@@ -12,33 +12,22 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetDeploymentTargetRequest::SerializePayload() const
-{
+Aws::String GetDeploymentTargetRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_deploymentIdHasBeenSet)
-  {
-   payload.WithString("deploymentId", m_deploymentId);
-
+  if (m_deploymentIdHasBeenSet) {
+    payload.WithString("deploymentId", m_deploymentId);
   }
 
-  if(m_targetIdHasBeenSet)
-  {
-   payload.WithString("targetId", m_targetId);
-
+  if (m_targetIdHasBeenSet) {
+    payload.WithString("targetId", m_targetId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetDeploymentTargetRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetDeploymentTargetRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeDeploy_20141006.GetDeploymentTarget"));
   return headers;
-
 }
-
-
-
-

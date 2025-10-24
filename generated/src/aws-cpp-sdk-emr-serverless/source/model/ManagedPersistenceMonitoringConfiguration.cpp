@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/emr-serverless/model/ManagedPersistenceMonitoringConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/emr-serverless/model/ManagedPersistenceMonitoringConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EMRServerless
-{
-namespace Model
-{
+namespace Aws {
+namespace EMRServerless {
+namespace Model {
 
-ManagedPersistenceMonitoringConfiguration::ManagedPersistenceMonitoringConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ManagedPersistenceMonitoringConfiguration::ManagedPersistenceMonitoringConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ManagedPersistenceMonitoringConfiguration& ManagedPersistenceMonitoringConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("enabled"))
-  {
+ManagedPersistenceMonitoringConfiguration& ManagedPersistenceMonitoringConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("enabled")) {
     m_enabled = jsonValue.GetBool("enabled");
     m_enabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("encryptionKeyArn"))
-  {
+  if (jsonValue.ValueExists("encryptionKeyArn")) {
     m_encryptionKeyArn = jsonValue.GetString("encryptionKeyArn");
     m_encryptionKeyArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ManagedPersistenceMonitoringConfiguration::Jsonize() const
-{
+JsonValue ManagedPersistenceMonitoringConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_enabledHasBeenSet)
-  {
-   payload.WithBool("enabled", m_enabled);
-
+  if (m_enabledHasBeenSet) {
+    payload.WithBool("enabled", m_enabled);
   }
 
-  if(m_encryptionKeyArnHasBeenSet)
-  {
-   payload.WithString("encryptionKeyArn", m_encryptionKeyArn);
-
+  if (m_encryptionKeyArnHasBeenSet) {
+    payload.WithString("encryptionKeyArn", m_encryptionKeyArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EMRServerless
-} // namespace Aws
+}  // namespace Model
+}  // namespace EMRServerless
+}  // namespace Aws

@@ -4,58 +4,46 @@
  */
 
 #include <aws/cloudfront/model/RealtimeLogConfig.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
-RealtimeLogConfig::RealtimeLogConfig(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+RealtimeLogConfig::RealtimeLogConfig(const XmlNode& xmlNode) { *this = xmlNode; }
 
-RealtimeLogConfig& RealtimeLogConfig::operator =(const XmlNode& xmlNode)
-{
+RealtimeLogConfig& RealtimeLogConfig::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode aRNNode = resultNode.FirstChild("ARN");
-    if(!aRNNode.IsNull())
-    {
+    if (!aRNNode.IsNull()) {
       m_aRN = Aws::Utils::Xml::DecodeEscapedXmlText(aRNNode.GetText());
       m_aRNHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("Name");
-    if(!nameNode.IsNull())
-    {
+    if (!nameNode.IsNull()) {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
     }
     XmlNode samplingRateNode = resultNode.FirstChild("SamplingRate");
-    if(!samplingRateNode.IsNull())
-    {
-      m_samplingRate = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(samplingRateNode.GetText()).c_str()).c_str());
+    if (!samplingRateNode.IsNull()) {
+      m_samplingRate =
+          StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(samplingRateNode.GetText()).c_str()).c_str());
       m_samplingRateHasBeenSet = true;
     }
     XmlNode endPointsNode = resultNode.FirstChild("EndPoints");
-    if(!endPointsNode.IsNull())
-    {
+    if (!endPointsNode.IsNull()) {
       XmlNode endPointsMember = endPointsNode.FirstChild("member");
       m_endPointsHasBeenSet = !endPointsMember.IsNull();
-      while(!endPointsMember.IsNull())
-      {
+      while (!endPointsMember.IsNull()) {
         m_endPoints.push_back(endPointsMember);
         endPointsMember = endPointsMember.NextNode("member");
       }
@@ -63,12 +51,10 @@ RealtimeLogConfig& RealtimeLogConfig::operator =(const XmlNode& xmlNode)
       m_endPointsHasBeenSet = true;
     }
     XmlNode fieldsNode = resultNode.FirstChild("Fields");
-    if(!fieldsNode.IsNull())
-    {
+    if (!fieldsNode.IsNull()) {
       XmlNode fieldsMember = fieldsNode.FirstChild("Field");
       m_fieldsHasBeenSet = !fieldsMember.IsNull();
-      while(!fieldsMember.IsNull())
-      {
+      while (!fieldsMember.IsNull()) {
         m_fields.push_back(fieldsMember.GetText());
         fieldsMember = fieldsMember.NextNode("Field");
       }
@@ -80,51 +66,42 @@ RealtimeLogConfig& RealtimeLogConfig::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void RealtimeLogConfig::AddToNode(XmlNode& parentNode) const
-{
+void RealtimeLogConfig::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_aRNHasBeenSet)
-  {
-   XmlNode aRNNode = parentNode.CreateChildElement("ARN");
-   aRNNode.SetText(m_aRN);
+  if (m_aRNHasBeenSet) {
+    XmlNode aRNNode = parentNode.CreateChildElement("ARN");
+    aRNNode.SetText(m_aRN);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   XmlNode nameNode = parentNode.CreateChildElement("Name");
-   nameNode.SetText(m_name);
+  if (m_nameHasBeenSet) {
+    XmlNode nameNode = parentNode.CreateChildElement("Name");
+    nameNode.SetText(m_name);
   }
 
-  if(m_samplingRateHasBeenSet)
-  {
-   XmlNode samplingRateNode = parentNode.CreateChildElement("SamplingRate");
-   ss << m_samplingRate;
-   samplingRateNode.SetText(ss.str());
-   ss.str("");
+  if (m_samplingRateHasBeenSet) {
+    XmlNode samplingRateNode = parentNode.CreateChildElement("SamplingRate");
+    ss << m_samplingRate;
+    samplingRateNode.SetText(ss.str());
+    ss.str("");
   }
 
-  if(m_endPointsHasBeenSet)
-  {
-   XmlNode endPointsParentNode = parentNode.CreateChildElement("EndPoints");
-   for(const auto& item : m_endPoints)
-   {
-     XmlNode endPointsNode = endPointsParentNode.CreateChildElement("EndPoint");
-     item.AddToNode(endPointsNode);
-   }
+  if (m_endPointsHasBeenSet) {
+    XmlNode endPointsParentNode = parentNode.CreateChildElement("EndPoints");
+    for (const auto& item : m_endPoints) {
+      XmlNode endPointsNode = endPointsParentNode.CreateChildElement("EndPoint");
+      item.AddToNode(endPointsNode);
+    }
   }
 
-  if(m_fieldsHasBeenSet)
-  {
-   XmlNode fieldsParentNode = parentNode.CreateChildElement("Fields");
-   for(const auto& item : m_fields)
-   {
-     XmlNode fieldsNode = fieldsParentNode.CreateChildElement("Field");
-     fieldsNode.SetText(item);
-   }
+  if (m_fieldsHasBeenSet) {
+    XmlNode fieldsParentNode = parentNode.CreateChildElement("Fields");
+    for (const auto& item : m_fields) {
+      XmlNode fieldsNode = fieldsParentNode.CreateChildElement("Field");
+      fieldsNode.SetText(item);
+    }
   }
-
 }
 
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

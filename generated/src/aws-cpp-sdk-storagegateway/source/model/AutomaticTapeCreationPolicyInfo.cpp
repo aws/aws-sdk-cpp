@@ -3,69 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/storagegateway/model/AutomaticTapeCreationPolicyInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/storagegateway/model/AutomaticTapeCreationPolicyInfo.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace StorageGateway
-{
-namespace Model
-{
+namespace Aws {
+namespace StorageGateway {
+namespace Model {
 
-AutomaticTapeCreationPolicyInfo::AutomaticTapeCreationPolicyInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AutomaticTapeCreationPolicyInfo::AutomaticTapeCreationPolicyInfo(JsonView jsonValue) { *this = jsonValue; }
 
-AutomaticTapeCreationPolicyInfo& AutomaticTapeCreationPolicyInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AutomaticTapeCreationRules"))
-  {
+AutomaticTapeCreationPolicyInfo& AutomaticTapeCreationPolicyInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AutomaticTapeCreationRules")) {
     Aws::Utils::Array<JsonView> automaticTapeCreationRulesJsonList = jsonValue.GetArray("AutomaticTapeCreationRules");
-    for(unsigned automaticTapeCreationRulesIndex = 0; automaticTapeCreationRulesIndex < automaticTapeCreationRulesJsonList.GetLength(); ++automaticTapeCreationRulesIndex)
-    {
+    for (unsigned automaticTapeCreationRulesIndex = 0; automaticTapeCreationRulesIndex < automaticTapeCreationRulesJsonList.GetLength();
+         ++automaticTapeCreationRulesIndex) {
       m_automaticTapeCreationRules.push_back(automaticTapeCreationRulesJsonList[automaticTapeCreationRulesIndex].AsObject());
     }
     m_automaticTapeCreationRulesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("GatewayARN"))
-  {
+  if (jsonValue.ValueExists("GatewayARN")) {
     m_gatewayARN = jsonValue.GetString("GatewayARN");
     m_gatewayARNHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AutomaticTapeCreationPolicyInfo::Jsonize() const
-{
+JsonValue AutomaticTapeCreationPolicyInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_automaticTapeCreationRulesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> automaticTapeCreationRulesJsonList(m_automaticTapeCreationRules.size());
-   for(unsigned automaticTapeCreationRulesIndex = 0; automaticTapeCreationRulesIndex < automaticTapeCreationRulesJsonList.GetLength(); ++automaticTapeCreationRulesIndex)
-   {
-     automaticTapeCreationRulesJsonList[automaticTapeCreationRulesIndex].AsObject(m_automaticTapeCreationRules[automaticTapeCreationRulesIndex].Jsonize());
-   }
-   payload.WithArray("AutomaticTapeCreationRules", std::move(automaticTapeCreationRulesJsonList));
-
+  if (m_automaticTapeCreationRulesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> automaticTapeCreationRulesJsonList(m_automaticTapeCreationRules.size());
+    for (unsigned automaticTapeCreationRulesIndex = 0; automaticTapeCreationRulesIndex < automaticTapeCreationRulesJsonList.GetLength();
+         ++automaticTapeCreationRulesIndex) {
+      automaticTapeCreationRulesJsonList[automaticTapeCreationRulesIndex].AsObject(
+          m_automaticTapeCreationRules[automaticTapeCreationRulesIndex].Jsonize());
+    }
+    payload.WithArray("AutomaticTapeCreationRules", std::move(automaticTapeCreationRulesJsonList));
   }
 
-  if(m_gatewayARNHasBeenSet)
-  {
-   payload.WithString("GatewayARN", m_gatewayARN);
-
+  if (m_gatewayARNHasBeenSet) {
+    payload.WithString("GatewayARN", m_gatewayARN);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace StorageGateway
-} // namespace Aws
+}  // namespace Model
+}  // namespace StorageGateway
+}  // namespace Aws

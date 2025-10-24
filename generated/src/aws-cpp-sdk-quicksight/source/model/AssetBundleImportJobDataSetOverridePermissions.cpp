@@ -3,69 +3,53 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/AssetBundleImportJobDataSetOverridePermissions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/AssetBundleImportJobDataSetOverridePermissions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-AssetBundleImportJobDataSetOverridePermissions::AssetBundleImportJobDataSetOverridePermissions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AssetBundleImportJobDataSetOverridePermissions::AssetBundleImportJobDataSetOverridePermissions(JsonView jsonValue) { *this = jsonValue; }
 
-AssetBundleImportJobDataSetOverridePermissions& AssetBundleImportJobDataSetOverridePermissions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DataSetIds"))
-  {
+AssetBundleImportJobDataSetOverridePermissions& AssetBundleImportJobDataSetOverridePermissions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DataSetIds")) {
     Aws::Utils::Array<JsonView> dataSetIdsJsonList = jsonValue.GetArray("DataSetIds");
-    for(unsigned dataSetIdsIndex = 0; dataSetIdsIndex < dataSetIdsJsonList.GetLength(); ++dataSetIdsIndex)
-    {
+    for (unsigned dataSetIdsIndex = 0; dataSetIdsIndex < dataSetIdsJsonList.GetLength(); ++dataSetIdsIndex) {
       m_dataSetIds.push_back(dataSetIdsJsonList[dataSetIdsIndex].AsString());
     }
     m_dataSetIdsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Permissions"))
-  {
+  if (jsonValue.ValueExists("Permissions")) {
     m_permissions = jsonValue.GetObject("Permissions");
     m_permissionsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AssetBundleImportJobDataSetOverridePermissions::Jsonize() const
-{
+JsonValue AssetBundleImportJobDataSetOverridePermissions::Jsonize() const {
   JsonValue payload;
 
-  if(m_dataSetIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> dataSetIdsJsonList(m_dataSetIds.size());
-   for(unsigned dataSetIdsIndex = 0; dataSetIdsIndex < dataSetIdsJsonList.GetLength(); ++dataSetIdsIndex)
-   {
-     dataSetIdsJsonList[dataSetIdsIndex].AsString(m_dataSetIds[dataSetIdsIndex]);
-   }
-   payload.WithArray("DataSetIds", std::move(dataSetIdsJsonList));
-
+  if (m_dataSetIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> dataSetIdsJsonList(m_dataSetIds.size());
+    for (unsigned dataSetIdsIndex = 0; dataSetIdsIndex < dataSetIdsJsonList.GetLength(); ++dataSetIdsIndex) {
+      dataSetIdsJsonList[dataSetIdsIndex].AsString(m_dataSetIds[dataSetIdsIndex]);
+    }
+    payload.WithArray("DataSetIds", std::move(dataSetIdsJsonList));
   }
 
-  if(m_permissionsHasBeenSet)
-  {
-   payload.WithObject("Permissions", m_permissions.Jsonize());
-
+  if (m_permissionsHasBeenSet) {
+    payload.WithObject("Permissions", m_permissions.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

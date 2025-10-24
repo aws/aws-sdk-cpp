@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/networkmanager/NetworkManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/networkmanager/NetworkManager_EXPORTS.h>
 
-namespace Aws
-{
-namespace NetworkManager
-{
-namespace Model
-{
-  enum class ChangeStatus
-  {
-    NOT_SET,
-    NOT_STARTED,
-    IN_PROGRESS,
-    COMPLETE,
-    FAILED
-  };
+namespace Aws {
+namespace NetworkManager {
+namespace Model {
+enum class ChangeStatus { NOT_SET, NOT_STARTED, IN_PROGRESS, COMPLETE, FAILED };
 
-namespace ChangeStatusMapper
-{
+namespace ChangeStatusMapper {
 AWS_NETWORKMANAGER_API ChangeStatus GetChangeStatusForName(const Aws::String& name);
 
 AWS_NETWORKMANAGER_API Aws::String GetNameForChangeStatus(ChangeStatus value);
-} // namespace ChangeStatusMapper
-} // namespace Model
-} // namespace NetworkManager
-} // namespace Aws
+}  // namespace ChangeStatusMapper
+}  // namespace Model
+}  // namespace NetworkManager
+}  // namespace Aws

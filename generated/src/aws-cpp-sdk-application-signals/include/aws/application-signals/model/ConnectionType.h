@@ -7,25 +7,16 @@
 #include <aws/application-signals/ApplicationSignals_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ApplicationSignals
-{
-namespace Model
-{
-  enum class ConnectionType
-  {
-    NOT_SET,
-    INDIRECT,
-    DIRECT
-  };
+namespace Aws {
+namespace ApplicationSignals {
+namespace Model {
+enum class ConnectionType { NOT_SET, INDIRECT, DIRECT };
 
-namespace ConnectionTypeMapper
-{
+namespace ConnectionTypeMapper {
 AWS_APPLICATIONSIGNALS_API ConnectionType GetConnectionTypeForName(const Aws::String& name);
 
 AWS_APPLICATIONSIGNALS_API Aws::String GetNameForConnectionType(ConnectionType value);
-} // namespace ConnectionTypeMapper
-} // namespace Model
-} // namespace ApplicationSignals
-} // namespace Aws
+}  // namespace ConnectionTypeMapper
+}  // namespace Model
+}  // namespace ApplicationSignals
+}  // namespace Aws

@@ -12,19 +12,12 @@ using namespace Aws::AmplifyBackend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetBackendRequest::SerializePayload() const
-{
+Aws::String GetBackendRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_backendEnvironmentNameHasBeenSet)
-  {
-   payload.WithString("backendEnvironmentName", m_backendEnvironmentName);
-
+  if (m_backendEnvironmentNameHasBeenSet) {
+    payload.WithString("backendEnvironmentName", m_backendEnvironmentName);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

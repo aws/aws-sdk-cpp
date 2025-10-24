@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/robomaker/model/Environment.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/robomaker/model/Environment.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace RoboMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace RoboMaker {
+namespace Model {
 
-Environment::Environment(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Environment::Environment(JsonView jsonValue) { *this = jsonValue; }
 
-Environment& Environment::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("uri"))
-  {
+Environment& Environment::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("uri")) {
     m_uri = jsonValue.GetString("uri");
     m_uriHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Environment::Jsonize() const
-{
+JsonValue Environment::Jsonize() const {
   JsonValue payload;
 
-  if(m_uriHasBeenSet)
-  {
-   payload.WithString("uri", m_uri);
-
+  if (m_uriHasBeenSet) {
+    payload.WithString("uri", m_uri);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace RoboMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace RoboMaker
+}  // namespace Aws

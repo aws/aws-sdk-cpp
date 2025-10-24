@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint-email/model/ReputationOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint-email/model/ReputationOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace PinpointEmail
-{
-namespace Model
-{
+namespace Aws {
+namespace PinpointEmail {
+namespace Model {
 
-ReputationOptions::ReputationOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReputationOptions::ReputationOptions(JsonView jsonValue) { *this = jsonValue; }
 
-ReputationOptions& ReputationOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ReputationMetricsEnabled"))
-  {
+ReputationOptions& ReputationOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ReputationMetricsEnabled")) {
     m_reputationMetricsEnabled = jsonValue.GetBool("ReputationMetricsEnabled");
     m_reputationMetricsEnabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastFreshStart"))
-  {
+  if (jsonValue.ValueExists("LastFreshStart")) {
     m_lastFreshStart = jsonValue.GetDouble("LastFreshStart");
     m_lastFreshStartHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ReputationOptions::Jsonize() const
-{
+JsonValue ReputationOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_reputationMetricsEnabledHasBeenSet)
-  {
-   payload.WithBool("ReputationMetricsEnabled", m_reputationMetricsEnabled);
-
+  if (m_reputationMetricsEnabledHasBeenSet) {
+    payload.WithBool("ReputationMetricsEnabled", m_reputationMetricsEnabled);
   }
 
-  if(m_lastFreshStartHasBeenSet)
-  {
-   payload.WithDouble("LastFreshStart", m_lastFreshStart.SecondsWithMSPrecision());
+  if (m_lastFreshStartHasBeenSet) {
+    payload.WithDouble("LastFreshStart", m_lastFreshStart.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace PinpointEmail
-} // namespace Aws
+}  // namespace Model
+}  // namespace PinpointEmail
+}  // namespace Aws

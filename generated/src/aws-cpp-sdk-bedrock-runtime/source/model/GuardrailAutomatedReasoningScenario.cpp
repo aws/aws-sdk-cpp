@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockRuntime {
+namespace Model {
 
-GuardrailAutomatedReasoningScenario::GuardrailAutomatedReasoningScenario(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GuardrailAutomatedReasoningScenario::GuardrailAutomatedReasoningScenario(JsonView jsonValue) { *this = jsonValue; }
 
-GuardrailAutomatedReasoningScenario& GuardrailAutomatedReasoningScenario::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("statements"))
-  {
+GuardrailAutomatedReasoningScenario& GuardrailAutomatedReasoningScenario::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("statements")) {
     Aws::Utils::Array<JsonView> statementsJsonList = jsonValue.GetArray("statements");
-    for(unsigned statementsIndex = 0; statementsIndex < statementsJsonList.GetLength(); ++statementsIndex)
-    {
+    for (unsigned statementsIndex = 0; statementsIndex < statementsJsonList.GetLength(); ++statementsIndex) {
       m_statements.push_back(statementsJsonList[statementsIndex].AsObject());
     }
     m_statementsHasBeenSet = true;
@@ -37,24 +28,20 @@ GuardrailAutomatedReasoningScenario& GuardrailAutomatedReasoningScenario::operat
   return *this;
 }
 
-JsonValue GuardrailAutomatedReasoningScenario::Jsonize() const
-{
+JsonValue GuardrailAutomatedReasoningScenario::Jsonize() const {
   JsonValue payload;
 
-  if(m_statementsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> statementsJsonList(m_statements.size());
-   for(unsigned statementsIndex = 0; statementsIndex < statementsJsonList.GetLength(); ++statementsIndex)
-   {
-     statementsJsonList[statementsIndex].AsObject(m_statements[statementsIndex].Jsonize());
-   }
-   payload.WithArray("statements", std::move(statementsJsonList));
-
+  if (m_statementsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> statementsJsonList(m_statements.size());
+    for (unsigned statementsIndex = 0; statementsIndex < statementsJsonList.GetLength(); ++statementsIndex) {
+      statementsJsonList[statementsIndex].AsObject(m_statements[statementsIndex].Jsonize());
+    }
+    payload.WithArray("statements", std::move(statementsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockRuntime
+}  // namespace Aws

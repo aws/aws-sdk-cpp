@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class MovClapAtom
-  {
-    NOT_SET,
-    INCLUDE,
-    EXCLUDE
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class MovClapAtom { NOT_SET, INCLUDE, EXCLUDE };
 
-namespace MovClapAtomMapper
-{
+namespace MovClapAtomMapper {
 AWS_MEDIACONVERT_API MovClapAtom GetMovClapAtomForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForMovClapAtom(MovClapAtom value);
-} // namespace MovClapAtomMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace MovClapAtomMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

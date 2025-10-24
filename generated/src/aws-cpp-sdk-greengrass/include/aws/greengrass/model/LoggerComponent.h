@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/greengrass/Greengrass_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/greengrass/Greengrass_EXPORTS.h>
 
-namespace Aws
-{
-namespace Greengrass
-{
-namespace Model
-{
-  enum class LoggerComponent
-  {
-    NOT_SET,
-    GreengrassSystem,
-    Lambda
-  };
+namespace Aws {
+namespace Greengrass {
+namespace Model {
+enum class LoggerComponent { NOT_SET, GreengrassSystem, Lambda };
 
-namespace LoggerComponentMapper
-{
+namespace LoggerComponentMapper {
 AWS_GREENGRASS_API LoggerComponent GetLoggerComponentForName(const Aws::String& name);
 
 AWS_GREENGRASS_API Aws::String GetNameForLoggerComponent(LoggerComponent value);
-} // namespace LoggerComponentMapper
-} // namespace Model
-} // namespace Greengrass
-} // namespace Aws
+}  // namespace LoggerComponentMapper
+}  // namespace Model
+}  // namespace Greengrass
+}  // namespace Aws

@@ -3,81 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ssm/model/DocumentParameter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ssm/model/DocumentParameter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SSM
-{
-namespace Model
-{
+namespace Aws {
+namespace SSM {
+namespace Model {
 
-DocumentParameter::DocumentParameter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DocumentParameter::DocumentParameter(JsonView jsonValue) { *this = jsonValue; }
 
-DocumentParameter& DocumentParameter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+DocumentParameter& DocumentParameter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = DocumentParameterTypeMapper::GetDocumentParameterTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DefaultValue"))
-  {
+  if (jsonValue.ValueExists("DefaultValue")) {
     m_defaultValue = jsonValue.GetString("DefaultValue");
     m_defaultValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DocumentParameter::Jsonize() const
-{
+JsonValue DocumentParameter::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", DocumentParameterTypeMapper::GetNameForDocumentParameterType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", DocumentParameterTypeMapper::GetNameForDocumentParameterType(m_type));
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_defaultValueHasBeenSet)
-  {
-   payload.WithString("DefaultValue", m_defaultValue);
-
+  if (m_defaultValueHasBeenSet) {
+    payload.WithString("DefaultValue", m_defaultValue);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SSM
-} // namespace Aws
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

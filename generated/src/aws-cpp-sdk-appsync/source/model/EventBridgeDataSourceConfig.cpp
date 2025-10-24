@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppSync
-{
-namespace Model
-{
+namespace Aws {
+namespace AppSync {
+namespace Model {
 
-EventBridgeDataSourceConfig::EventBridgeDataSourceConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EventBridgeDataSourceConfig::EventBridgeDataSourceConfig(JsonView jsonValue) { *this = jsonValue; }
 
-EventBridgeDataSourceConfig& EventBridgeDataSourceConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("eventBusArn"))
-  {
+EventBridgeDataSourceConfig& EventBridgeDataSourceConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("eventBusArn")) {
     m_eventBusArn = jsonValue.GetString("eventBusArn");
     m_eventBusArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EventBridgeDataSourceConfig::Jsonize() const
-{
+JsonValue EventBridgeDataSourceConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_eventBusArnHasBeenSet)
-  {
-   payload.WithString("eventBusArn", m_eventBusArn);
-
+  if (m_eventBusArnHasBeenSet) {
+    payload.WithString("eventBusArn", m_eventBusArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppSync
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppSync
+}  // namespace Aws

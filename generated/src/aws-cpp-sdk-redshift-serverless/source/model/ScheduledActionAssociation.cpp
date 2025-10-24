@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift-serverless/model/ScheduledActionAssociation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/redshift-serverless/model/ScheduledActionAssociation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace RedshiftServerless
-{
-namespace Model
-{
+namespace Aws {
+namespace RedshiftServerless {
+namespace Model {
 
-ScheduledActionAssociation::ScheduledActionAssociation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ScheduledActionAssociation::ScheduledActionAssociation(JsonView jsonValue) { *this = jsonValue; }
 
-ScheduledActionAssociation& ScheduledActionAssociation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("namespaceName"))
-  {
+ScheduledActionAssociation& ScheduledActionAssociation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("namespaceName")) {
     m_namespaceName = jsonValue.GetString("namespaceName");
     m_namespaceNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("scheduledActionName"))
-  {
+  if (jsonValue.ValueExists("scheduledActionName")) {
     m_scheduledActionName = jsonValue.GetString("scheduledActionName");
     m_scheduledActionNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ScheduledActionAssociation::Jsonize() const
-{
+JsonValue ScheduledActionAssociation::Jsonize() const {
   JsonValue payload;
 
-  if(m_namespaceNameHasBeenSet)
-  {
-   payload.WithString("namespaceName", m_namespaceName);
-
+  if (m_namespaceNameHasBeenSet) {
+    payload.WithString("namespaceName", m_namespaceName);
   }
 
-  if(m_scheduledActionNameHasBeenSet)
-  {
-   payload.WithString("scheduledActionName", m_scheduledActionName);
-
+  if (m_scheduledActionNameHasBeenSet) {
+    payload.WithString("scheduledActionName", m_scheduledActionName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace RedshiftServerless
-} // namespace Aws
+}  // namespace Model
+}  // namespace RedshiftServerless
+}  // namespace Aws

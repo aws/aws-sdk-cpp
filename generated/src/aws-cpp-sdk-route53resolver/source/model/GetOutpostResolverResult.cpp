@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/route53resolver/model/GetOutpostResolverResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/route53resolver/model/GetOutpostResolverResult.h>
 
 #include <utility>
 
@@ -17,28 +17,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetOutpostResolverResult::GetOutpostResolverResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetOutpostResolverResult::GetOutpostResolverResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetOutpostResolverResult& GetOutpostResolverResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetOutpostResolverResult& GetOutpostResolverResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("OutpostResolver"))
-  {
+  if (jsonValue.ValueExists("OutpostResolver")) {
     m_outpostResolver = jsonValue.GetObject("OutpostResolver");
     m_outpostResolverHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

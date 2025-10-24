@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/opensearch/model/AutoTuneDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/opensearch/model/AutoTuneDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace OpenSearchService
-{
-namespace Model
-{
+namespace Aws {
+namespace OpenSearchService {
+namespace Model {
 
-AutoTuneDetails::AutoTuneDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AutoTuneDetails::AutoTuneDetails(JsonView jsonValue) { *this = jsonValue; }
 
-AutoTuneDetails& AutoTuneDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ScheduledAutoTuneDetails"))
-  {
+AutoTuneDetails& AutoTuneDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ScheduledAutoTuneDetails")) {
     m_scheduledAutoTuneDetails = jsonValue.GetObject("ScheduledAutoTuneDetails");
     m_scheduledAutoTuneDetailsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AutoTuneDetails::Jsonize() const
-{
+JsonValue AutoTuneDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_scheduledAutoTuneDetailsHasBeenSet)
-  {
-   payload.WithObject("ScheduledAutoTuneDetails", m_scheduledAutoTuneDetails.Jsonize());
-
+  if (m_scheduledAutoTuneDetailsHasBeenSet) {
+    payload.WithObject("ScheduledAutoTuneDetails", m_scheduledAutoTuneDetails.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace OpenSearchService
-} // namespace Aws
+}  // namespace Model
+}  // namespace OpenSearchService
+}  // namespace Aws

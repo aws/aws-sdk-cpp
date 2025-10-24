@@ -4,132 +4,161 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/PipelineExecutionStatus.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace SageMaker {
+namespace Model {
 
+/**
+ * <p>A pipeline execution summary.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/PipelineExecutionSummary">AWS
+ * API Reference</a></p>
+ */
+class PipelineExecutionSummary {
+ public:
+  AWS_SAGEMAKER_API PipelineExecutionSummary() = default;
+  AWS_SAGEMAKER_API PipelineExecutionSummary(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SAGEMAKER_API PipelineExecutionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>A pipeline execution summary.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/PipelineExecutionSummary">AWS
-   * API Reference</a></p>
+   * <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
    */
-  class PipelineExecutionSummary
-  {
-  public:
-    AWS_SAGEMAKER_API PipelineExecutionSummary() = default;
-    AWS_SAGEMAKER_API PipelineExecutionSummary(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SAGEMAKER_API PipelineExecutionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetPipelineExecutionArn() const { return m_pipelineExecutionArn; }
+  inline bool PipelineExecutionArnHasBeenSet() const { return m_pipelineExecutionArnHasBeenSet; }
+  template <typename PipelineExecutionArnT = Aws::String>
+  void SetPipelineExecutionArn(PipelineExecutionArnT&& value) {
+    m_pipelineExecutionArnHasBeenSet = true;
+    m_pipelineExecutionArn = std::forward<PipelineExecutionArnT>(value);
+  }
+  template <typename PipelineExecutionArnT = Aws::String>
+  PipelineExecutionSummary& WithPipelineExecutionArn(PipelineExecutionArnT&& value) {
+    SetPipelineExecutionArn(std::forward<PipelineExecutionArnT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The start time of the pipeline execution.</p>
+   */
+  inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
+  inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+  template <typename StartTimeT = Aws::Utils::DateTime>
+  void SetStartTime(StartTimeT&& value) {
+    m_startTimeHasBeenSet = true;
+    m_startTime = std::forward<StartTimeT>(value);
+  }
+  template <typename StartTimeT = Aws::Utils::DateTime>
+  PipelineExecutionSummary& WithStartTime(StartTimeT&& value) {
+    SetStartTime(std::forward<StartTimeT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-     */
-    inline const Aws::String& GetPipelineExecutionArn() const { return m_pipelineExecutionArn; }
-    inline bool PipelineExecutionArnHasBeenSet() const { return m_pipelineExecutionArnHasBeenSet; }
-    template<typename PipelineExecutionArnT = Aws::String>
-    void SetPipelineExecutionArn(PipelineExecutionArnT&& value) { m_pipelineExecutionArnHasBeenSet = true; m_pipelineExecutionArn = std::forward<PipelineExecutionArnT>(value); }
-    template<typename PipelineExecutionArnT = Aws::String>
-    PipelineExecutionSummary& WithPipelineExecutionArn(PipelineExecutionArnT&& value) { SetPipelineExecutionArn(std::forward<PipelineExecutionArnT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The status of the pipeline execution.</p>
+   */
+  inline PipelineExecutionStatus GetPipelineExecutionStatus() const { return m_pipelineExecutionStatus; }
+  inline bool PipelineExecutionStatusHasBeenSet() const { return m_pipelineExecutionStatusHasBeenSet; }
+  inline void SetPipelineExecutionStatus(PipelineExecutionStatus value) {
+    m_pipelineExecutionStatusHasBeenSet = true;
+    m_pipelineExecutionStatus = value;
+  }
+  inline PipelineExecutionSummary& WithPipelineExecutionStatus(PipelineExecutionStatus value) {
+    SetPipelineExecutionStatus(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The start time of the pipeline execution.</p>
-     */
-    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
-    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    template<typename StartTimeT = Aws::Utils::DateTime>
-    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
-    template<typename StartTimeT = Aws::Utils::DateTime>
-    PipelineExecutionSummary& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The description of the pipeline execution.</p>
+   */
+  inline const Aws::String& GetPipelineExecutionDescription() const { return m_pipelineExecutionDescription; }
+  inline bool PipelineExecutionDescriptionHasBeenSet() const { return m_pipelineExecutionDescriptionHasBeenSet; }
+  template <typename PipelineExecutionDescriptionT = Aws::String>
+  void SetPipelineExecutionDescription(PipelineExecutionDescriptionT&& value) {
+    m_pipelineExecutionDescriptionHasBeenSet = true;
+    m_pipelineExecutionDescription = std::forward<PipelineExecutionDescriptionT>(value);
+  }
+  template <typename PipelineExecutionDescriptionT = Aws::String>
+  PipelineExecutionSummary& WithPipelineExecutionDescription(PipelineExecutionDescriptionT&& value) {
+    SetPipelineExecutionDescription(std::forward<PipelineExecutionDescriptionT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The status of the pipeline execution.</p>
-     */
-    inline PipelineExecutionStatus GetPipelineExecutionStatus() const { return m_pipelineExecutionStatus; }
-    inline bool PipelineExecutionStatusHasBeenSet() const { return m_pipelineExecutionStatusHasBeenSet; }
-    inline void SetPipelineExecutionStatus(PipelineExecutionStatus value) { m_pipelineExecutionStatusHasBeenSet = true; m_pipelineExecutionStatus = value; }
-    inline PipelineExecutionSummary& WithPipelineExecutionStatus(PipelineExecutionStatus value) { SetPipelineExecutionStatus(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The display name of the pipeline execution.</p>
+   */
+  inline const Aws::String& GetPipelineExecutionDisplayName() const { return m_pipelineExecutionDisplayName; }
+  inline bool PipelineExecutionDisplayNameHasBeenSet() const { return m_pipelineExecutionDisplayNameHasBeenSet; }
+  template <typename PipelineExecutionDisplayNameT = Aws::String>
+  void SetPipelineExecutionDisplayName(PipelineExecutionDisplayNameT&& value) {
+    m_pipelineExecutionDisplayNameHasBeenSet = true;
+    m_pipelineExecutionDisplayName = std::forward<PipelineExecutionDisplayNameT>(value);
+  }
+  template <typename PipelineExecutionDisplayNameT = Aws::String>
+  PipelineExecutionSummary& WithPipelineExecutionDisplayName(PipelineExecutionDisplayNameT&& value) {
+    SetPipelineExecutionDisplayName(std::forward<PipelineExecutionDisplayNameT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The description of the pipeline execution.</p>
-     */
-    inline const Aws::String& GetPipelineExecutionDescription() const { return m_pipelineExecutionDescription; }
-    inline bool PipelineExecutionDescriptionHasBeenSet() const { return m_pipelineExecutionDescriptionHasBeenSet; }
-    template<typename PipelineExecutionDescriptionT = Aws::String>
-    void SetPipelineExecutionDescription(PipelineExecutionDescriptionT&& value) { m_pipelineExecutionDescriptionHasBeenSet = true; m_pipelineExecutionDescription = std::forward<PipelineExecutionDescriptionT>(value); }
-    template<typename PipelineExecutionDescriptionT = Aws::String>
-    PipelineExecutionSummary& WithPipelineExecutionDescription(PipelineExecutionDescriptionT&& value) { SetPipelineExecutionDescription(std::forward<PipelineExecutionDescriptionT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>A message generated by SageMaker Pipelines describing why the pipeline
+   * execution failed.</p>
+   */
+  inline const Aws::String& GetPipelineExecutionFailureReason() const { return m_pipelineExecutionFailureReason; }
+  inline bool PipelineExecutionFailureReasonHasBeenSet() const { return m_pipelineExecutionFailureReasonHasBeenSet; }
+  template <typename PipelineExecutionFailureReasonT = Aws::String>
+  void SetPipelineExecutionFailureReason(PipelineExecutionFailureReasonT&& value) {
+    m_pipelineExecutionFailureReasonHasBeenSet = true;
+    m_pipelineExecutionFailureReason = std::forward<PipelineExecutionFailureReasonT>(value);
+  }
+  template <typename PipelineExecutionFailureReasonT = Aws::String>
+  PipelineExecutionSummary& WithPipelineExecutionFailureReason(PipelineExecutionFailureReasonT&& value) {
+    SetPipelineExecutionFailureReason(std::forward<PipelineExecutionFailureReasonT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_pipelineExecutionArn;
+  bool m_pipelineExecutionArnHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The display name of the pipeline execution.</p>
-     */
-    inline const Aws::String& GetPipelineExecutionDisplayName() const { return m_pipelineExecutionDisplayName; }
-    inline bool PipelineExecutionDisplayNameHasBeenSet() const { return m_pipelineExecutionDisplayNameHasBeenSet; }
-    template<typename PipelineExecutionDisplayNameT = Aws::String>
-    void SetPipelineExecutionDisplayName(PipelineExecutionDisplayNameT&& value) { m_pipelineExecutionDisplayNameHasBeenSet = true; m_pipelineExecutionDisplayName = std::forward<PipelineExecutionDisplayNameT>(value); }
-    template<typename PipelineExecutionDisplayNameT = Aws::String>
-    PipelineExecutionSummary& WithPipelineExecutionDisplayName(PipelineExecutionDisplayNameT&& value) { SetPipelineExecutionDisplayName(std::forward<PipelineExecutionDisplayNameT>(value)); return *this;}
-    ///@}
+  Aws::Utils::DateTime m_startTime{};
+  bool m_startTimeHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>A message generated by SageMaker Pipelines describing why the pipeline
-     * execution failed.</p>
-     */
-    inline const Aws::String& GetPipelineExecutionFailureReason() const { return m_pipelineExecutionFailureReason; }
-    inline bool PipelineExecutionFailureReasonHasBeenSet() const { return m_pipelineExecutionFailureReasonHasBeenSet; }
-    template<typename PipelineExecutionFailureReasonT = Aws::String>
-    void SetPipelineExecutionFailureReason(PipelineExecutionFailureReasonT&& value) { m_pipelineExecutionFailureReasonHasBeenSet = true; m_pipelineExecutionFailureReason = std::forward<PipelineExecutionFailureReasonT>(value); }
-    template<typename PipelineExecutionFailureReasonT = Aws::String>
-    PipelineExecutionSummary& WithPipelineExecutionFailureReason(PipelineExecutionFailureReasonT&& value) { SetPipelineExecutionFailureReason(std::forward<PipelineExecutionFailureReasonT>(value)); return *this;}
-    ///@}
-  private:
+  PipelineExecutionStatus m_pipelineExecutionStatus{PipelineExecutionStatus::NOT_SET};
+  bool m_pipelineExecutionStatusHasBeenSet = false;
 
-    Aws::String m_pipelineExecutionArn;
-    bool m_pipelineExecutionArnHasBeenSet = false;
+  Aws::String m_pipelineExecutionDescription;
+  bool m_pipelineExecutionDescriptionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime{};
-    bool m_startTimeHasBeenSet = false;
+  Aws::String m_pipelineExecutionDisplayName;
+  bool m_pipelineExecutionDisplayNameHasBeenSet = false;
 
-    PipelineExecutionStatus m_pipelineExecutionStatus{PipelineExecutionStatus::NOT_SET};
-    bool m_pipelineExecutionStatusHasBeenSet = false;
+  Aws::String m_pipelineExecutionFailureReason;
+  bool m_pipelineExecutionFailureReasonHasBeenSet = false;
+};
 
-    Aws::String m_pipelineExecutionDescription;
-    bool m_pipelineExecutionDescriptionHasBeenSet = false;
-
-    Aws::String m_pipelineExecutionDisplayName;
-    bool m_pipelineExecutionDisplayNameHasBeenSet = false;
-
-    Aws::String m_pipelineExecutionFailureReason;
-    bool m_pipelineExecutionFailureReasonHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

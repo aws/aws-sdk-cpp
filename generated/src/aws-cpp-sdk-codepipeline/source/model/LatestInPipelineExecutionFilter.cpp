@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
 
-LatestInPipelineExecutionFilter::LatestInPipelineExecutionFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LatestInPipelineExecutionFilter::LatestInPipelineExecutionFilter(JsonView jsonValue) { *this = jsonValue; }
 
-LatestInPipelineExecutionFilter& LatestInPipelineExecutionFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("pipelineExecutionId"))
-  {
+LatestInPipelineExecutionFilter& LatestInPipelineExecutionFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("pipelineExecutionId")) {
     m_pipelineExecutionId = jsonValue.GetString("pipelineExecutionId");
     m_pipelineExecutionIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("startTimeRange"))
-  {
+  if (jsonValue.ValueExists("startTimeRange")) {
     m_startTimeRange = StartTimeRangeMapper::GetStartTimeRangeForName(jsonValue.GetString("startTimeRange"));
     m_startTimeRangeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LatestInPipelineExecutionFilter::Jsonize() const
-{
+JsonValue LatestInPipelineExecutionFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_pipelineExecutionIdHasBeenSet)
-  {
-   payload.WithString("pipelineExecutionId", m_pipelineExecutionId);
-
+  if (m_pipelineExecutionIdHasBeenSet) {
+    payload.WithString("pipelineExecutionId", m_pipelineExecutionId);
   }
 
-  if(m_startTimeRangeHasBeenSet)
-  {
-   payload.WithString("startTimeRange", StartTimeRangeMapper::GetNameForStartTimeRange(m_startTimeRange));
+  if (m_startTimeRangeHasBeenSet) {
+    payload.WithString("startTimeRange", StartTimeRangeMapper::GetNameForStartTimeRange(m_startTimeRange));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

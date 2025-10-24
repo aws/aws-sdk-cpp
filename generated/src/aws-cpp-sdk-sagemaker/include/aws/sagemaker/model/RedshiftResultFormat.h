@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class RedshiftResultFormat
-  {
-    NOT_SET,
-    PARQUET,
-    CSV
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class RedshiftResultFormat { NOT_SET, PARQUET, CSV };
 
-namespace RedshiftResultFormatMapper
-{
+namespace RedshiftResultFormatMapper {
 AWS_SAGEMAKER_API RedshiftResultFormat GetRedshiftResultFormatForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForRedshiftResultFormat(RedshiftResultFormat value);
-} // namespace RedshiftResultFormatMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace RedshiftResultFormatMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

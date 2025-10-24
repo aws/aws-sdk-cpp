@@ -3,91 +3,69 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/IntegerListConfigurationOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/IntegerListConfigurationOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-IntegerListConfigurationOptions::IntegerListConfigurationOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IntegerListConfigurationOptions::IntegerListConfigurationOptions(JsonView jsonValue) { *this = jsonValue; }
 
-IntegerListConfigurationOptions& IntegerListConfigurationOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DefaultValue"))
-  {
+IntegerListConfigurationOptions& IntegerListConfigurationOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DefaultValue")) {
     Aws::Utils::Array<JsonView> defaultValueJsonList = jsonValue.GetArray("DefaultValue");
-    for(unsigned defaultValueIndex = 0; defaultValueIndex < defaultValueJsonList.GetLength(); ++defaultValueIndex)
-    {
+    for (unsigned defaultValueIndex = 0; defaultValueIndex < defaultValueJsonList.GetLength(); ++defaultValueIndex) {
       m_defaultValue.push_back(defaultValueJsonList[defaultValueIndex].AsInteger());
     }
     m_defaultValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Min"))
-  {
+  if (jsonValue.ValueExists("Min")) {
     m_min = jsonValue.GetInteger("Min");
     m_minHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Max"))
-  {
+  if (jsonValue.ValueExists("Max")) {
     m_max = jsonValue.GetInteger("Max");
     m_maxHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MaxItems"))
-  {
+  if (jsonValue.ValueExists("MaxItems")) {
     m_maxItems = jsonValue.GetInteger("MaxItems");
     m_maxItemsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IntegerListConfigurationOptions::Jsonize() const
-{
+JsonValue IntegerListConfigurationOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_defaultValueHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> defaultValueJsonList(m_defaultValue.size());
-   for(unsigned defaultValueIndex = 0; defaultValueIndex < defaultValueJsonList.GetLength(); ++defaultValueIndex)
-   {
-     defaultValueJsonList[defaultValueIndex].AsInteger(m_defaultValue[defaultValueIndex]);
-   }
-   payload.WithArray("DefaultValue", std::move(defaultValueJsonList));
-
+  if (m_defaultValueHasBeenSet) {
+    Aws::Utils::Array<JsonValue> defaultValueJsonList(m_defaultValue.size());
+    for (unsigned defaultValueIndex = 0; defaultValueIndex < defaultValueJsonList.GetLength(); ++defaultValueIndex) {
+      defaultValueJsonList[defaultValueIndex].AsInteger(m_defaultValue[defaultValueIndex]);
+    }
+    payload.WithArray("DefaultValue", std::move(defaultValueJsonList));
   }
 
-  if(m_minHasBeenSet)
-  {
-   payload.WithInteger("Min", m_min);
-
+  if (m_minHasBeenSet) {
+    payload.WithInteger("Min", m_min);
   }
 
-  if(m_maxHasBeenSet)
-  {
-   payload.WithInteger("Max", m_max);
-
+  if (m_maxHasBeenSet) {
+    payload.WithInteger("Max", m_max);
   }
 
-  if(m_maxItemsHasBeenSet)
-  {
-   payload.WithInteger("MaxItems", m_maxItems);
-
+  if (m_maxItemsHasBeenSet) {
+    payload.WithInteger("MaxItems", m_maxItems);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

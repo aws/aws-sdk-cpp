@@ -11,61 +11,45 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Model
-{
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
 
-ReservationCoverageGroup::ReservationCoverageGroup(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReservationCoverageGroup::ReservationCoverageGroup(JsonView jsonValue) { *this = jsonValue; }
 
-ReservationCoverageGroup& ReservationCoverageGroup::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Attributes"))
-  {
+ReservationCoverageGroup& ReservationCoverageGroup::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Attributes")) {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
-    for(auto& attributesItem : attributesJsonMap)
-    {
+    for (auto& attributesItem : attributesJsonMap) {
       m_attributes[attributesItem.first] = attributesItem.second.AsString();
     }
     m_attributesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Coverage"))
-  {
+  if (jsonValue.ValueExists("Coverage")) {
     m_coverage = jsonValue.GetObject("Coverage");
     m_coverageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ReservationCoverageGroup::Jsonize() const
-{
+JsonValue ReservationCoverageGroup::Jsonize() const {
   JsonValue payload;
 
-  if(m_attributesHasBeenSet)
-  {
-   JsonValue attributesJsonMap;
-   for(auto& attributesItem : m_attributes)
-   {
-     attributesJsonMap.WithString(attributesItem.first, attributesItem.second);
-   }
-   payload.WithObject("Attributes", std::move(attributesJsonMap));
-
+  if (m_attributesHasBeenSet) {
+    JsonValue attributesJsonMap;
+    for (auto& attributesItem : m_attributes) {
+      attributesJsonMap.WithString(attributesItem.first, attributesItem.second);
+    }
+    payload.WithObject("Attributes", std::move(attributesJsonMap));
   }
 
-  if(m_coverageHasBeenSet)
-  {
-   payload.WithObject("Coverage", m_coverage.Jsonize());
-
+  if (m_coverageHasBeenSet) {
+    payload.WithObject("Coverage", m_coverage.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

@@ -12,11 +12,4 @@ using namespace Aws::ChimeSDKMediaPipelines::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetMediaPipelineKinesisVideoStreamPoolRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetMediaPipelineKinesisVideoStreamPoolRequest::SerializePayload() const { return {}; }

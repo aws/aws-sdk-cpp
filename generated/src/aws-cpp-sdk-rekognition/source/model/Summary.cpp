@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rekognition/model/Summary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rekognition/model/Summary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Rekognition
-{
-namespace Model
-{
+namespace Aws {
+namespace Rekognition {
+namespace Model {
 
-Summary::Summary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Summary::Summary(JsonView jsonValue) { *this = jsonValue; }
 
-Summary& Summary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("S3Object"))
-  {
+Summary& Summary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("S3Object")) {
     m_s3Object = jsonValue.GetObject("S3Object");
     m_s3ObjectHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Summary::Jsonize() const
-{
+JsonValue Summary::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3ObjectHasBeenSet)
-  {
-   payload.WithObject("S3Object", m_s3Object.Jsonize());
-
+  if (m_s3ObjectHasBeenSet) {
+    payload.WithObject("S3Object", m_s3Object.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Rekognition
-} // namespace Aws
+}  // namespace Model
+}  // namespace Rekognition
+}  // namespace Aws

@@ -6,57 +6,56 @@
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/DolbyEProgramSelection.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace MediaLive {
+namespace Model {
 
+/**
+ * Audio Dolby EDecode<p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AudioDolbyEDecode">AWS
+ * API Reference</a></p>
+ */
+class AudioDolbyEDecode {
+ public:
+  AWS_MEDIALIVE_API AudioDolbyEDecode() = default;
+  AWS_MEDIALIVE_API AudioDolbyEDecode(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MEDIALIVE_API AudioDolbyEDecode& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * Audio Dolby EDecode<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AudioDolbyEDecode">AWS
-   * API Reference</a></p>
+   * Applies only to Dolby E. Enter the program ID (according to the metadata in the
+   * audio) of the Dolby E program to extract from the specified track. One program
+   * extracted per audio selector. To select multiple programs, create multiple
+   * selectors with the same Track and different Program numbers. “All channels”
+   * means to ignore the program IDs and include all the channels in this selector;
+   * useful if metadata is known to be incorrect.
    */
-  class AudioDolbyEDecode
-  {
-  public:
-    AWS_MEDIALIVE_API AudioDolbyEDecode() = default;
-    AWS_MEDIALIVE_API AudioDolbyEDecode(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MEDIALIVE_API AudioDolbyEDecode& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline DolbyEProgramSelection GetProgramSelection() const { return m_programSelection; }
+  inline bool ProgramSelectionHasBeenSet() const { return m_programSelectionHasBeenSet; }
+  inline void SetProgramSelection(DolbyEProgramSelection value) {
+    m_programSelectionHasBeenSet = true;
+    m_programSelection = value;
+  }
+  inline AudioDolbyEDecode& WithProgramSelection(DolbyEProgramSelection value) {
+    SetProgramSelection(value);
+    return *this;
+  }
+  ///@}
+ private:
+  DolbyEProgramSelection m_programSelection{DolbyEProgramSelection::NOT_SET};
+  bool m_programSelectionHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * Applies only to Dolby E. Enter the program ID (according to the metadata in the
-     * audio) of the Dolby E program to extract from the specified track. One program
-     * extracted per audio selector. To select multiple programs, create multiple
-     * selectors with the same Track and different Program numbers. “All channels”
-     * means to ignore the program IDs and include all the channels in this selector;
-     * useful if metadata is known to be incorrect.
-     */
-    inline DolbyEProgramSelection GetProgramSelection() const { return m_programSelection; }
-    inline bool ProgramSelectionHasBeenSet() const { return m_programSelectionHasBeenSet; }
-    inline void SetProgramSelection(DolbyEProgramSelection value) { m_programSelectionHasBeenSet = true; m_programSelection = value; }
-    inline AudioDolbyEDecode& WithProgramSelection(DolbyEProgramSelection value) { SetProgramSelection(value); return *this;}
-    ///@}
-  private:
-
-    DolbyEProgramSelection m_programSelection{DolbyEProgramSelection::NOT_SET};
-    bool m_programSelectionHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

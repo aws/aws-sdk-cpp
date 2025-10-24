@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconnect/model/GatewayBridgeSource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconnect/model/GatewayBridgeSource.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConnect {
+namespace Model {
 
-GatewayBridgeSource::GatewayBridgeSource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GatewayBridgeSource::GatewayBridgeSource(JsonView jsonValue) { *this = jsonValue; }
 
-GatewayBridgeSource& GatewayBridgeSource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("bridgeArn"))
-  {
+GatewayBridgeSource& GatewayBridgeSource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("bridgeArn")) {
     m_bridgeArn = jsonValue.GetString("bridgeArn");
     m_bridgeArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("vpcInterfaceAttachment"))
-  {
+  if (jsonValue.ValueExists("vpcInterfaceAttachment")) {
     m_vpcInterfaceAttachment = jsonValue.GetObject("vpcInterfaceAttachment");
     m_vpcInterfaceAttachmentHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GatewayBridgeSource::Jsonize() const
-{
+JsonValue GatewayBridgeSource::Jsonize() const {
   JsonValue payload;
 
-  if(m_bridgeArnHasBeenSet)
-  {
-   payload.WithString("bridgeArn", m_bridgeArn);
-
+  if (m_bridgeArnHasBeenSet) {
+    payload.WithString("bridgeArn", m_bridgeArn);
   }
 
-  if(m_vpcInterfaceAttachmentHasBeenSet)
-  {
-   payload.WithObject("vpcInterfaceAttachment", m_vpcInterfaceAttachment.Jsonize());
-
+  if (m_vpcInterfaceAttachmentHasBeenSet) {
+    payload.WithObject("vpcInterfaceAttachment", m_vpcInterfaceAttachment.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConnect
+}  // namespace Aws

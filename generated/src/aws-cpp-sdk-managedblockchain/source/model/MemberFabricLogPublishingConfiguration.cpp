@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/managedblockchain/model/MemberFabricLogPublishingConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/managedblockchain/model/MemberFabricLogPublishingConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ManagedBlockchain
-{
-namespace Model
-{
+namespace Aws {
+namespace ManagedBlockchain {
+namespace Model {
 
-MemberFabricLogPublishingConfiguration::MemberFabricLogPublishingConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MemberFabricLogPublishingConfiguration::MemberFabricLogPublishingConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-MemberFabricLogPublishingConfiguration& MemberFabricLogPublishingConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CaLogs"))
-  {
+MemberFabricLogPublishingConfiguration& MemberFabricLogPublishingConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CaLogs")) {
     m_caLogs = jsonValue.GetObject("CaLogs");
     m_caLogsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MemberFabricLogPublishingConfiguration::Jsonize() const
-{
+JsonValue MemberFabricLogPublishingConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_caLogsHasBeenSet)
-  {
-   payload.WithObject("CaLogs", m_caLogs.Jsonize());
-
+  if (m_caLogsHasBeenSet) {
+    payload.WithObject("CaLogs", m_caLogs.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ManagedBlockchain
-} // namespace Aws
+}  // namespace Model
+}  // namespace ManagedBlockchain
+}  // namespace Aws

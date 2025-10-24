@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/memorydb/model/ACLsUpdateStatus.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/memorydb/model/ACLsUpdateStatus.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MemoryDB
-{
-namespace Model
-{
+namespace Aws {
+namespace MemoryDB {
+namespace Model {
 
-ACLsUpdateStatus::ACLsUpdateStatus(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ACLsUpdateStatus::ACLsUpdateStatus(JsonView jsonValue) { *this = jsonValue; }
 
-ACLsUpdateStatus& ACLsUpdateStatus::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ACLToApply"))
-  {
+ACLsUpdateStatus& ACLsUpdateStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ACLToApply")) {
     m_aCLToApply = jsonValue.GetString("ACLToApply");
     m_aCLToApplyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ACLsUpdateStatus::Jsonize() const
-{
+JsonValue ACLsUpdateStatus::Jsonize() const {
   JsonValue payload;
 
-  if(m_aCLToApplyHasBeenSet)
-  {
-   payload.WithString("ACLToApply", m_aCLToApply);
-
+  if (m_aCLToApplyHasBeenSet) {
+    payload.WithString("ACLToApply", m_aCLToApply);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MemoryDB
-} // namespace Aws
+}  // namespace Model
+}  // namespace MemoryDB
+}  // namespace Aws

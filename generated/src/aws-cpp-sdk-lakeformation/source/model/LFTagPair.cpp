@@ -3,43 +3,32 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lakeformation/model/LFTagPair.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lakeformation/model/LFTagPair.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LakeFormation
-{
-namespace Model
-{
+namespace Aws {
+namespace LakeFormation {
+namespace Model {
 
-LFTagPair::LFTagPair(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LFTagPair::LFTagPair(JsonView jsonValue) { *this = jsonValue; }
 
-LFTagPair& LFTagPair::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CatalogId"))
-  {
+LFTagPair& LFTagPair::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CatalogId")) {
     m_catalogId = jsonValue.GetString("CatalogId");
     m_catalogIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TagKey"))
-  {
+  if (jsonValue.ValueExists("TagKey")) {
     m_tagKey = jsonValue.GetString("TagKey");
     m_tagKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TagValues"))
-  {
+  if (jsonValue.ValueExists("TagValues")) {
     Aws::Utils::Array<JsonView> tagValuesJsonList = jsonValue.GetArray("TagValues");
-    for(unsigned tagValuesIndex = 0; tagValuesIndex < tagValuesJsonList.GetLength(); ++tagValuesIndex)
-    {
+    for (unsigned tagValuesIndex = 0; tagValuesIndex < tagValuesJsonList.GetLength(); ++tagValuesIndex) {
       m_tagValues.push_back(tagValuesJsonList[tagValuesIndex].AsString());
     }
     m_tagValuesHasBeenSet = true;
@@ -47,36 +36,28 @@ LFTagPair& LFTagPair::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue LFTagPair::Jsonize() const
-{
+JsonValue LFTagPair::Jsonize() const {
   JsonValue payload;
 
-  if(m_catalogIdHasBeenSet)
-  {
-   payload.WithString("CatalogId", m_catalogId);
-
+  if (m_catalogIdHasBeenSet) {
+    payload.WithString("CatalogId", m_catalogId);
   }
 
-  if(m_tagKeyHasBeenSet)
-  {
-   payload.WithString("TagKey", m_tagKey);
-
+  if (m_tagKeyHasBeenSet) {
+    payload.WithString("TagKey", m_tagKey);
   }
 
-  if(m_tagValuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagValuesJsonList(m_tagValues.size());
-   for(unsigned tagValuesIndex = 0; tagValuesIndex < tagValuesJsonList.GetLength(); ++tagValuesIndex)
-   {
-     tagValuesJsonList[tagValuesIndex].AsString(m_tagValues[tagValuesIndex]);
-   }
-   payload.WithArray("TagValues", std::move(tagValuesJsonList));
-
+  if (m_tagValuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagValuesJsonList(m_tagValues.size());
+    for (unsigned tagValuesIndex = 0; tagValuesIndex < tagValuesJsonList.GetLength(); ++tagValuesIndex) {
+      tagValuesJsonList[tagValuesIndex].AsString(m_tagValues[tagValuesIndex]);
+    }
+    payload.WithArray("TagValues", std::move(tagValuesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LakeFormation
-} // namespace Aws
+}  // namespace Model
+}  // namespace LakeFormation
+}  // namespace Aws

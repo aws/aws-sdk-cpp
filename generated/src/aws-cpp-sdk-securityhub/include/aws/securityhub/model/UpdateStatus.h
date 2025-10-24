@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/securityhub/SecurityHub_EXPORTS.h>
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
-  enum class UpdateStatus
-  {
-    NOT_SET,
-    READY,
-    UPDATING
-  };
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
+enum class UpdateStatus { NOT_SET, READY, UPDATING };
 
-namespace UpdateStatusMapper
-{
+namespace UpdateStatusMapper {
 AWS_SECURITYHUB_API UpdateStatus GetUpdateStatusForName(const Aws::String& name);
 
 AWS_SECURITYHUB_API Aws::String GetNameForUpdateStatus(UpdateStatus value);
-} // namespace UpdateStatusMapper
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace UpdateStatusMapper
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

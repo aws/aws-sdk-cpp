@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kendra/model/DescribeExperienceRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kendra/model/DescribeExperienceRequest.h>
 
 #include <utility>
 
@@ -12,33 +12,22 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeExperienceRequest::SerializePayload() const
-{
+Aws::String DescribeExperienceRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
-  if(m_indexIdHasBeenSet)
-  {
-   payload.WithString("IndexId", m_indexId);
-
+  if (m_indexIdHasBeenSet) {
+    payload.WithString("IndexId", m_indexId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeExperienceRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeExperienceRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSKendraFrontendService.DescribeExperience"));
   return headers;
-
 }
-
-
-
-

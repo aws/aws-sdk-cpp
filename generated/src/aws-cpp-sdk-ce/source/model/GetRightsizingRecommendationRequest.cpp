@@ -12,51 +12,34 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetRightsizingRecommendationRequest::SerializePayload() const
-{
+Aws::String GetRightsizingRecommendationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_filterHasBeenSet)
-  {
-   payload.WithObject("Filter", m_filter.Jsonize());
-
+  if (m_filterHasBeenSet) {
+    payload.WithObject("Filter", m_filter.Jsonize());
   }
 
-  if(m_configurationHasBeenSet)
-  {
-   payload.WithObject("Configuration", m_configuration.Jsonize());
-
+  if (m_configurationHasBeenSet) {
+    payload.WithObject("Configuration", m_configuration.Jsonize());
   }
 
-  if(m_serviceHasBeenSet)
-  {
-   payload.WithString("Service", m_service);
-
+  if (m_serviceHasBeenSet) {
+    payload.WithString("Service", m_service);
   }
 
-  if(m_pageSizeHasBeenSet)
-  {
-   payload.WithInteger("PageSize", m_pageSize);
-
+  if (m_pageSizeHasBeenSet) {
+    payload.WithInteger("PageSize", m_pageSize);
   }
 
-  if(m_nextPageTokenHasBeenSet)
-  {
-   payload.WithString("NextPageToken", m_nextPageToken);
-
+  if (m_nextPageTokenHasBeenSet) {
+    payload.WithString("NextPageToken", m_nextPageToken);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetRightsizingRecommendationRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetRightsizingRecommendationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSInsightsIndexService.GetRightsizingRecommendation"));
   return headers;
-
 }
-
-
-
-

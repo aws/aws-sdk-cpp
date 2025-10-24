@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/neptune/model/AddSourceIdentifierToSubscriptionRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/neptune/model/AddSourceIdentifierToSubscriptionRequest.h>
 
 using namespace Aws::Neptune::Model;
 using namespace Aws::Utils;
 
-Aws::String AddSourceIdentifierToSubscriptionRequest::SerializePayload() const
-{
+Aws::String AddSourceIdentifierToSubscriptionRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=AddSourceIdentifierToSubscription&";
-  if(m_subscriptionNameHasBeenSet)
-  {
+  if (m_subscriptionNameHasBeenSet) {
     ss << "SubscriptionName=" << StringUtils::URLEncode(m_subscriptionName.c_str()) << "&";
   }
 
-  if(m_sourceIdentifierHasBeenSet)
-  {
+  if (m_sourceIdentifierHasBeenSet) {
     ss << "SourceIdentifier=" << StringUtils::URLEncode(m_sourceIdentifier.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String AddSourceIdentifierToSubscriptionRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  AddSourceIdentifierToSubscriptionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void AddSourceIdentifierToSubscriptionRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

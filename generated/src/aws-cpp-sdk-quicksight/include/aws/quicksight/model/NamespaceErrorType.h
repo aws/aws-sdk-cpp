@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class NamespaceErrorType
-  {
-    NOT_SET,
-    PERMISSION_DENIED,
-    INTERNAL_SERVICE_ERROR
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class NamespaceErrorType { NOT_SET, PERMISSION_DENIED, INTERNAL_SERVICE_ERROR };
 
-namespace NamespaceErrorTypeMapper
-{
+namespace NamespaceErrorTypeMapper {
 AWS_QUICKSIGHT_API NamespaceErrorType GetNamespaceErrorTypeForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForNamespaceErrorType(NamespaceErrorType value);
-} // namespace NamespaceErrorTypeMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace NamespaceErrorTypeMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

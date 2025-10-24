@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyUIBuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Model {
 
-FormBindingElement::FormBindingElement(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FormBindingElement::FormBindingElement(JsonView jsonValue) { *this = jsonValue; }
 
-FormBindingElement& FormBindingElement::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("element"))
-  {
+FormBindingElement& FormBindingElement::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("element")) {
     m_element = jsonValue.GetString("element");
     m_elementHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("property"))
-  {
+  if (jsonValue.ValueExists("property")) {
     m_property = jsonValue.GetString("property");
     m_propertyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FormBindingElement::Jsonize() const
-{
+JsonValue FormBindingElement::Jsonize() const {
   JsonValue payload;
 
-  if(m_elementHasBeenSet)
-  {
-   payload.WithString("element", m_element);
-
+  if (m_elementHasBeenSet) {
+    payload.WithString("element", m_element);
   }
 
-  if(m_propertyHasBeenSet)
-  {
-   payload.WithString("property", m_property);
-
+  if (m_propertyHasBeenSet) {
+    payload.WithString("property", m_property);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

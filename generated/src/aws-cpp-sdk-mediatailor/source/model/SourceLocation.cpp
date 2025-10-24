@@ -3,77 +3,60 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediatailor/model/SourceLocation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediatailor/model/SourceLocation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaTailor
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaTailor {
+namespace Model {
 
-SourceLocation::SourceLocation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SourceLocation::SourceLocation(JsonView jsonValue) { *this = jsonValue; }
 
-SourceLocation& SourceLocation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AccessConfiguration"))
-  {
+SourceLocation& SourceLocation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AccessConfiguration")) {
     m_accessConfiguration = jsonValue.GetObject("AccessConfiguration");
     m_accessConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Arn"))
-  {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DefaultSegmentDeliveryConfiguration"))
-  {
+  if (jsonValue.ValueExists("DefaultSegmentDeliveryConfiguration")) {
     m_defaultSegmentDeliveryConfiguration = jsonValue.GetObject("DefaultSegmentDeliveryConfiguration");
     m_defaultSegmentDeliveryConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HttpConfiguration"))
-  {
+  if (jsonValue.ValueExists("HttpConfiguration")) {
     m_httpConfiguration = jsonValue.GetObject("HttpConfiguration");
     m_httpConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModifiedTime"))
-  {
+  if (jsonValue.ValueExists("LastModifiedTime")) {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SegmentDeliveryConfigurations"))
-  {
+  if (jsonValue.ValueExists("SegmentDeliveryConfigurations")) {
     Aws::Utils::Array<JsonView> segmentDeliveryConfigurationsJsonList = jsonValue.GetArray("SegmentDeliveryConfigurations");
-    for(unsigned segmentDeliveryConfigurationsIndex = 0; segmentDeliveryConfigurationsIndex < segmentDeliveryConfigurationsJsonList.GetLength(); ++segmentDeliveryConfigurationsIndex)
-    {
+    for (unsigned segmentDeliveryConfigurationsIndex = 0;
+         segmentDeliveryConfigurationsIndex < segmentDeliveryConfigurationsJsonList.GetLength(); ++segmentDeliveryConfigurationsIndex) {
       m_segmentDeliveryConfigurations.push_back(segmentDeliveryConfigurationsJsonList[segmentDeliveryConfigurationsIndex].AsObject());
     }
     m_segmentDeliveryConfigurationsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourceLocationName"))
-  {
+  if (jsonValue.ValueExists("SourceLocationName")) {
     m_sourceLocationName = jsonValue.GetString("SourceLocationName");
     m_sourceLocationNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tags"))
-  {
+  if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
+    for (auto& tagsItem : tagsJsonMap) {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
@@ -81,75 +64,58 @@ SourceLocation& SourceLocation::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue SourceLocation::Jsonize() const
-{
+JsonValue SourceLocation::Jsonize() const {
   JsonValue payload;
 
-  if(m_accessConfigurationHasBeenSet)
-  {
-   payload.WithObject("AccessConfiguration", m_accessConfiguration.Jsonize());
-
+  if (m_accessConfigurationHasBeenSet) {
+    payload.WithObject("AccessConfiguration", m_accessConfiguration.Jsonize());
   }
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_defaultSegmentDeliveryConfigurationHasBeenSet)
-  {
-   payload.WithObject("DefaultSegmentDeliveryConfiguration", m_defaultSegmentDeliveryConfiguration.Jsonize());
-
+  if (m_defaultSegmentDeliveryConfigurationHasBeenSet) {
+    payload.WithObject("DefaultSegmentDeliveryConfiguration", m_defaultSegmentDeliveryConfiguration.Jsonize());
   }
 
-  if(m_httpConfigurationHasBeenSet)
-  {
-   payload.WithObject("HttpConfiguration", m_httpConfiguration.Jsonize());
-
+  if (m_httpConfigurationHasBeenSet) {
+    payload.WithObject("HttpConfiguration", m_httpConfiguration.Jsonize());
   }
 
-  if(m_lastModifiedTimeHasBeenSet)
-  {
-   payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  if (m_lastModifiedTimeHasBeenSet) {
+    payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
   }
 
-  if(m_segmentDeliveryConfigurationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> segmentDeliveryConfigurationsJsonList(m_segmentDeliveryConfigurations.size());
-   for(unsigned segmentDeliveryConfigurationsIndex = 0; segmentDeliveryConfigurationsIndex < segmentDeliveryConfigurationsJsonList.GetLength(); ++segmentDeliveryConfigurationsIndex)
-   {
-     segmentDeliveryConfigurationsJsonList[segmentDeliveryConfigurationsIndex].AsObject(m_segmentDeliveryConfigurations[segmentDeliveryConfigurationsIndex].Jsonize());
-   }
-   payload.WithArray("SegmentDeliveryConfigurations", std::move(segmentDeliveryConfigurationsJsonList));
-
+  if (m_segmentDeliveryConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> segmentDeliveryConfigurationsJsonList(m_segmentDeliveryConfigurations.size());
+    for (unsigned segmentDeliveryConfigurationsIndex = 0;
+         segmentDeliveryConfigurationsIndex < segmentDeliveryConfigurationsJsonList.GetLength(); ++segmentDeliveryConfigurationsIndex) {
+      segmentDeliveryConfigurationsJsonList[segmentDeliveryConfigurationsIndex].AsObject(
+          m_segmentDeliveryConfigurations[segmentDeliveryConfigurationsIndex].Jsonize());
+    }
+    payload.WithArray("SegmentDeliveryConfigurations", std::move(segmentDeliveryConfigurationsJsonList));
   }
 
-  if(m_sourceLocationNameHasBeenSet)
-  {
-   payload.WithString("SourceLocationName", m_sourceLocationName);
-
+  if (m_sourceLocationNameHasBeenSet) {
+    payload.WithString("SourceLocationName", m_sourceLocationName);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaTailor
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaTailor
+}  // namespace Aws

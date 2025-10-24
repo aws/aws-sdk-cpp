@@ -12,74 +12,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace APIGateway
-{
-namespace Model
-{
+namespace Aws {
+namespace APIGateway {
+namespace Model {
 
-RequestValidator::RequestValidator(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RequestValidator::RequestValidator(JsonView jsonValue) { *this = jsonValue; }
 
-RequestValidator& RequestValidator::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("id"))
-  {
+RequestValidator& RequestValidator::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("validateRequestBody"))
-  {
+  if (jsonValue.ValueExists("validateRequestBody")) {
     m_validateRequestBody = jsonValue.GetBool("validateRequestBody");
     m_validateRequestBodyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("validateRequestParameters"))
-  {
+  if (jsonValue.ValueExists("validateRequestParameters")) {
     m_validateRequestParameters = jsonValue.GetBool("validateRequestParameters");
     m_validateRequestParametersHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RequestValidator::Jsonize() const
-{
+JsonValue RequestValidator::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_validateRequestBodyHasBeenSet)
-  {
-   payload.WithBool("validateRequestBody", m_validateRequestBody);
-
+  if (m_validateRequestBodyHasBeenSet) {
+    payload.WithBool("validateRequestBody", m_validateRequestBody);
   }
 
-  if(m_validateRequestParametersHasBeenSet)
-  {
-   payload.WithBool("validateRequestParameters", m_validateRequestParameters);
-
+  if (m_validateRequestParametersHasBeenSet) {
+    payload.WithBool("validateRequestParameters", m_validateRequestParameters);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace APIGateway
-} // namespace Aws
+}  // namespace Model
+}  // namespace APIGateway
+}  // namespace Aws

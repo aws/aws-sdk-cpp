@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/timestream-write/model/RecordsIngested.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/timestream-write/model/RecordsIngested.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace TimestreamWrite
-{
-namespace Model
-{
+namespace Aws {
+namespace TimestreamWrite {
+namespace Model {
 
-RecordsIngested::RecordsIngested(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RecordsIngested::RecordsIngested(JsonView jsonValue) { *this = jsonValue; }
 
-RecordsIngested& RecordsIngested::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Total"))
-  {
+RecordsIngested& RecordsIngested::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Total")) {
     m_total = jsonValue.GetInteger("Total");
     m_totalHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MemoryStore"))
-  {
+  if (jsonValue.ValueExists("MemoryStore")) {
     m_memoryStore = jsonValue.GetInteger("MemoryStore");
     m_memoryStoreHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MagneticStore"))
-  {
+  if (jsonValue.ValueExists("MagneticStore")) {
     m_magneticStore = jsonValue.GetInteger("MagneticStore");
     m_magneticStoreHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RecordsIngested::Jsonize() const
-{
+JsonValue RecordsIngested::Jsonize() const {
   JsonValue payload;
 
-  if(m_totalHasBeenSet)
-  {
-   payload.WithInteger("Total", m_total);
-
+  if (m_totalHasBeenSet) {
+    payload.WithInteger("Total", m_total);
   }
 
-  if(m_memoryStoreHasBeenSet)
-  {
-   payload.WithInteger("MemoryStore", m_memoryStore);
-
+  if (m_memoryStoreHasBeenSet) {
+    payload.WithInteger("MemoryStore", m_memoryStore);
   }
 
-  if(m_magneticStoreHasBeenSet)
-  {
-   payload.WithInteger("MagneticStore", m_magneticStore);
-
+  if (m_magneticStoreHasBeenSet) {
+    payload.WithInteger("MagneticStore", m_magneticStore);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace TimestreamWrite
-} // namespace Aws
+}  // namespace Model
+}  // namespace TimestreamWrite
+}  // namespace Aws

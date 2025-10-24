@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/wellarchitected/WellArchitected_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/wellarchitected/WellArchitected_EXPORTS.h>
 
-namespace Aws
-{
-namespace WellArchitected
-{
-namespace Model
-{
-  enum class CheckStatus
-  {
-    NOT_SET,
-    OKAY,
-    WARNING,
-    ERROR_,
-    NOT_AVAILABLE,
-    FETCH_FAILED
-  };
+namespace Aws {
+namespace WellArchitected {
+namespace Model {
+enum class CheckStatus { NOT_SET, OKAY, WARNING, ERROR_, NOT_AVAILABLE, FETCH_FAILED };
 
-namespace CheckStatusMapper
-{
+namespace CheckStatusMapper {
 AWS_WELLARCHITECTED_API CheckStatus GetCheckStatusForName(const Aws::String& name);
 
 AWS_WELLARCHITECTED_API Aws::String GetNameForCheckStatus(CheckStatus value);
-} // namespace CheckStatusMapper
-} // namespace Model
-} // namespace WellArchitected
-} // namespace Aws
+}  // namespace CheckStatusMapper
+}  // namespace Model
+}  // namespace WellArchitected
+}  // namespace Aws

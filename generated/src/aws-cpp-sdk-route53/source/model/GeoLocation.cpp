@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/route53/model/GeoLocation.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/route53/model/GeoLocation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Route53
-{
-namespace Model
-{
+namespace Aws {
+namespace Route53 {
+namespace Model {
 
-GeoLocation::GeoLocation(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+GeoLocation::GeoLocation(const XmlNode& xmlNode) { *this = xmlNode; }
 
-GeoLocation& GeoLocation::operator =(const XmlNode& xmlNode)
-{
+GeoLocation& GeoLocation::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode continentCodeNode = resultNode.FirstChild("ContinentCode");
-    if(!continentCodeNode.IsNull())
-    {
+    if (!continentCodeNode.IsNull()) {
       m_continentCode = Aws::Utils::Xml::DecodeEscapedXmlText(continentCodeNode.GetText());
       m_continentCodeHasBeenSet = true;
     }
     XmlNode countryCodeNode = resultNode.FirstChild("CountryCode");
-    if(!countryCodeNode.IsNull())
-    {
+    if (!countryCodeNode.IsNull()) {
       m_countryCode = Aws::Utils::Xml::DecodeEscapedXmlText(countryCodeNode.GetText());
       m_countryCodeHasBeenSet = true;
     }
     XmlNode subdivisionCodeNode = resultNode.FirstChild("SubdivisionCode");
-    if(!subdivisionCodeNode.IsNull())
-    {
+    if (!subdivisionCodeNode.IsNull()) {
       m_subdivisionCode = Aws::Utils::Xml::DecodeEscapedXmlText(subdivisionCodeNode.GetText());
       m_subdivisionCodeHasBeenSet = true;
     }
@@ -54,29 +43,24 @@ GeoLocation& GeoLocation::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void GeoLocation::AddToNode(XmlNode& parentNode) const
-{
+void GeoLocation::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_continentCodeHasBeenSet)
-  {
-   XmlNode continentCodeNode = parentNode.CreateChildElement("ContinentCode");
-   continentCodeNode.SetText(m_continentCode);
+  if (m_continentCodeHasBeenSet) {
+    XmlNode continentCodeNode = parentNode.CreateChildElement("ContinentCode");
+    continentCodeNode.SetText(m_continentCode);
   }
 
-  if(m_countryCodeHasBeenSet)
-  {
-   XmlNode countryCodeNode = parentNode.CreateChildElement("CountryCode");
-   countryCodeNode.SetText(m_countryCode);
+  if (m_countryCodeHasBeenSet) {
+    XmlNode countryCodeNode = parentNode.CreateChildElement("CountryCode");
+    countryCodeNode.SetText(m_countryCode);
   }
 
-  if(m_subdivisionCodeHasBeenSet)
-  {
-   XmlNode subdivisionCodeNode = parentNode.CreateChildElement("SubdivisionCode");
-   subdivisionCodeNode.SetText(m_subdivisionCode);
+  if (m_subdivisionCodeHasBeenSet) {
+    XmlNode subdivisionCodeNode = parentNode.CreateChildElement("SubdivisionCode");
+    subdivisionCodeNode.SetText(m_subdivisionCode);
   }
-
 }
 
-} // namespace Model
-} // namespace Route53
-} // namespace Aws
+}  // namespace Model
+}  // namespace Route53
+}  // namespace Aws

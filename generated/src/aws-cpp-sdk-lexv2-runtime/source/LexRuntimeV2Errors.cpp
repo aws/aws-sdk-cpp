@@ -11,42 +11,30 @@ using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::LexRuntimeV2;
 
-namespace Aws
-{
-namespace LexRuntimeV2
-{
-namespace LexRuntimeV2ErrorMapper
-{
+namespace Aws {
+namespace LexRuntimeV2 {
+namespace LexRuntimeV2ErrorMapper {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int BAD_GATEWAY_HASH = HashingUtils::HashString("BadGatewayException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 static const int DEPENDENCY_FAILED_HASH = HashingUtils::HashString("DependencyFailedException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == CONFLICT_HASH)
-  {
+  if (hashCode == CONFLICT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LexRuntimeV2Errors::CONFLICT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == BAD_GATEWAY_HASH)
-  {
+  } else if (hashCode == BAD_GATEWAY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LexRuntimeV2Errors::BAD_GATEWAY), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == INTERNAL_SERVER_HASH)
-  {
+  } else if (hashCode == INTERNAL_SERVER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LexRuntimeV2Errors::INTERNAL_SERVER), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == DEPENDENCY_FAILED_HASH)
-  {
+  } else if (hashCode == DEPENDENCY_FAILED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LexRuntimeV2Errors::DEPENDENCY_FAILED), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace LexRuntimeV2ErrorMapper
-} // namespace LexRuntimeV2
-} // namespace Aws
+}  // namespace LexRuntimeV2ErrorMapper
+}  // namespace LexRuntimeV2
+}  // namespace Aws

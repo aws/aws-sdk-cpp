@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::ServiceQuotas;
 
-AWSError<CoreErrors> ServiceQuotasErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> ServiceQuotasErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = ServiceQuotasErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

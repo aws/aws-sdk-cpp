@@ -11,52 +11,41 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApplicationAutoScaling
-{
-namespace Model
-{
+namespace Aws {
+namespace ApplicationAutoScaling {
+namespace Model {
 
-PredictiveScalingPredefinedScalingMetricSpecification::PredictiveScalingPredefinedScalingMetricSpecification(JsonView jsonValue)
-{
+PredictiveScalingPredefinedScalingMetricSpecification::PredictiveScalingPredefinedScalingMetricSpecification(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-PredictiveScalingPredefinedScalingMetricSpecification& PredictiveScalingPredefinedScalingMetricSpecification::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PredefinedMetricType"))
-  {
+PredictiveScalingPredefinedScalingMetricSpecification& PredictiveScalingPredefinedScalingMetricSpecification::operator=(
+    JsonView jsonValue) {
+  if (jsonValue.ValueExists("PredefinedMetricType")) {
     m_predefinedMetricType = jsonValue.GetString("PredefinedMetricType");
     m_predefinedMetricTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceLabel"))
-  {
+  if (jsonValue.ValueExists("ResourceLabel")) {
     m_resourceLabel = jsonValue.GetString("ResourceLabel");
     m_resourceLabelHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PredictiveScalingPredefinedScalingMetricSpecification::Jsonize() const
-{
+JsonValue PredictiveScalingPredefinedScalingMetricSpecification::Jsonize() const {
   JsonValue payload;
 
-  if(m_predefinedMetricTypeHasBeenSet)
-  {
-   payload.WithString("PredefinedMetricType", m_predefinedMetricType);
-
+  if (m_predefinedMetricTypeHasBeenSet) {
+    payload.WithString("PredefinedMetricType", m_predefinedMetricType);
   }
 
-  if(m_resourceLabelHasBeenSet)
-  {
-   payload.WithString("ResourceLabel", m_resourceLabel);
-
+  if (m_resourceLabelHasBeenSet) {
+    payload.WithString("ResourceLabel", m_resourceLabel);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApplicationAutoScaling
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApplicationAutoScaling
+}  // namespace Aws

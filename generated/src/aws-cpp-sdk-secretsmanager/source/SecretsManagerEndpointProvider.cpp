@@ -5,12 +5,8 @@
 
 #include <aws/secretsmanager/SecretsManagerEndpointProvider.h>
 
-namespace Aws
-{
-namespace SecretsManager
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace SecretsManager
-} // namespace Aws
+namespace Aws {
+namespace SecretsManager {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace SecretsManager
+}  // namespace Aws

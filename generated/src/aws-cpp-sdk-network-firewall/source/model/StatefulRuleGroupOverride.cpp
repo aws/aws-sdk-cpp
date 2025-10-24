@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/network-firewall/model/StatefulRuleGroupOverride.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/network-firewall/model/StatefulRuleGroupOverride.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace NetworkFirewall
-{
-namespace Model
-{
+namespace Aws {
+namespace NetworkFirewall {
+namespace Model {
 
-StatefulRuleGroupOverride::StatefulRuleGroupOverride(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StatefulRuleGroupOverride::StatefulRuleGroupOverride(JsonView jsonValue) { *this = jsonValue; }
 
-StatefulRuleGroupOverride& StatefulRuleGroupOverride::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Action"))
-  {
+StatefulRuleGroupOverride& StatefulRuleGroupOverride::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Action")) {
     m_action = OverrideActionMapper::GetOverrideActionForName(jsonValue.GetString("Action"));
     m_actionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StatefulRuleGroupOverride::Jsonize() const
-{
+JsonValue StatefulRuleGroupOverride::Jsonize() const {
   JsonValue payload;
 
-  if(m_actionHasBeenSet)
-  {
-   payload.WithString("Action", OverrideActionMapper::GetNameForOverrideAction(m_action));
+  if (m_actionHasBeenSet) {
+    payload.WithString("Action", OverrideActionMapper::GetNameForOverrideAction(m_action));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace NetworkFirewall
-} // namespace Aws
+}  // namespace Model
+}  // namespace NetworkFirewall
+}  // namespace Aws

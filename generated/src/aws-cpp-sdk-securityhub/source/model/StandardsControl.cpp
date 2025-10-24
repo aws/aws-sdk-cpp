@@ -3,78 +3,61 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/StandardsControl.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/StandardsControl.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-StandardsControl::StandardsControl(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StandardsControl::StandardsControl(JsonView jsonValue) { *this = jsonValue; }
 
-StandardsControl& StandardsControl::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("StandardsControlArn"))
-  {
+StandardsControl& StandardsControl::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("StandardsControlArn")) {
     m_standardsControlArn = jsonValue.GetString("StandardsControlArn");
     m_standardsControlArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ControlStatus"))
-  {
+  if (jsonValue.ValueExists("ControlStatus")) {
     m_controlStatus = ControlStatusMapper::GetControlStatusForName(jsonValue.GetString("ControlStatus"));
     m_controlStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DisabledReason"))
-  {
+  if (jsonValue.ValueExists("DisabledReason")) {
     m_disabledReason = jsonValue.GetString("DisabledReason");
     m_disabledReasonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ControlStatusUpdatedAt"))
-  {
+  if (jsonValue.ValueExists("ControlStatusUpdatedAt")) {
     m_controlStatusUpdatedAt = jsonValue.GetString("ControlStatusUpdatedAt");
     m_controlStatusUpdatedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ControlId"))
-  {
+  if (jsonValue.ValueExists("ControlId")) {
     m_controlId = jsonValue.GetString("ControlId");
     m_controlIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Title"))
-  {
+  if (jsonValue.ValueExists("Title")) {
     m_title = jsonValue.GetString("Title");
     m_titleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RemediationUrl"))
-  {
+  if (jsonValue.ValueExists("RemediationUrl")) {
     m_remediationUrl = jsonValue.GetString("RemediationUrl");
     m_remediationUrlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SeverityRating"))
-  {
+  if (jsonValue.ValueExists("SeverityRating")) {
     m_severityRating = SeverityRatingMapper::GetSeverityRatingForName(jsonValue.GetString("SeverityRating"));
     m_severityRatingHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RelatedRequirements"))
-  {
+  if (jsonValue.ValueExists("RelatedRequirements")) {
     Aws::Utils::Array<JsonView> relatedRequirementsJsonList = jsonValue.GetArray("RelatedRequirements");
-    for(unsigned relatedRequirementsIndex = 0; relatedRequirementsIndex < relatedRequirementsJsonList.GetLength(); ++relatedRequirementsIndex)
-    {
+    for (unsigned relatedRequirementsIndex = 0; relatedRequirementsIndex < relatedRequirementsJsonList.GetLength();
+         ++relatedRequirementsIndex) {
       m_relatedRequirements.push_back(relatedRequirementsJsonList[relatedRequirementsIndex].AsString());
     }
     m_relatedRequirementsHasBeenSet = true;
@@ -82,75 +65,57 @@ StandardsControl& StandardsControl::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue StandardsControl::Jsonize() const
-{
+JsonValue StandardsControl::Jsonize() const {
   JsonValue payload;
 
-  if(m_standardsControlArnHasBeenSet)
-  {
-   payload.WithString("StandardsControlArn", m_standardsControlArn);
-
+  if (m_standardsControlArnHasBeenSet) {
+    payload.WithString("StandardsControlArn", m_standardsControlArn);
   }
 
-  if(m_controlStatusHasBeenSet)
-  {
-   payload.WithString("ControlStatus", ControlStatusMapper::GetNameForControlStatus(m_controlStatus));
+  if (m_controlStatusHasBeenSet) {
+    payload.WithString("ControlStatus", ControlStatusMapper::GetNameForControlStatus(m_controlStatus));
   }
 
-  if(m_disabledReasonHasBeenSet)
-  {
-   payload.WithString("DisabledReason", m_disabledReason);
-
+  if (m_disabledReasonHasBeenSet) {
+    payload.WithString("DisabledReason", m_disabledReason);
   }
 
-  if(m_controlStatusUpdatedAtHasBeenSet)
-  {
-   payload.WithString("ControlStatusUpdatedAt", m_controlStatusUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_controlStatusUpdatedAtHasBeenSet) {
+    payload.WithString("ControlStatusUpdatedAt", m_controlStatusUpdatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_controlIdHasBeenSet)
-  {
-   payload.WithString("ControlId", m_controlId);
-
+  if (m_controlIdHasBeenSet) {
+    payload.WithString("ControlId", m_controlId);
   }
 
-  if(m_titleHasBeenSet)
-  {
-   payload.WithString("Title", m_title);
-
+  if (m_titleHasBeenSet) {
+    payload.WithString("Title", m_title);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_remediationUrlHasBeenSet)
-  {
-   payload.WithString("RemediationUrl", m_remediationUrl);
-
+  if (m_remediationUrlHasBeenSet) {
+    payload.WithString("RemediationUrl", m_remediationUrl);
   }
 
-  if(m_severityRatingHasBeenSet)
-  {
-   payload.WithString("SeverityRating", SeverityRatingMapper::GetNameForSeverityRating(m_severityRating));
+  if (m_severityRatingHasBeenSet) {
+    payload.WithString("SeverityRating", SeverityRatingMapper::GetNameForSeverityRating(m_severityRating));
   }
 
-  if(m_relatedRequirementsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> relatedRequirementsJsonList(m_relatedRequirements.size());
-   for(unsigned relatedRequirementsIndex = 0; relatedRequirementsIndex < relatedRequirementsJsonList.GetLength(); ++relatedRequirementsIndex)
-   {
-     relatedRequirementsJsonList[relatedRequirementsIndex].AsString(m_relatedRequirements[relatedRequirementsIndex]);
-   }
-   payload.WithArray("RelatedRequirements", std::move(relatedRequirementsJsonList));
-
+  if (m_relatedRequirementsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> relatedRequirementsJsonList(m_relatedRequirements.size());
+    for (unsigned relatedRequirementsIndex = 0; relatedRequirementsIndex < relatedRequirementsJsonList.GetLength();
+         ++relatedRequirementsIndex) {
+      relatedRequirementsJsonList[relatedRequirementsIndex].AsString(m_relatedRequirements[relatedRequirementsIndex]);
+    }
+    payload.WithArray("RelatedRequirements", std::move(relatedRequirementsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

@@ -3,81 +3,63 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/EdgeOutputConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/EdgeOutputConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-EdgeOutputConfig::EdgeOutputConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EdgeOutputConfig::EdgeOutputConfig(JsonView jsonValue) { *this = jsonValue; }
 
-EdgeOutputConfig& EdgeOutputConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("S3OutputLocation"))
-  {
+EdgeOutputConfig& EdgeOutputConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("S3OutputLocation")) {
     m_s3OutputLocation = jsonValue.GetString("S3OutputLocation");
     m_s3OutputLocationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("KmsKeyId"))
-  {
+  if (jsonValue.ValueExists("KmsKeyId")) {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
     m_kmsKeyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PresetDeploymentType"))
-  {
-    m_presetDeploymentType = EdgePresetDeploymentTypeMapper::GetEdgePresetDeploymentTypeForName(jsonValue.GetString("PresetDeploymentType"));
+  if (jsonValue.ValueExists("PresetDeploymentType")) {
+    m_presetDeploymentType =
+        EdgePresetDeploymentTypeMapper::GetEdgePresetDeploymentTypeForName(jsonValue.GetString("PresetDeploymentType"));
     m_presetDeploymentTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PresetDeploymentConfig"))
-  {
+  if (jsonValue.ValueExists("PresetDeploymentConfig")) {
     m_presetDeploymentConfig = jsonValue.GetString("PresetDeploymentConfig");
     m_presetDeploymentConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EdgeOutputConfig::Jsonize() const
-{
+JsonValue EdgeOutputConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3OutputLocationHasBeenSet)
-  {
-   payload.WithString("S3OutputLocation", m_s3OutputLocation);
-
+  if (m_s3OutputLocationHasBeenSet) {
+    payload.WithString("S3OutputLocation", m_s3OutputLocation);
   }
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
-   payload.WithString("KmsKeyId", m_kmsKeyId);
-
+  if (m_kmsKeyIdHasBeenSet) {
+    payload.WithString("KmsKeyId", m_kmsKeyId);
   }
 
-  if(m_presetDeploymentTypeHasBeenSet)
-  {
-   payload.WithString("PresetDeploymentType", EdgePresetDeploymentTypeMapper::GetNameForEdgePresetDeploymentType(m_presetDeploymentType));
+  if (m_presetDeploymentTypeHasBeenSet) {
+    payload.WithString("PresetDeploymentType", EdgePresetDeploymentTypeMapper::GetNameForEdgePresetDeploymentType(m_presetDeploymentType));
   }
 
-  if(m_presetDeploymentConfigHasBeenSet)
-  {
-   payload.WithString("PresetDeploymentConfig", m_presetDeploymentConfig);
-
+  if (m_presetDeploymentConfigHasBeenSet) {
+    payload.WithString("PresetDeploymentConfig", m_presetDeploymentConfig);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

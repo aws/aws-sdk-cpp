@@ -3,58 +3,47 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/BandwidthReductionFilter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconvert/model/BandwidthReductionFilter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
 
-BandwidthReductionFilter::BandwidthReductionFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BandwidthReductionFilter::BandwidthReductionFilter(JsonView jsonValue) { *this = jsonValue; }
 
-BandwidthReductionFilter& BandwidthReductionFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("sharpening"))
-  {
-    m_sharpening = BandwidthReductionFilterSharpeningMapper::GetBandwidthReductionFilterSharpeningForName(jsonValue.GetString("sharpening"));
+BandwidthReductionFilter& BandwidthReductionFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("sharpening")) {
+    m_sharpening =
+        BandwidthReductionFilterSharpeningMapper::GetBandwidthReductionFilterSharpeningForName(jsonValue.GetString("sharpening"));
     m_sharpeningHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("strength"))
-  {
+  if (jsonValue.ValueExists("strength")) {
     m_strength = BandwidthReductionFilterStrengthMapper::GetBandwidthReductionFilterStrengthForName(jsonValue.GetString("strength"));
     m_strengthHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BandwidthReductionFilter::Jsonize() const
-{
+JsonValue BandwidthReductionFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_sharpeningHasBeenSet)
-  {
-   payload.WithString("sharpening", BandwidthReductionFilterSharpeningMapper::GetNameForBandwidthReductionFilterSharpening(m_sharpening));
+  if (m_sharpeningHasBeenSet) {
+    payload.WithString("sharpening", BandwidthReductionFilterSharpeningMapper::GetNameForBandwidthReductionFilterSharpening(m_sharpening));
   }
 
-  if(m_strengthHasBeenSet)
-  {
-   payload.WithString("strength", BandwidthReductionFilterStrengthMapper::GetNameForBandwidthReductionFilterStrength(m_strength));
+  if (m_strengthHasBeenSet) {
+    payload.WithString("strength", BandwidthReductionFilterStrengthMapper::GetNameForBandwidthReductionFilterStrength(m_strength));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

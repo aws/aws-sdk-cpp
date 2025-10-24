@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/monitoring/model/GetDashboardRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/monitoring/model/GetDashboardRequest.h>
 
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-Aws::String GetDashboardRequest::SerializePayload() const
-{
+Aws::String GetDashboardRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetDashboard&";
-  if(m_dashboardNameHasBeenSet)
-  {
+  if (m_dashboardNameHasBeenSet) {
     ss << "DashboardName=" << StringUtils::URLEncode(m_dashboardName.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String GetDashboardRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetDashboardRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetDashboardRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

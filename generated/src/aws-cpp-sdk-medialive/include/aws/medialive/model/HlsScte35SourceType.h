@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
-  enum class HlsScte35SourceType
-  {
-    NOT_SET,
-    MANIFEST,
-    SEGMENTS
-  };
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+enum class HlsScte35SourceType { NOT_SET, MANIFEST, SEGMENTS };
 
-namespace HlsScte35SourceTypeMapper
-{
+namespace HlsScte35SourceTypeMapper {
 AWS_MEDIALIVE_API HlsScte35SourceType GetHlsScte35SourceTypeForName(const Aws::String& name);
 
 AWS_MEDIALIVE_API Aws::String GetNameForHlsScte35SourceType(HlsScte35SourceType value);
-} // namespace HlsScte35SourceTypeMapper
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace HlsScte35SourceTypeMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

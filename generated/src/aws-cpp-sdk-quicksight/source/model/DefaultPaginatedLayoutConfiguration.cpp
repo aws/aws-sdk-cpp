@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/DefaultPaginatedLayoutConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/DefaultPaginatedLayoutConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-DefaultPaginatedLayoutConfiguration::DefaultPaginatedLayoutConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DefaultPaginatedLayoutConfiguration::DefaultPaginatedLayoutConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-DefaultPaginatedLayoutConfiguration& DefaultPaginatedLayoutConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SectionBased"))
-  {
+DefaultPaginatedLayoutConfiguration& DefaultPaginatedLayoutConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SectionBased")) {
     m_sectionBased = jsonValue.GetObject("SectionBased");
     m_sectionBasedHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DefaultPaginatedLayoutConfiguration::Jsonize() const
-{
+JsonValue DefaultPaginatedLayoutConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_sectionBasedHasBeenSet)
-  {
-   payload.WithObject("SectionBased", m_sectionBased.Jsonize());
-
+  if (m_sectionBasedHasBeenSet) {
+    payload.WithObject("SectionBased", m_sectionBased.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

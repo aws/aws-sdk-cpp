@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/resourcegroupstaggingapi/model/FailureInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/resourcegroupstaggingapi/model/FailureInfo.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ResourceGroupsTaggingAPI
-{
-namespace Model
-{
+namespace Aws {
+namespace ResourceGroupsTaggingAPI {
+namespace Model {
 
-FailureInfo::FailureInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FailureInfo::FailureInfo(JsonView jsonValue) { *this = jsonValue; }
 
-FailureInfo& FailureInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("StatusCode"))
-  {
+FailureInfo& FailureInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("StatusCode")) {
     m_statusCode = jsonValue.GetInteger("StatusCode");
     m_statusCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorCode"))
-  {
+  if (jsonValue.ValueExists("ErrorCode")) {
     m_errorCode = ErrorCodeMapper::GetErrorCodeForName(jsonValue.GetString("ErrorCode"));
     m_errorCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorMessage"))
-  {
+  if (jsonValue.ValueExists("ErrorMessage")) {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
     m_errorMessageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FailureInfo::Jsonize() const
-{
+JsonValue FailureInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusCodeHasBeenSet)
-  {
-   payload.WithInteger("StatusCode", m_statusCode);
-
+  if (m_statusCodeHasBeenSet) {
+    payload.WithInteger("StatusCode", m_statusCode);
   }
 
-  if(m_errorCodeHasBeenSet)
-  {
-   payload.WithString("ErrorCode", ErrorCodeMapper::GetNameForErrorCode(m_errorCode));
+  if (m_errorCodeHasBeenSet) {
+    payload.WithString("ErrorCode", ErrorCodeMapper::GetNameForErrorCode(m_errorCode));
   }
 
-  if(m_errorMessageHasBeenSet)
-  {
-   payload.WithString("ErrorMessage", m_errorMessage);
-
+  if (m_errorMessageHasBeenSet) {
+    payload.WithString("ErrorMessage", m_errorMessage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ResourceGroupsTaggingAPI
-} // namespace Aws
+}  // namespace Model
+}  // namespace ResourceGroupsTaggingAPI
+}  // namespace Aws

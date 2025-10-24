@@ -3,81 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kendra/model/Highlight.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kendra/model/Highlight.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace kendra
-{
-namespace Model
-{
+namespace Aws {
+namespace kendra {
+namespace Model {
 
-Highlight::Highlight(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Highlight::Highlight(JsonView jsonValue) { *this = jsonValue; }
 
-Highlight& Highlight::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("BeginOffset"))
-  {
+Highlight& Highlight::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("BeginOffset")) {
     m_beginOffset = jsonValue.GetInteger("BeginOffset");
     m_beginOffsetHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EndOffset"))
-  {
+  if (jsonValue.ValueExists("EndOffset")) {
     m_endOffset = jsonValue.GetInteger("EndOffset");
     m_endOffsetHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TopAnswer"))
-  {
+  if (jsonValue.ValueExists("TopAnswer")) {
     m_topAnswer = jsonValue.GetBool("TopAnswer");
     m_topAnswerHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = HighlightTypeMapper::GetHighlightTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Highlight::Jsonize() const
-{
+JsonValue Highlight::Jsonize() const {
   JsonValue payload;
 
-  if(m_beginOffsetHasBeenSet)
-  {
-   payload.WithInteger("BeginOffset", m_beginOffset);
-
+  if (m_beginOffsetHasBeenSet) {
+    payload.WithInteger("BeginOffset", m_beginOffset);
   }
 
-  if(m_endOffsetHasBeenSet)
-  {
-   payload.WithInteger("EndOffset", m_endOffset);
-
+  if (m_endOffsetHasBeenSet) {
+    payload.WithInteger("EndOffset", m_endOffset);
   }
 
-  if(m_topAnswerHasBeenSet)
-  {
-   payload.WithBool("TopAnswer", m_topAnswer);
-
+  if (m_topAnswerHasBeenSet) {
+    payload.WithBool("TopAnswer", m_topAnswer);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", HighlightTypeMapper::GetNameForHighlightType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", HighlightTypeMapper::GetNameForHighlightType(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace kendra
-} // namespace Aws
+}  // namespace Model
+}  // namespace kendra
+}  // namespace Aws

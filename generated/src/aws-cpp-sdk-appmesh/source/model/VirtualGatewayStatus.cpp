@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-VirtualGatewayStatus::VirtualGatewayStatus(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VirtualGatewayStatus::VirtualGatewayStatus(JsonView jsonValue) { *this = jsonValue; }
 
-VirtualGatewayStatus& VirtualGatewayStatus::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("status"))
-  {
+VirtualGatewayStatus& VirtualGatewayStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("status")) {
     m_status = VirtualGatewayStatusCodeMapper::GetVirtualGatewayStatusCodeForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VirtualGatewayStatus::Jsonize() const
-{
+JsonValue VirtualGatewayStatus::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", VirtualGatewayStatusCodeMapper::GetNameForVirtualGatewayStatusCode(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", VirtualGatewayStatusCodeMapper::GetNameForVirtualGatewayStatusCode(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

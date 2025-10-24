@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/pi/PI_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pi/PI_EXPORTS.h>
 
-namespace Aws
-{
-namespace PI
-{
-namespace Model
-{
-  enum class Severity
-  {
-    NOT_SET,
-    LOW,
-    MEDIUM,
-    HIGH
-  };
+namespace Aws {
+namespace PI {
+namespace Model {
+enum class Severity { NOT_SET, LOW, MEDIUM, HIGH };
 
-namespace SeverityMapper
-{
+namespace SeverityMapper {
 AWS_PI_API Severity GetSeverityForName(const Aws::String& name);
 
 AWS_PI_API Aws::String GetNameForSeverity(Severity value);
-} // namespace SeverityMapper
-} // namespace Model
-} // namespace PI
-} // namespace Aws
+}  // namespace SeverityMapper
+}  // namespace Model
+}  // namespace PI
+}  // namespace Aws

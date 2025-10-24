@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/eks/EKS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/eks/EKS_EXPORTS.h>
 
-namespace Aws
-{
-namespace EKS
-{
-namespace Model
-{
-  enum class VersionStatus
-  {
-    NOT_SET,
-    UNSUPPORTED,
-    STANDARD_SUPPORT,
-    EXTENDED_SUPPORT
-  };
+namespace Aws {
+namespace EKS {
+namespace Model {
+enum class VersionStatus { NOT_SET, UNSUPPORTED, STANDARD_SUPPORT, EXTENDED_SUPPORT };
 
-namespace VersionStatusMapper
-{
+namespace VersionStatusMapper {
 AWS_EKS_API VersionStatus GetVersionStatusForName(const Aws::String& name);
 
 AWS_EKS_API Aws::String GetNameForVersionStatus(VersionStatus value);
-} // namespace VersionStatusMapper
-} // namespace Model
-} // namespace EKS
-} // namespace Aws
+}  // namespace VersionStatusMapper
+}  // namespace Model
+}  // namespace EKS
+}  // namespace Aws

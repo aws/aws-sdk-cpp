@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticfilesystem/model/CreateReplicationConfigurationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/elasticfilesystem/model/CreateReplicationConfigurationRequest.h>
 
 #include <utility>
 
@@ -12,24 +12,16 @@ using namespace Aws::EFS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateReplicationConfigurationRequest::SerializePayload() const
-{
+Aws::String CreateReplicationConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_destinationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> destinationsJsonList(m_destinations.size());
-   for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
-   {
-     destinationsJsonList[destinationsIndex].AsObject(m_destinations[destinationsIndex].Jsonize());
-   }
-   payload.WithArray("Destinations", std::move(destinationsJsonList));
-
+  if (m_destinationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> destinationsJsonList(m_destinations.size());
+    for (unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex) {
+      destinationsJsonList[destinationsIndex].AsObject(m_destinations[destinationsIndex].Jsonize());
+    }
+    payload.WithArray("Destinations", std::move(destinationsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

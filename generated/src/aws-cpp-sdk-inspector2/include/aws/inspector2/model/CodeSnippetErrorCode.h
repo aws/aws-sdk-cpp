@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector2/Inspector2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Inspector2
-{
-namespace Model
-{
-  enum class CodeSnippetErrorCode
-  {
-    NOT_SET,
-    INTERNAL_ERROR,
-    ACCESS_DENIED,
-    CODE_SNIPPET_NOT_FOUND,
-    INVALID_INPUT
-  };
+namespace Aws {
+namespace Inspector2 {
+namespace Model {
+enum class CodeSnippetErrorCode { NOT_SET, INTERNAL_ERROR, ACCESS_DENIED, CODE_SNIPPET_NOT_FOUND, INVALID_INPUT };
 
-namespace CodeSnippetErrorCodeMapper
-{
+namespace CodeSnippetErrorCodeMapper {
 AWS_INSPECTOR2_API CodeSnippetErrorCode GetCodeSnippetErrorCodeForName(const Aws::String& name);
 
 AWS_INSPECTOR2_API Aws::String GetNameForCodeSnippetErrorCode(CodeSnippetErrorCode value);
-} // namespace CodeSnippetErrorCodeMapper
-} // namespace Model
-} // namespace Inspector2
-} // namespace Aws
+}  // namespace CodeSnippetErrorCodeMapper
+}  // namespace Model
+}  // namespace Inspector2
+}  // namespace Aws

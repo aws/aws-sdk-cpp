@@ -12,45 +12,30 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateUserPoolDomainRequest::SerializePayload() const
-{
+Aws::String CreateUserPoolDomainRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_domainHasBeenSet)
-  {
-   payload.WithString("Domain", m_domain);
-
+  if (m_domainHasBeenSet) {
+    payload.WithString("Domain", m_domain);
   }
 
-  if(m_userPoolIdHasBeenSet)
-  {
-   payload.WithString("UserPoolId", m_userPoolId);
-
+  if (m_userPoolIdHasBeenSet) {
+    payload.WithString("UserPoolId", m_userPoolId);
   }
 
-  if(m_managedLoginVersionHasBeenSet)
-  {
-   payload.WithInteger("ManagedLoginVersion", m_managedLoginVersion);
-
+  if (m_managedLoginVersionHasBeenSet) {
+    payload.WithInteger("ManagedLoginVersion", m_managedLoginVersion);
   }
 
-  if(m_customDomainConfigHasBeenSet)
-  {
-   payload.WithObject("CustomDomainConfig", m_customDomainConfig.Jsonize());
-
+  if (m_customDomainConfigHasBeenSet) {
+    payload.WithObject("CustomDomainConfig", m_customDomainConfig.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateUserPoolDomainRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateUserPoolDomainRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityProviderService.CreateUserPoolDomain"));
   return headers;
-
 }
-
-
-
-

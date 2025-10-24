@@ -5,12 +5,8 @@
 
 #include <aws/ecr/ECREndpointProvider.h>
 
-namespace Aws
-{
-namespace ECR
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ECR
-} // namespace Aws
+namespace Aws {
+namespace ECR {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ECR
+}  // namespace Aws

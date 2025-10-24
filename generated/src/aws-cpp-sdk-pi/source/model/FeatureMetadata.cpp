@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pi/model/FeatureMetadata.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pi/model/FeatureMetadata.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace PI
-{
-namespace Model
-{
+namespace Aws {
+namespace PI {
+namespace Model {
 
-FeatureMetadata::FeatureMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FeatureMetadata::FeatureMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-FeatureMetadata& FeatureMetadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Status"))
-  {
+FeatureMetadata& FeatureMetadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Status")) {
     m_status = FeatureStatusMapper::GetFeatureStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FeatureMetadata::Jsonize() const
-{
+JsonValue FeatureMetadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", FeatureStatusMapper::GetNameForFeatureStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", FeatureStatusMapper::GetNameForFeatureStatus(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace PI
-} // namespace Aws
+}  // namespace Model
+}  // namespace PI
+}  // namespace Aws

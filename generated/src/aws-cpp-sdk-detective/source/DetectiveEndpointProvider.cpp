@@ -5,12 +5,8 @@
 
 #include <aws/detective/DetectiveEndpointProvider.h>
 
-namespace Aws
-{
-namespace Detective
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Detective
-} // namespace Aws
+namespace Aws {
+namespace Detective {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Detective
+}  // namespace Aws

@@ -11,30 +11,21 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeDeploy
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeDeploy {
+namespace Model {
 
-OnPremisesTagSet::OnPremisesTagSet(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OnPremisesTagSet::OnPremisesTagSet(JsonView jsonValue) { *this = jsonValue; }
 
-OnPremisesTagSet& OnPremisesTagSet::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("onPremisesTagSetList"))
-  {
+OnPremisesTagSet& OnPremisesTagSet::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("onPremisesTagSetList")) {
     Aws::Utils::Array<JsonView> onPremisesTagSetListJsonList = jsonValue.GetArray("onPremisesTagSetList");
-    for(unsigned onPremisesTagSetListIndex = 0; onPremisesTagSetListIndex < onPremisesTagSetListJsonList.GetLength(); ++onPremisesTagSetListIndex)
-    {
+    for (unsigned onPremisesTagSetListIndex = 0; onPremisesTagSetListIndex < onPremisesTagSetListJsonList.GetLength();
+         ++onPremisesTagSetListIndex) {
       Aws::Utils::Array<JsonView> tagFilterListJsonList = onPremisesTagSetListJsonList[onPremisesTagSetListIndex].AsArray();
       Aws::Vector<TagFilter> tagFilterListList;
       tagFilterListList.reserve((size_t)tagFilterListJsonList.GetLength());
-      for(unsigned tagFilterListIndex = 0; tagFilterListIndex < tagFilterListJsonList.GetLength(); ++tagFilterListIndex)
-      {
+      for (unsigned tagFilterListIndex = 0; tagFilterListIndex < tagFilterListJsonList.GetLength(); ++tagFilterListIndex) {
         tagFilterListList.push_back(tagFilterListJsonList[tagFilterListIndex].AsObject());
       }
       m_onPremisesTagSetList.push_back(std::move(tagFilterListList));
@@ -44,29 +35,25 @@ OnPremisesTagSet& OnPremisesTagSet::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue OnPremisesTagSet::Jsonize() const
-{
+JsonValue OnPremisesTagSet::Jsonize() const {
   JsonValue payload;
 
-  if(m_onPremisesTagSetListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> onPremisesTagSetListJsonList(m_onPremisesTagSetList.size());
-   for(unsigned onPremisesTagSetListIndex = 0; onPremisesTagSetListIndex < onPremisesTagSetListJsonList.GetLength(); ++onPremisesTagSetListIndex)
-   {
-     Aws::Utils::Array<JsonValue> tagFilterListJsonList(m_onPremisesTagSetList[onPremisesTagSetListIndex].size());
-     for(unsigned tagFilterListIndex = 0; tagFilterListIndex < tagFilterListJsonList.GetLength(); ++tagFilterListIndex)
-     {
-       tagFilterListJsonList[tagFilterListIndex].AsObject(m_onPremisesTagSetList[onPremisesTagSetListIndex][tagFilterListIndex].Jsonize());
-     }
-     onPremisesTagSetListJsonList[onPremisesTagSetListIndex].AsArray(std::move(tagFilterListJsonList));
-   }
-   payload.WithArray("onPremisesTagSetList", std::move(onPremisesTagSetListJsonList));
-
+  if (m_onPremisesTagSetListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> onPremisesTagSetListJsonList(m_onPremisesTagSetList.size());
+    for (unsigned onPremisesTagSetListIndex = 0; onPremisesTagSetListIndex < onPremisesTagSetListJsonList.GetLength();
+         ++onPremisesTagSetListIndex) {
+      Aws::Utils::Array<JsonValue> tagFilterListJsonList(m_onPremisesTagSetList[onPremisesTagSetListIndex].size());
+      for (unsigned tagFilterListIndex = 0; tagFilterListIndex < tagFilterListJsonList.GetLength(); ++tagFilterListIndex) {
+        tagFilterListJsonList[tagFilterListIndex].AsObject(m_onPremisesTagSetList[onPremisesTagSetListIndex][tagFilterListIndex].Jsonize());
+      }
+      onPremisesTagSetListJsonList[onPremisesTagSetListIndex].AsArray(std::move(tagFilterListJsonList));
+    }
+    payload.WithArray("onPremisesTagSetList", std::move(onPremisesTagSetListJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeDeploy
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeDeploy
+}  // namespace Aws

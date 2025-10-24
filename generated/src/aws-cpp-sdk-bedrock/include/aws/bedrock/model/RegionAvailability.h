@@ -7,25 +7,16 @@
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
-  enum class RegionAvailability
-  {
-    NOT_SET,
-    AVAILABLE,
-    NOT_AVAILABLE
-  };
+namespace Aws {
+namespace Bedrock {
+namespace Model {
+enum class RegionAvailability { NOT_SET, AVAILABLE, NOT_AVAILABLE };
 
-namespace RegionAvailabilityMapper
-{
+namespace RegionAvailabilityMapper {
 AWS_BEDROCK_API RegionAvailability GetRegionAvailabilityForName(const Aws::String& name);
 
 AWS_BEDROCK_API Aws::String GetNameForRegionAvailability(RegionAvailability value);
-} // namespace RegionAvailabilityMapper
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace RegionAvailabilityMapper
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

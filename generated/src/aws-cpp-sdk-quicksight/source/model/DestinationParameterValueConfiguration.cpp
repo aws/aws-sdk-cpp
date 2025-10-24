@@ -3,92 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/DestinationParameterValueConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/DestinationParameterValueConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-DestinationParameterValueConfiguration::DestinationParameterValueConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DestinationParameterValueConfiguration::DestinationParameterValueConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-DestinationParameterValueConfiguration& DestinationParameterValueConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CustomValuesConfiguration"))
-  {
+DestinationParameterValueConfiguration& DestinationParameterValueConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CustomValuesConfiguration")) {
     m_customValuesConfiguration = jsonValue.GetObject("CustomValuesConfiguration");
     m_customValuesConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SelectAllValueOptions"))
-  {
+  if (jsonValue.ValueExists("SelectAllValueOptions")) {
     m_selectAllValueOptions = SelectAllValueOptionsMapper::GetSelectAllValueOptionsForName(jsonValue.GetString("SelectAllValueOptions"));
     m_selectAllValueOptionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourceParameterName"))
-  {
+  if (jsonValue.ValueExists("SourceParameterName")) {
     m_sourceParameterName = jsonValue.GetString("SourceParameterName");
     m_sourceParameterNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourceField"))
-  {
+  if (jsonValue.ValueExists("SourceField")) {
     m_sourceField = jsonValue.GetString("SourceField");
     m_sourceFieldHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourceColumn"))
-  {
+  if (jsonValue.ValueExists("SourceColumn")) {
     m_sourceColumn = jsonValue.GetObject("SourceColumn");
     m_sourceColumnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DestinationParameterValueConfiguration::Jsonize() const
-{
+JsonValue DestinationParameterValueConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_customValuesConfigurationHasBeenSet)
-  {
-   payload.WithObject("CustomValuesConfiguration", m_customValuesConfiguration.Jsonize());
-
+  if (m_customValuesConfigurationHasBeenSet) {
+    payload.WithObject("CustomValuesConfiguration", m_customValuesConfiguration.Jsonize());
   }
 
-  if(m_selectAllValueOptionsHasBeenSet)
-  {
-   payload.WithString("SelectAllValueOptions", SelectAllValueOptionsMapper::GetNameForSelectAllValueOptions(m_selectAllValueOptions));
+  if (m_selectAllValueOptionsHasBeenSet) {
+    payload.WithString("SelectAllValueOptions", SelectAllValueOptionsMapper::GetNameForSelectAllValueOptions(m_selectAllValueOptions));
   }
 
-  if(m_sourceParameterNameHasBeenSet)
-  {
-   payload.WithString("SourceParameterName", m_sourceParameterName);
-
+  if (m_sourceParameterNameHasBeenSet) {
+    payload.WithString("SourceParameterName", m_sourceParameterName);
   }
 
-  if(m_sourceFieldHasBeenSet)
-  {
-   payload.WithString("SourceField", m_sourceField);
-
+  if (m_sourceFieldHasBeenSet) {
+    payload.WithString("SourceField", m_sourceField);
   }
 
-  if(m_sourceColumnHasBeenSet)
-  {
-   payload.WithObject("SourceColumn", m_sourceColumn.Jsonize());
-
+  if (m_sourceColumnHasBeenSet) {
+    payload.WithObject("SourceColumn", m_sourceColumn.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeArtifact
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeArtifact {
+namespace Model {
 
-PackageVersionOrigin::PackageVersionOrigin(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PackageVersionOrigin::PackageVersionOrigin(JsonView jsonValue) { *this = jsonValue; }
 
-PackageVersionOrigin& PackageVersionOrigin::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("domainEntryPoint"))
-  {
+PackageVersionOrigin& PackageVersionOrigin::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("domainEntryPoint")) {
     m_domainEntryPoint = jsonValue.GetObject("domainEntryPoint");
     m_domainEntryPointHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("originType"))
-  {
+  if (jsonValue.ValueExists("originType")) {
     m_originType = PackageVersionOriginTypeMapper::GetPackageVersionOriginTypeForName(jsonValue.GetString("originType"));
     m_originTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PackageVersionOrigin::Jsonize() const
-{
+JsonValue PackageVersionOrigin::Jsonize() const {
   JsonValue payload;
 
-  if(m_domainEntryPointHasBeenSet)
-  {
-   payload.WithObject("domainEntryPoint", m_domainEntryPoint.Jsonize());
-
+  if (m_domainEntryPointHasBeenSet) {
+    payload.WithObject("domainEntryPoint", m_domainEntryPoint.Jsonize());
   }
 
-  if(m_originTypeHasBeenSet)
-  {
-   payload.WithString("originType", PackageVersionOriginTypeMapper::GetNameForPackageVersionOriginType(m_originType));
+  if (m_originTypeHasBeenSet) {
+    payload.WithString("originType", PackageVersionOriginTypeMapper::GetNameForPackageVersionOriginType(m_originType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeArtifact
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeArtifact
+}  // namespace Aws

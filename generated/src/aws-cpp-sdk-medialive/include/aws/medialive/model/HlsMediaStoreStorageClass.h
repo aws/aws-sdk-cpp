@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
-  enum class HlsMediaStoreStorageClass
-  {
-    NOT_SET,
-    TEMPORAL
-  };
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+enum class HlsMediaStoreStorageClass { NOT_SET, TEMPORAL };
 
-namespace HlsMediaStoreStorageClassMapper
-{
+namespace HlsMediaStoreStorageClassMapper {
 AWS_MEDIALIVE_API HlsMediaStoreStorageClass GetHlsMediaStoreStorageClassForName(const Aws::String& name);
 
 AWS_MEDIALIVE_API Aws::String GetNameForHlsMediaStoreStorageClass(HlsMediaStoreStorageClass value);
-} // namespace HlsMediaStoreStorageClassMapper
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace HlsMediaStoreStorageClassMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

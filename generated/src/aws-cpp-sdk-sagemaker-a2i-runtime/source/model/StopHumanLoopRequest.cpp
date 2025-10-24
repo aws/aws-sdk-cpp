@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker-a2i-runtime/model/StopHumanLoopRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker-a2i-runtime/model/StopHumanLoopRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::AugmentedAIRuntime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StopHumanLoopRequest::SerializePayload() const
-{
+Aws::String StopHumanLoopRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_humanLoopNameHasBeenSet)
-  {
-   payload.WithString("HumanLoopName", m_humanLoopName);
-
+  if (m_humanLoopNameHasBeenSet) {
+    payload.WithString("HumanLoopName", m_humanLoopName);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -7,25 +7,16 @@
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
-  enum class PromptState
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
+enum class PromptState { NOT_SET, ENABLED, DISABLED };
 
-namespace PromptStateMapper
-{
+namespace PromptStateMapper {
 AWS_BEDROCKAGENT_API PromptState GetPromptStateForName(const Aws::String& name);
 
 AWS_BEDROCKAGENT_API Aws::String GetNameForPromptState(PromptState value);
-} // namespace PromptStateMapper
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace PromptStateMapper
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

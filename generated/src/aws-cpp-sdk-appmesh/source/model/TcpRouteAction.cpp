@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-TcpRouteAction::TcpRouteAction(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TcpRouteAction::TcpRouteAction(JsonView jsonValue) { *this = jsonValue; }
 
-TcpRouteAction& TcpRouteAction::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("weightedTargets"))
-  {
+TcpRouteAction& TcpRouteAction::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("weightedTargets")) {
     Aws::Utils::Array<JsonView> weightedTargetsJsonList = jsonValue.GetArray("weightedTargets");
-    for(unsigned weightedTargetsIndex = 0; weightedTargetsIndex < weightedTargetsJsonList.GetLength(); ++weightedTargetsIndex)
-    {
+    for (unsigned weightedTargetsIndex = 0; weightedTargetsIndex < weightedTargetsJsonList.GetLength(); ++weightedTargetsIndex) {
       m_weightedTargets.push_back(weightedTargetsJsonList[weightedTargetsIndex].AsObject());
     }
     m_weightedTargetsHasBeenSet = true;
@@ -37,24 +28,20 @@ TcpRouteAction& TcpRouteAction::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue TcpRouteAction::Jsonize() const
-{
+JsonValue TcpRouteAction::Jsonize() const {
   JsonValue payload;
 
-  if(m_weightedTargetsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> weightedTargetsJsonList(m_weightedTargets.size());
-   for(unsigned weightedTargetsIndex = 0; weightedTargetsIndex < weightedTargetsJsonList.GetLength(); ++weightedTargetsIndex)
-   {
-     weightedTargetsJsonList[weightedTargetsIndex].AsObject(m_weightedTargets[weightedTargetsIndex].Jsonize());
-   }
-   payload.WithArray("weightedTargets", std::move(weightedTargetsJsonList));
-
+  if (m_weightedTargetsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> weightedTargetsJsonList(m_weightedTargets.size());
+    for (unsigned weightedTargetsIndex = 0; weightedTargetsIndex < weightedTargetsJsonList.GetLength(); ++weightedTargetsIndex) {
+      weightedTargetsJsonList[weightedTargetsIndex].AsObject(m_weightedTargets[weightedTargetsIndex].Jsonize());
+    }
+    payload.WithArray("weightedTargets", std::move(weightedTargetsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

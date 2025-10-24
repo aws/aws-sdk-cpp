@@ -3,44 +3,37 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/EnableFastLaunchRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/EnableFastLaunchRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String EnableFastLaunchRequest::SerializePayload() const
-{
+Aws::String EnableFastLaunchRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=EnableFastLaunch&";
-  if(m_imageIdHasBeenSet)
-  {
+  if (m_imageIdHasBeenSet) {
     ss << "ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
   }
 
-  if(m_resourceTypeHasBeenSet)
-  {
+  if (m_resourceTypeHasBeenSet) {
     ss << "ResourceType=" << StringUtils::URLEncode(m_resourceType.c_str()) << "&";
   }
 
-  if(m_snapshotConfigurationHasBeenSet)
-  {
+  if (m_snapshotConfigurationHasBeenSet) {
     m_snapshotConfiguration.OutputToStream(ss, "SnapshotConfiguration");
   }
 
-  if(m_launchTemplateHasBeenSet)
-  {
+  if (m_launchTemplateHasBeenSet) {
     m_launchTemplate.OutputToStream(ss, "LaunchTemplate");
   }
 
-  if(m_maxParallelLaunchesHasBeenSet)
-  {
+  if (m_maxParallelLaunchesHasBeenSet) {
     ss << "MaxParallelLaunches=" << m_maxParallelLaunches << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -48,8 +41,4 @@ Aws::String EnableFastLaunchRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  EnableFastLaunchRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void EnableFastLaunchRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

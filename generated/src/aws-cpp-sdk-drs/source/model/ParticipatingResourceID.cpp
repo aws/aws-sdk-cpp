@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/drs/model/ParticipatingResourceID.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/drs/model/ParticipatingResourceID.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace drs
-{
-namespace Model
-{
+namespace Aws {
+namespace drs {
+namespace Model {
 
-ParticipatingResourceID::ParticipatingResourceID(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ParticipatingResourceID::ParticipatingResourceID(JsonView jsonValue) { *this = jsonValue; }
 
-ParticipatingResourceID& ParticipatingResourceID::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("sourceNetworkID"))
-  {
+ParticipatingResourceID& ParticipatingResourceID::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("sourceNetworkID")) {
     m_sourceNetworkID = jsonValue.GetString("sourceNetworkID");
     m_sourceNetworkIDHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ParticipatingResourceID::Jsonize() const
-{
+JsonValue ParticipatingResourceID::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceNetworkIDHasBeenSet)
-  {
-   payload.WithString("sourceNetworkID", m_sourceNetworkID);
-
+  if (m_sourceNetworkIDHasBeenSet) {
+    payload.WithString("sourceNetworkID", m_sourceNetworkID);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace drs
-} // namespace Aws
+}  // namespace Model
+}  // namespace drs
+}  // namespace Aws

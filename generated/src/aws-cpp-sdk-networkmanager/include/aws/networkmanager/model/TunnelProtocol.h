@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/networkmanager/NetworkManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/networkmanager/NetworkManager_EXPORTS.h>
 
-namespace Aws
-{
-namespace NetworkManager
-{
-namespace Model
-{
-  enum class TunnelProtocol
-  {
-    NOT_SET,
-    GRE,
-    NO_ENCAP
-  };
+namespace Aws {
+namespace NetworkManager {
+namespace Model {
+enum class TunnelProtocol { NOT_SET, GRE, NO_ENCAP };
 
-namespace TunnelProtocolMapper
-{
+namespace TunnelProtocolMapper {
 AWS_NETWORKMANAGER_API TunnelProtocol GetTunnelProtocolForName(const Aws::String& name);
 
 AWS_NETWORKMANAGER_API Aws::String GetNameForTunnelProtocol(TunnelProtocol value);
-} // namespace TunnelProtocolMapper
-} // namespace Model
-} // namespace NetworkManager
-} // namespace Aws
+}  // namespace TunnelProtocolMapper
+}  // namespace Model
+}  // namespace NetworkManager
+}  // namespace Aws

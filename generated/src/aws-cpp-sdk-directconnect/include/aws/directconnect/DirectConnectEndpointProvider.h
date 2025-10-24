@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/directconnect/DirectConnectEndpointRules.h>
+#include <aws/directconnect/DirectConnect_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace DirectConnect
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace DirectConnect {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using DirectConnectClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using DirectConnectDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_DIRECTCONNECT_API DirectConnectEndpointProvider : public DirectConnectDefaultEpProviderBase
-{
-public:
-    using DirectConnectResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_DIRECTCONNECT_API DirectConnectEndpointProvider : public DirectConnectDefaultEpProviderBase {
+ public:
+  using DirectConnectResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    DirectConnectEndpointProvider()
-      : DirectConnectDefaultEpProviderBase(Aws::DirectConnect::DirectConnectEndpointRules::GetRulesBlob(), Aws::DirectConnect::DirectConnectEndpointRules::RulesBlobSize)
-    {}
+  DirectConnectEndpointProvider()
+      : DirectConnectDefaultEpProviderBase(Aws::DirectConnect::DirectConnectEndpointRules::GetRulesBlob(),
+                                           Aws::DirectConnect::DirectConnectEndpointRules::RulesBlobSize) {}
 
-    ~DirectConnectEndpointProvider()
-    {
-    }
+  ~DirectConnectEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace DirectConnect
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace DirectConnect
+}  // namespace Aws

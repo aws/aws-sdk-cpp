@@ -3,37 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/RemoveIpamOperatingRegion.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/RemoveIpamOperatingRegion.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-RemoveIpamOperatingRegion::RemoveIpamOperatingRegion(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+RemoveIpamOperatingRegion::RemoveIpamOperatingRegion(const XmlNode& xmlNode) { *this = xmlNode; }
 
-RemoveIpamOperatingRegion& RemoveIpamOperatingRegion::operator =(const XmlNode& xmlNode)
-{
+RemoveIpamOperatingRegion& RemoveIpamOperatingRegion::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode regionNameNode = resultNode.FirstChild("RegionName");
-    if(!regionNameNode.IsNull())
-    {
+    if (!regionNameNode.IsNull()) {
       m_regionName = Aws::Utils::Xml::DecodeEscapedXmlText(regionNameNode.GetText());
       m_regionNameHasBeenSet = true;
     }
@@ -42,23 +33,19 @@ RemoveIpamOperatingRegion& RemoveIpamOperatingRegion::operator =(const XmlNode& 
   return *this;
 }
 
-void RemoveIpamOperatingRegion::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_regionNameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".RegionName=" << StringUtils::URLEncode(m_regionName.c_str()) << "&";
-  }
-
-}
-
-void RemoveIpamOperatingRegion::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_regionNameHasBeenSet)
-  {
-      oStream << location << ".RegionName=" << StringUtils::URLEncode(m_regionName.c_str()) << "&";
+void RemoveIpamOperatingRegion::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                               const char* locationValue) const {
+  if (m_regionNameHasBeenSet) {
+    oStream << location << index << locationValue << ".RegionName=" << StringUtils::URLEncode(m_regionName.c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void RemoveIpamOperatingRegion::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_regionNameHasBeenSet) {
+    oStream << location << ".RegionName=" << StringUtils::URLEncode(m_regionName.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ecs/model/EnvironmentFile.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ecs/model/EnvironmentFile.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ECS
-{
-namespace Model
-{
+namespace Aws {
+namespace ECS {
+namespace Model {
 
-EnvironmentFile::EnvironmentFile(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EnvironmentFile::EnvironmentFile(JsonView jsonValue) { *this = jsonValue; }
 
-EnvironmentFile& EnvironmentFile::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("value"))
-  {
+EnvironmentFile& EnvironmentFile::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetString("value");
     m_valueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = EnvironmentFileTypeMapper::GetEnvironmentFileTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EnvironmentFile::Jsonize() const
-{
+JsonValue EnvironmentFile::Jsonize() const {
   JsonValue payload;
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("value", m_value);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", EnvironmentFileTypeMapper::GetNameForEnvironmentFileType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", EnvironmentFileTypeMapper::GetNameForEnvironmentFileType(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ECS
-} // namespace Aws
+}  // namespace Model
+}  // namespace ECS
+}  // namespace Aws

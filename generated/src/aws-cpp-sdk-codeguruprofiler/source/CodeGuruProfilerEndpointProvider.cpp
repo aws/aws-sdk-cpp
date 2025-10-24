@@ -5,12 +5,8 @@
 
 #include <aws/codeguruprofiler/CodeGuruProfilerEndpointProvider.h>
 
-namespace Aws
-{
-namespace CodeGuruProfiler
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace CodeGuruProfiler
-} // namespace Aws
+namespace Aws {
+namespace CodeGuruProfiler {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace CodeGuruProfiler
+}  // namespace Aws

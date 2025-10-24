@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/SwitchoverGlobalClusterRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/SwitchoverGlobalClusterRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String SwitchoverGlobalClusterRequest::SerializePayload() const
-{
+Aws::String SwitchoverGlobalClusterRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=SwitchoverGlobalCluster&";
-  if(m_globalClusterIdentifierHasBeenSet)
-  {
+  if (m_globalClusterIdentifierHasBeenSet) {
     ss << "GlobalClusterIdentifier=" << StringUtils::URLEncode(m_globalClusterIdentifier.c_str()) << "&";
   }
 
-  if(m_targetDbClusterIdentifierHasBeenSet)
-  {
+  if (m_targetDbClusterIdentifierHasBeenSet) {
     ss << "TargetDbClusterIdentifier=" << StringUtils::URLEncode(m_targetDbClusterIdentifier.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String SwitchoverGlobalClusterRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  SwitchoverGlobalClusterRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void SwitchoverGlobalClusterRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

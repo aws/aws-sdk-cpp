@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-GatewayRouteSpec::GatewayRouteSpec(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GatewayRouteSpec::GatewayRouteSpec(JsonView jsonValue) { *this = jsonValue; }
 
-GatewayRouteSpec& GatewayRouteSpec::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("grpcRoute"))
-  {
+GatewayRouteSpec& GatewayRouteSpec::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("grpcRoute")) {
     m_grpcRoute = jsonValue.GetObject("grpcRoute");
     m_grpcRouteHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("http2Route"))
-  {
+  if (jsonValue.ValueExists("http2Route")) {
     m_http2Route = jsonValue.GetObject("http2Route");
     m_http2RouteHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("httpRoute"))
-  {
+  if (jsonValue.ValueExists("httpRoute")) {
     m_httpRoute = jsonValue.GetObject("httpRoute");
     m_httpRouteHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("priority"))
-  {
+  if (jsonValue.ValueExists("priority")) {
     m_priority = jsonValue.GetInteger("priority");
     m_priorityHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GatewayRouteSpec::Jsonize() const
-{
+JsonValue GatewayRouteSpec::Jsonize() const {
   JsonValue payload;
 
-  if(m_grpcRouteHasBeenSet)
-  {
-   payload.WithObject("grpcRoute", m_grpcRoute.Jsonize());
-
+  if (m_grpcRouteHasBeenSet) {
+    payload.WithObject("grpcRoute", m_grpcRoute.Jsonize());
   }
 
-  if(m_http2RouteHasBeenSet)
-  {
-   payload.WithObject("http2Route", m_http2Route.Jsonize());
-
+  if (m_http2RouteHasBeenSet) {
+    payload.WithObject("http2Route", m_http2Route.Jsonize());
   }
 
-  if(m_httpRouteHasBeenSet)
-  {
-   payload.WithObject("httpRoute", m_httpRoute.Jsonize());
-
+  if (m_httpRouteHasBeenSet) {
+    payload.WithObject("httpRoute", m_httpRoute.Jsonize());
   }
 
-  if(m_priorityHasBeenSet)
-  {
-   payload.WithInteger("priority", m_priority);
-
+  if (m_priorityHasBeenSet) {
+    payload.WithInteger("priority", m_priority);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-ServiceQuotaExceededException::ServiceQuotaExceededException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ServiceQuotaExceededException::ServiceQuotaExceededException(JsonView jsonValue) { *this = jsonValue; }
 
-ServiceQuotaExceededException& ServiceQuotaExceededException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Message"))
-  {
+ServiceQuotaExceededException& ServiceQuotaExceededException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Reason"))
-  {
+  if (jsonValue.ValueExists("Reason")) {
     m_reason = jsonValue.GetObject("Reason");
     m_reasonHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ServiceQuotaExceededException::Jsonize() const
-{
+JsonValue ServiceQuotaExceededException::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
-  if(m_reasonHasBeenSet)
-  {
-   payload.WithObject("Reason", m_reason.Jsonize());
-
+  if (m_reasonHasBeenSet) {
+    payload.WithObject("Reason", m_reason.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

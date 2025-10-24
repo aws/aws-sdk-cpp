@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApplicationSignals
-{
-namespace Model
-{
+namespace Aws {
+namespace ApplicationSignals {
+namespace Model {
 
-BurnRateConfiguration::BurnRateConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BurnRateConfiguration::BurnRateConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-BurnRateConfiguration& BurnRateConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("LookBackWindowMinutes"))
-  {
+BurnRateConfiguration& BurnRateConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("LookBackWindowMinutes")) {
     m_lookBackWindowMinutes = jsonValue.GetInteger("LookBackWindowMinutes");
     m_lookBackWindowMinutesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BurnRateConfiguration::Jsonize() const
-{
+JsonValue BurnRateConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_lookBackWindowMinutesHasBeenSet)
-  {
-   payload.WithInteger("LookBackWindowMinutes", m_lookBackWindowMinutes);
-
+  if (m_lookBackWindowMinutesHasBeenSet) {
+    payload.WithInteger("LookBackWindowMinutes", m_lookBackWindowMinutes);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApplicationSignals
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApplicationSignals
+}  // namespace Aws

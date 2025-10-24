@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workdocs/model/GetResourcesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/workdocs/model/GetResourcesResult.h>
 
 #include <utility>
 
@@ -17,46 +17,35 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetResourcesResult::GetResourcesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetResourcesResult::GetResourcesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetResourcesResult& GetResourcesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetResourcesResult& GetResourcesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Folders"))
-  {
+  if (jsonValue.ValueExists("Folders")) {
     Aws::Utils::Array<JsonView> foldersJsonList = jsonValue.GetArray("Folders");
-    for(unsigned foldersIndex = 0; foldersIndex < foldersJsonList.GetLength(); ++foldersIndex)
-    {
+    for (unsigned foldersIndex = 0; foldersIndex < foldersJsonList.GetLength(); ++foldersIndex) {
       m_folders.push_back(foldersJsonList[foldersIndex].AsObject());
     }
     m_foldersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Documents"))
-  {
+  if (jsonValue.ValueExists("Documents")) {
     Aws::Utils::Array<JsonView> documentsJsonList = jsonValue.GetArray("Documents");
-    for(unsigned documentsIndex = 0; documentsIndex < documentsJsonList.GetLength(); ++documentsIndex)
-    {
+    for (unsigned documentsIndex = 0; documentsIndex < documentsJsonList.GetLength(); ++documentsIndex) {
       m_documents.push_back(documentsJsonList[documentsIndex].AsObject());
     }
     m_documentsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Marker"))
-  {
+  if (jsonValue.ValueExists("Marker")) {
     m_marker = jsonValue.GetString("Marker");
     m_markerHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

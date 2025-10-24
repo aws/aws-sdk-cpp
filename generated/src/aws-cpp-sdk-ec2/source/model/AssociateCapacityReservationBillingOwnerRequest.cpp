@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/AssociateCapacityReservationBillingOwnerRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/AssociateCapacityReservationBillingOwnerRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String AssociateCapacityReservationBillingOwnerRequest::SerializePayload() const
-{
+Aws::String AssociateCapacityReservationBillingOwnerRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=AssociateCapacityReservationBillingOwner&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_capacityReservationIdHasBeenSet)
-  {
+  if (m_capacityReservationIdHasBeenSet) {
     ss << "CapacityReservationId=" << StringUtils::URLEncode(m_capacityReservationId.c_str()) << "&";
   }
 
-  if(m_unusedReservationBillingOwnerIdHasBeenSet)
-  {
+  if (m_unusedReservationBillingOwnerIdHasBeenSet) {
     ss << "UnusedReservationBillingOwnerId=" << StringUtils::URLEncode(m_unusedReservationBillingOwnerId.c_str()) << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String AssociateCapacityReservationBillingOwnerRequest::SerializePayload() 
   return ss.str();
 }
 
-
-void  AssociateCapacityReservationBillingOwnerRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void AssociateCapacityReservationBillingOwnerRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

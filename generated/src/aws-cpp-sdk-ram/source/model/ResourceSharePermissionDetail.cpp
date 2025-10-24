@@ -3,93 +3,72 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ram/model/ResourceSharePermissionDetail.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ram/model/ResourceSharePermissionDetail.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace RAM
-{
-namespace Model
-{
+namespace Aws {
+namespace RAM {
+namespace Model {
 
-ResourceSharePermissionDetail::ResourceSharePermissionDetail(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResourceSharePermissionDetail::ResourceSharePermissionDetail(JsonView jsonValue) { *this = jsonValue; }
 
-ResourceSharePermissionDetail& ResourceSharePermissionDetail::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("arn"))
-  {
+ResourceSharePermissionDetail& ResourceSharePermissionDetail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("version"))
-  {
+  if (jsonValue.ValueExists("version")) {
     m_version = jsonValue.GetString("version");
     m_versionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("defaultVersion"))
-  {
+  if (jsonValue.ValueExists("defaultVersion")) {
     m_defaultVersion = jsonValue.GetBool("defaultVersion");
     m_defaultVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceType"))
-  {
+  if (jsonValue.ValueExists("resourceType")) {
     m_resourceType = jsonValue.GetString("resourceType");
     m_resourceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("permission"))
-  {
+  if (jsonValue.ValueExists("permission")) {
     m_permission = jsonValue.GetString("permission");
     m_permissionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("creationTime"))
-  {
+  if (jsonValue.ValueExists("creationTime")) {
     m_creationTime = jsonValue.GetDouble("creationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdatedTime"))
-  {
+  if (jsonValue.ValueExists("lastUpdatedTime")) {
     m_lastUpdatedTime = jsonValue.GetDouble("lastUpdatedTime");
     m_lastUpdatedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("isResourceTypeDefault"))
-  {
+  if (jsonValue.ValueExists("isResourceTypeDefault")) {
     m_isResourceTypeDefault = jsonValue.GetBool("isResourceTypeDefault");
     m_isResourceTypeDefaultHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("permissionType"))
-  {
+  if (jsonValue.ValueExists("permissionType")) {
     m_permissionType = PermissionTypeMapper::GetPermissionTypeForName(jsonValue.GetString("permissionType"));
     m_permissionTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("featureSet"))
-  {
+  if (jsonValue.ValueExists("featureSet")) {
     m_featureSet = PermissionFeatureSetMapper::GetPermissionFeatureSetForName(jsonValue.GetString("featureSet"));
     m_featureSetHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = PermissionStatusMapper::GetPermissionStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tags"))
-  {
+  if (jsonValue.ValueExists("tags")) {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
-    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-    {
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
     m_tagsHasBeenSet = true;
@@ -97,91 +76,68 @@ ResourceSharePermissionDetail& ResourceSharePermissionDetail::operator =(JsonVie
   return *this;
 }
 
-JsonValue ResourceSharePermissionDetail::Jsonize() const
-{
+JsonValue ResourceSharePermissionDetail::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_versionHasBeenSet)
-  {
-   payload.WithString("version", m_version);
-
+  if (m_versionHasBeenSet) {
+    payload.WithString("version", m_version);
   }
 
-  if(m_defaultVersionHasBeenSet)
-  {
-   payload.WithBool("defaultVersion", m_defaultVersion);
-
+  if (m_defaultVersionHasBeenSet) {
+    payload.WithBool("defaultVersion", m_defaultVersion);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("resourceType", m_resourceType);
-
+  if (m_resourceTypeHasBeenSet) {
+    payload.WithString("resourceType", m_resourceType);
   }
 
-  if(m_permissionHasBeenSet)
-  {
-   payload.WithString("permission", m_permission);
-
+  if (m_permissionHasBeenSet) {
+    payload.WithString("permission", m_permission);
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("creationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("creationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_lastUpdatedTimeHasBeenSet)
-  {
-   payload.WithDouble("lastUpdatedTime", m_lastUpdatedTime.SecondsWithMSPrecision());
+  if (m_lastUpdatedTimeHasBeenSet) {
+    payload.WithDouble("lastUpdatedTime", m_lastUpdatedTime.SecondsWithMSPrecision());
   }
 
-  if(m_isResourceTypeDefaultHasBeenSet)
-  {
-   payload.WithBool("isResourceTypeDefault", m_isResourceTypeDefault);
-
+  if (m_isResourceTypeDefaultHasBeenSet) {
+    payload.WithBool("isResourceTypeDefault", m_isResourceTypeDefault);
   }
 
-  if(m_permissionTypeHasBeenSet)
-  {
-   payload.WithString("permissionType", PermissionTypeMapper::GetNameForPermissionType(m_permissionType));
+  if (m_permissionTypeHasBeenSet) {
+    payload.WithString("permissionType", PermissionTypeMapper::GetNameForPermissionType(m_permissionType));
   }
 
-  if(m_featureSetHasBeenSet)
-  {
-   payload.WithString("featureSet", PermissionFeatureSetMapper::GetNameForPermissionFeatureSet(m_featureSet));
+  if (m_featureSetHasBeenSet) {
+    payload.WithString("featureSet", PermissionFeatureSetMapper::GetNameForPermissionFeatureSet(m_featureSet));
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", PermissionStatusMapper::GetNameForPermissionStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", PermissionStatusMapper::GetNameForPermissionStatus(m_status));
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("tags", std::move(tagsJsonList));
-
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("tags", std::move(tagsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace RAM
-} // namespace Aws
+}  // namespace Model
+}  // namespace RAM
+}  // namespace Aws

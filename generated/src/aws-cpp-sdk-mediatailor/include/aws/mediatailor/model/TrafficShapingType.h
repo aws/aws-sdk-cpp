@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediatailor/MediaTailor_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediatailor/MediaTailor_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaTailor
-{
-namespace Model
-{
-  enum class TrafficShapingType
-  {
-    NOT_SET,
-    RETRIEVAL_WINDOW,
-    TPS
-  };
+namespace Aws {
+namespace MediaTailor {
+namespace Model {
+enum class TrafficShapingType { NOT_SET, RETRIEVAL_WINDOW, TPS };
 
-namespace TrafficShapingTypeMapper
-{
+namespace TrafficShapingTypeMapper {
 AWS_MEDIATAILOR_API TrafficShapingType GetTrafficShapingTypeForName(const Aws::String& name);
 
 AWS_MEDIATAILOR_API Aws::String GetNameForTrafficShapingType(TrafficShapingType value);
-} // namespace TrafficShapingTypeMapper
-} // namespace Model
-} // namespace MediaTailor
-} // namespace Aws
+}  // namespace TrafficShapingTypeMapper
+}  // namespace Model
+}  // namespace MediaTailor
+}  // namespace Aws

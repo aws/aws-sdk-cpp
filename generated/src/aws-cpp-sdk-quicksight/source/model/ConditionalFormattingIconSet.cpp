@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/ConditionalFormattingIconSet.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/ConditionalFormattingIconSet.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-ConditionalFormattingIconSet::ConditionalFormattingIconSet(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConditionalFormattingIconSet::ConditionalFormattingIconSet(JsonView jsonValue) { *this = jsonValue; }
 
-ConditionalFormattingIconSet& ConditionalFormattingIconSet::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Expression"))
-  {
+ConditionalFormattingIconSet& ConditionalFormattingIconSet::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Expression")) {
     m_expression = jsonValue.GetString("Expression");
     m_expressionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IconSetType"))
-  {
+  if (jsonValue.ValueExists("IconSetType")) {
     m_iconSetType = ConditionalFormattingIconSetTypeMapper::GetConditionalFormattingIconSetTypeForName(jsonValue.GetString("IconSetType"));
     m_iconSetTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ConditionalFormattingIconSet::Jsonize() const
-{
+JsonValue ConditionalFormattingIconSet::Jsonize() const {
   JsonValue payload;
 
-  if(m_expressionHasBeenSet)
-  {
-   payload.WithString("Expression", m_expression);
-
+  if (m_expressionHasBeenSet) {
+    payload.WithString("Expression", m_expression);
   }
 
-  if(m_iconSetTypeHasBeenSet)
-  {
-   payload.WithString("IconSetType", ConditionalFormattingIconSetTypeMapper::GetNameForConditionalFormattingIconSetType(m_iconSetType));
+  if (m_iconSetTypeHasBeenSet) {
+    payload.WithString("IconSetType", ConditionalFormattingIconSetTypeMapper::GetNameForConditionalFormattingIconSetType(m_iconSetType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

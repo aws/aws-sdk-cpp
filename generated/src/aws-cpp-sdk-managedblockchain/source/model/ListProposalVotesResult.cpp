@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/managedblockchain/model/ListProposalVotesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/managedblockchain/model/ListProposalVotesResult.h>
 
 #include <utility>
 
@@ -17,37 +17,28 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListProposalVotesResult::ListProposalVotesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListProposalVotesResult::ListProposalVotesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListProposalVotesResult& ListProposalVotesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListProposalVotesResult& ListProposalVotesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("ProposalVotes"))
-  {
+  if (jsonValue.ValueExists("ProposalVotes")) {
     Aws::Utils::Array<JsonView> proposalVotesJsonList = jsonValue.GetArray("ProposalVotes");
-    for(unsigned proposalVotesIndex = 0; proposalVotesIndex < proposalVotesJsonList.GetLength(); ++proposalVotesIndex)
-    {
+    for (unsigned proposalVotesIndex = 0; proposalVotesIndex < proposalVotesJsonList.GetLength(); ++proposalVotesIndex) {
       m_proposalVotes.push_back(proposalVotesJsonList[proposalVotesIndex].AsObject());
     }
     m_proposalVotesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

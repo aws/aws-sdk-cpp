@@ -3,47 +3,39 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/UpdateSecurityGroupRuleDescriptionsEgressRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/UpdateSecurityGroupRuleDescriptionsEgressRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String UpdateSecurityGroupRuleDescriptionsEgressRequest::SerializePayload() const
-{
+Aws::String UpdateSecurityGroupRuleDescriptionsEgressRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=UpdateSecurityGroupRuleDescriptionsEgress&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_groupIdHasBeenSet)
-  {
+  if (m_groupIdHasBeenSet) {
     ss << "GroupId=" << StringUtils::URLEncode(m_groupId.c_str()) << "&";
   }
 
-  if(m_groupNameHasBeenSet)
-  {
+  if (m_groupNameHasBeenSet) {
     ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
   }
 
-  if(m_ipPermissionsHasBeenSet)
-  {
+  if (m_ipPermissionsHasBeenSet) {
     unsigned ipPermissionsCount = 1;
-    for(auto& item : m_ipPermissions)
-    {
+    for (auto& item : m_ipPermissions) {
       item.OutputToStream(ss, "IpPermissions.", ipPermissionsCount, "");
       ipPermissionsCount++;
     }
   }
 
-  if(m_securityGroupRuleDescriptionsHasBeenSet)
-  {
+  if (m_securityGroupRuleDescriptionsHasBeenSet) {
     unsigned securityGroupRuleDescriptionsCount = 1;
-    for(auto& item : m_securityGroupRuleDescriptions)
-    {
+    for (auto& item : m_securityGroupRuleDescriptions) {
       item.OutputToStream(ss, "SecurityGroupRuleDescription.", securityGroupRuleDescriptionsCount, "");
       securityGroupRuleDescriptionsCount++;
     }
@@ -53,8 +45,4 @@ Aws::String UpdateSecurityGroupRuleDescriptionsEgressRequest::SerializePayload()
   return ss.str();
 }
 
-
-void  UpdateSecurityGroupRuleDescriptionsEgressRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void UpdateSecurityGroupRuleDescriptionsEgressRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

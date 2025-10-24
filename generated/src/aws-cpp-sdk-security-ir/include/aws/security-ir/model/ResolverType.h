@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/security-ir/SecurityIR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/security-ir/SecurityIR_EXPORTS.h>
 
-namespace Aws
-{
-namespace SecurityIR
-{
-namespace Model
-{
-  enum class ResolverType
-  {
-    NOT_SET,
-    AWS,
-    Self
-  };
+namespace Aws {
+namespace SecurityIR {
+namespace Model {
+enum class ResolverType { NOT_SET, AWS, Self };
 
-namespace ResolverTypeMapper
-{
+namespace ResolverTypeMapper {
 AWS_SECURITYIR_API ResolverType GetResolverTypeForName(const Aws::String& name);
 
 AWS_SECURITYIR_API Aws::String GetNameForResolverType(ResolverType value);
-} // namespace ResolverTypeMapper
-} // namespace Model
-} // namespace SecurityIR
-} // namespace Aws
+}  // namespace ResolverTypeMapper
+}  // namespace Model
+}  // namespace SecurityIR
+}  // namespace Aws

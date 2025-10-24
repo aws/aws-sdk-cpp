@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
 
-namespace Aws
-{
-namespace MarketplaceCatalog
-{
-class MarketplaceCatalogEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace MarketplaceCatalog {
+class MarketplaceCatalogEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace MarketplaceCatalog
-} // namespace Aws
+}  // namespace MarketplaceCatalog
+}  // namespace Aws

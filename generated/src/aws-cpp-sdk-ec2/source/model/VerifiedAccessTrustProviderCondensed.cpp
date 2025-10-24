@@ -3,62 +3,52 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/VerifiedAccessTrustProviderCondensed.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/VerifiedAccessTrustProviderCondensed.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-VerifiedAccessTrustProviderCondensed::VerifiedAccessTrustProviderCondensed(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+VerifiedAccessTrustProviderCondensed::VerifiedAccessTrustProviderCondensed(const XmlNode& xmlNode) { *this = xmlNode; }
 
-VerifiedAccessTrustProviderCondensed& VerifiedAccessTrustProviderCondensed::operator =(const XmlNode& xmlNode)
-{
+VerifiedAccessTrustProviderCondensed& VerifiedAccessTrustProviderCondensed::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode verifiedAccessTrustProviderIdNode = resultNode.FirstChild("verifiedAccessTrustProviderId");
-    if(!verifiedAccessTrustProviderIdNode.IsNull())
-    {
+    if (!verifiedAccessTrustProviderIdNode.IsNull()) {
       m_verifiedAccessTrustProviderId = Aws::Utils::Xml::DecodeEscapedXmlText(verifiedAccessTrustProviderIdNode.GetText());
       m_verifiedAccessTrustProviderIdHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
-    if(!descriptionNode.IsNull())
-    {
+    if (!descriptionNode.IsNull()) {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
     XmlNode trustProviderTypeNode = resultNode.FirstChild("trustProviderType");
-    if(!trustProviderTypeNode.IsNull())
-    {
-      m_trustProviderType = TrustProviderTypeMapper::GetTrustProviderTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(trustProviderTypeNode.GetText()).c_str()));
+    if (!trustProviderTypeNode.IsNull()) {
+      m_trustProviderType = TrustProviderTypeMapper::GetTrustProviderTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(trustProviderTypeNode.GetText()).c_str()));
       m_trustProviderTypeHasBeenSet = true;
     }
     XmlNode userTrustProviderTypeNode = resultNode.FirstChild("userTrustProviderType");
-    if(!userTrustProviderTypeNode.IsNull())
-    {
-      m_userTrustProviderType = UserTrustProviderTypeMapper::GetUserTrustProviderTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(userTrustProviderTypeNode.GetText()).c_str()));
+    if (!userTrustProviderTypeNode.IsNull()) {
+      m_userTrustProviderType = UserTrustProviderTypeMapper::GetUserTrustProviderTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(userTrustProviderTypeNode.GetText()).c_str()));
       m_userTrustProviderTypeHasBeenSet = true;
     }
     XmlNode deviceTrustProviderTypeNode = resultNode.FirstChild("deviceTrustProviderType");
-    if(!deviceTrustProviderTypeNode.IsNull())
-    {
-      m_deviceTrustProviderType = DeviceTrustProviderTypeMapper::GetDeviceTrustProviderTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deviceTrustProviderTypeNode.GetText()).c_str()));
+    if (!deviceTrustProviderTypeNode.IsNull()) {
+      m_deviceTrustProviderType = DeviceTrustProviderTypeMapper::GetDeviceTrustProviderTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deviceTrustProviderTypeNode.GetText()).c_str()));
       m_deviceTrustProviderTypeHasBeenSet = true;
     }
   }
@@ -66,59 +56,56 @@ VerifiedAccessTrustProviderCondensed& VerifiedAccessTrustProviderCondensed::oper
   return *this;
 }
 
-void VerifiedAccessTrustProviderCondensed::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_verifiedAccessTrustProviderIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".VerifiedAccessTrustProviderId=" << StringUtils::URLEncode(m_verifiedAccessTrustProviderId.c_str()) << "&";
+void VerifiedAccessTrustProviderCondensed::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                          const char* locationValue) const {
+  if (m_verifiedAccessTrustProviderIdHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".VerifiedAccessTrustProviderId=" << StringUtils::URLEncode(m_verifiedAccessTrustProviderId.c_str()) << "&";
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  if (m_descriptionHasBeenSet) {
+    oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
-  if(m_trustProviderTypeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".TrustProviderType=" << StringUtils::URLEncode(TrustProviderTypeMapper::GetNameForTrustProviderType(m_trustProviderType)) << "&";
+  if (m_trustProviderTypeHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".TrustProviderType=" << StringUtils::URLEncode(TrustProviderTypeMapper::GetNameForTrustProviderType(m_trustProviderType))
+            << "&";
   }
 
-  if(m_userTrustProviderTypeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".UserTrustProviderType=" << StringUtils::URLEncode(UserTrustProviderTypeMapper::GetNameForUserTrustProviderType(m_userTrustProviderType)) << "&";
+  if (m_userTrustProviderTypeHasBeenSet) {
+    oStream << location << index << locationValue << ".UserTrustProviderType="
+            << StringUtils::URLEncode(UserTrustProviderTypeMapper::GetNameForUserTrustProviderType(m_userTrustProviderType)) << "&";
   }
 
-  if(m_deviceTrustProviderTypeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".DeviceTrustProviderType=" << StringUtils::URLEncode(DeviceTrustProviderTypeMapper::GetNameForDeviceTrustProviderType(m_deviceTrustProviderType)) << "&";
-  }
-
-}
-
-void VerifiedAccessTrustProviderCondensed::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_verifiedAccessTrustProviderIdHasBeenSet)
-  {
-      oStream << location << ".VerifiedAccessTrustProviderId=" << StringUtils::URLEncode(m_verifiedAccessTrustProviderId.c_str()) << "&";
-  }
-  if(m_descriptionHasBeenSet)
-  {
-      oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
-  }
-  if(m_trustProviderTypeHasBeenSet)
-  {
-      oStream << location << ".TrustProviderType=" << StringUtils::URLEncode(TrustProviderTypeMapper::GetNameForTrustProviderType(m_trustProviderType)) << "&";
-  }
-  if(m_userTrustProviderTypeHasBeenSet)
-  {
-      oStream << location << ".UserTrustProviderType=" << StringUtils::URLEncode(UserTrustProviderTypeMapper::GetNameForUserTrustProviderType(m_userTrustProviderType)) << "&";
-  }
-  if(m_deviceTrustProviderTypeHasBeenSet)
-  {
-      oStream << location << ".DeviceTrustProviderType=" << StringUtils::URLEncode(DeviceTrustProviderTypeMapper::GetNameForDeviceTrustProviderType(m_deviceTrustProviderType)) << "&";
+  if (m_deviceTrustProviderTypeHasBeenSet) {
+    oStream << location << index << locationValue << ".DeviceTrustProviderType="
+            << StringUtils::URLEncode(DeviceTrustProviderTypeMapper::GetNameForDeviceTrustProviderType(m_deviceTrustProviderType)) << "&";
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void VerifiedAccessTrustProviderCondensed::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_verifiedAccessTrustProviderIdHasBeenSet) {
+    oStream << location << ".VerifiedAccessTrustProviderId=" << StringUtils::URLEncode(m_verifiedAccessTrustProviderId.c_str()) << "&";
+  }
+  if (m_descriptionHasBeenSet) {
+    oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+  if (m_trustProviderTypeHasBeenSet) {
+    oStream << location
+            << ".TrustProviderType=" << StringUtils::URLEncode(TrustProviderTypeMapper::GetNameForTrustProviderType(m_trustProviderType))
+            << "&";
+  }
+  if (m_userTrustProviderTypeHasBeenSet) {
+    oStream << location << ".UserTrustProviderType="
+            << StringUtils::URLEncode(UserTrustProviderTypeMapper::GetNameForUserTrustProviderType(m_userTrustProviderType)) << "&";
+  }
+  if (m_deviceTrustProviderTypeHasBeenSet) {
+    oStream << location << ".DeviceTrustProviderType="
+            << StringUtils::URLEncode(DeviceTrustProviderTypeMapper::GetNameForDeviceTrustProviderType(m_deviceTrustProviderType)) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

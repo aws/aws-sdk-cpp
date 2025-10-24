@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/logs/CloudWatchLogsRequest.h>
 
-namespace Aws
-{
-namespace CloudWatchLogs
-{
-} // namespace CloudWatchLogs
-} // namespace Aws
+namespace Aws {
+namespace CloudWatchLogs {}  // namespace CloudWatchLogs
+}  // namespace Aws

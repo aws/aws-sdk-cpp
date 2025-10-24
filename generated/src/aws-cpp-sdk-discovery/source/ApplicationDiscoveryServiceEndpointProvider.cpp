@@ -5,12 +5,8 @@
 
 #include <aws/discovery/ApplicationDiscoveryServiceEndpointProvider.h>
 
-namespace Aws
-{
-namespace ApplicationDiscoveryService
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ApplicationDiscoveryService
-} // namespace Aws
+namespace Aws {
+namespace ApplicationDiscoveryService {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ApplicationDiscoveryService
+}  // namespace Aws

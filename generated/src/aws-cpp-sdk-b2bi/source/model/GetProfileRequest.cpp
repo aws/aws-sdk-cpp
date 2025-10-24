@@ -12,27 +12,18 @@ using namespace Aws::B2BI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetProfileRequest::SerializePayload() const
-{
+Aws::String GetProfileRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_profileIdHasBeenSet)
-  {
-   payload.WithString("profileId", m_profileId);
-
+  if (m_profileIdHasBeenSet) {
+    payload.WithString("profileId", m_profileId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetProfileRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetProfileRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "B2BI.GetProfile"));
   return headers;
-
 }
-
-
-
-

@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/codepipeline/CodePipelineRequest.h>
 
-namespace Aws
-{
-namespace CodePipeline
-{
-} // namespace CodePipeline
-} // namespace Aws
+namespace Aws {
+namespace CodePipeline {}  // namespace CodePipeline
+}  // namespace Aws

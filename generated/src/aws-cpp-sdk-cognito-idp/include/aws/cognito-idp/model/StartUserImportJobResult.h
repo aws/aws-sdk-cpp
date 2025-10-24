@@ -7,67 +7,73 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/model/UserImportJobType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace CognitoIdentityProvider {
+namespace Model {
+/**
+ * <p>Represents the response from the server to the request to start the user
+ * import job.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StartUserImportJobResponse">AWS
+ * API Reference</a></p>
+ */
+class StartUserImportJobResult {
+ public:
+  AWS_COGNITOIDENTITYPROVIDER_API StartUserImportJobResult() = default;
+  AWS_COGNITOIDENTITYPROVIDER_API StartUserImportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_COGNITOIDENTITYPROVIDER_API StartUserImportJobResult& operator=(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
   /**
-   * <p>Represents the response from the server to the request to start the user
-   * import job.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StartUserImportJobResponse">AWS
-   * API Reference</a></p>
+   * <p>The details of the user import job. Includes logging destination, status, and
+   * the Amazon S3 pre-signed URL for CSV upload.</p>
    */
-  class StartUserImportJobResult
-  {
-  public:
-    AWS_COGNITOIDENTITYPROVIDER_API StartUserImportJobResult() = default;
-    AWS_COGNITOIDENTITYPROVIDER_API StartUserImportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_COGNITOIDENTITYPROVIDER_API StartUserImportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  inline const UserImportJobType& GetUserImportJob() const { return m_userImportJob; }
+  template <typename UserImportJobT = UserImportJobType>
+  void SetUserImportJob(UserImportJobT&& value) {
+    m_userImportJobHasBeenSet = true;
+    m_userImportJob = std::forward<UserImportJobT>(value);
+  }
+  template <typename UserImportJobT = UserImportJobType>
+  StartUserImportJobResult& WithUserImportJob(UserImportJobT&& value) {
+    SetUserImportJob(std::forward<UserImportJobT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
 
-    ///@{
-    /**
-     * <p>The details of the user import job. Includes logging destination, status, and
-     * the Amazon S3 pre-signed URL for CSV upload.</p>
-     */
-    inline const UserImportJobType& GetUserImportJob() const { return m_userImportJob; }
-    template<typename UserImportJobT = UserImportJobType>
-    void SetUserImportJob(UserImportJobT&& value) { m_userImportJobHasBeenSet = true; m_userImportJob = std::forward<UserImportJobT>(value); }
-    template<typename UserImportJobT = UserImportJobType>
-    StartUserImportJobResult& WithUserImportJob(UserImportJobT&& value) { SetUserImportJob(std::forward<UserImportJobT>(value)); return *this;}
-    ///@}
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  StartUserImportJobResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  UserImportJobType m_userImportJob;
+  bool m_userImportJobHasBeenSet = false;
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    StartUserImportJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    UserImportJobType m_userImportJob;
-    bool m_userImportJobHasBeenSet = false;
-
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

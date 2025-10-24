@@ -7,25 +7,16 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace BedrockAgentCoreControl
-{
-namespace Model
-{
-  enum class NetworkMode
-  {
-    NOT_SET,
-    PUBLIC_,
-    VPC
-  };
+namespace Aws {
+namespace BedrockAgentCoreControl {
+namespace Model {
+enum class NetworkMode { NOT_SET, PUBLIC_, VPC };
 
-namespace NetworkModeMapper
-{
+namespace NetworkModeMapper {
 AWS_BEDROCKAGENTCORECONTROL_API NetworkMode GetNetworkModeForName(const Aws::String& name);
 
 AWS_BEDROCKAGENTCORECONTROL_API Aws::String GetNameForNetworkMode(NetworkMode value);
-} // namespace NetworkModeMapper
-} // namespace Model
-} // namespace BedrockAgentCoreControl
-} // namespace Aws
+}  // namespace NetworkModeMapper
+}  // namespace Model
+}  // namespace BedrockAgentCoreControl
+}  // namespace Aws

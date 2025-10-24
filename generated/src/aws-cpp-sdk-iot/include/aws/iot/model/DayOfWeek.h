@@ -4,33 +4,19 @@
  */
 
 #pragma once
-#include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/IoT_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
-  enum class DayOfWeek
-  {
-    NOT_SET,
-    SUN,
-    MON,
-    TUE,
-    WED,
-    THU,
-    FRI,
-    SAT
-  };
+namespace Aws {
+namespace IoT {
+namespace Model {
+enum class DayOfWeek { NOT_SET, SUN, MON, TUE, WED, THU, FRI, SAT };
 
-namespace DayOfWeekMapper
-{
+namespace DayOfWeekMapper {
 AWS_IOT_API DayOfWeek GetDayOfWeekForName(const Aws::String& name);
 
 AWS_IOT_API Aws::String GetNameForDayOfWeek(DayOfWeek value);
-} // namespace DayOfWeekMapper
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace DayOfWeekMapper
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

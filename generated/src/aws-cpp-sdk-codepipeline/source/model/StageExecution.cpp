@@ -11,61 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
 
-StageExecution::StageExecution(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StageExecution::StageExecution(JsonView jsonValue) { *this = jsonValue; }
 
-StageExecution& StageExecution::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("pipelineExecutionId"))
-  {
+StageExecution& StageExecution::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("pipelineExecutionId")) {
     m_pipelineExecutionId = jsonValue.GetString("pipelineExecutionId");
     m_pipelineExecutionIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = StageExecutionStatusMapper::GetStageExecutionStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = ExecutionTypeMapper::GetExecutionTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StageExecution::Jsonize() const
-{
+JsonValue StageExecution::Jsonize() const {
   JsonValue payload;
 
-  if(m_pipelineExecutionIdHasBeenSet)
-  {
-   payload.WithString("pipelineExecutionId", m_pipelineExecutionId);
-
+  if (m_pipelineExecutionIdHasBeenSet) {
+    payload.WithString("pipelineExecutionId", m_pipelineExecutionId);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", StageExecutionStatusMapper::GetNameForStageExecutionStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", StageExecutionStatusMapper::GetNameForStageExecutionStatus(m_status));
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", ExecutionTypeMapper::GetNameForExecutionType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", ExecutionTypeMapper::GetNameForExecutionType(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

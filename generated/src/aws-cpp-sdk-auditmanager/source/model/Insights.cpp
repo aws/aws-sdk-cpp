@@ -11,106 +11,78 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AuditManager
-{
-namespace Model
-{
+namespace Aws {
+namespace AuditManager {
+namespace Model {
 
-Insights::Insights(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Insights::Insights(JsonView jsonValue) { *this = jsonValue; }
 
-Insights& Insights::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("activeAssessmentsCount"))
-  {
+Insights& Insights::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("activeAssessmentsCount")) {
     m_activeAssessmentsCount = jsonValue.GetInteger("activeAssessmentsCount");
     m_activeAssessmentsCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("noncompliantEvidenceCount"))
-  {
+  if (jsonValue.ValueExists("noncompliantEvidenceCount")) {
     m_noncompliantEvidenceCount = jsonValue.GetInteger("noncompliantEvidenceCount");
     m_noncompliantEvidenceCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("compliantEvidenceCount"))
-  {
+  if (jsonValue.ValueExists("compliantEvidenceCount")) {
     m_compliantEvidenceCount = jsonValue.GetInteger("compliantEvidenceCount");
     m_compliantEvidenceCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("inconclusiveEvidenceCount"))
-  {
+  if (jsonValue.ValueExists("inconclusiveEvidenceCount")) {
     m_inconclusiveEvidenceCount = jsonValue.GetInteger("inconclusiveEvidenceCount");
     m_inconclusiveEvidenceCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("assessmentControlsCountByNoncompliantEvidence"))
-  {
+  if (jsonValue.ValueExists("assessmentControlsCountByNoncompliantEvidence")) {
     m_assessmentControlsCountByNoncompliantEvidence = jsonValue.GetInteger("assessmentControlsCountByNoncompliantEvidence");
     m_assessmentControlsCountByNoncompliantEvidenceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("totalAssessmentControlsCount"))
-  {
+  if (jsonValue.ValueExists("totalAssessmentControlsCount")) {
     m_totalAssessmentControlsCount = jsonValue.GetInteger("totalAssessmentControlsCount");
     m_totalAssessmentControlsCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdated"))
-  {
+  if (jsonValue.ValueExists("lastUpdated")) {
     m_lastUpdated = jsonValue.GetDouble("lastUpdated");
     m_lastUpdatedHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Insights::Jsonize() const
-{
+JsonValue Insights::Jsonize() const {
   JsonValue payload;
 
-  if(m_activeAssessmentsCountHasBeenSet)
-  {
-   payload.WithInteger("activeAssessmentsCount", m_activeAssessmentsCount);
-
+  if (m_activeAssessmentsCountHasBeenSet) {
+    payload.WithInteger("activeAssessmentsCount", m_activeAssessmentsCount);
   }
 
-  if(m_noncompliantEvidenceCountHasBeenSet)
-  {
-   payload.WithInteger("noncompliantEvidenceCount", m_noncompliantEvidenceCount);
-
+  if (m_noncompliantEvidenceCountHasBeenSet) {
+    payload.WithInteger("noncompliantEvidenceCount", m_noncompliantEvidenceCount);
   }
 
-  if(m_compliantEvidenceCountHasBeenSet)
-  {
-   payload.WithInteger("compliantEvidenceCount", m_compliantEvidenceCount);
-
+  if (m_compliantEvidenceCountHasBeenSet) {
+    payload.WithInteger("compliantEvidenceCount", m_compliantEvidenceCount);
   }
 
-  if(m_inconclusiveEvidenceCountHasBeenSet)
-  {
-   payload.WithInteger("inconclusiveEvidenceCount", m_inconclusiveEvidenceCount);
-
+  if (m_inconclusiveEvidenceCountHasBeenSet) {
+    payload.WithInteger("inconclusiveEvidenceCount", m_inconclusiveEvidenceCount);
   }
 
-  if(m_assessmentControlsCountByNoncompliantEvidenceHasBeenSet)
-  {
-   payload.WithInteger("assessmentControlsCountByNoncompliantEvidence", m_assessmentControlsCountByNoncompliantEvidence);
-
+  if (m_assessmentControlsCountByNoncompliantEvidenceHasBeenSet) {
+    payload.WithInteger("assessmentControlsCountByNoncompliantEvidence", m_assessmentControlsCountByNoncompliantEvidence);
   }
 
-  if(m_totalAssessmentControlsCountHasBeenSet)
-  {
-   payload.WithInteger("totalAssessmentControlsCount", m_totalAssessmentControlsCount);
-
+  if (m_totalAssessmentControlsCountHasBeenSet) {
+    payload.WithInteger("totalAssessmentControlsCount", m_totalAssessmentControlsCount);
   }
 
-  if(m_lastUpdatedHasBeenSet)
-  {
-   payload.WithDouble("lastUpdated", m_lastUpdated.SecondsWithMSPrecision());
+  if (m_lastUpdatedHasBeenSet) {
+    payload.WithDouble("lastUpdated", m_lastUpdated.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AuditManager
-} // namespace Aws
+}  // namespace Model
+}  // namespace AuditManager
+}  // namespace Aws

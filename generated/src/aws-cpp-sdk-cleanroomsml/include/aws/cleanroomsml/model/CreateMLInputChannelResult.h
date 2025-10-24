@@ -6,60 +6,65 @@
 #pragma once
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace CleanRoomsML
-{
-namespace Model
-{
-  class CreateMLInputChannelResult
-  {
-  public:
-    AWS_CLEANROOMSML_API CreateMLInputChannelResult() = default;
-    AWS_CLEANROOMSML_API CreateMLInputChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_CLEANROOMSML_API CreateMLInputChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace CleanRoomsML {
+namespace Model {
+class CreateMLInputChannelResult {
+ public:
+  AWS_CLEANROOMSML_API CreateMLInputChannelResult() = default;
+  AWS_CLEANROOMSML_API CreateMLInputChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_CLEANROOMSML_API CreateMLInputChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the ML input channel.</p>
+   */
+  inline const Aws::String& GetMlInputChannelArn() const { return m_mlInputChannelArn; }
+  template <typename MlInputChannelArnT = Aws::String>
+  void SetMlInputChannelArn(MlInputChannelArnT&& value) {
+    m_mlInputChannelArnHasBeenSet = true;
+    m_mlInputChannelArn = std::forward<MlInputChannelArnT>(value);
+  }
+  template <typename MlInputChannelArnT = Aws::String>
+  CreateMLInputChannelResult& WithMlInputChannelArn(MlInputChannelArnT&& value) {
+    SetMlInputChannelArn(std::forward<MlInputChannelArnT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the ML input channel.</p>
-     */
-    inline const Aws::String& GetMlInputChannelArn() const { return m_mlInputChannelArn; }
-    template<typename MlInputChannelArnT = Aws::String>
-    void SetMlInputChannelArn(MlInputChannelArnT&& value) { m_mlInputChannelArnHasBeenSet = true; m_mlInputChannelArn = std::forward<MlInputChannelArnT>(value); }
-    template<typename MlInputChannelArnT = Aws::String>
-    CreateMLInputChannelResult& WithMlInputChannelArn(MlInputChannelArnT&& value) { SetMlInputChannelArn(std::forward<MlInputChannelArnT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    CreateMLInputChannelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  CreateMLInputChannelResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_mlInputChannelArn;
+  bool m_mlInputChannelArnHasBeenSet = false;
 
-    Aws::String m_mlInputChannelArn;
-    bool m_mlInputChannelArnHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace CleanRoomsML
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRoomsML
+}  // namespace Aws

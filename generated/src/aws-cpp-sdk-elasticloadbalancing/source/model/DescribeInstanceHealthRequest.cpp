@@ -3,33 +3,26 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancing/model/DescribeInstanceHealthRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticloadbalancing/model/DescribeInstanceHealthRequest.h>
 
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeInstanceHealthRequest::SerializePayload() const
-{
+Aws::String DescribeInstanceHealthRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeInstanceHealth&";
-  if(m_loadBalancerNameHasBeenSet)
-  {
+  if (m_loadBalancerNameHasBeenSet) {
     ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
   }
 
-  if(m_instancesHasBeenSet)
-  {
-    if (m_instances.empty())
-    {
+  if (m_instancesHasBeenSet) {
+    if (m_instances.empty()) {
       ss << "Instances=&";
-    }
-    else
-    {
+    } else {
       unsigned instancesCount = 1;
-      for(auto& item : m_instances)
-      {
+      for (auto& item : m_instances) {
         item.OutputToStream(ss, "Instances.member.", instancesCount, "");
         instancesCount++;
       }
@@ -40,8 +33,4 @@ Aws::String DescribeInstanceHealthRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeInstanceHealthRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeInstanceHealthRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

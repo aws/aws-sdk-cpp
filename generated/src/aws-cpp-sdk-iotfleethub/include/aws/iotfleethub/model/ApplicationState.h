@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotfleethub/IoTFleetHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotfleethub/IoTFleetHub_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTFleetHub
-{
-namespace Model
-{
-  enum class ApplicationState
-  {
-    NOT_SET,
-    CREATING,
-    DELETING,
-    ACTIVE,
-    CREATE_FAILED,
-    DELETE_FAILED
-  };
+namespace Aws {
+namespace IoTFleetHub {
+namespace Model {
+enum class ApplicationState { NOT_SET, CREATING, DELETING, ACTIVE, CREATE_FAILED, DELETE_FAILED };
 
-namespace ApplicationStateMapper
-{
+namespace ApplicationStateMapper {
 AWS_IOTFLEETHUB_API ApplicationState GetApplicationStateForName(const Aws::String& name);
 
 AWS_IOTFLEETHUB_API Aws::String GetNameForApplicationState(ApplicationState value);
-} // namespace ApplicationStateMapper
-} // namespace Model
-} // namespace IoTFleetHub
-} // namespace Aws
+}  // namespace ApplicationStateMapper
+}  // namespace Model
+}  // namespace IoTFleetHub
+}  // namespace Aws

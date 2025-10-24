@@ -7,25 +7,16 @@
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
-  enum class GuardrailWordAction
-  {
-    NOT_SET,
-    BLOCK,
-    NONE
-  };
+namespace Aws {
+namespace Bedrock {
+namespace Model {
+enum class GuardrailWordAction { NOT_SET, BLOCK, NONE };
 
-namespace GuardrailWordActionMapper
-{
+namespace GuardrailWordActionMapper {
 AWS_BEDROCK_API GuardrailWordAction GetGuardrailWordActionForName(const Aws::String& name);
 
 AWS_BEDROCK_API Aws::String GetNameForGuardrailWordAction(GuardrailWordAction value);
-} // namespace GuardrailWordActionMapper
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace GuardrailWordActionMapper
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

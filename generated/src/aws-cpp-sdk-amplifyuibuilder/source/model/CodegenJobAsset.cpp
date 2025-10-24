@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyUIBuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Model {
 
-CodegenJobAsset::CodegenJobAsset(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CodegenJobAsset::CodegenJobAsset(JsonView jsonValue) { *this = jsonValue; }
 
-CodegenJobAsset& CodegenJobAsset::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("downloadUrl"))
-  {
+CodegenJobAsset& CodegenJobAsset::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("downloadUrl")) {
     m_downloadUrl = jsonValue.GetString("downloadUrl");
     m_downloadUrlHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CodegenJobAsset::Jsonize() const
-{
+JsonValue CodegenJobAsset::Jsonize() const {
   JsonValue payload;
 
-  if(m_downloadUrlHasBeenSet)
-  {
-   payload.WithString("downloadUrl", m_downloadUrl);
-
+  if (m_downloadUrlHasBeenSet) {
+    payload.WithString("downloadUrl", m_downloadUrl);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

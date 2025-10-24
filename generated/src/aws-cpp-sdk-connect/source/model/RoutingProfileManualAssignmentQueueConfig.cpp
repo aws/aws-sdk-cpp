@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-RoutingProfileManualAssignmentQueueConfig::RoutingProfileManualAssignmentQueueConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RoutingProfileManualAssignmentQueueConfig::RoutingProfileManualAssignmentQueueConfig(JsonView jsonValue) { *this = jsonValue; }
 
-RoutingProfileManualAssignmentQueueConfig& RoutingProfileManualAssignmentQueueConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("QueueReference"))
-  {
+RoutingProfileManualAssignmentQueueConfig& RoutingProfileManualAssignmentQueueConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("QueueReference")) {
     m_queueReference = jsonValue.GetObject("QueueReference");
     m_queueReferenceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RoutingProfileManualAssignmentQueueConfig::Jsonize() const
-{
+JsonValue RoutingProfileManualAssignmentQueueConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_queueReferenceHasBeenSet)
-  {
-   payload.WithObject("QueueReference", m_queueReference.Jsonize());
-
+  if (m_queueReferenceHasBeenSet) {
+    payload.WithObject("QueueReference", m_queueReference.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

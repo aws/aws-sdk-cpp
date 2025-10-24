@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/redshift/Redshift_EXPORTS.h>
 
-namespace Aws
-{
-namespace Redshift
-{
-namespace Model
-{
-  enum class SortByOrder
-  {
-    NOT_SET,
-    ASC,
-    DESC
-  };
+namespace Aws {
+namespace Redshift {
+namespace Model {
+enum class SortByOrder { NOT_SET, ASC, DESC };
 
-namespace SortByOrderMapper
-{
+namespace SortByOrderMapper {
 AWS_REDSHIFT_API SortByOrder GetSortByOrderForName(const Aws::String& name);
 
 AWS_REDSHIFT_API Aws::String GetNameForSortByOrder(SortByOrder value);
-} // namespace SortByOrderMapper
-} // namespace Model
-} // namespace Redshift
-} // namespace Aws
+}  // namespace SortByOrderMapper
+}  // namespace Model
+}  // namespace Redshift
+}  // namespace Aws

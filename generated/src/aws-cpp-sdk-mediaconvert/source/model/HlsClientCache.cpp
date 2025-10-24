@@ -3,70 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/HlsClientCache.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/mediaconvert/model/HlsClientCache.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+namespace HlsClientCacheMapper {
 
-namespace Aws
-{
-  namespace MediaConvert
-  {
-    namespace Model
-    {
-      namespace HlsClientCacheMapper
-      {
+static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
+static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
 
-        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
-        static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
+HlsClientCache GetHlsClientCacheForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == DISABLED_HASH) {
+    return HlsClientCache::DISABLED;
+  } else if (hashCode == ENABLED_HASH) {
+    return HlsClientCache::ENABLED;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<HlsClientCache>(hashCode);
+  }
 
+  return HlsClientCache::NOT_SET;
+}
 
-        HlsClientCache GetHlsClientCacheForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == DISABLED_HASH)
-          {
-            return HlsClientCache::DISABLED;
-          }
-          else if (hashCode == ENABLED_HASH)
-          {
-            return HlsClientCache::ENABLED;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<HlsClientCache>(hashCode);
-          }
+Aws::String GetNameForHlsClientCache(HlsClientCache enumValue) {
+  switch (enumValue) {
+    case HlsClientCache::NOT_SET:
+      return {};
+    case HlsClientCache::DISABLED:
+      return "DISABLED";
+    case HlsClientCache::ENABLED:
+      return "ENABLED";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return HlsClientCache::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForHlsClientCache(HlsClientCache enumValue)
-        {
-          switch(enumValue)
-          {
-          case HlsClientCache::NOT_SET:
-            return {};
-          case HlsClientCache::DISABLED:
-            return "DISABLED";
-          case HlsClientCache::ENABLED:
-            return "ENABLED";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace HlsClientCacheMapper
-    } // namespace Model
-  } // namespace MediaConvert
-} // namespace Aws
+}  // namespace HlsClientCacheMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

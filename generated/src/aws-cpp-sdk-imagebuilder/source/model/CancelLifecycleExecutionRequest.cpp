@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/imagebuilder/model/CancelLifecycleExecutionRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/imagebuilder/model/CancelLifecycleExecutionRequest.h>
 
 #include <utility>
 
@@ -12,25 +12,16 @@ using namespace Aws::imagebuilder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CancelLifecycleExecutionRequest::SerializePayload() const
-{
+Aws::String CancelLifecycleExecutionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_lifecycleExecutionIdHasBeenSet)
-  {
-   payload.WithString("lifecycleExecutionId", m_lifecycleExecutionId);
-
+  if (m_lifecycleExecutionIdHasBeenSet) {
+    payload.WithString("lifecycleExecutionId", m_lifecycleExecutionId);
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

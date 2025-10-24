@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/voice-id/model/OutputDataConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/voice-id/model/OutputDataConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace VoiceID
-{
-namespace Model
-{
+namespace Aws {
+namespace VoiceID {
+namespace Model {
 
-OutputDataConfig::OutputDataConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OutputDataConfig::OutputDataConfig(JsonView jsonValue) { *this = jsonValue; }
 
-OutputDataConfig& OutputDataConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("KmsKeyId"))
-  {
+OutputDataConfig& OutputDataConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("KmsKeyId")) {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
     m_kmsKeyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("S3Uri"))
-  {
+  if (jsonValue.ValueExists("S3Uri")) {
     m_s3Uri = jsonValue.GetString("S3Uri");
     m_s3UriHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OutputDataConfig::Jsonize() const
-{
+JsonValue OutputDataConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
-   payload.WithString("KmsKeyId", m_kmsKeyId);
-
+  if (m_kmsKeyIdHasBeenSet) {
+    payload.WithString("KmsKeyId", m_kmsKeyId);
   }
 
-  if(m_s3UriHasBeenSet)
-  {
-   payload.WithString("S3Uri", m_s3Uri);
-
+  if (m_s3UriHasBeenSet) {
+    payload.WithString("S3Uri", m_s3Uri);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace VoiceID
-} // namespace Aws
+}  // namespace Model
+}  // namespace VoiceID
+}  // namespace Aws

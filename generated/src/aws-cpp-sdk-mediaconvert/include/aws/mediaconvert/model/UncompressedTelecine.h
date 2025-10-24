@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class UncompressedTelecine
-  {
-    NOT_SET,
-    NONE,
-    HARD
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class UncompressedTelecine { NOT_SET, NONE, HARD };
 
-namespace UncompressedTelecineMapper
-{
+namespace UncompressedTelecineMapper {
 AWS_MEDIACONVERT_API UncompressedTelecine GetUncompressedTelecineForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForUncompressedTelecine(UncompressedTelecine value);
-} // namespace UncompressedTelecineMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace UncompressedTelecineMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

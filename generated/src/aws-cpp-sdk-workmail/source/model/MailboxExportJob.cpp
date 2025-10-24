@@ -3,134 +3,102 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workmail/model/MailboxExportJob.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workmail/model/MailboxExportJob.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WorkMail
-{
-namespace Model
-{
+namespace Aws {
+namespace WorkMail {
+namespace Model {
 
-MailboxExportJob::MailboxExportJob(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MailboxExportJob::MailboxExportJob(JsonView jsonValue) { *this = jsonValue; }
 
-MailboxExportJob& MailboxExportJob::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("JobId"))
-  {
+MailboxExportJob& MailboxExportJob::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("JobId")) {
     m_jobId = jsonValue.GetString("JobId");
     m_jobIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EntityId"))
-  {
+  if (jsonValue.ValueExists("EntityId")) {
     m_entityId = jsonValue.GetString("EntityId");
     m_entityIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("S3BucketName"))
-  {
+  if (jsonValue.ValueExists("S3BucketName")) {
     m_s3BucketName = jsonValue.GetString("S3BucketName");
     m_s3BucketNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("S3Path"))
-  {
+  if (jsonValue.ValueExists("S3Path")) {
     m_s3Path = jsonValue.GetString("S3Path");
     m_s3PathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EstimatedProgress"))
-  {
+  if (jsonValue.ValueExists("EstimatedProgress")) {
     m_estimatedProgress = jsonValue.GetInteger("EstimatedProgress");
     m_estimatedProgressHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("State"))
-  {
+  if (jsonValue.ValueExists("State")) {
     m_state = MailboxExportJobStateMapper::GetMailboxExportJobStateForName(jsonValue.GetString("State"));
     m_stateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StartTime"))
-  {
+  if (jsonValue.ValueExists("StartTime")) {
     m_startTime = jsonValue.GetDouble("StartTime");
     m_startTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EndTime"))
-  {
+  if (jsonValue.ValueExists("EndTime")) {
     m_endTime = jsonValue.GetDouble("EndTime");
     m_endTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MailboxExportJob::Jsonize() const
-{
+JsonValue MailboxExportJob::Jsonize() const {
   JsonValue payload;
 
-  if(m_jobIdHasBeenSet)
-  {
-   payload.WithString("JobId", m_jobId);
-
+  if (m_jobIdHasBeenSet) {
+    payload.WithString("JobId", m_jobId);
   }
 
-  if(m_entityIdHasBeenSet)
-  {
-   payload.WithString("EntityId", m_entityId);
-
+  if (m_entityIdHasBeenSet) {
+    payload.WithString("EntityId", m_entityId);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_s3BucketNameHasBeenSet)
-  {
-   payload.WithString("S3BucketName", m_s3BucketName);
-
+  if (m_s3BucketNameHasBeenSet) {
+    payload.WithString("S3BucketName", m_s3BucketName);
   }
 
-  if(m_s3PathHasBeenSet)
-  {
-   payload.WithString("S3Path", m_s3Path);
-
+  if (m_s3PathHasBeenSet) {
+    payload.WithString("S3Path", m_s3Path);
   }
 
-  if(m_estimatedProgressHasBeenSet)
-  {
-   payload.WithInteger("EstimatedProgress", m_estimatedProgress);
-
+  if (m_estimatedProgressHasBeenSet) {
+    payload.WithInteger("EstimatedProgress", m_estimatedProgress);
   }
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("State", MailboxExportJobStateMapper::GetNameForMailboxExportJobState(m_state));
+  if (m_stateHasBeenSet) {
+    payload.WithString("State", MailboxExportJobStateMapper::GetNameForMailboxExportJobState(m_state));
   }
 
-  if(m_startTimeHasBeenSet)
-  {
-   payload.WithDouble("StartTime", m_startTime.SecondsWithMSPrecision());
+  if (m_startTimeHasBeenSet) {
+    payload.WithDouble("StartTime", m_startTime.SecondsWithMSPrecision());
   }
 
-  if(m_endTimeHasBeenSet)
-  {
-   payload.WithDouble("EndTime", m_endTime.SecondsWithMSPrecision());
+  if (m_endTimeHasBeenSet) {
+    payload.WithDouble("EndTime", m_endTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WorkMail
-} // namespace Aws
+}  // namespace Model
+}  // namespace WorkMail
+}  // namespace Aws

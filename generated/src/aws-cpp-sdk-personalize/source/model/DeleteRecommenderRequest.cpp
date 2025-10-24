@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/personalize/model/DeleteRecommenderRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/personalize/model/DeleteRecommenderRequest.h>
 
 #include <utility>
 
@@ -12,27 +12,18 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteRecommenderRequest::SerializePayload() const
-{
+Aws::String DeleteRecommenderRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_recommenderArnHasBeenSet)
-  {
-   payload.WithString("recommenderArn", m_recommenderArn);
-
+  if (m_recommenderArnHasBeenSet) {
+    payload.WithString("recommenderArn", m_recommenderArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteRecommenderRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteRecommenderRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonPersonalize.DeleteRecommender"));
   return headers;
-
 }
-
-
-
-

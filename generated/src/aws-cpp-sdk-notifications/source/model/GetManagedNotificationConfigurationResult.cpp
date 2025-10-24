@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/notifications/model/GetManagedNotificationConfigurationResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/notifications/model/GetManagedNotificationConfigurationResult.h>
 
 #include <utility>
 
@@ -17,48 +17,40 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetManagedNotificationConfigurationResult::GetManagedNotificationConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetManagedNotificationConfigurationResult::GetManagedNotificationConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-GetManagedNotificationConfigurationResult& GetManagedNotificationConfigurationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetManagedNotificationConfigurationResult& GetManagedNotificationConfigurationResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("arn"))
-  {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("category"))
-  {
+  if (jsonValue.ValueExists("category")) {
     m_category = jsonValue.GetString("category");
     m_categoryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("subCategory"))
-  {
+  if (jsonValue.ValueExists("subCategory")) {
     m_subCategory = jsonValue.GetString("subCategory");
     m_subCategoryHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

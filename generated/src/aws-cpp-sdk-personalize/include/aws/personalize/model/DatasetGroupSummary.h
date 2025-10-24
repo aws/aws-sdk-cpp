@@ -4,151 +4,186 @@
  */
 
 #pragma once
-#include <aws/personalize/Personalize_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/personalize/Personalize_EXPORTS.h>
 #include <aws/personalize/model/Domain.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace Personalize
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Personalize {
+namespace Model {
 
+/**
+ * <p>Provides a summary of the properties of a dataset group. For a complete
+ * listing, call the <a
+ * href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a>
+ * API.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DatasetGroupSummary">AWS
+ * API Reference</a></p>
+ */
+class DatasetGroupSummary {
+ public:
+  AWS_PERSONALIZE_API DatasetGroupSummary() = default;
+  AWS_PERSONALIZE_API DatasetGroupSummary(Aws::Utils::Json::JsonView jsonValue);
+  AWS_PERSONALIZE_API DatasetGroupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Provides a summary of the properties of a dataset group. For a complete
-   * listing, call the <a
-   * href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a>
-   * API.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DatasetGroupSummary">AWS
-   * API Reference</a></p>
+   * <p>The name of the dataset group.</p>
    */
-  class DatasetGroupSummary
-  {
-  public:
-    AWS_PERSONALIZE_API DatasetGroupSummary() = default;
-    AWS_PERSONALIZE_API DatasetGroupSummary(Aws::Utils::Json::JsonView jsonValue);
-    AWS_PERSONALIZE_API DatasetGroupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  DatasetGroupSummary& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the dataset group.</p>
+   */
+  inline const Aws::String& GetDatasetGroupArn() const { return m_datasetGroupArn; }
+  inline bool DatasetGroupArnHasBeenSet() const { return m_datasetGroupArnHasBeenSet; }
+  template <typename DatasetGroupArnT = Aws::String>
+  void SetDatasetGroupArn(DatasetGroupArnT&& value) {
+    m_datasetGroupArnHasBeenSet = true;
+    m_datasetGroupArn = std::forward<DatasetGroupArnT>(value);
+  }
+  template <typename DatasetGroupArnT = Aws::String>
+  DatasetGroupSummary& WithDatasetGroupArn(DatasetGroupArnT&& value) {
+    SetDatasetGroupArn(std::forward<DatasetGroupArnT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The name of the dataset group.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    DatasetGroupSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The status of the dataset group.</p> <p>A dataset group can be in one of the
+   * following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt;
+   * ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE PENDING</p> </li> </ul>
+   */
+  inline const Aws::String& GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  template <typename StatusT = Aws::String>
+  void SetStatus(StatusT&& value) {
+    m_statusHasBeenSet = true;
+    m_status = std::forward<StatusT>(value);
+  }
+  template <typename StatusT = Aws::String>
+  DatasetGroupSummary& WithStatus(StatusT&& value) {
+    SetStatus(std::forward<StatusT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset group.</p>
-     */
-    inline const Aws::String& GetDatasetGroupArn() const { return m_datasetGroupArn; }
-    inline bool DatasetGroupArnHasBeenSet() const { return m_datasetGroupArnHasBeenSet; }
-    template<typename DatasetGroupArnT = Aws::String>
-    void SetDatasetGroupArn(DatasetGroupArnT&& value) { m_datasetGroupArnHasBeenSet = true; m_datasetGroupArn = std::forward<DatasetGroupArnT>(value); }
-    template<typename DatasetGroupArnT = Aws::String>
-    DatasetGroupSummary& WithDatasetGroupArn(DatasetGroupArnT&& value) { SetDatasetGroupArn(std::forward<DatasetGroupArnT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The date and time (in Unix time) that the dataset group was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreationDateTime() const { return m_creationDateTime; }
+  inline bool CreationDateTimeHasBeenSet() const { return m_creationDateTimeHasBeenSet; }
+  template <typename CreationDateTimeT = Aws::Utils::DateTime>
+  void SetCreationDateTime(CreationDateTimeT&& value) {
+    m_creationDateTimeHasBeenSet = true;
+    m_creationDateTime = std::forward<CreationDateTimeT>(value);
+  }
+  template <typename CreationDateTimeT = Aws::Utils::DateTime>
+  DatasetGroupSummary& WithCreationDateTime(CreationDateTimeT&& value) {
+    SetCreationDateTime(std::forward<CreationDateTimeT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The status of the dataset group.</p> <p>A dataset group can be in one of the
-     * following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt;
-     * ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE PENDING</p> </li> </ul>
-     */
-    inline const Aws::String& GetStatus() const { return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    template<typename StatusT = Aws::String>
-    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
-    template<typename StatusT = Aws::String>
-    DatasetGroupSummary& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The date and time (in Unix time) that the dataset group was last updated.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const { return m_lastUpdatedDateTime; }
+  inline bool LastUpdatedDateTimeHasBeenSet() const { return m_lastUpdatedDateTimeHasBeenSet; }
+  template <typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
+  void SetLastUpdatedDateTime(LastUpdatedDateTimeT&& value) {
+    m_lastUpdatedDateTimeHasBeenSet = true;
+    m_lastUpdatedDateTime = std::forward<LastUpdatedDateTimeT>(value);
+  }
+  template <typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
+  DatasetGroupSummary& WithLastUpdatedDateTime(LastUpdatedDateTimeT&& value) {
+    SetLastUpdatedDateTime(std::forward<LastUpdatedDateTimeT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The date and time (in Unix time) that the dataset group was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreationDateTime() const { return m_creationDateTime; }
-    inline bool CreationDateTimeHasBeenSet() const { return m_creationDateTimeHasBeenSet; }
-    template<typename CreationDateTimeT = Aws::Utils::DateTime>
-    void SetCreationDateTime(CreationDateTimeT&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::forward<CreationDateTimeT>(value); }
-    template<typename CreationDateTimeT = Aws::Utils::DateTime>
-    DatasetGroupSummary& WithCreationDateTime(CreationDateTimeT&& value) { SetCreationDateTime(std::forward<CreationDateTimeT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>If creating a dataset group fails, the reason behind the failure.</p>
+   */
+  inline const Aws::String& GetFailureReason() const { return m_failureReason; }
+  inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
+  template <typename FailureReasonT = Aws::String>
+  void SetFailureReason(FailureReasonT&& value) {
+    m_failureReasonHasBeenSet = true;
+    m_failureReason = std::forward<FailureReasonT>(value);
+  }
+  template <typename FailureReasonT = Aws::String>
+  DatasetGroupSummary& WithFailureReason(FailureReasonT&& value) {
+    SetFailureReason(std::forward<FailureReasonT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The date and time (in Unix time) that the dataset group was last updated.</p>
-     */
-    inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const { return m_lastUpdatedDateTime; }
-    inline bool LastUpdatedDateTimeHasBeenSet() const { return m_lastUpdatedDateTimeHasBeenSet; }
-    template<typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
-    void SetLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = std::forward<LastUpdatedDateTimeT>(value); }
-    template<typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
-    DatasetGroupSummary& WithLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { SetLastUpdatedDateTime(std::forward<LastUpdatedDateTimeT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The domain of a Domain dataset group.</p>
+   */
+  inline Domain GetDomain() const { return m_domain; }
+  inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+  inline void SetDomain(Domain value) {
+    m_domainHasBeenSet = true;
+    m_domain = value;
+  }
+  inline DatasetGroupSummary& WithDomain(Domain value) {
+    SetDomain(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_name;
+  bool m_nameHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>If creating a dataset group fails, the reason behind the failure.</p>
-     */
-    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
-    inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
-    template<typename FailureReasonT = Aws::String>
-    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
-    template<typename FailureReasonT = Aws::String>
-    DatasetGroupSummary& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
-    ///@}
+  Aws::String m_datasetGroupArn;
+  bool m_datasetGroupArnHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The domain of a Domain dataset group.</p>
-     */
-    inline Domain GetDomain() const { return m_domain; }
-    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(Domain value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline DatasetGroupSummary& WithDomain(Domain value) { SetDomain(value); return *this;}
-    ///@}
-  private:
+  Aws::String m_status;
+  bool m_statusHasBeenSet = false;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
+  Aws::Utils::DateTime m_creationDateTime{};
+  bool m_creationDateTimeHasBeenSet = false;
 
-    Aws::String m_datasetGroupArn;
-    bool m_datasetGroupArnHasBeenSet = false;
+  Aws::Utils::DateTime m_lastUpdatedDateTime{};
+  bool m_lastUpdatedDateTimeHasBeenSet = false;
 
-    Aws::String m_status;
-    bool m_statusHasBeenSet = false;
+  Aws::String m_failureReason;
+  bool m_failureReasonHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDateTime{};
-    bool m_creationDateTimeHasBeenSet = false;
+  Domain m_domain{Domain::NOT_SET};
+  bool m_domainHasBeenSet = false;
+};
 
-    Aws::Utils::DateTime m_lastUpdatedDateTime{};
-    bool m_lastUpdatedDateTimeHasBeenSet = false;
-
-    Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet = false;
-
-    Domain m_domain{Domain::NOT_SET};
-    bool m_domainHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Personalize
-} // namespace Aws
+}  // namespace Model
+}  // namespace Personalize
+}  // namespace Aws

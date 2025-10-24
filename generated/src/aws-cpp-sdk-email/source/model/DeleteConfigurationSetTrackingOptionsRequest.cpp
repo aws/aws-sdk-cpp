@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/email/model/DeleteConfigurationSetTrackingOptionsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/email/model/DeleteConfigurationSetTrackingOptionsRequest.h>
 
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteConfigurationSetTrackingOptionsRequest::SerializePayload() const
-{
+Aws::String DeleteConfigurationSetTrackingOptionsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteConfigurationSetTrackingOptions&";
-  if(m_configurationSetNameHasBeenSet)
-  {
+  if (m_configurationSetNameHasBeenSet) {
     ss << "ConfigurationSetName=" << StringUtils::URLEncode(m_configurationSetName.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteConfigurationSetTrackingOptionsRequest::SerializePayload() con
   return ss.str();
 }
 
-
-void  DeleteConfigurationSetTrackingOptionsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteConfigurationSetTrackingOptionsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

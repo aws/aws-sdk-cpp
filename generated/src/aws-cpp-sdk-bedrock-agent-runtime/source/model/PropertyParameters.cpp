@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-PropertyParameters::PropertyParameters(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PropertyParameters::PropertyParameters(JsonView jsonValue) { *this = jsonValue; }
 
-PropertyParameters& PropertyParameters::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("properties"))
-  {
+PropertyParameters& PropertyParameters::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("properties")) {
     Aws::Utils::Array<JsonView> propertiesJsonList = jsonValue.GetArray("properties");
-    for(unsigned propertiesIndex = 0; propertiesIndex < propertiesJsonList.GetLength(); ++propertiesIndex)
-    {
+    for (unsigned propertiesIndex = 0; propertiesIndex < propertiesJsonList.GetLength(); ++propertiesIndex) {
       m_properties.push_back(propertiesJsonList[propertiesIndex].AsObject());
     }
     m_propertiesHasBeenSet = true;
@@ -37,24 +28,20 @@ PropertyParameters& PropertyParameters::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue PropertyParameters::Jsonize() const
-{
+JsonValue PropertyParameters::Jsonize() const {
   JsonValue payload;
 
-  if(m_propertiesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> propertiesJsonList(m_properties.size());
-   for(unsigned propertiesIndex = 0; propertiesIndex < propertiesJsonList.GetLength(); ++propertiesIndex)
-   {
-     propertiesJsonList[propertiesIndex].AsObject(m_properties[propertiesIndex].Jsonize());
-   }
-   payload.WithArray("properties", std::move(propertiesJsonList));
-
+  if (m_propertiesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> propertiesJsonList(m_properties.size());
+    for (unsigned propertiesIndex = 0; propertiesIndex < propertiesJsonList.GetLength(); ++propertiesIndex) {
+      propertiesJsonList[propertiesIndex].AsObject(m_properties[propertiesIndex].Jsonize());
+    }
+    payload.WithArray("properties", std::move(propertiesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-RoutingProfileQueueConfig::RoutingProfileQueueConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RoutingProfileQueueConfig::RoutingProfileQueueConfig(JsonView jsonValue) { *this = jsonValue; }
 
-RoutingProfileQueueConfig& RoutingProfileQueueConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("QueueReference"))
-  {
+RoutingProfileQueueConfig& RoutingProfileQueueConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("QueueReference")) {
     m_queueReference = jsonValue.GetObject("QueueReference");
     m_queueReferenceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Priority"))
-  {
+  if (jsonValue.ValueExists("Priority")) {
     m_priority = jsonValue.GetInteger("Priority");
     m_priorityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Delay"))
-  {
+  if (jsonValue.ValueExists("Delay")) {
     m_delay = jsonValue.GetInteger("Delay");
     m_delayHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RoutingProfileQueueConfig::Jsonize() const
-{
+JsonValue RoutingProfileQueueConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_queueReferenceHasBeenSet)
-  {
-   payload.WithObject("QueueReference", m_queueReference.Jsonize());
-
+  if (m_queueReferenceHasBeenSet) {
+    payload.WithObject("QueueReference", m_queueReference.Jsonize());
   }
 
-  if(m_priorityHasBeenSet)
-  {
-   payload.WithInteger("Priority", m_priority);
-
+  if (m_priorityHasBeenSet) {
+    payload.WithInteger("Priority", m_priority);
   }
 
-  if(m_delayHasBeenSet)
-  {
-   payload.WithInteger("Delay", m_delay);
-
+  if (m_delayHasBeenSet) {
+    payload.WithInteger("Delay", m_delay);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/translate/TranslateRequest.h>
 
-namespace Aws
-{
-namespace Translate
-{
-} // namespace Translate
-} // namespace Aws
+namespace Aws {
+namespace Translate {}  // namespace Translate
+}  // namespace Aws

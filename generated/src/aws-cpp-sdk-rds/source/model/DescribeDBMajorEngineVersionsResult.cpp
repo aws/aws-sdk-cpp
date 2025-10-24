@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/DescribeDBMajorEngineVersionsResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/rds/model/DescribeDBMajorEngineVersionsResult.h>
 
 #include <utility>
 
@@ -17,30 +17,25 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDBMajorEngineVersionsResult::DescribeDBMajorEngineVersionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeDBMajorEngineVersionsResult::DescribeDBMajorEngineVersionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-DescribeDBMajorEngineVersionsResult& DescribeDBMajorEngineVersionsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeDBMajorEngineVersionsResult& DescribeDBMajorEngineVersionsResult::operator=(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeDBMajorEngineVersionsResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeDBMajorEngineVersionsResult")) {
     resultNode = rootNode.FirstChild("DescribeDBMajorEngineVersionsResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode dBMajorEngineVersionsNode = resultNode.FirstChild("DBMajorEngineVersions");
-    if(!dBMajorEngineVersionsNode.IsNull())
-    {
+    if (!dBMajorEngineVersionsNode.IsNull()) {
       XmlNode dBMajorEngineVersionsMember = dBMajorEngineVersionsNode.FirstChild("DBMajorEngineVersion");
       m_dBMajorEngineVersionsHasBeenSet = !dBMajorEngineVersionsMember.IsNull();
-      while(!dBMajorEngineVersionsMember.IsNull())
-      {
+      while (!dBMajorEngineVersionsMember.IsNull()) {
         m_dBMajorEngineVersions.push_back(dBMajorEngineVersionsMember);
         dBMajorEngineVersionsMember = dBMajorEngineVersionsMember.NextNode("DBMajorEngineVersion");
       }
@@ -48,8 +43,7 @@ DescribeDBMajorEngineVersionsResult& DescribeDBMajorEngineVersionsResult::operat
       m_dBMajorEngineVersionsHasBeenSet = true;
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    if(!markerNode.IsNull())
-    {
+    if (!markerNode.IsNull()) {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
       m_markerHasBeenSet = true;
     }
@@ -59,7 +53,7 @@ DescribeDBMajorEngineVersionsResult& DescribeDBMajorEngineVersionsResult::operat
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DescribeDBMajorEngineVersionsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DescribeDBMajorEngineVersionsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

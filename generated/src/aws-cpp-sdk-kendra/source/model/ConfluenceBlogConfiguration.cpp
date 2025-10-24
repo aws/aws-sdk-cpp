@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kendra/model/ConfluenceBlogConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kendra/model/ConfluenceBlogConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace kendra
-{
-namespace Model
-{
+namespace Aws {
+namespace kendra {
+namespace Model {
 
-ConfluenceBlogConfiguration::ConfluenceBlogConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConfluenceBlogConfiguration::ConfluenceBlogConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ConfluenceBlogConfiguration& ConfluenceBlogConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("BlogFieldMappings"))
-  {
+ConfluenceBlogConfiguration& ConfluenceBlogConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("BlogFieldMappings")) {
     Aws::Utils::Array<JsonView> blogFieldMappingsJsonList = jsonValue.GetArray("BlogFieldMappings");
-    for(unsigned blogFieldMappingsIndex = 0; blogFieldMappingsIndex < blogFieldMappingsJsonList.GetLength(); ++blogFieldMappingsIndex)
-    {
+    for (unsigned blogFieldMappingsIndex = 0; blogFieldMappingsIndex < blogFieldMappingsJsonList.GetLength(); ++blogFieldMappingsIndex) {
       m_blogFieldMappings.push_back(blogFieldMappingsJsonList[blogFieldMappingsIndex].AsObject());
     }
     m_blogFieldMappingsHasBeenSet = true;
@@ -37,24 +28,20 @@ ConfluenceBlogConfiguration& ConfluenceBlogConfiguration::operator =(JsonView js
   return *this;
 }
 
-JsonValue ConfluenceBlogConfiguration::Jsonize() const
-{
+JsonValue ConfluenceBlogConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_blogFieldMappingsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> blogFieldMappingsJsonList(m_blogFieldMappings.size());
-   for(unsigned blogFieldMappingsIndex = 0; blogFieldMappingsIndex < blogFieldMappingsJsonList.GetLength(); ++blogFieldMappingsIndex)
-   {
-     blogFieldMappingsJsonList[blogFieldMappingsIndex].AsObject(m_blogFieldMappings[blogFieldMappingsIndex].Jsonize());
-   }
-   payload.WithArray("BlogFieldMappings", std::move(blogFieldMappingsJsonList));
-
+  if (m_blogFieldMappingsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> blogFieldMappingsJsonList(m_blogFieldMappings.size());
+    for (unsigned blogFieldMappingsIndex = 0; blogFieldMappingsIndex < blogFieldMappingsJsonList.GetLength(); ++blogFieldMappingsIndex) {
+      blogFieldMappingsJsonList[blogFieldMappingsIndex].AsObject(m_blogFieldMappings[blogFieldMappingsIndex].Jsonize());
+    }
+    payload.WithArray("BlogFieldMappings", std::move(blogFieldMappingsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace kendra
-} // namespace Aws
+}  // namespace Model
+}  // namespace kendra
+}  // namespace Aws

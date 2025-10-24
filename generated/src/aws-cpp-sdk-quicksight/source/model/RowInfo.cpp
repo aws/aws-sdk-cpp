@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/RowInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/RowInfo.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-RowInfo::RowInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RowInfo::RowInfo(JsonView jsonValue) { *this = jsonValue; }
 
-RowInfo& RowInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RowsIngested"))
-  {
+RowInfo& RowInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RowsIngested")) {
     m_rowsIngested = jsonValue.GetInt64("RowsIngested");
     m_rowsIngestedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RowsDropped"))
-  {
+  if (jsonValue.ValueExists("RowsDropped")) {
     m_rowsDropped = jsonValue.GetInt64("RowsDropped");
     m_rowsDroppedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TotalRowsInDataset"))
-  {
+  if (jsonValue.ValueExists("TotalRowsInDataset")) {
     m_totalRowsInDataset = jsonValue.GetInt64("TotalRowsInDataset");
     m_totalRowsInDatasetHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RowInfo::Jsonize() const
-{
+JsonValue RowInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_rowsIngestedHasBeenSet)
-  {
-   payload.WithInt64("RowsIngested", m_rowsIngested);
-
+  if (m_rowsIngestedHasBeenSet) {
+    payload.WithInt64("RowsIngested", m_rowsIngested);
   }
 
-  if(m_rowsDroppedHasBeenSet)
-  {
-   payload.WithInt64("RowsDropped", m_rowsDropped);
-
+  if (m_rowsDroppedHasBeenSet) {
+    payload.WithInt64("RowsDropped", m_rowsDropped);
   }
 
-  if(m_totalRowsInDatasetHasBeenSet)
-  {
-   payload.WithInt64("TotalRowsInDataset", m_totalRowsInDataset);
-
+  if (m_totalRowsInDatasetHasBeenSet) {
+    payload.WithInt64("TotalRowsInDataset", m_totalRowsInDataset);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

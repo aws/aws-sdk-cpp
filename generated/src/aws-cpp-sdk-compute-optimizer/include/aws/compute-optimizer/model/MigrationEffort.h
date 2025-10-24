@@ -7,27 +7,16 @@
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
-  enum class MigrationEffort
-  {
-    NOT_SET,
-    VeryLow,
-    Low,
-    Medium,
-    High
-  };
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
+enum class MigrationEffort { NOT_SET, VeryLow, Low, Medium, High };
 
-namespace MigrationEffortMapper
-{
+namespace MigrationEffortMapper {
 AWS_COMPUTEOPTIMIZER_API MigrationEffort GetMigrationEffortForName(const Aws::String& name);
 
 AWS_COMPUTEOPTIMIZER_API Aws::String GetNameForMigrationEffort(MigrationEffort value);
-} // namespace MigrationEffortMapper
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace MigrationEffortMapper
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

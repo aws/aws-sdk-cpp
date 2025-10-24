@@ -12,38 +12,26 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartRemediationExecutionRequest::SerializePayload() const
-{
+Aws::String StartRemediationExecutionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_configRuleNameHasBeenSet)
-  {
-   payload.WithString("ConfigRuleName", m_configRuleName);
-
+  if (m_configRuleNameHasBeenSet) {
+    payload.WithString("ConfigRuleName", m_configRuleName);
   }
 
-  if(m_resourceKeysHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> resourceKeysJsonList(m_resourceKeys.size());
-   for(unsigned resourceKeysIndex = 0; resourceKeysIndex < resourceKeysJsonList.GetLength(); ++resourceKeysIndex)
-   {
-     resourceKeysJsonList[resourceKeysIndex].AsObject(m_resourceKeys[resourceKeysIndex].Jsonize());
-   }
-   payload.WithArray("ResourceKeys", std::move(resourceKeysJsonList));
-
+  if (m_resourceKeysHasBeenSet) {
+    Aws::Utils::Array<JsonValue> resourceKeysJsonList(m_resourceKeys.size());
+    for (unsigned resourceKeysIndex = 0; resourceKeysIndex < resourceKeysJsonList.GetLength(); ++resourceKeysIndex) {
+      resourceKeysJsonList[resourceKeysIndex].AsObject(m_resourceKeys[resourceKeysIndex].Jsonize());
+    }
+    payload.WithArray("ResourceKeys", std::move(resourceKeysJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection StartRemediationExecutionRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection StartRemediationExecutionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "StarlingDoveService.StartRemediationExecution"));
   return headers;
-
 }
-
-
-
-

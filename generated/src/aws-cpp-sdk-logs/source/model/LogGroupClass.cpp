@@ -3,77 +3,61 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/logs/model/LogGroupClass.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/logs/model/LogGroupClass.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace CloudWatchLogs {
+namespace Model {
+namespace LogGroupClassMapper {
 
-namespace Aws
-{
-  namespace CloudWatchLogs
-  {
-    namespace Model
-    {
-      namespace LogGroupClassMapper
-      {
+static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
+static const int INFREQUENT_ACCESS_HASH = HashingUtils::HashString("INFREQUENT_ACCESS");
+static const int DELIVERY_HASH = HashingUtils::HashString("DELIVERY");
 
-        static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
-        static const int INFREQUENT_ACCESS_HASH = HashingUtils::HashString("INFREQUENT_ACCESS");
-        static const int DELIVERY_HASH = HashingUtils::HashString("DELIVERY");
+LogGroupClass GetLogGroupClassForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == STANDARD_HASH) {
+    return LogGroupClass::STANDARD;
+  } else if (hashCode == INFREQUENT_ACCESS_HASH) {
+    return LogGroupClass::INFREQUENT_ACCESS;
+  } else if (hashCode == DELIVERY_HASH) {
+    return LogGroupClass::DELIVERY;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<LogGroupClass>(hashCode);
+  }
 
+  return LogGroupClass::NOT_SET;
+}
 
-        LogGroupClass GetLogGroupClassForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == STANDARD_HASH)
-          {
-            return LogGroupClass::STANDARD;
-          }
-          else if (hashCode == INFREQUENT_ACCESS_HASH)
-          {
-            return LogGroupClass::INFREQUENT_ACCESS;
-          }
-          else if (hashCode == DELIVERY_HASH)
-          {
-            return LogGroupClass::DELIVERY;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<LogGroupClass>(hashCode);
-          }
+Aws::String GetNameForLogGroupClass(LogGroupClass enumValue) {
+  switch (enumValue) {
+    case LogGroupClass::NOT_SET:
+      return {};
+    case LogGroupClass::STANDARD:
+      return "STANDARD";
+    case LogGroupClass::INFREQUENT_ACCESS:
+      return "INFREQUENT_ACCESS";
+    case LogGroupClass::DELIVERY:
+      return "DELIVERY";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return LogGroupClass::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForLogGroupClass(LogGroupClass enumValue)
-        {
-          switch(enumValue)
-          {
-          case LogGroupClass::NOT_SET:
-            return {};
-          case LogGroupClass::STANDARD:
-            return "STANDARD";
-          case LogGroupClass::INFREQUENT_ACCESS:
-            return "INFREQUENT_ACCESS";
-          case LogGroupClass::DELIVERY:
-            return "DELIVERY";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace LogGroupClassMapper
-    } // namespace Model
-  } // namespace CloudWatchLogs
-} // namespace Aws
+}  // namespace LogGroupClassMapper
+}  // namespace Model
+}  // namespace CloudWatchLogs
+}  // namespace Aws

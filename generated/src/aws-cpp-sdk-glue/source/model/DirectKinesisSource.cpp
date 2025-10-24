@@ -3,93 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/DirectKinesisSource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/DirectKinesisSource.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
+namespace Aws {
+namespace Glue {
+namespace Model {
 
-DirectKinesisSource::DirectKinesisSource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DirectKinesisSource::DirectKinesisSource(JsonView jsonValue) { *this = jsonValue; }
 
-DirectKinesisSource& DirectKinesisSource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+DirectKinesisSource& DirectKinesisSource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WindowSize"))
-  {
+  if (jsonValue.ValueExists("WindowSize")) {
     m_windowSize = jsonValue.GetInteger("WindowSize");
     m_windowSizeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DetectSchema"))
-  {
+  if (jsonValue.ValueExists("DetectSchema")) {
     m_detectSchema = jsonValue.GetBool("DetectSchema");
     m_detectSchemaHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StreamingOptions"))
-  {
+  if (jsonValue.ValueExists("StreamingOptions")) {
     m_streamingOptions = jsonValue.GetObject("StreamingOptions");
     m_streamingOptionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DataPreviewOptions"))
-  {
+  if (jsonValue.ValueExists("DataPreviewOptions")) {
     m_dataPreviewOptions = jsonValue.GetObject("DataPreviewOptions");
     m_dataPreviewOptionsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DirectKinesisSource::Jsonize() const
-{
+JsonValue DirectKinesisSource::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_windowSizeHasBeenSet)
-  {
-   payload.WithInteger("WindowSize", m_windowSize);
-
+  if (m_windowSizeHasBeenSet) {
+    payload.WithInteger("WindowSize", m_windowSize);
   }
 
-  if(m_detectSchemaHasBeenSet)
-  {
-   payload.WithBool("DetectSchema", m_detectSchema);
-
+  if (m_detectSchemaHasBeenSet) {
+    payload.WithBool("DetectSchema", m_detectSchema);
   }
 
-  if(m_streamingOptionsHasBeenSet)
-  {
-   payload.WithObject("StreamingOptions", m_streamingOptions.Jsonize());
-
+  if (m_streamingOptionsHasBeenSet) {
+    payload.WithObject("StreamingOptions", m_streamingOptions.Jsonize());
   }
 
-  if(m_dataPreviewOptionsHasBeenSet)
-  {
-   payload.WithObject("DataPreviewOptions", m_dataPreviewOptions.Jsonize());
-
+  if (m_dataPreviewOptionsHasBeenSet) {
+    payload.WithObject("DataPreviewOptions", m_dataPreviewOptions.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

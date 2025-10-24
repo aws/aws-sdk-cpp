@@ -10,21 +10,15 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String BatchDescribeTypeConfigurationsRequest::SerializePayload() const
-{
+Aws::String BatchDescribeTypeConfigurationsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=BatchDescribeTypeConfigurations&";
-  if(m_typeConfigurationIdentifiersHasBeenSet)
-  {
-    if (m_typeConfigurationIdentifiers.empty())
-    {
+  if (m_typeConfigurationIdentifiersHasBeenSet) {
+    if (m_typeConfigurationIdentifiers.empty()) {
       ss << "TypeConfigurationIdentifiers=&";
-    }
-    else
-    {
+    } else {
       unsigned typeConfigurationIdentifiersCount = 1;
-      for(auto& item : m_typeConfigurationIdentifiers)
-      {
+      for (auto& item : m_typeConfigurationIdentifiers) {
         item.OutputToStream(ss, "TypeConfigurationIdentifiers.member.", typeConfigurationIdentifiersCount, "");
         typeConfigurationIdentifiersCount++;
       }
@@ -35,8 +29,4 @@ Aws::String BatchDescribeTypeConfigurationsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  BatchDescribeTypeConfigurationsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void BatchDescribeTypeConfigurationsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

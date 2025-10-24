@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BillingConductor
-{
-namespace Model
-{
+namespace Aws {
+namespace BillingConductor {
+namespace Model {
 
-PresentationObject::PresentationObject(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PresentationObject::PresentationObject(JsonView jsonValue) { *this = jsonValue; }
 
-PresentationObject& PresentationObject::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Service"))
-  {
+PresentationObject& PresentationObject::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Service")) {
     m_service = jsonValue.GetString("Service");
     m_serviceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PresentationObject::Jsonize() const
-{
+JsonValue PresentationObject::Jsonize() const {
   JsonValue payload;
 
-  if(m_serviceHasBeenSet)
-  {
-   payload.WithString("Service", m_service);
-
+  if (m_serviceHasBeenSet) {
+    payload.WithString("Service", m_service);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BillingConductor
-} // namespace Aws
+}  // namespace Model
+}  // namespace BillingConductor
+}  // namespace Aws

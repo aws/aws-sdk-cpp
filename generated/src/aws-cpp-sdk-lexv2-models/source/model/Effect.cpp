@@ -3,70 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lexv2-models/model/Effect.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/lexv2-models/model/Effect.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
+namespace EffectMapper {
 
-namespace Aws
-{
-  namespace LexModelsV2
-  {
-    namespace Model
-    {
-      namespace EffectMapper
-      {
+static const int Allow_HASH = HashingUtils::HashString("Allow");
+static const int Deny_HASH = HashingUtils::HashString("Deny");
 
-        static const int Allow_HASH = HashingUtils::HashString("Allow");
-        static const int Deny_HASH = HashingUtils::HashString("Deny");
+Effect GetEffectForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == Allow_HASH) {
+    return Effect::Allow;
+  } else if (hashCode == Deny_HASH) {
+    return Effect::Deny;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<Effect>(hashCode);
+  }
 
+  return Effect::NOT_SET;
+}
 
-        Effect GetEffectForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Allow_HASH)
-          {
-            return Effect::Allow;
-          }
-          else if (hashCode == Deny_HASH)
-          {
-            return Effect::Deny;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<Effect>(hashCode);
-          }
+Aws::String GetNameForEffect(Effect enumValue) {
+  switch (enumValue) {
+    case Effect::NOT_SET:
+      return {};
+    case Effect::Allow:
+      return "Allow";
+    case Effect::Deny:
+      return "Deny";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return Effect::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForEffect(Effect enumValue)
-        {
-          switch(enumValue)
-          {
-          case Effect::NOT_SET:
-            return {};
-          case Effect::Allow:
-            return "Allow";
-          case Effect::Deny:
-            return "Deny";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace EffectMapper
-    } // namespace Model
-  } // namespace LexModelsV2
-} // namespace Aws
+}  // namespace EffectMapper
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

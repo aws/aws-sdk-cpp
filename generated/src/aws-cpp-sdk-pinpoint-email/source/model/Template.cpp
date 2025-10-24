@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint-email/model/Template.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint-email/model/Template.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace PinpointEmail
-{
-namespace Model
-{
+namespace Aws {
+namespace PinpointEmail {
+namespace Model {
 
-Template::Template(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Template::Template(JsonView jsonValue) { *this = jsonValue; }
 
-Template& Template::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TemplateArn"))
-  {
+Template& Template::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TemplateArn")) {
     m_templateArn = jsonValue.GetString("TemplateArn");
     m_templateArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TemplateData"))
-  {
+  if (jsonValue.ValueExists("TemplateData")) {
     m_templateData = jsonValue.GetString("TemplateData");
     m_templateDataHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Template::Jsonize() const
-{
+JsonValue Template::Jsonize() const {
   JsonValue payload;
 
-  if(m_templateArnHasBeenSet)
-  {
-   payload.WithString("TemplateArn", m_templateArn);
-
+  if (m_templateArnHasBeenSet) {
+    payload.WithString("TemplateArn", m_templateArn);
   }
 
-  if(m_templateDataHasBeenSet)
-  {
-   payload.WithString("TemplateData", m_templateData);
-
+  if (m_templateDataHasBeenSet) {
+    payload.WithString("TemplateData", m_templateData);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace PinpointEmail
-} // namespace Aws
+}  // namespace Model
+}  // namespace PinpointEmail
+}  // namespace Aws

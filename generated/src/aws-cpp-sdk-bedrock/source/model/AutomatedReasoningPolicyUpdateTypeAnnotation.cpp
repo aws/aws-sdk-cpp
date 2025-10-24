@@ -11,40 +11,28 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-AutomatedReasoningPolicyUpdateTypeAnnotation::AutomatedReasoningPolicyUpdateTypeAnnotation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AutomatedReasoningPolicyUpdateTypeAnnotation::AutomatedReasoningPolicyUpdateTypeAnnotation(JsonView jsonValue) { *this = jsonValue; }
 
-AutomatedReasoningPolicyUpdateTypeAnnotation& AutomatedReasoningPolicyUpdateTypeAnnotation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+AutomatedReasoningPolicyUpdateTypeAnnotation& AutomatedReasoningPolicyUpdateTypeAnnotation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("newName"))
-  {
+  if (jsonValue.ValueExists("newName")) {
     m_newName = jsonValue.GetString("newName");
     m_newNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("values"))
-  {
+  if (jsonValue.ValueExists("values")) {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
-    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-    {
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
       m_values.push_back(valuesJsonList[valuesIndex].AsObject());
     }
     m_valuesHasBeenSet = true;
@@ -52,42 +40,32 @@ AutomatedReasoningPolicyUpdateTypeAnnotation& AutomatedReasoningPolicyUpdateType
   return *this;
 }
 
-JsonValue AutomatedReasoningPolicyUpdateTypeAnnotation::Jsonize() const
-{
+JsonValue AutomatedReasoningPolicyUpdateTypeAnnotation::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_newNameHasBeenSet)
-  {
-   payload.WithString("newName", m_newName);
-
+  if (m_newNameHasBeenSet) {
+    payload.WithString("newName", m_newName);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_valuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
-   for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-   {
-     valuesJsonList[valuesIndex].AsObject(m_values[valuesIndex].Jsonize());
-   }
-   payload.WithArray("values", std::move(valuesJsonList));
-
+  if (m_valuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
+      valuesJsonList[valuesIndex].AsObject(m_values[valuesIndex].Jsonize());
+    }
+    payload.WithArray("values", std::move(valuesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

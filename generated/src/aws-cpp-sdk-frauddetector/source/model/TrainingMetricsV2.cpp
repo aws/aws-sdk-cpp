@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/frauddetector/model/TrainingMetricsV2.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/frauddetector/model/TrainingMetricsV2.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FraudDetector
-{
-namespace Model
-{
+namespace Aws {
+namespace FraudDetector {
+namespace Model {
 
-TrainingMetricsV2::TrainingMetricsV2(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TrainingMetricsV2::TrainingMetricsV2(JsonView jsonValue) { *this = jsonValue; }
 
-TrainingMetricsV2& TrainingMetricsV2::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ofi"))
-  {
+TrainingMetricsV2& TrainingMetricsV2::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ofi")) {
     m_ofi = jsonValue.GetObject("ofi");
     m_ofiHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tfi"))
-  {
+  if (jsonValue.ValueExists("tfi")) {
     m_tfi = jsonValue.GetObject("tfi");
     m_tfiHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ati"))
-  {
+  if (jsonValue.ValueExists("ati")) {
     m_ati = jsonValue.GetObject("ati");
     m_atiHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TrainingMetricsV2::Jsonize() const
-{
+JsonValue TrainingMetricsV2::Jsonize() const {
   JsonValue payload;
 
-  if(m_ofiHasBeenSet)
-  {
-   payload.WithObject("ofi", m_ofi.Jsonize());
-
+  if (m_ofiHasBeenSet) {
+    payload.WithObject("ofi", m_ofi.Jsonize());
   }
 
-  if(m_tfiHasBeenSet)
-  {
-   payload.WithObject("tfi", m_tfi.Jsonize());
-
+  if (m_tfiHasBeenSet) {
+    payload.WithObject("tfi", m_tfi.Jsonize());
   }
 
-  if(m_atiHasBeenSet)
-  {
-   payload.WithObject("ati", m_ati.Jsonize());
-
+  if (m_atiHasBeenSet) {
+    payload.WithObject("ati", m_ati.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FraudDetector
-} // namespace Aws
+}  // namespace Model
+}  // namespace FraudDetector
+}  // namespace Aws

@@ -3,18 +3,16 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/client/AWSError.h>
 #include <aws/cloudfront-keyvaluestore/CloudFrontKeyValueStoreErrorMarshaller.h>
 #include <aws/cloudfront-keyvaluestore/CloudFrontKeyValueStoreErrors.h>
+#include <aws/core/client/AWSError.h>
 
 using namespace Aws::Client;
 using namespace Aws::CloudFrontKeyValueStore;
 
-AWSError<CoreErrors> CloudFrontKeyValueStoreErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> CloudFrontKeyValueStoreErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = CloudFrontKeyValueStoreErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

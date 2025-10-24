@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/macie2/Macie2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/macie2/Macie2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
-  enum class OrderBy
-  {
-    NOT_SET,
-    ASC,
-    DESC
-  };
+namespace Aws {
+namespace Macie2 {
+namespace Model {
+enum class OrderBy { NOT_SET, ASC, DESC };
 
-namespace OrderByMapper
-{
+namespace OrderByMapper {
 AWS_MACIE2_API OrderBy GetOrderByForName(const Aws::String& name);
 
 AWS_MACIE2_API Aws::String GetNameForOrderBy(OrderBy value);
-} // namespace OrderByMapper
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace OrderByMapper
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

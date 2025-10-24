@@ -12,37 +12,24 @@ using namespace Aws::CleanRoomsML::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartTrainedModelExportJobRequest::SerializePayload() const
-{
+Aws::String StartTrainedModelExportJobRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_trainedModelVersionIdentifierHasBeenSet)
-  {
-   payload.WithString("trainedModelVersionIdentifier", m_trainedModelVersionIdentifier);
-
+  if (m_trainedModelVersionIdentifierHasBeenSet) {
+    payload.WithString("trainedModelVersionIdentifier", m_trainedModelVersionIdentifier);
   }
 
-  if(m_outputConfigurationHasBeenSet)
-  {
-   payload.WithObject("outputConfiguration", m_outputConfiguration.Jsonize());
-
+  if (m_outputConfigurationHasBeenSet) {
+    payload.WithObject("outputConfiguration", m_outputConfiguration.Jsonize());
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sns/model/ListEndpointsByPlatformApplicationRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sns/model/ListEndpointsByPlatformApplicationRequest.h>
 
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-Aws::String ListEndpointsByPlatformApplicationRequest::SerializePayload() const
-{
+Aws::String ListEndpointsByPlatformApplicationRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ListEndpointsByPlatformApplication&";
-  if(m_platformApplicationArnHasBeenSet)
-  {
+  if (m_platformApplicationArnHasBeenSet) {
     ss << "PlatformApplicationArn=" << StringUtils::URLEncode(m_platformApplicationArn.c_str()) << "&";
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String ListEndpointsByPlatformApplicationRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ListEndpointsByPlatformApplicationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ListEndpointsByPlatformApplicationRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

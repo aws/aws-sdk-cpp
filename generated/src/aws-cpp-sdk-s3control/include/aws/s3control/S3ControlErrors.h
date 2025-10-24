@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/s3control/S3Control_EXPORTS.h>
 
-namespace Aws
-{
-namespace S3Control
-{
-enum class S3ControlErrors
-{
-  //From Core//
+namespace Aws {
+namespace S3Control {
+enum class S3ControlErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class S3ControlErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class S3ControlErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BAD_REQUEST = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   BUCKET_ALREADY_EXISTS,
   BUCKET_ALREADY_OWNED_BY_YOU,
   IDEMPOTENCY,
@@ -61,9 +58,8 @@ enum class S3ControlErrors
   TOO_MANY_TAGS
 };
 
-class AWS_S3CONTROL_API S3ControlError : public Aws::Client::AWSError<S3ControlErrors>
-{
-public:
+class AWS_S3CONTROL_API S3ControlError : public Aws::Client::AWSError<S3ControlErrors> {
+ public:
   S3ControlError() {}
   S3ControlError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<S3ControlErrors>(rhs) {}
   S3ControlError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<S3ControlErrors>(rhs) {}
@@ -74,10 +70,9 @@ public:
   T GetModeledError();
 };
 
-namespace S3ControlErrorMapper
-{
-  AWS_S3CONTROL_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace S3ControlErrorMapper {
+AWS_S3CONTROL_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace S3Control
-} // namespace Aws
+}  // namespace S3Control
+}  // namespace Aws

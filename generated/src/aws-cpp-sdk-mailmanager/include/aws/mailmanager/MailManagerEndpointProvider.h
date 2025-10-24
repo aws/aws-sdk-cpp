@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/mailmanager/MailManagerEndpointRules.h>
+#include <aws/mailmanager/MailManager_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace MailManager
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace MailManager {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using MailManagerClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using MailManagerDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_MAILMANAGER_API MailManagerEndpointProvider : public MailManagerDefaultEpProviderBase
-{
-public:
-    using MailManagerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_MAILMANAGER_API MailManagerEndpointProvider : public MailManagerDefaultEpProviderBase {
+ public:
+  using MailManagerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    MailManagerEndpointProvider()
-      : MailManagerDefaultEpProviderBase(Aws::MailManager::MailManagerEndpointRules::GetRulesBlob(), Aws::MailManager::MailManagerEndpointRules::RulesBlobSize)
-    {}
+  MailManagerEndpointProvider()
+      : MailManagerDefaultEpProviderBase(Aws::MailManager::MailManagerEndpointRules::GetRulesBlob(),
+                                         Aws::MailManager::MailManagerEndpointRules::RulesBlobSize) {}
 
-    ~MailManagerEndpointProvider()
-    {
-    }
+  ~MailManagerEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace MailManager
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace MailManager
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/odb/model/DeleteCloudAutonomousVmClusterRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/odb/model/DeleteCloudAutonomousVmClusterRequest.h>
 
 #include <utility>
 
@@ -12,27 +12,18 @@ using namespace Aws::odb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteCloudAutonomousVmClusterRequest::SerializePayload() const
-{
+Aws::String DeleteCloudAutonomousVmClusterRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_cloudAutonomousVmClusterIdHasBeenSet)
-  {
-   payload.WithString("cloudAutonomousVmClusterId", m_cloudAutonomousVmClusterId);
-
+  if (m_cloudAutonomousVmClusterIdHasBeenSet) {
+    payload.WithString("cloudAutonomousVmClusterId", m_cloudAutonomousVmClusterId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteCloudAutonomousVmClusterRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteCloudAutonomousVmClusterRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Odb.DeleteCloudAutonomousVmCluster"));
   return headers;
-
 }
-
-
-
-

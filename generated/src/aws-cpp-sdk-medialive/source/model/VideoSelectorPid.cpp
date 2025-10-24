@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/VideoSelectorPid.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/VideoSelectorPid.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-VideoSelectorPid::VideoSelectorPid(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VideoSelectorPid::VideoSelectorPid(JsonView jsonValue) { *this = jsonValue; }
 
-VideoSelectorPid& VideoSelectorPid::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("pid"))
-  {
+VideoSelectorPid& VideoSelectorPid::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("pid")) {
     m_pid = jsonValue.GetInteger("pid");
     m_pidHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VideoSelectorPid::Jsonize() const
-{
+JsonValue VideoSelectorPid::Jsonize() const {
   JsonValue payload;
 
-  if(m_pidHasBeenSet)
-  {
-   payload.WithInteger("pid", m_pid);
-
+  if (m_pidHasBeenSet) {
+    payload.WithInteger("pid", m_pid);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

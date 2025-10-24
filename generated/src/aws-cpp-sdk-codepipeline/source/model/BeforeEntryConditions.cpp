@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
 
-BeforeEntryConditions::BeforeEntryConditions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BeforeEntryConditions::BeforeEntryConditions(JsonView jsonValue) { *this = jsonValue; }
 
-BeforeEntryConditions& BeforeEntryConditions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("conditions"))
-  {
+BeforeEntryConditions& BeforeEntryConditions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("conditions")) {
     Aws::Utils::Array<JsonView> conditionsJsonList = jsonValue.GetArray("conditions");
-    for(unsigned conditionsIndex = 0; conditionsIndex < conditionsJsonList.GetLength(); ++conditionsIndex)
-    {
+    for (unsigned conditionsIndex = 0; conditionsIndex < conditionsJsonList.GetLength(); ++conditionsIndex) {
       m_conditions.push_back(conditionsJsonList[conditionsIndex].AsObject());
     }
     m_conditionsHasBeenSet = true;
@@ -37,24 +28,20 @@ BeforeEntryConditions& BeforeEntryConditions::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue BeforeEntryConditions::Jsonize() const
-{
+JsonValue BeforeEntryConditions::Jsonize() const {
   JsonValue payload;
 
-  if(m_conditionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> conditionsJsonList(m_conditions.size());
-   for(unsigned conditionsIndex = 0; conditionsIndex < conditionsJsonList.GetLength(); ++conditionsIndex)
-   {
-     conditionsJsonList[conditionsIndex].AsObject(m_conditions[conditionsIndex].Jsonize());
-   }
-   payload.WithArray("conditions", std::move(conditionsJsonList));
-
+  if (m_conditionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> conditionsJsonList(m_conditions.size());
+    for (unsigned conditionsIndex = 0; conditionsIndex < conditionsJsonList.GetLength(); ++conditionsIndex) {
+      conditionsJsonList[conditionsIndex].AsObject(m_conditions[conditionsIndex].Jsonize());
+    }
+    payload.WithArray("conditions", std::move(conditionsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

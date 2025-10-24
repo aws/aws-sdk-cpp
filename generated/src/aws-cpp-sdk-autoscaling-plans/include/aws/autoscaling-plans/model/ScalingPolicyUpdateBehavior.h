@@ -7,25 +7,16 @@
 #include <aws/autoscaling-plans/AutoScalingPlans_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace AutoScalingPlans
-{
-namespace Model
-{
-  enum class ScalingPolicyUpdateBehavior
-  {
-    NOT_SET,
-    KeepExternalPolicies,
-    ReplaceExternalPolicies
-  };
+namespace Aws {
+namespace AutoScalingPlans {
+namespace Model {
+enum class ScalingPolicyUpdateBehavior { NOT_SET, KeepExternalPolicies, ReplaceExternalPolicies };
 
-namespace ScalingPolicyUpdateBehaviorMapper
-{
+namespace ScalingPolicyUpdateBehaviorMapper {
 AWS_AUTOSCALINGPLANS_API ScalingPolicyUpdateBehavior GetScalingPolicyUpdateBehaviorForName(const Aws::String& name);
 
 AWS_AUTOSCALINGPLANS_API Aws::String GetNameForScalingPolicyUpdateBehavior(ScalingPolicyUpdateBehavior value);
-} // namespace ScalingPolicyUpdateBehaviorMapper
-} // namespace Model
-} // namespace AutoScalingPlans
-} // namespace Aws
+}  // namespace ScalingPolicyUpdateBehaviorMapper
+}  // namespace Model
+}  // namespace AutoScalingPlans
+}  // namespace Aws

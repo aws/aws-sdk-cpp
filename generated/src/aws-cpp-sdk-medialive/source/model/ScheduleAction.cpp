@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/ScheduleAction.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/ScheduleAction.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-ScheduleAction::ScheduleAction(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ScheduleAction::ScheduleAction(JsonView jsonValue) { *this = jsonValue; }
 
-ScheduleAction& ScheduleAction::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("actionName"))
-  {
+ScheduleAction& ScheduleAction::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("actionName")) {
     m_actionName = jsonValue.GetString("actionName");
     m_actionNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("scheduleActionSettings"))
-  {
+  if (jsonValue.ValueExists("scheduleActionSettings")) {
     m_scheduleActionSettings = jsonValue.GetObject("scheduleActionSettings");
     m_scheduleActionSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("scheduleActionStartSettings"))
-  {
+  if (jsonValue.ValueExists("scheduleActionStartSettings")) {
     m_scheduleActionStartSettings = jsonValue.GetObject("scheduleActionStartSettings");
     m_scheduleActionStartSettingsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ScheduleAction::Jsonize() const
-{
+JsonValue ScheduleAction::Jsonize() const {
   JsonValue payload;
 
-  if(m_actionNameHasBeenSet)
-  {
-   payload.WithString("actionName", m_actionName);
-
+  if (m_actionNameHasBeenSet) {
+    payload.WithString("actionName", m_actionName);
   }
 
-  if(m_scheduleActionSettingsHasBeenSet)
-  {
-   payload.WithObject("scheduleActionSettings", m_scheduleActionSettings.Jsonize());
-
+  if (m_scheduleActionSettingsHasBeenSet) {
+    payload.WithObject("scheduleActionSettings", m_scheduleActionSettings.Jsonize());
   }
 
-  if(m_scheduleActionStartSettingsHasBeenSet)
-  {
-   payload.WithObject("scheduleActionStartSettings", m_scheduleActionStartSettings.Jsonize());
-
+  if (m_scheduleActionStartSettingsHasBeenSet) {
+    payload.WithObject("scheduleActionStartSettings", m_scheduleActionStartSettings.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kafkaconnect/model/LogDelivery.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kafkaconnect/model/LogDelivery.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace KafkaConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace KafkaConnect {
+namespace Model {
 
-LogDelivery::LogDelivery(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LogDelivery::LogDelivery(JsonView jsonValue) { *this = jsonValue; }
 
-LogDelivery& LogDelivery::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("workerLogDelivery"))
-  {
+LogDelivery& LogDelivery::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("workerLogDelivery")) {
     m_workerLogDelivery = jsonValue.GetObject("workerLogDelivery");
     m_workerLogDeliveryHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LogDelivery::Jsonize() const
-{
+JsonValue LogDelivery::Jsonize() const {
   JsonValue payload;
 
-  if(m_workerLogDeliveryHasBeenSet)
-  {
-   payload.WithObject("workerLogDelivery", m_workerLogDelivery.Jsonize());
-
+  if (m_workerLogDeliveryHasBeenSet) {
+    payload.WithObject("workerLogDelivery", m_workerLogDelivery.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace KafkaConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace KafkaConnect
+}  // namespace Aws

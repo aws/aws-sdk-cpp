@@ -11,73 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeGuruReviewer
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeGuruReviewer {
+namespace Model {
 
-RequestMetadata::RequestMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RequestMetadata::RequestMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-RequestMetadata& RequestMetadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RequestId"))
-  {
+RequestMetadata& RequestMetadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RequestId")) {
     m_requestId = jsonValue.GetString("RequestId");
     m_requestIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Requester"))
-  {
+  if (jsonValue.ValueExists("Requester")) {
     m_requester = jsonValue.GetString("Requester");
     m_requesterHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EventInfo"))
-  {
+  if (jsonValue.ValueExists("EventInfo")) {
     m_eventInfo = jsonValue.GetObject("EventInfo");
     m_eventInfoHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VendorName"))
-  {
+  if (jsonValue.ValueExists("VendorName")) {
     m_vendorName = VendorNameMapper::GetVendorNameForName(jsonValue.GetString("VendorName"));
     m_vendorNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RequestMetadata::Jsonize() const
-{
+JsonValue RequestMetadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_requestIdHasBeenSet)
-  {
-   payload.WithString("RequestId", m_requestId);
-
+  if (m_requestIdHasBeenSet) {
+    payload.WithString("RequestId", m_requestId);
   }
 
-  if(m_requesterHasBeenSet)
-  {
-   payload.WithString("Requester", m_requester);
-
+  if (m_requesterHasBeenSet) {
+    payload.WithString("Requester", m_requester);
   }
 
-  if(m_eventInfoHasBeenSet)
-  {
-   payload.WithObject("EventInfo", m_eventInfo.Jsonize());
-
+  if (m_eventInfoHasBeenSet) {
+    payload.WithObject("EventInfo", m_eventInfo.Jsonize());
   }
 
-  if(m_vendorNameHasBeenSet)
-  {
-   payload.WithString("VendorName", VendorNameMapper::GetNameForVendorName(m_vendorName));
+  if (m_vendorNameHasBeenSet) {
+    payload.WithString("VendorName", VendorNameMapper::GetNameForVendorName(m_vendorName));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeGuruReviewer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeGuruReviewer
+}  // namespace Aws

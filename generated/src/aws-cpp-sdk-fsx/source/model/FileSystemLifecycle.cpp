@@ -3,105 +3,81 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fsx/model/FileSystemLifecycle.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/fsx/model/FileSystemLifecycle.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace FSx {
+namespace Model {
+namespace FileSystemLifecycleMapper {
 
-namespace Aws
-{
-  namespace FSx
-  {
-    namespace Model
-    {
-      namespace FileSystemLifecycleMapper
-      {
+static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
+static const int CREATING_HASH = HashingUtils::HashString("CREATING");
+static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+static const int MISCONFIGURED_HASH = HashingUtils::HashString("MISCONFIGURED");
+static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
+static const int MISCONFIGURED_UNAVAILABLE_HASH = HashingUtils::HashString("MISCONFIGURED_UNAVAILABLE");
 
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int MISCONFIGURED_HASH = HashingUtils::HashString("MISCONFIGURED");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
-        static const int MISCONFIGURED_UNAVAILABLE_HASH = HashingUtils::HashString("MISCONFIGURED_UNAVAILABLE");
+FileSystemLifecycle GetFileSystemLifecycleForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == AVAILABLE_HASH) {
+    return FileSystemLifecycle::AVAILABLE;
+  } else if (hashCode == CREATING_HASH) {
+    return FileSystemLifecycle::CREATING;
+  } else if (hashCode == FAILED_HASH) {
+    return FileSystemLifecycle::FAILED;
+  } else if (hashCode == DELETING_HASH) {
+    return FileSystemLifecycle::DELETING;
+  } else if (hashCode == MISCONFIGURED_HASH) {
+    return FileSystemLifecycle::MISCONFIGURED;
+  } else if (hashCode == UPDATING_HASH) {
+    return FileSystemLifecycle::UPDATING;
+  } else if (hashCode == MISCONFIGURED_UNAVAILABLE_HASH) {
+    return FileSystemLifecycle::MISCONFIGURED_UNAVAILABLE;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<FileSystemLifecycle>(hashCode);
+  }
 
+  return FileSystemLifecycle::NOT_SET;
+}
 
-        FileSystemLifecycle GetFileSystemLifecycleForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == AVAILABLE_HASH)
-          {
-            return FileSystemLifecycle::AVAILABLE;
-          }
-          else if (hashCode == CREATING_HASH)
-          {
-            return FileSystemLifecycle::CREATING;
-          }
-          else if (hashCode == FAILED_HASH)
-          {
-            return FileSystemLifecycle::FAILED;
-          }
-          else if (hashCode == DELETING_HASH)
-          {
-            return FileSystemLifecycle::DELETING;
-          }
-          else if (hashCode == MISCONFIGURED_HASH)
-          {
-            return FileSystemLifecycle::MISCONFIGURED;
-          }
-          else if (hashCode == UPDATING_HASH)
-          {
-            return FileSystemLifecycle::UPDATING;
-          }
-          else if (hashCode == MISCONFIGURED_UNAVAILABLE_HASH)
-          {
-            return FileSystemLifecycle::MISCONFIGURED_UNAVAILABLE;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<FileSystemLifecycle>(hashCode);
-          }
+Aws::String GetNameForFileSystemLifecycle(FileSystemLifecycle enumValue) {
+  switch (enumValue) {
+    case FileSystemLifecycle::NOT_SET:
+      return {};
+    case FileSystemLifecycle::AVAILABLE:
+      return "AVAILABLE";
+    case FileSystemLifecycle::CREATING:
+      return "CREATING";
+    case FileSystemLifecycle::FAILED:
+      return "FAILED";
+    case FileSystemLifecycle::DELETING:
+      return "DELETING";
+    case FileSystemLifecycle::MISCONFIGURED:
+      return "MISCONFIGURED";
+    case FileSystemLifecycle::UPDATING:
+      return "UPDATING";
+    case FileSystemLifecycle::MISCONFIGURED_UNAVAILABLE:
+      return "MISCONFIGURED_UNAVAILABLE";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return FileSystemLifecycle::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForFileSystemLifecycle(FileSystemLifecycle enumValue)
-        {
-          switch(enumValue)
-          {
-          case FileSystemLifecycle::NOT_SET:
-            return {};
-          case FileSystemLifecycle::AVAILABLE:
-            return "AVAILABLE";
-          case FileSystemLifecycle::CREATING:
-            return "CREATING";
-          case FileSystemLifecycle::FAILED:
-            return "FAILED";
-          case FileSystemLifecycle::DELETING:
-            return "DELETING";
-          case FileSystemLifecycle::MISCONFIGURED:
-            return "MISCONFIGURED";
-          case FileSystemLifecycle::UPDATING:
-            return "UPDATING";
-          case FileSystemLifecycle::MISCONFIGURED_UNAVAILABLE:
-            return "MISCONFIGURED_UNAVAILABLE";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace FileSystemLifecycleMapper
-    } // namespace Model
-  } // namespace FSx
-} // namespace Aws
+}  // namespace FileSystemLifecycleMapper
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

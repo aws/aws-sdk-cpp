@@ -4,35 +4,28 @@
  */
 
 #pragma once
-#include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/qbusiness/QBusiness_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace QBusiness
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace QBusiness {
+namespace Model {
 
-  class ChatInitialResponse
-  {
-  public:
-    AWS_QBUSINESS_API ChatInitialResponse() = default;
-    AWS_QBUSINESS_API ChatInitialResponse(Aws::Utils::Json::JsonView jsonValue);
-    AWS_QBUSINESS_API ChatInitialResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_QBUSINESS_API ChatInitialResponse(const Http::HeaderValueCollection& responseHeaders);
-    AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
+class ChatInitialResponse {
+ public:
+  AWS_QBUSINESS_API ChatInitialResponse() = default;
+  AWS_QBUSINESS_API ChatInitialResponse(Aws::Utils::Json::JsonView jsonValue);
+  AWS_QBUSINESS_API ChatInitialResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_QBUSINESS_API ChatInitialResponse(const Http::HeaderValueCollection& responseHeaders);
+  AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
+};
 
-  };
-
-} // namespace Model
-} // namespace QBusiness
-} // namespace Aws
+}  // namespace Model
+}  // namespace QBusiness
+}  // namespace Aws

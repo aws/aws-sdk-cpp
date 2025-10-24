@@ -6,70 +6,75 @@
 #pragma once
 #include <aws/appflow/Appflow_EXPORTS.h>
 #include <aws/appflow/model/AggregationType.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Appflow {
+namespace Model {
 
+/**
+ * <p> The aggregation settings that you can use to customize the output format of
+ * your flow data. </p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/AggregationConfig">AWS
+ * API Reference</a></p>
+ */
+class AggregationConfig {
+ public:
+  AWS_APPFLOW_API AggregationConfig() = default;
+  AWS_APPFLOW_API AggregationConfig(Aws::Utils::Json::JsonView jsonValue);
+  AWS_APPFLOW_API AggregationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p> The aggregation settings that you can use to customize the output format of
-   * your flow data. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/AggregationConfig">AWS
-   * API Reference</a></p>
+   * <p> Specifies whether Amazon AppFlow aggregates the flow records into a single
+   * file, or leave them unaggregated. </p>
    */
-  class AggregationConfig
-  {
-  public:
-    AWS_APPFLOW_API AggregationConfig() = default;
-    AWS_APPFLOW_API AggregationConfig(Aws::Utils::Json::JsonView jsonValue);
-    AWS_APPFLOW_API AggregationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline AggregationType GetAggregationType() const { return m_aggregationType; }
+  inline bool AggregationTypeHasBeenSet() const { return m_aggregationTypeHasBeenSet; }
+  inline void SetAggregationType(AggregationType value) {
+    m_aggregationTypeHasBeenSet = true;
+    m_aggregationType = value;
+  }
+  inline AggregationConfig& WithAggregationType(AggregationType value) {
+    SetAggregationType(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The desired file size, in MB, for each output file that Amazon AppFlow writes
+   * to the flow destination. For each file, Amazon AppFlow attempts to achieve the
+   * size that you specify. The actual file sizes might differ from this target based
+   * on the number and size of the records that each file contains.</p>
+   */
+  inline long long GetTargetFileSize() const { return m_targetFileSize; }
+  inline bool TargetFileSizeHasBeenSet() const { return m_targetFileSizeHasBeenSet; }
+  inline void SetTargetFileSize(long long value) {
+    m_targetFileSizeHasBeenSet = true;
+    m_targetFileSize = value;
+  }
+  inline AggregationConfig& WithTargetFileSize(long long value) {
+    SetTargetFileSize(value);
+    return *this;
+  }
+  ///@}
+ private:
+  AggregationType m_aggregationType{AggregationType::NOT_SET};
+  bool m_aggregationTypeHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p> Specifies whether Amazon AppFlow aggregates the flow records into a single
-     * file, or leave them unaggregated. </p>
-     */
-    inline AggregationType GetAggregationType() const { return m_aggregationType; }
-    inline bool AggregationTypeHasBeenSet() const { return m_aggregationTypeHasBeenSet; }
-    inline void SetAggregationType(AggregationType value) { m_aggregationTypeHasBeenSet = true; m_aggregationType = value; }
-    inline AggregationConfig& WithAggregationType(AggregationType value) { SetAggregationType(value); return *this;}
-    ///@}
+  long long m_targetFileSize{0};
+  bool m_targetFileSizeHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The desired file size, in MB, for each output file that Amazon AppFlow writes
-     * to the flow destination. For each file, Amazon AppFlow attempts to achieve the
-     * size that you specify. The actual file sizes might differ from this target based
-     * on the number and size of the records that each file contains.</p>
-     */
-    inline long long GetTargetFileSize() const { return m_targetFileSize; }
-    inline bool TargetFileSizeHasBeenSet() const { return m_targetFileSizeHasBeenSet; }
-    inline void SetTargetFileSize(long long value) { m_targetFileSizeHasBeenSet = true; m_targetFileSize = value; }
-    inline AggregationConfig& WithTargetFileSize(long long value) { SetTargetFileSize(value); return *this;}
-    ///@}
-  private:
-
-    AggregationType m_aggregationType{AggregationType::NOT_SET};
-    bool m_aggregationTypeHasBeenSet = false;
-
-    long long m_targetFileSize{0};
-    bool m_targetFileSizeHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

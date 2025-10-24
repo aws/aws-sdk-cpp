@@ -3,79 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lakeformation/model/TransactionDescription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lakeformation/model/TransactionDescription.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LakeFormation
-{
-namespace Model
-{
+namespace Aws {
+namespace LakeFormation {
+namespace Model {
 
-TransactionDescription::TransactionDescription(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TransactionDescription::TransactionDescription(JsonView jsonValue) { *this = jsonValue; }
 
-TransactionDescription& TransactionDescription::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TransactionId"))
-  {
+TransactionDescription& TransactionDescription::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TransactionId")) {
     m_transactionId = jsonValue.GetString("TransactionId");
     m_transactionIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TransactionStatus"))
-  {
+  if (jsonValue.ValueExists("TransactionStatus")) {
     m_transactionStatus = TransactionStatusMapper::GetTransactionStatusForName(jsonValue.GetString("TransactionStatus"));
     m_transactionStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TransactionStartTime"))
-  {
+  if (jsonValue.ValueExists("TransactionStartTime")) {
     m_transactionStartTime = jsonValue.GetDouble("TransactionStartTime");
     m_transactionStartTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TransactionEndTime"))
-  {
+  if (jsonValue.ValueExists("TransactionEndTime")) {
     m_transactionEndTime = jsonValue.GetDouble("TransactionEndTime");
     m_transactionEndTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TransactionDescription::Jsonize() const
-{
+JsonValue TransactionDescription::Jsonize() const {
   JsonValue payload;
 
-  if(m_transactionIdHasBeenSet)
-  {
-   payload.WithString("TransactionId", m_transactionId);
-
+  if (m_transactionIdHasBeenSet) {
+    payload.WithString("TransactionId", m_transactionId);
   }
 
-  if(m_transactionStatusHasBeenSet)
-  {
-   payload.WithString("TransactionStatus", TransactionStatusMapper::GetNameForTransactionStatus(m_transactionStatus));
+  if (m_transactionStatusHasBeenSet) {
+    payload.WithString("TransactionStatus", TransactionStatusMapper::GetNameForTransactionStatus(m_transactionStatus));
   }
 
-  if(m_transactionStartTimeHasBeenSet)
-  {
-   payload.WithDouble("TransactionStartTime", m_transactionStartTime.SecondsWithMSPrecision());
+  if (m_transactionStartTimeHasBeenSet) {
+    payload.WithDouble("TransactionStartTime", m_transactionStartTime.SecondsWithMSPrecision());
   }
 
-  if(m_transactionEndTimeHasBeenSet)
-  {
-   payload.WithDouble("TransactionEndTime", m_transactionEndTime.SecondsWithMSPrecision());
+  if (m_transactionEndTimeHasBeenSet) {
+    payload.WithDouble("TransactionEndTime", m_transactionEndTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LakeFormation
-} // namespace Aws
+}  // namespace Model
+}  // namespace LakeFormation
+}  // namespace Aws

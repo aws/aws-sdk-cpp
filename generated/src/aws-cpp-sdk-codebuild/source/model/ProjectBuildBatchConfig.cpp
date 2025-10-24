@@ -11,84 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeBuild
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeBuild {
+namespace Model {
 
-ProjectBuildBatchConfig::ProjectBuildBatchConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProjectBuildBatchConfig::ProjectBuildBatchConfig(JsonView jsonValue) { *this = jsonValue; }
 
-ProjectBuildBatchConfig& ProjectBuildBatchConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("serviceRole"))
-  {
+ProjectBuildBatchConfig& ProjectBuildBatchConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("serviceRole")) {
     m_serviceRole = jsonValue.GetString("serviceRole");
     m_serviceRoleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("combineArtifacts"))
-  {
+  if (jsonValue.ValueExists("combineArtifacts")) {
     m_combineArtifacts = jsonValue.GetBool("combineArtifacts");
     m_combineArtifactsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("restrictions"))
-  {
+  if (jsonValue.ValueExists("restrictions")) {
     m_restrictions = jsonValue.GetObject("restrictions");
     m_restrictionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("timeoutInMins"))
-  {
+  if (jsonValue.ValueExists("timeoutInMins")) {
     m_timeoutInMins = jsonValue.GetInteger("timeoutInMins");
     m_timeoutInMinsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("batchReportMode"))
-  {
+  if (jsonValue.ValueExists("batchReportMode")) {
     m_batchReportMode = BatchReportModeTypeMapper::GetBatchReportModeTypeForName(jsonValue.GetString("batchReportMode"));
     m_batchReportModeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ProjectBuildBatchConfig::Jsonize() const
-{
+JsonValue ProjectBuildBatchConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_serviceRoleHasBeenSet)
-  {
-   payload.WithString("serviceRole", m_serviceRole);
-
+  if (m_serviceRoleHasBeenSet) {
+    payload.WithString("serviceRole", m_serviceRole);
   }
 
-  if(m_combineArtifactsHasBeenSet)
-  {
-   payload.WithBool("combineArtifacts", m_combineArtifacts);
-
+  if (m_combineArtifactsHasBeenSet) {
+    payload.WithBool("combineArtifacts", m_combineArtifacts);
   }
 
-  if(m_restrictionsHasBeenSet)
-  {
-   payload.WithObject("restrictions", m_restrictions.Jsonize());
-
+  if (m_restrictionsHasBeenSet) {
+    payload.WithObject("restrictions", m_restrictions.Jsonize());
   }
 
-  if(m_timeoutInMinsHasBeenSet)
-  {
-   payload.WithInteger("timeoutInMins", m_timeoutInMins);
-
+  if (m_timeoutInMinsHasBeenSet) {
+    payload.WithInteger("timeoutInMins", m_timeoutInMins);
   }
 
-  if(m_batchReportModeHasBeenSet)
-  {
-   payload.WithString("batchReportMode", BatchReportModeTypeMapper::GetNameForBatchReportModeType(m_batchReportMode));
+  if (m_batchReportModeHasBeenSet) {
+    payload.WithString("batchReportMode", BatchReportModeTypeMapper::GetNameForBatchReportModeType(m_batchReportMode));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeBuild
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeBuild
+}  // namespace Aws

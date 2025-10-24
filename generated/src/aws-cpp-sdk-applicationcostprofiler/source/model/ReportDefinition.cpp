@@ -11,103 +11,78 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApplicationCostProfiler
-{
-namespace Model
-{
+namespace Aws {
+namespace ApplicationCostProfiler {
+namespace Model {
 
-ReportDefinition::ReportDefinition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReportDefinition::ReportDefinition(JsonView jsonValue) { *this = jsonValue; }
 
-ReportDefinition& ReportDefinition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("reportId"))
-  {
+ReportDefinition& ReportDefinition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("reportId")) {
     m_reportId = jsonValue.GetString("reportId");
     m_reportIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("reportDescription"))
-  {
+  if (jsonValue.ValueExists("reportDescription")) {
     m_reportDescription = jsonValue.GetString("reportDescription");
     m_reportDescriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("reportFrequency"))
-  {
+  if (jsonValue.ValueExists("reportFrequency")) {
     m_reportFrequency = ReportFrequencyMapper::GetReportFrequencyForName(jsonValue.GetString("reportFrequency"));
     m_reportFrequencyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("format"))
-  {
+  if (jsonValue.ValueExists("format")) {
     m_format = FormatMapper::GetFormatForName(jsonValue.GetString("format"));
     m_formatHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("destinationS3Location"))
-  {
+  if (jsonValue.ValueExists("destinationS3Location")) {
     m_destinationS3Location = jsonValue.GetObject("destinationS3Location");
     m_destinationS3LocationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
-  {
+  if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetDouble("createdAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdatedAt"))
-  {
+  if (jsonValue.ValueExists("lastUpdatedAt")) {
     m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");
     m_lastUpdatedAtHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ReportDefinition::Jsonize() const
-{
+JsonValue ReportDefinition::Jsonize() const {
   JsonValue payload;
 
-  if(m_reportIdHasBeenSet)
-  {
-   payload.WithString("reportId", m_reportId);
-
+  if (m_reportIdHasBeenSet) {
+    payload.WithString("reportId", m_reportId);
   }
 
-  if(m_reportDescriptionHasBeenSet)
-  {
-   payload.WithString("reportDescription", m_reportDescription);
-
+  if (m_reportDescriptionHasBeenSet) {
+    payload.WithString("reportDescription", m_reportDescription);
   }
 
-  if(m_reportFrequencyHasBeenSet)
-  {
-   payload.WithString("reportFrequency", ReportFrequencyMapper::GetNameForReportFrequency(m_reportFrequency));
+  if (m_reportFrequencyHasBeenSet) {
+    payload.WithString("reportFrequency", ReportFrequencyMapper::GetNameForReportFrequency(m_reportFrequency));
   }
 
-  if(m_formatHasBeenSet)
-  {
-   payload.WithString("format", FormatMapper::GetNameForFormat(m_format));
+  if (m_formatHasBeenSet) {
+    payload.WithString("format", FormatMapper::GetNameForFormat(m_format));
   }
 
-  if(m_destinationS3LocationHasBeenSet)
-  {
-   payload.WithObject("destinationS3Location", m_destinationS3Location.Jsonize());
-
+  if (m_destinationS3LocationHasBeenSet) {
+    payload.WithObject("destinationS3Location", m_destinationS3Location.Jsonize());
   }
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
-  if(m_lastUpdatedAtHasBeenSet)
-  {
-   payload.WithDouble("lastUpdatedAt", m_lastUpdatedAt.SecondsWithMSPrecision());
+  if (m_lastUpdatedAtHasBeenSet) {
+    payload.WithDouble("lastUpdatedAt", m_lastUpdatedAt.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApplicationCostProfiler
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApplicationCostProfiler
+}  // namespace Aws

@@ -5,73 +5,82 @@
 
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudfront/model/ResponseHeadersPolicyRemoveHeader.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Xml
-{
-  class XmlNode;
-} // namespace Xml
-} // namespace Utils
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Xml {
+class XmlNode;
+}  // namespace Xml
+}  // namespace Utils
+namespace CloudFront {
+namespace Model {
 
+/**
+ * <p>A list of HTTP header names that CloudFront removes from HTTP responses to
+ * requests that match the cache behavior that this response headers policy is
+ * attached to.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ResponseHeadersPolicyRemoveHeadersConfig">AWS
+ * API Reference</a></p>
+ */
+class ResponseHeadersPolicyRemoveHeadersConfig {
+ public:
+  AWS_CLOUDFRONT_API ResponseHeadersPolicyRemoveHeadersConfig() = default;
+  AWS_CLOUDFRONT_API ResponseHeadersPolicyRemoveHeadersConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+  AWS_CLOUDFRONT_API ResponseHeadersPolicyRemoveHeadersConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+  AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+
+  ///@{
   /**
-   * <p>A list of HTTP header names that CloudFront removes from HTTP responses to
-   * requests that match the cache behavior that this response headers policy is
-   * attached to.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ResponseHeadersPolicyRemoveHeadersConfig">AWS
-   * API Reference</a></p>
+   * <p>The number of HTTP header names in the list.</p>
    */
-  class ResponseHeadersPolicyRemoveHeadersConfig
-  {
-  public:
-    AWS_CLOUDFRONT_API ResponseHeadersPolicyRemoveHeadersConfig() = default;
-    AWS_CLOUDFRONT_API ResponseHeadersPolicyRemoveHeadersConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AWS_CLOUDFRONT_API ResponseHeadersPolicyRemoveHeadersConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+  inline int GetQuantity() const { return m_quantity; }
+  inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
+  inline void SetQuantity(int value) {
+    m_quantityHasBeenSet = true;
+    m_quantity = value;
+  }
+  inline ResponseHeadersPolicyRemoveHeadersConfig& WithQuantity(int value) {
+    SetQuantity(value);
+    return *this;
+  }
+  ///@}
 
-    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+  ///@{
+  /**
+   * <p>The list of HTTP header names.</p>
+   */
+  inline const Aws::Vector<ResponseHeadersPolicyRemoveHeader>& GetItems() const { return m_items; }
+  inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
+  template <typename ItemsT = Aws::Vector<ResponseHeadersPolicyRemoveHeader>>
+  void SetItems(ItemsT&& value) {
+    m_itemsHasBeenSet = true;
+    m_items = std::forward<ItemsT>(value);
+  }
+  template <typename ItemsT = Aws::Vector<ResponseHeadersPolicyRemoveHeader>>
+  ResponseHeadersPolicyRemoveHeadersConfig& WithItems(ItemsT&& value) {
+    SetItems(std::forward<ItemsT>(value));
+    return *this;
+  }
+  template <typename ItemsT = ResponseHeadersPolicyRemoveHeader>
+  ResponseHeadersPolicyRemoveHeadersConfig& AddItems(ItemsT&& value) {
+    m_itemsHasBeenSet = true;
+    m_items.emplace_back(std::forward<ItemsT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  int m_quantity{0};
+  bool m_quantityHasBeenSet = false;
 
+  Aws::Vector<ResponseHeadersPolicyRemoveHeader> m_items;
+  bool m_itemsHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The number of HTTP header names in the list.</p>
-     */
-    inline int GetQuantity() const { return m_quantity; }
-    inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
-    inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
-    inline ResponseHeadersPolicyRemoveHeadersConfig& WithQuantity(int value) { SetQuantity(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The list of HTTP header names.</p>
-     */
-    inline const Aws::Vector<ResponseHeadersPolicyRemoveHeader>& GetItems() const { return m_items; }
-    inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-    template<typename ItemsT = Aws::Vector<ResponseHeadersPolicyRemoveHeader>>
-    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
-    template<typename ItemsT = Aws::Vector<ResponseHeadersPolicyRemoveHeader>>
-    ResponseHeadersPolicyRemoveHeadersConfig& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
-    template<typename ItemsT = ResponseHeadersPolicyRemoveHeader>
-    ResponseHeadersPolicyRemoveHeadersConfig& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
-    ///@}
-  private:
-
-    int m_quantity{0};
-    bool m_quantityHasBeenSet = false;
-
-    Aws::Vector<ResponseHeadersPolicyRemoveHeader> m_items;
-    bool m_itemsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

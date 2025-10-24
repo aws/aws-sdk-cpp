@@ -6,50 +6,48 @@
 #pragma once
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Bedrock {
+namespace Model {
 
+/**
+ * <p>Metrics associated with the custom job.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/TrainingMetrics">AWS
+ * API Reference</a></p>
+ */
+class TrainingMetrics {
+ public:
+  AWS_BEDROCK_API TrainingMetrics() = default;
+  AWS_BEDROCK_API TrainingMetrics(Aws::Utils::Json::JsonView jsonValue);
+  AWS_BEDROCK_API TrainingMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Metrics associated with the custom job.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/TrainingMetrics">AWS
-   * API Reference</a></p>
+   * <p>Loss metric associated with the custom job.</p>
    */
-  class TrainingMetrics
-  {
-  public:
-    AWS_BEDROCK_API TrainingMetrics() = default;
-    AWS_BEDROCK_API TrainingMetrics(Aws::Utils::Json::JsonView jsonValue);
-    AWS_BEDROCK_API TrainingMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline double GetTrainingLoss() const { return m_trainingLoss; }
+  inline bool TrainingLossHasBeenSet() const { return m_trainingLossHasBeenSet; }
+  inline void SetTrainingLoss(double value) {
+    m_trainingLossHasBeenSet = true;
+    m_trainingLoss = value;
+  }
+  inline TrainingMetrics& WithTrainingLoss(double value) {
+    SetTrainingLoss(value);
+    return *this;
+  }
+  ///@}
+ private:
+  double m_trainingLoss{0.0};
+  bool m_trainingLossHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>Loss metric associated with the custom job.</p>
-     */
-    inline double GetTrainingLoss() const { return m_trainingLoss; }
-    inline bool TrainingLossHasBeenSet() const { return m_trainingLossHasBeenSet; }
-    inline void SetTrainingLoss(double value) { m_trainingLossHasBeenSet = true; m_trainingLoss = value; }
-    inline TrainingMetrics& WithTrainingLoss(double value) { SetTrainingLoss(value); return *this;}
-    ///@}
-  private:
-
-    double m_trainingLoss{0.0};
-    bool m_trainingLossHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

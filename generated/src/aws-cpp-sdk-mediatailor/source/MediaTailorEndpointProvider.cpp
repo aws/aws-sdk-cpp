@@ -5,12 +5,8 @@
 
 #include <aws/mediatailor/MediaTailorEndpointProvider.h>
 
-namespace Aws
-{
-namespace MediaTailor
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace MediaTailor
-} // namespace Aws
+namespace Aws {
+namespace MediaTailor {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace MediaTailor
+}  // namespace Aws

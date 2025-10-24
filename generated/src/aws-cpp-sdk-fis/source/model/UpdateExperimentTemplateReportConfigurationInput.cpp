@@ -3,82 +3,64 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fis/model/UpdateExperimentTemplateReportConfigurationInput.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fis/model/UpdateExperimentTemplateReportConfigurationInput.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FIS
-{
-namespace Model
-{
+namespace Aws {
+namespace FIS {
+namespace Model {
 
-UpdateExperimentTemplateReportConfigurationInput::UpdateExperimentTemplateReportConfigurationInput(JsonView jsonValue)
-{
+UpdateExperimentTemplateReportConfigurationInput::UpdateExperimentTemplateReportConfigurationInput(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-UpdateExperimentTemplateReportConfigurationInput& UpdateExperimentTemplateReportConfigurationInput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("outputs"))
-  {
+UpdateExperimentTemplateReportConfigurationInput& UpdateExperimentTemplateReportConfigurationInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("outputs")) {
     m_outputs = jsonValue.GetObject("outputs");
     m_outputsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("dataSources"))
-  {
+  if (jsonValue.ValueExists("dataSources")) {
     m_dataSources = jsonValue.GetObject("dataSources");
     m_dataSourcesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("preExperimentDuration"))
-  {
+  if (jsonValue.ValueExists("preExperimentDuration")) {
     m_preExperimentDuration = jsonValue.GetString("preExperimentDuration");
     m_preExperimentDurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("postExperimentDuration"))
-  {
+  if (jsonValue.ValueExists("postExperimentDuration")) {
     m_postExperimentDuration = jsonValue.GetString("postExperimentDuration");
     m_postExperimentDurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UpdateExperimentTemplateReportConfigurationInput::Jsonize() const
-{
+JsonValue UpdateExperimentTemplateReportConfigurationInput::Jsonize() const {
   JsonValue payload;
 
-  if(m_outputsHasBeenSet)
-  {
-   payload.WithObject("outputs", m_outputs.Jsonize());
-
+  if (m_outputsHasBeenSet) {
+    payload.WithObject("outputs", m_outputs.Jsonize());
   }
 
-  if(m_dataSourcesHasBeenSet)
-  {
-   payload.WithObject("dataSources", m_dataSources.Jsonize());
-
+  if (m_dataSourcesHasBeenSet) {
+    payload.WithObject("dataSources", m_dataSources.Jsonize());
   }
 
-  if(m_preExperimentDurationHasBeenSet)
-  {
-   payload.WithString("preExperimentDuration", m_preExperimentDuration);
-
+  if (m_preExperimentDurationHasBeenSet) {
+    payload.WithString("preExperimentDuration", m_preExperimentDuration);
   }
 
-  if(m_postExperimentDurationHasBeenSet)
-  {
-   payload.WithString("postExperimentDuration", m_postExperimentDuration);
-
+  if (m_postExperimentDurationHasBeenSet) {
+    payload.WithString("postExperimentDuration", m_postExperimentDuration);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FIS
-} // namespace Aws
+}  // namespace Model
+}  // namespace FIS
+}  // namespace Aws

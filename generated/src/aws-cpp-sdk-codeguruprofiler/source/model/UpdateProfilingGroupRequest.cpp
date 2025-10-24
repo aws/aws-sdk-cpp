@@ -12,19 +12,12 @@ using namespace Aws::CodeGuruProfiler::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateProfilingGroupRequest::SerializePayload() const
-{
+Aws::String UpdateProfilingGroupRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_agentOrchestrationConfigHasBeenSet)
-  {
-   payload.WithObject("agentOrchestrationConfig", m_agentOrchestrationConfig.Jsonize());
-
+  if (m_agentOrchestrationConfigHasBeenSet) {
+    payload.WithObject("agentOrchestrationConfig", m_agentOrchestrationConfig.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
 
-ExternalMetricsPreference::ExternalMetricsPreference(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExternalMetricsPreference::ExternalMetricsPreference(JsonView jsonValue) { *this = jsonValue; }
 
-ExternalMetricsPreference& ExternalMetricsPreference::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("source"))
-  {
+ExternalMetricsPreference& ExternalMetricsPreference::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("source")) {
     m_source = ExternalMetricsSourceMapper::GetExternalMetricsSourceForName(jsonValue.GetString("source"));
     m_sourceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExternalMetricsPreference::Jsonize() const
-{
+JsonValue ExternalMetricsPreference::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceHasBeenSet)
-  {
-   payload.WithString("source", ExternalMetricsSourceMapper::GetNameForExternalMetricsSource(m_source));
+  if (m_sourceHasBeenSet) {
+    payload.WithString("source", ExternalMetricsSourceMapper::GetNameForExternalMetricsSource(m_source));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/globalaccelerator/GlobalAccelerator_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/globalaccelerator/GlobalAccelerator_EXPORTS.h>
 
-namespace Aws
-{
-namespace GlobalAccelerator
-{
-namespace Model
-{
-  enum class AcceleratorStatus
-  {
-    NOT_SET,
-    DEPLOYED,
-    IN_PROGRESS
-  };
+namespace Aws {
+namespace GlobalAccelerator {
+namespace Model {
+enum class AcceleratorStatus { NOT_SET, DEPLOYED, IN_PROGRESS };
 
-namespace AcceleratorStatusMapper
-{
+namespace AcceleratorStatusMapper {
 AWS_GLOBALACCELERATOR_API AcceleratorStatus GetAcceleratorStatusForName(const Aws::String& name);
 
 AWS_GLOBALACCELERATOR_API Aws::String GetNameForAcceleratorStatus(AcceleratorStatus value);
-} // namespace AcceleratorStatusMapper
-} // namespace Model
-} // namespace GlobalAccelerator
-} // namespace Aws
+}  // namespace AcceleratorStatusMapper
+}  // namespace Model
+}  // namespace GlobalAccelerator
+}  // namespace Aws

@@ -4,8 +4,8 @@
  */
 
 #include <aws/bedrock-agent/model/DeleteFlowRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -15,22 +15,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String DeleteFlowRequest::SerializePayload() const
-{
-  return {};
+Aws::String DeleteFlowRequest::SerializePayload() const { return {}; }
+
+void DeleteFlowRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_skipResourceInUseCheckHasBeenSet) {
+    ss << m_skipResourceInUseCheck;
+    uri.AddQueryStringParameter("skipResourceInUseCheck", ss.str());
+    ss.str("");
+  }
 }
-
-void DeleteFlowRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_skipResourceInUseCheckHasBeenSet)
-    {
-      ss << m_skipResourceInUseCheck;
-      uri.AddQueryStringParameter("skipResourceInUseCheck", ss.str());
-      ss.str("");
-    }
-
-}
-
-
-

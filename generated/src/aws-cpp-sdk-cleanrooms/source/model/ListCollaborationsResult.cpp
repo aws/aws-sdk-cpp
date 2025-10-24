@@ -4,10 +4,10 @@
  */
 
 #include <aws/cleanrooms/model/ListCollaborationsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,24 +17,17 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListCollaborationsResult::ListCollaborationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListCollaborationsResult::ListCollaborationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListCollaborationsResult& ListCollaborationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListCollaborationsResult& ListCollaborationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("collaborationList"))
-  {
+  if (jsonValue.ValueExists("collaborationList")) {
     Aws::Utils::Array<JsonView> collaborationListJsonList = jsonValue.GetArray("collaborationList");
-    for(unsigned collaborationListIndex = 0; collaborationListIndex < collaborationListJsonList.GetLength(); ++collaborationListIndex)
-    {
+    for (unsigned collaborationListIndex = 0; collaborationListIndex < collaborationListJsonList.GetLength(); ++collaborationListIndex) {
       m_collaborationList.push_back(collaborationListJsonList[collaborationListIndex].AsObject());
     }
     m_collaborationListHasBeenSet = true;
@@ -42,12 +35,10 @@ ListCollaborationsResult& ListCollaborationsResult::operator =(const Aws::Amazon
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

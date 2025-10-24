@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qconnect/QConnect_EXPORTS.h>
 
-namespace Aws
-{
-namespace QConnect
-{
-namespace Model
-{
-  enum class VisibilityStatus
-  {
-    NOT_SET,
-    SAVED,
-    PUBLISHED
-  };
+namespace Aws {
+namespace QConnect {
+namespace Model {
+enum class VisibilityStatus { NOT_SET, SAVED, PUBLISHED };
 
-namespace VisibilityStatusMapper
-{
+namespace VisibilityStatusMapper {
 AWS_QCONNECT_API VisibilityStatus GetVisibilityStatusForName(const Aws::String& name);
 
 AWS_QCONNECT_API Aws::String GetNameForVisibilityStatus(VisibilityStatus value);
-} // namespace VisibilityStatusMapper
-} // namespace Model
-} // namespace QConnect
-} // namespace Aws
+}  // namespace VisibilityStatusMapper
+}  // namespace Model
+}  // namespace QConnect
+}  // namespace Aws

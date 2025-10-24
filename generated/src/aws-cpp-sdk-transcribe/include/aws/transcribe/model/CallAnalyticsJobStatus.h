@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/transcribe/TranscribeService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/transcribe/TranscribeService_EXPORTS.h>
 
-namespace Aws
-{
-namespace TranscribeService
-{
-namespace Model
-{
-  enum class CallAnalyticsJobStatus
-  {
-    NOT_SET,
-    QUEUED,
-    IN_PROGRESS,
-    FAILED,
-    COMPLETED
-  };
+namespace Aws {
+namespace TranscribeService {
+namespace Model {
+enum class CallAnalyticsJobStatus { NOT_SET, QUEUED, IN_PROGRESS, FAILED, COMPLETED };
 
-namespace CallAnalyticsJobStatusMapper
-{
+namespace CallAnalyticsJobStatusMapper {
 AWS_TRANSCRIBESERVICE_API CallAnalyticsJobStatus GetCallAnalyticsJobStatusForName(const Aws::String& name);
 
 AWS_TRANSCRIBESERVICE_API Aws::String GetNameForCallAnalyticsJobStatus(CallAnalyticsJobStatus value);
-} // namespace CallAnalyticsJobStatusMapper
-} // namespace Model
-} // namespace TranscribeService
-} // namespace Aws
+}  // namespace CallAnalyticsJobStatusMapper
+}  // namespace Model
+}  // namespace TranscribeService
+}  // namespace Aws

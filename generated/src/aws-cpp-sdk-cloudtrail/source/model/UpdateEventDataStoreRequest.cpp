@@ -12,79 +12,55 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateEventDataStoreRequest::SerializePayload() const
-{
+Aws::String UpdateEventDataStoreRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_eventDataStoreHasBeenSet)
-  {
-   payload.WithString("EventDataStore", m_eventDataStore);
-
+  if (m_eventDataStoreHasBeenSet) {
+    payload.WithString("EventDataStore", m_eventDataStore);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_advancedEventSelectorsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> advancedEventSelectorsJsonList(m_advancedEventSelectors.size());
-   for(unsigned advancedEventSelectorsIndex = 0; advancedEventSelectorsIndex < advancedEventSelectorsJsonList.GetLength(); ++advancedEventSelectorsIndex)
-   {
-     advancedEventSelectorsJsonList[advancedEventSelectorsIndex].AsObject(m_advancedEventSelectors[advancedEventSelectorsIndex].Jsonize());
-   }
-   payload.WithArray("AdvancedEventSelectors", std::move(advancedEventSelectorsJsonList));
-
+  if (m_advancedEventSelectorsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> advancedEventSelectorsJsonList(m_advancedEventSelectors.size());
+    for (unsigned advancedEventSelectorsIndex = 0; advancedEventSelectorsIndex < advancedEventSelectorsJsonList.GetLength();
+         ++advancedEventSelectorsIndex) {
+      advancedEventSelectorsJsonList[advancedEventSelectorsIndex].AsObject(m_advancedEventSelectors[advancedEventSelectorsIndex].Jsonize());
+    }
+    payload.WithArray("AdvancedEventSelectors", std::move(advancedEventSelectorsJsonList));
   }
 
-  if(m_multiRegionEnabledHasBeenSet)
-  {
-   payload.WithBool("MultiRegionEnabled", m_multiRegionEnabled);
-
+  if (m_multiRegionEnabledHasBeenSet) {
+    payload.WithBool("MultiRegionEnabled", m_multiRegionEnabled);
   }
 
-  if(m_organizationEnabledHasBeenSet)
-  {
-   payload.WithBool("OrganizationEnabled", m_organizationEnabled);
-
+  if (m_organizationEnabledHasBeenSet) {
+    payload.WithBool("OrganizationEnabled", m_organizationEnabled);
   }
 
-  if(m_retentionPeriodHasBeenSet)
-  {
-   payload.WithInteger("RetentionPeriod", m_retentionPeriod);
-
+  if (m_retentionPeriodHasBeenSet) {
+    payload.WithInteger("RetentionPeriod", m_retentionPeriod);
   }
 
-  if(m_terminationProtectionEnabledHasBeenSet)
-  {
-   payload.WithBool("TerminationProtectionEnabled", m_terminationProtectionEnabled);
-
+  if (m_terminationProtectionEnabledHasBeenSet) {
+    payload.WithBool("TerminationProtectionEnabled", m_terminationProtectionEnabled);
   }
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
-   payload.WithString("KmsKeyId", m_kmsKeyId);
-
+  if (m_kmsKeyIdHasBeenSet) {
+    payload.WithString("KmsKeyId", m_kmsKeyId);
   }
 
-  if(m_billingModeHasBeenSet)
-  {
-   payload.WithString("BillingMode", BillingModeMapper::GetNameForBillingMode(m_billingMode));
+  if (m_billingModeHasBeenSet) {
+    payload.WithString("BillingMode", BillingModeMapper::GetNameForBillingMode(m_billingMode));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateEventDataStoreRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateEventDataStoreRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.UpdateEventDataStore"));
   return headers;
-
 }
-
-
-
-

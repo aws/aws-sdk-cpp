@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/robomaker/RoboMaker_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/robomaker/RoboMakerEndpointRules.h>
+#include <aws/robomaker/RoboMaker_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace RoboMaker
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace RoboMaker {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using RoboMakerClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using RoboMakerDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_ROBOMAKER_API RoboMakerEndpointProvider : public RoboMakerDefaultEpProviderBase
-{
-public:
-    using RoboMakerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_ROBOMAKER_API RoboMakerEndpointProvider : public RoboMakerDefaultEpProviderBase {
+ public:
+  using RoboMakerResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    RoboMakerEndpointProvider()
-      : RoboMakerDefaultEpProviderBase(Aws::RoboMaker::RoboMakerEndpointRules::GetRulesBlob(), Aws::RoboMaker::RoboMakerEndpointRules::RulesBlobSize)
-    {}
+  RoboMakerEndpointProvider()
+      : RoboMakerDefaultEpProviderBase(Aws::RoboMaker::RoboMakerEndpointRules::GetRulesBlob(),
+                                       Aws::RoboMaker::RoboMakerEndpointRules::RulesBlobSize) {}
 
-    ~RoboMakerEndpointProvider()
-    {
-    }
+  ~RoboMakerEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace RoboMaker
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace RoboMaker
+}  // namespace Aws

@@ -3,92 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glacier/model/Grantee.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glacier/model/Grantee.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Glacier
-{
-namespace Model
-{
+namespace Aws {
+namespace Glacier {
+namespace Model {
 
-Grantee::Grantee(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Grantee::Grantee(JsonView jsonValue) { *this = jsonValue; }
 
-Grantee& Grantee::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Type"))
-  {
+Grantee& Grantee::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Type")) {
     m_type = TypeMapper::GetTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DisplayName"))
-  {
+  if (jsonValue.ValueExists("DisplayName")) {
     m_displayName = jsonValue.GetString("DisplayName");
     m_displayNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("URI"))
-  {
+  if (jsonValue.ValueExists("URI")) {
     m_uRI = jsonValue.GetString("URI");
     m_uRIHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ID"))
-  {
+  if (jsonValue.ValueExists("ID")) {
     m_iD = jsonValue.GetString("ID");
     m_iDHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EmailAddress"))
-  {
+  if (jsonValue.ValueExists("EmailAddress")) {
     m_emailAddress = jsonValue.GetString("EmailAddress");
     m_emailAddressHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Grantee::Jsonize() const
-{
+JsonValue Grantee::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", TypeMapper::GetNameForType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", TypeMapper::GetNameForType(m_type));
   }
 
-  if(m_displayNameHasBeenSet)
-  {
-   payload.WithString("DisplayName", m_displayName);
-
+  if (m_displayNameHasBeenSet) {
+    payload.WithString("DisplayName", m_displayName);
   }
 
-  if(m_uRIHasBeenSet)
-  {
-   payload.WithString("URI", m_uRI);
-
+  if (m_uRIHasBeenSet) {
+    payload.WithString("URI", m_uRI);
   }
 
-  if(m_iDHasBeenSet)
-  {
-   payload.WithString("ID", m_iD);
-
+  if (m_iDHasBeenSet) {
+    payload.WithString("ID", m_iD);
   }
 
-  if(m_emailAddressHasBeenSet)
-  {
-   payload.WithString("EmailAddress", m_emailAddress);
-
+  if (m_emailAddressHasBeenSet) {
+    payload.WithString("EmailAddress", m_emailAddress);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Glacier
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glacier
+}  // namespace Aws

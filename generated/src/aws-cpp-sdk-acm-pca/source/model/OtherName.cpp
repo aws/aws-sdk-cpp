@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ACMPCA
-{
-namespace Model
-{
+namespace Aws {
+namespace ACMPCA {
+namespace Model {
 
-OtherName::OtherName(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OtherName::OtherName(JsonView jsonValue) { *this = jsonValue; }
 
-OtherName& OtherName::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TypeId"))
-  {
+OtherName& OtherName::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TypeId")) {
     m_typeId = jsonValue.GetString("TypeId");
     m_typeIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Value"))
-  {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetString("Value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OtherName::Jsonize() const
-{
+JsonValue OtherName::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeIdHasBeenSet)
-  {
-   payload.WithString("TypeId", m_typeId);
-
+  if (m_typeIdHasBeenSet) {
+    payload.WithString("TypeId", m_typeId);
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("Value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("Value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ACMPCA
-} // namespace Aws
+}  // namespace Model
+}  // namespace ACMPCA
+}  // namespace Aws

@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/s3/S3_EXPORTS.h>
 
-namespace Aws
-{
-namespace S3
-{
-enum class S3Errors
-{
-  //From Core//
+namespace Aws {
+namespace S3 {
+enum class S3Errors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class S3Errors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class S3Errors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  BUCKET_ALREADY_EXISTS= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BUCKET_ALREADY_EXISTS = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   BUCKET_ALREADY_OWNED_BY_YOU,
   ENCRYPTION_TYPE_MISMATCH,
   IDEMPOTENCY_PARAMETER_MISMATCH,
@@ -62,9 +59,8 @@ enum class S3Errors
   TOO_MANY_PARTS
 };
 
-class AWS_S3_API S3Error : public Aws::Client::AWSError<S3Errors>
-{
-public:
+class AWS_S3_API S3Error : public Aws::Client::AWSError<S3Errors> {
+ public:
   S3Error() {}
   S3Error(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<S3Errors>(rhs) {}
   S3Error(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<S3Errors>(rhs) {}
@@ -75,10 +71,9 @@ public:
   T GetModeledError();
 };
 
-namespace S3ErrorMapper
-{
-  AWS_S3_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace S3ErrorMapper {
+AWS_S3_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace S3
-} // namespace Aws
+}  // namespace S3
+}  // namespace Aws

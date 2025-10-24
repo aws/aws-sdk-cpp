@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 
-namespace Aws
-{
-namespace DatabaseMigrationService
-{
-namespace Model
-{
-  enum class TablePreparationMode
-  {
-    NOT_SET,
-    do_nothing,
-    truncate,
-    drop_tables_on_target
-  };
+namespace Aws {
+namespace DatabaseMigrationService {
+namespace Model {
+enum class TablePreparationMode { NOT_SET, do_nothing, truncate, drop_tables_on_target };
 
-namespace TablePreparationModeMapper
-{
+namespace TablePreparationModeMapper {
 AWS_DATABASEMIGRATIONSERVICE_API TablePreparationMode GetTablePreparationModeForName(const Aws::String& name);
 
 AWS_DATABASEMIGRATIONSERVICE_API Aws::String GetNameForTablePreparationMode(TablePreparationMode value);
-} // namespace TablePreparationModeMapper
-} // namespace Model
-} // namespace DatabaseMigrationService
-} // namespace Aws
+}  // namespace TablePreparationModeMapper
+}  // namespace Model
+}  // namespace DatabaseMigrationService
+}  // namespace Aws

@@ -3,49 +3,39 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DiskInfo.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/DiskInfo.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-DiskInfo::DiskInfo(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+DiskInfo::DiskInfo(const XmlNode& xmlNode) { *this = xmlNode; }
 
-DiskInfo& DiskInfo::operator =(const XmlNode& xmlNode)
-{
+DiskInfo& DiskInfo::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode sizeInGBNode = resultNode.FirstChild("sizeInGB");
-    if(!sizeInGBNode.IsNull())
-    {
-      m_sizeInGB = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sizeInGBNode.GetText()).c_str()).c_str());
+    if (!sizeInGBNode.IsNull()) {
+      m_sizeInGB =
+          StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sizeInGBNode.GetText()).c_str()).c_str());
       m_sizeInGBHasBeenSet = true;
     }
     XmlNode countNode = resultNode.FirstChild("count");
-    if(!countNode.IsNull())
-    {
+    if (!countNode.IsNull()) {
       m_count = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(countNode.GetText()).c_str()).c_str());
       m_countHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("type");
-    if(!typeNode.IsNull())
-    {
+    if (!typeNode.IsNull()) {
       m_type = DiskTypeMapper::GetDiskTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
     }
@@ -54,41 +44,32 @@ DiskInfo& DiskInfo::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void DiskInfo::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_sizeInGBHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".SizeInGB=" << m_sizeInGB << "&";
+void DiskInfo::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_sizeInGBHasBeenSet) {
+    oStream << location << index << locationValue << ".SizeInGB=" << m_sizeInGB << "&";
   }
 
-  if(m_countHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Count=" << m_count << "&";
+  if (m_countHasBeenSet) {
+    oStream << location << index << locationValue << ".Count=" << m_count << "&";
   }
 
-  if(m_typeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Type=" << StringUtils::URLEncode(DiskTypeMapper::GetNameForDiskType(m_type)) << "&";
-  }
-
-}
-
-void DiskInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_sizeInGBHasBeenSet)
-  {
-      oStream << location << ".SizeInGB=" << m_sizeInGB << "&";
-  }
-  if(m_countHasBeenSet)
-  {
-      oStream << location << ".Count=" << m_count << "&";
-  }
-  if(m_typeHasBeenSet)
-  {
-      oStream << location << ".Type=" << StringUtils::URLEncode(DiskTypeMapper::GetNameForDiskType(m_type)) << "&";
+  if (m_typeHasBeenSet) {
+    oStream << location << index << locationValue << ".Type=" << StringUtils::URLEncode(DiskTypeMapper::GetNameForDiskType(m_type)) << "&";
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void DiskInfo::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_sizeInGBHasBeenSet) {
+    oStream << location << ".SizeInGB=" << m_sizeInGB << "&";
+  }
+  if (m_countHasBeenSet) {
+    oStream << location << ".Count=" << m_count << "&";
+  }
+  if (m_typeHasBeenSet) {
+    oStream << location << ".Type=" << StringUtils::URLEncode(DiskTypeMapper::GetNameForDiskType(m_type)) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

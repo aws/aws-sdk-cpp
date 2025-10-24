@@ -7,25 +7,16 @@
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
-  enum class GuardrailContextualGroundingAction
-  {
-    NOT_SET,
-    BLOCK,
-    NONE
-  };
+namespace Aws {
+namespace Bedrock {
+namespace Model {
+enum class GuardrailContextualGroundingAction { NOT_SET, BLOCK, NONE };
 
-namespace GuardrailContextualGroundingActionMapper
-{
+namespace GuardrailContextualGroundingActionMapper {
 AWS_BEDROCK_API GuardrailContextualGroundingAction GetGuardrailContextualGroundingActionForName(const Aws::String& name);
 
 AWS_BEDROCK_API Aws::String GetNameForGuardrailContextualGroundingAction(GuardrailContextualGroundingAction value);
-} // namespace GuardrailContextualGroundingActionMapper
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace GuardrailContextualGroundingActionMapper
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

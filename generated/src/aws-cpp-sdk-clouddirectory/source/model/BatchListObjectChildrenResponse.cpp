@@ -11,61 +11,45 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudDirectory
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudDirectory {
+namespace Model {
 
-BatchListObjectChildrenResponse::BatchListObjectChildrenResponse(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchListObjectChildrenResponse::BatchListObjectChildrenResponse(JsonView jsonValue) { *this = jsonValue; }
 
-BatchListObjectChildrenResponse& BatchListObjectChildrenResponse::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Children"))
-  {
+BatchListObjectChildrenResponse& BatchListObjectChildrenResponse::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Children")) {
     Aws::Map<Aws::String, JsonView> childrenJsonMap = jsonValue.GetObject("Children").GetAllObjects();
-    for(auto& childrenItem : childrenJsonMap)
-    {
+    for (auto& childrenItem : childrenJsonMap) {
       m_children[childrenItem.first] = childrenItem.second.AsString();
     }
     m_childrenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BatchListObjectChildrenResponse::Jsonize() const
-{
+JsonValue BatchListObjectChildrenResponse::Jsonize() const {
   JsonValue payload;
 
-  if(m_childrenHasBeenSet)
-  {
-   JsonValue childrenJsonMap;
-   for(auto& childrenItem : m_children)
-   {
-     childrenJsonMap.WithString(childrenItem.first, childrenItem.second);
-   }
-   payload.WithObject("Children", std::move(childrenJsonMap));
-
+  if (m_childrenHasBeenSet) {
+    JsonValue childrenJsonMap;
+    for (auto& childrenItem : m_children) {
+      childrenJsonMap.WithString(childrenItem.first, childrenItem.second);
+    }
+    payload.WithObject("Children", std::move(childrenJsonMap));
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudDirectory
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudDirectory
+}  // namespace Aws

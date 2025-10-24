@@ -7,28 +7,16 @@
 #include <aws/budgets/Budgets_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Budgets
-{
-namespace Model
-{
-  enum class TimeUnit
-  {
-    NOT_SET,
-    DAILY,
-    MONTHLY,
-    QUARTERLY,
-    ANNUALLY,
-    CUSTOM
-  };
+namespace Aws {
+namespace Budgets {
+namespace Model {
+enum class TimeUnit { NOT_SET, DAILY, MONTHLY, QUARTERLY, ANNUALLY, CUSTOM };
 
-namespace TimeUnitMapper
-{
+namespace TimeUnitMapper {
 AWS_BUDGETS_API TimeUnit GetTimeUnitForName(const Aws::String& name);
 
 AWS_BUDGETS_API Aws::String GetNameForTimeUnit(TimeUnit value);
-} // namespace TimeUnitMapper
-} // namespace Model
-} // namespace Budgets
-} // namespace Aws
+}  // namespace TimeUnitMapper
+}  // namespace Model
+}  // namespace Budgets
+}  // namespace Aws

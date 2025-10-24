@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/storagegateway/StorageGateway_EXPORTS.h>
 
-namespace Aws
-{
-namespace StorageGateway
-{
-namespace Model
-{
-  enum class TapeStorageClass
-  {
-    NOT_SET,
-    DEEP_ARCHIVE,
-    GLACIER
-  };
+namespace Aws {
+namespace StorageGateway {
+namespace Model {
+enum class TapeStorageClass { NOT_SET, DEEP_ARCHIVE, GLACIER };
 
-namespace TapeStorageClassMapper
-{
+namespace TapeStorageClassMapper {
 AWS_STORAGEGATEWAY_API TapeStorageClass GetTapeStorageClassForName(const Aws::String& name);
 
 AWS_STORAGEGATEWAY_API Aws::String GetNameForTapeStorageClass(TapeStorageClass value);
-} // namespace TapeStorageClassMapper
-} // namespace Model
-} // namespace StorageGateway
-} // namespace Aws
+}  // namespace TapeStorageClassMapper
+}  // namespace Model
+}  // namespace StorageGateway
+}  // namespace Aws

@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/ScheduleRefreshOnEntity.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/ScheduleRefreshOnEntity.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-ScheduleRefreshOnEntity::ScheduleRefreshOnEntity(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ScheduleRefreshOnEntity::ScheduleRefreshOnEntity(JsonView jsonValue) { *this = jsonValue; }
 
-ScheduleRefreshOnEntity& ScheduleRefreshOnEntity::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DayOfWeek"))
-  {
+ScheduleRefreshOnEntity& ScheduleRefreshOnEntity::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DayOfWeek")) {
     m_dayOfWeek = DayOfWeekMapper::GetDayOfWeekForName(jsonValue.GetString("DayOfWeek"));
     m_dayOfWeekHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DayOfMonth"))
-  {
+  if (jsonValue.ValueExists("DayOfMonth")) {
     m_dayOfMonth = jsonValue.GetString("DayOfMonth");
     m_dayOfMonthHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ScheduleRefreshOnEntity::Jsonize() const
-{
+JsonValue ScheduleRefreshOnEntity::Jsonize() const {
   JsonValue payload;
 
-  if(m_dayOfWeekHasBeenSet)
-  {
-   payload.WithString("DayOfWeek", DayOfWeekMapper::GetNameForDayOfWeek(m_dayOfWeek));
+  if (m_dayOfWeekHasBeenSet) {
+    payload.WithString("DayOfWeek", DayOfWeekMapper::GetNameForDayOfWeek(m_dayOfWeek));
   }
 
-  if(m_dayOfMonthHasBeenSet)
-  {
-   payload.WithString("DayOfMonth", m_dayOfMonth);
-
+  if (m_dayOfMonthHasBeenSet) {
+    payload.WithString("DayOfMonth", m_dayOfMonth);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

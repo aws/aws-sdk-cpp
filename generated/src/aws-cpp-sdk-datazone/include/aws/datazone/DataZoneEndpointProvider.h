@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/datazone/DataZoneEndpointRules.h>
+#include <aws/datazone/DataZone_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace DataZone
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace DataZone {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using DataZoneClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using DataZoneDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_DATAZONE_API DataZoneEndpointProvider : public DataZoneDefaultEpProviderBase
-{
-public:
-    using DataZoneResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_DATAZONE_API DataZoneEndpointProvider : public DataZoneDefaultEpProviderBase {
+ public:
+  using DataZoneResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    DataZoneEndpointProvider()
-      : DataZoneDefaultEpProviderBase(Aws::DataZone::DataZoneEndpointRules::GetRulesBlob(), Aws::DataZone::DataZoneEndpointRules::RulesBlobSize)
-    {}
+  DataZoneEndpointProvider()
+      : DataZoneDefaultEpProviderBase(Aws::DataZone::DataZoneEndpointRules::GetRulesBlob(),
+                                      Aws::DataZone::DataZoneEndpointRules::RulesBlobSize) {}
 
-    ~DataZoneEndpointProvider()
-    {
-    }
+  ~DataZoneEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace DataZone
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace DataZone
+}  // namespace Aws

@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentCore
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentCore {
+namespace Model {
 
-MemoryRecordDeleteInput::MemoryRecordDeleteInput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MemoryRecordDeleteInput::MemoryRecordDeleteInput(JsonView jsonValue) { *this = jsonValue; }
 
-MemoryRecordDeleteInput& MemoryRecordDeleteInput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("memoryRecordId"))
-  {
+MemoryRecordDeleteInput& MemoryRecordDeleteInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("memoryRecordId")) {
     m_memoryRecordId = jsonValue.GetString("memoryRecordId");
     m_memoryRecordIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MemoryRecordDeleteInput::Jsonize() const
-{
+JsonValue MemoryRecordDeleteInput::Jsonize() const {
   JsonValue payload;
 
-  if(m_memoryRecordIdHasBeenSet)
-  {
-   payload.WithString("memoryRecordId", m_memoryRecordId);
-
+  if (m_memoryRecordIdHasBeenSet) {
+    payload.WithString("memoryRecordId", m_memoryRecordId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentCore
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentCore
+}  // namespace Aws

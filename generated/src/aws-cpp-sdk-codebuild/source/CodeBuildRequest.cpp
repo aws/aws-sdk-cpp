@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/codebuild/CodeBuildRequest.h>
 
-namespace Aws
-{
-namespace CodeBuild
-{
-} // namespace CodeBuild
-} // namespace Aws
+namespace Aws {
+namespace CodeBuild {}  // namespace CodeBuild
+}  // namespace Aws

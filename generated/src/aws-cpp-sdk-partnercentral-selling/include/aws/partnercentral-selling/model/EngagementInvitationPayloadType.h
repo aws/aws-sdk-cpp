@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 
-namespace Aws
-{
-namespace PartnerCentralSelling
-{
-namespace Model
-{
-  enum class EngagementInvitationPayloadType
-  {
-    NOT_SET,
-    OpportunityInvitation
-  };
+namespace Aws {
+namespace PartnerCentralSelling {
+namespace Model {
+enum class EngagementInvitationPayloadType { NOT_SET, OpportunityInvitation };
 
-namespace EngagementInvitationPayloadTypeMapper
-{
+namespace EngagementInvitationPayloadTypeMapper {
 AWS_PARTNERCENTRALSELLING_API EngagementInvitationPayloadType GetEngagementInvitationPayloadTypeForName(const Aws::String& name);
 
 AWS_PARTNERCENTRALSELLING_API Aws::String GetNameForEngagementInvitationPayloadType(EngagementInvitationPayloadType value);
-} // namespace EngagementInvitationPayloadTypeMapper
-} // namespace Model
-} // namespace PartnerCentralSelling
-} // namespace Aws
+}  // namespace EngagementInvitationPayloadTypeMapper
+}  // namespace Model
+}  // namespace PartnerCentralSelling
+}  // namespace Aws

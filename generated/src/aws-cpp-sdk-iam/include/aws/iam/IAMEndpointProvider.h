@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/iam/IAM_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/iam/IAMEndpointRules.h>
+#include <aws/iam/IAM_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace IAM
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace IAM {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using IAMClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -34,28 +29,21 @@ using IAMBuiltInParameters = Aws::Endpoint::BuiltInParameters;
  * Inherit from this Base class / "Interface" should you want to provide a custom endpoint provider.
  * The SDK must use service-specific type for each service per specification.
  */
-using IAMEndpointProviderBase =
-    EndpointProviderBase<IAMClientConfiguration, IAMBuiltInParameters, IAMClientContextParameters>;
+using IAMEndpointProviderBase = EndpointProviderBase<IAMClientConfiguration, IAMBuiltInParameters, IAMClientContextParameters>;
 
-using IAMDefaultEpProviderBase =
-    DefaultEndpointProvider<IAMClientConfiguration, IAMBuiltInParameters, IAMClientContextParameters>;
+using IAMDefaultEpProviderBase = DefaultEndpointProvider<IAMClientConfiguration, IAMBuiltInParameters, IAMClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_IAM_API IAMEndpointProvider : public IAMDefaultEpProviderBase
-{
-public:
-    using IAMResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_IAM_API IAMEndpointProvider : public IAMDefaultEpProviderBase {
+ public:
+  using IAMResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    IAMEndpointProvider()
-      : IAMDefaultEpProviderBase(Aws::IAM::IAMEndpointRules::GetRulesBlob(), Aws::IAM::IAMEndpointRules::RulesBlobSize)
-    {}
+  IAMEndpointProvider() : IAMDefaultEpProviderBase(Aws::IAM::IAMEndpointRules::GetRulesBlob(), Aws::IAM::IAMEndpointRules::RulesBlobSize) {}
 
-    ~IAMEndpointProvider()
-    {
-    }
+  ~IAMEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace IAM
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace IAM
+}  // namespace Aws

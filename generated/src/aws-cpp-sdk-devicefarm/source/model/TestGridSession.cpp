@@ -3,101 +3,78 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/devicefarm/model/TestGridSession.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/devicefarm/model/TestGridSession.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DeviceFarm
-{
-namespace Model
-{
+namespace Aws {
+namespace DeviceFarm {
+namespace Model {
 
-TestGridSession::TestGridSession(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TestGridSession::TestGridSession(JsonView jsonValue) { *this = jsonValue; }
 
-TestGridSession& TestGridSession::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("arn"))
-  {
+TestGridSession& TestGridSession::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = TestGridSessionStatusMapper::GetTestGridSessionStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("created"))
-  {
+  if (jsonValue.ValueExists("created")) {
     m_created = jsonValue.GetDouble("created");
     m_createdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ended"))
-  {
+  if (jsonValue.ValueExists("ended")) {
     m_ended = jsonValue.GetDouble("ended");
     m_endedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("billingMinutes"))
-  {
+  if (jsonValue.ValueExists("billingMinutes")) {
     m_billingMinutes = jsonValue.GetDouble("billingMinutes");
     m_billingMinutesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("seleniumProperties"))
-  {
+  if (jsonValue.ValueExists("seleniumProperties")) {
     m_seleniumProperties = jsonValue.GetString("seleniumProperties");
     m_seleniumPropertiesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TestGridSession::Jsonize() const
-{
+JsonValue TestGridSession::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", TestGridSessionStatusMapper::GetNameForTestGridSessionStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", TestGridSessionStatusMapper::GetNameForTestGridSessionStatus(m_status));
   }
 
-  if(m_createdHasBeenSet)
-  {
-   payload.WithDouble("created", m_created.SecondsWithMSPrecision());
+  if (m_createdHasBeenSet) {
+    payload.WithDouble("created", m_created.SecondsWithMSPrecision());
   }
 
-  if(m_endedHasBeenSet)
-  {
-   payload.WithDouble("ended", m_ended.SecondsWithMSPrecision());
+  if (m_endedHasBeenSet) {
+    payload.WithDouble("ended", m_ended.SecondsWithMSPrecision());
   }
 
-  if(m_billingMinutesHasBeenSet)
-  {
-   payload.WithDouble("billingMinutes", m_billingMinutes);
-
+  if (m_billingMinutesHasBeenSet) {
+    payload.WithDouble("billingMinutes", m_billingMinutes);
   }
 
-  if(m_seleniumPropertiesHasBeenSet)
-  {
-   payload.WithString("seleniumProperties", m_seleniumProperties);
-
+  if (m_seleniumPropertiesHasBeenSet) {
+    payload.WithString("seleniumProperties", m_seleniumProperties);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DeviceFarm
-} // namespace Aws
+}  // namespace Model
+}  // namespace DeviceFarm
+}  // namespace Aws

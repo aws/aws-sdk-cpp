@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class CopyProtectionAction
-  {
-    NOT_SET,
-    PASSTHROUGH,
-    STRIP
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class CopyProtectionAction { NOT_SET, PASSTHROUGH, STRIP };
 
-namespace CopyProtectionActionMapper
-{
+namespace CopyProtectionActionMapper {
 AWS_MEDIACONVERT_API CopyProtectionAction GetCopyProtectionActionForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForCopyProtectionAction(CopyProtectionAction value);
-} // namespace CopyProtectionActionMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace CopyProtectionActionMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

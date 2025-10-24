@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/VorbisSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconvert/model/VorbisSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
 
-VorbisSettings::VorbisSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VorbisSettings::VorbisSettings(JsonView jsonValue) { *this = jsonValue; }
 
-VorbisSettings& VorbisSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("channels"))
-  {
+VorbisSettings& VorbisSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("channels")) {
     m_channels = jsonValue.GetInteger("channels");
     m_channelsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sampleRate"))
-  {
+  if (jsonValue.ValueExists("sampleRate")) {
     m_sampleRate = jsonValue.GetInteger("sampleRate");
     m_sampleRateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("vbrQuality"))
-  {
+  if (jsonValue.ValueExists("vbrQuality")) {
     m_vbrQuality = jsonValue.GetInteger("vbrQuality");
     m_vbrQualityHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VorbisSettings::Jsonize() const
-{
+JsonValue VorbisSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_channelsHasBeenSet)
-  {
-   payload.WithInteger("channels", m_channels);
-
+  if (m_channelsHasBeenSet) {
+    payload.WithInteger("channels", m_channels);
   }
 
-  if(m_sampleRateHasBeenSet)
-  {
-   payload.WithInteger("sampleRate", m_sampleRate);
-
+  if (m_sampleRateHasBeenSet) {
+    payload.WithInteger("sampleRate", m_sampleRate);
   }
 
-  if(m_vbrQualityHasBeenSet)
-  {
-   payload.WithInteger("vbrQuality", m_vbrQuality);
-
+  if (m_vbrQualityHasBeenSet) {
+    payload.WithInteger("vbrQuality", m_vbrQuality);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

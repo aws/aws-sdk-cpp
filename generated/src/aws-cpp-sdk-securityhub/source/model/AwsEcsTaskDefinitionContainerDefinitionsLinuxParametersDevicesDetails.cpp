@@ -3,43 +3,36 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails(JsonView jsonValue)
-{
+AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails::
+    AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails& AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ContainerPath"))
-  {
+AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails&
+AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ContainerPath")) {
     m_containerPath = jsonValue.GetString("ContainerPath");
     m_containerPathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HostPath"))
-  {
+  if (jsonValue.ValueExists("HostPath")) {
     m_hostPath = jsonValue.GetString("HostPath");
     m_hostPathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Permissions"))
-  {
+  if (jsonValue.ValueExists("Permissions")) {
     Aws::Utils::Array<JsonView> permissionsJsonList = jsonValue.GetArray("Permissions");
-    for(unsigned permissionsIndex = 0; permissionsIndex < permissionsJsonList.GetLength(); ++permissionsIndex)
-    {
+    for (unsigned permissionsIndex = 0; permissionsIndex < permissionsJsonList.GetLength(); ++permissionsIndex) {
       m_permissions.push_back(permissionsJsonList[permissionsIndex].AsString());
     }
     m_permissionsHasBeenSet = true;
@@ -47,36 +40,28 @@ AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails& AwsEcsTas
   return *this;
 }
 
-JsonValue AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails::Jsonize() const
-{
+JsonValue AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_containerPathHasBeenSet)
-  {
-   payload.WithString("ContainerPath", m_containerPath);
-
+  if (m_containerPathHasBeenSet) {
+    payload.WithString("ContainerPath", m_containerPath);
   }
 
-  if(m_hostPathHasBeenSet)
-  {
-   payload.WithString("HostPath", m_hostPath);
-
+  if (m_hostPathHasBeenSet) {
+    payload.WithString("HostPath", m_hostPath);
   }
 
-  if(m_permissionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> permissionsJsonList(m_permissions.size());
-   for(unsigned permissionsIndex = 0; permissionsIndex < permissionsJsonList.GetLength(); ++permissionsIndex)
-   {
-     permissionsJsonList[permissionsIndex].AsString(m_permissions[permissionsIndex]);
-   }
-   payload.WithArray("Permissions", std::move(permissionsJsonList));
-
+  if (m_permissionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> permissionsJsonList(m_permissions.size());
+    for (unsigned permissionsIndex = 0; permissionsIndex < permissionsJsonList.GetLength(); ++permissionsIndex) {
+      permissionsJsonList[permissionsIndex].AsString(m_permissions[permissionsIndex]);
+    }
+    payload.WithArray("Permissions", std::move(permissionsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

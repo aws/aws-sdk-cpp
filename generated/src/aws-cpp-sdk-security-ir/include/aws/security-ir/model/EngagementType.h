@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/security-ir/SecurityIR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/security-ir/SecurityIR_EXPORTS.h>
 
-namespace Aws
-{
-namespace SecurityIR
-{
-namespace Model
-{
-  enum class EngagementType
-  {
-    NOT_SET,
-    Security_Incident,
-    Investigation
-  };
+namespace Aws {
+namespace SecurityIR {
+namespace Model {
+enum class EngagementType { NOT_SET, Security_Incident, Investigation };
 
-namespace EngagementTypeMapper
-{
+namespace EngagementTypeMapper {
 AWS_SECURITYIR_API EngagementType GetEngagementTypeForName(const Aws::String& name);
 
 AWS_SECURITYIR_API Aws::String GetNameForEngagementType(EngagementType value);
-} // namespace EngagementTypeMapper
-} // namespace Model
-} // namespace SecurityIR
-} // namespace Aws
+}  // namespace EngagementTypeMapper
+}  // namespace Model
+}  // namespace SecurityIR
+}  // namespace Aws

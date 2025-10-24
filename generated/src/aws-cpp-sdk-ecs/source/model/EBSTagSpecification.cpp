@@ -3,78 +3,61 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ecs/model/EBSTagSpecification.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ecs/model/EBSTagSpecification.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ECS
-{
-namespace Model
-{
+namespace Aws {
+namespace ECS {
+namespace Model {
 
-EBSTagSpecification::EBSTagSpecification(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EBSTagSpecification::EBSTagSpecification(JsonView jsonValue) { *this = jsonValue; }
 
-EBSTagSpecification& EBSTagSpecification::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("resourceType"))
-  {
+EBSTagSpecification& EBSTagSpecification::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("resourceType")) {
     m_resourceType = EBSResourceTypeMapper::GetEBSResourceTypeForName(jsonValue.GetString("resourceType"));
     m_resourceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tags"))
-  {
+  if (jsonValue.ValueExists("tags")) {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
-    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-    {
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("propagateTags"))
-  {
+  if (jsonValue.ValueExists("propagateTags")) {
     m_propagateTags = PropagateTagsMapper::GetPropagateTagsForName(jsonValue.GetString("propagateTags"));
     m_propagateTagsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EBSTagSpecification::Jsonize() const
-{
+JsonValue EBSTagSpecification::Jsonize() const {
   JsonValue payload;
 
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("resourceType", EBSResourceTypeMapper::GetNameForEBSResourceType(m_resourceType));
+  if (m_resourceTypeHasBeenSet) {
+    payload.WithString("resourceType", EBSResourceTypeMapper::GetNameForEBSResourceType(m_resourceType));
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("tags", std::move(tagsJsonList));
-
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("tags", std::move(tagsJsonList));
   }
 
-  if(m_propagateTagsHasBeenSet)
-  {
-   payload.WithString("propagateTags", PropagateTagsMapper::GetNameForPropagateTags(m_propagateTags));
+  if (m_propagateTagsHasBeenSet) {
+    payload.WithString("propagateTags", PropagateTagsMapper::GetNameForPropagateTags(m_propagateTags));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ECS
-} // namespace Aws
+}  // namespace Model
+}  // namespace ECS
+}  // namespace Aws

@@ -12,56 +12,38 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartQueryRequest::SerializePayload() const
-{
+Aws::String StartQueryRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_queryStatementHasBeenSet)
-  {
-   payload.WithString("QueryStatement", m_queryStatement);
-
+  if (m_queryStatementHasBeenSet) {
+    payload.WithString("QueryStatement", m_queryStatement);
   }
 
-  if(m_deliveryS3UriHasBeenSet)
-  {
-   payload.WithString("DeliveryS3Uri", m_deliveryS3Uri);
-
+  if (m_deliveryS3UriHasBeenSet) {
+    payload.WithString("DeliveryS3Uri", m_deliveryS3Uri);
   }
 
-  if(m_queryAliasHasBeenSet)
-  {
-   payload.WithString("QueryAlias", m_queryAlias);
-
+  if (m_queryAliasHasBeenSet) {
+    payload.WithString("QueryAlias", m_queryAlias);
   }
 
-  if(m_queryParametersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> queryParametersJsonList(m_queryParameters.size());
-   for(unsigned queryParametersIndex = 0; queryParametersIndex < queryParametersJsonList.GetLength(); ++queryParametersIndex)
-   {
-     queryParametersJsonList[queryParametersIndex].AsString(m_queryParameters[queryParametersIndex]);
-   }
-   payload.WithArray("QueryParameters", std::move(queryParametersJsonList));
-
+  if (m_queryParametersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> queryParametersJsonList(m_queryParameters.size());
+    for (unsigned queryParametersIndex = 0; queryParametersIndex < queryParametersJsonList.GetLength(); ++queryParametersIndex) {
+      queryParametersJsonList[queryParametersIndex].AsString(m_queryParameters[queryParametersIndex]);
+    }
+    payload.WithArray("QueryParameters", std::move(queryParametersJsonList));
   }
 
-  if(m_eventDataStoreOwnerAccountIdHasBeenSet)
-  {
-   payload.WithString("EventDataStoreOwnerAccountId", m_eventDataStoreOwnerAccountId);
-
+  if (m_eventDataStoreOwnerAccountIdHasBeenSet) {
+    payload.WithString("EventDataStoreOwnerAccountId", m_eventDataStoreOwnerAccountId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection StartQueryRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection StartQueryRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.StartQuery"));
   return headers;
-
 }
-
-
-
-

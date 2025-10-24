@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/migrationhubstrategy/model/VcenterBasedRemoteInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/migrationhubstrategy/model/VcenterBasedRemoteInfo.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MigrationHubStrategyRecommendations
-{
-namespace Model
-{
+namespace Aws {
+namespace MigrationHubStrategyRecommendations {
+namespace Model {
 
-VcenterBasedRemoteInfo::VcenterBasedRemoteInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VcenterBasedRemoteInfo::VcenterBasedRemoteInfo(JsonView jsonValue) { *this = jsonValue; }
 
-VcenterBasedRemoteInfo& VcenterBasedRemoteInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("osType"))
-  {
+VcenterBasedRemoteInfo& VcenterBasedRemoteInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("osType")) {
     m_osType = OSTypeMapper::GetOSTypeForName(jsonValue.GetString("osType"));
     m_osTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("vcenterConfigurationTimeStamp"))
-  {
+  if (jsonValue.ValueExists("vcenterConfigurationTimeStamp")) {
     m_vcenterConfigurationTimeStamp = jsonValue.GetString("vcenterConfigurationTimeStamp");
     m_vcenterConfigurationTimeStampHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VcenterBasedRemoteInfo::Jsonize() const
-{
+JsonValue VcenterBasedRemoteInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_osTypeHasBeenSet)
-  {
-   payload.WithString("osType", OSTypeMapper::GetNameForOSType(m_osType));
+  if (m_osTypeHasBeenSet) {
+    payload.WithString("osType", OSTypeMapper::GetNameForOSType(m_osType));
   }
 
-  if(m_vcenterConfigurationTimeStampHasBeenSet)
-  {
-   payload.WithString("vcenterConfigurationTimeStamp", m_vcenterConfigurationTimeStamp);
-
+  if (m_vcenterConfigurationTimeStampHasBeenSet) {
+    payload.WithString("vcenterConfigurationTimeStamp", m_vcenterConfigurationTimeStamp);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MigrationHubStrategyRecommendations
-} // namespace Aws
+}  // namespace Model
+}  // namespace MigrationHubStrategyRecommendations
+}  // namespace Aws

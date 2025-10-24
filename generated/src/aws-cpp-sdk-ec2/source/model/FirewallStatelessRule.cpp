@@ -3,47 +3,36 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/FirewallStatelessRule.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/FirewallStatelessRule.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-FirewallStatelessRule::FirewallStatelessRule(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+FirewallStatelessRule::FirewallStatelessRule(const XmlNode& xmlNode) { *this = xmlNode; }
 
-FirewallStatelessRule& FirewallStatelessRule::operator =(const XmlNode& xmlNode)
-{
+FirewallStatelessRule& FirewallStatelessRule::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode ruleGroupArnNode = resultNode.FirstChild("ruleGroupArn");
-    if(!ruleGroupArnNode.IsNull())
-    {
+    if (!ruleGroupArnNode.IsNull()) {
       m_ruleGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(ruleGroupArnNode.GetText());
       m_ruleGroupArnHasBeenSet = true;
     }
     XmlNode sourcesNode = resultNode.FirstChild("sourceSet");
-    if(!sourcesNode.IsNull())
-    {
+    if (!sourcesNode.IsNull()) {
       XmlNode sourcesMember = sourcesNode.FirstChild("item");
       m_sourcesHasBeenSet = !sourcesMember.IsNull();
-      while(!sourcesMember.IsNull())
-      {
+      while (!sourcesMember.IsNull()) {
         m_sources.push_back(sourcesMember.GetText());
         sourcesMember = sourcesMember.NextNode("item");
       }
@@ -51,12 +40,10 @@ FirewallStatelessRule& FirewallStatelessRule::operator =(const XmlNode& xmlNode)
       m_sourcesHasBeenSet = true;
     }
     XmlNode destinationsNode = resultNode.FirstChild("destinationSet");
-    if(!destinationsNode.IsNull())
-    {
+    if (!destinationsNode.IsNull()) {
       XmlNode destinationsMember = destinationsNode.FirstChild("item");
       m_destinationsHasBeenSet = !destinationsMember.IsNull();
-      while(!destinationsMember.IsNull())
-      {
+      while (!destinationsMember.IsNull()) {
         m_destinations.push_back(destinationsMember.GetText());
         destinationsMember = destinationsMember.NextNode("item");
       }
@@ -64,12 +51,10 @@ FirewallStatelessRule& FirewallStatelessRule::operator =(const XmlNode& xmlNode)
       m_destinationsHasBeenSet = true;
     }
     XmlNode sourcePortsNode = resultNode.FirstChild("sourcePortSet");
-    if(!sourcePortsNode.IsNull())
-    {
+    if (!sourcePortsNode.IsNull()) {
       XmlNode sourcePortsMember = sourcePortsNode.FirstChild("item");
       m_sourcePortsHasBeenSet = !sourcePortsMember.IsNull();
-      while(!sourcePortsMember.IsNull())
-      {
+      while (!sourcePortsMember.IsNull()) {
         m_sourcePorts.push_back(sourcePortsMember);
         sourcePortsMember = sourcePortsMember.NextNode("item");
       }
@@ -77,12 +62,10 @@ FirewallStatelessRule& FirewallStatelessRule::operator =(const XmlNode& xmlNode)
       m_sourcePortsHasBeenSet = true;
     }
     XmlNode destinationPortsNode = resultNode.FirstChild("destinationPortSet");
-    if(!destinationPortsNode.IsNull())
-    {
+    if (!destinationPortsNode.IsNull()) {
       XmlNode destinationPortsMember = destinationPortsNode.FirstChild("item");
       m_destinationPortsHasBeenSet = !destinationPortsMember.IsNull();
-      while(!destinationPortsMember.IsNull())
-      {
+      while (!destinationPortsMember.IsNull()) {
         m_destinationPorts.push_back(destinationPortsMember);
         destinationPortsMember = destinationPortsMember.NextNode("item");
       }
@@ -90,12 +73,10 @@ FirewallStatelessRule& FirewallStatelessRule::operator =(const XmlNode& xmlNode)
       m_destinationPortsHasBeenSet = true;
     }
     XmlNode protocolsNode = resultNode.FirstChild("protocolSet");
-    if(!protocolsNode.IsNull())
-    {
+    if (!protocolsNode.IsNull()) {
       XmlNode protocolsMember = protocolsNode.FirstChild("item");
       m_protocolsHasBeenSet = !protocolsMember.IsNull();
-      while(!protocolsMember.IsNull())
-      {
+      while (!protocolsMember.IsNull()) {
         m_protocols.push_back(StringUtils::ConvertToInt32(StringUtils::Trim(protocolsMember.GetText().c_str()).c_str()));
         protocolsMember = protocolsMember.NextNode("item");
       }
@@ -103,15 +84,14 @@ FirewallStatelessRule& FirewallStatelessRule::operator =(const XmlNode& xmlNode)
       m_protocolsHasBeenSet = true;
     }
     XmlNode ruleActionNode = resultNode.FirstChild("ruleAction");
-    if(!ruleActionNode.IsNull())
-    {
+    if (!ruleActionNode.IsNull()) {
       m_ruleAction = Aws::Utils::Xml::DecodeEscapedXmlText(ruleActionNode.GetText());
       m_ruleActionHasBeenSet = true;
     }
     XmlNode priorityNode = resultNode.FirstChild("priority");
-    if(!priorityNode.IsNull())
-    {
-      m_priority = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(priorityNode.GetText()).c_str()).c_str());
+    if (!priorityNode.IsNull()) {
+      m_priority =
+          StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(priorityNode.GetText()).c_str()).c_str());
       m_priorityHasBeenSet = true;
     }
   }
@@ -119,134 +99,106 @@ FirewallStatelessRule& FirewallStatelessRule::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void FirewallStatelessRule::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_ruleGroupArnHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".RuleGroupArn=" << StringUtils::URLEncode(m_ruleGroupArn.c_str()) << "&";
+void FirewallStatelessRule::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_ruleGroupArnHasBeenSet) {
+    oStream << location << index << locationValue << ".RuleGroupArn=" << StringUtils::URLEncode(m_ruleGroupArn.c_str()) << "&";
   }
 
-  if(m_sourcesHasBeenSet)
-  {
-      unsigned sourcesIdx = 1;
-      for(auto& item : m_sources)
-      {
-        oStream << location << index << locationValue << ".SourceSet." << sourcesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
+  if (m_sourcesHasBeenSet) {
+    unsigned sourcesIdx = 1;
+    for (auto& item : m_sources) {
+      oStream << location << index << locationValue << ".SourceSet." << sourcesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+    }
   }
 
-  if(m_destinationsHasBeenSet)
-  {
-      unsigned destinationsIdx = 1;
-      for(auto& item : m_destinations)
-      {
-        oStream << location << index << locationValue << ".DestinationSet." << destinationsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
+  if (m_destinationsHasBeenSet) {
+    unsigned destinationsIdx = 1;
+    for (auto& item : m_destinations) {
+      oStream << location << index << locationValue << ".DestinationSet." << destinationsIdx++ << "="
+              << StringUtils::URLEncode(item.c_str()) << "&";
+    }
   }
 
-  if(m_sourcePortsHasBeenSet)
-  {
-      unsigned sourcePortsIdx = 1;
-      for(auto& item : m_sourcePorts)
-      {
-        Aws::StringStream sourcePortsSs;
-        sourcePortsSs << location << index << locationValue << ".SourcePortSet." << sourcePortsIdx++;
-        item.OutputToStream(oStream, sourcePortsSs.str().c_str());
-      }
+  if (m_sourcePortsHasBeenSet) {
+    unsigned sourcePortsIdx = 1;
+    for (auto& item : m_sourcePorts) {
+      Aws::StringStream sourcePortsSs;
+      sourcePortsSs << location << index << locationValue << ".SourcePortSet." << sourcePortsIdx++;
+      item.OutputToStream(oStream, sourcePortsSs.str().c_str());
+    }
   }
 
-  if(m_destinationPortsHasBeenSet)
-  {
-      unsigned destinationPortsIdx = 1;
-      for(auto& item : m_destinationPorts)
-      {
-        Aws::StringStream destinationPortsSs;
-        destinationPortsSs << location << index << locationValue << ".DestinationPortSet." << destinationPortsIdx++;
-        item.OutputToStream(oStream, destinationPortsSs.str().c_str());
-      }
+  if (m_destinationPortsHasBeenSet) {
+    unsigned destinationPortsIdx = 1;
+    for (auto& item : m_destinationPorts) {
+      Aws::StringStream destinationPortsSs;
+      destinationPortsSs << location << index << locationValue << ".DestinationPortSet." << destinationPortsIdx++;
+      item.OutputToStream(oStream, destinationPortsSs.str().c_str());
+    }
   }
 
-  if(m_protocolsHasBeenSet)
-  {
-      unsigned protocolsIdx = 1;
-      for(auto& item : m_protocols)
-      {
-        oStream << location << index << locationValue << ".ProtocolSet." << protocolsIdx++ << "=" << item << "&";
-      }
+  if (m_protocolsHasBeenSet) {
+    unsigned protocolsIdx = 1;
+    for (auto& item : m_protocols) {
+      oStream << location << index << locationValue << ".ProtocolSet." << protocolsIdx++ << "=" << item << "&";
+    }
   }
 
-  if(m_ruleActionHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".RuleAction=" << StringUtils::URLEncode(m_ruleAction.c_str()) << "&";
+  if (m_ruleActionHasBeenSet) {
+    oStream << location << index << locationValue << ".RuleAction=" << StringUtils::URLEncode(m_ruleAction.c_str()) << "&";
   }
 
-  if(m_priorityHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Priority=" << m_priority << "&";
-  }
-
-}
-
-void FirewallStatelessRule::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_ruleGroupArnHasBeenSet)
-  {
-      oStream << location << ".RuleGroupArn=" << StringUtils::URLEncode(m_ruleGroupArn.c_str()) << "&";
-  }
-  if(m_sourcesHasBeenSet)
-  {
-      unsigned sourcesIdx = 1;
-      for(auto& item : m_sources)
-      {
-        oStream << location << ".SourceSet." << sourcesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
-  }
-  if(m_destinationsHasBeenSet)
-  {
-      unsigned destinationsIdx = 1;
-      for(auto& item : m_destinations)
-      {
-        oStream << location << ".DestinationSet." << destinationsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
-  }
-  if(m_sourcePortsHasBeenSet)
-  {
-      unsigned sourcePortsIdx = 1;
-      for(auto& item : m_sourcePorts)
-      {
-        Aws::StringStream sourcePortsSs;
-        sourcePortsSs << location << ".SourcePortSet." << sourcePortsIdx++;
-        item.OutputToStream(oStream, sourcePortsSs.str().c_str());
-      }
-  }
-  if(m_destinationPortsHasBeenSet)
-  {
-      unsigned destinationPortsIdx = 1;
-      for(auto& item : m_destinationPorts)
-      {
-        Aws::StringStream destinationPortsSs;
-        destinationPortsSs << location << ".DestinationPortSet." << destinationPortsIdx++;
-        item.OutputToStream(oStream, destinationPortsSs.str().c_str());
-      }
-  }
-  if(m_protocolsHasBeenSet)
-  {
-      unsigned protocolsIdx = 1;
-      for(auto& item : m_protocols)
-      {
-        oStream << location << ".ProtocolSet." << protocolsIdx++ << "=" << item << "&";
-      }
-  }
-  if(m_ruleActionHasBeenSet)
-  {
-      oStream << location << ".RuleAction=" << StringUtils::URLEncode(m_ruleAction.c_str()) << "&";
-  }
-  if(m_priorityHasBeenSet)
-  {
-      oStream << location << ".Priority=" << m_priority << "&";
+  if (m_priorityHasBeenSet) {
+    oStream << location << index << locationValue << ".Priority=" << m_priority << "&";
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void FirewallStatelessRule::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_ruleGroupArnHasBeenSet) {
+    oStream << location << ".RuleGroupArn=" << StringUtils::URLEncode(m_ruleGroupArn.c_str()) << "&";
+  }
+  if (m_sourcesHasBeenSet) {
+    unsigned sourcesIdx = 1;
+    for (auto& item : m_sources) {
+      oStream << location << ".SourceSet." << sourcesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+    }
+  }
+  if (m_destinationsHasBeenSet) {
+    unsigned destinationsIdx = 1;
+    for (auto& item : m_destinations) {
+      oStream << location << ".DestinationSet." << destinationsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+    }
+  }
+  if (m_sourcePortsHasBeenSet) {
+    unsigned sourcePortsIdx = 1;
+    for (auto& item : m_sourcePorts) {
+      Aws::StringStream sourcePortsSs;
+      sourcePortsSs << location << ".SourcePortSet." << sourcePortsIdx++;
+      item.OutputToStream(oStream, sourcePortsSs.str().c_str());
+    }
+  }
+  if (m_destinationPortsHasBeenSet) {
+    unsigned destinationPortsIdx = 1;
+    for (auto& item : m_destinationPorts) {
+      Aws::StringStream destinationPortsSs;
+      destinationPortsSs << location << ".DestinationPortSet." << destinationPortsIdx++;
+      item.OutputToStream(oStream, destinationPortsSs.str().c_str());
+    }
+  }
+  if (m_protocolsHasBeenSet) {
+    unsigned protocolsIdx = 1;
+    for (auto& item : m_protocols) {
+      oStream << location << ".ProtocolSet." << protocolsIdx++ << "=" << item << "&";
+    }
+  }
+  if (m_ruleActionHasBeenSet) {
+    oStream << location << ".RuleAction=" << StringUtils::URLEncode(m_ruleAction.c_str()) << "&";
+  }
+  if (m_priorityHasBeenSet) {
+    oStream << location << ".Priority=" << m_priority << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

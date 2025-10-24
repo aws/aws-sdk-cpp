@@ -6,60 +6,59 @@
 #pragma once
 #include <aws/awstransfer/Transfer_EXPORTS.h>
 #include <aws/awstransfer/model/DirectoryListingOptimization.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace Transfer
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Transfer {
+namespace Model {
 
+/**
+ * <p>The Amazon S3 storage options that are configured for your
+ * server.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/S3StorageOptions">AWS
+ * API Reference</a></p>
+ */
+class S3StorageOptions {
+ public:
+  AWS_TRANSFER_API S3StorageOptions() = default;
+  AWS_TRANSFER_API S3StorageOptions(Aws::Utils::Json::JsonView jsonValue);
+  AWS_TRANSFER_API S3StorageOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>The Amazon S3 storage options that are configured for your
-   * server.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/S3StorageOptions">AWS
-   * API Reference</a></p>
+   * <p>Specifies whether or not performance for your Amazon S3 directories is
+   * optimized.</p> <ul> <li> <p>If using the console, this is enabled by
+   * default.</p> </li> <li> <p>If using the API or CLI, this is disabled by
+   * default.</p> </li> </ul> <p>By default, home directory mappings have a
+   * <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this option, you
+   * would then need to explicitly set the <code>HomeDirectoryMapEntry</code>
+   * <code>Type</code> to <code>FILE</code> if you want a mapping to have a file
+   * target.</p>
    */
-  class S3StorageOptions
-  {
-  public:
-    AWS_TRANSFER_API S3StorageOptions() = default;
-    AWS_TRANSFER_API S3StorageOptions(Aws::Utils::Json::JsonView jsonValue);
-    AWS_TRANSFER_API S3StorageOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline DirectoryListingOptimization GetDirectoryListingOptimization() const { return m_directoryListingOptimization; }
+  inline bool DirectoryListingOptimizationHasBeenSet() const { return m_directoryListingOptimizationHasBeenSet; }
+  inline void SetDirectoryListingOptimization(DirectoryListingOptimization value) {
+    m_directoryListingOptimizationHasBeenSet = true;
+    m_directoryListingOptimization = value;
+  }
+  inline S3StorageOptions& WithDirectoryListingOptimization(DirectoryListingOptimization value) {
+    SetDirectoryListingOptimization(value);
+    return *this;
+  }
+  ///@}
+ private:
+  DirectoryListingOptimization m_directoryListingOptimization{DirectoryListingOptimization::NOT_SET};
+  bool m_directoryListingOptimizationHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>Specifies whether or not performance for your Amazon S3 directories is
-     * optimized.</p> <ul> <li> <p>If using the console, this is enabled by
-     * default.</p> </li> <li> <p>If using the API or CLI, this is disabled by
-     * default.</p> </li> </ul> <p>By default, home directory mappings have a
-     * <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this option, you
-     * would then need to explicitly set the <code>HomeDirectoryMapEntry</code>
-     * <code>Type</code> to <code>FILE</code> if you want a mapping to have a file
-     * target.</p>
-     */
-    inline DirectoryListingOptimization GetDirectoryListingOptimization() const { return m_directoryListingOptimization; }
-    inline bool DirectoryListingOptimizationHasBeenSet() const { return m_directoryListingOptimizationHasBeenSet; }
-    inline void SetDirectoryListingOptimization(DirectoryListingOptimization value) { m_directoryListingOptimizationHasBeenSet = true; m_directoryListingOptimization = value; }
-    inline S3StorageOptions& WithDirectoryListingOptimization(DirectoryListingOptimization value) { SetDirectoryListingOptimization(value); return *this;}
-    ///@}
-  private:
-
-    DirectoryListingOptimization m_directoryListingOptimization{DirectoryListingOptimization::NOT_SET};
-    bool m_directoryListingOptimizationHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Transfer
-} // namespace Aws
+}  // namespace Model
+}  // namespace Transfer
+}  // namespace Aws

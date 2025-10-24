@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/securityhub/SecurityHub_EXPORTS.h>
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
-  enum class AutoEnableStandards
-  {
-    NOT_SET,
-    NONE,
-    DEFAULT
-  };
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
+enum class AutoEnableStandards { NOT_SET, NONE, DEFAULT };
 
-namespace AutoEnableStandardsMapper
-{
+namespace AutoEnableStandardsMapper {
 AWS_SECURITYHUB_API AutoEnableStandards GetAutoEnableStandardsForName(const Aws::String& name);
 
 AWS_SECURITYHUB_API Aws::String GetNameForAutoEnableStandards(AutoEnableStandards value);
-} // namespace AutoEnableStandardsMapper
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace AutoEnableStandardsMapper
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

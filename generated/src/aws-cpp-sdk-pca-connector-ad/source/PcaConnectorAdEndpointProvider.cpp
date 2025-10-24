@@ -5,12 +5,8 @@
 
 #include <aws/pca-connector-ad/PcaConnectorAdEndpointProvider.h>
 
-namespace Aws
-{
-namespace PcaConnectorAd
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace PcaConnectorAd
-} // namespace Aws
+namespace Aws {
+namespace PcaConnectorAd {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace PcaConnectorAd
+}  // namespace Aws

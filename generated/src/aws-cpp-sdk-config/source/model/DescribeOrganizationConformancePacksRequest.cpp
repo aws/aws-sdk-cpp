@@ -12,44 +12,33 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeOrganizationConformancePacksRequest::SerializePayload() const
-{
+Aws::String DescribeOrganizationConformancePacksRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_organizationConformancePackNamesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> organizationConformancePackNamesJsonList(m_organizationConformancePackNames.size());
-   for(unsigned organizationConformancePackNamesIndex = 0; organizationConformancePackNamesIndex < organizationConformancePackNamesJsonList.GetLength(); ++organizationConformancePackNamesIndex)
-   {
-     organizationConformancePackNamesJsonList[organizationConformancePackNamesIndex].AsString(m_organizationConformancePackNames[organizationConformancePackNamesIndex]);
-   }
-   payload.WithArray("OrganizationConformancePackNames", std::move(organizationConformancePackNamesJsonList));
-
+  if (m_organizationConformancePackNamesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> organizationConformancePackNamesJsonList(m_organizationConformancePackNames.size());
+    for (unsigned organizationConformancePackNamesIndex = 0;
+         organizationConformancePackNamesIndex < organizationConformancePackNamesJsonList.GetLength();
+         ++organizationConformancePackNamesIndex) {
+      organizationConformancePackNamesJsonList[organizationConformancePackNamesIndex].AsString(
+          m_organizationConformancePackNames[organizationConformancePackNamesIndex]);
+    }
+    payload.WithArray("OrganizationConformancePackNames", std::move(organizationConformancePackNamesJsonList));
   }
 
-  if(m_limitHasBeenSet)
-  {
-   payload.WithInteger("Limit", m_limit);
-
+  if (m_limitHasBeenSet) {
+    payload.WithInteger("Limit", m_limit);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeOrganizationConformancePacksRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeOrganizationConformancePacksRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "StarlingDoveService.DescribeOrganizationConformancePacks"));
   return headers;
-
 }
-
-
-
-

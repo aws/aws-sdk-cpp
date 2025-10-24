@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/networkmanager/NetworkManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/networkmanager/NetworkManager_EXPORTS.h>
 
-namespace Aws
-{
-namespace NetworkManager
-{
-namespace Model
-{
-  enum class SegmentActionServiceInsertion
-  {
-    NOT_SET,
-    send_via,
-    send_to
-  };
+namespace Aws {
+namespace NetworkManager {
+namespace Model {
+enum class SegmentActionServiceInsertion { NOT_SET, send_via, send_to };
 
-namespace SegmentActionServiceInsertionMapper
-{
+namespace SegmentActionServiceInsertionMapper {
 AWS_NETWORKMANAGER_API SegmentActionServiceInsertion GetSegmentActionServiceInsertionForName(const Aws::String& name);
 
 AWS_NETWORKMANAGER_API Aws::String GetNameForSegmentActionServiceInsertion(SegmentActionServiceInsertion value);
-} // namespace SegmentActionServiceInsertionMapper
-} // namespace Model
-} // namespace NetworkManager
-} // namespace Aws
+}  // namespace SegmentActionServiceInsertionMapper
+}  // namespace Model
+}  // namespace NetworkManager
+}  // namespace Aws

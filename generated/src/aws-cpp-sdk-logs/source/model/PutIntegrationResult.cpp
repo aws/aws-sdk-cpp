@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/logs/model/PutIntegrationResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/logs/model/PutIntegrationResult.h>
 
 #include <utility>
 
@@ -17,33 +17,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutIntegrationResult::PutIntegrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+PutIntegrationResult::PutIntegrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-PutIntegrationResult& PutIntegrationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+PutIntegrationResult& PutIntegrationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("integrationName"))
-  {
+  if (jsonValue.ValueExists("integrationName")) {
     m_integrationName = jsonValue.GetString("integrationName");
     m_integrationNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("integrationStatus"))
-  {
+  if (jsonValue.ValueExists("integrationStatus")) {
     m_integrationStatus = IntegrationStatusMapper::GetIntegrationStatusForName(jsonValue.GetString("integrationStatus"));
     m_integrationStatusHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

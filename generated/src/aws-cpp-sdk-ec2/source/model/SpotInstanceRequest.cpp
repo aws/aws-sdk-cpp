@@ -3,131 +3,110 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/SpotInstanceRequest.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/SpotInstanceRequest.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-SpotInstanceRequest::SpotInstanceRequest(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+SpotInstanceRequest::SpotInstanceRequest(const XmlNode& xmlNode) { *this = xmlNode; }
 
-SpotInstanceRequest& SpotInstanceRequest::operator =(const XmlNode& xmlNode)
-{
+SpotInstanceRequest& SpotInstanceRequest::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode actualBlockHourlyPriceNode = resultNode.FirstChild("actualBlockHourlyPrice");
-    if(!actualBlockHourlyPriceNode.IsNull())
-    {
+    if (!actualBlockHourlyPriceNode.IsNull()) {
       m_actualBlockHourlyPrice = Aws::Utils::Xml::DecodeEscapedXmlText(actualBlockHourlyPriceNode.GetText());
       m_actualBlockHourlyPriceHasBeenSet = true;
     }
     XmlNode availabilityZoneGroupNode = resultNode.FirstChild("availabilityZoneGroup");
-    if(!availabilityZoneGroupNode.IsNull())
-    {
+    if (!availabilityZoneGroupNode.IsNull()) {
       m_availabilityZoneGroup = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneGroupNode.GetText());
       m_availabilityZoneGroupHasBeenSet = true;
     }
     XmlNode blockDurationMinutesNode = resultNode.FirstChild("blockDurationMinutes");
-    if(!blockDurationMinutesNode.IsNull())
-    {
-      m_blockDurationMinutes = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(blockDurationMinutesNode.GetText()).c_str()).c_str());
+    if (!blockDurationMinutesNode.IsNull()) {
+      m_blockDurationMinutes = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(blockDurationMinutesNode.GetText()).c_str()).c_str());
       m_blockDurationMinutesHasBeenSet = true;
     }
     XmlNode createTimeNode = resultNode.FirstChild("createTime");
-    if(!createTimeNode.IsNull())
-    {
-      m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+    if (!createTimeNode.IsNull()) {
+      m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(),
+                              Aws::Utils::DateFormat::ISO_8601);
       m_createTimeHasBeenSet = true;
     }
     XmlNode faultNode = resultNode.FirstChild("fault");
-    if(!faultNode.IsNull())
-    {
+    if (!faultNode.IsNull()) {
       m_fault = faultNode;
       m_faultHasBeenSet = true;
     }
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
-    if(!instanceIdNode.IsNull())
-    {
+    if (!instanceIdNode.IsNull()) {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
     }
     XmlNode launchGroupNode = resultNode.FirstChild("launchGroup");
-    if(!launchGroupNode.IsNull())
-    {
+    if (!launchGroupNode.IsNull()) {
       m_launchGroup = Aws::Utils::Xml::DecodeEscapedXmlText(launchGroupNode.GetText());
       m_launchGroupHasBeenSet = true;
     }
     XmlNode launchSpecificationNode = resultNode.FirstChild("launchSpecification");
-    if(!launchSpecificationNode.IsNull())
-    {
+    if (!launchSpecificationNode.IsNull()) {
       m_launchSpecification = launchSpecificationNode;
       m_launchSpecificationHasBeenSet = true;
     }
     XmlNode launchedAvailabilityZoneNode = resultNode.FirstChild("launchedAvailabilityZone");
-    if(!launchedAvailabilityZoneNode.IsNull())
-    {
+    if (!launchedAvailabilityZoneNode.IsNull()) {
       m_launchedAvailabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(launchedAvailabilityZoneNode.GetText());
       m_launchedAvailabilityZoneHasBeenSet = true;
     }
     XmlNode launchedAvailabilityZoneIdNode = resultNode.FirstChild("launchedAvailabilityZoneId");
-    if(!launchedAvailabilityZoneIdNode.IsNull())
-    {
+    if (!launchedAvailabilityZoneIdNode.IsNull()) {
       m_launchedAvailabilityZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(launchedAvailabilityZoneIdNode.GetText());
       m_launchedAvailabilityZoneIdHasBeenSet = true;
     }
     XmlNode productDescriptionNode = resultNode.FirstChild("productDescription");
-    if(!productDescriptionNode.IsNull())
-    {
-      m_productDescription = RIProductDescriptionMapper::GetRIProductDescriptionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(productDescriptionNode.GetText()).c_str()));
+    if (!productDescriptionNode.IsNull()) {
+      m_productDescription = RIProductDescriptionMapper::GetRIProductDescriptionForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(productDescriptionNode.GetText()).c_str()));
       m_productDescriptionHasBeenSet = true;
     }
     XmlNode spotInstanceRequestIdNode = resultNode.FirstChild("spotInstanceRequestId");
-    if(!spotInstanceRequestIdNode.IsNull())
-    {
+    if (!spotInstanceRequestIdNode.IsNull()) {
       m_spotInstanceRequestId = Aws::Utils::Xml::DecodeEscapedXmlText(spotInstanceRequestIdNode.GetText());
       m_spotInstanceRequestIdHasBeenSet = true;
     }
     XmlNode spotPriceNode = resultNode.FirstChild("spotPrice");
-    if(!spotPriceNode.IsNull())
-    {
+    if (!spotPriceNode.IsNull()) {
       m_spotPrice = Aws::Utils::Xml::DecodeEscapedXmlText(spotPriceNode.GetText());
       m_spotPriceHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
-    if(!stateNode.IsNull())
-    {
-      m_state = SpotInstanceStateMapper::GetSpotInstanceStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
+    if (!stateNode.IsNull()) {
+      m_state = SpotInstanceStateMapper::GetSpotInstanceStateForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
-    if(!statusNode.IsNull())
-    {
+    if (!statusNode.IsNull()) {
       m_status = statusNode;
       m_statusHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
-    if(!tagsNode.IsNull())
-    {
+    if (!tagsNode.IsNull()) {
       XmlNode tagsMember = tagsNode.FirstChild("item");
       m_tagsHasBeenSet = !tagsMember.IsNull();
-      while(!tagsMember.IsNull())
-      {
+      while (!tagsMember.IsNull()) {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
@@ -135,27 +114,27 @@ SpotInstanceRequest& SpotInstanceRequest::operator =(const XmlNode& xmlNode)
       m_tagsHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("type");
-    if(!typeNode.IsNull())
-    {
-      m_type = SpotInstanceTypeMapper::GetSpotInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
+    if (!typeNode.IsNull()) {
+      m_type = SpotInstanceTypeMapper::GetSpotInstanceTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
     }
     XmlNode validFromNode = resultNode.FirstChild("validFrom");
-    if(!validFromNode.IsNull())
-    {
-      m_validFrom = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(validFromNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+    if (!validFromNode.IsNull()) {
+      m_validFrom = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(validFromNode.GetText()).c_str()).c_str(),
+                             Aws::Utils::DateFormat::ISO_8601);
       m_validFromHasBeenSet = true;
     }
     XmlNode validUntilNode = resultNode.FirstChild("validUntil");
-    if(!validUntilNode.IsNull())
-    {
-      m_validUntil = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(validUntilNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+    if (!validUntilNode.IsNull()) {
+      m_validUntil = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(validUntilNode.GetText()).c_str()).c_str(),
+                              Aws::Utils::DateFormat::ISO_8601);
       m_validUntilHasBeenSet = true;
     }
     XmlNode instanceInterruptionBehaviorNode = resultNode.FirstChild("instanceInterruptionBehavior");
-    if(!instanceInterruptionBehaviorNode.IsNull())
-    {
-      m_instanceInterruptionBehavior = InstanceInterruptionBehaviorMapper::GetInstanceInterruptionBehaviorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceInterruptionBehaviorNode.GetText()).c_str()));
+    if (!instanceInterruptionBehaviorNode.IsNull()) {
+      m_instanceInterruptionBehavior = InstanceInterruptionBehaviorMapper::GetInstanceInterruptionBehaviorForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceInterruptionBehaviorNode.GetText()).c_str()));
       m_instanceInterruptionBehaviorHasBeenSet = true;
     }
   }
@@ -163,218 +142,194 @@ SpotInstanceRequest& SpotInstanceRequest::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void SpotInstanceRequest::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_actualBlockHourlyPriceHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ActualBlockHourlyPrice=" << StringUtils::URLEncode(m_actualBlockHourlyPrice.c_str()) << "&";
+void SpotInstanceRequest::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_actualBlockHourlyPriceHasBeenSet) {
+    oStream << location << index << locationValue << ".ActualBlockHourlyPrice=" << StringUtils::URLEncode(m_actualBlockHourlyPrice.c_str())
+            << "&";
   }
 
-  if(m_availabilityZoneGroupHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".AvailabilityZoneGroup=" << StringUtils::URLEncode(m_availabilityZoneGroup.c_str()) << "&";
+  if (m_availabilityZoneGroupHasBeenSet) {
+    oStream << location << index << locationValue << ".AvailabilityZoneGroup=" << StringUtils::URLEncode(m_availabilityZoneGroup.c_str())
+            << "&";
   }
 
-  if(m_blockDurationMinutesHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".BlockDurationMinutes=" << m_blockDurationMinutes << "&";
+  if (m_blockDurationMinutesHasBeenSet) {
+    oStream << location << index << locationValue << ".BlockDurationMinutes=" << m_blockDurationMinutes << "&";
   }
 
-  if(m_createTimeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  if (m_createTimeHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_faultHasBeenSet)
-  {
-      Aws::StringStream faultLocationAndMemberSs;
-      faultLocationAndMemberSs << location << index << locationValue << ".Fault";
-      m_fault.OutputToStream(oStream, faultLocationAndMemberSs.str().c_str());
+  if (m_faultHasBeenSet) {
+    Aws::StringStream faultLocationAndMemberSs;
+    faultLocationAndMemberSs << location << index << locationValue << ".Fault";
+    m_fault.OutputToStream(oStream, faultLocationAndMemberSs.str().c_str());
   }
 
-  if(m_instanceIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+  if (m_instanceIdHasBeenSet) {
+    oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
 
-  if(m_launchGroupHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".LaunchGroup=" << StringUtils::URLEncode(m_launchGroup.c_str()) << "&";
+  if (m_launchGroupHasBeenSet) {
+    oStream << location << index << locationValue << ".LaunchGroup=" << StringUtils::URLEncode(m_launchGroup.c_str()) << "&";
   }
 
-  if(m_launchSpecificationHasBeenSet)
-  {
-      Aws::StringStream launchSpecificationLocationAndMemberSs;
-      launchSpecificationLocationAndMemberSs << location << index << locationValue << ".LaunchSpecification";
-      m_launchSpecification.OutputToStream(oStream, launchSpecificationLocationAndMemberSs.str().c_str());
+  if (m_launchSpecificationHasBeenSet) {
+    Aws::StringStream launchSpecificationLocationAndMemberSs;
+    launchSpecificationLocationAndMemberSs << location << index << locationValue << ".LaunchSpecification";
+    m_launchSpecification.OutputToStream(oStream, launchSpecificationLocationAndMemberSs.str().c_str());
   }
 
-  if(m_launchedAvailabilityZoneHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".LaunchedAvailabilityZone=" << StringUtils::URLEncode(m_launchedAvailabilityZone.c_str()) << "&";
+  if (m_launchedAvailabilityZoneHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".LaunchedAvailabilityZone=" << StringUtils::URLEncode(m_launchedAvailabilityZone.c_str()) << "&";
   }
 
-  if(m_launchedAvailabilityZoneIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".LaunchedAvailabilityZoneId=" << StringUtils::URLEncode(m_launchedAvailabilityZoneId.c_str()) << "&";
+  if (m_launchedAvailabilityZoneIdHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".LaunchedAvailabilityZoneId=" << StringUtils::URLEncode(m_launchedAvailabilityZoneId.c_str()) << "&";
   }
 
-  if(m_productDescriptionHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ProductDescription=" << StringUtils::URLEncode(RIProductDescriptionMapper::GetNameForRIProductDescription(m_productDescription)) << "&";
+  if (m_productDescriptionHasBeenSet) {
+    oStream << location << index << locationValue << ".ProductDescription="
+            << StringUtils::URLEncode(RIProductDescriptionMapper::GetNameForRIProductDescription(m_productDescription)) << "&";
   }
 
-  if(m_spotInstanceRequestIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".SpotInstanceRequestId=" << StringUtils::URLEncode(m_spotInstanceRequestId.c_str()) << "&";
+  if (m_spotInstanceRequestIdHasBeenSet) {
+    oStream << location << index << locationValue << ".SpotInstanceRequestId=" << StringUtils::URLEncode(m_spotInstanceRequestId.c_str())
+            << "&";
   }
 
-  if(m_spotPriceHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".SpotPrice=" << StringUtils::URLEncode(m_spotPrice.c_str()) << "&";
+  if (m_spotPriceHasBeenSet) {
+    oStream << location << index << locationValue << ".SpotPrice=" << StringUtils::URLEncode(m_spotPrice.c_str()) << "&";
   }
 
-  if(m_stateHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(SpotInstanceStateMapper::GetNameForSpotInstanceState(m_state)) << "&";
+  if (m_stateHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".State=" << StringUtils::URLEncode(SpotInstanceStateMapper::GetNameForSpotInstanceState(m_state)) << "&";
   }
 
-  if(m_statusHasBeenSet)
-  {
-      Aws::StringStream statusLocationAndMemberSs;
-      statusLocationAndMemberSs << location << index << locationValue << ".Status";
-      m_status.OutputToStream(oStream, statusLocationAndMemberSs.str().c_str());
+  if (m_statusHasBeenSet) {
+    Aws::StringStream statusLocationAndMemberSs;
+    statusLocationAndMemberSs << location << index << locationValue << ".Status";
+    m_status.OutputToStream(oStream, statusLocationAndMemberSs.str().c_str());
   }
 
-  if(m_tagsHasBeenSet)
-  {
-      unsigned tagsIdx = 1;
-      for(auto& item : m_tags)
-      {
-        Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
-        item.OutputToStream(oStream, tagsSs.str().c_str());
-      }
+  if (m_tagsHasBeenSet) {
+    unsigned tagsIdx = 1;
+    for (auto& item : m_tags) {
+      Aws::StringStream tagsSs;
+      tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
+      item.OutputToStream(oStream, tagsSs.str().c_str());
+    }
   }
 
-  if(m_typeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Type=" << StringUtils::URLEncode(SpotInstanceTypeMapper::GetNameForSpotInstanceType(m_type)) << "&";
+  if (m_typeHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".Type=" << StringUtils::URLEncode(SpotInstanceTypeMapper::GetNameForSpotInstanceType(m_type)) << "&";
   }
 
-  if(m_validFromHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ValidFrom=" << StringUtils::URLEncode(m_validFrom.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  if (m_validFromHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".ValidFrom=" << StringUtils::URLEncode(m_validFrom.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_validUntilHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ValidUntil=" << StringUtils::URLEncode(m_validUntil.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  if (m_validUntilHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".ValidUntil=" << StringUtils::URLEncode(m_validUntil.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_instanceInterruptionBehaviorHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".InstanceInterruptionBehavior=" << StringUtils::URLEncode(InstanceInterruptionBehaviorMapper::GetNameForInstanceInterruptionBehavior(m_instanceInterruptionBehavior)) << "&";
-  }
-
-}
-
-void SpotInstanceRequest::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_actualBlockHourlyPriceHasBeenSet)
-  {
-      oStream << location << ".ActualBlockHourlyPrice=" << StringUtils::URLEncode(m_actualBlockHourlyPrice.c_str()) << "&";
-  }
-  if(m_availabilityZoneGroupHasBeenSet)
-  {
-      oStream << location << ".AvailabilityZoneGroup=" << StringUtils::URLEncode(m_availabilityZoneGroup.c_str()) << "&";
-  }
-  if(m_blockDurationMinutesHasBeenSet)
-  {
-      oStream << location << ".BlockDurationMinutes=" << m_blockDurationMinutes << "&";
-  }
-  if(m_createTimeHasBeenSet)
-  {
-      oStream << location << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
-  }
-  if(m_faultHasBeenSet)
-  {
-      Aws::String faultLocationAndMember(location);
-      faultLocationAndMember += ".Fault";
-      m_fault.OutputToStream(oStream, faultLocationAndMember.c_str());
-  }
-  if(m_instanceIdHasBeenSet)
-  {
-      oStream << location << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
-  }
-  if(m_launchGroupHasBeenSet)
-  {
-      oStream << location << ".LaunchGroup=" << StringUtils::URLEncode(m_launchGroup.c_str()) << "&";
-  }
-  if(m_launchSpecificationHasBeenSet)
-  {
-      Aws::String launchSpecificationLocationAndMember(location);
-      launchSpecificationLocationAndMember += ".LaunchSpecification";
-      m_launchSpecification.OutputToStream(oStream, launchSpecificationLocationAndMember.c_str());
-  }
-  if(m_launchedAvailabilityZoneHasBeenSet)
-  {
-      oStream << location << ".LaunchedAvailabilityZone=" << StringUtils::URLEncode(m_launchedAvailabilityZone.c_str()) << "&";
-  }
-  if(m_launchedAvailabilityZoneIdHasBeenSet)
-  {
-      oStream << location << ".LaunchedAvailabilityZoneId=" << StringUtils::URLEncode(m_launchedAvailabilityZoneId.c_str()) << "&";
-  }
-  if(m_productDescriptionHasBeenSet)
-  {
-      oStream << location << ".ProductDescription=" << StringUtils::URLEncode(RIProductDescriptionMapper::GetNameForRIProductDescription(m_productDescription)) << "&";
-  }
-  if(m_spotInstanceRequestIdHasBeenSet)
-  {
-      oStream << location << ".SpotInstanceRequestId=" << StringUtils::URLEncode(m_spotInstanceRequestId.c_str()) << "&";
-  }
-  if(m_spotPriceHasBeenSet)
-  {
-      oStream << location << ".SpotPrice=" << StringUtils::URLEncode(m_spotPrice.c_str()) << "&";
-  }
-  if(m_stateHasBeenSet)
-  {
-      oStream << location << ".State=" << StringUtils::URLEncode(SpotInstanceStateMapper::GetNameForSpotInstanceState(m_state)) << "&";
-  }
-  if(m_statusHasBeenSet)
-  {
-      Aws::String statusLocationAndMember(location);
-      statusLocationAndMember += ".Status";
-      m_status.OutputToStream(oStream, statusLocationAndMember.c_str());
-  }
-  if(m_tagsHasBeenSet)
-  {
-      unsigned tagsIdx = 1;
-      for(auto& item : m_tags)
-      {
-        Aws::StringStream tagsSs;
-        tagsSs << location << ".TagSet." << tagsIdx++;
-        item.OutputToStream(oStream, tagsSs.str().c_str());
-      }
-  }
-  if(m_typeHasBeenSet)
-  {
-      oStream << location << ".Type=" << StringUtils::URLEncode(SpotInstanceTypeMapper::GetNameForSpotInstanceType(m_type)) << "&";
-  }
-  if(m_validFromHasBeenSet)
-  {
-      oStream << location << ".ValidFrom=" << StringUtils::URLEncode(m_validFrom.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
-  }
-  if(m_validUntilHasBeenSet)
-  {
-      oStream << location << ".ValidUntil=" << StringUtils::URLEncode(m_validUntil.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
-  }
-  if(m_instanceInterruptionBehaviorHasBeenSet)
-  {
-      oStream << location << ".InstanceInterruptionBehavior=" << StringUtils::URLEncode(InstanceInterruptionBehaviorMapper::GetNameForInstanceInterruptionBehavior(m_instanceInterruptionBehavior)) << "&";
+  if (m_instanceInterruptionBehaviorHasBeenSet) {
+    oStream << location << index << locationValue << ".InstanceInterruptionBehavior="
+            << StringUtils::URLEncode(
+                   InstanceInterruptionBehaviorMapper::GetNameForInstanceInterruptionBehavior(m_instanceInterruptionBehavior))
+            << "&";
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void SpotInstanceRequest::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_actualBlockHourlyPriceHasBeenSet) {
+    oStream << location << ".ActualBlockHourlyPrice=" << StringUtils::URLEncode(m_actualBlockHourlyPrice.c_str()) << "&";
+  }
+  if (m_availabilityZoneGroupHasBeenSet) {
+    oStream << location << ".AvailabilityZoneGroup=" << StringUtils::URLEncode(m_availabilityZoneGroup.c_str()) << "&";
+  }
+  if (m_blockDurationMinutesHasBeenSet) {
+    oStream << location << ".BlockDurationMinutes=" << m_blockDurationMinutes << "&";
+  }
+  if (m_createTimeHasBeenSet) {
+    oStream << location << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str())
+            << "&";
+  }
+  if (m_faultHasBeenSet) {
+    Aws::String faultLocationAndMember(location);
+    faultLocationAndMember += ".Fault";
+    m_fault.OutputToStream(oStream, faultLocationAndMember.c_str());
+  }
+  if (m_instanceIdHasBeenSet) {
+    oStream << location << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+  }
+  if (m_launchGroupHasBeenSet) {
+    oStream << location << ".LaunchGroup=" << StringUtils::URLEncode(m_launchGroup.c_str()) << "&";
+  }
+  if (m_launchSpecificationHasBeenSet) {
+    Aws::String launchSpecificationLocationAndMember(location);
+    launchSpecificationLocationAndMember += ".LaunchSpecification";
+    m_launchSpecification.OutputToStream(oStream, launchSpecificationLocationAndMember.c_str());
+  }
+  if (m_launchedAvailabilityZoneHasBeenSet) {
+    oStream << location << ".LaunchedAvailabilityZone=" << StringUtils::URLEncode(m_launchedAvailabilityZone.c_str()) << "&";
+  }
+  if (m_launchedAvailabilityZoneIdHasBeenSet) {
+    oStream << location << ".LaunchedAvailabilityZoneId=" << StringUtils::URLEncode(m_launchedAvailabilityZoneId.c_str()) << "&";
+  }
+  if (m_productDescriptionHasBeenSet) {
+    oStream << location << ".ProductDescription="
+            << StringUtils::URLEncode(RIProductDescriptionMapper::GetNameForRIProductDescription(m_productDescription)) << "&";
+  }
+  if (m_spotInstanceRequestIdHasBeenSet) {
+    oStream << location << ".SpotInstanceRequestId=" << StringUtils::URLEncode(m_spotInstanceRequestId.c_str()) << "&";
+  }
+  if (m_spotPriceHasBeenSet) {
+    oStream << location << ".SpotPrice=" << StringUtils::URLEncode(m_spotPrice.c_str()) << "&";
+  }
+  if (m_stateHasBeenSet) {
+    oStream << location << ".State=" << StringUtils::URLEncode(SpotInstanceStateMapper::GetNameForSpotInstanceState(m_state)) << "&";
+  }
+  if (m_statusHasBeenSet) {
+    Aws::String statusLocationAndMember(location);
+    statusLocationAndMember += ".Status";
+    m_status.OutputToStream(oStream, statusLocationAndMember.c_str());
+  }
+  if (m_tagsHasBeenSet) {
+    unsigned tagsIdx = 1;
+    for (auto& item : m_tags) {
+      Aws::StringStream tagsSs;
+      tagsSs << location << ".TagSet." << tagsIdx++;
+      item.OutputToStream(oStream, tagsSs.str().c_str());
+    }
+  }
+  if (m_typeHasBeenSet) {
+    oStream << location << ".Type=" << StringUtils::URLEncode(SpotInstanceTypeMapper::GetNameForSpotInstanceType(m_type)) << "&";
+  }
+  if (m_validFromHasBeenSet) {
+    oStream << location << ".ValidFrom=" << StringUtils::URLEncode(m_validFrom.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str())
+            << "&";
+  }
+  if (m_validUntilHasBeenSet) {
+    oStream << location << ".ValidUntil=" << StringUtils::URLEncode(m_validUntil.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str())
+            << "&";
+  }
+  if (m_instanceInterruptionBehaviorHasBeenSet) {
+    oStream << location << ".InstanceInterruptionBehavior="
+            << StringUtils::URLEncode(
+                   InstanceInterruptionBehaviorMapper::GetNameForInstanceInterruptionBehavior(m_instanceInterruptionBehavior))
+            << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

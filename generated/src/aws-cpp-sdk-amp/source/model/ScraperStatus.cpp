@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace PrometheusService
-{
-namespace Model
-{
+namespace Aws {
+namespace PrometheusService {
+namespace Model {
 
-ScraperStatus::ScraperStatus(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ScraperStatus::ScraperStatus(JsonView jsonValue) { *this = jsonValue; }
 
-ScraperStatus& ScraperStatus::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("statusCode"))
-  {
+ScraperStatus& ScraperStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("statusCode")) {
     m_statusCode = ScraperStatusCodeMapper::GetScraperStatusCodeForName(jsonValue.GetString("statusCode"));
     m_statusCodeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ScraperStatus::Jsonize() const
-{
+JsonValue ScraperStatus::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusCodeHasBeenSet)
-  {
-   payload.WithString("statusCode", ScraperStatusCodeMapper::GetNameForScraperStatusCode(m_statusCode));
+  if (m_statusCodeHasBeenSet) {
+    payload.WithString("statusCode", ScraperStatusCodeMapper::GetNameForScraperStatusCode(m_statusCode));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace PrometheusService
-} // namespace Aws
+}  // namespace Model
+}  // namespace PrometheusService
+}  // namespace Aws

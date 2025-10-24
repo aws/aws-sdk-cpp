@@ -5,12 +5,8 @@
 
 #include <aws/finspace/FinspaceEndpointProvider.h>
 
-namespace Aws
-{
-namespace finspace
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace finspace
-} // namespace Aws
+namespace Aws {
+namespace finspace {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace finspace
+}  // namespace Aws

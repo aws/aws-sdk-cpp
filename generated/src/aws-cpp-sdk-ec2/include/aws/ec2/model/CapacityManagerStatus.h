@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class CapacityManagerStatus
-  {
-    NOT_SET,
-    enabled,
-    disabled
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class CapacityManagerStatus { NOT_SET, enabled, disabled };
 
-namespace CapacityManagerStatusMapper
-{
+namespace CapacityManagerStatusMapper {
 AWS_EC2_API CapacityManagerStatus GetCapacityManagerStatusForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForCapacityManagerStatus(CapacityManagerStatus value);
-} // namespace CapacityManagerStatusMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace CapacityManagerStatusMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

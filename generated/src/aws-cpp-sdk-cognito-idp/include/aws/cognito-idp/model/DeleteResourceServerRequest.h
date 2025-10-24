@@ -4,68 +4,75 @@
  */
 
 #pragma once
-#include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
+#include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
 
+/**
+ */
+class DeleteResourceServerRequest : public CognitoIdentityProviderRequest {
+ public:
+  AWS_COGNITOIDENTITYPROVIDER_API DeleteResourceServerRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeleteResourceServer"; }
+
+  AWS_COGNITOIDENTITYPROVIDER_API Aws::String SerializePayload() const override;
+
+  AWS_COGNITOIDENTITYPROVIDER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The ID of the user pool where you want to delete the resource server.</p>
    */
-  class DeleteResourceServerRequest : public CognitoIdentityProviderRequest
-  {
-  public:
-    AWS_COGNITOIDENTITYPROVIDER_API DeleteResourceServerRequest() = default;
+  inline const Aws::String& GetUserPoolId() const { return m_userPoolId; }
+  inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
+  template <typename UserPoolIdT = Aws::String>
+  void SetUserPoolId(UserPoolIdT&& value) {
+    m_userPoolIdHasBeenSet = true;
+    m_userPoolId = std::forward<UserPoolIdT>(value);
+  }
+  template <typename UserPoolIdT = Aws::String>
+  DeleteResourceServerRequest& WithUserPoolId(UserPoolIdT&& value) {
+    SetUserPoolId(std::forward<UserPoolIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DeleteResourceServer"; }
+  ///@{
+  /**
+   * <p>The identifier of the resource server that you want to delete.</p>
+   */
+  inline const Aws::String& GetIdentifier() const { return m_identifier; }
+  inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
+  template <typename IdentifierT = Aws::String>
+  void SetIdentifier(IdentifierT&& value) {
+    m_identifierHasBeenSet = true;
+    m_identifier = std::forward<IdentifierT>(value);
+  }
+  template <typename IdentifierT = Aws::String>
+  DeleteResourceServerRequest& WithIdentifier(IdentifierT&& value) {
+    SetIdentifier(std::forward<IdentifierT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_userPoolId;
+  bool m_userPoolIdHasBeenSet = false;
 
-    AWS_COGNITOIDENTITYPROVIDER_API Aws::String SerializePayload() const override;
+  Aws::String m_identifier;
+  bool m_identifierHasBeenSet = false;
+};
 
-    AWS_COGNITOIDENTITYPROVIDER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    ///@{
-    /**
-     * <p>The ID of the user pool where you want to delete the resource server.</p>
-     */
-    inline const Aws::String& GetUserPoolId() const { return m_userPoolId; }
-    inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
-    template<typename UserPoolIdT = Aws::String>
-    void SetUserPoolId(UserPoolIdT&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::forward<UserPoolIdT>(value); }
-    template<typename UserPoolIdT = Aws::String>
-    DeleteResourceServerRequest& WithUserPoolId(UserPoolIdT&& value) { SetUserPoolId(std::forward<UserPoolIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The identifier of the resource server that you want to delete.</p>
-     */
-    inline const Aws::String& GetIdentifier() const { return m_identifier; }
-    inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    template<typename IdentifierT = Aws::String>
-    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
-    template<typename IdentifierT = Aws::String>
-    DeleteResourceServerRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_userPoolId;
-    bool m_userPoolIdHasBeenSet = false;
-
-    Aws::String m_identifier;
-    bool m_identifierHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/gamelift/model/DescribePlayerSessionsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/gamelift/model/DescribePlayerSessionsRequest.h>
 
 #include <utility>
 
@@ -12,57 +12,38 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribePlayerSessionsRequest::SerializePayload() const
-{
+Aws::String DescribePlayerSessionsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_gameSessionIdHasBeenSet)
-  {
-   payload.WithString("GameSessionId", m_gameSessionId);
-
+  if (m_gameSessionIdHasBeenSet) {
+    payload.WithString("GameSessionId", m_gameSessionId);
   }
 
-  if(m_playerIdHasBeenSet)
-  {
-   payload.WithString("PlayerId", m_playerId);
-
+  if (m_playerIdHasBeenSet) {
+    payload.WithString("PlayerId", m_playerId);
   }
 
-  if(m_playerSessionIdHasBeenSet)
-  {
-   payload.WithString("PlayerSessionId", m_playerSessionId);
-
+  if (m_playerSessionIdHasBeenSet) {
+    payload.WithString("PlayerSessionId", m_playerSessionId);
   }
 
-  if(m_playerSessionStatusFilterHasBeenSet)
-  {
-   payload.WithString("PlayerSessionStatusFilter", m_playerSessionStatusFilter);
-
+  if (m_playerSessionStatusFilterHasBeenSet) {
+    payload.WithString("PlayerSessionStatusFilter", m_playerSessionStatusFilter);
   }
 
-  if(m_limitHasBeenSet)
-  {
-   payload.WithInteger("Limit", m_limit);
-
+  if (m_limitHasBeenSet) {
+    payload.WithInteger("Limit", m_limit);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribePlayerSessionsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribePlayerSessionsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "GameLift.DescribePlayerSessions"));
   return headers;
-
 }
-
-
-
-

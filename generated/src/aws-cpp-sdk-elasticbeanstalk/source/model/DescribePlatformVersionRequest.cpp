@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticbeanstalk/model/DescribePlatformVersionRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticbeanstalk/model/DescribePlatformVersionRequest.h>
 
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribePlatformVersionRequest::SerializePayload() const
-{
+Aws::String DescribePlatformVersionRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribePlatformVersion&";
-  if(m_platformArnHasBeenSet)
-  {
+  if (m_platformArnHasBeenSet) {
     ss << "PlatformArn=" << StringUtils::URLEncode(m_platformArn.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DescribePlatformVersionRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribePlatformVersionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribePlatformVersionRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

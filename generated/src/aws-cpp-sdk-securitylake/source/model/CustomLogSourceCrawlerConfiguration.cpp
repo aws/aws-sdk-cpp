@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securitylake/model/CustomLogSourceCrawlerConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securitylake/model/CustomLogSourceCrawlerConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityLake
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityLake {
+namespace Model {
 
-CustomLogSourceCrawlerConfiguration::CustomLogSourceCrawlerConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CustomLogSourceCrawlerConfiguration::CustomLogSourceCrawlerConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-CustomLogSourceCrawlerConfiguration& CustomLogSourceCrawlerConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("roleArn"))
-  {
+CustomLogSourceCrawlerConfiguration& CustomLogSourceCrawlerConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("roleArn")) {
     m_roleArn = jsonValue.GetString("roleArn");
     m_roleArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CustomLogSourceCrawlerConfiguration::Jsonize() const
-{
+JsonValue CustomLogSourceCrawlerConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("roleArn", m_roleArn);
-
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("roleArn", m_roleArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityLake
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityLake
+}  // namespace Aws

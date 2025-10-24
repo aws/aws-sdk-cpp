@@ -11,71 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Comprehend {
+namespace Model {
 
-PiiEntitiesDetectionJobFilter::PiiEntitiesDetectionJobFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PiiEntitiesDetectionJobFilter::PiiEntitiesDetectionJobFilter(JsonView jsonValue) { *this = jsonValue; }
 
-PiiEntitiesDetectionJobFilter& PiiEntitiesDetectionJobFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("JobName"))
-  {
+PiiEntitiesDetectionJobFilter& PiiEntitiesDetectionJobFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("JobName")) {
     m_jobName = jsonValue.GetString("JobName");
     m_jobNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("JobStatus"))
-  {
+  if (jsonValue.ValueExists("JobStatus")) {
     m_jobStatus = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("JobStatus"));
     m_jobStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SubmitTimeBefore"))
-  {
+  if (jsonValue.ValueExists("SubmitTimeBefore")) {
     m_submitTimeBefore = jsonValue.GetDouble("SubmitTimeBefore");
     m_submitTimeBeforeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SubmitTimeAfter"))
-  {
+  if (jsonValue.ValueExists("SubmitTimeAfter")) {
     m_submitTimeAfter = jsonValue.GetDouble("SubmitTimeAfter");
     m_submitTimeAfterHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PiiEntitiesDetectionJobFilter::Jsonize() const
-{
+JsonValue PiiEntitiesDetectionJobFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_jobNameHasBeenSet)
-  {
-   payload.WithString("JobName", m_jobName);
-
+  if (m_jobNameHasBeenSet) {
+    payload.WithString("JobName", m_jobName);
   }
 
-  if(m_jobStatusHasBeenSet)
-  {
-   payload.WithString("JobStatus", JobStatusMapper::GetNameForJobStatus(m_jobStatus));
+  if (m_jobStatusHasBeenSet) {
+    payload.WithString("JobStatus", JobStatusMapper::GetNameForJobStatus(m_jobStatus));
   }
 
-  if(m_submitTimeBeforeHasBeenSet)
-  {
-   payload.WithDouble("SubmitTimeBefore", m_submitTimeBefore.SecondsWithMSPrecision());
+  if (m_submitTimeBeforeHasBeenSet) {
+    payload.WithDouble("SubmitTimeBefore", m_submitTimeBefore.SecondsWithMSPrecision());
   }
 
-  if(m_submitTimeAfterHasBeenSet)
-  {
-   payload.WithDouble("SubmitTimeAfter", m_submitTimeAfter.SecondsWithMSPrecision());
+  if (m_submitTimeAfterHasBeenSet) {
+    payload.WithDouble("SubmitTimeAfter", m_submitTimeAfter.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

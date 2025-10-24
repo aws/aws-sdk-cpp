@@ -12,11 +12,4 @@ using namespace Aws::CodeGuruSecurity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetAccountConfigurationRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetAccountConfigurationRequest::SerializePayload() const { return {}; }

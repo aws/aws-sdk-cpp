@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/logs/CloudWatchLogs_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudWatchLogs
-{
-namespace Model
-{
-  enum class AnomalyDetectorStatus
-  {
-    NOT_SET,
-    INITIALIZING,
-    TRAINING,
-    ANALYZING,
-    FAILED,
-    DELETED,
-    PAUSED
-  };
+namespace Aws {
+namespace CloudWatchLogs {
+namespace Model {
+enum class AnomalyDetectorStatus { NOT_SET, INITIALIZING, TRAINING, ANALYZING, FAILED, DELETED, PAUSED };
 
-namespace AnomalyDetectorStatusMapper
-{
+namespace AnomalyDetectorStatusMapper {
 AWS_CLOUDWATCHLOGS_API AnomalyDetectorStatus GetAnomalyDetectorStatusForName(const Aws::String& name);
 
 AWS_CLOUDWATCHLOGS_API Aws::String GetNameForAnomalyDetectorStatus(AnomalyDetectorStatus value);
-} // namespace AnomalyDetectorStatusMapper
-} // namespace Model
-} // namespace CloudWatchLogs
-} // namespace Aws
+}  // namespace AnomalyDetectorStatusMapper
+}  // namespace Model
+}  // namespace CloudWatchLogs
+}  // namespace Aws

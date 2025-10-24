@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glacier/model/UploadMultipartPartRequest.h>
 #include <aws/core/AmazonWebServiceResult.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/glacier/model/UploadMultipartPartRequest.h>
 
 #include <utility>
 
@@ -15,27 +15,21 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-
-
-Aws::Http::HeaderValueCollection UploadMultipartPartRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UploadMultipartPartRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("x-amz-glacier-version", "2012-06-01"));
   Aws::StringStream ss;
-  if(m_checksumHasBeenSet)
-  {
+  if (m_checksumHasBeenSet) {
     ss << m_checksum;
-    headers.emplace("x-amz-sha256-tree-hash",  ss.str());
+    headers.emplace("x-amz-sha256-tree-hash", ss.str());
     ss.str("");
   }
 
-  if(m_rangeHasBeenSet)
-  {
+  if (m_rangeHasBeenSet) {
     ss << m_range;
-    headers.emplace("content-range",  ss.str());
+    headers.emplace("content-range", ss.str());
     ss.str("");
   }
 
   return headers;
-
 }

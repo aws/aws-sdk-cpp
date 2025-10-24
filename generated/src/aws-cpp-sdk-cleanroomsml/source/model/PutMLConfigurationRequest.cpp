@@ -12,19 +12,12 @@ using namespace Aws::CleanRoomsML::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutMLConfigurationRequest::SerializePayload() const
-{
+Aws::String PutMLConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_defaultOutputLocationHasBeenSet)
-  {
-   payload.WithObject("defaultOutputLocation", m_defaultOutputLocation.Jsonize());
-
+  if (m_defaultOutputLocationHasBeenSet) {
+    payload.WithObject("defaultOutputLocation", m_defaultOutputLocation.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

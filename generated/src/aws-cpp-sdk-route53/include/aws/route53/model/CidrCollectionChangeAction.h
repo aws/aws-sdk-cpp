@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/route53/Route53_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/route53/Route53_EXPORTS.h>
 
-namespace Aws
-{
-namespace Route53
-{
-namespace Model
-{
-  enum class CidrCollectionChangeAction
-  {
-    NOT_SET,
-    PUT,
-    DELETE_IF_EXISTS
-  };
+namespace Aws {
+namespace Route53 {
+namespace Model {
+enum class CidrCollectionChangeAction { NOT_SET, PUT, DELETE_IF_EXISTS };
 
-namespace CidrCollectionChangeActionMapper
-{
+namespace CidrCollectionChangeActionMapper {
 AWS_ROUTE53_API CidrCollectionChangeAction GetCidrCollectionChangeActionForName(const Aws::String& name);
 
 AWS_ROUTE53_API Aws::String GetNameForCidrCollectionChangeAction(CidrCollectionChangeAction value);
-} // namespace CidrCollectionChangeActionMapper
-} // namespace Model
-} // namespace Route53
-} // namespace Aws
+}  // namespace CidrCollectionChangeActionMapper
+}  // namespace Model
+}  // namespace Route53
+}  // namespace Aws

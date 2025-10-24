@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::StorageGateway;
 
-AWSError<CoreErrors> StorageGatewayErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> StorageGatewayErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = StorageGatewayErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticbeanstalk/model/RebuildEnvironmentRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticbeanstalk/model/RebuildEnvironmentRequest.h>
 
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-Aws::String RebuildEnvironmentRequest::SerializePayload() const
-{
+Aws::String RebuildEnvironmentRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=RebuildEnvironment&";
-  if(m_environmentIdHasBeenSet)
-  {
+  if (m_environmentIdHasBeenSet) {
     ss << "EnvironmentId=" << StringUtils::URLEncode(m_environmentId.c_str()) << "&";
   }
 
-  if(m_environmentNameHasBeenSet)
-  {
+  if (m_environmentNameHasBeenSet) {
     ss << "EnvironmentName=" << StringUtils::URLEncode(m_environmentName.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String RebuildEnvironmentRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  RebuildEnvironmentRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void RebuildEnvironmentRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

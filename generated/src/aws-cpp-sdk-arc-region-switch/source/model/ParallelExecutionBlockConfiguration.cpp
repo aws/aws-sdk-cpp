@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ARCRegionswitch
-{
-namespace Model
-{
+namespace Aws {
+namespace ARCRegionswitch {
+namespace Model {
 
-ParallelExecutionBlockConfiguration::ParallelExecutionBlockConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ParallelExecutionBlockConfiguration::ParallelExecutionBlockConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ParallelExecutionBlockConfiguration& ParallelExecutionBlockConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("steps"))
-  {
+ParallelExecutionBlockConfiguration& ParallelExecutionBlockConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("steps")) {
     Aws::Utils::Array<JsonView> stepsJsonList = jsonValue.GetArray("steps");
-    for(unsigned stepsIndex = 0; stepsIndex < stepsJsonList.GetLength(); ++stepsIndex)
-    {
+    for (unsigned stepsIndex = 0; stepsIndex < stepsJsonList.GetLength(); ++stepsIndex) {
       m_steps.push_back(stepsJsonList[stepsIndex].AsObject());
     }
     m_stepsHasBeenSet = true;
@@ -37,24 +28,20 @@ ParallelExecutionBlockConfiguration& ParallelExecutionBlockConfiguration::operat
   return *this;
 }
 
-JsonValue ParallelExecutionBlockConfiguration::Jsonize() const
-{
+JsonValue ParallelExecutionBlockConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_stepsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> stepsJsonList(m_steps.size());
-   for(unsigned stepsIndex = 0; stepsIndex < stepsJsonList.GetLength(); ++stepsIndex)
-   {
-     stepsJsonList[stepsIndex].AsObject(m_steps[stepsIndex].Jsonize());
-   }
-   payload.WithArray("steps", std::move(stepsJsonList));
-
+  if (m_stepsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> stepsJsonList(m_steps.size());
+    for (unsigned stepsIndex = 0; stepsIndex < stepsJsonList.GetLength(); ++stepsIndex) {
+      stepsJsonList[stepsIndex].AsObject(m_steps[stepsIndex].Jsonize());
+    }
+    payload.WithArray("steps", std::move(stepsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ARCRegionswitch
-} // namespace Aws
+}  // namespace Model
+}  // namespace ARCRegionswitch
+}  // namespace Aws

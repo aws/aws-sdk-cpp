@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-EvaluationScore::EvaluationScore(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EvaluationScore::EvaluationScore(JsonView jsonValue) { *this = jsonValue; }
 
-EvaluationScore& EvaluationScore::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Percentage"))
-  {
+EvaluationScore& EvaluationScore::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Percentage")) {
     m_percentage = jsonValue.GetDouble("Percentage");
     m_percentageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NotApplicable"))
-  {
+  if (jsonValue.ValueExists("NotApplicable")) {
     m_notApplicable = jsonValue.GetBool("NotApplicable");
     m_notApplicableHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AutomaticFail"))
-  {
+  if (jsonValue.ValueExists("AutomaticFail")) {
     m_automaticFail = jsonValue.GetBool("AutomaticFail");
     m_automaticFailHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EvaluationScore::Jsonize() const
-{
+JsonValue EvaluationScore::Jsonize() const {
   JsonValue payload;
 
-  if(m_percentageHasBeenSet)
-  {
-   payload.WithDouble("Percentage", m_percentage);
-
+  if (m_percentageHasBeenSet) {
+    payload.WithDouble("Percentage", m_percentage);
   }
 
-  if(m_notApplicableHasBeenSet)
-  {
-   payload.WithBool("NotApplicable", m_notApplicable);
-
+  if (m_notApplicableHasBeenSet) {
+    payload.WithBool("NotApplicable", m_notApplicable);
   }
 
-  if(m_automaticFailHasBeenSet)
-  {
-   payload.WithBool("AutomaticFail", m_automaticFail);
-
+  if (m_automaticFailHasBeenSet) {
+    payload.WithBool("AutomaticFail", m_automaticFail);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/FilledMapShapeConditionalFormatting.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/FilledMapShapeConditionalFormatting.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-FilledMapShapeConditionalFormatting::FilledMapShapeConditionalFormatting(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FilledMapShapeConditionalFormatting::FilledMapShapeConditionalFormatting(JsonView jsonValue) { *this = jsonValue; }
 
-FilledMapShapeConditionalFormatting& FilledMapShapeConditionalFormatting::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FieldId"))
-  {
+FilledMapShapeConditionalFormatting& FilledMapShapeConditionalFormatting::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FieldId")) {
     m_fieldId = jsonValue.GetString("FieldId");
     m_fieldIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Format"))
-  {
+  if (jsonValue.ValueExists("Format")) {
     m_format = jsonValue.GetObject("Format");
     m_formatHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FilledMapShapeConditionalFormatting::Jsonize() const
-{
+JsonValue FilledMapShapeConditionalFormatting::Jsonize() const {
   JsonValue payload;
 
-  if(m_fieldIdHasBeenSet)
-  {
-   payload.WithString("FieldId", m_fieldId);
-
+  if (m_fieldIdHasBeenSet) {
+    payload.WithString("FieldId", m_fieldId);
   }
 
-  if(m_formatHasBeenSet)
-  {
-   payload.WithObject("Format", m_format.Jsonize());
-
+  if (m_formatHasBeenSet) {
+    payload.WithObject("Format", m_format.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

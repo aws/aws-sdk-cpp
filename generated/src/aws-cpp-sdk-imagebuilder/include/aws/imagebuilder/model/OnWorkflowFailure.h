@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 
-namespace Aws
-{
-namespace imagebuilder
-{
-namespace Model
-{
-  enum class OnWorkflowFailure
-  {
-    NOT_SET,
-    CONTINUE,
-    ABORT
-  };
+namespace Aws {
+namespace imagebuilder {
+namespace Model {
+enum class OnWorkflowFailure { NOT_SET, CONTINUE, ABORT };
 
-namespace OnWorkflowFailureMapper
-{
+namespace OnWorkflowFailureMapper {
 AWS_IMAGEBUILDER_API OnWorkflowFailure GetOnWorkflowFailureForName(const Aws::String& name);
 
 AWS_IMAGEBUILDER_API Aws::String GetNameForOnWorkflowFailure(OnWorkflowFailure value);
-} // namespace OnWorkflowFailureMapper
-} // namespace Model
-} // namespace imagebuilder
-} // namespace Aws
+}  // namespace OnWorkflowFailureMapper
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kinesisanalyticsv2/model/ZeppelinMonitoringConfigurationDescription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kinesisanalyticsv2/model/ZeppelinMonitoringConfigurationDescription.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace KinesisAnalyticsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace KinesisAnalyticsV2 {
+namespace Model {
 
-ZeppelinMonitoringConfigurationDescription::ZeppelinMonitoringConfigurationDescription(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ZeppelinMonitoringConfigurationDescription::ZeppelinMonitoringConfigurationDescription(JsonView jsonValue) { *this = jsonValue; }
 
-ZeppelinMonitoringConfigurationDescription& ZeppelinMonitoringConfigurationDescription::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("LogLevel"))
-  {
+ZeppelinMonitoringConfigurationDescription& ZeppelinMonitoringConfigurationDescription::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("LogLevel")) {
     m_logLevel = LogLevelMapper::GetLogLevelForName(jsonValue.GetString("LogLevel"));
     m_logLevelHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ZeppelinMonitoringConfigurationDescription::Jsonize() const
-{
+JsonValue ZeppelinMonitoringConfigurationDescription::Jsonize() const {
   JsonValue payload;
 
-  if(m_logLevelHasBeenSet)
-  {
-   payload.WithString("LogLevel", LogLevelMapper::GetNameForLogLevel(m_logLevel));
+  if (m_logLevelHasBeenSet) {
+    payload.WithString("LogLevel", LogLevelMapper::GetNameForLogLevel(m_logLevel));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace KinesisAnalyticsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace KinesisAnalyticsV2
+}  // namespace Aws

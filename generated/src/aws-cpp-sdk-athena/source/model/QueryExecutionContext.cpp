@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Athena
-{
-namespace Model
-{
+namespace Aws {
+namespace Athena {
+namespace Model {
 
-QueryExecutionContext::QueryExecutionContext(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+QueryExecutionContext::QueryExecutionContext(JsonView jsonValue) { *this = jsonValue; }
 
-QueryExecutionContext& QueryExecutionContext::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Database"))
-  {
+QueryExecutionContext& QueryExecutionContext::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Database")) {
     m_database = jsonValue.GetString("Database");
     m_databaseHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Catalog"))
-  {
+  if (jsonValue.ValueExists("Catalog")) {
     m_catalog = jsonValue.GetString("Catalog");
     m_catalogHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue QueryExecutionContext::Jsonize() const
-{
+JsonValue QueryExecutionContext::Jsonize() const {
   JsonValue payload;
 
-  if(m_databaseHasBeenSet)
-  {
-   payload.WithString("Database", m_database);
-
+  if (m_databaseHasBeenSet) {
+    payload.WithString("Database", m_database);
   }
 
-  if(m_catalogHasBeenSet)
-  {
-   payload.WithString("Catalog", m_catalog);
-
+  if (m_catalogHasBeenSet) {
+    payload.WithString("Catalog", m_catalog);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Athena
-} // namespace Aws
+}  // namespace Model
+}  // namespace Athena
+}  // namespace Aws

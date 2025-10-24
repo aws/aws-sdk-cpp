@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
-  enum class DvbSubOcrLanguage
-  {
-    NOT_SET,
-    DEU,
-    ENG,
-    FRA,
-    NLD,
-    POR,
-    SPA
-  };
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+enum class DvbSubOcrLanguage { NOT_SET, DEU, ENG, FRA, NLD, POR, SPA };
 
-namespace DvbSubOcrLanguageMapper
-{
+namespace DvbSubOcrLanguageMapper {
 AWS_MEDIALIVE_API DvbSubOcrLanguage GetDvbSubOcrLanguageForName(const Aws::String& name);
 
 AWS_MEDIALIVE_API Aws::String GetNameForDvbSubOcrLanguage(DvbSubOcrLanguage value);
-} // namespace DvbSubOcrLanguageMapper
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace DvbSubOcrLanguageMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

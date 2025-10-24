@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
 
-AccountTakeoverActionType::AccountTakeoverActionType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AccountTakeoverActionType::AccountTakeoverActionType(JsonView jsonValue) { *this = jsonValue; }
 
-AccountTakeoverActionType& AccountTakeoverActionType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Notify"))
-  {
+AccountTakeoverActionType& AccountTakeoverActionType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Notify")) {
     m_notify = jsonValue.GetBool("Notify");
     m_notifyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EventAction"))
-  {
+  if (jsonValue.ValueExists("EventAction")) {
     m_eventAction = AccountTakeoverEventActionTypeMapper::GetAccountTakeoverEventActionTypeForName(jsonValue.GetString("EventAction"));
     m_eventActionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AccountTakeoverActionType::Jsonize() const
-{
+JsonValue AccountTakeoverActionType::Jsonize() const {
   JsonValue payload;
 
-  if(m_notifyHasBeenSet)
-  {
-   payload.WithBool("Notify", m_notify);
-
+  if (m_notifyHasBeenSet) {
+    payload.WithBool("Notify", m_notify);
   }
 
-  if(m_eventActionHasBeenSet)
-  {
-   payload.WithString("EventAction", AccountTakeoverEventActionTypeMapper::GetNameForAccountTakeoverEventActionType(m_eventAction));
+  if (m_eventActionHasBeenSet) {
+    payload.WithString("EventAction", AccountTakeoverEventActionTypeMapper::GetNameForAccountTakeoverEventActionType(m_eventAction));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

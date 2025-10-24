@@ -4,10 +4,10 @@
  */
 
 #include <aws/awstransfer/model/ListWebAppsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,24 +17,17 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListWebAppsResult::ListWebAppsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListWebAppsResult::ListWebAppsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListWebAppsResult& ListWebAppsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListWebAppsResult& ListWebAppsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WebApps"))
-  {
+  if (jsonValue.ValueExists("WebApps")) {
     Aws::Utils::Array<JsonView> webAppsJsonList = jsonValue.GetArray("WebApps");
-    for(unsigned webAppsIndex = 0; webAppsIndex < webAppsJsonList.GetLength(); ++webAppsIndex)
-    {
+    for (unsigned webAppsIndex = 0; webAppsIndex < webAppsJsonList.GetLength(); ++webAppsIndex) {
       m_webApps.push_back(webAppsJsonList[webAppsIndex].AsObject());
     }
     m_webAppsHasBeenSet = true;
@@ -42,12 +35,10 @@ ListWebAppsResult& ListWebAppsResult::operator =(const Aws::AmazonWebServiceResu
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

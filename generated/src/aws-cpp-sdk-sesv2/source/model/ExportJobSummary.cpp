@@ -3,89 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sesv2/model/ExportJobSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sesv2/model/ExportJobSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SESV2
-{
-namespace Model
-{
+namespace Aws {
+namespace SESV2 {
+namespace Model {
 
-ExportJobSummary::ExportJobSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExportJobSummary::ExportJobSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ExportJobSummary& ExportJobSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("JobId"))
-  {
+ExportJobSummary& ExportJobSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("JobId")) {
     m_jobId = jsonValue.GetString("JobId");
     m_jobIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExportSourceType"))
-  {
+  if (jsonValue.ValueExists("ExportSourceType")) {
     m_exportSourceType = ExportSourceTypeMapper::GetExportSourceTypeForName(jsonValue.GetString("ExportSourceType"));
     m_exportSourceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("JobStatus"))
-  {
+  if (jsonValue.ValueExists("JobStatus")) {
     m_jobStatus = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("JobStatus"));
     m_jobStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedTimestamp"))
-  {
+  if (jsonValue.ValueExists("CreatedTimestamp")) {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
     m_createdTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CompletedTimestamp"))
-  {
+  if (jsonValue.ValueExists("CompletedTimestamp")) {
     m_completedTimestamp = jsonValue.GetDouble("CompletedTimestamp");
     m_completedTimestampHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExportJobSummary::Jsonize() const
-{
+JsonValue ExportJobSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_jobIdHasBeenSet)
-  {
-   payload.WithString("JobId", m_jobId);
-
+  if (m_jobIdHasBeenSet) {
+    payload.WithString("JobId", m_jobId);
   }
 
-  if(m_exportSourceTypeHasBeenSet)
-  {
-   payload.WithString("ExportSourceType", ExportSourceTypeMapper::GetNameForExportSourceType(m_exportSourceType));
+  if (m_exportSourceTypeHasBeenSet) {
+    payload.WithString("ExportSourceType", ExportSourceTypeMapper::GetNameForExportSourceType(m_exportSourceType));
   }
 
-  if(m_jobStatusHasBeenSet)
-  {
-   payload.WithString("JobStatus", JobStatusMapper::GetNameForJobStatus(m_jobStatus));
+  if (m_jobStatusHasBeenSet) {
+    payload.WithString("JobStatus", JobStatusMapper::GetNameForJobStatus(m_jobStatus));
   }
 
-  if(m_createdTimestampHasBeenSet)
-  {
-   payload.WithDouble("CreatedTimestamp", m_createdTimestamp.SecondsWithMSPrecision());
+  if (m_createdTimestampHasBeenSet) {
+    payload.WithDouble("CreatedTimestamp", m_createdTimestamp.SecondsWithMSPrecision());
   }
 
-  if(m_completedTimestampHasBeenSet)
-  {
-   payload.WithDouble("CompletedTimestamp", m_completedTimestamp.SecondsWithMSPrecision());
+  if (m_completedTimestampHasBeenSet) {
+    payload.WithDouble("CompletedTimestamp", m_completedTimestamp.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SESV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace SESV2
+}  // namespace Aws

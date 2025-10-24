@@ -5,12 +5,8 @@
 
 #include <aws/wafv2/WAFV2EndpointProvider.h>
 
-namespace Aws
-{
-namespace WAFV2
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace WAFV2
-} // namespace Aws
+namespace Aws {
+namespace WAFV2 {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace WAFV2
+}  // namespace Aws

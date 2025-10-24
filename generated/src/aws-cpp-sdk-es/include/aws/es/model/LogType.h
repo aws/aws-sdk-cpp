@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/es/ElasticsearchService_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElasticsearchService
-{
-namespace Model
-{
-  enum class LogType
-  {
-    NOT_SET,
-    INDEX_SLOW_LOGS,
-    SEARCH_SLOW_LOGS,
-    ES_APPLICATION_LOGS,
-    AUDIT_LOGS
-  };
+namespace Aws {
+namespace ElasticsearchService {
+namespace Model {
+enum class LogType { NOT_SET, INDEX_SLOW_LOGS, SEARCH_SLOW_LOGS, ES_APPLICATION_LOGS, AUDIT_LOGS };
 
-namespace LogTypeMapper
-{
+namespace LogTypeMapper {
 AWS_ELASTICSEARCHSERVICE_API LogType GetLogTypeForName(const Aws::String& name);
 
 AWS_ELASTICSEARCHSERVICE_API Aws::String GetNameForLogType(LogType value);
-} // namespace LogTypeMapper
-} // namespace Model
-} // namespace ElasticsearchService
-} // namespace Aws
+}  // namespace LogTypeMapper
+}  // namespace Model
+}  // namespace ElasticsearchService
+}  // namespace Aws

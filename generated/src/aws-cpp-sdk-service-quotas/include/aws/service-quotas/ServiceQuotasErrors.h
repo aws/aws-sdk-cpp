@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/service-quotas/ServiceQuotas_EXPORTS.h>
 
-namespace Aws
-{
-namespace ServiceQuotas
-{
-enum class ServiceQuotasErrors
-{
-  //From Core//
+namespace Aws {
+namespace ServiceQuotas {
+enum class ServiceQuotasErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class ServiceQuotasErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class ServiceQuotasErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  A_W_S_SERVICE_ACCESS_NOT_ENABLED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  A_W_S_SERVICE_ACCESS_NOT_ENABLED = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   DEPENDENCY_ACCESS_DENIED,
   ILLEGAL_ARGUMENT,
   INVALID_PAGINATION_TOKEN,
@@ -65,9 +62,8 @@ enum class ServiceQuotasErrors
   TOO_MANY_TAGS
 };
 
-class AWS_SERVICEQUOTAS_API ServiceQuotasError : public Aws::Client::AWSError<ServiceQuotasErrors>
-{
-public:
+class AWS_SERVICEQUOTAS_API ServiceQuotasError : public Aws::Client::AWSError<ServiceQuotasErrors> {
+ public:
   ServiceQuotasError() {}
   ServiceQuotasError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ServiceQuotasErrors>(rhs) {}
   ServiceQuotasError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ServiceQuotasErrors>(rhs) {}
@@ -78,10 +74,9 @@ public:
   T GetModeledError();
 };
 
-namespace ServiceQuotasErrorMapper
-{
-  AWS_SERVICEQUOTAS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace ServiceQuotasErrorMapper {
+AWS_SERVICEQUOTAS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace ServiceQuotas
-} // namespace Aws
+}  // namespace ServiceQuotas
+}  // namespace Aws

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dms/model/AvailabilityZone.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dms/model/AvailabilityZone.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DatabaseMigrationService
-{
-namespace Model
-{
+namespace Aws {
+namespace DatabaseMigrationService {
+namespace Model {
 
-AvailabilityZone::AvailabilityZone(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AvailabilityZone::AvailabilityZone(JsonView jsonValue) { *this = jsonValue; }
 
-AvailabilityZone& AvailabilityZone::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+AvailabilityZone& AvailabilityZone::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AvailabilityZone::Jsonize() const
-{
+JsonValue AvailabilityZone::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DatabaseMigrationService
-} // namespace Aws
+}  // namespace Model
+}  // namespace DatabaseMigrationService
+}  // namespace Aws

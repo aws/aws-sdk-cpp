@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/ssm-sap/SsmSap_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm-sap/SsmSap_EXPORTS.h>
 
-namespace Aws
-{
-namespace SsmSap
-{
-namespace Model
-{
-  enum class BackintMode
-  {
-    NOT_SET,
-    AWSBackup
-  };
+namespace Aws {
+namespace SsmSap {
+namespace Model {
+enum class BackintMode { NOT_SET, AWSBackup };
 
-namespace BackintModeMapper
-{
+namespace BackintModeMapper {
 AWS_SSMSAP_API BackintMode GetBackintModeForName(const Aws::String& name);
 
 AWS_SSMSAP_API Aws::String GetNameForBackintMode(BackintMode value);
-} // namespace BackintModeMapper
-} // namespace Model
-} // namespace SsmSap
-} // namespace Aws
+}  // namespace BackintModeMapper
+}  // namespace Model
+}  // namespace SsmSap
+}  // namespace Aws

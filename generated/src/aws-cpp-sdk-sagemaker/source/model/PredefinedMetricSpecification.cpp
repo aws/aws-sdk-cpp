@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/PredefinedMetricSpecification.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/PredefinedMetricSpecification.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-PredefinedMetricSpecification::PredefinedMetricSpecification(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PredefinedMetricSpecification::PredefinedMetricSpecification(JsonView jsonValue) { *this = jsonValue; }
 
-PredefinedMetricSpecification& PredefinedMetricSpecification::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PredefinedMetricType"))
-  {
+PredefinedMetricSpecification& PredefinedMetricSpecification::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PredefinedMetricType")) {
     m_predefinedMetricType = jsonValue.GetString("PredefinedMetricType");
     m_predefinedMetricTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PredefinedMetricSpecification::Jsonize() const
-{
+JsonValue PredefinedMetricSpecification::Jsonize() const {
   JsonValue payload;
 
-  if(m_predefinedMetricTypeHasBeenSet)
-  {
-   payload.WithString("PredefinedMetricType", m_predefinedMetricType);
-
+  if (m_predefinedMetricTypeHasBeenSet) {
+    payload.WithString("PredefinedMetricType", m_predefinedMetricType);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

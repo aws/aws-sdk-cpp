@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workspaces-instances/model/ConnectionTrackingSpecificationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workspaces-instances/model/ConnectionTrackingSpecificationRequest.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WorkspacesInstances
-{
-namespace Model
-{
+namespace Aws {
+namespace WorkspacesInstances {
+namespace Model {
 
-ConnectionTrackingSpecificationRequest::ConnectionTrackingSpecificationRequest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConnectionTrackingSpecificationRequest::ConnectionTrackingSpecificationRequest(JsonView jsonValue) { *this = jsonValue; }
 
-ConnectionTrackingSpecificationRequest& ConnectionTrackingSpecificationRequest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TcpEstablishedTimeout"))
-  {
+ConnectionTrackingSpecificationRequest& ConnectionTrackingSpecificationRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TcpEstablishedTimeout")) {
     m_tcpEstablishedTimeout = jsonValue.GetInteger("TcpEstablishedTimeout");
     m_tcpEstablishedTimeoutHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UdpStreamTimeout"))
-  {
+  if (jsonValue.ValueExists("UdpStreamTimeout")) {
     m_udpStreamTimeout = jsonValue.GetInteger("UdpStreamTimeout");
     m_udpStreamTimeoutHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UdpTimeout"))
-  {
+  if (jsonValue.ValueExists("UdpTimeout")) {
     m_udpTimeout = jsonValue.GetInteger("UdpTimeout");
     m_udpTimeoutHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ConnectionTrackingSpecificationRequest::Jsonize() const
-{
+JsonValue ConnectionTrackingSpecificationRequest::Jsonize() const {
   JsonValue payload;
 
-  if(m_tcpEstablishedTimeoutHasBeenSet)
-  {
-   payload.WithInteger("TcpEstablishedTimeout", m_tcpEstablishedTimeout);
-
+  if (m_tcpEstablishedTimeoutHasBeenSet) {
+    payload.WithInteger("TcpEstablishedTimeout", m_tcpEstablishedTimeout);
   }
 
-  if(m_udpStreamTimeoutHasBeenSet)
-  {
-   payload.WithInteger("UdpStreamTimeout", m_udpStreamTimeout);
-
+  if (m_udpStreamTimeoutHasBeenSet) {
+    payload.WithInteger("UdpStreamTimeout", m_udpStreamTimeout);
   }
 
-  if(m_udpTimeoutHasBeenSet)
-  {
-   payload.WithInteger("UdpTimeout", m_udpTimeout);
-
+  if (m_udpTimeoutHasBeenSet) {
+    payload.WithInteger("UdpTimeout", m_udpTimeout);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WorkspacesInstances
-} // namespace Aws
+}  // namespace Model
+}  // namespace WorkspacesInstances
+}  // namespace Aws

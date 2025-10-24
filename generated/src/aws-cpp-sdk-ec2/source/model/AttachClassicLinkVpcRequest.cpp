@@ -3,39 +3,32 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/AttachClassicLinkVpcRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/AttachClassicLinkVpcRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String AttachClassicLinkVpcRequest::SerializePayload() const
-{
+Aws::String AttachClassicLinkVpcRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=AttachClassicLinkVpc&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_instanceIdHasBeenSet)
-  {
+  if (m_instanceIdHasBeenSet) {
     ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
 
-  if(m_vpcIdHasBeenSet)
-  {
+  if (m_vpcIdHasBeenSet) {
     ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
-  if(m_groupsHasBeenSet)
-  {
+  if (m_groupsHasBeenSet) {
     unsigned groupsCount = 1;
-    for(auto& item : m_groups)
-    {
-      ss << "SecurityGroupId." << groupsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_groups) {
+      ss << "SecurityGroupId." << groupsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       groupsCount++;
     }
   }
@@ -44,8 +37,4 @@ Aws::String AttachClassicLinkVpcRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  AttachClassicLinkVpcRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void AttachClassicLinkVpcRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

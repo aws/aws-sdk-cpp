@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediapackage-vod/model/UpdatePackagingGroupRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediapackage-vod/model/UpdatePackagingGroupRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::MediaPackageVod::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdatePackagingGroupRequest::SerializePayload() const
-{
+Aws::String UpdatePackagingGroupRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_authorizationHasBeenSet)
-  {
-   payload.WithObject("authorization", m_authorization.Jsonize());
-
+  if (m_authorizationHasBeenSet) {
+    payload.WithObject("authorization", m_authorization.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

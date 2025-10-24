@@ -5,12 +5,8 @@
 
 #include <aws/cloud9/Cloud9EndpointProvider.h>
 
-namespace Aws
-{
-namespace Cloud9
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Cloud9
-} // namespace Aws
+namespace Aws {
+namespace Cloud9 {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Cloud9
+}  // namespace Aws

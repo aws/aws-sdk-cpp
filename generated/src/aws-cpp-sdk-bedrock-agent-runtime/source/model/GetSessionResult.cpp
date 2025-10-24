@@ -4,10 +4,10 @@
  */
 
 #include <aws/bedrock-agent-runtime/model/GetSessionResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,62 +17,48 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSessionResult::GetSessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetSessionResult::GetSessionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetSessionResult& GetSessionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetSessionResult& GetSessionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("sessionId"))
-  {
+  if (jsonValue.ValueExists("sessionId")) {
     m_sessionId = jsonValue.GetString("sessionId");
     m_sessionIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sessionArn"))
-  {
+  if (jsonValue.ValueExists("sessionArn")) {
     m_sessionArn = jsonValue.GetString("sessionArn");
     m_sessionArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sessionStatus"))
-  {
+  if (jsonValue.ValueExists("sessionStatus")) {
     m_sessionStatus = SessionStatusMapper::GetSessionStatusForName(jsonValue.GetString("sessionStatus"));
     m_sessionStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
-  {
+  if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdatedAt"))
-  {
+  if (jsonValue.ValueExists("lastUpdatedAt")) {
     m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
     m_lastUpdatedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sessionMetadata"))
-  {
+  if (jsonValue.ValueExists("sessionMetadata")) {
     Aws::Map<Aws::String, JsonView> sessionMetadataJsonMap = jsonValue.GetObject("sessionMetadata").GetAllObjects();
-    for(auto& sessionMetadataItem : sessionMetadataJsonMap)
-    {
+    for (auto& sessionMetadataItem : sessionMetadataJsonMap) {
       m_sessionMetadata[sessionMetadataItem.first] = sessionMetadataItem.second.AsString();
     }
     m_sessionMetadataHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("encryptionKeyArn"))
-  {
+  if (jsonValue.ValueExists("encryptionKeyArn")) {
     m_encryptionKeyArn = jsonValue.GetString("encryptionKeyArn");
     m_encryptionKeyArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

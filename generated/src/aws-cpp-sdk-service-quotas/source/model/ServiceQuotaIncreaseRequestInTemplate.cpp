@@ -3,126 +3,94 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/service-quotas/model/ServiceQuotaIncreaseRequestInTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/service-quotas/model/ServiceQuotaIncreaseRequestInTemplate.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ServiceQuotas
-{
-namespace Model
-{
+namespace Aws {
+namespace ServiceQuotas {
+namespace Model {
 
-ServiceQuotaIncreaseRequestInTemplate::ServiceQuotaIncreaseRequestInTemplate(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ServiceQuotaIncreaseRequestInTemplate::ServiceQuotaIncreaseRequestInTemplate(JsonView jsonValue) { *this = jsonValue; }
 
-ServiceQuotaIncreaseRequestInTemplate& ServiceQuotaIncreaseRequestInTemplate::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ServiceCode"))
-  {
+ServiceQuotaIncreaseRequestInTemplate& ServiceQuotaIncreaseRequestInTemplate::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ServiceCode")) {
     m_serviceCode = jsonValue.GetString("ServiceCode");
     m_serviceCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ServiceName"))
-  {
+  if (jsonValue.ValueExists("ServiceName")) {
     m_serviceName = jsonValue.GetString("ServiceName");
     m_serviceNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("QuotaCode"))
-  {
+  if (jsonValue.ValueExists("QuotaCode")) {
     m_quotaCode = jsonValue.GetString("QuotaCode");
     m_quotaCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("QuotaName"))
-  {
+  if (jsonValue.ValueExists("QuotaName")) {
     m_quotaName = jsonValue.GetString("QuotaName");
     m_quotaNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DesiredValue"))
-  {
+  if (jsonValue.ValueExists("DesiredValue")) {
     m_desiredValue = jsonValue.GetDouble("DesiredValue");
     m_desiredValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AwsRegion"))
-  {
+  if (jsonValue.ValueExists("AwsRegion")) {
     m_awsRegion = jsonValue.GetString("AwsRegion");
     m_awsRegionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Unit"))
-  {
+  if (jsonValue.ValueExists("Unit")) {
     m_unit = jsonValue.GetString("Unit");
     m_unitHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("GlobalQuota"))
-  {
+  if (jsonValue.ValueExists("GlobalQuota")) {
     m_globalQuota = jsonValue.GetBool("GlobalQuota");
     m_globalQuotaHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ServiceQuotaIncreaseRequestInTemplate::Jsonize() const
-{
+JsonValue ServiceQuotaIncreaseRequestInTemplate::Jsonize() const {
   JsonValue payload;
 
-  if(m_serviceCodeHasBeenSet)
-  {
-   payload.WithString("ServiceCode", m_serviceCode);
-
+  if (m_serviceCodeHasBeenSet) {
+    payload.WithString("ServiceCode", m_serviceCode);
   }
 
-  if(m_serviceNameHasBeenSet)
-  {
-   payload.WithString("ServiceName", m_serviceName);
-
+  if (m_serviceNameHasBeenSet) {
+    payload.WithString("ServiceName", m_serviceName);
   }
 
-  if(m_quotaCodeHasBeenSet)
-  {
-   payload.WithString("QuotaCode", m_quotaCode);
-
+  if (m_quotaCodeHasBeenSet) {
+    payload.WithString("QuotaCode", m_quotaCode);
   }
 
-  if(m_quotaNameHasBeenSet)
-  {
-   payload.WithString("QuotaName", m_quotaName);
-
+  if (m_quotaNameHasBeenSet) {
+    payload.WithString("QuotaName", m_quotaName);
   }
 
-  if(m_desiredValueHasBeenSet)
-  {
-   payload.WithDouble("DesiredValue", m_desiredValue);
-
+  if (m_desiredValueHasBeenSet) {
+    payload.WithDouble("DesiredValue", m_desiredValue);
   }
 
-  if(m_awsRegionHasBeenSet)
-  {
-   payload.WithString("AwsRegion", m_awsRegion);
-
+  if (m_awsRegionHasBeenSet) {
+    payload.WithString("AwsRegion", m_awsRegion);
   }
 
-  if(m_unitHasBeenSet)
-  {
-   payload.WithString("Unit", m_unit);
-
+  if (m_unitHasBeenSet) {
+    payload.WithString("Unit", m_unit);
   }
 
-  if(m_globalQuotaHasBeenSet)
-  {
-   payload.WithBool("GlobalQuota", m_globalQuota);
-
+  if (m_globalQuotaHasBeenSet) {
+    payload.WithBool("GlobalQuota", m_globalQuota);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ServiceQuotas
-} // namespace Aws
+}  // namespace Model
+}  // namespace ServiceQuotas
+}  // namespace Aws

@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/finspace-data/FinSpaceData_EXPORTS.h>
 
-namespace Aws
-{
-namespace FinSpaceData
-{
-class FinSpaceDataEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace FinSpaceData {
+class FinSpaceDataEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace FinSpaceData
-} // namespace Aws
+}  // namespace FinSpaceData
+}  // namespace Aws

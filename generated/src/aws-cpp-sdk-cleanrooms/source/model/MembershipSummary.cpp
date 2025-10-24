@@ -11,179 +11,134 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
 
-MembershipSummary::MembershipSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MembershipSummary::MembershipSummary(JsonView jsonValue) { *this = jsonValue; }
 
-MembershipSummary& MembershipSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("id"))
-  {
+MembershipSummary& MembershipSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("arn"))
-  {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("collaborationArn"))
-  {
+  if (jsonValue.ValueExists("collaborationArn")) {
     m_collaborationArn = jsonValue.GetString("collaborationArn");
     m_collaborationArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("collaborationId"))
-  {
+  if (jsonValue.ValueExists("collaborationId")) {
     m_collaborationId = jsonValue.GetString("collaborationId");
     m_collaborationIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("collaborationCreatorAccountId"))
-  {
+  if (jsonValue.ValueExists("collaborationCreatorAccountId")) {
     m_collaborationCreatorAccountId = jsonValue.GetString("collaborationCreatorAccountId");
     m_collaborationCreatorAccountIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("collaborationCreatorDisplayName"))
-  {
+  if (jsonValue.ValueExists("collaborationCreatorDisplayName")) {
     m_collaborationCreatorDisplayName = jsonValue.GetString("collaborationCreatorDisplayName");
     m_collaborationCreatorDisplayNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("collaborationName"))
-  {
+  if (jsonValue.ValueExists("collaborationName")) {
     m_collaborationName = jsonValue.GetString("collaborationName");
     m_collaborationNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createTime"))
-  {
+  if (jsonValue.ValueExists("createTime")) {
     m_createTime = jsonValue.GetDouble("createTime");
     m_createTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("updateTime"))
-  {
+  if (jsonValue.ValueExists("updateTime")) {
     m_updateTime = jsonValue.GetDouble("updateTime");
     m_updateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = MembershipStatusMapper::GetMembershipStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("memberAbilities"))
-  {
+  if (jsonValue.ValueExists("memberAbilities")) {
     Aws::Utils::Array<JsonView> memberAbilitiesJsonList = jsonValue.GetArray("memberAbilities");
-    for(unsigned memberAbilitiesIndex = 0; memberAbilitiesIndex < memberAbilitiesJsonList.GetLength(); ++memberAbilitiesIndex)
-    {
+    for (unsigned memberAbilitiesIndex = 0; memberAbilitiesIndex < memberAbilitiesJsonList.GetLength(); ++memberAbilitiesIndex) {
       m_memberAbilities.push_back(MemberAbilityMapper::GetMemberAbilityForName(memberAbilitiesJsonList[memberAbilitiesIndex].AsString()));
     }
     m_memberAbilitiesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("mlMemberAbilities"))
-  {
+  if (jsonValue.ValueExists("mlMemberAbilities")) {
     m_mlMemberAbilities = jsonValue.GetObject("mlMemberAbilities");
     m_mlMemberAbilitiesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("paymentConfiguration"))
-  {
+  if (jsonValue.ValueExists("paymentConfiguration")) {
     m_paymentConfiguration = jsonValue.GetObject("paymentConfiguration");
     m_paymentConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MembershipSummary::Jsonize() const
-{
+JsonValue MembershipSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_collaborationArnHasBeenSet)
-  {
-   payload.WithString("collaborationArn", m_collaborationArn);
-
+  if (m_collaborationArnHasBeenSet) {
+    payload.WithString("collaborationArn", m_collaborationArn);
   }
 
-  if(m_collaborationIdHasBeenSet)
-  {
-   payload.WithString("collaborationId", m_collaborationId);
-
+  if (m_collaborationIdHasBeenSet) {
+    payload.WithString("collaborationId", m_collaborationId);
   }
 
-  if(m_collaborationCreatorAccountIdHasBeenSet)
-  {
-   payload.WithString("collaborationCreatorAccountId", m_collaborationCreatorAccountId);
-
+  if (m_collaborationCreatorAccountIdHasBeenSet) {
+    payload.WithString("collaborationCreatorAccountId", m_collaborationCreatorAccountId);
   }
 
-  if(m_collaborationCreatorDisplayNameHasBeenSet)
-  {
-   payload.WithString("collaborationCreatorDisplayName", m_collaborationCreatorDisplayName);
-
+  if (m_collaborationCreatorDisplayNameHasBeenSet) {
+    payload.WithString("collaborationCreatorDisplayName", m_collaborationCreatorDisplayName);
   }
 
-  if(m_collaborationNameHasBeenSet)
-  {
-   payload.WithString("collaborationName", m_collaborationName);
-
+  if (m_collaborationNameHasBeenSet) {
+    payload.WithString("collaborationName", m_collaborationName);
   }
 
-  if(m_createTimeHasBeenSet)
-  {
-   payload.WithDouble("createTime", m_createTime.SecondsWithMSPrecision());
+  if (m_createTimeHasBeenSet) {
+    payload.WithDouble("createTime", m_createTime.SecondsWithMSPrecision());
   }
 
-  if(m_updateTimeHasBeenSet)
-  {
-   payload.WithDouble("updateTime", m_updateTime.SecondsWithMSPrecision());
+  if (m_updateTimeHasBeenSet) {
+    payload.WithDouble("updateTime", m_updateTime.SecondsWithMSPrecision());
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", MembershipStatusMapper::GetNameForMembershipStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", MembershipStatusMapper::GetNameForMembershipStatus(m_status));
   }
 
-  if(m_memberAbilitiesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> memberAbilitiesJsonList(m_memberAbilities.size());
-   for(unsigned memberAbilitiesIndex = 0; memberAbilitiesIndex < memberAbilitiesJsonList.GetLength(); ++memberAbilitiesIndex)
-   {
-     memberAbilitiesJsonList[memberAbilitiesIndex].AsString(MemberAbilityMapper::GetNameForMemberAbility(m_memberAbilities[memberAbilitiesIndex]));
-   }
-   payload.WithArray("memberAbilities", std::move(memberAbilitiesJsonList));
-
+  if (m_memberAbilitiesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> memberAbilitiesJsonList(m_memberAbilities.size());
+    for (unsigned memberAbilitiesIndex = 0; memberAbilitiesIndex < memberAbilitiesJsonList.GetLength(); ++memberAbilitiesIndex) {
+      memberAbilitiesJsonList[memberAbilitiesIndex].AsString(
+          MemberAbilityMapper::GetNameForMemberAbility(m_memberAbilities[memberAbilitiesIndex]));
+    }
+    payload.WithArray("memberAbilities", std::move(memberAbilitiesJsonList));
   }
 
-  if(m_mlMemberAbilitiesHasBeenSet)
-  {
-   payload.WithObject("mlMemberAbilities", m_mlMemberAbilities.Jsonize());
-
+  if (m_mlMemberAbilitiesHasBeenSet) {
+    payload.WithObject("mlMemberAbilities", m_mlMemberAbilities.Jsonize());
   }
 
-  if(m_paymentConfigurationHasBeenSet)
-  {
-   payload.WithObject("paymentConfiguration", m_paymentConfiguration.Jsonize());
-
+  if (m_paymentConfigurationHasBeenSet) {
+    payload.WithObject("paymentConfiguration", m_paymentConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

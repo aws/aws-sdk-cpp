@@ -5,12 +5,8 @@
 
 #include <aws/pinpoint/PinpointEndpointProvider.h>
 
-namespace Aws
-{
-namespace Pinpoint
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Pinpoint
-} // namespace Aws
+namespace Aws {
+namespace Pinpoint {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Pinpoint
+}  // namespace Aws

@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeGuruReviewer
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeGuruReviewer {
+namespace Model {
 
-Metrics::Metrics(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Metrics::Metrics(JsonView jsonValue) { *this = jsonValue; }
 
-Metrics& Metrics::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MeteredLinesOfCodeCount"))
-  {
+Metrics& Metrics::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MeteredLinesOfCodeCount")) {
     m_meteredLinesOfCodeCount = jsonValue.GetInt64("MeteredLinesOfCodeCount");
     m_meteredLinesOfCodeCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SuppressedLinesOfCodeCount"))
-  {
+  if (jsonValue.ValueExists("SuppressedLinesOfCodeCount")) {
     m_suppressedLinesOfCodeCount = jsonValue.GetInt64("SuppressedLinesOfCodeCount");
     m_suppressedLinesOfCodeCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FindingsCount"))
-  {
+  if (jsonValue.ValueExists("FindingsCount")) {
     m_findingsCount = jsonValue.GetInt64("FindingsCount");
     m_findingsCountHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Metrics::Jsonize() const
-{
+JsonValue Metrics::Jsonize() const {
   JsonValue payload;
 
-  if(m_meteredLinesOfCodeCountHasBeenSet)
-  {
-   payload.WithInt64("MeteredLinesOfCodeCount", m_meteredLinesOfCodeCount);
-
+  if (m_meteredLinesOfCodeCountHasBeenSet) {
+    payload.WithInt64("MeteredLinesOfCodeCount", m_meteredLinesOfCodeCount);
   }
 
-  if(m_suppressedLinesOfCodeCountHasBeenSet)
-  {
-   payload.WithInt64("SuppressedLinesOfCodeCount", m_suppressedLinesOfCodeCount);
-
+  if (m_suppressedLinesOfCodeCountHasBeenSet) {
+    payload.WithInt64("SuppressedLinesOfCodeCount", m_suppressedLinesOfCodeCount);
   }
 
-  if(m_findingsCountHasBeenSet)
-  {
-   payload.WithInt64("FindingsCount", m_findingsCount);
-
+  if (m_findingsCountHasBeenSet) {
+    payload.WithInt64("FindingsCount", m_findingsCount);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeGuruReviewer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeGuruReviewer
+}  // namespace Aws

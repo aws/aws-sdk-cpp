@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/waf-regional/WAFRegional_EXPORTS.h>
 
-namespace Aws
-{
-namespace WAFRegional
-{
-class WAFRegionalEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace WAFRegional {
+class WAFRegionalEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace WAFRegional
-} // namespace Aws
+}  // namespace WAFRegional
+}  // namespace Aws

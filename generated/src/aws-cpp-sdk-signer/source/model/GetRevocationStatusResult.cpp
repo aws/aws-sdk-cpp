@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/signer/model/GetRevocationStatusResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/signer/model/GetRevocationStatusResult.h>
 
 #include <utility>
 
@@ -17,19 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRevocationStatusResult::GetRevocationStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetRevocationStatusResult::GetRevocationStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetRevocationStatusResult& GetRevocationStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetRevocationStatusResult& GetRevocationStatusResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("revokedEntities"))
-  {
+  if (jsonValue.ValueExists("revokedEntities")) {
     Aws::Utils::Array<JsonView> revokedEntitiesJsonList = jsonValue.GetArray("revokedEntities");
-    for(unsigned revokedEntitiesIndex = 0; revokedEntitiesIndex < revokedEntitiesJsonList.GetLength(); ++revokedEntitiesIndex)
-    {
+    for (unsigned revokedEntitiesIndex = 0; revokedEntitiesIndex < revokedEntitiesJsonList.GetLength(); ++revokedEntitiesIndex) {
       m_revokedEntities.push_back(revokedEntitiesJsonList[revokedEntitiesIndex].AsString());
     }
     m_revokedEntitiesHasBeenSet = true;
@@ -37,12 +31,10 @@ GetRevocationStatusResult& GetRevocationStatusResult::operator =(const Aws::Amaz
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

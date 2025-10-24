@@ -3,77 +3,61 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancingv2/model/AuthenticateCognitoActionConditionalBehaviorEnum.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/elasticloadbalancingv2/model/AuthenticateCognitoActionConditionalBehaviorEnum.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace ElasticLoadBalancingv2 {
+namespace Model {
+namespace AuthenticateCognitoActionConditionalBehaviorEnumMapper {
 
-namespace Aws
-{
-  namespace ElasticLoadBalancingv2
-  {
-    namespace Model
-    {
-      namespace AuthenticateCognitoActionConditionalBehaviorEnumMapper
-      {
+static const int deny_HASH = HashingUtils::HashString("deny");
+static const int allow_HASH = HashingUtils::HashString("allow");
+static const int authenticate_HASH = HashingUtils::HashString("authenticate");
 
-        static const int deny_HASH = HashingUtils::HashString("deny");
-        static const int allow_HASH = HashingUtils::HashString("allow");
-        static const int authenticate_HASH = HashingUtils::HashString("authenticate");
+AuthenticateCognitoActionConditionalBehaviorEnum GetAuthenticateCognitoActionConditionalBehaviorEnumForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == deny_HASH) {
+    return AuthenticateCognitoActionConditionalBehaviorEnum::deny;
+  } else if (hashCode == allow_HASH) {
+    return AuthenticateCognitoActionConditionalBehaviorEnum::allow;
+  } else if (hashCode == authenticate_HASH) {
+    return AuthenticateCognitoActionConditionalBehaviorEnum::authenticate;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<AuthenticateCognitoActionConditionalBehaviorEnum>(hashCode);
+  }
 
+  return AuthenticateCognitoActionConditionalBehaviorEnum::NOT_SET;
+}
 
-        AuthenticateCognitoActionConditionalBehaviorEnum GetAuthenticateCognitoActionConditionalBehaviorEnumForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == deny_HASH)
-          {
-            return AuthenticateCognitoActionConditionalBehaviorEnum::deny;
-          }
-          else if (hashCode == allow_HASH)
-          {
-            return AuthenticateCognitoActionConditionalBehaviorEnum::allow;
-          }
-          else if (hashCode == authenticate_HASH)
-          {
-            return AuthenticateCognitoActionConditionalBehaviorEnum::authenticate;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<AuthenticateCognitoActionConditionalBehaviorEnum>(hashCode);
-          }
+Aws::String GetNameForAuthenticateCognitoActionConditionalBehaviorEnum(AuthenticateCognitoActionConditionalBehaviorEnum enumValue) {
+  switch (enumValue) {
+    case AuthenticateCognitoActionConditionalBehaviorEnum::NOT_SET:
+      return {};
+    case AuthenticateCognitoActionConditionalBehaviorEnum::deny:
+      return "deny";
+    case AuthenticateCognitoActionConditionalBehaviorEnum::allow:
+      return "allow";
+    case AuthenticateCognitoActionConditionalBehaviorEnum::authenticate:
+      return "authenticate";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return AuthenticateCognitoActionConditionalBehaviorEnum::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForAuthenticateCognitoActionConditionalBehaviorEnum(AuthenticateCognitoActionConditionalBehaviorEnum enumValue)
-        {
-          switch(enumValue)
-          {
-          case AuthenticateCognitoActionConditionalBehaviorEnum::NOT_SET:
-            return {};
-          case AuthenticateCognitoActionConditionalBehaviorEnum::deny:
-            return "deny";
-          case AuthenticateCognitoActionConditionalBehaviorEnum::allow:
-            return "allow";
-          case AuthenticateCognitoActionConditionalBehaviorEnum::authenticate:
-            return "authenticate";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace AuthenticateCognitoActionConditionalBehaviorEnumMapper
-    } // namespace Model
-  } // namespace ElasticLoadBalancingv2
-} // namespace Aws
+}  // namespace AuthenticateCognitoActionConditionalBehaviorEnumMapper
+}  // namespace Model
+}  // namespace ElasticLoadBalancingv2
+}  // namespace Aws

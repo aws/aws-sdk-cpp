@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotwireless/IoTWireless_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTWireless
-{
-namespace Model
-{
-  enum class AggregationPeriod
-  {
-    NOT_SET,
-    OneHour,
-    OneDay,
-    OneWeek
-  };
+namespace Aws {
+namespace IoTWireless {
+namespace Model {
+enum class AggregationPeriod { NOT_SET, OneHour, OneDay, OneWeek };
 
-namespace AggregationPeriodMapper
-{
+namespace AggregationPeriodMapper {
 AWS_IOTWIRELESS_API AggregationPeriod GetAggregationPeriodForName(const Aws::String& name);
 
 AWS_IOTWIRELESS_API Aws::String GetNameForAggregationPeriod(AggregationPeriod value);
-} // namespace AggregationPeriodMapper
-} // namespace Model
-} // namespace IoTWireless
-} // namespace Aws
+}  // namespace AggregationPeriodMapper
+}  // namespace Model
+}  // namespace IoTWireless
+}  // namespace Aws

@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dynamodb/model/ProvisionedThroughputExceededException.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dynamodb/model/ProvisionedThroughputExceededException.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DynamoDB
-{
-namespace Model
-{
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
 
-ProvisionedThroughputExceededException::ProvisionedThroughputExceededException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProvisionedThroughputExceededException::ProvisionedThroughputExceededException(JsonView jsonValue) { *this = jsonValue; }
 
-ProvisionedThroughputExceededException& ProvisionedThroughputExceededException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("message"))
-  {
+ProvisionedThroughputExceededException& ProvisionedThroughputExceededException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ThrottlingReasons"))
-  {
+  if (jsonValue.ValueExists("ThrottlingReasons")) {
     Aws::Utils::Array<JsonView> throttlingReasonsJsonList = jsonValue.GetArray("ThrottlingReasons");
-    for(unsigned throttlingReasonsIndex = 0; throttlingReasonsIndex < throttlingReasonsJsonList.GetLength(); ++throttlingReasonsIndex)
-    {
+    for (unsigned throttlingReasonsIndex = 0; throttlingReasonsIndex < throttlingReasonsJsonList.GetLength(); ++throttlingReasonsIndex) {
       m_throttlingReasons.push_back(throttlingReasonsJsonList[throttlingReasonsIndex].AsObject());
     }
     m_throttlingReasonsHasBeenSet = true;
@@ -42,30 +32,24 @@ ProvisionedThroughputExceededException& ProvisionedThroughputExceededException::
   return *this;
 }
 
-JsonValue ProvisionedThroughputExceededException::Jsonize() const
-{
+JsonValue ProvisionedThroughputExceededException::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
-  if(m_throttlingReasonsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> throttlingReasonsJsonList(m_throttlingReasons.size());
-   for(unsigned throttlingReasonsIndex = 0; throttlingReasonsIndex < throttlingReasonsJsonList.GetLength(); ++throttlingReasonsIndex)
-   {
-     throttlingReasonsJsonList[throttlingReasonsIndex].AsObject(m_throttlingReasons[throttlingReasonsIndex].Jsonize());
-   }
-   payload.WithArray("ThrottlingReasons", std::move(throttlingReasonsJsonList));
-
+  if (m_throttlingReasonsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> throttlingReasonsJsonList(m_throttlingReasons.size());
+    for (unsigned throttlingReasonsIndex = 0; throttlingReasonsIndex < throttlingReasonsJsonList.GetLength(); ++throttlingReasonsIndex) {
+      throttlingReasonsJsonList[throttlingReasonsIndex].AsObject(m_throttlingReasons[throttlingReasonsIndex].Jsonize());
+    }
+    payload.WithArray("ThrottlingReasons", std::move(throttlingReasonsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DynamoDB
-} // namespace Aws
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws

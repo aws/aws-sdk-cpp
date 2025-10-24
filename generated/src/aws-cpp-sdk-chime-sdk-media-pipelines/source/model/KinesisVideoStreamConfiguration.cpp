@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-KinesisVideoStreamConfiguration::KinesisVideoStreamConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+KinesisVideoStreamConfiguration::KinesisVideoStreamConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-KinesisVideoStreamConfiguration& KinesisVideoStreamConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Region"))
-  {
+KinesisVideoStreamConfiguration& KinesisVideoStreamConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Region")) {
     m_region = jsonValue.GetString("Region");
     m_regionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DataRetentionInHours"))
-  {
+  if (jsonValue.ValueExists("DataRetentionInHours")) {
     m_dataRetentionInHours = jsonValue.GetInteger("DataRetentionInHours");
     m_dataRetentionInHoursHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue KinesisVideoStreamConfiguration::Jsonize() const
-{
+JsonValue KinesisVideoStreamConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_regionHasBeenSet)
-  {
-   payload.WithString("Region", m_region);
-
+  if (m_regionHasBeenSet) {
+    payload.WithString("Region", m_region);
   }
 
-  if(m_dataRetentionInHoursHasBeenSet)
-  {
-   payload.WithInteger("DataRetentionInHours", m_dataRetentionInHours);
-
+  if (m_dataRetentionInHoursHasBeenSet) {
+    payload.WithInteger("DataRetentionInHours", m_dataRetentionInHours);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

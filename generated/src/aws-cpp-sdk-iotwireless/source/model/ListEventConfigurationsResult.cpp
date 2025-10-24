@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotwireless/model/ListEventConfigurationsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iotwireless/model/ListEventConfigurationsResult.h>
 
 #include <utility>
 
@@ -17,24 +17,18 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListEventConfigurationsResult::ListEventConfigurationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListEventConfigurationsResult::ListEventConfigurationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListEventConfigurationsResult& ListEventConfigurationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListEventConfigurationsResult& ListEventConfigurationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EventConfigurationsList"))
-  {
+  if (jsonValue.ValueExists("EventConfigurationsList")) {
     Aws::Utils::Array<JsonView> eventConfigurationsListJsonList = jsonValue.GetArray("EventConfigurationsList");
-    for(unsigned eventConfigurationsListIndex = 0; eventConfigurationsListIndex < eventConfigurationsListJsonList.GetLength(); ++eventConfigurationsListIndex)
-    {
+    for (unsigned eventConfigurationsListIndex = 0; eventConfigurationsListIndex < eventConfigurationsListJsonList.GetLength();
+         ++eventConfigurationsListIndex) {
       m_eventConfigurationsList.push_back(eventConfigurationsListJsonList[eventConfigurationsListIndex].AsObject());
     }
     m_eventConfigurationsListHasBeenSet = true;
@@ -42,12 +36,10 @@ ListEventConfigurationsResult& ListEventConfigurationsResult::operator =(const A
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

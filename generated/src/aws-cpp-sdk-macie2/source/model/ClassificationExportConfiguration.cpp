@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/macie2/model/ClassificationExportConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/macie2/model/ClassificationExportConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
+namespace Aws {
+namespace Macie2 {
+namespace Model {
 
-ClassificationExportConfiguration::ClassificationExportConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ClassificationExportConfiguration::ClassificationExportConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ClassificationExportConfiguration& ClassificationExportConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("s3Destination"))
-  {
+ClassificationExportConfiguration& ClassificationExportConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("s3Destination")) {
     m_s3Destination = jsonValue.GetObject("s3Destination");
     m_s3DestinationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ClassificationExportConfiguration::Jsonize() const
-{
+JsonValue ClassificationExportConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3DestinationHasBeenSet)
-  {
-   payload.WithObject("s3Destination", m_s3Destination.Jsonize());
-
+  if (m_s3DestinationHasBeenSet) {
+    payload.WithObject("s3Destination", m_s3Destination.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

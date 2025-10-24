@@ -3,65 +3,52 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/InboundIntegration.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/redshift/model/InboundIntegration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Redshift
-{
-namespace Model
-{
+namespace Aws {
+namespace Redshift {
+namespace Model {
 
-InboundIntegration::InboundIntegration(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+InboundIntegration::InboundIntegration(const XmlNode& xmlNode) { *this = xmlNode; }
 
-InboundIntegration& InboundIntegration::operator =(const XmlNode& xmlNode)
-{
+InboundIntegration& InboundIntegration::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode integrationArnNode = resultNode.FirstChild("IntegrationArn");
-    if(!integrationArnNode.IsNull())
-    {
+    if (!integrationArnNode.IsNull()) {
       m_integrationArn = Aws::Utils::Xml::DecodeEscapedXmlText(integrationArnNode.GetText());
       m_integrationArnHasBeenSet = true;
     }
     XmlNode sourceArnNode = resultNode.FirstChild("SourceArn");
-    if(!sourceArnNode.IsNull())
-    {
+    if (!sourceArnNode.IsNull()) {
       m_sourceArn = Aws::Utils::Xml::DecodeEscapedXmlText(sourceArnNode.GetText());
       m_sourceArnHasBeenSet = true;
     }
     XmlNode targetArnNode = resultNode.FirstChild("TargetArn");
-    if(!targetArnNode.IsNull())
-    {
+    if (!targetArnNode.IsNull()) {
       m_targetArn = Aws::Utils::Xml::DecodeEscapedXmlText(targetArnNode.GetText());
       m_targetArnHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    if(!statusNode.IsNull())
-    {
-      m_status = ZeroETLIntegrationStatusMapper::GetZeroETLIntegrationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
+    if (!statusNode.IsNull()) {
+      m_status = ZeroETLIntegrationStatusMapper::GetZeroETLIntegrationStatusForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode errorsNode = resultNode.FirstChild("Errors");
-    if(!errorsNode.IsNull())
-    {
+    if (!errorsNode.IsNull()) {
       XmlNode errorsMember = errorsNode.FirstChild("IntegrationError");
       m_errorsHasBeenSet = !errorsMember.IsNull();
-      while(!errorsMember.IsNull())
-      {
+      while (!errorsMember.IsNull()) {
         m_errors.push_back(errorsMember);
         errorsMember = errorsMember.NextNode("IntegrationError");
       }
@@ -69,9 +56,9 @@ InboundIntegration& InboundIntegration::operator =(const XmlNode& xmlNode)
       m_errorsHasBeenSet = true;
     }
     XmlNode createTimeNode = resultNode.FirstChild("CreateTime");
-    if(!createTimeNode.IsNull())
-    {
-      m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+    if (!createTimeNode.IsNull()) {
+      m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(),
+                              Aws::Utils::DateFormat::ISO_8601);
       m_createTimeHasBeenSet = true;
     }
   }
@@ -79,80 +66,67 @@ InboundIntegration& InboundIntegration::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void InboundIntegration::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_integrationArnHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".IntegrationArn=" << StringUtils::URLEncode(m_integrationArn.c_str()) << "&";
+void InboundIntegration::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_integrationArnHasBeenSet) {
+    oStream << location << index << locationValue << ".IntegrationArn=" << StringUtils::URLEncode(m_integrationArn.c_str()) << "&";
   }
 
-  if(m_sourceArnHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".SourceArn=" << StringUtils::URLEncode(m_sourceArn.c_str()) << "&";
+  if (m_sourceArnHasBeenSet) {
+    oStream << location << index << locationValue << ".SourceArn=" << StringUtils::URLEncode(m_sourceArn.c_str()) << "&";
   }
 
-  if(m_targetArnHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".TargetArn=" << StringUtils::URLEncode(m_targetArn.c_str()) << "&";
+  if (m_targetArnHasBeenSet) {
+    oStream << location << index << locationValue << ".TargetArn=" << StringUtils::URLEncode(m_targetArn.c_str()) << "&";
   }
 
-  if(m_statusHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(ZeroETLIntegrationStatusMapper::GetNameForZeroETLIntegrationStatus(m_status)) << "&";
+  if (m_statusHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".Status=" << StringUtils::URLEncode(ZeroETLIntegrationStatusMapper::GetNameForZeroETLIntegrationStatus(m_status)) << "&";
   }
 
-  if(m_errorsHasBeenSet)
-  {
-      unsigned errorsIdx = 1;
-      for(auto& item : m_errors)
-      {
-        Aws::StringStream errorsSs;
-        errorsSs << location << index << locationValue << ".Errors.IntegrationError." << errorsIdx++;
-        item.OutputToStream(oStream, errorsSs.str().c_str());
-      }
+  if (m_errorsHasBeenSet) {
+    unsigned errorsIdx = 1;
+    for (auto& item : m_errors) {
+      Aws::StringStream errorsSs;
+      errorsSs << location << index << locationValue << ".Errors.IntegrationError." << errorsIdx++;
+      item.OutputToStream(oStream, errorsSs.str().c_str());
+    }
   }
 
-  if(m_createTimeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
-  }
-
-}
-
-void InboundIntegration::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_integrationArnHasBeenSet)
-  {
-      oStream << location << ".IntegrationArn=" << StringUtils::URLEncode(m_integrationArn.c_str()) << "&";
-  }
-  if(m_sourceArnHasBeenSet)
-  {
-      oStream << location << ".SourceArn=" << StringUtils::URLEncode(m_sourceArn.c_str()) << "&";
-  }
-  if(m_targetArnHasBeenSet)
-  {
-      oStream << location << ".TargetArn=" << StringUtils::URLEncode(m_targetArn.c_str()) << "&";
-  }
-  if(m_statusHasBeenSet)
-  {
-      oStream << location << ".Status=" << StringUtils::URLEncode(ZeroETLIntegrationStatusMapper::GetNameForZeroETLIntegrationStatus(m_status)) << "&";
-  }
-  if(m_errorsHasBeenSet)
-  {
-      unsigned errorsIdx = 1;
-      for(auto& item : m_errors)
-      {
-        Aws::StringStream errorsSs;
-        errorsSs << location << ".Errors.IntegrationError." << errorsIdx++;
-        item.OutputToStream(oStream, errorsSs.str().c_str());
-      }
-  }
-  if(m_createTimeHasBeenSet)
-  {
-      oStream << location << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  if (m_createTimeHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace Redshift
-} // namespace Aws
+void InboundIntegration::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_integrationArnHasBeenSet) {
+    oStream << location << ".IntegrationArn=" << StringUtils::URLEncode(m_integrationArn.c_str()) << "&";
+  }
+  if (m_sourceArnHasBeenSet) {
+    oStream << location << ".SourceArn=" << StringUtils::URLEncode(m_sourceArn.c_str()) << "&";
+  }
+  if (m_targetArnHasBeenSet) {
+    oStream << location << ".TargetArn=" << StringUtils::URLEncode(m_targetArn.c_str()) << "&";
+  }
+  if (m_statusHasBeenSet) {
+    oStream << location
+            << ".Status=" << StringUtils::URLEncode(ZeroETLIntegrationStatusMapper::GetNameForZeroETLIntegrationStatus(m_status)) << "&";
+  }
+  if (m_errorsHasBeenSet) {
+    unsigned errorsIdx = 1;
+    for (auto& item : m_errors) {
+      Aws::StringStream errorsSs;
+      errorsSs << location << ".Errors.IntegrationError." << errorsIdx++;
+      item.OutputToStream(oStream, errorsSs.str().c_str());
+    }
+  }
+  if (m_createTimeHasBeenSet) {
+    oStream << location << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str())
+            << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace Redshift
+}  // namespace Aws

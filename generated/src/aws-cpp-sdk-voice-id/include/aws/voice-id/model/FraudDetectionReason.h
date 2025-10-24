@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/voice-id/VoiceID_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/voice-id/VoiceID_EXPORTS.h>
 
-namespace Aws
-{
-namespace VoiceID
-{
-namespace Model
-{
-  enum class FraudDetectionReason
-  {
-    NOT_SET,
-    KNOWN_FRAUDSTER,
-    VOICE_SPOOFING
-  };
+namespace Aws {
+namespace VoiceID {
+namespace Model {
+enum class FraudDetectionReason { NOT_SET, KNOWN_FRAUDSTER, VOICE_SPOOFING };
 
-namespace FraudDetectionReasonMapper
-{
+namespace FraudDetectionReasonMapper {
 AWS_VOICEID_API FraudDetectionReason GetFraudDetectionReasonForName(const Aws::String& name);
 
 AWS_VOICEID_API Aws::String GetNameForFraudDetectionReason(FraudDetectionReason value);
-} // namespace FraudDetectionReasonMapper
-} // namespace Model
-} // namespace VoiceID
-} // namespace Aws
+}  // namespace FraudDetectionReasonMapper
+}  // namespace Model
+}  // namespace VoiceID
+}  // namespace Aws

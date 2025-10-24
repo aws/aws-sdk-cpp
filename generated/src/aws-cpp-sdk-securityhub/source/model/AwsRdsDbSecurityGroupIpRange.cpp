@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsRdsDbSecurityGroupIpRange.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsRdsDbSecurityGroupIpRange.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsRdsDbSecurityGroupIpRange::AwsRdsDbSecurityGroupIpRange(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsRdsDbSecurityGroupIpRange::AwsRdsDbSecurityGroupIpRange(JsonView jsonValue) { *this = jsonValue; }
 
-AwsRdsDbSecurityGroupIpRange& AwsRdsDbSecurityGroupIpRange::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CidrIp"))
-  {
+AwsRdsDbSecurityGroupIpRange& AwsRdsDbSecurityGroupIpRange::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CidrIp")) {
     m_cidrIp = jsonValue.GetString("CidrIp");
     m_cidrIpHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = jsonValue.GetString("Status");
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsRdsDbSecurityGroupIpRange::Jsonize() const
-{
+JsonValue AwsRdsDbSecurityGroupIpRange::Jsonize() const {
   JsonValue payload;
 
-  if(m_cidrIpHasBeenSet)
-  {
-   payload.WithString("CidrIp", m_cidrIp);
-
+  if (m_cidrIpHasBeenSet) {
+    payload.WithString("CidrIp", m_cidrIp);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", m_status);
-
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", m_status);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

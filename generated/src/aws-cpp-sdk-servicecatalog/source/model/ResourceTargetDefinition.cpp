@@ -3,69 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/servicecatalog/model/ResourceTargetDefinition.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/servicecatalog/model/ResourceTargetDefinition.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ServiceCatalog
-{
-namespace Model
-{
+namespace Aws {
+namespace ServiceCatalog {
+namespace Model {
 
-ResourceTargetDefinition::ResourceTargetDefinition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResourceTargetDefinition::ResourceTargetDefinition(JsonView jsonValue) { *this = jsonValue; }
 
-ResourceTargetDefinition& ResourceTargetDefinition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Attribute"))
-  {
+ResourceTargetDefinition& ResourceTargetDefinition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Attribute")) {
     m_attribute = ResourceAttributeMapper::GetResourceAttributeForName(jsonValue.GetString("Attribute"));
     m_attributeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RequiresRecreation"))
-  {
+  if (jsonValue.ValueExists("RequiresRecreation")) {
     m_requiresRecreation = RequiresRecreationMapper::GetRequiresRecreationForName(jsonValue.GetString("RequiresRecreation"));
     m_requiresRecreationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResourceTargetDefinition::Jsonize() const
-{
+JsonValue ResourceTargetDefinition::Jsonize() const {
   JsonValue payload;
 
-  if(m_attributeHasBeenSet)
-  {
-   payload.WithString("Attribute", ResourceAttributeMapper::GetNameForResourceAttribute(m_attribute));
+  if (m_attributeHasBeenSet) {
+    payload.WithString("Attribute", ResourceAttributeMapper::GetNameForResourceAttribute(m_attribute));
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_requiresRecreationHasBeenSet)
-  {
-   payload.WithString("RequiresRecreation", RequiresRecreationMapper::GetNameForRequiresRecreation(m_requiresRecreation));
+  if (m_requiresRecreationHasBeenSet) {
+    payload.WithString("RequiresRecreation", RequiresRecreationMapper::GetNameForRequiresRecreation(m_requiresRecreation));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ServiceCatalog
-} // namespace Aws
+}  // namespace Model
+}  // namespace ServiceCatalog
+}  // namespace Aws

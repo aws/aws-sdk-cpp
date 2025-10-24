@@ -4,36 +4,27 @@
  */
 
 #include <aws/cloudfront/model/MonitoringSubscription.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
-MonitoringSubscription::MonitoringSubscription(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+MonitoringSubscription::MonitoringSubscription(const XmlNode& xmlNode) { *this = xmlNode; }
 
-MonitoringSubscription& MonitoringSubscription::operator =(const XmlNode& xmlNode)
-{
+MonitoringSubscription& MonitoringSubscription::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode realtimeMetricsSubscriptionConfigNode = resultNode.FirstChild("RealtimeMetricsSubscriptionConfig");
-    if(!realtimeMetricsSubscriptionConfigNode.IsNull())
-    {
+    if (!realtimeMetricsSubscriptionConfigNode.IsNull()) {
       m_realtimeMetricsSubscriptionConfig = realtimeMetricsSubscriptionConfigNode;
       m_realtimeMetricsSubscriptionConfigHasBeenSet = true;
     }
@@ -42,17 +33,14 @@ MonitoringSubscription& MonitoringSubscription::operator =(const XmlNode& xmlNod
   return *this;
 }
 
-void MonitoringSubscription::AddToNode(XmlNode& parentNode) const
-{
+void MonitoringSubscription::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_realtimeMetricsSubscriptionConfigHasBeenSet)
-  {
-   XmlNode realtimeMetricsSubscriptionConfigNode = parentNode.CreateChildElement("RealtimeMetricsSubscriptionConfig");
-   m_realtimeMetricsSubscriptionConfig.AddToNode(realtimeMetricsSubscriptionConfigNode);
+  if (m_realtimeMetricsSubscriptionConfigHasBeenSet) {
+    XmlNode realtimeMetricsSubscriptionConfigNode = parentNode.CreateChildElement("RealtimeMetricsSubscriptionConfig");
+    m_realtimeMetricsSubscriptionConfig.AddToNode(realtimeMetricsSubscriptionConfigNode);
   }
-
 }
 
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

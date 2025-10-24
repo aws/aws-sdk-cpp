@@ -5,19 +5,16 @@
 
 #pragma once
 
-#include <aws/marketplace-deployment/MarketplaceDeployment_EXPORTS.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
+#include <aws/marketplace-deployment/MarketplaceDeployment_EXPORTS.h>
 
-namespace Aws
-{
-namespace Client
-{
+namespace Aws {
+namespace Client {
 
-class AWS_MARKETPLACEDEPLOYMENT_API MarketplaceDeploymentErrorMarshaller : public Aws::Client::JsonErrorMarshaller
-{
-public:
+class AWS_MARKETPLACEDEPLOYMENT_API MarketplaceDeploymentErrorMarshaller : public Aws::Client::JsonErrorMarshaller {
+ public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Client
-} // namespace Aws
+}  // namespace Client
+}  // namespace Aws

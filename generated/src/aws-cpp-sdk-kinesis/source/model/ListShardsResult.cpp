@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kinesis/model/ListShardsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/kinesis/model/ListShardsResult.h>
 
 #include <utility>
 
@@ -17,37 +17,28 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListShardsResult::ListShardsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListShardsResult::ListShardsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListShardsResult& ListShardsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListShardsResult& ListShardsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Shards"))
-  {
+  if (jsonValue.ValueExists("Shards")) {
     Aws::Utils::Array<JsonView> shardsJsonList = jsonValue.GetArray("Shards");
-    for(unsigned shardsIndex = 0; shardsIndex < shardsJsonList.GetLength(); ++shardsIndex)
-    {
+    for (unsigned shardsIndex = 0; shardsIndex < shardsJsonList.GetLength(); ++shardsIndex) {
       m_shards.push_back(shardsJsonList[shardsIndex].AsObject());
     }
     m_shardsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

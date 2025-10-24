@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dynamodb/model/WriteRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dynamodb/model/WriteRequest.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DynamoDB
-{
-namespace Model
-{
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
 
-WriteRequest::WriteRequest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+WriteRequest::WriteRequest(JsonView jsonValue) { *this = jsonValue; }
 
-WriteRequest& WriteRequest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PutRequest"))
-  {
+WriteRequest& WriteRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PutRequest")) {
     m_putRequest = jsonValue.GetObject("PutRequest");
     m_putRequestHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DeleteRequest"))
-  {
+  if (jsonValue.ValueExists("DeleteRequest")) {
     m_deleteRequest = jsonValue.GetObject("DeleteRequest");
     m_deleteRequestHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue WriteRequest::Jsonize() const
-{
+JsonValue WriteRequest::Jsonize() const {
   JsonValue payload;
 
-  if(m_putRequestHasBeenSet)
-  {
-   payload.WithObject("PutRequest", m_putRequest.Jsonize());
-
+  if (m_putRequestHasBeenSet) {
+    payload.WithObject("PutRequest", m_putRequest.Jsonize());
   }
 
-  if(m_deleteRequestHasBeenSet)
-  {
-   payload.WithObject("DeleteRequest", m_deleteRequest.Jsonize());
-
+  if (m_deleteRequestHasBeenSet) {
+    payload.WithObject("DeleteRequest", m_deleteRequest.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DynamoDB
-} // namespace Aws
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws

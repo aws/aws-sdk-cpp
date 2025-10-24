@@ -7,25 +7,16 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
-  enum class UsernameAttributeType
-  {
-    NOT_SET,
-    phone_number,
-    email
-  };
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
+enum class UsernameAttributeType { NOT_SET, phone_number, email };
 
-namespace UsernameAttributeTypeMapper
-{
+namespace UsernameAttributeTypeMapper {
 AWS_COGNITOIDENTITYPROVIDER_API UsernameAttributeType GetUsernameAttributeTypeForName(const Aws::String& name);
 
 AWS_COGNITOIDENTITYPROVIDER_API Aws::String GetNameForUsernameAttributeType(UsernameAttributeType value);
-} // namespace UsernameAttributeTypeMapper
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace UsernameAttributeTypeMapper
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

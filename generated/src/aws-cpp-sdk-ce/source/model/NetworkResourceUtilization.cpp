@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Model
-{
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
 
-NetworkResourceUtilization::NetworkResourceUtilization(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NetworkResourceUtilization::NetworkResourceUtilization(JsonView jsonValue) { *this = jsonValue; }
 
-NetworkResourceUtilization& NetworkResourceUtilization::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("NetworkInBytesPerSecond"))
-  {
+NetworkResourceUtilization& NetworkResourceUtilization::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("NetworkInBytesPerSecond")) {
     m_networkInBytesPerSecond = jsonValue.GetString("NetworkInBytesPerSecond");
     m_networkInBytesPerSecondHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NetworkOutBytesPerSecond"))
-  {
+  if (jsonValue.ValueExists("NetworkOutBytesPerSecond")) {
     m_networkOutBytesPerSecond = jsonValue.GetString("NetworkOutBytesPerSecond");
     m_networkOutBytesPerSecondHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NetworkPacketsInPerSecond"))
-  {
+  if (jsonValue.ValueExists("NetworkPacketsInPerSecond")) {
     m_networkPacketsInPerSecond = jsonValue.GetString("NetworkPacketsInPerSecond");
     m_networkPacketsInPerSecondHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NetworkPacketsOutPerSecond"))
-  {
+  if (jsonValue.ValueExists("NetworkPacketsOutPerSecond")) {
     m_networkPacketsOutPerSecond = jsonValue.GetString("NetworkPacketsOutPerSecond");
     m_networkPacketsOutPerSecondHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NetworkResourceUtilization::Jsonize() const
-{
+JsonValue NetworkResourceUtilization::Jsonize() const {
   JsonValue payload;
 
-  if(m_networkInBytesPerSecondHasBeenSet)
-  {
-   payload.WithString("NetworkInBytesPerSecond", m_networkInBytesPerSecond);
-
+  if (m_networkInBytesPerSecondHasBeenSet) {
+    payload.WithString("NetworkInBytesPerSecond", m_networkInBytesPerSecond);
   }
 
-  if(m_networkOutBytesPerSecondHasBeenSet)
-  {
-   payload.WithString("NetworkOutBytesPerSecond", m_networkOutBytesPerSecond);
-
+  if (m_networkOutBytesPerSecondHasBeenSet) {
+    payload.WithString("NetworkOutBytesPerSecond", m_networkOutBytesPerSecond);
   }
 
-  if(m_networkPacketsInPerSecondHasBeenSet)
-  {
-   payload.WithString("NetworkPacketsInPerSecond", m_networkPacketsInPerSecond);
-
+  if (m_networkPacketsInPerSecondHasBeenSet) {
+    payload.WithString("NetworkPacketsInPerSecond", m_networkPacketsInPerSecond);
   }
 
-  if(m_networkPacketsOutPerSecondHasBeenSet)
-  {
-   payload.WithString("NetworkPacketsOutPerSecond", m_networkPacketsOutPerSecond);
-
+  if (m_networkPacketsOutPerSecondHasBeenSet) {
+    payload.WithString("NetworkPacketsOutPerSecond", m_networkPacketsOutPerSecond);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

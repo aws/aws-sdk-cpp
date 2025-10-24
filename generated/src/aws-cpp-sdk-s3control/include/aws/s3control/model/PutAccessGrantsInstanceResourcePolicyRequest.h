@@ -4,90 +4,104 @@
  */
 
 #pragma once
-#include <aws/s3control/S3Control_EXPORTS.h>
-#include <aws/s3control/S3ControlRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3control/S3ControlRequest.h>
+#include <aws/s3control/S3Control_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace S3Control
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Control {
+namespace Model {
+
+/**
+ */
+class PutAccessGrantsInstanceResourcePolicyRequest : public S3ControlRequest {
+ public:
+  AWS_S3CONTROL_API PutAccessGrantsInstanceResourcePolicyRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "PutAccessGrantsInstanceResourcePolicy"; }
+
+  AWS_S3CONTROL_API Aws::String SerializePayload() const override;
+
+  AWS_S3CONTROL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  AWS_S3CONTROL_API inline bool ShouldComputeContentMd5() const override { return true; }
 
   /**
+   * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
    */
-  class PutAccessGrantsInstanceResourcePolicyRequest : public S3ControlRequest
-  {
-  public:
-    AWS_S3CONTROL_API PutAccessGrantsInstanceResourcePolicyRequest() = default;
+  AWS_S3CONTROL_API EndpointParameters GetEndpointContextParams() const override;
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "PutAccessGrantsInstanceResourcePolicy"; }
+  ///@{
+  /**
+   * <p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>
+   */
+  inline const Aws::String& GetAccountId() const { return m_accountId; }
+  inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+  template <typename AccountIdT = Aws::String>
+  void SetAccountId(AccountIdT&& value) {
+    m_accountIdHasBeenSet = true;
+    m_accountId = std::forward<AccountIdT>(value);
+  }
+  template <typename AccountIdT = Aws::String>
+  PutAccessGrantsInstanceResourcePolicyRequest& WithAccountId(AccountIdT&& value) {
+    SetAccountId(std::forward<AccountIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_S3CONTROL_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>The resource policy of the S3 Access Grants instance that you are
+   * updating.</p>
+   */
+  inline const Aws::String& GetPolicy() const { return m_policy; }
+  inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
+  template <typename PolicyT = Aws::String>
+  void SetPolicy(PolicyT&& value) {
+    m_policyHasBeenSet = true;
+    m_policy = std::forward<PolicyT>(value);
+  }
+  template <typename PolicyT = Aws::String>
+  PutAccessGrantsInstanceResourcePolicyRequest& WithPolicy(PolicyT&& value) {
+    SetPolicy(std::forward<PolicyT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_S3CONTROL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+  ///@{
+  /**
+   * <p>The Organization of the resource policy of the S3 Access Grants instance.</p>
+   */
+  inline const Aws::String& GetOrganization() const { return m_organization; }
+  inline bool OrganizationHasBeenSet() const { return m_organizationHasBeenSet; }
+  template <typename OrganizationT = Aws::String>
+  void SetOrganization(OrganizationT&& value) {
+    m_organizationHasBeenSet = true;
+    m_organization = std::forward<OrganizationT>(value);
+  }
+  template <typename OrganizationT = Aws::String>
+  PutAccessGrantsInstanceResourcePolicyRequest& WithOrganization(OrganizationT&& value) {
+    SetOrganization(std::forward<OrganizationT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_accountId;
+  bool m_accountIdHasBeenSet = false;
 
-    AWS_S3CONTROL_API inline bool ShouldComputeContentMd5() const override { return true; }
+  Aws::String m_policy;
+  bool m_policyHasBeenSet = false;
 
-    /**
-     * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
-     */
-    AWS_S3CONTROL_API EndpointParameters GetEndpointContextParams() const override;
+  Aws::String m_organization;
+  bool m_organizationHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>
-     */
-    inline const Aws::String& GetAccountId() const { return m_accountId; }
-    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    template<typename AccountIdT = Aws::String>
-    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
-    template<typename AccountIdT = Aws::String>
-    PutAccessGrantsInstanceResourcePolicyRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The resource policy of the S3 Access Grants instance that you are
-     * updating.</p>
-     */
-    inline const Aws::String& GetPolicy() const { return m_policy; }
-    inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
-    template<typename PolicyT = Aws::String>
-    void SetPolicy(PolicyT&& value) { m_policyHasBeenSet = true; m_policy = std::forward<PolicyT>(value); }
-    template<typename PolicyT = Aws::String>
-    PutAccessGrantsInstanceResourcePolicyRequest& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Organization of the resource policy of the S3 Access Grants instance.</p>
-     */
-    inline const Aws::String& GetOrganization() const { return m_organization; }
-    inline bool OrganizationHasBeenSet() const { return m_organizationHasBeenSet; }
-    template<typename OrganizationT = Aws::String>
-    void SetOrganization(OrganizationT&& value) { m_organizationHasBeenSet = true; m_organization = std::forward<OrganizationT>(value); }
-    template<typename OrganizationT = Aws::String>
-    PutAccessGrantsInstanceResourcePolicyRequest& WithOrganization(OrganizationT&& value) { SetOrganization(std::forward<OrganizationT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_accountId;
-    bool m_accountIdHasBeenSet = false;
-
-    Aws::String m_policy;
-    bool m_policyHasBeenSet = false;
-
-    Aws::String m_organization;
-    bool m_organizationHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace S3Control
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Control
+}  // namespace Aws

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kinesisvideo/model/UploaderConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kinesisvideo/model/UploaderConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace KinesisVideo
-{
-namespace Model
-{
+namespace Aws {
+namespace KinesisVideo {
+namespace Model {
 
-UploaderConfig::UploaderConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UploaderConfig::UploaderConfig(JsonView jsonValue) { *this = jsonValue; }
 
-UploaderConfig& UploaderConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ScheduleConfig"))
-  {
+UploaderConfig& UploaderConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ScheduleConfig")) {
     m_scheduleConfig = jsonValue.GetObject("ScheduleConfig");
     m_scheduleConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UploaderConfig::Jsonize() const
-{
+JsonValue UploaderConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_scheduleConfigHasBeenSet)
-  {
-   payload.WithObject("ScheduleConfig", m_scheduleConfig.Jsonize());
-
+  if (m_scheduleConfigHasBeenSet) {
+    payload.WithObject("ScheduleConfig", m_scheduleConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace KinesisVideo
-} // namespace Aws
+}  // namespace Model
+}  // namespace KinesisVideo
+}  // namespace Aws

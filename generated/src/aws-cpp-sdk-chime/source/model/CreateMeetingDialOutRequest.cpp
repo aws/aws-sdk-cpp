@@ -12,31 +12,20 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateMeetingDialOutRequest::SerializePayload() const
-{
+Aws::String CreateMeetingDialOutRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_fromPhoneNumberHasBeenSet)
-  {
-   payload.WithString("FromPhoneNumber", m_fromPhoneNumber);
-
+  if (m_fromPhoneNumberHasBeenSet) {
+    payload.WithString("FromPhoneNumber", m_fromPhoneNumber);
   }
 
-  if(m_toPhoneNumberHasBeenSet)
-  {
-   payload.WithString("ToPhoneNumber", m_toPhoneNumber);
-
+  if (m_toPhoneNumberHasBeenSet) {
+    payload.WithString("ToPhoneNumber", m_toPhoneNumber);
   }
 
-  if(m_joinTokenHasBeenSet)
-  {
-   payload.WithString("JoinToken", m_joinToken);
-
+  if (m_joinTokenHasBeenSet) {
+    payload.WithString("JoinToken", m_joinToken);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

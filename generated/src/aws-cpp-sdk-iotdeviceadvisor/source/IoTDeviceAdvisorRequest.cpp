@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/iotdeviceadvisor/IoTDeviceAdvisorRequest.h>
 
-namespace Aws
-{
-namespace IoTDeviceAdvisor
-{
-} // namespace IoTDeviceAdvisor
-} // namespace Aws
+namespace Aws {
+namespace IoTDeviceAdvisor {}  // namespace IoTDeviceAdvisor
+}  // namespace Aws

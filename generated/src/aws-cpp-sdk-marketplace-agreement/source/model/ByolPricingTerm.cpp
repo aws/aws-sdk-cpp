@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/marketplace-agreement/model/ByolPricingTerm.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/marketplace-agreement/model/ByolPricingTerm.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AgreementService
-{
-namespace Model
-{
+namespace Aws {
+namespace AgreementService {
+namespace Model {
 
-ByolPricingTerm::ByolPricingTerm(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ByolPricingTerm::ByolPricingTerm(JsonView jsonValue) { *this = jsonValue; }
 
-ByolPricingTerm& ByolPricingTerm::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+ByolPricingTerm& ByolPricingTerm::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = jsonValue.GetString("type");
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ByolPricingTerm::Jsonize() const
-{
+JsonValue ByolPricingTerm::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", m_type);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AgreementService
-} // namespace Aws
+}  // namespace Model
+}  // namespace AgreementService
+}  // namespace Aws

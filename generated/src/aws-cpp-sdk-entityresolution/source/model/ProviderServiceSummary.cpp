@@ -3,92 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/entityresolution/model/ProviderServiceSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/entityresolution/model/ProviderServiceSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EntityResolution
-{
-namespace Model
-{
+namespace Aws {
+namespace EntityResolution {
+namespace Model {
 
-ProviderServiceSummary::ProviderServiceSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProviderServiceSummary::ProviderServiceSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ProviderServiceSummary& ProviderServiceSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("providerServiceArn"))
-  {
+ProviderServiceSummary& ProviderServiceSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("providerServiceArn")) {
     m_providerServiceArn = jsonValue.GetString("providerServiceArn");
     m_providerServiceArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("providerName"))
-  {
+  if (jsonValue.ValueExists("providerName")) {
     m_providerName = jsonValue.GetString("providerName");
     m_providerNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("providerServiceDisplayName"))
-  {
+  if (jsonValue.ValueExists("providerServiceDisplayName")) {
     m_providerServiceDisplayName = jsonValue.GetString("providerServiceDisplayName");
     m_providerServiceDisplayNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("providerServiceName"))
-  {
+  if (jsonValue.ValueExists("providerServiceName")) {
     m_providerServiceName = jsonValue.GetString("providerServiceName");
     m_providerServiceNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("providerServiceType"))
-  {
+  if (jsonValue.ValueExists("providerServiceType")) {
     m_providerServiceType = ServiceTypeMapper::GetServiceTypeForName(jsonValue.GetString("providerServiceType"));
     m_providerServiceTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ProviderServiceSummary::Jsonize() const
-{
+JsonValue ProviderServiceSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_providerServiceArnHasBeenSet)
-  {
-   payload.WithString("providerServiceArn", m_providerServiceArn);
-
+  if (m_providerServiceArnHasBeenSet) {
+    payload.WithString("providerServiceArn", m_providerServiceArn);
   }
 
-  if(m_providerNameHasBeenSet)
-  {
-   payload.WithString("providerName", m_providerName);
-
+  if (m_providerNameHasBeenSet) {
+    payload.WithString("providerName", m_providerName);
   }
 
-  if(m_providerServiceDisplayNameHasBeenSet)
-  {
-   payload.WithString("providerServiceDisplayName", m_providerServiceDisplayName);
-
+  if (m_providerServiceDisplayNameHasBeenSet) {
+    payload.WithString("providerServiceDisplayName", m_providerServiceDisplayName);
   }
 
-  if(m_providerServiceNameHasBeenSet)
-  {
-   payload.WithString("providerServiceName", m_providerServiceName);
-
+  if (m_providerServiceNameHasBeenSet) {
+    payload.WithString("providerServiceName", m_providerServiceName);
   }
 
-  if(m_providerServiceTypeHasBeenSet)
-  {
-   payload.WithString("providerServiceType", ServiceTypeMapper::GetNameForServiceType(m_providerServiceType));
+  if (m_providerServiceTypeHasBeenSet) {
+    payload.WithString("providerServiceType", ServiceTypeMapper::GetNameForServiceType(m_providerServiceType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EntityResolution
-} // namespace Aws
+}  // namespace Model
+}  // namespace EntityResolution
+}  // namespace Aws

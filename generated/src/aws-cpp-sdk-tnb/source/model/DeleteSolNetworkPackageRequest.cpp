@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/tnb/model/DeleteSolNetworkPackageRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/tnb/model/DeleteSolNetworkPackageRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::tnb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteSolNetworkPackageRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DeleteSolNetworkPackageRequest::SerializePayload() const { return {}; }

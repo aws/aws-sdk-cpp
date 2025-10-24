@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::ElasticLoadBalancingv2;
 
-AWSError<CoreErrors> ElasticLoadBalancingv2ErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> ElasticLoadBalancingv2ErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = ElasticLoadBalancingv2ErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

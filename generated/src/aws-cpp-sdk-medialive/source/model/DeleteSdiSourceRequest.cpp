@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/DeleteSdiSourceRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/DeleteSdiSourceRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteSdiSourceRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DeleteSdiSourceRequest::SerializePayload() const { return {}; }

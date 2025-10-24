@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/marketplace-catalog/model/DataProductSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/marketplace-catalog/model/DataProductSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MarketplaceCatalog
-{
-namespace Model
-{
+namespace Aws {
+namespace MarketplaceCatalog {
+namespace Model {
 
-DataProductSummary::DataProductSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DataProductSummary::DataProductSummary(JsonView jsonValue) { *this = jsonValue; }
 
-DataProductSummary& DataProductSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ProductTitle"))
-  {
+DataProductSummary& DataProductSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ProductTitle")) {
     m_productTitle = jsonValue.GetString("ProductTitle");
     m_productTitleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Visibility"))
-  {
+  if (jsonValue.ValueExists("Visibility")) {
     m_visibility = DataProductVisibilityStringMapper::GetDataProductVisibilityStringForName(jsonValue.GetString("Visibility"));
     m_visibilityHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DataProductSummary::Jsonize() const
-{
+JsonValue DataProductSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_productTitleHasBeenSet)
-  {
-   payload.WithString("ProductTitle", m_productTitle);
-
+  if (m_productTitleHasBeenSet) {
+    payload.WithString("ProductTitle", m_productTitle);
   }
 
-  if(m_visibilityHasBeenSet)
-  {
-   payload.WithString("Visibility", DataProductVisibilityStringMapper::GetNameForDataProductVisibilityString(m_visibility));
+  if (m_visibilityHasBeenSet) {
+    payload.WithString("Visibility", DataProductVisibilityStringMapper::GetNameForDataProductVisibilityString(m_visibility));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MarketplaceCatalog
-} // namespace Aws
+}  // namespace Model
+}  // namespace MarketplaceCatalog
+}  // namespace Aws

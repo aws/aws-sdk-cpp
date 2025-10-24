@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lambda/model/FileSystemConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lambda/model/FileSystemConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Lambda
-{
-namespace Model
-{
+namespace Aws {
+namespace Lambda {
+namespace Model {
 
-FileSystemConfig::FileSystemConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FileSystemConfig::FileSystemConfig(JsonView jsonValue) { *this = jsonValue; }
 
-FileSystemConfig& FileSystemConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Arn"))
-  {
+FileSystemConfig& FileSystemConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LocalMountPath"))
-  {
+  if (jsonValue.ValueExists("LocalMountPath")) {
     m_localMountPath = jsonValue.GetString("LocalMountPath");
     m_localMountPathHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FileSystemConfig::Jsonize() const
-{
+JsonValue FileSystemConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_localMountPathHasBeenSet)
-  {
-   payload.WithString("LocalMountPath", m_localMountPath);
-
+  if (m_localMountPathHasBeenSet) {
+    payload.WithString("LocalMountPath", m_localMountPath);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Lambda
-} // namespace Aws
+}  // namespace Model
+}  // namespace Lambda
+}  // namespace Aws

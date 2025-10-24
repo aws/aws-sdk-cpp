@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class TooltipTarget
-  {
-    NOT_SET,
-    BOTH,
-    BAR,
-    LINE
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class TooltipTarget { NOT_SET, BOTH, BAR, LINE };
 
-namespace TooltipTargetMapper
-{
+namespace TooltipTargetMapper {
 AWS_QUICKSIGHT_API TooltipTarget GetTooltipTargetForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForTooltipTarget(TooltipTarget value);
-} // namespace TooltipTargetMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace TooltipTargetMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

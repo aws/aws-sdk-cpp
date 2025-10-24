@@ -12,30 +12,20 @@ using namespace Aws::Amplify::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartDeploymentRequest::SerializePayload() const
-{
+Aws::String StartDeploymentRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_jobIdHasBeenSet)
-  {
-   payload.WithString("jobId", m_jobId);
-
+  if (m_jobIdHasBeenSet) {
+    payload.WithString("jobId", m_jobId);
   }
 
-  if(m_sourceUrlHasBeenSet)
-  {
-   payload.WithString("sourceUrl", m_sourceUrl);
-
+  if (m_sourceUrlHasBeenSet) {
+    payload.WithString("sourceUrl", m_sourceUrl);
   }
 
-  if(m_sourceUrlTypeHasBeenSet)
-  {
-   payload.WithString("sourceUrlType", SourceUrlTypeMapper::GetNameForSourceUrlType(m_sourceUrlType));
+  if (m_sourceUrlTypeHasBeenSet) {
+    payload.WithString("sourceUrlType", SourceUrlTypeMapper::GetNameForSourceUrlType(m_sourceUrlType));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

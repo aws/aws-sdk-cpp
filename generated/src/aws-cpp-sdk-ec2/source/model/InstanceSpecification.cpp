@@ -3,53 +3,42 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/InstanceSpecification.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/InstanceSpecification.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-InstanceSpecification::InstanceSpecification(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+InstanceSpecification::InstanceSpecification(const XmlNode& xmlNode) { *this = xmlNode; }
 
-InstanceSpecification& InstanceSpecification::operator =(const XmlNode& xmlNode)
-{
+InstanceSpecification& InstanceSpecification::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode instanceIdNode = resultNode.FirstChild("InstanceId");
-    if(!instanceIdNode.IsNull())
-    {
+    if (!instanceIdNode.IsNull()) {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
     }
     XmlNode excludeBootVolumeNode = resultNode.FirstChild("ExcludeBootVolume");
-    if(!excludeBootVolumeNode.IsNull())
-    {
-      m_excludeBootVolume = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(excludeBootVolumeNode.GetText()).c_str()).c_str());
+    if (!excludeBootVolumeNode.IsNull()) {
+      m_excludeBootVolume = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(excludeBootVolumeNode.GetText()).c_str()).c_str());
       m_excludeBootVolumeHasBeenSet = true;
     }
     XmlNode excludeDataVolumeIdsNode = resultNode.FirstChild("ExcludeDataVolumeId");
-    if(!excludeDataVolumeIdsNode.IsNull())
-    {
+    if (!excludeDataVolumeIdsNode.IsNull()) {
       XmlNode excludeDataVolumeIdsMember = excludeDataVolumeIdsNode.FirstChild("VolumeId");
       m_excludeDataVolumeIdsHasBeenSet = !excludeDataVolumeIdsMember.IsNull();
-      while(!excludeDataVolumeIdsMember.IsNull())
-      {
+      while (!excludeDataVolumeIdsMember.IsNull()) {
         m_excludeDataVolumeIds.push_back(excludeDataVolumeIdsMember.GetText());
         excludeDataVolumeIdsMember = excludeDataVolumeIdsMember.NextNode("VolumeId");
       }
@@ -61,49 +50,39 @@ InstanceSpecification& InstanceSpecification::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void InstanceSpecification::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_instanceIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+void InstanceSpecification::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_instanceIdHasBeenSet) {
+    oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
 
-  if(m_excludeBootVolumeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ExcludeBootVolume=" << std::boolalpha << m_excludeBootVolume << "&";
+  if (m_excludeBootVolumeHasBeenSet) {
+    oStream << location << index << locationValue << ".ExcludeBootVolume=" << std::boolalpha << m_excludeBootVolume << "&";
   }
 
-  if(m_excludeDataVolumeIdsHasBeenSet)
-  {
-      unsigned excludeDataVolumeIdsIdx = 1;
-      for(auto& item : m_excludeDataVolumeIds)
-      {
-        oStream << location << index << locationValue << ".ExcludeDataVolumeId." << excludeDataVolumeIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
-  }
-
-}
-
-void InstanceSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_instanceIdHasBeenSet)
-  {
-      oStream << location << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
-  }
-  if(m_excludeBootVolumeHasBeenSet)
-  {
-      oStream << location << ".ExcludeBootVolume=" << std::boolalpha << m_excludeBootVolume << "&";
-  }
-  if(m_excludeDataVolumeIdsHasBeenSet)
-  {
-      unsigned excludeDataVolumeIdsIdx = 1;
-      for(auto& item : m_excludeDataVolumeIds)
-      {
-        oStream << location << ".ExcludeDataVolumeId." << excludeDataVolumeIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
+  if (m_excludeDataVolumeIdsHasBeenSet) {
+    unsigned excludeDataVolumeIdsIdx = 1;
+    for (auto& item : m_excludeDataVolumeIds) {
+      oStream << location << index << locationValue << ".ExcludeDataVolumeId." << excludeDataVolumeIdsIdx++ << "="
+              << StringUtils::URLEncode(item.c_str()) << "&";
+    }
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void InstanceSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_instanceIdHasBeenSet) {
+    oStream << location << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+  }
+  if (m_excludeBootVolumeHasBeenSet) {
+    oStream << location << ".ExcludeBootVolume=" << std::boolalpha << m_excludeBootVolume << "&";
+  }
+  if (m_excludeDataVolumeIdsHasBeenSet) {
+    unsigned excludeDataVolumeIdsIdx = 1;
+    for (auto& item : m_excludeDataVolumeIds) {
+      oStream << location << ".ExcludeDataVolumeId." << excludeDataVolumeIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+    }
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

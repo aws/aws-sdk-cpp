@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class UncompressedFramerateConversionAlgorithm
-  {
-    NOT_SET,
-    DUPLICATE_DROP,
-    INTERPOLATE,
-    FRAMEFORMER,
-    MAINTAIN_FRAME_COUNT
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class UncompressedFramerateConversionAlgorithm { NOT_SET, DUPLICATE_DROP, INTERPOLATE, FRAMEFORMER, MAINTAIN_FRAME_COUNT };
 
-namespace UncompressedFramerateConversionAlgorithmMapper
-{
+namespace UncompressedFramerateConversionAlgorithmMapper {
 AWS_MEDIACONVERT_API UncompressedFramerateConversionAlgorithm GetUncompressedFramerateConversionAlgorithmForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForUncompressedFramerateConversionAlgorithm(UncompressedFramerateConversionAlgorithm value);
-} // namespace UncompressedFramerateConversionAlgorithmMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace UncompressedFramerateConversionAlgorithmMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

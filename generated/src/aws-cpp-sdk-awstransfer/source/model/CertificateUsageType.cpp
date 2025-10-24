@@ -4,76 +4,60 @@
  */
 
 #include <aws/awstransfer/model/CertificateUsageType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace Transfer {
+namespace Model {
+namespace CertificateUsageTypeMapper {
 
-namespace Aws
-{
-  namespace Transfer
-  {
-    namespace Model
-    {
-      namespace CertificateUsageTypeMapper
-      {
+static const int SIGNING_HASH = HashingUtils::HashString("SIGNING");
+static const int ENCRYPTION_HASH = HashingUtils::HashString("ENCRYPTION");
+static const int TLS_HASH = HashingUtils::HashString("TLS");
 
-        static const int SIGNING_HASH = HashingUtils::HashString("SIGNING");
-        static const int ENCRYPTION_HASH = HashingUtils::HashString("ENCRYPTION");
-        static const int TLS_HASH = HashingUtils::HashString("TLS");
+CertificateUsageType GetCertificateUsageTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == SIGNING_HASH) {
+    return CertificateUsageType::SIGNING;
+  } else if (hashCode == ENCRYPTION_HASH) {
+    return CertificateUsageType::ENCRYPTION;
+  } else if (hashCode == TLS_HASH) {
+    return CertificateUsageType::TLS;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<CertificateUsageType>(hashCode);
+  }
 
+  return CertificateUsageType::NOT_SET;
+}
 
-        CertificateUsageType GetCertificateUsageTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == SIGNING_HASH)
-          {
-            return CertificateUsageType::SIGNING;
-          }
-          else if (hashCode == ENCRYPTION_HASH)
-          {
-            return CertificateUsageType::ENCRYPTION;
-          }
-          else if (hashCode == TLS_HASH)
-          {
-            return CertificateUsageType::TLS;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<CertificateUsageType>(hashCode);
-          }
+Aws::String GetNameForCertificateUsageType(CertificateUsageType enumValue) {
+  switch (enumValue) {
+    case CertificateUsageType::NOT_SET:
+      return {};
+    case CertificateUsageType::SIGNING:
+      return "SIGNING";
+    case CertificateUsageType::ENCRYPTION:
+      return "ENCRYPTION";
+    case CertificateUsageType::TLS:
+      return "TLS";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return CertificateUsageType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForCertificateUsageType(CertificateUsageType enumValue)
-        {
-          switch(enumValue)
-          {
-          case CertificateUsageType::NOT_SET:
-            return {};
-          case CertificateUsageType::SIGNING:
-            return "SIGNING";
-          case CertificateUsageType::ENCRYPTION:
-            return "ENCRYPTION";
-          case CertificateUsageType::TLS:
-            return "TLS";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace CertificateUsageTypeMapper
-    } // namespace Model
-  } // namespace Transfer
-} // namespace Aws
+}  // namespace CertificateUsageTypeMapper
+}  // namespace Model
+}  // namespace Transfer
+}  // namespace Aws

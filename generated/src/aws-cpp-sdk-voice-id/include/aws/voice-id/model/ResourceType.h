@@ -4,33 +4,19 @@
  */
 
 #pragma once
-#include <aws/voice-id/VoiceID_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/voice-id/VoiceID_EXPORTS.h>
 
-namespace Aws
-{
-namespace VoiceID
-{
-namespace Model
-{
-  enum class ResourceType
-  {
-    NOT_SET,
-    BATCH_JOB,
-    COMPLIANCE_CONSENT,
-    DOMAIN_,
-    FRAUDSTER,
-    SESSION,
-    SPEAKER,
-    WATCHLIST
-  };
+namespace Aws {
+namespace VoiceID {
+namespace Model {
+enum class ResourceType { NOT_SET, BATCH_JOB, COMPLIANCE_CONSENT, DOMAIN_, FRAUDSTER, SESSION, SPEAKER, WATCHLIST };
 
-namespace ResourceTypeMapper
-{
+namespace ResourceTypeMapper {
 AWS_VOICEID_API ResourceType GetResourceTypeForName(const Aws::String& name);
 
 AWS_VOICEID_API Aws::String GetNameForResourceType(ResourceType value);
-} // namespace ResourceTypeMapper
-} // namespace Model
-} // namespace VoiceID
-} // namespace Aws
+}  // namespace ResourceTypeMapper
+}  // namespace Model
+}  // namespace VoiceID
+}  // namespace Aws

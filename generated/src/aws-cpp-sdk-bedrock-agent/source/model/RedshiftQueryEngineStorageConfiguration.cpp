@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-RedshiftQueryEngineStorageConfiguration::RedshiftQueryEngineStorageConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RedshiftQueryEngineStorageConfiguration::RedshiftQueryEngineStorageConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-RedshiftQueryEngineStorageConfiguration& RedshiftQueryEngineStorageConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+RedshiftQueryEngineStorageConfiguration& RedshiftQueryEngineStorageConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = RedshiftQueryEngineStorageTypeMapper::GetRedshiftQueryEngineStorageTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("awsDataCatalogConfiguration"))
-  {
+  if (jsonValue.ValueExists("awsDataCatalogConfiguration")) {
     m_awsDataCatalogConfiguration = jsonValue.GetObject("awsDataCatalogConfiguration");
     m_awsDataCatalogConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("redshiftConfiguration"))
-  {
+  if (jsonValue.ValueExists("redshiftConfiguration")) {
     m_redshiftConfiguration = jsonValue.GetObject("redshiftConfiguration");
     m_redshiftConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RedshiftQueryEngineStorageConfiguration::Jsonize() const
-{
+JsonValue RedshiftQueryEngineStorageConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", RedshiftQueryEngineStorageTypeMapper::GetNameForRedshiftQueryEngineStorageType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", RedshiftQueryEngineStorageTypeMapper::GetNameForRedshiftQueryEngineStorageType(m_type));
   }
 
-  if(m_awsDataCatalogConfigurationHasBeenSet)
-  {
-   payload.WithObject("awsDataCatalogConfiguration", m_awsDataCatalogConfiguration.Jsonize());
-
+  if (m_awsDataCatalogConfigurationHasBeenSet) {
+    payload.WithObject("awsDataCatalogConfiguration", m_awsDataCatalogConfiguration.Jsonize());
   }
 
-  if(m_redshiftConfigurationHasBeenSet)
-  {
-   payload.WithObject("redshiftConfiguration", m_redshiftConfiguration.Jsonize());
-
+  if (m_redshiftConfigurationHasBeenSet) {
+    payload.WithObject("redshiftConfiguration", m_redshiftConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

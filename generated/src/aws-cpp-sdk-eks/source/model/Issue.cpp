@@ -3,43 +3,32 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/eks/model/Issue.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/eks/model/Issue.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EKS
-{
-namespace Model
-{
+namespace Aws {
+namespace EKS {
+namespace Model {
 
-Issue::Issue(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Issue::Issue(JsonView jsonValue) { *this = jsonValue; }
 
-Issue& Issue::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("code"))
-  {
+Issue& Issue::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("code")) {
     m_code = NodegroupIssueCodeMapper::GetNodegroupIssueCodeForName(jsonValue.GetString("code"));
     m_codeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("message"))
-  {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceIds"))
-  {
+  if (jsonValue.ValueExists("resourceIds")) {
     Aws::Utils::Array<JsonView> resourceIdsJsonList = jsonValue.GetArray("resourceIds");
-    for(unsigned resourceIdsIndex = 0; resourceIdsIndex < resourceIdsJsonList.GetLength(); ++resourceIdsIndex)
-    {
+    for (unsigned resourceIdsIndex = 0; resourceIdsIndex < resourceIdsJsonList.GetLength(); ++resourceIdsIndex) {
       m_resourceIds.push_back(resourceIdsJsonList[resourceIdsIndex].AsString());
     }
     m_resourceIdsHasBeenSet = true;
@@ -47,35 +36,28 @@ Issue& Issue::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue Issue::Jsonize() const
-{
+JsonValue Issue::Jsonize() const {
   JsonValue payload;
 
-  if(m_codeHasBeenSet)
-  {
-   payload.WithString("code", NodegroupIssueCodeMapper::GetNameForNodegroupIssueCode(m_code));
+  if (m_codeHasBeenSet) {
+    payload.WithString("code", NodegroupIssueCodeMapper::GetNameForNodegroupIssueCode(m_code));
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
-  if(m_resourceIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> resourceIdsJsonList(m_resourceIds.size());
-   for(unsigned resourceIdsIndex = 0; resourceIdsIndex < resourceIdsJsonList.GetLength(); ++resourceIdsIndex)
-   {
-     resourceIdsJsonList[resourceIdsIndex].AsString(m_resourceIds[resourceIdsIndex]);
-   }
-   payload.WithArray("resourceIds", std::move(resourceIdsJsonList));
-
+  if (m_resourceIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> resourceIdsJsonList(m_resourceIds.size());
+    for (unsigned resourceIdsIndex = 0; resourceIdsIndex < resourceIdsJsonList.GetLength(); ++resourceIdsIndex) {
+      resourceIdsJsonList[resourceIdsIndex].AsString(m_resourceIds[resourceIdsIndex]);
+    }
+    payload.WithArray("resourceIds", std::move(resourceIdsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EKS
-} // namespace Aws
+}  // namespace Model
+}  // namespace EKS
+}  // namespace Aws

@@ -6,63 +6,67 @@
 #pragma once
 #include <aws/workdocs/WorkDocs_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace WorkDocs
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace WorkDocs {
+namespace Model {
 
+/**
+ * <p>Filter based on size (in bytes).</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/LongRangeType">AWS
+ * API Reference</a></p>
+ */
+class LongRangeType {
+ public:
+  AWS_WORKDOCS_API LongRangeType() = default;
+  AWS_WORKDOCS_API LongRangeType(Aws::Utils::Json::JsonView jsonValue);
+  AWS_WORKDOCS_API LongRangeType& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Filter based on size (in bytes).</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/LongRangeType">AWS
-   * API Reference</a></p>
+   * <p>The size start range (in bytes).</p>
    */
-  class LongRangeType
-  {
-  public:
-    AWS_WORKDOCS_API LongRangeType() = default;
-    AWS_WORKDOCS_API LongRangeType(Aws::Utils::Json::JsonView jsonValue);
-    AWS_WORKDOCS_API LongRangeType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline long long GetStartValue() const { return m_startValue; }
+  inline bool StartValueHasBeenSet() const { return m_startValueHasBeenSet; }
+  inline void SetStartValue(long long value) {
+    m_startValueHasBeenSet = true;
+    m_startValue = value;
+  }
+  inline LongRangeType& WithStartValue(long long value) {
+    SetStartValue(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The size end range (in bytes).</p>
+   */
+  inline long long GetEndValue() const { return m_endValue; }
+  inline bool EndValueHasBeenSet() const { return m_endValueHasBeenSet; }
+  inline void SetEndValue(long long value) {
+    m_endValueHasBeenSet = true;
+    m_endValue = value;
+  }
+  inline LongRangeType& WithEndValue(long long value) {
+    SetEndValue(value);
+    return *this;
+  }
+  ///@}
+ private:
+  long long m_startValue{0};
+  bool m_startValueHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The size start range (in bytes).</p>
-     */
-    inline long long GetStartValue() const { return m_startValue; }
-    inline bool StartValueHasBeenSet() const { return m_startValueHasBeenSet; }
-    inline void SetStartValue(long long value) { m_startValueHasBeenSet = true; m_startValue = value; }
-    inline LongRangeType& WithStartValue(long long value) { SetStartValue(value); return *this;}
-    ///@}
+  long long m_endValue{0};
+  bool m_endValueHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The size end range (in bytes).</p>
-     */
-    inline long long GetEndValue() const { return m_endValue; }
-    inline bool EndValueHasBeenSet() const { return m_endValueHasBeenSet; }
-    inline void SetEndValue(long long value) { m_endValueHasBeenSet = true; m_endValue = value; }
-    inline LongRangeType& WithEndValue(long long value) { SetEndValue(value); return *this;}
-    ///@}
-  private:
-
-    long long m_startValue{0};
-    bool m_startValueHasBeenSet = false;
-
-    long long m_endValue{0};
-    bool m_endValueHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace WorkDocs
-} // namespace Aws
+}  // namespace Model
+}  // namespace WorkDocs
+}  // namespace Aws

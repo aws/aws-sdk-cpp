@@ -3,37 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3-crt/model/StatsEvent.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3-crt/model/StatsEvent.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Crt
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Crt {
+namespace Model {
 
-StatsEvent::StatsEvent(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+StatsEvent::StatsEvent(const XmlNode& xmlNode) { *this = xmlNode; }
 
-StatsEvent& StatsEvent::operator =(const XmlNode& xmlNode)
-{
+StatsEvent& StatsEvent::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode detailsNode = resultNode;
-    if(!detailsNode.IsNull())
-    {
+    if (!detailsNode.IsNull()) {
       m_details = detailsNode;
       m_detailsHasBeenSet = true;
     }
@@ -42,17 +33,14 @@ StatsEvent& StatsEvent::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void StatsEvent::AddToNode(XmlNode& parentNode) const
-{
+void StatsEvent::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_detailsHasBeenSet)
-  {
-   XmlNode detailsNode = parentNode.CreateChildElement("Details");
-   m_details.AddToNode(detailsNode);
+  if (m_detailsHasBeenSet) {
+    XmlNode detailsNode = parentNode.CreateChildElement("Details");
+    m_details.AddToNode(detailsNode);
   }
-
 }
 
-} // namespace Model
-} // namespace S3Crt
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

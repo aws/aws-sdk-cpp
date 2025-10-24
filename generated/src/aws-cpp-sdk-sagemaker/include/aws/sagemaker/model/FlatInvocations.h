@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class FlatInvocations
-  {
-    NOT_SET,
-    Continue,
-    Stop
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class FlatInvocations { NOT_SET, Continue, Stop };
 
-namespace FlatInvocationsMapper
-{
+namespace FlatInvocationsMapper {
 AWS_SAGEMAKER_API FlatInvocations GetFlatInvocationsForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForFlatInvocations(FlatInvocations value);
-} // namespace FlatInvocationsMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace FlatInvocationsMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

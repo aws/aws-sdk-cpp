@@ -4,32 +4,27 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class AsnAssociationState
-  {
-    NOT_SET,
-    disassociated,
-    failed_disassociation,
-    failed_association,
-    pending_disassociation,
-    pending_association,
-    associated
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class AsnAssociationState {
+  NOT_SET,
+  disassociated,
+  failed_disassociation,
+  failed_association,
+  pending_disassociation,
+  pending_association,
+  associated
+};
 
-namespace AsnAssociationStateMapper
-{
+namespace AsnAssociationStateMapper {
 AWS_EC2_API AsnAssociationState GetAsnAssociationStateForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForAsnAssociationState(AsnAssociationState value);
-} // namespace AsnAssociationStateMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace AsnAssociationStateMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

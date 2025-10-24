@@ -7,25 +7,16 @@
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
-  enum class BlockType
-  {
-    NOT_SET,
-    LINE,
-    WORD
-  };
+namespace Aws {
+namespace Comprehend {
+namespace Model {
+enum class BlockType { NOT_SET, LINE, WORD };
 
-namespace BlockTypeMapper
-{
+namespace BlockTypeMapper {
 AWS_COMPREHEND_API BlockType GetBlockTypeForName(const Aws::String& name);
 
 AWS_COMPREHEND_API Aws::String GetNameForBlockType(BlockType value);
-} // namespace BlockTypeMapper
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace BlockTypeMapper
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

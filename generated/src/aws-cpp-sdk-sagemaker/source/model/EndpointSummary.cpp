@@ -3,90 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/EndpointSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/EndpointSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-EndpointSummary::EndpointSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EndpointSummary::EndpointSummary(JsonView jsonValue) { *this = jsonValue; }
 
-EndpointSummary& EndpointSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EndpointName"))
-  {
+EndpointSummary& EndpointSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EndpointName")) {
     m_endpointName = jsonValue.GetString("EndpointName");
     m_endpointNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EndpointArn"))
-  {
+  if (jsonValue.ValueExists("EndpointArn")) {
     m_endpointArn = jsonValue.GetString("EndpointArn");
     m_endpointArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModifiedTime"))
-  {
+  if (jsonValue.ValueExists("LastModifiedTime")) {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EndpointStatus"))
-  {
+  if (jsonValue.ValueExists("EndpointStatus")) {
     m_endpointStatus = EndpointStatusMapper::GetEndpointStatusForName(jsonValue.GetString("EndpointStatus"));
     m_endpointStatusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EndpointSummary::Jsonize() const
-{
+JsonValue EndpointSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_endpointNameHasBeenSet)
-  {
-   payload.WithString("EndpointName", m_endpointName);
-
+  if (m_endpointNameHasBeenSet) {
+    payload.WithString("EndpointName", m_endpointName);
   }
 
-  if(m_endpointArnHasBeenSet)
-  {
-   payload.WithString("EndpointArn", m_endpointArn);
-
+  if (m_endpointArnHasBeenSet) {
+    payload.WithString("EndpointArn", m_endpointArn);
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_lastModifiedTimeHasBeenSet)
-  {
-   payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  if (m_lastModifiedTimeHasBeenSet) {
+    payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
   }
 
-  if(m_endpointStatusHasBeenSet)
-  {
-   payload.WithString("EndpointStatus", EndpointStatusMapper::GetNameForEndpointStatus(m_endpointStatus));
+  if (m_endpointStatusHasBeenSet) {
+    payload.WithString("EndpointStatus", EndpointStatusMapper::GetNameForEndpointStatus(m_endpointStatus));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

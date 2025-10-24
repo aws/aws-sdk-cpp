@@ -3,63 +3,51 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/eventbridge/model/PropagateTags.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/eventbridge/model/PropagateTags.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace EventBridge {
+namespace Model {
+namespace PropagateTagsMapper {
 
-namespace Aws
-{
-  namespace EventBridge
-  {
-    namespace Model
-    {
-      namespace PropagateTagsMapper
-      {
+static const int TASK_DEFINITION_HASH = HashingUtils::HashString("TASK_DEFINITION");
 
-        static const int TASK_DEFINITION_HASH = HashingUtils::HashString("TASK_DEFINITION");
+PropagateTags GetPropagateTagsForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == TASK_DEFINITION_HASH) {
+    return PropagateTags::TASK_DEFINITION;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<PropagateTags>(hashCode);
+  }
 
+  return PropagateTags::NOT_SET;
+}
 
-        PropagateTags GetPropagateTagsForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == TASK_DEFINITION_HASH)
-          {
-            return PropagateTags::TASK_DEFINITION;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<PropagateTags>(hashCode);
-          }
+Aws::String GetNameForPropagateTags(PropagateTags enumValue) {
+  switch (enumValue) {
+    case PropagateTags::NOT_SET:
+      return {};
+    case PropagateTags::TASK_DEFINITION:
+      return "TASK_DEFINITION";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return PropagateTags::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForPropagateTags(PropagateTags enumValue)
-        {
-          switch(enumValue)
-          {
-          case PropagateTags::NOT_SET:
-            return {};
-          case PropagateTags::TASK_DEFINITION:
-            return "TASK_DEFINITION";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace PropagateTagsMapper
-    } // namespace Model
-  } // namespace EventBridge
-} // namespace Aws
+}  // namespace PropagateTagsMapper
+}  // namespace Model
+}  // namespace EventBridge
+}  // namespace Aws

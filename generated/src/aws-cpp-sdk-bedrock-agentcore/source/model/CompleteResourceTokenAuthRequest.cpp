@@ -12,25 +12,16 @@ using namespace Aws::BedrockAgentCore::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CompleteResourceTokenAuthRequest::SerializePayload() const
-{
+Aws::String CompleteResourceTokenAuthRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_userIdentifierHasBeenSet)
-  {
-   payload.WithObject("userIdentifier", m_userIdentifier.Jsonize());
-
+  if (m_userIdentifierHasBeenSet) {
+    payload.WithObject("userIdentifier", m_userIdentifier.Jsonize());
   }
 
-  if(m_sessionUriHasBeenSet)
-  {
-   payload.WithString("sessionUri", m_sessionUri);
-
+  if (m_sessionUriHasBeenSet) {
+    payload.WithString("sessionUri", m_sessionUri);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

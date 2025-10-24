@@ -7,25 +7,16 @@
 #include <aws/appsync/AppSync_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace AppSync
-{
-namespace Model
-{
-  enum class GraphQLApiVisibility
-  {
-    NOT_SET,
-    GLOBAL,
-    PRIVATE_
-  };
+namespace Aws {
+namespace AppSync {
+namespace Model {
+enum class GraphQLApiVisibility { NOT_SET, GLOBAL, PRIVATE_ };
 
-namespace GraphQLApiVisibilityMapper
-{
+namespace GraphQLApiVisibilityMapper {
 AWS_APPSYNC_API GraphQLApiVisibility GetGraphQLApiVisibilityForName(const Aws::String& name);
 
 AWS_APPSYNC_API Aws::String GetNameForGraphQLApiVisibility(GraphQLApiVisibility value);
-} // namespace GraphQLApiVisibilityMapper
-} // namespace Model
-} // namespace AppSync
-} // namespace Aws
+}  // namespace GraphQLApiVisibilityMapper
+}  // namespace Model
+}  // namespace AppSync
+}  // namespace Aws

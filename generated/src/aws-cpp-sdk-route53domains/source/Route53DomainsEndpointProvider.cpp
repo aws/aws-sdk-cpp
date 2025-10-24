@@ -5,12 +5,8 @@
 
 #include <aws/route53domains/Route53DomainsEndpointProvider.h>
 
-namespace Aws
-{
-namespace Route53Domains
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Route53Domains
-} // namespace Aws
+namespace Aws {
+namespace Route53Domains {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Route53Domains
+}  // namespace Aws

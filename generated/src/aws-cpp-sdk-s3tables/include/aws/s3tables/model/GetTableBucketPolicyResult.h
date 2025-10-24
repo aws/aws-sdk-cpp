@@ -4,62 +4,67 @@
  */
 
 #pragma once
-#include <aws/s3tables/S3Tables_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3tables/S3Tables_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace S3Tables
-{
-namespace Model
-{
-  class GetTableBucketPolicyResult
-  {
-  public:
-    AWS_S3TABLES_API GetTableBucketPolicyResult() = default;
-    AWS_S3TABLES_API GetTableBucketPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_S3TABLES_API GetTableBucketPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace S3Tables {
+namespace Model {
+class GetTableBucketPolicyResult {
+ public:
+  AWS_S3TABLES_API GetTableBucketPolicyResult() = default;
+  AWS_S3TABLES_API GetTableBucketPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_S3TABLES_API GetTableBucketPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>The <code>JSON</code> that defines the policy.</p>
+   */
+  inline const Aws::String& GetResourcePolicy() const { return m_resourcePolicy; }
+  template <typename ResourcePolicyT = Aws::String>
+  void SetResourcePolicy(ResourcePolicyT&& value) {
+    m_resourcePolicyHasBeenSet = true;
+    m_resourcePolicy = std::forward<ResourcePolicyT>(value);
+  }
+  template <typename ResourcePolicyT = Aws::String>
+  GetTableBucketPolicyResult& WithResourcePolicy(ResourcePolicyT&& value) {
+    SetResourcePolicy(std::forward<ResourcePolicyT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The <code>JSON</code> that defines the policy.</p>
-     */
-    inline const Aws::String& GetResourcePolicy() const { return m_resourcePolicy; }
-    template<typename ResourcePolicyT = Aws::String>
-    void SetResourcePolicy(ResourcePolicyT&& value) { m_resourcePolicyHasBeenSet = true; m_resourcePolicy = std::forward<ResourcePolicyT>(value); }
-    template<typename ResourcePolicyT = Aws::String>
-    GetTableBucketPolicyResult& WithResourcePolicy(ResourcePolicyT&& value) { SetResourcePolicy(std::forward<ResourcePolicyT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    GetTableBucketPolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  GetTableBucketPolicyResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_resourcePolicy;
+  bool m_resourcePolicyHasBeenSet = false;
 
-    Aws::String m_resourcePolicy;
-    bool m_resourcePolicyHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace S3Tables
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Tables
+}  // namespace Aws

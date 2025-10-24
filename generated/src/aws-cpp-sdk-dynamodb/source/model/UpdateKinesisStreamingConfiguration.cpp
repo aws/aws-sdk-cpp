@@ -3,48 +3,41 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dynamodb/model/UpdateKinesisStreamingConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dynamodb/model/UpdateKinesisStreamingConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DynamoDB
-{
-namespace Model
-{
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
 
-UpdateKinesisStreamingConfiguration::UpdateKinesisStreamingConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UpdateKinesisStreamingConfiguration::UpdateKinesisStreamingConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-UpdateKinesisStreamingConfiguration& UpdateKinesisStreamingConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ApproximateCreationDateTimePrecision"))
-  {
-    m_approximateCreationDateTimePrecision = ApproximateCreationDateTimePrecisionMapper::GetApproximateCreationDateTimePrecisionForName(jsonValue.GetString("ApproximateCreationDateTimePrecision"));
+UpdateKinesisStreamingConfiguration& UpdateKinesisStreamingConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ApproximateCreationDateTimePrecision")) {
+    m_approximateCreationDateTimePrecision = ApproximateCreationDateTimePrecisionMapper::GetApproximateCreationDateTimePrecisionForName(
+        jsonValue.GetString("ApproximateCreationDateTimePrecision"));
     m_approximateCreationDateTimePrecisionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UpdateKinesisStreamingConfiguration::Jsonize() const
-{
+JsonValue UpdateKinesisStreamingConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_approximateCreationDateTimePrecisionHasBeenSet)
-  {
-   payload.WithString("ApproximateCreationDateTimePrecision", ApproximateCreationDateTimePrecisionMapper::GetNameForApproximateCreationDateTimePrecision(m_approximateCreationDateTimePrecision));
+  if (m_approximateCreationDateTimePrecisionHasBeenSet) {
+    payload.WithString(
+        "ApproximateCreationDateTimePrecision",
+        ApproximateCreationDateTimePrecisionMapper::GetNameForApproximateCreationDateTimePrecision(m_approximateCreationDateTimePrecision));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DynamoDB
-} // namespace Aws
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws

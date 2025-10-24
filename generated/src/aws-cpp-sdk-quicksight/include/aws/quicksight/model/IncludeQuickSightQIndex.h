@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class IncludeQuickSightQIndex
-  {
-    NOT_SET,
-    INCLUDE,
-    EXCLUDE
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class IncludeQuickSightQIndex { NOT_SET, INCLUDE, EXCLUDE };
 
-namespace IncludeQuickSightQIndexMapper
-{
+namespace IncludeQuickSightQIndexMapper {
 AWS_QUICKSIGHT_API IncludeQuickSightQIndex GetIncludeQuickSightQIndexForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForIncludeQuickSightQIndex(IncludeQuickSightQIndex value);
-} // namespace IncludeQuickSightQIndexMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace IncludeQuickSightQIndexMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/drs/model/EventResourceData.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/drs/model/EventResourceData.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace drs
-{
-namespace Model
-{
+namespace Aws {
+namespace drs {
+namespace Model {
 
-EventResourceData::EventResourceData(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EventResourceData::EventResourceData(JsonView jsonValue) { *this = jsonValue; }
 
-EventResourceData& EventResourceData::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("sourceNetworkData"))
-  {
+EventResourceData& EventResourceData::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("sourceNetworkData")) {
     m_sourceNetworkData = jsonValue.GetObject("sourceNetworkData");
     m_sourceNetworkDataHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EventResourceData::Jsonize() const
-{
+JsonValue EventResourceData::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceNetworkDataHasBeenSet)
-  {
-   payload.WithObject("sourceNetworkData", m_sourceNetworkData.Jsonize());
-
+  if (m_sourceNetworkDataHasBeenSet) {
+    payload.WithObject("sourceNetworkData", m_sourceNetworkData.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace drs
-} // namespace Aws
+}  // namespace Model
+}  // namespace drs
+}  // namespace Aws

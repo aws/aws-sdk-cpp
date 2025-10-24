@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class FontWeightName
-  {
-    NOT_SET,
-    NORMAL,
-    BOLD
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class FontWeightName { NOT_SET, NORMAL, BOLD };
 
-namespace FontWeightNameMapper
-{
+namespace FontWeightNameMapper {
 AWS_QUICKSIGHT_API FontWeightName GetFontWeightNameForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForFontWeightName(FontWeightName value);
-} // namespace FontWeightNameMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace FontWeightNameMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

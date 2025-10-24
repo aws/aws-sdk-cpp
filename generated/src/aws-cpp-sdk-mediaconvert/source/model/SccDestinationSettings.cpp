@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/SccDestinationSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconvert/model/SccDestinationSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
 
-SccDestinationSettings::SccDestinationSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SccDestinationSettings::SccDestinationSettings(JsonView jsonValue) { *this = jsonValue; }
 
-SccDestinationSettings& SccDestinationSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("framerate"))
-  {
+SccDestinationSettings& SccDestinationSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("framerate")) {
     m_framerate = SccDestinationFramerateMapper::GetSccDestinationFramerateForName(jsonValue.GetString("framerate"));
     m_framerateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SccDestinationSettings::Jsonize() const
-{
+JsonValue SccDestinationSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_framerateHasBeenSet)
-  {
-   payload.WithString("framerate", SccDestinationFramerateMapper::GetNameForSccDestinationFramerate(m_framerate));
+  if (m_framerateHasBeenSet) {
+    payload.WithString("framerate", SccDestinationFramerateMapper::GetNameForSccDestinationFramerate(m_framerate));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

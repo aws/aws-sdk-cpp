@@ -11,81 +11,60 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
 
-EbsSnapshotConfiguration::EbsSnapshotConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EbsSnapshotConfiguration::EbsSnapshotConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-EbsSnapshotConfiguration& EbsSnapshotConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("userIds"))
-  {
+EbsSnapshotConfiguration& EbsSnapshotConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("userIds")) {
     Aws::Utils::Array<JsonView> userIdsJsonList = jsonValue.GetArray("userIds");
-    for(unsigned userIdsIndex = 0; userIdsIndex < userIdsJsonList.GetLength(); ++userIdsIndex)
-    {
+    for (unsigned userIdsIndex = 0; userIdsIndex < userIdsJsonList.GetLength(); ++userIdsIndex) {
       m_userIds.push_back(userIdsJsonList[userIdsIndex].AsString());
     }
     m_userIdsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("groups"))
-  {
+  if (jsonValue.ValueExists("groups")) {
     Aws::Utils::Array<JsonView> groupsJsonList = jsonValue.GetArray("groups");
-    for(unsigned groupsIndex = 0; groupsIndex < groupsJsonList.GetLength(); ++groupsIndex)
-    {
+    for (unsigned groupsIndex = 0; groupsIndex < groupsJsonList.GetLength(); ++groupsIndex) {
       m_groups.push_back(groupsJsonList[groupsIndex].AsString());
     }
     m_groupsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("kmsKeyId"))
-  {
+  if (jsonValue.ValueExists("kmsKeyId")) {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
     m_kmsKeyIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EbsSnapshotConfiguration::Jsonize() const
-{
+JsonValue EbsSnapshotConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_userIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> userIdsJsonList(m_userIds.size());
-   for(unsigned userIdsIndex = 0; userIdsIndex < userIdsJsonList.GetLength(); ++userIdsIndex)
-   {
-     userIdsJsonList[userIdsIndex].AsString(m_userIds[userIdsIndex]);
-   }
-   payload.WithArray("userIds", std::move(userIdsJsonList));
-
+  if (m_userIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> userIdsJsonList(m_userIds.size());
+    for (unsigned userIdsIndex = 0; userIdsIndex < userIdsJsonList.GetLength(); ++userIdsIndex) {
+      userIdsJsonList[userIdsIndex].AsString(m_userIds[userIdsIndex]);
+    }
+    payload.WithArray("userIds", std::move(userIdsJsonList));
   }
 
-  if(m_groupsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> groupsJsonList(m_groups.size());
-   for(unsigned groupsIndex = 0; groupsIndex < groupsJsonList.GetLength(); ++groupsIndex)
-   {
-     groupsJsonList[groupsIndex].AsString(m_groups[groupsIndex]);
-   }
-   payload.WithArray("groups", std::move(groupsJsonList));
-
+  if (m_groupsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> groupsJsonList(m_groups.size());
+    for (unsigned groupsIndex = 0; groupsIndex < groupsJsonList.GetLength(); ++groupsIndex) {
+      groupsJsonList[groupsIndex].AsString(m_groups[groupsIndex]);
+    }
+    payload.WithArray("groups", std::move(groupsJsonList));
   }
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
-   payload.WithString("kmsKeyId", m_kmsKeyId);
-
+  if (m_kmsKeyIdHasBeenSet) {
+    payload.WithString("kmsKeyId", m_kmsKeyId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

@@ -5,12 +5,8 @@
 
 #include <aws/proton/ProtonEndpointProvider.h>
 
-namespace Aws
-{
-namespace Proton
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Proton
-} // namespace Aws
+namespace Aws {
+namespace Proton {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Proton
+}  // namespace Aws

@@ -12,33 +12,22 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteReportGroupRequest::SerializePayload() const
-{
+Aws::String DeleteReportGroupRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_deleteReportsHasBeenSet)
-  {
-   payload.WithBool("deleteReports", m_deleteReports);
-
+  if (m_deleteReportsHasBeenSet) {
+    payload.WithBool("deleteReports", m_deleteReports);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteReportGroupRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteReportGroupRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeBuild_20161006.DeleteReportGroup"));
   return headers;
-
 }
-
-
-
-

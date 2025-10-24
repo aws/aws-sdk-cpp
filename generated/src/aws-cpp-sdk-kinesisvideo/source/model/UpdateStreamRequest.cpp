@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kinesisvideo/model/UpdateStreamRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kinesisvideo/model/UpdateStreamRequest.h>
 
 #include <utility>
 
@@ -12,43 +12,28 @@ using namespace Aws::KinesisVideo::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateStreamRequest::SerializePayload() const
-{
+Aws::String UpdateStreamRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_streamNameHasBeenSet)
-  {
-   payload.WithString("StreamName", m_streamName);
-
+  if (m_streamNameHasBeenSet) {
+    payload.WithString("StreamName", m_streamName);
   }
 
-  if(m_streamARNHasBeenSet)
-  {
-   payload.WithString("StreamARN", m_streamARN);
-
+  if (m_streamARNHasBeenSet) {
+    payload.WithString("StreamARN", m_streamARN);
   }
 
-  if(m_currentVersionHasBeenSet)
-  {
-   payload.WithString("CurrentVersion", m_currentVersion);
-
+  if (m_currentVersionHasBeenSet) {
+    payload.WithString("CurrentVersion", m_currentVersion);
   }
 
-  if(m_deviceNameHasBeenSet)
-  {
-   payload.WithString("DeviceName", m_deviceName);
-
+  if (m_deviceNameHasBeenSet) {
+    payload.WithString("DeviceName", m_deviceName);
   }
 
-  if(m_mediaTypeHasBeenSet)
-  {
-   payload.WithString("MediaType", m_mediaType);
-
+  if (m_mediaTypeHasBeenSet) {
+    payload.WithString("MediaType", m_mediaType);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

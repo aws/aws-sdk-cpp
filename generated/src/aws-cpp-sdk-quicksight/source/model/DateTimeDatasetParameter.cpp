@@ -3,91 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/DateTimeDatasetParameter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/DateTimeDatasetParameter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-DateTimeDatasetParameter::DateTimeDatasetParameter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DateTimeDatasetParameter::DateTimeDatasetParameter(JsonView jsonValue) { *this = jsonValue; }
 
-DateTimeDatasetParameter& DateTimeDatasetParameter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Id"))
-  {
+DateTimeDatasetParameter& DateTimeDatasetParameter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ValueType"))
-  {
+  if (jsonValue.ValueExists("ValueType")) {
     m_valueType = DatasetParameterValueTypeMapper::GetDatasetParameterValueTypeForName(jsonValue.GetString("ValueType"));
     m_valueTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TimeGranularity"))
-  {
+  if (jsonValue.ValueExists("TimeGranularity")) {
     m_timeGranularity = TimeGranularityMapper::GetTimeGranularityForName(jsonValue.GetString("TimeGranularity"));
     m_timeGranularityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DefaultValues"))
-  {
+  if (jsonValue.ValueExists("DefaultValues")) {
     m_defaultValues = jsonValue.GetObject("DefaultValues");
     m_defaultValuesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DateTimeDatasetParameter::Jsonize() const
-{
+JsonValue DateTimeDatasetParameter::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_valueTypeHasBeenSet)
-  {
-   payload.WithString("ValueType", DatasetParameterValueTypeMapper::GetNameForDatasetParameterValueType(m_valueType));
+  if (m_valueTypeHasBeenSet) {
+    payload.WithString("ValueType", DatasetParameterValueTypeMapper::GetNameForDatasetParameterValueType(m_valueType));
   }
 
-  if(m_timeGranularityHasBeenSet)
-  {
-   payload.WithString("TimeGranularity", TimeGranularityMapper::GetNameForTimeGranularity(m_timeGranularity));
+  if (m_timeGranularityHasBeenSet) {
+    payload.WithString("TimeGranularity", TimeGranularityMapper::GetNameForTimeGranularity(m_timeGranularity));
   }
 
-  if(m_defaultValuesHasBeenSet)
-  {
-   payload.WithObject("DefaultValues", m_defaultValues.Jsonize());
-
+  if (m_defaultValuesHasBeenSet) {
+    payload.WithObject("DefaultValues", m_defaultValues.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

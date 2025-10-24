@@ -12,11 +12,4 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeBackupJobRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DescribeBackupJobRequest::SerializePayload() const { return {}; }

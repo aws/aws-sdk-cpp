@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/opensearch/model/DescribeDomainNodesRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/opensearch/model/DescribeDomainNodesRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::OpenSearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeDomainNodesRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DescribeDomainNodesRequest::SerializePayload() const { return {}; }

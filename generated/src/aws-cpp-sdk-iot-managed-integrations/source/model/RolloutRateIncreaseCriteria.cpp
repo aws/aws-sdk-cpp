@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot-managed-integrations/model/RolloutRateIncreaseCriteria.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot-managed-integrations/model/RolloutRateIncreaseCriteria.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTManagedIntegrations
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTManagedIntegrations {
+namespace Model {
 
-RolloutRateIncreaseCriteria::RolloutRateIncreaseCriteria(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RolloutRateIncreaseCriteria::RolloutRateIncreaseCriteria(JsonView jsonValue) { *this = jsonValue; }
 
-RolloutRateIncreaseCriteria& RolloutRateIncreaseCriteria::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("numberOfNotifiedThings"))
-  {
+RolloutRateIncreaseCriteria& RolloutRateIncreaseCriteria::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("numberOfNotifiedThings")) {
     m_numberOfNotifiedThings = jsonValue.GetInteger("numberOfNotifiedThings");
     m_numberOfNotifiedThingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("numberOfSucceededThings"))
-  {
+  if (jsonValue.ValueExists("numberOfSucceededThings")) {
     m_numberOfSucceededThings = jsonValue.GetInteger("numberOfSucceededThings");
     m_numberOfSucceededThingsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RolloutRateIncreaseCriteria::Jsonize() const
-{
+JsonValue RolloutRateIncreaseCriteria::Jsonize() const {
   JsonValue payload;
 
-  if(m_numberOfNotifiedThingsHasBeenSet)
-  {
-   payload.WithInteger("numberOfNotifiedThings", m_numberOfNotifiedThings);
-
+  if (m_numberOfNotifiedThingsHasBeenSet) {
+    payload.WithInteger("numberOfNotifiedThings", m_numberOfNotifiedThings);
   }
 
-  if(m_numberOfSucceededThingsHasBeenSet)
-  {
-   payload.WithInteger("numberOfSucceededThings", m_numberOfSucceededThings);
-
+  if (m_numberOfSucceededThingsHasBeenSet) {
+    payload.WithInteger("numberOfSucceededThings", m_numberOfSucceededThings);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTManagedIntegrations
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTManagedIntegrations
+}  // namespace Aws

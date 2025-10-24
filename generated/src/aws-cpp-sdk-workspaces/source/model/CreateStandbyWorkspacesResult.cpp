@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workspaces/model/CreateStandbyWorkspacesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/workspaces/model/CreateStandbyWorkspacesResult.h>
 
 #include <utility>
 
@@ -17,28 +17,22 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateStandbyWorkspacesResult::CreateStandbyWorkspacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+CreateStandbyWorkspacesResult::CreateStandbyWorkspacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-CreateStandbyWorkspacesResult& CreateStandbyWorkspacesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+CreateStandbyWorkspacesResult& CreateStandbyWorkspacesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("FailedStandbyRequests"))
-  {
+  if (jsonValue.ValueExists("FailedStandbyRequests")) {
     Aws::Utils::Array<JsonView> failedStandbyRequestsJsonList = jsonValue.GetArray("FailedStandbyRequests");
-    for(unsigned failedStandbyRequestsIndex = 0; failedStandbyRequestsIndex < failedStandbyRequestsJsonList.GetLength(); ++failedStandbyRequestsIndex)
-    {
+    for (unsigned failedStandbyRequestsIndex = 0; failedStandbyRequestsIndex < failedStandbyRequestsJsonList.GetLength();
+         ++failedStandbyRequestsIndex) {
       m_failedStandbyRequests.push_back(failedStandbyRequestsJsonList[failedStandbyRequestsIndex].AsObject());
     }
     m_failedStandbyRequestsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PendingStandbyRequests"))
-  {
+  if (jsonValue.ValueExists("PendingStandbyRequests")) {
     Aws::Utils::Array<JsonView> pendingStandbyRequestsJsonList = jsonValue.GetArray("PendingStandbyRequests");
-    for(unsigned pendingStandbyRequestsIndex = 0; pendingStandbyRequestsIndex < pendingStandbyRequestsJsonList.GetLength(); ++pendingStandbyRequestsIndex)
-    {
+    for (unsigned pendingStandbyRequestsIndex = 0; pendingStandbyRequestsIndex < pendingStandbyRequestsJsonList.GetLength();
+         ++pendingStandbyRequestsIndex) {
       m_pendingStandbyRequests.push_back(pendingStandbyRequestsJsonList[pendingStandbyRequestsIndex].AsObject());
     }
     m_pendingStandbyRequestsHasBeenSet = true;
@@ -46,12 +40,10 @@ CreateStandbyWorkspacesResult& CreateStandbyWorkspacesResult::operator =(const A
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

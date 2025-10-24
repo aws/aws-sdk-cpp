@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/cost-optimization-hub/model/SavingsPlansCostCalculation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/cost-optimization-hub/model/SavingsPlansCostCalculation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostOptimizationHub
-{
-namespace Model
-{
+namespace Aws {
+namespace CostOptimizationHub {
+namespace Model {
 
-SavingsPlansCostCalculation::SavingsPlansCostCalculation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SavingsPlansCostCalculation::SavingsPlansCostCalculation(JsonView jsonValue) { *this = jsonValue; }
 
-SavingsPlansCostCalculation& SavingsPlansCostCalculation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("pricing"))
-  {
+SavingsPlansCostCalculation& SavingsPlansCostCalculation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("pricing")) {
     m_pricing = jsonValue.GetObject("pricing");
     m_pricingHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SavingsPlansCostCalculation::Jsonize() const
-{
+JsonValue SavingsPlansCostCalculation::Jsonize() const {
   JsonValue payload;
 
-  if(m_pricingHasBeenSet)
-  {
-   payload.WithObject("pricing", m_pricing.Jsonize());
-
+  if (m_pricingHasBeenSet) {
+    payload.WithObject("pricing", m_pricing.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostOptimizationHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostOptimizationHub
+}  // namespace Aws

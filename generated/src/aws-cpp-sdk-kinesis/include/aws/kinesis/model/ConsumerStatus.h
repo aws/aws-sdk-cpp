@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/kinesis/Kinesis_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kinesis/Kinesis_EXPORTS.h>
 
-namespace Aws
-{
-namespace Kinesis
-{
-namespace Model
-{
-  enum class ConsumerStatus
-  {
-    NOT_SET,
-    CREATING,
-    DELETING,
-    ACTIVE
-  };
+namespace Aws {
+namespace Kinesis {
+namespace Model {
+enum class ConsumerStatus { NOT_SET, CREATING, DELETING, ACTIVE };
 
-namespace ConsumerStatusMapper
-{
+namespace ConsumerStatusMapper {
 AWS_KINESIS_API ConsumerStatus GetConsumerStatusForName(const Aws::String& name);
 
 AWS_KINESIS_API Aws::String GetNameForConsumerStatus(ConsumerStatus value);
-} // namespace ConsumerStatusMapper
-} // namespace Model
-} // namespace Kinesis
-} // namespace Aws
+}  // namespace ConsumerStatusMapper
+}  // namespace Model
+}  // namespace Kinesis
+}  // namespace Aws

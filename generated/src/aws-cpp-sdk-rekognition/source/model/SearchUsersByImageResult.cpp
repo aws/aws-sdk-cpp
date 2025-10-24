@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rekognition/model/SearchUsersByImageResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rekognition/model/SearchUsersByImageResult.h>
 
 #include <utility>
 
@@ -17,38 +17,28 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SearchUsersByImageResult::SearchUsersByImageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+SearchUsersByImageResult::SearchUsersByImageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-SearchUsersByImageResult& SearchUsersByImageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+SearchUsersByImageResult& SearchUsersByImageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("UserMatches"))
-  {
+  if (jsonValue.ValueExists("UserMatches")) {
     Aws::Utils::Array<JsonView> userMatchesJsonList = jsonValue.GetArray("UserMatches");
-    for(unsigned userMatchesIndex = 0; userMatchesIndex < userMatchesJsonList.GetLength(); ++userMatchesIndex)
-    {
+    for (unsigned userMatchesIndex = 0; userMatchesIndex < userMatchesJsonList.GetLength(); ++userMatchesIndex) {
       m_userMatches.push_back(userMatchesJsonList[userMatchesIndex].AsObject());
     }
     m_userMatchesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FaceModelVersion"))
-  {
+  if (jsonValue.ValueExists("FaceModelVersion")) {
     m_faceModelVersion = jsonValue.GetString("FaceModelVersion");
     m_faceModelVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SearchedFace"))
-  {
+  if (jsonValue.ValueExists("SearchedFace")) {
     m_searchedFace = jsonValue.GetObject("SearchedFace");
     m_searchedFaceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UnsearchedFaces"))
-  {
+  if (jsonValue.ValueExists("UnsearchedFaces")) {
     Aws::Utils::Array<JsonView> unsearchedFacesJsonList = jsonValue.GetArray("UnsearchedFaces");
-    for(unsigned unsearchedFacesIndex = 0; unsearchedFacesIndex < unsearchedFacesJsonList.GetLength(); ++unsearchedFacesIndex)
-    {
+    for (unsigned unsearchedFacesIndex = 0; unsearchedFacesIndex < unsearchedFacesJsonList.GetLength(); ++unsearchedFacesIndex) {
       m_unsearchedFaces.push_back(unsearchedFacesJsonList[unsearchedFacesIndex].AsObject());
     }
     m_unsearchedFacesHasBeenSet = true;
@@ -56,12 +46,10 @@ SearchUsersByImageResult& SearchUsersByImageResult::operator =(const Aws::Amazon
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

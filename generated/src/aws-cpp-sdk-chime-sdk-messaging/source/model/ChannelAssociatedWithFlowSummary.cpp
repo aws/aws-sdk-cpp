@@ -11,83 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMessaging
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMessaging {
+namespace Model {
 
-ChannelAssociatedWithFlowSummary::ChannelAssociatedWithFlowSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ChannelAssociatedWithFlowSummary::ChannelAssociatedWithFlowSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ChannelAssociatedWithFlowSummary& ChannelAssociatedWithFlowSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+ChannelAssociatedWithFlowSummary& ChannelAssociatedWithFlowSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ChannelArn"))
-  {
+  if (jsonValue.ValueExists("ChannelArn")) {
     m_channelArn = jsonValue.GetString("ChannelArn");
     m_channelArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Mode"))
-  {
+  if (jsonValue.ValueExists("Mode")) {
     m_mode = ChannelModeMapper::GetChannelModeForName(jsonValue.GetString("Mode"));
     m_modeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Privacy"))
-  {
+  if (jsonValue.ValueExists("Privacy")) {
     m_privacy = ChannelPrivacyMapper::GetChannelPrivacyForName(jsonValue.GetString("Privacy"));
     m_privacyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Metadata"))
-  {
+  if (jsonValue.ValueExists("Metadata")) {
     m_metadata = jsonValue.GetString("Metadata");
     m_metadataHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ChannelAssociatedWithFlowSummary::Jsonize() const
-{
+JsonValue ChannelAssociatedWithFlowSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_channelArnHasBeenSet)
-  {
-   payload.WithString("ChannelArn", m_channelArn);
-
+  if (m_channelArnHasBeenSet) {
+    payload.WithString("ChannelArn", m_channelArn);
   }
 
-  if(m_modeHasBeenSet)
-  {
-   payload.WithString("Mode", ChannelModeMapper::GetNameForChannelMode(m_mode));
+  if (m_modeHasBeenSet) {
+    payload.WithString("Mode", ChannelModeMapper::GetNameForChannelMode(m_mode));
   }
 
-  if(m_privacyHasBeenSet)
-  {
-   payload.WithString("Privacy", ChannelPrivacyMapper::GetNameForChannelPrivacy(m_privacy));
+  if (m_privacyHasBeenSet) {
+    payload.WithString("Privacy", ChannelPrivacyMapper::GetNameForChannelPrivacy(m_privacy));
   }
 
-  if(m_metadataHasBeenSet)
-  {
-   payload.WithString("Metadata", m_metadata);
-
+  if (m_metadataHasBeenSet) {
+    payload.WithString("Metadata", m_metadata);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMessaging
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMessaging
+}  // namespace Aws

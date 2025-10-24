@@ -3,37 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3control/model/JobManifestGenerator.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3control/model/JobManifestGenerator.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Control
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Control {
+namespace Model {
 
-JobManifestGenerator::JobManifestGenerator(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+JobManifestGenerator::JobManifestGenerator(const XmlNode& xmlNode) { *this = xmlNode; }
 
-JobManifestGenerator& JobManifestGenerator::operator =(const XmlNode& xmlNode)
-{
+JobManifestGenerator& JobManifestGenerator::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode s3JobManifestGeneratorNode = resultNode.FirstChild("S3JobManifestGenerator");
-    if(!s3JobManifestGeneratorNode.IsNull())
-    {
+    if (!s3JobManifestGeneratorNode.IsNull()) {
       m_s3JobManifestGenerator = s3JobManifestGeneratorNode;
       m_s3JobManifestGeneratorHasBeenSet = true;
     }
@@ -42,17 +33,14 @@ JobManifestGenerator& JobManifestGenerator::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void JobManifestGenerator::AddToNode(XmlNode& parentNode) const
-{
+void JobManifestGenerator::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_s3JobManifestGeneratorHasBeenSet)
-  {
-   XmlNode s3JobManifestGeneratorNode = parentNode.CreateChildElement("S3JobManifestGenerator");
-   m_s3JobManifestGenerator.AddToNode(s3JobManifestGeneratorNode);
+  if (m_s3JobManifestGeneratorHasBeenSet) {
+    XmlNode s3JobManifestGeneratorNode = parentNode.CreateChildElement("S3JobManifestGenerator");
+    m_s3JobManifestGenerator.AddToNode(s3JobManifestGeneratorNode);
   }
-
 }
 
-} // namespace Model
-} // namespace S3Control
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Control
+}  // namespace Aws

@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/DescribeEngineDefaultParametersResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/rds/model/DescribeEngineDefaultParametersResult.h>
 
 #include <utility>
 
@@ -17,26 +17,22 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeEngineDefaultParametersResult::DescribeEngineDefaultParametersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeEngineDefaultParametersResult::DescribeEngineDefaultParametersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-DescribeEngineDefaultParametersResult& DescribeEngineDefaultParametersResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeEngineDefaultParametersResult& DescribeEngineDefaultParametersResult::operator=(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeEngineDefaultParametersResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeEngineDefaultParametersResult")) {
     resultNode = rootNode.FirstChild("DescribeEngineDefaultParametersResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode engineDefaultsNode = resultNode.FirstChild("EngineDefaults");
-    if(!engineDefaultsNode.IsNull())
-    {
+    if (!engineDefaultsNode.IsNull()) {
       m_engineDefaults = engineDefaultsNode;
       m_engineDefaultsHasBeenSet = true;
     }
@@ -46,7 +42,8 @@ DescribeEngineDefaultParametersResult& DescribeEngineDefaultParametersResult::op
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DescribeEngineDefaultParametersResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DescribeEngineDefaultParametersResult",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

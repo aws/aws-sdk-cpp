@@ -12,31 +12,20 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateDocumentationVersionRequest::SerializePayload() const
-{
+Aws::String CreateDocumentationVersionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_documentationVersionHasBeenSet)
-  {
-   payload.WithString("documentationVersion", m_documentationVersion);
-
+  if (m_documentationVersionHasBeenSet) {
+    payload.WithString("documentationVersion", m_documentationVersion);
   }
 
-  if(m_stageNameHasBeenSet)
-  {
-   payload.WithString("stageName", m_stageName);
-
+  if (m_stageNameHasBeenSet) {
+    payload.WithString("stageName", m_stageName);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

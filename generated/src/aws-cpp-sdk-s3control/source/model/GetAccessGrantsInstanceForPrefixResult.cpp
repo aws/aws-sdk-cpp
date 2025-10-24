@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3control/model/GetAccessGrantsInstanceForPrefixResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3control/model/GetAccessGrantsInstanceForPrefixResult.h>
 
 #include <utility>
 
@@ -16,27 +16,23 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAccessGrantsInstanceForPrefixResult::GetAccessGrantsInstanceForPrefixResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+GetAccessGrantsInstanceForPrefixResult::GetAccessGrantsInstanceForPrefixResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-GetAccessGrantsInstanceForPrefixResult& GetAccessGrantsInstanceForPrefixResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+GetAccessGrantsInstanceForPrefixResult& GetAccessGrantsInstanceForPrefixResult::operator=(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode accessGrantsInstanceArnNode = resultNode.FirstChild("AccessGrantsInstanceArn");
-    if(!accessGrantsInstanceArnNode.IsNull())
-    {
+    if (!accessGrantsInstanceArnNode.IsNull()) {
       m_accessGrantsInstanceArn = Aws::Utils::Xml::DecodeEscapedXmlText(accessGrantsInstanceArnNode.GetText());
       m_accessGrantsInstanceArnHasBeenSet = true;
     }
     XmlNode accessGrantsInstanceIdNode = resultNode.FirstChild("AccessGrantsInstanceId");
-    if(!accessGrantsInstanceIdNode.IsNull())
-    {
+    if (!accessGrantsInstanceIdNode.IsNull()) {
       m_accessGrantsInstanceId = Aws::Utils::Xml::DecodeEscapedXmlText(accessGrantsInstanceIdNode.GetText());
       m_accessGrantsInstanceIdHasBeenSet = true;
     }
@@ -44,15 +40,13 @@ GetAccessGrantsInstanceForPrefixResult& GetAccessGrantsInstanceForPrefixResult::
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amz-request-id");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
 
   const auto& hostIdIter = headers.find("x-amz-id-2");
-  if(hostIdIter != headers.end())
-  {
+  if (hostIdIter != headers.end()) {
     m_hostId = hostIdIter->second;
     m_hostIdHasBeenSet = true;
   }

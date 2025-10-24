@@ -3,38 +3,30 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/TransitGatewayConnectRequestBgpOptions.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/TransitGatewayConnectRequestBgpOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-TransitGatewayConnectRequestBgpOptions::TransitGatewayConnectRequestBgpOptions(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+TransitGatewayConnectRequestBgpOptions::TransitGatewayConnectRequestBgpOptions(const XmlNode& xmlNode) { *this = xmlNode; }
 
-TransitGatewayConnectRequestBgpOptions& TransitGatewayConnectRequestBgpOptions::operator =(const XmlNode& xmlNode)
-{
+TransitGatewayConnectRequestBgpOptions& TransitGatewayConnectRequestBgpOptions::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode peerAsnNode = resultNode.FirstChild("PeerAsn");
-    if(!peerAsnNode.IsNull())
-    {
-      m_peerAsn = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(peerAsnNode.GetText()).c_str()).c_str());
+    if (!peerAsnNode.IsNull()) {
+      m_peerAsn =
+          StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(peerAsnNode.GetText()).c_str()).c_str());
       m_peerAsnHasBeenSet = true;
     }
   }
@@ -42,23 +34,19 @@ TransitGatewayConnectRequestBgpOptions& TransitGatewayConnectRequestBgpOptions::
   return *this;
 }
 
-void TransitGatewayConnectRequestBgpOptions::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_peerAsnHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".PeerAsn=" << m_peerAsn << "&";
-  }
-
-}
-
-void TransitGatewayConnectRequestBgpOptions::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_peerAsnHasBeenSet)
-  {
-      oStream << location << ".PeerAsn=" << m_peerAsn << "&";
+void TransitGatewayConnectRequestBgpOptions::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                            const char* locationValue) const {
+  if (m_peerAsnHasBeenSet) {
+    oStream << location << index << locationValue << ".PeerAsn=" << m_peerAsn << "&";
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void TransitGatewayConnectRequestBgpOptions::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_peerAsnHasBeenSet) {
+    oStream << location << ".PeerAsn=" << m_peerAsn << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

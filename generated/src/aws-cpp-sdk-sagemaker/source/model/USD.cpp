@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/USD.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/USD.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-USD::USD(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+USD::USD(JsonView jsonValue) { *this = jsonValue; }
 
-USD& USD::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Dollars"))
-  {
+USD& USD::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Dollars")) {
     m_dollars = jsonValue.GetInteger("Dollars");
     m_dollarsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Cents"))
-  {
+  if (jsonValue.ValueExists("Cents")) {
     m_cents = jsonValue.GetInteger("Cents");
     m_centsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TenthFractionsOfACent"))
-  {
+  if (jsonValue.ValueExists("TenthFractionsOfACent")) {
     m_tenthFractionsOfACent = jsonValue.GetInteger("TenthFractionsOfACent");
     m_tenthFractionsOfACentHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue USD::Jsonize() const
-{
+JsonValue USD::Jsonize() const {
   JsonValue payload;
 
-  if(m_dollarsHasBeenSet)
-  {
-   payload.WithInteger("Dollars", m_dollars);
-
+  if (m_dollarsHasBeenSet) {
+    payload.WithInteger("Dollars", m_dollars);
   }
 
-  if(m_centsHasBeenSet)
-  {
-   payload.WithInteger("Cents", m_cents);
-
+  if (m_centsHasBeenSet) {
+    payload.WithInteger("Cents", m_cents);
   }
 
-  if(m_tenthFractionsOfACentHasBeenSet)
-  {
-   payload.WithInteger("TenthFractionsOfACent", m_tenthFractionsOfACent);
-
+  if (m_tenthFractionsOfACentHasBeenSet) {
+    payload.WithInteger("TenthFractionsOfACent", m_tenthFractionsOfACent);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

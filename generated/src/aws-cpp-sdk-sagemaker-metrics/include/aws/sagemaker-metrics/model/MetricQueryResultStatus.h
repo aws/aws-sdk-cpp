@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker-metrics/SageMakerMetrics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker-metrics/SageMakerMetrics_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMakerMetrics
-{
-namespace Model
-{
-  enum class MetricQueryResultStatus
-  {
-    NOT_SET,
-    Complete,
-    Truncated,
-    InternalError,
-    ValidationError
-  };
+namespace Aws {
+namespace SageMakerMetrics {
+namespace Model {
+enum class MetricQueryResultStatus { NOT_SET, Complete, Truncated, InternalError, ValidationError };
 
-namespace MetricQueryResultStatusMapper
-{
+namespace MetricQueryResultStatusMapper {
 AWS_SAGEMAKERMETRICS_API MetricQueryResultStatus GetMetricQueryResultStatusForName(const Aws::String& name);
 
 AWS_SAGEMAKERMETRICS_API Aws::String GetNameForMetricQueryResultStatus(MetricQueryResultStatus value);
-} // namespace MetricQueryResultStatusMapper
-} // namespace Model
-} // namespace SageMakerMetrics
-} // namespace Aws
+}  // namespace MetricQueryResultStatusMapper
+}  // namespace Model
+}  // namespace SageMakerMetrics
+}  // namespace Aws

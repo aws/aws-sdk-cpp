@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/CloudWatchLogsLogGroupArnConfigDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/CloudWatchLogsLogGroupArnConfigDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-CloudWatchLogsLogGroupArnConfigDetails::CloudWatchLogsLogGroupArnConfigDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CloudWatchLogsLogGroupArnConfigDetails::CloudWatchLogsLogGroupArnConfigDetails(JsonView jsonValue) { *this = jsonValue; }
 
-CloudWatchLogsLogGroupArnConfigDetails& CloudWatchLogsLogGroupArnConfigDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CloudWatchLogsLogGroupArn"))
-  {
+CloudWatchLogsLogGroupArnConfigDetails& CloudWatchLogsLogGroupArnConfigDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CloudWatchLogsLogGroupArn")) {
     m_cloudWatchLogsLogGroupArn = jsonValue.GetString("CloudWatchLogsLogGroupArn");
     m_cloudWatchLogsLogGroupArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HostedZoneId"))
-  {
+  if (jsonValue.ValueExists("HostedZoneId")) {
     m_hostedZoneId = jsonValue.GetString("HostedZoneId");
     m_hostedZoneIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Id"))
-  {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CloudWatchLogsLogGroupArnConfigDetails::Jsonize() const
-{
+JsonValue CloudWatchLogsLogGroupArnConfigDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_cloudWatchLogsLogGroupArnHasBeenSet)
-  {
-   payload.WithString("CloudWatchLogsLogGroupArn", m_cloudWatchLogsLogGroupArn);
-
+  if (m_cloudWatchLogsLogGroupArnHasBeenSet) {
+    payload.WithString("CloudWatchLogsLogGroupArn", m_cloudWatchLogsLogGroupArn);
   }
 
-  if(m_hostedZoneIdHasBeenSet)
-  {
-   payload.WithString("HostedZoneId", m_hostedZoneId);
-
+  if (m_hostedZoneIdHasBeenSet) {
+    payload.WithString("HostedZoneId", m_hostedZoneId);
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

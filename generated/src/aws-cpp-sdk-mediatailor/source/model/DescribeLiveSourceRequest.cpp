@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediatailor/model/DescribeLiveSourceRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediatailor/model/DescribeLiveSourceRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::MediaTailor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeLiveSourceRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DescribeLiveSourceRequest::SerializePayload() const { return {}; }

@@ -3,44 +3,36 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/monitoring/model/InsightRuleContributorDatapoint.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/monitoring/model/InsightRuleContributorDatapoint.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudWatch
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudWatch {
+namespace Model {
 
-InsightRuleContributorDatapoint::InsightRuleContributorDatapoint(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+InsightRuleContributorDatapoint::InsightRuleContributorDatapoint(const XmlNode& xmlNode) { *this = xmlNode; }
 
-InsightRuleContributorDatapoint& InsightRuleContributorDatapoint::operator =(const XmlNode& xmlNode)
-{
+InsightRuleContributorDatapoint& InsightRuleContributorDatapoint::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode timestampNode = resultNode.FirstChild("Timestamp");
-    if(!timestampNode.IsNull())
-    {
-      m_timestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+    if (!timestampNode.IsNull()) {
+      m_timestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timestampNode.GetText()).c_str()).c_str(),
+                             Aws::Utils::DateFormat::ISO_8601);
       m_timestampHasBeenSet = true;
     }
     XmlNode approximateValueNode = resultNode.FirstChild("ApproximateValue");
-    if(!approximateValueNode.IsNull())
-    {
-      m_approximateValue = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(approximateValueNode.GetText()).c_str()).c_str());
+    if (!approximateValueNode.IsNull()) {
+      m_approximateValue = StringUtils::ConvertToDouble(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(approximateValueNode.GetText()).c_str()).c_str());
       m_approximateValueHasBeenSet = true;
     }
   }
@@ -48,32 +40,28 @@ InsightRuleContributorDatapoint& InsightRuleContributorDatapoint::operator =(con
   return *this;
 }
 
-void InsightRuleContributorDatapoint::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_timestampHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+void InsightRuleContributorDatapoint::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                     const char* locationValue) const {
+  if (m_timestampHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_approximateValueHasBeenSet)
-  {
-        oStream << location << index << locationValue << ".ApproximateValue=" << StringUtils::URLEncode(m_approximateValue) << "&";
-  }
-
-}
-
-void InsightRuleContributorDatapoint::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_timestampHasBeenSet)
-  {
-      oStream << location << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
-  }
-  if(m_approximateValueHasBeenSet)
-  {
-      oStream << location << ".ApproximateValue=" << StringUtils::URLEncode(m_approximateValue) << "&";
+  if (m_approximateValueHasBeenSet) {
+    oStream << location << index << locationValue << ".ApproximateValue=" << StringUtils::URLEncode(m_approximateValue) << "&";
   }
 }
 
-} // namespace Model
-} // namespace CloudWatch
-} // namespace Aws
+void InsightRuleContributorDatapoint::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_timestampHasBeenSet) {
+    oStream << location << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str())
+            << "&";
+  }
+  if (m_approximateValueHasBeenSet) {
+    oStream << location << ".ApproximateValue=" << StringUtils::URLEncode(m_approximateValue) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace CloudWatch
+}  // namespace Aws

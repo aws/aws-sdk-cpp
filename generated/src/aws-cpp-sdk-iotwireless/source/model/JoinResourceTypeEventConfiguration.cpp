@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotwireless/model/JoinResourceTypeEventConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotwireless/model/JoinResourceTypeEventConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTWireless
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTWireless {
+namespace Model {
 
-JoinResourceTypeEventConfiguration::JoinResourceTypeEventConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+JoinResourceTypeEventConfiguration::JoinResourceTypeEventConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-JoinResourceTypeEventConfiguration& JoinResourceTypeEventConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("LoRaWAN"))
-  {
+JoinResourceTypeEventConfiguration& JoinResourceTypeEventConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("LoRaWAN")) {
     m_loRaWAN = jsonValue.GetObject("LoRaWAN");
     m_loRaWANHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue JoinResourceTypeEventConfiguration::Jsonize() const
-{
+JsonValue JoinResourceTypeEventConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_loRaWANHasBeenSet)
-  {
-   payload.WithObject("LoRaWAN", m_loRaWAN.Jsonize());
-
+  if (m_loRaWANHasBeenSet) {
+    payload.WithObject("LoRaWAN", m_loRaWAN.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTWireless
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTWireless
+}  // namespace Aws

@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/secretsmanager/SecretsManager_EXPORTS.h>
 
-namespace Aws
-{
-namespace SecretsManager
-{
-class SecretsManagerEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace SecretsManager {
+class SecretsManagerEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace SecretsManager
-} // namespace Aws
+}  // namespace SecretsManager
+}  // namespace Aws

@@ -5,12 +5,8 @@
 
 #include <aws/bcm-dashboards/BCMDashboardsEndpointProvider.h>
 
-namespace Aws
-{
-namespace BCMDashboards
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace BCMDashboards
-} // namespace Aws
+namespace Aws {
+namespace BCMDashboards {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace BCMDashboards
+}  // namespace Aws

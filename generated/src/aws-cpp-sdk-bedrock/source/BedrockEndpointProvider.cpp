@@ -5,12 +5,8 @@
 
 #include <aws/bedrock/BedrockEndpointProvider.h>
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Bedrock
-} // namespace Aws
+namespace Aws {
+namespace Bedrock {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Bedrock
+}  // namespace Aws

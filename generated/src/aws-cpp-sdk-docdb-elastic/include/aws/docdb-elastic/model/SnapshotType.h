@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/docdb-elastic/DocDBElastic_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/docdb-elastic/DocDBElastic_EXPORTS.h>
 
-namespace Aws
-{
-namespace DocDBElastic
-{
-namespace Model
-{
-  enum class SnapshotType
-  {
-    NOT_SET,
-    MANUAL,
-    AUTOMATED
-  };
+namespace Aws {
+namespace DocDBElastic {
+namespace Model {
+enum class SnapshotType { NOT_SET, MANUAL, AUTOMATED };
 
-namespace SnapshotTypeMapper
-{
+namespace SnapshotTypeMapper {
 AWS_DOCDBELASTIC_API SnapshotType GetSnapshotTypeForName(const Aws::String& name);
 
 AWS_DOCDBELASTIC_API Aws::String GetNameForSnapshotType(SnapshotType value);
-} // namespace SnapshotTypeMapper
-} // namespace Model
-} // namespace DocDBElastic
-} // namespace Aws
+}  // namespace SnapshotTypeMapper
+}  // namespace Model
+}  // namespace DocDBElastic
+}  // namespace Aws

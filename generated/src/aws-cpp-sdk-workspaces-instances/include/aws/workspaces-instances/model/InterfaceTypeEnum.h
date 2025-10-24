@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/workspaces-instances/WorkspacesInstances_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workspaces-instances/WorkspacesInstances_EXPORTS.h>
 
-namespace Aws
-{
-namespace WorkspacesInstances
-{
-namespace Model
-{
-  enum class InterfaceTypeEnum
-  {
-    NOT_SET,
-    interface,
-    efa,
-    efa_only
-  };
+namespace Aws {
+namespace WorkspacesInstances {
+namespace Model {
+enum class InterfaceTypeEnum { NOT_SET, interface, efa, efa_only };
 
-namespace InterfaceTypeEnumMapper
-{
+namespace InterfaceTypeEnumMapper {
 AWS_WORKSPACESINSTANCES_API InterfaceTypeEnum GetInterfaceTypeEnumForName(const Aws::String& name);
 
 AWS_WORKSPACESINSTANCES_API Aws::String GetNameForInterfaceTypeEnum(InterfaceTypeEnum value);
-} // namespace InterfaceTypeEnumMapper
-} // namespace Model
-} // namespace WorkspacesInstances
-} // namespace Aws
+}  // namespace InterfaceTypeEnumMapper
+}  // namespace Model
+}  // namespace WorkspacesInstances
+}  // namespace Aws

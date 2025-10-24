@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DeleteNetworkInterfacePermissionRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DeleteNetworkInterfacePermissionRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteNetworkInterfacePermissionRequest::SerializePayload() const
-{
+Aws::String DeleteNetworkInterfacePermissionRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteNetworkInterfacePermission&";
-  if(m_networkInterfacePermissionIdHasBeenSet)
-  {
+  if (m_networkInterfacePermissionIdHasBeenSet) {
     ss << "NetworkInterfacePermissionId=" << StringUtils::URLEncode(m_networkInterfacePermissionId.c_str()) << "&";
   }
 
-  if(m_forceHasBeenSet)
-  {
+  if (m_forceHasBeenSet) {
     ss << "Force=" << std::boolalpha << m_force << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String DeleteNetworkInterfacePermissionRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteNetworkInterfacePermissionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteNetworkInterfacePermissionRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

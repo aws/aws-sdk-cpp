@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTFleetWise
-{
-namespace Model
-{
-  enum class VehicleMiddlewareProtocol
-  {
-    NOT_SET,
-    ROS_2
-  };
+namespace Aws {
+namespace IoTFleetWise {
+namespace Model {
+enum class VehicleMiddlewareProtocol { NOT_SET, ROS_2 };
 
-namespace VehicleMiddlewareProtocolMapper
-{
+namespace VehicleMiddlewareProtocolMapper {
 AWS_IOTFLEETWISE_API VehicleMiddlewareProtocol GetVehicleMiddlewareProtocolForName(const Aws::String& name);
 
 AWS_IOTFLEETWISE_API Aws::String GetNameForVehicleMiddlewareProtocol(VehicleMiddlewareProtocol value);
-} // namespace VehicleMiddlewareProtocolMapper
-} // namespace Model
-} // namespace IoTFleetWise
-} // namespace Aws
+}  // namespace VehicleMiddlewareProtocolMapper
+}  // namespace Model
+}  // namespace IoTFleetWise
+}  // namespace Aws

@@ -5,28 +5,22 @@
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
-#include <aws/proton/ProtonErrors.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/proton/ProtonErrors.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::Proton;
 
-namespace Aws
-{
-namespace Proton
-{
-namespace ProtonErrorMapper
-{
+namespace Aws {
+namespace Proton {
+namespace ProtonErrorMapper {
 
-
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   AWS_UNREFERENCED_PARAM(errorName);
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace ProtonErrorMapper
-} // namespace Proton
-} // namespace Aws
+}  // namespace ProtonErrorMapper
+}  // namespace Proton
+}  // namespace Aws

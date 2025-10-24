@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/payment-cryptography/PaymentCryptography_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/payment-cryptography/PaymentCryptography_EXPORTS.h>
 
-namespace Aws
-{
-namespace PaymentCryptography
-{
-namespace Model
-{
-  enum class SigningAlgorithmType
-  {
-    NOT_SET,
-    SHA224,
-    SHA256,
-    SHA384,
-    SHA512
-  };
+namespace Aws {
+namespace PaymentCryptography {
+namespace Model {
+enum class SigningAlgorithmType { NOT_SET, SHA224, SHA256, SHA384, SHA512 };
 
-namespace SigningAlgorithmTypeMapper
-{
+namespace SigningAlgorithmTypeMapper {
 AWS_PAYMENTCRYPTOGRAPHY_API SigningAlgorithmType GetSigningAlgorithmTypeForName(const Aws::String& name);
 
 AWS_PAYMENTCRYPTOGRAPHY_API Aws::String GetNameForSigningAlgorithmType(SigningAlgorithmType value);
-} // namespace SigningAlgorithmTypeMapper
-} // namespace Model
-} // namespace PaymentCryptography
-} // namespace Aws
+}  // namespace SigningAlgorithmTypeMapper
+}  // namespace Model
+}  // namespace PaymentCryptography
+}  // namespace Aws

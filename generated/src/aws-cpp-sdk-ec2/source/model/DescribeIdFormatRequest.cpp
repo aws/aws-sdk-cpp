@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeIdFormatRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DescribeIdFormatRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeIdFormatRequest::SerializePayload() const
-{
+Aws::String DescribeIdFormatRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeIdFormat&";
-  if(m_resourceHasBeenSet)
-  {
+  if (m_resourceHasBeenSet) {
     ss << "Resource=" << StringUtils::URLEncode(m_resource.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DescribeIdFormatRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeIdFormatRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeIdFormatRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

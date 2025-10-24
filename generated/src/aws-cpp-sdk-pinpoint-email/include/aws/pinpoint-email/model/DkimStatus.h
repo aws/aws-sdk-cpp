@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/pinpoint-email/PinpointEmail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pinpoint-email/PinpointEmail_EXPORTS.h>
 
-namespace Aws
-{
-namespace PinpointEmail
-{
-namespace Model
-{
-  enum class DkimStatus
-  {
-    NOT_SET,
-    PENDING,
-    SUCCESS,
-    FAILED,
-    TEMPORARY_FAILURE,
-    NOT_STARTED
-  };
+namespace Aws {
+namespace PinpointEmail {
+namespace Model {
+enum class DkimStatus { NOT_SET, PENDING, SUCCESS, FAILED, TEMPORARY_FAILURE, NOT_STARTED };
 
-namespace DkimStatusMapper
-{
+namespace DkimStatusMapper {
 AWS_PINPOINTEMAIL_API DkimStatus GetDkimStatusForName(const Aws::String& name);
 
 AWS_PINPOINTEMAIL_API Aws::String GetNameForDkimStatus(DkimStatus value);
-} // namespace DkimStatusMapper
-} // namespace Model
-} // namespace PinpointEmail
-} // namespace Aws
+}  // namespace DkimStatusMapper
+}  // namespace Model
+}  // namespace PinpointEmail
+}  // namespace Aws

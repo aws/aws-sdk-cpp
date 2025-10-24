@@ -6,58 +6,57 @@
 #pragma once
 #include <aws/keyspaces/Keyspaces_EXPORTS.h>
 #include <aws/keyspaces/model/TimeToLiveStatus.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace Keyspaces
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Keyspaces {
+namespace Model {
 
+/**
+ * <p>Enable custom Time to Live (TTL) settings for rows and columns without
+ * setting a TTL default for the specified table.</p> <p>For more information, see
+ * <a
+ * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL-how-it-works.html#ttl-howitworks_enabling">Enabling
+ * TTL on tables</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/TimeToLive">AWS
+ * API Reference</a></p>
+ */
+class TimeToLive {
+ public:
+  AWS_KEYSPACES_API TimeToLive() = default;
+  AWS_KEYSPACES_API TimeToLive(Aws::Utils::Json::JsonView jsonValue);
+  AWS_KEYSPACES_API TimeToLive& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Enable custom Time to Live (TTL) settings for rows and columns without
-   * setting a TTL default for the specified table.</p> <p>For more information, see
-   * <a
-   * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL-how-it-works.html#ttl-howitworks_enabling">Enabling
-   * TTL on tables</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/TimeToLive">AWS
-   * API Reference</a></p>
+   * <p>Shows how to enable custom Time to Live (TTL) settings for the specified
+   * table.</p>
    */
-  class TimeToLive
-  {
-  public:
-    AWS_KEYSPACES_API TimeToLive() = default;
-    AWS_KEYSPACES_API TimeToLive(Aws::Utils::Json::JsonView jsonValue);
-    AWS_KEYSPACES_API TimeToLive& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline TimeToLiveStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(TimeToLiveStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline TimeToLive& WithStatus(TimeToLiveStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+ private:
+  TimeToLiveStatus m_status{TimeToLiveStatus::NOT_SET};
+  bool m_statusHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>Shows how to enable custom Time to Live (TTL) settings for the specified
-     * table.</p>
-     */
-    inline TimeToLiveStatus GetStatus() const { return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(TimeToLiveStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline TimeToLive& WithStatus(TimeToLiveStatus value) { SetStatus(value); return *this;}
-    ///@}
-  private:
-
-    TimeToLiveStatus m_status{TimeToLiveStatus::NOT_SET};
-    bool m_statusHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Keyspaces
-} // namespace Aws
+}  // namespace Model
+}  // namespace Keyspaces
+}  // namespace Aws

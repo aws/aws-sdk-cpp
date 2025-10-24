@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::Pricing;
 
-AWSError<CoreErrors> PricingErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> PricingErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = PricingErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

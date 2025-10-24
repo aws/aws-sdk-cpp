@@ -3,49 +3,39 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/VpnStaticRoute.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/VpnStaticRoute.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-VpnStaticRoute::VpnStaticRoute(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+VpnStaticRoute::VpnStaticRoute(const XmlNode& xmlNode) { *this = xmlNode; }
 
-VpnStaticRoute& VpnStaticRoute::operator =(const XmlNode& xmlNode)
-{
+VpnStaticRoute& VpnStaticRoute::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode destinationCidrBlockNode = resultNode.FirstChild("destinationCidrBlock");
-    if(!destinationCidrBlockNode.IsNull())
-    {
+    if (!destinationCidrBlockNode.IsNull()) {
       m_destinationCidrBlock = Aws::Utils::Xml::DecodeEscapedXmlText(destinationCidrBlockNode.GetText());
       m_destinationCidrBlockHasBeenSet = true;
     }
     XmlNode sourceNode = resultNode.FirstChild("source");
-    if(!sourceNode.IsNull())
-    {
-      m_source = VpnStaticRouteSourceMapper::GetVpnStaticRouteSourceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sourceNode.GetText()).c_str()));
+    if (!sourceNode.IsNull()) {
+      m_source = VpnStaticRouteSourceMapper::GetVpnStaticRouteSourceForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sourceNode.GetText()).c_str()));
       m_sourceHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
-    if(!stateNode.IsNull())
-    {
+    if (!stateNode.IsNull()) {
       m_state = VpnStateMapper::GetVpnStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
@@ -54,41 +44,36 @@ VpnStaticRoute& VpnStaticRoute::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void VpnStaticRoute::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_destinationCidrBlockHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".DestinationCidrBlock=" << StringUtils::URLEncode(m_destinationCidrBlock.c_str()) << "&";
+void VpnStaticRoute::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_destinationCidrBlockHasBeenSet) {
+    oStream << location << index << locationValue << ".DestinationCidrBlock=" << StringUtils::URLEncode(m_destinationCidrBlock.c_str())
+            << "&";
   }
 
-  if(m_sourceHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Source=" << StringUtils::URLEncode(VpnStaticRouteSourceMapper::GetNameForVpnStaticRouteSource(m_source)) << "&";
+  if (m_sourceHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".Source=" << StringUtils::URLEncode(VpnStaticRouteSourceMapper::GetNameForVpnStaticRouteSource(m_source)) << "&";
   }
 
-  if(m_stateHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(VpnStateMapper::GetNameForVpnState(m_state)) << "&";
-  }
-
-}
-
-void VpnStaticRoute::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_destinationCidrBlockHasBeenSet)
-  {
-      oStream << location << ".DestinationCidrBlock=" << StringUtils::URLEncode(m_destinationCidrBlock.c_str()) << "&";
-  }
-  if(m_sourceHasBeenSet)
-  {
-      oStream << location << ".Source=" << StringUtils::URLEncode(VpnStaticRouteSourceMapper::GetNameForVpnStaticRouteSource(m_source)) << "&";
-  }
-  if(m_stateHasBeenSet)
-  {
-      oStream << location << ".State=" << StringUtils::URLEncode(VpnStateMapper::GetNameForVpnState(m_state)) << "&";
+  if (m_stateHasBeenSet) {
+    oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(VpnStateMapper::GetNameForVpnState(m_state))
+            << "&";
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void VpnStaticRoute::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_destinationCidrBlockHasBeenSet) {
+    oStream << location << ".DestinationCidrBlock=" << StringUtils::URLEncode(m_destinationCidrBlock.c_str()) << "&";
+  }
+  if (m_sourceHasBeenSet) {
+    oStream << location << ".Source=" << StringUtils::URLEncode(VpnStaticRouteSourceMapper::GetNameForVpnStaticRouteSource(m_source))
+            << "&";
+  }
+  if (m_stateHasBeenSet) {
+    oStream << location << ".State=" << StringUtils::URLEncode(VpnStateMapper::GetNameForVpnState(m_state)) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

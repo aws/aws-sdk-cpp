@@ -7,28 +7,16 @@
 #include <aws/connectcampaigns/ConnectCampaigns_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ConnectCampaigns
-{
-namespace Model
-{
-  enum class CampaignState
-  {
-    NOT_SET,
-    Initialized,
-    Running,
-    Paused,
-    Stopped,
-    Failed
-  };
+namespace Aws {
+namespace ConnectCampaigns {
+namespace Model {
+enum class CampaignState { NOT_SET, Initialized, Running, Paused, Stopped, Failed };
 
-namespace CampaignStateMapper
-{
+namespace CampaignStateMapper {
 AWS_CONNECTCAMPAIGNS_API CampaignState GetCampaignStateForName(const Aws::String& name);
 
 AWS_CONNECTCAMPAIGNS_API Aws::String GetNameForCampaignState(CampaignState value);
-} // namespace CampaignStateMapper
-} // namespace Model
-} // namespace ConnectCampaigns
-} // namespace Aws
+}  // namespace CampaignStateMapper
+}  // namespace Model
+}  // namespace ConnectCampaigns
+}  // namespace Aws

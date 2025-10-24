@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/s3-crt/S3Crt_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3-crt/S3Crt_EXPORTS.h>
 
-namespace Aws
-{
-namespace S3Crt
-{
-namespace Model
-{
-  enum class ExpirationStatus
-  {
-    NOT_SET,
-    Enabled,
-    Disabled
-  };
+namespace Aws {
+namespace S3Crt {
+namespace Model {
+enum class ExpirationStatus { NOT_SET, Enabled, Disabled };
 
-namespace ExpirationStatusMapper
-{
+namespace ExpirationStatusMapper {
 AWS_S3CRT_API ExpirationStatus GetExpirationStatusForName(const Aws::String& name);
 
 AWS_S3CRT_API Aws::String GetNameForExpirationStatus(ExpirationStatus value);
-} // namespace ExpirationStatusMapper
-} // namespace Model
-} // namespace S3Crt
-} // namespace Aws
+}  // namespace ExpirationStatusMapper
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

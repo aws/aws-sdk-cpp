@@ -10,35 +10,26 @@
 using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeAnalysisSchemesRequest::SerializePayload() const
-{
+Aws::String DescribeAnalysisSchemesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeAnalysisSchemes&";
-  if(m_domainNameHasBeenSet)
-  {
+  if (m_domainNameHasBeenSet) {
     ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
   }
 
-  if(m_analysisSchemeNamesHasBeenSet)
-  {
-    if (m_analysisSchemeNames.empty())
-    {
+  if (m_analysisSchemeNamesHasBeenSet) {
+    if (m_analysisSchemeNames.empty()) {
       ss << "AnalysisSchemeNames=&";
-    }
-    else
-    {
+    } else {
       unsigned analysisSchemeNamesCount = 1;
-      for(auto& item : m_analysisSchemeNames)
-      {
-        ss << "AnalysisSchemeNames.member." << analysisSchemeNamesCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_analysisSchemeNames) {
+        ss << "AnalysisSchemeNames.member." << analysisSchemeNamesCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         analysisSchemeNamesCount++;
       }
     }
   }
 
-  if(m_deployedHasBeenSet)
-  {
+  if (m_deployedHasBeenSet) {
     ss << "Deployed=" << std::boolalpha << m_deployed << "&";
   }
 
@@ -46,8 +37,4 @@ Aws::String DescribeAnalysisSchemesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeAnalysisSchemesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeAnalysisSchemesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

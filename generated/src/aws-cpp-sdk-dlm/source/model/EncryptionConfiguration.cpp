@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dlm/model/EncryptionConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dlm/model/EncryptionConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DLM
-{
-namespace Model
-{
+namespace Aws {
+namespace DLM {
+namespace Model {
 
-EncryptionConfiguration::EncryptionConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EncryptionConfiguration::EncryptionConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-EncryptionConfiguration& EncryptionConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Encrypted"))
-  {
+EncryptionConfiguration& EncryptionConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Encrypted")) {
     m_encrypted = jsonValue.GetBool("Encrypted");
     m_encryptedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CmkArn"))
-  {
+  if (jsonValue.ValueExists("CmkArn")) {
     m_cmkArn = jsonValue.GetString("CmkArn");
     m_cmkArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EncryptionConfiguration::Jsonize() const
-{
+JsonValue EncryptionConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_encryptedHasBeenSet)
-  {
-   payload.WithBool("Encrypted", m_encrypted);
-
+  if (m_encryptedHasBeenSet) {
+    payload.WithBool("Encrypted", m_encrypted);
   }
 
-  if(m_cmkArnHasBeenSet)
-  {
-   payload.WithString("CmkArn", m_cmkArn);
-
+  if (m_cmkArnHasBeenSet) {
+    payload.WithString("CmkArn", m_cmkArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DLM
-} // namespace Aws
+}  // namespace Model
+}  // namespace DLM
+}  // namespace Aws

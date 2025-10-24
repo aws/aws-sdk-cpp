@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/inspector2/model/CodeLine.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/inspector2/model/CodeLine.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Inspector2
-{
-namespace Model
-{
+namespace Aws {
+namespace Inspector2 {
+namespace Model {
 
-CodeLine::CodeLine(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CodeLine::CodeLine(JsonView jsonValue) { *this = jsonValue; }
 
-CodeLine& CodeLine::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("content"))
-  {
+CodeLine& CodeLine::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("content")) {
     m_content = jsonValue.GetString("content");
     m_contentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lineNumber"))
-  {
+  if (jsonValue.ValueExists("lineNumber")) {
     m_lineNumber = jsonValue.GetInteger("lineNumber");
     m_lineNumberHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CodeLine::Jsonize() const
-{
+JsonValue CodeLine::Jsonize() const {
   JsonValue payload;
 
-  if(m_contentHasBeenSet)
-  {
-   payload.WithString("content", m_content);
-
+  if (m_contentHasBeenSet) {
+    payload.WithString("content", m_content);
   }
 
-  if(m_lineNumberHasBeenSet)
-  {
-   payload.WithInteger("lineNumber", m_lineNumber);
-
+  if (m_lineNumberHasBeenSet) {
+    payload.WithInteger("lineNumber", m_lineNumber);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Inspector2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Inspector2
+}  // namespace Aws

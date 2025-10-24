@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppSync
-{
-namespace Model
-{
+namespace Aws {
+namespace AppSync {
+namespace Model {
 
-CognitoUserPoolConfig::CognitoUserPoolConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CognitoUserPoolConfig::CognitoUserPoolConfig(JsonView jsonValue) { *this = jsonValue; }
 
-CognitoUserPoolConfig& CognitoUserPoolConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("userPoolId"))
-  {
+CognitoUserPoolConfig& CognitoUserPoolConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("userPoolId")) {
     m_userPoolId = jsonValue.GetString("userPoolId");
     m_userPoolIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("awsRegion"))
-  {
+  if (jsonValue.ValueExists("awsRegion")) {
     m_awsRegion = jsonValue.GetString("awsRegion");
     m_awsRegionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("appIdClientRegex"))
-  {
+  if (jsonValue.ValueExists("appIdClientRegex")) {
     m_appIdClientRegex = jsonValue.GetString("appIdClientRegex");
     m_appIdClientRegexHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CognitoUserPoolConfig::Jsonize() const
-{
+JsonValue CognitoUserPoolConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_userPoolIdHasBeenSet)
-  {
-   payload.WithString("userPoolId", m_userPoolId);
-
+  if (m_userPoolIdHasBeenSet) {
+    payload.WithString("userPoolId", m_userPoolId);
   }
 
-  if(m_awsRegionHasBeenSet)
-  {
-   payload.WithString("awsRegion", m_awsRegion);
-
+  if (m_awsRegionHasBeenSet) {
+    payload.WithString("awsRegion", m_awsRegion);
   }
 
-  if(m_appIdClientRegexHasBeenSet)
-  {
-   payload.WithString("appIdClientRegex", m_appIdClientRegex);
-
+  if (m_appIdClientRegexHasBeenSet) {
+    payload.WithString("appIdClientRegex", m_appIdClientRegex);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppSync
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppSync
+}  // namespace Aws

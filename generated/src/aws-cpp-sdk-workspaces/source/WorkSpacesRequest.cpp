@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/workspaces/WorkSpacesRequest.h>
 
-namespace Aws
-{
-namespace WorkSpaces
-{
-} // namespace WorkSpaces
-} // namespace Aws
+namespace Aws {
+namespace WorkSpaces {}  // namespace WorkSpaces
+}  // namespace Aws

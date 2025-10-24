@@ -12,44 +12,30 @@ using namespace Aws::CognitoIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetIdRequest::SerializePayload() const
-{
+Aws::String GetIdRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("AccountId", m_accountId);
-
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("AccountId", m_accountId);
   }
 
-  if(m_identityPoolIdHasBeenSet)
-  {
-   payload.WithString("IdentityPoolId", m_identityPoolId);
-
+  if (m_identityPoolIdHasBeenSet) {
+    payload.WithString("IdentityPoolId", m_identityPoolId);
   }
 
-  if(m_loginsHasBeenSet)
-  {
-   JsonValue loginsJsonMap;
-   for(auto& loginsItem : m_logins)
-   {
-     loginsJsonMap.WithString(loginsItem.first, loginsItem.second);
-   }
-   payload.WithObject("Logins", std::move(loginsJsonMap));
-
+  if (m_loginsHasBeenSet) {
+    JsonValue loginsJsonMap;
+    for (auto& loginsItem : m_logins) {
+      loginsJsonMap.WithString(loginsItem.first, loginsItem.second);
+    }
+    payload.WithObject("Logins", std::move(loginsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetIdRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetIdRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityService.GetId"));
   return headers;
-
 }
-
-
-
-

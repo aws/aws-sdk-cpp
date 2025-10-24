@@ -7,25 +7,16 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
-  enum class ExecutorType
-  {
-    NOT_SET,
-    JobWorker,
-    Lambda
-  };
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
+enum class ExecutorType { NOT_SET, JobWorker, Lambda };
 
-namespace ExecutorTypeMapper
-{
+namespace ExecutorTypeMapper {
 AWS_CODEPIPELINE_API ExecutorType GetExecutorTypeForName(const Aws::String& name);
 
 AWS_CODEPIPELINE_API Aws::String GetNameForExecutorType(ExecutorType value);
-} // namespace ExecutorTypeMapper
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace ExecutorTypeMapper
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

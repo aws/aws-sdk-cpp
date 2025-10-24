@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
-  enum class HlsMode
-  {
-    NOT_SET,
-    LIVE,
-    VOD
-  };
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+enum class HlsMode { NOT_SET, LIVE, VOD };
 
-namespace HlsModeMapper
-{
+namespace HlsModeMapper {
 AWS_MEDIALIVE_API HlsMode GetHlsModeForName(const Aws::String& name);
 
 AWS_MEDIALIVE_API Aws::String GetNameForHlsMode(HlsMode value);
-} // namespace HlsModeMapper
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace HlsModeMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

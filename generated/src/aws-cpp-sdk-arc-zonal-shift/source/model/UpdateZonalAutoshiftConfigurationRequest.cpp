@@ -12,18 +12,12 @@ using namespace Aws::ARCZonalShift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateZonalAutoshiftConfigurationRequest::SerializePayload() const
-{
+Aws::String UpdateZonalAutoshiftConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_zonalAutoshiftStatusHasBeenSet)
-  {
-   payload.WithString("zonalAutoshiftStatus", ZonalAutoshiftStatusMapper::GetNameForZonalAutoshiftStatus(m_zonalAutoshiftStatus));
+  if (m_zonalAutoshiftStatusHasBeenSet) {
+    payload.WithString("zonalAutoshiftStatus", ZonalAutoshiftStatusMapper::GetNameForZonalAutoshiftStatus(m_zonalAutoshiftStatus));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

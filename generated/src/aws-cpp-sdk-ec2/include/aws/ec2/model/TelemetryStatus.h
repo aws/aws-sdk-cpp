@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class TelemetryStatus
-  {
-    NOT_SET,
-    UP,
-    DOWN
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class TelemetryStatus { NOT_SET, UP, DOWN };
 
-namespace TelemetryStatusMapper
-{
+namespace TelemetryStatusMapper {
 AWS_EC2_API TelemetryStatus GetTelemetryStatusForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForTelemetryStatus(TelemetryStatus value);
-} // namespace TelemetryStatusMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace TelemetryStatusMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

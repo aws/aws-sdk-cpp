@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/repostspace/Repostspace_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/repostspace/Repostspace_EXPORTS.h>
 
-namespace Aws
-{
-namespace repostspace
-{
-namespace Model
-{
-  enum class VanityDomainStatus
-  {
-    NOT_SET,
-    PENDING,
-    APPROVED,
-    UNAPPROVED
-  };
+namespace Aws {
+namespace repostspace {
+namespace Model {
+enum class VanityDomainStatus { NOT_SET, PENDING, APPROVED, UNAPPROVED };
 
-namespace VanityDomainStatusMapper
-{
+namespace VanityDomainStatusMapper {
 AWS_REPOSTSPACE_API VanityDomainStatus GetVanityDomainStatusForName(const Aws::String& name);
 
 AWS_REPOSTSPACE_API Aws::String GetNameForVanityDomainStatus(VanityDomainStatus value);
-} // namespace VanityDomainStatusMapper
-} // namespace Model
-} // namespace repostspace
-} // namespace Aws
+}  // namespace VanityDomainStatusMapper
+}  // namespace Model
+}  // namespace repostspace
+}  // namespace Aws

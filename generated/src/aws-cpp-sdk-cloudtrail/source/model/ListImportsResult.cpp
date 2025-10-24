@@ -4,10 +4,10 @@
  */
 
 #include <aws/cloudtrail/model/ListImportsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,37 +17,28 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListImportsResult::ListImportsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListImportsResult::ListImportsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListImportsResult& ListImportsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListImportsResult& ListImportsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Imports"))
-  {
+  if (jsonValue.ValueExists("Imports")) {
     Aws::Utils::Array<JsonView> importsJsonList = jsonValue.GetArray("Imports");
-    for(unsigned importsIndex = 0; importsIndex < importsJsonList.GetLength(); ++importsIndex)
-    {
+    for (unsigned importsIndex = 0; importsIndex < importsJsonList.GetLength(); ++importsIndex) {
       m_imports.push_back(importsJsonList[importsIndex].AsObject());
     }
     m_importsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

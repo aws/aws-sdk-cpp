@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/StaticKeySettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/StaticKeySettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-StaticKeySettings::StaticKeySettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StaticKeySettings::StaticKeySettings(JsonView jsonValue) { *this = jsonValue; }
 
-StaticKeySettings& StaticKeySettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("keyProviderServer"))
-  {
+StaticKeySettings& StaticKeySettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("keyProviderServer")) {
     m_keyProviderServer = jsonValue.GetObject("keyProviderServer");
     m_keyProviderServerHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("staticKeyValue"))
-  {
+  if (jsonValue.ValueExists("staticKeyValue")) {
     m_staticKeyValue = jsonValue.GetString("staticKeyValue");
     m_staticKeyValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StaticKeySettings::Jsonize() const
-{
+JsonValue StaticKeySettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_keyProviderServerHasBeenSet)
-  {
-   payload.WithObject("keyProviderServer", m_keyProviderServer.Jsonize());
-
+  if (m_keyProviderServerHasBeenSet) {
+    payload.WithObject("keyProviderServer", m_keyProviderServer.Jsonize());
   }
 
-  if(m_staticKeyValueHasBeenSet)
-  {
-   payload.WithString("staticKeyValue", m_staticKeyValue);
-
+  if (m_staticKeyValueHasBeenSet) {
+    payload.WithString("staticKeyValue", m_staticKeyValue);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

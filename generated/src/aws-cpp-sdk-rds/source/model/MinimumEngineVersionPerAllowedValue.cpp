@@ -3,43 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/MinimumEngineVersionPerAllowedValue.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/rds/model/MinimumEngineVersionPerAllowedValue.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace RDS
-{
-namespace Model
-{
+namespace Aws {
+namespace RDS {
+namespace Model {
 
-MinimumEngineVersionPerAllowedValue::MinimumEngineVersionPerAllowedValue(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+MinimumEngineVersionPerAllowedValue::MinimumEngineVersionPerAllowedValue(const XmlNode& xmlNode) { *this = xmlNode; }
 
-MinimumEngineVersionPerAllowedValue& MinimumEngineVersionPerAllowedValue::operator =(const XmlNode& xmlNode)
-{
+MinimumEngineVersionPerAllowedValue& MinimumEngineVersionPerAllowedValue::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode allowedValueNode = resultNode.FirstChild("AllowedValue");
-    if(!allowedValueNode.IsNull())
-    {
+    if (!allowedValueNode.IsNull()) {
       m_allowedValue = Aws::Utils::Xml::DecodeEscapedXmlText(allowedValueNode.GetText());
       m_allowedValueHasBeenSet = true;
     }
     XmlNode minimumEngineVersionNode = resultNode.FirstChild("MinimumEngineVersion");
-    if(!minimumEngineVersionNode.IsNull())
-    {
+    if (!minimumEngineVersionNode.IsNull()) {
       m_minimumEngineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(minimumEngineVersionNode.GetText());
       m_minimumEngineVersionHasBeenSet = true;
     }
@@ -48,32 +38,27 @@ MinimumEngineVersionPerAllowedValue& MinimumEngineVersionPerAllowedValue::operat
   return *this;
 }
 
-void MinimumEngineVersionPerAllowedValue::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_allowedValueHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".AllowedValue=" << StringUtils::URLEncode(m_allowedValue.c_str()) << "&";
+void MinimumEngineVersionPerAllowedValue::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                         const char* locationValue) const {
+  if (m_allowedValueHasBeenSet) {
+    oStream << location << index << locationValue << ".AllowedValue=" << StringUtils::URLEncode(m_allowedValue.c_str()) << "&";
   }
 
-  if(m_minimumEngineVersionHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".MinimumEngineVersion=" << StringUtils::URLEncode(m_minimumEngineVersion.c_str()) << "&";
-  }
-
-}
-
-void MinimumEngineVersionPerAllowedValue::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_allowedValueHasBeenSet)
-  {
-      oStream << location << ".AllowedValue=" << StringUtils::URLEncode(m_allowedValue.c_str()) << "&";
-  }
-  if(m_minimumEngineVersionHasBeenSet)
-  {
-      oStream << location << ".MinimumEngineVersion=" << StringUtils::URLEncode(m_minimumEngineVersion.c_str()) << "&";
+  if (m_minimumEngineVersionHasBeenSet) {
+    oStream << location << index << locationValue << ".MinimumEngineVersion=" << StringUtils::URLEncode(m_minimumEngineVersion.c_str())
+            << "&";
   }
 }
 
-} // namespace Model
-} // namespace RDS
-} // namespace Aws
+void MinimumEngineVersionPerAllowedValue::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_allowedValueHasBeenSet) {
+    oStream << location << ".AllowedValue=" << StringUtils::URLEncode(m_allowedValue.c_str()) << "&";
+  }
+  if (m_minimumEngineVersionHasBeenSet) {
+    oStream << location << ".MinimumEngineVersion=" << StringUtils::URLEncode(m_minimumEngineVersion.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace RDS
+}  // namespace Aws

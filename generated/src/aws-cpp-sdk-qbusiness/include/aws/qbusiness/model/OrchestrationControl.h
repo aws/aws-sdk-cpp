@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qbusiness/QBusiness_EXPORTS.h>
 
-namespace Aws
-{
-namespace QBusiness
-{
-namespace Model
-{
-  enum class OrchestrationControl
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace QBusiness {
+namespace Model {
+enum class OrchestrationControl { NOT_SET, ENABLED, DISABLED };
 
-namespace OrchestrationControlMapper
-{
+namespace OrchestrationControlMapper {
 AWS_QBUSINESS_API OrchestrationControl GetOrchestrationControlForName(const Aws::String& name);
 
 AWS_QBUSINESS_API Aws::String GetNameForOrchestrationControl(OrchestrationControl value);
-} // namespace OrchestrationControlMapper
-} // namespace Model
-} // namespace QBusiness
-} // namespace Aws
+}  // namespace OrchestrationControlMapper
+}  // namespace Model
+}  // namespace QBusiness
+}  // namespace Aws

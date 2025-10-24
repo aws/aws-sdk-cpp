@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace APIGateway
-{
-namespace Model
-{
+namespace Aws {
+namespace APIGateway {
+namespace Model {
 
-StageKey::StageKey(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StageKey::StageKey(JsonView jsonValue) { *this = jsonValue; }
 
-StageKey& StageKey::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("restApiId"))
-  {
+StageKey& StageKey::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("restApiId")) {
     m_restApiId = jsonValue.GetString("restApiId");
     m_restApiIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("stageName"))
-  {
+  if (jsonValue.ValueExists("stageName")) {
     m_stageName = jsonValue.GetString("stageName");
     m_stageNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StageKey::Jsonize() const
-{
+JsonValue StageKey::Jsonize() const {
   JsonValue payload;
 
-  if(m_restApiIdHasBeenSet)
-  {
-   payload.WithString("restApiId", m_restApiId);
-
+  if (m_restApiIdHasBeenSet) {
+    payload.WithString("restApiId", m_restApiId);
   }
 
-  if(m_stageNameHasBeenSet)
-  {
-   payload.WithString("stageName", m_stageName);
-
+  if (m_stageNameHasBeenSet) {
+    payload.WithString("stageName", m_stageName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace APIGateway
-} // namespace Aws
+}  // namespace Model
+}  // namespace APIGateway
+}  // namespace Aws

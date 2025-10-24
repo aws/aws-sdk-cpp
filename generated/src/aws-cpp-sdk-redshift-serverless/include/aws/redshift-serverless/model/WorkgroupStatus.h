@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/redshift-serverless/RedshiftServerless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/redshift-serverless/RedshiftServerless_EXPORTS.h>
 
-namespace Aws
-{
-namespace RedshiftServerless
-{
-namespace Model
-{
-  enum class WorkgroupStatus
-  {
-    NOT_SET,
-    CREATING,
-    AVAILABLE,
-    MODIFYING,
-    DELETING
-  };
+namespace Aws {
+namespace RedshiftServerless {
+namespace Model {
+enum class WorkgroupStatus { NOT_SET, CREATING, AVAILABLE, MODIFYING, DELETING };
 
-namespace WorkgroupStatusMapper
-{
+namespace WorkgroupStatusMapper {
 AWS_REDSHIFTSERVERLESS_API WorkgroupStatus GetWorkgroupStatusForName(const Aws::String& name);
 
 AWS_REDSHIFTSERVERLESS_API Aws::String GetNameForWorkgroupStatus(WorkgroupStatus value);
-} // namespace WorkgroupStatusMapper
-} // namespace Model
-} // namespace RedshiftServerless
-} // namespace Aws
+}  // namespace WorkgroupStatusMapper
+}  // namespace Model
+}  // namespace RedshiftServerless
+}  // namespace Aws

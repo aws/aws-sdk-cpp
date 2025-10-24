@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/secretsmanager/model/ReplicateSecretToRegionsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/secretsmanager/model/ReplicateSecretToRegionsResult.h>
 
 #include <utility>
 
@@ -17,24 +17,17 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ReplicateSecretToRegionsResult::ReplicateSecretToRegionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ReplicateSecretToRegionsResult::ReplicateSecretToRegionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ReplicateSecretToRegionsResult& ReplicateSecretToRegionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ReplicateSecretToRegionsResult& ReplicateSecretToRegionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("ARN"))
-  {
+  if (jsonValue.ValueExists("ARN")) {
     m_aRN = jsonValue.GetString("ARN");
     m_aRNHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ReplicationStatus"))
-  {
+  if (jsonValue.ValueExists("ReplicationStatus")) {
     Aws::Utils::Array<JsonView> replicationStatusJsonList = jsonValue.GetArray("ReplicationStatus");
-    for(unsigned replicationStatusIndex = 0; replicationStatusIndex < replicationStatusJsonList.GetLength(); ++replicationStatusIndex)
-    {
+    for (unsigned replicationStatusIndex = 0; replicationStatusIndex < replicationStatusJsonList.GetLength(); ++replicationStatusIndex) {
       m_replicationStatus.push_back(replicationStatusJsonList[replicationStatusIndex].AsObject());
     }
     m_replicationStatusHasBeenSet = true;
@@ -42,12 +35,10 @@ ReplicateSecretToRegionsResult& ReplicateSecretToRegionsResult::operator =(const
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

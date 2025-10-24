@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/pi/PIRequest.h>
 
-namespace Aws
-{
-namespace PI
-{
-} // namespace PI
-} // namespace Aws
+namespace Aws {
+namespace PI {}  // namespace PI
+}  // namespace Aws

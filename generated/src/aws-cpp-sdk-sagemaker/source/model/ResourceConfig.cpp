@@ -3,134 +3,101 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/ResourceConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/ResourceConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-ResourceConfig::ResourceConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResourceConfig::ResourceConfig(JsonView jsonValue) { *this = jsonValue; }
 
-ResourceConfig& ResourceConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("InstanceType"))
-  {
+ResourceConfig& ResourceConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("InstanceType")) {
     m_instanceType = TrainingInstanceTypeMapper::GetTrainingInstanceTypeForName(jsonValue.GetString("InstanceType"));
     m_instanceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InstanceCount"))
-  {
+  if (jsonValue.ValueExists("InstanceCount")) {
     m_instanceCount = jsonValue.GetInteger("InstanceCount");
     m_instanceCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VolumeSizeInGB"))
-  {
+  if (jsonValue.ValueExists("VolumeSizeInGB")) {
     m_volumeSizeInGB = jsonValue.GetInteger("VolumeSizeInGB");
     m_volumeSizeInGBHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VolumeKmsKeyId"))
-  {
+  if (jsonValue.ValueExists("VolumeKmsKeyId")) {
     m_volumeKmsKeyId = jsonValue.GetString("VolumeKmsKeyId");
     m_volumeKmsKeyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("KeepAlivePeriodInSeconds"))
-  {
+  if (jsonValue.ValueExists("KeepAlivePeriodInSeconds")) {
     m_keepAlivePeriodInSeconds = jsonValue.GetInteger("KeepAlivePeriodInSeconds");
     m_keepAlivePeriodInSecondsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InstanceGroups"))
-  {
+  if (jsonValue.ValueExists("InstanceGroups")) {
     Aws::Utils::Array<JsonView> instanceGroupsJsonList = jsonValue.GetArray("InstanceGroups");
-    for(unsigned instanceGroupsIndex = 0; instanceGroupsIndex < instanceGroupsJsonList.GetLength(); ++instanceGroupsIndex)
-    {
+    for (unsigned instanceGroupsIndex = 0; instanceGroupsIndex < instanceGroupsJsonList.GetLength(); ++instanceGroupsIndex) {
       m_instanceGroups.push_back(instanceGroupsJsonList[instanceGroupsIndex].AsObject());
     }
     m_instanceGroupsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TrainingPlanArn"))
-  {
+  if (jsonValue.ValueExists("TrainingPlanArn")) {
     m_trainingPlanArn = jsonValue.GetString("TrainingPlanArn");
     m_trainingPlanArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InstancePlacementConfig"))
-  {
+  if (jsonValue.ValueExists("InstancePlacementConfig")) {
     m_instancePlacementConfig = jsonValue.GetObject("InstancePlacementConfig");
     m_instancePlacementConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResourceConfig::Jsonize() const
-{
+JsonValue ResourceConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_instanceTypeHasBeenSet)
-  {
-   payload.WithString("InstanceType", TrainingInstanceTypeMapper::GetNameForTrainingInstanceType(m_instanceType));
+  if (m_instanceTypeHasBeenSet) {
+    payload.WithString("InstanceType", TrainingInstanceTypeMapper::GetNameForTrainingInstanceType(m_instanceType));
   }
 
-  if(m_instanceCountHasBeenSet)
-  {
-   payload.WithInteger("InstanceCount", m_instanceCount);
-
+  if (m_instanceCountHasBeenSet) {
+    payload.WithInteger("InstanceCount", m_instanceCount);
   }
 
-  if(m_volumeSizeInGBHasBeenSet)
-  {
-   payload.WithInteger("VolumeSizeInGB", m_volumeSizeInGB);
-
+  if (m_volumeSizeInGBHasBeenSet) {
+    payload.WithInteger("VolumeSizeInGB", m_volumeSizeInGB);
   }
 
-  if(m_volumeKmsKeyIdHasBeenSet)
-  {
-   payload.WithString("VolumeKmsKeyId", m_volumeKmsKeyId);
-
+  if (m_volumeKmsKeyIdHasBeenSet) {
+    payload.WithString("VolumeKmsKeyId", m_volumeKmsKeyId);
   }
 
-  if(m_keepAlivePeriodInSecondsHasBeenSet)
-  {
-   payload.WithInteger("KeepAlivePeriodInSeconds", m_keepAlivePeriodInSeconds);
-
+  if (m_keepAlivePeriodInSecondsHasBeenSet) {
+    payload.WithInteger("KeepAlivePeriodInSeconds", m_keepAlivePeriodInSeconds);
   }
 
-  if(m_instanceGroupsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> instanceGroupsJsonList(m_instanceGroups.size());
-   for(unsigned instanceGroupsIndex = 0; instanceGroupsIndex < instanceGroupsJsonList.GetLength(); ++instanceGroupsIndex)
-   {
-     instanceGroupsJsonList[instanceGroupsIndex].AsObject(m_instanceGroups[instanceGroupsIndex].Jsonize());
-   }
-   payload.WithArray("InstanceGroups", std::move(instanceGroupsJsonList));
-
+  if (m_instanceGroupsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> instanceGroupsJsonList(m_instanceGroups.size());
+    for (unsigned instanceGroupsIndex = 0; instanceGroupsIndex < instanceGroupsJsonList.GetLength(); ++instanceGroupsIndex) {
+      instanceGroupsJsonList[instanceGroupsIndex].AsObject(m_instanceGroups[instanceGroupsIndex].Jsonize());
+    }
+    payload.WithArray("InstanceGroups", std::move(instanceGroupsJsonList));
   }
 
-  if(m_trainingPlanArnHasBeenSet)
-  {
-   payload.WithString("TrainingPlanArn", m_trainingPlanArn);
-
+  if (m_trainingPlanArnHasBeenSet) {
+    payload.WithString("TrainingPlanArn", m_trainingPlanArn);
   }
 
-  if(m_instancePlacementConfigHasBeenSet)
-  {
-   payload.WithObject("InstancePlacementConfig", m_instancePlacementConfig.Jsonize());
-
+  if (m_instancePlacementConfigHasBeenSet) {
+    payload.WithObject("InstancePlacementConfig", m_instancePlacementConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

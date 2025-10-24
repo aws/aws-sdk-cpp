@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/omics/Omics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/omics/Omics_EXPORTS.h>
 
-namespace Aws
-{
-namespace Omics
-{
-namespace Model
-{
-  enum class ReferenceStatus
-  {
-    NOT_SET,
-    ACTIVE,
-    DELETING,
-    DELETED
-  };
+namespace Aws {
+namespace Omics {
+namespace Model {
+enum class ReferenceStatus { NOT_SET, ACTIVE, DELETING, DELETED };
 
-namespace ReferenceStatusMapper
-{
+namespace ReferenceStatusMapper {
 AWS_OMICS_API ReferenceStatus GetReferenceStatusForName(const Aws::String& name);
 
 AWS_OMICS_API Aws::String GetNameForReferenceStatus(ReferenceStatus value);
-} // namespace ReferenceStatusMapper
-} // namespace Model
-} // namespace Omics
-} // namespace Aws
+}  // namespace ReferenceStatusMapper
+}  // namespace Model
+}  // namespace Omics
+}  // namespace Aws

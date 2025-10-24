@@ -3,112 +3,86 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/storagegateway/model/ActiveDirectoryStatus.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/storagegateway/model/ActiveDirectoryStatus.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace StorageGateway {
+namespace Model {
+namespace ActiveDirectoryStatusMapper {
 
-namespace Aws
-{
-  namespace StorageGateway
-  {
-    namespace Model
-    {
-      namespace ActiveDirectoryStatusMapper
-      {
+static const int ACCESS_DENIED_HASH = HashingUtils::HashString("ACCESS_DENIED");
+static const int DETACHED_HASH = HashingUtils::HashString("DETACHED");
+static const int JOINED_HASH = HashingUtils::HashString("JOINED");
+static const int JOINING_HASH = HashingUtils::HashString("JOINING");
+static const int NETWORK_ERROR_HASH = HashingUtils::HashString("NETWORK_ERROR");
+static const int TIMEOUT_HASH = HashingUtils::HashString("TIMEOUT");
+static const int UNKNOWN_ERROR_HASH = HashingUtils::HashString("UNKNOWN_ERROR");
+static const int INSUFFICIENT_PERMISSIONS_HASH = HashingUtils::HashString("INSUFFICIENT_PERMISSIONS");
 
-        static const int ACCESS_DENIED_HASH = HashingUtils::HashString("ACCESS_DENIED");
-        static const int DETACHED_HASH = HashingUtils::HashString("DETACHED");
-        static const int JOINED_HASH = HashingUtils::HashString("JOINED");
-        static const int JOINING_HASH = HashingUtils::HashString("JOINING");
-        static const int NETWORK_ERROR_HASH = HashingUtils::HashString("NETWORK_ERROR");
-        static const int TIMEOUT_HASH = HashingUtils::HashString("TIMEOUT");
-        static const int UNKNOWN_ERROR_HASH = HashingUtils::HashString("UNKNOWN_ERROR");
-        static const int INSUFFICIENT_PERMISSIONS_HASH = HashingUtils::HashString("INSUFFICIENT_PERMISSIONS");
+ActiveDirectoryStatus GetActiveDirectoryStatusForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == ACCESS_DENIED_HASH) {
+    return ActiveDirectoryStatus::ACCESS_DENIED;
+  } else if (hashCode == DETACHED_HASH) {
+    return ActiveDirectoryStatus::DETACHED;
+  } else if (hashCode == JOINED_HASH) {
+    return ActiveDirectoryStatus::JOINED;
+  } else if (hashCode == JOINING_HASH) {
+    return ActiveDirectoryStatus::JOINING;
+  } else if (hashCode == NETWORK_ERROR_HASH) {
+    return ActiveDirectoryStatus::NETWORK_ERROR;
+  } else if (hashCode == TIMEOUT_HASH) {
+    return ActiveDirectoryStatus::TIMEOUT;
+  } else if (hashCode == UNKNOWN_ERROR_HASH) {
+    return ActiveDirectoryStatus::UNKNOWN_ERROR;
+  } else if (hashCode == INSUFFICIENT_PERMISSIONS_HASH) {
+    return ActiveDirectoryStatus::INSUFFICIENT_PERMISSIONS;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<ActiveDirectoryStatus>(hashCode);
+  }
 
+  return ActiveDirectoryStatus::NOT_SET;
+}
 
-        ActiveDirectoryStatus GetActiveDirectoryStatusForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ACCESS_DENIED_HASH)
-          {
-            return ActiveDirectoryStatus::ACCESS_DENIED;
-          }
-          else if (hashCode == DETACHED_HASH)
-          {
-            return ActiveDirectoryStatus::DETACHED;
-          }
-          else if (hashCode == JOINED_HASH)
-          {
-            return ActiveDirectoryStatus::JOINED;
-          }
-          else if (hashCode == JOINING_HASH)
-          {
-            return ActiveDirectoryStatus::JOINING;
-          }
-          else if (hashCode == NETWORK_ERROR_HASH)
-          {
-            return ActiveDirectoryStatus::NETWORK_ERROR;
-          }
-          else if (hashCode == TIMEOUT_HASH)
-          {
-            return ActiveDirectoryStatus::TIMEOUT;
-          }
-          else if (hashCode == UNKNOWN_ERROR_HASH)
-          {
-            return ActiveDirectoryStatus::UNKNOWN_ERROR;
-          }
-          else if (hashCode == INSUFFICIENT_PERMISSIONS_HASH)
-          {
-            return ActiveDirectoryStatus::INSUFFICIENT_PERMISSIONS;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ActiveDirectoryStatus>(hashCode);
-          }
+Aws::String GetNameForActiveDirectoryStatus(ActiveDirectoryStatus enumValue) {
+  switch (enumValue) {
+    case ActiveDirectoryStatus::NOT_SET:
+      return {};
+    case ActiveDirectoryStatus::ACCESS_DENIED:
+      return "ACCESS_DENIED";
+    case ActiveDirectoryStatus::DETACHED:
+      return "DETACHED";
+    case ActiveDirectoryStatus::JOINED:
+      return "JOINED";
+    case ActiveDirectoryStatus::JOINING:
+      return "JOINING";
+    case ActiveDirectoryStatus::NETWORK_ERROR:
+      return "NETWORK_ERROR";
+    case ActiveDirectoryStatus::TIMEOUT:
+      return "TIMEOUT";
+    case ActiveDirectoryStatus::UNKNOWN_ERROR:
+      return "UNKNOWN_ERROR";
+    case ActiveDirectoryStatus::INSUFFICIENT_PERMISSIONS:
+      return "INSUFFICIENT_PERMISSIONS";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return ActiveDirectoryStatus::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForActiveDirectoryStatus(ActiveDirectoryStatus enumValue)
-        {
-          switch(enumValue)
-          {
-          case ActiveDirectoryStatus::NOT_SET:
-            return {};
-          case ActiveDirectoryStatus::ACCESS_DENIED:
-            return "ACCESS_DENIED";
-          case ActiveDirectoryStatus::DETACHED:
-            return "DETACHED";
-          case ActiveDirectoryStatus::JOINED:
-            return "JOINED";
-          case ActiveDirectoryStatus::JOINING:
-            return "JOINING";
-          case ActiveDirectoryStatus::NETWORK_ERROR:
-            return "NETWORK_ERROR";
-          case ActiveDirectoryStatus::TIMEOUT:
-            return "TIMEOUT";
-          case ActiveDirectoryStatus::UNKNOWN_ERROR:
-            return "UNKNOWN_ERROR";
-          case ActiveDirectoryStatus::INSUFFICIENT_PERMISSIONS:
-            return "INSUFFICIENT_PERMISSIONS";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace ActiveDirectoryStatusMapper
-    } // namespace Model
-  } // namespace StorageGateway
-} // namespace Aws
+}  // namespace ActiveDirectoryStatusMapper
+}  // namespace Model
+}  // namespace StorageGateway
+}  // namespace Aws

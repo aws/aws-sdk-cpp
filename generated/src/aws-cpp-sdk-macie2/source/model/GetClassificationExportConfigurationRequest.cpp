@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/macie2/model/GetClassificationExportConfigurationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/macie2/model/GetClassificationExportConfigurationRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetClassificationExportConfigurationRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetClassificationExportConfigurationRequest::SerializePayload() const { return {}; }

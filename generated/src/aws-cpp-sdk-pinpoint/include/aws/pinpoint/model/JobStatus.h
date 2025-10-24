@@ -4,35 +4,30 @@
  */
 
 #pragma once
-#include <aws/pinpoint/Pinpoint_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pinpoint/Pinpoint_EXPORTS.h>
 
-namespace Aws
-{
-namespace Pinpoint
-{
-namespace Model
-{
-  enum class JobStatus
-  {
-    NOT_SET,
-    CREATED,
-    PREPARING_FOR_INITIALIZATION,
-    INITIALIZING,
-    PROCESSING,
-    PENDING_JOB,
-    COMPLETING,
-    COMPLETED,
-    FAILING,
-    FAILED
-  };
+namespace Aws {
+namespace Pinpoint {
+namespace Model {
+enum class JobStatus {
+  NOT_SET,
+  CREATED,
+  PREPARING_FOR_INITIALIZATION,
+  INITIALIZING,
+  PROCESSING,
+  PENDING_JOB,
+  COMPLETING,
+  COMPLETED,
+  FAILING,
+  FAILED
+};
 
-namespace JobStatusMapper
-{
+namespace JobStatusMapper {
 AWS_PINPOINT_API JobStatus GetJobStatusForName(const Aws::String& name);
 
 AWS_PINPOINT_API Aws::String GetNameForJobStatus(JobStatus value);
-} // namespace JobStatusMapper
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace JobStatusMapper
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

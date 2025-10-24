@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudDirectory
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudDirectory {
+namespace Model {
 
-BatchDetachTypedLink::BatchDetachTypedLink(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchDetachTypedLink::BatchDetachTypedLink(JsonView jsonValue) { *this = jsonValue; }
 
-BatchDetachTypedLink& BatchDetachTypedLink::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TypedLinkSpecifier"))
-  {
+BatchDetachTypedLink& BatchDetachTypedLink::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TypedLinkSpecifier")) {
     m_typedLinkSpecifier = jsonValue.GetObject("TypedLinkSpecifier");
     m_typedLinkSpecifierHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BatchDetachTypedLink::Jsonize() const
-{
+JsonValue BatchDetachTypedLink::Jsonize() const {
   JsonValue payload;
 
-  if(m_typedLinkSpecifierHasBeenSet)
-  {
-   payload.WithObject("TypedLinkSpecifier", m_typedLinkSpecifier.Jsonize());
-
+  if (m_typedLinkSpecifierHasBeenSet) {
+    payload.WithObject("TypedLinkSpecifier", m_typedLinkSpecifier.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudDirectory
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudDirectory
+}  // namespace Aws

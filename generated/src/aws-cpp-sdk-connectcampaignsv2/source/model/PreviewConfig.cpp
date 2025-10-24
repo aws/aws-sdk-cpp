@@ -11,35 +11,24 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCampaignsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCampaignsV2 {
+namespace Model {
 
-PreviewConfig::PreviewConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PreviewConfig::PreviewConfig(JsonView jsonValue) { *this = jsonValue; }
 
-PreviewConfig& PreviewConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("bandwidthAllocation"))
-  {
+PreviewConfig& PreviewConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("bandwidthAllocation")) {
     m_bandwidthAllocation = jsonValue.GetDouble("bandwidthAllocation");
     m_bandwidthAllocationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("timeoutConfig"))
-  {
+  if (jsonValue.ValueExists("timeoutConfig")) {
     m_timeoutConfig = jsonValue.GetObject("timeoutConfig");
     m_timeoutConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("agentActions"))
-  {
+  if (jsonValue.ValueExists("agentActions")) {
     Aws::Utils::Array<JsonView> agentActionsJsonList = jsonValue.GetArray("agentActions");
-    for(unsigned agentActionsIndex = 0; agentActionsIndex < agentActionsJsonList.GetLength(); ++agentActionsIndex)
-    {
+    for (unsigned agentActionsIndex = 0; agentActionsIndex < agentActionsJsonList.GetLength(); ++agentActionsIndex) {
       m_agentActions.push_back(AgentActionMapper::GetAgentActionForName(agentActionsJsonList[agentActionsIndex].AsString()));
     }
     m_agentActionsHasBeenSet = true;
@@ -47,36 +36,28 @@ PreviewConfig& PreviewConfig::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue PreviewConfig::Jsonize() const
-{
+JsonValue PreviewConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_bandwidthAllocationHasBeenSet)
-  {
-   payload.WithDouble("bandwidthAllocation", m_bandwidthAllocation);
-
+  if (m_bandwidthAllocationHasBeenSet) {
+    payload.WithDouble("bandwidthAllocation", m_bandwidthAllocation);
   }
 
-  if(m_timeoutConfigHasBeenSet)
-  {
-   payload.WithObject("timeoutConfig", m_timeoutConfig.Jsonize());
-
+  if (m_timeoutConfigHasBeenSet) {
+    payload.WithObject("timeoutConfig", m_timeoutConfig.Jsonize());
   }
 
-  if(m_agentActionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> agentActionsJsonList(m_agentActions.size());
-   for(unsigned agentActionsIndex = 0; agentActionsIndex < agentActionsJsonList.GetLength(); ++agentActionsIndex)
-   {
-     agentActionsJsonList[agentActionsIndex].AsString(AgentActionMapper::GetNameForAgentAction(m_agentActions[agentActionsIndex]));
-   }
-   payload.WithArray("agentActions", std::move(agentActionsJsonList));
-
+  if (m_agentActionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> agentActionsJsonList(m_agentActions.size());
+    for (unsigned agentActionsIndex = 0; agentActionsIndex < agentActionsJsonList.GetLength(); ++agentActionsIndex) {
+      agentActionsJsonList[agentActionsIndex].AsString(AgentActionMapper::GetNameForAgentAction(m_agentActions[agentActionsIndex]));
+    }
+    payload.WithArray("agentActions", std::move(agentActionsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCampaignsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCampaignsV2
+}  // namespace Aws

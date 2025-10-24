@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-SemanticChunkingConfiguration::SemanticChunkingConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SemanticChunkingConfiguration::SemanticChunkingConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-SemanticChunkingConfiguration& SemanticChunkingConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("maxTokens"))
-  {
+SemanticChunkingConfiguration& SemanticChunkingConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("maxTokens")) {
     m_maxTokens = jsonValue.GetInteger("maxTokens");
     m_maxTokensHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("bufferSize"))
-  {
+  if (jsonValue.ValueExists("bufferSize")) {
     m_bufferSize = jsonValue.GetInteger("bufferSize");
     m_bufferSizeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("breakpointPercentileThreshold"))
-  {
+  if (jsonValue.ValueExists("breakpointPercentileThreshold")) {
     m_breakpointPercentileThreshold = jsonValue.GetInteger("breakpointPercentileThreshold");
     m_breakpointPercentileThresholdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SemanticChunkingConfiguration::Jsonize() const
-{
+JsonValue SemanticChunkingConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_maxTokensHasBeenSet)
-  {
-   payload.WithInteger("maxTokens", m_maxTokens);
-
+  if (m_maxTokensHasBeenSet) {
+    payload.WithInteger("maxTokens", m_maxTokens);
   }
 
-  if(m_bufferSizeHasBeenSet)
-  {
-   payload.WithInteger("bufferSize", m_bufferSize);
-
+  if (m_bufferSizeHasBeenSet) {
+    payload.WithInteger("bufferSize", m_bufferSize);
   }
 
-  if(m_breakpointPercentileThresholdHasBeenSet)
-  {
-   payload.WithInteger("breakpointPercentileThreshold", m_breakpointPercentileThreshold);
-
+  if (m_breakpointPercentileThresholdHasBeenSet) {
+    payload.WithInteger("breakpointPercentileThreshold", m_breakpointPercentileThreshold);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/keyspaces/model/ListTypesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/keyspaces/model/ListTypesResult.h>
 
 #include <utility>
 
@@ -17,24 +17,17 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListTypesResult::ListTypesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListTypesResult::ListTypesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListTypesResult& ListTypesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListTypesResult& ListTypesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("types"))
-  {
+  if (jsonValue.ValueExists("types")) {
     Aws::Utils::Array<JsonView> typesJsonList = jsonValue.GetArray("types");
-    for(unsigned typesIndex = 0; typesIndex < typesJsonList.GetLength(); ++typesIndex)
-    {
+    for (unsigned typesIndex = 0; typesIndex < typesJsonList.GetLength(); ++typesIndex) {
       m_types.push_back(typesJsonList[typesIndex].AsString());
     }
     m_typesHasBeenSet = true;
@@ -42,12 +35,10 @@ ListTypesResult& ListTypesResult::operator =(const Aws::AmazonWebServiceResult<J
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

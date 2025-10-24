@@ -3,401 +3,305 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/ModelPackage.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/ModelPackage.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-ModelPackage::ModelPackage(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ModelPackage::ModelPackage(JsonView jsonValue) { *this = jsonValue; }
 
-ModelPackage& ModelPackage::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ModelPackageName"))
-  {
+ModelPackage& ModelPackage::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ModelPackageName")) {
     m_modelPackageName = jsonValue.GetString("ModelPackageName");
     m_modelPackageNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ModelPackageGroupName"))
-  {
+  if (jsonValue.ValueExists("ModelPackageGroupName")) {
     m_modelPackageGroupName = jsonValue.GetString("ModelPackageGroupName");
     m_modelPackageGroupNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ModelPackageVersion"))
-  {
+  if (jsonValue.ValueExists("ModelPackageVersion")) {
     m_modelPackageVersion = jsonValue.GetInteger("ModelPackageVersion");
     m_modelPackageVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ModelPackageArn"))
-  {
+  if (jsonValue.ValueExists("ModelPackageArn")) {
     m_modelPackageArn = jsonValue.GetString("ModelPackageArn");
     m_modelPackageArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ModelPackageDescription"))
-  {
+  if (jsonValue.ValueExists("ModelPackageDescription")) {
     m_modelPackageDescription = jsonValue.GetString("ModelPackageDescription");
     m_modelPackageDescriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InferenceSpecification"))
-  {
+  if (jsonValue.ValueExists("InferenceSpecification")) {
     m_inferenceSpecification = jsonValue.GetObject("InferenceSpecification");
     m_inferenceSpecificationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourceAlgorithmSpecification"))
-  {
+  if (jsonValue.ValueExists("SourceAlgorithmSpecification")) {
     m_sourceAlgorithmSpecification = jsonValue.GetObject("SourceAlgorithmSpecification");
     m_sourceAlgorithmSpecificationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ValidationSpecification"))
-  {
+  if (jsonValue.ValueExists("ValidationSpecification")) {
     m_validationSpecification = jsonValue.GetObject("ValidationSpecification");
     m_validationSpecificationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ModelPackageStatus"))
-  {
+  if (jsonValue.ValueExists("ModelPackageStatus")) {
     m_modelPackageStatus = ModelPackageStatusMapper::GetModelPackageStatusForName(jsonValue.GetString("ModelPackageStatus"));
     m_modelPackageStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ModelPackageStatusDetails"))
-  {
+  if (jsonValue.ValueExists("ModelPackageStatusDetails")) {
     m_modelPackageStatusDetails = jsonValue.GetObject("ModelPackageStatusDetails");
     m_modelPackageStatusDetailsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CertifyForMarketplace"))
-  {
+  if (jsonValue.ValueExists("CertifyForMarketplace")) {
     m_certifyForMarketplace = jsonValue.GetBool("CertifyForMarketplace");
     m_certifyForMarketplaceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ModelApprovalStatus"))
-  {
+  if (jsonValue.ValueExists("ModelApprovalStatus")) {
     m_modelApprovalStatus = ModelApprovalStatusMapper::GetModelApprovalStatusForName(jsonValue.GetString("ModelApprovalStatus"));
     m_modelApprovalStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedBy"))
-  {
+  if (jsonValue.ValueExists("CreatedBy")) {
     m_createdBy = jsonValue.GetObject("CreatedBy");
     m_createdByHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MetadataProperties"))
-  {
+  if (jsonValue.ValueExists("MetadataProperties")) {
     m_metadataProperties = jsonValue.GetObject("MetadataProperties");
     m_metadataPropertiesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ModelMetrics"))
-  {
+  if (jsonValue.ValueExists("ModelMetrics")) {
     m_modelMetrics = jsonValue.GetObject("ModelMetrics");
     m_modelMetricsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModifiedTime"))
-  {
+  if (jsonValue.ValueExists("LastModifiedTime")) {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModifiedBy"))
-  {
+  if (jsonValue.ValueExists("LastModifiedBy")) {
     m_lastModifiedBy = jsonValue.GetObject("LastModifiedBy");
     m_lastModifiedByHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ApprovalDescription"))
-  {
+  if (jsonValue.ValueExists("ApprovalDescription")) {
     m_approvalDescription = jsonValue.GetString("ApprovalDescription");
     m_approvalDescriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Domain"))
-  {
+  if (jsonValue.ValueExists("Domain")) {
     m_domain = jsonValue.GetString("Domain");
     m_domainHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Task"))
-  {
+  if (jsonValue.ValueExists("Task")) {
     m_task = jsonValue.GetString("Task");
     m_taskHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SamplePayloadUrl"))
-  {
+  if (jsonValue.ValueExists("SamplePayloadUrl")) {
     m_samplePayloadUrl = jsonValue.GetString("SamplePayloadUrl");
     m_samplePayloadUrlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AdditionalInferenceSpecifications"))
-  {
+  if (jsonValue.ValueExists("AdditionalInferenceSpecifications")) {
     Aws::Utils::Array<JsonView> additionalInferenceSpecificationsJsonList = jsonValue.GetArray("AdditionalInferenceSpecifications");
-    for(unsigned additionalInferenceSpecificationsIndex = 0; additionalInferenceSpecificationsIndex < additionalInferenceSpecificationsJsonList.GetLength(); ++additionalInferenceSpecificationsIndex)
-    {
-      m_additionalInferenceSpecifications.push_back(additionalInferenceSpecificationsJsonList[additionalInferenceSpecificationsIndex].AsObject());
+    for (unsigned additionalInferenceSpecificationsIndex = 0;
+         additionalInferenceSpecificationsIndex < additionalInferenceSpecificationsJsonList.GetLength();
+         ++additionalInferenceSpecificationsIndex) {
+      m_additionalInferenceSpecifications.push_back(
+          additionalInferenceSpecificationsJsonList[additionalInferenceSpecificationsIndex].AsObject());
     }
     m_additionalInferenceSpecificationsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourceUri"))
-  {
+  if (jsonValue.ValueExists("SourceUri")) {
     m_sourceUri = jsonValue.GetString("SourceUri");
     m_sourceUriHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SecurityConfig"))
-  {
+  if (jsonValue.ValueExists("SecurityConfig")) {
     m_securityConfig = jsonValue.GetObject("SecurityConfig");
     m_securityConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ModelCard"))
-  {
+  if (jsonValue.ValueExists("ModelCard")) {
     m_modelCard = jsonValue.GetObject("ModelCard");
     m_modelCardHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ModelLifeCycle"))
-  {
+  if (jsonValue.ValueExists("ModelLifeCycle")) {
     m_modelLifeCycle = jsonValue.GetObject("ModelLifeCycle");
     m_modelLifeCycleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Tags"))
-  {
+  if (jsonValue.ValueExists("Tags")) {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
-    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-    {
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CustomerMetadataProperties"))
-  {
+  if (jsonValue.ValueExists("CustomerMetadataProperties")) {
     Aws::Map<Aws::String, JsonView> customerMetadataPropertiesJsonMap = jsonValue.GetObject("CustomerMetadataProperties").GetAllObjects();
-    for(auto& customerMetadataPropertiesItem : customerMetadataPropertiesJsonMap)
-    {
+    for (auto& customerMetadataPropertiesItem : customerMetadataPropertiesJsonMap) {
       m_customerMetadataProperties[customerMetadataPropertiesItem.first] = customerMetadataPropertiesItem.second.AsString();
     }
     m_customerMetadataPropertiesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DriftCheckBaselines"))
-  {
+  if (jsonValue.ValueExists("DriftCheckBaselines")) {
     m_driftCheckBaselines = jsonValue.GetObject("DriftCheckBaselines");
     m_driftCheckBaselinesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SkipModelValidation"))
-  {
+  if (jsonValue.ValueExists("SkipModelValidation")) {
     m_skipModelValidation = SkipModelValidationMapper::GetSkipModelValidationForName(jsonValue.GetString("SkipModelValidation"));
     m_skipModelValidationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ModelPackage::Jsonize() const
-{
+JsonValue ModelPackage::Jsonize() const {
   JsonValue payload;
 
-  if(m_modelPackageNameHasBeenSet)
-  {
-   payload.WithString("ModelPackageName", m_modelPackageName);
-
+  if (m_modelPackageNameHasBeenSet) {
+    payload.WithString("ModelPackageName", m_modelPackageName);
   }
 
-  if(m_modelPackageGroupNameHasBeenSet)
-  {
-   payload.WithString("ModelPackageGroupName", m_modelPackageGroupName);
-
+  if (m_modelPackageGroupNameHasBeenSet) {
+    payload.WithString("ModelPackageGroupName", m_modelPackageGroupName);
   }
 
-  if(m_modelPackageVersionHasBeenSet)
-  {
-   payload.WithInteger("ModelPackageVersion", m_modelPackageVersion);
-
+  if (m_modelPackageVersionHasBeenSet) {
+    payload.WithInteger("ModelPackageVersion", m_modelPackageVersion);
   }
 
-  if(m_modelPackageArnHasBeenSet)
-  {
-   payload.WithString("ModelPackageArn", m_modelPackageArn);
-
+  if (m_modelPackageArnHasBeenSet) {
+    payload.WithString("ModelPackageArn", m_modelPackageArn);
   }
 
-  if(m_modelPackageDescriptionHasBeenSet)
-  {
-   payload.WithString("ModelPackageDescription", m_modelPackageDescription);
-
+  if (m_modelPackageDescriptionHasBeenSet) {
+    payload.WithString("ModelPackageDescription", m_modelPackageDescription);
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_inferenceSpecificationHasBeenSet)
-  {
-   payload.WithObject("InferenceSpecification", m_inferenceSpecification.Jsonize());
-
+  if (m_inferenceSpecificationHasBeenSet) {
+    payload.WithObject("InferenceSpecification", m_inferenceSpecification.Jsonize());
   }
 
-  if(m_sourceAlgorithmSpecificationHasBeenSet)
-  {
-   payload.WithObject("SourceAlgorithmSpecification", m_sourceAlgorithmSpecification.Jsonize());
-
+  if (m_sourceAlgorithmSpecificationHasBeenSet) {
+    payload.WithObject("SourceAlgorithmSpecification", m_sourceAlgorithmSpecification.Jsonize());
   }
 
-  if(m_validationSpecificationHasBeenSet)
-  {
-   payload.WithObject("ValidationSpecification", m_validationSpecification.Jsonize());
-
+  if (m_validationSpecificationHasBeenSet) {
+    payload.WithObject("ValidationSpecification", m_validationSpecification.Jsonize());
   }
 
-  if(m_modelPackageStatusHasBeenSet)
-  {
-   payload.WithString("ModelPackageStatus", ModelPackageStatusMapper::GetNameForModelPackageStatus(m_modelPackageStatus));
+  if (m_modelPackageStatusHasBeenSet) {
+    payload.WithString("ModelPackageStatus", ModelPackageStatusMapper::GetNameForModelPackageStatus(m_modelPackageStatus));
   }
 
-  if(m_modelPackageStatusDetailsHasBeenSet)
-  {
-   payload.WithObject("ModelPackageStatusDetails", m_modelPackageStatusDetails.Jsonize());
-
+  if (m_modelPackageStatusDetailsHasBeenSet) {
+    payload.WithObject("ModelPackageStatusDetails", m_modelPackageStatusDetails.Jsonize());
   }
 
-  if(m_certifyForMarketplaceHasBeenSet)
-  {
-   payload.WithBool("CertifyForMarketplace", m_certifyForMarketplace);
-
+  if (m_certifyForMarketplaceHasBeenSet) {
+    payload.WithBool("CertifyForMarketplace", m_certifyForMarketplace);
   }
 
-  if(m_modelApprovalStatusHasBeenSet)
-  {
-   payload.WithString("ModelApprovalStatus", ModelApprovalStatusMapper::GetNameForModelApprovalStatus(m_modelApprovalStatus));
+  if (m_modelApprovalStatusHasBeenSet) {
+    payload.WithString("ModelApprovalStatus", ModelApprovalStatusMapper::GetNameForModelApprovalStatus(m_modelApprovalStatus));
   }
 
-  if(m_createdByHasBeenSet)
-  {
-   payload.WithObject("CreatedBy", m_createdBy.Jsonize());
-
+  if (m_createdByHasBeenSet) {
+    payload.WithObject("CreatedBy", m_createdBy.Jsonize());
   }
 
-  if(m_metadataPropertiesHasBeenSet)
-  {
-   payload.WithObject("MetadataProperties", m_metadataProperties.Jsonize());
-
+  if (m_metadataPropertiesHasBeenSet) {
+    payload.WithObject("MetadataProperties", m_metadataProperties.Jsonize());
   }
 
-  if(m_modelMetricsHasBeenSet)
-  {
-   payload.WithObject("ModelMetrics", m_modelMetrics.Jsonize());
-
+  if (m_modelMetricsHasBeenSet) {
+    payload.WithObject("ModelMetrics", m_modelMetrics.Jsonize());
   }
 
-  if(m_lastModifiedTimeHasBeenSet)
-  {
-   payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  if (m_lastModifiedTimeHasBeenSet) {
+    payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
   }
 
-  if(m_lastModifiedByHasBeenSet)
-  {
-   payload.WithObject("LastModifiedBy", m_lastModifiedBy.Jsonize());
-
+  if (m_lastModifiedByHasBeenSet) {
+    payload.WithObject("LastModifiedBy", m_lastModifiedBy.Jsonize());
   }
 
-  if(m_approvalDescriptionHasBeenSet)
-  {
-   payload.WithString("ApprovalDescription", m_approvalDescription);
-
+  if (m_approvalDescriptionHasBeenSet) {
+    payload.WithString("ApprovalDescription", m_approvalDescription);
   }
 
-  if(m_domainHasBeenSet)
-  {
-   payload.WithString("Domain", m_domain);
-
+  if (m_domainHasBeenSet) {
+    payload.WithString("Domain", m_domain);
   }
 
-  if(m_taskHasBeenSet)
-  {
-   payload.WithString("Task", m_task);
-
+  if (m_taskHasBeenSet) {
+    payload.WithString("Task", m_task);
   }
 
-  if(m_samplePayloadUrlHasBeenSet)
-  {
-   payload.WithString("SamplePayloadUrl", m_samplePayloadUrl);
-
+  if (m_samplePayloadUrlHasBeenSet) {
+    payload.WithString("SamplePayloadUrl", m_samplePayloadUrl);
   }
 
-  if(m_additionalInferenceSpecificationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> additionalInferenceSpecificationsJsonList(m_additionalInferenceSpecifications.size());
-   for(unsigned additionalInferenceSpecificationsIndex = 0; additionalInferenceSpecificationsIndex < additionalInferenceSpecificationsJsonList.GetLength(); ++additionalInferenceSpecificationsIndex)
-   {
-     additionalInferenceSpecificationsJsonList[additionalInferenceSpecificationsIndex].AsObject(m_additionalInferenceSpecifications[additionalInferenceSpecificationsIndex].Jsonize());
-   }
-   payload.WithArray("AdditionalInferenceSpecifications", std::move(additionalInferenceSpecificationsJsonList));
-
+  if (m_additionalInferenceSpecificationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> additionalInferenceSpecificationsJsonList(m_additionalInferenceSpecifications.size());
+    for (unsigned additionalInferenceSpecificationsIndex = 0;
+         additionalInferenceSpecificationsIndex < additionalInferenceSpecificationsJsonList.GetLength();
+         ++additionalInferenceSpecificationsIndex) {
+      additionalInferenceSpecificationsJsonList[additionalInferenceSpecificationsIndex].AsObject(
+          m_additionalInferenceSpecifications[additionalInferenceSpecificationsIndex].Jsonize());
+    }
+    payload.WithArray("AdditionalInferenceSpecifications", std::move(additionalInferenceSpecificationsJsonList));
   }
 
-  if(m_sourceUriHasBeenSet)
-  {
-   payload.WithString("SourceUri", m_sourceUri);
-
+  if (m_sourceUriHasBeenSet) {
+    payload.WithString("SourceUri", m_sourceUri);
   }
 
-  if(m_securityConfigHasBeenSet)
-  {
-   payload.WithObject("SecurityConfig", m_securityConfig.Jsonize());
-
+  if (m_securityConfigHasBeenSet) {
+    payload.WithObject("SecurityConfig", m_securityConfig.Jsonize());
   }
 
-  if(m_modelCardHasBeenSet)
-  {
-   payload.WithObject("ModelCard", m_modelCard.Jsonize());
-
+  if (m_modelCardHasBeenSet) {
+    payload.WithObject("ModelCard", m_modelCard.Jsonize());
   }
 
-  if(m_modelLifeCycleHasBeenSet)
-  {
-   payload.WithObject("ModelLifeCycle", m_modelLifeCycle.Jsonize());
-
+  if (m_modelLifeCycleHasBeenSet) {
+    payload.WithObject("ModelLifeCycle", m_modelLifeCycle.Jsonize());
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("Tags", std::move(tagsJsonList));
-
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
-  if(m_customerMetadataPropertiesHasBeenSet)
-  {
-   JsonValue customerMetadataPropertiesJsonMap;
-   for(auto& customerMetadataPropertiesItem : m_customerMetadataProperties)
-   {
-     customerMetadataPropertiesJsonMap.WithString(customerMetadataPropertiesItem.first, customerMetadataPropertiesItem.second);
-   }
-   payload.WithObject("CustomerMetadataProperties", std::move(customerMetadataPropertiesJsonMap));
-
+  if (m_customerMetadataPropertiesHasBeenSet) {
+    JsonValue customerMetadataPropertiesJsonMap;
+    for (auto& customerMetadataPropertiesItem : m_customerMetadataProperties) {
+      customerMetadataPropertiesJsonMap.WithString(customerMetadataPropertiesItem.first, customerMetadataPropertiesItem.second);
+    }
+    payload.WithObject("CustomerMetadataProperties", std::move(customerMetadataPropertiesJsonMap));
   }
 
-  if(m_driftCheckBaselinesHasBeenSet)
-  {
-   payload.WithObject("DriftCheckBaselines", m_driftCheckBaselines.Jsonize());
-
+  if (m_driftCheckBaselinesHasBeenSet) {
+    payload.WithObject("DriftCheckBaselines", m_driftCheckBaselines.Jsonize());
   }
 
-  if(m_skipModelValidationHasBeenSet)
-  {
-   payload.WithString("SkipModelValidation", SkipModelValidationMapper::GetNameForSkipModelValidation(m_skipModelValidation));
+  if (m_skipModelValidationHasBeenSet) {
+    payload.WithString("SkipModelValidation", SkipModelValidationMapper::GetNameForSkipModelValidation(m_skipModelValidation));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

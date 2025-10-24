@@ -11,139 +11,102 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeBuild
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeBuild {
+namespace Model {
 
-CodeCoverage::CodeCoverage(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CodeCoverage::CodeCoverage(JsonView jsonValue) { *this = jsonValue; }
 
-CodeCoverage& CodeCoverage::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("id"))
-  {
+CodeCoverage& CodeCoverage::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("reportARN"))
-  {
+  if (jsonValue.ValueExists("reportARN")) {
     m_reportARN = jsonValue.GetString("reportARN");
     m_reportARNHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("filePath"))
-  {
+  if (jsonValue.ValueExists("filePath")) {
     m_filePath = jsonValue.GetString("filePath");
     m_filePathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lineCoveragePercentage"))
-  {
+  if (jsonValue.ValueExists("lineCoveragePercentage")) {
     m_lineCoveragePercentage = jsonValue.GetDouble("lineCoveragePercentage");
     m_lineCoveragePercentageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("linesCovered"))
-  {
+  if (jsonValue.ValueExists("linesCovered")) {
     m_linesCovered = jsonValue.GetInteger("linesCovered");
     m_linesCoveredHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("linesMissed"))
-  {
+  if (jsonValue.ValueExists("linesMissed")) {
     m_linesMissed = jsonValue.GetInteger("linesMissed");
     m_linesMissedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("branchCoveragePercentage"))
-  {
+  if (jsonValue.ValueExists("branchCoveragePercentage")) {
     m_branchCoveragePercentage = jsonValue.GetDouble("branchCoveragePercentage");
     m_branchCoveragePercentageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("branchesCovered"))
-  {
+  if (jsonValue.ValueExists("branchesCovered")) {
     m_branchesCovered = jsonValue.GetInteger("branchesCovered");
     m_branchesCoveredHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("branchesMissed"))
-  {
+  if (jsonValue.ValueExists("branchesMissed")) {
     m_branchesMissed = jsonValue.GetInteger("branchesMissed");
     m_branchesMissedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("expired"))
-  {
+  if (jsonValue.ValueExists("expired")) {
     m_expired = jsonValue.GetDouble("expired");
     m_expiredHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CodeCoverage::Jsonize() const
-{
+JsonValue CodeCoverage::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_reportARNHasBeenSet)
-  {
-   payload.WithString("reportARN", m_reportARN);
-
+  if (m_reportARNHasBeenSet) {
+    payload.WithString("reportARN", m_reportARN);
   }
 
-  if(m_filePathHasBeenSet)
-  {
-   payload.WithString("filePath", m_filePath);
-
+  if (m_filePathHasBeenSet) {
+    payload.WithString("filePath", m_filePath);
   }
 
-  if(m_lineCoveragePercentageHasBeenSet)
-  {
-   payload.WithDouble("lineCoveragePercentage", m_lineCoveragePercentage);
-
+  if (m_lineCoveragePercentageHasBeenSet) {
+    payload.WithDouble("lineCoveragePercentage", m_lineCoveragePercentage);
   }
 
-  if(m_linesCoveredHasBeenSet)
-  {
-   payload.WithInteger("linesCovered", m_linesCovered);
-
+  if (m_linesCoveredHasBeenSet) {
+    payload.WithInteger("linesCovered", m_linesCovered);
   }
 
-  if(m_linesMissedHasBeenSet)
-  {
-   payload.WithInteger("linesMissed", m_linesMissed);
-
+  if (m_linesMissedHasBeenSet) {
+    payload.WithInteger("linesMissed", m_linesMissed);
   }
 
-  if(m_branchCoveragePercentageHasBeenSet)
-  {
-   payload.WithDouble("branchCoveragePercentage", m_branchCoveragePercentage);
-
+  if (m_branchCoveragePercentageHasBeenSet) {
+    payload.WithDouble("branchCoveragePercentage", m_branchCoveragePercentage);
   }
 
-  if(m_branchesCoveredHasBeenSet)
-  {
-   payload.WithInteger("branchesCovered", m_branchesCovered);
-
+  if (m_branchesCoveredHasBeenSet) {
+    payload.WithInteger("branchesCovered", m_branchesCovered);
   }
 
-  if(m_branchesMissedHasBeenSet)
-  {
-   payload.WithInteger("branchesMissed", m_branchesMissed);
-
+  if (m_branchesMissedHasBeenSet) {
+    payload.WithInteger("branchesMissed", m_branchesMissed);
   }
 
-  if(m_expiredHasBeenSet)
-  {
-   payload.WithDouble("expired", m_expired.SecondsWithMSPrecision());
+  if (m_expiredHasBeenSet) {
+    payload.WithDouble("expired", m_expired.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeBuild
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeBuild
+}  // namespace Aws

@@ -12,49 +12,32 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartCopyJobRequest::SerializePayload() const
-{
+Aws::String StartCopyJobRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_recoveryPointArnHasBeenSet)
-  {
-   payload.WithString("RecoveryPointArn", m_recoveryPointArn);
-
+  if (m_recoveryPointArnHasBeenSet) {
+    payload.WithString("RecoveryPointArn", m_recoveryPointArn);
   }
 
-  if(m_sourceBackupVaultNameHasBeenSet)
-  {
-   payload.WithString("SourceBackupVaultName", m_sourceBackupVaultName);
-
+  if (m_sourceBackupVaultNameHasBeenSet) {
+    payload.WithString("SourceBackupVaultName", m_sourceBackupVaultName);
   }
 
-  if(m_destinationBackupVaultArnHasBeenSet)
-  {
-   payload.WithString("DestinationBackupVaultArn", m_destinationBackupVaultArn);
-
+  if (m_destinationBackupVaultArnHasBeenSet) {
+    payload.WithString("DestinationBackupVaultArn", m_destinationBackupVaultArn);
   }
 
-  if(m_iamRoleArnHasBeenSet)
-  {
-   payload.WithString("IamRoleArn", m_iamRoleArn);
-
+  if (m_iamRoleArnHasBeenSet) {
+    payload.WithString("IamRoleArn", m_iamRoleArn);
   }
 
-  if(m_idempotencyTokenHasBeenSet)
-  {
-   payload.WithString("IdempotencyToken", m_idempotencyToken);
-
+  if (m_idempotencyTokenHasBeenSet) {
+    payload.WithString("IdempotencyToken", m_idempotencyToken);
   }
 
-  if(m_lifecycleHasBeenSet)
-  {
-   payload.WithObject("Lifecycle", m_lifecycle.Jsonize());
-
+  if (m_lifecycleHasBeenSet) {
+    payload.WithObject("Lifecycle", m_lifecycle.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

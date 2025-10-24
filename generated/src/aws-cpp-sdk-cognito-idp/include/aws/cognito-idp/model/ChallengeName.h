@@ -7,25 +7,16 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
-  enum class ChallengeName
-  {
-    NOT_SET,
-    Password,
-    Mfa
-  };
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
+enum class ChallengeName { NOT_SET, Password, Mfa };
 
-namespace ChallengeNameMapper
-{
+namespace ChallengeNameMapper {
 AWS_COGNITOIDENTITYPROVIDER_API ChallengeName GetChallengeNameForName(const Aws::String& name);
 
 AWS_COGNITOIDENTITYPROVIDER_API Aws::String GetNameForChallengeName(ChallengeName value);
-} // namespace ChallengeNameMapper
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace ChallengeNameMapper
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

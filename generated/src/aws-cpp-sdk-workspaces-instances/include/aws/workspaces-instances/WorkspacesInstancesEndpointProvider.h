@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/workspaces-instances/WorkspacesInstances_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/workspaces-instances/WorkspacesInstancesEndpointRules.h>
+#include <aws/workspaces-instances/WorkspacesInstances_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace WorkspacesInstances
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace WorkspacesInstances {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using WorkspacesInstancesClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -35,27 +30,26 @@ using WorkspacesInstancesBuiltInParameters = Aws::Endpoint::BuiltInParameters;
  * The SDK must use service-specific type for each service per specification.
  */
 using WorkspacesInstancesEndpointProviderBase =
-    EndpointProviderBase<WorkspacesInstancesClientConfiguration, WorkspacesInstancesBuiltInParameters, WorkspacesInstancesClientContextParameters>;
+    EndpointProviderBase<WorkspacesInstancesClientConfiguration, WorkspacesInstancesBuiltInParameters,
+                         WorkspacesInstancesClientContextParameters>;
 
 using WorkspacesInstancesDefaultEpProviderBase =
-    DefaultEndpointProvider<WorkspacesInstancesClientConfiguration, WorkspacesInstancesBuiltInParameters, WorkspacesInstancesClientContextParameters>;
+    DefaultEndpointProvider<WorkspacesInstancesClientConfiguration, WorkspacesInstancesBuiltInParameters,
+                            WorkspacesInstancesClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_WORKSPACESINSTANCES_API WorkspacesInstancesEndpointProvider : public WorkspacesInstancesDefaultEpProviderBase
-{
-public:
-    using WorkspacesInstancesResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_WORKSPACESINSTANCES_API WorkspacesInstancesEndpointProvider : public WorkspacesInstancesDefaultEpProviderBase {
+ public:
+  using WorkspacesInstancesResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    WorkspacesInstancesEndpointProvider()
-      : WorkspacesInstancesDefaultEpProviderBase(Aws::WorkspacesInstances::WorkspacesInstancesEndpointRules::GetRulesBlob(), Aws::WorkspacesInstances::WorkspacesInstancesEndpointRules::RulesBlobSize)
-    {}
+  WorkspacesInstancesEndpointProvider()
+      : WorkspacesInstancesDefaultEpProviderBase(Aws::WorkspacesInstances::WorkspacesInstancesEndpointRules::GetRulesBlob(),
+                                                 Aws::WorkspacesInstances::WorkspacesInstancesEndpointRules::RulesBlobSize) {}
 
-    ~WorkspacesInstancesEndpointProvider()
-    {
-    }
+  ~WorkspacesInstancesEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace WorkspacesInstances
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace WorkspacesInstances
+}  // namespace Aws

@@ -11,50 +11,36 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Comprehend {
+namespace Model {
 
-Block::Block(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Block::Block(JsonView jsonValue) { *this = jsonValue; }
 
-Block& Block::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Id"))
-  {
+Block& Block::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BlockType"))
-  {
+  if (jsonValue.ValueExists("BlockType")) {
     m_blockType = BlockTypeMapper::GetBlockTypeForName(jsonValue.GetString("BlockType"));
     m_blockTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Text"))
-  {
+  if (jsonValue.ValueExists("Text")) {
     m_text = jsonValue.GetString("Text");
     m_textHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Page"))
-  {
+  if (jsonValue.ValueExists("Page")) {
     m_page = jsonValue.GetInteger("Page");
     m_pageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Geometry"))
-  {
+  if (jsonValue.ValueExists("Geometry")) {
     m_geometry = jsonValue.GetObject("Geometry");
     m_geometryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Relationships"))
-  {
+  if (jsonValue.ValueExists("Relationships")) {
     Aws::Utils::Array<JsonView> relationshipsJsonList = jsonValue.GetArray("Relationships");
-    for(unsigned relationshipsIndex = 0; relationshipsIndex < relationshipsJsonList.GetLength(); ++relationshipsIndex)
-    {
+    for (unsigned relationshipsIndex = 0; relationshipsIndex < relationshipsJsonList.GetLength(); ++relationshipsIndex) {
       m_relationships.push_back(relationshipsJsonList[relationshipsIndex].AsObject());
     }
     m_relationshipsHasBeenSet = true;
@@ -62,53 +48,40 @@ Block& Block::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue Block::Jsonize() const
-{
+JsonValue Block::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
-  if(m_blockTypeHasBeenSet)
-  {
-   payload.WithString("BlockType", BlockTypeMapper::GetNameForBlockType(m_blockType));
+  if (m_blockTypeHasBeenSet) {
+    payload.WithString("BlockType", BlockTypeMapper::GetNameForBlockType(m_blockType));
   }
 
-  if(m_textHasBeenSet)
-  {
-   payload.WithString("Text", m_text);
-
+  if (m_textHasBeenSet) {
+    payload.WithString("Text", m_text);
   }
 
-  if(m_pageHasBeenSet)
-  {
-   payload.WithInteger("Page", m_page);
-
+  if (m_pageHasBeenSet) {
+    payload.WithInteger("Page", m_page);
   }
 
-  if(m_geometryHasBeenSet)
-  {
-   payload.WithObject("Geometry", m_geometry.Jsonize());
-
+  if (m_geometryHasBeenSet) {
+    payload.WithObject("Geometry", m_geometry.Jsonize());
   }
 
-  if(m_relationshipsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> relationshipsJsonList(m_relationships.size());
-   for(unsigned relationshipsIndex = 0; relationshipsIndex < relationshipsJsonList.GetLength(); ++relationshipsIndex)
-   {
-     relationshipsJsonList[relationshipsIndex].AsObject(m_relationships[relationshipsIndex].Jsonize());
-   }
-   payload.WithArray("Relationships", std::move(relationshipsJsonList));
-
+  if (m_relationshipsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> relationshipsJsonList(m_relationships.size());
+    for (unsigned relationshipsIndex = 0; relationshipsIndex < relationshipsJsonList.GetLength(); ++relationshipsIndex) {
+      relationshipsJsonList[relationshipsIndex].AsObject(m_relationships[relationshipsIndex].Jsonize());
+    }
+    payload.WithArray("Relationships", std::move(relationshipsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

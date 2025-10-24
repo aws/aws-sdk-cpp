@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/HlsId3SegmentTaggingScheduleActionSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/HlsId3SegmentTaggingScheduleActionSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-HlsId3SegmentTaggingScheduleActionSettings::HlsId3SegmentTaggingScheduleActionSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+HlsId3SegmentTaggingScheduleActionSettings::HlsId3SegmentTaggingScheduleActionSettings(JsonView jsonValue) { *this = jsonValue; }
 
-HlsId3SegmentTaggingScheduleActionSettings& HlsId3SegmentTaggingScheduleActionSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("tag"))
-  {
+HlsId3SegmentTaggingScheduleActionSettings& HlsId3SegmentTaggingScheduleActionSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("tag")) {
     m_tag = jsonValue.GetString("tag");
     m_tagHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("id3"))
-  {
+  if (jsonValue.ValueExists("id3")) {
     m_id3 = jsonValue.GetString("id3");
     m_id3HasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue HlsId3SegmentTaggingScheduleActionSettings::Jsonize() const
-{
+JsonValue HlsId3SegmentTaggingScheduleActionSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_tagHasBeenSet)
-  {
-   payload.WithString("tag", m_tag);
-
+  if (m_tagHasBeenSet) {
+    payload.WithString("tag", m_tag);
   }
 
-  if(m_id3HasBeenSet)
-  {
-   payload.WithString("id3", m_id3);
-
+  if (m_id3HasBeenSet) {
+    payload.WithString("id3", m_id3);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

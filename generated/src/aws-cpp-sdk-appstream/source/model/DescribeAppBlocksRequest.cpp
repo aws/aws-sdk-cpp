@@ -12,44 +12,30 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeAppBlocksRequest::SerializePayload() const
-{
+Aws::String DescribeAppBlocksRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_arnsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> arnsJsonList(m_arns.size());
-   for(unsigned arnsIndex = 0; arnsIndex < arnsJsonList.GetLength(); ++arnsIndex)
-   {
-     arnsJsonList[arnsIndex].AsString(m_arns[arnsIndex]);
-   }
-   payload.WithArray("Arns", std::move(arnsJsonList));
-
+  if (m_arnsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> arnsJsonList(m_arns.size());
+    for (unsigned arnsIndex = 0; arnsIndex < arnsJsonList.GetLength(); ++arnsIndex) {
+      arnsJsonList[arnsIndex].AsString(m_arns[arnsIndex]);
+    }
+    payload.WithArray("Arns", std::move(arnsJsonList));
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("MaxResults", m_maxResults);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeAppBlocksRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeAppBlocksRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "PhotonAdminProxyService.DescribeAppBlocks"));
   return headers;
-
 }
-
-
-
-

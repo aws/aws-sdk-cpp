@@ -3,43 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3/model/Tag.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3/model/Tag.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3
-{
-namespace Model
-{
+namespace Aws {
+namespace S3 {
+namespace Model {
 
-Tag::Tag(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+Tag::Tag(const XmlNode& xmlNode) { *this = xmlNode; }
 
-Tag& Tag::operator =(const XmlNode& xmlNode)
-{
+Tag& Tag::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode keyNode = resultNode.FirstChild("Key");
-    if(!keyNode.IsNull())
-    {
+    if (!keyNode.IsNull()) {
       m_key = Aws::Utils::Xml::DecodeEscapedXmlText(keyNode.GetText());
       m_keyHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");
-    if(!valueNode.IsNull())
-    {
+    if (!valueNode.IsNull()) {
       m_value = Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText());
       m_valueHasBeenSet = true;
     }
@@ -48,23 +38,19 @@ Tag& Tag::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void Tag::AddToNode(XmlNode& parentNode) const
-{
+void Tag::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_keyHasBeenSet)
-  {
-   XmlNode keyNode = parentNode.CreateChildElement("Key");
-   keyNode.SetText(m_key);
+  if (m_keyHasBeenSet) {
+    XmlNode keyNode = parentNode.CreateChildElement("Key");
+    keyNode.SetText(m_key);
   }
 
-  if(m_valueHasBeenSet)
-  {
-   XmlNode valueNode = parentNode.CreateChildElement("Value");
-   valueNode.SetText(m_value);
+  if (m_valueHasBeenSet) {
+    XmlNode valueNode = parentNode.CreateChildElement("Value");
+    valueNode.SetText(m_value);
   }
-
 }
 
-} // namespace Model
-} // namespace S3
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3
+}  // namespace Aws

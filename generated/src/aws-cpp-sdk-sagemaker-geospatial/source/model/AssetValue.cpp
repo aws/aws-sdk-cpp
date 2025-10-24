@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker-geospatial/model/AssetValue.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker-geospatial/model/AssetValue.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMakerGeospatial
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMakerGeospatial {
+namespace Model {
 
-AssetValue::AssetValue(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AssetValue::AssetValue(JsonView jsonValue) { *this = jsonValue; }
 
-AssetValue& AssetValue::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Href"))
-  {
+AssetValue& AssetValue::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Href")) {
     m_href = jsonValue.GetString("Href");
     m_hrefHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AssetValue::Jsonize() const
-{
+JsonValue AssetValue::Jsonize() const {
   JsonValue payload;
 
-  if(m_hrefHasBeenSet)
-  {
-   payload.WithString("Href", m_href);
-
+  if (m_hrefHasBeenSet) {
+    payload.WithString("Href", m_href);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMakerGeospatial
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMakerGeospatial
+}  // namespace Aws

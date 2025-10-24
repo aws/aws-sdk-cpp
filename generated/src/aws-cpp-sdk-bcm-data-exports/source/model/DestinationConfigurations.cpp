@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BCMDataExports
-{
-namespace Model
-{
+namespace Aws {
+namespace BCMDataExports {
+namespace Model {
 
-DestinationConfigurations::DestinationConfigurations(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DestinationConfigurations::DestinationConfigurations(JsonView jsonValue) { *this = jsonValue; }
 
-DestinationConfigurations& DestinationConfigurations::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("S3Destination"))
-  {
+DestinationConfigurations& DestinationConfigurations::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("S3Destination")) {
     m_s3Destination = jsonValue.GetObject("S3Destination");
     m_s3DestinationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DestinationConfigurations::Jsonize() const
-{
+JsonValue DestinationConfigurations::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3DestinationHasBeenSet)
-  {
-   payload.WithObject("S3Destination", m_s3Destination.Jsonize());
-
+  if (m_s3DestinationHasBeenSet) {
+    payload.WithObject("S3Destination", m_s3Destination.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BCMDataExports
-} // namespace Aws
+}  // namespace Model
+}  // namespace BCMDataExports
+}  // namespace Aws

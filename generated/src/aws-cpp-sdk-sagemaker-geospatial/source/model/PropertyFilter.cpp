@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker-geospatial/model/PropertyFilter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker-geospatial/model/PropertyFilter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMakerGeospatial
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMakerGeospatial {
+namespace Model {
 
-PropertyFilter::PropertyFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PropertyFilter::PropertyFilter(JsonView jsonValue) { *this = jsonValue; }
 
-PropertyFilter& PropertyFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Property"))
-  {
+PropertyFilter& PropertyFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Property")) {
     m_property = jsonValue.GetObject("Property");
     m_propertyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PropertyFilter::Jsonize() const
-{
+JsonValue PropertyFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_propertyHasBeenSet)
-  {
-   payload.WithObject("Property", m_property.Jsonize());
-
+  if (m_propertyHasBeenSet) {
+    payload.WithObject("Property", m_property.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMakerGeospatial
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMakerGeospatial
+}  // namespace Aws

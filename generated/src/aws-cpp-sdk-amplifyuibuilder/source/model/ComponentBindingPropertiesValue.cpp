@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyUIBuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Model {
 
-ComponentBindingPropertiesValue::ComponentBindingPropertiesValue(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ComponentBindingPropertiesValue::ComponentBindingPropertiesValue(JsonView jsonValue) { *this = jsonValue; }
 
-ComponentBindingPropertiesValue& ComponentBindingPropertiesValue::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+ComponentBindingPropertiesValue& ComponentBindingPropertiesValue::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = jsonValue.GetString("type");
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("bindingProperties"))
-  {
+  if (jsonValue.ValueExists("bindingProperties")) {
     m_bindingProperties = jsonValue.GetObject("bindingProperties");
     m_bindingPropertiesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("defaultValue"))
-  {
+  if (jsonValue.ValueExists("defaultValue")) {
     m_defaultValue = jsonValue.GetString("defaultValue");
     m_defaultValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ComponentBindingPropertiesValue::Jsonize() const
-{
+JsonValue ComponentBindingPropertiesValue::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", m_type);
   }
 
-  if(m_bindingPropertiesHasBeenSet)
-  {
-   payload.WithObject("bindingProperties", m_bindingProperties.Jsonize());
-
+  if (m_bindingPropertiesHasBeenSet) {
+    payload.WithObject("bindingProperties", m_bindingProperties.Jsonize());
   }
 
-  if(m_defaultValueHasBeenSet)
-  {
-   payload.WithString("defaultValue", m_defaultValue);
-
+  if (m_defaultValueHasBeenSet) {
+    payload.WithString("defaultValue", m_defaultValue);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

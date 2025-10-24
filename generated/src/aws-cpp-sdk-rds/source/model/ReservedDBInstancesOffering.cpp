@@ -3,95 +3,80 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/ReservedDBInstancesOffering.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/rds/model/ReservedDBInstancesOffering.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace RDS
-{
-namespace Model
-{
+namespace Aws {
+namespace RDS {
+namespace Model {
 
-ReservedDBInstancesOffering::ReservedDBInstancesOffering(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+ReservedDBInstancesOffering::ReservedDBInstancesOffering(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ReservedDBInstancesOffering& ReservedDBInstancesOffering::operator =(const XmlNode& xmlNode)
-{
+ReservedDBInstancesOffering& ReservedDBInstancesOffering::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode reservedDBInstancesOfferingIdNode = resultNode.FirstChild("ReservedDBInstancesOfferingId");
-    if(!reservedDBInstancesOfferingIdNode.IsNull())
-    {
+    if (!reservedDBInstancesOfferingIdNode.IsNull()) {
       m_reservedDBInstancesOfferingId = Aws::Utils::Xml::DecodeEscapedXmlText(reservedDBInstancesOfferingIdNode.GetText());
       m_reservedDBInstancesOfferingIdHasBeenSet = true;
     }
     XmlNode dBInstanceClassNode = resultNode.FirstChild("DBInstanceClass");
-    if(!dBInstanceClassNode.IsNull())
-    {
+    if (!dBInstanceClassNode.IsNull()) {
       m_dBInstanceClass = Aws::Utils::Xml::DecodeEscapedXmlText(dBInstanceClassNode.GetText());
       m_dBInstanceClassHasBeenSet = true;
     }
     XmlNode durationNode = resultNode.FirstChild("Duration");
-    if(!durationNode.IsNull())
-    {
-      m_duration = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(durationNode.GetText()).c_str()).c_str());
+    if (!durationNode.IsNull()) {
+      m_duration =
+          StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(durationNode.GetText()).c_str()).c_str());
       m_durationHasBeenSet = true;
     }
     XmlNode fixedPriceNode = resultNode.FirstChild("FixedPrice");
-    if(!fixedPriceNode.IsNull())
-    {
-      m_fixedPrice = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fixedPriceNode.GetText()).c_str()).c_str());
+    if (!fixedPriceNode.IsNull()) {
+      m_fixedPrice =
+          StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fixedPriceNode.GetText()).c_str()).c_str());
       m_fixedPriceHasBeenSet = true;
     }
     XmlNode usagePriceNode = resultNode.FirstChild("UsagePrice");
-    if(!usagePriceNode.IsNull())
-    {
-      m_usagePrice = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(usagePriceNode.GetText()).c_str()).c_str());
+    if (!usagePriceNode.IsNull()) {
+      m_usagePrice =
+          StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(usagePriceNode.GetText()).c_str()).c_str());
       m_usagePriceHasBeenSet = true;
     }
     XmlNode currencyCodeNode = resultNode.FirstChild("CurrencyCode");
-    if(!currencyCodeNode.IsNull())
-    {
+    if (!currencyCodeNode.IsNull()) {
       m_currencyCode = Aws::Utils::Xml::DecodeEscapedXmlText(currencyCodeNode.GetText());
       m_currencyCodeHasBeenSet = true;
     }
     XmlNode productDescriptionNode = resultNode.FirstChild("ProductDescription");
-    if(!productDescriptionNode.IsNull())
-    {
+    if (!productDescriptionNode.IsNull()) {
       m_productDescription = Aws::Utils::Xml::DecodeEscapedXmlText(productDescriptionNode.GetText());
       m_productDescriptionHasBeenSet = true;
     }
     XmlNode offeringTypeNode = resultNode.FirstChild("OfferingType");
-    if(!offeringTypeNode.IsNull())
-    {
+    if (!offeringTypeNode.IsNull()) {
       m_offeringType = Aws::Utils::Xml::DecodeEscapedXmlText(offeringTypeNode.GetText());
       m_offeringTypeHasBeenSet = true;
     }
     XmlNode multiAZNode = resultNode.FirstChild("MultiAZ");
-    if(!multiAZNode.IsNull())
-    {
-      m_multiAZ = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(multiAZNode.GetText()).c_str()).c_str());
+    if (!multiAZNode.IsNull()) {
+      m_multiAZ =
+          StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(multiAZNode.GetText()).c_str()).c_str());
       m_multiAZHasBeenSet = true;
     }
     XmlNode recurringChargesNode = resultNode.FirstChild("RecurringCharges");
-    if(!recurringChargesNode.IsNull())
-    {
+    if (!recurringChargesNode.IsNull()) {
       XmlNode recurringChargesMember = recurringChargesNode.FirstChild("RecurringCharge");
       m_recurringChargesHasBeenSet = !recurringChargesMember.IsNull();
-      while(!recurringChargesMember.IsNull())
-      {
+      while (!recurringChargesMember.IsNull()) {
         m_recurringCharges.push_back(recurringChargesMember);
         recurringChargesMember = recurringChargesMember.NextNode("RecurringCharge");
       }
@@ -103,116 +88,93 @@ ReservedDBInstancesOffering& ReservedDBInstancesOffering::operator =(const XmlNo
   return *this;
 }
 
-void ReservedDBInstancesOffering::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_reservedDBInstancesOfferingIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ReservedDBInstancesOfferingId=" << StringUtils::URLEncode(m_reservedDBInstancesOfferingId.c_str()) << "&";
+void ReservedDBInstancesOffering::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                 const char* locationValue) const {
+  if (m_reservedDBInstancesOfferingIdHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".ReservedDBInstancesOfferingId=" << StringUtils::URLEncode(m_reservedDBInstancesOfferingId.c_str()) << "&";
   }
 
-  if(m_dBInstanceClassHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".DBInstanceClass=" << StringUtils::URLEncode(m_dBInstanceClass.c_str()) << "&";
+  if (m_dBInstanceClassHasBeenSet) {
+    oStream << location << index << locationValue << ".DBInstanceClass=" << StringUtils::URLEncode(m_dBInstanceClass.c_str()) << "&";
   }
 
-  if(m_durationHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Duration=" << m_duration << "&";
+  if (m_durationHasBeenSet) {
+    oStream << location << index << locationValue << ".Duration=" << m_duration << "&";
   }
 
-  if(m_fixedPriceHasBeenSet)
-  {
-        oStream << location << index << locationValue << ".FixedPrice=" << StringUtils::URLEncode(m_fixedPrice) << "&";
+  if (m_fixedPriceHasBeenSet) {
+    oStream << location << index << locationValue << ".FixedPrice=" << StringUtils::URLEncode(m_fixedPrice) << "&";
   }
 
-  if(m_usagePriceHasBeenSet)
-  {
-        oStream << location << index << locationValue << ".UsagePrice=" << StringUtils::URLEncode(m_usagePrice) << "&";
+  if (m_usagePriceHasBeenSet) {
+    oStream << location << index << locationValue << ".UsagePrice=" << StringUtils::URLEncode(m_usagePrice) << "&";
   }
 
-  if(m_currencyCodeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".CurrencyCode=" << StringUtils::URLEncode(m_currencyCode.c_str()) << "&";
+  if (m_currencyCodeHasBeenSet) {
+    oStream << location << index << locationValue << ".CurrencyCode=" << StringUtils::URLEncode(m_currencyCode.c_str()) << "&";
   }
 
-  if(m_productDescriptionHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ProductDescription=" << StringUtils::URLEncode(m_productDescription.c_str()) << "&";
+  if (m_productDescriptionHasBeenSet) {
+    oStream << location << index << locationValue << ".ProductDescription=" << StringUtils::URLEncode(m_productDescription.c_str()) << "&";
   }
 
-  if(m_offeringTypeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".OfferingType=" << StringUtils::URLEncode(m_offeringType.c_str()) << "&";
+  if (m_offeringTypeHasBeenSet) {
+    oStream << location << index << locationValue << ".OfferingType=" << StringUtils::URLEncode(m_offeringType.c_str()) << "&";
   }
 
-  if(m_multiAZHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".MultiAZ=" << std::boolalpha << m_multiAZ << "&";
+  if (m_multiAZHasBeenSet) {
+    oStream << location << index << locationValue << ".MultiAZ=" << std::boolalpha << m_multiAZ << "&";
   }
 
-  if(m_recurringChargesHasBeenSet)
-  {
-      unsigned recurringChargesIdx = 1;
-      for(auto& item : m_recurringCharges)
-      {
-        Aws::StringStream recurringChargesSs;
-        recurringChargesSs << location << index << locationValue << ".RecurringCharges.RecurringCharge." << recurringChargesIdx++;
-        item.OutputToStream(oStream, recurringChargesSs.str().c_str());
-      }
-  }
-
-}
-
-void ReservedDBInstancesOffering::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_reservedDBInstancesOfferingIdHasBeenSet)
-  {
-      oStream << location << ".ReservedDBInstancesOfferingId=" << StringUtils::URLEncode(m_reservedDBInstancesOfferingId.c_str()) << "&";
-  }
-  if(m_dBInstanceClassHasBeenSet)
-  {
-      oStream << location << ".DBInstanceClass=" << StringUtils::URLEncode(m_dBInstanceClass.c_str()) << "&";
-  }
-  if(m_durationHasBeenSet)
-  {
-      oStream << location << ".Duration=" << m_duration << "&";
-  }
-  if(m_fixedPriceHasBeenSet)
-  {
-      oStream << location << ".FixedPrice=" << StringUtils::URLEncode(m_fixedPrice) << "&";
-  }
-  if(m_usagePriceHasBeenSet)
-  {
-      oStream << location << ".UsagePrice=" << StringUtils::URLEncode(m_usagePrice) << "&";
-  }
-  if(m_currencyCodeHasBeenSet)
-  {
-      oStream << location << ".CurrencyCode=" << StringUtils::URLEncode(m_currencyCode.c_str()) << "&";
-  }
-  if(m_productDescriptionHasBeenSet)
-  {
-      oStream << location << ".ProductDescription=" << StringUtils::URLEncode(m_productDescription.c_str()) << "&";
-  }
-  if(m_offeringTypeHasBeenSet)
-  {
-      oStream << location << ".OfferingType=" << StringUtils::URLEncode(m_offeringType.c_str()) << "&";
-  }
-  if(m_multiAZHasBeenSet)
-  {
-      oStream << location << ".MultiAZ=" << std::boolalpha << m_multiAZ << "&";
-  }
-  if(m_recurringChargesHasBeenSet)
-  {
-      unsigned recurringChargesIdx = 1;
-      for(auto& item : m_recurringCharges)
-      {
-        Aws::StringStream recurringChargesSs;
-        recurringChargesSs << location << ".RecurringCharges.RecurringCharge." << recurringChargesIdx++;
-        item.OutputToStream(oStream, recurringChargesSs.str().c_str());
-      }
+  if (m_recurringChargesHasBeenSet) {
+    unsigned recurringChargesIdx = 1;
+    for (auto& item : m_recurringCharges) {
+      Aws::StringStream recurringChargesSs;
+      recurringChargesSs << location << index << locationValue << ".RecurringCharges.RecurringCharge." << recurringChargesIdx++;
+      item.OutputToStream(oStream, recurringChargesSs.str().c_str());
+    }
   }
 }
 
-} // namespace Model
-} // namespace RDS
-} // namespace Aws
+void ReservedDBInstancesOffering::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_reservedDBInstancesOfferingIdHasBeenSet) {
+    oStream << location << ".ReservedDBInstancesOfferingId=" << StringUtils::URLEncode(m_reservedDBInstancesOfferingId.c_str()) << "&";
+  }
+  if (m_dBInstanceClassHasBeenSet) {
+    oStream << location << ".DBInstanceClass=" << StringUtils::URLEncode(m_dBInstanceClass.c_str()) << "&";
+  }
+  if (m_durationHasBeenSet) {
+    oStream << location << ".Duration=" << m_duration << "&";
+  }
+  if (m_fixedPriceHasBeenSet) {
+    oStream << location << ".FixedPrice=" << StringUtils::URLEncode(m_fixedPrice) << "&";
+  }
+  if (m_usagePriceHasBeenSet) {
+    oStream << location << ".UsagePrice=" << StringUtils::URLEncode(m_usagePrice) << "&";
+  }
+  if (m_currencyCodeHasBeenSet) {
+    oStream << location << ".CurrencyCode=" << StringUtils::URLEncode(m_currencyCode.c_str()) << "&";
+  }
+  if (m_productDescriptionHasBeenSet) {
+    oStream << location << ".ProductDescription=" << StringUtils::URLEncode(m_productDescription.c_str()) << "&";
+  }
+  if (m_offeringTypeHasBeenSet) {
+    oStream << location << ".OfferingType=" << StringUtils::URLEncode(m_offeringType.c_str()) << "&";
+  }
+  if (m_multiAZHasBeenSet) {
+    oStream << location << ".MultiAZ=" << std::boolalpha << m_multiAZ << "&";
+  }
+  if (m_recurringChargesHasBeenSet) {
+    unsigned recurringChargesIdx = 1;
+    for (auto& item : m_recurringCharges) {
+      Aws::StringStream recurringChargesSs;
+      recurringChargesSs << location << ".RecurringCharges.RecurringCharge." << recurringChargesIdx++;
+      item.OutputToStream(oStream, recurringChargesSs.str().c_str());
+    }
+  }
+}
+
+}  // namespace Model
+}  // namespace RDS
+}  // namespace Aws

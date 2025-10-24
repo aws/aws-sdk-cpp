@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/ram/RAM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ram/RAM_EXPORTS.h>
 
-namespace Aws
-{
-namespace RAM
-{
-namespace Model
-{
-  enum class ReplacePermissionAssociationsWorkStatus
-  {
-    NOT_SET,
-    IN_PROGRESS,
-    COMPLETED,
-    FAILED
-  };
+namespace Aws {
+namespace RAM {
+namespace Model {
+enum class ReplacePermissionAssociationsWorkStatus { NOT_SET, IN_PROGRESS, COMPLETED, FAILED };
 
-namespace ReplacePermissionAssociationsWorkStatusMapper
-{
+namespace ReplacePermissionAssociationsWorkStatusMapper {
 AWS_RAM_API ReplacePermissionAssociationsWorkStatus GetReplacePermissionAssociationsWorkStatusForName(const Aws::String& name);
 
 AWS_RAM_API Aws::String GetNameForReplacePermissionAssociationsWorkStatus(ReplacePermissionAssociationsWorkStatus value);
-} // namespace ReplacePermissionAssociationsWorkStatusMapper
-} // namespace Model
-} // namespace RAM
-} // namespace Aws
+}  // namespace ReplacePermissionAssociationsWorkStatusMapper
+}  // namespace Model
+}  // namespace RAM
+}  // namespace Aws

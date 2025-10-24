@@ -10,37 +10,30 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String GetTemplateSummaryRequest::SerializePayload() const
-{
+Aws::String GetTemplateSummaryRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetTemplateSummary&";
-  if(m_templateBodyHasBeenSet)
-  {
+  if (m_templateBodyHasBeenSet) {
     ss << "TemplateBody=" << StringUtils::URLEncode(m_templateBody.c_str()) << "&";
   }
 
-  if(m_templateURLHasBeenSet)
-  {
+  if (m_templateURLHasBeenSet) {
     ss << "TemplateURL=" << StringUtils::URLEncode(m_templateURL.c_str()) << "&";
   }
 
-  if(m_stackNameHasBeenSet)
-  {
+  if (m_stackNameHasBeenSet) {
     ss << "StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
   }
 
-  if(m_stackSetNameHasBeenSet)
-  {
+  if (m_stackSetNameHasBeenSet) {
     ss << "StackSetName=" << StringUtils::URLEncode(m_stackSetName.c_str()) << "&";
   }
 
-  if(m_callAsHasBeenSet)
-  {
+  if (m_callAsHasBeenSet) {
     ss << "CallAs=" << StringUtils::URLEncode(CallAsMapper::GetNameForCallAs(m_callAs)) << "&";
   }
 
-  if(m_templateSummaryConfigHasBeenSet)
-  {
+  if (m_templateSummaryConfigHasBeenSet) {
     m_templateSummaryConfig.OutputToStream(ss, "TemplateSummaryConfig");
   }
 
@@ -48,8 +41,4 @@ Aws::String GetTemplateSummaryRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetTemplateSummaryRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetTemplateSummaryRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -11,96 +11,70 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BCMDataExports
-{
-namespace Model
-{
+namespace Aws {
+namespace BCMDataExports {
+namespace Model {
 
-Export::Export(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Export::Export(JsonView jsonValue) { *this = jsonValue; }
 
-Export& Export::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DataQuery"))
-  {
+Export& Export::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DataQuery")) {
     m_dataQuery = jsonValue.GetObject("DataQuery");
     m_dataQueryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DestinationConfigurations"))
-  {
+  if (jsonValue.ValueExists("DestinationConfigurations")) {
     m_destinationConfigurations = jsonValue.GetObject("DestinationConfigurations");
     m_destinationConfigurationsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExportArn"))
-  {
+  if (jsonValue.ValueExists("ExportArn")) {
     m_exportArn = jsonValue.GetString("ExportArn");
     m_exportArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RefreshCadence"))
-  {
+  if (jsonValue.ValueExists("RefreshCadence")) {
     m_refreshCadence = jsonValue.GetObject("RefreshCadence");
     m_refreshCadenceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Export::Jsonize() const
-{
+JsonValue Export::Jsonize() const {
   JsonValue payload;
 
-  if(m_dataQueryHasBeenSet)
-  {
-   payload.WithObject("DataQuery", m_dataQuery.Jsonize());
-
+  if (m_dataQueryHasBeenSet) {
+    payload.WithObject("DataQuery", m_dataQuery.Jsonize());
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_destinationConfigurationsHasBeenSet)
-  {
-   payload.WithObject("DestinationConfigurations", m_destinationConfigurations.Jsonize());
-
+  if (m_destinationConfigurationsHasBeenSet) {
+    payload.WithObject("DestinationConfigurations", m_destinationConfigurations.Jsonize());
   }
 
-  if(m_exportArnHasBeenSet)
-  {
-   payload.WithString("ExportArn", m_exportArn);
-
+  if (m_exportArnHasBeenSet) {
+    payload.WithString("ExportArn", m_exportArn);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_refreshCadenceHasBeenSet)
-  {
-   payload.WithObject("RefreshCadence", m_refreshCadence.Jsonize());
-
+  if (m_refreshCadenceHasBeenSet) {
+    payload.WithObject("RefreshCadence", m_refreshCadence.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BCMDataExports
-} // namespace Aws
+}  // namespace Model
+}  // namespace BCMDataExports
+}  // namespace Aws

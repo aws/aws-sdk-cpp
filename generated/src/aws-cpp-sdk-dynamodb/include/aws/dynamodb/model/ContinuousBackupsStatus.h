@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dynamodb/DynamoDB_EXPORTS.h>
 
-namespace Aws
-{
-namespace DynamoDB
-{
-namespace Model
-{
-  enum class ContinuousBackupsStatus
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
+enum class ContinuousBackupsStatus { NOT_SET, ENABLED, DISABLED };
 
-namespace ContinuousBackupsStatusMapper
-{
+namespace ContinuousBackupsStatusMapper {
 AWS_DYNAMODB_API ContinuousBackupsStatus GetContinuousBackupsStatusForName(const Aws::String& name);
 
 AWS_DYNAMODB_API Aws::String GetNameForContinuousBackupsStatus(ContinuousBackupsStatus value);
-} // namespace ContinuousBackupsStatusMapper
-} // namespace Model
-} // namespace DynamoDB
-} // namespace Aws
+}  // namespace ContinuousBackupsStatusMapper
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws

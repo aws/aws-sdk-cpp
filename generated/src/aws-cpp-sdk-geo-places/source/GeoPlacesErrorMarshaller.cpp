@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::GeoPlaces;
 
-AWSError<CoreErrors> GeoPlacesErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> GeoPlacesErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = GeoPlacesErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

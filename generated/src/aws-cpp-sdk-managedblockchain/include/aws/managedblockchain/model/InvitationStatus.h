@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/managedblockchain/ManagedBlockchain_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/managedblockchain/ManagedBlockchain_EXPORTS.h>
 
-namespace Aws
-{
-namespace ManagedBlockchain
-{
-namespace Model
-{
-  enum class InvitationStatus
-  {
-    NOT_SET,
-    PENDING,
-    ACCEPTED,
-    ACCEPTING,
-    REJECTED,
-    EXPIRED
-  };
+namespace Aws {
+namespace ManagedBlockchain {
+namespace Model {
+enum class InvitationStatus { NOT_SET, PENDING, ACCEPTED, ACCEPTING, REJECTED, EXPIRED };
 
-namespace InvitationStatusMapper
-{
+namespace InvitationStatusMapper {
 AWS_MANAGEDBLOCKCHAIN_API InvitationStatus GetInvitationStatusForName(const Aws::String& name);
 
 AWS_MANAGEDBLOCKCHAIN_API Aws::String GetNameForInvitationStatus(InvitationStatus value);
-} // namespace InvitationStatusMapper
-} // namespace Model
-} // namespace ManagedBlockchain
-} // namespace Aws
+}  // namespace InvitationStatusMapper
+}  // namespace Model
+}  // namespace ManagedBlockchain
+}  // namespace Aws

@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Athena
-{
-namespace Model
-{
+namespace Aws {
+namespace Athena {
+namespace Model {
 
-Datum::Datum(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Datum::Datum(JsonView jsonValue) { *this = jsonValue; }
 
-Datum& Datum::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("VarCharValue"))
-  {
+Datum& Datum::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("VarCharValue")) {
     m_varCharValue = jsonValue.GetString("VarCharValue");
     m_varCharValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Datum::Jsonize() const
-{
+JsonValue Datum::Jsonize() const {
   JsonValue payload;
 
-  if(m_varCharValueHasBeenSet)
-  {
-   payload.WithString("VarCharValue", m_varCharValue);
-
+  if (m_varCharValueHasBeenSet) {
+    payload.WithString("VarCharValue", m_varCharValue);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Athena
-} // namespace Aws
+}  // namespace Model
+}  // namespace Athena
+}  // namespace Aws

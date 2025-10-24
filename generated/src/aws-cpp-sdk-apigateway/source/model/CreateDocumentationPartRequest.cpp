@@ -12,25 +12,16 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateDocumentationPartRequest::SerializePayload() const
-{
+Aws::String CreateDocumentationPartRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_locationHasBeenSet)
-  {
-   payload.WithObject("location", m_location.Jsonize());
-
+  if (m_locationHasBeenSet) {
+    payload.WithObject("location", m_location.Jsonize());
   }
 
-  if(m_propertiesHasBeenSet)
-  {
-   payload.WithString("properties", m_properties);
-
+  if (m_propertiesHasBeenSet) {
+    payload.WithString("properties", m_properties);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

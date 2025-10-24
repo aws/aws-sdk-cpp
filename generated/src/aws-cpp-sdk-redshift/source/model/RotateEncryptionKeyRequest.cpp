@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/RotateEncryptionKeyRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/RotateEncryptionKeyRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String RotateEncryptionKeyRequest::SerializePayload() const
-{
+Aws::String RotateEncryptionKeyRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=RotateEncryptionKey&";
-  if(m_clusterIdentifierHasBeenSet)
-  {
+  if (m_clusterIdentifierHasBeenSet) {
     ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String RotateEncryptionKeyRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  RotateEncryptionKeyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void RotateEncryptionKeyRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

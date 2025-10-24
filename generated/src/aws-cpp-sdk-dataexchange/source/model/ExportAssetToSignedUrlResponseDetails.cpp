@@ -3,92 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dataexchange/model/ExportAssetToSignedUrlResponseDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dataexchange/model/ExportAssetToSignedUrlResponseDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DataExchange
-{
-namespace Model
-{
+namespace Aws {
+namespace DataExchange {
+namespace Model {
 
-ExportAssetToSignedUrlResponseDetails::ExportAssetToSignedUrlResponseDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExportAssetToSignedUrlResponseDetails::ExportAssetToSignedUrlResponseDetails(JsonView jsonValue) { *this = jsonValue; }
 
-ExportAssetToSignedUrlResponseDetails& ExportAssetToSignedUrlResponseDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AssetId"))
-  {
+ExportAssetToSignedUrlResponseDetails& ExportAssetToSignedUrlResponseDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AssetId")) {
     m_assetId = jsonValue.GetString("AssetId");
     m_assetIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DataSetId"))
-  {
+  if (jsonValue.ValueExists("DataSetId")) {
     m_dataSetId = jsonValue.GetString("DataSetId");
     m_dataSetIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RevisionId"))
-  {
+  if (jsonValue.ValueExists("RevisionId")) {
     m_revisionId = jsonValue.GetString("RevisionId");
     m_revisionIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SignedUrl"))
-  {
+  if (jsonValue.ValueExists("SignedUrl")) {
     m_signedUrl = jsonValue.GetString("SignedUrl");
     m_signedUrlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SignedUrlExpiresAt"))
-  {
+  if (jsonValue.ValueExists("SignedUrlExpiresAt")) {
     m_signedUrlExpiresAt = jsonValue.GetString("SignedUrlExpiresAt");
     m_signedUrlExpiresAtHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExportAssetToSignedUrlResponseDetails::Jsonize() const
-{
+JsonValue ExportAssetToSignedUrlResponseDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_assetIdHasBeenSet)
-  {
-   payload.WithString("AssetId", m_assetId);
-
+  if (m_assetIdHasBeenSet) {
+    payload.WithString("AssetId", m_assetId);
   }
 
-  if(m_dataSetIdHasBeenSet)
-  {
-   payload.WithString("DataSetId", m_dataSetId);
-
+  if (m_dataSetIdHasBeenSet) {
+    payload.WithString("DataSetId", m_dataSetId);
   }
 
-  if(m_revisionIdHasBeenSet)
-  {
-   payload.WithString("RevisionId", m_revisionId);
-
+  if (m_revisionIdHasBeenSet) {
+    payload.WithString("RevisionId", m_revisionId);
   }
 
-  if(m_signedUrlHasBeenSet)
-  {
-   payload.WithString("SignedUrl", m_signedUrl);
-
+  if (m_signedUrlHasBeenSet) {
+    payload.WithString("SignedUrl", m_signedUrl);
   }
 
-  if(m_signedUrlExpiresAtHasBeenSet)
-  {
-   payload.WithString("SignedUrlExpiresAt", m_signedUrlExpiresAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_signedUrlExpiresAtHasBeenSet) {
+    payload.WithString("SignedUrlExpiresAt", m_signedUrlExpiresAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DataExchange
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataExchange
+}  // namespace Aws

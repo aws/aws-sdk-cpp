@@ -12,19 +12,12 @@ using namespace Aws::ControlCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetControlRequest::SerializePayload() const
-{
+Aws::String GetControlRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_controlArnHasBeenSet)
-  {
-   payload.WithString("ControlArn", m_controlArn);
-
+  if (m_controlArnHasBeenSet) {
+    payload.WithString("ControlArn", m_controlArn);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

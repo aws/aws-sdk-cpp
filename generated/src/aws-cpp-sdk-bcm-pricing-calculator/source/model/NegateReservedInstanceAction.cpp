@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BCMPricingCalculator
-{
-namespace Model
-{
+namespace Aws {
+namespace BCMPricingCalculator {
+namespace Model {
 
-NegateReservedInstanceAction::NegateReservedInstanceAction(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NegateReservedInstanceAction::NegateReservedInstanceAction(JsonView jsonValue) { *this = jsonValue; }
 
-NegateReservedInstanceAction& NegateReservedInstanceAction::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("reservedInstancesId"))
-  {
+NegateReservedInstanceAction& NegateReservedInstanceAction::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("reservedInstancesId")) {
     m_reservedInstancesId = jsonValue.GetString("reservedInstancesId");
     m_reservedInstancesIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NegateReservedInstanceAction::Jsonize() const
-{
+JsonValue NegateReservedInstanceAction::Jsonize() const {
   JsonValue payload;
 
-  if(m_reservedInstancesIdHasBeenSet)
-  {
-   payload.WithString("reservedInstancesId", m_reservedInstancesId);
-
+  if (m_reservedInstancesIdHasBeenSet) {
+    payload.WithString("reservedInstancesId", m_reservedInstancesId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BCMPricingCalculator
-} // namespace Aws
+}  // namespace Model
+}  // namespace BCMPricingCalculator
+}  // namespace Aws

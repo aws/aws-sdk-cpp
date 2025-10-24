@@ -4,10 +4,10 @@
  */
 
 #include <aws/billingconductor/model/ListBillingGroupCostReportsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,37 +17,31 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListBillingGroupCostReportsResult::ListBillingGroupCostReportsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListBillingGroupCostReportsResult::ListBillingGroupCostReportsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-ListBillingGroupCostReportsResult& ListBillingGroupCostReportsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListBillingGroupCostReportsResult& ListBillingGroupCostReportsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("BillingGroupCostReports"))
-  {
+  if (jsonValue.ValueExists("BillingGroupCostReports")) {
     Aws::Utils::Array<JsonView> billingGroupCostReportsJsonList = jsonValue.GetArray("BillingGroupCostReports");
-    for(unsigned billingGroupCostReportsIndex = 0; billingGroupCostReportsIndex < billingGroupCostReportsJsonList.GetLength(); ++billingGroupCostReportsIndex)
-    {
+    for (unsigned billingGroupCostReportsIndex = 0; billingGroupCostReportsIndex < billingGroupCostReportsJsonList.GetLength();
+         ++billingGroupCostReportsIndex) {
       m_billingGroupCostReports.push_back(billingGroupCostReportsJsonList[billingGroupCostReportsIndex].AsObject());
     }
     m_billingGroupCostReportsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

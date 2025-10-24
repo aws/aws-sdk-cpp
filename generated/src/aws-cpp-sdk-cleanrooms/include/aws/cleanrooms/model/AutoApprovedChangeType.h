@@ -7,24 +7,16 @@
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
-  enum class AutoApprovedChangeType
-  {
-    NOT_SET,
-    ADD_MEMBER
-  };
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
+enum class AutoApprovedChangeType { NOT_SET, ADD_MEMBER };
 
-namespace AutoApprovedChangeTypeMapper
-{
+namespace AutoApprovedChangeTypeMapper {
 AWS_CLEANROOMS_API AutoApprovedChangeType GetAutoApprovedChangeTypeForName(const Aws::String& name);
 
 AWS_CLEANROOMS_API Aws::String GetNameForAutoApprovedChangeType(AutoApprovedChangeType value);
-} // namespace AutoApprovedChangeTypeMapper
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace AutoApprovedChangeTypeMapper
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

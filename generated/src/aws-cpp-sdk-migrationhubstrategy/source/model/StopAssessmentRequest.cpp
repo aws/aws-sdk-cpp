@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/migrationhubstrategy/model/StopAssessmentRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/migrationhubstrategy/model/StopAssessmentRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::MigrationHubStrategyRecommendations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StopAssessmentRequest::SerializePayload() const
-{
+Aws::String StopAssessmentRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_assessmentIdHasBeenSet)
-  {
-   payload.WithString("assessmentId", m_assessmentId);
-
+  if (m_assessmentIdHasBeenSet) {
+    payload.WithString("assessmentId", m_assessmentId);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

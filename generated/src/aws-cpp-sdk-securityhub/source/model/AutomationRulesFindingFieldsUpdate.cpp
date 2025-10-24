@@ -3,81 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AutomationRulesFindingFieldsUpdate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AutomationRulesFindingFieldsUpdate.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AutomationRulesFindingFieldsUpdate::AutomationRulesFindingFieldsUpdate(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AutomationRulesFindingFieldsUpdate::AutomationRulesFindingFieldsUpdate(JsonView jsonValue) { *this = jsonValue; }
 
-AutomationRulesFindingFieldsUpdate& AutomationRulesFindingFieldsUpdate::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Note"))
-  {
+AutomationRulesFindingFieldsUpdate& AutomationRulesFindingFieldsUpdate::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Note")) {
     m_note = jsonValue.GetObject("Note");
     m_noteHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Severity"))
-  {
+  if (jsonValue.ValueExists("Severity")) {
     m_severity = jsonValue.GetObject("Severity");
     m_severityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VerificationState"))
-  {
+  if (jsonValue.ValueExists("VerificationState")) {
     m_verificationState = VerificationStateMapper::GetVerificationStateForName(jsonValue.GetString("VerificationState"));
     m_verificationStateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Confidence"))
-  {
+  if (jsonValue.ValueExists("Confidence")) {
     m_confidence = jsonValue.GetInteger("Confidence");
     m_confidenceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Criticality"))
-  {
+  if (jsonValue.ValueExists("Criticality")) {
     m_criticality = jsonValue.GetInteger("Criticality");
     m_criticalityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Types"))
-  {
+  if (jsonValue.ValueExists("Types")) {
     Aws::Utils::Array<JsonView> typesJsonList = jsonValue.GetArray("Types");
-    for(unsigned typesIndex = 0; typesIndex < typesJsonList.GetLength(); ++typesIndex)
-    {
+    for (unsigned typesIndex = 0; typesIndex < typesJsonList.GetLength(); ++typesIndex) {
       m_types.push_back(typesJsonList[typesIndex].AsString());
     }
     m_typesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UserDefinedFields"))
-  {
+  if (jsonValue.ValueExists("UserDefinedFields")) {
     Aws::Map<Aws::String, JsonView> userDefinedFieldsJsonMap = jsonValue.GetObject("UserDefinedFields").GetAllObjects();
-    for(auto& userDefinedFieldsItem : userDefinedFieldsJsonMap)
-    {
+    for (auto& userDefinedFieldsItem : userDefinedFieldsJsonMap) {
       m_userDefinedFields[userDefinedFieldsItem.first] = userDefinedFieldsItem.second.AsString();
     }
     m_userDefinedFieldsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Workflow"))
-  {
+  if (jsonValue.ValueExists("Workflow")) {
     m_workflow = jsonValue.GetObject("Workflow");
     m_workflowHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RelatedFindings"))
-  {
+  if (jsonValue.ValueExists("RelatedFindings")) {
     Aws::Utils::Array<JsonView> relatedFindingsJsonList = jsonValue.GetArray("RelatedFindings");
-    for(unsigned relatedFindingsIndex = 0; relatedFindingsIndex < relatedFindingsJsonList.GetLength(); ++relatedFindingsIndex)
-    {
+    for (unsigned relatedFindingsIndex = 0; relatedFindingsIndex < relatedFindingsJsonList.GetLength(); ++relatedFindingsIndex) {
       m_relatedFindings.push_back(relatedFindingsJsonList[relatedFindingsIndex].AsObject());
     }
     m_relatedFindingsHasBeenSet = true;
@@ -85,81 +66,60 @@ AutomationRulesFindingFieldsUpdate& AutomationRulesFindingFieldsUpdate::operator
   return *this;
 }
 
-JsonValue AutomationRulesFindingFieldsUpdate::Jsonize() const
-{
+JsonValue AutomationRulesFindingFieldsUpdate::Jsonize() const {
   JsonValue payload;
 
-  if(m_noteHasBeenSet)
-  {
-   payload.WithObject("Note", m_note.Jsonize());
-
+  if (m_noteHasBeenSet) {
+    payload.WithObject("Note", m_note.Jsonize());
   }
 
-  if(m_severityHasBeenSet)
-  {
-   payload.WithObject("Severity", m_severity.Jsonize());
-
+  if (m_severityHasBeenSet) {
+    payload.WithObject("Severity", m_severity.Jsonize());
   }
 
-  if(m_verificationStateHasBeenSet)
-  {
-   payload.WithString("VerificationState", VerificationStateMapper::GetNameForVerificationState(m_verificationState));
+  if (m_verificationStateHasBeenSet) {
+    payload.WithString("VerificationState", VerificationStateMapper::GetNameForVerificationState(m_verificationState));
   }
 
-  if(m_confidenceHasBeenSet)
-  {
-   payload.WithInteger("Confidence", m_confidence);
-
+  if (m_confidenceHasBeenSet) {
+    payload.WithInteger("Confidence", m_confidence);
   }
 
-  if(m_criticalityHasBeenSet)
-  {
-   payload.WithInteger("Criticality", m_criticality);
-
+  if (m_criticalityHasBeenSet) {
+    payload.WithInteger("Criticality", m_criticality);
   }
 
-  if(m_typesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> typesJsonList(m_types.size());
-   for(unsigned typesIndex = 0; typesIndex < typesJsonList.GetLength(); ++typesIndex)
-   {
-     typesJsonList[typesIndex].AsString(m_types[typesIndex]);
-   }
-   payload.WithArray("Types", std::move(typesJsonList));
-
+  if (m_typesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> typesJsonList(m_types.size());
+    for (unsigned typesIndex = 0; typesIndex < typesJsonList.GetLength(); ++typesIndex) {
+      typesJsonList[typesIndex].AsString(m_types[typesIndex]);
+    }
+    payload.WithArray("Types", std::move(typesJsonList));
   }
 
-  if(m_userDefinedFieldsHasBeenSet)
-  {
-   JsonValue userDefinedFieldsJsonMap;
-   for(auto& userDefinedFieldsItem : m_userDefinedFields)
-   {
-     userDefinedFieldsJsonMap.WithString(userDefinedFieldsItem.first, userDefinedFieldsItem.second);
-   }
-   payload.WithObject("UserDefinedFields", std::move(userDefinedFieldsJsonMap));
-
+  if (m_userDefinedFieldsHasBeenSet) {
+    JsonValue userDefinedFieldsJsonMap;
+    for (auto& userDefinedFieldsItem : m_userDefinedFields) {
+      userDefinedFieldsJsonMap.WithString(userDefinedFieldsItem.first, userDefinedFieldsItem.second);
+    }
+    payload.WithObject("UserDefinedFields", std::move(userDefinedFieldsJsonMap));
   }
 
-  if(m_workflowHasBeenSet)
-  {
-   payload.WithObject("Workflow", m_workflow.Jsonize());
-
+  if (m_workflowHasBeenSet) {
+    payload.WithObject("Workflow", m_workflow.Jsonize());
   }
 
-  if(m_relatedFindingsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> relatedFindingsJsonList(m_relatedFindings.size());
-   for(unsigned relatedFindingsIndex = 0; relatedFindingsIndex < relatedFindingsJsonList.GetLength(); ++relatedFindingsIndex)
-   {
-     relatedFindingsJsonList[relatedFindingsIndex].AsObject(m_relatedFindings[relatedFindingsIndex].Jsonize());
-   }
-   payload.WithArray("RelatedFindings", std::move(relatedFindingsJsonList));
-
+  if (m_relatedFindingsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> relatedFindingsJsonList(m_relatedFindings.size());
+    for (unsigned relatedFindingsIndex = 0; relatedFindingsIndex < relatedFindingsJsonList.GetLength(); ++relatedFindingsIndex) {
+      relatedFindingsJsonList[relatedFindingsIndex].AsObject(m_relatedFindings[relatedFindingsIndex].Jsonize());
+    }
+    payload.WithArray("RelatedFindings", std::move(relatedFindingsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

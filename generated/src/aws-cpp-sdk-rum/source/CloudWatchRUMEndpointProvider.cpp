@@ -5,12 +5,8 @@
 
 #include <aws/rum/CloudWatchRUMEndpointProvider.h>
 
-namespace Aws
-{
-namespace CloudWatchRUM
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace CloudWatchRUM
-} // namespace Aws
+namespace Aws {
+namespace CloudWatchRUM {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace CloudWatchRUM
+}  // namespace Aws

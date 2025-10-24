@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/snow-device-management/SnowDeviceManagementRequest.h>
 
-namespace Aws
-{
-namespace SnowDeviceManagement
-{
-} // namespace SnowDeviceManagement
-} // namespace Aws
+namespace Aws {
+namespace SnowDeviceManagement {}  // namespace SnowDeviceManagement
+}  // namespace Aws

@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/eks/model/DescribeAddonVersionsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/eks/model/DescribeAddonVersionsResult.h>
 
 #include <utility>
 
@@ -17,37 +17,28 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAddonVersionsResult::DescribeAddonVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+DescribeAddonVersionsResult::DescribeAddonVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-DescribeAddonVersionsResult& DescribeAddonVersionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeAddonVersionsResult& DescribeAddonVersionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("addons"))
-  {
+  if (jsonValue.ValueExists("addons")) {
     Aws::Utils::Array<JsonView> addonsJsonList = jsonValue.GetArray("addons");
-    for(unsigned addonsIndex = 0; addonsIndex < addonsJsonList.GetLength(); ++addonsIndex)
-    {
+    for (unsigned addonsIndex = 0; addonsIndex < addonsJsonList.GetLength(); ++addonsIndex) {
       m_addons.push_back(addonsJsonList[addonsIndex].AsObject());
     }
     m_addonsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

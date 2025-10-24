@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/proton/Proton_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/proton/Proton_EXPORTS.h>
 
-namespace Aws
-{
-namespace Proton
-{
-namespace Model
-{
-  enum class RepositoryProvider
-  {
-    NOT_SET,
-    GITHUB,
-    GITHUB_ENTERPRISE,
-    BITBUCKET
-  };
+namespace Aws {
+namespace Proton {
+namespace Model {
+enum class RepositoryProvider { NOT_SET, GITHUB, GITHUB_ENTERPRISE, BITBUCKET };
 
-namespace RepositoryProviderMapper
-{
+namespace RepositoryProviderMapper {
 AWS_PROTON_API RepositoryProvider GetRepositoryProviderForName(const Aws::String& name);
 
 AWS_PROTON_API Aws::String GetNameForRepositoryProvider(RepositoryProvider value);
-} // namespace RepositoryProviderMapper
-} // namespace Model
-} // namespace Proton
-} // namespace Aws
+}  // namespace RepositoryProviderMapper
+}  // namespace Model
+}  // namespace Proton
+}  // namespace Aws

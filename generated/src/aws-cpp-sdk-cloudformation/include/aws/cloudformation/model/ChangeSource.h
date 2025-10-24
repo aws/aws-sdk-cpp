@@ -7,28 +7,16 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CloudFormation
-{
-namespace Model
-{
-  enum class ChangeSource
-  {
-    NOT_SET,
-    ResourceReference,
-    ParameterReference,
-    ResourceAttribute,
-    DirectModification,
-    Automatic
-  };
+namespace Aws {
+namespace CloudFormation {
+namespace Model {
+enum class ChangeSource { NOT_SET, ResourceReference, ParameterReference, ResourceAttribute, DirectModification, Automatic };
 
-namespace ChangeSourceMapper
-{
+namespace ChangeSourceMapper {
 AWS_CLOUDFORMATION_API ChangeSource GetChangeSourceForName(const Aws::String& name);
 
 AWS_CLOUDFORMATION_API Aws::String GetNameForChangeSource(ChangeSource value);
-} // namespace ChangeSourceMapper
-} // namespace Model
-} // namespace CloudFormation
-} // namespace Aws
+}  // namespace ChangeSourceMapper
+}  // namespace Model
+}  // namespace CloudFormation
+}  // namespace Aws

@@ -3,42 +3,35 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/CreateRouteServerEndpointRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/CreateRouteServerEndpointRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateRouteServerEndpointRequest::SerializePayload() const
-{
+Aws::String CreateRouteServerEndpointRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateRouteServerEndpoint&";
-  if(m_routeServerIdHasBeenSet)
-  {
+  if (m_routeServerIdHasBeenSet) {
     ss << "RouteServerId=" << StringUtils::URLEncode(m_routeServerId.c_str()) << "&";
   }
 
-  if(m_subnetIdHasBeenSet)
-  {
+  if (m_subnetIdHasBeenSet) {
     ss << "SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
+  if (m_clientTokenHasBeenSet) {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_tagSpecificationsHasBeenSet)
-  {
+  if (m_tagSpecificationsHasBeenSet) {
     unsigned tagSpecificationsCount = 1;
-    for(auto& item : m_tagSpecifications)
-    {
+    for (auto& item : m_tagSpecifications) {
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
@@ -48,8 +41,4 @@ Aws::String CreateRouteServerEndpointRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CreateRouteServerEndpointRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateRouteServerEndpointRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

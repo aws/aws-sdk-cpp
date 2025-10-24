@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKVoice
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKVoice {
+namespace Model {
 
-SpeakerSearchResult::SpeakerSearchResult(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SpeakerSearchResult::SpeakerSearchResult(JsonView jsonValue) { *this = jsonValue; }
 
-SpeakerSearchResult& SpeakerSearchResult::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ConfidenceScore"))
-  {
+SpeakerSearchResult& SpeakerSearchResult::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ConfidenceScore")) {
     m_confidenceScore = jsonValue.GetDouble("ConfidenceScore");
     m_confidenceScoreHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VoiceProfileId"))
-  {
+  if (jsonValue.ValueExists("VoiceProfileId")) {
     m_voiceProfileId = jsonValue.GetString("VoiceProfileId");
     m_voiceProfileIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SpeakerSearchResult::Jsonize() const
-{
+JsonValue SpeakerSearchResult::Jsonize() const {
   JsonValue payload;
 
-  if(m_confidenceScoreHasBeenSet)
-  {
-   payload.WithDouble("ConfidenceScore", m_confidenceScore);
-
+  if (m_confidenceScoreHasBeenSet) {
+    payload.WithDouble("ConfidenceScore", m_confidenceScore);
   }
 
-  if(m_voiceProfileIdHasBeenSet)
-  {
-   payload.WithString("VoiceProfileId", m_voiceProfileId);
-
+  if (m_voiceProfileIdHasBeenSet) {
+    payload.WithString("VoiceProfileId", m_voiceProfileId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKVoice
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKVoice
+}  // namespace Aws

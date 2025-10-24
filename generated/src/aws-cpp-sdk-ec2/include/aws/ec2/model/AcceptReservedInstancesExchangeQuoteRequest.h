@@ -4,98 +4,119 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/ec2/EC2Request.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/EC2Request.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/TargetConfigurationRequest.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
+/**
+ * <p>Contains the parameters for accepting the quote.</p><p><h3>See Also:</h3>
+ * <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptReservedInstancesExchangeQuoteRequest">AWS
+ * API Reference</a></p>
+ */
+class AcceptReservedInstancesExchangeQuoteRequest : public EC2Request {
+ public:
+  AWS_EC2_API AcceptReservedInstancesExchangeQuoteRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "AcceptReservedInstancesExchangeQuote"; }
+
+  AWS_EC2_API Aws::String SerializePayload() const override;
+
+ protected:
+  AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
+
+ public:
+  ///@{
   /**
-   * <p>Contains the parameters for accepting the quote.</p><p><h3>See Also:</h3>  
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptReservedInstancesExchangeQuoteRequest">AWS
-   * API Reference</a></p>
+   * <p>Checks whether you have the required permissions for the action, without
+   * actually making the request, and provides an error response. If you have the
+   * required permissions, the error response is <code>DryRunOperation</code>.
+   * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
    */
-  class AcceptReservedInstancesExchangeQuoteRequest : public EC2Request
-  {
-  public:
-    AWS_EC2_API AcceptReservedInstancesExchangeQuoteRequest() = default;
+  inline bool GetDryRun() const { return m_dryRun; }
+  inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+  inline void SetDryRun(bool value) {
+    m_dryRunHasBeenSet = true;
+    m_dryRun = value;
+  }
+  inline AcceptReservedInstancesExchangeQuoteRequest& WithDryRun(bool value) {
+    SetDryRun(value);
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "AcceptReservedInstancesExchangeQuote"; }
+  ///@{
+  /**
+   * <p>The IDs of the Convertible Reserved Instances to exchange for another
+   * Convertible Reserved Instance of the same or higher value.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetReservedInstanceIds() const { return m_reservedInstanceIds; }
+  inline bool ReservedInstanceIdsHasBeenSet() const { return m_reservedInstanceIdsHasBeenSet; }
+  template <typename ReservedInstanceIdsT = Aws::Vector<Aws::String>>
+  void SetReservedInstanceIds(ReservedInstanceIdsT&& value) {
+    m_reservedInstanceIdsHasBeenSet = true;
+    m_reservedInstanceIds = std::forward<ReservedInstanceIdsT>(value);
+  }
+  template <typename ReservedInstanceIdsT = Aws::Vector<Aws::String>>
+  AcceptReservedInstancesExchangeQuoteRequest& WithReservedInstanceIds(ReservedInstanceIdsT&& value) {
+    SetReservedInstanceIds(std::forward<ReservedInstanceIdsT>(value));
+    return *this;
+  }
+  template <typename ReservedInstanceIdsT = Aws::String>
+  AcceptReservedInstancesExchangeQuoteRequest& AddReservedInstanceIds(ReservedInstanceIdsT&& value) {
+    m_reservedInstanceIdsHasBeenSet = true;
+    m_reservedInstanceIds.emplace_back(std::forward<ReservedInstanceIdsT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_EC2_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>The configuration of the target Convertible Reserved Instance to exchange for
+   * your current Convertible Reserved Instances.</p>
+   */
+  inline const Aws::Vector<TargetConfigurationRequest>& GetTargetConfigurations() const { return m_targetConfigurations; }
+  inline bool TargetConfigurationsHasBeenSet() const { return m_targetConfigurationsHasBeenSet; }
+  template <typename TargetConfigurationsT = Aws::Vector<TargetConfigurationRequest>>
+  void SetTargetConfigurations(TargetConfigurationsT&& value) {
+    m_targetConfigurationsHasBeenSet = true;
+    m_targetConfigurations = std::forward<TargetConfigurationsT>(value);
+  }
+  template <typename TargetConfigurationsT = Aws::Vector<TargetConfigurationRequest>>
+  AcceptReservedInstancesExchangeQuoteRequest& WithTargetConfigurations(TargetConfigurationsT&& value) {
+    SetTargetConfigurations(std::forward<TargetConfigurationsT>(value));
+    return *this;
+  }
+  template <typename TargetConfigurationsT = TargetConfigurationRequest>
+  AcceptReservedInstancesExchangeQuoteRequest& AddTargetConfigurations(TargetConfigurationsT&& value) {
+    m_targetConfigurationsHasBeenSet = true;
+    m_targetConfigurations.emplace_back(std::forward<TargetConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  bool m_dryRun{false};
+  bool m_dryRunHasBeenSet = false;
 
-  protected:
-    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+  Aws::Vector<Aws::String> m_reservedInstanceIds;
+  bool m_reservedInstanceIdsHasBeenSet = false;
 
-  public:
+  Aws::Vector<TargetConfigurationRequest> m_targetConfigurations;
+  bool m_targetConfigurationsHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const { return m_dryRun; }
-    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-    inline AcceptReservedInstancesExchangeQuoteRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The IDs of the Convertible Reserved Instances to exchange for another
-     * Convertible Reserved Instance of the same or higher value.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetReservedInstanceIds() const { return m_reservedInstanceIds; }
-    inline bool ReservedInstanceIdsHasBeenSet() const { return m_reservedInstanceIdsHasBeenSet; }
-    template<typename ReservedInstanceIdsT = Aws::Vector<Aws::String>>
-    void SetReservedInstanceIds(ReservedInstanceIdsT&& value) { m_reservedInstanceIdsHasBeenSet = true; m_reservedInstanceIds = std::forward<ReservedInstanceIdsT>(value); }
-    template<typename ReservedInstanceIdsT = Aws::Vector<Aws::String>>
-    AcceptReservedInstancesExchangeQuoteRequest& WithReservedInstanceIds(ReservedInstanceIdsT&& value) { SetReservedInstanceIds(std::forward<ReservedInstanceIdsT>(value)); return *this;}
-    template<typename ReservedInstanceIdsT = Aws::String>
-    AcceptReservedInstancesExchangeQuoteRequest& AddReservedInstanceIds(ReservedInstanceIdsT&& value) { m_reservedInstanceIdsHasBeenSet = true; m_reservedInstanceIds.emplace_back(std::forward<ReservedInstanceIdsT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The configuration of the target Convertible Reserved Instance to exchange for
-     * your current Convertible Reserved Instances.</p>
-     */
-    inline const Aws::Vector<TargetConfigurationRequest>& GetTargetConfigurations() const { return m_targetConfigurations; }
-    inline bool TargetConfigurationsHasBeenSet() const { return m_targetConfigurationsHasBeenSet; }
-    template<typename TargetConfigurationsT = Aws::Vector<TargetConfigurationRequest>>
-    void SetTargetConfigurations(TargetConfigurationsT&& value) { m_targetConfigurationsHasBeenSet = true; m_targetConfigurations = std::forward<TargetConfigurationsT>(value); }
-    template<typename TargetConfigurationsT = Aws::Vector<TargetConfigurationRequest>>
-    AcceptReservedInstancesExchangeQuoteRequest& WithTargetConfigurations(TargetConfigurationsT&& value) { SetTargetConfigurations(std::forward<TargetConfigurationsT>(value)); return *this;}
-    template<typename TargetConfigurationsT = TargetConfigurationRequest>
-    AcceptReservedInstancesExchangeQuoteRequest& AddTargetConfigurations(TargetConfigurationsT&& value) { m_targetConfigurationsHasBeenSet = true; m_targetConfigurations.emplace_back(std::forward<TargetConfigurationsT>(value)); return *this; }
-    ///@}
-  private:
-
-    bool m_dryRun{false};
-    bool m_dryRunHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_reservedInstanceIds;
-    bool m_reservedInstanceIdsHasBeenSet = false;
-
-    Aws::Vector<TargetConfigurationRequest> m_targetConfigurations;
-    bool m_targetConfigurationsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

@@ -12,44 +12,30 @@ using namespace Aws::BCMPricingCalculator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String BatchCreateWorkloadEstimateUsageRequest::SerializePayload() const
-{
+Aws::String BatchCreateWorkloadEstimateUsageRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_workloadEstimateIdHasBeenSet)
-  {
-   payload.WithString("workloadEstimateId", m_workloadEstimateId);
-
+  if (m_workloadEstimateIdHasBeenSet) {
+    payload.WithString("workloadEstimateId", m_workloadEstimateId);
   }
 
-  if(m_usageHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> usageJsonList(m_usage.size());
-   for(unsigned usageIndex = 0; usageIndex < usageJsonList.GetLength(); ++usageIndex)
-   {
-     usageJsonList[usageIndex].AsObject(m_usage[usageIndex].Jsonize());
-   }
-   payload.WithArray("usage", std::move(usageJsonList));
-
+  if (m_usageHasBeenSet) {
+    Aws::Utils::Array<JsonValue> usageJsonList(m_usage.size());
+    for (unsigned usageIndex = 0; usageIndex < usageJsonList.GetLength(); ++usageIndex) {
+      usageJsonList[usageIndex].AsObject(m_usage[usageIndex].Jsonize());
+    }
+    payload.WithArray("usage", std::move(usageJsonList));
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection BatchCreateWorkloadEstimateUsageRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection BatchCreateWorkloadEstimateUsageRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSBCMPricingCalculator.BatchCreateWorkloadEstimateUsage"));
   return headers;
-
 }
-
-
-
-

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/events/model/ConnectionOAuthClientResponseParameters.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/events/model/ConnectionOAuthClientResponseParameters.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudWatchEvents
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudWatchEvents {
+namespace Model {
 
-ConnectionOAuthClientResponseParameters::ConnectionOAuthClientResponseParameters(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConnectionOAuthClientResponseParameters::ConnectionOAuthClientResponseParameters(JsonView jsonValue) { *this = jsonValue; }
 
-ConnectionOAuthClientResponseParameters& ConnectionOAuthClientResponseParameters::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ClientID"))
-  {
+ConnectionOAuthClientResponseParameters& ConnectionOAuthClientResponseParameters::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ClientID")) {
     m_clientID = jsonValue.GetString("ClientID");
     m_clientIDHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ConnectionOAuthClientResponseParameters::Jsonize() const
-{
+JsonValue ConnectionOAuthClientResponseParameters::Jsonize() const {
   JsonValue payload;
 
-  if(m_clientIDHasBeenSet)
-  {
-   payload.WithString("ClientID", m_clientID);
-
+  if (m_clientIDHasBeenSet) {
+    payload.WithString("ClientID", m_clientID);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudWatchEvents
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudWatchEvents
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/shield/Shield_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/shield/Shield_EXPORTS.h>
 
-namespace Aws
-{
-namespace Shield
-{
-namespace Model
-{
-  enum class AutoRenew
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace Shield {
+namespace Model {
+enum class AutoRenew { NOT_SET, ENABLED, DISABLED };
 
-namespace AutoRenewMapper
-{
+namespace AutoRenewMapper {
 AWS_SHIELD_API AutoRenew GetAutoRenewForName(const Aws::String& name);
 
 AWS_SHIELD_API Aws::String GetNameForAutoRenew(AutoRenew value);
-} // namespace AutoRenewMapper
-} // namespace Model
-} // namespace Shield
-} // namespace Aws
+}  // namespace AutoRenewMapper
+}  // namespace Model
+}  // namespace Shield
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/taxsettings/TaxSettings_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/taxsettings/TaxSettings_EXPORTS.h>
 
-namespace Aws
-{
-namespace TaxSettings
-{
-namespace Model
-{
-  enum class TaxRegistrationNumberType
-  {
-    NOT_SET,
-    TaxRegistrationNumber,
-    LocalRegistrationNumber
-  };
+namespace Aws {
+namespace TaxSettings {
+namespace Model {
+enum class TaxRegistrationNumberType { NOT_SET, TaxRegistrationNumber, LocalRegistrationNumber };
 
-namespace TaxRegistrationNumberTypeMapper
-{
+namespace TaxRegistrationNumberTypeMapper {
 AWS_TAXSETTINGS_API TaxRegistrationNumberType GetTaxRegistrationNumberTypeForName(const Aws::String& name);
 
 AWS_TAXSETTINGS_API Aws::String GetNameForTaxRegistrationNumberType(TaxRegistrationNumberType value);
-} // namespace TaxRegistrationNumberTypeMapper
-} // namespace Model
-} // namespace TaxSettings
-} // namespace Aws
+}  // namespace TaxRegistrationNumberTypeMapper
+}  // namespace Model
+}  // namespace TaxSettings
+}  // namespace Aws

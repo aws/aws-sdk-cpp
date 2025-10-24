@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/ScatterPlotFieldWells.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/ScatterPlotFieldWells.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-ScatterPlotFieldWells::ScatterPlotFieldWells(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ScatterPlotFieldWells::ScatterPlotFieldWells(JsonView jsonValue) { *this = jsonValue; }
 
-ScatterPlotFieldWells& ScatterPlotFieldWells::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ScatterPlotCategoricallyAggregatedFieldWells"))
-  {
+ScatterPlotFieldWells& ScatterPlotFieldWells::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ScatterPlotCategoricallyAggregatedFieldWells")) {
     m_scatterPlotCategoricallyAggregatedFieldWells = jsonValue.GetObject("ScatterPlotCategoricallyAggregatedFieldWells");
     m_scatterPlotCategoricallyAggregatedFieldWellsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ScatterPlotUnaggregatedFieldWells"))
-  {
+  if (jsonValue.ValueExists("ScatterPlotUnaggregatedFieldWells")) {
     m_scatterPlotUnaggregatedFieldWells = jsonValue.GetObject("ScatterPlotUnaggregatedFieldWells");
     m_scatterPlotUnaggregatedFieldWellsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ScatterPlotFieldWells::Jsonize() const
-{
+JsonValue ScatterPlotFieldWells::Jsonize() const {
   JsonValue payload;
 
-  if(m_scatterPlotCategoricallyAggregatedFieldWellsHasBeenSet)
-  {
-   payload.WithObject("ScatterPlotCategoricallyAggregatedFieldWells", m_scatterPlotCategoricallyAggregatedFieldWells.Jsonize());
-
+  if (m_scatterPlotCategoricallyAggregatedFieldWellsHasBeenSet) {
+    payload.WithObject("ScatterPlotCategoricallyAggregatedFieldWells", m_scatterPlotCategoricallyAggregatedFieldWells.Jsonize());
   }
 
-  if(m_scatterPlotUnaggregatedFieldWellsHasBeenSet)
-  {
-   payload.WithObject("ScatterPlotUnaggregatedFieldWells", m_scatterPlotUnaggregatedFieldWells.Jsonize());
-
+  if (m_scatterPlotUnaggregatedFieldWellsHasBeenSet) {
+    payload.WithObject("ScatterPlotUnaggregatedFieldWells", m_scatterPlotUnaggregatedFieldWells.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

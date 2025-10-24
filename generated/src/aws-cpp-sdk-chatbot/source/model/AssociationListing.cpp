@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace chatbot
-{
-namespace Model
-{
+namespace Aws {
+namespace chatbot {
+namespace Model {
 
-AssociationListing::AssociationListing(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AssociationListing::AssociationListing(JsonView jsonValue) { *this = jsonValue; }
 
-AssociationListing& AssociationListing::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Resource"))
-  {
+AssociationListing& AssociationListing::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Resource")) {
     m_resource = jsonValue.GetString("Resource");
     m_resourceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AssociationListing::Jsonize() const
-{
+JsonValue AssociationListing::Jsonize() const {
   JsonValue payload;
 
-  if(m_resourceHasBeenSet)
-  {
-   payload.WithString("Resource", m_resource);
-
+  if (m_resourceHasBeenSet) {
+    payload.WithString("Resource", m_resource);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace chatbot
-} // namespace Aws
+}  // namespace Model
+}  // namespace chatbot
+}  // namespace Aws

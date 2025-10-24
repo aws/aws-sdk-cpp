@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/qldb/model/ExportJournalToS3Request.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/qldb/model/ExportJournalToS3Request.h>
 
 #include <utility>
 
@@ -12,40 +12,28 @@ using namespace Aws::QLDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ExportJournalToS3Request::SerializePayload() const
-{
+Aws::String ExportJournalToS3Request::SerializePayload() const {
   JsonValue payload;
 
-  if(m_inclusiveStartTimeHasBeenSet)
-  {
-   payload.WithDouble("InclusiveStartTime", m_inclusiveStartTime.SecondsWithMSPrecision());
+  if (m_inclusiveStartTimeHasBeenSet) {
+    payload.WithDouble("InclusiveStartTime", m_inclusiveStartTime.SecondsWithMSPrecision());
   }
 
-  if(m_exclusiveEndTimeHasBeenSet)
-  {
-   payload.WithDouble("ExclusiveEndTime", m_exclusiveEndTime.SecondsWithMSPrecision());
+  if (m_exclusiveEndTimeHasBeenSet) {
+    payload.WithDouble("ExclusiveEndTime", m_exclusiveEndTime.SecondsWithMSPrecision());
   }
 
-  if(m_s3ExportConfigurationHasBeenSet)
-  {
-   payload.WithObject("S3ExportConfiguration", m_s3ExportConfiguration.Jsonize());
-
+  if (m_s3ExportConfigurationHasBeenSet) {
+    payload.WithObject("S3ExportConfiguration", m_s3ExportConfiguration.Jsonize());
   }
 
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("RoleArn", m_roleArn);
-
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("RoleArn", m_roleArn);
   }
 
-  if(m_outputFormatHasBeenSet)
-  {
-   payload.WithString("OutputFormat", OutputFormatMapper::GetNameForOutputFormat(m_outputFormat));
+  if (m_outputFormatHasBeenSet) {
+    payload.WithString("OutputFormat", OutputFormatMapper::GetNameForOutputFormat(m_outputFormat));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

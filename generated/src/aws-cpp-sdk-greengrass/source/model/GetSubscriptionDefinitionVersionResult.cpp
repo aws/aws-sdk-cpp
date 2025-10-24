@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/greengrass/model/GetSubscriptionDefinitionVersionResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/greengrass/model/GetSubscriptionDefinitionVersionResult.h>
 
 #include <utility>
 
@@ -17,53 +17,44 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSubscriptionDefinitionVersionResult::GetSubscriptionDefinitionVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetSubscriptionDefinitionVersionResult::GetSubscriptionDefinitionVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-GetSubscriptionDefinitionVersionResult& GetSubscriptionDefinitionVersionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetSubscriptionDefinitionVersionResult& GetSubscriptionDefinitionVersionResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Arn"))
-  {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTimestamp"))
-  {
+  if (jsonValue.ValueExists("CreationTimestamp")) {
     m_creationTimestamp = jsonValue.GetString("CreationTimestamp");
     m_creationTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Definition"))
-  {
+  if (jsonValue.ValueExists("Definition")) {
     m_definition = jsonValue.GetObject("Definition");
     m_definitionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Id"))
-  {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Version"))
-  {
+  if (jsonValue.ValueExists("Version")) {
     m_version = jsonValue.GetString("Version");
     m_versionHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

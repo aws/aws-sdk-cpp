@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/lookoutequipment/LookoutEquipmentRequest.h>
 
-namespace Aws
-{
-namespace LookoutEquipment
-{
-} // namespace LookoutEquipment
-} // namespace Aws
+namespace Aws {
+namespace LookoutEquipment {}  // namespace LookoutEquipment
+}  // namespace Aws

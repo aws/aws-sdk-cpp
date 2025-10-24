@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/omics/Omics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/omics/Omics_EXPORTS.h>
 
-namespace Aws
-{
-namespace Omics
-{
-namespace Model
-{
-  enum class ReadSetFile
-  {
-    NOT_SET,
-    SOURCE1,
-    SOURCE2,
-    INDEX
-  };
+namespace Aws {
+namespace Omics {
+namespace Model {
+enum class ReadSetFile { NOT_SET, SOURCE1, SOURCE2, INDEX };
 
-namespace ReadSetFileMapper
-{
+namespace ReadSetFileMapper {
 AWS_OMICS_API ReadSetFile GetReadSetFileForName(const Aws::String& name);
 
 AWS_OMICS_API Aws::String GetNameForReadSetFile(ReadSetFile value);
-} // namespace ReadSetFileMapper
-} // namespace Model
-} // namespace Omics
-} // namespace Aws
+}  // namespace ReadSetFileMapper
+}  // namespace Model
+}  // namespace Omics
+}  // namespace Aws

@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::ServerlessApplicationRepository;
 
-AWSError<CoreErrors> ServerlessApplicationRepositoryErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> ServerlessApplicationRepositoryErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = ServerlessApplicationRepositoryErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

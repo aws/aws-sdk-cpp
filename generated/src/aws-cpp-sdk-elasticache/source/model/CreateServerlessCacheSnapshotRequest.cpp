@@ -3,43 +3,34 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/CreateServerlessCacheSnapshotRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticache/model/CreateServerlessCacheSnapshotRequest.h>
 
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateServerlessCacheSnapshotRequest::SerializePayload() const
-{
+Aws::String CreateServerlessCacheSnapshotRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateServerlessCacheSnapshot&";
-  if(m_serverlessCacheSnapshotNameHasBeenSet)
-  {
+  if (m_serverlessCacheSnapshotNameHasBeenSet) {
     ss << "ServerlessCacheSnapshotName=" << StringUtils::URLEncode(m_serverlessCacheSnapshotName.c_str()) << "&";
   }
 
-  if(m_serverlessCacheNameHasBeenSet)
-  {
+  if (m_serverlessCacheNameHasBeenSet) {
     ss << "ServerlessCacheName=" << StringUtils::URLEncode(m_serverlessCacheName.c_str()) << "&";
   }
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
+  if (m_kmsKeyIdHasBeenSet) {
     ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
 
-  if(m_tagsHasBeenSet)
-  {
-    if (m_tags.empty())
-    {
+  if (m_tagsHasBeenSet) {
+    if (m_tags.empty()) {
       ss << "Tags=&";
-    }
-    else
-    {
+    } else {
       unsigned tagsCount = 1;
-      for(auto& item : m_tags)
-      {
+      for (auto& item : m_tags) {
         item.OutputToStream(ss, "Tags.Tag.", tagsCount, "");
         tagsCount++;
       }
@@ -50,8 +41,4 @@ Aws::String CreateServerlessCacheSnapshotRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CreateServerlessCacheSnapshotRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateServerlessCacheSnapshotRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

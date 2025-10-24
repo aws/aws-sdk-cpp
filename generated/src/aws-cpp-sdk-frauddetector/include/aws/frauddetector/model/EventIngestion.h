@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/frauddetector/FraudDetector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/frauddetector/FraudDetector_EXPORTS.h>
 
-namespace Aws
-{
-namespace FraudDetector
-{
-namespace Model
-{
-  enum class EventIngestion
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace FraudDetector {
+namespace Model {
+enum class EventIngestion { NOT_SET, ENABLED, DISABLED };
 
-namespace EventIngestionMapper
-{
+namespace EventIngestionMapper {
 AWS_FRAUDDETECTOR_API EventIngestion GetEventIngestionForName(const Aws::String& name);
 
 AWS_FRAUDDETECTOR_API Aws::String GetNameForEventIngestion(EventIngestion value);
-} // namespace EventIngestionMapper
-} // namespace Model
-} // namespace FraudDetector
-} // namespace Aws
+}  // namespace EventIngestionMapper
+}  // namespace Model
+}  // namespace FraudDetector
+}  // namespace Aws

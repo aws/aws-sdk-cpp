@@ -3,93 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kendra/model/EntityDisplayData.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kendra/model/EntityDisplayData.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace kendra
-{
-namespace Model
-{
+namespace Aws {
+namespace kendra {
+namespace Model {
 
-EntityDisplayData::EntityDisplayData(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EntityDisplayData::EntityDisplayData(JsonView jsonValue) { *this = jsonValue; }
 
-EntityDisplayData& EntityDisplayData::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("UserName"))
-  {
+EntityDisplayData& EntityDisplayData::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("UserName")) {
     m_userName = jsonValue.GetString("UserName");
     m_userNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("GroupName"))
-  {
+  if (jsonValue.ValueExists("GroupName")) {
     m_groupName = jsonValue.GetString("GroupName");
     m_groupNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IdentifiedUserName"))
-  {
+  if (jsonValue.ValueExists("IdentifiedUserName")) {
     m_identifiedUserName = jsonValue.GetString("IdentifiedUserName");
     m_identifiedUserNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FirstName"))
-  {
+  if (jsonValue.ValueExists("FirstName")) {
     m_firstName = jsonValue.GetString("FirstName");
     m_firstNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastName"))
-  {
+  if (jsonValue.ValueExists("LastName")) {
     m_lastName = jsonValue.GetString("LastName");
     m_lastNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EntityDisplayData::Jsonize() const
-{
+JsonValue EntityDisplayData::Jsonize() const {
   JsonValue payload;
 
-  if(m_userNameHasBeenSet)
-  {
-   payload.WithString("UserName", m_userName);
-
+  if (m_userNameHasBeenSet) {
+    payload.WithString("UserName", m_userName);
   }
 
-  if(m_groupNameHasBeenSet)
-  {
-   payload.WithString("GroupName", m_groupName);
-
+  if (m_groupNameHasBeenSet) {
+    payload.WithString("GroupName", m_groupName);
   }
 
-  if(m_identifiedUserNameHasBeenSet)
-  {
-   payload.WithString("IdentifiedUserName", m_identifiedUserName);
-
+  if (m_identifiedUserNameHasBeenSet) {
+    payload.WithString("IdentifiedUserName", m_identifiedUserName);
   }
 
-  if(m_firstNameHasBeenSet)
-  {
-   payload.WithString("FirstName", m_firstName);
-
+  if (m_firstNameHasBeenSet) {
+    payload.WithString("FirstName", m_firstName);
   }
 
-  if(m_lastNameHasBeenSet)
-  {
-   payload.WithString("LastName", m_lastName);
-
+  if (m_lastNameHasBeenSet) {
+    payload.WithString("LastName", m_lastName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace kendra
-} // namespace Aws
+}  // namespace Model
+}  // namespace kendra
+}  // namespace Aws

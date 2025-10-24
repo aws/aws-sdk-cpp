@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker-geospatial/model/OutputResolutionResamplingInput.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker-geospatial/model/OutputResolutionResamplingInput.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMakerGeospatial
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMakerGeospatial {
+namespace Model {
 
-OutputResolutionResamplingInput::OutputResolutionResamplingInput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OutputResolutionResamplingInput::OutputResolutionResamplingInput(JsonView jsonValue) { *this = jsonValue; }
 
-OutputResolutionResamplingInput& OutputResolutionResamplingInput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("UserDefined"))
-  {
+OutputResolutionResamplingInput& OutputResolutionResamplingInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("UserDefined")) {
     m_userDefined = jsonValue.GetObject("UserDefined");
     m_userDefinedHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OutputResolutionResamplingInput::Jsonize() const
-{
+JsonValue OutputResolutionResamplingInput::Jsonize() const {
   JsonValue payload;
 
-  if(m_userDefinedHasBeenSet)
-  {
-   payload.WithObject("UserDefined", m_userDefined.Jsonize());
-
+  if (m_userDefinedHasBeenSet) {
+    payload.WithObject("UserDefined", m_userDefined.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMakerGeospatial
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMakerGeospatial
+}  // namespace Aws

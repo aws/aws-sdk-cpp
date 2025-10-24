@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/TimedMetadataInsertion.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconvert/model/TimedMetadataInsertion.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
 
-TimedMetadataInsertion::TimedMetadataInsertion(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TimedMetadataInsertion::TimedMetadataInsertion(JsonView jsonValue) { *this = jsonValue; }
 
-TimedMetadataInsertion& TimedMetadataInsertion::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("id3Insertions"))
-  {
+TimedMetadataInsertion& TimedMetadataInsertion::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id3Insertions")) {
     Aws::Utils::Array<JsonView> id3InsertionsJsonList = jsonValue.GetArray("id3Insertions");
-    for(unsigned id3InsertionsIndex = 0; id3InsertionsIndex < id3InsertionsJsonList.GetLength(); ++id3InsertionsIndex)
-    {
+    for (unsigned id3InsertionsIndex = 0; id3InsertionsIndex < id3InsertionsJsonList.GetLength(); ++id3InsertionsIndex) {
       m_id3Insertions.push_back(id3InsertionsJsonList[id3InsertionsIndex].AsObject());
     }
     m_id3InsertionsHasBeenSet = true;
@@ -37,24 +28,20 @@ TimedMetadataInsertion& TimedMetadataInsertion::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue TimedMetadataInsertion::Jsonize() const
-{
+JsonValue TimedMetadataInsertion::Jsonize() const {
   JsonValue payload;
 
-  if(m_id3InsertionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> id3InsertionsJsonList(m_id3Insertions.size());
-   for(unsigned id3InsertionsIndex = 0; id3InsertionsIndex < id3InsertionsJsonList.GetLength(); ++id3InsertionsIndex)
-   {
-     id3InsertionsJsonList[id3InsertionsIndex].AsObject(m_id3Insertions[id3InsertionsIndex].Jsonize());
-   }
-   payload.WithArray("id3Insertions", std::move(id3InsertionsJsonList));
-
+  if (m_id3InsertionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> id3InsertionsJsonList(m_id3Insertions.size());
+    for (unsigned id3InsertionsIndex = 0; id3InsertionsIndex < id3InsertionsJsonList.GetLength(); ++id3InsertionsIndex) {
+      id3InsertionsJsonList[id3InsertionsIndex].AsObject(m_id3Insertions[id3InsertionsIndex].Jsonize());
+    }
+    payload.WithArray("id3Insertions", std::move(id3InsertionsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

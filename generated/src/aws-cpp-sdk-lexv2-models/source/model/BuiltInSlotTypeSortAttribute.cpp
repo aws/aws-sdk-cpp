@@ -3,63 +3,51 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lexv2-models/model/BuiltInSlotTypeSortAttribute.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/lexv2-models/model/BuiltInSlotTypeSortAttribute.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
+namespace BuiltInSlotTypeSortAttributeMapper {
 
-namespace Aws
-{
-  namespace LexModelsV2
-  {
-    namespace Model
-    {
-      namespace BuiltInSlotTypeSortAttributeMapper
-      {
+static const int SlotTypeSignature_HASH = HashingUtils::HashString("SlotTypeSignature");
 
-        static const int SlotTypeSignature_HASH = HashingUtils::HashString("SlotTypeSignature");
+BuiltInSlotTypeSortAttribute GetBuiltInSlotTypeSortAttributeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == SlotTypeSignature_HASH) {
+    return BuiltInSlotTypeSortAttribute::SlotTypeSignature;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<BuiltInSlotTypeSortAttribute>(hashCode);
+  }
 
+  return BuiltInSlotTypeSortAttribute::NOT_SET;
+}
 
-        BuiltInSlotTypeSortAttribute GetBuiltInSlotTypeSortAttributeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == SlotTypeSignature_HASH)
-          {
-            return BuiltInSlotTypeSortAttribute::SlotTypeSignature;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<BuiltInSlotTypeSortAttribute>(hashCode);
-          }
+Aws::String GetNameForBuiltInSlotTypeSortAttribute(BuiltInSlotTypeSortAttribute enumValue) {
+  switch (enumValue) {
+    case BuiltInSlotTypeSortAttribute::NOT_SET:
+      return {};
+    case BuiltInSlotTypeSortAttribute::SlotTypeSignature:
+      return "SlotTypeSignature";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return BuiltInSlotTypeSortAttribute::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForBuiltInSlotTypeSortAttribute(BuiltInSlotTypeSortAttribute enumValue)
-        {
-          switch(enumValue)
-          {
-          case BuiltInSlotTypeSortAttribute::NOT_SET:
-            return {};
-          case BuiltInSlotTypeSortAttribute::SlotTypeSignature:
-            return "SlotTypeSignature";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace BuiltInSlotTypeSortAttributeMapper
-    } // namespace Model
-  } // namespace LexModelsV2
-} // namespace Aws
+}  // namespace BuiltInSlotTypeSortAttributeMapper
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

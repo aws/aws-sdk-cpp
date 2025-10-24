@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/directconnect/DirectConnect_EXPORTS.h>
 
-namespace Aws
-{
-namespace DirectConnect
-{
-namespace Model
-{
-  enum class GatewayType
-  {
-    NOT_SET,
-    virtualPrivateGateway,
-    transitGateway
-  };
+namespace Aws {
+namespace DirectConnect {
+namespace Model {
+enum class GatewayType { NOT_SET, virtualPrivateGateway, transitGateway };
 
-namespace GatewayTypeMapper
-{
+namespace GatewayTypeMapper {
 AWS_DIRECTCONNECT_API GatewayType GetGatewayTypeForName(const Aws::String& name);
 
 AWS_DIRECTCONNECT_API Aws::String GetNameForGatewayType(GatewayType value);
-} // namespace GatewayTypeMapper
-} // namespace Model
-} // namespace DirectConnect
-} // namespace Aws
+}  // namespace GatewayTypeMapper
+}  // namespace Model
+}  // namespace DirectConnect
+}  // namespace Aws

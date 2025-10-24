@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/AuthorizeSecurityGroupEgressResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/AuthorizeSecurityGroupEgressResponse.h>
 
 #include <utility>
 
@@ -17,36 +17,30 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AuthorizeSecurityGroupEgressResponse::AuthorizeSecurityGroupEgressResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+AuthorizeSecurityGroupEgressResponse::AuthorizeSecurityGroupEgressResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-AuthorizeSecurityGroupEgressResponse& AuthorizeSecurityGroupEgressResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+AuthorizeSecurityGroupEgressResponse& AuthorizeSecurityGroupEgressResponse::operator=(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "AuthorizeSecurityGroupEgressResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "AuthorizeSecurityGroupEgressResponse")) {
     resultNode = rootNode.FirstChild("AuthorizeSecurityGroupEgressResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode returnNode = resultNode.FirstChild("return");
-    if(!returnNode.IsNull())
-    {
+    if (!returnNode.IsNull()) {
       m_return = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(returnNode.GetText()).c_str()).c_str());
       m_returnHasBeenSet = true;
     }
     XmlNode securityGroupRulesNode = resultNode.FirstChild("securityGroupRuleSet");
-    if(!securityGroupRulesNode.IsNull())
-    {
+    if (!securityGroupRulesNode.IsNull()) {
       XmlNode securityGroupRulesMember = securityGroupRulesNode.FirstChild("item");
       m_securityGroupRulesHasBeenSet = !securityGroupRulesMember.IsNull();
-      while(!securityGroupRulesMember.IsNull())
-      {
+      while (!securityGroupRulesMember.IsNull()) {
         m_securityGroupRules.push_back(securityGroupRulesMember);
         securityGroupRulesMember = securityGroupRulesMember.NextNode("item");
       }
@@ -57,12 +51,12 @@ AuthorizeSecurityGroupEgressResponse& AuthorizeSecurityGroupEgressResponse::oper
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::AuthorizeSecurityGroupEgressResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::AuthorizeSecurityGroupEgressResponse",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

@@ -11,44 +11,31 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-ConformancePackEvaluationFilters::ConformancePackEvaluationFilters(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConformancePackEvaluationFilters::ConformancePackEvaluationFilters(JsonView jsonValue) { *this = jsonValue; }
 
-ConformancePackEvaluationFilters& ConformancePackEvaluationFilters::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ConfigRuleNames"))
-  {
+ConformancePackEvaluationFilters& ConformancePackEvaluationFilters::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ConfigRuleNames")) {
     Aws::Utils::Array<JsonView> configRuleNamesJsonList = jsonValue.GetArray("ConfigRuleNames");
-    for(unsigned configRuleNamesIndex = 0; configRuleNamesIndex < configRuleNamesJsonList.GetLength(); ++configRuleNamesIndex)
-    {
+    for (unsigned configRuleNamesIndex = 0; configRuleNamesIndex < configRuleNamesJsonList.GetLength(); ++configRuleNamesIndex) {
       m_configRuleNames.push_back(configRuleNamesJsonList[configRuleNamesIndex].AsString());
     }
     m_configRuleNamesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ComplianceType"))
-  {
+  if (jsonValue.ValueExists("ComplianceType")) {
     m_complianceType = ConformancePackComplianceTypeMapper::GetConformancePackComplianceTypeForName(jsonValue.GetString("ComplianceType"));
     m_complianceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceType"))
-  {
+  if (jsonValue.ValueExists("ResourceType")) {
     m_resourceType = jsonValue.GetString("ResourceType");
     m_resourceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceIds"))
-  {
+  if (jsonValue.ValueExists("ResourceIds")) {
     Aws::Utils::Array<JsonView> resourceIdsJsonList = jsonValue.GetArray("ResourceIds");
-    for(unsigned resourceIdsIndex = 0; resourceIdsIndex < resourceIdsJsonList.GetLength(); ++resourceIdsIndex)
-    {
+    for (unsigned resourceIdsIndex = 0; resourceIdsIndex < resourceIdsJsonList.GetLength(); ++resourceIdsIndex) {
       m_resourceIds.push_back(resourceIdsJsonList[resourceIdsIndex].AsString());
     }
     m_resourceIdsHasBeenSet = true;
@@ -56,46 +43,36 @@ ConformancePackEvaluationFilters& ConformancePackEvaluationFilters::operator =(J
   return *this;
 }
 
-JsonValue ConformancePackEvaluationFilters::Jsonize() const
-{
+JsonValue ConformancePackEvaluationFilters::Jsonize() const {
   JsonValue payload;
 
-  if(m_configRuleNamesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> configRuleNamesJsonList(m_configRuleNames.size());
-   for(unsigned configRuleNamesIndex = 0; configRuleNamesIndex < configRuleNamesJsonList.GetLength(); ++configRuleNamesIndex)
-   {
-     configRuleNamesJsonList[configRuleNamesIndex].AsString(m_configRuleNames[configRuleNamesIndex]);
-   }
-   payload.WithArray("ConfigRuleNames", std::move(configRuleNamesJsonList));
-
+  if (m_configRuleNamesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> configRuleNamesJsonList(m_configRuleNames.size());
+    for (unsigned configRuleNamesIndex = 0; configRuleNamesIndex < configRuleNamesJsonList.GetLength(); ++configRuleNamesIndex) {
+      configRuleNamesJsonList[configRuleNamesIndex].AsString(m_configRuleNames[configRuleNamesIndex]);
+    }
+    payload.WithArray("ConfigRuleNames", std::move(configRuleNamesJsonList));
   }
 
-  if(m_complianceTypeHasBeenSet)
-  {
-   payload.WithString("ComplianceType", ConformancePackComplianceTypeMapper::GetNameForConformancePackComplianceType(m_complianceType));
+  if (m_complianceTypeHasBeenSet) {
+    payload.WithString("ComplianceType", ConformancePackComplianceTypeMapper::GetNameForConformancePackComplianceType(m_complianceType));
   }
 
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("ResourceType", m_resourceType);
-
+  if (m_resourceTypeHasBeenSet) {
+    payload.WithString("ResourceType", m_resourceType);
   }
 
-  if(m_resourceIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> resourceIdsJsonList(m_resourceIds.size());
-   for(unsigned resourceIdsIndex = 0; resourceIdsIndex < resourceIdsJsonList.GetLength(); ++resourceIdsIndex)
-   {
-     resourceIdsJsonList[resourceIdsIndex].AsString(m_resourceIds[resourceIdsIndex]);
-   }
-   payload.WithArray("ResourceIds", std::move(resourceIdsJsonList));
-
+  if (m_resourceIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> resourceIdsJsonList(m_resourceIds.size());
+    for (unsigned resourceIdsIndex = 0; resourceIdsIndex < resourceIdsJsonList.GetLength(); ++resourceIdsIndex) {
+      resourceIdsJsonList[resourceIdsIndex].AsString(m_resourceIds[resourceIdsIndex]);
+    }
+    payload.WithArray("ResourceIds", std::move(resourceIdsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

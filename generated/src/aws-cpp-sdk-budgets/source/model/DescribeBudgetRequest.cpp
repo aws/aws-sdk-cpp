@@ -12,39 +12,26 @@ using namespace Aws::Budgets::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeBudgetRequest::SerializePayload() const
-{
+Aws::String DescribeBudgetRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("AccountId", m_accountId);
-
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("AccountId", m_accountId);
   }
 
-  if(m_budgetNameHasBeenSet)
-  {
-   payload.WithString("BudgetName", m_budgetName);
-
+  if (m_budgetNameHasBeenSet) {
+    payload.WithString("BudgetName", m_budgetName);
   }
 
-  if(m_showFilterExpressionHasBeenSet)
-  {
-   payload.WithBool("ShowFilterExpression", m_showFilterExpression);
-
+  if (m_showFilterExpressionHasBeenSet) {
+    payload.WithBool("ShowFilterExpression", m_showFilterExpression);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeBudgetRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeBudgetRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSBudgetServiceGateway.DescribeBudget"));
   return headers;
-
 }
-
-
-
-

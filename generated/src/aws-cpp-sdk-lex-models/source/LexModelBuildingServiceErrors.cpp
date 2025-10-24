@@ -14,24 +14,21 @@ using namespace Aws::Utils;
 using namespace Aws::LexModelBuildingService;
 using namespace Aws::LexModelBuildingService::Model;
 
-namespace Aws
-{
-namespace LexModelBuildingService
-{
-template<> AWS_LEXMODELBUILDINGSERVICE_API LimitExceededException LexModelBuildingServiceError::GetModeledError()
-{
+namespace Aws {
+namespace LexModelBuildingService {
+template <>
+AWS_LEXMODELBUILDINGSERVICE_API LimitExceededException LexModelBuildingServiceError::GetModeledError() {
   assert(this->GetErrorType() == LexModelBuildingServiceErrors::LIMIT_EXCEEDED);
   return LimitExceededException(this->GetJsonPayload().View());
 }
 
-template<> AWS_LEXMODELBUILDINGSERVICE_API ResourceInUseException LexModelBuildingServiceError::GetModeledError()
-{
+template <>
+AWS_LEXMODELBUILDINGSERVICE_API ResourceInUseException LexModelBuildingServiceError::GetModeledError() {
   assert(this->GetErrorType() == LexModelBuildingServiceErrors::RESOURCE_IN_USE);
   return ResourceInUseException(this->GetJsonPayload().View());
 }
 
-namespace LexModelBuildingServiceErrorMapper
-{
+namespace LexModelBuildingServiceErrorMapper {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
@@ -40,38 +37,25 @@ static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededEx
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == CONFLICT_HASH)
-  {
+  if (hashCode == CONFLICT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LexModelBuildingServiceErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == NOT_FOUND_HASH)
-  {
+  } else if (hashCode == NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LexModelBuildingServiceErrors::NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == PRECONDITION_FAILED_HASH)
-  {
+  } else if (hashCode == PRECONDITION_FAILED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LexModelBuildingServiceErrors::PRECONDITION_FAILED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LexModelBuildingServiceErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == RESOURCE_IN_USE_HASH)
-  {
+  } else if (hashCode == RESOURCE_IN_USE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LexModelBuildingServiceErrors::RESOURCE_IN_USE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == BAD_REQUEST_HASH)
-  {
+  } else if (hashCode == BAD_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LexModelBuildingServiceErrors::BAD_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace LexModelBuildingServiceErrorMapper
-} // namespace LexModelBuildingService
-} // namespace Aws
+}  // namespace LexModelBuildingServiceErrorMapper
+}  // namespace LexModelBuildingService
+}  // namespace Aws

@@ -11,61 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-FlowFailureEvent::FlowFailureEvent(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FlowFailureEvent::FlowFailureEvent(JsonView jsonValue) { *this = jsonValue; }
 
-FlowFailureEvent& FlowFailureEvent::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("timestamp"))
-  {
+FlowFailureEvent& FlowFailureEvent::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("timestamp")) {
     m_timestamp = jsonValue.GetString("timestamp");
     m_timestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("errorCode"))
-  {
+  if (jsonValue.ValueExists("errorCode")) {
     m_errorCode = FlowErrorCodeMapper::GetFlowErrorCodeForName(jsonValue.GetString("errorCode"));
     m_errorCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("errorMessage"))
-  {
+  if (jsonValue.ValueExists("errorMessage")) {
     m_errorMessage = jsonValue.GetString("errorMessage");
     m_errorMessageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FlowFailureEvent::Jsonize() const
-{
+JsonValue FlowFailureEvent::Jsonize() const {
   JsonValue payload;
 
-  if(m_timestampHasBeenSet)
-  {
-   payload.WithString("timestamp", m_timestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_timestampHasBeenSet) {
+    payload.WithString("timestamp", m_timestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_errorCodeHasBeenSet)
-  {
-   payload.WithString("errorCode", FlowErrorCodeMapper::GetNameForFlowErrorCode(m_errorCode));
+  if (m_errorCodeHasBeenSet) {
+    payload.WithString("errorCode", FlowErrorCodeMapper::GetNameForFlowErrorCode(m_errorCode));
   }
 
-  if(m_errorMessageHasBeenSet)
-  {
-   payload.WithString("errorMessage", m_errorMessage);
-
+  if (m_errorMessageHasBeenSet) {
+    payload.WithString("errorMessage", m_errorMessage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

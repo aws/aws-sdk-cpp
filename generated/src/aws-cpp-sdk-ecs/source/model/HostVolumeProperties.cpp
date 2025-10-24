@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ecs/model/HostVolumeProperties.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ecs/model/HostVolumeProperties.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ECS
-{
-namespace Model
-{
+namespace Aws {
+namespace ECS {
+namespace Model {
 
-HostVolumeProperties::HostVolumeProperties(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+HostVolumeProperties::HostVolumeProperties(JsonView jsonValue) { *this = jsonValue; }
 
-HostVolumeProperties& HostVolumeProperties::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("sourcePath"))
-  {
+HostVolumeProperties& HostVolumeProperties::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("sourcePath")) {
     m_sourcePath = jsonValue.GetString("sourcePath");
     m_sourcePathHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue HostVolumeProperties::Jsonize() const
-{
+JsonValue HostVolumeProperties::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourcePathHasBeenSet)
-  {
-   payload.WithString("sourcePath", m_sourcePath);
-
+  if (m_sourcePathHasBeenSet) {
+    payload.WithString("sourcePath", m_sourcePath);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ECS
-} // namespace Aws
+}  // namespace Model
+}  // namespace ECS
+}  // namespace Aws

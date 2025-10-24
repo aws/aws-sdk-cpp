@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentCoreControl
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentCoreControl {
+namespace Model {
 
-CustomOauth2ProviderConfigOutput::CustomOauth2ProviderConfigOutput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CustomOauth2ProviderConfigOutput::CustomOauth2ProviderConfigOutput(JsonView jsonValue) { *this = jsonValue; }
 
-CustomOauth2ProviderConfigOutput& CustomOauth2ProviderConfigOutput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("oauthDiscovery"))
-  {
+CustomOauth2ProviderConfigOutput& CustomOauth2ProviderConfigOutput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("oauthDiscovery")) {
     m_oauthDiscovery = jsonValue.GetObject("oauthDiscovery");
     m_oauthDiscoveryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("clientId"))
-  {
+  if (jsonValue.ValueExists("clientId")) {
     m_clientId = jsonValue.GetString("clientId");
     m_clientIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CustomOauth2ProviderConfigOutput::Jsonize() const
-{
+JsonValue CustomOauth2ProviderConfigOutput::Jsonize() const {
   JsonValue payload;
 
-  if(m_oauthDiscoveryHasBeenSet)
-  {
-   payload.WithObject("oauthDiscovery", m_oauthDiscovery.Jsonize());
-
+  if (m_oauthDiscoveryHasBeenSet) {
+    payload.WithObject("oauthDiscovery", m_oauthDiscovery.Jsonize());
   }
 
-  if(m_clientIdHasBeenSet)
-  {
-   payload.WithString("clientId", m_clientId);
-
+  if (m_clientIdHasBeenSet) {
+    payload.WithString("clientId", m_clientId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentCoreControl
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentCoreControl
+}  // namespace Aws

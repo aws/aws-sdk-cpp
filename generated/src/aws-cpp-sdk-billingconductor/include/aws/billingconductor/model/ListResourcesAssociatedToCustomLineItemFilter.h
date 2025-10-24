@@ -6,54 +6,53 @@
 #pragma once
 #include <aws/billingconductor/BillingConductor_EXPORTS.h>
 #include <aws/billingconductor/model/CustomLineItemRelationship.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace BillingConductor
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace BillingConductor {
+namespace Model {
 
+/**
+ * <p> A filter that specifies the type of resource associations that should be
+ * retrieved for a custom line item. </p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListResourcesAssociatedToCustomLineItemFilter">AWS
+ * API Reference</a></p>
+ */
+class ListResourcesAssociatedToCustomLineItemFilter {
+ public:
+  AWS_BILLINGCONDUCTOR_API ListResourcesAssociatedToCustomLineItemFilter() = default;
+  AWS_BILLINGCONDUCTOR_API ListResourcesAssociatedToCustomLineItemFilter(Aws::Utils::Json::JsonView jsonValue);
+  AWS_BILLINGCONDUCTOR_API ListResourcesAssociatedToCustomLineItemFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p> A filter that specifies the type of resource associations that should be
-   * retrieved for a custom line item. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListResourcesAssociatedToCustomLineItemFilter">AWS
-   * API Reference</a></p>
+   * <p> The type of relationship between the custom line item and the associated
+   * resource. </p>
    */
-  class ListResourcesAssociatedToCustomLineItemFilter
-  {
-  public:
-    AWS_BILLINGCONDUCTOR_API ListResourcesAssociatedToCustomLineItemFilter() = default;
-    AWS_BILLINGCONDUCTOR_API ListResourcesAssociatedToCustomLineItemFilter(Aws::Utils::Json::JsonView jsonValue);
-    AWS_BILLINGCONDUCTOR_API ListResourcesAssociatedToCustomLineItemFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline CustomLineItemRelationship GetRelationship() const { return m_relationship; }
+  inline bool RelationshipHasBeenSet() const { return m_relationshipHasBeenSet; }
+  inline void SetRelationship(CustomLineItemRelationship value) {
+    m_relationshipHasBeenSet = true;
+    m_relationship = value;
+  }
+  inline ListResourcesAssociatedToCustomLineItemFilter& WithRelationship(CustomLineItemRelationship value) {
+    SetRelationship(value);
+    return *this;
+  }
+  ///@}
+ private:
+  CustomLineItemRelationship m_relationship{CustomLineItemRelationship::NOT_SET};
+  bool m_relationshipHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p> The type of relationship between the custom line item and the associated
-     * resource. </p>
-     */
-    inline CustomLineItemRelationship GetRelationship() const { return m_relationship; }
-    inline bool RelationshipHasBeenSet() const { return m_relationshipHasBeenSet; }
-    inline void SetRelationship(CustomLineItemRelationship value) { m_relationshipHasBeenSet = true; m_relationship = value; }
-    inline ListResourcesAssociatedToCustomLineItemFilter& WithRelationship(CustomLineItemRelationship value) { SetRelationship(value); return *this;}
-    ///@}
-  private:
-
-    CustomLineItemRelationship m_relationship{CustomLineItemRelationship::NOT_SET};
-    bool m_relationshipHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace BillingConductor
-} // namespace Aws
+}  // namespace Model
+}  // namespace BillingConductor
+}  // namespace Aws

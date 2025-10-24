@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/macie2/model/DisassociateFromAdministratorAccountRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/macie2/model/DisassociateFromAdministratorAccountRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DisassociateFromAdministratorAccountRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DisassociateFromAdministratorAccountRequest::SerializePayload() const { return {}; }

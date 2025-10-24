@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::FIS;
 
-AWSError<CoreErrors> FISErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> FISErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = FISErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

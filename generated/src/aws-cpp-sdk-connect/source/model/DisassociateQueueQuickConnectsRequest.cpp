@@ -12,24 +12,16 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DisassociateQueueQuickConnectsRequest::SerializePayload() const
-{
+Aws::String DisassociateQueueQuickConnectsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_quickConnectIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> quickConnectIdsJsonList(m_quickConnectIds.size());
-   for(unsigned quickConnectIdsIndex = 0; quickConnectIdsIndex < quickConnectIdsJsonList.GetLength(); ++quickConnectIdsIndex)
-   {
-     quickConnectIdsJsonList[quickConnectIdsIndex].AsString(m_quickConnectIds[quickConnectIdsIndex]);
-   }
-   payload.WithArray("QuickConnectIds", std::move(quickConnectIdsJsonList));
-
+  if (m_quickConnectIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> quickConnectIdsJsonList(m_quickConnectIds.size());
+    for (unsigned quickConnectIdsIndex = 0; quickConnectIdsIndex < quickConnectIdsJsonList.GetLength(); ++quickConnectIdsIndex) {
+      quickConnectIdsJsonList[quickConnectIdsIndex].AsString(m_quickConnectIds[quickConnectIdsIndex]);
+    }
+    payload.WithArray("QuickConnectIds", std::move(quickConnectIdsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

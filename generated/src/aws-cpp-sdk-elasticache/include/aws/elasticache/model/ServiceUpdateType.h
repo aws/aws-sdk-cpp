@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticache/ElastiCache_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElastiCache
-{
-namespace Model
-{
-  enum class ServiceUpdateType
-  {
-    NOT_SET,
-    security_update
-  };
+namespace Aws {
+namespace ElastiCache {
+namespace Model {
+enum class ServiceUpdateType { NOT_SET, security_update };
 
-namespace ServiceUpdateTypeMapper
-{
+namespace ServiceUpdateTypeMapper {
 AWS_ELASTICACHE_API ServiceUpdateType GetServiceUpdateTypeForName(const Aws::String& name);
 
 AWS_ELASTICACHE_API Aws::String GetNameForServiceUpdateType(ServiceUpdateType value);
-} // namespace ServiceUpdateTypeMapper
-} // namespace Model
-} // namespace ElastiCache
-} // namespace Aws
+}  // namespace ServiceUpdateTypeMapper
+}  // namespace Model
+}  // namespace ElastiCache
+}  // namespace Aws

@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticache/ElastiCache_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElastiCache
-{
-namespace Model
-{
-  enum class SlaMet
-  {
-    NOT_SET,
-    yes,
-    no,
-    n_a
-  };
+namespace Aws {
+namespace ElastiCache {
+namespace Model {
+enum class SlaMet { NOT_SET, yes, no, n_a };
 
-namespace SlaMetMapper
-{
+namespace SlaMetMapper {
 AWS_ELASTICACHE_API SlaMet GetSlaMetForName(const Aws::String& name);
 
 AWS_ELASTICACHE_API Aws::String GetNameForSlaMet(SlaMet value);
-} // namespace SlaMetMapper
-} // namespace Model
-} // namespace ElastiCache
-} // namespace Aws
+}  // namespace SlaMetMapper
+}  // namespace Model
+}  // namespace ElastiCache
+}  // namespace Aws

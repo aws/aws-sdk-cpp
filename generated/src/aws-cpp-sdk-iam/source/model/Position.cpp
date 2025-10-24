@@ -3,44 +3,35 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/Position.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/iam/model/Position.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IAM
-{
-namespace Model
-{
+namespace Aws {
+namespace IAM {
+namespace Model {
 
-Position::Position(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+Position::Position(const XmlNode& xmlNode) { *this = xmlNode; }
 
-Position& Position::operator =(const XmlNode& xmlNode)
-{
+Position& Position::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode lineNode = resultNode.FirstChild("Line");
-    if(!lineNode.IsNull())
-    {
+    if (!lineNode.IsNull()) {
       m_line = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lineNode.GetText()).c_str()).c_str());
       m_lineHasBeenSet = true;
     }
     XmlNode columnNode = resultNode.FirstChild("Column");
-    if(!columnNode.IsNull())
-    {
-      m_column = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(columnNode.GetText()).c_str()).c_str());
+    if (!columnNode.IsNull()) {
+      m_column =
+          StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(columnNode.GetText()).c_str()).c_str());
       m_columnHasBeenSet = true;
     }
   }
@@ -48,32 +39,25 @@ Position& Position::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void Position::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_lineHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Line=" << m_line << "&";
+void Position::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_lineHasBeenSet) {
+    oStream << location << index << locationValue << ".Line=" << m_line << "&";
   }
 
-  if(m_columnHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Column=" << m_column << "&";
-  }
-
-}
-
-void Position::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_lineHasBeenSet)
-  {
-      oStream << location << ".Line=" << m_line << "&";
-  }
-  if(m_columnHasBeenSet)
-  {
-      oStream << location << ".Column=" << m_column << "&";
+  if (m_columnHasBeenSet) {
+    oStream << location << index << locationValue << ".Column=" << m_column << "&";
   }
 }
 
-} // namespace Model
-} // namespace IAM
-} // namespace Aws
+void Position::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_lineHasBeenSet) {
+    oStream << location << ".Line=" << m_line << "&";
+  }
+  if (m_columnHasBeenSet) {
+    oStream << location << ".Column=" << m_column << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace IAM
+}  // namespace Aws

@@ -4,87 +4,98 @@
  */
 
 #pragma once
-#include <aws/neptunedata/Neptunedata_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/neptunedata/Neptunedata_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace neptunedata
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace neptunedata {
+namespace Model {
 
+/**
+ * <p>Raised when the size of a query exceeds the system limit.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/QueryLimitException">AWS
+ * API Reference</a></p>
+ */
+class QueryLimitException {
+ public:
+  AWS_NEPTUNEDATA_API QueryLimitException() = default;
+  AWS_NEPTUNEDATA_API QueryLimitException(Aws::Utils::Json::JsonView jsonValue);
+  AWS_NEPTUNEDATA_API QueryLimitException& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_NEPTUNEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Raised when the size of a query exceeds the system limit.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/QueryLimitException">AWS
-   * API Reference</a></p>
+   * <p>A detailed message describing the problem.</p>
    */
-  class QueryLimitException
-  {
-  public:
-    AWS_NEPTUNEDATA_API QueryLimitException() = default;
-    AWS_NEPTUNEDATA_API QueryLimitException(Aws::Utils::Json::JsonView jsonValue);
-    AWS_NEPTUNEDATA_API QueryLimitException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_NEPTUNEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetDetailedMessage() const { return m_detailedMessage; }
+  inline bool DetailedMessageHasBeenSet() const { return m_detailedMessageHasBeenSet; }
+  template <typename DetailedMessageT = Aws::String>
+  void SetDetailedMessage(DetailedMessageT&& value) {
+    m_detailedMessageHasBeenSet = true;
+    m_detailedMessage = std::forward<DetailedMessageT>(value);
+  }
+  template <typename DetailedMessageT = Aws::String>
+  QueryLimitException& WithDetailedMessage(DetailedMessageT&& value) {
+    SetDetailedMessage(std::forward<DetailedMessageT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The ID of the request that exceeded the limit.</p>
+   */
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  QueryLimitException& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>A detailed message describing the problem.</p>
-     */
-    inline const Aws::String& GetDetailedMessage() const { return m_detailedMessage; }
-    inline bool DetailedMessageHasBeenSet() const { return m_detailedMessageHasBeenSet; }
-    template<typename DetailedMessageT = Aws::String>
-    void SetDetailedMessage(DetailedMessageT&& value) { m_detailedMessageHasBeenSet = true; m_detailedMessage = std::forward<DetailedMessageT>(value); }
-    template<typename DetailedMessageT = Aws::String>
-    QueryLimitException& WithDetailedMessage(DetailedMessageT&& value) { SetDetailedMessage(std::forward<DetailedMessageT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The HTTP status code returned with the exception.</p>
+   */
+  inline const Aws::String& GetCode() const { return m_code; }
+  inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+  template <typename CodeT = Aws::String>
+  void SetCode(CodeT&& value) {
+    m_codeHasBeenSet = true;
+    m_code = std::forward<CodeT>(value);
+  }
+  template <typename CodeT = Aws::String>
+  QueryLimitException& WithCode(CodeT&& value) {
+    SetCode(std::forward<CodeT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_detailedMessage;
+  bool m_detailedMessageHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The ID of the request that exceeded the limit.</p>
-     */
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    QueryLimitException& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The HTTP status code returned with the exception.</p>
-     */
-    inline const Aws::String& GetCode() const { return m_code; }
-    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    template<typename CodeT = Aws::String>
-    void SetCode(CodeT&& value) { m_codeHasBeenSet = true; m_code = std::forward<CodeT>(value); }
-    template<typename CodeT = Aws::String>
-    QueryLimitException& WithCode(CodeT&& value) { SetCode(std::forward<CodeT>(value)); return *this;}
-    ///@}
-  private:
+  Aws::String m_code;
+  bool m_codeHasBeenSet = false;
+};
 
-    Aws::String m_detailedMessage;
-    bool m_detailedMessageHasBeenSet = false;
-
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-
-    Aws::String m_code;
-    bool m_codeHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace neptunedata
-} // namespace Aws
+}  // namespace Model
+}  // namespace neptunedata
+}  // namespace Aws

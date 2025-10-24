@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/qldb-session/QLDBSession_EXPORTS.h>
 
-namespace Aws
-{
-namespace QLDBSession
-{
-enum class QLDBSessionErrors
-{
-  //From Core//
+namespace Aws {
+namespace QLDBSession {
+enum class QLDBSessionErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class QLDBSessionErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class QLDBSessionErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BAD_REQUEST = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CAPACITY_EXCEEDED,
   INVALID_SESSION,
   LIMIT_EXCEEDED,
@@ -55,9 +52,8 @@ enum class QLDBSessionErrors
   RATE_EXCEEDED
 };
 
-class AWS_QLDBSESSION_API QLDBSessionError : public Aws::Client::AWSError<QLDBSessionErrors>
-{
-public:
+class AWS_QLDBSESSION_API QLDBSessionError : public Aws::Client::AWSError<QLDBSessionErrors> {
+ public:
   QLDBSessionError() {}
   QLDBSessionError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<QLDBSessionErrors>(rhs) {}
   QLDBSessionError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<QLDBSessionErrors>(rhs) {}
@@ -68,10 +64,9 @@ public:
   T GetModeledError();
 };
 
-namespace QLDBSessionErrorMapper
-{
-  AWS_QLDBSESSION_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace QLDBSessionErrorMapper {
+AWS_QLDBSESSION_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace QLDBSession
-} // namespace Aws
+}  // namespace QLDBSession
+}  // namespace Aws

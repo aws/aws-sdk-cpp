@@ -3,111 +3,88 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/vpc-lattice/model/TargetGroupConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/vpc-lattice/model/TargetGroupConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace VPCLattice
-{
-namespace Model
-{
+namespace Aws {
+namespace VPCLattice {
+namespace Model {
 
-TargetGroupConfig::TargetGroupConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TargetGroupConfig::TargetGroupConfig(JsonView jsonValue) { *this = jsonValue; }
 
-TargetGroupConfig& TargetGroupConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("port"))
-  {
+TargetGroupConfig& TargetGroupConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("port")) {
     m_port = jsonValue.GetInteger("port");
     m_portHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("protocol"))
-  {
+  if (jsonValue.ValueExists("protocol")) {
     m_protocol = TargetGroupProtocolMapper::GetTargetGroupProtocolForName(jsonValue.GetString("protocol"));
     m_protocolHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("protocolVersion"))
-  {
+  if (jsonValue.ValueExists("protocolVersion")) {
     m_protocolVersion = TargetGroupProtocolVersionMapper::GetTargetGroupProtocolVersionForName(jsonValue.GetString("protocolVersion"));
     m_protocolVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ipAddressType"))
-  {
+  if (jsonValue.ValueExists("ipAddressType")) {
     m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(jsonValue.GetString("ipAddressType"));
     m_ipAddressTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("vpcIdentifier"))
-  {
+  if (jsonValue.ValueExists("vpcIdentifier")) {
     m_vpcIdentifier = jsonValue.GetString("vpcIdentifier");
     m_vpcIdentifierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("healthCheck"))
-  {
+  if (jsonValue.ValueExists("healthCheck")) {
     m_healthCheck = jsonValue.GetObject("healthCheck");
     m_healthCheckHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lambdaEventStructureVersion"))
-  {
-    m_lambdaEventStructureVersion = LambdaEventStructureVersionMapper::GetLambdaEventStructureVersionForName(jsonValue.GetString("lambdaEventStructureVersion"));
+  if (jsonValue.ValueExists("lambdaEventStructureVersion")) {
+    m_lambdaEventStructureVersion =
+        LambdaEventStructureVersionMapper::GetLambdaEventStructureVersionForName(jsonValue.GetString("lambdaEventStructureVersion"));
     m_lambdaEventStructureVersionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TargetGroupConfig::Jsonize() const
-{
+JsonValue TargetGroupConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_portHasBeenSet)
-  {
-   payload.WithInteger("port", m_port);
-
+  if (m_portHasBeenSet) {
+    payload.WithInteger("port", m_port);
   }
 
-  if(m_protocolHasBeenSet)
-  {
-   payload.WithString("protocol", TargetGroupProtocolMapper::GetNameForTargetGroupProtocol(m_protocol));
+  if (m_protocolHasBeenSet) {
+    payload.WithString("protocol", TargetGroupProtocolMapper::GetNameForTargetGroupProtocol(m_protocol));
   }
 
-  if(m_protocolVersionHasBeenSet)
-  {
-   payload.WithString("protocolVersion", TargetGroupProtocolVersionMapper::GetNameForTargetGroupProtocolVersion(m_protocolVersion));
+  if (m_protocolVersionHasBeenSet) {
+    payload.WithString("protocolVersion", TargetGroupProtocolVersionMapper::GetNameForTargetGroupProtocolVersion(m_protocolVersion));
   }
 
-  if(m_ipAddressTypeHasBeenSet)
-  {
-   payload.WithString("ipAddressType", IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType));
+  if (m_ipAddressTypeHasBeenSet) {
+    payload.WithString("ipAddressType", IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType));
   }
 
-  if(m_vpcIdentifierHasBeenSet)
-  {
-   payload.WithString("vpcIdentifier", m_vpcIdentifier);
-
+  if (m_vpcIdentifierHasBeenSet) {
+    payload.WithString("vpcIdentifier", m_vpcIdentifier);
   }
 
-  if(m_healthCheckHasBeenSet)
-  {
-   payload.WithObject("healthCheck", m_healthCheck.Jsonize());
-
+  if (m_healthCheckHasBeenSet) {
+    payload.WithObject("healthCheck", m_healthCheck.Jsonize());
   }
 
-  if(m_lambdaEventStructureVersionHasBeenSet)
-  {
-   payload.WithString("lambdaEventStructureVersion", LambdaEventStructureVersionMapper::GetNameForLambdaEventStructureVersion(m_lambdaEventStructureVersion));
+  if (m_lambdaEventStructureVersionHasBeenSet) {
+    payload.WithString("lambdaEventStructureVersion",
+                       LambdaEventStructureVersionMapper::GetNameForLambdaEventStructureVersion(m_lambdaEventStructureVersion));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace VPCLattice
-} // namespace Aws
+}  // namespace Model
+}  // namespace VPCLattice
+}  // namespace Aws

@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/pipes/Pipes_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pipes/Pipes_EXPORTS.h>
 
-namespace Aws
-{
-namespace Pipes
-{
-namespace Model
-{
-  enum class PropagateTags
-  {
-    NOT_SET,
-    TASK_DEFINITION
-  };
+namespace Aws {
+namespace Pipes {
+namespace Model {
+enum class PropagateTags { NOT_SET, TASK_DEFINITION };
 
-namespace PropagateTagsMapper
-{
+namespace PropagateTagsMapper {
 AWS_PIPES_API PropagateTags GetPropagateTagsForName(const Aws::String& name);
 
 AWS_PIPES_API Aws::String GetNameForPropagateTags(PropagateTags value);
-} // namespace PropagateTagsMapper
-} // namespace Model
-} // namespace Pipes
-} // namespace Aws
+}  // namespace PropagateTagsMapper
+}  // namespace Model
+}  // namespace Pipes
+}  // namespace Aws

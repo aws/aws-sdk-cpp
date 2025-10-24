@@ -11,83 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-ExternalEvaluation::ExternalEvaluation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExternalEvaluation::ExternalEvaluation(JsonView jsonValue) { *this = jsonValue; }
 
-ExternalEvaluation& ExternalEvaluation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ComplianceResourceType"))
-  {
+ExternalEvaluation& ExternalEvaluation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ComplianceResourceType")) {
     m_complianceResourceType = jsonValue.GetString("ComplianceResourceType");
     m_complianceResourceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ComplianceResourceId"))
-  {
+  if (jsonValue.ValueExists("ComplianceResourceId")) {
     m_complianceResourceId = jsonValue.GetString("ComplianceResourceId");
     m_complianceResourceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ComplianceType"))
-  {
+  if (jsonValue.ValueExists("ComplianceType")) {
     m_complianceType = ComplianceTypeMapper::GetComplianceTypeForName(jsonValue.GetString("ComplianceType"));
     m_complianceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Annotation"))
-  {
+  if (jsonValue.ValueExists("Annotation")) {
     m_annotation = jsonValue.GetString("Annotation");
     m_annotationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OrderingTimestamp"))
-  {
+  if (jsonValue.ValueExists("OrderingTimestamp")) {
     m_orderingTimestamp = jsonValue.GetDouble("OrderingTimestamp");
     m_orderingTimestampHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExternalEvaluation::Jsonize() const
-{
+JsonValue ExternalEvaluation::Jsonize() const {
   JsonValue payload;
 
-  if(m_complianceResourceTypeHasBeenSet)
-  {
-   payload.WithString("ComplianceResourceType", m_complianceResourceType);
-
+  if (m_complianceResourceTypeHasBeenSet) {
+    payload.WithString("ComplianceResourceType", m_complianceResourceType);
   }
 
-  if(m_complianceResourceIdHasBeenSet)
-  {
-   payload.WithString("ComplianceResourceId", m_complianceResourceId);
-
+  if (m_complianceResourceIdHasBeenSet) {
+    payload.WithString("ComplianceResourceId", m_complianceResourceId);
   }
 
-  if(m_complianceTypeHasBeenSet)
-  {
-   payload.WithString("ComplianceType", ComplianceTypeMapper::GetNameForComplianceType(m_complianceType));
+  if (m_complianceTypeHasBeenSet) {
+    payload.WithString("ComplianceType", ComplianceTypeMapper::GetNameForComplianceType(m_complianceType));
   }
 
-  if(m_annotationHasBeenSet)
-  {
-   payload.WithString("Annotation", m_annotation);
-
+  if (m_annotationHasBeenSet) {
+    payload.WithString("Annotation", m_annotation);
   }
 
-  if(m_orderingTimestampHasBeenSet)
-  {
-   payload.WithDouble("OrderingTimestamp", m_orderingTimestamp.SecondsWithMSPrecision());
+  if (m_orderingTimestampHasBeenSet) {
+    payload.WithDouble("OrderingTimestamp", m_orderingTimestamp.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

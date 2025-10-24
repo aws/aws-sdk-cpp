@@ -12,37 +12,26 @@ using namespace Aws::ApplicationInsights::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateProblemRequest::SerializePayload() const
-{
+Aws::String UpdateProblemRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_problemIdHasBeenSet)
-  {
-   payload.WithString("ProblemId", m_problemId);
-
+  if (m_problemIdHasBeenSet) {
+    payload.WithString("ProblemId", m_problemId);
   }
 
-  if(m_updateStatusHasBeenSet)
-  {
-   payload.WithString("UpdateStatus", UpdateStatusMapper::GetNameForUpdateStatus(m_updateStatus));
+  if (m_updateStatusHasBeenSet) {
+    payload.WithString("UpdateStatus", UpdateStatusMapper::GetNameForUpdateStatus(m_updateStatus));
   }
 
-  if(m_visibilityHasBeenSet)
-  {
-   payload.WithString("Visibility", VisibilityMapper::GetNameForVisibility(m_visibility));
+  if (m_visibilityHasBeenSet) {
+    payload.WithString("Visibility", VisibilityMapper::GetNameForVisibility(m_visibility));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateProblemRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateProblemRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "EC2WindowsBarleyService.UpdateProblem"));
   return headers;
-
 }
-
-
-
-

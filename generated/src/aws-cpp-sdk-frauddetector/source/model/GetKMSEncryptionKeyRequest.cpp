@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/frauddetector/model/GetKMSEncryptionKeyRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/frauddetector/model/GetKMSEncryptionKeyRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,10 @@ using namespace Aws::FraudDetector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetKMSEncryptionKeyRequest::SerializePayload() const
-{
-  return "{}";
-}
+Aws::String GetKMSEncryptionKeyRequest::SerializePayload() const { return "{}"; }
 
-Aws::Http::HeaderValueCollection GetKMSEncryptionKeyRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetKMSEncryptionKeyRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSHawksNestServiceFacade.GetKMSEncryptionKey"));
   return headers;
-
 }
-
-
-
-

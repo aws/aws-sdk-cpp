@@ -3,69 +3,53 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/PivotTableDataPathOption.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/PivotTableDataPathOption.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-PivotTableDataPathOption::PivotTableDataPathOption(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PivotTableDataPathOption::PivotTableDataPathOption(JsonView jsonValue) { *this = jsonValue; }
 
-PivotTableDataPathOption& PivotTableDataPathOption::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DataPathList"))
-  {
+PivotTableDataPathOption& PivotTableDataPathOption::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DataPathList")) {
     Aws::Utils::Array<JsonView> dataPathListJsonList = jsonValue.GetArray("DataPathList");
-    for(unsigned dataPathListIndex = 0; dataPathListIndex < dataPathListJsonList.GetLength(); ++dataPathListIndex)
-    {
+    for (unsigned dataPathListIndex = 0; dataPathListIndex < dataPathListJsonList.GetLength(); ++dataPathListIndex) {
       m_dataPathList.push_back(dataPathListJsonList[dataPathListIndex].AsObject());
     }
     m_dataPathListHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Width"))
-  {
+  if (jsonValue.ValueExists("Width")) {
     m_width = jsonValue.GetString("Width");
     m_widthHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PivotTableDataPathOption::Jsonize() const
-{
+JsonValue PivotTableDataPathOption::Jsonize() const {
   JsonValue payload;
 
-  if(m_dataPathListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> dataPathListJsonList(m_dataPathList.size());
-   for(unsigned dataPathListIndex = 0; dataPathListIndex < dataPathListJsonList.GetLength(); ++dataPathListIndex)
-   {
-     dataPathListJsonList[dataPathListIndex].AsObject(m_dataPathList[dataPathListIndex].Jsonize());
-   }
-   payload.WithArray("DataPathList", std::move(dataPathListJsonList));
-
+  if (m_dataPathListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> dataPathListJsonList(m_dataPathList.size());
+    for (unsigned dataPathListIndex = 0; dataPathListIndex < dataPathListJsonList.GetLength(); ++dataPathListIndex) {
+      dataPathListJsonList[dataPathListIndex].AsObject(m_dataPathList[dataPathListIndex].Jsonize());
+    }
+    payload.WithArray("DataPathList", std::move(dataPathListJsonList));
   }
 
-  if(m_widthHasBeenSet)
-  {
-   payload.WithString("Width", m_width);
-
+  if (m_widthHasBeenSet) {
+    payload.WithString("Width", m_width);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class NielsenSourceWatermarkStatusType
-  {
-    NOT_SET,
-    CLEAN,
-    WATERMARKED
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class NielsenSourceWatermarkStatusType { NOT_SET, CLEAN, WATERMARKED };
 
-namespace NielsenSourceWatermarkStatusTypeMapper
-{
+namespace NielsenSourceWatermarkStatusTypeMapper {
 AWS_MEDIACONVERT_API NielsenSourceWatermarkStatusType GetNielsenSourceWatermarkStatusTypeForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForNielsenSourceWatermarkStatusType(NielsenSourceWatermarkStatusType value);
-} // namespace NielsenSourceWatermarkStatusTypeMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace NielsenSourceWatermarkStatusTypeMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

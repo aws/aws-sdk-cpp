@@ -5,12 +5,8 @@
 
 #include <aws/s3vectors/S3VectorsEndpointProvider.h>
 
-namespace Aws
-{
-namespace S3Vectors
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace S3Vectors
-} // namespace Aws
+namespace Aws {
+namespace S3Vectors {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace S3Vectors
+}  // namespace Aws

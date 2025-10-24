@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
-  enum class NielsenWatermarksCbetStepaside
-  {
-    NOT_SET,
-    DISABLED,
-    ENABLED
-  };
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+enum class NielsenWatermarksCbetStepaside { NOT_SET, DISABLED, ENABLED };
 
-namespace NielsenWatermarksCbetStepasideMapper
-{
+namespace NielsenWatermarksCbetStepasideMapper {
 AWS_MEDIALIVE_API NielsenWatermarksCbetStepaside GetNielsenWatermarksCbetStepasideForName(const Aws::String& name);
 
 AWS_MEDIALIVE_API Aws::String GetNameForNielsenWatermarksCbetStepaside(NielsenWatermarksCbetStepaside value);
-} // namespace NielsenWatermarksCbetStepasideMapper
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace NielsenWatermarksCbetStepasideMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

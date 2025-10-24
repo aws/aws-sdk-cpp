@@ -12,11 +12,4 @@ using namespace Aws::ApiGatewayV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetVpcLinkRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetVpcLinkRequest::SerializePayload() const { return {}; }

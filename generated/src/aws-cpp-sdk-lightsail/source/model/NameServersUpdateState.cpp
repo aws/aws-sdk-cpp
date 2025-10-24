@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lightsail/model/NameServersUpdateState.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lightsail/model/NameServersUpdateState.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
+namespace Aws {
+namespace Lightsail {
+namespace Model {
 
-NameServersUpdateState::NameServersUpdateState(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NameServersUpdateState::NameServersUpdateState(JsonView jsonValue) { *this = jsonValue; }
 
-NameServersUpdateState& NameServersUpdateState::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("code"))
-  {
+NameServersUpdateState& NameServersUpdateState::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("code")) {
     m_code = NameServersUpdateStateCodeMapper::GetNameServersUpdateStateCodeForName(jsonValue.GetString("code"));
     m_codeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("message"))
-  {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NameServersUpdateState::Jsonize() const
-{
+JsonValue NameServersUpdateState::Jsonize() const {
   JsonValue payload;
 
-  if(m_codeHasBeenSet)
-  {
-   payload.WithString("code", NameServersUpdateStateCodeMapper::GetNameForNameServersUpdateStateCode(m_code));
+  if (m_codeHasBeenSet) {
+    payload.WithString("code", NameServersUpdateStateCodeMapper::GetNameForNameServersUpdateStateCode(m_code));
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

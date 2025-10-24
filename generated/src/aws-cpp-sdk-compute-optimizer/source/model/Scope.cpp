@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
 
-Scope::Scope(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Scope::Scope(JsonView jsonValue) { *this = jsonValue; }
 
-Scope& Scope::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+Scope& Scope::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = ScopeNameMapper::GetScopeNameForName(jsonValue.GetString("name"));
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("value"))
-  {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetString("value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Scope::Jsonize() const
-{
+JsonValue Scope::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", ScopeNameMapper::GetNameForScopeName(m_name));
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", ScopeNameMapper::GetNameForScopeName(m_name));
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

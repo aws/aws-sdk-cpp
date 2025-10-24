@@ -4,83 +4,96 @@
  */
 
 #pragma once
-#include <aws/datazone/DataZone_EXPORTS.h>
-#include <aws/datazone/DataZoneRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datazone/DataZoneRequest.h>
+#include <aws/datazone/DataZone_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace DataZone
-{
-namespace Model
-{
+namespace Aws {
+namespace DataZone {
+namespace Model {
 
+/**
+ */
+class DeleteSubscriptionTargetRequest : public DataZoneRequest {
+ public:
+  AWS_DATAZONE_API DeleteSubscriptionTargetRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeleteSubscriptionTarget"; }
+
+  AWS_DATAZONE_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
+   * <p>The ID of the Amazon DataZone domain in which the subscription target is
+   * deleted.</p>
    */
-  class DeleteSubscriptionTargetRequest : public DataZoneRequest
-  {
-  public:
-    AWS_DATAZONE_API DeleteSubscriptionTargetRequest() = default;
+  inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
+  inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
+  template <typename DomainIdentifierT = Aws::String>
+  void SetDomainIdentifier(DomainIdentifierT&& value) {
+    m_domainIdentifierHasBeenSet = true;
+    m_domainIdentifier = std::forward<DomainIdentifierT>(value);
+  }
+  template <typename DomainIdentifierT = Aws::String>
+  DeleteSubscriptionTargetRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
+    SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DeleteSubscriptionTarget"; }
+  ///@{
+  /**
+   * <p>The ID of the Amazon DataZone environment in which the subscription target is
+   * deleted.</p>
+   */
+  inline const Aws::String& GetEnvironmentIdentifier() const { return m_environmentIdentifier; }
+  inline bool EnvironmentIdentifierHasBeenSet() const { return m_environmentIdentifierHasBeenSet; }
+  template <typename EnvironmentIdentifierT = Aws::String>
+  void SetEnvironmentIdentifier(EnvironmentIdentifierT&& value) {
+    m_environmentIdentifierHasBeenSet = true;
+    m_environmentIdentifier = std::forward<EnvironmentIdentifierT>(value);
+  }
+  template <typename EnvironmentIdentifierT = Aws::String>
+  DeleteSubscriptionTargetRequest& WithEnvironmentIdentifier(EnvironmentIdentifierT&& value) {
+    SetEnvironmentIdentifier(std::forward<EnvironmentIdentifierT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_DATAZONE_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>The ID of the subscription target that is deleted.</p>
+   */
+  inline const Aws::String& GetIdentifier() const { return m_identifier; }
+  inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
+  template <typename IdentifierT = Aws::String>
+  void SetIdentifier(IdentifierT&& value) {
+    m_identifierHasBeenSet = true;
+    m_identifier = std::forward<IdentifierT>(value);
+  }
+  template <typename IdentifierT = Aws::String>
+  DeleteSubscriptionTargetRequest& WithIdentifier(IdentifierT&& value) {
+    SetIdentifier(std::forward<IdentifierT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_domainIdentifier;
+  bool m_domainIdentifierHasBeenSet = false;
 
+  Aws::String m_environmentIdentifier;
+  bool m_environmentIdentifierHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The ID of the Amazon DataZone domain in which the subscription target is
-     * deleted.</p>
-     */
-    inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
-    inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-    template<typename DomainIdentifierT = Aws::String>
-    void SetDomainIdentifier(DomainIdentifierT&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::forward<DomainIdentifierT>(value); }
-    template<typename DomainIdentifierT = Aws::String>
-    DeleteSubscriptionTargetRequest& WithDomainIdentifier(DomainIdentifierT&& value) { SetDomainIdentifier(std::forward<DomainIdentifierT>(value)); return *this;}
-    ///@}
+  Aws::String m_identifier;
+  bool m_identifierHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The ID of the Amazon DataZone environment in which the subscription target is
-     * deleted.</p>
-     */
-    inline const Aws::String& GetEnvironmentIdentifier() const { return m_environmentIdentifier; }
-    inline bool EnvironmentIdentifierHasBeenSet() const { return m_environmentIdentifierHasBeenSet; }
-    template<typename EnvironmentIdentifierT = Aws::String>
-    void SetEnvironmentIdentifier(EnvironmentIdentifierT&& value) { m_environmentIdentifierHasBeenSet = true; m_environmentIdentifier = std::forward<EnvironmentIdentifierT>(value); }
-    template<typename EnvironmentIdentifierT = Aws::String>
-    DeleteSubscriptionTargetRequest& WithEnvironmentIdentifier(EnvironmentIdentifierT&& value) { SetEnvironmentIdentifier(std::forward<EnvironmentIdentifierT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the subscription target that is deleted.</p>
-     */
-    inline const Aws::String& GetIdentifier() const { return m_identifier; }
-    inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    template<typename IdentifierT = Aws::String>
-    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
-    template<typename IdentifierT = Aws::String>
-    DeleteSubscriptionTargetRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_domainIdentifier;
-    bool m_domainIdentifierHasBeenSet = false;
-
-    Aws::String m_environmentIdentifier;
-    bool m_environmentIdentifierHasBeenSet = false;
-
-    Aws::String m_identifier;
-    bool m_identifierHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace DataZone
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

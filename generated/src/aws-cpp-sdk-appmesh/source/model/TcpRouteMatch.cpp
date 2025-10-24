@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-TcpRouteMatch::TcpRouteMatch(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TcpRouteMatch::TcpRouteMatch(JsonView jsonValue) { *this = jsonValue; }
 
-TcpRouteMatch& TcpRouteMatch::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("port"))
-  {
+TcpRouteMatch& TcpRouteMatch::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("port")) {
     m_port = jsonValue.GetInteger("port");
     m_portHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TcpRouteMatch::Jsonize() const
-{
+JsonValue TcpRouteMatch::Jsonize() const {
   JsonValue payload;
 
-  if(m_portHasBeenSet)
-  {
-   payload.WithInteger("port", m_port);
-
+  if (m_portHasBeenSet) {
+    payload.WithInteger("port", m_port);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

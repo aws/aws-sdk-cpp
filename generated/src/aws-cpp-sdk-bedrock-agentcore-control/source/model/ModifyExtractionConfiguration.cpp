@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentCoreControl
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentCoreControl {
+namespace Model {
 
-ModifyExtractionConfiguration::ModifyExtractionConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ModifyExtractionConfiguration::ModifyExtractionConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ModifyExtractionConfiguration& ModifyExtractionConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("customExtractionConfiguration"))
-  {
+ModifyExtractionConfiguration& ModifyExtractionConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("customExtractionConfiguration")) {
     m_customExtractionConfiguration = jsonValue.GetObject("customExtractionConfiguration");
     m_customExtractionConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ModifyExtractionConfiguration::Jsonize() const
-{
+JsonValue ModifyExtractionConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_customExtractionConfigurationHasBeenSet)
-  {
-   payload.WithObject("customExtractionConfiguration", m_customExtractionConfiguration.Jsonize());
-
+  if (m_customExtractionConfigurationHasBeenSet) {
+    payload.WithObject("customExtractionConfiguration", m_customExtractionConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentCoreControl
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentCoreControl
+}  // namespace Aws

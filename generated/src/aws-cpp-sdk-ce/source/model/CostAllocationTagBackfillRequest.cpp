@@ -11,84 +11,64 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Model
-{
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
 
-CostAllocationTagBackfillRequest::CostAllocationTagBackfillRequest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CostAllocationTagBackfillRequest::CostAllocationTagBackfillRequest(JsonView jsonValue) { *this = jsonValue; }
 
-CostAllocationTagBackfillRequest& CostAllocationTagBackfillRequest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("BackfillFrom"))
-  {
+CostAllocationTagBackfillRequest& CostAllocationTagBackfillRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("BackfillFrom")) {
     m_backfillFrom = jsonValue.GetString("BackfillFrom");
     m_backfillFromHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RequestedAt"))
-  {
+  if (jsonValue.ValueExists("RequestedAt")) {
     m_requestedAt = jsonValue.GetString("RequestedAt");
     m_requestedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CompletedAt"))
-  {
+  if (jsonValue.ValueExists("CompletedAt")) {
     m_completedAt = jsonValue.GetString("CompletedAt");
     m_completedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BackfillStatus"))
-  {
-    m_backfillStatus = CostAllocationTagBackfillStatusMapper::GetCostAllocationTagBackfillStatusForName(jsonValue.GetString("BackfillStatus"));
+  if (jsonValue.ValueExists("BackfillStatus")) {
+    m_backfillStatus =
+        CostAllocationTagBackfillStatusMapper::GetCostAllocationTagBackfillStatusForName(jsonValue.GetString("BackfillStatus"));
     m_backfillStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastUpdatedAt"))
-  {
+  if (jsonValue.ValueExists("LastUpdatedAt")) {
     m_lastUpdatedAt = jsonValue.GetString("LastUpdatedAt");
     m_lastUpdatedAtHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CostAllocationTagBackfillRequest::Jsonize() const
-{
+JsonValue CostAllocationTagBackfillRequest::Jsonize() const {
   JsonValue payload;
 
-  if(m_backfillFromHasBeenSet)
-  {
-   payload.WithString("BackfillFrom", m_backfillFrom);
-
+  if (m_backfillFromHasBeenSet) {
+    payload.WithString("BackfillFrom", m_backfillFrom);
   }
 
-  if(m_requestedAtHasBeenSet)
-  {
-   payload.WithString("RequestedAt", m_requestedAt);
-
+  if (m_requestedAtHasBeenSet) {
+    payload.WithString("RequestedAt", m_requestedAt);
   }
 
-  if(m_completedAtHasBeenSet)
-  {
-   payload.WithString("CompletedAt", m_completedAt);
-
+  if (m_completedAtHasBeenSet) {
+    payload.WithString("CompletedAt", m_completedAt);
   }
 
-  if(m_backfillStatusHasBeenSet)
-  {
-   payload.WithString("BackfillStatus", CostAllocationTagBackfillStatusMapper::GetNameForCostAllocationTagBackfillStatus(m_backfillStatus));
+  if (m_backfillStatusHasBeenSet) {
+    payload.WithString("BackfillStatus",
+                       CostAllocationTagBackfillStatusMapper::GetNameForCostAllocationTagBackfillStatus(m_backfillStatus));
   }
 
-  if(m_lastUpdatedAtHasBeenSet)
-  {
-   payload.WithString("LastUpdatedAt", m_lastUpdatedAt);
-
+  if (m_lastUpdatedAtHasBeenSet) {
+    payload.WithString("LastUpdatedAt", m_lastUpdatedAt);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

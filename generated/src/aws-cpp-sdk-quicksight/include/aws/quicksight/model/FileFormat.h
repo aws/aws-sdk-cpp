@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class FileFormat
-  {
-    NOT_SET,
-    CSV,
-    TSV,
-    CLF,
-    ELF,
-    XLSX,
-    JSON
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class FileFormat { NOT_SET, CSV, TSV, CLF, ELF, XLSX, JSON };
 
-namespace FileFormatMapper
-{
+namespace FileFormatMapper {
 AWS_QUICKSIGHT_API FileFormat GetFileFormatForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForFileFormat(FileFormat value);
-} // namespace FileFormatMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace FileFormatMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

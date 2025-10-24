@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/redshift-serverless/RedshiftServerless_EXPORTS.h>
 
-namespace Aws
-{
-namespace RedshiftServerless
-{
-class RedshiftServerlessEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace RedshiftServerless {
+class RedshiftServerlessEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace RedshiftServerless
-} // namespace Aws
+}  // namespace RedshiftServerless
+}  // namespace Aws

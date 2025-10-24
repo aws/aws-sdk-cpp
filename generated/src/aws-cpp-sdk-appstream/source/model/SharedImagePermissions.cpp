@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppStream
-{
-namespace Model
-{
+namespace Aws {
+namespace AppStream {
+namespace Model {
 
-SharedImagePermissions::SharedImagePermissions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SharedImagePermissions::SharedImagePermissions(JsonView jsonValue) { *this = jsonValue; }
 
-SharedImagePermissions& SharedImagePermissions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("sharedAccountId"))
-  {
+SharedImagePermissions& SharedImagePermissions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("sharedAccountId")) {
     m_sharedAccountId = jsonValue.GetString("sharedAccountId");
     m_sharedAccountIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("imagePermissions"))
-  {
+  if (jsonValue.ValueExists("imagePermissions")) {
     m_imagePermissions = jsonValue.GetObject("imagePermissions");
     m_imagePermissionsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SharedImagePermissions::Jsonize() const
-{
+JsonValue SharedImagePermissions::Jsonize() const {
   JsonValue payload;
 
-  if(m_sharedAccountIdHasBeenSet)
-  {
-   payload.WithString("sharedAccountId", m_sharedAccountId);
-
+  if (m_sharedAccountIdHasBeenSet) {
+    payload.WithString("sharedAccountId", m_sharedAccountId);
   }
 
-  if(m_imagePermissionsHasBeenSet)
-  {
-   payload.WithObject("imagePermissions", m_imagePermissions.Jsonize());
-
+  if (m_imagePermissionsHasBeenSet) {
+    payload.WithObject("imagePermissions", m_imagePermissions.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppStream
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppStream
+}  // namespace Aws

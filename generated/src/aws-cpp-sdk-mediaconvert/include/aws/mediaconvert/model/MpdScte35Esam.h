@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class MpdScte35Esam
-  {
-    NOT_SET,
-    INSERT,
-    NONE
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class MpdScte35Esam { NOT_SET, INSERT, NONE };
 
-namespace MpdScte35EsamMapper
-{
+namespace MpdScte35EsamMapper {
 AWS_MEDIACONVERT_API MpdScte35Esam GetMpdScte35EsamForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForMpdScte35Esam(MpdScte35Esam value);
-} // namespace MpdScte35EsamMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace MpdScte35EsamMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

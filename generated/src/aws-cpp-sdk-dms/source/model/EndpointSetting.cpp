@@ -3,145 +3,109 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dms/model/EndpointSetting.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dms/model/EndpointSetting.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DatabaseMigrationService
-{
-namespace Model
-{
+namespace Aws {
+namespace DatabaseMigrationService {
+namespace Model {
 
-EndpointSetting::EndpointSetting(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EndpointSetting::EndpointSetting(JsonView jsonValue) { *this = jsonValue; }
 
-EndpointSetting& EndpointSetting::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+EndpointSetting& EndpointSetting::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = EndpointSettingTypeValueMapper::GetEndpointSettingTypeValueForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EnumValues"))
-  {
+  if (jsonValue.ValueExists("EnumValues")) {
     Aws::Utils::Array<JsonView> enumValuesJsonList = jsonValue.GetArray("EnumValues");
-    for(unsigned enumValuesIndex = 0; enumValuesIndex < enumValuesJsonList.GetLength(); ++enumValuesIndex)
-    {
+    for (unsigned enumValuesIndex = 0; enumValuesIndex < enumValuesJsonList.GetLength(); ++enumValuesIndex) {
       m_enumValues.push_back(enumValuesJsonList[enumValuesIndex].AsString());
     }
     m_enumValuesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Sensitive"))
-  {
+  if (jsonValue.ValueExists("Sensitive")) {
     m_sensitive = jsonValue.GetBool("Sensitive");
     m_sensitiveHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Units"))
-  {
+  if (jsonValue.ValueExists("Units")) {
     m_units = jsonValue.GetString("Units");
     m_unitsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Applicability"))
-  {
+  if (jsonValue.ValueExists("Applicability")) {
     m_applicability = jsonValue.GetString("Applicability");
     m_applicabilityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IntValueMin"))
-  {
+  if (jsonValue.ValueExists("IntValueMin")) {
     m_intValueMin = jsonValue.GetInteger("IntValueMin");
     m_intValueMinHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IntValueMax"))
-  {
+  if (jsonValue.ValueExists("IntValueMax")) {
     m_intValueMax = jsonValue.GetInteger("IntValueMax");
     m_intValueMaxHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DefaultValue"))
-  {
+  if (jsonValue.ValueExists("DefaultValue")) {
     m_defaultValue = jsonValue.GetString("DefaultValue");
     m_defaultValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EndpointSetting::Jsonize() const
-{
+JsonValue EndpointSetting::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", EndpointSettingTypeValueMapper::GetNameForEndpointSettingTypeValue(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", EndpointSettingTypeValueMapper::GetNameForEndpointSettingTypeValue(m_type));
   }
 
-  if(m_enumValuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> enumValuesJsonList(m_enumValues.size());
-   for(unsigned enumValuesIndex = 0; enumValuesIndex < enumValuesJsonList.GetLength(); ++enumValuesIndex)
-   {
-     enumValuesJsonList[enumValuesIndex].AsString(m_enumValues[enumValuesIndex]);
-   }
-   payload.WithArray("EnumValues", std::move(enumValuesJsonList));
-
+  if (m_enumValuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> enumValuesJsonList(m_enumValues.size());
+    for (unsigned enumValuesIndex = 0; enumValuesIndex < enumValuesJsonList.GetLength(); ++enumValuesIndex) {
+      enumValuesJsonList[enumValuesIndex].AsString(m_enumValues[enumValuesIndex]);
+    }
+    payload.WithArray("EnumValues", std::move(enumValuesJsonList));
   }
 
-  if(m_sensitiveHasBeenSet)
-  {
-   payload.WithBool("Sensitive", m_sensitive);
-
+  if (m_sensitiveHasBeenSet) {
+    payload.WithBool("Sensitive", m_sensitive);
   }
 
-  if(m_unitsHasBeenSet)
-  {
-   payload.WithString("Units", m_units);
-
+  if (m_unitsHasBeenSet) {
+    payload.WithString("Units", m_units);
   }
 
-  if(m_applicabilityHasBeenSet)
-  {
-   payload.WithString("Applicability", m_applicability);
-
+  if (m_applicabilityHasBeenSet) {
+    payload.WithString("Applicability", m_applicability);
   }
 
-  if(m_intValueMinHasBeenSet)
-  {
-   payload.WithInteger("IntValueMin", m_intValueMin);
-
+  if (m_intValueMinHasBeenSet) {
+    payload.WithInteger("IntValueMin", m_intValueMin);
   }
 
-  if(m_intValueMaxHasBeenSet)
-  {
-   payload.WithInteger("IntValueMax", m_intValueMax);
-
+  if (m_intValueMaxHasBeenSet) {
+    payload.WithInteger("IntValueMax", m_intValueMax);
   }
 
-  if(m_defaultValueHasBeenSet)
-  {
-   payload.WithString("DefaultValue", m_defaultValue);
-
+  if (m_defaultValueHasBeenSet) {
+    payload.WithString("DefaultValue", m_defaultValue);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DatabaseMigrationService
-} // namespace Aws
+}  // namespace Model
+}  // namespace DatabaseMigrationService
+}  // namespace Aws

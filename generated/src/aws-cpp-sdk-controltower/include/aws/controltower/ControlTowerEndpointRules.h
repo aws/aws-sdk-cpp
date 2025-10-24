@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/controltower/ControlTower_EXPORTS.h>
 
-namespace Aws
-{
-namespace ControlTower
-{
-class ControlTowerEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace ControlTower {
+class ControlTowerEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace ControlTower
-} // namespace Aws
+}  // namespace ControlTower
+}  // namespace Aws

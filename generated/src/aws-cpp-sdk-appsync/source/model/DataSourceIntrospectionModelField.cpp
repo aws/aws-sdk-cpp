@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppSync
-{
-namespace Model
-{
+namespace Aws {
+namespace AppSync {
+namespace Model {
 
-DataSourceIntrospectionModelField::DataSourceIntrospectionModelField(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DataSourceIntrospectionModelField::DataSourceIntrospectionModelField(JsonView jsonValue) { *this = jsonValue; }
 
-DataSourceIntrospectionModelField& DataSourceIntrospectionModelField::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+DataSourceIntrospectionModelField& DataSourceIntrospectionModelField::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = jsonValue.GetObject("type");
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("length"))
-  {
+  if (jsonValue.ValueExists("length")) {
     m_length = jsonValue.GetInt64("length");
     m_lengthHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DataSourceIntrospectionModelField::Jsonize() const
-{
+JsonValue DataSourceIntrospectionModelField::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithObject("type", m_type.Jsonize());
-
+  if (m_typeHasBeenSet) {
+    payload.WithObject("type", m_type.Jsonize());
   }
 
-  if(m_lengthHasBeenSet)
-  {
-   payload.WithInt64("length", m_length);
-
+  if (m_lengthHasBeenSet) {
+    payload.WithInt64("length", m_length);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppSync
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppSync
+}  // namespace Aws

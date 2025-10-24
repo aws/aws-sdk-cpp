@@ -11,85 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApiGatewayV2
-{
-namespace Model
-{
+namespace Aws {
+namespace ApiGatewayV2 {
+namespace Model {
 
-Model::Model(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Model::Model(JsonView jsonValue) { *this = jsonValue; }
 
-Model& Model::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("contentType"))
-  {
+Model& Model::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("contentType")) {
     m_contentType = jsonValue.GetString("contentType");
     m_contentTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("modelId"))
-  {
+  if (jsonValue.ValueExists("modelId")) {
     m_modelId = jsonValue.GetString("modelId");
     m_modelIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("schema"))
-  {
+  if (jsonValue.ValueExists("schema")) {
     m_schema = jsonValue.GetString("schema");
     m_schemaHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Model::Jsonize() const
-{
+JsonValue Model::Jsonize() const {
   JsonValue payload;
 
-  if(m_contentTypeHasBeenSet)
-  {
-   payload.WithString("contentType", m_contentType);
-
+  if (m_contentTypeHasBeenSet) {
+    payload.WithString("contentType", m_contentType);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_modelIdHasBeenSet)
-  {
-   payload.WithString("modelId", m_modelId);
-
+  if (m_modelIdHasBeenSet) {
+    payload.WithString("modelId", m_modelId);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_schemaHasBeenSet)
-  {
-   payload.WithString("schema", m_schema);
-
+  if (m_schemaHasBeenSet) {
+    payload.WithString("schema", m_schema);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApiGatewayV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApiGatewayV2
+}  // namespace Aws

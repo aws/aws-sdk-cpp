@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/mediastore/MediaStore_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/mediastore/MediaStoreEndpointRules.h>
+#include <aws/mediastore/MediaStore_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace MediaStore
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace MediaStore {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using MediaStoreClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using MediaStoreDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_MEDIASTORE_API MediaStoreEndpointProvider : public MediaStoreDefaultEpProviderBase
-{
-public:
-    using MediaStoreResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_MEDIASTORE_API MediaStoreEndpointProvider : public MediaStoreDefaultEpProviderBase {
+ public:
+  using MediaStoreResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    MediaStoreEndpointProvider()
-      : MediaStoreDefaultEpProviderBase(Aws::MediaStore::MediaStoreEndpointRules::GetRulesBlob(), Aws::MediaStore::MediaStoreEndpointRules::RulesBlobSize)
-    {}
+  MediaStoreEndpointProvider()
+      : MediaStoreDefaultEpProviderBase(Aws::MediaStore::MediaStoreEndpointRules::GetRulesBlob(),
+                                        Aws::MediaStore::MediaStoreEndpointRules::RulesBlobSize) {}
 
-    ~MediaStoreEndpointProvider()
-    {
-    }
+  ~MediaStoreEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace MediaStore
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace MediaStore
+}  // namespace Aws

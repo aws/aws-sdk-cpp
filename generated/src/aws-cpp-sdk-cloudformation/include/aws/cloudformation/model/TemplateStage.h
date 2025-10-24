@@ -7,25 +7,16 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CloudFormation
-{
-namespace Model
-{
-  enum class TemplateStage
-  {
-    NOT_SET,
-    Original,
-    Processed
-  };
+namespace Aws {
+namespace CloudFormation {
+namespace Model {
+enum class TemplateStage { NOT_SET, Original, Processed };
 
-namespace TemplateStageMapper
-{
+namespace TemplateStageMapper {
 AWS_CLOUDFORMATION_API TemplateStage GetTemplateStageForName(const Aws::String& name);
 
 AWS_CLOUDFORMATION_API Aws::String GetNameForTemplateStage(TemplateStage value);
-} // namespace TemplateStageMapper
-} // namespace Model
-} // namespace CloudFormation
-} // namespace Aws
+}  // namespace TemplateStageMapper
+}  // namespace Model
+}  // namespace CloudFormation
+}  // namespace Aws

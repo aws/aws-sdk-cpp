@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/directconnect/model/AssociatedCoreNetwork.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/directconnect/model/AssociatedCoreNetwork.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DirectConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace DirectConnect {
+namespace Model {
 
-AssociatedCoreNetwork::AssociatedCoreNetwork(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AssociatedCoreNetwork::AssociatedCoreNetwork(JsonView jsonValue) { *this = jsonValue; }
 
-AssociatedCoreNetwork& AssociatedCoreNetwork::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("id"))
-  {
+AssociatedCoreNetwork& AssociatedCoreNetwork::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ownerAccount"))
-  {
+  if (jsonValue.ValueExists("ownerAccount")) {
     m_ownerAccount = jsonValue.GetString("ownerAccount");
     m_ownerAccountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("attachmentId"))
-  {
+  if (jsonValue.ValueExists("attachmentId")) {
     m_attachmentId = jsonValue.GetString("attachmentId");
     m_attachmentIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AssociatedCoreNetwork::Jsonize() const
-{
+JsonValue AssociatedCoreNetwork::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_ownerAccountHasBeenSet)
-  {
-   payload.WithString("ownerAccount", m_ownerAccount);
-
+  if (m_ownerAccountHasBeenSet) {
+    payload.WithString("ownerAccount", m_ownerAccount);
   }
 
-  if(m_attachmentIdHasBeenSet)
-  {
-   payload.WithString("attachmentId", m_attachmentId);
-
+  if (m_attachmentIdHasBeenSet) {
+    payload.WithString("attachmentId", m_attachmentId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DirectConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace DirectConnect
+}  // namespace Aws

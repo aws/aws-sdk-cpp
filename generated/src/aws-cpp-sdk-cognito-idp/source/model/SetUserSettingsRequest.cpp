@@ -12,38 +12,26 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String SetUserSettingsRequest::SerializePayload() const
-{
+Aws::String SetUserSettingsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_accessTokenHasBeenSet)
-  {
-   payload.WithString("AccessToken", m_accessToken);
-
+  if (m_accessTokenHasBeenSet) {
+    payload.WithString("AccessToken", m_accessToken);
   }
 
-  if(m_mFAOptionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> mFAOptionsJsonList(m_mFAOptions.size());
-   for(unsigned mFAOptionsIndex = 0; mFAOptionsIndex < mFAOptionsJsonList.GetLength(); ++mFAOptionsIndex)
-   {
-     mFAOptionsJsonList[mFAOptionsIndex].AsObject(m_mFAOptions[mFAOptionsIndex].Jsonize());
-   }
-   payload.WithArray("MFAOptions", std::move(mFAOptionsJsonList));
-
+  if (m_mFAOptionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> mFAOptionsJsonList(m_mFAOptions.size());
+    for (unsigned mFAOptionsIndex = 0; mFAOptionsIndex < mFAOptionsJsonList.GetLength(); ++mFAOptionsIndex) {
+      mFAOptionsJsonList[mFAOptionsIndex].AsObject(m_mFAOptions[mFAOptionsIndex].Jsonize());
+    }
+    payload.WithArray("MFAOptions", std::move(mFAOptionsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection SetUserSettingsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection SetUserSettingsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityProviderService.SetUserSettings"));
   return headers;
-
 }
-
-
-
-

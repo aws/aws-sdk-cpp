@@ -3,115 +3,86 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/logs/model/LogStream.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/logs/model/LogStream.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudWatchLogs
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudWatchLogs {
+namespace Model {
 
-LogStream::LogStream(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LogStream::LogStream(JsonView jsonValue) { *this = jsonValue; }
 
-LogStream& LogStream::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("logStreamName"))
-  {
+LogStream& LogStream::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("logStreamName")) {
     m_logStreamName = jsonValue.GetString("logStreamName");
     m_logStreamNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("creationTime"))
-  {
+  if (jsonValue.ValueExists("creationTime")) {
     m_creationTime = jsonValue.GetInt64("creationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("firstEventTimestamp"))
-  {
+  if (jsonValue.ValueExists("firstEventTimestamp")) {
     m_firstEventTimestamp = jsonValue.GetInt64("firstEventTimestamp");
     m_firstEventTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastEventTimestamp"))
-  {
+  if (jsonValue.ValueExists("lastEventTimestamp")) {
     m_lastEventTimestamp = jsonValue.GetInt64("lastEventTimestamp");
     m_lastEventTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastIngestionTime"))
-  {
+  if (jsonValue.ValueExists("lastIngestionTime")) {
     m_lastIngestionTime = jsonValue.GetInt64("lastIngestionTime");
     m_lastIngestionTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("uploadSequenceToken"))
-  {
+  if (jsonValue.ValueExists("uploadSequenceToken")) {
     m_uploadSequenceToken = jsonValue.GetString("uploadSequenceToken");
     m_uploadSequenceTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("arn"))
-  {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LogStream::Jsonize() const
-{
+JsonValue LogStream::Jsonize() const {
   JsonValue payload;
 
-  if(m_logStreamNameHasBeenSet)
-  {
-   payload.WithString("logStreamName", m_logStreamName);
-
+  if (m_logStreamNameHasBeenSet) {
+    payload.WithString("logStreamName", m_logStreamName);
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithInt64("creationTime", m_creationTime);
-
+  if (m_creationTimeHasBeenSet) {
+    payload.WithInt64("creationTime", m_creationTime);
   }
 
-  if(m_firstEventTimestampHasBeenSet)
-  {
-   payload.WithInt64("firstEventTimestamp", m_firstEventTimestamp);
-
+  if (m_firstEventTimestampHasBeenSet) {
+    payload.WithInt64("firstEventTimestamp", m_firstEventTimestamp);
   }
 
-  if(m_lastEventTimestampHasBeenSet)
-  {
-   payload.WithInt64("lastEventTimestamp", m_lastEventTimestamp);
-
+  if (m_lastEventTimestampHasBeenSet) {
+    payload.WithInt64("lastEventTimestamp", m_lastEventTimestamp);
   }
 
-  if(m_lastIngestionTimeHasBeenSet)
-  {
-   payload.WithInt64("lastIngestionTime", m_lastIngestionTime);
-
+  if (m_lastIngestionTimeHasBeenSet) {
+    payload.WithInt64("lastIngestionTime", m_lastIngestionTime);
   }
 
-  if(m_uploadSequenceTokenHasBeenSet)
-  {
-   payload.WithString("uploadSequenceToken", m_uploadSequenceToken);
-
+  if (m_uploadSequenceTokenHasBeenSet) {
+    payload.WithString("uploadSequenceToken", m_uploadSequenceToken);
   }
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudWatchLogs
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudWatchLogs
+}  // namespace Aws

@@ -5,12 +5,8 @@
 
 #include <aws/qapps/QAppsEndpointProvider.h>
 
-namespace Aws
-{
-namespace QApps
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace QApps
-} // namespace Aws
+namespace Aws {
+namespace QApps {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace QApps
+}  // namespace Aws

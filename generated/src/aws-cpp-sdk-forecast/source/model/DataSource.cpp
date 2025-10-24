@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/forecast/model/DataSource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/forecast/model/DataSource.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ForecastService
-{
-namespace Model
-{
+namespace Aws {
+namespace ForecastService {
+namespace Model {
 
-DataSource::DataSource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DataSource::DataSource(JsonView jsonValue) { *this = jsonValue; }
 
-DataSource& DataSource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("S3Config"))
-  {
+DataSource& DataSource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("S3Config")) {
     m_s3Config = jsonValue.GetObject("S3Config");
     m_s3ConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DataSource::Jsonize() const
-{
+JsonValue DataSource::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3ConfigHasBeenSet)
-  {
-   payload.WithObject("S3Config", m_s3Config.Jsonize());
-
+  if (m_s3ConfigHasBeenSet) {
+    payload.WithObject("S3Config", m_s3Config.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ForecastService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ForecastService
+}  // namespace Aws

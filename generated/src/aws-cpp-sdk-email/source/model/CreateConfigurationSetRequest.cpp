@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/email/model/CreateConfigurationSetRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/email/model/CreateConfigurationSetRequest.h>
 
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateConfigurationSetRequest::SerializePayload() const
-{
+Aws::String CreateConfigurationSetRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateConfigurationSet&";
-  if(m_configurationSetHasBeenSet)
-  {
+  if (m_configurationSetHasBeenSet) {
     m_configurationSet.OutputToStream(ss, "ConfigurationSet");
   }
 
@@ -23,8 +21,4 @@ Aws::String CreateConfigurationSetRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CreateConfigurationSetRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateConfigurationSetRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

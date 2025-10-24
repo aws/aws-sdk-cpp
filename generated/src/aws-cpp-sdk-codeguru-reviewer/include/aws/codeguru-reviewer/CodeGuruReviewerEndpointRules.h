@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/codeguru-reviewer/CodeGuruReviewer_EXPORTS.h>
 
-namespace Aws
-{
-namespace CodeGuruReviewer
-{
-class CodeGuruReviewerEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace CodeGuruReviewer {
+class CodeGuruReviewerEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace CodeGuruReviewer
-} // namespace Aws
+}  // namespace CodeGuruReviewer
+}  // namespace Aws

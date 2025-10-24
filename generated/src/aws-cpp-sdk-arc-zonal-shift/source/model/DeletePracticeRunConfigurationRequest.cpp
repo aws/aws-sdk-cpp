@@ -12,11 +12,4 @@ using namespace Aws::ARCZonalShift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeletePracticeRunConfigurationRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DeletePracticeRunConfigurationRequest::SerializePayload() const { return {}; }

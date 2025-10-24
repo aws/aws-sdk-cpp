@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecs/ECS_EXPORTS.h>
 
-namespace Aws
-{
-namespace ECS
-{
-namespace Model
-{
-  enum class AssignPublicIp
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace ECS {
+namespace Model {
+enum class AssignPublicIp { NOT_SET, ENABLED, DISABLED };
 
-namespace AssignPublicIpMapper
-{
+namespace AssignPublicIpMapper {
 AWS_ECS_API AssignPublicIp GetAssignPublicIpForName(const Aws::String& name);
 
 AWS_ECS_API Aws::String GetNameForAssignPublicIp(AssignPublicIp value);
-} // namespace AssignPublicIpMapper
-} // namespace Model
-} // namespace ECS
-} // namespace Aws
+}  // namespace AssignPublicIpMapper
+}  // namespace Model
+}  // namespace ECS
+}  // namespace Aws

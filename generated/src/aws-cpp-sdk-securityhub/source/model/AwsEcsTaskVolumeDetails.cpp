@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsEcsTaskVolumeDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsEcsTaskVolumeDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsEcsTaskVolumeDetails::AwsEcsTaskVolumeDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsEcsTaskVolumeDetails::AwsEcsTaskVolumeDetails(JsonView jsonValue) { *this = jsonValue; }
 
-AwsEcsTaskVolumeDetails& AwsEcsTaskVolumeDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+AwsEcsTaskVolumeDetails& AwsEcsTaskVolumeDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Host"))
-  {
+  if (jsonValue.ValueExists("Host")) {
     m_host = jsonValue.GetObject("Host");
     m_hostHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsEcsTaskVolumeDetails::Jsonize() const
-{
+JsonValue AwsEcsTaskVolumeDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_hostHasBeenSet)
-  {
-   payload.WithObject("Host", m_host.Jsonize());
-
+  if (m_hostHasBeenSet) {
+    payload.WithObject("Host", m_host.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

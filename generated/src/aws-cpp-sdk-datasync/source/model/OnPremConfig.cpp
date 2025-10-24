@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/datasync/model/OnPremConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/datasync/model/OnPremConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DataSync
-{
-namespace Model
-{
+namespace Aws {
+namespace DataSync {
+namespace Model {
 
-OnPremConfig::OnPremConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OnPremConfig::OnPremConfig(JsonView jsonValue) { *this = jsonValue; }
 
-OnPremConfig& OnPremConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AgentArns"))
-  {
+OnPremConfig& OnPremConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AgentArns")) {
     Aws::Utils::Array<JsonView> agentArnsJsonList = jsonValue.GetArray("AgentArns");
-    for(unsigned agentArnsIndex = 0; agentArnsIndex < agentArnsJsonList.GetLength(); ++agentArnsIndex)
-    {
+    for (unsigned agentArnsIndex = 0; agentArnsIndex < agentArnsJsonList.GetLength(); ++agentArnsIndex) {
       m_agentArns.push_back(agentArnsJsonList[agentArnsIndex].AsString());
     }
     m_agentArnsHasBeenSet = true;
@@ -37,24 +28,20 @@ OnPremConfig& OnPremConfig::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue OnPremConfig::Jsonize() const
-{
+JsonValue OnPremConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_agentArnsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> agentArnsJsonList(m_agentArns.size());
-   for(unsigned agentArnsIndex = 0; agentArnsIndex < agentArnsJsonList.GetLength(); ++agentArnsIndex)
-   {
-     agentArnsJsonList[agentArnsIndex].AsString(m_agentArns[agentArnsIndex]);
-   }
-   payload.WithArray("AgentArns", std::move(agentArnsJsonList));
-
+  if (m_agentArnsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> agentArnsJsonList(m_agentArns.size());
+    for (unsigned agentArnsIndex = 0; agentArnsIndex < agentArnsJsonList.GetLength(); ++agentArnsIndex) {
+      agentArnsJsonList[agentArnsIndex].AsString(m_agentArns[agentArnsIndex]);
+    }
+    payload.WithArray("AgentArns", std::move(agentArnsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DataSync
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataSync
+}  // namespace Aws

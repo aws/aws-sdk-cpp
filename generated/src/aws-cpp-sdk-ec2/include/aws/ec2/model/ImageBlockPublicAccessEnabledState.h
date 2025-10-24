@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class ImageBlockPublicAccessEnabledState
-  {
-    NOT_SET,
-    block_new_sharing
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class ImageBlockPublicAccessEnabledState { NOT_SET, block_new_sharing };
 
-namespace ImageBlockPublicAccessEnabledStateMapper
-{
+namespace ImageBlockPublicAccessEnabledStateMapper {
 AWS_EC2_API ImageBlockPublicAccessEnabledState GetImageBlockPublicAccessEnabledStateForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForImageBlockPublicAccessEnabledState(ImageBlockPublicAccessEnabledState value);
-} // namespace ImageBlockPublicAccessEnabledStateMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace ImageBlockPublicAccessEnabledStateMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

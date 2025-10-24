@@ -5,12 +5,8 @@
 
 #include <aws/servicecatalog/ServiceCatalogEndpointProvider.h>
 
-namespace Aws
-{
-namespace ServiceCatalog
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ServiceCatalog
-} // namespace Aws
+namespace Aws {
+namespace ServiceCatalog {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ServiceCatalog
+}  // namespace Aws

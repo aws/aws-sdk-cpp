@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMeetings
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMeetings {
+namespace Model {
 
-AttendeeFeatures::AttendeeFeatures(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AttendeeFeatures::AttendeeFeatures(JsonView jsonValue) { *this = jsonValue; }
 
-AttendeeFeatures& AttendeeFeatures::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MaxCount"))
-  {
+AttendeeFeatures& AttendeeFeatures::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MaxCount")) {
     m_maxCount = jsonValue.GetInteger("MaxCount");
     m_maxCountHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AttendeeFeatures::Jsonize() const
-{
+JsonValue AttendeeFeatures::Jsonize() const {
   JsonValue payload;
 
-  if(m_maxCountHasBeenSet)
-  {
-   payload.WithInteger("MaxCount", m_maxCount);
-
+  if (m_maxCountHasBeenSet) {
+    payload.WithInteger("MaxCount", m_maxCount);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMeetings
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMeetings
+}  // namespace Aws

@@ -8,16 +8,13 @@
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelines_EXPORTS.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
 
-namespace Aws
-{
-namespace Client
-{
+namespace Aws {
+namespace Client {
 
-class AWS_CHIMESDKMEDIAPIPELINES_API ChimeSDKMediaPipelinesErrorMarshaller : public Aws::Client::JsonErrorMarshaller
-{
-public:
+class AWS_CHIMESDKMEDIAPIPELINES_API ChimeSDKMediaPipelinesErrorMarshaller : public Aws::Client::JsonErrorMarshaller {
+ public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Client
-} // namespace Aws
+}  // namespace Client
+}  // namespace Aws

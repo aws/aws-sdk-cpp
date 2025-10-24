@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
 
-namespace Aws
-{
-namespace ResilienceHub
-{
-namespace Model
-{
-  enum class ResourceResolutionStatusType
-  {
-    NOT_SET,
-    Pending,
-    InProgress,
-    Failed,
-    Success
-  };
+namespace Aws {
+namespace ResilienceHub {
+namespace Model {
+enum class ResourceResolutionStatusType { NOT_SET, Pending, InProgress, Failed, Success };
 
-namespace ResourceResolutionStatusTypeMapper
-{
+namespace ResourceResolutionStatusTypeMapper {
 AWS_RESILIENCEHUB_API ResourceResolutionStatusType GetResourceResolutionStatusTypeForName(const Aws::String& name);
 
 AWS_RESILIENCEHUB_API Aws::String GetNameForResourceResolutionStatusType(ResourceResolutionStatusType value);
-} // namespace ResourceResolutionStatusTypeMapper
-} // namespace Model
-} // namespace ResilienceHub
-} // namespace Aws
+}  // namespace ResourceResolutionStatusTypeMapper
+}  // namespace Model
+}  // namespace ResilienceHub
+}  // namespace Aws

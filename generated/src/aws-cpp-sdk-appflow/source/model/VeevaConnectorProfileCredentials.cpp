@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-VeevaConnectorProfileCredentials::VeevaConnectorProfileCredentials(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VeevaConnectorProfileCredentials::VeevaConnectorProfileCredentials(JsonView jsonValue) { *this = jsonValue; }
 
-VeevaConnectorProfileCredentials& VeevaConnectorProfileCredentials::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("username"))
-  {
+VeevaConnectorProfileCredentials& VeevaConnectorProfileCredentials::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("username")) {
     m_username = jsonValue.GetString("username");
     m_usernameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("password"))
-  {
+  if (jsonValue.ValueExists("password")) {
     m_password = jsonValue.GetString("password");
     m_passwordHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VeevaConnectorProfileCredentials::Jsonize() const
-{
+JsonValue VeevaConnectorProfileCredentials::Jsonize() const {
   JsonValue payload;
 
-  if(m_usernameHasBeenSet)
-  {
-   payload.WithString("username", m_username);
-
+  if (m_usernameHasBeenSet) {
+    payload.WithString("username", m_username);
   }
 
-  if(m_passwordHasBeenSet)
-  {
-   payload.WithString("password", m_password);
-
+  if (m_passwordHasBeenSet) {
+    payload.WithString("password", m_password);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

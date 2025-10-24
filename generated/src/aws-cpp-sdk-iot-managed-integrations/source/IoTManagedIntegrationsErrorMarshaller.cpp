@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::IoTManagedIntegrations;
 
-AWSError<CoreErrors> IoTManagedIntegrationsErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> IoTManagedIntegrationsErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = IoTManagedIntegrationsErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

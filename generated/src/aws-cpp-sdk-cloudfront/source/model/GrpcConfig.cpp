@@ -4,37 +4,29 @@
  */
 
 #include <aws/cloudfront/model/GrpcConfig.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
-GrpcConfig::GrpcConfig(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+GrpcConfig::GrpcConfig(const XmlNode& xmlNode) { *this = xmlNode; }
 
-GrpcConfig& GrpcConfig::operator =(const XmlNode& xmlNode)
-{
+GrpcConfig& GrpcConfig::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
-    if(!enabledNode.IsNull())
-    {
-      m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
+    if (!enabledNode.IsNull()) {
+      m_enabled =
+          StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
     }
   }
@@ -42,19 +34,16 @@ GrpcConfig& GrpcConfig::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void GrpcConfig::AddToNode(XmlNode& parentNode) const
-{
+void GrpcConfig::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_enabledHasBeenSet)
-  {
-   XmlNode enabledNode = parentNode.CreateChildElement("Enabled");
-   ss << std::boolalpha << m_enabled;
-   enabledNode.SetText(ss.str());
-   ss.str("");
+  if (m_enabledHasBeenSet) {
+    XmlNode enabledNode = parentNode.CreateChildElement("Enabled");
+    ss << std::boolalpha << m_enabled;
+    enabledNode.SetText(ss.str());
+    ss.str("");
   }
-
 }
 
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

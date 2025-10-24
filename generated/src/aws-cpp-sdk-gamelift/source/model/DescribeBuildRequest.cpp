@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/gamelift/model/DescribeBuildRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/gamelift/model/DescribeBuildRequest.h>
 
 #include <utility>
 
@@ -12,27 +12,18 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeBuildRequest::SerializePayload() const
-{
+Aws::String DescribeBuildRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_buildIdHasBeenSet)
-  {
-   payload.WithString("BuildId", m_buildId);
-
+  if (m_buildIdHasBeenSet) {
+    payload.WithString("BuildId", m_buildId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeBuildRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeBuildRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "GameLift.DescribeBuild"));
   return headers;
-
 }
-
-
-
-

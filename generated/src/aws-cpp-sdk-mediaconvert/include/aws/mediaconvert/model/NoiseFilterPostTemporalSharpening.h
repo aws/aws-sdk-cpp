@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class NoiseFilterPostTemporalSharpening
-  {
-    NOT_SET,
-    DISABLED,
-    ENABLED,
-    AUTO
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class NoiseFilterPostTemporalSharpening { NOT_SET, DISABLED, ENABLED, AUTO };
 
-namespace NoiseFilterPostTemporalSharpeningMapper
-{
+namespace NoiseFilterPostTemporalSharpeningMapper {
 AWS_MEDIACONVERT_API NoiseFilterPostTemporalSharpening GetNoiseFilterPostTemporalSharpeningForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForNoiseFilterPostTemporalSharpening(NoiseFilterPostTemporalSharpening value);
-} // namespace NoiseFilterPostTemporalSharpeningMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace NoiseFilterPostTemporalSharpeningMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

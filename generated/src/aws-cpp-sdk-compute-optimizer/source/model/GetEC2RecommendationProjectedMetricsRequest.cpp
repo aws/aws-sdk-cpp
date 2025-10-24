@@ -12,54 +12,38 @@ using namespace Aws::ComputeOptimizer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetEC2RecommendationProjectedMetricsRequest::SerializePayload() const
-{
+Aws::String GetEC2RecommendationProjectedMetricsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_instanceArnHasBeenSet)
-  {
-   payload.WithString("instanceArn", m_instanceArn);
-
+  if (m_instanceArnHasBeenSet) {
+    payload.WithString("instanceArn", m_instanceArn);
   }
 
-  if(m_statHasBeenSet)
-  {
-   payload.WithString("stat", MetricStatisticMapper::GetNameForMetricStatistic(m_stat));
+  if (m_statHasBeenSet) {
+    payload.WithString("stat", MetricStatisticMapper::GetNameForMetricStatistic(m_stat));
   }
 
-  if(m_periodHasBeenSet)
-  {
-   payload.WithInteger("period", m_period);
-
+  if (m_periodHasBeenSet) {
+    payload.WithInteger("period", m_period);
   }
 
-  if(m_startTimeHasBeenSet)
-  {
-   payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
+  if (m_startTimeHasBeenSet) {
+    payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
   }
 
-  if(m_endTimeHasBeenSet)
-  {
-   payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
+  if (m_endTimeHasBeenSet) {
+    payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
   }
 
-  if(m_recommendationPreferencesHasBeenSet)
-  {
-   payload.WithObject("recommendationPreferences", m_recommendationPreferences.Jsonize());
-
+  if (m_recommendationPreferencesHasBeenSet) {
+    payload.WithObject("recommendationPreferences", m_recommendationPreferences.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetEC2RecommendationProjectedMetricsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetEC2RecommendationProjectedMetricsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ComputeOptimizerService.GetEC2RecommendationProjectedMetrics"));
   return headers;
-
 }
-
-
-
-

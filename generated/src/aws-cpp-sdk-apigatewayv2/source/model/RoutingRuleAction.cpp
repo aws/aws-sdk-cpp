@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApiGatewayV2
-{
-namespace Model
-{
+namespace Aws {
+namespace ApiGatewayV2 {
+namespace Model {
 
-RoutingRuleAction::RoutingRuleAction(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RoutingRuleAction::RoutingRuleAction(JsonView jsonValue) { *this = jsonValue; }
 
-RoutingRuleAction& RoutingRuleAction::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("invokeApi"))
-  {
+RoutingRuleAction& RoutingRuleAction::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("invokeApi")) {
     m_invokeApi = jsonValue.GetObject("invokeApi");
     m_invokeApiHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RoutingRuleAction::Jsonize() const
-{
+JsonValue RoutingRuleAction::Jsonize() const {
   JsonValue payload;
 
-  if(m_invokeApiHasBeenSet)
-  {
-   payload.WithObject("invokeApi", m_invokeApi.Jsonize());
-
+  if (m_invokeApiHasBeenSet) {
+    payload.WithObject("invokeApi", m_invokeApi.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApiGatewayV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApiGatewayV2
+}  // namespace Aws

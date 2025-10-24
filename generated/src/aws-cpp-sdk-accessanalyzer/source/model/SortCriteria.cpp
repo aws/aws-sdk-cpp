@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
 
-SortCriteria::SortCriteria(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SortCriteria::SortCriteria(JsonView jsonValue) { *this = jsonValue; }
 
-SortCriteria& SortCriteria::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("attributeName"))
-  {
+SortCriteria& SortCriteria::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("attributeName")) {
     m_attributeName = jsonValue.GetString("attributeName");
     m_attributeNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("orderBy"))
-  {
+  if (jsonValue.ValueExists("orderBy")) {
     m_orderBy = OrderByMapper::GetOrderByForName(jsonValue.GetString("orderBy"));
     m_orderByHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SortCriteria::Jsonize() const
-{
+JsonValue SortCriteria::Jsonize() const {
   JsonValue payload;
 
-  if(m_attributeNameHasBeenSet)
-  {
-   payload.WithString("attributeName", m_attributeName);
-
+  if (m_attributeNameHasBeenSet) {
+    payload.WithString("attributeName", m_attributeName);
   }
 
-  if(m_orderByHasBeenSet)
-  {
-   payload.WithString("orderBy", OrderByMapper::GetNameForOrderBy(m_orderBy));
+  if (m_orderByHasBeenSet) {
+    payload.WithString("orderBy", OrderByMapper::GetNameForOrderBy(m_orderBy));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

@@ -4,40 +4,30 @@
  */
 
 #include <aws/cloudfront/model/Tags.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
-Tags::Tags(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+Tags::Tags(const XmlNode& xmlNode) { *this = xmlNode; }
 
-Tags& Tags::operator =(const XmlNode& xmlNode)
-{
+Tags& Tags::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode itemsNode = resultNode.FirstChild("Items");
-    if(!itemsNode.IsNull())
-    {
+    if (!itemsNode.IsNull()) {
       XmlNode itemsMember = itemsNode.FirstChild("Tag");
       m_itemsHasBeenSet = !itemsMember.IsNull();
-      while(!itemsMember.IsNull())
-      {
+      while (!itemsMember.IsNull()) {
         m_items.push_back(itemsMember);
         itemsMember = itemsMember.NextNode("Tag");
       }
@@ -49,21 +39,17 @@ Tags& Tags::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void Tags::AddToNode(XmlNode& parentNode) const
-{
+void Tags::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_itemsHasBeenSet)
-  {
-   XmlNode itemsParentNode = parentNode.CreateChildElement("Items");
-   for(const auto& item : m_items)
-   {
-     XmlNode itemsNode = itemsParentNode.CreateChildElement("Tag");
-     item.AddToNode(itemsNode);
-   }
+  if (m_itemsHasBeenSet) {
+    XmlNode itemsParentNode = parentNode.CreateChildElement("Items");
+    for (const auto& item : m_items) {
+      XmlNode itemsNode = itemsParentNode.CreateChildElement("Tag");
+      item.AddToNode(itemsNode);
+    }
   }
-
 }
 
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

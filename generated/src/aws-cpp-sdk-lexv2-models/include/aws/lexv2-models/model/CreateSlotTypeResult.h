@@ -4,227 +4,302 @@
  */
 
 #pragma once
-#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/lexv2-models/model/SlotValueSelectionSetting.h>
-#include <aws/core/utils/DateTime.h>
-#include <aws/lexv2-models/model/ExternalSourceSetting.h>
+#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/lexv2-models/model/CompositeSlotTypeSetting.h>
+#include <aws/lexv2-models/model/ExternalSourceSetting.h>
 #include <aws/lexv2-models/model/SlotTypeValue.h>
+#include <aws/lexv2-models/model/SlotValueSelectionSetting.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace LexModelsV2
-{
-namespace Model
-{
-  class CreateSlotTypeResult
-  {
-  public:
-    AWS_LEXMODELSV2_API CreateSlotTypeResult() = default;
-    AWS_LEXMODELSV2_API CreateSlotTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_LEXMODELSV2_API CreateSlotTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace LexModelsV2 {
+namespace Model {
+class CreateSlotTypeResult {
+ public:
+  AWS_LEXMODELSV2_API CreateSlotTypeResult() = default;
+  AWS_LEXMODELSV2_API CreateSlotTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_LEXMODELSV2_API CreateSlotTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>The unique identifier assigned to the slot type. Use this to identify the
+   * slot type in the <code>UpdateSlotType</code> and <code>DeleteSlotType</code>
+   * operations.</p>
+   */
+  inline const Aws::String& GetSlotTypeId() const { return m_slotTypeId; }
+  template <typename SlotTypeIdT = Aws::String>
+  void SetSlotTypeId(SlotTypeIdT&& value) {
+    m_slotTypeIdHasBeenSet = true;
+    m_slotTypeId = std::forward<SlotTypeIdT>(value);
+  }
+  template <typename SlotTypeIdT = Aws::String>
+  CreateSlotTypeResult& WithSlotTypeId(SlotTypeIdT&& value) {
+    SetSlotTypeId(std::forward<SlotTypeIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The unique identifier assigned to the slot type. Use this to identify the
-     * slot type in the <code>UpdateSlotType</code> and <code>DeleteSlotType</code>
-     * operations.</p>
-     */
-    inline const Aws::String& GetSlotTypeId() const { return m_slotTypeId; }
-    template<typename SlotTypeIdT = Aws::String>
-    void SetSlotTypeId(SlotTypeIdT&& value) { m_slotTypeIdHasBeenSet = true; m_slotTypeId = std::forward<SlotTypeIdT>(value); }
-    template<typename SlotTypeIdT = Aws::String>
-    CreateSlotTypeResult& WithSlotTypeId(SlotTypeIdT&& value) { SetSlotTypeId(std::forward<SlotTypeIdT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The name specified for the slot type.</p>
+   */
+  inline const Aws::String& GetSlotTypeName() const { return m_slotTypeName; }
+  template <typename SlotTypeNameT = Aws::String>
+  void SetSlotTypeName(SlotTypeNameT&& value) {
+    m_slotTypeNameHasBeenSet = true;
+    m_slotTypeName = std::forward<SlotTypeNameT>(value);
+  }
+  template <typename SlotTypeNameT = Aws::String>
+  CreateSlotTypeResult& WithSlotTypeName(SlotTypeNameT&& value) {
+    SetSlotTypeName(std::forward<SlotTypeNameT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The name specified for the slot type.</p>
-     */
-    inline const Aws::String& GetSlotTypeName() const { return m_slotTypeName; }
-    template<typename SlotTypeNameT = Aws::String>
-    void SetSlotTypeName(SlotTypeNameT&& value) { m_slotTypeNameHasBeenSet = true; m_slotTypeName = std::forward<SlotTypeNameT>(value); }
-    template<typename SlotTypeNameT = Aws::String>
-    CreateSlotTypeResult& WithSlotTypeName(SlotTypeNameT&& value) { SetSlotTypeName(std::forward<SlotTypeNameT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The description specified for the slot type.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  CreateSlotTypeResult& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The description specified for the slot type.</p>
-     */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    CreateSlotTypeResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The list of values that the slot type can assume.</p>
+   */
+  inline const Aws::Vector<SlotTypeValue>& GetSlotTypeValues() const { return m_slotTypeValues; }
+  template <typename SlotTypeValuesT = Aws::Vector<SlotTypeValue>>
+  void SetSlotTypeValues(SlotTypeValuesT&& value) {
+    m_slotTypeValuesHasBeenSet = true;
+    m_slotTypeValues = std::forward<SlotTypeValuesT>(value);
+  }
+  template <typename SlotTypeValuesT = Aws::Vector<SlotTypeValue>>
+  CreateSlotTypeResult& WithSlotTypeValues(SlotTypeValuesT&& value) {
+    SetSlotTypeValues(std::forward<SlotTypeValuesT>(value));
+    return *this;
+  }
+  template <typename SlotTypeValuesT = SlotTypeValue>
+  CreateSlotTypeResult& AddSlotTypeValues(SlotTypeValuesT&& value) {
+    m_slotTypeValuesHasBeenSet = true;
+    m_slotTypeValues.emplace_back(std::forward<SlotTypeValuesT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The list of values that the slot type can assume.</p>
-     */
-    inline const Aws::Vector<SlotTypeValue>& GetSlotTypeValues() const { return m_slotTypeValues; }
-    template<typename SlotTypeValuesT = Aws::Vector<SlotTypeValue>>
-    void SetSlotTypeValues(SlotTypeValuesT&& value) { m_slotTypeValuesHasBeenSet = true; m_slotTypeValues = std::forward<SlotTypeValuesT>(value); }
-    template<typename SlotTypeValuesT = Aws::Vector<SlotTypeValue>>
-    CreateSlotTypeResult& WithSlotTypeValues(SlotTypeValuesT&& value) { SetSlotTypeValues(std::forward<SlotTypeValuesT>(value)); return *this;}
-    template<typename SlotTypeValuesT = SlotTypeValue>
-    CreateSlotTypeResult& AddSlotTypeValues(SlotTypeValuesT&& value) { m_slotTypeValuesHasBeenSet = true; m_slotTypeValues.emplace_back(std::forward<SlotTypeValuesT>(value)); return *this; }
-    ///@}
+  ///@{
+  /**
+   * <p>The strategy that Amazon Lex uses to select a value from the list of possible
+   * values.</p>
+   */
+  inline const SlotValueSelectionSetting& GetValueSelectionSetting() const { return m_valueSelectionSetting; }
+  template <typename ValueSelectionSettingT = SlotValueSelectionSetting>
+  void SetValueSelectionSetting(ValueSelectionSettingT&& value) {
+    m_valueSelectionSettingHasBeenSet = true;
+    m_valueSelectionSetting = std::forward<ValueSelectionSettingT>(value);
+  }
+  template <typename ValueSelectionSettingT = SlotValueSelectionSetting>
+  CreateSlotTypeResult& WithValueSelectionSetting(ValueSelectionSettingT&& value) {
+    SetValueSelectionSetting(std::forward<ValueSelectionSettingT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The strategy that Amazon Lex uses to select a value from the list of possible
-     * values.</p>
-     */
-    inline const SlotValueSelectionSetting& GetValueSelectionSetting() const { return m_valueSelectionSetting; }
-    template<typename ValueSelectionSettingT = SlotValueSelectionSetting>
-    void SetValueSelectionSetting(ValueSelectionSettingT&& value) { m_valueSelectionSettingHasBeenSet = true; m_valueSelectionSetting = std::forward<ValueSelectionSettingT>(value); }
-    template<typename ValueSelectionSettingT = SlotValueSelectionSetting>
-    CreateSlotTypeResult& WithValueSelectionSetting(ValueSelectionSettingT&& value) { SetValueSelectionSetting(std::forward<ValueSelectionSettingT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The signature of the base slot type specified for the slot type.</p>
+   */
+  inline const Aws::String& GetParentSlotTypeSignature() const { return m_parentSlotTypeSignature; }
+  template <typename ParentSlotTypeSignatureT = Aws::String>
+  void SetParentSlotTypeSignature(ParentSlotTypeSignatureT&& value) {
+    m_parentSlotTypeSignatureHasBeenSet = true;
+    m_parentSlotTypeSignature = std::forward<ParentSlotTypeSignatureT>(value);
+  }
+  template <typename ParentSlotTypeSignatureT = Aws::String>
+  CreateSlotTypeResult& WithParentSlotTypeSignature(ParentSlotTypeSignatureT&& value) {
+    SetParentSlotTypeSignature(std::forward<ParentSlotTypeSignatureT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The signature of the base slot type specified for the slot type.</p>
-     */
-    inline const Aws::String& GetParentSlotTypeSignature() const { return m_parentSlotTypeSignature; }
-    template<typename ParentSlotTypeSignatureT = Aws::String>
-    void SetParentSlotTypeSignature(ParentSlotTypeSignatureT&& value) { m_parentSlotTypeSignatureHasBeenSet = true; m_parentSlotTypeSignature = std::forward<ParentSlotTypeSignatureT>(value); }
-    template<typename ParentSlotTypeSignatureT = Aws::String>
-    CreateSlotTypeResult& WithParentSlotTypeSignature(ParentSlotTypeSignatureT&& value) { SetParentSlotTypeSignature(std::forward<ParentSlotTypeSignatureT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The identifier for the bot associated with the slot type.</p>
+   */
+  inline const Aws::String& GetBotId() const { return m_botId; }
+  template <typename BotIdT = Aws::String>
+  void SetBotId(BotIdT&& value) {
+    m_botIdHasBeenSet = true;
+    m_botId = std::forward<BotIdT>(value);
+  }
+  template <typename BotIdT = Aws::String>
+  CreateSlotTypeResult& WithBotId(BotIdT&& value) {
+    SetBotId(std::forward<BotIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The identifier for the bot associated with the slot type.</p>
-     */
-    inline const Aws::String& GetBotId() const { return m_botId; }
-    template<typename BotIdT = Aws::String>
-    void SetBotId(BotIdT&& value) { m_botIdHasBeenSet = true; m_botId = std::forward<BotIdT>(value); }
-    template<typename BotIdT = Aws::String>
-    CreateSlotTypeResult& WithBotId(BotIdT&& value) { SetBotId(std::forward<BotIdT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The version of the bot associated with the slot type.</p>
+   */
+  inline const Aws::String& GetBotVersion() const { return m_botVersion; }
+  template <typename BotVersionT = Aws::String>
+  void SetBotVersion(BotVersionT&& value) {
+    m_botVersionHasBeenSet = true;
+    m_botVersion = std::forward<BotVersionT>(value);
+  }
+  template <typename BotVersionT = Aws::String>
+  CreateSlotTypeResult& WithBotVersion(BotVersionT&& value) {
+    SetBotVersion(std::forward<BotVersionT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The version of the bot associated with the slot type.</p>
-     */
-    inline const Aws::String& GetBotVersion() const { return m_botVersion; }
-    template<typename BotVersionT = Aws::String>
-    void SetBotVersion(BotVersionT&& value) { m_botVersionHasBeenSet = true; m_botVersion = std::forward<BotVersionT>(value); }
-    template<typename BotVersionT = Aws::String>
-    CreateSlotTypeResult& WithBotVersion(BotVersionT&& value) { SetBotVersion(std::forward<BotVersionT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The specified language and local specified for the slot type.</p>
+   */
+  inline const Aws::String& GetLocaleId() const { return m_localeId; }
+  template <typename LocaleIdT = Aws::String>
+  void SetLocaleId(LocaleIdT&& value) {
+    m_localeIdHasBeenSet = true;
+    m_localeId = std::forward<LocaleIdT>(value);
+  }
+  template <typename LocaleIdT = Aws::String>
+  CreateSlotTypeResult& WithLocaleId(LocaleIdT&& value) {
+    SetLocaleId(std::forward<LocaleIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The specified language and local specified for the slot type.</p>
-     */
-    inline const Aws::String& GetLocaleId() const { return m_localeId; }
-    template<typename LocaleIdT = Aws::String>
-    void SetLocaleId(LocaleIdT&& value) { m_localeIdHasBeenSet = true; m_localeId = std::forward<LocaleIdT>(value); }
-    template<typename LocaleIdT = Aws::String>
-    CreateSlotTypeResult& WithLocaleId(LocaleIdT&& value) { SetLocaleId(std::forward<LocaleIdT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>A timestamp of the date and time that the slot type was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreationDateTime() const { return m_creationDateTime; }
+  template <typename CreationDateTimeT = Aws::Utils::DateTime>
+  void SetCreationDateTime(CreationDateTimeT&& value) {
+    m_creationDateTimeHasBeenSet = true;
+    m_creationDateTime = std::forward<CreationDateTimeT>(value);
+  }
+  template <typename CreationDateTimeT = Aws::Utils::DateTime>
+  CreateSlotTypeResult& WithCreationDateTime(CreationDateTimeT&& value) {
+    SetCreationDateTime(std::forward<CreationDateTimeT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>A timestamp of the date and time that the slot type was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreationDateTime() const { return m_creationDateTime; }
-    template<typename CreationDateTimeT = Aws::Utils::DateTime>
-    void SetCreationDateTime(CreationDateTimeT&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::forward<CreationDateTimeT>(value); }
-    template<typename CreationDateTimeT = Aws::Utils::DateTime>
-    CreateSlotTypeResult& WithCreationDateTime(CreationDateTimeT&& value) { SetCreationDateTime(std::forward<CreationDateTimeT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The type of external information used to create the slot type.</p>
+   */
+  inline const ExternalSourceSetting& GetExternalSourceSetting() const { return m_externalSourceSetting; }
+  template <typename ExternalSourceSettingT = ExternalSourceSetting>
+  void SetExternalSourceSetting(ExternalSourceSettingT&& value) {
+    m_externalSourceSettingHasBeenSet = true;
+    m_externalSourceSetting = std::forward<ExternalSourceSettingT>(value);
+  }
+  template <typename ExternalSourceSettingT = ExternalSourceSetting>
+  CreateSlotTypeResult& WithExternalSourceSetting(ExternalSourceSettingT&& value) {
+    SetExternalSourceSetting(std::forward<ExternalSourceSettingT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The type of external information used to create the slot type.</p>
-     */
-    inline const ExternalSourceSetting& GetExternalSourceSetting() const { return m_externalSourceSetting; }
-    template<typename ExternalSourceSettingT = ExternalSourceSetting>
-    void SetExternalSourceSetting(ExternalSourceSettingT&& value) { m_externalSourceSettingHasBeenSet = true; m_externalSourceSetting = std::forward<ExternalSourceSettingT>(value); }
-    template<typename ExternalSourceSettingT = ExternalSourceSetting>
-    CreateSlotTypeResult& WithExternalSourceSetting(ExternalSourceSettingT&& value) { SetExternalSourceSetting(std::forward<ExternalSourceSettingT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>Specifications for a composite slot type.</p>
+   */
+  inline const CompositeSlotTypeSetting& GetCompositeSlotTypeSetting() const { return m_compositeSlotTypeSetting; }
+  template <typename CompositeSlotTypeSettingT = CompositeSlotTypeSetting>
+  void SetCompositeSlotTypeSetting(CompositeSlotTypeSettingT&& value) {
+    m_compositeSlotTypeSettingHasBeenSet = true;
+    m_compositeSlotTypeSetting = std::forward<CompositeSlotTypeSettingT>(value);
+  }
+  template <typename CompositeSlotTypeSettingT = CompositeSlotTypeSetting>
+  CreateSlotTypeResult& WithCompositeSlotTypeSetting(CompositeSlotTypeSettingT&& value) {
+    SetCompositeSlotTypeSetting(std::forward<CompositeSlotTypeSettingT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Specifications for a composite slot type.</p>
-     */
-    inline const CompositeSlotTypeSetting& GetCompositeSlotTypeSetting() const { return m_compositeSlotTypeSetting; }
-    template<typename CompositeSlotTypeSettingT = CompositeSlotTypeSetting>
-    void SetCompositeSlotTypeSetting(CompositeSlotTypeSettingT&& value) { m_compositeSlotTypeSettingHasBeenSet = true; m_compositeSlotTypeSetting = std::forward<CompositeSlotTypeSettingT>(value); }
-    template<typename CompositeSlotTypeSettingT = CompositeSlotTypeSetting>
-    CreateSlotTypeResult& WithCompositeSlotTypeSetting(CompositeSlotTypeSettingT&& value) { SetCompositeSlotTypeSetting(std::forward<CompositeSlotTypeSettingT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    CreateSlotTypeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  CreateSlotTypeResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_slotTypeId;
+  bool m_slotTypeIdHasBeenSet = false;
 
-    Aws::String m_slotTypeId;
-    bool m_slotTypeIdHasBeenSet = false;
+  Aws::String m_slotTypeName;
+  bool m_slotTypeNameHasBeenSet = false;
 
-    Aws::String m_slotTypeName;
-    bool m_slotTypeNameHasBeenSet = false;
+  Aws::String m_description;
+  bool m_descriptionHasBeenSet = false;
 
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
+  Aws::Vector<SlotTypeValue> m_slotTypeValues;
+  bool m_slotTypeValuesHasBeenSet = false;
 
-    Aws::Vector<SlotTypeValue> m_slotTypeValues;
-    bool m_slotTypeValuesHasBeenSet = false;
+  SlotValueSelectionSetting m_valueSelectionSetting;
+  bool m_valueSelectionSettingHasBeenSet = false;
 
-    SlotValueSelectionSetting m_valueSelectionSetting;
-    bool m_valueSelectionSettingHasBeenSet = false;
+  Aws::String m_parentSlotTypeSignature;
+  bool m_parentSlotTypeSignatureHasBeenSet = false;
 
-    Aws::String m_parentSlotTypeSignature;
-    bool m_parentSlotTypeSignatureHasBeenSet = false;
+  Aws::String m_botId;
+  bool m_botIdHasBeenSet = false;
 
-    Aws::String m_botId;
-    bool m_botIdHasBeenSet = false;
+  Aws::String m_botVersion;
+  bool m_botVersionHasBeenSet = false;
 
-    Aws::String m_botVersion;
-    bool m_botVersionHasBeenSet = false;
+  Aws::String m_localeId;
+  bool m_localeIdHasBeenSet = false;
 
-    Aws::String m_localeId;
-    bool m_localeIdHasBeenSet = false;
+  Aws::Utils::DateTime m_creationDateTime{};
+  bool m_creationDateTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDateTime{};
-    bool m_creationDateTimeHasBeenSet = false;
+  ExternalSourceSetting m_externalSourceSetting;
+  bool m_externalSourceSettingHasBeenSet = false;
 
-    ExternalSourceSetting m_externalSourceSetting;
-    bool m_externalSourceSettingHasBeenSet = false;
+  CompositeSlotTypeSetting m_compositeSlotTypeSetting;
+  bool m_compositeSlotTypeSettingHasBeenSet = false;
 
-    CompositeSlotTypeSetting m_compositeSlotTypeSetting;
-    bool m_compositeSlotTypeSettingHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

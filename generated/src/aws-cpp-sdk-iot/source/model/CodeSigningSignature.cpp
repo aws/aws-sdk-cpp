@@ -3,49 +3,39 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/CodeSigningSignature.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot/model/CodeSigningSignature.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
+namespace Aws {
+namespace IoT {
+namespace Model {
 
-CodeSigningSignature::CodeSigningSignature(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CodeSigningSignature::CodeSigningSignature(JsonView jsonValue) { *this = jsonValue; }
 
-CodeSigningSignature& CodeSigningSignature::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("inlineDocument"))
-  {
+CodeSigningSignature& CodeSigningSignature::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("inlineDocument")) {
     m_inlineDocument = HashingUtils::Base64Decode(jsonValue.GetString("inlineDocument"));
     m_inlineDocumentHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CodeSigningSignature::Jsonize() const
-{
+JsonValue CodeSigningSignature::Jsonize() const {
   JsonValue payload;
 
-  if(m_inlineDocumentHasBeenSet)
-  {
-   payload.WithString("inlineDocument", HashingUtils::Base64Encode(m_inlineDocument));
+  if (m_inlineDocumentHasBeenSet) {
+    payload.WithString("inlineDocument", HashingUtils::Base64Encode(m_inlineDocument));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

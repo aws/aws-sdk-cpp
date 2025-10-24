@@ -5,12 +5,8 @@
 
 #include <aws/lakeformation/LakeFormationEndpointProvider.h>
 
-namespace Aws
-{
-namespace LakeFormation
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace LakeFormation
-} // namespace Aws
+namespace Aws {
+namespace LakeFormation {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace LakeFormation
+}  // namespace Aws

@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/s3-crt/S3Crt_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3-crt/S3Crt_EXPORTS.h>
 
-namespace Aws
-{
-namespace S3Crt
-{
-namespace Model
-{
-  enum class EncodingType
-  {
-    NOT_SET,
-    url
-  };
+namespace Aws {
+namespace S3Crt {
+namespace Model {
+enum class EncodingType { NOT_SET, url };
 
-namespace EncodingTypeMapper
-{
+namespace EncodingTypeMapper {
 AWS_S3CRT_API EncodingType GetEncodingTypeForName(const Aws::String& name);
 
 AWS_S3CRT_API Aws::String GetNameForEncodingType(EncodingType value);
-} // namespace EncodingTypeMapper
-} // namespace Model
-} // namespace S3Crt
-} // namespace Aws
+}  // namespace EncodingTypeMapper
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

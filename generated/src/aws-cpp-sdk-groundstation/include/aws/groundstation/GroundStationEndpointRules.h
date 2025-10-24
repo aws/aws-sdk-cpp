@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/groundstation/GroundStation_EXPORTS.h>
 
-namespace Aws
-{
-namespace GroundStation
-{
-class GroundStationEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace GroundStation {
+class GroundStationEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace GroundStation
-} // namespace Aws
+}  // namespace GroundStation
+}  // namespace Aws

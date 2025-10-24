@@ -5,12 +5,8 @@
 
 #include <aws/amp/PrometheusServiceEndpointProvider.h>
 
-namespace Aws
-{
-namespace PrometheusService
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace PrometheusService
-} // namespace Aws
+namespace Aws {
+namespace PrometheusService {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace PrometheusService
+}  // namespace Aws

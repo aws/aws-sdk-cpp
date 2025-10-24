@@ -3,135 +3,102 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/servicediscovery/model/NamespaceSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/servicediscovery/model/NamespaceSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ServiceDiscovery
-{
-namespace Model
-{
+namespace Aws {
+namespace ServiceDiscovery {
+namespace Model {
 
-NamespaceSummary::NamespaceSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NamespaceSummary::NamespaceSummary(JsonView jsonValue) { *this = jsonValue; }
 
-NamespaceSummary& NamespaceSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Id"))
-  {
+NamespaceSummary& NamespaceSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Arn"))
-  {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceOwner"))
-  {
+  if (jsonValue.ValueExists("ResourceOwner")) {
     m_resourceOwner = jsonValue.GetString("ResourceOwner");
     m_resourceOwnerHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = NamespaceTypeMapper::GetNamespaceTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ServiceCount"))
-  {
+  if (jsonValue.ValueExists("ServiceCount")) {
     m_serviceCount = jsonValue.GetInteger("ServiceCount");
     m_serviceCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Properties"))
-  {
+  if (jsonValue.ValueExists("Properties")) {
     m_properties = jsonValue.GetObject("Properties");
     m_propertiesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreateDate"))
-  {
+  if (jsonValue.ValueExists("CreateDate")) {
     m_createDate = jsonValue.GetDouble("CreateDate");
     m_createDateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NamespaceSummary::Jsonize() const
-{
+JsonValue NamespaceSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_resourceOwnerHasBeenSet)
-  {
-   payload.WithString("ResourceOwner", m_resourceOwner);
-
+  if (m_resourceOwnerHasBeenSet) {
+    payload.WithString("ResourceOwner", m_resourceOwner);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", NamespaceTypeMapper::GetNameForNamespaceType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", NamespaceTypeMapper::GetNameForNamespaceType(m_type));
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_serviceCountHasBeenSet)
-  {
-   payload.WithInteger("ServiceCount", m_serviceCount);
-
+  if (m_serviceCountHasBeenSet) {
+    payload.WithInteger("ServiceCount", m_serviceCount);
   }
 
-  if(m_propertiesHasBeenSet)
-  {
-   payload.WithObject("Properties", m_properties.Jsonize());
-
+  if (m_propertiesHasBeenSet) {
+    payload.WithObject("Properties", m_properties.Jsonize());
   }
 
-  if(m_createDateHasBeenSet)
-  {
-   payload.WithDouble("CreateDate", m_createDate.SecondsWithMSPrecision());
+  if (m_createDateHasBeenSet) {
+    payload.WithDouble("CreateDate", m_createDate.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ServiceDiscovery
-} // namespace Aws
+}  // namespace Model
+}  // namespace ServiceDiscovery
+}  // namespace Aws

@@ -7,26 +7,16 @@
 #include <aws/amplifyuibuilder/AmplifyUIBuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace AmplifyUIBuilder
-{
-namespace Model
-{
-  enum class JSScript
-  {
-    NOT_SET,
-    jsx,
-    tsx,
-    js
-  };
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Model {
+enum class JSScript { NOT_SET, jsx, tsx, js };
 
-namespace JSScriptMapper
-{
+namespace JSScriptMapper {
 AWS_AMPLIFYUIBUILDER_API JSScript GetJSScriptForName(const Aws::String& name);
 
 AWS_AMPLIFYUIBUILDER_API Aws::String GetNameForJSScript(JSScript value);
-} // namespace JSScriptMapper
-} // namespace Model
-} // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace JSScriptMapper
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

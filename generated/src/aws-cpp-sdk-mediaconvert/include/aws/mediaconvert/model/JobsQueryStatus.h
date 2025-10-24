@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class JobsQueryStatus
-  {
-    NOT_SET,
-    SUBMITTED,
-    PROGRESSING,
-    COMPLETE,
-    ERROR_
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class JobsQueryStatus { NOT_SET, SUBMITTED, PROGRESSING, COMPLETE, ERROR_ };
 
-namespace JobsQueryStatusMapper
-{
+namespace JobsQueryStatusMapper {
 AWS_MEDIACONVERT_API JobsQueryStatus GetJobsQueryStatusForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForJobsQueryStatus(JobsQueryStatus value);
-} // namespace JobsQueryStatusMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace JobsQueryStatusMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

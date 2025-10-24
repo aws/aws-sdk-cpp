@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-CustomModelUnits::CustomModelUnits(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CustomModelUnits::CustomModelUnits(JsonView jsonValue) { *this = jsonValue; }
 
-CustomModelUnits& CustomModelUnits::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("customModelUnitsPerModelCopy"))
-  {
+CustomModelUnits& CustomModelUnits::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("customModelUnitsPerModelCopy")) {
     m_customModelUnitsPerModelCopy = jsonValue.GetInteger("customModelUnitsPerModelCopy");
     m_customModelUnitsPerModelCopyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("customModelUnitsVersion"))
-  {
+  if (jsonValue.ValueExists("customModelUnitsVersion")) {
     m_customModelUnitsVersion = jsonValue.GetString("customModelUnitsVersion");
     m_customModelUnitsVersionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CustomModelUnits::Jsonize() const
-{
+JsonValue CustomModelUnits::Jsonize() const {
   JsonValue payload;
 
-  if(m_customModelUnitsPerModelCopyHasBeenSet)
-  {
-   payload.WithInteger("customModelUnitsPerModelCopy", m_customModelUnitsPerModelCopy);
-
+  if (m_customModelUnitsPerModelCopyHasBeenSet) {
+    payload.WithInteger("customModelUnitsPerModelCopy", m_customModelUnitsPerModelCopy);
   }
 
-  if(m_customModelUnitsVersionHasBeenSet)
-  {
-   payload.WithString("customModelUnitsVersion", m_customModelUnitsVersion);
-
+  if (m_customModelUnitsVersionHasBeenSet) {
+    payload.WithString("customModelUnitsVersion", m_customModelUnitsVersion);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

@@ -10,12 +10,10 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeOrganizationsAccessRequest::SerializePayload() const
-{
+Aws::String DescribeOrganizationsAccessRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeOrganizationsAccess&";
-  if(m_callAsHasBeenSet)
-  {
+  if (m_callAsHasBeenSet) {
     ss << "CallAs=" << StringUtils::URLEncode(CallAsMapper::GetNameForCallAs(m_callAs)) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DescribeOrganizationsAccessRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeOrganizationsAccessRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeOrganizationsAccessRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

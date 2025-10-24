@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/fms/FMS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fms/FMS_EXPORTS.h>
 
-namespace Aws
-{
-namespace FMS
-{
-namespace Model
-{
-  enum class RemediationActionType
-  {
-    NOT_SET,
-    REMOVE,
-    MODIFY
-  };
+namespace Aws {
+namespace FMS {
+namespace Model {
+enum class RemediationActionType { NOT_SET, REMOVE, MODIFY };
 
-namespace RemediationActionTypeMapper
-{
+namespace RemediationActionTypeMapper {
 AWS_FMS_API RemediationActionType GetRemediationActionTypeForName(const Aws::String& name);
 
 AWS_FMS_API Aws::String GetNameForRemediationActionType(RemediationActionType value);
-} // namespace RemediationActionTypeMapper
-} // namespace Model
-} // namespace FMS
-} // namespace Aws
+}  // namespace RemediationActionTypeMapper
+}  // namespace Model
+}  // namespace FMS
+}  // namespace Aws

@@ -11,107 +11,78 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace chatbot
-{
-namespace Model
-{
+namespace Aws {
+namespace chatbot {
+namespace Model {
 
-TeamsUserIdentity::TeamsUserIdentity(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TeamsUserIdentity::TeamsUserIdentity(JsonView jsonValue) { *this = jsonValue; }
 
-TeamsUserIdentity& TeamsUserIdentity::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("IamRoleArn"))
-  {
+TeamsUserIdentity& TeamsUserIdentity::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("IamRoleArn")) {
     m_iamRoleArn = jsonValue.GetString("IamRoleArn");
     m_iamRoleArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ChatConfigurationArn"))
-  {
+  if (jsonValue.ValueExists("ChatConfigurationArn")) {
     m_chatConfigurationArn = jsonValue.GetString("ChatConfigurationArn");
     m_chatConfigurationArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TeamId"))
-  {
+  if (jsonValue.ValueExists("TeamId")) {
     m_teamId = jsonValue.GetString("TeamId");
     m_teamIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UserId"))
-  {
+  if (jsonValue.ValueExists("UserId")) {
     m_userId = jsonValue.GetString("UserId");
     m_userIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AwsUserIdentity"))
-  {
+  if (jsonValue.ValueExists("AwsUserIdentity")) {
     m_awsUserIdentity = jsonValue.GetString("AwsUserIdentity");
     m_awsUserIdentityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TeamsChannelId"))
-  {
+  if (jsonValue.ValueExists("TeamsChannelId")) {
     m_teamsChannelId = jsonValue.GetString("TeamsChannelId");
     m_teamsChannelIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TeamsTenantId"))
-  {
+  if (jsonValue.ValueExists("TeamsTenantId")) {
     m_teamsTenantId = jsonValue.GetString("TeamsTenantId");
     m_teamsTenantIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TeamsUserIdentity::Jsonize() const
-{
+JsonValue TeamsUserIdentity::Jsonize() const {
   JsonValue payload;
 
-  if(m_iamRoleArnHasBeenSet)
-  {
-   payload.WithString("IamRoleArn", m_iamRoleArn);
-
+  if (m_iamRoleArnHasBeenSet) {
+    payload.WithString("IamRoleArn", m_iamRoleArn);
   }
 
-  if(m_chatConfigurationArnHasBeenSet)
-  {
-   payload.WithString("ChatConfigurationArn", m_chatConfigurationArn);
-
+  if (m_chatConfigurationArnHasBeenSet) {
+    payload.WithString("ChatConfigurationArn", m_chatConfigurationArn);
   }
 
-  if(m_teamIdHasBeenSet)
-  {
-   payload.WithString("TeamId", m_teamId);
-
+  if (m_teamIdHasBeenSet) {
+    payload.WithString("TeamId", m_teamId);
   }
 
-  if(m_userIdHasBeenSet)
-  {
-   payload.WithString("UserId", m_userId);
-
+  if (m_userIdHasBeenSet) {
+    payload.WithString("UserId", m_userId);
   }
 
-  if(m_awsUserIdentityHasBeenSet)
-  {
-   payload.WithString("AwsUserIdentity", m_awsUserIdentity);
-
+  if (m_awsUserIdentityHasBeenSet) {
+    payload.WithString("AwsUserIdentity", m_awsUserIdentity);
   }
 
-  if(m_teamsChannelIdHasBeenSet)
-  {
-   payload.WithString("TeamsChannelId", m_teamsChannelId);
-
+  if (m_teamsChannelIdHasBeenSet) {
+    payload.WithString("TeamsChannelId", m_teamsChannelId);
   }
 
-  if(m_teamsTenantIdHasBeenSet)
-  {
-   payload.WithString("TeamsTenantId", m_teamsTenantId);
-
+  if (m_teamsTenantIdHasBeenSet) {
+    payload.WithString("TeamsTenantId", m_teamsTenantId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace chatbot
-} // namespace Aws
+}  // namespace Model
+}  // namespace chatbot
+}  // namespace Aws

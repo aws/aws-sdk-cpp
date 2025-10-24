@@ -11,27 +11,21 @@ using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::PersonalizeRuntime;
 
-namespace Aws
-{
-namespace PersonalizeRuntime
-{
-namespace PersonalizeRuntimeErrorMapper
-{
+namespace Aws {
+namespace PersonalizeRuntime {
+namespace PersonalizeRuntimeErrorMapper {
 
 static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INVALID_INPUT_HASH)
-  {
+  if (hashCode == INVALID_INPUT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PersonalizeRuntimeErrors::INVALID_INPUT), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace PersonalizeRuntimeErrorMapper
-} // namespace PersonalizeRuntime
-} // namespace Aws
+}  // namespace PersonalizeRuntimeErrorMapper
+}  // namespace PersonalizeRuntime
+}  // namespace Aws

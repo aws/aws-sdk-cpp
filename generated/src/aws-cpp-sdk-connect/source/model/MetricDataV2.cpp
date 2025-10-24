@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-MetricDataV2::MetricDataV2(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MetricDataV2::MetricDataV2(JsonView jsonValue) { *this = jsonValue; }
 
-MetricDataV2& MetricDataV2::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Metric"))
-  {
+MetricDataV2& MetricDataV2::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Metric")) {
     m_metric = jsonValue.GetObject("Metric");
     m_metricHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Value"))
-  {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetDouble("Value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MetricDataV2::Jsonize() const
-{
+JsonValue MetricDataV2::Jsonize() const {
   JsonValue payload;
 
-  if(m_metricHasBeenSet)
-  {
-   payload.WithObject("Metric", m_metric.Jsonize());
-
+  if (m_metricHasBeenSet) {
+    payload.WithObject("Metric", m_metric.Jsonize());
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithDouble("Value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithDouble("Value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

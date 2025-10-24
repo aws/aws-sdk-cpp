@@ -5,12 +5,8 @@
 
 #include <aws/mediastore/MediaStoreEndpointProvider.h>
 
-namespace Aws
-{
-namespace MediaStore
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace MediaStore
-} // namespace Aws
+namespace Aws {
+namespace MediaStore {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace MediaStore
+}  // namespace Aws

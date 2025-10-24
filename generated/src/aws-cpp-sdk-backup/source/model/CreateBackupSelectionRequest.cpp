@@ -12,25 +12,16 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateBackupSelectionRequest::SerializePayload() const
-{
+Aws::String CreateBackupSelectionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_backupSelectionHasBeenSet)
-  {
-   payload.WithObject("BackupSelection", m_backupSelection.Jsonize());
-
+  if (m_backupSelectionHasBeenSet) {
+    payload.WithObject("BackupSelection", m_backupSelection.Jsonize());
   }
 
-  if(m_creatorRequestIdHasBeenSet)
-  {
-   payload.WithString("CreatorRequestId", m_creatorRequestId);
-
+  if (m_creatorRequestIdHasBeenSet) {
+    payload.WithString("CreatorRequestId", m_creatorRequestId);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

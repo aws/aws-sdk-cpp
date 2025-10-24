@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dataexchange/model/ExportServerSideEncryption.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dataexchange/model/ExportServerSideEncryption.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DataExchange
-{
-namespace Model
-{
+namespace Aws {
+namespace DataExchange {
+namespace Model {
 
-ExportServerSideEncryption::ExportServerSideEncryption(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExportServerSideEncryption::ExportServerSideEncryption(JsonView jsonValue) { *this = jsonValue; }
 
-ExportServerSideEncryption& ExportServerSideEncryption::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("KmsKeyArn"))
-  {
+ExportServerSideEncryption& ExportServerSideEncryption::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("KmsKeyArn")) {
     m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
     m_kmsKeyArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = ServerSideEncryptionTypesMapper::GetServerSideEncryptionTypesForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExportServerSideEncryption::Jsonize() const
-{
+JsonValue ExportServerSideEncryption::Jsonize() const {
   JsonValue payload;
 
-  if(m_kmsKeyArnHasBeenSet)
-  {
-   payload.WithString("KmsKeyArn", m_kmsKeyArn);
-
+  if (m_kmsKeyArnHasBeenSet) {
+    payload.WithString("KmsKeyArn", m_kmsKeyArn);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", ServerSideEncryptionTypesMapper::GetNameForServerSideEncryptionTypes(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", ServerSideEncryptionTypesMapper::GetNameForServerSideEncryptionTypes(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DataExchange
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataExchange
+}  // namespace Aws

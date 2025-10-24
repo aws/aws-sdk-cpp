@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Batch
-{
-namespace Model
-{
+namespace Aws {
+namespace Batch {
+namespace Model {
 
-EksSecret::EksSecret(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EksSecret::EksSecret(JsonView jsonValue) { *this = jsonValue; }
 
-EksSecret& EksSecret::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("secretName"))
-  {
+EksSecret& EksSecret::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("secretName")) {
     m_secretName = jsonValue.GetString("secretName");
     m_secretNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("optional"))
-  {
+  if (jsonValue.ValueExists("optional")) {
     m_optional = jsonValue.GetBool("optional");
     m_optionalHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EksSecret::Jsonize() const
-{
+JsonValue EksSecret::Jsonize() const {
   JsonValue payload;
 
-  if(m_secretNameHasBeenSet)
-  {
-   payload.WithString("secretName", m_secretName);
-
+  if (m_secretNameHasBeenSet) {
+    payload.WithString("secretName", m_secretName);
   }
 
-  if(m_optionalHasBeenSet)
-  {
-   payload.WithBool("optional", m_optional);
-
+  if (m_optionalHasBeenSet) {
+    payload.WithBool("optional", m_optional);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Batch
-} // namespace Aws
+}  // namespace Model
+}  // namespace Batch
+}  // namespace Aws

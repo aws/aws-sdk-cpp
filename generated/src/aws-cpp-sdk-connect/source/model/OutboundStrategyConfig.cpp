@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-OutboundStrategyConfig::OutboundStrategyConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OutboundStrategyConfig::OutboundStrategyConfig(JsonView jsonValue) { *this = jsonValue; }
 
-OutboundStrategyConfig& OutboundStrategyConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AgentFirst"))
-  {
+OutboundStrategyConfig& OutboundStrategyConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AgentFirst")) {
     m_agentFirst = jsonValue.GetObject("AgentFirst");
     m_agentFirstHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OutboundStrategyConfig::Jsonize() const
-{
+JsonValue OutboundStrategyConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_agentFirstHasBeenSet)
-  {
-   payload.WithObject("AgentFirst", m_agentFirst.Jsonize());
-
+  if (m_agentFirstHasBeenSet) {
+    payload.WithObject("AgentFirst", m_agentFirst.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

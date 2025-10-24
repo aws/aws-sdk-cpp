@@ -12,78 +12,54 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AdminRespondToAuthChallengeRequest::SerializePayload() const
-{
+Aws::String AdminRespondToAuthChallengeRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_userPoolIdHasBeenSet)
-  {
-   payload.WithString("UserPoolId", m_userPoolId);
-
+  if (m_userPoolIdHasBeenSet) {
+    payload.WithString("UserPoolId", m_userPoolId);
   }
 
-  if(m_clientIdHasBeenSet)
-  {
-   payload.WithString("ClientId", m_clientId);
-
+  if (m_clientIdHasBeenSet) {
+    payload.WithString("ClientId", m_clientId);
   }
 
-  if(m_challengeNameHasBeenSet)
-  {
-   payload.WithString("ChallengeName", ChallengeNameTypeMapper::GetNameForChallengeNameType(m_challengeName));
+  if (m_challengeNameHasBeenSet) {
+    payload.WithString("ChallengeName", ChallengeNameTypeMapper::GetNameForChallengeNameType(m_challengeName));
   }
 
-  if(m_challengeResponsesHasBeenSet)
-  {
-   JsonValue challengeResponsesJsonMap;
-   for(auto& challengeResponsesItem : m_challengeResponses)
-   {
-     challengeResponsesJsonMap.WithString(challengeResponsesItem.first, challengeResponsesItem.second);
-   }
-   payload.WithObject("ChallengeResponses", std::move(challengeResponsesJsonMap));
-
+  if (m_challengeResponsesHasBeenSet) {
+    JsonValue challengeResponsesJsonMap;
+    for (auto& challengeResponsesItem : m_challengeResponses) {
+      challengeResponsesJsonMap.WithString(challengeResponsesItem.first, challengeResponsesItem.second);
+    }
+    payload.WithObject("ChallengeResponses", std::move(challengeResponsesJsonMap));
   }
 
-  if(m_sessionHasBeenSet)
-  {
-   payload.WithString("Session", m_session);
-
+  if (m_sessionHasBeenSet) {
+    payload.WithString("Session", m_session);
   }
 
-  if(m_analyticsMetadataHasBeenSet)
-  {
-   payload.WithObject("AnalyticsMetadata", m_analyticsMetadata.Jsonize());
-
+  if (m_analyticsMetadataHasBeenSet) {
+    payload.WithObject("AnalyticsMetadata", m_analyticsMetadata.Jsonize());
   }
 
-  if(m_contextDataHasBeenSet)
-  {
-   payload.WithObject("ContextData", m_contextData.Jsonize());
-
+  if (m_contextDataHasBeenSet) {
+    payload.WithObject("ContextData", m_contextData.Jsonize());
   }
 
-  if(m_clientMetadataHasBeenSet)
-  {
-   JsonValue clientMetadataJsonMap;
-   for(auto& clientMetadataItem : m_clientMetadata)
-   {
-     clientMetadataJsonMap.WithString(clientMetadataItem.first, clientMetadataItem.second);
-   }
-   payload.WithObject("ClientMetadata", std::move(clientMetadataJsonMap));
-
+  if (m_clientMetadataHasBeenSet) {
+    JsonValue clientMetadataJsonMap;
+    for (auto& clientMetadataItem : m_clientMetadata) {
+      clientMetadataJsonMap.WithString(clientMetadataItem.first, clientMetadataItem.second);
+    }
+    payload.WithObject("ClientMetadata", std::move(clientMetadataJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection AdminRespondToAuthChallengeRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection AdminRespondToAuthChallengeRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityProviderService.AdminRespondToAuthChallenge"));
   return headers;
-
 }
-
-
-
-

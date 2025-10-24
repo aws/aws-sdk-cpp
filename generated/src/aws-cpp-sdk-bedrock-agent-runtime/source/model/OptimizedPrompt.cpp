@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-OptimizedPrompt::OptimizedPrompt(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OptimizedPrompt::OptimizedPrompt(JsonView jsonValue) { *this = jsonValue; }
 
-OptimizedPrompt& OptimizedPrompt::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("textPrompt"))
-  {
+OptimizedPrompt& OptimizedPrompt::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("textPrompt")) {
     m_textPrompt = jsonValue.GetObject("textPrompt");
     m_textPromptHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OptimizedPrompt::Jsonize() const
-{
+JsonValue OptimizedPrompt::Jsonize() const {
   JsonValue payload;
 
-  if(m_textPromptHasBeenSet)
-  {
-   payload.WithObject("textPrompt", m_textPrompt.Jsonize());
-
+  if (m_textPromptHasBeenSet) {
+    payload.WithObject("textPrompt", m_textPrompt.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

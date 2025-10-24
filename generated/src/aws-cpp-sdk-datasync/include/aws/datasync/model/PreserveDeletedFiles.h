@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/datasync/DataSync_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datasync/DataSync_EXPORTS.h>
 
-namespace Aws
-{
-namespace DataSync
-{
-namespace Model
-{
-  enum class PreserveDeletedFiles
-  {
-    NOT_SET,
-    PRESERVE,
-    REMOVE
-  };
+namespace Aws {
+namespace DataSync {
+namespace Model {
+enum class PreserveDeletedFiles { NOT_SET, PRESERVE, REMOVE };
 
-namespace PreserveDeletedFilesMapper
-{
+namespace PreserveDeletedFilesMapper {
 AWS_DATASYNC_API PreserveDeletedFiles GetPreserveDeletedFilesForName(const Aws::String& name);
 
 AWS_DATASYNC_API Aws::String GetNameForPreserveDeletedFiles(PreserveDeletedFiles value);
-} // namespace PreserveDeletedFilesMapper
-} // namespace Model
-} // namespace DataSync
-} // namespace Aws
+}  // namespace PreserveDeletedFilesMapper
+}  // namespace Model
+}  // namespace DataSync
+}  // namespace Aws

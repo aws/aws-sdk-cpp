@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/translate/Translate_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/translate/TranslateEndpointRules.h>
+#include <aws/translate/Translate_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace Translate
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace Translate {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using TranslateClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using TranslateDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_TRANSLATE_API TranslateEndpointProvider : public TranslateDefaultEpProviderBase
-{
-public:
-    using TranslateResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_TRANSLATE_API TranslateEndpointProvider : public TranslateDefaultEpProviderBase {
+ public:
+  using TranslateResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    TranslateEndpointProvider()
-      : TranslateDefaultEpProviderBase(Aws::Translate::TranslateEndpointRules::GetRulesBlob(), Aws::Translate::TranslateEndpointRules::RulesBlobSize)
-    {}
+  TranslateEndpointProvider()
+      : TranslateDefaultEpProviderBase(Aws::Translate::TranslateEndpointRules::GetRulesBlob(),
+                                       Aws::Translate::TranslateEndpointRules::RulesBlobSize) {}
 
-    ~TranslateEndpointProvider()
-    {
-    }
+  ~TranslateEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace Translate
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace Translate
+}  // namespace Aws

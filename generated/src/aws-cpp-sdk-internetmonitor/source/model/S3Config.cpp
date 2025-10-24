@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/internetmonitor/model/S3Config.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/internetmonitor/model/S3Config.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace InternetMonitor
-{
-namespace Model
-{
+namespace Aws {
+namespace InternetMonitor {
+namespace Model {
 
-S3Config::S3Config(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+S3Config::S3Config(JsonView jsonValue) { *this = jsonValue; }
 
-S3Config& S3Config::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("BucketName"))
-  {
+S3Config& S3Config::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("BucketName")) {
     m_bucketName = jsonValue.GetString("BucketName");
     m_bucketNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BucketPrefix"))
-  {
+  if (jsonValue.ValueExists("BucketPrefix")) {
     m_bucketPrefix = jsonValue.GetString("BucketPrefix");
     m_bucketPrefixHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LogDeliveryStatus"))
-  {
+  if (jsonValue.ValueExists("LogDeliveryStatus")) {
     m_logDeliveryStatus = LogDeliveryStatusMapper::GetLogDeliveryStatusForName(jsonValue.GetString("LogDeliveryStatus"));
     m_logDeliveryStatusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue S3Config::Jsonize() const
-{
+JsonValue S3Config::Jsonize() const {
   JsonValue payload;
 
-  if(m_bucketNameHasBeenSet)
-  {
-   payload.WithString("BucketName", m_bucketName);
-
+  if (m_bucketNameHasBeenSet) {
+    payload.WithString("BucketName", m_bucketName);
   }
 
-  if(m_bucketPrefixHasBeenSet)
-  {
-   payload.WithString("BucketPrefix", m_bucketPrefix);
-
+  if (m_bucketPrefixHasBeenSet) {
+    payload.WithString("BucketPrefix", m_bucketPrefix);
   }
 
-  if(m_logDeliveryStatusHasBeenSet)
-  {
-   payload.WithString("LogDeliveryStatus", LogDeliveryStatusMapper::GetNameForLogDeliveryStatus(m_logDeliveryStatus));
+  if (m_logDeliveryStatusHasBeenSet) {
+    payload.WithString("LogDeliveryStatus", LogDeliveryStatusMapper::GetNameForLogDeliveryStatus(m_logDeliveryStatus));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace InternetMonitor
-} // namespace Aws
+}  // namespace Model
+}  // namespace InternetMonitor
+}  // namespace Aws

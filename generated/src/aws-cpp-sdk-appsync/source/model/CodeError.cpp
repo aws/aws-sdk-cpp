@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppSync
-{
-namespace Model
-{
+namespace Aws {
+namespace AppSync {
+namespace Model {
 
-CodeError::CodeError(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CodeError::CodeError(JsonView jsonValue) { *this = jsonValue; }
 
-CodeError& CodeError::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("errorType"))
-  {
+CodeError& CodeError::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("errorType")) {
     m_errorType = jsonValue.GetString("errorType");
     m_errorTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("value"))
-  {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetString("value");
     m_valueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("location"))
-  {
+  if (jsonValue.ValueExists("location")) {
     m_location = jsonValue.GetObject("location");
     m_locationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CodeError::Jsonize() const
-{
+JsonValue CodeError::Jsonize() const {
   JsonValue payload;
 
-  if(m_errorTypeHasBeenSet)
-  {
-   payload.WithString("errorType", m_errorType);
-
+  if (m_errorTypeHasBeenSet) {
+    payload.WithString("errorType", m_errorType);
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("value", m_value);
   }
 
-  if(m_locationHasBeenSet)
-  {
-   payload.WithObject("location", m_location.Jsonize());
-
+  if (m_locationHasBeenSet) {
+    payload.WithObject("location", m_location.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppSync
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppSync
+}  // namespace Aws

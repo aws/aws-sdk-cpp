@@ -11,72 +11,56 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-ReplicationConfiguration::ReplicationConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReplicationConfiguration::ReplicationConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ReplicationConfiguration& ReplicationConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ReplicationStatusSummaryList"))
-  {
+ReplicationConfiguration& ReplicationConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ReplicationStatusSummaryList")) {
     Aws::Utils::Array<JsonView> replicationStatusSummaryListJsonList = jsonValue.GetArray("ReplicationStatusSummaryList");
-    for(unsigned replicationStatusSummaryListIndex = 0; replicationStatusSummaryListIndex < replicationStatusSummaryListJsonList.GetLength(); ++replicationStatusSummaryListIndex)
-    {
+    for (unsigned replicationStatusSummaryListIndex = 0;
+         replicationStatusSummaryListIndex < replicationStatusSummaryListJsonList.GetLength(); ++replicationStatusSummaryListIndex) {
       m_replicationStatusSummaryList.push_back(replicationStatusSummaryListJsonList[replicationStatusSummaryListIndex].AsObject());
     }
     m_replicationStatusSummaryListHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourceRegion"))
-  {
+  if (jsonValue.ValueExists("SourceRegion")) {
     m_sourceRegion = jsonValue.GetString("SourceRegion");
     m_sourceRegionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("GlobalSignInEndpoint"))
-  {
+  if (jsonValue.ValueExists("GlobalSignInEndpoint")) {
     m_globalSignInEndpoint = jsonValue.GetString("GlobalSignInEndpoint");
     m_globalSignInEndpointHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ReplicationConfiguration::Jsonize() const
-{
+JsonValue ReplicationConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_replicationStatusSummaryListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> replicationStatusSummaryListJsonList(m_replicationStatusSummaryList.size());
-   for(unsigned replicationStatusSummaryListIndex = 0; replicationStatusSummaryListIndex < replicationStatusSummaryListJsonList.GetLength(); ++replicationStatusSummaryListIndex)
-   {
-     replicationStatusSummaryListJsonList[replicationStatusSummaryListIndex].AsObject(m_replicationStatusSummaryList[replicationStatusSummaryListIndex].Jsonize());
-   }
-   payload.WithArray("ReplicationStatusSummaryList", std::move(replicationStatusSummaryListJsonList));
-
+  if (m_replicationStatusSummaryListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> replicationStatusSummaryListJsonList(m_replicationStatusSummaryList.size());
+    for (unsigned replicationStatusSummaryListIndex = 0;
+         replicationStatusSummaryListIndex < replicationStatusSummaryListJsonList.GetLength(); ++replicationStatusSummaryListIndex) {
+      replicationStatusSummaryListJsonList[replicationStatusSummaryListIndex].AsObject(
+          m_replicationStatusSummaryList[replicationStatusSummaryListIndex].Jsonize());
+    }
+    payload.WithArray("ReplicationStatusSummaryList", std::move(replicationStatusSummaryListJsonList));
   }
 
-  if(m_sourceRegionHasBeenSet)
-  {
-   payload.WithString("SourceRegion", m_sourceRegion);
-
+  if (m_sourceRegionHasBeenSet) {
+    payload.WithString("SourceRegion", m_sourceRegion);
   }
 
-  if(m_globalSignInEndpointHasBeenSet)
-  {
-   payload.WithString("GlobalSignInEndpoint", m_globalSignInEndpoint);
-
+  if (m_globalSignInEndpointHasBeenSet) {
+    payload.WithString("GlobalSignInEndpoint", m_globalSignInEndpoint);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/swf/SWF_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/swf/SWF_EXPORTS.h>
 
-namespace Aws
-{
-namespace SWF
-{
-namespace Model
-{
-  enum class StartLambdaFunctionFailedCause
-  {
-    NOT_SET,
-    ASSUME_ROLE_FAILED
-  };
+namespace Aws {
+namespace SWF {
+namespace Model {
+enum class StartLambdaFunctionFailedCause { NOT_SET, ASSUME_ROLE_FAILED };
 
-namespace StartLambdaFunctionFailedCauseMapper
-{
+namespace StartLambdaFunctionFailedCauseMapper {
 AWS_SWF_API StartLambdaFunctionFailedCause GetStartLambdaFunctionFailedCauseForName(const Aws::String& name);
 
 AWS_SWF_API Aws::String GetNameForStartLambdaFunctionFailedCause(StartLambdaFunctionFailedCause value);
-} // namespace StartLambdaFunctionFailedCauseMapper
-} // namespace Model
-} // namespace SWF
-} // namespace Aws
+}  // namespace StartLambdaFunctionFailedCauseMapper
+}  // namespace Model
+}  // namespace SWF
+}  // namespace Aws

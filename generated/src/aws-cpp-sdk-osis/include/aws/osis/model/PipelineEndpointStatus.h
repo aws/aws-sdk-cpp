@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/osis/OSIS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/osis/OSIS_EXPORTS.h>
 
-namespace Aws
-{
-namespace OSIS
-{
-namespace Model
-{
-  enum class PipelineEndpointStatus
-  {
-    NOT_SET,
-    CREATING,
-    ACTIVE,
-    CREATE_FAILED,
-    DELETING,
-    REVOKING,
-    REVOKED
-  };
+namespace Aws {
+namespace OSIS {
+namespace Model {
+enum class PipelineEndpointStatus { NOT_SET, CREATING, ACTIVE, CREATE_FAILED, DELETING, REVOKING, REVOKED };
 
-namespace PipelineEndpointStatusMapper
-{
+namespace PipelineEndpointStatusMapper {
 AWS_OSIS_API PipelineEndpointStatus GetPipelineEndpointStatusForName(const Aws::String& name);
 
 AWS_OSIS_API Aws::String GetNameForPipelineEndpointStatus(PipelineEndpointStatus value);
-} // namespace PipelineEndpointStatusMapper
-} // namespace Model
-} // namespace OSIS
-} // namespace Aws
+}  // namespace PipelineEndpointStatusMapper
+}  // namespace Model
+}  // namespace OSIS
+}  // namespace Aws

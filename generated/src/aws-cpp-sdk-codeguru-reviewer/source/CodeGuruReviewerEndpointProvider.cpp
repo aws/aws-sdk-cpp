@@ -5,12 +5,8 @@
 
 #include <aws/codeguru-reviewer/CodeGuruReviewerEndpointProvider.h>
 
-namespace Aws
-{
-namespace CodeGuruReviewer
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace CodeGuruReviewer
-} // namespace Aws
+namespace Aws {
+namespace CodeGuruReviewer {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace CodeGuruReviewer
+}  // namespace Aws

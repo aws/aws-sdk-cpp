@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::ApplicationDiscoveryService;
 
-AWSError<CoreErrors> ApplicationDiscoveryServiceErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> ApplicationDiscoveryServiceErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = ApplicationDiscoveryServiceErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

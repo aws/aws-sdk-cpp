@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentCoreControl
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentCoreControl {
+namespace Model {
 
-SalesforceOauth2ProviderConfigInput::SalesforceOauth2ProviderConfigInput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SalesforceOauth2ProviderConfigInput::SalesforceOauth2ProviderConfigInput(JsonView jsonValue) { *this = jsonValue; }
 
-SalesforceOauth2ProviderConfigInput& SalesforceOauth2ProviderConfigInput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("clientId"))
-  {
+SalesforceOauth2ProviderConfigInput& SalesforceOauth2ProviderConfigInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("clientId")) {
     m_clientId = jsonValue.GetString("clientId");
     m_clientIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("clientSecret"))
-  {
+  if (jsonValue.ValueExists("clientSecret")) {
     m_clientSecret = jsonValue.GetString("clientSecret");
     m_clientSecretHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SalesforceOauth2ProviderConfigInput::Jsonize() const
-{
+JsonValue SalesforceOauth2ProviderConfigInput::Jsonize() const {
   JsonValue payload;
 
-  if(m_clientIdHasBeenSet)
-  {
-   payload.WithString("clientId", m_clientId);
-
+  if (m_clientIdHasBeenSet) {
+    payload.WithString("clientId", m_clientId);
   }
 
-  if(m_clientSecretHasBeenSet)
-  {
-   payload.WithString("clientSecret", m_clientSecret);
-
+  if (m_clientSecretHasBeenSet) {
+    payload.WithString("clientSecret", m_clientSecret);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentCoreControl
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentCoreControl
+}  // namespace Aws

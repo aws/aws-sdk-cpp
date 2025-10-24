@@ -12,24 +12,16 @@ using namespace Aws::BedrockAgentCoreControl::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String SynchronizeGatewayTargetsRequest::SerializePayload() const
-{
+Aws::String SynchronizeGatewayTargetsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_targetIdListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> targetIdListJsonList(m_targetIdList.size());
-   for(unsigned targetIdListIndex = 0; targetIdListIndex < targetIdListJsonList.GetLength(); ++targetIdListIndex)
-   {
-     targetIdListJsonList[targetIdListIndex].AsString(m_targetIdList[targetIdListIndex]);
-   }
-   payload.WithArray("targetIdList", std::move(targetIdListJsonList));
-
+  if (m_targetIdListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> targetIdListJsonList(m_targetIdList.size());
+    for (unsigned targetIdListIndex = 0; targetIdListIndex < targetIdListJsonList.GetLength(); ++targetIdListIndex) {
+      targetIdListJsonList[targetIdListIndex].AsString(m_targetIdList[targetIdListIndex]);
+    }
+    payload.WithArray("targetIdList", std::move(targetIdListJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

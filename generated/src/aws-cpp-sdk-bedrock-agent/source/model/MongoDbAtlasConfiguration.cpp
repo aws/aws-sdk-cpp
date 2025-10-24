@@ -11,118 +11,86 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-MongoDbAtlasConfiguration::MongoDbAtlasConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MongoDbAtlasConfiguration::MongoDbAtlasConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-MongoDbAtlasConfiguration& MongoDbAtlasConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("endpoint"))
-  {
+MongoDbAtlasConfiguration& MongoDbAtlasConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("endpoint")) {
     m_endpoint = jsonValue.GetString("endpoint");
     m_endpointHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("databaseName"))
-  {
+  if (jsonValue.ValueExists("databaseName")) {
     m_databaseName = jsonValue.GetString("databaseName");
     m_databaseNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("collectionName"))
-  {
+  if (jsonValue.ValueExists("collectionName")) {
     m_collectionName = jsonValue.GetString("collectionName");
     m_collectionNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("vectorIndexName"))
-  {
+  if (jsonValue.ValueExists("vectorIndexName")) {
     m_vectorIndexName = jsonValue.GetString("vectorIndexName");
     m_vectorIndexNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("credentialsSecretArn"))
-  {
+  if (jsonValue.ValueExists("credentialsSecretArn")) {
     m_credentialsSecretArn = jsonValue.GetString("credentialsSecretArn");
     m_credentialsSecretArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("fieldMapping"))
-  {
+  if (jsonValue.ValueExists("fieldMapping")) {
     m_fieldMapping = jsonValue.GetObject("fieldMapping");
     m_fieldMappingHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("endpointServiceName"))
-  {
+  if (jsonValue.ValueExists("endpointServiceName")) {
     m_endpointServiceName = jsonValue.GetString("endpointServiceName");
     m_endpointServiceNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("textIndexName"))
-  {
+  if (jsonValue.ValueExists("textIndexName")) {
     m_textIndexName = jsonValue.GetString("textIndexName");
     m_textIndexNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MongoDbAtlasConfiguration::Jsonize() const
-{
+JsonValue MongoDbAtlasConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_endpointHasBeenSet)
-  {
-   payload.WithString("endpoint", m_endpoint);
-
+  if (m_endpointHasBeenSet) {
+    payload.WithString("endpoint", m_endpoint);
   }
 
-  if(m_databaseNameHasBeenSet)
-  {
-   payload.WithString("databaseName", m_databaseName);
-
+  if (m_databaseNameHasBeenSet) {
+    payload.WithString("databaseName", m_databaseName);
   }
 
-  if(m_collectionNameHasBeenSet)
-  {
-   payload.WithString("collectionName", m_collectionName);
-
+  if (m_collectionNameHasBeenSet) {
+    payload.WithString("collectionName", m_collectionName);
   }
 
-  if(m_vectorIndexNameHasBeenSet)
-  {
-   payload.WithString("vectorIndexName", m_vectorIndexName);
-
+  if (m_vectorIndexNameHasBeenSet) {
+    payload.WithString("vectorIndexName", m_vectorIndexName);
   }
 
-  if(m_credentialsSecretArnHasBeenSet)
-  {
-   payload.WithString("credentialsSecretArn", m_credentialsSecretArn);
-
+  if (m_credentialsSecretArnHasBeenSet) {
+    payload.WithString("credentialsSecretArn", m_credentialsSecretArn);
   }
 
-  if(m_fieldMappingHasBeenSet)
-  {
-   payload.WithObject("fieldMapping", m_fieldMapping.Jsonize());
-
+  if (m_fieldMappingHasBeenSet) {
+    payload.WithObject("fieldMapping", m_fieldMapping.Jsonize());
   }
 
-  if(m_endpointServiceNameHasBeenSet)
-  {
-   payload.WithString("endpointServiceName", m_endpointServiceName);
-
+  if (m_endpointServiceNameHasBeenSet) {
+    payload.WithString("endpointServiceName", m_endpointServiceName);
   }
 
-  if(m_textIndexNameHasBeenSet)
-  {
-   payload.WithString("textIndexName", m_textIndexName);
-
+  if (m_textIndexNameHasBeenSet) {
+    payload.WithString("textIndexName", m_textIndexName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

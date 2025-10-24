@@ -4,87 +4,98 @@
  */
 
 #pragma once
-#include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecs/ECS_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace ECS
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace ECS {
+namespace Model {
 
+/**
+ * <p>An object representing the elastic network interface for tasks that use the
+ * <code>awsvpc</code> network mode.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/NetworkInterface">AWS
+ * API Reference</a></p>
+ */
+class NetworkInterface {
+ public:
+  AWS_ECS_API NetworkInterface() = default;
+  AWS_ECS_API NetworkInterface(Aws::Utils::Json::JsonView jsonValue);
+  AWS_ECS_API NetworkInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>An object representing the elastic network interface for tasks that use the
-   * <code>awsvpc</code> network mode.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/NetworkInterface">AWS
-   * API Reference</a></p>
+   * <p>The attachment ID for the network interface.</p>
    */
-  class NetworkInterface
-  {
-  public:
-    AWS_ECS_API NetworkInterface() = default;
-    AWS_ECS_API NetworkInterface(Aws::Utils::Json::JsonView jsonValue);
-    AWS_ECS_API NetworkInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetAttachmentId() const { return m_attachmentId; }
+  inline bool AttachmentIdHasBeenSet() const { return m_attachmentIdHasBeenSet; }
+  template <typename AttachmentIdT = Aws::String>
+  void SetAttachmentId(AttachmentIdT&& value) {
+    m_attachmentIdHasBeenSet = true;
+    m_attachmentId = std::forward<AttachmentIdT>(value);
+  }
+  template <typename AttachmentIdT = Aws::String>
+  NetworkInterface& WithAttachmentId(AttachmentIdT&& value) {
+    SetAttachmentId(std::forward<AttachmentIdT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The private IPv4 address for the network interface.</p>
+   */
+  inline const Aws::String& GetPrivateIpv4Address() const { return m_privateIpv4Address; }
+  inline bool PrivateIpv4AddressHasBeenSet() const { return m_privateIpv4AddressHasBeenSet; }
+  template <typename PrivateIpv4AddressT = Aws::String>
+  void SetPrivateIpv4Address(PrivateIpv4AddressT&& value) {
+    m_privateIpv4AddressHasBeenSet = true;
+    m_privateIpv4Address = std::forward<PrivateIpv4AddressT>(value);
+  }
+  template <typename PrivateIpv4AddressT = Aws::String>
+  NetworkInterface& WithPrivateIpv4Address(PrivateIpv4AddressT&& value) {
+    SetPrivateIpv4Address(std::forward<PrivateIpv4AddressT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The attachment ID for the network interface.</p>
-     */
-    inline const Aws::String& GetAttachmentId() const { return m_attachmentId; }
-    inline bool AttachmentIdHasBeenSet() const { return m_attachmentIdHasBeenSet; }
-    template<typename AttachmentIdT = Aws::String>
-    void SetAttachmentId(AttachmentIdT&& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = std::forward<AttachmentIdT>(value); }
-    template<typename AttachmentIdT = Aws::String>
-    NetworkInterface& WithAttachmentId(AttachmentIdT&& value) { SetAttachmentId(std::forward<AttachmentIdT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The private IPv6 address for the network interface.</p>
+   */
+  inline const Aws::String& GetIpv6Address() const { return m_ipv6Address; }
+  inline bool Ipv6AddressHasBeenSet() const { return m_ipv6AddressHasBeenSet; }
+  template <typename Ipv6AddressT = Aws::String>
+  void SetIpv6Address(Ipv6AddressT&& value) {
+    m_ipv6AddressHasBeenSet = true;
+    m_ipv6Address = std::forward<Ipv6AddressT>(value);
+  }
+  template <typename Ipv6AddressT = Aws::String>
+  NetworkInterface& WithIpv6Address(Ipv6AddressT&& value) {
+    SetIpv6Address(std::forward<Ipv6AddressT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_attachmentId;
+  bool m_attachmentIdHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The private IPv4 address for the network interface.</p>
-     */
-    inline const Aws::String& GetPrivateIpv4Address() const { return m_privateIpv4Address; }
-    inline bool PrivateIpv4AddressHasBeenSet() const { return m_privateIpv4AddressHasBeenSet; }
-    template<typename PrivateIpv4AddressT = Aws::String>
-    void SetPrivateIpv4Address(PrivateIpv4AddressT&& value) { m_privateIpv4AddressHasBeenSet = true; m_privateIpv4Address = std::forward<PrivateIpv4AddressT>(value); }
-    template<typename PrivateIpv4AddressT = Aws::String>
-    NetworkInterface& WithPrivateIpv4Address(PrivateIpv4AddressT&& value) { SetPrivateIpv4Address(std::forward<PrivateIpv4AddressT>(value)); return *this;}
-    ///@}
+  Aws::String m_privateIpv4Address;
+  bool m_privateIpv4AddressHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The private IPv6 address for the network interface.</p>
-     */
-    inline const Aws::String& GetIpv6Address() const { return m_ipv6Address; }
-    inline bool Ipv6AddressHasBeenSet() const { return m_ipv6AddressHasBeenSet; }
-    template<typename Ipv6AddressT = Aws::String>
-    void SetIpv6Address(Ipv6AddressT&& value) { m_ipv6AddressHasBeenSet = true; m_ipv6Address = std::forward<Ipv6AddressT>(value); }
-    template<typename Ipv6AddressT = Aws::String>
-    NetworkInterface& WithIpv6Address(Ipv6AddressT&& value) { SetIpv6Address(std::forward<Ipv6AddressT>(value)); return *this;}
-    ///@}
-  private:
+  Aws::String m_ipv6Address;
+  bool m_ipv6AddressHasBeenSet = false;
+};
 
-    Aws::String m_attachmentId;
-    bool m_attachmentIdHasBeenSet = false;
-
-    Aws::String m_privateIpv4Address;
-    bool m_privateIpv4AddressHasBeenSet = false;
-
-    Aws::String m_ipv6Address;
-    bool m_ipv6AddressHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace ECS
-} // namespace Aws
+}  // namespace Model
+}  // namespace ECS
+}  // namespace Aws

@@ -4,10 +4,10 @@
  */
 
 #include <aws/connect/model/DescribeEmailAddressResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,63 +17,49 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeEmailAddressResult::DescribeEmailAddressResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+DescribeEmailAddressResult::DescribeEmailAddressResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-DescribeEmailAddressResult& DescribeEmailAddressResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeEmailAddressResult& DescribeEmailAddressResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("EmailAddressId"))
-  {
+  if (jsonValue.ValueExists("EmailAddressId")) {
     m_emailAddressId = jsonValue.GetString("EmailAddressId");
     m_emailAddressIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EmailAddressArn"))
-  {
+  if (jsonValue.ValueExists("EmailAddressArn")) {
     m_emailAddressArn = jsonValue.GetString("EmailAddressArn");
     m_emailAddressArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EmailAddress"))
-  {
+  if (jsonValue.ValueExists("EmailAddress")) {
     m_emailAddress = jsonValue.GetString("EmailAddress");
     m_emailAddressHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DisplayName"))
-  {
+  if (jsonValue.ValueExists("DisplayName")) {
     m_displayName = jsonValue.GetString("DisplayName");
     m_displayNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreateTimestamp"))
-  {
+  if (jsonValue.ValueExists("CreateTimestamp")) {
     m_createTimestamp = jsonValue.GetString("CreateTimestamp");
     m_createTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ModifiedTimestamp"))
-  {
+  if (jsonValue.ValueExists("ModifiedTimestamp")) {
     m_modifiedTimestamp = jsonValue.GetString("ModifiedTimestamp");
     m_modifiedTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AliasConfigurations"))
-  {
+  if (jsonValue.ValueExists("AliasConfigurations")) {
     Aws::Utils::Array<JsonView> aliasConfigurationsJsonList = jsonValue.GetArray("AliasConfigurations");
-    for(unsigned aliasConfigurationsIndex = 0; aliasConfigurationsIndex < aliasConfigurationsJsonList.GetLength(); ++aliasConfigurationsIndex)
-    {
+    for (unsigned aliasConfigurationsIndex = 0; aliasConfigurationsIndex < aliasConfigurationsJsonList.GetLength();
+         ++aliasConfigurationsIndex) {
       m_aliasConfigurations.push_back(aliasConfigurationsJsonList[aliasConfigurationsIndex].AsObject());
     }
     m_aliasConfigurationsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Tags"))
-  {
+  if (jsonValue.ValueExists("Tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
+    for (auto& tagsItem : tagsJsonMap) {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
@@ -81,12 +67,10 @@ DescribeEmailAddressResult& DescribeEmailAddressResult::operator =(const Aws::Am
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

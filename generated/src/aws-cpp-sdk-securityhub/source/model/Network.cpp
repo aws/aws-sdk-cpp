@@ -3,169 +3,126 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/Network.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/Network.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-Network::Network(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Network::Network(JsonView jsonValue) { *this = jsonValue; }
 
-Network& Network::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Direction"))
-  {
+Network& Network::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Direction")) {
     m_direction = NetworkDirectionMapper::GetNetworkDirectionForName(jsonValue.GetString("Direction"));
     m_directionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Protocol"))
-  {
+  if (jsonValue.ValueExists("Protocol")) {
     m_protocol = jsonValue.GetString("Protocol");
     m_protocolHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OpenPortRange"))
-  {
+  if (jsonValue.ValueExists("OpenPortRange")) {
     m_openPortRange = jsonValue.GetObject("OpenPortRange");
     m_openPortRangeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourceIpV4"))
-  {
+  if (jsonValue.ValueExists("SourceIpV4")) {
     m_sourceIpV4 = jsonValue.GetString("SourceIpV4");
     m_sourceIpV4HasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourceIpV6"))
-  {
+  if (jsonValue.ValueExists("SourceIpV6")) {
     m_sourceIpV6 = jsonValue.GetString("SourceIpV6");
     m_sourceIpV6HasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourcePort"))
-  {
+  if (jsonValue.ValueExists("SourcePort")) {
     m_sourcePort = jsonValue.GetInteger("SourcePort");
     m_sourcePortHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourceDomain"))
-  {
+  if (jsonValue.ValueExists("SourceDomain")) {
     m_sourceDomain = jsonValue.GetString("SourceDomain");
     m_sourceDomainHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourceMac"))
-  {
+  if (jsonValue.ValueExists("SourceMac")) {
     m_sourceMac = jsonValue.GetString("SourceMac");
     m_sourceMacHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DestinationIpV4"))
-  {
+  if (jsonValue.ValueExists("DestinationIpV4")) {
     m_destinationIpV4 = jsonValue.GetString("DestinationIpV4");
     m_destinationIpV4HasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DestinationIpV6"))
-  {
+  if (jsonValue.ValueExists("DestinationIpV6")) {
     m_destinationIpV6 = jsonValue.GetString("DestinationIpV6");
     m_destinationIpV6HasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DestinationPort"))
-  {
+  if (jsonValue.ValueExists("DestinationPort")) {
     m_destinationPort = jsonValue.GetInteger("DestinationPort");
     m_destinationPortHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DestinationDomain"))
-  {
+  if (jsonValue.ValueExists("DestinationDomain")) {
     m_destinationDomain = jsonValue.GetString("DestinationDomain");
     m_destinationDomainHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Network::Jsonize() const
-{
+JsonValue Network::Jsonize() const {
   JsonValue payload;
 
-  if(m_directionHasBeenSet)
-  {
-   payload.WithString("Direction", NetworkDirectionMapper::GetNameForNetworkDirection(m_direction));
+  if (m_directionHasBeenSet) {
+    payload.WithString("Direction", NetworkDirectionMapper::GetNameForNetworkDirection(m_direction));
   }
 
-  if(m_protocolHasBeenSet)
-  {
-   payload.WithString("Protocol", m_protocol);
-
+  if (m_protocolHasBeenSet) {
+    payload.WithString("Protocol", m_protocol);
   }
 
-  if(m_openPortRangeHasBeenSet)
-  {
-   payload.WithObject("OpenPortRange", m_openPortRange.Jsonize());
-
+  if (m_openPortRangeHasBeenSet) {
+    payload.WithObject("OpenPortRange", m_openPortRange.Jsonize());
   }
 
-  if(m_sourceIpV4HasBeenSet)
-  {
-   payload.WithString("SourceIpV4", m_sourceIpV4);
-
+  if (m_sourceIpV4HasBeenSet) {
+    payload.WithString("SourceIpV4", m_sourceIpV4);
   }
 
-  if(m_sourceIpV6HasBeenSet)
-  {
-   payload.WithString("SourceIpV6", m_sourceIpV6);
-
+  if (m_sourceIpV6HasBeenSet) {
+    payload.WithString("SourceIpV6", m_sourceIpV6);
   }
 
-  if(m_sourcePortHasBeenSet)
-  {
-   payload.WithInteger("SourcePort", m_sourcePort);
-
+  if (m_sourcePortHasBeenSet) {
+    payload.WithInteger("SourcePort", m_sourcePort);
   }
 
-  if(m_sourceDomainHasBeenSet)
-  {
-   payload.WithString("SourceDomain", m_sourceDomain);
-
+  if (m_sourceDomainHasBeenSet) {
+    payload.WithString("SourceDomain", m_sourceDomain);
   }
 
-  if(m_sourceMacHasBeenSet)
-  {
-   payload.WithString("SourceMac", m_sourceMac);
-
+  if (m_sourceMacHasBeenSet) {
+    payload.WithString("SourceMac", m_sourceMac);
   }
 
-  if(m_destinationIpV4HasBeenSet)
-  {
-   payload.WithString("DestinationIpV4", m_destinationIpV4);
-
+  if (m_destinationIpV4HasBeenSet) {
+    payload.WithString("DestinationIpV4", m_destinationIpV4);
   }
 
-  if(m_destinationIpV6HasBeenSet)
-  {
-   payload.WithString("DestinationIpV6", m_destinationIpV6);
-
+  if (m_destinationIpV6HasBeenSet) {
+    payload.WithString("DestinationIpV6", m_destinationIpV6);
   }
 
-  if(m_destinationPortHasBeenSet)
-  {
-   payload.WithInteger("DestinationPort", m_destinationPort);
-
+  if (m_destinationPortHasBeenSet) {
+    payload.WithInteger("DestinationPort", m_destinationPort);
   }
 
-  if(m_destinationDomainHasBeenSet)
-  {
-   payload.WithString("DestinationDomain", m_destinationDomain);
-
+  if (m_destinationDomainHasBeenSet) {
+    payload.WithString("DestinationDomain", m_destinationDomain);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

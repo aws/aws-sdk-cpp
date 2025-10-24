@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3/S3_EXPORTS.h>
 
-namespace Aws
-{
-namespace S3
-{
-namespace Model
-{
-  enum class RestoreRequestType
-  {
-    NOT_SET,
-    SELECT
-  };
+namespace Aws {
+namespace S3 {
+namespace Model {
+enum class RestoreRequestType { NOT_SET, SELECT };
 
-namespace RestoreRequestTypeMapper
-{
+namespace RestoreRequestTypeMapper {
 AWS_S3_API RestoreRequestType GetRestoreRequestTypeForName(const Aws::String& name);
 
 AWS_S3_API Aws::String GetNameForRestoreRequestType(RestoreRequestType value);
-} // namespace RestoreRequestTypeMapper
-} // namespace Model
-} // namespace S3
-} // namespace Aws
+}  // namespace RestoreRequestTypeMapper
+}  // namespace Model
+}  // namespace S3
+}  // namespace Aws

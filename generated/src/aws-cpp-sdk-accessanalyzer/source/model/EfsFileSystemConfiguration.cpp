@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
 
-EfsFileSystemConfiguration::EfsFileSystemConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EfsFileSystemConfiguration::EfsFileSystemConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-EfsFileSystemConfiguration& EfsFileSystemConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("fileSystemPolicy"))
-  {
+EfsFileSystemConfiguration& EfsFileSystemConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("fileSystemPolicy")) {
     m_fileSystemPolicy = jsonValue.GetString("fileSystemPolicy");
     m_fileSystemPolicyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EfsFileSystemConfiguration::Jsonize() const
-{
+JsonValue EfsFileSystemConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_fileSystemPolicyHasBeenSet)
-  {
-   payload.WithString("fileSystemPolicy", m_fileSystemPolicy);
-
+  if (m_fileSystemPolicyHasBeenSet) {
+    payload.WithString("fileSystemPolicy", m_fileSystemPolicy);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

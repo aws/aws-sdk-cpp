@@ -3,61 +3,49 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3-crt/model/InventoryS3BucketDestination.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3-crt/model/InventoryS3BucketDestination.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Crt
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Crt {
+namespace Model {
 
-InventoryS3BucketDestination::InventoryS3BucketDestination(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+InventoryS3BucketDestination::InventoryS3BucketDestination(const XmlNode& xmlNode) { *this = xmlNode; }
 
-InventoryS3BucketDestination& InventoryS3BucketDestination::operator =(const XmlNode& xmlNode)
-{
+InventoryS3BucketDestination& InventoryS3BucketDestination::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode accountIdNode = resultNode.FirstChild("AccountId");
-    if(!accountIdNode.IsNull())
-    {
+    if (!accountIdNode.IsNull()) {
       m_accountId = Aws::Utils::Xml::DecodeEscapedXmlText(accountIdNode.GetText());
       m_accountIdHasBeenSet = true;
     }
     XmlNode bucketNode = resultNode.FirstChild("Bucket");
-    if(!bucketNode.IsNull())
-    {
+    if (!bucketNode.IsNull()) {
       m_bucket = Aws::Utils::Xml::DecodeEscapedXmlText(bucketNode.GetText());
       m_bucketHasBeenSet = true;
     }
     XmlNode formatNode = resultNode.FirstChild("Format");
-    if(!formatNode.IsNull())
-    {
-      m_format = InventoryFormatMapper::GetInventoryFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(formatNode.GetText()).c_str()));
+    if (!formatNode.IsNull()) {
+      m_format = InventoryFormatMapper::GetInventoryFormatForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(formatNode.GetText()).c_str()));
       m_formatHasBeenSet = true;
     }
     XmlNode prefixNode = resultNode.FirstChild("Prefix");
-    if(!prefixNode.IsNull())
-    {
+    if (!prefixNode.IsNull()) {
       m_prefix = Aws::Utils::Xml::DecodeEscapedXmlText(prefixNode.GetText());
       m_prefixHasBeenSet = true;
     }
     XmlNode encryptionNode = resultNode.FirstChild("Encryption");
-    if(!encryptionNode.IsNull())
-    {
+    if (!encryptionNode.IsNull()) {
       m_encryption = encryptionNode;
       m_encryptionHasBeenSet = true;
     }
@@ -66,41 +54,34 @@ InventoryS3BucketDestination& InventoryS3BucketDestination::operator =(const Xml
   return *this;
 }
 
-void InventoryS3BucketDestination::AddToNode(XmlNode& parentNode) const
-{
+void InventoryS3BucketDestination::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_accountIdHasBeenSet)
-  {
-   XmlNode accountIdNode = parentNode.CreateChildElement("AccountId");
-   accountIdNode.SetText(m_accountId);
+  if (m_accountIdHasBeenSet) {
+    XmlNode accountIdNode = parentNode.CreateChildElement("AccountId");
+    accountIdNode.SetText(m_accountId);
   }
 
-  if(m_bucketHasBeenSet)
-  {
-   XmlNode bucketNode = parentNode.CreateChildElement("Bucket");
-   bucketNode.SetText(m_bucket);
+  if (m_bucketHasBeenSet) {
+    XmlNode bucketNode = parentNode.CreateChildElement("Bucket");
+    bucketNode.SetText(m_bucket);
   }
 
-  if(m_formatHasBeenSet)
-  {
-   XmlNode formatNode = parentNode.CreateChildElement("Format");
-   formatNode.SetText(InventoryFormatMapper::GetNameForInventoryFormat(m_format));
+  if (m_formatHasBeenSet) {
+    XmlNode formatNode = parentNode.CreateChildElement("Format");
+    formatNode.SetText(InventoryFormatMapper::GetNameForInventoryFormat(m_format));
   }
 
-  if(m_prefixHasBeenSet)
-  {
-   XmlNode prefixNode = parentNode.CreateChildElement("Prefix");
-   prefixNode.SetText(m_prefix);
+  if (m_prefixHasBeenSet) {
+    XmlNode prefixNode = parentNode.CreateChildElement("Prefix");
+    prefixNode.SetText(m_prefix);
   }
 
-  if(m_encryptionHasBeenSet)
-  {
-   XmlNode encryptionNode = parentNode.CreateChildElement("Encryption");
-   m_encryption.AddToNode(encryptionNode);
+  if (m_encryptionHasBeenSet) {
+    XmlNode encryptionNode = parentNode.CreateChildElement("Encryption");
+    m_encryption.AddToNode(encryptionNode);
   }
-
 }
 
-} // namespace Model
-} // namespace S3Crt
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

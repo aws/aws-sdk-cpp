@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppFabric
-{
-namespace Model
-{
+namespace Aws {
+namespace AppFabric {
+namespace Model {
 
-Oauth2Credential::Oauth2Credential(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Oauth2Credential::Oauth2Credential(JsonView jsonValue) { *this = jsonValue; }
 
-Oauth2Credential& Oauth2Credential::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("clientId"))
-  {
+Oauth2Credential& Oauth2Credential::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("clientId")) {
     m_clientId = jsonValue.GetString("clientId");
     m_clientIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("clientSecret"))
-  {
+  if (jsonValue.ValueExists("clientSecret")) {
     m_clientSecret = jsonValue.GetString("clientSecret");
     m_clientSecretHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Oauth2Credential::Jsonize() const
-{
+JsonValue Oauth2Credential::Jsonize() const {
   JsonValue payload;
 
-  if(m_clientIdHasBeenSet)
-  {
-   payload.WithString("clientId", m_clientId);
-
+  if (m_clientIdHasBeenSet) {
+    payload.WithString("clientId", m_clientId);
   }
 
-  if(m_clientSecretHasBeenSet)
-  {
-   payload.WithString("clientSecret", m_clientSecret);
-
+  if (m_clientSecretHasBeenSet) {
+    payload.WithString("clientSecret", m_clientSecret);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppFabric
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppFabric
+}  // namespace Aws

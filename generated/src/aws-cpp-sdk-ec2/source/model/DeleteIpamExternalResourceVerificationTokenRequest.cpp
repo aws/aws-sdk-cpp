@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DeleteIpamExternalResourceVerificationTokenRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DeleteIpamExternalResourceVerificationTokenRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteIpamExternalResourceVerificationTokenRequest::SerializePayload() const
-{
+Aws::String DeleteIpamExternalResourceVerificationTokenRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteIpamExternalResourceVerificationToken&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_ipamExternalResourceVerificationTokenIdHasBeenSet)
-  {
+  if (m_ipamExternalResourceVerificationTokenIdHasBeenSet) {
     ss << "IpamExternalResourceVerificationTokenId=" << StringUtils::URLEncode(m_ipamExternalResourceVerificationTokenId.c_str()) << "&";
   }
 
@@ -28,8 +25,6 @@ Aws::String DeleteIpamExternalResourceVerificationTokenRequest::SerializePayload
   return ss.str();
 }
 
-
-void  DeleteIpamExternalResourceVerificationTokenRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
+void DeleteIpamExternalResourceVerificationTokenRequest::DumpBodyToUrl(Aws::Http::URI& uri) const {
   uri.SetQueryString(SerializePayload());
 }

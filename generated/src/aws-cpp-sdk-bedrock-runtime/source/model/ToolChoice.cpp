@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockRuntime {
+namespace Model {
 
-ToolChoice::ToolChoice(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ToolChoice::ToolChoice(JsonView jsonValue) { *this = jsonValue; }
 
-ToolChoice& ToolChoice::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("auto"))
-  {
+ToolChoice& ToolChoice::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("auto")) {
     m_auto = jsonValue.GetObject("auto");
     m_autoHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("any"))
-  {
+  if (jsonValue.ValueExists("any")) {
     m_any = jsonValue.GetObject("any");
     m_anyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tool"))
-  {
+  if (jsonValue.ValueExists("tool")) {
     m_tool = jsonValue.GetObject("tool");
     m_toolHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ToolChoice::Jsonize() const
-{
+JsonValue ToolChoice::Jsonize() const {
   JsonValue payload;
 
-  if(m_autoHasBeenSet)
-  {
-   payload.WithObject("auto", m_auto.Jsonize());
-
+  if (m_autoHasBeenSet) {
+    payload.WithObject("auto", m_auto.Jsonize());
   }
 
-  if(m_anyHasBeenSet)
-  {
-   payload.WithObject("any", m_any.Jsonize());
-
+  if (m_anyHasBeenSet) {
+    payload.WithObject("any", m_any.Jsonize());
   }
 
-  if(m_toolHasBeenSet)
-  {
-   payload.WithObject("tool", m_tool.Jsonize());
-
+  if (m_toolHasBeenSet) {
+    payload.WithObject("tool", m_tool.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockRuntime
+}  // namespace Aws

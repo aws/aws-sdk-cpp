@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DeleteTransitGatewayPrefixListReferenceRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DeleteTransitGatewayPrefixListReferenceRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteTransitGatewayPrefixListReferenceRequest::SerializePayload() const
-{
+Aws::String DeleteTransitGatewayPrefixListReferenceRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteTransitGatewayPrefixListReference&";
-  if(m_transitGatewayRouteTableIdHasBeenSet)
-  {
+  if (m_transitGatewayRouteTableIdHasBeenSet) {
     ss << "TransitGatewayRouteTableId=" << StringUtils::URLEncode(m_transitGatewayRouteTableId.c_str()) << "&";
   }
 
-  if(m_prefixListIdHasBeenSet)
-  {
+  if (m_prefixListIdHasBeenSet) {
     ss << "PrefixListId=" << StringUtils::URLEncode(m_prefixListId.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String DeleteTransitGatewayPrefixListReferenceRequest::SerializePayload() c
   return ss.str();
 }
 
-
-void  DeleteTransitGatewayPrefixListReferenceRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteTransitGatewayPrefixListReferenceRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

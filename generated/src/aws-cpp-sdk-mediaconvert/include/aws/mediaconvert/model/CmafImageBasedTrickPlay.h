@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class CmafImageBasedTrickPlay
-  {
-    NOT_SET,
-    NONE,
-    THUMBNAIL,
-    THUMBNAIL_AND_FULLFRAME,
-    ADVANCED
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class CmafImageBasedTrickPlay { NOT_SET, NONE, THUMBNAIL, THUMBNAIL_AND_FULLFRAME, ADVANCED };
 
-namespace CmafImageBasedTrickPlayMapper
-{
+namespace CmafImageBasedTrickPlayMapper {
 AWS_MEDIACONVERT_API CmafImageBasedTrickPlay GetCmafImageBasedTrickPlayForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForCmafImageBasedTrickPlay(CmafImageBasedTrickPlay value);
-} // namespace CmafImageBasedTrickPlayMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace CmafImageBasedTrickPlayMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

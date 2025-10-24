@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/migrationhubstrategy/model/PrioritizeBusinessGoals.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/migrationhubstrategy/model/PrioritizeBusinessGoals.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MigrationHubStrategyRecommendations
-{
-namespace Model
-{
+namespace Aws {
+namespace MigrationHubStrategyRecommendations {
+namespace Model {
 
-PrioritizeBusinessGoals::PrioritizeBusinessGoals(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PrioritizeBusinessGoals::PrioritizeBusinessGoals(JsonView jsonValue) { *this = jsonValue; }
 
-PrioritizeBusinessGoals& PrioritizeBusinessGoals::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("businessGoals"))
-  {
+PrioritizeBusinessGoals& PrioritizeBusinessGoals::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("businessGoals")) {
     m_businessGoals = jsonValue.GetObject("businessGoals");
     m_businessGoalsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PrioritizeBusinessGoals::Jsonize() const
-{
+JsonValue PrioritizeBusinessGoals::Jsonize() const {
   JsonValue payload;
 
-  if(m_businessGoalsHasBeenSet)
-  {
-   payload.WithObject("businessGoals", m_businessGoals.Jsonize());
-
+  if (m_businessGoalsHasBeenSet) {
+    payload.WithObject("businessGoals", m_businessGoals.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MigrationHubStrategyRecommendations
-} // namespace Aws
+}  // namespace Model
+}  // namespace MigrationHubStrategyRecommendations
+}  // namespace Aws

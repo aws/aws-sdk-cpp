@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/robomaker/model/UpdateRobotApplicationResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/robomaker/model/UpdateRobotApplicationResult.h>
 
 #include <utility>
 
@@ -17,67 +17,52 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateRobotApplicationResult::UpdateRobotApplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+UpdateRobotApplicationResult::UpdateRobotApplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-UpdateRobotApplicationResult& UpdateRobotApplicationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+UpdateRobotApplicationResult& UpdateRobotApplicationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("arn"))
-  {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("version"))
-  {
+  if (jsonValue.ValueExists("version")) {
     m_version = jsonValue.GetString("version");
     m_versionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sources"))
-  {
+  if (jsonValue.ValueExists("sources")) {
     Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
-    for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
-    {
+    for (unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex) {
       m_sources.push_back(sourcesJsonList[sourcesIndex].AsObject());
     }
     m_sourcesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("robotSoftwareSuite"))
-  {
+  if (jsonValue.ValueExists("robotSoftwareSuite")) {
     m_robotSoftwareSuite = jsonValue.GetObject("robotSoftwareSuite");
     m_robotSoftwareSuiteHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdatedAt"))
-  {
+  if (jsonValue.ValueExists("lastUpdatedAt")) {
     m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");
     m_lastUpdatedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("revisionId"))
-  {
+  if (jsonValue.ValueExists("revisionId")) {
     m_revisionId = jsonValue.GetString("revisionId");
     m_revisionIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("environment"))
-  {
+  if (jsonValue.ValueExists("environment")) {
     m_environment = jsonValue.GetObject("environment");
     m_environmentHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

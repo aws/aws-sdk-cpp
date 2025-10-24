@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/geo-routes/model/RoutePedestrianOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/geo-routes/model/RoutePedestrianOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GeoRoutes
-{
-namespace Model
-{
+namespace Aws {
+namespace GeoRoutes {
+namespace Model {
 
-RoutePedestrianOptions::RoutePedestrianOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RoutePedestrianOptions::RoutePedestrianOptions(JsonView jsonValue) { *this = jsonValue; }
 
-RoutePedestrianOptions& RoutePedestrianOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Speed"))
-  {
+RoutePedestrianOptions& RoutePedestrianOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Speed")) {
     m_speed = jsonValue.GetDouble("Speed");
     m_speedHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RoutePedestrianOptions::Jsonize() const
-{
+JsonValue RoutePedestrianOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_speedHasBeenSet)
-  {
-   payload.WithDouble("Speed", m_speed);
-
+  if (m_speedHasBeenSet) {
+    payload.WithDouble("Speed", m_speed);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GeoRoutes
-} // namespace Aws
+}  // namespace Model
+}  // namespace GeoRoutes
+}  // namespace Aws

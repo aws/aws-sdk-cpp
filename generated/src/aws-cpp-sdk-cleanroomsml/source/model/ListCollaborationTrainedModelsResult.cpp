@@ -4,10 +4,10 @@
  */
 
 #include <aws/cleanroomsml/model/ListCollaborationTrainedModelsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,24 +17,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListCollaborationTrainedModelsResult::ListCollaborationTrainedModelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListCollaborationTrainedModelsResult::ListCollaborationTrainedModelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-ListCollaborationTrainedModelsResult& ListCollaborationTrainedModelsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListCollaborationTrainedModelsResult& ListCollaborationTrainedModelsResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("collaborationTrainedModels"))
-  {
+  if (jsonValue.ValueExists("collaborationTrainedModels")) {
     Aws::Utils::Array<JsonView> collaborationTrainedModelsJsonList = jsonValue.GetArray("collaborationTrainedModels");
-    for(unsigned collaborationTrainedModelsIndex = 0; collaborationTrainedModelsIndex < collaborationTrainedModelsJsonList.GetLength(); ++collaborationTrainedModelsIndex)
-    {
+    for (unsigned collaborationTrainedModelsIndex = 0; collaborationTrainedModelsIndex < collaborationTrainedModelsJsonList.GetLength();
+         ++collaborationTrainedModelsIndex) {
       m_collaborationTrainedModels.push_back(collaborationTrainedModelsJsonList[collaborationTrainedModelsIndex].AsObject());
     }
     m_collaborationTrainedModelsHasBeenSet = true;
@@ -42,12 +39,10 @@ ListCollaborationTrainedModelsResult& ListCollaborationTrainedModelsResult::oper
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

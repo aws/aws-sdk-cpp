@@ -5,102 +5,123 @@
 
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
+#include <aws/cloudfront/model/KeyGroupSummary.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/cloudfront/model/KeyGroupSummary.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Xml
-{
-  class XmlNode;
-} // namespace Xml
-} // namespace Utils
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Xml {
+class XmlNode;
+}  // namespace Xml
+}  // namespace Utils
+namespace CloudFront {
+namespace Model {
 
+/**
+ * <p>A list of key groups.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/KeyGroupList">AWS
+ * API Reference</a></p>
+ */
+class KeyGroupList {
+ public:
+  AWS_CLOUDFRONT_API KeyGroupList() = default;
+  AWS_CLOUDFRONT_API KeyGroupList(const Aws::Utils::Xml::XmlNode& xmlNode);
+  AWS_CLOUDFRONT_API KeyGroupList& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+  AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+
+  ///@{
   /**
-   * <p>A list of key groups.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/KeyGroupList">AWS
-   * API Reference</a></p>
+   * <p>If there are more items in the list than are in this response, this element
+   * is present. It contains the value that you should use in the <code>Marker</code>
+   * field of a subsequent request to continue listing key groups.</p>
    */
-  class KeyGroupList
-  {
-  public:
-    AWS_CLOUDFRONT_API KeyGroupList() = default;
-    AWS_CLOUDFRONT_API KeyGroupList(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AWS_CLOUDFRONT_API KeyGroupList& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+  inline const Aws::String& GetNextMarker() const { return m_nextMarker; }
+  inline bool NextMarkerHasBeenSet() const { return m_nextMarkerHasBeenSet; }
+  template <typename NextMarkerT = Aws::String>
+  void SetNextMarker(NextMarkerT&& value) {
+    m_nextMarkerHasBeenSet = true;
+    m_nextMarker = std::forward<NextMarkerT>(value);
+  }
+  template <typename NextMarkerT = Aws::String>
+  KeyGroupList& WithNextMarker(NextMarkerT&& value) {
+    SetNextMarker(std::forward<NextMarkerT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+  ///@{
+  /**
+   * <p>The maximum number of key groups requested.</p>
+   */
+  inline int GetMaxItems() const { return m_maxItems; }
+  inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
+  inline void SetMaxItems(int value) {
+    m_maxItemsHasBeenSet = true;
+    m_maxItems = value;
+  }
+  inline KeyGroupList& WithMaxItems(int value) {
+    SetMaxItems(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The number of key groups returned in the response.</p>
+   */
+  inline int GetQuantity() const { return m_quantity; }
+  inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
+  inline void SetQuantity(int value) {
+    m_quantityHasBeenSet = true;
+    m_quantity = value;
+  }
+  inline KeyGroupList& WithQuantity(int value) {
+    SetQuantity(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>If there are more items in the list than are in this response, this element
-     * is present. It contains the value that you should use in the <code>Marker</code>
-     * field of a subsequent request to continue listing key groups.</p>
-     */
-    inline const Aws::String& GetNextMarker() const { return m_nextMarker; }
-    inline bool NextMarkerHasBeenSet() const { return m_nextMarkerHasBeenSet; }
-    template<typename NextMarkerT = Aws::String>
-    void SetNextMarker(NextMarkerT&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::forward<NextMarkerT>(value); }
-    template<typename NextMarkerT = Aws::String>
-    KeyGroupList& WithNextMarker(NextMarkerT&& value) { SetNextMarker(std::forward<NextMarkerT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>A list of key groups.</p>
+   */
+  inline const Aws::Vector<KeyGroupSummary>& GetItems() const { return m_items; }
+  inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
+  template <typename ItemsT = Aws::Vector<KeyGroupSummary>>
+  void SetItems(ItemsT&& value) {
+    m_itemsHasBeenSet = true;
+    m_items = std::forward<ItemsT>(value);
+  }
+  template <typename ItemsT = Aws::Vector<KeyGroupSummary>>
+  KeyGroupList& WithItems(ItemsT&& value) {
+    SetItems(std::forward<ItemsT>(value));
+    return *this;
+  }
+  template <typename ItemsT = KeyGroupSummary>
+  KeyGroupList& AddItems(ItemsT&& value) {
+    m_itemsHasBeenSet = true;
+    m_items.emplace_back(std::forward<ItemsT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_nextMarker;
+  bool m_nextMarkerHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The maximum number of key groups requested.</p>
-     */
-    inline int GetMaxItems() const { return m_maxItems; }
-    inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
-    inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
-    inline KeyGroupList& WithMaxItems(int value) { SetMaxItems(value); return *this;}
-    ///@}
+  int m_maxItems{0};
+  bool m_maxItemsHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The number of key groups returned in the response.</p>
-     */
-    inline int GetQuantity() const { return m_quantity; }
-    inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
-    inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
-    inline KeyGroupList& WithQuantity(int value) { SetQuantity(value); return *this;}
-    ///@}
+  int m_quantity{0};
+  bool m_quantityHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>A list of key groups.</p>
-     */
-    inline const Aws::Vector<KeyGroupSummary>& GetItems() const { return m_items; }
-    inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-    template<typename ItemsT = Aws::Vector<KeyGroupSummary>>
-    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
-    template<typename ItemsT = Aws::Vector<KeyGroupSummary>>
-    KeyGroupList& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
-    template<typename ItemsT = KeyGroupSummary>
-    KeyGroupList& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
-    ///@}
-  private:
+  Aws::Vector<KeyGroupSummary> m_items;
+  bool m_itemsHasBeenSet = false;
+};
 
-    Aws::String m_nextMarker;
-    bool m_nextMarkerHasBeenSet = false;
-
-    int m_maxItems{0};
-    bool m_maxItemsHasBeenSet = false;
-
-    int m_quantity{0};
-    bool m_quantityHasBeenSet = false;
-
-    Aws::Vector<KeyGroupSummary> m_items;
-    bool m_itemsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

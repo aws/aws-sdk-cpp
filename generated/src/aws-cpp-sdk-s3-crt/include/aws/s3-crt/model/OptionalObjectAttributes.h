@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/s3-crt/S3Crt_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3-crt/S3Crt_EXPORTS.h>
 
-namespace Aws
-{
-namespace S3Crt
-{
-namespace Model
-{
-  enum class OptionalObjectAttributes
-  {
-    NOT_SET,
-    RestoreStatus
-  };
+namespace Aws {
+namespace S3Crt {
+namespace Model {
+enum class OptionalObjectAttributes { NOT_SET, RestoreStatus };
 
-namespace OptionalObjectAttributesMapper
-{
+namespace OptionalObjectAttributesMapper {
 AWS_S3CRT_API OptionalObjectAttributes GetOptionalObjectAttributesForName(const Aws::String& name);
 
 AWS_S3CRT_API Aws::String GetNameForOptionalObjectAttributes(OptionalObjectAttributes value);
-} // namespace OptionalObjectAttributesMapper
-} // namespace Model
-} // namespace S3Crt
-} // namespace Aws
+}  // namespace OptionalObjectAttributesMapper
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

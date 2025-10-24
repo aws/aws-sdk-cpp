@@ -5,12 +5,8 @@
 
 #include <aws/lightsail/LightsailEndpointProvider.h>
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Lightsail
-} // namespace Aws
+namespace Aws {
+namespace Lightsail {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Lightsail
+}  // namespace Aws

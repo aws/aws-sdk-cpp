@@ -4,10 +4,10 @@
  */
 
 #include <aws/autoscaling/model/DescribeAdjustmentTypesResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
@@ -17,30 +17,22 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAdjustmentTypesResult::DescribeAdjustmentTypesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+DescribeAdjustmentTypesResult::DescribeAdjustmentTypesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-DescribeAdjustmentTypesResult& DescribeAdjustmentTypesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeAdjustmentTypesResult& DescribeAdjustmentTypesResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeAdjustmentTypesResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeAdjustmentTypesResult")) {
     resultNode = rootNode.FirstChild("DescribeAdjustmentTypesResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode adjustmentTypesNode = resultNode.FirstChild("AdjustmentTypes");
-    if(!adjustmentTypesNode.IsNull())
-    {
+    if (!adjustmentTypesNode.IsNull()) {
       XmlNode adjustmentTypesMember = adjustmentTypesNode.FirstChild("member");
       m_adjustmentTypesHasBeenSet = !adjustmentTypesMember.IsNull();
-      while(!adjustmentTypesMember.IsNull())
-      {
+      while (!adjustmentTypesMember.IsNull()) {
         m_adjustmentTypes.push_back(adjustmentTypesMember);
         adjustmentTypesMember = adjustmentTypesMember.NextNode("member");
       }
@@ -53,7 +45,8 @@ DescribeAdjustmentTypesResult& DescribeAdjustmentTypesResult::operator =(const A
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::AutoScaling::Model::DescribeAdjustmentTypesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::AutoScaling::Model::DescribeAdjustmentTypesResult",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

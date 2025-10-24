@@ -3,133 +3,101 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/neptune-graph/model/GraphStatus.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/neptune-graph/model/GraphStatus.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace NeptuneGraph {
+namespace Model {
+namespace GraphStatusMapper {
 
-namespace Aws
-{
-  namespace NeptuneGraph
-  {
-    namespace Model
-    {
-      namespace GraphStatusMapper
-      {
+static const int CREATING_HASH = HashingUtils::HashString("CREATING");
+static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
+static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+static const int RESETTING_HASH = HashingUtils::HashString("RESETTING");
+static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
+static const int SNAPSHOTTING_HASH = HashingUtils::HashString("SNAPSHOTTING");
+static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+static const int IMPORTING_HASH = HashingUtils::HashString("IMPORTING");
+static const int STARTING_HASH = HashingUtils::HashString("STARTING");
+static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
+static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
 
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
-        static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int RESETTING_HASH = HashingUtils::HashString("RESETTING");
-        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
-        static const int SNAPSHOTTING_HASH = HashingUtils::HashString("SNAPSHOTTING");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int IMPORTING_HASH = HashingUtils::HashString("IMPORTING");
-        static const int STARTING_HASH = HashingUtils::HashString("STARTING");
-        static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
-        static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
+GraphStatus GetGraphStatusForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == CREATING_HASH) {
+    return GraphStatus::CREATING;
+  } else if (hashCode == AVAILABLE_HASH) {
+    return GraphStatus::AVAILABLE;
+  } else if (hashCode == DELETING_HASH) {
+    return GraphStatus::DELETING;
+  } else if (hashCode == RESETTING_HASH) {
+    return GraphStatus::RESETTING;
+  } else if (hashCode == UPDATING_HASH) {
+    return GraphStatus::UPDATING;
+  } else if (hashCode == SNAPSHOTTING_HASH) {
+    return GraphStatus::SNAPSHOTTING;
+  } else if (hashCode == FAILED_HASH) {
+    return GraphStatus::FAILED;
+  } else if (hashCode == IMPORTING_HASH) {
+    return GraphStatus::IMPORTING;
+  } else if (hashCode == STARTING_HASH) {
+    return GraphStatus::STARTING;
+  } else if (hashCode == STOPPING_HASH) {
+    return GraphStatus::STOPPING;
+  } else if (hashCode == STOPPED_HASH) {
+    return GraphStatus::STOPPED;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<GraphStatus>(hashCode);
+  }
 
+  return GraphStatus::NOT_SET;
+}
 
-        GraphStatus GetGraphStatusForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == CREATING_HASH)
-          {
-            return GraphStatus::CREATING;
-          }
-          else if (hashCode == AVAILABLE_HASH)
-          {
-            return GraphStatus::AVAILABLE;
-          }
-          else if (hashCode == DELETING_HASH)
-          {
-            return GraphStatus::DELETING;
-          }
-          else if (hashCode == RESETTING_HASH)
-          {
-            return GraphStatus::RESETTING;
-          }
-          else if (hashCode == UPDATING_HASH)
-          {
-            return GraphStatus::UPDATING;
-          }
-          else if (hashCode == SNAPSHOTTING_HASH)
-          {
-            return GraphStatus::SNAPSHOTTING;
-          }
-          else if (hashCode == FAILED_HASH)
-          {
-            return GraphStatus::FAILED;
-          }
-          else if (hashCode == IMPORTING_HASH)
-          {
-            return GraphStatus::IMPORTING;
-          }
-          else if (hashCode == STARTING_HASH)
-          {
-            return GraphStatus::STARTING;
-          }
-          else if (hashCode == STOPPING_HASH)
-          {
-            return GraphStatus::STOPPING;
-          }
-          else if (hashCode == STOPPED_HASH)
-          {
-            return GraphStatus::STOPPED;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<GraphStatus>(hashCode);
-          }
+Aws::String GetNameForGraphStatus(GraphStatus enumValue) {
+  switch (enumValue) {
+    case GraphStatus::NOT_SET:
+      return {};
+    case GraphStatus::CREATING:
+      return "CREATING";
+    case GraphStatus::AVAILABLE:
+      return "AVAILABLE";
+    case GraphStatus::DELETING:
+      return "DELETING";
+    case GraphStatus::RESETTING:
+      return "RESETTING";
+    case GraphStatus::UPDATING:
+      return "UPDATING";
+    case GraphStatus::SNAPSHOTTING:
+      return "SNAPSHOTTING";
+    case GraphStatus::FAILED:
+      return "FAILED";
+    case GraphStatus::IMPORTING:
+      return "IMPORTING";
+    case GraphStatus::STARTING:
+      return "STARTING";
+    case GraphStatus::STOPPING:
+      return "STOPPING";
+    case GraphStatus::STOPPED:
+      return "STOPPED";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return GraphStatus::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForGraphStatus(GraphStatus enumValue)
-        {
-          switch(enumValue)
-          {
-          case GraphStatus::NOT_SET:
-            return {};
-          case GraphStatus::CREATING:
-            return "CREATING";
-          case GraphStatus::AVAILABLE:
-            return "AVAILABLE";
-          case GraphStatus::DELETING:
-            return "DELETING";
-          case GraphStatus::RESETTING:
-            return "RESETTING";
-          case GraphStatus::UPDATING:
-            return "UPDATING";
-          case GraphStatus::SNAPSHOTTING:
-            return "SNAPSHOTTING";
-          case GraphStatus::FAILED:
-            return "FAILED";
-          case GraphStatus::IMPORTING:
-            return "IMPORTING";
-          case GraphStatus::STARTING:
-            return "STARTING";
-          case GraphStatus::STOPPING:
-            return "STOPPING";
-          case GraphStatus::STOPPED:
-            return "STOPPED";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace GraphStatusMapper
-    } // namespace Model
-  } // namespace NeptuneGraph
-} // namespace Aws
+}  // namespace GraphStatusMapper
+}  // namespace Model
+}  // namespace NeptuneGraph
+}  // namespace Aws

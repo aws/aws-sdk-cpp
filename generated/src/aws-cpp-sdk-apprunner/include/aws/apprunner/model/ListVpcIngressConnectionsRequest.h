@@ -4,90 +4,103 @@
  */
 
 #pragma once
-#include <aws/apprunner/AppRunner_EXPORTS.h>
 #include <aws/apprunner/AppRunnerRequest.h>
+#include <aws/apprunner/AppRunner_EXPORTS.h>
 #include <aws/apprunner/model/ListVpcIngressConnectionsFilter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace AppRunner
-{
-namespace Model
-{
+namespace Aws {
+namespace AppRunner {
+namespace Model {
 
+/**
+ */
+class ListVpcIngressConnectionsRequest : public AppRunnerRequest {
+ public:
+  AWS_APPRUNNER_API ListVpcIngressConnectionsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "ListVpcIngressConnections"; }
+
+  AWS_APPRUNNER_API Aws::String SerializePayload() const override;
+
+  AWS_APPRUNNER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The VPC Ingress Connections to be listed based on either the Service Arn or
+   * Vpc Endpoint Id, or both.</p>
    */
-  class ListVpcIngressConnectionsRequest : public AppRunnerRequest
-  {
-  public:
-    AWS_APPRUNNER_API ListVpcIngressConnectionsRequest() = default;
+  inline const ListVpcIngressConnectionsFilter& GetFilter() const { return m_filter; }
+  inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+  template <typename FilterT = ListVpcIngressConnectionsFilter>
+  void SetFilter(FilterT&& value) {
+    m_filterHasBeenSet = true;
+    m_filter = std::forward<FilterT>(value);
+  }
+  template <typename FilterT = ListVpcIngressConnectionsFilter>
+  ListVpcIngressConnectionsRequest& WithFilter(FilterT&& value) {
+    SetFilter(std::forward<FilterT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "ListVpcIngressConnections"; }
+  ///@{
+  /**
+   * <p>The maximum number of results to include in each response (result page). It's
+   * used for a paginated request.</p> <p>If you don't specify
+   * <code>MaxResults</code>, the request retrieves all available results in a single
+   * response.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline ListVpcIngressConnectionsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
 
-    AWS_APPRUNNER_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>A token from a previous result page. It's used for a paginated request. The
+   * request retrieves the next result page. All other parameter values must be
+   * identical to the ones that are specified in the initial request.</p> <p>If you
+   * don't specify <code>NextToken</code>, the request retrieves the first result
+   * page.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListVpcIngressConnectionsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  ListVpcIngressConnectionsFilter m_filter;
+  bool m_filterHasBeenSet = false;
 
-    AWS_APPRUNNER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+  int m_maxResults{0};
+  bool m_maxResultsHasBeenSet = false;
 
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The VPC Ingress Connections to be listed based on either the Service Arn or
-     * Vpc Endpoint Id, or both.</p>
-     */
-    inline const ListVpcIngressConnectionsFilter& GetFilter() const { return m_filter; }
-    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    template<typename FilterT = ListVpcIngressConnectionsFilter>
-    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
-    template<typename FilterT = ListVpcIngressConnectionsFilter>
-    ListVpcIngressConnectionsRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The maximum number of results to include in each response (result page). It's
-     * used for a paginated request.</p> <p>If you don't specify
-     * <code>MaxResults</code>, the request retrieves all available results in a single
-     * response.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListVpcIngressConnectionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A token from a previous result page. It's used for a paginated request. The
-     * request retrieves the next result page. All other parameter values must be
-     * identical to the ones that are specified in the initial request.</p> <p>If you
-     * don't specify <code>NextToken</code>, the request retrieves the first result
-     * page.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListVpcIngressConnectionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-  private:
-
-    ListVpcIngressConnectionsFilter m_filter;
-    bool m_filterHasBeenSet = false;
-
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace AppRunner
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppRunner
+}  // namespace Aws

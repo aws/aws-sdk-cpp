@@ -5,12 +5,8 @@
 
 #include <aws/entityresolution/EntityResolutionEndpointProvider.h>
 
-namespace Aws
-{
-namespace EntityResolution
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace EntityResolution
-} // namespace Aws
+namespace Aws {
+namespace EntityResolution {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace EntityResolution
+}  // namespace Aws

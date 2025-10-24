@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/ListUserPoliciesResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/iam/model/ListUserPoliciesResult.h>
 
 #include <utility>
 
@@ -17,30 +17,22 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListUserPoliciesResult::ListUserPoliciesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+ListUserPoliciesResult::ListUserPoliciesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-ListUserPoliciesResult& ListUserPoliciesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+ListUserPoliciesResult& ListUserPoliciesResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "ListUserPoliciesResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "ListUserPoliciesResult")) {
     resultNode = rootNode.FirstChild("ListUserPoliciesResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode policyNamesNode = resultNode.FirstChild("PolicyNames");
-    if(!policyNamesNode.IsNull())
-    {
+    if (!policyNamesNode.IsNull()) {
       XmlNode policyNamesMember = policyNamesNode.FirstChild("member");
       m_policyNamesHasBeenSet = !policyNamesMember.IsNull();
-      while(!policyNamesMember.IsNull())
-      {
+      while (!policyNamesMember.IsNull()) {
         m_policyNames.push_back(policyNamesMember.GetText());
         policyNamesMember = policyNamesMember.NextNode("member");
       }
@@ -48,14 +40,13 @@ ListUserPoliciesResult& ListUserPoliciesResult::operator =(const Aws::AmazonWebS
       m_policyNamesHasBeenSet = true;
     }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
-    if(!isTruncatedNode.IsNull())
-    {
-      m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isTruncatedNode.GetText()).c_str()).c_str());
+    if (!isTruncatedNode.IsNull()) {
+      m_isTruncated =
+          StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isTruncatedNode.GetText()).c_str()).c_str());
       m_isTruncatedHasBeenSet = true;
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    if(!markerNode.IsNull())
-    {
+    if (!markerNode.IsNull()) {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
       m_markerHasBeenSet = true;
     }
@@ -65,7 +56,7 @@ ListUserPoliciesResult& ListUserPoliciesResult::operator =(const Aws::AmazonWebS
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::ListUserPoliciesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::ListUserPoliciesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-RetrievalResultSharePointLocation::RetrievalResultSharePointLocation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RetrievalResultSharePointLocation::RetrievalResultSharePointLocation(JsonView jsonValue) { *this = jsonValue; }
 
-RetrievalResultSharePointLocation& RetrievalResultSharePointLocation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("url"))
-  {
+RetrievalResultSharePointLocation& RetrievalResultSharePointLocation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("url")) {
     m_url = jsonValue.GetString("url");
     m_urlHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RetrievalResultSharePointLocation::Jsonize() const
-{
+JsonValue RetrievalResultSharePointLocation::Jsonize() const {
   JsonValue payload;
 
-  if(m_urlHasBeenSet)
-  {
-   payload.WithString("url", m_url);
-
+  if (m_urlHasBeenSet) {
+    payload.WithString("url", m_url);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

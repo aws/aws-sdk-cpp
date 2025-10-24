@@ -4,33 +4,19 @@
  */
 
 #pragma once
-#include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lightsail/Lightsail_EXPORTS.h>
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
-  enum class ContainerServiceState
-  {
-    NOT_SET,
-    PENDING,
-    READY,
-    RUNNING,
-    UPDATING,
-    DELETING,
-    DISABLED,
-    DEPLOYING
-  };
+namespace Aws {
+namespace Lightsail {
+namespace Model {
+enum class ContainerServiceState { NOT_SET, PENDING, READY, RUNNING, UPDATING, DELETING, DISABLED, DEPLOYING };
 
-namespace ContainerServiceStateMapper
-{
+namespace ContainerServiceStateMapper {
 AWS_LIGHTSAIL_API ContainerServiceState GetContainerServiceStateForName(const Aws::String& name);
 
 AWS_LIGHTSAIL_API Aws::String GetNameForContainerServiceState(ContainerServiceState value);
-} // namespace ContainerServiceStateMapper
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace ContainerServiceStateMapper
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

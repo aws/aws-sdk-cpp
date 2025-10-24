@@ -3,43 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/CertificateAssociation.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/redshift/model/CertificateAssociation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Redshift
-{
-namespace Model
-{
+namespace Aws {
+namespace Redshift {
+namespace Model {
 
-CertificateAssociation::CertificateAssociation(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+CertificateAssociation::CertificateAssociation(const XmlNode& xmlNode) { *this = xmlNode; }
 
-CertificateAssociation& CertificateAssociation::operator =(const XmlNode& xmlNode)
-{
+CertificateAssociation& CertificateAssociation::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode customDomainNameNode = resultNode.FirstChild("CustomDomainName");
-    if(!customDomainNameNode.IsNull())
-    {
+    if (!customDomainNameNode.IsNull()) {
       m_customDomainName = Aws::Utils::Xml::DecodeEscapedXmlText(customDomainNameNode.GetText());
       m_customDomainNameHasBeenSet = true;
     }
     XmlNode clusterIdentifierNode = resultNode.FirstChild("ClusterIdentifier");
-    if(!clusterIdentifierNode.IsNull())
-    {
+    if (!clusterIdentifierNode.IsNull()) {
       m_clusterIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(clusterIdentifierNode.GetText());
       m_clusterIdentifierHasBeenSet = true;
     }
@@ -48,32 +38,25 @@ CertificateAssociation& CertificateAssociation::operator =(const XmlNode& xmlNod
   return *this;
 }
 
-void CertificateAssociation::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_customDomainNameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".CustomDomainName=" << StringUtils::URLEncode(m_customDomainName.c_str()) << "&";
+void CertificateAssociation::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_customDomainNameHasBeenSet) {
+    oStream << location << index << locationValue << ".CustomDomainName=" << StringUtils::URLEncode(m_customDomainName.c_str()) << "&";
   }
 
-  if(m_clusterIdentifierHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
-  }
-
-}
-
-void CertificateAssociation::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_customDomainNameHasBeenSet)
-  {
-      oStream << location << ".CustomDomainName=" << StringUtils::URLEncode(m_customDomainName.c_str()) << "&";
-  }
-  if(m_clusterIdentifierHasBeenSet)
-  {
-      oStream << location << ".ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
+  if (m_clusterIdentifierHasBeenSet) {
+    oStream << location << index << locationValue << ".ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace Redshift
-} // namespace Aws
+void CertificateAssociation::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_customDomainNameHasBeenSet) {
+    oStream << location << ".CustomDomainName=" << StringUtils::URLEncode(m_customDomainName.c_str()) << "&";
+  }
+  if (m_clusterIdentifierHasBeenSet) {
+    oStream << location << ".ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace Redshift
+}  // namespace Aws

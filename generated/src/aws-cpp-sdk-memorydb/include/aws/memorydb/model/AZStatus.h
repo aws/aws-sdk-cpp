@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/memorydb/MemoryDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/memorydb/MemoryDB_EXPORTS.h>
 
-namespace Aws
-{
-namespace MemoryDB
-{
-namespace Model
-{
-  enum class AZStatus
-  {
-    NOT_SET,
-    singleaz,
-    multiaz
-  };
+namespace Aws {
+namespace MemoryDB {
+namespace Model {
+enum class AZStatus { NOT_SET, singleaz, multiaz };
 
-namespace AZStatusMapper
-{
+namespace AZStatusMapper {
 AWS_MEMORYDB_API AZStatus GetAZStatusForName(const Aws::String& name);
 
 AWS_MEMORYDB_API Aws::String GetNameForAZStatus(AZStatus value);
-} // namespace AZStatusMapper
-} // namespace Model
-} // namespace MemoryDB
-} // namespace Aws
+}  // namespace AZStatusMapper
+}  // namespace Model
+}  // namespace MemoryDB
+}  // namespace Aws

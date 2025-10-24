@@ -3,42 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/RuleGroupSourceStatelessRuleMatchAttributesTcpFlags.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/RuleGroupSourceStatelessRuleMatchAttributesTcpFlags.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-RuleGroupSourceStatelessRuleMatchAttributesTcpFlags::RuleGroupSourceStatelessRuleMatchAttributesTcpFlags(JsonView jsonValue)
-{
+RuleGroupSourceStatelessRuleMatchAttributesTcpFlags::RuleGroupSourceStatelessRuleMatchAttributesTcpFlags(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-RuleGroupSourceStatelessRuleMatchAttributesTcpFlags& RuleGroupSourceStatelessRuleMatchAttributesTcpFlags::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Flags"))
-  {
+RuleGroupSourceStatelessRuleMatchAttributesTcpFlags& RuleGroupSourceStatelessRuleMatchAttributesTcpFlags::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Flags")) {
     Aws::Utils::Array<JsonView> flagsJsonList = jsonValue.GetArray("Flags");
-    for(unsigned flagsIndex = 0; flagsIndex < flagsJsonList.GetLength(); ++flagsIndex)
-    {
+    for (unsigned flagsIndex = 0; flagsIndex < flagsJsonList.GetLength(); ++flagsIndex) {
       m_flags.push_back(flagsJsonList[flagsIndex].AsString());
     }
     m_flagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Masks"))
-  {
+  if (jsonValue.ValueExists("Masks")) {
     Aws::Utils::Array<JsonView> masksJsonList = jsonValue.GetArray("Masks");
-    for(unsigned masksIndex = 0; masksIndex < masksJsonList.GetLength(); ++masksIndex)
-    {
+    for (unsigned masksIndex = 0; masksIndex < masksJsonList.GetLength(); ++masksIndex) {
       m_masks.push_back(masksJsonList[masksIndex].AsString());
     }
     m_masksHasBeenSet = true;
@@ -46,35 +37,28 @@ RuleGroupSourceStatelessRuleMatchAttributesTcpFlags& RuleGroupSourceStatelessRul
   return *this;
 }
 
-JsonValue RuleGroupSourceStatelessRuleMatchAttributesTcpFlags::Jsonize() const
-{
+JsonValue RuleGroupSourceStatelessRuleMatchAttributesTcpFlags::Jsonize() const {
   JsonValue payload;
 
-  if(m_flagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> flagsJsonList(m_flags.size());
-   for(unsigned flagsIndex = 0; flagsIndex < flagsJsonList.GetLength(); ++flagsIndex)
-   {
-     flagsJsonList[flagsIndex].AsString(m_flags[flagsIndex]);
-   }
-   payload.WithArray("Flags", std::move(flagsJsonList));
-
+  if (m_flagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> flagsJsonList(m_flags.size());
+    for (unsigned flagsIndex = 0; flagsIndex < flagsJsonList.GetLength(); ++flagsIndex) {
+      flagsJsonList[flagsIndex].AsString(m_flags[flagsIndex]);
+    }
+    payload.WithArray("Flags", std::move(flagsJsonList));
   }
 
-  if(m_masksHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> masksJsonList(m_masks.size());
-   for(unsigned masksIndex = 0; masksIndex < masksJsonList.GetLength(); ++masksIndex)
-   {
-     masksJsonList[masksIndex].AsString(m_masks[masksIndex]);
-   }
-   payload.WithArray("Masks", std::move(masksJsonList));
-
+  if (m_masksHasBeenSet) {
+    Aws::Utils::Array<JsonValue> masksJsonList(m_masks.size());
+    for (unsigned masksIndex = 0; masksIndex < masksJsonList.GetLength(); ++masksIndex) {
+      masksJsonList[masksIndex].AsString(m_masks[masksIndex]);
+    }
+    payload.WithArray("Masks", std::move(masksJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

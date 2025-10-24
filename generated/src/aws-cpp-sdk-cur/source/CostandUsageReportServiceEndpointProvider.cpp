@@ -5,12 +5,8 @@
 
 #include <aws/cur/CostandUsageReportServiceEndpointProvider.h>
 
-namespace Aws
-{
-namespace CostandUsageReportService
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace CostandUsageReportService
-} // namespace Aws
+namespace Aws {
+namespace CostandUsageReportService {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace CostandUsageReportService
+}  // namespace Aws

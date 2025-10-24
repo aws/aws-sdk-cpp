@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class SpotInstanceType
-  {
-    NOT_SET,
-    one_time,
-    persistent
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class SpotInstanceType { NOT_SET, one_time, persistent };
 
-namespace SpotInstanceTypeMapper
-{
+namespace SpotInstanceTypeMapper {
 AWS_EC2_API SpotInstanceType GetSpotInstanceTypeForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForSpotInstanceType(SpotInstanceType value);
-} // namespace SpotInstanceTypeMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace SpotInstanceTypeMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

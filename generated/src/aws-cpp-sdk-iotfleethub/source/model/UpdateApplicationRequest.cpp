@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotfleethub/model/UpdateApplicationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotfleethub/model/UpdateApplicationRequest.h>
 
 #include <utility>
 
@@ -12,31 +12,20 @@ using namespace Aws::IoTFleetHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateApplicationRequest::SerializePayload() const
-{
+Aws::String UpdateApplicationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_applicationNameHasBeenSet)
-  {
-   payload.WithString("applicationName", m_applicationName);
-
+  if (m_applicationNameHasBeenSet) {
+    payload.WithString("applicationName", m_applicationName);
   }
 
-  if(m_applicationDescriptionHasBeenSet)
-  {
-   payload.WithString("applicationDescription", m_applicationDescription);
-
+  if (m_applicationDescriptionHasBeenSet) {
+    payload.WithString("applicationDescription", m_applicationDescription);
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

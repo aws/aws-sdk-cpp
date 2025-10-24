@@ -3,50 +3,40 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/EnableLoggingRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/EnableLoggingRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String EnableLoggingRequest::SerializePayload() const
-{
+Aws::String EnableLoggingRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=EnableLogging&";
-  if(m_clusterIdentifierHasBeenSet)
-  {
+  if (m_clusterIdentifierHasBeenSet) {
     ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
   }
 
-  if(m_bucketNameHasBeenSet)
-  {
+  if (m_bucketNameHasBeenSet) {
     ss << "BucketName=" << StringUtils::URLEncode(m_bucketName.c_str()) << "&";
   }
 
-  if(m_s3KeyPrefixHasBeenSet)
-  {
+  if (m_s3KeyPrefixHasBeenSet) {
     ss << "S3KeyPrefix=" << StringUtils::URLEncode(m_s3KeyPrefix.c_str()) << "&";
   }
 
-  if(m_logDestinationTypeHasBeenSet)
-  {
-    ss << "LogDestinationType=" << StringUtils::URLEncode(LogDestinationTypeMapper::GetNameForLogDestinationType(m_logDestinationType)) << "&";
+  if (m_logDestinationTypeHasBeenSet) {
+    ss << "LogDestinationType=" << StringUtils::URLEncode(LogDestinationTypeMapper::GetNameForLogDestinationType(m_logDestinationType))
+       << "&";
   }
 
-  if(m_logExportsHasBeenSet)
-  {
-    if (m_logExports.empty())
-    {
+  if (m_logExportsHasBeenSet) {
+    if (m_logExports.empty()) {
       ss << "LogExports=&";
-    }
-    else
-    {
+    } else {
       unsigned logExportsCount = 1;
-      for(auto& item : m_logExports)
-      {
-        ss << "LogExports.member." << logExportsCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_logExports) {
+        ss << "LogExports.member." << logExportsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         logExportsCount++;
       }
     }
@@ -56,8 +46,4 @@ Aws::String EnableLoggingRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  EnableLoggingRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void EnableLoggingRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

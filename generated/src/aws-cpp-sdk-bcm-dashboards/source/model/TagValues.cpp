@@ -11,39 +11,27 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BCMDashboards
-{
-namespace Model
-{
+namespace Aws {
+namespace BCMDashboards {
+namespace Model {
 
-TagValues::TagValues(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TagValues::TagValues(JsonView jsonValue) { *this = jsonValue; }
 
-TagValues& TagValues::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("key"))
-  {
+TagValues& TagValues::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("key")) {
     m_key = jsonValue.GetString("key");
     m_keyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("values"))
-  {
+  if (jsonValue.ValueExists("values")) {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
-    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-    {
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());
     }
     m_valuesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("matchOptions"))
-  {
+  if (jsonValue.ValueExists("matchOptions")) {
     Aws::Utils::Array<JsonView> matchOptionsJsonList = jsonValue.GetArray("matchOptions");
-    for(unsigned matchOptionsIndex = 0; matchOptionsIndex < matchOptionsJsonList.GetLength(); ++matchOptionsIndex)
-    {
+    for (unsigned matchOptionsIndex = 0; matchOptionsIndex < matchOptionsJsonList.GetLength(); ++matchOptionsIndex) {
       m_matchOptions.push_back(MatchOptionMapper::GetMatchOptionForName(matchOptionsJsonList[matchOptionsIndex].AsString()));
     }
     m_matchOptionsHasBeenSet = true;
@@ -51,41 +39,32 @@ TagValues& TagValues::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue TagValues::Jsonize() const
-{
+JsonValue TagValues::Jsonize() const {
   JsonValue payload;
 
-  if(m_keyHasBeenSet)
-  {
-   payload.WithString("key", m_key);
-
+  if (m_keyHasBeenSet) {
+    payload.WithString("key", m_key);
   }
 
-  if(m_valuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
-   for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-   {
-     valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
-   }
-   payload.WithArray("values", std::move(valuesJsonList));
-
+  if (m_valuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
+      valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
+    }
+    payload.WithArray("values", std::move(valuesJsonList));
   }
 
-  if(m_matchOptionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> matchOptionsJsonList(m_matchOptions.size());
-   for(unsigned matchOptionsIndex = 0; matchOptionsIndex < matchOptionsJsonList.GetLength(); ++matchOptionsIndex)
-   {
-     matchOptionsJsonList[matchOptionsIndex].AsString(MatchOptionMapper::GetNameForMatchOption(m_matchOptions[matchOptionsIndex]));
-   }
-   payload.WithArray("matchOptions", std::move(matchOptionsJsonList));
-
+  if (m_matchOptionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> matchOptionsJsonList(m_matchOptions.size());
+    for (unsigned matchOptionsIndex = 0; matchOptionsIndex < matchOptionsJsonList.GetLength(); ++matchOptionsIndex) {
+      matchOptionsJsonList[matchOptionsIndex].AsString(MatchOptionMapper::GetNameForMatchOption(m_matchOptions[matchOptionsIndex]));
+    }
+    payload.WithArray("matchOptions", std::move(matchOptionsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BCMDashboards
-} // namespace Aws
+}  // namespace Model
+}  // namespace BCMDashboards
+}  // namespace Aws

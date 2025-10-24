@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeCommit
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeCommit {
+namespace Model {
 
-BatchDescribeMergeConflictsError::BatchDescribeMergeConflictsError(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchDescribeMergeConflictsError::BatchDescribeMergeConflictsError(JsonView jsonValue) { *this = jsonValue; }
 
-BatchDescribeMergeConflictsError& BatchDescribeMergeConflictsError::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("filePath"))
-  {
+BatchDescribeMergeConflictsError& BatchDescribeMergeConflictsError::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("filePath")) {
     m_filePath = jsonValue.GetString("filePath");
     m_filePathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("exceptionName"))
-  {
+  if (jsonValue.ValueExists("exceptionName")) {
     m_exceptionName = jsonValue.GetString("exceptionName");
     m_exceptionNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("message"))
-  {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BatchDescribeMergeConflictsError::Jsonize() const
-{
+JsonValue BatchDescribeMergeConflictsError::Jsonize() const {
   JsonValue payload;
 
-  if(m_filePathHasBeenSet)
-  {
-   payload.WithString("filePath", m_filePath);
-
+  if (m_filePathHasBeenSet) {
+    payload.WithString("filePath", m_filePath);
   }
 
-  if(m_exceptionNameHasBeenSet)
-  {
-   payload.WithString("exceptionName", m_exceptionName);
-
+  if (m_exceptionNameHasBeenSet) {
+    payload.WithString("exceptionName", m_exceptionName);
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeCommit
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeCommit
+}  // namespace Aws

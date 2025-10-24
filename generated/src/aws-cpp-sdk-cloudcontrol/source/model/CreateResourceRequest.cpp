@@ -12,51 +12,34 @@ using namespace Aws::CloudControlApi::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateResourceRequest::SerializePayload() const
-{
+Aws::String CreateResourceRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_typeNameHasBeenSet)
-  {
-   payload.WithString("TypeName", m_typeName);
-
+  if (m_typeNameHasBeenSet) {
+    payload.WithString("TypeName", m_typeName);
   }
 
-  if(m_typeVersionIdHasBeenSet)
-  {
-   payload.WithString("TypeVersionId", m_typeVersionId);
-
+  if (m_typeVersionIdHasBeenSet) {
+    payload.WithString("TypeVersionId", m_typeVersionId);
   }
 
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("RoleArn", m_roleArn);
-
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("RoleArn", m_roleArn);
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("ClientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("ClientToken", m_clientToken);
   }
 
-  if(m_desiredStateHasBeenSet)
-  {
-   payload.WithString("DesiredState", m_desiredState);
-
+  if (m_desiredStateHasBeenSet) {
+    payload.WithString("DesiredState", m_desiredState);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateResourceRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateResourceRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CloudApiService.CreateResource"));
   return headers;
-
 }
-
-
-
-

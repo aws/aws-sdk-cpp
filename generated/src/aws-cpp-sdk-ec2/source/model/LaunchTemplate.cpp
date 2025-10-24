@@ -3,77 +3,64 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/LaunchTemplate.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/LaunchTemplate.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-LaunchTemplate::LaunchTemplate(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+LaunchTemplate::LaunchTemplate(const XmlNode& xmlNode) { *this = xmlNode; }
 
-LaunchTemplate& LaunchTemplate::operator =(const XmlNode& xmlNode)
-{
+LaunchTemplate& LaunchTemplate::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode launchTemplateIdNode = resultNode.FirstChild("launchTemplateId");
-    if(!launchTemplateIdNode.IsNull())
-    {
+    if (!launchTemplateIdNode.IsNull()) {
       m_launchTemplateId = Aws::Utils::Xml::DecodeEscapedXmlText(launchTemplateIdNode.GetText());
       m_launchTemplateIdHasBeenSet = true;
     }
     XmlNode launchTemplateNameNode = resultNode.FirstChild("launchTemplateName");
-    if(!launchTemplateNameNode.IsNull())
-    {
+    if (!launchTemplateNameNode.IsNull()) {
       m_launchTemplateName = Aws::Utils::Xml::DecodeEscapedXmlText(launchTemplateNameNode.GetText());
       m_launchTemplateNameHasBeenSet = true;
     }
     XmlNode createTimeNode = resultNode.FirstChild("createTime");
-    if(!createTimeNode.IsNull())
-    {
-      m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+    if (!createTimeNode.IsNull()) {
+      m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(),
+                              Aws::Utils::DateFormat::ISO_8601);
       m_createTimeHasBeenSet = true;
     }
     XmlNode createdByNode = resultNode.FirstChild("createdBy");
-    if(!createdByNode.IsNull())
-    {
+    if (!createdByNode.IsNull()) {
       m_createdBy = Aws::Utils::Xml::DecodeEscapedXmlText(createdByNode.GetText());
       m_createdByHasBeenSet = true;
     }
     XmlNode defaultVersionNumberNode = resultNode.FirstChild("defaultVersionNumber");
-    if(!defaultVersionNumberNode.IsNull())
-    {
-      m_defaultVersionNumber = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultVersionNumberNode.GetText()).c_str()).c_str());
+    if (!defaultVersionNumberNode.IsNull()) {
+      m_defaultVersionNumber = StringUtils::ConvertToInt64(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultVersionNumberNode.GetText()).c_str()).c_str());
       m_defaultVersionNumberHasBeenSet = true;
     }
     XmlNode latestVersionNumberNode = resultNode.FirstChild("latestVersionNumber");
-    if(!latestVersionNumberNode.IsNull())
-    {
-      m_latestVersionNumber = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(latestVersionNumberNode.GetText()).c_str()).c_str());
+    if (!latestVersionNumberNode.IsNull()) {
+      m_latestVersionNumber = StringUtils::ConvertToInt64(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(latestVersionNumberNode.GetText()).c_str()).c_str());
       m_latestVersionNumberHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
-    if(!tagsNode.IsNull())
-    {
+    if (!tagsNode.IsNull()) {
       XmlNode tagsMember = tagsNode.FirstChild("item");
       m_tagsHasBeenSet = !tagsMember.IsNull();
-      while(!tagsMember.IsNull())
-      {
+      while (!tagsMember.IsNull()) {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
@@ -81,8 +68,7 @@ LaunchTemplate& LaunchTemplate::operator =(const XmlNode& xmlNode)
       m_tagsHasBeenSet = true;
     }
     XmlNode operatorNode = resultNode.FirstChild("operator");
-    if(!operatorNode.IsNull())
-    {
+    if (!operatorNode.IsNull()) {
       m_operator = operatorNode;
       m_operatorHasBeenSet = true;
     }
@@ -91,102 +77,83 @@ LaunchTemplate& LaunchTemplate::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void LaunchTemplate::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_launchTemplateIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".LaunchTemplateId=" << StringUtils::URLEncode(m_launchTemplateId.c_str()) << "&";
+void LaunchTemplate::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_launchTemplateIdHasBeenSet) {
+    oStream << location << index << locationValue << ".LaunchTemplateId=" << StringUtils::URLEncode(m_launchTemplateId.c_str()) << "&";
   }
 
-  if(m_launchTemplateNameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".LaunchTemplateName=" << StringUtils::URLEncode(m_launchTemplateName.c_str()) << "&";
+  if (m_launchTemplateNameHasBeenSet) {
+    oStream << location << index << locationValue << ".LaunchTemplateName=" << StringUtils::URLEncode(m_launchTemplateName.c_str()) << "&";
   }
 
-  if(m_createTimeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  if (m_createTimeHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_createdByHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".CreatedBy=" << StringUtils::URLEncode(m_createdBy.c_str()) << "&";
+  if (m_createdByHasBeenSet) {
+    oStream << location << index << locationValue << ".CreatedBy=" << StringUtils::URLEncode(m_createdBy.c_str()) << "&";
   }
 
-  if(m_defaultVersionNumberHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".DefaultVersionNumber=" << m_defaultVersionNumber << "&";
+  if (m_defaultVersionNumberHasBeenSet) {
+    oStream << location << index << locationValue << ".DefaultVersionNumber=" << m_defaultVersionNumber << "&";
   }
 
-  if(m_latestVersionNumberHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".LatestVersionNumber=" << m_latestVersionNumber << "&";
+  if (m_latestVersionNumberHasBeenSet) {
+    oStream << location << index << locationValue << ".LatestVersionNumber=" << m_latestVersionNumber << "&";
   }
 
-  if(m_tagsHasBeenSet)
-  {
-      unsigned tagsIdx = 1;
-      for(auto& item : m_tags)
-      {
-        Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
-        item.OutputToStream(oStream, tagsSs.str().c_str());
-      }
+  if (m_tagsHasBeenSet) {
+    unsigned tagsIdx = 1;
+    for (auto& item : m_tags) {
+      Aws::StringStream tagsSs;
+      tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
+      item.OutputToStream(oStream, tagsSs.str().c_str());
+    }
   }
 
-  if(m_operatorHasBeenSet)
-  {
-      Aws::StringStream operatorLocationAndMemberSs;
-      operatorLocationAndMemberSs << location << index << locationValue << ".Operator";
-      m_operator.OutputToStream(oStream, operatorLocationAndMemberSs.str().c_str());
-  }
-
-}
-
-void LaunchTemplate::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_launchTemplateIdHasBeenSet)
-  {
-      oStream << location << ".LaunchTemplateId=" << StringUtils::URLEncode(m_launchTemplateId.c_str()) << "&";
-  }
-  if(m_launchTemplateNameHasBeenSet)
-  {
-      oStream << location << ".LaunchTemplateName=" << StringUtils::URLEncode(m_launchTemplateName.c_str()) << "&";
-  }
-  if(m_createTimeHasBeenSet)
-  {
-      oStream << location << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
-  }
-  if(m_createdByHasBeenSet)
-  {
-      oStream << location << ".CreatedBy=" << StringUtils::URLEncode(m_createdBy.c_str()) << "&";
-  }
-  if(m_defaultVersionNumberHasBeenSet)
-  {
-      oStream << location << ".DefaultVersionNumber=" << m_defaultVersionNumber << "&";
-  }
-  if(m_latestVersionNumberHasBeenSet)
-  {
-      oStream << location << ".LatestVersionNumber=" << m_latestVersionNumber << "&";
-  }
-  if(m_tagsHasBeenSet)
-  {
-      unsigned tagsIdx = 1;
-      for(auto& item : m_tags)
-      {
-        Aws::StringStream tagsSs;
-        tagsSs << location << ".TagSet." << tagsIdx++;
-        item.OutputToStream(oStream, tagsSs.str().c_str());
-      }
-  }
-  if(m_operatorHasBeenSet)
-  {
-      Aws::String operatorLocationAndMember(location);
-      operatorLocationAndMember += ".Operator";
-      m_operator.OutputToStream(oStream, operatorLocationAndMember.c_str());
+  if (m_operatorHasBeenSet) {
+    Aws::StringStream operatorLocationAndMemberSs;
+    operatorLocationAndMemberSs << location << index << locationValue << ".Operator";
+    m_operator.OutputToStream(oStream, operatorLocationAndMemberSs.str().c_str());
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void LaunchTemplate::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_launchTemplateIdHasBeenSet) {
+    oStream << location << ".LaunchTemplateId=" << StringUtils::URLEncode(m_launchTemplateId.c_str()) << "&";
+  }
+  if (m_launchTemplateNameHasBeenSet) {
+    oStream << location << ".LaunchTemplateName=" << StringUtils::URLEncode(m_launchTemplateName.c_str()) << "&";
+  }
+  if (m_createTimeHasBeenSet) {
+    oStream << location << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str())
+            << "&";
+  }
+  if (m_createdByHasBeenSet) {
+    oStream << location << ".CreatedBy=" << StringUtils::URLEncode(m_createdBy.c_str()) << "&";
+  }
+  if (m_defaultVersionNumberHasBeenSet) {
+    oStream << location << ".DefaultVersionNumber=" << m_defaultVersionNumber << "&";
+  }
+  if (m_latestVersionNumberHasBeenSet) {
+    oStream << location << ".LatestVersionNumber=" << m_latestVersionNumber << "&";
+  }
+  if (m_tagsHasBeenSet) {
+    unsigned tagsIdx = 1;
+    for (auto& item : m_tags) {
+      Aws::StringStream tagsSs;
+      tagsSs << location << ".TagSet." << tagsIdx++;
+      item.OutputToStream(oStream, tagsSs.str().c_str());
+    }
+  }
+  if (m_operatorHasBeenSet) {
+    Aws::String operatorLocationAndMember(location);
+    operatorLocationAndMember += ".Operator";
+    m_operator.OutputToStream(oStream, operatorLocationAndMember.c_str());
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

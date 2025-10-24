@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/globalaccelerator/GlobalAccelerator_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/globalaccelerator/GlobalAccelerator_EXPORTS.h>
 
-namespace Aws
-{
-namespace GlobalAccelerator
-{
-namespace Model
-{
-  enum class CustomRoutingProtocol
-  {
-    NOT_SET,
-    TCP,
-    UDP
-  };
+namespace Aws {
+namespace GlobalAccelerator {
+namespace Model {
+enum class CustomRoutingProtocol { NOT_SET, TCP, UDP };
 
-namespace CustomRoutingProtocolMapper
-{
+namespace CustomRoutingProtocolMapper {
 AWS_GLOBALACCELERATOR_API CustomRoutingProtocol GetCustomRoutingProtocolForName(const Aws::String& name);
 
 AWS_GLOBALACCELERATOR_API Aws::String GetNameForCustomRoutingProtocol(CustomRoutingProtocol value);
-} // namespace CustomRoutingProtocolMapper
-} // namespace Model
-} // namespace GlobalAccelerator
-} // namespace Aws
+}  // namespace CustomRoutingProtocolMapper
+}  // namespace Model
+}  // namespace GlobalAccelerator
+}  // namespace Aws

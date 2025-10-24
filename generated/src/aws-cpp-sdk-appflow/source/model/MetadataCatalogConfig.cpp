@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-MetadataCatalogConfig::MetadataCatalogConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MetadataCatalogConfig::MetadataCatalogConfig(JsonView jsonValue) { *this = jsonValue; }
 
-MetadataCatalogConfig& MetadataCatalogConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("glueDataCatalog"))
-  {
+MetadataCatalogConfig& MetadataCatalogConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("glueDataCatalog")) {
     m_glueDataCatalog = jsonValue.GetObject("glueDataCatalog");
     m_glueDataCatalogHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MetadataCatalogConfig::Jsonize() const
-{
+JsonValue MetadataCatalogConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_glueDataCatalogHasBeenSet)
-  {
-   payload.WithObject("glueDataCatalog", m_glueDataCatalog.Jsonize());
-
+  if (m_glueDataCatalogHasBeenSet) {
+    payload.WithObject("glueDataCatalog", m_glueDataCatalog.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

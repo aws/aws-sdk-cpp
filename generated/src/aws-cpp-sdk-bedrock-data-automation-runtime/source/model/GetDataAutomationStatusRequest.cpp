@@ -12,27 +12,18 @@ using namespace Aws::BedrockDataAutomationRuntime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetDataAutomationStatusRequest::SerializePayload() const
-{
+Aws::String GetDataAutomationStatusRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_invocationArnHasBeenSet)
-  {
-   payload.WithString("invocationArn", m_invocationArn);
-
+  if (m_invocationArnHasBeenSet) {
+    payload.WithString("invocationArn", m_invocationArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetDataAutomationStatusRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetDataAutomationStatusRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonBedrockKeystoneRuntimeService.GetDataAutomationStatus"));
   return headers;
-
 }
-
-
-
-

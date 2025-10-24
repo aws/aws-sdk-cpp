@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/storagegateway/model/FileSystemAssociationStatusDetail.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/storagegateway/model/FileSystemAssociationStatusDetail.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace StorageGateway
-{
-namespace Model
-{
+namespace Aws {
+namespace StorageGateway {
+namespace Model {
 
-FileSystemAssociationStatusDetail::FileSystemAssociationStatusDetail(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FileSystemAssociationStatusDetail::FileSystemAssociationStatusDetail(JsonView jsonValue) { *this = jsonValue; }
 
-FileSystemAssociationStatusDetail& FileSystemAssociationStatusDetail::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ErrorCode"))
-  {
+FileSystemAssociationStatusDetail& FileSystemAssociationStatusDetail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ErrorCode")) {
     m_errorCode = jsonValue.GetString("ErrorCode");
     m_errorCodeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FileSystemAssociationStatusDetail::Jsonize() const
-{
+JsonValue FileSystemAssociationStatusDetail::Jsonize() const {
   JsonValue payload;
 
-  if(m_errorCodeHasBeenSet)
-  {
-   payload.WithString("ErrorCode", m_errorCode);
-
+  if (m_errorCodeHasBeenSet) {
+    payload.WithString("ErrorCode", m_errorCode);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace StorageGateway
-} // namespace Aws
+}  // namespace Model
+}  // namespace StorageGateway
+}  // namespace Aws

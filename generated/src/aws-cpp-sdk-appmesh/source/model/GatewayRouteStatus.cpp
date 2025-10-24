@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-GatewayRouteStatus::GatewayRouteStatus(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GatewayRouteStatus::GatewayRouteStatus(JsonView jsonValue) { *this = jsonValue; }
 
-GatewayRouteStatus& GatewayRouteStatus::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("status"))
-  {
+GatewayRouteStatus& GatewayRouteStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("status")) {
     m_status = GatewayRouteStatusCodeMapper::GetGatewayRouteStatusCodeForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GatewayRouteStatus::Jsonize() const
-{
+JsonValue GatewayRouteStatus::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", GatewayRouteStatusCodeMapper::GetNameForGatewayRouteStatusCode(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", GatewayRouteStatusCodeMapper::GetNameForGatewayRouteStatusCode(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

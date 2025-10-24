@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-Threshold::Threshold(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Threshold::Threshold(JsonView jsonValue) { *this = jsonValue; }
 
-Threshold& Threshold::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Comparison"))
-  {
+Threshold& Threshold::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Comparison")) {
     m_comparison = ComparisonMapper::GetComparisonForName(jsonValue.GetString("Comparison"));
     m_comparisonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ThresholdValue"))
-  {
+  if (jsonValue.ValueExists("ThresholdValue")) {
     m_thresholdValue = jsonValue.GetDouble("ThresholdValue");
     m_thresholdValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Threshold::Jsonize() const
-{
+JsonValue Threshold::Jsonize() const {
   JsonValue payload;
 
-  if(m_comparisonHasBeenSet)
-  {
-   payload.WithString("Comparison", ComparisonMapper::GetNameForComparison(m_comparison));
+  if (m_comparisonHasBeenSet) {
+    payload.WithString("Comparison", ComparisonMapper::GetNameForComparison(m_comparison));
   }
 
-  if(m_thresholdValueHasBeenSet)
-  {
-   payload.WithDouble("ThresholdValue", m_thresholdValue);
-
+  if (m_thresholdValueHasBeenSet) {
+    payload.WithDouble("ThresholdValue", m_thresholdValue);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

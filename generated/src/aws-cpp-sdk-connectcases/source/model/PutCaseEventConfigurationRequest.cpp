@@ -12,19 +12,12 @@ using namespace Aws::ConnectCases::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutCaseEventConfigurationRequest::SerializePayload() const
-{
+Aws::String PutCaseEventConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_eventBridgeHasBeenSet)
-  {
-   payload.WithObject("eventBridge", m_eventBridge.Jsonize());
-
+  if (m_eventBridgeHasBeenSet) {
+    payload.WithObject("eventBridge", m_eventBridge.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

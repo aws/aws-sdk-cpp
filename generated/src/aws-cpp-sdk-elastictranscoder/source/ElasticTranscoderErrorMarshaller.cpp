@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::ElasticTranscoder;
 
-AWSError<CoreErrors> ElasticTranscoderErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> ElasticTranscoderErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = ElasticTranscoderErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

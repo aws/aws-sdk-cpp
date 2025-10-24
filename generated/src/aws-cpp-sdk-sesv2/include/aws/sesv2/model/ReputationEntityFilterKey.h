@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/sesv2/SESV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sesv2/SESV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace SESV2
-{
-namespace Model
-{
-  enum class ReputationEntityFilterKey
-  {
-    NOT_SET,
-    ENTITY_TYPE,
-    REPUTATION_IMPACT,
-    SENDING_STATUS,
-    ENTITY_REFERENCE_PREFIX
-  };
+namespace Aws {
+namespace SESV2 {
+namespace Model {
+enum class ReputationEntityFilterKey { NOT_SET, ENTITY_TYPE, REPUTATION_IMPACT, SENDING_STATUS, ENTITY_REFERENCE_PREFIX };
 
-namespace ReputationEntityFilterKeyMapper
-{
+namespace ReputationEntityFilterKeyMapper {
 AWS_SESV2_API ReputationEntityFilterKey GetReputationEntityFilterKeyForName(const Aws::String& name);
 
 AWS_SESV2_API Aws::String GetNameForReputationEntityFilterKey(ReputationEntityFilterKey value);
-} // namespace ReputationEntityFilterKeyMapper
-} // namespace Model
-} // namespace SESV2
-} // namespace Aws
+}  // namespace ReputationEntityFilterKeyMapper
+}  // namespace Model
+}  // namespace SESV2
+}  // namespace Aws

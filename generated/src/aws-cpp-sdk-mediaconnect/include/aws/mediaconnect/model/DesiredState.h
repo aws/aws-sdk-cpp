@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConnect
-{
-namespace Model
-{
-  enum class DesiredState
-  {
-    NOT_SET,
-    ACTIVE,
-    STANDBY,
-    DELETED
-  };
+namespace Aws {
+namespace MediaConnect {
+namespace Model {
+enum class DesiredState { NOT_SET, ACTIVE, STANDBY, DELETED };
 
-namespace DesiredStateMapper
-{
+namespace DesiredStateMapper {
 AWS_MEDIACONNECT_API DesiredState GetDesiredStateForName(const Aws::String& name);
 
 AWS_MEDIACONNECT_API Aws::String GetNameForDesiredState(DesiredState value);
-} // namespace DesiredStateMapper
-} // namespace Model
-} // namespace MediaConnect
-} // namespace Aws
+}  // namespace DesiredStateMapper
+}  // namespace Model
+}  // namespace MediaConnect
+}  // namespace Aws

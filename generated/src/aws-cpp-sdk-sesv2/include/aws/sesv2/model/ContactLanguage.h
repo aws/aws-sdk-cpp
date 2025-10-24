@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/sesv2/SESV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sesv2/SESV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace SESV2
-{
-namespace Model
-{
-  enum class ContactLanguage
-  {
-    NOT_SET,
-    EN,
-    JA
-  };
+namespace Aws {
+namespace SESV2 {
+namespace Model {
+enum class ContactLanguage { NOT_SET, EN, JA };
 
-namespace ContactLanguageMapper
-{
+namespace ContactLanguageMapper {
 AWS_SESV2_API ContactLanguage GetContactLanguageForName(const Aws::String& name);
 
 AWS_SESV2_API Aws::String GetNameForContactLanguage(ContactLanguage value);
-} // namespace ContactLanguageMapper
-} // namespace Model
-} // namespace SESV2
-} // namespace Aws
+}  // namespace ContactLanguageMapper
+}  // namespace Model
+}  // namespace SESV2
+}  // namespace Aws

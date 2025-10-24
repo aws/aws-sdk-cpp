@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/macie2/model/UpdateFindingsFilterRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/macie2/model/UpdateFindingsFilterRequest.h>
 
 #include <utility>
 
@@ -12,48 +12,32 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateFindingsFilterRequest::SerializePayload() const
-{
+Aws::String UpdateFindingsFilterRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_actionHasBeenSet)
-  {
-   payload.WithString("action", FindingsFilterActionMapper::GetNameForFindingsFilterAction(m_action));
+  if (m_actionHasBeenSet) {
+    payload.WithString("action", FindingsFilterActionMapper::GetNameForFindingsFilterAction(m_action));
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_findingCriteriaHasBeenSet)
-  {
-   payload.WithObject("findingCriteria", m_findingCriteria.Jsonize());
-
+  if (m_findingCriteriaHasBeenSet) {
+    payload.WithObject("findingCriteria", m_findingCriteria.Jsonize());
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_positionHasBeenSet)
-  {
-   payload.WithInteger("position", m_position);
-
+  if (m_positionHasBeenSet) {
+    payload.WithInteger("position", m_position);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

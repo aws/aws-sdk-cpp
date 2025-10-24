@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-ModelInvocationJobInputDataConfig::ModelInvocationJobInputDataConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ModelInvocationJobInputDataConfig::ModelInvocationJobInputDataConfig(JsonView jsonValue) { *this = jsonValue; }
 
-ModelInvocationJobInputDataConfig& ModelInvocationJobInputDataConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("s3InputDataConfig"))
-  {
+ModelInvocationJobInputDataConfig& ModelInvocationJobInputDataConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("s3InputDataConfig")) {
     m_s3InputDataConfig = jsonValue.GetObject("s3InputDataConfig");
     m_s3InputDataConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ModelInvocationJobInputDataConfig::Jsonize() const
-{
+JsonValue ModelInvocationJobInputDataConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3InputDataConfigHasBeenSet)
-  {
-   payload.WithObject("s3InputDataConfig", m_s3InputDataConfig.Jsonize());
-
+  if (m_s3InputDataConfigHasBeenSet) {
+    payload.WithObject("s3InputDataConfig", m_s3InputDataConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

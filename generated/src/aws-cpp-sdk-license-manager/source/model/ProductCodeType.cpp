@@ -3,63 +3,51 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/license-manager/model/ProductCodeType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/license-manager/model/ProductCodeType.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace LicenseManager {
+namespace Model {
+namespace ProductCodeTypeMapper {
 
-namespace Aws
-{
-  namespace LicenseManager
-  {
-    namespace Model
-    {
-      namespace ProductCodeTypeMapper
-      {
+static const int marketplace_HASH = HashingUtils::HashString("marketplace");
 
-        static const int marketplace_HASH = HashingUtils::HashString("marketplace");
+ProductCodeType GetProductCodeTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == marketplace_HASH) {
+    return ProductCodeType::marketplace;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<ProductCodeType>(hashCode);
+  }
 
+  return ProductCodeType::NOT_SET;
+}
 
-        ProductCodeType GetProductCodeTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == marketplace_HASH)
-          {
-            return ProductCodeType::marketplace;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ProductCodeType>(hashCode);
-          }
+Aws::String GetNameForProductCodeType(ProductCodeType enumValue) {
+  switch (enumValue) {
+    case ProductCodeType::NOT_SET:
+      return {};
+    case ProductCodeType::marketplace:
+      return "marketplace";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return ProductCodeType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForProductCodeType(ProductCodeType enumValue)
-        {
-          switch(enumValue)
-          {
-          case ProductCodeType::NOT_SET:
-            return {};
-          case ProductCodeType::marketplace:
-            return "marketplace";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace ProductCodeTypeMapper
-    } // namespace Model
-  } // namespace LicenseManager
-} // namespace Aws
+}  // namespace ProductCodeTypeMapper
+}  // namespace Model
+}  // namespace LicenseManager
+}  // namespace Aws

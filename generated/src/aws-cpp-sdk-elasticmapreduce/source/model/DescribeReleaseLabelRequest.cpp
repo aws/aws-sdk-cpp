@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticmapreduce/model/DescribeReleaseLabelRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/elasticmapreduce/model/DescribeReleaseLabelRequest.h>
 
 #include <utility>
 
@@ -12,39 +12,26 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeReleaseLabelRequest::SerializePayload() const
-{
+Aws::String DescribeReleaseLabelRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_releaseLabelHasBeenSet)
-  {
-   payload.WithString("ReleaseLabel", m_releaseLabel);
-
+  if (m_releaseLabelHasBeenSet) {
+    payload.WithString("ReleaseLabel", m_releaseLabel);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("MaxResults", m_maxResults);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeReleaseLabelRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeReleaseLabelRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ElasticMapReduce.DescribeReleaseLabel"));
   return headers;
-
 }
-
-
-
-

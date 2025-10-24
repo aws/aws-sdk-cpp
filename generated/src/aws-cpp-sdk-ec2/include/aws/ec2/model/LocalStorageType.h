@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class LocalStorageType
-  {
-    NOT_SET,
-    hdd,
-    ssd
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class LocalStorageType { NOT_SET, hdd, ssd };
 
-namespace LocalStorageTypeMapper
-{
+namespace LocalStorageTypeMapper {
 AWS_EC2_API LocalStorageType GetLocalStorageTypeForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForLocalStorageType(LocalStorageType value);
-} // namespace LocalStorageTypeMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace LocalStorageTypeMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

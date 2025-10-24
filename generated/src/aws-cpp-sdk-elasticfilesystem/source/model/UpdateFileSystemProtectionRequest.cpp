@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticfilesystem/model/UpdateFileSystemProtectionRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/elasticfilesystem/model/UpdateFileSystemProtectionRequest.h>
 
 #include <utility>
 
@@ -12,18 +12,13 @@ using namespace Aws::EFS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateFileSystemProtectionRequest::SerializePayload() const
-{
+Aws::String UpdateFileSystemProtectionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_replicationOverwriteProtectionHasBeenSet)
-  {
-   payload.WithString("ReplicationOverwriteProtection", ReplicationOverwriteProtectionMapper::GetNameForReplicationOverwriteProtection(m_replicationOverwriteProtection));
+  if (m_replicationOverwriteProtectionHasBeenSet) {
+    payload.WithString("ReplicationOverwriteProtection",
+                       ReplicationOverwriteProtectionMapper::GetNameForReplicationOverwriteProtection(m_replicationOverwriteProtection));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

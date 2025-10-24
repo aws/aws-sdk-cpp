@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppSync
-{
-namespace Model
-{
+namespace Aws {
+namespace AppSync {
+namespace Model {
 
-ElasticsearchDataSourceConfig::ElasticsearchDataSourceConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ElasticsearchDataSourceConfig::ElasticsearchDataSourceConfig(JsonView jsonValue) { *this = jsonValue; }
 
-ElasticsearchDataSourceConfig& ElasticsearchDataSourceConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("endpoint"))
-  {
+ElasticsearchDataSourceConfig& ElasticsearchDataSourceConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("endpoint")) {
     m_endpoint = jsonValue.GetString("endpoint");
     m_endpointHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("awsRegion"))
-  {
+  if (jsonValue.ValueExists("awsRegion")) {
     m_awsRegion = jsonValue.GetString("awsRegion");
     m_awsRegionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ElasticsearchDataSourceConfig::Jsonize() const
-{
+JsonValue ElasticsearchDataSourceConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_endpointHasBeenSet)
-  {
-   payload.WithString("endpoint", m_endpoint);
-
+  if (m_endpointHasBeenSet) {
+    payload.WithString("endpoint", m_endpoint);
   }
 
-  if(m_awsRegionHasBeenSet)
-  {
-   payload.WithString("awsRegion", m_awsRegion);
-
+  if (m_awsRegionHasBeenSet) {
+    payload.WithString("awsRegion", m_awsRegion);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppSync
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppSync
+}  // namespace Aws

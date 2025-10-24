@@ -12,27 +12,18 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeThemeForStackRequest::SerializePayload() const
-{
+Aws::String DescribeThemeForStackRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_stackNameHasBeenSet)
-  {
-   payload.WithString("StackName", m_stackName);
-
+  if (m_stackNameHasBeenSet) {
+    payload.WithString("StackName", m_stackName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeThemeForStackRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeThemeForStackRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "PhotonAdminProxyService.DescribeThemeForStack"));
   return headers;
-
 }
-
-
-
-

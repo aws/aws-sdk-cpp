@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/geo-places/GeoPlaces_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/geo-places/GeoPlaces_EXPORTS.h>
 
-namespace Aws
-{
-namespace GeoPlaces
-{
-namespace Model
-{
-  enum class QueryType
-  {
-    NOT_SET,
-    Category,
-    BusinessChain
-  };
+namespace Aws {
+namespace GeoPlaces {
+namespace Model {
+enum class QueryType { NOT_SET, Category, BusinessChain };
 
-namespace QueryTypeMapper
-{
+namespace QueryTypeMapper {
 AWS_GEOPLACES_API QueryType GetQueryTypeForName(const Aws::String& name);
 
 AWS_GEOPLACES_API Aws::String GetNameForQueryType(QueryType value);
-} // namespace QueryTypeMapper
-} // namespace Model
-} // namespace GeoPlaces
-} // namespace Aws
+}  // namespace QueryTypeMapper
+}  // namespace Model
+}  // namespace GeoPlaces
+}  // namespace Aws

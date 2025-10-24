@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ARCRegionswitch
-{
-namespace Model
-{
+namespace Aws {
+namespace ARCRegionswitch {
+namespace Model {
 
-EcsUngraceful::EcsUngraceful(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EcsUngraceful::EcsUngraceful(JsonView jsonValue) { *this = jsonValue; }
 
-EcsUngraceful& EcsUngraceful::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("minimumSuccessPercentage"))
-  {
+EcsUngraceful& EcsUngraceful::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("minimumSuccessPercentage")) {
     m_minimumSuccessPercentage = jsonValue.GetInteger("minimumSuccessPercentage");
     m_minimumSuccessPercentageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EcsUngraceful::Jsonize() const
-{
+JsonValue EcsUngraceful::Jsonize() const {
   JsonValue payload;
 
-  if(m_minimumSuccessPercentageHasBeenSet)
-  {
-   payload.WithInteger("minimumSuccessPercentage", m_minimumSuccessPercentage);
-
+  if (m_minimumSuccessPercentageHasBeenSet) {
+    payload.WithInteger("minimumSuccessPercentage", m_minimumSuccessPercentage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ARCRegionswitch
-} // namespace Aws
+}  // namespace Model
+}  // namespace ARCRegionswitch
+}  // namespace Aws

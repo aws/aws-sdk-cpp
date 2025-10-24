@@ -12,38 +12,26 @@ using namespace Aws::CognitoIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetOpenIdTokenRequest::SerializePayload() const
-{
+Aws::String GetOpenIdTokenRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_identityIdHasBeenSet)
-  {
-   payload.WithString("IdentityId", m_identityId);
-
+  if (m_identityIdHasBeenSet) {
+    payload.WithString("IdentityId", m_identityId);
   }
 
-  if(m_loginsHasBeenSet)
-  {
-   JsonValue loginsJsonMap;
-   for(auto& loginsItem : m_logins)
-   {
-     loginsJsonMap.WithString(loginsItem.first, loginsItem.second);
-   }
-   payload.WithObject("Logins", std::move(loginsJsonMap));
-
+  if (m_loginsHasBeenSet) {
+    JsonValue loginsJsonMap;
+    for (auto& loginsItem : m_logins) {
+      loginsJsonMap.WithString(loginsItem.first, loginsItem.second);
+    }
+    payload.WithObject("Logins", std::move(loginsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetOpenIdTokenRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetOpenIdTokenRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityService.GetOpenIdToken"));
   return headers;
-
 }
-
-
-
-

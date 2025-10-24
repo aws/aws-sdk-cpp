@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/resource-groups/ResourceGroups_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/resource-groups/ResourceGroups_EXPORTS.h>
 
-namespace Aws
-{
-namespace ResourceGroups
-{
-namespace Model
-{
-  enum class GroupFilterName
-  {
-    NOT_SET,
-    resource_type,
-    configuration_type,
-    owner,
-    display_name,
-    criticality
-  };
+namespace Aws {
+namespace ResourceGroups {
+namespace Model {
+enum class GroupFilterName { NOT_SET, resource_type, configuration_type, owner, display_name, criticality };
 
-namespace GroupFilterNameMapper
-{
+namespace GroupFilterNameMapper {
 AWS_RESOURCEGROUPS_API GroupFilterName GetGroupFilterNameForName(const Aws::String& name);
 
 AWS_RESOURCEGROUPS_API Aws::String GetNameForGroupFilterName(GroupFilterName value);
-} // namespace GroupFilterNameMapper
-} // namespace Model
-} // namespace ResourceGroups
-} // namespace Aws
+}  // namespace GroupFilterNameMapper
+}  // namespace Model
+}  // namespace ResourceGroups
+}  // namespace Aws

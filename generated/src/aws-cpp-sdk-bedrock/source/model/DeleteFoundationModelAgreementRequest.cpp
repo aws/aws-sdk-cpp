@@ -12,19 +12,12 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteFoundationModelAgreementRequest::SerializePayload() const
-{
+Aws::String DeleteFoundationModelAgreementRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_modelIdHasBeenSet)
-  {
-   payload.WithString("modelId", m_modelId);
-
+  if (m_modelIdHasBeenSet) {
+    payload.WithString("modelId", m_modelId);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

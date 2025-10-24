@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRoomsML
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRoomsML {
+namespace Model {
 
-InferenceResourceConfig::InferenceResourceConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InferenceResourceConfig::InferenceResourceConfig(JsonView jsonValue) { *this = jsonValue; }
 
-InferenceResourceConfig& InferenceResourceConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("instanceType"))
-  {
+InferenceResourceConfig& InferenceResourceConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("instanceType")) {
     m_instanceType = InferenceInstanceTypeMapper::GetInferenceInstanceTypeForName(jsonValue.GetString("instanceType"));
     m_instanceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("instanceCount"))
-  {
+  if (jsonValue.ValueExists("instanceCount")) {
     m_instanceCount = jsonValue.GetInteger("instanceCount");
     m_instanceCountHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InferenceResourceConfig::Jsonize() const
-{
+JsonValue InferenceResourceConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_instanceTypeHasBeenSet)
-  {
-   payload.WithString("instanceType", InferenceInstanceTypeMapper::GetNameForInferenceInstanceType(m_instanceType));
+  if (m_instanceTypeHasBeenSet) {
+    payload.WithString("instanceType", InferenceInstanceTypeMapper::GetNameForInferenceInstanceType(m_instanceType));
   }
 
-  if(m_instanceCountHasBeenSet)
-  {
-   payload.WithInteger("instanceCount", m_instanceCount);
-
+  if (m_instanceCountHasBeenSet) {
+    payload.WithInteger("instanceCount", m_instanceCount);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRoomsML
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRoomsML
+}  // namespace Aws

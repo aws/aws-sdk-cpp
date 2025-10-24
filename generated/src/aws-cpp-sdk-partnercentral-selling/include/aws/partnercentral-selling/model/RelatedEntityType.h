@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 
-namespace Aws
-{
-namespace PartnerCentralSelling
-{
-namespace Model
-{
-  enum class RelatedEntityType
-  {
-    NOT_SET,
-    Solutions,
-    AwsProducts,
-    AwsMarketplaceOffers
-  };
+namespace Aws {
+namespace PartnerCentralSelling {
+namespace Model {
+enum class RelatedEntityType { NOT_SET, Solutions, AwsProducts, AwsMarketplaceOffers };
 
-namespace RelatedEntityTypeMapper
-{
+namespace RelatedEntityTypeMapper {
 AWS_PARTNERCENTRALSELLING_API RelatedEntityType GetRelatedEntityTypeForName(const Aws::String& name);
 
 AWS_PARTNERCENTRALSELLING_API Aws::String GetNameForRelatedEntityType(RelatedEntityType value);
-} // namespace RelatedEntityTypeMapper
-} // namespace Model
-} // namespace PartnerCentralSelling
-} // namespace Aws
+}  // namespace RelatedEntityTypeMapper
+}  // namespace Model
+}  // namespace PartnerCentralSelling
+}  // namespace Aws

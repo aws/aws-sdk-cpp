@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/CheckSchemaVersionValidityRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/CheckSchemaVersionValidityRequest.h>
 
 #include <utility>
 
@@ -12,32 +12,22 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CheckSchemaVersionValidityRequest::SerializePayload() const
-{
+Aws::String CheckSchemaVersionValidityRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_dataFormatHasBeenSet)
-  {
-   payload.WithString("DataFormat", DataFormatMapper::GetNameForDataFormat(m_dataFormat));
+  if (m_dataFormatHasBeenSet) {
+    payload.WithString("DataFormat", DataFormatMapper::GetNameForDataFormat(m_dataFormat));
   }
 
-  if(m_schemaDefinitionHasBeenSet)
-  {
-   payload.WithString("SchemaDefinition", m_schemaDefinition);
-
+  if (m_schemaDefinitionHasBeenSet) {
+    payload.WithString("SchemaDefinition", m_schemaDefinition);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CheckSchemaVersionValidityRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CheckSchemaVersionValidityRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSGlue.CheckSchemaVersionValidity"));
   return headers;
-
 }
-
-
-
-

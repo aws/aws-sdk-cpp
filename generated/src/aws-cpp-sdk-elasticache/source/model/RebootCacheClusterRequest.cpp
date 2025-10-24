@@ -3,35 +3,27 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/RebootCacheClusterRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticache/model/RebootCacheClusterRequest.h>
 
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-Aws::String RebootCacheClusterRequest::SerializePayload() const
-{
+Aws::String RebootCacheClusterRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=RebootCacheCluster&";
-  if(m_cacheClusterIdHasBeenSet)
-  {
+  if (m_cacheClusterIdHasBeenSet) {
     ss << "CacheClusterId=" << StringUtils::URLEncode(m_cacheClusterId.c_str()) << "&";
   }
 
-  if(m_cacheNodeIdsToRebootHasBeenSet)
-  {
-    if (m_cacheNodeIdsToReboot.empty())
-    {
+  if (m_cacheNodeIdsToRebootHasBeenSet) {
+    if (m_cacheNodeIdsToReboot.empty()) {
       ss << "CacheNodeIdsToReboot=&";
-    }
-    else
-    {
+    } else {
       unsigned cacheNodeIdsToRebootCount = 1;
-      for(auto& item : m_cacheNodeIdsToReboot)
-      {
-        ss << "CacheNodeIdsToReboot.CacheNodeId." << cacheNodeIdsToRebootCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_cacheNodeIdsToReboot) {
+        ss << "CacheNodeIdsToReboot.CacheNodeId." << cacheNodeIdsToRebootCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         cacheNodeIdsToRebootCount++;
       }
     }
@@ -41,8 +33,4 @@ Aws::String RebootCacheClusterRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  RebootCacheClusterRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void RebootCacheClusterRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

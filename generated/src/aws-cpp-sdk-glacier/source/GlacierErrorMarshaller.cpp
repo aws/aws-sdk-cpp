@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::Glacier;
 
-AWSError<CoreErrors> GlacierErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> GlacierErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = GlacierErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

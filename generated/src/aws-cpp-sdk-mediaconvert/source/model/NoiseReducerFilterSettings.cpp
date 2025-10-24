@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/NoiseReducerFilterSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconvert/model/NoiseReducerFilterSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
 
-NoiseReducerFilterSettings::NoiseReducerFilterSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NoiseReducerFilterSettings::NoiseReducerFilterSettings(JsonView jsonValue) { *this = jsonValue; }
 
-NoiseReducerFilterSettings& NoiseReducerFilterSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("strength"))
-  {
+NoiseReducerFilterSettings& NoiseReducerFilterSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("strength")) {
     m_strength = jsonValue.GetInteger("strength");
     m_strengthHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NoiseReducerFilterSettings::Jsonize() const
-{
+JsonValue NoiseReducerFilterSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_strengthHasBeenSet)
-  {
-   payload.WithInteger("strength", m_strength);
-
+  if (m_strengthHasBeenSet) {
+    payload.WithInteger("strength", m_strength);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

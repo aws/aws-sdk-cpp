@@ -12,34 +12,24 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateApiCacheRequest::SerializePayload() const
-{
+Aws::String CreateApiCacheRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_ttlHasBeenSet)
-  {
-   payload.WithInt64("ttl", m_ttl);
-
+  if (m_ttlHasBeenSet) {
+    payload.WithInt64("ttl", m_ttl);
   }
 
-  if(m_apiCachingBehaviorHasBeenSet)
-  {
-   payload.WithString("apiCachingBehavior", ApiCachingBehaviorMapper::GetNameForApiCachingBehavior(m_apiCachingBehavior));
+  if (m_apiCachingBehaviorHasBeenSet) {
+    payload.WithString("apiCachingBehavior", ApiCachingBehaviorMapper::GetNameForApiCachingBehavior(m_apiCachingBehavior));
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", ApiCacheTypeMapper::GetNameForApiCacheType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", ApiCacheTypeMapper::GetNameForApiCacheType(m_type));
   }
 
-  if(m_healthMetricsConfigHasBeenSet)
-  {
-   payload.WithString("healthMetricsConfig", CacheHealthMetricsConfigMapper::GetNameForCacheHealthMetricsConfig(m_healthMetricsConfig));
+  if (m_healthMetricsConfigHasBeenSet) {
+    payload.WithString("healthMetricsConfig", CacheHealthMetricsConfigMapper::GetNameForCacheHealthMetricsConfig(m_healthMetricsConfig));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

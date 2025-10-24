@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iottwinmaker/model/DeleteSceneRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iottwinmaker/model/DeleteSceneRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::IoTTwinMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteSceneRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DeleteSceneRequest::SerializePayload() const { return {}; }

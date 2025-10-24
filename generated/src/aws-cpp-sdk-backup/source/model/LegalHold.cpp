@@ -11,104 +11,78 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Backup
-{
-namespace Model
-{
+namespace Aws {
+namespace Backup {
+namespace Model {
 
-LegalHold::LegalHold(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LegalHold::LegalHold(JsonView jsonValue) { *this = jsonValue; }
 
-LegalHold& LegalHold::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Title"))
-  {
+LegalHold& LegalHold::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Title")) {
     m_title = jsonValue.GetString("Title");
     m_titleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = LegalHoldStatusMapper::GetLegalHoldStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LegalHoldId"))
-  {
+  if (jsonValue.ValueExists("LegalHoldId")) {
     m_legalHoldId = jsonValue.GetString("LegalHoldId");
     m_legalHoldIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LegalHoldArn"))
-  {
+  if (jsonValue.ValueExists("LegalHoldArn")) {
     m_legalHoldArn = jsonValue.GetString("LegalHoldArn");
     m_legalHoldArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationDate"))
-  {
+  if (jsonValue.ValueExists("CreationDate")) {
     m_creationDate = jsonValue.GetDouble("CreationDate");
     m_creationDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CancellationDate"))
-  {
+  if (jsonValue.ValueExists("CancellationDate")) {
     m_cancellationDate = jsonValue.GetDouble("CancellationDate");
     m_cancellationDateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LegalHold::Jsonize() const
-{
+JsonValue LegalHold::Jsonize() const {
   JsonValue payload;
 
-  if(m_titleHasBeenSet)
-  {
-   payload.WithString("Title", m_title);
-
+  if (m_titleHasBeenSet) {
+    payload.WithString("Title", m_title);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", LegalHoldStatusMapper::GetNameForLegalHoldStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", LegalHoldStatusMapper::GetNameForLegalHoldStatus(m_status));
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_legalHoldIdHasBeenSet)
-  {
-   payload.WithString("LegalHoldId", m_legalHoldId);
-
+  if (m_legalHoldIdHasBeenSet) {
+    payload.WithString("LegalHoldId", m_legalHoldId);
   }
 
-  if(m_legalHoldArnHasBeenSet)
-  {
-   payload.WithString("LegalHoldArn", m_legalHoldArn);
-
+  if (m_legalHoldArnHasBeenSet) {
+    payload.WithString("LegalHoldArn", m_legalHoldArn);
   }
 
-  if(m_creationDateHasBeenSet)
-  {
-   payload.WithDouble("CreationDate", m_creationDate.SecondsWithMSPrecision());
+  if (m_creationDateHasBeenSet) {
+    payload.WithDouble("CreationDate", m_creationDate.SecondsWithMSPrecision());
   }
 
-  if(m_cancellationDateHasBeenSet)
-  {
-   payload.WithDouble("CancellationDate", m_cancellationDate.SecondsWithMSPrecision());
+  if (m_cancellationDateHasBeenSet) {
+    payload.WithDouble("CancellationDate", m_cancellationDate.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Backup
-} // namespace Aws
+}  // namespace Model
+}  // namespace Backup
+}  // namespace Aws

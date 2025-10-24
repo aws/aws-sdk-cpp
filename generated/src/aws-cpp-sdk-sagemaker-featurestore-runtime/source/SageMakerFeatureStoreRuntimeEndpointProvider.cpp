@@ -5,12 +5,8 @@
 
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeEndpointProvider.h>
 
-namespace Aws
-{
-namespace SageMakerFeatureStoreRuntime
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace SageMakerFeatureStoreRuntime
-} // namespace Aws
+namespace Aws {
+namespace SageMakerFeatureStoreRuntime {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace SageMakerFeatureStoreRuntime
+}  // namespace Aws

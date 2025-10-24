@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dax/model/ParameterNameValue.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dax/model/ParameterNameValue.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DAX
-{
-namespace Model
-{
+namespace Aws {
+namespace DAX {
+namespace Model {
 
-ParameterNameValue::ParameterNameValue(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ParameterNameValue::ParameterNameValue(JsonView jsonValue) { *this = jsonValue; }
 
-ParameterNameValue& ParameterNameValue::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ParameterName"))
-  {
+ParameterNameValue& ParameterNameValue::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ParameterName")) {
     m_parameterName = jsonValue.GetString("ParameterName");
     m_parameterNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ParameterValue"))
-  {
+  if (jsonValue.ValueExists("ParameterValue")) {
     m_parameterValue = jsonValue.GetString("ParameterValue");
     m_parameterValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ParameterNameValue::Jsonize() const
-{
+JsonValue ParameterNameValue::Jsonize() const {
   JsonValue payload;
 
-  if(m_parameterNameHasBeenSet)
-  {
-   payload.WithString("ParameterName", m_parameterName);
-
+  if (m_parameterNameHasBeenSet) {
+    payload.WithString("ParameterName", m_parameterName);
   }
 
-  if(m_parameterValueHasBeenSet)
-  {
-   payload.WithString("ParameterValue", m_parameterValue);
-
+  if (m_parameterValueHasBeenSet) {
+    payload.WithString("ParameterValue", m_parameterValue);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DAX
-} // namespace Aws
+}  // namespace Model
+}  // namespace DAX
+}  // namespace Aws

@@ -3,37 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3-crt/model/NotificationConfigurationFilter.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3-crt/model/NotificationConfigurationFilter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Crt
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Crt {
+namespace Model {
 
-NotificationConfigurationFilter::NotificationConfigurationFilter(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+NotificationConfigurationFilter::NotificationConfigurationFilter(const XmlNode& xmlNode) { *this = xmlNode; }
 
-NotificationConfigurationFilter& NotificationConfigurationFilter::operator =(const XmlNode& xmlNode)
-{
+NotificationConfigurationFilter& NotificationConfigurationFilter::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode keyNode = resultNode.FirstChild("S3Key");
-    if(!keyNode.IsNull())
-    {
+    if (!keyNode.IsNull()) {
       m_key = keyNode;
       m_keyHasBeenSet = true;
     }
@@ -42,17 +33,14 @@ NotificationConfigurationFilter& NotificationConfigurationFilter::operator =(con
   return *this;
 }
 
-void NotificationConfigurationFilter::AddToNode(XmlNode& parentNode) const
-{
+void NotificationConfigurationFilter::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_keyHasBeenSet)
-  {
-   XmlNode keyNode = parentNode.CreateChildElement("S3Key");
-   m_key.AddToNode(keyNode);
+  if (m_keyHasBeenSet) {
+    XmlNode keyNode = parentNode.CreateChildElement("S3Key");
+    m_key.AddToNode(keyNode);
   }
-
 }
 
-} // namespace Model
-} // namespace S3Crt
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

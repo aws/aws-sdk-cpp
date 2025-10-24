@@ -3,70 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/HlsManifestCompression.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/medialive/model/HlsManifestCompression.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+namespace HlsManifestCompressionMapper {
 
-namespace Aws
-{
-  namespace MediaLive
-  {
-    namespace Model
-    {
-      namespace HlsManifestCompressionMapper
-      {
+static const int GZIP_HASH = HashingUtils::HashString("GZIP");
+static const int NONE_HASH = HashingUtils::HashString("NONE");
 
-        static const int GZIP_HASH = HashingUtils::HashString("GZIP");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+HlsManifestCompression GetHlsManifestCompressionForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == GZIP_HASH) {
+    return HlsManifestCompression::GZIP;
+  } else if (hashCode == NONE_HASH) {
+    return HlsManifestCompression::NONE;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<HlsManifestCompression>(hashCode);
+  }
 
+  return HlsManifestCompression::NOT_SET;
+}
 
-        HlsManifestCompression GetHlsManifestCompressionForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == GZIP_HASH)
-          {
-            return HlsManifestCompression::GZIP;
-          }
-          else if (hashCode == NONE_HASH)
-          {
-            return HlsManifestCompression::NONE;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<HlsManifestCompression>(hashCode);
-          }
+Aws::String GetNameForHlsManifestCompression(HlsManifestCompression enumValue) {
+  switch (enumValue) {
+    case HlsManifestCompression::NOT_SET:
+      return {};
+    case HlsManifestCompression::GZIP:
+      return "GZIP";
+    case HlsManifestCompression::NONE:
+      return "NONE";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return HlsManifestCompression::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForHlsManifestCompression(HlsManifestCompression enumValue)
-        {
-          switch(enumValue)
-          {
-          case HlsManifestCompression::NOT_SET:
-            return {};
-          case HlsManifestCompression::GZIP:
-            return "GZIP";
-          case HlsManifestCompression::NONE:
-            return "NONE";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace HlsManifestCompressionMapper
-    } // namespace Model
-  } // namespace MediaLive
-} // namespace Aws
+}  // namespace HlsManifestCompressionMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

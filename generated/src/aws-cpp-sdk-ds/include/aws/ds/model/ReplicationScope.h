@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ds/DirectoryService_EXPORTS.h>
 
-namespace Aws
-{
-namespace DirectoryService
-{
-namespace Model
-{
-  enum class ReplicationScope
-  {
-    NOT_SET,
-    Domain
-  };
+namespace Aws {
+namespace DirectoryService {
+namespace Model {
+enum class ReplicationScope { NOT_SET, Domain };
 
-namespace ReplicationScopeMapper
-{
+namespace ReplicationScopeMapper {
 AWS_DIRECTORYSERVICE_API ReplicationScope GetReplicationScopeForName(const Aws::String& name);
 
 AWS_DIRECTORYSERVICE_API Aws::String GetNameForReplicationScope(ReplicationScope value);
-} // namespace ReplicationScopeMapper
-} // namespace Model
-} // namespace DirectoryService
-} // namespace Aws
+}  // namespace ReplicationScopeMapper
+}  // namespace Model
+}  // namespace DirectoryService
+}  // namespace Aws

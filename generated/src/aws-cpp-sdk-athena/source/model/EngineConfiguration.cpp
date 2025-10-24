@@ -11,49 +11,35 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Athena
-{
-namespace Model
-{
+namespace Aws {
+namespace Athena {
+namespace Model {
 
-EngineConfiguration::EngineConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EngineConfiguration::EngineConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-EngineConfiguration& EngineConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CoordinatorDpuSize"))
-  {
+EngineConfiguration& EngineConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CoordinatorDpuSize")) {
     m_coordinatorDpuSize = jsonValue.GetInteger("CoordinatorDpuSize");
     m_coordinatorDpuSizeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MaxConcurrentDpus"))
-  {
+  if (jsonValue.ValueExists("MaxConcurrentDpus")) {
     m_maxConcurrentDpus = jsonValue.GetInteger("MaxConcurrentDpus");
     m_maxConcurrentDpusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DefaultExecutorDpuSize"))
-  {
+  if (jsonValue.ValueExists("DefaultExecutorDpuSize")) {
     m_defaultExecutorDpuSize = jsonValue.GetInteger("DefaultExecutorDpuSize");
     m_defaultExecutorDpuSizeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AdditionalConfigs"))
-  {
+  if (jsonValue.ValueExists("AdditionalConfigs")) {
     Aws::Map<Aws::String, JsonView> additionalConfigsJsonMap = jsonValue.GetObject("AdditionalConfigs").GetAllObjects();
-    for(auto& additionalConfigsItem : additionalConfigsJsonMap)
-    {
+    for (auto& additionalConfigsItem : additionalConfigsJsonMap) {
       m_additionalConfigs[additionalConfigsItem.first] = additionalConfigsItem.second.AsString();
     }
     m_additionalConfigsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SparkProperties"))
-  {
+  if (jsonValue.ValueExists("SparkProperties")) {
     Aws::Map<Aws::String, JsonView> sparkPropertiesJsonMap = jsonValue.GetObject("SparkProperties").GetAllObjects();
-    for(auto& sparkPropertiesItem : sparkPropertiesJsonMap)
-    {
+    for (auto& sparkPropertiesItem : sparkPropertiesJsonMap) {
       m_sparkProperties[sparkPropertiesItem.first] = sparkPropertiesItem.second.AsString();
     }
     m_sparkPropertiesHasBeenSet = true;
@@ -61,53 +47,40 @@ EngineConfiguration& EngineConfiguration::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue EngineConfiguration::Jsonize() const
-{
+JsonValue EngineConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_coordinatorDpuSizeHasBeenSet)
-  {
-   payload.WithInteger("CoordinatorDpuSize", m_coordinatorDpuSize);
-
+  if (m_coordinatorDpuSizeHasBeenSet) {
+    payload.WithInteger("CoordinatorDpuSize", m_coordinatorDpuSize);
   }
 
-  if(m_maxConcurrentDpusHasBeenSet)
-  {
-   payload.WithInteger("MaxConcurrentDpus", m_maxConcurrentDpus);
-
+  if (m_maxConcurrentDpusHasBeenSet) {
+    payload.WithInteger("MaxConcurrentDpus", m_maxConcurrentDpus);
   }
 
-  if(m_defaultExecutorDpuSizeHasBeenSet)
-  {
-   payload.WithInteger("DefaultExecutorDpuSize", m_defaultExecutorDpuSize);
-
+  if (m_defaultExecutorDpuSizeHasBeenSet) {
+    payload.WithInteger("DefaultExecutorDpuSize", m_defaultExecutorDpuSize);
   }
 
-  if(m_additionalConfigsHasBeenSet)
-  {
-   JsonValue additionalConfigsJsonMap;
-   for(auto& additionalConfigsItem : m_additionalConfigs)
-   {
-     additionalConfigsJsonMap.WithString(additionalConfigsItem.first, additionalConfigsItem.second);
-   }
-   payload.WithObject("AdditionalConfigs", std::move(additionalConfigsJsonMap));
-
+  if (m_additionalConfigsHasBeenSet) {
+    JsonValue additionalConfigsJsonMap;
+    for (auto& additionalConfigsItem : m_additionalConfigs) {
+      additionalConfigsJsonMap.WithString(additionalConfigsItem.first, additionalConfigsItem.second);
+    }
+    payload.WithObject("AdditionalConfigs", std::move(additionalConfigsJsonMap));
   }
 
-  if(m_sparkPropertiesHasBeenSet)
-  {
-   JsonValue sparkPropertiesJsonMap;
-   for(auto& sparkPropertiesItem : m_sparkProperties)
-   {
-     sparkPropertiesJsonMap.WithString(sparkPropertiesItem.first, sparkPropertiesItem.second);
-   }
-   payload.WithObject("SparkProperties", std::move(sparkPropertiesJsonMap));
-
+  if (m_sparkPropertiesHasBeenSet) {
+    JsonValue sparkPropertiesJsonMap;
+    for (auto& sparkPropertiesItem : m_sparkProperties) {
+      sparkPropertiesJsonMap.WithString(sparkPropertiesItem.first, sparkPropertiesItem.second);
+    }
+    payload.WithObject("SparkProperties", std::move(sparkPropertiesJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Athena
-} // namespace Aws
+}  // namespace Model
+}  // namespace Athena
+}  // namespace Aws

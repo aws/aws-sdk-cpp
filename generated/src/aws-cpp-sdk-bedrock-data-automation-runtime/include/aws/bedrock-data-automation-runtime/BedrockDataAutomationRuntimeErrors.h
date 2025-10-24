@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntime_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntime_EXPORTS.h>
 
-namespace Aws
-{
-namespace BedrockDataAutomationRuntime
-{
-enum class BedrockDataAutomationRuntimeErrors
-{
-  //From Core//
+namespace Aws {
+namespace BedrockDataAutomationRuntime {
+enum class BedrockDataAutomationRuntimeErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class BedrockDataAutomationRuntimeErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,27 +44,30 @@ enum class BedrockDataAutomationRuntimeErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INTERNAL_SERVER= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INTERNAL_SERVER = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   SERVICE_QUOTA_EXCEEDED
 };
 
-class AWS_BEDROCKDATAAUTOMATIONRUNTIME_API BedrockDataAutomationRuntimeError : public Aws::Client::AWSError<BedrockDataAutomationRuntimeErrors>
-{
-public:
+class AWS_BEDROCKDATAAUTOMATIONRUNTIME_API BedrockDataAutomationRuntimeError
+    : public Aws::Client::AWSError<BedrockDataAutomationRuntimeErrors> {
+ public:
   BedrockDataAutomationRuntimeError() {}
-  BedrockDataAutomationRuntimeError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<BedrockDataAutomationRuntimeErrors>(rhs) {}
-  BedrockDataAutomationRuntimeError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<BedrockDataAutomationRuntimeErrors>(rhs) {}
-  BedrockDataAutomationRuntimeError(const Aws::Client::AWSError<BedrockDataAutomationRuntimeErrors>& rhs) : Aws::Client::AWSError<BedrockDataAutomationRuntimeErrors>(rhs) {}
-  BedrockDataAutomationRuntimeError(Aws::Client::AWSError<BedrockDataAutomationRuntimeErrors>&& rhs) : Aws::Client::AWSError<BedrockDataAutomationRuntimeErrors>(rhs) {}
+  BedrockDataAutomationRuntimeError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs)
+      : Aws::Client::AWSError<BedrockDataAutomationRuntimeErrors>(rhs) {}
+  BedrockDataAutomationRuntimeError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs)
+      : Aws::Client::AWSError<BedrockDataAutomationRuntimeErrors>(rhs) {}
+  BedrockDataAutomationRuntimeError(const Aws::Client::AWSError<BedrockDataAutomationRuntimeErrors>& rhs)
+      : Aws::Client::AWSError<BedrockDataAutomationRuntimeErrors>(rhs) {}
+  BedrockDataAutomationRuntimeError(Aws::Client::AWSError<BedrockDataAutomationRuntimeErrors>&& rhs)
+      : Aws::Client::AWSError<BedrockDataAutomationRuntimeErrors>(rhs) {}
 
   template <typename T>
   T GetModeledError();
 };
 
-namespace BedrockDataAutomationRuntimeErrorMapper
-{
-  AWS_BEDROCKDATAAUTOMATIONRUNTIME_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace BedrockDataAutomationRuntimeErrorMapper {
+AWS_BEDROCKDATAAUTOMATIONRUNTIME_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace BedrockDataAutomationRuntime
-} // namespace Aws
+}  // namespace BedrockDataAutomationRuntime
+}  // namespace Aws

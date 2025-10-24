@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sesv2/model/GetImportJobResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sesv2/model/GetImportJobResult.h>
 
 #include <utility>
 
@@ -17,68 +17,53 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetImportJobResult::GetImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetImportJobResult::GetImportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetImportJobResult& GetImportJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetImportJobResult& GetImportJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("JobId"))
-  {
+  if (jsonValue.ValueExists("JobId")) {
     m_jobId = jsonValue.GetString("JobId");
     m_jobIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ImportDestination"))
-  {
+  if (jsonValue.ValueExists("ImportDestination")) {
     m_importDestination = jsonValue.GetObject("ImportDestination");
     m_importDestinationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ImportDataSource"))
-  {
+  if (jsonValue.ValueExists("ImportDataSource")) {
     m_importDataSource = jsonValue.GetObject("ImportDataSource");
     m_importDataSourceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FailureInfo"))
-  {
+  if (jsonValue.ValueExists("FailureInfo")) {
     m_failureInfo = jsonValue.GetObject("FailureInfo");
     m_failureInfoHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("JobStatus"))
-  {
+  if (jsonValue.ValueExists("JobStatus")) {
     m_jobStatus = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("JobStatus"));
     m_jobStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedTimestamp"))
-  {
+  if (jsonValue.ValueExists("CreatedTimestamp")) {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
     m_createdTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CompletedTimestamp"))
-  {
+  if (jsonValue.ValueExists("CompletedTimestamp")) {
     m_completedTimestamp = jsonValue.GetDouble("CompletedTimestamp");
     m_completedTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProcessedRecordsCount"))
-  {
+  if (jsonValue.ValueExists("ProcessedRecordsCount")) {
     m_processedRecordsCount = jsonValue.GetInteger("ProcessedRecordsCount");
     m_processedRecordsCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FailedRecordsCount"))
-  {
+  if (jsonValue.ValueExists("FailedRecordsCount")) {
     m_failedRecordsCount = jsonValue.GetInteger("FailedRecordsCount");
     m_failedRecordsCountHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

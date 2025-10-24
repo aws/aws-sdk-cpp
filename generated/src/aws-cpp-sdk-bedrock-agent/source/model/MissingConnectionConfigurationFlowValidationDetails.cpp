@@ -11,41 +11,32 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-MissingConnectionConfigurationFlowValidationDetails::MissingConnectionConfigurationFlowValidationDetails(JsonView jsonValue)
-{
+MissingConnectionConfigurationFlowValidationDetails::MissingConnectionConfigurationFlowValidationDetails(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-MissingConnectionConfigurationFlowValidationDetails& MissingConnectionConfigurationFlowValidationDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("connection"))
-  {
+MissingConnectionConfigurationFlowValidationDetails& MissingConnectionConfigurationFlowValidationDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("connection")) {
     m_connection = jsonValue.GetString("connection");
     m_connectionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MissingConnectionConfigurationFlowValidationDetails::Jsonize() const
-{
+JsonValue MissingConnectionConfigurationFlowValidationDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_connectionHasBeenSet)
-  {
-   payload.WithString("connection", m_connection);
-
+  if (m_connectionHasBeenSet) {
+    payload.WithString("connection", m_connection);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

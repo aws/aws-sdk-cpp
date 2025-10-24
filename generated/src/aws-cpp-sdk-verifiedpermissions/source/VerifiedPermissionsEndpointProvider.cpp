@@ -5,12 +5,8 @@
 
 #include <aws/verifiedpermissions/VerifiedPermissionsEndpointProvider.h>
 
-namespace Aws
-{
-namespace VerifiedPermissions
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace VerifiedPermissions
-} // namespace Aws
+namespace Aws {
+namespace VerifiedPermissions {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace VerifiedPermissions
+}  // namespace Aws

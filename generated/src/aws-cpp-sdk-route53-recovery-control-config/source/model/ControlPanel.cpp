@@ -3,114 +3,86 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/route53-recovery-control-config/model/ControlPanel.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/route53-recovery-control-config/model/ControlPanel.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Route53RecoveryControlConfig
-{
-namespace Model
-{
+namespace Aws {
+namespace Route53RecoveryControlConfig {
+namespace Model {
 
-ControlPanel::ControlPanel(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ControlPanel::ControlPanel(JsonView jsonValue) { *this = jsonValue; }
 
-ControlPanel& ControlPanel::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ClusterArn"))
-  {
+ControlPanel& ControlPanel::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ClusterArn")) {
     m_clusterArn = jsonValue.GetString("ClusterArn");
     m_clusterArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ControlPanelArn"))
-  {
+  if (jsonValue.ValueExists("ControlPanelArn")) {
     m_controlPanelArn = jsonValue.GetString("ControlPanelArn");
     m_controlPanelArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DefaultControlPanel"))
-  {
+  if (jsonValue.ValueExists("DefaultControlPanel")) {
     m_defaultControlPanel = jsonValue.GetBool("DefaultControlPanel");
     m_defaultControlPanelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RoutingControlCount"))
-  {
+  if (jsonValue.ValueExists("RoutingControlCount")) {
     m_routingControlCount = jsonValue.GetInteger("RoutingControlCount");
     m_routingControlCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Owner"))
-  {
+  if (jsonValue.ValueExists("Owner")) {
     m_owner = jsonValue.GetString("Owner");
     m_ownerHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ControlPanel::Jsonize() const
-{
+JsonValue ControlPanel::Jsonize() const {
   JsonValue payload;
 
-  if(m_clusterArnHasBeenSet)
-  {
-   payload.WithString("ClusterArn", m_clusterArn);
-
+  if (m_clusterArnHasBeenSet) {
+    payload.WithString("ClusterArn", m_clusterArn);
   }
 
-  if(m_controlPanelArnHasBeenSet)
-  {
-   payload.WithString("ControlPanelArn", m_controlPanelArn);
-
+  if (m_controlPanelArnHasBeenSet) {
+    payload.WithString("ControlPanelArn", m_controlPanelArn);
   }
 
-  if(m_defaultControlPanelHasBeenSet)
-  {
-   payload.WithBool("DefaultControlPanel", m_defaultControlPanel);
-
+  if (m_defaultControlPanelHasBeenSet) {
+    payload.WithBool("DefaultControlPanel", m_defaultControlPanel);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_routingControlCountHasBeenSet)
-  {
-   payload.WithInteger("RoutingControlCount", m_routingControlCount);
-
+  if (m_routingControlCountHasBeenSet) {
+    payload.WithInteger("RoutingControlCount", m_routingControlCount);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", StatusMapper::GetNameForStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", StatusMapper::GetNameForStatus(m_status));
   }
 
-  if(m_ownerHasBeenSet)
-  {
-   payload.WithString("Owner", m_owner);
-
+  if (m_ownerHasBeenSet) {
+    payload.WithString("Owner", m_owner);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Route53RecoveryControlConfig
-} // namespace Aws
+}  // namespace Model
+}  // namespace Route53RecoveryControlConfig
+}  // namespace Aws

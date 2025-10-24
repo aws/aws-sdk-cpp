@@ -5,12 +5,8 @@
 
 #include <aws/security-ir/SecurityIREndpointProvider.h>
 
-namespace Aws
-{
-namespace SecurityIR
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace SecurityIR
-} // namespace Aws
+namespace Aws {
+namespace SecurityIR {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace SecurityIR
+}  // namespace Aws

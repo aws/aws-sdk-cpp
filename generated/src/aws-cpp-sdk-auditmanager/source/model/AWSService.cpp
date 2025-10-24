@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AuditManager
-{
-namespace Model
-{
+namespace Aws {
+namespace AuditManager {
+namespace Model {
 
-AWSService::AWSService(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AWSService::AWSService(JsonView jsonValue) { *this = jsonValue; }
 
-AWSService& AWSService::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("serviceName"))
-  {
+AWSService& AWSService::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("serviceName")) {
     m_serviceName = jsonValue.GetString("serviceName");
     m_serviceNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AWSService::Jsonize() const
-{
+JsonValue AWSService::Jsonize() const {
   JsonValue payload;
 
-  if(m_serviceNameHasBeenSet)
-  {
-   payload.WithString("serviceName", m_serviceName);
-
+  if (m_serviceNameHasBeenSet) {
+    payload.WithString("serviceName", m_serviceName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AuditManager
-} // namespace Aws
+}  // namespace Model
+}  // namespace AuditManager
+}  // namespace Aws

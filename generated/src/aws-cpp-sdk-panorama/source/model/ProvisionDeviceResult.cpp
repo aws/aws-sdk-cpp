@@ -3,13 +3,13 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/panorama/model/ProvisionDeviceResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
-#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/panorama/model/ProvisionDeviceResult.h>
 
 #include <utility>
 
@@ -18,48 +18,37 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ProvisionDeviceResult::ProvisionDeviceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ProvisionDeviceResult::ProvisionDeviceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ProvisionDeviceResult& ProvisionDeviceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ProvisionDeviceResult& ProvisionDeviceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Arn"))
-  {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Certificates"))
-  {
+  if (jsonValue.ValueExists("Certificates")) {
     m_certificates = HashingUtils::Base64Decode(jsonValue.GetString("Certificates"));
     m_certificatesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DeviceId"))
-  {
+  if (jsonValue.ValueExists("DeviceId")) {
     m_deviceId = jsonValue.GetString("DeviceId");
     m_deviceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IotThingName"))
-  {
+  if (jsonValue.ValueExists("IotThingName")) {
     m_iotThingName = jsonValue.GetString("IotThingName");
     m_iotThingNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = DeviceStatusMapper::GetDeviceStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

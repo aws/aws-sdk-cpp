@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 
-namespace Aws
-{
-namespace CustomerProfiles
-{
-namespace Model
-{
-  enum class EventTriggerLogicalOperator
-  {
-    NOT_SET,
-    ANY,
-    ALL,
-    NONE
-  };
+namespace Aws {
+namespace CustomerProfiles {
+namespace Model {
+enum class EventTriggerLogicalOperator { NOT_SET, ANY, ALL, NONE };
 
-namespace EventTriggerLogicalOperatorMapper
-{
+namespace EventTriggerLogicalOperatorMapper {
 AWS_CUSTOMERPROFILES_API EventTriggerLogicalOperator GetEventTriggerLogicalOperatorForName(const Aws::String& name);
 
 AWS_CUSTOMERPROFILES_API Aws::String GetNameForEventTriggerLogicalOperator(EventTriggerLogicalOperator value);
-} // namespace EventTriggerLogicalOperatorMapper
-} // namespace Model
-} // namespace CustomerProfiles
-} // namespace Aws
+}  // namespace EventTriggerLogicalOperatorMapper
+}  // namespace Model
+}  // namespace CustomerProfiles
+}  // namespace Aws

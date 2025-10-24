@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/shield/model/AttackVolume.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/shield/model/AttackVolume.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Shield
-{
-namespace Model
-{
+namespace Aws {
+namespace Shield {
+namespace Model {
 
-AttackVolume::AttackVolume(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AttackVolume::AttackVolume(JsonView jsonValue) { *this = jsonValue; }
 
-AttackVolume& AttackVolume::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("BitsPerSecond"))
-  {
+AttackVolume& AttackVolume::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("BitsPerSecond")) {
     m_bitsPerSecond = jsonValue.GetObject("BitsPerSecond");
     m_bitsPerSecondHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PacketsPerSecond"))
-  {
+  if (jsonValue.ValueExists("PacketsPerSecond")) {
     m_packetsPerSecond = jsonValue.GetObject("PacketsPerSecond");
     m_packetsPerSecondHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RequestsPerSecond"))
-  {
+  if (jsonValue.ValueExists("RequestsPerSecond")) {
     m_requestsPerSecond = jsonValue.GetObject("RequestsPerSecond");
     m_requestsPerSecondHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AttackVolume::Jsonize() const
-{
+JsonValue AttackVolume::Jsonize() const {
   JsonValue payload;
 
-  if(m_bitsPerSecondHasBeenSet)
-  {
-   payload.WithObject("BitsPerSecond", m_bitsPerSecond.Jsonize());
-
+  if (m_bitsPerSecondHasBeenSet) {
+    payload.WithObject("BitsPerSecond", m_bitsPerSecond.Jsonize());
   }
 
-  if(m_packetsPerSecondHasBeenSet)
-  {
-   payload.WithObject("PacketsPerSecond", m_packetsPerSecond.Jsonize());
-
+  if (m_packetsPerSecondHasBeenSet) {
+    payload.WithObject("PacketsPerSecond", m_packetsPerSecond.Jsonize());
   }
 
-  if(m_requestsPerSecondHasBeenSet)
-  {
-   payload.WithObject("RequestsPerSecond", m_requestsPerSecond.Jsonize());
-
+  if (m_requestsPerSecondHasBeenSet) {
+    payload.WithObject("RequestsPerSecond", m_requestsPerSecond.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Shield
-} // namespace Aws
+}  // namespace Model
+}  // namespace Shield
+}  // namespace Aws

@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-BedrockFoundationModelConfiguration::BedrockFoundationModelConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BedrockFoundationModelConfiguration::BedrockFoundationModelConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-BedrockFoundationModelConfiguration& BedrockFoundationModelConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("modelArn"))
-  {
+BedrockFoundationModelConfiguration& BedrockFoundationModelConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("modelArn")) {
     m_modelArn = jsonValue.GetString("modelArn");
     m_modelArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("parsingPrompt"))
-  {
+  if (jsonValue.ValueExists("parsingPrompt")) {
     m_parsingPrompt = jsonValue.GetObject("parsingPrompt");
     m_parsingPromptHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("parsingModality"))
-  {
+  if (jsonValue.ValueExists("parsingModality")) {
     m_parsingModality = ParsingModalityMapper::GetParsingModalityForName(jsonValue.GetString("parsingModality"));
     m_parsingModalityHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BedrockFoundationModelConfiguration::Jsonize() const
-{
+JsonValue BedrockFoundationModelConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_modelArnHasBeenSet)
-  {
-   payload.WithString("modelArn", m_modelArn);
-
+  if (m_modelArnHasBeenSet) {
+    payload.WithString("modelArn", m_modelArn);
   }
 
-  if(m_parsingPromptHasBeenSet)
-  {
-   payload.WithObject("parsingPrompt", m_parsingPrompt.Jsonize());
-
+  if (m_parsingPromptHasBeenSet) {
+    payload.WithObject("parsingPrompt", m_parsingPrompt.Jsonize());
   }
 
-  if(m_parsingModalityHasBeenSet)
-  {
-   payload.WithString("parsingModality", ParsingModalityMapper::GetNameForParsingModality(m_parsingModality));
+  if (m_parsingModalityHasBeenSet) {
+    payload.WithString("parsingModality", ParsingModalityMapper::GetNameForParsingModality(m_parsingModality));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

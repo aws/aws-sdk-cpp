@@ -5,12 +5,8 @@
 
 #include <aws/deadline/DeadlineEndpointProvider.h>
 
-namespace Aws
-{
-namespace deadline
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace deadline
-} // namespace Aws
+namespace Aws {
+namespace deadline {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace deadline
+}  // namespace Aws

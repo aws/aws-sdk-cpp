@@ -3,60 +3,50 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails(JsonView jsonValue)
-{
+AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails(
+    JsonView jsonValue) {
   *this = jsonValue;
 }
 
-AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails& AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Enable"))
-  {
+AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails&
+AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Enable")) {
     m_enable = jsonValue.GetBool("Enable");
     m_enableHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Rollback"))
-  {
+  if (jsonValue.ValueExists("Rollback")) {
     m_rollback = jsonValue.GetBool("Rollback");
     m_rollbackHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails::Jsonize() const
-{
+JsonValue AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_enableHasBeenSet)
-  {
-   payload.WithBool("Enable", m_enable);
-
+  if (m_enableHasBeenSet) {
+    payload.WithBool("Enable", m_enable);
   }
 
-  if(m_rollbackHasBeenSet)
-  {
-   payload.WithBool("Rollback", m_rollback);
-
+  if (m_rollbackHasBeenSet) {
+    payload.WithBool("Rollback", m_rollback);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

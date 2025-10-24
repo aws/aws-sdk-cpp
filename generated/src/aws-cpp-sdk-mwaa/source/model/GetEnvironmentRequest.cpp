@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mwaa/model/GetEnvironmentRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mwaa/model/GetEnvironmentRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::MWAA::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetEnvironmentRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetEnvironmentRequest::SerializePayload() const { return {}; }

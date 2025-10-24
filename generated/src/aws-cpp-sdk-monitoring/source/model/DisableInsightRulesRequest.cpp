@@ -3,30 +3,23 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/monitoring/model/DisableInsightRulesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/monitoring/model/DisableInsightRulesRequest.h>
 
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-Aws::String DisableInsightRulesRequest::SerializePayload() const
-{
+Aws::String DisableInsightRulesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DisableInsightRules&";
-  if(m_ruleNamesHasBeenSet)
-  {
-    if (m_ruleNames.empty())
-    {
+  if (m_ruleNamesHasBeenSet) {
+    if (m_ruleNames.empty()) {
       ss << "RuleNames=&";
-    }
-    else
-    {
+    } else {
       unsigned ruleNamesCount = 1;
-      for(auto& item : m_ruleNames)
-      {
-        ss << "RuleNames.member." << ruleNamesCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_ruleNames) {
+        ss << "RuleNames.member." << ruleNamesCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         ruleNamesCount++;
       }
     }
@@ -36,8 +29,4 @@ Aws::String DisableInsightRulesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DisableInsightRulesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DisableInsightRulesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

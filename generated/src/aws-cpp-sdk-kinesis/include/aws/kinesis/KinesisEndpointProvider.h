@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/kinesis/Kinesis_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/kinesis/KinesisEndpointRules.h>
+#include <aws/kinesis/Kinesis_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace Kinesis
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace Kinesis {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using KinesisClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using KinesisDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_KINESIS_API KinesisEndpointProvider : public KinesisDefaultEpProviderBase
-{
-public:
-    using KinesisResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_KINESIS_API KinesisEndpointProvider : public KinesisDefaultEpProviderBase {
+ public:
+  using KinesisResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    KinesisEndpointProvider()
-      : KinesisDefaultEpProviderBase(Aws::Kinesis::KinesisEndpointRules::GetRulesBlob(), Aws::Kinesis::KinesisEndpointRules::RulesBlobSize)
-    {}
+  KinesisEndpointProvider()
+      : KinesisDefaultEpProviderBase(Aws::Kinesis::KinesisEndpointRules::GetRulesBlob(),
+                                     Aws::Kinesis::KinesisEndpointRules::RulesBlobSize) {}
 
-    ~KinesisEndpointProvider()
-    {
-    }
+  ~KinesisEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace Kinesis
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace Kinesis
+}  // namespace Aws

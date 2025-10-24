@@ -5,19 +5,16 @@
 
 #pragma once
 
-#include <aws/sns/SNS_EXPORTS.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
+#include <aws/sns/SNS_EXPORTS.h>
 
-namespace Aws
-{
-namespace Client
-{
+namespace Aws {
+namespace Client {
 
-class AWS_SNS_API SNSErrorMarshaller : public Aws::Client::XmlErrorMarshaller
-{
-public:
+class AWS_SNS_API SNSErrorMarshaller : public Aws::Client::XmlErrorMarshaller {
+ public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Client
-} // namespace Aws
+}  // namespace Client
+}  // namespace Aws

@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/SwitchoverBlueGreenDeploymentRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/SwitchoverBlueGreenDeploymentRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String SwitchoverBlueGreenDeploymentRequest::SerializePayload() const
-{
+Aws::String SwitchoverBlueGreenDeploymentRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=SwitchoverBlueGreenDeployment&";
-  if(m_blueGreenDeploymentIdentifierHasBeenSet)
-  {
+  if (m_blueGreenDeploymentIdentifierHasBeenSet) {
     ss << "BlueGreenDeploymentIdentifier=" << StringUtils::URLEncode(m_blueGreenDeploymentIdentifier.c_str()) << "&";
   }
 
-  if(m_switchoverTimeoutHasBeenSet)
-  {
+  if (m_switchoverTimeoutHasBeenSet) {
     ss << "SwitchoverTimeout=" << m_switchoverTimeout << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String SwitchoverBlueGreenDeploymentRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  SwitchoverBlueGreenDeploymentRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void SwitchoverBlueGreenDeploymentRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

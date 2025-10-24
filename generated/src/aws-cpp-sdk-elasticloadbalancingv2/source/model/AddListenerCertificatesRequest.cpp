@@ -3,33 +3,26 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancingv2/model/AddListenerCertificatesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticloadbalancingv2/model/AddListenerCertificatesRequest.h>
 
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-Aws::String AddListenerCertificatesRequest::SerializePayload() const
-{
+Aws::String AddListenerCertificatesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=AddListenerCertificates&";
-  if(m_listenerArnHasBeenSet)
-  {
+  if (m_listenerArnHasBeenSet) {
     ss << "ListenerArn=" << StringUtils::URLEncode(m_listenerArn.c_str()) << "&";
   }
 
-  if(m_certificatesHasBeenSet)
-  {
-    if (m_certificates.empty())
-    {
+  if (m_certificatesHasBeenSet) {
+    if (m_certificates.empty()) {
       ss << "Certificates=&";
-    }
-    else
-    {
+    } else {
       unsigned certificatesCount = 1;
-      for(auto& item : m_certificates)
-      {
+      for (auto& item : m_certificates) {
         item.OutputToStream(ss, "Certificates.member.", certificatesCount, "");
         certificatesCount++;
       }
@@ -40,8 +33,4 @@ Aws::String AddListenerCertificatesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  AddListenerCertificatesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void AddListenerCertificatesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

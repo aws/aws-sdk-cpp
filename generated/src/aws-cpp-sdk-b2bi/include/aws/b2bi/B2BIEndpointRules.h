@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/b2bi/B2BI_EXPORTS.h>
 
-namespace Aws
-{
-namespace B2BI
-{
-class B2BIEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace B2BI {
+class B2BIEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace B2BI
-} // namespace Aws
+}  // namespace B2BI
+}  // namespace Aws

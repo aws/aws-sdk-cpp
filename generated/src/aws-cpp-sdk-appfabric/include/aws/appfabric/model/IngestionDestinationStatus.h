@@ -7,25 +7,16 @@
 #include <aws/appfabric/AppFabric_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace AppFabric
-{
-namespace Model
-{
-  enum class IngestionDestinationStatus
-  {
-    NOT_SET,
-    Active,
-    Failed
-  };
+namespace Aws {
+namespace AppFabric {
+namespace Model {
+enum class IngestionDestinationStatus { NOT_SET, Active, Failed };
 
-namespace IngestionDestinationStatusMapper
-{
+namespace IngestionDestinationStatusMapper {
 AWS_APPFABRIC_API IngestionDestinationStatus GetIngestionDestinationStatusForName(const Aws::String& name);
 
 AWS_APPFABRIC_API Aws::String GetNameForIngestionDestinationStatus(IngestionDestinationStatus value);
-} // namespace IngestionDestinationStatusMapper
-} // namespace Model
-} // namespace AppFabric
-} // namespace Aws
+}  // namespace IngestionDestinationStatusMapper
+}  // namespace Model
+}  // namespace AppFabric
+}  // namespace Aws

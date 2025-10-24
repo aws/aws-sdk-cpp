@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-PhoneNumberStatus::PhoneNumberStatus(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PhoneNumberStatus::PhoneNumberStatus(JsonView jsonValue) { *this = jsonValue; }
 
-PhoneNumberStatus& PhoneNumberStatus::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Status"))
-  {
+PhoneNumberStatus& PhoneNumberStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Status")) {
     m_status = PhoneNumberWorkflowStatusMapper::GetPhoneNumberWorkflowStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Message"))
-  {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PhoneNumberStatus::Jsonize() const
-{
+JsonValue PhoneNumberStatus::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", PhoneNumberWorkflowStatusMapper::GetNameForPhoneNumberWorkflowStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", PhoneNumberWorkflowStatusMapper::GetNameForPhoneNumberWorkflowStatus(m_status));
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

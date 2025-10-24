@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class HlsOfflineEncrypted
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class HlsOfflineEncrypted { NOT_SET, ENABLED, DISABLED };
 
-namespace HlsOfflineEncryptedMapper
-{
+namespace HlsOfflineEncryptedMapper {
 AWS_MEDIACONVERT_API HlsOfflineEncrypted GetHlsOfflineEncryptedForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForHlsOfflineEncrypted(HlsOfflineEncrypted value);
-} // namespace HlsOfflineEncryptedMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace HlsOfflineEncryptedMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

@@ -12,51 +12,34 @@ using namespace Aws::BackupGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutMaintenanceStartTimeRequest::SerializePayload() const
-{
+Aws::String PutMaintenanceStartTimeRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_dayOfMonthHasBeenSet)
-  {
-   payload.WithInteger("DayOfMonth", m_dayOfMonth);
-
+  if (m_dayOfMonthHasBeenSet) {
+    payload.WithInteger("DayOfMonth", m_dayOfMonth);
   }
 
-  if(m_dayOfWeekHasBeenSet)
-  {
-   payload.WithInteger("DayOfWeek", m_dayOfWeek);
-
+  if (m_dayOfWeekHasBeenSet) {
+    payload.WithInteger("DayOfWeek", m_dayOfWeek);
   }
 
-  if(m_gatewayArnHasBeenSet)
-  {
-   payload.WithString("GatewayArn", m_gatewayArn);
-
+  if (m_gatewayArnHasBeenSet) {
+    payload.WithString("GatewayArn", m_gatewayArn);
   }
 
-  if(m_hourOfDayHasBeenSet)
-  {
-   payload.WithInteger("HourOfDay", m_hourOfDay);
-
+  if (m_hourOfDayHasBeenSet) {
+    payload.WithInteger("HourOfDay", m_hourOfDay);
   }
 
-  if(m_minuteOfHourHasBeenSet)
-  {
-   payload.WithInteger("MinuteOfHour", m_minuteOfHour);
-
+  if (m_minuteOfHourHasBeenSet) {
+    payload.WithInteger("MinuteOfHour", m_minuteOfHour);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection PutMaintenanceStartTimeRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection PutMaintenanceStartTimeRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "BackupOnPremises_v20210101.PutMaintenanceStartTime"));
   return headers;
-
 }
-
-
-
-

@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/CreatePolicyResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iot/model/CreatePolicyResult.h>
 
 #include <utility>
 
@@ -17,43 +17,33 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreatePolicyResult::CreatePolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+CreatePolicyResult::CreatePolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-CreatePolicyResult& CreatePolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+CreatePolicyResult& CreatePolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("policyName"))
-  {
+  if (jsonValue.ValueExists("policyName")) {
     m_policyName = jsonValue.GetString("policyName");
     m_policyNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("policyArn"))
-  {
+  if (jsonValue.ValueExists("policyArn")) {
     m_policyArn = jsonValue.GetString("policyArn");
     m_policyArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("policyDocument"))
-  {
+  if (jsonValue.ValueExists("policyDocument")) {
     m_policyDocument = jsonValue.GetString("policyDocument");
     m_policyDocumentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("policyVersionId"))
-  {
+  if (jsonValue.ValueExists("policyVersionId")) {
     m_policyVersionId = jsonValue.GetString("policyVersionId");
     m_policyVersionIdHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

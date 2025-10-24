@@ -4,42 +4,37 @@
  */
 
 #pragma once
-#include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
 
-namespace Aws
-{
-namespace WorkSpacesWeb
-{
-namespace Model
-{
-  enum class Event
-  {
-    NOT_SET,
-    WebsiteInteract,
-    FileDownloadFromSecureBrowserToRemoteDisk,
-    FileTransferFromRemoteToLocalDisk,
-    FileTransferFromLocalToRemoteDisk,
-    FileUploadFromRemoteDiskToSecureBrowser,
-    ContentPasteToWebsite,
-    ContentTransferFromLocalToRemoteClipboard,
-    ContentCopyFromWebsite,
-    UrlLoad,
-    TabOpen,
-    TabClose,
-    PrintJobSubmit,
-    SessionConnect,
-    SessionStart,
-    SessionDisconnect,
-    SessionEnd
-  };
+namespace Aws {
+namespace WorkSpacesWeb {
+namespace Model {
+enum class Event {
+  NOT_SET,
+  WebsiteInteract,
+  FileDownloadFromSecureBrowserToRemoteDisk,
+  FileTransferFromRemoteToLocalDisk,
+  FileTransferFromLocalToRemoteDisk,
+  FileUploadFromRemoteDiskToSecureBrowser,
+  ContentPasteToWebsite,
+  ContentTransferFromLocalToRemoteClipboard,
+  ContentCopyFromWebsite,
+  UrlLoad,
+  TabOpen,
+  TabClose,
+  PrintJobSubmit,
+  SessionConnect,
+  SessionStart,
+  SessionDisconnect,
+  SessionEnd
+};
 
-namespace EventMapper
-{
+namespace EventMapper {
 AWS_WORKSPACESWEB_API Event GetEventForName(const Aws::String& name);
 
 AWS_WORKSPACESWEB_API Aws::String GetNameForEvent(Event value);
-} // namespace EventMapper
-} // namespace Model
-} // namespace WorkSpacesWeb
-} // namespace Aws
+}  // namespace EventMapper
+}  // namespace Model
+}  // namespace WorkSpacesWeb
+}  // namespace Aws

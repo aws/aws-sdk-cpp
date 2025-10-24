@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/logs/model/ParseCloudfront.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/logs/model/ParseCloudfront.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudWatchLogs
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudWatchLogs {
+namespace Model {
 
-ParseCloudfront::ParseCloudfront(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ParseCloudfront::ParseCloudfront(JsonView jsonValue) { *this = jsonValue; }
 
-ParseCloudfront& ParseCloudfront::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("source"))
-  {
+ParseCloudfront& ParseCloudfront::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("source")) {
     m_source = jsonValue.GetString("source");
     m_sourceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ParseCloudfront::Jsonize() const
-{
+JsonValue ParseCloudfront::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceHasBeenSet)
-  {
-   payload.WithString("source", m_source);
-
+  if (m_sourceHasBeenSet) {
+    payload.WithString("source", m_source);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudWatchLogs
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudWatchLogs
+}  // namespace Aws

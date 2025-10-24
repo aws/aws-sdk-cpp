@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/KPIActualValueConditionalFormatting.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/KPIActualValueConditionalFormatting.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-KPIActualValueConditionalFormatting::KPIActualValueConditionalFormatting(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+KPIActualValueConditionalFormatting::KPIActualValueConditionalFormatting(JsonView jsonValue) { *this = jsonValue; }
 
-KPIActualValueConditionalFormatting& KPIActualValueConditionalFormatting::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TextColor"))
-  {
+KPIActualValueConditionalFormatting& KPIActualValueConditionalFormatting::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TextColor")) {
     m_textColor = jsonValue.GetObject("TextColor");
     m_textColorHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Icon"))
-  {
+  if (jsonValue.ValueExists("Icon")) {
     m_icon = jsonValue.GetObject("Icon");
     m_iconHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue KPIActualValueConditionalFormatting::Jsonize() const
-{
+JsonValue KPIActualValueConditionalFormatting::Jsonize() const {
   JsonValue payload;
 
-  if(m_textColorHasBeenSet)
-  {
-   payload.WithObject("TextColor", m_textColor.Jsonize());
-
+  if (m_textColorHasBeenSet) {
+    payload.WithObject("TextColor", m_textColor.Jsonize());
   }
 
-  if(m_iconHasBeenSet)
-  {
-   payload.WithObject("Icon", m_icon.Jsonize());
-
+  if (m_iconHasBeenSet) {
+    payload.WithObject("Icon", m_icon.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/payment-cryptography-data/PaymentCryptographyData_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/payment-cryptography-data/PaymentCryptographyData_EXPORTS.h>
 
-namespace Aws
-{
-namespace PaymentCryptographyData
-{
-namespace Model
-{
-  enum class MajorKeyDerivationMode
-  {
-    NOT_SET,
-    EMV_OPTION_A,
-    EMV_OPTION_B
-  };
+namespace Aws {
+namespace PaymentCryptographyData {
+namespace Model {
+enum class MajorKeyDerivationMode { NOT_SET, EMV_OPTION_A, EMV_OPTION_B };
 
-namespace MajorKeyDerivationModeMapper
-{
+namespace MajorKeyDerivationModeMapper {
 AWS_PAYMENTCRYPTOGRAPHYDATA_API MajorKeyDerivationMode GetMajorKeyDerivationModeForName(const Aws::String& name);
 
 AWS_PAYMENTCRYPTOGRAPHYDATA_API Aws::String GetNameForMajorKeyDerivationMode(MajorKeyDerivationMode value);
-} // namespace MajorKeyDerivationModeMapper
-} // namespace Model
-} // namespace PaymentCryptographyData
-} // namespace Aws
+}  // namespace MajorKeyDerivationModeMapper
+}  // namespace Model
+}  // namespace PaymentCryptographyData
+}  // namespace Aws

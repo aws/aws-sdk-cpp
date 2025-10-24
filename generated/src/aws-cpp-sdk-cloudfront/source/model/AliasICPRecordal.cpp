@@ -4,43 +4,34 @@
  */
 
 #include <aws/cloudfront/model/AliasICPRecordal.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
-AliasICPRecordal::AliasICPRecordal(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+AliasICPRecordal::AliasICPRecordal(const XmlNode& xmlNode) { *this = xmlNode; }
 
-AliasICPRecordal& AliasICPRecordal::operator =(const XmlNode& xmlNode)
-{
+AliasICPRecordal& AliasICPRecordal::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode cNAMENode = resultNode.FirstChild("CNAME");
-    if(!cNAMENode.IsNull())
-    {
+    if (!cNAMENode.IsNull()) {
       m_cNAME = Aws::Utils::Xml::DecodeEscapedXmlText(cNAMENode.GetText());
       m_cNAMEHasBeenSet = true;
     }
     XmlNode iCPRecordalStatusNode = resultNode.FirstChild("ICPRecordalStatus");
-    if(!iCPRecordalStatusNode.IsNull())
-    {
-      m_iCPRecordalStatus = ICPRecordalStatusMapper::GetICPRecordalStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(iCPRecordalStatusNode.GetText()).c_str()));
+    if (!iCPRecordalStatusNode.IsNull()) {
+      m_iCPRecordalStatus = ICPRecordalStatusMapper::GetICPRecordalStatusForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(iCPRecordalStatusNode.GetText()).c_str()));
       m_iCPRecordalStatusHasBeenSet = true;
     }
   }
@@ -48,23 +39,19 @@ AliasICPRecordal& AliasICPRecordal::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void AliasICPRecordal::AddToNode(XmlNode& parentNode) const
-{
+void AliasICPRecordal::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_cNAMEHasBeenSet)
-  {
-   XmlNode cNAMENode = parentNode.CreateChildElement("CNAME");
-   cNAMENode.SetText(m_cNAME);
+  if (m_cNAMEHasBeenSet) {
+    XmlNode cNAMENode = parentNode.CreateChildElement("CNAME");
+    cNAMENode.SetText(m_cNAME);
   }
 
-  if(m_iCPRecordalStatusHasBeenSet)
-  {
-   XmlNode iCPRecordalStatusNode = parentNode.CreateChildElement("ICPRecordalStatus");
-   iCPRecordalStatusNode.SetText(ICPRecordalStatusMapper::GetNameForICPRecordalStatus(m_iCPRecordalStatus));
+  if (m_iCPRecordalStatusHasBeenSet) {
+    XmlNode iCPRecordalStatusNode = parentNode.CreateChildElement("ICPRecordalStatus");
+    iCPRecordalStatusNode.SetText(ICPRecordalStatusMapper::GetNameForICPRecordalStatus(m_iCPRecordalStatus));
   }
-
 }
 
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

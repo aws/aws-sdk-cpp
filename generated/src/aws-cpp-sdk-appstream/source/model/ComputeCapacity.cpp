@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppStream
-{
-namespace Model
-{
+namespace Aws {
+namespace AppStream {
+namespace Model {
 
-ComputeCapacity::ComputeCapacity(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ComputeCapacity::ComputeCapacity(JsonView jsonValue) { *this = jsonValue; }
 
-ComputeCapacity& ComputeCapacity::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DesiredInstances"))
-  {
+ComputeCapacity& ComputeCapacity::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DesiredInstances")) {
     m_desiredInstances = jsonValue.GetInteger("DesiredInstances");
     m_desiredInstancesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DesiredSessions"))
-  {
+  if (jsonValue.ValueExists("DesiredSessions")) {
     m_desiredSessions = jsonValue.GetInteger("DesiredSessions");
     m_desiredSessionsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ComputeCapacity::Jsonize() const
-{
+JsonValue ComputeCapacity::Jsonize() const {
   JsonValue payload;
 
-  if(m_desiredInstancesHasBeenSet)
-  {
-   payload.WithInteger("DesiredInstances", m_desiredInstances);
-
+  if (m_desiredInstancesHasBeenSet) {
+    payload.WithInteger("DesiredInstances", m_desiredInstances);
   }
 
-  if(m_desiredSessionsHasBeenSet)
-  {
-   payload.WithInteger("DesiredSessions", m_desiredSessions);
-
+  if (m_desiredSessionsHasBeenSet) {
+    payload.WithInteger("DesiredSessions", m_desiredSessions);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppStream
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppStream
+}  // namespace Aws

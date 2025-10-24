@@ -11,45 +11,32 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
 
-ValidatePolicyFinding::ValidatePolicyFinding(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ValidatePolicyFinding::ValidatePolicyFinding(JsonView jsonValue) { *this = jsonValue; }
 
-ValidatePolicyFinding& ValidatePolicyFinding::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("findingDetails"))
-  {
+ValidatePolicyFinding& ValidatePolicyFinding::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("findingDetails")) {
     m_findingDetails = jsonValue.GetString("findingDetails");
     m_findingDetailsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("findingType"))
-  {
+  if (jsonValue.ValueExists("findingType")) {
     m_findingType = ValidatePolicyFindingTypeMapper::GetValidatePolicyFindingTypeForName(jsonValue.GetString("findingType"));
     m_findingTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("issueCode"))
-  {
+  if (jsonValue.ValueExists("issueCode")) {
     m_issueCode = jsonValue.GetString("issueCode");
     m_issueCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("learnMoreLink"))
-  {
+  if (jsonValue.ValueExists("learnMoreLink")) {
     m_learnMoreLink = jsonValue.GetString("learnMoreLink");
     m_learnMoreLinkHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("locations"))
-  {
+  if (jsonValue.ValueExists("locations")) {
     Aws::Utils::Array<JsonView> locationsJsonList = jsonValue.GetArray("locations");
-    for(unsigned locationsIndex = 0; locationsIndex < locationsJsonList.GetLength(); ++locationsIndex)
-    {
+    for (unsigned locationsIndex = 0; locationsIndex < locationsJsonList.GetLength(); ++locationsIndex) {
       m_locations.push_back(locationsJsonList[locationsIndex].AsObject());
     }
     m_locationsHasBeenSet = true;
@@ -57,47 +44,36 @@ ValidatePolicyFinding& ValidatePolicyFinding::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ValidatePolicyFinding::Jsonize() const
-{
+JsonValue ValidatePolicyFinding::Jsonize() const {
   JsonValue payload;
 
-  if(m_findingDetailsHasBeenSet)
-  {
-   payload.WithString("findingDetails", m_findingDetails);
-
+  if (m_findingDetailsHasBeenSet) {
+    payload.WithString("findingDetails", m_findingDetails);
   }
 
-  if(m_findingTypeHasBeenSet)
-  {
-   payload.WithString("findingType", ValidatePolicyFindingTypeMapper::GetNameForValidatePolicyFindingType(m_findingType));
+  if (m_findingTypeHasBeenSet) {
+    payload.WithString("findingType", ValidatePolicyFindingTypeMapper::GetNameForValidatePolicyFindingType(m_findingType));
   }
 
-  if(m_issueCodeHasBeenSet)
-  {
-   payload.WithString("issueCode", m_issueCode);
-
+  if (m_issueCodeHasBeenSet) {
+    payload.WithString("issueCode", m_issueCode);
   }
 
-  if(m_learnMoreLinkHasBeenSet)
-  {
-   payload.WithString("learnMoreLink", m_learnMoreLink);
-
+  if (m_learnMoreLinkHasBeenSet) {
+    payload.WithString("learnMoreLink", m_learnMoreLink);
   }
 
-  if(m_locationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> locationsJsonList(m_locations.size());
-   for(unsigned locationsIndex = 0; locationsIndex < locationsJsonList.GetLength(); ++locationsIndex)
-   {
-     locationsJsonList[locationsIndex].AsObject(m_locations[locationsIndex].Jsonize());
-   }
-   payload.WithArray("locations", std::move(locationsJsonList));
-
+  if (m_locationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> locationsJsonList(m_locations.size());
+    for (unsigned locationsIndex = 0; locationsIndex < locationsJsonList.GetLength(); ++locationsIndex) {
+      locationsJsonList[locationsIndex].AsObject(m_locations[locationsIndex].Jsonize());
+    }
+    payload.WithArray("locations", std::move(locationsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

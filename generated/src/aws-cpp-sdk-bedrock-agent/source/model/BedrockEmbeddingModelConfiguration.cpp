@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-BedrockEmbeddingModelConfiguration::BedrockEmbeddingModelConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BedrockEmbeddingModelConfiguration::BedrockEmbeddingModelConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-BedrockEmbeddingModelConfiguration& BedrockEmbeddingModelConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("dimensions"))
-  {
+BedrockEmbeddingModelConfiguration& BedrockEmbeddingModelConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("dimensions")) {
     m_dimensions = jsonValue.GetInteger("dimensions");
     m_dimensionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("embeddingDataType"))
-  {
+  if (jsonValue.ValueExists("embeddingDataType")) {
     m_embeddingDataType = EmbeddingDataTypeMapper::GetEmbeddingDataTypeForName(jsonValue.GetString("embeddingDataType"));
     m_embeddingDataTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BedrockEmbeddingModelConfiguration::Jsonize() const
-{
+JsonValue BedrockEmbeddingModelConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_dimensionsHasBeenSet)
-  {
-   payload.WithInteger("dimensions", m_dimensions);
-
+  if (m_dimensionsHasBeenSet) {
+    payload.WithInteger("dimensions", m_dimensions);
   }
 
-  if(m_embeddingDataTypeHasBeenSet)
-  {
-   payload.WithString("embeddingDataType", EmbeddingDataTypeMapper::GetNameForEmbeddingDataType(m_embeddingDataType));
+  if (m_embeddingDataTypeHasBeenSet) {
+    payload.WithString("embeddingDataType", EmbeddingDataTypeMapper::GetNameForEmbeddingDataType(m_embeddingDataType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

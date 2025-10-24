@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace B2BI
-{
-namespace Model
-{
+namespace Aws {
+namespace B2BI {
+namespace Model {
 
-FormatOptions::FormatOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FormatOptions::FormatOptions(JsonView jsonValue) { *this = jsonValue; }
 
-FormatOptions& FormatOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("x12"))
-  {
+FormatOptions& FormatOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("x12")) {
     m_x12 = jsonValue.GetObject("x12");
     m_x12HasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FormatOptions::Jsonize() const
-{
+JsonValue FormatOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_x12HasBeenSet)
-  {
-   payload.WithObject("x12", m_x12.Jsonize());
-
+  if (m_x12HasBeenSet) {
+    payload.WithObject("x12", m_x12.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace B2BI
-} // namespace Aws
+}  // namespace Model
+}  // namespace B2BI
+}  // namespace Aws

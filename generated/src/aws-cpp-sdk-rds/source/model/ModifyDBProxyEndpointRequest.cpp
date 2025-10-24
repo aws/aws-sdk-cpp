@@ -3,40 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/ModifyDBProxyEndpointRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/ModifyDBProxyEndpointRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyDBProxyEndpointRequest::SerializePayload() const
-{
+Aws::String ModifyDBProxyEndpointRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyDBProxyEndpoint&";
-  if(m_dBProxyEndpointNameHasBeenSet)
-  {
+  if (m_dBProxyEndpointNameHasBeenSet) {
     ss << "DBProxyEndpointName=" << StringUtils::URLEncode(m_dBProxyEndpointName.c_str()) << "&";
   }
 
-  if(m_newDBProxyEndpointNameHasBeenSet)
-  {
+  if (m_newDBProxyEndpointNameHasBeenSet) {
     ss << "NewDBProxyEndpointName=" << StringUtils::URLEncode(m_newDBProxyEndpointName.c_str()) << "&";
   }
 
-  if(m_vpcSecurityGroupIdsHasBeenSet)
-  {
-    if (m_vpcSecurityGroupIds.empty())
-    {
+  if (m_vpcSecurityGroupIdsHasBeenSet) {
+    if (m_vpcSecurityGroupIds.empty()) {
       ss << "VpcSecurityGroupIds=&";
-    }
-    else
-    {
+    } else {
       unsigned vpcSecurityGroupIdsCount = 1;
-      for(auto& item : m_vpcSecurityGroupIds)
-      {
-        ss << "VpcSecurityGroupIds.member." << vpcSecurityGroupIdsCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_vpcSecurityGroupIds) {
+        ss << "VpcSecurityGroupIds.member." << vpcSecurityGroupIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         vpcSecurityGroupIdsCount++;
       }
     }
@@ -46,8 +37,4 @@ Aws::String ModifyDBProxyEndpointRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ModifyDBProxyEndpointRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ModifyDBProxyEndpointRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

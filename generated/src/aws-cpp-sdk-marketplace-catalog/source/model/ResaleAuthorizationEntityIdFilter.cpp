@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/marketplace-catalog/model/ResaleAuthorizationEntityIdFilter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/marketplace-catalog/model/ResaleAuthorizationEntityIdFilter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MarketplaceCatalog
-{
-namespace Model
-{
+namespace Aws {
+namespace MarketplaceCatalog {
+namespace Model {
 
-ResaleAuthorizationEntityIdFilter::ResaleAuthorizationEntityIdFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResaleAuthorizationEntityIdFilter::ResaleAuthorizationEntityIdFilter(JsonView jsonValue) { *this = jsonValue; }
 
-ResaleAuthorizationEntityIdFilter& ResaleAuthorizationEntityIdFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ValueList"))
-  {
+ResaleAuthorizationEntityIdFilter& ResaleAuthorizationEntityIdFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ValueList")) {
     Aws::Utils::Array<JsonView> valueListJsonList = jsonValue.GetArray("ValueList");
-    for(unsigned valueListIndex = 0; valueListIndex < valueListJsonList.GetLength(); ++valueListIndex)
-    {
+    for (unsigned valueListIndex = 0; valueListIndex < valueListJsonList.GetLength(); ++valueListIndex) {
       m_valueList.push_back(valueListJsonList[valueListIndex].AsString());
     }
     m_valueListHasBeenSet = true;
@@ -37,24 +28,20 @@ ResaleAuthorizationEntityIdFilter& ResaleAuthorizationEntityIdFilter::operator =
   return *this;
 }
 
-JsonValue ResaleAuthorizationEntityIdFilter::Jsonize() const
-{
+JsonValue ResaleAuthorizationEntityIdFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_valueListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> valueListJsonList(m_valueList.size());
-   for(unsigned valueListIndex = 0; valueListIndex < valueListJsonList.GetLength(); ++valueListIndex)
-   {
-     valueListJsonList[valueListIndex].AsString(m_valueList[valueListIndex]);
-   }
-   payload.WithArray("ValueList", std::move(valueListJsonList));
-
+  if (m_valueListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> valueListJsonList(m_valueList.size());
+    for (unsigned valueListIndex = 0; valueListIndex < valueListJsonList.GetLength(); ++valueListIndex) {
+      valueListJsonList[valueListIndex].AsString(m_valueList[valueListIndex]);
+    }
+    payload.WithArray("ValueList", std::move(valueListJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MarketplaceCatalog
-} // namespace Aws
+}  // namespace Model
+}  // namespace MarketplaceCatalog
+}  // namespace Aws

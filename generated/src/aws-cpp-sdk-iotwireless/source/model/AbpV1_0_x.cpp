@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotwireless/model/AbpV1_0_x.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotwireless/model/AbpV1_0_x.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTWireless
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTWireless {
+namespace Model {
 
-AbpV1_0_x::AbpV1_0_x(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AbpV1_0_x::AbpV1_0_x(JsonView jsonValue) { *this = jsonValue; }
 
-AbpV1_0_x& AbpV1_0_x::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DevAddr"))
-  {
+AbpV1_0_x& AbpV1_0_x::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DevAddr")) {
     m_devAddr = jsonValue.GetString("DevAddr");
     m_devAddrHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SessionKeys"))
-  {
+  if (jsonValue.ValueExists("SessionKeys")) {
     m_sessionKeys = jsonValue.GetObject("SessionKeys");
     m_sessionKeysHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FCntStart"))
-  {
+  if (jsonValue.ValueExists("FCntStart")) {
     m_fCntStart = jsonValue.GetInteger("FCntStart");
     m_fCntStartHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AbpV1_0_x::Jsonize() const
-{
+JsonValue AbpV1_0_x::Jsonize() const {
   JsonValue payload;
 
-  if(m_devAddrHasBeenSet)
-  {
-   payload.WithString("DevAddr", m_devAddr);
-
+  if (m_devAddrHasBeenSet) {
+    payload.WithString("DevAddr", m_devAddr);
   }
 
-  if(m_sessionKeysHasBeenSet)
-  {
-   payload.WithObject("SessionKeys", m_sessionKeys.Jsonize());
-
+  if (m_sessionKeysHasBeenSet) {
+    payload.WithObject("SessionKeys", m_sessionKeys.Jsonize());
   }
 
-  if(m_fCntStartHasBeenSet)
-  {
-   payload.WithInteger("FCntStart", m_fCntStart);
-
+  if (m_fCntStartHasBeenSet) {
+    payload.WithInteger("FCntStart", m_fCntStart);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTWireless
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTWireless
+}  // namespace Aws

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/cognito-idp/CognitoIdentityProviderEndpointRules.h>
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -11,18 +12,12 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
-#include <aws/cognito-idp/CognitoIdentityProviderEndpointRules.h>
-
-
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using CognitoIdentityProviderClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -35,27 +30,26 @@ using CognitoIdentityProviderBuiltInParameters = Aws::Endpoint::BuiltInParameter
  * The SDK must use service-specific type for each service per specification.
  */
 using CognitoIdentityProviderEndpointProviderBase =
-    EndpointProviderBase<CognitoIdentityProviderClientConfiguration, CognitoIdentityProviderBuiltInParameters, CognitoIdentityProviderClientContextParameters>;
+    EndpointProviderBase<CognitoIdentityProviderClientConfiguration, CognitoIdentityProviderBuiltInParameters,
+                         CognitoIdentityProviderClientContextParameters>;
 
 using CognitoIdentityProviderDefaultEpProviderBase =
-    DefaultEndpointProvider<CognitoIdentityProviderClientConfiguration, CognitoIdentityProviderBuiltInParameters, CognitoIdentityProviderClientContextParameters>;
+    DefaultEndpointProvider<CognitoIdentityProviderClientConfiguration, CognitoIdentityProviderBuiltInParameters,
+                            CognitoIdentityProviderClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderEndpointProvider : public CognitoIdentityProviderDefaultEpProviderBase
-{
-public:
-    using CognitoIdentityProviderResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderEndpointProvider : public CognitoIdentityProviderDefaultEpProviderBase {
+ public:
+  using CognitoIdentityProviderResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    CognitoIdentityProviderEndpointProvider()
-      : CognitoIdentityProviderDefaultEpProviderBase(Aws::CognitoIdentityProvider::CognitoIdentityProviderEndpointRules::GetRulesBlob(), Aws::CognitoIdentityProvider::CognitoIdentityProviderEndpointRules::RulesBlobSize)
-    {}
+  CognitoIdentityProviderEndpointProvider()
+      : CognitoIdentityProviderDefaultEpProviderBase(Aws::CognitoIdentityProvider::CognitoIdentityProviderEndpointRules::GetRulesBlob(),
+                                                     Aws::CognitoIdentityProvider::CognitoIdentityProviderEndpointRules::RulesBlobSize) {}
 
-    ~CognitoIdentityProviderEndpointProvider()
-    {
-    }
+  ~CognitoIdentityProviderEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Braket
-{
-namespace Model
-{
+namespace Aws {
+namespace Braket {
+namespace Model {
 
-JobCheckpointConfig::JobCheckpointConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+JobCheckpointConfig::JobCheckpointConfig(JsonView jsonValue) { *this = jsonValue; }
 
-JobCheckpointConfig& JobCheckpointConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("localPath"))
-  {
+JobCheckpointConfig& JobCheckpointConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("localPath")) {
     m_localPath = jsonValue.GetString("localPath");
     m_localPathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("s3Uri"))
-  {
+  if (jsonValue.ValueExists("s3Uri")) {
     m_s3Uri = jsonValue.GetString("s3Uri");
     m_s3UriHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue JobCheckpointConfig::Jsonize() const
-{
+JsonValue JobCheckpointConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_localPathHasBeenSet)
-  {
-   payload.WithString("localPath", m_localPath);
-
+  if (m_localPathHasBeenSet) {
+    payload.WithString("localPath", m_localPath);
   }
 
-  if(m_s3UriHasBeenSet)
-  {
-   payload.WithString("s3Uri", m_s3Uri);
-
+  if (m_s3UriHasBeenSet) {
+    payload.WithString("s3Uri", m_s3Uri);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Braket
-} // namespace Aws
+}  // namespace Model
+}  // namespace Braket
+}  // namespace Aws

@@ -7,29 +7,16 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
-  enum class ReferenceStatus
-  {
-    NOT_SET,
-    AVAILABLE,
-    DELETED,
-    APPROVED,
-    REJECTED,
-    PROCESSING,
-    FAILED
-  };
+namespace Aws {
+namespace Connect {
+namespace Model {
+enum class ReferenceStatus { NOT_SET, AVAILABLE, DELETED, APPROVED, REJECTED, PROCESSING, FAILED };
 
-namespace ReferenceStatusMapper
-{
+namespace ReferenceStatusMapper {
 AWS_CONNECT_API ReferenceStatus GetReferenceStatusForName(const Aws::String& name);
 
 AWS_CONNECT_API Aws::String GetNameForReferenceStatus(ReferenceStatus value);
-} // namespace ReferenceStatusMapper
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace ReferenceStatusMapper
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

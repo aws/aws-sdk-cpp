@@ -3,63 +3,51 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ebs/model/ChecksumAggregationMethod.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/ebs/model/ChecksumAggregationMethod.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace EBS {
+namespace Model {
+namespace ChecksumAggregationMethodMapper {
 
-namespace Aws
-{
-  namespace EBS
-  {
-    namespace Model
-    {
-      namespace ChecksumAggregationMethodMapper
-      {
+static const int LINEAR_HASH = HashingUtils::HashString("LINEAR");
 
-        static const int LINEAR_HASH = HashingUtils::HashString("LINEAR");
+ChecksumAggregationMethod GetChecksumAggregationMethodForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == LINEAR_HASH) {
+    return ChecksumAggregationMethod::LINEAR;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<ChecksumAggregationMethod>(hashCode);
+  }
 
+  return ChecksumAggregationMethod::NOT_SET;
+}
 
-        ChecksumAggregationMethod GetChecksumAggregationMethodForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == LINEAR_HASH)
-          {
-            return ChecksumAggregationMethod::LINEAR;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ChecksumAggregationMethod>(hashCode);
-          }
+Aws::String GetNameForChecksumAggregationMethod(ChecksumAggregationMethod enumValue) {
+  switch (enumValue) {
+    case ChecksumAggregationMethod::NOT_SET:
+      return {};
+    case ChecksumAggregationMethod::LINEAR:
+      return "LINEAR";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return ChecksumAggregationMethod::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForChecksumAggregationMethod(ChecksumAggregationMethod enumValue)
-        {
-          switch(enumValue)
-          {
-          case ChecksumAggregationMethod::NOT_SET:
-            return {};
-          case ChecksumAggregationMethod::LINEAR:
-            return "LINEAR";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace ChecksumAggregationMethodMapper
-    } // namespace Model
-  } // namespace EBS
-} // namespace Aws
+}  // namespace ChecksumAggregationMethodMapper
+}  // namespace Model
+}  // namespace EBS
+}  // namespace Aws

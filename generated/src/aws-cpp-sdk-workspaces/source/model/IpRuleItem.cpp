@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workspaces/model/IpRuleItem.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workspaces/model/IpRuleItem.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WorkSpaces
-{
-namespace Model
-{
+namespace Aws {
+namespace WorkSpaces {
+namespace Model {
 
-IpRuleItem::IpRuleItem(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IpRuleItem::IpRuleItem(JsonView jsonValue) { *this = jsonValue; }
 
-IpRuleItem& IpRuleItem::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ipRule"))
-  {
+IpRuleItem& IpRuleItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ipRule")) {
     m_ipRule = jsonValue.GetString("ipRule");
     m_ipRuleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ruleDesc"))
-  {
+  if (jsonValue.ValueExists("ruleDesc")) {
     m_ruleDesc = jsonValue.GetString("ruleDesc");
     m_ruleDescHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IpRuleItem::Jsonize() const
-{
+JsonValue IpRuleItem::Jsonize() const {
   JsonValue payload;
 
-  if(m_ipRuleHasBeenSet)
-  {
-   payload.WithString("ipRule", m_ipRule);
-
+  if (m_ipRuleHasBeenSet) {
+    payload.WithString("ipRule", m_ipRule);
   }
 
-  if(m_ruleDescHasBeenSet)
-  {
-   payload.WithString("ruleDesc", m_ruleDesc);
-
+  if (m_ruleDescHasBeenSet) {
+    payload.WithString("ruleDesc", m_ruleDesc);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WorkSpaces
-} // namespace Aws
+}  // namespace Model
+}  // namespace WorkSpaces
+}  // namespace Aws

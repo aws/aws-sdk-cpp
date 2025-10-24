@@ -5,12 +5,8 @@
 
 #include <aws/redshift/RedshiftEndpointProvider.h>
 
-namespace Aws
-{
-namespace Redshift
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Redshift
-} // namespace Aws
+namespace Aws {
+namespace Redshift {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Redshift
+}  // namespace Aws

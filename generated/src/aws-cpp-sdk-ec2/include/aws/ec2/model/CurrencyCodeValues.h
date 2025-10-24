@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class CurrencyCodeValues
-  {
-    NOT_SET,
-    USD
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class CurrencyCodeValues { NOT_SET, USD };
 
-namespace CurrencyCodeValuesMapper
-{
+namespace CurrencyCodeValuesMapper {
 AWS_EC2_API CurrencyCodeValues GetCurrencyCodeValuesForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForCurrencyCodeValues(CurrencyCodeValues value);
-} // namespace CurrencyCodeValuesMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace CurrencyCodeValuesMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

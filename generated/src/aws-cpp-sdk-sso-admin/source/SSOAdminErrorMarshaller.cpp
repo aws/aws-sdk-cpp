@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::SSOAdmin;
 
-AWSError<CoreErrors> SSOAdminErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> SSOAdminErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = SSOAdminErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

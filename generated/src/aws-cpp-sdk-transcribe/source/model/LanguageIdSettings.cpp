@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/transcribe/model/LanguageIdSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/transcribe/model/LanguageIdSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace TranscribeService
-{
-namespace Model
-{
+namespace Aws {
+namespace TranscribeService {
+namespace Model {
 
-LanguageIdSettings::LanguageIdSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LanguageIdSettings::LanguageIdSettings(JsonView jsonValue) { *this = jsonValue; }
 
-LanguageIdSettings& LanguageIdSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("VocabularyName"))
-  {
+LanguageIdSettings& LanguageIdSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("VocabularyName")) {
     m_vocabularyName = jsonValue.GetString("VocabularyName");
     m_vocabularyNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VocabularyFilterName"))
-  {
+  if (jsonValue.ValueExists("VocabularyFilterName")) {
     m_vocabularyFilterName = jsonValue.GetString("VocabularyFilterName");
     m_vocabularyFilterNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LanguageModelName"))
-  {
+  if (jsonValue.ValueExists("LanguageModelName")) {
     m_languageModelName = jsonValue.GetString("LanguageModelName");
     m_languageModelNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LanguageIdSettings::Jsonize() const
-{
+JsonValue LanguageIdSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_vocabularyNameHasBeenSet)
-  {
-   payload.WithString("VocabularyName", m_vocabularyName);
-
+  if (m_vocabularyNameHasBeenSet) {
+    payload.WithString("VocabularyName", m_vocabularyName);
   }
 
-  if(m_vocabularyFilterNameHasBeenSet)
-  {
-   payload.WithString("VocabularyFilterName", m_vocabularyFilterName);
-
+  if (m_vocabularyFilterNameHasBeenSet) {
+    payload.WithString("VocabularyFilterName", m_vocabularyFilterName);
   }
 
-  if(m_languageModelNameHasBeenSet)
-  {
-   payload.WithString("LanguageModelName", m_languageModelName);
-
+  if (m_languageModelNameHasBeenSet) {
+    payload.WithString("LanguageModelName", m_languageModelName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace TranscribeService
-} // namespace Aws
+}  // namespace Model
+}  // namespace TranscribeService
+}  // namespace Aws

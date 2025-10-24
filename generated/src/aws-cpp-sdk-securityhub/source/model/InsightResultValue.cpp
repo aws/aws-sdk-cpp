@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/InsightResultValue.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/InsightResultValue.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-InsightResultValue::InsightResultValue(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InsightResultValue::InsightResultValue(JsonView jsonValue) { *this = jsonValue; }
 
-InsightResultValue& InsightResultValue::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("GroupByAttributeValue"))
-  {
+InsightResultValue& InsightResultValue::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("GroupByAttributeValue")) {
     m_groupByAttributeValue = jsonValue.GetString("GroupByAttributeValue");
     m_groupByAttributeValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Count"))
-  {
+  if (jsonValue.ValueExists("Count")) {
     m_count = jsonValue.GetInteger("Count");
     m_countHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InsightResultValue::Jsonize() const
-{
+JsonValue InsightResultValue::Jsonize() const {
   JsonValue payload;
 
-  if(m_groupByAttributeValueHasBeenSet)
-  {
-   payload.WithString("GroupByAttributeValue", m_groupByAttributeValue);
-
+  if (m_groupByAttributeValueHasBeenSet) {
+    payload.WithString("GroupByAttributeValue", m_groupByAttributeValue);
   }
 
-  if(m_countHasBeenSet)
-  {
-   payload.WithInteger("Count", m_count);
-
+  if (m_countHasBeenSet) {
+    payload.WithInteger("Count", m_count);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

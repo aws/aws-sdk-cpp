@@ -7,25 +7,16 @@
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelines_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
-  enum class ParticipantRole
-  {
-    NOT_SET,
-    AGENT,
-    CUSTOMER
-  };
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
+enum class ParticipantRole { NOT_SET, AGENT, CUSTOMER };
 
-namespace ParticipantRoleMapper
-{
+namespace ParticipantRoleMapper {
 AWS_CHIMESDKMEDIAPIPELINES_API ParticipantRole GetParticipantRoleForName(const Aws::String& name);
 
 AWS_CHIMESDKMEDIAPIPELINES_API Aws::String GetNameForParticipantRole(ParticipantRole value);
-} // namespace ParticipantRoleMapper
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace ParticipantRoleMapper
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

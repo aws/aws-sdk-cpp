@@ -12,30 +12,20 @@ using namespace Aws::PrometheusService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateQueryLoggingConfigurationRequest::SerializePayload() const
-{
+Aws::String CreateQueryLoggingConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_destinationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> destinationsJsonList(m_destinations.size());
-   for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
-   {
-     destinationsJsonList[destinationsIndex].AsObject(m_destinations[destinationsIndex].Jsonize());
-   }
-   payload.WithArray("destinations", std::move(destinationsJsonList));
-
+  if (m_destinationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> destinationsJsonList(m_destinations.size());
+    for (unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex) {
+      destinationsJsonList[destinationsIndex].AsObject(m_destinations[destinationsIndex].Jsonize());
+    }
+    payload.WithArray("destinations", std::move(destinationsJsonList));
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -3,65 +3,52 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/migrationhubstrategy/model/ConfigurationSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/migrationhubstrategy/model/ConfigurationSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MigrationHubStrategyRecommendations
-{
-namespace Model
-{
+namespace Aws {
+namespace MigrationHubStrategyRecommendations {
+namespace Model {
 
-ConfigurationSummary::ConfigurationSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConfigurationSummary::ConfigurationSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ConfigurationSummary& ConfigurationSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ipAddressBasedRemoteInfoList"))
-  {
+ConfigurationSummary& ConfigurationSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ipAddressBasedRemoteInfoList")) {
     Aws::Utils::Array<JsonView> ipAddressBasedRemoteInfoListJsonList = jsonValue.GetArray("ipAddressBasedRemoteInfoList");
-    for(unsigned ipAddressBasedRemoteInfoListIndex = 0; ipAddressBasedRemoteInfoListIndex < ipAddressBasedRemoteInfoListJsonList.GetLength(); ++ipAddressBasedRemoteInfoListIndex)
-    {
+    for (unsigned ipAddressBasedRemoteInfoListIndex = 0;
+         ipAddressBasedRemoteInfoListIndex < ipAddressBasedRemoteInfoListJsonList.GetLength(); ++ipAddressBasedRemoteInfoListIndex) {
       m_ipAddressBasedRemoteInfoList.push_back(ipAddressBasedRemoteInfoListJsonList[ipAddressBasedRemoteInfoListIndex].AsObject());
     }
     m_ipAddressBasedRemoteInfoListHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("pipelineInfoList"))
-  {
+  if (jsonValue.ValueExists("pipelineInfoList")) {
     Aws::Utils::Array<JsonView> pipelineInfoListJsonList = jsonValue.GetArray("pipelineInfoList");
-    for(unsigned pipelineInfoListIndex = 0; pipelineInfoListIndex < pipelineInfoListJsonList.GetLength(); ++pipelineInfoListIndex)
-    {
+    for (unsigned pipelineInfoListIndex = 0; pipelineInfoListIndex < pipelineInfoListJsonList.GetLength(); ++pipelineInfoListIndex) {
       m_pipelineInfoList.push_back(pipelineInfoListJsonList[pipelineInfoListIndex].AsObject());
     }
     m_pipelineInfoListHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("remoteSourceCodeAnalysisServerInfo"))
-  {
+  if (jsonValue.ValueExists("remoteSourceCodeAnalysisServerInfo")) {
     m_remoteSourceCodeAnalysisServerInfo = jsonValue.GetObject("remoteSourceCodeAnalysisServerInfo");
     m_remoteSourceCodeAnalysisServerInfoHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("vcenterBasedRemoteInfoList"))
-  {
+  if (jsonValue.ValueExists("vcenterBasedRemoteInfoList")) {
     Aws::Utils::Array<JsonView> vcenterBasedRemoteInfoListJsonList = jsonValue.GetArray("vcenterBasedRemoteInfoList");
-    for(unsigned vcenterBasedRemoteInfoListIndex = 0; vcenterBasedRemoteInfoListIndex < vcenterBasedRemoteInfoListJsonList.GetLength(); ++vcenterBasedRemoteInfoListIndex)
-    {
+    for (unsigned vcenterBasedRemoteInfoListIndex = 0; vcenterBasedRemoteInfoListIndex < vcenterBasedRemoteInfoListJsonList.GetLength();
+         ++vcenterBasedRemoteInfoListIndex) {
       m_vcenterBasedRemoteInfoList.push_back(vcenterBasedRemoteInfoListJsonList[vcenterBasedRemoteInfoListIndex].AsObject());
     }
     m_vcenterBasedRemoteInfoListHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("versionControlInfoList"))
-  {
+  if (jsonValue.ValueExists("versionControlInfoList")) {
     Aws::Utils::Array<JsonView> versionControlInfoListJsonList = jsonValue.GetArray("versionControlInfoList");
-    for(unsigned versionControlInfoListIndex = 0; versionControlInfoListIndex < versionControlInfoListJsonList.GetLength(); ++versionControlInfoListIndex)
-    {
+    for (unsigned versionControlInfoListIndex = 0; versionControlInfoListIndex < versionControlInfoListJsonList.GetLength();
+         ++versionControlInfoListIndex) {
       m_versionControlInfoList.push_back(versionControlInfoListJsonList[versionControlInfoListIndex].AsObject());
     }
     m_versionControlInfoListHasBeenSet = true;
@@ -69,63 +56,53 @@ ConfigurationSummary& ConfigurationSummary::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ConfigurationSummary::Jsonize() const
-{
+JsonValue ConfigurationSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_ipAddressBasedRemoteInfoListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> ipAddressBasedRemoteInfoListJsonList(m_ipAddressBasedRemoteInfoList.size());
-   for(unsigned ipAddressBasedRemoteInfoListIndex = 0; ipAddressBasedRemoteInfoListIndex < ipAddressBasedRemoteInfoListJsonList.GetLength(); ++ipAddressBasedRemoteInfoListIndex)
-   {
-     ipAddressBasedRemoteInfoListJsonList[ipAddressBasedRemoteInfoListIndex].AsObject(m_ipAddressBasedRemoteInfoList[ipAddressBasedRemoteInfoListIndex].Jsonize());
-   }
-   payload.WithArray("ipAddressBasedRemoteInfoList", std::move(ipAddressBasedRemoteInfoListJsonList));
-
+  if (m_ipAddressBasedRemoteInfoListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> ipAddressBasedRemoteInfoListJsonList(m_ipAddressBasedRemoteInfoList.size());
+    for (unsigned ipAddressBasedRemoteInfoListIndex = 0;
+         ipAddressBasedRemoteInfoListIndex < ipAddressBasedRemoteInfoListJsonList.GetLength(); ++ipAddressBasedRemoteInfoListIndex) {
+      ipAddressBasedRemoteInfoListJsonList[ipAddressBasedRemoteInfoListIndex].AsObject(
+          m_ipAddressBasedRemoteInfoList[ipAddressBasedRemoteInfoListIndex].Jsonize());
+    }
+    payload.WithArray("ipAddressBasedRemoteInfoList", std::move(ipAddressBasedRemoteInfoListJsonList));
   }
 
-  if(m_pipelineInfoListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> pipelineInfoListJsonList(m_pipelineInfoList.size());
-   for(unsigned pipelineInfoListIndex = 0; pipelineInfoListIndex < pipelineInfoListJsonList.GetLength(); ++pipelineInfoListIndex)
-   {
-     pipelineInfoListJsonList[pipelineInfoListIndex].AsObject(m_pipelineInfoList[pipelineInfoListIndex].Jsonize());
-   }
-   payload.WithArray("pipelineInfoList", std::move(pipelineInfoListJsonList));
-
+  if (m_pipelineInfoListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> pipelineInfoListJsonList(m_pipelineInfoList.size());
+    for (unsigned pipelineInfoListIndex = 0; pipelineInfoListIndex < pipelineInfoListJsonList.GetLength(); ++pipelineInfoListIndex) {
+      pipelineInfoListJsonList[pipelineInfoListIndex].AsObject(m_pipelineInfoList[pipelineInfoListIndex].Jsonize());
+    }
+    payload.WithArray("pipelineInfoList", std::move(pipelineInfoListJsonList));
   }
 
-  if(m_remoteSourceCodeAnalysisServerInfoHasBeenSet)
-  {
-   payload.WithObject("remoteSourceCodeAnalysisServerInfo", m_remoteSourceCodeAnalysisServerInfo.Jsonize());
-
+  if (m_remoteSourceCodeAnalysisServerInfoHasBeenSet) {
+    payload.WithObject("remoteSourceCodeAnalysisServerInfo", m_remoteSourceCodeAnalysisServerInfo.Jsonize());
   }
 
-  if(m_vcenterBasedRemoteInfoListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> vcenterBasedRemoteInfoListJsonList(m_vcenterBasedRemoteInfoList.size());
-   for(unsigned vcenterBasedRemoteInfoListIndex = 0; vcenterBasedRemoteInfoListIndex < vcenterBasedRemoteInfoListJsonList.GetLength(); ++vcenterBasedRemoteInfoListIndex)
-   {
-     vcenterBasedRemoteInfoListJsonList[vcenterBasedRemoteInfoListIndex].AsObject(m_vcenterBasedRemoteInfoList[vcenterBasedRemoteInfoListIndex].Jsonize());
-   }
-   payload.WithArray("vcenterBasedRemoteInfoList", std::move(vcenterBasedRemoteInfoListJsonList));
-
+  if (m_vcenterBasedRemoteInfoListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> vcenterBasedRemoteInfoListJsonList(m_vcenterBasedRemoteInfoList.size());
+    for (unsigned vcenterBasedRemoteInfoListIndex = 0; vcenterBasedRemoteInfoListIndex < vcenterBasedRemoteInfoListJsonList.GetLength();
+         ++vcenterBasedRemoteInfoListIndex) {
+      vcenterBasedRemoteInfoListJsonList[vcenterBasedRemoteInfoListIndex].AsObject(
+          m_vcenterBasedRemoteInfoList[vcenterBasedRemoteInfoListIndex].Jsonize());
+    }
+    payload.WithArray("vcenterBasedRemoteInfoList", std::move(vcenterBasedRemoteInfoListJsonList));
   }
 
-  if(m_versionControlInfoListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> versionControlInfoListJsonList(m_versionControlInfoList.size());
-   for(unsigned versionControlInfoListIndex = 0; versionControlInfoListIndex < versionControlInfoListJsonList.GetLength(); ++versionControlInfoListIndex)
-   {
-     versionControlInfoListJsonList[versionControlInfoListIndex].AsObject(m_versionControlInfoList[versionControlInfoListIndex].Jsonize());
-   }
-   payload.WithArray("versionControlInfoList", std::move(versionControlInfoListJsonList));
-
+  if (m_versionControlInfoListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> versionControlInfoListJsonList(m_versionControlInfoList.size());
+    for (unsigned versionControlInfoListIndex = 0; versionControlInfoListIndex < versionControlInfoListJsonList.GetLength();
+         ++versionControlInfoListIndex) {
+      versionControlInfoListJsonList[versionControlInfoListIndex].AsObject(m_versionControlInfoList[versionControlInfoListIndex].Jsonize());
+    }
+    payload.WithArray("versionControlInfoList", std::move(versionControlInfoListJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MigrationHubStrategyRecommendations
-} // namespace Aws
+}  // namespace Model
+}  // namespace MigrationHubStrategyRecommendations
+}  // namespace Aws

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/network-firewall/model/IPSetMetadata.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/network-firewall/model/IPSetMetadata.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace NetworkFirewall
-{
-namespace Model
-{
+namespace Aws {
+namespace NetworkFirewall {
+namespace Model {
 
-IPSetMetadata::IPSetMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IPSetMetadata::IPSetMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-IPSetMetadata& IPSetMetadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ResolvedCIDRCount"))
-  {
+IPSetMetadata& IPSetMetadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ResolvedCIDRCount")) {
     m_resolvedCIDRCount = jsonValue.GetInteger("ResolvedCIDRCount");
     m_resolvedCIDRCountHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IPSetMetadata::Jsonize() const
-{
+JsonValue IPSetMetadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_resolvedCIDRCountHasBeenSet)
-  {
-   payload.WithInteger("ResolvedCIDRCount", m_resolvedCIDRCount);
-
+  if (m_resolvedCIDRCountHasBeenSet) {
+    payload.WithInteger("ResolvedCIDRCount", m_resolvedCIDRCount);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace NetworkFirewall
-} // namespace Aws
+}  // namespace Model
+}  // namespace NetworkFirewall
+}  // namespace Aws

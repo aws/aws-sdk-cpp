@@ -3,18 +3,16 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/client/AWSError.h>
 #include <aws/apigateway/APIGatewayErrorMarshaller.h>
 #include <aws/apigateway/APIGatewayErrors.h>
+#include <aws/core/client/AWSError.h>
 
 using namespace Aws::Client;
 using namespace Aws::APIGateway;
 
-AWSError<CoreErrors> APIGatewayErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> APIGatewayErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = APIGatewayErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

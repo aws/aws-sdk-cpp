@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BCMPricingCalculator
-{
-namespace Model
-{
+namespace Aws {
+namespace BCMPricingCalculator {
+namespace Model {
 
-NegateSavingsPlanAction::NegateSavingsPlanAction(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NegateSavingsPlanAction::NegateSavingsPlanAction(JsonView jsonValue) { *this = jsonValue; }
 
-NegateSavingsPlanAction& NegateSavingsPlanAction::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("savingsPlanId"))
-  {
+NegateSavingsPlanAction& NegateSavingsPlanAction::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("savingsPlanId")) {
     m_savingsPlanId = jsonValue.GetString("savingsPlanId");
     m_savingsPlanIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NegateSavingsPlanAction::Jsonize() const
-{
+JsonValue NegateSavingsPlanAction::Jsonize() const {
   JsonValue payload;
 
-  if(m_savingsPlanIdHasBeenSet)
-  {
-   payload.WithString("savingsPlanId", m_savingsPlanId);
-
+  if (m_savingsPlanIdHasBeenSet) {
+    payload.WithString("savingsPlanId", m_savingsPlanId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BCMPricingCalculator
-} // namespace Aws
+}  // namespace Model
+}  // namespace BCMPricingCalculator
+}  // namespace Aws

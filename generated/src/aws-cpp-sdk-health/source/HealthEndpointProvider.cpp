@@ -5,12 +5,8 @@
 
 #include <aws/health/HealthEndpointProvider.h>
 
-namespace Aws
-{
-namespace Health
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Health
-} // namespace Aws
+namespace Aws {
+namespace Health {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Health
+}  // namespace Aws

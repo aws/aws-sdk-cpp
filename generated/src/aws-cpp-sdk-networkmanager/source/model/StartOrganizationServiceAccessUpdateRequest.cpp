@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/networkmanager/model/StartOrganizationServiceAccessUpdateRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/networkmanager/model/StartOrganizationServiceAccessUpdateRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartOrganizationServiceAccessUpdateRequest::SerializePayload() const
-{
+Aws::String StartOrganizationServiceAccessUpdateRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_actionHasBeenSet)
-  {
-   payload.WithString("Action", m_action);
-
+  if (m_actionHasBeenSet) {
+    payload.WithString("Action", m_action);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

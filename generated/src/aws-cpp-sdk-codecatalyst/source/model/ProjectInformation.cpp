@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeCatalyst
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeCatalyst {
+namespace Model {
 
-ProjectInformation::ProjectInformation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProjectInformation::ProjectInformation(JsonView jsonValue) { *this = jsonValue; }
 
-ProjectInformation& ProjectInformation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+ProjectInformation& ProjectInformation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("projectId"))
-  {
+  if (jsonValue.ValueExists("projectId")) {
     m_projectId = jsonValue.GetString("projectId");
     m_projectIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ProjectInformation::Jsonize() const
-{
+JsonValue ProjectInformation::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_projectIdHasBeenSet)
-  {
-   payload.WithString("projectId", m_projectId);
-
+  if (m_projectIdHasBeenSet) {
+    payload.WithString("projectId", m_projectId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeCatalyst
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeCatalyst
+}  // namespace Aws

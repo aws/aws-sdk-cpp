@@ -11,93 +11,70 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Athena
-{
-namespace Model
-{
+namespace Aws {
+namespace Athena {
+namespace Model {
 
-NotebookMetadata::NotebookMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NotebookMetadata::NotebookMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-NotebookMetadata& NotebookMetadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("NotebookId"))
-  {
+NotebookMetadata& NotebookMetadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("NotebookId")) {
     m_notebookId = jsonValue.GetString("NotebookId");
     m_notebookIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WorkGroup"))
-  {
+  if (jsonValue.ValueExists("WorkGroup")) {
     m_workGroup = jsonValue.GetString("WorkGroup");
     m_workGroupHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = NotebookTypeMapper::GetNotebookTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModifiedTime"))
-  {
+  if (jsonValue.ValueExists("LastModifiedTime")) {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NotebookMetadata::Jsonize() const
-{
+JsonValue NotebookMetadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_notebookIdHasBeenSet)
-  {
-   payload.WithString("NotebookId", m_notebookId);
-
+  if (m_notebookIdHasBeenSet) {
+    payload.WithString("NotebookId", m_notebookId);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_workGroupHasBeenSet)
-  {
-   payload.WithString("WorkGroup", m_workGroup);
-
+  if (m_workGroupHasBeenSet) {
+    payload.WithString("WorkGroup", m_workGroup);
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", NotebookTypeMapper::GetNameForNotebookType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", NotebookTypeMapper::GetNameForNotebookType(m_type));
   }
 
-  if(m_lastModifiedTimeHasBeenSet)
-  {
-   payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  if (m_lastModifiedTimeHasBeenSet) {
+    payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Athena
-} // namespace Aws
+}  // namespace Model
+}  // namespace Athena
+}  // namespace Aws

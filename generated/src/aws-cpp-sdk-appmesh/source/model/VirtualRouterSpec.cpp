@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-VirtualRouterSpec::VirtualRouterSpec(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VirtualRouterSpec::VirtualRouterSpec(JsonView jsonValue) { *this = jsonValue; }
 
-VirtualRouterSpec& VirtualRouterSpec::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("listeners"))
-  {
+VirtualRouterSpec& VirtualRouterSpec::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("listeners")) {
     Aws::Utils::Array<JsonView> listenersJsonList = jsonValue.GetArray("listeners");
-    for(unsigned listenersIndex = 0; listenersIndex < listenersJsonList.GetLength(); ++listenersIndex)
-    {
+    for (unsigned listenersIndex = 0; listenersIndex < listenersJsonList.GetLength(); ++listenersIndex) {
       m_listeners.push_back(listenersJsonList[listenersIndex].AsObject());
     }
     m_listenersHasBeenSet = true;
@@ -37,24 +28,20 @@ VirtualRouterSpec& VirtualRouterSpec::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue VirtualRouterSpec::Jsonize() const
-{
+JsonValue VirtualRouterSpec::Jsonize() const {
   JsonValue payload;
 
-  if(m_listenersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> listenersJsonList(m_listeners.size());
-   for(unsigned listenersIndex = 0; listenersIndex < listenersJsonList.GetLength(); ++listenersIndex)
-   {
-     listenersJsonList[listenersIndex].AsObject(m_listeners[listenersIndex].Jsonize());
-   }
-   payload.WithArray("listeners", std::move(listenersJsonList));
-
+  if (m_listenersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> listenersJsonList(m_listeners.size());
+    for (unsigned listenersIndex = 0; listenersIndex < listenersJsonList.GetLength(); ++listenersIndex) {
+      listenersJsonList[listenersIndex].AsObject(m_listeners[listenersIndex].Jsonize());
+    }
+    payload.WithArray("listeners", std::move(listenersJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

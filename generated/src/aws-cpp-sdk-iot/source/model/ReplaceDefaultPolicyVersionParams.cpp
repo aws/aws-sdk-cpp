@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/ReplaceDefaultPolicyVersionParams.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot/model/ReplaceDefaultPolicyVersionParams.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
+namespace Aws {
+namespace IoT {
+namespace Model {
 
-ReplaceDefaultPolicyVersionParams::ReplaceDefaultPolicyVersionParams(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReplaceDefaultPolicyVersionParams::ReplaceDefaultPolicyVersionParams(JsonView jsonValue) { *this = jsonValue; }
 
-ReplaceDefaultPolicyVersionParams& ReplaceDefaultPolicyVersionParams::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("templateName"))
-  {
+ReplaceDefaultPolicyVersionParams& ReplaceDefaultPolicyVersionParams::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("templateName")) {
     m_templateName = PolicyTemplateNameMapper::GetPolicyTemplateNameForName(jsonValue.GetString("templateName"));
     m_templateNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ReplaceDefaultPolicyVersionParams::Jsonize() const
-{
+JsonValue ReplaceDefaultPolicyVersionParams::Jsonize() const {
   JsonValue payload;
 
-  if(m_templateNameHasBeenSet)
-  {
-   payload.WithString("templateName", PolicyTemplateNameMapper::GetNameForPolicyTemplateName(m_templateName));
+  if (m_templateNameHasBeenSet) {
+    payload.WithString("templateName", PolicyTemplateNameMapper::GetNameForPolicyTemplateName(m_templateName));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

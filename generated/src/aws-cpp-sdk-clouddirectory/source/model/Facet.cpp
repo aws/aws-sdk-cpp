@@ -11,61 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudDirectory
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudDirectory {
+namespace Model {
 
-Facet::Facet(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Facet::Facet(JsonView jsonValue) { *this = jsonValue; }
 
-Facet& Facet::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+Facet& Facet::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ObjectType"))
-  {
+  if (jsonValue.ValueExists("ObjectType")) {
     m_objectType = ObjectTypeMapper::GetObjectTypeForName(jsonValue.GetString("ObjectType"));
     m_objectTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FacetStyle"))
-  {
+  if (jsonValue.ValueExists("FacetStyle")) {
     m_facetStyle = FacetStyleMapper::GetFacetStyleForName(jsonValue.GetString("FacetStyle"));
     m_facetStyleHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Facet::Jsonize() const
-{
+JsonValue Facet::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_objectTypeHasBeenSet)
-  {
-   payload.WithString("ObjectType", ObjectTypeMapper::GetNameForObjectType(m_objectType));
+  if (m_objectTypeHasBeenSet) {
+    payload.WithString("ObjectType", ObjectTypeMapper::GetNameForObjectType(m_objectType));
   }
 
-  if(m_facetStyleHasBeenSet)
-  {
-   payload.WithString("FacetStyle", FacetStyleMapper::GetNameForFacetStyle(m_facetStyle));
+  if (m_facetStyleHasBeenSet) {
+    payload.WithString("FacetStyle", FacetStyleMapper::GetNameForFacetStyle(m_facetStyle));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudDirectory
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudDirectory
+}  // namespace Aws

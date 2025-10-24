@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Athena
-{
-namespace Model
-{
+namespace Aws {
+namespace Athena {
+namespace Model {
 
-ResultReuseByAgeConfiguration::ResultReuseByAgeConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResultReuseByAgeConfiguration::ResultReuseByAgeConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ResultReuseByAgeConfiguration& ResultReuseByAgeConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Enabled"))
-  {
+ResultReuseByAgeConfiguration& ResultReuseByAgeConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Enabled")) {
     m_enabled = jsonValue.GetBool("Enabled");
     m_enabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MaxAgeInMinutes"))
-  {
+  if (jsonValue.ValueExists("MaxAgeInMinutes")) {
     m_maxAgeInMinutes = jsonValue.GetInteger("MaxAgeInMinutes");
     m_maxAgeInMinutesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResultReuseByAgeConfiguration::Jsonize() const
-{
+JsonValue ResultReuseByAgeConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_enabledHasBeenSet)
-  {
-   payload.WithBool("Enabled", m_enabled);
-
+  if (m_enabledHasBeenSet) {
+    payload.WithBool("Enabled", m_enabled);
   }
 
-  if(m_maxAgeInMinutesHasBeenSet)
-  {
-   payload.WithInteger("MaxAgeInMinutes", m_maxAgeInMinutes);
-
+  if (m_maxAgeInMinutesHasBeenSet) {
+    payload.WithInteger("MaxAgeInMinutes", m_maxAgeInMinutes);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Athena
-} // namespace Aws
+}  // namespace Model
+}  // namespace Athena
+}  // namespace Aws

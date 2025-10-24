@@ -3,125 +3,94 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/route53resolver/model/IpAddressResponse.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/route53resolver/model/IpAddressResponse.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Route53Resolver
-{
-namespace Model
-{
+namespace Aws {
+namespace Route53Resolver {
+namespace Model {
 
-IpAddressResponse::IpAddressResponse(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IpAddressResponse::IpAddressResponse(JsonView jsonValue) { *this = jsonValue; }
 
-IpAddressResponse& IpAddressResponse::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("IpId"))
-  {
+IpAddressResponse& IpAddressResponse::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("IpId")) {
     m_ipId = jsonValue.GetString("IpId");
     m_ipIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SubnetId"))
-  {
+  if (jsonValue.ValueExists("SubnetId")) {
     m_subnetId = jsonValue.GetString("SubnetId");
     m_subnetIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Ip"))
-  {
+  if (jsonValue.ValueExists("Ip")) {
     m_ip = jsonValue.GetString("Ip");
     m_ipHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Ipv6"))
-  {
+  if (jsonValue.ValueExists("Ipv6")) {
     m_ipv6 = jsonValue.GetString("Ipv6");
     m_ipv6HasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = IpAddressStatusMapper::GetIpAddressStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StatusMessage"))
-  {
+  if (jsonValue.ValueExists("StatusMessage")) {
     m_statusMessage = jsonValue.GetString("StatusMessage");
     m_statusMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetString("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ModificationTime"))
-  {
+  if (jsonValue.ValueExists("ModificationTime")) {
     m_modificationTime = jsonValue.GetString("ModificationTime");
     m_modificationTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IpAddressResponse::Jsonize() const
-{
+JsonValue IpAddressResponse::Jsonize() const {
   JsonValue payload;
 
-  if(m_ipIdHasBeenSet)
-  {
-   payload.WithString("IpId", m_ipId);
-
+  if (m_ipIdHasBeenSet) {
+    payload.WithString("IpId", m_ipId);
   }
 
-  if(m_subnetIdHasBeenSet)
-  {
-   payload.WithString("SubnetId", m_subnetId);
-
+  if (m_subnetIdHasBeenSet) {
+    payload.WithString("SubnetId", m_subnetId);
   }
 
-  if(m_ipHasBeenSet)
-  {
-   payload.WithString("Ip", m_ip);
-
+  if (m_ipHasBeenSet) {
+    payload.WithString("Ip", m_ip);
   }
 
-  if(m_ipv6HasBeenSet)
-  {
-   payload.WithString("Ipv6", m_ipv6);
-
+  if (m_ipv6HasBeenSet) {
+    payload.WithString("Ipv6", m_ipv6);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", IpAddressStatusMapper::GetNameForIpAddressStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", IpAddressStatusMapper::GetNameForIpAddressStatus(m_status));
   }
 
-  if(m_statusMessageHasBeenSet)
-  {
-   payload.WithString("StatusMessage", m_statusMessage);
-
+  if (m_statusMessageHasBeenSet) {
+    payload.WithString("StatusMessage", m_statusMessage);
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithString("CreationTime", m_creationTime);
-
+  if (m_creationTimeHasBeenSet) {
+    payload.WithString("CreationTime", m_creationTime);
   }
 
-  if(m_modificationTimeHasBeenSet)
-  {
-   payload.WithString("ModificationTime", m_modificationTime);
-
+  if (m_modificationTimeHasBeenSet) {
+    payload.WithString("ModificationTime", m_modificationTime);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Route53Resolver
-} // namespace Aws
+}  // namespace Model
+}  // namespace Route53Resolver
+}  // namespace Aws

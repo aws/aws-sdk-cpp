@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BCMDataExports
-{
-namespace Model
-{
+namespace Aws {
+namespace BCMDataExports {
+namespace Model {
 
-ThrottlingException::ThrottlingException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ThrottlingException::ThrottlingException(JsonView jsonValue) { *this = jsonValue; }
 
-ThrottlingException& ThrottlingException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Message"))
-  {
+ThrottlingException& ThrottlingException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("QuotaCode"))
-  {
+  if (jsonValue.ValueExists("QuotaCode")) {
     m_quotaCode = jsonValue.GetString("QuotaCode");
     m_quotaCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ServiceCode"))
-  {
+  if (jsonValue.ValueExists("ServiceCode")) {
     m_serviceCode = jsonValue.GetString("ServiceCode");
     m_serviceCodeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ThrottlingException::Jsonize() const
-{
+JsonValue ThrottlingException::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
-  if(m_quotaCodeHasBeenSet)
-  {
-   payload.WithString("QuotaCode", m_quotaCode);
-
+  if (m_quotaCodeHasBeenSet) {
+    payload.WithString("QuotaCode", m_quotaCode);
   }
 
-  if(m_serviceCodeHasBeenSet)
-  {
-   payload.WithString("ServiceCode", m_serviceCode);
-
+  if (m_serviceCodeHasBeenSet) {
+    payload.WithString("ServiceCode", m_serviceCode);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BCMDataExports
-} // namespace Aws
+}  // namespace Model
+}  // namespace BCMDataExports
+}  // namespace Aws

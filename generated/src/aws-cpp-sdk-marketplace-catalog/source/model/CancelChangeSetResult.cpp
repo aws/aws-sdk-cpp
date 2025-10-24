@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/marketplace-catalog/model/CancelChangeSetResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/marketplace-catalog/model/CancelChangeSetResult.h>
 
 #include <utility>
 
@@ -17,33 +17,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CancelChangeSetResult::CancelChangeSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+CancelChangeSetResult::CancelChangeSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-CancelChangeSetResult& CancelChangeSetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+CancelChangeSetResult& CancelChangeSetResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("ChangeSetId"))
-  {
+  if (jsonValue.ValueExists("ChangeSetId")) {
     m_changeSetId = jsonValue.GetString("ChangeSetId");
     m_changeSetIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ChangeSetArn"))
-  {
+  if (jsonValue.ValueExists("ChangeSetArn")) {
     m_changeSetArn = jsonValue.GetString("ChangeSetArn");
     m_changeSetArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

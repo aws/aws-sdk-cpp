@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lookoutmetrics/model/DetectedMetricSource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lookoutmetrics/model/DetectedMetricSource.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LookoutMetrics
-{
-namespace Model
-{
+namespace Aws {
+namespace LookoutMetrics {
+namespace Model {
 
-DetectedMetricSource::DetectedMetricSource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DetectedMetricSource::DetectedMetricSource(JsonView jsonValue) { *this = jsonValue; }
 
-DetectedMetricSource& DetectedMetricSource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("S3SourceConfig"))
-  {
+DetectedMetricSource& DetectedMetricSource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("S3SourceConfig")) {
     m_s3SourceConfig = jsonValue.GetObject("S3SourceConfig");
     m_s3SourceConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DetectedMetricSource::Jsonize() const
-{
+JsonValue DetectedMetricSource::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3SourceConfigHasBeenSet)
-  {
-   payload.WithObject("S3SourceConfig", m_s3SourceConfig.Jsonize());
-
+  if (m_s3SourceConfigHasBeenSet) {
+    payload.WithObject("S3SourceConfig", m_s3SourceConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LookoutMetrics
-} // namespace Aws
+}  // namespace Model
+}  // namespace LookoutMetrics
+}  // namespace Aws

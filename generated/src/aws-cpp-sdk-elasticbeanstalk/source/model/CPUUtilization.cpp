@@ -3,80 +3,68 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticbeanstalk/model/CPUUtilization.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticbeanstalk/model/CPUUtilization.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ElasticBeanstalk
-{
-namespace Model
-{
+namespace Aws {
+namespace ElasticBeanstalk {
+namespace Model {
 
-CPUUtilization::CPUUtilization(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+CPUUtilization::CPUUtilization(const XmlNode& xmlNode) { *this = xmlNode; }
 
-CPUUtilization& CPUUtilization::operator =(const XmlNode& xmlNode)
-{
+CPUUtilization& CPUUtilization::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode userNode = resultNode.FirstChild("User");
-    if(!userNode.IsNull())
-    {
+    if (!userNode.IsNull()) {
       m_user = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(userNode.GetText()).c_str()).c_str());
       m_userHasBeenSet = true;
     }
     XmlNode niceNode = resultNode.FirstChild("Nice");
-    if(!niceNode.IsNull())
-    {
+    if (!niceNode.IsNull()) {
       m_nice = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(niceNode.GetText()).c_str()).c_str());
       m_niceHasBeenSet = true;
     }
     XmlNode systemNode = resultNode.FirstChild("System");
-    if(!systemNode.IsNull())
-    {
-      m_system = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(systemNode.GetText()).c_str()).c_str());
+    if (!systemNode.IsNull()) {
+      m_system =
+          StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(systemNode.GetText()).c_str()).c_str());
       m_systemHasBeenSet = true;
     }
     XmlNode idleNode = resultNode.FirstChild("Idle");
-    if(!idleNode.IsNull())
-    {
+    if (!idleNode.IsNull()) {
       m_idle = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(idleNode.GetText()).c_str()).c_str());
       m_idleHasBeenSet = true;
     }
     XmlNode iOWaitNode = resultNode.FirstChild("IOWait");
-    if(!iOWaitNode.IsNull())
-    {
-      m_iOWait = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(iOWaitNode.GetText()).c_str()).c_str());
+    if (!iOWaitNode.IsNull()) {
+      m_iOWait =
+          StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(iOWaitNode.GetText()).c_str()).c_str());
       m_iOWaitHasBeenSet = true;
     }
     XmlNode iRQNode = resultNode.FirstChild("IRQ");
-    if(!iRQNode.IsNull())
-    {
+    if (!iRQNode.IsNull()) {
       m_iRQ = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(iRQNode.GetText()).c_str()).c_str());
       m_iRQHasBeenSet = true;
     }
     XmlNode softIRQNode = resultNode.FirstChild("SoftIRQ");
-    if(!softIRQNode.IsNull())
-    {
-      m_softIRQ = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(softIRQNode.GetText()).c_str()).c_str());
+    if (!softIRQNode.IsNull()) {
+      m_softIRQ =
+          StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(softIRQNode.GetText()).c_str()).c_str());
       m_softIRQHasBeenSet = true;
     }
     XmlNode privilegedNode = resultNode.FirstChild("Privileged");
-    if(!privilegedNode.IsNull())
-    {
-      m_privileged = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(privilegedNode.GetText()).c_str()).c_str());
+    if (!privilegedNode.IsNull()) {
+      m_privileged =
+          StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(privilegedNode.GetText()).c_str()).c_str());
       m_privilegedHasBeenSet = true;
     }
   }
@@ -84,86 +72,67 @@ CPUUtilization& CPUUtilization::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void CPUUtilization::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_userHasBeenSet)
-  {
-        oStream << location << index << locationValue << ".User=" << StringUtils::URLEncode(m_user) << "&";
+void CPUUtilization::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_userHasBeenSet) {
+    oStream << location << index << locationValue << ".User=" << StringUtils::URLEncode(m_user) << "&";
   }
 
-  if(m_niceHasBeenSet)
-  {
-        oStream << location << index << locationValue << ".Nice=" << StringUtils::URLEncode(m_nice) << "&";
+  if (m_niceHasBeenSet) {
+    oStream << location << index << locationValue << ".Nice=" << StringUtils::URLEncode(m_nice) << "&";
   }
 
-  if(m_systemHasBeenSet)
-  {
-        oStream << location << index << locationValue << ".System=" << StringUtils::URLEncode(m_system) << "&";
+  if (m_systemHasBeenSet) {
+    oStream << location << index << locationValue << ".System=" << StringUtils::URLEncode(m_system) << "&";
   }
 
-  if(m_idleHasBeenSet)
-  {
-        oStream << location << index << locationValue << ".Idle=" << StringUtils::URLEncode(m_idle) << "&";
+  if (m_idleHasBeenSet) {
+    oStream << location << index << locationValue << ".Idle=" << StringUtils::URLEncode(m_idle) << "&";
   }
 
-  if(m_iOWaitHasBeenSet)
-  {
-        oStream << location << index << locationValue << ".IOWait=" << StringUtils::URLEncode(m_iOWait) << "&";
+  if (m_iOWaitHasBeenSet) {
+    oStream << location << index << locationValue << ".IOWait=" << StringUtils::URLEncode(m_iOWait) << "&";
   }
 
-  if(m_iRQHasBeenSet)
-  {
-        oStream << location << index << locationValue << ".IRQ=" << StringUtils::URLEncode(m_iRQ) << "&";
+  if (m_iRQHasBeenSet) {
+    oStream << location << index << locationValue << ".IRQ=" << StringUtils::URLEncode(m_iRQ) << "&";
   }
 
-  if(m_softIRQHasBeenSet)
-  {
-        oStream << location << index << locationValue << ".SoftIRQ=" << StringUtils::URLEncode(m_softIRQ) << "&";
+  if (m_softIRQHasBeenSet) {
+    oStream << location << index << locationValue << ".SoftIRQ=" << StringUtils::URLEncode(m_softIRQ) << "&";
   }
 
-  if(m_privilegedHasBeenSet)
-  {
-        oStream << location << index << locationValue << ".Privileged=" << StringUtils::URLEncode(m_privileged) << "&";
-  }
-
-}
-
-void CPUUtilization::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_userHasBeenSet)
-  {
-      oStream << location << ".User=" << StringUtils::URLEncode(m_user) << "&";
-  }
-  if(m_niceHasBeenSet)
-  {
-      oStream << location << ".Nice=" << StringUtils::URLEncode(m_nice) << "&";
-  }
-  if(m_systemHasBeenSet)
-  {
-      oStream << location << ".System=" << StringUtils::URLEncode(m_system) << "&";
-  }
-  if(m_idleHasBeenSet)
-  {
-      oStream << location << ".Idle=" << StringUtils::URLEncode(m_idle) << "&";
-  }
-  if(m_iOWaitHasBeenSet)
-  {
-      oStream << location << ".IOWait=" << StringUtils::URLEncode(m_iOWait) << "&";
-  }
-  if(m_iRQHasBeenSet)
-  {
-      oStream << location << ".IRQ=" << StringUtils::URLEncode(m_iRQ) << "&";
-  }
-  if(m_softIRQHasBeenSet)
-  {
-      oStream << location << ".SoftIRQ=" << StringUtils::URLEncode(m_softIRQ) << "&";
-  }
-  if(m_privilegedHasBeenSet)
-  {
-      oStream << location << ".Privileged=" << StringUtils::URLEncode(m_privileged) << "&";
+  if (m_privilegedHasBeenSet) {
+    oStream << location << index << locationValue << ".Privileged=" << StringUtils::URLEncode(m_privileged) << "&";
   }
 }
 
-} // namespace Model
-} // namespace ElasticBeanstalk
-} // namespace Aws
+void CPUUtilization::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_userHasBeenSet) {
+    oStream << location << ".User=" << StringUtils::URLEncode(m_user) << "&";
+  }
+  if (m_niceHasBeenSet) {
+    oStream << location << ".Nice=" << StringUtils::URLEncode(m_nice) << "&";
+  }
+  if (m_systemHasBeenSet) {
+    oStream << location << ".System=" << StringUtils::URLEncode(m_system) << "&";
+  }
+  if (m_idleHasBeenSet) {
+    oStream << location << ".Idle=" << StringUtils::URLEncode(m_idle) << "&";
+  }
+  if (m_iOWaitHasBeenSet) {
+    oStream << location << ".IOWait=" << StringUtils::URLEncode(m_iOWait) << "&";
+  }
+  if (m_iRQHasBeenSet) {
+    oStream << location << ".IRQ=" << StringUtils::URLEncode(m_iRQ) << "&";
+  }
+  if (m_softIRQHasBeenSet) {
+    oStream << location << ".SoftIRQ=" << StringUtils::URLEncode(m_softIRQ) << "&";
+  }
+  if (m_privilegedHasBeenSet) {
+    oStream << location << ".Privileged=" << StringUtils::URLEncode(m_privileged) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace ElasticBeanstalk
+}  // namespace Aws

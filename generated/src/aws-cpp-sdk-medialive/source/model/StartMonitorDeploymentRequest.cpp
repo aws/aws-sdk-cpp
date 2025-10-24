@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/StartMonitorDeploymentRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/StartMonitorDeploymentRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartMonitorDeploymentRequest::SerializePayload() const
-{
+Aws::String StartMonitorDeploymentRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_dryRunHasBeenSet)
-  {
-   payload.WithBool("dryRun", m_dryRun);
-
+  if (m_dryRunHasBeenSet) {
+    payload.WithBool("dryRun", m_dryRun);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

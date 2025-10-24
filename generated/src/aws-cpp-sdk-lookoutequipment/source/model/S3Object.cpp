@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lookoutequipment/model/S3Object.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lookoutequipment/model/S3Object.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LookoutEquipment
-{
-namespace Model
-{
+namespace Aws {
+namespace LookoutEquipment {
+namespace Model {
 
-S3Object::S3Object(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+S3Object::S3Object(JsonView jsonValue) { *this = jsonValue; }
 
-S3Object& S3Object::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Bucket"))
-  {
+S3Object& S3Object::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Bucket")) {
     m_bucket = jsonValue.GetString("Bucket");
     m_bucketHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Key"))
-  {
+  if (jsonValue.ValueExists("Key")) {
     m_key = jsonValue.GetString("Key");
     m_keyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue S3Object::Jsonize() const
-{
+JsonValue S3Object::Jsonize() const {
   JsonValue payload;
 
-  if(m_bucketHasBeenSet)
-  {
-   payload.WithString("Bucket", m_bucket);
-
+  if (m_bucketHasBeenSet) {
+    payload.WithString("Bucket", m_bucket);
   }
 
-  if(m_keyHasBeenSet)
-  {
-   payload.WithString("Key", m_key);
-
+  if (m_keyHasBeenSet) {
+    payload.WithString("Key", m_key);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LookoutEquipment
-} // namespace Aws
+}  // namespace Model
+}  // namespace LookoutEquipment
+}  // namespace Aws

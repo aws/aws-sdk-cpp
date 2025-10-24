@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rds/RDS_EXPORTS.h>
 
-namespace Aws
-{
-namespace RDS
-{
-namespace Model
-{
-  enum class GlobalClusterMemberSynchronizationStatus
-  {
-    NOT_SET,
-    connected,
-    pending_resync
-  };
+namespace Aws {
+namespace RDS {
+namespace Model {
+enum class GlobalClusterMemberSynchronizationStatus { NOT_SET, connected, pending_resync };
 
-namespace GlobalClusterMemberSynchronizationStatusMapper
-{
+namespace GlobalClusterMemberSynchronizationStatusMapper {
 AWS_RDS_API GlobalClusterMemberSynchronizationStatus GetGlobalClusterMemberSynchronizationStatusForName(const Aws::String& name);
 
 AWS_RDS_API Aws::String GetNameForGlobalClusterMemberSynchronizationStatus(GlobalClusterMemberSynchronizationStatus value);
-} // namespace GlobalClusterMemberSynchronizationStatusMapper
-} // namespace Model
-} // namespace RDS
-} // namespace Aws
+}  // namespace GlobalClusterMemberSynchronizationStatusMapper
+}  // namespace Model
+}  // namespace RDS
+}  // namespace Aws

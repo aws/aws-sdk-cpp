@@ -5,12 +5,8 @@
 
 #include <aws/appstream/AppStreamEndpointProvider.h>
 
-namespace Aws
-{
-namespace AppStream
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace AppStream
-} // namespace Aws
+namespace Aws {
+namespace AppStream {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace AppStream
+}  // namespace Aws

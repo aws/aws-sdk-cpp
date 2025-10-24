@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/resource-groups/ResourceGroups_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/resource-groups/ResourceGroups_EXPORTS.h>
 
-namespace Aws
-{
-namespace ResourceGroups
-{
-namespace Model
-{
-  enum class GroupingStatus
-  {
-    NOT_SET,
-    SUCCESS,
-    FAILED,
-    IN_PROGRESS,
-    SKIPPED
-  };
+namespace Aws {
+namespace ResourceGroups {
+namespace Model {
+enum class GroupingStatus { NOT_SET, SUCCESS, FAILED, IN_PROGRESS, SKIPPED };
 
-namespace GroupingStatusMapper
-{
+namespace GroupingStatusMapper {
 AWS_RESOURCEGROUPS_API GroupingStatus GetGroupingStatusForName(const Aws::String& name);
 
 AWS_RESOURCEGROUPS_API Aws::String GetNameForGroupingStatus(GroupingStatus value);
-} // namespace GroupingStatusMapper
-} // namespace Model
-} // namespace ResourceGroups
-} // namespace Aws
+}  // namespace GroupingStatusMapper
+}  // namespace Model
+}  // namespace ResourceGroups
+}  // namespace Aws

@@ -4,33 +4,19 @@
  */
 
 #pragma once
-#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 
-namespace Aws
-{
-namespace MigrationHubStrategyRecommendations
-{
-namespace Model
-{
-  enum class Strategy
-  {
-    NOT_SET,
-    Rehost,
-    Retirement,
-    Refactor,
-    Replatform,
-    Retain,
-    Relocate,
-    Repurchase
-  };
+namespace Aws {
+namespace MigrationHubStrategyRecommendations {
+namespace Model {
+enum class Strategy { NOT_SET, Rehost, Retirement, Refactor, Replatform, Retain, Relocate, Repurchase };
 
-namespace StrategyMapper
-{
+namespace StrategyMapper {
 AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Strategy GetStrategyForName(const Aws::String& name);
 
 AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::String GetNameForStrategy(Strategy value);
-} // namespace StrategyMapper
-} // namespace Model
-} // namespace MigrationHubStrategyRecommendations
-} // namespace Aws
+}  // namespace StrategyMapper
+}  // namespace Model
+}  // namespace MigrationHubStrategyRecommendations
+}  // namespace Aws

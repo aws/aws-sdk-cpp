@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/internetmonitor/InternetMonitor_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/internetmonitor/InternetMonitorEndpointRules.h>
+#include <aws/internetmonitor/InternetMonitor_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace InternetMonitor
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace InternetMonitor {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using InternetMonitorClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using InternetMonitorDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_INTERNETMONITOR_API InternetMonitorEndpointProvider : public InternetMonitorDefaultEpProviderBase
-{
-public:
-    using InternetMonitorResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_INTERNETMONITOR_API InternetMonitorEndpointProvider : public InternetMonitorDefaultEpProviderBase {
+ public:
+  using InternetMonitorResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    InternetMonitorEndpointProvider()
-      : InternetMonitorDefaultEpProviderBase(Aws::InternetMonitor::InternetMonitorEndpointRules::GetRulesBlob(), Aws::InternetMonitor::InternetMonitorEndpointRules::RulesBlobSize)
-    {}
+  InternetMonitorEndpointProvider()
+      : InternetMonitorDefaultEpProviderBase(Aws::InternetMonitor::InternetMonitorEndpointRules::GetRulesBlob(),
+                                             Aws::InternetMonitor::InternetMonitorEndpointRules::RulesBlobSize) {}
 
-    ~InternetMonitorEndpointProvider()
-    {
-    }
+  ~InternetMonitorEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace InternetMonitor
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace InternetMonitor
+}  // namespace Aws

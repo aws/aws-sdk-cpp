@@ -10,35 +10,26 @@
 using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeSuggestersRequest::SerializePayload() const
-{
+Aws::String DescribeSuggestersRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeSuggesters&";
-  if(m_domainNameHasBeenSet)
-  {
+  if (m_domainNameHasBeenSet) {
     ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
   }
 
-  if(m_suggesterNamesHasBeenSet)
-  {
-    if (m_suggesterNames.empty())
-    {
+  if (m_suggesterNamesHasBeenSet) {
+    if (m_suggesterNames.empty()) {
       ss << "SuggesterNames=&";
-    }
-    else
-    {
+    } else {
       unsigned suggesterNamesCount = 1;
-      for(auto& item : m_suggesterNames)
-      {
-        ss << "SuggesterNames.member." << suggesterNamesCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_suggesterNames) {
+        ss << "SuggesterNames.member." << suggesterNamesCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         suggesterNamesCount++;
       }
     }
   }
 
-  if(m_deployedHasBeenSet)
-  {
+  if (m_deployedHasBeenSet) {
     ss << "Deployed=" << std::boolalpha << m_deployed << "&";
   }
 
@@ -46,8 +37,4 @@ Aws::String DescribeSuggestersRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeSuggestersRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeSuggestersRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

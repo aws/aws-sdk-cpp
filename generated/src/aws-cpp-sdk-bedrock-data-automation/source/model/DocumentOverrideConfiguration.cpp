@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockDataAutomation
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockDataAutomation {
+namespace Model {
 
-DocumentOverrideConfiguration::DocumentOverrideConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DocumentOverrideConfiguration::DocumentOverrideConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-DocumentOverrideConfiguration& DocumentOverrideConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("splitter"))
-  {
+DocumentOverrideConfiguration& DocumentOverrideConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("splitter")) {
     m_splitter = jsonValue.GetObject("splitter");
     m_splitterHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("modalityProcessing"))
-  {
+  if (jsonValue.ValueExists("modalityProcessing")) {
     m_modalityProcessing = jsonValue.GetObject("modalityProcessing");
     m_modalityProcessingHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DocumentOverrideConfiguration::Jsonize() const
-{
+JsonValue DocumentOverrideConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_splitterHasBeenSet)
-  {
-   payload.WithObject("splitter", m_splitter.Jsonize());
-
+  if (m_splitterHasBeenSet) {
+    payload.WithObject("splitter", m_splitter.Jsonize());
   }
 
-  if(m_modalityProcessingHasBeenSet)
-  {
-   payload.WithObject("modalityProcessing", m_modalityProcessing.Jsonize());
-
+  if (m_modalityProcessingHasBeenSet) {
+    payload.WithObject("modalityProcessing", m_modalityProcessing.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockDataAutomation
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockDataAutomation
+}  // namespace Aws

@@ -11,27 +11,22 @@ using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::MarketplaceCommerceAnalytics;
 
-namespace Aws
-{
-namespace MarketplaceCommerceAnalytics
-{
-namespace MarketplaceCommerceAnalyticsErrorMapper
-{
+namespace Aws {
+namespace MarketplaceCommerceAnalytics {
+namespace MarketplaceCommerceAnalyticsErrorMapper {
 
 static const int MARKETPLACE_COMMERCE_ANALYTICS_HASH = HashingUtils::HashString("MarketplaceCommerceAnalyticsException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == MARKETPLACE_COMMERCE_ANALYTICS_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceCommerceAnalyticsErrors::MARKETPLACE_COMMERCE_ANALYTICS), RetryableType::NOT_RETRYABLE);
+  if (hashCode == MARKETPLACE_COMMERCE_ANALYTICS_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceCommerceAnalyticsErrors::MARKETPLACE_COMMERCE_ANALYTICS),
+                                RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace MarketplaceCommerceAnalyticsErrorMapper
-} // namespace MarketplaceCommerceAnalytics
-} // namespace Aws
+}  // namespace MarketplaceCommerceAnalyticsErrorMapper
+}  // namespace MarketplaceCommerceAnalytics
+}  // namespace Aws

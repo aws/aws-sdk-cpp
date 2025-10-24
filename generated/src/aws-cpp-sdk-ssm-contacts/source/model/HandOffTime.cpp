@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ssm-contacts/model/HandOffTime.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ssm-contacts/model/HandOffTime.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SSMContacts
-{
-namespace Model
-{
+namespace Aws {
+namespace SSMContacts {
+namespace Model {
 
-HandOffTime::HandOffTime(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+HandOffTime::HandOffTime(JsonView jsonValue) { *this = jsonValue; }
 
-HandOffTime& HandOffTime::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("HourOfDay"))
-  {
+HandOffTime& HandOffTime::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("HourOfDay")) {
     m_hourOfDay = jsonValue.GetInteger("HourOfDay");
     m_hourOfDayHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MinuteOfHour"))
-  {
+  if (jsonValue.ValueExists("MinuteOfHour")) {
     m_minuteOfHour = jsonValue.GetInteger("MinuteOfHour");
     m_minuteOfHourHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue HandOffTime::Jsonize() const
-{
+JsonValue HandOffTime::Jsonize() const {
   JsonValue payload;
 
-  if(m_hourOfDayHasBeenSet)
-  {
-   payload.WithInteger("HourOfDay", m_hourOfDay);
-
+  if (m_hourOfDayHasBeenSet) {
+    payload.WithInteger("HourOfDay", m_hourOfDay);
   }
 
-  if(m_minuteOfHourHasBeenSet)
-  {
-   payload.WithInteger("MinuteOfHour", m_minuteOfHour);
-
+  if (m_minuteOfHourHasBeenSet) {
+    payload.WithInteger("MinuteOfHour", m_minuteOfHour);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SSMContacts
-} // namespace Aws
+}  // namespace Model
+}  // namespace SSMContacts
+}  // namespace Aws

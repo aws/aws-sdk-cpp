@@ -3,60 +3,50 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails(JsonView jsonValue)
-{
+AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails(
+    JsonView jsonValue) {
   *this = jsonValue;
 }
 
-AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails& AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Max"))
-  {
+AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails&
+AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Max")) {
     m_max = jsonValue.GetDouble("Max");
     m_maxHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Min"))
-  {
+  if (jsonValue.ValueExists("Min")) {
     m_min = jsonValue.GetDouble("Min");
     m_minHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails::Jsonize() const
-{
+JsonValue AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_maxHasBeenSet)
-  {
-   payload.WithDouble("Max", m_max);
-
+  if (m_maxHasBeenSet) {
+    payload.WithDouble("Max", m_max);
   }
 
-  if(m_minHasBeenSet)
-  {
-   payload.WithDouble("Min", m_min);
-
+  if (m_minHasBeenSet) {
+    payload.WithDouble("Min", m_min);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

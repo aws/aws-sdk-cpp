@@ -6,65 +6,69 @@
 #pragma once
 #include <aws/kafkaconnect/KafkaConnect_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace KafkaConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace KafkaConnect {
+namespace Model {
 
+/**
+ * <p>The description of a connector's provisioned capacity.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ProvisionedCapacityDescription">AWS
+ * API Reference</a></p>
+ */
+class ProvisionedCapacityDescription {
+ public:
+  AWS_KAFKACONNECT_API ProvisionedCapacityDescription() = default;
+  AWS_KAFKACONNECT_API ProvisionedCapacityDescription(Aws::Utils::Json::JsonView jsonValue);
+  AWS_KAFKACONNECT_API ProvisionedCapacityDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>The description of a connector's provisioned capacity.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ProvisionedCapacityDescription">AWS
-   * API Reference</a></p>
+   * <p>The number of microcontroller units (MCUs) allocated to each connector
+   * worker. The valid values are 1,2,4,8.</p>
    */
-  class ProvisionedCapacityDescription
-  {
-  public:
-    AWS_KAFKACONNECT_API ProvisionedCapacityDescription() = default;
-    AWS_KAFKACONNECT_API ProvisionedCapacityDescription(Aws::Utils::Json::JsonView jsonValue);
-    AWS_KAFKACONNECT_API ProvisionedCapacityDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetMcuCount() const { return m_mcuCount; }
+  inline bool McuCountHasBeenSet() const { return m_mcuCountHasBeenSet; }
+  inline void SetMcuCount(int value) {
+    m_mcuCountHasBeenSet = true;
+    m_mcuCount = value;
+  }
+  inline ProvisionedCapacityDescription& WithMcuCount(int value) {
+    SetMcuCount(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The number of workers that are allocated to the connector.</p>
+   */
+  inline int GetWorkerCount() const { return m_workerCount; }
+  inline bool WorkerCountHasBeenSet() const { return m_workerCountHasBeenSet; }
+  inline void SetWorkerCount(int value) {
+    m_workerCountHasBeenSet = true;
+    m_workerCount = value;
+  }
+  inline ProvisionedCapacityDescription& WithWorkerCount(int value) {
+    SetWorkerCount(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_mcuCount{0};
+  bool m_mcuCountHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The number of microcontroller units (MCUs) allocated to each connector
-     * worker. The valid values are 1,2,4,8.</p>
-     */
-    inline int GetMcuCount() const { return m_mcuCount; }
-    inline bool McuCountHasBeenSet() const { return m_mcuCountHasBeenSet; }
-    inline void SetMcuCount(int value) { m_mcuCountHasBeenSet = true; m_mcuCount = value; }
-    inline ProvisionedCapacityDescription& WithMcuCount(int value) { SetMcuCount(value); return *this;}
-    ///@}
+  int m_workerCount{0};
+  bool m_workerCountHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The number of workers that are allocated to the connector.</p>
-     */
-    inline int GetWorkerCount() const { return m_workerCount; }
-    inline bool WorkerCountHasBeenSet() const { return m_workerCountHasBeenSet; }
-    inline void SetWorkerCount(int value) { m_workerCountHasBeenSet = true; m_workerCount = value; }
-    inline ProvisionedCapacityDescription& WithWorkerCount(int value) { SetWorkerCount(value); return *this;}
-    ///@}
-  private:
-
-    int m_mcuCount{0};
-    bool m_mcuCountHasBeenSet = false;
-
-    int m_workerCount{0};
-    bool m_workerCountHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace KafkaConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace KafkaConnect
+}  // namespace Aws

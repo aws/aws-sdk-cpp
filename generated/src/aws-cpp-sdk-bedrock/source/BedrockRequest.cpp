@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/bedrock/BedrockRequest.h>
 
-namespace Aws
-{
-namespace Bedrock
-{
-} // namespace Bedrock
-} // namespace Aws
+namespace Aws {
+namespace Bedrock {}  // namespace Bedrock
+}  // namespace Aws

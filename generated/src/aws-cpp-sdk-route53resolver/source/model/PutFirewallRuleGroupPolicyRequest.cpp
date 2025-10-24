@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/route53resolver/model/PutFirewallRuleGroupPolicyRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/route53resolver/model/PutFirewallRuleGroupPolicyRequest.h>
 
 #include <utility>
 
@@ -12,33 +12,22 @@ using namespace Aws::Route53Resolver::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutFirewallRuleGroupPolicyRequest::SerializePayload() const
-{
+Aws::String PutFirewallRuleGroupPolicyRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_firewallRuleGroupPolicyHasBeenSet)
-  {
-   payload.WithString("FirewallRuleGroupPolicy", m_firewallRuleGroupPolicy);
-
+  if (m_firewallRuleGroupPolicyHasBeenSet) {
+    payload.WithString("FirewallRuleGroupPolicy", m_firewallRuleGroupPolicy);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection PutFirewallRuleGroupPolicyRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection PutFirewallRuleGroupPolicyRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Route53Resolver.PutFirewallRuleGroupPolicy"));
   return headers;
-
 }
-
-
-
-

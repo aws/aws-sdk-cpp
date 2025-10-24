@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotanalytics/model/LateDataRuleConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotanalytics/model/LateDataRuleConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTAnalytics
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTAnalytics {
+namespace Model {
 
-LateDataRuleConfiguration::LateDataRuleConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LateDataRuleConfiguration::LateDataRuleConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-LateDataRuleConfiguration& LateDataRuleConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("deltaTimeSessionWindowConfiguration"))
-  {
+LateDataRuleConfiguration& LateDataRuleConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("deltaTimeSessionWindowConfiguration")) {
     m_deltaTimeSessionWindowConfiguration = jsonValue.GetObject("deltaTimeSessionWindowConfiguration");
     m_deltaTimeSessionWindowConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LateDataRuleConfiguration::Jsonize() const
-{
+JsonValue LateDataRuleConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_deltaTimeSessionWindowConfigurationHasBeenSet)
-  {
-   payload.WithObject("deltaTimeSessionWindowConfiguration", m_deltaTimeSessionWindowConfiguration.Jsonize());
-
+  if (m_deltaTimeSessionWindowConfigurationHasBeenSet) {
+    payload.WithObject("deltaTimeSessionWindowConfiguration", m_deltaTimeSessionWindowConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTAnalytics
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTAnalytics
+}  // namespace Aws

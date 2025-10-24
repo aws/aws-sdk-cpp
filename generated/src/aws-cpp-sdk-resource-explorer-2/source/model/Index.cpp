@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/resource-explorer-2/model/Index.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/resource-explorer-2/model/Index.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ResourceExplorer2
-{
-namespace Model
-{
+namespace Aws {
+namespace ResourceExplorer2 {
+namespace Model {
 
-Index::Index(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Index::Index(JsonView jsonValue) { *this = jsonValue; }
 
-Index& Index::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Region"))
-  {
+Index& Index::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Region")) {
     m_region = jsonValue.GetString("Region");
     m_regionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Arn"))
-  {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = IndexTypeMapper::GetIndexTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Index::Jsonize() const
-{
+JsonValue Index::Jsonize() const {
   JsonValue payload;
 
-  if(m_regionHasBeenSet)
-  {
-   payload.WithString("Region", m_region);
-
+  if (m_regionHasBeenSet) {
+    payload.WithString("Region", m_region);
   }
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", IndexTypeMapper::GetNameForIndexType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", IndexTypeMapper::GetNameForIndexType(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ResourceExplorer2
-} // namespace Aws
+}  // namespace Model
+}  // namespace ResourceExplorer2
+}  // namespace Aws

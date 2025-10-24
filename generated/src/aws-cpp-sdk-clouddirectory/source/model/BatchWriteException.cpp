@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudDirectory
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudDirectory {
+namespace Model {
 
-BatchWriteException::BatchWriteException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchWriteException::BatchWriteException(JsonView jsonValue) { *this = jsonValue; }
 
-BatchWriteException& BatchWriteException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Index"))
-  {
+BatchWriteException& BatchWriteException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Index")) {
     m_index = jsonValue.GetInteger("Index");
     m_indexHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = BatchWriteExceptionTypeMapper::GetBatchWriteExceptionTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Message"))
-  {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BatchWriteException::Jsonize() const
-{
+JsonValue BatchWriteException::Jsonize() const {
   JsonValue payload;
 
-  if(m_indexHasBeenSet)
-  {
-   payload.WithInteger("Index", m_index);
-
+  if (m_indexHasBeenSet) {
+    payload.WithInteger("Index", m_index);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", BatchWriteExceptionTypeMapper::GetNameForBatchWriteExceptionType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", BatchWriteExceptionTypeMapper::GetNameForBatchWriteExceptionType(m_type));
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudDirectory
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudDirectory
+}  // namespace Aws

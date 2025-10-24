@@ -4,32 +4,27 @@
  */
 
 #pragma once
-#include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticmapreduce/EMR_EXPORTS.h>
 
-namespace Aws
-{
-namespace EMR
-{
-namespace Model
-{
-  enum class OnClusterAppUIType
-  {
-    NOT_SET,
-    SparkHistoryServer,
-    YarnTimelineService,
-    TezUI,
-    ApplicationMaster,
-    JobHistoryServer,
-    ResourceManager
-  };
+namespace Aws {
+namespace EMR {
+namespace Model {
+enum class OnClusterAppUIType {
+  NOT_SET,
+  SparkHistoryServer,
+  YarnTimelineService,
+  TezUI,
+  ApplicationMaster,
+  JobHistoryServer,
+  ResourceManager
+};
 
-namespace OnClusterAppUITypeMapper
-{
+namespace OnClusterAppUITypeMapper {
 AWS_EMR_API OnClusterAppUIType GetOnClusterAppUITypeForName(const Aws::String& name);
 
 AWS_EMR_API Aws::String GetNameForOnClusterAppUIType(OnClusterAppUIType value);
-} // namespace OnClusterAppUITypeMapper
-} // namespace Model
-} // namespace EMR
-} // namespace Aws
+}  // namespace OnClusterAppUITypeMapper
+}  // namespace Model
+}  // namespace EMR
+}  // namespace Aws

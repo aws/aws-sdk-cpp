@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 
-namespace Aws
-{
-namespace OpenSearchServerless
-{
-namespace Model
-{
-  enum class CollectionType
-  {
-    NOT_SET,
-    SEARCH,
-    TIMESERIES,
-    VECTORSEARCH
-  };
+namespace Aws {
+namespace OpenSearchServerless {
+namespace Model {
+enum class CollectionType { NOT_SET, SEARCH, TIMESERIES, VECTORSEARCH };
 
-namespace CollectionTypeMapper
-{
+namespace CollectionTypeMapper {
 AWS_OPENSEARCHSERVERLESS_API CollectionType GetCollectionTypeForName(const Aws::String& name);
 
 AWS_OPENSEARCHSERVERLESS_API Aws::String GetNameForCollectionType(CollectionType value);
-} // namespace CollectionTypeMapper
-} // namespace Model
-} // namespace OpenSearchServerless
-} // namespace Aws
+}  // namespace CollectionTypeMapper
+}  // namespace Model
+}  // namespace OpenSearchServerless
+}  // namespace Aws

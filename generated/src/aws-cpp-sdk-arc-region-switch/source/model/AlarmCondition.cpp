@@ -4,69 +4,55 @@
  */
 
 #include <aws/arc-region-switch/model/AlarmCondition.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace ARCRegionswitch {
+namespace Model {
+namespace AlarmConditionMapper {
 
-namespace Aws
-{
-  namespace ARCRegionswitch
-  {
-    namespace Model
-    {
-      namespace AlarmConditionMapper
-      {
+static const int red_HASH = HashingUtils::HashString("red");
+static const int green_HASH = HashingUtils::HashString("green");
 
-        static const int red_HASH = HashingUtils::HashString("red");
-        static const int green_HASH = HashingUtils::HashString("green");
+AlarmCondition GetAlarmConditionForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == red_HASH) {
+    return AlarmCondition::red;
+  } else if (hashCode == green_HASH) {
+    return AlarmCondition::green;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<AlarmCondition>(hashCode);
+  }
 
+  return AlarmCondition::NOT_SET;
+}
 
-        AlarmCondition GetAlarmConditionForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == red_HASH)
-          {
-            return AlarmCondition::red;
-          }
-          else if (hashCode == green_HASH)
-          {
-            return AlarmCondition::green;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<AlarmCondition>(hashCode);
-          }
+Aws::String GetNameForAlarmCondition(AlarmCondition enumValue) {
+  switch (enumValue) {
+    case AlarmCondition::NOT_SET:
+      return {};
+    case AlarmCondition::red:
+      return "red";
+    case AlarmCondition::green:
+      return "green";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return AlarmCondition::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForAlarmCondition(AlarmCondition enumValue)
-        {
-          switch(enumValue)
-          {
-          case AlarmCondition::NOT_SET:
-            return {};
-          case AlarmCondition::red:
-            return "red";
-          case AlarmCondition::green:
-            return "green";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace AlarmConditionMapper
-    } // namespace Model
-  } // namespace ARCRegionswitch
-} // namespace Aws
+}  // namespace AlarmConditionMapper
+}  // namespace Model
+}  // namespace ARCRegionswitch
+}  // namespace Aws

@@ -4,74 +4,79 @@
  */
 
 #pragma once
-#include <aws/discovery/ApplicationDiscoveryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/discovery/ApplicationDiscoveryService_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace ApplicationDiscoveryService
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace ApplicationDiscoveryService {
+namespace Model {
 
+/**
+ * <p> An object representing the agent or data collector to be deleted along with
+ * the optional configurations for error handling. </p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DeleteAgent">AWS
+ * API Reference</a></p>
+ */
+class DeleteAgent {
+ public:
+  AWS_APPLICATIONDISCOVERYSERVICE_API DeleteAgent() = default;
+  AWS_APPLICATIONDISCOVERYSERVICE_API DeleteAgent(Aws::Utils::Json::JsonView jsonValue);
+  AWS_APPLICATIONDISCOVERYSERVICE_API DeleteAgent& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p> An object representing the agent or data collector to be deleted along with
-   * the optional configurations for error handling. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DeleteAgent">AWS
-   * API Reference</a></p>
+   * <p> The ID of the agent or data collector to delete. </p>
    */
-  class DeleteAgent
-  {
-  public:
-    AWS_APPLICATIONDISCOVERYSERVICE_API DeleteAgent() = default;
-    AWS_APPLICATIONDISCOVERYSERVICE_API DeleteAgent(Aws::Utils::Json::JsonView jsonValue);
-    AWS_APPLICATIONDISCOVERYSERVICE_API DeleteAgent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetAgentId() const { return m_agentId; }
+  inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
+  template <typename AgentIdT = Aws::String>
+  void SetAgentId(AgentIdT&& value) {
+    m_agentIdHasBeenSet = true;
+    m_agentId = std::forward<AgentIdT>(value);
+  }
+  template <typename AgentIdT = Aws::String>
+  DeleteAgent& WithAgentId(AgentIdT&& value) {
+    SetAgentId(std::forward<AgentIdT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p> Optional flag used to force delete an agent or data collector. It is needed
+   * to delete any agent in HEALTHY/UNHEALTHY/RUNNING status. Note that deleting an
+   * agent that is actively reporting health causes it to be re-registered with a
+   * different agent ID after data collector re-connects with Amazon Web Services.
+   * </p>
+   */
+  inline bool GetForce() const { return m_force; }
+  inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
+  inline void SetForce(bool value) {
+    m_forceHasBeenSet = true;
+    m_force = value;
+  }
+  inline DeleteAgent& WithForce(bool value) {
+    SetForce(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_agentId;
+  bool m_agentIdHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p> The ID of the agent or data collector to delete. </p>
-     */
-    inline const Aws::String& GetAgentId() const { return m_agentId; }
-    inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
-    template<typename AgentIdT = Aws::String>
-    void SetAgentId(AgentIdT&& value) { m_agentIdHasBeenSet = true; m_agentId = std::forward<AgentIdT>(value); }
-    template<typename AgentIdT = Aws::String>
-    DeleteAgent& WithAgentId(AgentIdT&& value) { SetAgentId(std::forward<AgentIdT>(value)); return *this;}
-    ///@}
+  bool m_force{false};
+  bool m_forceHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p> Optional flag used to force delete an agent or data collector. It is needed
-     * to delete any agent in HEALTHY/UNHEALTHY/RUNNING status. Note that deleting an
-     * agent that is actively reporting health causes it to be re-registered with a
-     * different agent ID after data collector re-connects with Amazon Web Services.
-     * </p>
-     */
-    inline bool GetForce() const { return m_force; }
-    inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
-    inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
-    inline DeleteAgent& WithForce(bool value) { SetForce(value); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_agentId;
-    bool m_agentIdHasBeenSet = false;
-
-    bool m_force{false};
-    bool m_forceHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace ApplicationDiscoveryService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApplicationDiscoveryService
+}  // namespace Aws

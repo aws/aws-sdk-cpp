@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/migrationhuborchestrator/MigrationHubOrchestrator_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/migrationhuborchestrator/MigrationHubOrchestratorEndpointRules.h>
+#include <aws/migrationhuborchestrator/MigrationHubOrchestrator_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace MigrationHubOrchestrator
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace MigrationHubOrchestrator {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using MigrationHubOrchestratorClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -35,27 +30,27 @@ using MigrationHubOrchestratorBuiltInParameters = Aws::Endpoint::BuiltInParamete
  * The SDK must use service-specific type for each service per specification.
  */
 using MigrationHubOrchestratorEndpointProviderBase =
-    EndpointProviderBase<MigrationHubOrchestratorClientConfiguration, MigrationHubOrchestratorBuiltInParameters, MigrationHubOrchestratorClientContextParameters>;
+    EndpointProviderBase<MigrationHubOrchestratorClientConfiguration, MigrationHubOrchestratorBuiltInParameters,
+                         MigrationHubOrchestratorClientContextParameters>;
 
 using MigrationHubOrchestratorDefaultEpProviderBase =
-    DefaultEndpointProvider<MigrationHubOrchestratorClientConfiguration, MigrationHubOrchestratorBuiltInParameters, MigrationHubOrchestratorClientContextParameters>;
+    DefaultEndpointProvider<MigrationHubOrchestratorClientConfiguration, MigrationHubOrchestratorBuiltInParameters,
+                            MigrationHubOrchestratorClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_MIGRATIONHUBORCHESTRATOR_API MigrationHubOrchestratorEndpointProvider : public MigrationHubOrchestratorDefaultEpProviderBase
-{
-public:
-    using MigrationHubOrchestratorResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_MIGRATIONHUBORCHESTRATOR_API MigrationHubOrchestratorEndpointProvider : public MigrationHubOrchestratorDefaultEpProviderBase {
+ public:
+  using MigrationHubOrchestratorResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    MigrationHubOrchestratorEndpointProvider()
-      : MigrationHubOrchestratorDefaultEpProviderBase(Aws::MigrationHubOrchestrator::MigrationHubOrchestratorEndpointRules::GetRulesBlob(), Aws::MigrationHubOrchestrator::MigrationHubOrchestratorEndpointRules::RulesBlobSize)
-    {}
+  MigrationHubOrchestratorEndpointProvider()
+      : MigrationHubOrchestratorDefaultEpProviderBase(Aws::MigrationHubOrchestrator::MigrationHubOrchestratorEndpointRules::GetRulesBlob(),
+                                                      Aws::MigrationHubOrchestrator::MigrationHubOrchestratorEndpointRules::RulesBlobSize) {
+  }
 
-    ~MigrationHubOrchestratorEndpointProvider()
-    {
-    }
+  ~MigrationHubOrchestratorEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace MigrationHubOrchestrator
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace MigrationHubOrchestrator
+}  // namespace Aws

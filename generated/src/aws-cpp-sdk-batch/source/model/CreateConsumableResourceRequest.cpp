@@ -12,42 +12,28 @@ using namespace Aws::Batch::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateConsumableResourceRequest::SerializePayload() const
-{
+Aws::String CreateConsumableResourceRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_consumableResourceNameHasBeenSet)
-  {
-   payload.WithString("consumableResourceName", m_consumableResourceName);
-
+  if (m_consumableResourceNameHasBeenSet) {
+    payload.WithString("consumableResourceName", m_consumableResourceName);
   }
 
-  if(m_totalQuantityHasBeenSet)
-  {
-   payload.WithInt64("totalQuantity", m_totalQuantity);
-
+  if (m_totalQuantityHasBeenSet) {
+    payload.WithInt64("totalQuantity", m_totalQuantity);
   }
 
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("resourceType", m_resourceType);
-
+  if (m_resourceTypeHasBeenSet) {
+    payload.WithString("resourceType", m_resourceType);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

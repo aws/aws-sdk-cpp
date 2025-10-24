@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/customer-profiles/model/BatchGetCalculatedAttributeForProfileError.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/customer-profiles/model/BatchGetCalculatedAttributeForProfileError.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CustomerProfiles
-{
-namespace Model
-{
+namespace Aws {
+namespace CustomerProfiles {
+namespace Model {
 
-BatchGetCalculatedAttributeForProfileError::BatchGetCalculatedAttributeForProfileError(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchGetCalculatedAttributeForProfileError::BatchGetCalculatedAttributeForProfileError(JsonView jsonValue) { *this = jsonValue; }
 
-BatchGetCalculatedAttributeForProfileError& BatchGetCalculatedAttributeForProfileError::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Code"))
-  {
+BatchGetCalculatedAttributeForProfileError& BatchGetCalculatedAttributeForProfileError::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Code")) {
     m_code = jsonValue.GetString("Code");
     m_codeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Message"))
-  {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProfileId"))
-  {
+  if (jsonValue.ValueExists("ProfileId")) {
     m_profileId = jsonValue.GetString("ProfileId");
     m_profileIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BatchGetCalculatedAttributeForProfileError::Jsonize() const
-{
+JsonValue BatchGetCalculatedAttributeForProfileError::Jsonize() const {
   JsonValue payload;
 
-  if(m_codeHasBeenSet)
-  {
-   payload.WithString("Code", m_code);
-
+  if (m_codeHasBeenSet) {
+    payload.WithString("Code", m_code);
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
-  if(m_profileIdHasBeenSet)
-  {
-   payload.WithString("ProfileId", m_profileId);
-
+  if (m_profileIdHasBeenSet) {
+    payload.WithString("ProfileId", m_profileId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CustomerProfiles
-} // namespace Aws
+}  // namespace Model
+}  // namespace CustomerProfiles
+}  // namespace Aws

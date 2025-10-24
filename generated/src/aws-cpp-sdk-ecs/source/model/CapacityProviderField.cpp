@@ -3,63 +3,51 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ecs/model/CapacityProviderField.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/ecs/model/CapacityProviderField.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace ECS {
+namespace Model {
+namespace CapacityProviderFieldMapper {
 
-namespace Aws
-{
-  namespace ECS
-  {
-    namespace Model
-    {
-      namespace CapacityProviderFieldMapper
-      {
+static const int TAGS_HASH = HashingUtils::HashString("TAGS");
 
-        static const int TAGS_HASH = HashingUtils::HashString("TAGS");
+CapacityProviderField GetCapacityProviderFieldForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == TAGS_HASH) {
+    return CapacityProviderField::TAGS;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<CapacityProviderField>(hashCode);
+  }
 
+  return CapacityProviderField::NOT_SET;
+}
 
-        CapacityProviderField GetCapacityProviderFieldForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == TAGS_HASH)
-          {
-            return CapacityProviderField::TAGS;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<CapacityProviderField>(hashCode);
-          }
+Aws::String GetNameForCapacityProviderField(CapacityProviderField enumValue) {
+  switch (enumValue) {
+    case CapacityProviderField::NOT_SET:
+      return {};
+    case CapacityProviderField::TAGS:
+      return "TAGS";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return CapacityProviderField::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForCapacityProviderField(CapacityProviderField enumValue)
-        {
-          switch(enumValue)
-          {
-          case CapacityProviderField::NOT_SET:
-            return {};
-          case CapacityProviderField::TAGS:
-            return "TAGS";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace CapacityProviderFieldMapper
-    } // namespace Model
-  } // namespace ECS
-} // namespace Aws
+}  // namespace CapacityProviderFieldMapper
+}  // namespace Model
+}  // namespace ECS
+}  // namespace Aws

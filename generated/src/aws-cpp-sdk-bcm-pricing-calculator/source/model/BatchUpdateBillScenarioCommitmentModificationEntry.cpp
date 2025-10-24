@@ -11,52 +11,40 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BCMPricingCalculator
-{
-namespace Model
-{
+namespace Aws {
+namespace BCMPricingCalculator {
+namespace Model {
 
-BatchUpdateBillScenarioCommitmentModificationEntry::BatchUpdateBillScenarioCommitmentModificationEntry(JsonView jsonValue)
-{
+BatchUpdateBillScenarioCommitmentModificationEntry::BatchUpdateBillScenarioCommitmentModificationEntry(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-BatchUpdateBillScenarioCommitmentModificationEntry& BatchUpdateBillScenarioCommitmentModificationEntry::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("id"))
-  {
+BatchUpdateBillScenarioCommitmentModificationEntry& BatchUpdateBillScenarioCommitmentModificationEntry::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("group"))
-  {
+  if (jsonValue.ValueExists("group")) {
     m_group = jsonValue.GetString("group");
     m_groupHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BatchUpdateBillScenarioCommitmentModificationEntry::Jsonize() const
-{
+JsonValue BatchUpdateBillScenarioCommitmentModificationEntry::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_groupHasBeenSet)
-  {
-   payload.WithString("group", m_group);
-
+  if (m_groupHasBeenSet) {
+    payload.WithString("group", m_group);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BCMPricingCalculator
-} // namespace Aws
+}  // namespace Model
+}  // namespace BCMPricingCalculator
+}  // namespace Aws

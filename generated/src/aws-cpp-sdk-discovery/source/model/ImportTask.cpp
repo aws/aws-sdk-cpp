@@ -3,187 +3,142 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/discovery/model/ImportTask.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/discovery/model/ImportTask.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApplicationDiscoveryService
-{
-namespace Model
-{
+namespace Aws {
+namespace ApplicationDiscoveryService {
+namespace Model {
 
-ImportTask::ImportTask(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ImportTask::ImportTask(JsonView jsonValue) { *this = jsonValue; }
 
-ImportTask& ImportTask::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("importTaskId"))
-  {
+ImportTask& ImportTask::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("importTaskId")) {
     m_importTaskId = jsonValue.GetString("importTaskId");
     m_importTaskIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("clientRequestToken"))
-  {
+  if (jsonValue.ValueExists("clientRequestToken")) {
     m_clientRequestToken = jsonValue.GetString("clientRequestToken");
     m_clientRequestTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("importUrl"))
-  {
+  if (jsonValue.ValueExists("importUrl")) {
     m_importUrl = jsonValue.GetString("importUrl");
     m_importUrlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = ImportStatusMapper::GetImportStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("importRequestTime"))
-  {
+  if (jsonValue.ValueExists("importRequestTime")) {
     m_importRequestTime = jsonValue.GetDouble("importRequestTime");
     m_importRequestTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("importCompletionTime"))
-  {
+  if (jsonValue.ValueExists("importCompletionTime")) {
     m_importCompletionTime = jsonValue.GetDouble("importCompletionTime");
     m_importCompletionTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("importDeletedTime"))
-  {
+  if (jsonValue.ValueExists("importDeletedTime")) {
     m_importDeletedTime = jsonValue.GetDouble("importDeletedTime");
     m_importDeletedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("fileClassification"))
-  {
+  if (jsonValue.ValueExists("fileClassification")) {
     m_fileClassification = FileClassificationMapper::GetFileClassificationForName(jsonValue.GetString("fileClassification"));
     m_fileClassificationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("serverImportSuccess"))
-  {
+  if (jsonValue.ValueExists("serverImportSuccess")) {
     m_serverImportSuccess = jsonValue.GetInteger("serverImportSuccess");
     m_serverImportSuccessHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("serverImportFailure"))
-  {
+  if (jsonValue.ValueExists("serverImportFailure")) {
     m_serverImportFailure = jsonValue.GetInteger("serverImportFailure");
     m_serverImportFailureHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("applicationImportSuccess"))
-  {
+  if (jsonValue.ValueExists("applicationImportSuccess")) {
     m_applicationImportSuccess = jsonValue.GetInteger("applicationImportSuccess");
     m_applicationImportSuccessHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("applicationImportFailure"))
-  {
+  if (jsonValue.ValueExists("applicationImportFailure")) {
     m_applicationImportFailure = jsonValue.GetInteger("applicationImportFailure");
     m_applicationImportFailureHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("errorsAndFailedEntriesZip"))
-  {
+  if (jsonValue.ValueExists("errorsAndFailedEntriesZip")) {
     m_errorsAndFailedEntriesZip = jsonValue.GetString("errorsAndFailedEntriesZip");
     m_errorsAndFailedEntriesZipHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ImportTask::Jsonize() const
-{
+JsonValue ImportTask::Jsonize() const {
   JsonValue payload;
 
-  if(m_importTaskIdHasBeenSet)
-  {
-   payload.WithString("importTaskId", m_importTaskId);
-
+  if (m_importTaskIdHasBeenSet) {
+    payload.WithString("importTaskId", m_importTaskId);
   }
 
-  if(m_clientRequestTokenHasBeenSet)
-  {
-   payload.WithString("clientRequestToken", m_clientRequestToken);
-
+  if (m_clientRequestTokenHasBeenSet) {
+    payload.WithString("clientRequestToken", m_clientRequestToken);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_importUrlHasBeenSet)
-  {
-   payload.WithString("importUrl", m_importUrl);
-
+  if (m_importUrlHasBeenSet) {
+    payload.WithString("importUrl", m_importUrl);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", ImportStatusMapper::GetNameForImportStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", ImportStatusMapper::GetNameForImportStatus(m_status));
   }
 
-  if(m_importRequestTimeHasBeenSet)
-  {
-   payload.WithDouble("importRequestTime", m_importRequestTime.SecondsWithMSPrecision());
+  if (m_importRequestTimeHasBeenSet) {
+    payload.WithDouble("importRequestTime", m_importRequestTime.SecondsWithMSPrecision());
   }
 
-  if(m_importCompletionTimeHasBeenSet)
-  {
-   payload.WithDouble("importCompletionTime", m_importCompletionTime.SecondsWithMSPrecision());
+  if (m_importCompletionTimeHasBeenSet) {
+    payload.WithDouble("importCompletionTime", m_importCompletionTime.SecondsWithMSPrecision());
   }
 
-  if(m_importDeletedTimeHasBeenSet)
-  {
-   payload.WithDouble("importDeletedTime", m_importDeletedTime.SecondsWithMSPrecision());
+  if (m_importDeletedTimeHasBeenSet) {
+    payload.WithDouble("importDeletedTime", m_importDeletedTime.SecondsWithMSPrecision());
   }
 
-  if(m_fileClassificationHasBeenSet)
-  {
-   payload.WithString("fileClassification", FileClassificationMapper::GetNameForFileClassification(m_fileClassification));
+  if (m_fileClassificationHasBeenSet) {
+    payload.WithString("fileClassification", FileClassificationMapper::GetNameForFileClassification(m_fileClassification));
   }
 
-  if(m_serverImportSuccessHasBeenSet)
-  {
-   payload.WithInteger("serverImportSuccess", m_serverImportSuccess);
-
+  if (m_serverImportSuccessHasBeenSet) {
+    payload.WithInteger("serverImportSuccess", m_serverImportSuccess);
   }
 
-  if(m_serverImportFailureHasBeenSet)
-  {
-   payload.WithInteger("serverImportFailure", m_serverImportFailure);
-
+  if (m_serverImportFailureHasBeenSet) {
+    payload.WithInteger("serverImportFailure", m_serverImportFailure);
   }
 
-  if(m_applicationImportSuccessHasBeenSet)
-  {
-   payload.WithInteger("applicationImportSuccess", m_applicationImportSuccess);
-
+  if (m_applicationImportSuccessHasBeenSet) {
+    payload.WithInteger("applicationImportSuccess", m_applicationImportSuccess);
   }
 
-  if(m_applicationImportFailureHasBeenSet)
-  {
-   payload.WithInteger("applicationImportFailure", m_applicationImportFailure);
-
+  if (m_applicationImportFailureHasBeenSet) {
+    payload.WithInteger("applicationImportFailure", m_applicationImportFailure);
   }
 
-  if(m_errorsAndFailedEntriesZipHasBeenSet)
-  {
-   payload.WithString("errorsAndFailedEntriesZip", m_errorsAndFailedEntriesZip);
-
+  if (m_errorsAndFailedEntriesZipHasBeenSet) {
+    payload.WithString("errorsAndFailedEntriesZip", m_errorsAndFailedEntriesZip);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApplicationDiscoveryService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApplicationDiscoveryService
+}  // namespace Aws

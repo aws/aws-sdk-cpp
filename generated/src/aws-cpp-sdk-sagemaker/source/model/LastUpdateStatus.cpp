@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/LastUpdateStatus.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/LastUpdateStatus.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-LastUpdateStatus::LastUpdateStatus(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LastUpdateStatus::LastUpdateStatus(JsonView jsonValue) { *this = jsonValue; }
 
-LastUpdateStatus& LastUpdateStatus::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Status"))
-  {
+LastUpdateStatus& LastUpdateStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Status")) {
     m_status = LastUpdateStatusValueMapper::GetLastUpdateStatusValueForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FailureReason"))
-  {
+  if (jsonValue.ValueExists("FailureReason")) {
     m_failureReason = jsonValue.GetString("FailureReason");
     m_failureReasonHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LastUpdateStatus::Jsonize() const
-{
+JsonValue LastUpdateStatus::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", LastUpdateStatusValueMapper::GetNameForLastUpdateStatusValue(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", LastUpdateStatusValueMapper::GetNameForLastUpdateStatusValue(m_status));
   }
 
-  if(m_failureReasonHasBeenSet)
-  {
-   payload.WithString("FailureReason", m_failureReason);
-
+  if (m_failureReasonHasBeenSet) {
+    payload.WithString("FailureReason", m_failureReason);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

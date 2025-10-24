@@ -5,12 +5,8 @@
 
 #include <aws/sagemaker/SageMakerEndpointProvider.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace SageMaker
-} // namespace Aws
+namespace Aws {
+namespace SageMaker {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace SageMaker
+}  // namespace Aws

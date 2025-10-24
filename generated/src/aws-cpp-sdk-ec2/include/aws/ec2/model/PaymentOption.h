@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class PaymentOption
-  {
-    NOT_SET,
-    AllUpfront,
-    PartialUpfront,
-    NoUpfront
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class PaymentOption { NOT_SET, AllUpfront, PartialUpfront, NoUpfront };
 
-namespace PaymentOptionMapper
-{
+namespace PaymentOptionMapper {
 AWS_EC2_API PaymentOption GetPaymentOptionForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForPaymentOption(PaymentOption value);
-} // namespace PaymentOptionMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace PaymentOptionMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

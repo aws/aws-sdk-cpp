@@ -4,41 +4,36 @@
  */
 
 #pragma once
-#include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fsx/FSx_EXPORTS.h>
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
-  enum class AdministrativeActionType
-  {
-    NOT_SET,
-    FILE_SYSTEM_UPDATE,
-    STORAGE_OPTIMIZATION,
-    FILE_SYSTEM_ALIAS_ASSOCIATION,
-    FILE_SYSTEM_ALIAS_DISASSOCIATION,
-    VOLUME_UPDATE,
-    SNAPSHOT_UPDATE,
-    RELEASE_NFS_V3_LOCKS,
-    VOLUME_RESTORE,
-    THROUGHPUT_OPTIMIZATION,
-    IOPS_OPTIMIZATION,
-    STORAGE_TYPE_OPTIMIZATION,
-    MISCONFIGURED_STATE_RECOVERY,
-    VOLUME_UPDATE_WITH_SNAPSHOT,
-    VOLUME_INITIALIZE_WITH_SNAPSHOT,
-    DOWNLOAD_DATA_FROM_BACKUP
-  };
+namespace Aws {
+namespace FSx {
+namespace Model {
+enum class AdministrativeActionType {
+  NOT_SET,
+  FILE_SYSTEM_UPDATE,
+  STORAGE_OPTIMIZATION,
+  FILE_SYSTEM_ALIAS_ASSOCIATION,
+  FILE_SYSTEM_ALIAS_DISASSOCIATION,
+  VOLUME_UPDATE,
+  SNAPSHOT_UPDATE,
+  RELEASE_NFS_V3_LOCKS,
+  VOLUME_RESTORE,
+  THROUGHPUT_OPTIMIZATION,
+  IOPS_OPTIMIZATION,
+  STORAGE_TYPE_OPTIMIZATION,
+  MISCONFIGURED_STATE_RECOVERY,
+  VOLUME_UPDATE_WITH_SNAPSHOT,
+  VOLUME_INITIALIZE_WITH_SNAPSHOT,
+  DOWNLOAD_DATA_FROM_BACKUP
+};
 
-namespace AdministrativeActionTypeMapper
-{
+namespace AdministrativeActionTypeMapper {
 AWS_FSX_API AdministrativeActionType GetAdministrativeActionTypeForName(const Aws::String& name);
 
 AWS_FSX_API Aws::String GetNameForAdministrativeActionType(AdministrativeActionType value);
-} // namespace AdministrativeActionTypeMapper
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace AdministrativeActionTypeMapper
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

@@ -4,8 +4,8 @@
  */
 
 #include <aws/chime/model/ListSupportedPhoneNumberCountriesRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -15,22 +15,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String ListSupportedPhoneNumberCountriesRequest::SerializePayload() const
-{
-  return {};
+Aws::String ListSupportedPhoneNumberCountriesRequest::SerializePayload() const { return {}; }
+
+void ListSupportedPhoneNumberCountriesRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_productTypeHasBeenSet) {
+    ss << PhoneNumberProductTypeMapper::GetNameForPhoneNumberProductType(m_productType);
+    uri.AddQueryStringParameter("product-type", ss.str());
+    ss.str("");
+  }
 }
-
-void ListSupportedPhoneNumberCountriesRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_productTypeHasBeenSet)
-    {
-      ss << PhoneNumberProductTypeMapper::GetNameForPhoneNumberProductType(m_productType);
-      uri.AddQueryStringParameter("product-type", ss.str());
-      ss.str("");
-    }
-
-}
-
-
-

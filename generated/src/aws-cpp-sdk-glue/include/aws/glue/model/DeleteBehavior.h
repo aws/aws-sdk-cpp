@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glue/Glue_EXPORTS.h>
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
-  enum class DeleteBehavior
-  {
-    NOT_SET,
-    LOG,
-    DELETE_FROM_DATABASE,
-    DEPRECATE_IN_DATABASE
-  };
+namespace Aws {
+namespace Glue {
+namespace Model {
+enum class DeleteBehavior { NOT_SET, LOG, DELETE_FROM_DATABASE, DEPRECATE_IN_DATABASE };
 
-namespace DeleteBehaviorMapper
-{
+namespace DeleteBehaviorMapper {
 AWS_GLUE_API DeleteBehavior GetDeleteBehaviorForName(const Aws::String& name);
 
 AWS_GLUE_API Aws::String GetNameForDeleteBehavior(DeleteBehavior value);
-} // namespace DeleteBehaviorMapper
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace DeleteBehaviorMapper
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

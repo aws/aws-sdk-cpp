@@ -12,30 +12,20 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String BatchAssociateAnalyticsDataSetRequest::SerializePayload() const
-{
+Aws::String BatchAssociateAnalyticsDataSetRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_dataSetIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> dataSetIdsJsonList(m_dataSetIds.size());
-   for(unsigned dataSetIdsIndex = 0; dataSetIdsIndex < dataSetIdsJsonList.GetLength(); ++dataSetIdsIndex)
-   {
-     dataSetIdsJsonList[dataSetIdsIndex].AsString(m_dataSetIds[dataSetIdsIndex]);
-   }
-   payload.WithArray("DataSetIds", std::move(dataSetIdsJsonList));
-
+  if (m_dataSetIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> dataSetIdsJsonList(m_dataSetIds.size());
+    for (unsigned dataSetIdsIndex = 0; dataSetIdsIndex < dataSetIdsJsonList.GetLength(); ++dataSetIdsIndex) {
+      dataSetIdsJsonList[dataSetIdsIndex].AsString(m_dataSetIds[dataSetIdsIndex]);
+    }
+    payload.WithArray("DataSetIds", std::move(dataSetIdsJsonList));
   }
 
-  if(m_targetAccountIdHasBeenSet)
-  {
-   payload.WithString("TargetAccountId", m_targetAccountId);
-
+  if (m_targetAccountIdHasBeenSet) {
+    payload.WithString("TargetAccountId", m_targetAccountId);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -5,12 +5,8 @@
 
 #include <aws/signer/SignerEndpointProvider.h>
 
-namespace Aws
-{
-namespace signer
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace signer
-} // namespace Aws
+namespace Aws {
+namespace signer {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace signer
+}  // namespace Aws

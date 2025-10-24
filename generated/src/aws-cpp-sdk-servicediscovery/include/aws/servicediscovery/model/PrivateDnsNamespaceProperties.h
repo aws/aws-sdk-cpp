@@ -6,54 +6,53 @@
 #pragma once
 #include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
 #include <aws/servicediscovery/model/PrivateDnsPropertiesMutable.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace ServiceDiscovery
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace ServiceDiscovery {
+namespace Model {
 
+/**
+ * <p>DNS properties for the private DNS namespace.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/PrivateDnsNamespaceProperties">AWS
+ * API Reference</a></p>
+ */
+class PrivateDnsNamespaceProperties {
+ public:
+  AWS_SERVICEDISCOVERY_API PrivateDnsNamespaceProperties() = default;
+  AWS_SERVICEDISCOVERY_API PrivateDnsNamespaceProperties(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SERVICEDISCOVERY_API PrivateDnsNamespaceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>DNS properties for the private DNS namespace.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/PrivateDnsNamespaceProperties">AWS
-   * API Reference</a></p>
+   * <p>DNS properties for the private DNS namespace.</p>
    */
-  class PrivateDnsNamespaceProperties
-  {
-  public:
-    AWS_SERVICEDISCOVERY_API PrivateDnsNamespaceProperties() = default;
-    AWS_SERVICEDISCOVERY_API PrivateDnsNamespaceProperties(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SERVICEDISCOVERY_API PrivateDnsNamespaceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const PrivateDnsPropertiesMutable& GetDnsProperties() const { return m_dnsProperties; }
+  inline bool DnsPropertiesHasBeenSet() const { return m_dnsPropertiesHasBeenSet; }
+  template <typename DnsPropertiesT = PrivateDnsPropertiesMutable>
+  void SetDnsProperties(DnsPropertiesT&& value) {
+    m_dnsPropertiesHasBeenSet = true;
+    m_dnsProperties = std::forward<DnsPropertiesT>(value);
+  }
+  template <typename DnsPropertiesT = PrivateDnsPropertiesMutable>
+  PrivateDnsNamespaceProperties& WithDnsProperties(DnsPropertiesT&& value) {
+    SetDnsProperties(std::forward<DnsPropertiesT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  PrivateDnsPropertiesMutable m_dnsProperties;
+  bool m_dnsPropertiesHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>DNS properties for the private DNS namespace.</p>
-     */
-    inline const PrivateDnsPropertiesMutable& GetDnsProperties() const { return m_dnsProperties; }
-    inline bool DnsPropertiesHasBeenSet() const { return m_dnsPropertiesHasBeenSet; }
-    template<typename DnsPropertiesT = PrivateDnsPropertiesMutable>
-    void SetDnsProperties(DnsPropertiesT&& value) { m_dnsPropertiesHasBeenSet = true; m_dnsProperties = std::forward<DnsPropertiesT>(value); }
-    template<typename DnsPropertiesT = PrivateDnsPropertiesMutable>
-    PrivateDnsNamespaceProperties& WithDnsProperties(DnsPropertiesT&& value) { SetDnsProperties(std::forward<DnsPropertiesT>(value)); return *this;}
-    ///@}
-  private:
-
-    PrivateDnsPropertiesMutable m_dnsProperties;
-    bool m_dnsPropertiesHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace ServiceDiscovery
-} // namespace Aws
+}  // namespace Model
+}  // namespace ServiceDiscovery
+}  // namespace Aws

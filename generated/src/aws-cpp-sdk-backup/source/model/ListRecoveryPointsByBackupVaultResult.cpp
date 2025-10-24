@@ -4,10 +4,10 @@
  */
 
 #include <aws/backup/model/ListRecoveryPointsByBackupVaultResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,24 +17,20 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListRecoveryPointsByBackupVaultResult::ListRecoveryPointsByBackupVaultResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListRecoveryPointsByBackupVaultResult::ListRecoveryPointsByBackupVaultResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-ListRecoveryPointsByBackupVaultResult& ListRecoveryPointsByBackupVaultResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListRecoveryPointsByBackupVaultResult& ListRecoveryPointsByBackupVaultResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RecoveryPoints"))
-  {
+  if (jsonValue.ValueExists("RecoveryPoints")) {
     Aws::Utils::Array<JsonView> recoveryPointsJsonList = jsonValue.GetArray("RecoveryPoints");
-    for(unsigned recoveryPointsIndex = 0; recoveryPointsIndex < recoveryPointsJsonList.GetLength(); ++recoveryPointsIndex)
-    {
+    for (unsigned recoveryPointsIndex = 0; recoveryPointsIndex < recoveryPointsJsonList.GetLength(); ++recoveryPointsIndex) {
       m_recoveryPoints.push_back(recoveryPointsJsonList[recoveryPointsIndex].AsObject());
     }
     m_recoveryPointsHasBeenSet = true;
@@ -42,12 +38,10 @@ ListRecoveryPointsByBackupVaultResult& ListRecoveryPointsByBackupVaultResult::op
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

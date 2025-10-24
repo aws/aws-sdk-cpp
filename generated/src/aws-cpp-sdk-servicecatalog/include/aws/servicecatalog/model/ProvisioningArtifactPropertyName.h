@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 
-namespace Aws
-{
-namespace ServiceCatalog
-{
-namespace Model
-{
-  enum class ProvisioningArtifactPropertyName
-  {
-    NOT_SET,
-    Id
-  };
+namespace Aws {
+namespace ServiceCatalog {
+namespace Model {
+enum class ProvisioningArtifactPropertyName { NOT_SET, Id };
 
-namespace ProvisioningArtifactPropertyNameMapper
-{
+namespace ProvisioningArtifactPropertyNameMapper {
 AWS_SERVICECATALOG_API ProvisioningArtifactPropertyName GetProvisioningArtifactPropertyNameForName(const Aws::String& name);
 
 AWS_SERVICECATALOG_API Aws::String GetNameForProvisioningArtifactPropertyName(ProvisioningArtifactPropertyName value);
-} // namespace ProvisioningArtifactPropertyNameMapper
-} // namespace Model
-} // namespace ServiceCatalog
-} // namespace Aws
+}  // namespace ProvisioningArtifactPropertyNameMapper
+}  // namespace Model
+}  // namespace ServiceCatalog
+}  // namespace Aws

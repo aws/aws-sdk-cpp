@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kafka/model/ListClusterOperationsV2Result.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/kafka/model/ListClusterOperationsV2Result.h>
 
 #include <utility>
 
@@ -17,37 +17,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListClusterOperationsV2Result::ListClusterOperationsV2Result(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListClusterOperationsV2Result::ListClusterOperationsV2Result(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListClusterOperationsV2Result& ListClusterOperationsV2Result::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListClusterOperationsV2Result& ListClusterOperationsV2Result::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("clusterOperationInfoList"))
-  {
+  if (jsonValue.ValueExists("clusterOperationInfoList")) {
     Aws::Utils::Array<JsonView> clusterOperationInfoListJsonList = jsonValue.GetArray("clusterOperationInfoList");
-    for(unsigned clusterOperationInfoListIndex = 0; clusterOperationInfoListIndex < clusterOperationInfoListJsonList.GetLength(); ++clusterOperationInfoListIndex)
-    {
+    for (unsigned clusterOperationInfoListIndex = 0; clusterOperationInfoListIndex < clusterOperationInfoListJsonList.GetLength();
+         ++clusterOperationInfoListIndex) {
       m_clusterOperationInfoList.push_back(clusterOperationInfoListJsonList[clusterOperationInfoListIndex].AsObject());
     }
     m_clusterOperationInfoListHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

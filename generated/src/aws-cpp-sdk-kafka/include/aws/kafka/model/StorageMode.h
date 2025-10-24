@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/kafka/Kafka_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kafka/Kafka_EXPORTS.h>
 
-namespace Aws
-{
-namespace Kafka
-{
-namespace Model
-{
-  enum class StorageMode
-  {
-    NOT_SET,
-    LOCAL,
-    TIERED
-  };
+namespace Aws {
+namespace Kafka {
+namespace Model {
+enum class StorageMode { NOT_SET, LOCAL, TIERED };
 
-namespace StorageModeMapper
-{
+namespace StorageModeMapper {
 AWS_KAFKA_API StorageMode GetStorageModeForName(const Aws::String& name);
 
 AWS_KAFKA_API Aws::String GetNameForStorageMode(StorageMode value);
-} // namespace StorageModeMapper
-} // namespace Model
-} // namespace Kafka
-} // namespace Aws
+}  // namespace StorageModeMapper
+}  // namespace Model
+}  // namespace Kafka
+}  // namespace Aws

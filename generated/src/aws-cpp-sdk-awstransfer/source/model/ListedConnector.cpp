@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Transfer
-{
-namespace Model
-{
+namespace Aws {
+namespace Transfer {
+namespace Model {
 
-ListedConnector::ListedConnector(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ListedConnector::ListedConnector(JsonView jsonValue) { *this = jsonValue; }
 
-ListedConnector& ListedConnector::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Arn"))
-  {
+ListedConnector& ListedConnector::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ConnectorId"))
-  {
+  if (jsonValue.ValueExists("ConnectorId")) {
     m_connectorId = jsonValue.GetString("ConnectorId");
     m_connectorIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Url"))
-  {
+  if (jsonValue.ValueExists("Url")) {
     m_url = jsonValue.GetString("Url");
     m_urlHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ListedConnector::Jsonize() const
-{
+JsonValue ListedConnector::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_connectorIdHasBeenSet)
-  {
-   payload.WithString("ConnectorId", m_connectorId);
-
+  if (m_connectorIdHasBeenSet) {
+    payload.WithString("ConnectorId", m_connectorId);
   }
 
-  if(m_urlHasBeenSet)
-  {
-   payload.WithString("Url", m_url);
-
+  if (m_urlHasBeenSet) {
+    payload.WithString("Url", m_url);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Transfer
-} // namespace Aws
+}  // namespace Model
+}  // namespace Transfer
+}  // namespace Aws

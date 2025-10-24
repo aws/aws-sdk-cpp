@@ -7,29 +7,16 @@
 #include <aws/amp/PrometheusService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace PrometheusService
-{
-namespace Model
-{
-  enum class LoggingConfigurationStatusCode
-  {
-    NOT_SET,
-    CREATING,
-    ACTIVE,
-    UPDATING,
-    DELETING,
-    CREATION_FAILED,
-    UPDATE_FAILED
-  };
+namespace Aws {
+namespace PrometheusService {
+namespace Model {
+enum class LoggingConfigurationStatusCode { NOT_SET, CREATING, ACTIVE, UPDATING, DELETING, CREATION_FAILED, UPDATE_FAILED };
 
-namespace LoggingConfigurationStatusCodeMapper
-{
+namespace LoggingConfigurationStatusCodeMapper {
 AWS_PROMETHEUSSERVICE_API LoggingConfigurationStatusCode GetLoggingConfigurationStatusCodeForName(const Aws::String& name);
 
 AWS_PROMETHEUSSERVICE_API Aws::String GetNameForLoggingConfigurationStatusCode(LoggingConfigurationStatusCode value);
-} // namespace LoggingConfigurationStatusCodeMapper
-} // namespace Model
-} // namespace PrometheusService
-} // namespace Aws
+}  // namespace LoggingConfigurationStatusCodeMapper
+}  // namespace Model
+}  // namespace PrometheusService
+}  // namespace Aws

@@ -3,41 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancingv2/model/SslPolicy.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticloadbalancingv2/model/SslPolicy.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ElasticLoadBalancingv2
-{
-namespace Model
-{
+namespace Aws {
+namespace ElasticLoadBalancingv2 {
+namespace Model {
 
-SslPolicy::SslPolicy(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+SslPolicy::SslPolicy(const XmlNode& xmlNode) { *this = xmlNode; }
 
-SslPolicy& SslPolicy::operator =(const XmlNode& xmlNode)
-{
+SslPolicy& SslPolicy::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode sslProtocolsNode = resultNode.FirstChild("SslProtocols");
-    if(!sslProtocolsNode.IsNull())
-    {
+    if (!sslProtocolsNode.IsNull()) {
       XmlNode sslProtocolsMember = sslProtocolsNode.FirstChild("member");
       m_sslProtocolsHasBeenSet = !sslProtocolsMember.IsNull();
-      while(!sslProtocolsMember.IsNull())
-      {
+      while (!sslProtocolsMember.IsNull()) {
         m_sslProtocols.push_back(sslProtocolsMember.GetText());
         sslProtocolsMember = sslProtocolsMember.NextNode("member");
       }
@@ -45,12 +35,10 @@ SslPolicy& SslPolicy::operator =(const XmlNode& xmlNode)
       m_sslProtocolsHasBeenSet = true;
     }
     XmlNode ciphersNode = resultNode.FirstChild("Ciphers");
-    if(!ciphersNode.IsNull())
-    {
+    if (!ciphersNode.IsNull()) {
       XmlNode ciphersMember = ciphersNode.FirstChild("member");
       m_ciphersHasBeenSet = !ciphersMember.IsNull();
-      while(!ciphersMember.IsNull())
-      {
+      while (!ciphersMember.IsNull()) {
         m_ciphers.push_back(ciphersMember);
         ciphersMember = ciphersMember.NextNode("member");
       }
@@ -58,18 +46,15 @@ SslPolicy& SslPolicy::operator =(const XmlNode& xmlNode)
       m_ciphersHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("Name");
-    if(!nameNode.IsNull())
-    {
+    if (!nameNode.IsNull()) {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
     }
     XmlNode supportedLoadBalancerTypesNode = resultNode.FirstChild("SupportedLoadBalancerTypes");
-    if(!supportedLoadBalancerTypesNode.IsNull())
-    {
+    if (!supportedLoadBalancerTypesNode.IsNull()) {
       XmlNode supportedLoadBalancerTypesMember = supportedLoadBalancerTypesNode.FirstChild("member");
       m_supportedLoadBalancerTypesHasBeenSet = !supportedLoadBalancerTypesMember.IsNull();
-      while(!supportedLoadBalancerTypesMember.IsNull())
-      {
+      while (!supportedLoadBalancerTypesMember.IsNull()) {
         m_supportedLoadBalancerTypes.push_back(supportedLoadBalancerTypesMember.GetText());
         supportedLoadBalancerTypesMember = supportedLoadBalancerTypesMember.NextNode("member");
       }
@@ -81,78 +66,64 @@ SslPolicy& SslPolicy::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void SslPolicy::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_sslProtocolsHasBeenSet)
-  {
-      unsigned sslProtocolsIdx = 1;
-      for(auto& item : m_sslProtocols)
-      {
-        oStream << location << index << locationValue << ".SslProtocols.member." << sslProtocolsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
+void SslPolicy::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_sslProtocolsHasBeenSet) {
+    unsigned sslProtocolsIdx = 1;
+    for (auto& item : m_sslProtocols) {
+      oStream << location << index << locationValue << ".SslProtocols.member." << sslProtocolsIdx++ << "="
+              << StringUtils::URLEncode(item.c_str()) << "&";
+    }
   }
 
-  if(m_ciphersHasBeenSet)
-  {
-      unsigned ciphersIdx = 1;
-      for(auto& item : m_ciphers)
-      {
-        Aws::StringStream ciphersSs;
-        ciphersSs << location << index << locationValue << ".Ciphers.member." << ciphersIdx++;
-        item.OutputToStream(oStream, ciphersSs.str().c_str());
-      }
+  if (m_ciphersHasBeenSet) {
+    unsigned ciphersIdx = 1;
+    for (auto& item : m_ciphers) {
+      Aws::StringStream ciphersSs;
+      ciphersSs << location << index << locationValue << ".Ciphers.member." << ciphersIdx++;
+      item.OutputToStream(oStream, ciphersSs.str().c_str());
+    }
   }
 
-  if(m_nameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+  if (m_nameHasBeenSet) {
+    oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
 
-  if(m_supportedLoadBalancerTypesHasBeenSet)
-  {
-      unsigned supportedLoadBalancerTypesIdx = 1;
-      for(auto& item : m_supportedLoadBalancerTypes)
-      {
-        oStream << location << index << locationValue << ".SupportedLoadBalancerTypes.member." << supportedLoadBalancerTypesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
-  }
-
-}
-
-void SslPolicy::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_sslProtocolsHasBeenSet)
-  {
-      unsigned sslProtocolsIdx = 1;
-      for(auto& item : m_sslProtocols)
-      {
-        oStream << location << ".SslProtocols.member." << sslProtocolsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
-  }
-  if(m_ciphersHasBeenSet)
-  {
-      unsigned ciphersIdx = 1;
-      for(auto& item : m_ciphers)
-      {
-        Aws::StringStream ciphersSs;
-        ciphersSs << location << ".Ciphers.member." << ciphersIdx++;
-        item.OutputToStream(oStream, ciphersSs.str().c_str());
-      }
-  }
-  if(m_nameHasBeenSet)
-  {
-      oStream << location << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
-  }
-  if(m_supportedLoadBalancerTypesHasBeenSet)
-  {
-      unsigned supportedLoadBalancerTypesIdx = 1;
-      for(auto& item : m_supportedLoadBalancerTypes)
-      {
-        oStream << location << ".SupportedLoadBalancerTypes.member." << supportedLoadBalancerTypesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
+  if (m_supportedLoadBalancerTypesHasBeenSet) {
+    unsigned supportedLoadBalancerTypesIdx = 1;
+    for (auto& item : m_supportedLoadBalancerTypes) {
+      oStream << location << index << locationValue << ".SupportedLoadBalancerTypes.member." << supportedLoadBalancerTypesIdx++ << "="
+              << StringUtils::URLEncode(item.c_str()) << "&";
+    }
   }
 }
 
-} // namespace Model
-} // namespace ElasticLoadBalancingv2
-} // namespace Aws
+void SslPolicy::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_sslProtocolsHasBeenSet) {
+    unsigned sslProtocolsIdx = 1;
+    for (auto& item : m_sslProtocols) {
+      oStream << location << ".SslProtocols.member." << sslProtocolsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+    }
+  }
+  if (m_ciphersHasBeenSet) {
+    unsigned ciphersIdx = 1;
+    for (auto& item : m_ciphers) {
+      Aws::StringStream ciphersSs;
+      ciphersSs << location << ".Ciphers.member." << ciphersIdx++;
+      item.OutputToStream(oStream, ciphersSs.str().c_str());
+    }
+  }
+  if (m_nameHasBeenSet) {
+    oStream << location << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+  }
+  if (m_supportedLoadBalancerTypesHasBeenSet) {
+    unsigned supportedLoadBalancerTypesIdx = 1;
+    for (auto& item : m_supportedLoadBalancerTypes) {
+      oStream << location << ".SupportedLoadBalancerTypes.member." << supportedLoadBalancerTypesIdx++ << "="
+              << StringUtils::URLEncode(item.c_str()) << "&";
+    }
+  }
+}
+
+}  // namespace Model
+}  // namespace ElasticLoadBalancingv2
+}  // namespace Aws

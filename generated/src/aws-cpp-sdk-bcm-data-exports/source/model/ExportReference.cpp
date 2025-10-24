@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BCMDataExports
-{
-namespace Model
-{
+namespace Aws {
+namespace BCMDataExports {
+namespace Model {
 
-ExportReference::ExportReference(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExportReference::ExportReference(JsonView jsonValue) { *this = jsonValue; }
 
-ExportReference& ExportReference::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ExportArn"))
-  {
+ExportReference& ExportReference::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ExportArn")) {
     m_exportArn = jsonValue.GetString("ExportArn");
     m_exportArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExportName"))
-  {
+  if (jsonValue.ValueExists("ExportName")) {
     m_exportName = jsonValue.GetString("ExportName");
     m_exportNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExportStatus"))
-  {
+  if (jsonValue.ValueExists("ExportStatus")) {
     m_exportStatus = jsonValue.GetObject("ExportStatus");
     m_exportStatusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExportReference::Jsonize() const
-{
+JsonValue ExportReference::Jsonize() const {
   JsonValue payload;
 
-  if(m_exportArnHasBeenSet)
-  {
-   payload.WithString("ExportArn", m_exportArn);
-
+  if (m_exportArnHasBeenSet) {
+    payload.WithString("ExportArn", m_exportArn);
   }
 
-  if(m_exportNameHasBeenSet)
-  {
-   payload.WithString("ExportName", m_exportName);
-
+  if (m_exportNameHasBeenSet) {
+    payload.WithString("ExportName", m_exportName);
   }
 
-  if(m_exportStatusHasBeenSet)
-  {
-   payload.WithObject("ExportStatus", m_exportStatus.Jsonize());
-
+  if (m_exportStatusHasBeenSet) {
+    payload.WithObject("ExportStatus", m_exportStatus.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BCMDataExports
-} // namespace Aws
+}  // namespace Model
+}  // namespace BCMDataExports
+}  // namespace Aws

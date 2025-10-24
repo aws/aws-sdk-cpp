@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dynamodb/model/ScanResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/dynamodb/model/ScanResult.h>
 
 #include <utility>
 
@@ -17,62 +17,48 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ScanResult::ScanResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ScanResult::ScanResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ScanResult& ScanResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ScanResult& ScanResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Items"))
-  {
+  if (jsonValue.ValueExists("Items")) {
     Aws::Utils::Array<JsonView> itemsJsonList = jsonValue.GetArray("Items");
-    for(unsigned itemsIndex = 0; itemsIndex < itemsJsonList.GetLength(); ++itemsIndex)
-    {
+    for (unsigned itemsIndex = 0; itemsIndex < itemsJsonList.GetLength(); ++itemsIndex) {
       Aws::Map<Aws::String, JsonView> attributeMapJsonMap = itemsJsonList[itemsIndex].GetAllObjects();
       Aws::Map<Aws::String, AttributeValue> attributeMapMap;
-      for(auto& attributeMapItem : attributeMapJsonMap)
-      {
+      for (auto& attributeMapItem : attributeMapJsonMap) {
         attributeMapMap[attributeMapItem.first] = attributeMapItem.second.AsObject();
       }
       m_items.push_back(std::move(attributeMapMap));
     }
     m_itemsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Count"))
-  {
+  if (jsonValue.ValueExists("Count")) {
     m_count = jsonValue.GetInteger("Count");
     m_countHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ScannedCount"))
-  {
+  if (jsonValue.ValueExists("ScannedCount")) {
     m_scannedCount = jsonValue.GetInteger("ScannedCount");
     m_scannedCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastEvaluatedKey"))
-  {
+  if (jsonValue.ValueExists("LastEvaluatedKey")) {
     Aws::Map<Aws::String, JsonView> lastEvaluatedKeyJsonMap = jsonValue.GetObject("LastEvaluatedKey").GetAllObjects();
-    for(auto& lastEvaluatedKeyItem : lastEvaluatedKeyJsonMap)
-    {
+    for (auto& lastEvaluatedKeyItem : lastEvaluatedKeyJsonMap) {
       m_lastEvaluatedKey[lastEvaluatedKeyItem.first] = lastEvaluatedKeyItem.second.AsObject();
     }
     m_lastEvaluatedKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ConsumedCapacity"))
-  {
+  if (jsonValue.ValueExists("ConsumedCapacity")) {
     m_consumedCapacity = jsonValue.GetObject("ConsumedCapacity");
     m_consumedCapacityHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

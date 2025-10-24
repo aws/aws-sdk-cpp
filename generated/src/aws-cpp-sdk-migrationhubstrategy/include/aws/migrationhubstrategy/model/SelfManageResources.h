@@ -4,58 +4,61 @@
  */
 
 #pragma once
-#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 #include <aws/migrationhubstrategy/model/SelfManageTargetDestination.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace MigrationHubStrategyRecommendations
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace MigrationHubStrategyRecommendations {
+namespace Model {
 
+/**
+ * <p> Self-managed resources. </p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/SelfManageResources">AWS
+ * API Reference</a></p>
+ */
+class SelfManageResources {
+ public:
+  AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API SelfManageResources() = default;
+  AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API SelfManageResources(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API SelfManageResources& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p> Self-managed resources. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/SelfManageResources">AWS
-   * API Reference</a></p>
+   * <p> Self-managed resources target destination. </p>
    */
-  class SelfManageResources
-  {
-  public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API SelfManageResources() = default;
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API SelfManageResources(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API SelfManageResources& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::Vector<SelfManageTargetDestination>& GetTargetDestination() const { return m_targetDestination; }
+  inline bool TargetDestinationHasBeenSet() const { return m_targetDestinationHasBeenSet; }
+  template <typename TargetDestinationT = Aws::Vector<SelfManageTargetDestination>>
+  void SetTargetDestination(TargetDestinationT&& value) {
+    m_targetDestinationHasBeenSet = true;
+    m_targetDestination = std::forward<TargetDestinationT>(value);
+  }
+  template <typename TargetDestinationT = Aws::Vector<SelfManageTargetDestination>>
+  SelfManageResources& WithTargetDestination(TargetDestinationT&& value) {
+    SetTargetDestination(std::forward<TargetDestinationT>(value));
+    return *this;
+  }
+  inline SelfManageResources& AddTargetDestination(SelfManageTargetDestination value) {
+    m_targetDestinationHasBeenSet = true;
+    m_targetDestination.push_back(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<SelfManageTargetDestination> m_targetDestination;
+  bool m_targetDestinationHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p> Self-managed resources target destination. </p>
-     */
-    inline const Aws::Vector<SelfManageTargetDestination>& GetTargetDestination() const { return m_targetDestination; }
-    inline bool TargetDestinationHasBeenSet() const { return m_targetDestinationHasBeenSet; }
-    template<typename TargetDestinationT = Aws::Vector<SelfManageTargetDestination>>
-    void SetTargetDestination(TargetDestinationT&& value) { m_targetDestinationHasBeenSet = true; m_targetDestination = std::forward<TargetDestinationT>(value); }
-    template<typename TargetDestinationT = Aws::Vector<SelfManageTargetDestination>>
-    SelfManageResources& WithTargetDestination(TargetDestinationT&& value) { SetTargetDestination(std::forward<TargetDestinationT>(value)); return *this;}
-    inline SelfManageResources& AddTargetDestination(SelfManageTargetDestination value) { m_targetDestinationHasBeenSet = true; m_targetDestination.push_back(value); return *this; }
-    ///@}
-  private:
-
-    Aws::Vector<SelfManageTargetDestination> m_targetDestination;
-    bool m_targetDestinationHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace MigrationHubStrategyRecommendations
-} // namespace Aws
+}  // namespace Model
+}  // namespace MigrationHubStrategyRecommendations
+}  // namespace Aws

@@ -11,73 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentCoreControl
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentCoreControl {
+namespace Model {
 
-StrategyConfiguration::StrategyConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StrategyConfiguration::StrategyConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-StrategyConfiguration& StrategyConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+StrategyConfiguration& StrategyConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = OverrideTypeMapper::GetOverrideTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("extraction"))
-  {
+  if (jsonValue.ValueExists("extraction")) {
     m_extraction = jsonValue.GetObject("extraction");
     m_extractionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("consolidation"))
-  {
+  if (jsonValue.ValueExists("consolidation")) {
     m_consolidation = jsonValue.GetObject("consolidation");
     m_consolidationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("selfManagedConfiguration"))
-  {
+  if (jsonValue.ValueExists("selfManagedConfiguration")) {
     m_selfManagedConfiguration = jsonValue.GetObject("selfManagedConfiguration");
     m_selfManagedConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StrategyConfiguration::Jsonize() const
-{
+JsonValue StrategyConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", OverrideTypeMapper::GetNameForOverrideType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", OverrideTypeMapper::GetNameForOverrideType(m_type));
   }
 
-  if(m_extractionHasBeenSet)
-  {
-   payload.WithObject("extraction", m_extraction.Jsonize());
-
+  if (m_extractionHasBeenSet) {
+    payload.WithObject("extraction", m_extraction.Jsonize());
   }
 
-  if(m_consolidationHasBeenSet)
-  {
-   payload.WithObject("consolidation", m_consolidation.Jsonize());
-
+  if (m_consolidationHasBeenSet) {
+    payload.WithObject("consolidation", m_consolidation.Jsonize());
   }
 
-  if(m_selfManagedConfigurationHasBeenSet)
-  {
-   payload.WithObject("selfManagedConfiguration", m_selfManagedConfiguration.Jsonize());
-
+  if (m_selfManagedConfigurationHasBeenSet) {
+    payload.WithObject("selfManagedConfiguration", m_selfManagedConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentCoreControl
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentCoreControl
+}  // namespace Aws

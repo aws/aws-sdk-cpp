@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/networkmanager/model/DeletePeeringRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/networkmanager/model/DeletePeeringRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeletePeeringRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DeletePeeringRequest::SerializePayload() const { return {}; }

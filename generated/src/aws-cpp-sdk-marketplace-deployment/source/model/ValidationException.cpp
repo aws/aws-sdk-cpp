@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/marketplace-deployment/model/ValidationException.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/marketplace-deployment/model/ValidationException.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MarketplaceDeployment
-{
-namespace Model
-{
+namespace Aws {
+namespace MarketplaceDeployment {
+namespace Model {
 
-ValidationException::ValidationException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ValidationException::ValidationException(JsonView jsonValue) { *this = jsonValue; }
 
-ValidationException& ValidationException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("fieldName"))
-  {
+ValidationException& ValidationException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("fieldName")) {
     m_fieldName = jsonValue.GetString("fieldName");
     m_fieldNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("message"))
-  {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ValidationException::Jsonize() const
-{
+JsonValue ValidationException::Jsonize() const {
   JsonValue payload;
 
-  if(m_fieldNameHasBeenSet)
-  {
-   payload.WithString("fieldName", m_fieldName);
-
+  if (m_fieldNameHasBeenSet) {
+    payload.WithString("fieldName", m_fieldName);
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MarketplaceDeployment
-} // namespace Aws
+}  // namespace Model
+}  // namespace MarketplaceDeployment
+}  // namespace Aws

@@ -3,121 +3,95 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/events/model/Connection.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/events/model/Connection.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudWatchEvents
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudWatchEvents {
+namespace Model {
 
-Connection::Connection(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Connection::Connection(JsonView jsonValue) { *this = jsonValue; }
 
-Connection& Connection::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ConnectionArn"))
-  {
+Connection& Connection::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ConnectionArn")) {
     m_connectionArn = jsonValue.GetString("ConnectionArn");
     m_connectionArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ConnectionState"))
-  {
+  if (jsonValue.ValueExists("ConnectionState")) {
     m_connectionState = ConnectionStateMapper::GetConnectionStateForName(jsonValue.GetString("ConnectionState"));
     m_connectionStateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StateReason"))
-  {
+  if (jsonValue.ValueExists("StateReason")) {
     m_stateReason = jsonValue.GetString("StateReason");
     m_stateReasonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AuthorizationType"))
-  {
-    m_authorizationType = ConnectionAuthorizationTypeMapper::GetConnectionAuthorizationTypeForName(jsonValue.GetString("AuthorizationType"));
+  if (jsonValue.ValueExists("AuthorizationType")) {
+    m_authorizationType =
+        ConnectionAuthorizationTypeMapper::GetConnectionAuthorizationTypeForName(jsonValue.GetString("AuthorizationType"));
     m_authorizationTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModifiedTime"))
-  {
+  if (jsonValue.ValueExists("LastModifiedTime")) {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastAuthorizedTime"))
-  {
+  if (jsonValue.ValueExists("LastAuthorizedTime")) {
     m_lastAuthorizedTime = jsonValue.GetDouble("LastAuthorizedTime");
     m_lastAuthorizedTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Connection::Jsonize() const
-{
+JsonValue Connection::Jsonize() const {
   JsonValue payload;
 
-  if(m_connectionArnHasBeenSet)
-  {
-   payload.WithString("ConnectionArn", m_connectionArn);
-
+  if (m_connectionArnHasBeenSet) {
+    payload.WithString("ConnectionArn", m_connectionArn);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_connectionStateHasBeenSet)
-  {
-   payload.WithString("ConnectionState", ConnectionStateMapper::GetNameForConnectionState(m_connectionState));
+  if (m_connectionStateHasBeenSet) {
+    payload.WithString("ConnectionState", ConnectionStateMapper::GetNameForConnectionState(m_connectionState));
   }
 
-  if(m_stateReasonHasBeenSet)
-  {
-   payload.WithString("StateReason", m_stateReason);
-
+  if (m_stateReasonHasBeenSet) {
+    payload.WithString("StateReason", m_stateReason);
   }
 
-  if(m_authorizationTypeHasBeenSet)
-  {
-   payload.WithString("AuthorizationType", ConnectionAuthorizationTypeMapper::GetNameForConnectionAuthorizationType(m_authorizationType));
+  if (m_authorizationTypeHasBeenSet) {
+    payload.WithString("AuthorizationType", ConnectionAuthorizationTypeMapper::GetNameForConnectionAuthorizationType(m_authorizationType));
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_lastModifiedTimeHasBeenSet)
-  {
-   payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  if (m_lastModifiedTimeHasBeenSet) {
+    payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
   }
 
-  if(m_lastAuthorizedTimeHasBeenSet)
-  {
-   payload.WithDouble("LastAuthorizedTime", m_lastAuthorizedTime.SecondsWithMSPrecision());
+  if (m_lastAuthorizedTimeHasBeenSet) {
+    payload.WithDouble("LastAuthorizedTime", m_lastAuthorizedTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudWatchEvents
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudWatchEvents
+}  // namespace Aws

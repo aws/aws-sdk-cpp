@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/notifications/Notifications_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/notifications/Notifications_EXPORTS.h>
 
-namespace Aws
-{
-namespace Notifications
-{
-namespace Model
-{
-  enum class NotificationType
-  {
-    NOT_SET,
-    ALERT,
-    WARNING,
-    ANNOUNCEMENT,
-    INFORMATIONAL
-  };
+namespace Aws {
+namespace Notifications {
+namespace Model {
+enum class NotificationType { NOT_SET, ALERT, WARNING, ANNOUNCEMENT, INFORMATIONAL };
 
-namespace NotificationTypeMapper
-{
+namespace NotificationTypeMapper {
 AWS_NOTIFICATIONS_API NotificationType GetNotificationTypeForName(const Aws::String& name);
 
 AWS_NOTIFICATIONS_API Aws::String GetNameForNotificationType(NotificationType value);
-} // namespace NotificationTypeMapper
-} // namespace Model
-} // namespace Notifications
-} // namespace Aws
+}  // namespace NotificationTypeMapper
+}  // namespace Model
+}  // namespace Notifications
+}  // namespace Aws

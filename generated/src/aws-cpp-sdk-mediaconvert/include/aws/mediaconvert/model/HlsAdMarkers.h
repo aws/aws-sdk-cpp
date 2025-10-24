@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class HlsAdMarkers
-  {
-    NOT_SET,
-    ELEMENTAL,
-    ELEMENTAL_SCTE35
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class HlsAdMarkers { NOT_SET, ELEMENTAL, ELEMENTAL_SCTE35 };
 
-namespace HlsAdMarkersMapper
-{
+namespace HlsAdMarkersMapper {
 AWS_MEDIACONVERT_API HlsAdMarkers GetHlsAdMarkersForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForHlsAdMarkers(HlsAdMarkers value);
-} // namespace HlsAdMarkersMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace HlsAdMarkersMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

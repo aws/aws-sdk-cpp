@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/DeleteRedshiftIdcApplicationRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/DeleteRedshiftIdcApplicationRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteRedshiftIdcApplicationRequest::SerializePayload() const
-{
+Aws::String DeleteRedshiftIdcApplicationRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteRedshiftIdcApplication&";
-  if(m_redshiftIdcApplicationArnHasBeenSet)
-  {
+  if (m_redshiftIdcApplicationArnHasBeenSet) {
     ss << "RedshiftIdcApplicationArn=" << StringUtils::URLEncode(m_redshiftIdcApplicationArn.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteRedshiftIdcApplicationRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteRedshiftIdcApplicationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteRedshiftIdcApplicationRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

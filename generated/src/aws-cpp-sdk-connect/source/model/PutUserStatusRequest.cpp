@@ -12,19 +12,12 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutUserStatusRequest::SerializePayload() const
-{
+Aws::String PutUserStatusRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_agentStatusIdHasBeenSet)
-  {
-   payload.WithString("AgentStatusId", m_agentStatusId);
-
+  if (m_agentStatusIdHasBeenSet) {
+    payload.WithString("AgentStatusId", m_agentStatusId);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

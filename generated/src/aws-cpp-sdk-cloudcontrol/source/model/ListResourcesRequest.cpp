@@ -12,57 +12,38 @@ using namespace Aws::CloudControlApi::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListResourcesRequest::SerializePayload() const
-{
+Aws::String ListResourcesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_typeNameHasBeenSet)
-  {
-   payload.WithString("TypeName", m_typeName);
-
+  if (m_typeNameHasBeenSet) {
+    payload.WithString("TypeName", m_typeName);
   }
 
-  if(m_typeVersionIdHasBeenSet)
-  {
-   payload.WithString("TypeVersionId", m_typeVersionId);
-
+  if (m_typeVersionIdHasBeenSet) {
+    payload.WithString("TypeVersionId", m_typeVersionId);
   }
 
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("RoleArn", m_roleArn);
-
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("RoleArn", m_roleArn);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("MaxResults", m_maxResults);
   }
 
-  if(m_resourceModelHasBeenSet)
-  {
-   payload.WithString("ResourceModel", m_resourceModel);
-
+  if (m_resourceModelHasBeenSet) {
+    payload.WithString("ResourceModel", m_resourceModel);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ListResourcesRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListResourcesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CloudApiService.ListResources"));
   return headers;
-
 }
-
-
-
-

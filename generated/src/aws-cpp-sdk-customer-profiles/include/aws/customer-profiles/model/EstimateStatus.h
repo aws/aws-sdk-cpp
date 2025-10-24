@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 
-namespace Aws
-{
-namespace CustomerProfiles
-{
-namespace Model
-{
-  enum class EstimateStatus
-  {
-    NOT_SET,
-    RUNNING,
-    SUCCEEDED,
-    FAILED
-  };
+namespace Aws {
+namespace CustomerProfiles {
+namespace Model {
+enum class EstimateStatus { NOT_SET, RUNNING, SUCCEEDED, FAILED };
 
-namespace EstimateStatusMapper
-{
+namespace EstimateStatusMapper {
 AWS_CUSTOMERPROFILES_API EstimateStatus GetEstimateStatusForName(const Aws::String& name);
 
 AWS_CUSTOMERPROFILES_API Aws::String GetNameForEstimateStatus(EstimateStatus value);
-} // namespace EstimateStatusMapper
-} // namespace Model
-} // namespace CustomerProfiles
-} // namespace Aws
+}  // namespace EstimateStatusMapper
+}  // namespace Model
+}  // namespace CustomerProfiles
+}  // namespace Aws

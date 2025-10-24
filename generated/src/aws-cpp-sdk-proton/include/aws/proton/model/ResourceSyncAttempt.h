@@ -4,137 +4,170 @@
  */
 
 #pragma once
-#include <aws/proton/Proton_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/proton/model/Revision.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/proton/model/ResourceSyncStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/proton/Proton_EXPORTS.h>
 #include <aws/proton/model/ResourceSyncEvent.h>
+#include <aws/proton/model/ResourceSyncStatus.h>
+#include <aws/proton/model/Revision.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace Proton
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Proton {
+namespace Model {
 
+/**
+ * <p>Detail data for a resource sync attempt activated by a push to a
+ * repository.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ResourceSyncAttempt">AWS
+ * API Reference</a></p>
+ */
+class ResourceSyncAttempt {
+ public:
+  AWS_PROTON_API ResourceSyncAttempt() = default;
+  AWS_PROTON_API ResourceSyncAttempt(Aws::Utils::Json::JsonView jsonValue);
+  AWS_PROTON_API ResourceSyncAttempt& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Detail data for a resource sync attempt activated by a push to a
-   * repository.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ResourceSyncAttempt">AWS
-   * API Reference</a></p>
+   * <p>An array of events with detail data.</p>
    */
-  class ResourceSyncAttempt
-  {
-  public:
-    AWS_PROTON_API ResourceSyncAttempt() = default;
-    AWS_PROTON_API ResourceSyncAttempt(Aws::Utils::Json::JsonView jsonValue);
-    AWS_PROTON_API ResourceSyncAttempt& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::Vector<ResourceSyncEvent>& GetEvents() const { return m_events; }
+  inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
+  template <typename EventsT = Aws::Vector<ResourceSyncEvent>>
+  void SetEvents(EventsT&& value) {
+    m_eventsHasBeenSet = true;
+    m_events = std::forward<EventsT>(value);
+  }
+  template <typename EventsT = Aws::Vector<ResourceSyncEvent>>
+  ResourceSyncAttempt& WithEvents(EventsT&& value) {
+    SetEvents(std::forward<EventsT>(value));
+    return *this;
+  }
+  template <typename EventsT = ResourceSyncEvent>
+  ResourceSyncAttempt& AddEvents(EventsT&& value) {
+    m_eventsHasBeenSet = true;
+    m_events.emplace_back(std::forward<EventsT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>Detail data for the initial repository commit, path and push.</p>
+   */
+  inline const Revision& GetInitialRevision() const { return m_initialRevision; }
+  inline bool InitialRevisionHasBeenSet() const { return m_initialRevisionHasBeenSet; }
+  template <typename InitialRevisionT = Revision>
+  void SetInitialRevision(InitialRevisionT&& value) {
+    m_initialRevisionHasBeenSet = true;
+    m_initialRevision = std::forward<InitialRevisionT>(value);
+  }
+  template <typename InitialRevisionT = Revision>
+  ResourceSyncAttempt& WithInitialRevision(InitialRevisionT&& value) {
+    SetInitialRevision(std::forward<InitialRevisionT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>An array of events with detail data.</p>
-     */
-    inline const Aws::Vector<ResourceSyncEvent>& GetEvents() const { return m_events; }
-    inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
-    template<typename EventsT = Aws::Vector<ResourceSyncEvent>>
-    void SetEvents(EventsT&& value) { m_eventsHasBeenSet = true; m_events = std::forward<EventsT>(value); }
-    template<typename EventsT = Aws::Vector<ResourceSyncEvent>>
-    ResourceSyncAttempt& WithEvents(EventsT&& value) { SetEvents(std::forward<EventsT>(value)); return *this;}
-    template<typename EventsT = ResourceSyncEvent>
-    ResourceSyncAttempt& AddEvents(EventsT&& value) { m_eventsHasBeenSet = true; m_events.emplace_back(std::forward<EventsT>(value)); return *this; }
-    ///@}
+  ///@{
+  /**
+   * <p>The time when the sync attempt started.</p>
+   */
+  inline const Aws::Utils::DateTime& GetStartedAt() const { return m_startedAt; }
+  inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
+  template <typename StartedAtT = Aws::Utils::DateTime>
+  void SetStartedAt(StartedAtT&& value) {
+    m_startedAtHasBeenSet = true;
+    m_startedAt = std::forward<StartedAtT>(value);
+  }
+  template <typename StartedAtT = Aws::Utils::DateTime>
+  ResourceSyncAttempt& WithStartedAt(StartedAtT&& value) {
+    SetStartedAt(std::forward<StartedAtT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Detail data for the initial repository commit, path and push.</p>
-     */
-    inline const Revision& GetInitialRevision() const { return m_initialRevision; }
-    inline bool InitialRevisionHasBeenSet() const { return m_initialRevisionHasBeenSet; }
-    template<typename InitialRevisionT = Revision>
-    void SetInitialRevision(InitialRevisionT&& value) { m_initialRevisionHasBeenSet = true; m_initialRevision = std::forward<InitialRevisionT>(value); }
-    template<typename InitialRevisionT = Revision>
-    ResourceSyncAttempt& WithInitialRevision(InitialRevisionT&& value) { SetInitialRevision(std::forward<InitialRevisionT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The status of the sync attempt.</p>
+   */
+  inline ResourceSyncStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(ResourceSyncStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline ResourceSyncAttempt& WithStatus(ResourceSyncStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The time when the sync attempt started.</p>
-     */
-    inline const Aws::Utils::DateTime& GetStartedAt() const { return m_startedAt; }
-    inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
-    template<typename StartedAtT = Aws::Utils::DateTime>
-    void SetStartedAt(StartedAtT&& value) { m_startedAtHasBeenSet = true; m_startedAt = std::forward<StartedAtT>(value); }
-    template<typename StartedAtT = Aws::Utils::DateTime>
-    ResourceSyncAttempt& WithStartedAt(StartedAtT&& value) { SetStartedAt(std::forward<StartedAtT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The resource that is synced to.</p>
+   */
+  inline const Aws::String& GetTarget() const { return m_target; }
+  inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
+  template <typename TargetT = Aws::String>
+  void SetTarget(TargetT&& value) {
+    m_targetHasBeenSet = true;
+    m_target = std::forward<TargetT>(value);
+  }
+  template <typename TargetT = Aws::String>
+  ResourceSyncAttempt& WithTarget(TargetT&& value) {
+    SetTarget(std::forward<TargetT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The status of the sync attempt.</p>
-     */
-    inline ResourceSyncStatus GetStatus() const { return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(ResourceSyncStatus value) { m_statusHasBeenSet = true; m_status = value; }
-    inline ResourceSyncAttempt& WithStatus(ResourceSyncStatus value) { SetStatus(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>Detail data for the target revision.</p>
+   */
+  inline const Revision& GetTargetRevision() const { return m_targetRevision; }
+  inline bool TargetRevisionHasBeenSet() const { return m_targetRevisionHasBeenSet; }
+  template <typename TargetRevisionT = Revision>
+  void SetTargetRevision(TargetRevisionT&& value) {
+    m_targetRevisionHasBeenSet = true;
+    m_targetRevision = std::forward<TargetRevisionT>(value);
+  }
+  template <typename TargetRevisionT = Revision>
+  ResourceSyncAttempt& WithTargetRevision(TargetRevisionT&& value) {
+    SetTargetRevision(std::forward<TargetRevisionT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<ResourceSyncEvent> m_events;
+  bool m_eventsHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The resource that is synced to.</p>
-     */
-    inline const Aws::String& GetTarget() const { return m_target; }
-    inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-    template<typename TargetT = Aws::String>
-    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
-    template<typename TargetT = Aws::String>
-    ResourceSyncAttempt& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
-    ///@}
+  Revision m_initialRevision;
+  bool m_initialRevisionHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>Detail data for the target revision.</p>
-     */
-    inline const Revision& GetTargetRevision() const { return m_targetRevision; }
-    inline bool TargetRevisionHasBeenSet() const { return m_targetRevisionHasBeenSet; }
-    template<typename TargetRevisionT = Revision>
-    void SetTargetRevision(TargetRevisionT&& value) { m_targetRevisionHasBeenSet = true; m_targetRevision = std::forward<TargetRevisionT>(value); }
-    template<typename TargetRevisionT = Revision>
-    ResourceSyncAttempt& WithTargetRevision(TargetRevisionT&& value) { SetTargetRevision(std::forward<TargetRevisionT>(value)); return *this;}
-    ///@}
-  private:
+  Aws::Utils::DateTime m_startedAt{};
+  bool m_startedAtHasBeenSet = false;
 
-    Aws::Vector<ResourceSyncEvent> m_events;
-    bool m_eventsHasBeenSet = false;
+  ResourceSyncStatus m_status{ResourceSyncStatus::NOT_SET};
+  bool m_statusHasBeenSet = false;
 
-    Revision m_initialRevision;
-    bool m_initialRevisionHasBeenSet = false;
+  Aws::String m_target;
+  bool m_targetHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startedAt{};
-    bool m_startedAtHasBeenSet = false;
+  Revision m_targetRevision;
+  bool m_targetRevisionHasBeenSet = false;
+};
 
-    ResourceSyncStatus m_status{ResourceSyncStatus::NOT_SET};
-    bool m_statusHasBeenSet = false;
-
-    Aws::String m_target;
-    bool m_targetHasBeenSet = false;
-
-    Revision m_targetRevision;
-    bool m_targetRevisionHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Proton
-} // namespace Aws
+}  // namespace Model
+}  // namespace Proton
+}  // namespace Aws

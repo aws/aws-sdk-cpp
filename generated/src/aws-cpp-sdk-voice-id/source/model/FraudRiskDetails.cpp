@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/voice-id/model/FraudRiskDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/voice-id/model/FraudRiskDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace VoiceID
-{
-namespace Model
-{
+namespace Aws {
+namespace VoiceID {
+namespace Model {
 
-FraudRiskDetails::FraudRiskDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FraudRiskDetails::FraudRiskDetails(JsonView jsonValue) { *this = jsonValue; }
 
-FraudRiskDetails& FraudRiskDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("KnownFraudsterRisk"))
-  {
+FraudRiskDetails& FraudRiskDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("KnownFraudsterRisk")) {
     m_knownFraudsterRisk = jsonValue.GetObject("KnownFraudsterRisk");
     m_knownFraudsterRiskHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VoiceSpoofingRisk"))
-  {
+  if (jsonValue.ValueExists("VoiceSpoofingRisk")) {
     m_voiceSpoofingRisk = jsonValue.GetObject("VoiceSpoofingRisk");
     m_voiceSpoofingRiskHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FraudRiskDetails::Jsonize() const
-{
+JsonValue FraudRiskDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_knownFraudsterRiskHasBeenSet)
-  {
-   payload.WithObject("KnownFraudsterRisk", m_knownFraudsterRisk.Jsonize());
-
+  if (m_knownFraudsterRiskHasBeenSet) {
+    payload.WithObject("KnownFraudsterRisk", m_knownFraudsterRisk.Jsonize());
   }
 
-  if(m_voiceSpoofingRiskHasBeenSet)
-  {
-   payload.WithObject("VoiceSpoofingRisk", m_voiceSpoofingRisk.Jsonize());
-
+  if (m_voiceSpoofingRiskHasBeenSet) {
+    payload.WithObject("VoiceSpoofingRisk", m_voiceSpoofingRisk.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace VoiceID
-} // namespace Aws
+}  // namespace Model
+}  // namespace VoiceID
+}  // namespace Aws

@@ -3,63 +3,51 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/frauddetector/model/Language.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/frauddetector/model/Language.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace FraudDetector {
+namespace Model {
+namespace LanguageMapper {
 
-namespace Aws
-{
-  namespace FraudDetector
-  {
-    namespace Model
-    {
-      namespace LanguageMapper
-      {
+static const int DETECTORPL_HASH = HashingUtils::HashString("DETECTORPL");
 
-        static const int DETECTORPL_HASH = HashingUtils::HashString("DETECTORPL");
+Language GetLanguageForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == DETECTORPL_HASH) {
+    return Language::DETECTORPL;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<Language>(hashCode);
+  }
 
+  return Language::NOT_SET;
+}
 
-        Language GetLanguageForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == DETECTORPL_HASH)
-          {
-            return Language::DETECTORPL;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<Language>(hashCode);
-          }
+Aws::String GetNameForLanguage(Language enumValue) {
+  switch (enumValue) {
+    case Language::NOT_SET:
+      return {};
+    case Language::DETECTORPL:
+      return "DETECTORPL";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return Language::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForLanguage(Language enumValue)
-        {
-          switch(enumValue)
-          {
-          case Language::NOT_SET:
-            return {};
-          case Language::DETECTORPL:
-            return "DETECTORPL";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace LanguageMapper
-    } // namespace Model
-  } // namespace FraudDetector
-} // namespace Aws
+}  // namespace LanguageMapper
+}  // namespace Model
+}  // namespace FraudDetector
+}  // namespace Aws

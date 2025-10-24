@@ -4,33 +4,28 @@
  */
 
 #pragma once
-#include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/opensearch/OpenSearchService_EXPORTS.h>
 
-namespace Aws
-{
-namespace OpenSearchService
-{
-namespace Model
-{
-  enum class DomainProcessingStatusType
-  {
-    NOT_SET,
-    Creating,
-    Active,
-    Modifying,
-    UpgradingEngineVersion,
-    UpdatingServiceSoftware,
-    Isolated,
-    Deleting
-  };
+namespace Aws {
+namespace OpenSearchService {
+namespace Model {
+enum class DomainProcessingStatusType {
+  NOT_SET,
+  Creating,
+  Active,
+  Modifying,
+  UpgradingEngineVersion,
+  UpdatingServiceSoftware,
+  Isolated,
+  Deleting
+};
 
-namespace DomainProcessingStatusTypeMapper
-{
+namespace DomainProcessingStatusTypeMapper {
 AWS_OPENSEARCHSERVICE_API DomainProcessingStatusType GetDomainProcessingStatusTypeForName(const Aws::String& name);
 
 AWS_OPENSEARCHSERVICE_API Aws::String GetNameForDomainProcessingStatusType(DomainProcessingStatusType value);
-} // namespace DomainProcessingStatusTypeMapper
-} // namespace Model
-} // namespace OpenSearchService
-} // namespace Aws
+}  // namespace DomainProcessingStatusTypeMapper
+}  // namespace Model
+}  // namespace OpenSearchService
+}  // namespace Aws

@@ -7,25 +7,16 @@
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CleanRoomsML
-{
-namespace Model
-{
-  enum class AudienceSizeType
-  {
-    NOT_SET,
-    ABSOLUTE,
-    PERCENTAGE
-  };
+namespace Aws {
+namespace CleanRoomsML {
+namespace Model {
+enum class AudienceSizeType { NOT_SET, ABSOLUTE, PERCENTAGE };
 
-namespace AudienceSizeTypeMapper
-{
+namespace AudienceSizeTypeMapper {
 AWS_CLEANROOMSML_API AudienceSizeType GetAudienceSizeTypeForName(const Aws::String& name);
 
 AWS_CLEANROOMSML_API Aws::String GetNameForAudienceSizeType(AudienceSizeType value);
-} // namespace AudienceSizeTypeMapper
-} // namespace Model
-} // namespace CleanRoomsML
-} // namespace Aws
+}  // namespace AudienceSizeTypeMapper
+}  // namespace Model
+}  // namespace CleanRoomsML
+}  // namespace Aws

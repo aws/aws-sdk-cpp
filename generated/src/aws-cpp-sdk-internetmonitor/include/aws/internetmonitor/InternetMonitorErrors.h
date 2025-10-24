@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/internetmonitor/InternetMonitor_EXPORTS.h>
 
-namespace Aws
-{
-namespace InternetMonitor
-{
-enum class InternetMonitorErrors
-{
-  //From Core//
+namespace Aws {
+namespace InternetMonitor {
+enum class InternetMonitorErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class InternetMonitorErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class InternetMonitorErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BAD_REQUEST = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CONFLICT,
   INTERNAL_SERVER,
   INTERNAL_SERVER_ERROR,
@@ -56,9 +53,8 @@ enum class InternetMonitorErrors
   TOO_MANY_REQUESTS
 };
 
-class AWS_INTERNETMONITOR_API InternetMonitorError : public Aws::Client::AWSError<InternetMonitorErrors>
-{
-public:
+class AWS_INTERNETMONITOR_API InternetMonitorError : public Aws::Client::AWSError<InternetMonitorErrors> {
+ public:
   InternetMonitorError() {}
   InternetMonitorError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<InternetMonitorErrors>(rhs) {}
   InternetMonitorError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<InternetMonitorErrors>(rhs) {}
@@ -69,10 +65,9 @@ public:
   T GetModeledError();
 };
 
-namespace InternetMonitorErrorMapper
-{
-  AWS_INTERNETMONITOR_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace InternetMonitorErrorMapper {
+AWS_INTERNETMONITOR_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace InternetMonitor
-} // namespace Aws
+}  // namespace InternetMonitor
+}  // namespace Aws

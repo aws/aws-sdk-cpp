@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/shield/Shield_EXPORTS.h>
 
-namespace Aws
-{
-namespace Shield
-{
-enum class ShieldErrors
-{
-  //From Core//
+namespace Aws {
+namespace Shield {
+enum class ShieldErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class ShieldErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class ShieldErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ACCESS_DENIED_FOR_DEPENDENCY= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ACCESS_DENIED_FOR_DEPENDENCY = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_ERROR,
   INVALID_OPERATION,
   INVALID_PAGINATION_TOKEN,
@@ -60,9 +57,8 @@ enum class ShieldErrors
   RESOURCE_ALREADY_EXISTS
 };
 
-class AWS_SHIELD_API ShieldError : public Aws::Client::AWSError<ShieldErrors>
-{
-public:
+class AWS_SHIELD_API ShieldError : public Aws::Client::AWSError<ShieldErrors> {
+ public:
   ShieldError() {}
   ShieldError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ShieldErrors>(rhs) {}
   ShieldError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ShieldErrors>(rhs) {}
@@ -73,10 +69,9 @@ public:
   T GetModeledError();
 };
 
-namespace ShieldErrorMapper
-{
-  AWS_SHIELD_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace ShieldErrorMapper {
+AWS_SHIELD_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace Shield
-} // namespace Aws
+}  // namespace Shield
+}  // namespace Aws

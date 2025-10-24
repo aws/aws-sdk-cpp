@@ -11,54 +11,39 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApplicationAutoScaling
-{
-namespace Model
-{
+namespace Aws {
+namespace ApplicationAutoScaling {
+namespace Model {
 
-CustomizedMetricSpecification::CustomizedMetricSpecification(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CustomizedMetricSpecification::CustomizedMetricSpecification(JsonView jsonValue) { *this = jsonValue; }
 
-CustomizedMetricSpecification& CustomizedMetricSpecification::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MetricName"))
-  {
+CustomizedMetricSpecification& CustomizedMetricSpecification::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MetricName")) {
     m_metricName = jsonValue.GetString("MetricName");
     m_metricNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Namespace"))
-  {
+  if (jsonValue.ValueExists("Namespace")) {
     m_namespace = jsonValue.GetString("Namespace");
     m_namespaceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Dimensions"))
-  {
+  if (jsonValue.ValueExists("Dimensions")) {
     Aws::Utils::Array<JsonView> dimensionsJsonList = jsonValue.GetArray("Dimensions");
-    for(unsigned dimensionsIndex = 0; dimensionsIndex < dimensionsJsonList.GetLength(); ++dimensionsIndex)
-    {
+    for (unsigned dimensionsIndex = 0; dimensionsIndex < dimensionsJsonList.GetLength(); ++dimensionsIndex) {
       m_dimensions.push_back(dimensionsJsonList[dimensionsIndex].AsObject());
     }
     m_dimensionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Statistic"))
-  {
+  if (jsonValue.ValueExists("Statistic")) {
     m_statistic = MetricStatisticMapper::GetMetricStatisticForName(jsonValue.GetString("Statistic"));
     m_statisticHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Unit"))
-  {
+  if (jsonValue.ValueExists("Unit")) {
     m_unit = jsonValue.GetString("Unit");
     m_unitHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Metrics"))
-  {
+  if (jsonValue.ValueExists("Metrics")) {
     Aws::Utils::Array<JsonView> metricsJsonList = jsonValue.GetArray("Metrics");
-    for(unsigned metricsIndex = 0; metricsIndex < metricsJsonList.GetLength(); ++metricsIndex)
-    {
+    for (unsigned metricsIndex = 0; metricsIndex < metricsJsonList.GetLength(); ++metricsIndex) {
       m_metrics.push_back(metricsJsonList[metricsIndex].AsObject());
     }
     m_metricsHasBeenSet = true;
@@ -66,58 +51,44 @@ CustomizedMetricSpecification& CustomizedMetricSpecification::operator =(JsonVie
   return *this;
 }
 
-JsonValue CustomizedMetricSpecification::Jsonize() const
-{
+JsonValue CustomizedMetricSpecification::Jsonize() const {
   JsonValue payload;
 
-  if(m_metricNameHasBeenSet)
-  {
-   payload.WithString("MetricName", m_metricName);
-
+  if (m_metricNameHasBeenSet) {
+    payload.WithString("MetricName", m_metricName);
   }
 
-  if(m_namespaceHasBeenSet)
-  {
-   payload.WithString("Namespace", m_namespace);
-
+  if (m_namespaceHasBeenSet) {
+    payload.WithString("Namespace", m_namespace);
   }
 
-  if(m_dimensionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> dimensionsJsonList(m_dimensions.size());
-   for(unsigned dimensionsIndex = 0; dimensionsIndex < dimensionsJsonList.GetLength(); ++dimensionsIndex)
-   {
-     dimensionsJsonList[dimensionsIndex].AsObject(m_dimensions[dimensionsIndex].Jsonize());
-   }
-   payload.WithArray("Dimensions", std::move(dimensionsJsonList));
-
+  if (m_dimensionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> dimensionsJsonList(m_dimensions.size());
+    for (unsigned dimensionsIndex = 0; dimensionsIndex < dimensionsJsonList.GetLength(); ++dimensionsIndex) {
+      dimensionsJsonList[dimensionsIndex].AsObject(m_dimensions[dimensionsIndex].Jsonize());
+    }
+    payload.WithArray("Dimensions", std::move(dimensionsJsonList));
   }
 
-  if(m_statisticHasBeenSet)
-  {
-   payload.WithString("Statistic", MetricStatisticMapper::GetNameForMetricStatistic(m_statistic));
+  if (m_statisticHasBeenSet) {
+    payload.WithString("Statistic", MetricStatisticMapper::GetNameForMetricStatistic(m_statistic));
   }
 
-  if(m_unitHasBeenSet)
-  {
-   payload.WithString("Unit", m_unit);
-
+  if (m_unitHasBeenSet) {
+    payload.WithString("Unit", m_unit);
   }
 
-  if(m_metricsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> metricsJsonList(m_metrics.size());
-   for(unsigned metricsIndex = 0; metricsIndex < metricsJsonList.GetLength(); ++metricsIndex)
-   {
-     metricsJsonList[metricsIndex].AsObject(m_metrics[metricsIndex].Jsonize());
-   }
-   payload.WithArray("Metrics", std::move(metricsJsonList));
-
+  if (m_metricsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> metricsJsonList(m_metrics.size());
+    for (unsigned metricsIndex = 0; metricsIndex < metricsJsonList.GetLength(); ++metricsIndex) {
+      metricsJsonList[metricsIndex].AsObject(m_metrics[metricsIndex].Jsonize());
+    }
+    payload.WithArray("Metrics", std::move(metricsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApplicationAutoScaling
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApplicationAutoScaling
+}  // namespace Aws

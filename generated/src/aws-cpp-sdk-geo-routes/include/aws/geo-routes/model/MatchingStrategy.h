@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 
-namespace Aws
-{
-namespace GeoRoutes
-{
-namespace Model
-{
-  enum class MatchingStrategy
-  {
-    NOT_SET,
-    MatchAny,
-    MatchMostSignificantRoad
-  };
+namespace Aws {
+namespace GeoRoutes {
+namespace Model {
+enum class MatchingStrategy { NOT_SET, MatchAny, MatchMostSignificantRoad };
 
-namespace MatchingStrategyMapper
-{
+namespace MatchingStrategyMapper {
 AWS_GEOROUTES_API MatchingStrategy GetMatchingStrategyForName(const Aws::String& name);
 
 AWS_GEOROUTES_API Aws::String GetNameForMatchingStrategy(MatchingStrategy value);
-} // namespace MatchingStrategyMapper
-} // namespace Model
-} // namespace GeoRoutes
-} // namespace Aws
+}  // namespace MatchingStrategyMapper
+}  // namespace Model
+}  // namespace GeoRoutes
+}  // namespace Aws

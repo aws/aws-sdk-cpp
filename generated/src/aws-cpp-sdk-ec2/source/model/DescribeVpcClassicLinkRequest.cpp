@@ -3,38 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeVpcClassicLinkRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DescribeVpcClassicLinkRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeVpcClassicLinkRequest::SerializePayload() const
-{
+Aws::String DescribeVpcClassicLinkRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeVpcClassicLink&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_vpcIdsHasBeenSet)
-  {
+  if (m_vpcIdsHasBeenSet) {
     unsigned vpcIdsCount = 1;
-    for(auto& item : m_vpcIds)
-    {
-      ss << "VpcId." << vpcIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_vpcIds) {
+      ss << "VpcId." << vpcIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       vpcIdsCount++;
     }
   }
 
-  if(m_filtersHasBeenSet)
-  {
+  if (m_filtersHasBeenSet) {
     unsigned filtersCount = 1;
-    for(auto& item : m_filters)
-    {
+    for (auto& item : m_filters) {
       item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
@@ -44,8 +37,4 @@ Aws::String DescribeVpcClassicLinkRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeVpcClassicLinkRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeVpcClassicLinkRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

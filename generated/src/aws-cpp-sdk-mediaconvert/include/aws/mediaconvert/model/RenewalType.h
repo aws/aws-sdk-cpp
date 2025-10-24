@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class RenewalType
-  {
-    NOT_SET,
-    AUTO_RENEW,
-    EXPIRE
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class RenewalType { NOT_SET, AUTO_RENEW, EXPIRE };
 
-namespace RenewalTypeMapper
-{
+namespace RenewalTypeMapper {
 AWS_MEDIACONVERT_API RenewalType GetRenewalTypeForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForRenewalType(RenewalType value);
-} // namespace RenewalTypeMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace RenewalTypeMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

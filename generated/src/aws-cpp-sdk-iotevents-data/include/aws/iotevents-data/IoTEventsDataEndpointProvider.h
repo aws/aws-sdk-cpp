@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/iotevents-data/IoTEventsData_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/iotevents-data/IoTEventsDataEndpointRules.h>
+#include <aws/iotevents-data/IoTEventsData_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace IoTEventsData
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace IoTEventsData {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using IoTEventsDataClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using IoTEventsDataDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_IOTEVENTSDATA_API IoTEventsDataEndpointProvider : public IoTEventsDataDefaultEpProviderBase
-{
-public:
-    using IoTEventsDataResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_IOTEVENTSDATA_API IoTEventsDataEndpointProvider : public IoTEventsDataDefaultEpProviderBase {
+ public:
+  using IoTEventsDataResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    IoTEventsDataEndpointProvider()
-      : IoTEventsDataDefaultEpProviderBase(Aws::IoTEventsData::IoTEventsDataEndpointRules::GetRulesBlob(), Aws::IoTEventsData::IoTEventsDataEndpointRules::RulesBlobSize)
-    {}
+  IoTEventsDataEndpointProvider()
+      : IoTEventsDataDefaultEpProviderBase(Aws::IoTEventsData::IoTEventsDataEndpointRules::GetRulesBlob(),
+                                           Aws::IoTEventsData::IoTEventsDataEndpointRules::RulesBlobSize) {}
 
-    ~IoTEventsDataEndpointProvider()
-    {
-    }
+  ~IoTEventsDataEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace IoTEventsData
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace IoTEventsData
+}  // namespace Aws

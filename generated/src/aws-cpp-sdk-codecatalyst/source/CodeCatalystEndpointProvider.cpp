@@ -5,12 +5,8 @@
 
 #include <aws/codecatalyst/CodeCatalystEndpointProvider.h>
 
-namespace Aws
-{
-namespace CodeCatalyst
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace CodeCatalyst
-} // namespace Aws
+namespace Aws {
+namespace CodeCatalyst {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace CodeCatalyst
+}  // namespace Aws

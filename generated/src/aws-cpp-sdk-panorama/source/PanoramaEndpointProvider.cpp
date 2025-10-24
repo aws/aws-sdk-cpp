@@ -5,12 +5,8 @@
 
 #include <aws/panorama/PanoramaEndpointProvider.h>
 
-namespace Aws
-{
-namespace Panorama
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Panorama
-} // namespace Aws
+namespace Aws {
+namespace Panorama {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Panorama
+}  // namespace Aws

@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class NetworkInterfaceCreationType
-  {
-    NOT_SET,
-    efa,
-    efa_only,
-    branch,
-    trunk
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class NetworkInterfaceCreationType { NOT_SET, efa, efa_only, branch, trunk };
 
-namespace NetworkInterfaceCreationTypeMapper
-{
+namespace NetworkInterfaceCreationTypeMapper {
 AWS_EC2_API NetworkInterfaceCreationType GetNetworkInterfaceCreationTypeForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForNetworkInterfaceCreationType(NetworkInterfaceCreationType value);
-} // namespace NetworkInterfaceCreationTypeMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace NetworkInterfaceCreationTypeMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

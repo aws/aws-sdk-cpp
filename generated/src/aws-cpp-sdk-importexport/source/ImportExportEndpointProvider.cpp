@@ -5,12 +5,8 @@
 
 #include <aws/importexport/ImportExportEndpointProvider.h>
 
-namespace Aws
-{
-namespace ImportExport
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ImportExport
-} // namespace Aws
+namespace Aws {
+namespace ImportExport {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ImportExport
+}  // namespace Aws

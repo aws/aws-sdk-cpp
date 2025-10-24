@@ -4,98 +4,119 @@
  */
 
 #pragma once
-#include <aws/macie2/Macie2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/macie2/Macie2_EXPORTS.h>
 #include <aws/macie2/model/TimeRange.h>
 #include <aws/macie2/model/UsageRecord.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace Macie2
-{
-namespace Model
-{
-  class GetUsageStatisticsResult
-  {
-  public:
-    AWS_MACIE2_API GetUsageStatisticsResult() = default;
-    AWS_MACIE2_API GetUsageStatisticsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_MACIE2_API GetUsageStatisticsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace Macie2 {
+namespace Model {
+class GetUsageStatisticsResult {
+ public:
+  AWS_MACIE2_API GetUsageStatisticsResult() = default;
+  AWS_MACIE2_API GetUsageStatisticsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_MACIE2_API GetUsageStatisticsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>The string to use in a subsequent request to get the next page of results in
+   * a paginated response. This value is null if there are no additional pages.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  GetUsageStatisticsResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The string to use in a subsequent request to get the next page of results in
-     * a paginated response. This value is null if there are no additional pages.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    GetUsageStatisticsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>An array of objects that contains the results of the query. Each object
+   * contains the data for an account that matches the filter criteria specified in
+   * the request.</p>
+   */
+  inline const Aws::Vector<UsageRecord>& GetRecords() const { return m_records; }
+  template <typename RecordsT = Aws::Vector<UsageRecord>>
+  void SetRecords(RecordsT&& value) {
+    m_recordsHasBeenSet = true;
+    m_records = std::forward<RecordsT>(value);
+  }
+  template <typename RecordsT = Aws::Vector<UsageRecord>>
+  GetUsageStatisticsResult& WithRecords(RecordsT&& value) {
+    SetRecords(std::forward<RecordsT>(value));
+    return *this;
+  }
+  template <typename RecordsT = UsageRecord>
+  GetUsageStatisticsResult& AddRecords(RecordsT&& value) {
+    m_recordsHasBeenSet = true;
+    m_records.emplace_back(std::forward<RecordsT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>An array of objects that contains the results of the query. Each object
-     * contains the data for an account that matches the filter criteria specified in
-     * the request.</p>
-     */
-    inline const Aws::Vector<UsageRecord>& GetRecords() const { return m_records; }
-    template<typename RecordsT = Aws::Vector<UsageRecord>>
-    void SetRecords(RecordsT&& value) { m_recordsHasBeenSet = true; m_records = std::forward<RecordsT>(value); }
-    template<typename RecordsT = Aws::Vector<UsageRecord>>
-    GetUsageStatisticsResult& WithRecords(RecordsT&& value) { SetRecords(std::forward<RecordsT>(value)); return *this;}
-    template<typename RecordsT = UsageRecord>
-    GetUsageStatisticsResult& AddRecords(RecordsT&& value) { m_recordsHasBeenSet = true; m_records.emplace_back(std::forward<RecordsT>(value)); return *this; }
-    ///@}
+  ///@{
+  /**
+   * <p>The inclusive time period that the usage data applies to. Possible values
+   * are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS,
+   * for the preceding 30 days.</p>
+   */
+  inline TimeRange GetTimeRange() const { return m_timeRange; }
+  inline void SetTimeRange(TimeRange value) {
+    m_timeRangeHasBeenSet = true;
+    m_timeRange = value;
+  }
+  inline GetUsageStatisticsResult& WithTimeRange(TimeRange value) {
+    SetTimeRange(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The inclusive time period that the usage data applies to. Possible values
-     * are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS,
-     * for the preceding 30 days.</p>
-     */
-    inline TimeRange GetTimeRange() const { return m_timeRange; }
-    inline void SetTimeRange(TimeRange value) { m_timeRangeHasBeenSet = true; m_timeRange = value; }
-    inline GetUsageStatisticsResult& WithTimeRange(TimeRange value) { SetTimeRange(value); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    GetUsageStatisticsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  GetUsageStatisticsResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
+  Aws::Vector<UsageRecord> m_records;
+  bool m_recordsHasBeenSet = false;
 
-    Aws::Vector<UsageRecord> m_records;
-    bool m_recordsHasBeenSet = false;
+  TimeRange m_timeRange{TimeRange::NOT_SET};
+  bool m_timeRangeHasBeenSet = false;
 
-    TimeRange m_timeRange{TimeRange::NOT_SET};
-    bool m_timeRangeHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

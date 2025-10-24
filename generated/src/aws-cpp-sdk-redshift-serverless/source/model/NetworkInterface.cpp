@@ -3,93 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift-serverless/model/NetworkInterface.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/redshift-serverless/model/NetworkInterface.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace RedshiftServerless
-{
-namespace Model
-{
+namespace Aws {
+namespace RedshiftServerless {
+namespace Model {
 
-NetworkInterface::NetworkInterface(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NetworkInterface::NetworkInterface(JsonView jsonValue) { *this = jsonValue; }
 
-NetworkInterface& NetworkInterface::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("availabilityZone"))
-  {
+NetworkInterface& NetworkInterface::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("availabilityZone")) {
     m_availabilityZone = jsonValue.GetString("availabilityZone");
     m_availabilityZoneHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ipv6Address"))
-  {
+  if (jsonValue.ValueExists("ipv6Address")) {
     m_ipv6Address = jsonValue.GetString("ipv6Address");
     m_ipv6AddressHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("networkInterfaceId"))
-  {
+  if (jsonValue.ValueExists("networkInterfaceId")) {
     m_networkInterfaceId = jsonValue.GetString("networkInterfaceId");
     m_networkInterfaceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("privateIpAddress"))
-  {
+  if (jsonValue.ValueExists("privateIpAddress")) {
     m_privateIpAddress = jsonValue.GetString("privateIpAddress");
     m_privateIpAddressHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("subnetId"))
-  {
+  if (jsonValue.ValueExists("subnetId")) {
     m_subnetId = jsonValue.GetString("subnetId");
     m_subnetIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NetworkInterface::Jsonize() const
-{
+JsonValue NetworkInterface::Jsonize() const {
   JsonValue payload;
 
-  if(m_availabilityZoneHasBeenSet)
-  {
-   payload.WithString("availabilityZone", m_availabilityZone);
-
+  if (m_availabilityZoneHasBeenSet) {
+    payload.WithString("availabilityZone", m_availabilityZone);
   }
 
-  if(m_ipv6AddressHasBeenSet)
-  {
-   payload.WithString("ipv6Address", m_ipv6Address);
-
+  if (m_ipv6AddressHasBeenSet) {
+    payload.WithString("ipv6Address", m_ipv6Address);
   }
 
-  if(m_networkInterfaceIdHasBeenSet)
-  {
-   payload.WithString("networkInterfaceId", m_networkInterfaceId);
-
+  if (m_networkInterfaceIdHasBeenSet) {
+    payload.WithString("networkInterfaceId", m_networkInterfaceId);
   }
 
-  if(m_privateIpAddressHasBeenSet)
-  {
-   payload.WithString("privateIpAddress", m_privateIpAddress);
-
+  if (m_privateIpAddressHasBeenSet) {
+    payload.WithString("privateIpAddress", m_privateIpAddress);
   }
 
-  if(m_subnetIdHasBeenSet)
-  {
-   payload.WithString("subnetId", m_subnetId);
-
+  if (m_subnetIdHasBeenSet) {
+    payload.WithString("subnetId", m_subnetId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace RedshiftServerless
-} // namespace Aws
+}  // namespace Model
+}  // namespace RedshiftServerless
+}  // namespace Aws

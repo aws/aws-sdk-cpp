@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
 
-MetricSource::MetricSource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MetricSource::MetricSource(JsonView jsonValue) { *this = jsonValue; }
 
-MetricSource& MetricSource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("provider"))
-  {
+MetricSource& MetricSource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("provider")) {
     m_provider = MetricSourceProviderMapper::GetMetricSourceProviderForName(jsonValue.GetString("provider"));
     m_providerHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("providerArn"))
-  {
+  if (jsonValue.ValueExists("providerArn")) {
     m_providerArn = jsonValue.GetString("providerArn");
     m_providerArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MetricSource::Jsonize() const
-{
+JsonValue MetricSource::Jsonize() const {
   JsonValue payload;
 
-  if(m_providerHasBeenSet)
-  {
-   payload.WithString("provider", MetricSourceProviderMapper::GetNameForMetricSourceProvider(m_provider));
+  if (m_providerHasBeenSet) {
+    payload.WithString("provider", MetricSourceProviderMapper::GetNameForMetricSourceProvider(m_provider));
   }
 
-  if(m_providerArnHasBeenSet)
-  {
-   payload.WithString("providerArn", m_providerArn);
-
+  if (m_providerArnHasBeenSet) {
+    payload.WithString("providerArn", m_providerArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

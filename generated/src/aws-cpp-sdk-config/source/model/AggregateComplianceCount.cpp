@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-AggregateComplianceCount::AggregateComplianceCount(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AggregateComplianceCount::AggregateComplianceCount(JsonView jsonValue) { *this = jsonValue; }
 
-AggregateComplianceCount& AggregateComplianceCount::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("GroupName"))
-  {
+AggregateComplianceCount& AggregateComplianceCount::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("GroupName")) {
     m_groupName = jsonValue.GetString("GroupName");
     m_groupNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ComplianceSummary"))
-  {
+  if (jsonValue.ValueExists("ComplianceSummary")) {
     m_complianceSummary = jsonValue.GetObject("ComplianceSummary");
     m_complianceSummaryHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AggregateComplianceCount::Jsonize() const
-{
+JsonValue AggregateComplianceCount::Jsonize() const {
   JsonValue payload;
 
-  if(m_groupNameHasBeenSet)
-  {
-   payload.WithString("GroupName", m_groupName);
-
+  if (m_groupNameHasBeenSet) {
+    payload.WithString("GroupName", m_groupName);
   }
 
-  if(m_complianceSummaryHasBeenSet)
-  {
-   payload.WithObject("ComplianceSummary", m_complianceSummary.Jsonize());
-
+  if (m_complianceSummaryHasBeenSet) {
+    payload.WithObject("ComplianceSummary", m_complianceSummary.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

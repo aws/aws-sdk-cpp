@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace PrometheusService
-{
-namespace Model
-{
+namespace Aws {
+namespace PrometheusService {
+namespace Model {
 
-ScraperLoggingDestination::ScraperLoggingDestination(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ScraperLoggingDestination::ScraperLoggingDestination(JsonView jsonValue) { *this = jsonValue; }
 
-ScraperLoggingDestination& ScraperLoggingDestination::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("cloudWatchLogs"))
-  {
+ScraperLoggingDestination& ScraperLoggingDestination::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("cloudWatchLogs")) {
     m_cloudWatchLogs = jsonValue.GetObject("cloudWatchLogs");
     m_cloudWatchLogsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ScraperLoggingDestination::Jsonize() const
-{
+JsonValue ScraperLoggingDestination::Jsonize() const {
   JsonValue payload;
 
-  if(m_cloudWatchLogsHasBeenSet)
-  {
-   payload.WithObject("cloudWatchLogs", m_cloudWatchLogs.Jsonize());
-
+  if (m_cloudWatchLogsHasBeenSet) {
+    payload.WithObject("cloudWatchLogs", m_cloudWatchLogs.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace PrometheusService
-} // namespace Aws
+}  // namespace Model
+}  // namespace PrometheusService
+}  // namespace Aws

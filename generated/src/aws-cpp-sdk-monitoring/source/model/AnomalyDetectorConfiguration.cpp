@@ -3,41 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/monitoring/model/AnomalyDetectorConfiguration.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/monitoring/model/AnomalyDetectorConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudWatch
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudWatch {
+namespace Model {
 
-AnomalyDetectorConfiguration::AnomalyDetectorConfiguration(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+AnomalyDetectorConfiguration::AnomalyDetectorConfiguration(const XmlNode& xmlNode) { *this = xmlNode; }
 
-AnomalyDetectorConfiguration& AnomalyDetectorConfiguration::operator =(const XmlNode& xmlNode)
-{
+AnomalyDetectorConfiguration& AnomalyDetectorConfiguration::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode excludedTimeRangesNode = resultNode.FirstChild("ExcludedTimeRanges");
-    if(!excludedTimeRangesNode.IsNull())
-    {
+    if (!excludedTimeRangesNode.IsNull()) {
       XmlNode excludedTimeRangesMember = excludedTimeRangesNode.FirstChild("member");
       m_excludedTimeRangesHasBeenSet = !excludedTimeRangesMember.IsNull();
-      while(!excludedTimeRangesMember.IsNull())
-      {
+      while (!excludedTimeRangesMember.IsNull()) {
         m_excludedTimeRanges.push_back(excludedTimeRangesMember);
         excludedTimeRangesMember = excludedTimeRangesMember.NextNode("member");
       }
@@ -45,8 +35,7 @@ AnomalyDetectorConfiguration& AnomalyDetectorConfiguration::operator =(const Xml
       m_excludedTimeRangesHasBeenSet = true;
     }
     XmlNode metricTimezoneNode = resultNode.FirstChild("MetricTimezone");
-    if(!metricTimezoneNode.IsNull())
-    {
+    if (!metricTimezoneNode.IsNull()) {
       m_metricTimezone = Aws::Utils::Xml::DecodeEscapedXmlText(metricTimezoneNode.GetText());
       m_metricTimezoneHasBeenSet = true;
     }
@@ -55,44 +44,36 @@ AnomalyDetectorConfiguration& AnomalyDetectorConfiguration::operator =(const Xml
   return *this;
 }
 
-void AnomalyDetectorConfiguration::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_excludedTimeRangesHasBeenSet)
-  {
-      unsigned excludedTimeRangesIdx = 1;
-      for(auto& item : m_excludedTimeRanges)
-      {
-        Aws::StringStream excludedTimeRangesSs;
-        excludedTimeRangesSs << location << index << locationValue << ".ExcludedTimeRanges.member." << excludedTimeRangesIdx++;
-        item.OutputToStream(oStream, excludedTimeRangesSs.str().c_str());
-      }
+void AnomalyDetectorConfiguration::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                  const char* locationValue) const {
+  if (m_excludedTimeRangesHasBeenSet) {
+    unsigned excludedTimeRangesIdx = 1;
+    for (auto& item : m_excludedTimeRanges) {
+      Aws::StringStream excludedTimeRangesSs;
+      excludedTimeRangesSs << location << index << locationValue << ".ExcludedTimeRanges.member." << excludedTimeRangesIdx++;
+      item.OutputToStream(oStream, excludedTimeRangesSs.str().c_str());
+    }
   }
 
-  if(m_metricTimezoneHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".MetricTimezone=" << StringUtils::URLEncode(m_metricTimezone.c_str()) << "&";
-  }
-
-}
-
-void AnomalyDetectorConfiguration::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_excludedTimeRangesHasBeenSet)
-  {
-      unsigned excludedTimeRangesIdx = 1;
-      for(auto& item : m_excludedTimeRanges)
-      {
-        Aws::StringStream excludedTimeRangesSs;
-        excludedTimeRangesSs << location << ".ExcludedTimeRanges.member." << excludedTimeRangesIdx++;
-        item.OutputToStream(oStream, excludedTimeRangesSs.str().c_str());
-      }
-  }
-  if(m_metricTimezoneHasBeenSet)
-  {
-      oStream << location << ".MetricTimezone=" << StringUtils::URLEncode(m_metricTimezone.c_str()) << "&";
+  if (m_metricTimezoneHasBeenSet) {
+    oStream << location << index << locationValue << ".MetricTimezone=" << StringUtils::URLEncode(m_metricTimezone.c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace CloudWatch
-} // namespace Aws
+void AnomalyDetectorConfiguration::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_excludedTimeRangesHasBeenSet) {
+    unsigned excludedTimeRangesIdx = 1;
+    for (auto& item : m_excludedTimeRanges) {
+      Aws::StringStream excludedTimeRangesSs;
+      excludedTimeRangesSs << location << ".ExcludedTimeRanges.member." << excludedTimeRangesIdx++;
+      item.OutputToStream(oStream, excludedTimeRangesSs.str().c_str());
+    }
+  }
+  if (m_metricTimezoneHasBeenSet) {
+    oStream << location << ".MetricTimezone=" << StringUtils::URLEncode(m_metricTimezone.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace CloudWatch
+}  // namespace Aws

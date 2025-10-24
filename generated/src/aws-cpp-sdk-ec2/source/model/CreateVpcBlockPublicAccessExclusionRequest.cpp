@@ -3,42 +3,37 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/CreateVpcBlockPublicAccessExclusionRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/CreateVpcBlockPublicAccessExclusionRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateVpcBlockPublicAccessExclusionRequest::SerializePayload() const
-{
+Aws::String CreateVpcBlockPublicAccessExclusionRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateVpcBlockPublicAccessExclusion&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_subnetIdHasBeenSet)
-  {
+  if (m_subnetIdHasBeenSet) {
     ss << "SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
   }
 
-  if(m_vpcIdHasBeenSet)
-  {
+  if (m_vpcIdHasBeenSet) {
     ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
-  if(m_internetGatewayExclusionModeHasBeenSet)
-  {
-    ss << "InternetGatewayExclusionMode=" << StringUtils::URLEncode(InternetGatewayExclusionModeMapper::GetNameForInternetGatewayExclusionMode(m_internetGatewayExclusionMode)) << "&";
+  if (m_internetGatewayExclusionModeHasBeenSet) {
+    ss << "InternetGatewayExclusionMode="
+       << StringUtils::URLEncode(InternetGatewayExclusionModeMapper::GetNameForInternetGatewayExclusionMode(m_internetGatewayExclusionMode))
+       << "&";
   }
 
-  if(m_tagSpecificationsHasBeenSet)
-  {
+  if (m_tagSpecificationsHasBeenSet) {
     unsigned tagSpecificationsCount = 1;
-    for(auto& item : m_tagSpecifications)
-    {
+    for (auto& item : m_tagSpecifications) {
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
@@ -48,8 +43,4 @@ Aws::String CreateVpcBlockPublicAccessExclusionRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CreateVpcBlockPublicAccessExclusionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateVpcBlockPublicAccessExclusionRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

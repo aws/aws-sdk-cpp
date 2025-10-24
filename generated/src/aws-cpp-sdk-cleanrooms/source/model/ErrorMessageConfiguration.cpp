@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
 
-ErrorMessageConfiguration::ErrorMessageConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ErrorMessageConfiguration::ErrorMessageConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ErrorMessageConfiguration& ErrorMessageConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+ErrorMessageConfiguration& ErrorMessageConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = ErrorMessageTypeMapper::GetErrorMessageTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ErrorMessageConfiguration::Jsonize() const
-{
+JsonValue ErrorMessageConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", ErrorMessageTypeMapper::GetNameForErrorMessageType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", ErrorMessageTypeMapper::GetNameForErrorMessageType(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

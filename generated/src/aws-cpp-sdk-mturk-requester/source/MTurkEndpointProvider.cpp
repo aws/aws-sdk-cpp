@@ -5,12 +5,8 @@
 
 #include <aws/mturk-requester/MTurkEndpointProvider.h>
 
-namespace Aws
-{
-namespace MTurk
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace MTurk
-} // namespace Aws
+namespace Aws {
+namespace MTurk {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace MTurk
+}  // namespace Aws

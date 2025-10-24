@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/entityresolution/EntityResolution_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/entityresolution/EntityResolution_EXPORTS.h>
 
-namespace Aws
-{
-namespace EntityResolution
-{
-namespace Model
-{
-  enum class JobStatus
-  {
-    NOT_SET,
-    RUNNING,
-    SUCCEEDED,
-    FAILED,
-    QUEUED
-  };
+namespace Aws {
+namespace EntityResolution {
+namespace Model {
+enum class JobStatus { NOT_SET, RUNNING, SUCCEEDED, FAILED, QUEUED };
 
-namespace JobStatusMapper
-{
+namespace JobStatusMapper {
 AWS_ENTITYRESOLUTION_API JobStatus GetJobStatusForName(const Aws::String& name);
 
 AWS_ENTITYRESOLUTION_API Aws::String GetNameForJobStatus(JobStatus value);
-} // namespace JobStatusMapper
-} // namespace Model
-} // namespace EntityResolution
-} // namespace Aws
+}  // namespace JobStatusMapper
+}  // namespace Model
+}  // namespace EntityResolution
+}  // namespace Aws

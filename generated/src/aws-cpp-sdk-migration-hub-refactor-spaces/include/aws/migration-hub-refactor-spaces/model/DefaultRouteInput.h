@@ -6,53 +6,52 @@
 #pragma once
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpaces_EXPORTS.h>
 #include <aws/migration-hub-refactor-spaces/model/RouteActivationState.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace MigrationHubRefactorSpaces
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace MigrationHubRefactorSpaces {
+namespace Model {
 
+/**
+ * <p> The configuration for the default route type. </p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/DefaultRouteInput">AWS
+ * API Reference</a></p>
+ */
+class DefaultRouteInput {
+ public:
+  AWS_MIGRATIONHUBREFACTORSPACES_API DefaultRouteInput() = default;
+  AWS_MIGRATIONHUBREFACTORSPACES_API DefaultRouteInput(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MIGRATIONHUBREFACTORSPACES_API DefaultRouteInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MIGRATIONHUBREFACTORSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p> The configuration for the default route type. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/DefaultRouteInput">AWS
-   * API Reference</a></p>
+   * <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service
+   * after the route is created. </p>
    */
-  class DefaultRouteInput
-  {
-  public:
-    AWS_MIGRATIONHUBREFACTORSPACES_API DefaultRouteInput() = default;
-    AWS_MIGRATIONHUBREFACTORSPACES_API DefaultRouteInput(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MIGRATIONHUBREFACTORSPACES_API DefaultRouteInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MIGRATIONHUBREFACTORSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline RouteActivationState GetActivationState() const { return m_activationState; }
+  inline bool ActivationStateHasBeenSet() const { return m_activationStateHasBeenSet; }
+  inline void SetActivationState(RouteActivationState value) {
+    m_activationStateHasBeenSet = true;
+    m_activationState = value;
+  }
+  inline DefaultRouteInput& WithActivationState(RouteActivationState value) {
+    SetActivationState(value);
+    return *this;
+  }
+  ///@}
+ private:
+  RouteActivationState m_activationState{RouteActivationState::NOT_SET};
+  bool m_activationStateHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service
-     * after the route is created. </p>
-     */
-    inline RouteActivationState GetActivationState() const { return m_activationState; }
-    inline bool ActivationStateHasBeenSet() const { return m_activationStateHasBeenSet; }
-    inline void SetActivationState(RouteActivationState value) { m_activationStateHasBeenSet = true; m_activationState = value; }
-    inline DefaultRouteInput& WithActivationState(RouteActivationState value) { SetActivationState(value); return *this;}
-    ///@}
-  private:
-
-    RouteActivationState m_activationState{RouteActivationState::NOT_SET};
-    bool m_activationStateHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace MigrationHubRefactorSpaces
-} // namespace Aws
+}  // namespace Model
+}  // namespace MigrationHubRefactorSpaces
+}  // namespace Aws

@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/es/model/CancelledChangeProperty.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/es/model/CancelledChangeProperty.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ElasticsearchService
-{
-namespace Model
-{
+namespace Aws {
+namespace ElasticsearchService {
+namespace Model {
 
-CancelledChangeProperty::CancelledChangeProperty(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CancelledChangeProperty::CancelledChangeProperty(JsonView jsonValue) { *this = jsonValue; }
 
-CancelledChangeProperty& CancelledChangeProperty::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PropertyName"))
-  {
+CancelledChangeProperty& CancelledChangeProperty::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PropertyName")) {
     m_propertyName = jsonValue.GetString("PropertyName");
     m_propertyNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CancelledValue"))
-  {
+  if (jsonValue.ValueExists("CancelledValue")) {
     m_cancelledValue = jsonValue.GetString("CancelledValue");
     m_cancelledValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ActiveValue"))
-  {
+  if (jsonValue.ValueExists("ActiveValue")) {
     m_activeValue = jsonValue.GetString("ActiveValue");
     m_activeValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CancelledChangeProperty::Jsonize() const
-{
+JsonValue CancelledChangeProperty::Jsonize() const {
   JsonValue payload;
 
-  if(m_propertyNameHasBeenSet)
-  {
-   payload.WithString("PropertyName", m_propertyName);
-
+  if (m_propertyNameHasBeenSet) {
+    payload.WithString("PropertyName", m_propertyName);
   }
 
-  if(m_cancelledValueHasBeenSet)
-  {
-   payload.WithString("CancelledValue", m_cancelledValue);
-
+  if (m_cancelledValueHasBeenSet) {
+    payload.WithString("CancelledValue", m_cancelledValue);
   }
 
-  if(m_activeValueHasBeenSet)
-  {
-   payload.WithString("ActiveValue", m_activeValue);
-
+  if (m_activeValueHasBeenSet) {
+    payload.WithString("ActiveValue", m_activeValue);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ElasticsearchService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ElasticsearchService
+}  // namespace Aws

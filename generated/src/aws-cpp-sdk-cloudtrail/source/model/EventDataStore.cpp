@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudTrail
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudTrail {
+namespace Model {
 
-EventDataStore::EventDataStore(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EventDataStore::EventDataStore(JsonView jsonValue) { *this = jsonValue; }
 
-EventDataStore& EventDataStore::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EventDataStoreArn"))
-  {
+EventDataStore& EventDataStore::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EventDataStoreArn")) {
     m_eventDataStoreArn = jsonValue.GetString("EventDataStoreArn");
     m_eventDataStoreArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EventDataStore::Jsonize() const
-{
+JsonValue EventDataStore::Jsonize() const {
   JsonValue payload;
 
-  if(m_eventDataStoreArnHasBeenSet)
-  {
-   payload.WithString("EventDataStoreArn", m_eventDataStoreArn);
-
+  if (m_eventDataStoreArnHasBeenSet) {
+    payload.WithString("EventDataStoreArn", m_eventDataStoreArn);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudTrail
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudTrail
+}  // namespace Aws

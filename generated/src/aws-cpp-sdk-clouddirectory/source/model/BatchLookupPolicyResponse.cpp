@@ -11,61 +11,45 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudDirectory
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudDirectory {
+namespace Model {
 
-BatchLookupPolicyResponse::BatchLookupPolicyResponse(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchLookupPolicyResponse::BatchLookupPolicyResponse(JsonView jsonValue) { *this = jsonValue; }
 
-BatchLookupPolicyResponse& BatchLookupPolicyResponse::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PolicyToPathList"))
-  {
+BatchLookupPolicyResponse& BatchLookupPolicyResponse::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PolicyToPathList")) {
     Aws::Utils::Array<JsonView> policyToPathListJsonList = jsonValue.GetArray("PolicyToPathList");
-    for(unsigned policyToPathListIndex = 0; policyToPathListIndex < policyToPathListJsonList.GetLength(); ++policyToPathListIndex)
-    {
+    for (unsigned policyToPathListIndex = 0; policyToPathListIndex < policyToPathListJsonList.GetLength(); ++policyToPathListIndex) {
       m_policyToPathList.push_back(policyToPathListJsonList[policyToPathListIndex].AsObject());
     }
     m_policyToPathListHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BatchLookupPolicyResponse::Jsonize() const
-{
+JsonValue BatchLookupPolicyResponse::Jsonize() const {
   JsonValue payload;
 
-  if(m_policyToPathListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> policyToPathListJsonList(m_policyToPathList.size());
-   for(unsigned policyToPathListIndex = 0; policyToPathListIndex < policyToPathListJsonList.GetLength(); ++policyToPathListIndex)
-   {
-     policyToPathListJsonList[policyToPathListIndex].AsObject(m_policyToPathList[policyToPathListIndex].Jsonize());
-   }
-   payload.WithArray("PolicyToPathList", std::move(policyToPathListJsonList));
-
+  if (m_policyToPathListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> policyToPathListJsonList(m_policyToPathList.size());
+    for (unsigned policyToPathListIndex = 0; policyToPathListIndex < policyToPathListJsonList.GetLength(); ++policyToPathListIndex) {
+      policyToPathListJsonList[policyToPathListIndex].AsObject(m_policyToPathList[policyToPathListIndex].Jsonize());
+    }
+    payload.WithArray("PolicyToPathList", std::move(policyToPathListJsonList));
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudDirectory
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudDirectory
+}  // namespace Aws

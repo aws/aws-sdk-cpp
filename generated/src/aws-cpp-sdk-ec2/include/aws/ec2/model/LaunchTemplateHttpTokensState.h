@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class LaunchTemplateHttpTokensState
-  {
-    NOT_SET,
-    optional,
-    required
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class LaunchTemplateHttpTokensState { NOT_SET, optional, required };
 
-namespace LaunchTemplateHttpTokensStateMapper
-{
+namespace LaunchTemplateHttpTokensStateMapper {
 AWS_EC2_API LaunchTemplateHttpTokensState GetLaunchTemplateHttpTokensStateForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForLaunchTemplateHttpTokensState(LaunchTemplateHttpTokensState value);
-} // namespace LaunchTemplateHttpTokensStateMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace LaunchTemplateHttpTokensStateMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

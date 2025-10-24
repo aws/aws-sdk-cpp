@@ -12,31 +12,20 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateApiRequest::SerializePayload() const
-{
+Aws::String UpdateApiRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_ownerContactHasBeenSet)
-  {
-   payload.WithString("ownerContact", m_ownerContact);
-
+  if (m_ownerContactHasBeenSet) {
+    payload.WithString("ownerContact", m_ownerContact);
   }
 
-  if(m_eventConfigHasBeenSet)
-  {
-   payload.WithObject("eventConfig", m_eventConfig.Jsonize());
-
+  if (m_eventConfigHasBeenSet) {
+    payload.WithObject("eventConfig", m_eventConfig.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/evs/EVS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/evs/EVS_EXPORTS.h>
 
-namespace Aws
-{
-namespace EVS
-{
-namespace Model
-{
-  enum class EnvironmentState
-  {
-    NOT_SET,
-    CREATING,
-    CREATED,
-    DELETING,
-    DELETED,
-    CREATE_FAILED
-  };
+namespace Aws {
+namespace EVS {
+namespace Model {
+enum class EnvironmentState { NOT_SET, CREATING, CREATED, DELETING, DELETED, CREATE_FAILED };
 
-namespace EnvironmentStateMapper
-{
+namespace EnvironmentStateMapper {
 AWS_EVS_API EnvironmentState GetEnvironmentStateForName(const Aws::String& name);
 
 AWS_EVS_API Aws::String GetNameForEnvironmentState(EnvironmentState value);
-} // namespace EnvironmentStateMapper
-} // namespace Model
-} // namespace EVS
-} // namespace Aws
+}  // namespace EnvironmentStateMapper
+}  // namespace Model
+}  // namespace EVS
+}  // namespace Aws

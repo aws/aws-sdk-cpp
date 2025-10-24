@@ -11,30 +11,20 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Budgets
-{
-namespace Model
-{
+namespace Aws {
+namespace Budgets {
+namespace Model {
 
-ScpActionDefinition::ScpActionDefinition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ScpActionDefinition::ScpActionDefinition(JsonView jsonValue) { *this = jsonValue; }
 
-ScpActionDefinition& ScpActionDefinition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PolicyId"))
-  {
+ScpActionDefinition& ScpActionDefinition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PolicyId")) {
     m_policyId = jsonValue.GetString("PolicyId");
     m_policyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TargetIds"))
-  {
+  if (jsonValue.ValueExists("TargetIds")) {
     Aws::Utils::Array<JsonView> targetIdsJsonList = jsonValue.GetArray("TargetIds");
-    for(unsigned targetIdsIndex = 0; targetIdsIndex < targetIdsJsonList.GetLength(); ++targetIdsIndex)
-    {
+    for (unsigned targetIdsIndex = 0; targetIdsIndex < targetIdsJsonList.GetLength(); ++targetIdsIndex) {
       m_targetIds.push_back(targetIdsJsonList[targetIdsIndex].AsString());
     }
     m_targetIdsHasBeenSet = true;
@@ -42,30 +32,24 @@ ScpActionDefinition& ScpActionDefinition::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ScpActionDefinition::Jsonize() const
-{
+JsonValue ScpActionDefinition::Jsonize() const {
   JsonValue payload;
 
-  if(m_policyIdHasBeenSet)
-  {
-   payload.WithString("PolicyId", m_policyId);
-
+  if (m_policyIdHasBeenSet) {
+    payload.WithString("PolicyId", m_policyId);
   }
 
-  if(m_targetIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> targetIdsJsonList(m_targetIds.size());
-   for(unsigned targetIdsIndex = 0; targetIdsIndex < targetIdsJsonList.GetLength(); ++targetIdsIndex)
-   {
-     targetIdsJsonList[targetIdsIndex].AsString(m_targetIds[targetIdsIndex]);
-   }
-   payload.WithArray("TargetIds", std::move(targetIdsJsonList));
-
+  if (m_targetIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> targetIdsJsonList(m_targetIds.size());
+    for (unsigned targetIdsIndex = 0; targetIdsIndex < targetIdsJsonList.GetLength(); ++targetIdsIndex) {
+      targetIdsJsonList[targetIdsIndex].AsString(m_targetIds[targetIdsIndex]);
+    }
+    payload.WithArray("TargetIds", std::move(targetIdsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Budgets
-} // namespace Aws
+}  // namespace Model
+}  // namespace Budgets
+}  // namespace Aws

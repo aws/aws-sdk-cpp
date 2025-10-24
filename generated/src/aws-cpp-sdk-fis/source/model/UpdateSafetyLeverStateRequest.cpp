@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fis/model/UpdateSafetyLeverStateRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fis/model/UpdateSafetyLeverStateRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::FIS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateSafetyLeverStateRequest::SerializePayload() const
-{
+Aws::String UpdateSafetyLeverStateRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithObject("state", m_state.Jsonize());
-
+  if (m_stateHasBeenSet) {
+    payload.WithObject("state", m_state.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

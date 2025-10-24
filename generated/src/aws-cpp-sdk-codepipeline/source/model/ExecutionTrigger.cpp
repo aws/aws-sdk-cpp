@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
 
-ExecutionTrigger::ExecutionTrigger(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExecutionTrigger::ExecutionTrigger(JsonView jsonValue) { *this = jsonValue; }
 
-ExecutionTrigger& ExecutionTrigger::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("triggerType"))
-  {
+ExecutionTrigger& ExecutionTrigger::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("triggerType")) {
     m_triggerType = TriggerTypeMapper::GetTriggerTypeForName(jsonValue.GetString("triggerType"));
     m_triggerTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("triggerDetail"))
-  {
+  if (jsonValue.ValueExists("triggerDetail")) {
     m_triggerDetail = jsonValue.GetString("triggerDetail");
     m_triggerDetailHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExecutionTrigger::Jsonize() const
-{
+JsonValue ExecutionTrigger::Jsonize() const {
   JsonValue payload;
 
-  if(m_triggerTypeHasBeenSet)
-  {
-   payload.WithString("triggerType", TriggerTypeMapper::GetNameForTriggerType(m_triggerType));
+  if (m_triggerTypeHasBeenSet) {
+    payload.WithString("triggerType", TriggerTypeMapper::GetNameForTriggerType(m_triggerType));
   }
 
-  if(m_triggerDetailHasBeenSet)
-  {
-   payload.WithString("triggerDetail", m_triggerDetail);
-
+  if (m_triggerDetailHasBeenSet) {
+    payload.WithString("triggerDetail", m_triggerDetail);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

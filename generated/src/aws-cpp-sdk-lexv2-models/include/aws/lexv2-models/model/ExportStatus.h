@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
-  enum class ExportStatus
-  {
-    NOT_SET,
-    InProgress,
-    Completed,
-    Failed,
-    Deleting
-  };
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
+enum class ExportStatus { NOT_SET, InProgress, Completed, Failed, Deleting };
 
-namespace ExportStatusMapper
-{
+namespace ExportStatusMapper {
 AWS_LEXMODELSV2_API ExportStatus GetExportStatusForName(const Aws::String& name);
 
 AWS_LEXMODELSV2_API Aws::String GetNameForExportStatus(ExportStatus value);
-} // namespace ExportStatusMapper
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace ExportStatusMapper
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

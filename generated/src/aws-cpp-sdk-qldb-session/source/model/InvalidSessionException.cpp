@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/qldb-session/model/InvalidSessionException.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/qldb-session/model/InvalidSessionException.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QLDBSession
-{
-namespace Model
-{
+namespace Aws {
+namespace QLDBSession {
+namespace Model {
 
-InvalidSessionException::InvalidSessionException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InvalidSessionException::InvalidSessionException(JsonView jsonValue) { *this = jsonValue; }
 
-InvalidSessionException& InvalidSessionException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Message"))
-  {
+InvalidSessionException& InvalidSessionException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Code"))
-  {
+  if (jsonValue.ValueExists("Code")) {
     m_code = jsonValue.GetString("Code");
     m_codeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InvalidSessionException::Jsonize() const
-{
+JsonValue InvalidSessionException::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
-  if(m_codeHasBeenSet)
-  {
-   payload.WithString("Code", m_code);
-
+  if (m_codeHasBeenSet) {
+    payload.WithString("Code", m_code);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QLDBSession
-} // namespace Aws
+}  // namespace Model
+}  // namespace QLDBSession
+}  // namespace Aws

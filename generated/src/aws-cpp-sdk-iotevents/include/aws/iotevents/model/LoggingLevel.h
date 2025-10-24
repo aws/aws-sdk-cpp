@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotevents/IoTEvents_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotevents/IoTEvents_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTEvents
-{
-namespace Model
-{
-  enum class LoggingLevel
-  {
-    NOT_SET,
-    ERROR_,
-    INFO,
-    DEBUG_
-  };
+namespace Aws {
+namespace IoTEvents {
+namespace Model {
+enum class LoggingLevel { NOT_SET, ERROR_, INFO, DEBUG_ };
 
-namespace LoggingLevelMapper
-{
+namespace LoggingLevelMapper {
 AWS_IOTEVENTS_API LoggingLevel GetLoggingLevelForName(const Aws::String& name);
 
 AWS_IOTEVENTS_API Aws::String GetNameForLoggingLevel(LoggingLevel value);
-} // namespace LoggingLevelMapper
-} // namespace Model
-} // namespace IoTEvents
-} // namespace Aws
+}  // namespace LoggingLevelMapper
+}  // namespace Model
+}  // namespace IoTEvents
+}  // namespace Aws

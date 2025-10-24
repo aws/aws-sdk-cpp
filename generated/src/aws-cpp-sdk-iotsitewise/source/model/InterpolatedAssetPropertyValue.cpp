@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotsitewise/model/InterpolatedAssetPropertyValue.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotsitewise/model/InterpolatedAssetPropertyValue.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTSiteWise
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTSiteWise {
+namespace Model {
 
-InterpolatedAssetPropertyValue::InterpolatedAssetPropertyValue(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InterpolatedAssetPropertyValue::InterpolatedAssetPropertyValue(JsonView jsonValue) { *this = jsonValue; }
 
-InterpolatedAssetPropertyValue& InterpolatedAssetPropertyValue::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("timestamp"))
-  {
+InterpolatedAssetPropertyValue& InterpolatedAssetPropertyValue::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("timestamp")) {
     m_timestamp = jsonValue.GetObject("timestamp");
     m_timestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("value"))
-  {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetObject("value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InterpolatedAssetPropertyValue::Jsonize() const
-{
+JsonValue InterpolatedAssetPropertyValue::Jsonize() const {
   JsonValue payload;
 
-  if(m_timestampHasBeenSet)
-  {
-   payload.WithObject("timestamp", m_timestamp.Jsonize());
-
+  if (m_timestampHasBeenSet) {
+    payload.WithObject("timestamp", m_timestamp.Jsonize());
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithObject("value", m_value.Jsonize());
-
+  if (m_valueHasBeenSet) {
+    payload.WithObject("value", m_value.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTSiteWise
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTSiteWise
+}  // namespace Aws

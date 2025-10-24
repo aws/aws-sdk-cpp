@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/AuthorizeCacheSecurityGroupIngressRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticache/model/AuthorizeCacheSecurityGroupIngressRequest.h>
 
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-Aws::String AuthorizeCacheSecurityGroupIngressRequest::SerializePayload() const
-{
+Aws::String AuthorizeCacheSecurityGroupIngressRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=AuthorizeCacheSecurityGroupIngress&";
-  if(m_cacheSecurityGroupNameHasBeenSet)
-  {
+  if (m_cacheSecurityGroupNameHasBeenSet) {
     ss << "CacheSecurityGroupName=" << StringUtils::URLEncode(m_cacheSecurityGroupName.c_str()) << "&";
   }
 
-  if(m_eC2SecurityGroupNameHasBeenSet)
-  {
+  if (m_eC2SecurityGroupNameHasBeenSet) {
     ss << "EC2SecurityGroupName=" << StringUtils::URLEncode(m_eC2SecurityGroupName.c_str()) << "&";
   }
 
-  if(m_eC2SecurityGroupOwnerIdHasBeenSet)
-  {
+  if (m_eC2SecurityGroupOwnerIdHasBeenSet) {
     ss << "EC2SecurityGroupOwnerId=" << StringUtils::URLEncode(m_eC2SecurityGroupOwnerId.c_str()) << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String AuthorizeCacheSecurityGroupIngressRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  AuthorizeCacheSecurityGroupIngressRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void AuthorizeCacheSecurityGroupIngressRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

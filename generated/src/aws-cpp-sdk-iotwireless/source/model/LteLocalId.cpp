@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotwireless/model/LteLocalId.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotwireless/model/LteLocalId.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTWireless
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTWireless {
+namespace Model {
 
-LteLocalId::LteLocalId(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LteLocalId::LteLocalId(JsonView jsonValue) { *this = jsonValue; }
 
-LteLocalId& LteLocalId::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Pci"))
-  {
+LteLocalId& LteLocalId::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Pci")) {
     m_pci = jsonValue.GetInteger("Pci");
     m_pciHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Earfcn"))
-  {
+  if (jsonValue.ValueExists("Earfcn")) {
     m_earfcn = jsonValue.GetInteger("Earfcn");
     m_earfcnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LteLocalId::Jsonize() const
-{
+JsonValue LteLocalId::Jsonize() const {
   JsonValue payload;
 
-  if(m_pciHasBeenSet)
-  {
-   payload.WithInteger("Pci", m_pci);
-
+  if (m_pciHasBeenSet) {
+    payload.WithInteger("Pci", m_pci);
   }
 
-  if(m_earfcnHasBeenSet)
-  {
-   payload.WithInteger("Earfcn", m_earfcn);
-
+  if (m_earfcnHasBeenSet) {
+    payload.WithInteger("Earfcn", m_earfcn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTWireless
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTWireless
+}  // namespace Aws

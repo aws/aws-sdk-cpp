@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-AggregateComplianceByConformancePack::AggregateComplianceByConformancePack(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AggregateComplianceByConformancePack::AggregateComplianceByConformancePack(JsonView jsonValue) { *this = jsonValue; }
 
-AggregateComplianceByConformancePack& AggregateComplianceByConformancePack::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ConformancePackName"))
-  {
+AggregateComplianceByConformancePack& AggregateComplianceByConformancePack::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ConformancePackName")) {
     m_conformancePackName = jsonValue.GetString("ConformancePackName");
     m_conformancePackNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Compliance"))
-  {
+  if (jsonValue.ValueExists("Compliance")) {
     m_compliance = jsonValue.GetObject("Compliance");
     m_complianceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AccountId"))
-  {
+  if (jsonValue.ValueExists("AccountId")) {
     m_accountId = jsonValue.GetString("AccountId");
     m_accountIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AwsRegion"))
-  {
+  if (jsonValue.ValueExists("AwsRegion")) {
     m_awsRegion = jsonValue.GetString("AwsRegion");
     m_awsRegionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AggregateComplianceByConformancePack::Jsonize() const
-{
+JsonValue AggregateComplianceByConformancePack::Jsonize() const {
   JsonValue payload;
 
-  if(m_conformancePackNameHasBeenSet)
-  {
-   payload.WithString("ConformancePackName", m_conformancePackName);
-
+  if (m_conformancePackNameHasBeenSet) {
+    payload.WithString("ConformancePackName", m_conformancePackName);
   }
 
-  if(m_complianceHasBeenSet)
-  {
-   payload.WithObject("Compliance", m_compliance.Jsonize());
-
+  if (m_complianceHasBeenSet) {
+    payload.WithObject("Compliance", m_compliance.Jsonize());
   }
 
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("AccountId", m_accountId);
-
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("AccountId", m_accountId);
   }
 
-  if(m_awsRegionHasBeenSet)
-  {
-   payload.WithString("AwsRegion", m_awsRegion);
-
+  if (m_awsRegionHasBeenSet) {
+    payload.WithString("AwsRegion", m_awsRegion);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

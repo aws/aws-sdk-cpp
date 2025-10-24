@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dynamodb/model/OnDemandThroughputOverride.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dynamodb/model/OnDemandThroughputOverride.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DynamoDB
-{
-namespace Model
-{
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
 
-OnDemandThroughputOverride::OnDemandThroughputOverride(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OnDemandThroughputOverride::OnDemandThroughputOverride(JsonView jsonValue) { *this = jsonValue; }
 
-OnDemandThroughputOverride& OnDemandThroughputOverride::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MaxReadRequestUnits"))
-  {
+OnDemandThroughputOverride& OnDemandThroughputOverride::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MaxReadRequestUnits")) {
     m_maxReadRequestUnits = jsonValue.GetInt64("MaxReadRequestUnits");
     m_maxReadRequestUnitsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OnDemandThroughputOverride::Jsonize() const
-{
+JsonValue OnDemandThroughputOverride::Jsonize() const {
   JsonValue payload;
 
-  if(m_maxReadRequestUnitsHasBeenSet)
-  {
-   payload.WithInt64("MaxReadRequestUnits", m_maxReadRequestUnits);
-
+  if (m_maxReadRequestUnitsHasBeenSet) {
+    payload.WithInt64("MaxReadRequestUnits", m_maxReadRequestUnits);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DynamoDB
-} // namespace Aws
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws

@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/inspector2/model/EcrRepositoryMetadata.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/inspector2/model/EcrRepositoryMetadata.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Inspector2
-{
-namespace Model
-{
+namespace Aws {
+namespace Inspector2 {
+namespace Model {
 
-EcrRepositoryMetadata::EcrRepositoryMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EcrRepositoryMetadata::EcrRepositoryMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-EcrRepositoryMetadata& EcrRepositoryMetadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+EcrRepositoryMetadata& EcrRepositoryMetadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("scanFrequency"))
-  {
+  if (jsonValue.ValueExists("scanFrequency")) {
     m_scanFrequency = EcrScanFrequencyMapper::GetEcrScanFrequencyForName(jsonValue.GetString("scanFrequency"));
     m_scanFrequencyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EcrRepositoryMetadata::Jsonize() const
-{
+JsonValue EcrRepositoryMetadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_scanFrequencyHasBeenSet)
-  {
-   payload.WithString("scanFrequency", EcrScanFrequencyMapper::GetNameForEcrScanFrequency(m_scanFrequency));
+  if (m_scanFrequencyHasBeenSet) {
+    payload.WithString("scanFrequency", EcrScanFrequencyMapper::GetNameForEcrScanFrequency(m_scanFrequency));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Inspector2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Inspector2
+}  // namespace Aws

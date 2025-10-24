@@ -7,25 +7,16 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
-  enum class StageTransitionType
-  {
-    NOT_SET,
-    Inbound,
-    Outbound
-  };
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
+enum class StageTransitionType { NOT_SET, Inbound, Outbound };
 
-namespace StageTransitionTypeMapper
-{
+namespace StageTransitionTypeMapper {
 AWS_CODEPIPELINE_API StageTransitionType GetStageTransitionTypeForName(const Aws::String& name);
 
 AWS_CODEPIPELINE_API Aws::String GetNameForStageTransitionType(StageTransitionType value);
-} // namespace StageTransitionTypeMapper
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace StageTransitionTypeMapper
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

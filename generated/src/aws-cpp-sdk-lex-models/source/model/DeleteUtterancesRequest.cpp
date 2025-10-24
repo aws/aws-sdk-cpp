@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lex-models/model/DeleteUtterancesRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lex-models/model/DeleteUtterancesRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::LexModelBuildingService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteUtterancesRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DeleteUtterancesRequest::SerializePayload() const { return {}; }

@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudTrailData
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudTrailData {
+namespace Model {
 
-ResultErrorEntry::ResultErrorEntry(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResultErrorEntry::ResultErrorEntry(JsonView jsonValue) { *this = jsonValue; }
 
-ResultErrorEntry& ResultErrorEntry::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("errorCode"))
-  {
+ResultErrorEntry& ResultErrorEntry::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("errorCode")) {
     m_errorCode = jsonValue.GetString("errorCode");
     m_errorCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("errorMessage"))
-  {
+  if (jsonValue.ValueExists("errorMessage")) {
     m_errorMessage = jsonValue.GetString("errorMessage");
     m_errorMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("id"))
-  {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResultErrorEntry::Jsonize() const
-{
+JsonValue ResultErrorEntry::Jsonize() const {
   JsonValue payload;
 
-  if(m_errorCodeHasBeenSet)
-  {
-   payload.WithString("errorCode", m_errorCode);
-
+  if (m_errorCodeHasBeenSet) {
+    payload.WithString("errorCode", m_errorCode);
   }
 
-  if(m_errorMessageHasBeenSet)
-  {
-   payload.WithString("errorMessage", m_errorMessage);
-
+  if (m_errorMessageHasBeenSet) {
+    payload.WithString("errorMessage", m_errorMessage);
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudTrailData
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudTrailData
+}  // namespace Aws

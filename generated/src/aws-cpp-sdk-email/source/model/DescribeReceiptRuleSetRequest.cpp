@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/email/model/DescribeReceiptRuleSetRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/email/model/DescribeReceiptRuleSetRequest.h>
 
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeReceiptRuleSetRequest::SerializePayload() const
-{
+Aws::String DescribeReceiptRuleSetRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeReceiptRuleSet&";
-  if(m_ruleSetNameHasBeenSet)
-  {
+  if (m_ruleSetNameHasBeenSet) {
     ss << "RuleSetName=" << StringUtils::URLEncode(m_ruleSetName.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DescribeReceiptRuleSetRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeReceiptRuleSetRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeReceiptRuleSetRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

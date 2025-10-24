@@ -6,86 +6,101 @@
 #pragma once
 #include <aws/bcm-pricing-calculator/BCMPricingCalculator_EXPORTS.h>
 #include <aws/bcm-pricing-calculator/model/ListWorkloadEstimatesFilterName.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bcm-pricing-calculator/model/MatchOption.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace BCMPricingCalculator
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace BCMPricingCalculator {
+namespace Model {
 
+/**
+ * <p> Represents a filter for listing workload estimates. </p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/ListWorkloadEstimatesFilter">AWS
+ * API Reference</a></p>
+ */
+class ListWorkloadEstimatesFilter {
+ public:
+  AWS_BCMPRICINGCALCULATOR_API ListWorkloadEstimatesFilter() = default;
+  AWS_BCMPRICINGCALCULATOR_API ListWorkloadEstimatesFilter(Aws::Utils::Json::JsonView jsonValue);
+  AWS_BCMPRICINGCALCULATOR_API ListWorkloadEstimatesFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_BCMPRICINGCALCULATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p> Represents a filter for listing workload estimates. </p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/bcm-pricing-calculator-2024-06-19/ListWorkloadEstimatesFilter">AWS
-   * API Reference</a></p>
+   * <p> The name of the filter attribute. </p>
    */
-  class ListWorkloadEstimatesFilter
-  {
-  public:
-    AWS_BCMPRICINGCALCULATOR_API ListWorkloadEstimatesFilter() = default;
-    AWS_BCMPRICINGCALCULATOR_API ListWorkloadEstimatesFilter(Aws::Utils::Json::JsonView jsonValue);
-    AWS_BCMPRICINGCALCULATOR_API ListWorkloadEstimatesFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_BCMPRICINGCALCULATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline ListWorkloadEstimatesFilterName GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  inline void SetName(ListWorkloadEstimatesFilterName value) {
+    m_nameHasBeenSet = true;
+    m_name = value;
+  }
+  inline ListWorkloadEstimatesFilter& WithName(ListWorkloadEstimatesFilterName value) {
+    SetName(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p> The values to filter by. </p>
+   */
+  inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
+  inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
+  template <typename ValuesT = Aws::Vector<Aws::String>>
+  void SetValues(ValuesT&& value) {
+    m_valuesHasBeenSet = true;
+    m_values = std::forward<ValuesT>(value);
+  }
+  template <typename ValuesT = Aws::Vector<Aws::String>>
+  ListWorkloadEstimatesFilter& WithValues(ValuesT&& value) {
+    SetValues(std::forward<ValuesT>(value));
+    return *this;
+  }
+  template <typename ValuesT = Aws::String>
+  ListWorkloadEstimatesFilter& AddValues(ValuesT&& value) {
+    m_valuesHasBeenSet = true;
+    m_values.emplace_back(std::forward<ValuesT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p> The name of the filter attribute. </p>
-     */
-    inline ListWorkloadEstimatesFilterName GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(ListWorkloadEstimatesFilterName value) { m_nameHasBeenSet = true; m_name = value; }
-    inline ListWorkloadEstimatesFilter& WithName(ListWorkloadEstimatesFilterName value) { SetName(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p> The match option for the filter (e.g., equals, contains). </p>
+   */
+  inline MatchOption GetMatchOption() const { return m_matchOption; }
+  inline bool MatchOptionHasBeenSet() const { return m_matchOptionHasBeenSet; }
+  inline void SetMatchOption(MatchOption value) {
+    m_matchOptionHasBeenSet = true;
+    m_matchOption = value;
+  }
+  inline ListWorkloadEstimatesFilter& WithMatchOption(MatchOption value) {
+    SetMatchOption(value);
+    return *this;
+  }
+  ///@}
+ private:
+  ListWorkloadEstimatesFilterName m_name{ListWorkloadEstimatesFilterName::NOT_SET};
+  bool m_nameHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p> The values to filter by. </p>
-     */
-    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
-    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    template<typename ValuesT = Aws::Vector<Aws::String>>
-    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
-    template<typename ValuesT = Aws::Vector<Aws::String>>
-    ListWorkloadEstimatesFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
-    template<typename ValuesT = Aws::String>
-    ListWorkloadEstimatesFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
-    ///@}
+  Aws::Vector<Aws::String> m_values;
+  bool m_valuesHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p> The match option for the filter (e.g., equals, contains). </p>
-     */
-    inline MatchOption GetMatchOption() const { return m_matchOption; }
-    inline bool MatchOptionHasBeenSet() const { return m_matchOptionHasBeenSet; }
-    inline void SetMatchOption(MatchOption value) { m_matchOptionHasBeenSet = true; m_matchOption = value; }
-    inline ListWorkloadEstimatesFilter& WithMatchOption(MatchOption value) { SetMatchOption(value); return *this;}
-    ///@}
-  private:
+  MatchOption m_matchOption{MatchOption::NOT_SET};
+  bool m_matchOptionHasBeenSet = false;
+};
 
-    ListWorkloadEstimatesFilterName m_name{ListWorkloadEstimatesFilterName::NOT_SET};
-    bool m_nameHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet = false;
-
-    MatchOption m_matchOption{MatchOption::NOT_SET};
-    bool m_matchOptionHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace BCMPricingCalculator
-} // namespace Aws
+}  // namespace Model
+}  // namespace BCMPricingCalculator
+}  // namespace Aws

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeCommit
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeCommit {
+namespace Model {
 
-OriginApprovalRuleTemplate::OriginApprovalRuleTemplate(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OriginApprovalRuleTemplate::OriginApprovalRuleTemplate(JsonView jsonValue) { *this = jsonValue; }
 
-OriginApprovalRuleTemplate& OriginApprovalRuleTemplate::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("approvalRuleTemplateId"))
-  {
+OriginApprovalRuleTemplate& OriginApprovalRuleTemplate::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("approvalRuleTemplateId")) {
     m_approvalRuleTemplateId = jsonValue.GetString("approvalRuleTemplateId");
     m_approvalRuleTemplateIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("approvalRuleTemplateName"))
-  {
+  if (jsonValue.ValueExists("approvalRuleTemplateName")) {
     m_approvalRuleTemplateName = jsonValue.GetString("approvalRuleTemplateName");
     m_approvalRuleTemplateNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OriginApprovalRuleTemplate::Jsonize() const
-{
+JsonValue OriginApprovalRuleTemplate::Jsonize() const {
   JsonValue payload;
 
-  if(m_approvalRuleTemplateIdHasBeenSet)
-  {
-   payload.WithString("approvalRuleTemplateId", m_approvalRuleTemplateId);
-
+  if (m_approvalRuleTemplateIdHasBeenSet) {
+    payload.WithString("approvalRuleTemplateId", m_approvalRuleTemplateId);
   }
 
-  if(m_approvalRuleTemplateNameHasBeenSet)
-  {
-   payload.WithString("approvalRuleTemplateName", m_approvalRuleTemplateName);
-
+  if (m_approvalRuleTemplateNameHasBeenSet) {
+    payload.WithString("approvalRuleTemplateName", m_approvalRuleTemplateName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeCommit
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeCommit
+}  // namespace Aws

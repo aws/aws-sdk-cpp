@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/states/SFN_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/states/SFN_EXPORTS.h>
 
-namespace Aws
-{
-namespace SFN
-{
-namespace Model
-{
-  enum class IncludedData
-  {
-    NOT_SET,
-    ALL_DATA,
-    METADATA_ONLY
-  };
+namespace Aws {
+namespace SFN {
+namespace Model {
+enum class IncludedData { NOT_SET, ALL_DATA, METADATA_ONLY };
 
-namespace IncludedDataMapper
-{
+namespace IncludedDataMapper {
 AWS_SFN_API IncludedData GetIncludedDataForName(const Aws::String& name);
 
 AWS_SFN_API Aws::String GetNameForIncludedData(IncludedData value);
-} // namespace IncludedDataMapper
-} // namespace Model
-} // namespace SFN
-} // namespace Aws
+}  // namespace IncludedDataMapper
+}  // namespace Model
+}  // namespace SFN
+}  // namespace Aws

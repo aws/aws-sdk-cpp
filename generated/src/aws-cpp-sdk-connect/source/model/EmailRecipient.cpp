@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-EmailRecipient::EmailRecipient(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EmailRecipient::EmailRecipient(JsonView jsonValue) { *this = jsonValue; }
 
-EmailRecipient& EmailRecipient::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Address"))
-  {
+EmailRecipient& EmailRecipient::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Address")) {
     m_address = jsonValue.GetString("Address");
     m_addressHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DisplayName"))
-  {
+  if (jsonValue.ValueExists("DisplayName")) {
     m_displayName = jsonValue.GetString("DisplayName");
     m_displayNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EmailRecipient::Jsonize() const
-{
+JsonValue EmailRecipient::Jsonize() const {
   JsonValue payload;
 
-  if(m_addressHasBeenSet)
-  {
-   payload.WithString("Address", m_address);
-
+  if (m_addressHasBeenSet) {
+    payload.WithString("Address", m_address);
   }
 
-  if(m_displayNameHasBeenSet)
-  {
-   payload.WithString("DisplayName", m_displayName);
-
+  if (m_displayNameHasBeenSet) {
+    payload.WithString("DisplayName", m_displayName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

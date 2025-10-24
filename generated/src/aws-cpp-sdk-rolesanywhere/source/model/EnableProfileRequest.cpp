@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rolesanywhere/model/EnableProfileRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rolesanywhere/model/EnableProfileRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::RolesAnywhere::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String EnableProfileRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String EnableProfileRequest::SerializePayload() const { return {}; }

@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/codecatalyst/CodeCatalystRequest.h>
 
-namespace Aws
-{
-namespace CodeCatalyst
-{
-} // namespace CodeCatalyst
-} // namespace Aws
+namespace Aws {
+namespace CodeCatalyst {}  // namespace CodeCatalyst
+}  // namespace Aws

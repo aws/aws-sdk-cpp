@@ -4,35 +4,30 @@
  */
 
 #pragma once
-#include <aws/waf-regional/WAFRegional_EXPORTS.h>
 #include <aws/waf-regional/WAFRegionalRequest.h>
+#include <aws/waf-regional/WAFRegional_EXPORTS.h>
 
-namespace Aws
-{
-namespace WAFRegional
-{
-namespace Model
-{
+namespace Aws {
+namespace WAFRegional {
+namespace Model {
 
-  /**
-   */
-  class GetChangeTokenRequest : public WAFRegionalRequest
-  {
-  public:
-    AWS_WAFREGIONAL_API GetChangeTokenRequest() = default;
+/**
+ */
+class GetChangeTokenRequest : public WAFRegionalRequest {
+ public:
+  AWS_WAFREGIONAL_API GetChangeTokenRequest() = default;
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "GetChangeToken"; }
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "GetChangeToken"; }
 
-    AWS_WAFREGIONAL_API Aws::String SerializePayload() const override;
+  AWS_WAFREGIONAL_API Aws::String SerializePayload() const override;
 
-    AWS_WAFREGIONAL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+  AWS_WAFREGIONAL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+};
 
-  };
-
-} // namespace Model
-} // namespace WAFRegional
-} // namespace Aws
+}  // namespace Model
+}  // namespace WAFRegional
+}  // namespace Aws

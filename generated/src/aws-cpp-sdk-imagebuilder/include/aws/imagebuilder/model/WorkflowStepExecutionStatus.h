@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 
-namespace Aws
-{
-namespace imagebuilder
-{
-namespace Model
-{
-  enum class WorkflowStepExecutionStatus
-  {
-    NOT_SET,
-    PENDING,
-    SKIPPED,
-    RUNNING,
-    COMPLETED,
-    FAILED,
-    CANCELLED
-  };
+namespace Aws {
+namespace imagebuilder {
+namespace Model {
+enum class WorkflowStepExecutionStatus { NOT_SET, PENDING, SKIPPED, RUNNING, COMPLETED, FAILED, CANCELLED };
 
-namespace WorkflowStepExecutionStatusMapper
-{
+namespace WorkflowStepExecutionStatusMapper {
 AWS_IMAGEBUILDER_API WorkflowStepExecutionStatus GetWorkflowStepExecutionStatusForName(const Aws::String& name);
 
 AWS_IMAGEBUILDER_API Aws::String GetNameForWorkflowStepExecutionStatus(WorkflowStepExecutionStatus value);
-} // namespace WorkflowStepExecutionStatusMapper
-} // namespace Model
-} // namespace imagebuilder
-} // namespace Aws
+}  // namespace WorkflowStepExecutionStatusMapper
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::kendra;
 
-AWSError<CoreErrors> KendraErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> KendraErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = KendraErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

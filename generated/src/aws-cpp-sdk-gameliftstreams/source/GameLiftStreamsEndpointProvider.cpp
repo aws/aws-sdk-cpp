@@ -5,12 +5,8 @@
 
 #include <aws/gameliftstreams/GameLiftStreamsEndpointProvider.h>
 
-namespace Aws
-{
-namespace GameLiftStreams
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace GameLiftStreams
-} // namespace Aws
+namespace Aws {
+namespace GameLiftStreams {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace GameLiftStreams
+}  // namespace Aws

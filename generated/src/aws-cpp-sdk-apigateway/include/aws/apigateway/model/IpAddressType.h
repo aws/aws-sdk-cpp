@@ -7,25 +7,16 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace APIGateway
-{
-namespace Model
-{
-  enum class IpAddressType
-  {
-    NOT_SET,
-    ipv4,
-    dualstack
-  };
+namespace Aws {
+namespace APIGateway {
+namespace Model {
+enum class IpAddressType { NOT_SET, ipv4, dualstack };
 
-namespace IpAddressTypeMapper
-{
+namespace IpAddressTypeMapper {
 AWS_APIGATEWAY_API IpAddressType GetIpAddressTypeForName(const Aws::String& name);
 
 AWS_APIGATEWAY_API Aws::String GetNameForIpAddressType(IpAddressType value);
-} // namespace IpAddressTypeMapper
-} // namespace Model
-} // namespace APIGateway
-} // namespace Aws
+}  // namespace IpAddressTypeMapper
+}  // namespace Model
+}  // namespace APIGateway
+}  // namespace Aws

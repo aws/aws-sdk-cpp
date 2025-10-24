@@ -7,24 +7,16 @@
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CleanRoomsML
-{
-namespace Model
-{
-  enum class TrainedModelExportsMaxSizeUnitType
-  {
-    NOT_SET,
-    GB
-  };
+namespace Aws {
+namespace CleanRoomsML {
+namespace Model {
+enum class TrainedModelExportsMaxSizeUnitType { NOT_SET, GB };
 
-namespace TrainedModelExportsMaxSizeUnitTypeMapper
-{
+namespace TrainedModelExportsMaxSizeUnitTypeMapper {
 AWS_CLEANROOMSML_API TrainedModelExportsMaxSizeUnitType GetTrainedModelExportsMaxSizeUnitTypeForName(const Aws::String& name);
 
 AWS_CLEANROOMSML_API Aws::String GetNameForTrainedModelExportsMaxSizeUnitType(TrainedModelExportsMaxSizeUnitType value);
-} // namespace TrainedModelExportsMaxSizeUnitTypeMapper
-} // namespace Model
-} // namespace CleanRoomsML
-} // namespace Aws
+}  // namespace TrainedModelExportsMaxSizeUnitTypeMapper
+}  // namespace Model
+}  // namespace CleanRoomsML
+}  // namespace Aws

@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lightsail/model/GetRelationalDatabasesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/lightsail/model/GetRelationalDatabasesResult.h>
 
 #include <utility>
 
@@ -17,37 +17,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRelationalDatabasesResult::GetRelationalDatabasesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetRelationalDatabasesResult::GetRelationalDatabasesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetRelationalDatabasesResult& GetRelationalDatabasesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetRelationalDatabasesResult& GetRelationalDatabasesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("relationalDatabases"))
-  {
+  if (jsonValue.ValueExists("relationalDatabases")) {
     Aws::Utils::Array<JsonView> relationalDatabasesJsonList = jsonValue.GetArray("relationalDatabases");
-    for(unsigned relationalDatabasesIndex = 0; relationalDatabasesIndex < relationalDatabasesJsonList.GetLength(); ++relationalDatabasesIndex)
-    {
+    for (unsigned relationalDatabasesIndex = 0; relationalDatabasesIndex < relationalDatabasesJsonList.GetLength();
+         ++relationalDatabasesIndex) {
       m_relationalDatabases.push_back(relationalDatabasesJsonList[relationalDatabasesIndex].AsObject());
     }
     m_relationalDatabasesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextPageToken"))
-  {
+  if (jsonValue.ValueExists("nextPageToken")) {
     m_nextPageToken = jsonValue.GetString("nextPageToken");
     m_nextPageTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

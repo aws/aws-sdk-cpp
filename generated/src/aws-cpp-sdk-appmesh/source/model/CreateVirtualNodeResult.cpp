@@ -4,10 +4,10 @@
  */
 
 #include <aws/appmesh/model/CreateVirtualNodeResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,25 +17,19 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateVirtualNodeResult::CreateVirtualNodeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+CreateVirtualNodeResult::CreateVirtualNodeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-CreateVirtualNodeResult& CreateVirtualNodeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+CreateVirtualNodeResult& CreateVirtualNodeResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
   m_virtualNode = jsonValue;
   m_virtualNodeHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

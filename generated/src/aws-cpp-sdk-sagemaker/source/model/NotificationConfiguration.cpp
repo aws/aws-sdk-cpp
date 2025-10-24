@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/NotificationConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/NotificationConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-NotificationConfiguration::NotificationConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NotificationConfiguration::NotificationConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-NotificationConfiguration& NotificationConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("NotificationTopicArn"))
-  {
+NotificationConfiguration& NotificationConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("NotificationTopicArn")) {
     m_notificationTopicArn = jsonValue.GetString("NotificationTopicArn");
     m_notificationTopicArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NotificationConfiguration::Jsonize() const
-{
+JsonValue NotificationConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_notificationTopicArnHasBeenSet)
-  {
-   payload.WithString("NotificationTopicArn", m_notificationTopicArn);
-
+  if (m_notificationTopicArnHasBeenSet) {
+    payload.WithString("NotificationTopicArn", m_notificationTopicArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

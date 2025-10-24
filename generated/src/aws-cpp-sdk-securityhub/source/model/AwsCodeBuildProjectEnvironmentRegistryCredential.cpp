@@ -3,60 +3,48 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsCodeBuildProjectEnvironmentRegistryCredential.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsCodeBuildProjectEnvironmentRegistryCredential.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsCodeBuildProjectEnvironmentRegistryCredential::AwsCodeBuildProjectEnvironmentRegistryCredential(JsonView jsonValue)
-{
+AwsCodeBuildProjectEnvironmentRegistryCredential::AwsCodeBuildProjectEnvironmentRegistryCredential(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-AwsCodeBuildProjectEnvironmentRegistryCredential& AwsCodeBuildProjectEnvironmentRegistryCredential::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Credential"))
-  {
+AwsCodeBuildProjectEnvironmentRegistryCredential& AwsCodeBuildProjectEnvironmentRegistryCredential::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Credential")) {
     m_credential = jsonValue.GetString("Credential");
     m_credentialHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CredentialProvider"))
-  {
+  if (jsonValue.ValueExists("CredentialProvider")) {
     m_credentialProvider = jsonValue.GetString("CredentialProvider");
     m_credentialProviderHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsCodeBuildProjectEnvironmentRegistryCredential::Jsonize() const
-{
+JsonValue AwsCodeBuildProjectEnvironmentRegistryCredential::Jsonize() const {
   JsonValue payload;
 
-  if(m_credentialHasBeenSet)
-  {
-   payload.WithString("Credential", m_credential);
-
+  if (m_credentialHasBeenSet) {
+    payload.WithString("Credential", m_credential);
   }
 
-  if(m_credentialProviderHasBeenSet)
-  {
-   payload.WithString("CredentialProvider", m_credentialProvider);
-
+  if (m_credentialProviderHasBeenSet) {
+    payload.WithString("CredentialProvider", m_credentialProvider);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

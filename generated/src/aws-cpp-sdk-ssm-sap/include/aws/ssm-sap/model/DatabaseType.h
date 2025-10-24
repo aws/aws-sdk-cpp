@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ssm-sap/SsmSap_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm-sap/SsmSap_EXPORTS.h>
 
-namespace Aws
-{
-namespace SsmSap
-{
-namespace Model
-{
-  enum class DatabaseType
-  {
-    NOT_SET,
-    SYSTEM,
-    TENANT
-  };
+namespace Aws {
+namespace SsmSap {
+namespace Model {
+enum class DatabaseType { NOT_SET, SYSTEM, TENANT };
 
-namespace DatabaseTypeMapper
-{
+namespace DatabaseTypeMapper {
 AWS_SSMSAP_API DatabaseType GetDatabaseTypeForName(const Aws::String& name);
 
 AWS_SSMSAP_API Aws::String GetNameForDatabaseType(DatabaseType value);
-} // namespace DatabaseTypeMapper
-} // namespace Model
-} // namespace SsmSap
-} // namespace Aws
+}  // namespace DatabaseTypeMapper
+}  // namespace Model
+}  // namespace SsmSap
+}  // namespace Aws

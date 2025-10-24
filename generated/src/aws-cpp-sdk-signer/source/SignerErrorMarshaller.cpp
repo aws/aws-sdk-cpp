@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::signer;
 
-AWSError<CoreErrors> SignerErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> SignerErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = SignerErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

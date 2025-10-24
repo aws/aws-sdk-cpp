@@ -12,11 +12,4 @@ using namespace Aws::CleanRooms::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetMembershipRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetMembershipRequest::SerializePayload() const { return {}; }

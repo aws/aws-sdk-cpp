@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector2/Inspector2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Inspector2
-{
-namespace Model
-{
-  enum class ProjectSelectionScope
-  {
-    NOT_SET,
-    ALL
-  };
+namespace Aws {
+namespace Inspector2 {
+namespace Model {
+enum class ProjectSelectionScope { NOT_SET, ALL };
 
-namespace ProjectSelectionScopeMapper
-{
+namespace ProjectSelectionScopeMapper {
 AWS_INSPECTOR2_API ProjectSelectionScope GetProjectSelectionScopeForName(const Aws::String& name);
 
 AWS_INSPECTOR2_API Aws::String GetNameForProjectSelectionScope(ProjectSelectionScope value);
-} // namespace ProjectSelectionScopeMapper
-} // namespace Model
-} // namespace Inspector2
-} // namespace Aws
+}  // namespace ProjectSelectionScopeMapper
+}  // namespace Model
+}  // namespace Inspector2
+}  // namespace Aws

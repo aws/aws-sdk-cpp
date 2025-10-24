@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/CancelJobExecutionRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iot/model/CancelJobExecutionRequest.h>
 
 #include <utility>
 
@@ -15,41 +15,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String CancelJobExecutionRequest::SerializePayload() const
-{
+Aws::String CancelJobExecutionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_expectedVersionHasBeenSet)
-  {
-   payload.WithInt64("expectedVersion", m_expectedVersion);
-
+  if (m_expectedVersionHasBeenSet) {
+    payload.WithInt64("expectedVersion", m_expectedVersion);
   }
 
-  if(m_statusDetailsHasBeenSet)
-  {
-   JsonValue statusDetailsJsonMap;
-   for(auto& statusDetailsItem : m_statusDetails)
-   {
-     statusDetailsJsonMap.WithString(statusDetailsItem.first, statusDetailsItem.second);
-   }
-   payload.WithObject("statusDetails", std::move(statusDetailsJsonMap));
-
+  if (m_statusDetailsHasBeenSet) {
+    JsonValue statusDetailsJsonMap;
+    for (auto& statusDetailsItem : m_statusDetails) {
+      statusDetailsJsonMap.WithString(statusDetailsItem.first, statusDetailsItem.second);
+    }
+    payload.WithObject("statusDetails", std::move(statusDetailsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
 
-void CancelJobExecutionRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_forceHasBeenSet)
-    {
-      ss << m_force;
-      uri.AddQueryStringParameter("force", ss.str());
-      ss.str("");
-    }
-
+void CancelJobExecutionRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_forceHasBeenSet) {
+    ss << m_force;
+    uri.AddQueryStringParameter("force", ss.str());
+    ss.str("");
+  }
 }
-
-
-

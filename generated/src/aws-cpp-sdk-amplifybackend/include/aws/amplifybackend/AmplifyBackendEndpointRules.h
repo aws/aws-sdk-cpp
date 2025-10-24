@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/amplifybackend/AmplifyBackend_EXPORTS.h>
 
-namespace Aws
-{
-namespace AmplifyBackend
-{
-class AmplifyBackendEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace AmplifyBackend {
+class AmplifyBackendEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace AmplifyBackend
-} // namespace Aws
+}  // namespace AmplifyBackend
+}  // namespace Aws

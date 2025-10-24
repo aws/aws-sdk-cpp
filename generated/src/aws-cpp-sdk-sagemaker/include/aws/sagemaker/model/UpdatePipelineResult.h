@@ -4,74 +4,85 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace SageMaker
-{
-namespace Model
-{
-  class UpdatePipelineResult
-  {
-  public:
-    AWS_SAGEMAKER_API UpdatePipelineResult() = default;
-    AWS_SAGEMAKER_API UpdatePipelineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_SAGEMAKER_API UpdatePipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace SageMaker {
+namespace Model {
+class UpdatePipelineResult {
+ public:
+  AWS_SAGEMAKER_API UpdatePipelineResult() = default;
+  AWS_SAGEMAKER_API UpdatePipelineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_SAGEMAKER_API UpdatePipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the updated pipeline.</p>
+   */
+  inline const Aws::String& GetPipelineArn() const { return m_pipelineArn; }
+  template <typename PipelineArnT = Aws::String>
+  void SetPipelineArn(PipelineArnT&& value) {
+    m_pipelineArnHasBeenSet = true;
+    m_pipelineArn = std::forward<PipelineArnT>(value);
+  }
+  template <typename PipelineArnT = Aws::String>
+  UpdatePipelineResult& WithPipelineArn(PipelineArnT&& value) {
+    SetPipelineArn(std::forward<PipelineArnT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the updated pipeline.</p>
-     */
-    inline const Aws::String& GetPipelineArn() const { return m_pipelineArn; }
-    template<typename PipelineArnT = Aws::String>
-    void SetPipelineArn(PipelineArnT&& value) { m_pipelineArnHasBeenSet = true; m_pipelineArn = std::forward<PipelineArnT>(value); }
-    template<typename PipelineArnT = Aws::String>
-    UpdatePipelineResult& WithPipelineArn(PipelineArnT&& value) { SetPipelineArn(std::forward<PipelineArnT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The ID of the pipeline version.</p>
+   */
+  inline long long GetPipelineVersionId() const { return m_pipelineVersionId; }
+  inline void SetPipelineVersionId(long long value) {
+    m_pipelineVersionIdHasBeenSet = true;
+    m_pipelineVersionId = value;
+  }
+  inline UpdatePipelineResult& WithPipelineVersionId(long long value) {
+    SetPipelineVersionId(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The ID of the pipeline version.</p>
-     */
-    inline long long GetPipelineVersionId() const { return m_pipelineVersionId; }
-    inline void SetPipelineVersionId(long long value) { m_pipelineVersionIdHasBeenSet = true; m_pipelineVersionId = value; }
-    inline UpdatePipelineResult& WithPipelineVersionId(long long value) { SetPipelineVersionId(value); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    UpdatePipelineResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  UpdatePipelineResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_pipelineArn;
+  bool m_pipelineArnHasBeenSet = false;
 
-    Aws::String m_pipelineArn;
-    bool m_pipelineArnHasBeenSet = false;
+  long long m_pipelineVersionId{0};
+  bool m_pipelineVersionIdHasBeenSet = false;
 
-    long long m_pipelineVersionId{0};
-    bool m_pipelineVersionIdHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

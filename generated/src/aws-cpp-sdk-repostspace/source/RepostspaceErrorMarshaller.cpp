@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::repostspace;
 
-AWSError<CoreErrors> RepostspaceErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> RepostspaceErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = RepostspaceErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

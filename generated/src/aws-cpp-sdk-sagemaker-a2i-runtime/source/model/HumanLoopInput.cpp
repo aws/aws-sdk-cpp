@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker-a2i-runtime/model/HumanLoopInput.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker-a2i-runtime/model/HumanLoopInput.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AugmentedAIRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace AugmentedAIRuntime {
+namespace Model {
 
-HumanLoopInput::HumanLoopInput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+HumanLoopInput::HumanLoopInput(JsonView jsonValue) { *this = jsonValue; }
 
-HumanLoopInput& HumanLoopInput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("InputContent"))
-  {
+HumanLoopInput& HumanLoopInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("InputContent")) {
     m_inputContent = jsonValue.GetString("InputContent");
     m_inputContentHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue HumanLoopInput::Jsonize() const
-{
+JsonValue HumanLoopInput::Jsonize() const {
   JsonValue payload;
 
-  if(m_inputContentHasBeenSet)
-  {
-   payload.WithString("InputContent", m_inputContent);
-
+  if (m_inputContentHasBeenSet) {
+    payload.WithString("InputContent", m_inputContent);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AugmentedAIRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace AugmentedAIRuntime
+}  // namespace Aws

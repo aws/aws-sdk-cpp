@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3/model/GetObjectTaggingResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3/model/GetObjectTaggingResult.h>
 
 #include <utility>
 
@@ -16,25 +16,18 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetObjectTaggingResult::GetObjectTaggingResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+GetObjectTaggingResult::GetObjectTaggingResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-GetObjectTaggingResult& GetObjectTaggingResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+GetObjectTaggingResult& GetObjectTaggingResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode tagSetNode = resultNode.FirstChild("TagSet");
-    if(!tagSetNode.IsNull())
-    {
+    if (!tagSetNode.IsNull()) {
       XmlNode tagSetMember = tagSetNode.FirstChild("Tag");
       m_tagSetHasBeenSet = !tagSetMember.IsNull();
-      while(!tagSetMember.IsNull())
-      {
+      while (!tagSetMember.IsNull()) {
         m_tagSet.push_back(tagSetMember);
         tagSetMember = tagSetMember.NextNode("Tag");
       }
@@ -45,15 +38,13 @@ GetObjectTaggingResult& GetObjectTaggingResult::operator =(const Aws::AmazonWebS
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& versionIdIter = headers.find("x-amz-version-id");
-  if(versionIdIter != headers.end())
-  {
+  if (versionIdIter != headers.end()) {
     m_versionId = versionIdIter->second;
     m_versionIdHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amz-request-id");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }

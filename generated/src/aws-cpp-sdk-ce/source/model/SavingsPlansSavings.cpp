@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Model
-{
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
 
-SavingsPlansSavings::SavingsPlansSavings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SavingsPlansSavings::SavingsPlansSavings(JsonView jsonValue) { *this = jsonValue; }
 
-SavingsPlansSavings& SavingsPlansSavings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("NetSavings"))
-  {
+SavingsPlansSavings& SavingsPlansSavings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("NetSavings")) {
     m_netSavings = jsonValue.GetString("NetSavings");
     m_netSavingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OnDemandCostEquivalent"))
-  {
+  if (jsonValue.ValueExists("OnDemandCostEquivalent")) {
     m_onDemandCostEquivalent = jsonValue.GetString("OnDemandCostEquivalent");
     m_onDemandCostEquivalentHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SavingsPlansSavings::Jsonize() const
-{
+JsonValue SavingsPlansSavings::Jsonize() const {
   JsonValue payload;
 
-  if(m_netSavingsHasBeenSet)
-  {
-   payload.WithString("NetSavings", m_netSavings);
-
+  if (m_netSavingsHasBeenSet) {
+    payload.WithString("NetSavings", m_netSavings);
   }
 
-  if(m_onDemandCostEquivalentHasBeenSet)
-  {
-   payload.WithString("OnDemandCostEquivalent", m_onDemandCostEquivalent);
-
+  if (m_onDemandCostEquivalentHasBeenSet) {
+    payload.WithString("OnDemandCostEquivalent", m_onDemandCostEquivalent);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

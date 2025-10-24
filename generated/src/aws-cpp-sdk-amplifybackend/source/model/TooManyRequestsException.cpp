@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyBackend
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyBackend {
+namespace Model {
 
-TooManyRequestsException::TooManyRequestsException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TooManyRequestsException::TooManyRequestsException(JsonView jsonValue) { *this = jsonValue; }
 
-TooManyRequestsException& TooManyRequestsException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("limitType"))
-  {
+TooManyRequestsException& TooManyRequestsException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("limitType")) {
     m_limitType = jsonValue.GetString("limitType");
     m_limitTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("message"))
-  {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TooManyRequestsException::Jsonize() const
-{
+JsonValue TooManyRequestsException::Jsonize() const {
   JsonValue payload;
 
-  if(m_limitTypeHasBeenSet)
-  {
-   payload.WithString("limitType", m_limitType);
-
+  if (m_limitTypeHasBeenSet) {
+    payload.WithString("limitType", m_limitType);
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyBackend
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyBackend
+}  // namespace Aws

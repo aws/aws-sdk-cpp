@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectParticipant
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectParticipant {
+namespace Model {
 
-MeetingFeaturesConfiguration::MeetingFeaturesConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MeetingFeaturesConfiguration::MeetingFeaturesConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-MeetingFeaturesConfiguration& MeetingFeaturesConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Audio"))
-  {
+MeetingFeaturesConfiguration& MeetingFeaturesConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Audio")) {
     m_audio = jsonValue.GetObject("Audio");
     m_audioHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MeetingFeaturesConfiguration::Jsonize() const
-{
+JsonValue MeetingFeaturesConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_audioHasBeenSet)
-  {
-   payload.WithObject("Audio", m_audio.Jsonize());
-
+  if (m_audioHasBeenSet) {
+    payload.WithObject("Audio", m_audio.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectParticipant
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectParticipant
+}  // namespace Aws

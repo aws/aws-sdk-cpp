@@ -7,25 +7,16 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
-  enum class PipelineType
-  {
-    NOT_SET,
-    V1,
-    V2
-  };
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
+enum class PipelineType { NOT_SET, V1, V2 };
 
-namespace PipelineTypeMapper
-{
+namespace PipelineTypeMapper {
 AWS_CODEPIPELINE_API PipelineType GetPipelineTypeForName(const Aws::String& name);
 
 AWS_CODEPIPELINE_API Aws::String GetNameForPipelineType(PipelineType value);
-} // namespace PipelineTypeMapper
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace PipelineTypeMapper
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

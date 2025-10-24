@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/kms/KMSRequest.h>
 
-namespace Aws
-{
-namespace KMS
-{
-} // namespace KMS
-} // namespace Aws
+namespace Aws {
+namespace KMS {}  // namespace KMS
+}  // namespace Aws

@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
 
-namespace Aws
-{
-namespace ServiceDiscovery
-{
-namespace Model
-{
-  enum class OperationFilterName
-  {
-    NOT_SET,
-    NAMESPACE_ID,
-    SERVICE_ID,
-    STATUS,
-    TYPE,
-    UPDATE_DATE
-  };
+namespace Aws {
+namespace ServiceDiscovery {
+namespace Model {
+enum class OperationFilterName { NOT_SET, NAMESPACE_ID, SERVICE_ID, STATUS, TYPE, UPDATE_DATE };
 
-namespace OperationFilterNameMapper
-{
+namespace OperationFilterNameMapper {
 AWS_SERVICEDISCOVERY_API OperationFilterName GetOperationFilterNameForName(const Aws::String& name);
 
 AWS_SERVICEDISCOVERY_API Aws::String GetNameForOperationFilterName(OperationFilterName value);
-} // namespace OperationFilterNameMapper
-} // namespace Model
-} // namespace ServiceDiscovery
-} // namespace Aws
+}  // namespace OperationFilterNameMapper
+}  // namespace Model
+}  // namespace ServiceDiscovery
+}  // namespace Aws

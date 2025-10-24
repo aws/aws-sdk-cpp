@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-ConnectionData::ConnectionData(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConnectionData::ConnectionData(JsonView jsonValue) { *this = jsonValue; }
 
-ConnectionData& ConnectionData::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Attendee"))
-  {
+ConnectionData& ConnectionData::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Attendee")) {
     m_attendee = jsonValue.GetObject("Attendee");
     m_attendeeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Meeting"))
-  {
+  if (jsonValue.ValueExists("Meeting")) {
     m_meeting = jsonValue.GetObject("Meeting");
     m_meetingHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ConnectionData::Jsonize() const
-{
+JsonValue ConnectionData::Jsonize() const {
   JsonValue payload;
 
-  if(m_attendeeHasBeenSet)
-  {
-   payload.WithObject("Attendee", m_attendee.Jsonize());
-
+  if (m_attendeeHasBeenSet) {
+    payload.WithObject("Attendee", m_attendee.Jsonize());
   }
 
-  if(m_meetingHasBeenSet)
-  {
-   payload.WithObject("Meeting", m_meeting.Jsonize());
-
+  if (m_meetingHasBeenSet) {
+    payload.WithObject("Meeting", m_meeting.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/macie2/model/BlockPublicAccess.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/macie2/model/BlockPublicAccess.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
+namespace Aws {
+namespace Macie2 {
+namespace Model {
 
-BlockPublicAccess::BlockPublicAccess(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BlockPublicAccess::BlockPublicAccess(JsonView jsonValue) { *this = jsonValue; }
 
-BlockPublicAccess& BlockPublicAccess::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("blockPublicAcls"))
-  {
+BlockPublicAccess& BlockPublicAccess::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("blockPublicAcls")) {
     m_blockPublicAcls = jsonValue.GetBool("blockPublicAcls");
     m_blockPublicAclsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("blockPublicPolicy"))
-  {
+  if (jsonValue.ValueExists("blockPublicPolicy")) {
     m_blockPublicPolicy = jsonValue.GetBool("blockPublicPolicy");
     m_blockPublicPolicyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ignorePublicAcls"))
-  {
+  if (jsonValue.ValueExists("ignorePublicAcls")) {
     m_ignorePublicAcls = jsonValue.GetBool("ignorePublicAcls");
     m_ignorePublicAclsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("restrictPublicBuckets"))
-  {
+  if (jsonValue.ValueExists("restrictPublicBuckets")) {
     m_restrictPublicBuckets = jsonValue.GetBool("restrictPublicBuckets");
     m_restrictPublicBucketsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BlockPublicAccess::Jsonize() const
-{
+JsonValue BlockPublicAccess::Jsonize() const {
   JsonValue payload;
 
-  if(m_blockPublicAclsHasBeenSet)
-  {
-   payload.WithBool("blockPublicAcls", m_blockPublicAcls);
-
+  if (m_blockPublicAclsHasBeenSet) {
+    payload.WithBool("blockPublicAcls", m_blockPublicAcls);
   }
 
-  if(m_blockPublicPolicyHasBeenSet)
-  {
-   payload.WithBool("blockPublicPolicy", m_blockPublicPolicy);
-
+  if (m_blockPublicPolicyHasBeenSet) {
+    payload.WithBool("blockPublicPolicy", m_blockPublicPolicy);
   }
 
-  if(m_ignorePublicAclsHasBeenSet)
-  {
-   payload.WithBool("ignorePublicAcls", m_ignorePublicAcls);
-
+  if (m_ignorePublicAclsHasBeenSet) {
+    payload.WithBool("ignorePublicAcls", m_ignorePublicAcls);
   }
 
-  if(m_restrictPublicBucketsHasBeenSet)
-  {
-   payload.WithBool("restrictPublicBuckets", m_restrictPublicBuckets);
-
+  if (m_restrictPublicBucketsHasBeenSet) {
+    payload.WithBool("restrictPublicBuckets", m_restrictPublicBuckets);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

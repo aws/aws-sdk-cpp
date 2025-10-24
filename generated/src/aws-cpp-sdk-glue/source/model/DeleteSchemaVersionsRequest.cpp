@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/DeleteSchemaVersionsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/DeleteSchemaVersionsRequest.h>
 
 #include <utility>
 
@@ -12,33 +12,22 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteSchemaVersionsRequest::SerializePayload() const
-{
+Aws::String DeleteSchemaVersionsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_schemaIdHasBeenSet)
-  {
-   payload.WithObject("SchemaId", m_schemaId.Jsonize());
-
+  if (m_schemaIdHasBeenSet) {
+    payload.WithObject("SchemaId", m_schemaId.Jsonize());
   }
 
-  if(m_versionsHasBeenSet)
-  {
-   payload.WithString("Versions", m_versions);
-
+  if (m_versionsHasBeenSet) {
+    payload.WithString("Versions", m_versions);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteSchemaVersionsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteSchemaVersionsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSGlue.DeleteSchemaVersions"));
   return headers;
-
 }
-
-
-
-

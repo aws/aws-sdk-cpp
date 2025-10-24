@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/tnb/model/GetSolInstantiatedVnfInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/tnb/model/GetSolInstantiatedVnfInfo.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace tnb
-{
-namespace Model
-{
+namespace Aws {
+namespace tnb {
+namespace Model {
 
-GetSolInstantiatedVnfInfo::GetSolInstantiatedVnfInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GetSolInstantiatedVnfInfo::GetSolInstantiatedVnfInfo(JsonView jsonValue) { *this = jsonValue; }
 
-GetSolInstantiatedVnfInfo& GetSolInstantiatedVnfInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("vnfState"))
-  {
+GetSolInstantiatedVnfInfo& GetSolInstantiatedVnfInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("vnfState")) {
     m_vnfState = VnfOperationalStateMapper::GetVnfOperationalStateForName(jsonValue.GetString("vnfState"));
     m_vnfStateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GetSolInstantiatedVnfInfo::Jsonize() const
-{
+JsonValue GetSolInstantiatedVnfInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_vnfStateHasBeenSet)
-  {
-   payload.WithString("vnfState", VnfOperationalStateMapper::GetNameForVnfOperationalState(m_vnfState));
+  if (m_vnfStateHasBeenSet) {
+    payload.WithString("vnfState", VnfOperationalStateMapper::GetNameForVnfOperationalState(m_vnfState));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace tnb
-} // namespace Aws
+}  // namespace Model
+}  // namespace tnb
+}  // namespace Aws

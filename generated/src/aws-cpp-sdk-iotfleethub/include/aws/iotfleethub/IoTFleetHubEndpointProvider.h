@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/iotfleethub/IoTFleetHub_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/iotfleethub/IoTFleetHubEndpointRules.h>
+#include <aws/iotfleethub/IoTFleetHub_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace IoTFleetHub
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace IoTFleetHub {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using IoTFleetHubClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using IoTFleetHubDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_IOTFLEETHUB_API IoTFleetHubEndpointProvider : public IoTFleetHubDefaultEpProviderBase
-{
-public:
-    using IoTFleetHubResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_IOTFLEETHUB_API IoTFleetHubEndpointProvider : public IoTFleetHubDefaultEpProviderBase {
+ public:
+  using IoTFleetHubResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    IoTFleetHubEndpointProvider()
-      : IoTFleetHubDefaultEpProviderBase(Aws::IoTFleetHub::IoTFleetHubEndpointRules::GetRulesBlob(), Aws::IoTFleetHub::IoTFleetHubEndpointRules::RulesBlobSize)
-    {}
+  IoTFleetHubEndpointProvider()
+      : IoTFleetHubDefaultEpProviderBase(Aws::IoTFleetHub::IoTFleetHubEndpointRules::GetRulesBlob(),
+                                         Aws::IoTFleetHub::IoTFleetHubEndpointRules::RulesBlobSize) {}
 
-    ~IoTFleetHubEndpointProvider()
-    {
-    }
+  ~IoTFleetHubEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace IoTFleetHub
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace IoTFleetHub
+}  // namespace Aws

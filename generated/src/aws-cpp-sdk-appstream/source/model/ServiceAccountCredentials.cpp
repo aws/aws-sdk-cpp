@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppStream
-{
-namespace Model
-{
+namespace Aws {
+namespace AppStream {
+namespace Model {
 
-ServiceAccountCredentials::ServiceAccountCredentials(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ServiceAccountCredentials::ServiceAccountCredentials(JsonView jsonValue) { *this = jsonValue; }
 
-ServiceAccountCredentials& ServiceAccountCredentials::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AccountName"))
-  {
+ServiceAccountCredentials& ServiceAccountCredentials::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AccountName")) {
     m_accountName = jsonValue.GetString("AccountName");
     m_accountNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AccountPassword"))
-  {
+  if (jsonValue.ValueExists("AccountPassword")) {
     m_accountPassword = jsonValue.GetString("AccountPassword");
     m_accountPasswordHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ServiceAccountCredentials::Jsonize() const
-{
+JsonValue ServiceAccountCredentials::Jsonize() const {
   JsonValue payload;
 
-  if(m_accountNameHasBeenSet)
-  {
-   payload.WithString("AccountName", m_accountName);
-
+  if (m_accountNameHasBeenSet) {
+    payload.WithString("AccountName", m_accountName);
   }
 
-  if(m_accountPasswordHasBeenSet)
-  {
-   payload.WithString("AccountPassword", m_accountPassword);
-
+  if (m_accountPasswordHasBeenSet) {
+    payload.WithString("AccountPassword", m_accountPassword);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppStream
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppStream
+}  // namespace Aws

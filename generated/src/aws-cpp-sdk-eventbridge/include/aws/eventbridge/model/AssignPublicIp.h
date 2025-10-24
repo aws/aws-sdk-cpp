@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/eventbridge/EventBridge_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/eventbridge/EventBridge_EXPORTS.h>
 
-namespace Aws
-{
-namespace EventBridge
-{
-namespace Model
-{
-  enum class AssignPublicIp
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace EventBridge {
+namespace Model {
+enum class AssignPublicIp { NOT_SET, ENABLED, DISABLED };
 
-namespace AssignPublicIpMapper
-{
+namespace AssignPublicIpMapper {
 AWS_EVENTBRIDGE_API AssignPublicIp GetAssignPublicIpForName(const Aws::String& name);
 
 AWS_EVENTBRIDGE_API Aws::String GetNameForAssignPublicIp(AssignPublicIp value);
-} // namespace AssignPublicIpMapper
-} // namespace Model
-} // namespace EventBridge
-} // namespace Aws
+}  // namespace AssignPublicIpMapper
+}  // namespace Model
+}  // namespace EventBridge
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workspaces/model/GetAccountLinkRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workspaces/model/GetAccountLinkRequest.h>
 
 #include <utility>
 
@@ -12,33 +12,22 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetAccountLinkRequest::SerializePayload() const
-{
+Aws::String GetAccountLinkRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_linkIdHasBeenSet)
-  {
-   payload.WithString("LinkId", m_linkId);
-
+  if (m_linkIdHasBeenSet) {
+    payload.WithString("LinkId", m_linkId);
   }
 
-  if(m_linkedAccountIdHasBeenSet)
-  {
-   payload.WithString("LinkedAccountId", m_linkedAccountId);
-
+  if (m_linkedAccountIdHasBeenSet) {
+    payload.WithString("LinkedAccountId", m_linkedAccountId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetAccountLinkRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetAccountLinkRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "WorkspacesService.GetAccountLink"));
   return headers;
-
 }
-
-
-
-

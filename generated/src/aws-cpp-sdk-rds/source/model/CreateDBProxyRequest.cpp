@@ -3,138 +3,105 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/CreateDBProxyRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/CreateDBProxyRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateDBProxyRequest::SerializePayload() const
-{
+Aws::String CreateDBProxyRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateDBProxy&";
-  if(m_dBProxyNameHasBeenSet)
-  {
+  if (m_dBProxyNameHasBeenSet) {
     ss << "DBProxyName=" << StringUtils::URLEncode(m_dBProxyName.c_str()) << "&";
   }
 
-  if(m_engineFamilyHasBeenSet)
-  {
+  if (m_engineFamilyHasBeenSet) {
     ss << "EngineFamily=" << StringUtils::URLEncode(EngineFamilyMapper::GetNameForEngineFamily(m_engineFamily)) << "&";
   }
 
-  if(m_defaultAuthSchemeHasBeenSet)
-  {
+  if (m_defaultAuthSchemeHasBeenSet) {
     ss << "DefaultAuthScheme=" << StringUtils::URLEncode(DefaultAuthSchemeMapper::GetNameForDefaultAuthScheme(m_defaultAuthScheme)) << "&";
   }
 
-  if(m_authHasBeenSet)
-  {
-    if (m_auth.empty())
-    {
+  if (m_authHasBeenSet) {
+    if (m_auth.empty()) {
       ss << "Auth=&";
-    }
-    else
-    {
+    } else {
       unsigned authCount = 1;
-      for(auto& item : m_auth)
-      {
+      for (auto& item : m_auth) {
         item.OutputToStream(ss, "Auth.member.", authCount, "");
         authCount++;
       }
     }
   }
 
-  if(m_roleArnHasBeenSet)
-  {
+  if (m_roleArnHasBeenSet) {
     ss << "RoleArn=" << StringUtils::URLEncode(m_roleArn.c_str()) << "&";
   }
 
-  if(m_vpcSubnetIdsHasBeenSet)
-  {
-    if (m_vpcSubnetIds.empty())
-    {
+  if (m_vpcSubnetIdsHasBeenSet) {
+    if (m_vpcSubnetIds.empty()) {
       ss << "VpcSubnetIds=&";
-    }
-    else
-    {
+    } else {
       unsigned vpcSubnetIdsCount = 1;
-      for(auto& item : m_vpcSubnetIds)
-      {
-        ss << "VpcSubnetIds.member." << vpcSubnetIdsCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_vpcSubnetIds) {
+        ss << "VpcSubnetIds.member." << vpcSubnetIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         vpcSubnetIdsCount++;
       }
     }
   }
 
-  if(m_vpcSecurityGroupIdsHasBeenSet)
-  {
-    if (m_vpcSecurityGroupIds.empty())
-    {
+  if (m_vpcSecurityGroupIdsHasBeenSet) {
+    if (m_vpcSecurityGroupIds.empty()) {
       ss << "VpcSecurityGroupIds=&";
-    }
-    else
-    {
+    } else {
       unsigned vpcSecurityGroupIdsCount = 1;
-      for(auto& item : m_vpcSecurityGroupIds)
-      {
-        ss << "VpcSecurityGroupIds.member." << vpcSecurityGroupIdsCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_vpcSecurityGroupIds) {
+        ss << "VpcSecurityGroupIds.member." << vpcSecurityGroupIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         vpcSecurityGroupIdsCount++;
       }
     }
   }
 
-  if(m_requireTLSHasBeenSet)
-  {
+  if (m_requireTLSHasBeenSet) {
     ss << "RequireTLS=" << std::boolalpha << m_requireTLS << "&";
   }
 
-  if(m_idleClientTimeoutHasBeenSet)
-  {
+  if (m_idleClientTimeoutHasBeenSet) {
     ss << "IdleClientTimeout=" << m_idleClientTimeout << "&";
   }
 
-  if(m_debugLoggingHasBeenSet)
-  {
+  if (m_debugLoggingHasBeenSet) {
     ss << "DebugLogging=" << std::boolalpha << m_debugLogging << "&";
   }
 
-  if(m_tagsHasBeenSet)
-  {
-    if (m_tags.empty())
-    {
+  if (m_tagsHasBeenSet) {
+    if (m_tags.empty()) {
       ss << "Tags=&";
-    }
-    else
-    {
+    } else {
       unsigned tagsCount = 1;
-      for(auto& item : m_tags)
-      {
+      for (auto& item : m_tags) {
         item.OutputToStream(ss, "Tags.Tag.", tagsCount, "");
         tagsCount++;
       }
     }
   }
 
-  if(m_endpointNetworkTypeHasBeenSet)
-  {
-    ss << "EndpointNetworkType=" << StringUtils::URLEncode(EndpointNetworkTypeMapper::GetNameForEndpointNetworkType(m_endpointNetworkType)) << "&";
+  if (m_endpointNetworkTypeHasBeenSet) {
+    ss << "EndpointNetworkType=" << StringUtils::URLEncode(EndpointNetworkTypeMapper::GetNameForEndpointNetworkType(m_endpointNetworkType))
+       << "&";
   }
 
-  if(m_targetConnectionNetworkTypeHasBeenSet)
-  {
-    ss << "TargetConnectionNetworkType=" << StringUtils::URLEncode(TargetConnectionNetworkTypeMapper::GetNameForTargetConnectionNetworkType(m_targetConnectionNetworkType)) << "&";
+  if (m_targetConnectionNetworkTypeHasBeenSet) {
+    ss << "TargetConnectionNetworkType="
+       << StringUtils::URLEncode(TargetConnectionNetworkTypeMapper::GetNameForTargetConnectionNetworkType(m_targetConnectionNetworkType))
+       << "&";
   }
 
   ss << "Version=2014-10-31";
   return ss.str();
 }
 
-
-void  CreateDBProxyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateDBProxyRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

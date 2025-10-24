@@ -7,25 +7,16 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
-  enum class OriginGroupSelectionCriteria
-  {
-    NOT_SET,
-    default_,
-    media_quality_based
-  };
+namespace Aws {
+namespace CloudFront {
+namespace Model {
+enum class OriginGroupSelectionCriteria { NOT_SET, default_, media_quality_based };
 
-namespace OriginGroupSelectionCriteriaMapper
-{
+namespace OriginGroupSelectionCriteriaMapper {
 AWS_CLOUDFRONT_API OriginGroupSelectionCriteria GetOriginGroupSelectionCriteriaForName(const Aws::String& name);
 
 AWS_CLOUDFRONT_API Aws::String GetNameForOriginGroupSelectionCriteria(OriginGroupSelectionCriteria value);
-} // namespace OriginGroupSelectionCriteriaMapper
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace OriginGroupSelectionCriteriaMapper
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

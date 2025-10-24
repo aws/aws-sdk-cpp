@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/inspector2/model/EcrConfigurationState.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/inspector2/model/EcrConfigurationState.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Inspector2
-{
-namespace Model
-{
+namespace Aws {
+namespace Inspector2 {
+namespace Model {
 
-EcrConfigurationState::EcrConfigurationState(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EcrConfigurationState::EcrConfigurationState(JsonView jsonValue) { *this = jsonValue; }
 
-EcrConfigurationState& EcrConfigurationState::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("rescanDurationState"))
-  {
+EcrConfigurationState& EcrConfigurationState::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("rescanDurationState")) {
     m_rescanDurationState = jsonValue.GetObject("rescanDurationState");
     m_rescanDurationStateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EcrConfigurationState::Jsonize() const
-{
+JsonValue EcrConfigurationState::Jsonize() const {
   JsonValue payload;
 
-  if(m_rescanDurationStateHasBeenSet)
-  {
-   payload.WithObject("rescanDurationState", m_rescanDurationState.Jsonize());
-
+  if (m_rescanDurationStateHasBeenSet) {
+    payload.WithObject("rescanDurationState", m_rescanDurationState.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Inspector2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Inspector2
+}  // namespace Aws

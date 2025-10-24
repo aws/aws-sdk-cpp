@@ -4,8 +4,8 @@
  */
 
 #include <aws/connectcampaignsv2/model/DeleteConnectInstanceConfigRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -15,22 +15,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String DeleteConnectInstanceConfigRequest::SerializePayload() const
-{
-  return {};
+Aws::String DeleteConnectInstanceConfigRequest::SerializePayload() const { return {}; }
+
+void DeleteConnectInstanceConfigRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_campaignDeletionPolicyHasBeenSet) {
+    ss << CampaignDeletionPolicyMapper::GetNameForCampaignDeletionPolicy(m_campaignDeletionPolicy);
+    uri.AddQueryStringParameter("campaignDeletionPolicy", ss.str());
+    ss.str("");
+  }
 }
-
-void DeleteConnectInstanceConfigRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_campaignDeletionPolicyHasBeenSet)
-    {
-      ss << CampaignDeletionPolicyMapper::GetNameForCampaignDeletionPolicy(m_campaignDeletionPolicy);
-      uri.AddQueryStringParameter("campaignDeletionPolicy", ss.str());
-      ss.str("");
-    }
-
-}
-
-
-

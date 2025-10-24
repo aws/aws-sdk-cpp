@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-SingularConnectorProfileCredentials::SingularConnectorProfileCredentials(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SingularConnectorProfileCredentials::SingularConnectorProfileCredentials(JsonView jsonValue) { *this = jsonValue; }
 
-SingularConnectorProfileCredentials& SingularConnectorProfileCredentials::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("apiKey"))
-  {
+SingularConnectorProfileCredentials& SingularConnectorProfileCredentials::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("apiKey")) {
     m_apiKey = jsonValue.GetString("apiKey");
     m_apiKeyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SingularConnectorProfileCredentials::Jsonize() const
-{
+JsonValue SingularConnectorProfileCredentials::Jsonize() const {
   JsonValue payload;
 
-  if(m_apiKeyHasBeenSet)
-  {
-   payload.WithString("apiKey", m_apiKey);
-
+  if (m_apiKeyHasBeenSet) {
+    payload.WithString("apiKey", m_apiKey);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

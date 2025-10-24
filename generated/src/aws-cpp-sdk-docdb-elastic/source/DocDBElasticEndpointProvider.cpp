@@ -5,12 +5,8 @@
 
 #include <aws/docdb-elastic/DocDBElasticEndpointProvider.h>
 
-namespace Aws
-{
-namespace DocDBElastic
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace DocDBElastic
-} // namespace Aws
+namespace Aws {
+namespace DocDBElastic {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace DocDBElastic
+}  // namespace Aws

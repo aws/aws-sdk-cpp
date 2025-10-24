@@ -4,43 +4,38 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class AutoMLMetricEnum
-  {
-    NOT_SET,
-    Accuracy,
-    MSE,
-    F1,
-    F1macro,
-    AUC,
-    RMSE,
-    BalancedAccuracy,
-    R2,
-    Recall,
-    RecallMacro,
-    Precision,
-    PrecisionMacro,
-    MAE,
-    MAPE,
-    MASE,
-    WAPE,
-    AverageWeightedQuantileLoss
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class AutoMLMetricEnum {
+  NOT_SET,
+  Accuracy,
+  MSE,
+  F1,
+  F1macro,
+  AUC,
+  RMSE,
+  BalancedAccuracy,
+  R2,
+  Recall,
+  RecallMacro,
+  Precision,
+  PrecisionMacro,
+  MAE,
+  MAPE,
+  MASE,
+  WAPE,
+  AverageWeightedQuantileLoss
+};
 
-namespace AutoMLMetricEnumMapper
-{
+namespace AutoMLMetricEnumMapper {
 AWS_SAGEMAKER_API AutoMLMetricEnum GetAutoMLMetricEnumForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForAutoMLMetricEnum(AutoMLMetricEnum value);
-} // namespace AutoMLMetricEnumMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace AutoMLMetricEnumMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

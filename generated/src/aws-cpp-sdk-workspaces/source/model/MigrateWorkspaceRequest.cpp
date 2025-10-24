@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workspaces/model/MigrateWorkspaceRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workspaces/model/MigrateWorkspaceRequest.h>
 
 #include <utility>
 
@@ -12,33 +12,22 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String MigrateWorkspaceRequest::SerializePayload() const
-{
+Aws::String MigrateWorkspaceRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_sourceWorkspaceIdHasBeenSet)
-  {
-   payload.WithString("SourceWorkspaceId", m_sourceWorkspaceId);
-
+  if (m_sourceWorkspaceIdHasBeenSet) {
+    payload.WithString("SourceWorkspaceId", m_sourceWorkspaceId);
   }
 
-  if(m_bundleIdHasBeenSet)
-  {
-   payload.WithString("BundleId", m_bundleId);
-
+  if (m_bundleIdHasBeenSet) {
+    payload.WithString("BundleId", m_bundleId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection MigrateWorkspaceRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection MigrateWorkspaceRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "WorkspacesService.MigrateWorkspace"));
   return headers;
-
 }
-
-
-
-

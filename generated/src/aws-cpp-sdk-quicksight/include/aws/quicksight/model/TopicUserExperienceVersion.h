@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class TopicUserExperienceVersion
-  {
-    NOT_SET,
-    LEGACY,
-    NEW_READER_EXPERIENCE
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class TopicUserExperienceVersion { NOT_SET, LEGACY, NEW_READER_EXPERIENCE };
 
-namespace TopicUserExperienceVersionMapper
-{
+namespace TopicUserExperienceVersionMapper {
 AWS_QUICKSIGHT_API TopicUserExperienceVersion GetTopicUserExperienceVersionForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForTopicUserExperienceVersion(TopicUserExperienceVersion value);
-} // namespace TopicUserExperienceVersionMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace TopicUserExperienceVersionMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

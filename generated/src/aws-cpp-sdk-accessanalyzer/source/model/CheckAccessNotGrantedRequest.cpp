@@ -12,35 +12,24 @@ using namespace Aws::AccessAnalyzer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CheckAccessNotGrantedRequest::SerializePayload() const
-{
+Aws::String CheckAccessNotGrantedRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_policyDocumentHasBeenSet)
-  {
-   payload.WithString("policyDocument", m_policyDocument);
-
+  if (m_policyDocumentHasBeenSet) {
+    payload.WithString("policyDocument", m_policyDocument);
   }
 
-  if(m_accessHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> accessJsonList(m_access.size());
-   for(unsigned accessIndex = 0; accessIndex < accessJsonList.GetLength(); ++accessIndex)
-   {
-     accessJsonList[accessIndex].AsObject(m_access[accessIndex].Jsonize());
-   }
-   payload.WithArray("access", std::move(accessJsonList));
-
+  if (m_accessHasBeenSet) {
+    Aws::Utils::Array<JsonValue> accessJsonList(m_access.size());
+    for (unsigned accessIndex = 0; accessIndex < accessJsonList.GetLength(); ++accessIndex) {
+      accessJsonList[accessIndex].AsObject(m_access[accessIndex].Jsonize());
+    }
+    payload.WithArray("access", std::move(accessJsonList));
   }
 
-  if(m_policyTypeHasBeenSet)
-  {
-   payload.WithString("policyType", AccessCheckPolicyTypeMapper::GetNameForAccessCheckPolicyType(m_policyType));
+  if (m_policyTypeHasBeenSet) {
+    payload.WithString("policyType", AccessCheckPolicyTypeMapper::GetNameForAccessCheckPolicyType(m_policyType));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

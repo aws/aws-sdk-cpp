@@ -4,85 +4,102 @@
  */
 
 #pragma once
-#include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
-#include <aws/vpc-lattice/VPCLatticeRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/vpc-lattice/VPCLatticeRequest.h>
+#include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
 #include <aws/vpc-lattice/model/RuleUpdate.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace VPCLattice
-{
-namespace Model
-{
+namespace Aws {
+namespace VPCLattice {
+namespace Model {
 
+/**
+ */
+class BatchUpdateRuleRequest : public VPCLatticeRequest {
+ public:
+  AWS_VPCLATTICE_API BatchUpdateRuleRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "BatchUpdateRule"; }
+
+  AWS_VPCLATTICE_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
+   * <p>The ID or ARN of the service.</p>
    */
-  class BatchUpdateRuleRequest : public VPCLatticeRequest
-  {
-  public:
-    AWS_VPCLATTICE_API BatchUpdateRuleRequest() = default;
+  inline const Aws::String& GetServiceIdentifier() const { return m_serviceIdentifier; }
+  inline bool ServiceIdentifierHasBeenSet() const { return m_serviceIdentifierHasBeenSet; }
+  template <typename ServiceIdentifierT = Aws::String>
+  void SetServiceIdentifier(ServiceIdentifierT&& value) {
+    m_serviceIdentifierHasBeenSet = true;
+    m_serviceIdentifier = std::forward<ServiceIdentifierT>(value);
+  }
+  template <typename ServiceIdentifierT = Aws::String>
+  BatchUpdateRuleRequest& WithServiceIdentifier(ServiceIdentifierT&& value) {
+    SetServiceIdentifier(std::forward<ServiceIdentifierT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "BatchUpdateRule"; }
+  ///@{
+  /**
+   * <p>The ID or ARN of the listener.</p>
+   */
+  inline const Aws::String& GetListenerIdentifier() const { return m_listenerIdentifier; }
+  inline bool ListenerIdentifierHasBeenSet() const { return m_listenerIdentifierHasBeenSet; }
+  template <typename ListenerIdentifierT = Aws::String>
+  void SetListenerIdentifier(ListenerIdentifierT&& value) {
+    m_listenerIdentifierHasBeenSet = true;
+    m_listenerIdentifier = std::forward<ListenerIdentifierT>(value);
+  }
+  template <typename ListenerIdentifierT = Aws::String>
+  BatchUpdateRuleRequest& WithListenerIdentifier(ListenerIdentifierT&& value) {
+    SetListenerIdentifier(std::forward<ListenerIdentifierT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_VPCLATTICE_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>The rules for the specified listener.</p>
+   */
+  inline const Aws::Vector<RuleUpdate>& GetRules() const { return m_rules; }
+  inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
+  template <typename RulesT = Aws::Vector<RuleUpdate>>
+  void SetRules(RulesT&& value) {
+    m_rulesHasBeenSet = true;
+    m_rules = std::forward<RulesT>(value);
+  }
+  template <typename RulesT = Aws::Vector<RuleUpdate>>
+  BatchUpdateRuleRequest& WithRules(RulesT&& value) {
+    SetRules(std::forward<RulesT>(value));
+    return *this;
+  }
+  template <typename RulesT = RuleUpdate>
+  BatchUpdateRuleRequest& AddRules(RulesT&& value) {
+    m_rulesHasBeenSet = true;
+    m_rules.emplace_back(std::forward<RulesT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_serviceIdentifier;
+  bool m_serviceIdentifierHasBeenSet = false;
 
+  Aws::String m_listenerIdentifier;
+  bool m_listenerIdentifierHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The ID or ARN of the service.</p>
-     */
-    inline const Aws::String& GetServiceIdentifier() const { return m_serviceIdentifier; }
-    inline bool ServiceIdentifierHasBeenSet() const { return m_serviceIdentifierHasBeenSet; }
-    template<typename ServiceIdentifierT = Aws::String>
-    void SetServiceIdentifier(ServiceIdentifierT&& value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier = std::forward<ServiceIdentifierT>(value); }
-    template<typename ServiceIdentifierT = Aws::String>
-    BatchUpdateRuleRequest& WithServiceIdentifier(ServiceIdentifierT&& value) { SetServiceIdentifier(std::forward<ServiceIdentifierT>(value)); return *this;}
-    ///@}
+  Aws::Vector<RuleUpdate> m_rules;
+  bool m_rulesHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The ID or ARN of the listener.</p>
-     */
-    inline const Aws::String& GetListenerIdentifier() const { return m_listenerIdentifier; }
-    inline bool ListenerIdentifierHasBeenSet() const { return m_listenerIdentifierHasBeenSet; }
-    template<typename ListenerIdentifierT = Aws::String>
-    void SetListenerIdentifier(ListenerIdentifierT&& value) { m_listenerIdentifierHasBeenSet = true; m_listenerIdentifier = std::forward<ListenerIdentifierT>(value); }
-    template<typename ListenerIdentifierT = Aws::String>
-    BatchUpdateRuleRequest& WithListenerIdentifier(ListenerIdentifierT&& value) { SetListenerIdentifier(std::forward<ListenerIdentifierT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The rules for the specified listener.</p>
-     */
-    inline const Aws::Vector<RuleUpdate>& GetRules() const { return m_rules; }
-    inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
-    template<typename RulesT = Aws::Vector<RuleUpdate>>
-    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
-    template<typename RulesT = Aws::Vector<RuleUpdate>>
-    BatchUpdateRuleRequest& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
-    template<typename RulesT = RuleUpdate>
-    BatchUpdateRuleRequest& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
-    ///@}
-  private:
-
-    Aws::String m_serviceIdentifier;
-    bool m_serviceIdentifierHasBeenSet = false;
-
-    Aws::String m_listenerIdentifier;
-    bool m_listenerIdentifierHasBeenSet = false;
-
-    Aws::Vector<RuleUpdate> m_rules;
-    bool m_rulesHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace VPCLattice
-} // namespace Aws
+}  // namespace Model
+}  // namespace VPCLattice
+}  // namespace Aws

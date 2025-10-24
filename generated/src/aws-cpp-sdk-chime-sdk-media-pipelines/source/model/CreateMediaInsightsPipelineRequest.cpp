@@ -12,65 +12,45 @@ using namespace Aws::ChimeSDKMediaPipelines::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateMediaInsightsPipelineRequest::SerializePayload() const
-{
+Aws::String CreateMediaInsightsPipelineRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_mediaInsightsPipelineConfigurationArnHasBeenSet)
-  {
-   payload.WithString("MediaInsightsPipelineConfigurationArn", m_mediaInsightsPipelineConfigurationArn);
-
+  if (m_mediaInsightsPipelineConfigurationArnHasBeenSet) {
+    payload.WithString("MediaInsightsPipelineConfigurationArn", m_mediaInsightsPipelineConfigurationArn);
   }
 
-  if(m_kinesisVideoStreamSourceRuntimeConfigurationHasBeenSet)
-  {
-   payload.WithObject("KinesisVideoStreamSourceRuntimeConfiguration", m_kinesisVideoStreamSourceRuntimeConfiguration.Jsonize());
-
+  if (m_kinesisVideoStreamSourceRuntimeConfigurationHasBeenSet) {
+    payload.WithObject("KinesisVideoStreamSourceRuntimeConfiguration", m_kinesisVideoStreamSourceRuntimeConfiguration.Jsonize());
   }
 
-  if(m_mediaInsightsRuntimeMetadataHasBeenSet)
-  {
-   JsonValue mediaInsightsRuntimeMetadataJsonMap;
-   for(auto& mediaInsightsRuntimeMetadataItem : m_mediaInsightsRuntimeMetadata)
-   {
-     mediaInsightsRuntimeMetadataJsonMap.WithString(mediaInsightsRuntimeMetadataItem.first, mediaInsightsRuntimeMetadataItem.second);
-   }
-   payload.WithObject("MediaInsightsRuntimeMetadata", std::move(mediaInsightsRuntimeMetadataJsonMap));
-
+  if (m_mediaInsightsRuntimeMetadataHasBeenSet) {
+    JsonValue mediaInsightsRuntimeMetadataJsonMap;
+    for (auto& mediaInsightsRuntimeMetadataItem : m_mediaInsightsRuntimeMetadata) {
+      mediaInsightsRuntimeMetadataJsonMap.WithString(mediaInsightsRuntimeMetadataItem.first, mediaInsightsRuntimeMetadataItem.second);
+    }
+    payload.WithObject("MediaInsightsRuntimeMetadata", std::move(mediaInsightsRuntimeMetadataJsonMap));
   }
 
-  if(m_kinesisVideoStreamRecordingSourceRuntimeConfigurationHasBeenSet)
-  {
-   payload.WithObject("KinesisVideoStreamRecordingSourceRuntimeConfiguration", m_kinesisVideoStreamRecordingSourceRuntimeConfiguration.Jsonize());
-
+  if (m_kinesisVideoStreamRecordingSourceRuntimeConfigurationHasBeenSet) {
+    payload.WithObject("KinesisVideoStreamRecordingSourceRuntimeConfiguration",
+                       m_kinesisVideoStreamRecordingSourceRuntimeConfiguration.Jsonize());
   }
 
-  if(m_s3RecordingSinkRuntimeConfigurationHasBeenSet)
-  {
-   payload.WithObject("S3RecordingSinkRuntimeConfiguration", m_s3RecordingSinkRuntimeConfiguration.Jsonize());
-
+  if (m_s3RecordingSinkRuntimeConfigurationHasBeenSet) {
+    payload.WithObject("S3RecordingSinkRuntimeConfiguration", m_s3RecordingSinkRuntimeConfiguration.Jsonize());
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("Tags", std::move(tagsJsonList));
-
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
-  if(m_clientRequestTokenHasBeenSet)
-  {
-   payload.WithString("ClientRequestToken", m_clientRequestToken);
-
+  if (m_clientRequestTokenHasBeenSet) {
+    payload.WithString("ClientRequestToken", m_clientRequestToken);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

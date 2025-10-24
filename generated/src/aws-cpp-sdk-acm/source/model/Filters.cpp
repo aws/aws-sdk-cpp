@@ -11,110 +11,85 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ACM
-{
-namespace Model
-{
+namespace Aws {
+namespace ACM {
+namespace Model {
 
-Filters::Filters(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Filters::Filters(JsonView jsonValue) { *this = jsonValue; }
 
-Filters& Filters::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("extendedKeyUsage"))
-  {
+Filters& Filters::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("extendedKeyUsage")) {
     Aws::Utils::Array<JsonView> extendedKeyUsageJsonList = jsonValue.GetArray("extendedKeyUsage");
-    for(unsigned extendedKeyUsageIndex = 0; extendedKeyUsageIndex < extendedKeyUsageJsonList.GetLength(); ++extendedKeyUsageIndex)
-    {
-      m_extendedKeyUsage.push_back(ExtendedKeyUsageNameMapper::GetExtendedKeyUsageNameForName(extendedKeyUsageJsonList[extendedKeyUsageIndex].AsString()));
+    for (unsigned extendedKeyUsageIndex = 0; extendedKeyUsageIndex < extendedKeyUsageJsonList.GetLength(); ++extendedKeyUsageIndex) {
+      m_extendedKeyUsage.push_back(
+          ExtendedKeyUsageNameMapper::GetExtendedKeyUsageNameForName(extendedKeyUsageJsonList[extendedKeyUsageIndex].AsString()));
     }
     m_extendedKeyUsageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("keyUsage"))
-  {
+  if (jsonValue.ValueExists("keyUsage")) {
     Aws::Utils::Array<JsonView> keyUsageJsonList = jsonValue.GetArray("keyUsage");
-    for(unsigned keyUsageIndex = 0; keyUsageIndex < keyUsageJsonList.GetLength(); ++keyUsageIndex)
-    {
+    for (unsigned keyUsageIndex = 0; keyUsageIndex < keyUsageJsonList.GetLength(); ++keyUsageIndex) {
       m_keyUsage.push_back(KeyUsageNameMapper::GetKeyUsageNameForName(keyUsageJsonList[keyUsageIndex].AsString()));
     }
     m_keyUsageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("keyTypes"))
-  {
+  if (jsonValue.ValueExists("keyTypes")) {
     Aws::Utils::Array<JsonView> keyTypesJsonList = jsonValue.GetArray("keyTypes");
-    for(unsigned keyTypesIndex = 0; keyTypesIndex < keyTypesJsonList.GetLength(); ++keyTypesIndex)
-    {
+    for (unsigned keyTypesIndex = 0; keyTypesIndex < keyTypesJsonList.GetLength(); ++keyTypesIndex) {
       m_keyTypes.push_back(KeyAlgorithmMapper::GetKeyAlgorithmForName(keyTypesJsonList[keyTypesIndex].AsString()));
     }
     m_keyTypesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("exportOption"))
-  {
+  if (jsonValue.ValueExists("exportOption")) {
     m_exportOption = CertificateExportMapper::GetCertificateExportForName(jsonValue.GetString("exportOption"));
     m_exportOptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("managedBy"))
-  {
+  if (jsonValue.ValueExists("managedBy")) {
     m_managedBy = CertificateManagedByMapper::GetCertificateManagedByForName(jsonValue.GetString("managedBy"));
     m_managedByHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Filters::Jsonize() const
-{
+JsonValue Filters::Jsonize() const {
   JsonValue payload;
 
-  if(m_extendedKeyUsageHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> extendedKeyUsageJsonList(m_extendedKeyUsage.size());
-   for(unsigned extendedKeyUsageIndex = 0; extendedKeyUsageIndex < extendedKeyUsageJsonList.GetLength(); ++extendedKeyUsageIndex)
-   {
-     extendedKeyUsageJsonList[extendedKeyUsageIndex].AsString(ExtendedKeyUsageNameMapper::GetNameForExtendedKeyUsageName(m_extendedKeyUsage[extendedKeyUsageIndex]));
-   }
-   payload.WithArray("extendedKeyUsage", std::move(extendedKeyUsageJsonList));
-
+  if (m_extendedKeyUsageHasBeenSet) {
+    Aws::Utils::Array<JsonValue> extendedKeyUsageJsonList(m_extendedKeyUsage.size());
+    for (unsigned extendedKeyUsageIndex = 0; extendedKeyUsageIndex < extendedKeyUsageJsonList.GetLength(); ++extendedKeyUsageIndex) {
+      extendedKeyUsageJsonList[extendedKeyUsageIndex].AsString(
+          ExtendedKeyUsageNameMapper::GetNameForExtendedKeyUsageName(m_extendedKeyUsage[extendedKeyUsageIndex]));
+    }
+    payload.WithArray("extendedKeyUsage", std::move(extendedKeyUsageJsonList));
   }
 
-  if(m_keyUsageHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> keyUsageJsonList(m_keyUsage.size());
-   for(unsigned keyUsageIndex = 0; keyUsageIndex < keyUsageJsonList.GetLength(); ++keyUsageIndex)
-   {
-     keyUsageJsonList[keyUsageIndex].AsString(KeyUsageNameMapper::GetNameForKeyUsageName(m_keyUsage[keyUsageIndex]));
-   }
-   payload.WithArray("keyUsage", std::move(keyUsageJsonList));
-
+  if (m_keyUsageHasBeenSet) {
+    Aws::Utils::Array<JsonValue> keyUsageJsonList(m_keyUsage.size());
+    for (unsigned keyUsageIndex = 0; keyUsageIndex < keyUsageJsonList.GetLength(); ++keyUsageIndex) {
+      keyUsageJsonList[keyUsageIndex].AsString(KeyUsageNameMapper::GetNameForKeyUsageName(m_keyUsage[keyUsageIndex]));
+    }
+    payload.WithArray("keyUsage", std::move(keyUsageJsonList));
   }
 
-  if(m_keyTypesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> keyTypesJsonList(m_keyTypes.size());
-   for(unsigned keyTypesIndex = 0; keyTypesIndex < keyTypesJsonList.GetLength(); ++keyTypesIndex)
-   {
-     keyTypesJsonList[keyTypesIndex].AsString(KeyAlgorithmMapper::GetNameForKeyAlgorithm(m_keyTypes[keyTypesIndex]));
-   }
-   payload.WithArray("keyTypes", std::move(keyTypesJsonList));
-
+  if (m_keyTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> keyTypesJsonList(m_keyTypes.size());
+    for (unsigned keyTypesIndex = 0; keyTypesIndex < keyTypesJsonList.GetLength(); ++keyTypesIndex) {
+      keyTypesJsonList[keyTypesIndex].AsString(KeyAlgorithmMapper::GetNameForKeyAlgorithm(m_keyTypes[keyTypesIndex]));
+    }
+    payload.WithArray("keyTypes", std::move(keyTypesJsonList));
   }
 
-  if(m_exportOptionHasBeenSet)
-  {
-   payload.WithString("exportOption", CertificateExportMapper::GetNameForCertificateExport(m_exportOption));
+  if (m_exportOptionHasBeenSet) {
+    payload.WithString("exportOption", CertificateExportMapper::GetNameForCertificateExport(m_exportOption));
   }
 
-  if(m_managedByHasBeenSet)
-  {
-   payload.WithString("managedBy", CertificateManagedByMapper::GetNameForCertificateManagedBy(m_managedBy));
+  if (m_managedByHasBeenSet) {
+    payload.WithString("managedBy", CertificateManagedByMapper::GetNameForCertificateManagedBy(m_managedBy));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ACM
-} // namespace Aws
+}  // namespace Model
+}  // namespace ACM
+}  // namespace Aws

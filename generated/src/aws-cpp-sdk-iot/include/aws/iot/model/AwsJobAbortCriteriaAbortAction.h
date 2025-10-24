@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/IoT_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
-  enum class AwsJobAbortCriteriaAbortAction
-  {
-    NOT_SET,
-    CANCEL
-  };
+namespace Aws {
+namespace IoT {
+namespace Model {
+enum class AwsJobAbortCriteriaAbortAction { NOT_SET, CANCEL };
 
-namespace AwsJobAbortCriteriaAbortActionMapper
-{
+namespace AwsJobAbortCriteriaAbortActionMapper {
 AWS_IOT_API AwsJobAbortCriteriaAbortAction GetAwsJobAbortCriteriaAbortActionForName(const Aws::String& name);
 
 AWS_IOT_API Aws::String GetNameForAwsJobAbortCriteriaAbortAction(AwsJobAbortCriteriaAbortAction value);
-} // namespace AwsJobAbortCriteriaAbortActionMapper
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace AwsJobAbortCriteriaAbortActionMapper
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

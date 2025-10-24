@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glue/Glue_EXPORTS.h>
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
-  enum class ResourceAction
-  {
-    NOT_SET,
-    UPDATE,
-    CREATE
-  };
+namespace Aws {
+namespace Glue {
+namespace Model {
+enum class ResourceAction { NOT_SET, UPDATE, CREATE };
 
-namespace ResourceActionMapper
-{
+namespace ResourceActionMapper {
 AWS_GLUE_API ResourceAction GetResourceActionForName(const Aws::String& name);
 
 AWS_GLUE_API Aws::String GetNameForResourceAction(ResourceAction value);
-} // namespace ResourceActionMapper
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace ResourceActionMapper
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

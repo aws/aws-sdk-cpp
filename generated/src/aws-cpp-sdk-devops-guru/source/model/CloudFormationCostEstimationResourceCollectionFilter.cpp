@@ -3,33 +3,26 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/devops-guru/model/CloudFormationCostEstimationResourceCollectionFilter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/devops-guru/model/CloudFormationCostEstimationResourceCollectionFilter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DevOpsGuru
-{
-namespace Model
-{
+namespace Aws {
+namespace DevOpsGuru {
+namespace Model {
 
-CloudFormationCostEstimationResourceCollectionFilter::CloudFormationCostEstimationResourceCollectionFilter(JsonView jsonValue)
-{
+CloudFormationCostEstimationResourceCollectionFilter::CloudFormationCostEstimationResourceCollectionFilter(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-CloudFormationCostEstimationResourceCollectionFilter& CloudFormationCostEstimationResourceCollectionFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("StackNames"))
-  {
+CloudFormationCostEstimationResourceCollectionFilter& CloudFormationCostEstimationResourceCollectionFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("StackNames")) {
     Aws::Utils::Array<JsonView> stackNamesJsonList = jsonValue.GetArray("StackNames");
-    for(unsigned stackNamesIndex = 0; stackNamesIndex < stackNamesJsonList.GetLength(); ++stackNamesIndex)
-    {
+    for (unsigned stackNamesIndex = 0; stackNamesIndex < stackNamesJsonList.GetLength(); ++stackNamesIndex) {
       m_stackNames.push_back(stackNamesJsonList[stackNamesIndex].AsString());
     }
     m_stackNamesHasBeenSet = true;
@@ -37,24 +30,20 @@ CloudFormationCostEstimationResourceCollectionFilter& CloudFormationCostEstimati
   return *this;
 }
 
-JsonValue CloudFormationCostEstimationResourceCollectionFilter::Jsonize() const
-{
+JsonValue CloudFormationCostEstimationResourceCollectionFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_stackNamesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> stackNamesJsonList(m_stackNames.size());
-   for(unsigned stackNamesIndex = 0; stackNamesIndex < stackNamesJsonList.GetLength(); ++stackNamesIndex)
-   {
-     stackNamesJsonList[stackNamesIndex].AsString(m_stackNames[stackNamesIndex]);
-   }
-   payload.WithArray("StackNames", std::move(stackNamesJsonList));
-
+  if (m_stackNamesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> stackNamesJsonList(m_stackNames.size());
+    for (unsigned stackNamesIndex = 0; stackNamesIndex < stackNamesJsonList.GetLength(); ++stackNamesIndex) {
+      stackNamesJsonList[stackNamesIndex].AsString(m_stackNames[stackNamesIndex]);
+    }
+    payload.WithArray("StackNames", std::move(stackNamesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DevOpsGuru
-} // namespace Aws
+}  // namespace Model
+}  // namespace DevOpsGuru
+}  // namespace Aws

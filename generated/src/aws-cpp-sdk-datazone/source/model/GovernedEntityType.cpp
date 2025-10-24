@@ -3,63 +3,51 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/datazone/model/GovernedEntityType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/datazone/model/GovernedEntityType.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace DataZone {
+namespace Model {
+namespace GovernedEntityTypeMapper {
 
-namespace Aws
-{
-  namespace DataZone
-  {
-    namespace Model
-    {
-      namespace GovernedEntityTypeMapper
-      {
+static const int ASSET_HASH = HashingUtils::HashString("ASSET");
 
-        static const int ASSET_HASH = HashingUtils::HashString("ASSET");
+GovernedEntityType GetGovernedEntityTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == ASSET_HASH) {
+    return GovernedEntityType::ASSET;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<GovernedEntityType>(hashCode);
+  }
 
+  return GovernedEntityType::NOT_SET;
+}
 
-        GovernedEntityType GetGovernedEntityTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ASSET_HASH)
-          {
-            return GovernedEntityType::ASSET;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<GovernedEntityType>(hashCode);
-          }
+Aws::String GetNameForGovernedEntityType(GovernedEntityType enumValue) {
+  switch (enumValue) {
+    case GovernedEntityType::NOT_SET:
+      return {};
+    case GovernedEntityType::ASSET:
+      return "ASSET";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return GovernedEntityType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForGovernedEntityType(GovernedEntityType enumValue)
-        {
-          switch(enumValue)
-          {
-          case GovernedEntityType::NOT_SET:
-            return {};
-          case GovernedEntityType::ASSET:
-            return "ASSET";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace GovernedEntityTypeMapper
-    } // namespace Model
-  } // namespace DataZone
-} // namespace Aws
+}  // namespace GovernedEntityTypeMapper
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/ParallelismConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/ParallelismConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-ParallelismConfiguration::ParallelismConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ParallelismConfiguration::ParallelismConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ParallelismConfiguration& ParallelismConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MaxParallelExecutionSteps"))
-  {
+ParallelismConfiguration& ParallelismConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MaxParallelExecutionSteps")) {
     m_maxParallelExecutionSteps = jsonValue.GetInteger("MaxParallelExecutionSteps");
     m_maxParallelExecutionStepsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ParallelismConfiguration::Jsonize() const
-{
+JsonValue ParallelismConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_maxParallelExecutionStepsHasBeenSet)
-  {
-   payload.WithInteger("MaxParallelExecutionSteps", m_maxParallelExecutionSteps);
-
+  if (m_maxParallelExecutionStepsHasBeenSet) {
+    payload.WithInteger("MaxParallelExecutionSteps", m_maxParallelExecutionSteps);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

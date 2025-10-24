@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-SAPODataParallelismConfig::SAPODataParallelismConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SAPODataParallelismConfig::SAPODataParallelismConfig(JsonView jsonValue) { *this = jsonValue; }
 
-SAPODataParallelismConfig& SAPODataParallelismConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("maxParallelism"))
-  {
+SAPODataParallelismConfig& SAPODataParallelismConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("maxParallelism")) {
     m_maxParallelism = jsonValue.GetInteger("maxParallelism");
     m_maxParallelismHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SAPODataParallelismConfig::Jsonize() const
-{
+JsonValue SAPODataParallelismConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_maxParallelismHasBeenSet)
-  {
-   payload.WithInteger("maxParallelism", m_maxParallelism);
-
+  if (m_maxParallelismHasBeenSet) {
+    payload.WithInteger("maxParallelism", m_maxParallelism);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

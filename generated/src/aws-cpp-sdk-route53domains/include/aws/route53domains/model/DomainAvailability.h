@@ -4,36 +4,31 @@
  */
 
 #pragma once
-#include <aws/route53domains/Route53Domains_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/route53domains/Route53Domains_EXPORTS.h>
 
-namespace Aws
-{
-namespace Route53Domains
-{
-namespace Model
-{
-  enum class DomainAvailability
-  {
-    NOT_SET,
-    AVAILABLE,
-    AVAILABLE_RESERVED,
-    AVAILABLE_PREORDER,
-    UNAVAILABLE,
-    UNAVAILABLE_PREMIUM,
-    UNAVAILABLE_RESTRICTED,
-    RESERVED,
-    DONT_KNOW,
-    INVALID_NAME_FOR_TLD,
-    PENDING
-  };
+namespace Aws {
+namespace Route53Domains {
+namespace Model {
+enum class DomainAvailability {
+  NOT_SET,
+  AVAILABLE,
+  AVAILABLE_RESERVED,
+  AVAILABLE_PREORDER,
+  UNAVAILABLE,
+  UNAVAILABLE_PREMIUM,
+  UNAVAILABLE_RESTRICTED,
+  RESERVED,
+  DONT_KNOW,
+  INVALID_NAME_FOR_TLD,
+  PENDING
+};
 
-namespace DomainAvailabilityMapper
-{
+namespace DomainAvailabilityMapper {
 AWS_ROUTE53DOMAINS_API DomainAvailability GetDomainAvailabilityForName(const Aws::String& name);
 
 AWS_ROUTE53DOMAINS_API Aws::String GetNameForDomainAvailability(DomainAvailability value);
-} // namespace DomainAvailabilityMapper
-} // namespace Model
-} // namespace Route53Domains
-} // namespace Aws
+}  // namespace DomainAvailabilityMapper
+}  // namespace Model
+}  // namespace Route53Domains
+}  // namespace Aws

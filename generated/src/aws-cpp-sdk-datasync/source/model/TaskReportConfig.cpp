@@ -3,90 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/datasync/model/TaskReportConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/datasync/model/TaskReportConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DataSync
-{
-namespace Model
-{
+namespace Aws {
+namespace DataSync {
+namespace Model {
 
-TaskReportConfig::TaskReportConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TaskReportConfig::TaskReportConfig(JsonView jsonValue) { *this = jsonValue; }
 
-TaskReportConfig& TaskReportConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Destination"))
-  {
+TaskReportConfig& TaskReportConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Destination")) {
     m_destination = jsonValue.GetObject("Destination");
     m_destinationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OutputType"))
-  {
+  if (jsonValue.ValueExists("OutputType")) {
     m_outputType = ReportOutputTypeMapper::GetReportOutputTypeForName(jsonValue.GetString("OutputType"));
     m_outputTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ReportLevel"))
-  {
+  if (jsonValue.ValueExists("ReportLevel")) {
     m_reportLevel = ReportLevelMapper::GetReportLevelForName(jsonValue.GetString("ReportLevel"));
     m_reportLevelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ObjectVersionIds"))
-  {
+  if (jsonValue.ValueExists("ObjectVersionIds")) {
     m_objectVersionIds = ObjectVersionIdsMapper::GetObjectVersionIdsForName(jsonValue.GetString("ObjectVersionIds"));
     m_objectVersionIdsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Overrides"))
-  {
+  if (jsonValue.ValueExists("Overrides")) {
     m_overrides = jsonValue.GetObject("Overrides");
     m_overridesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TaskReportConfig::Jsonize() const
-{
+JsonValue TaskReportConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_destinationHasBeenSet)
-  {
-   payload.WithObject("Destination", m_destination.Jsonize());
-
+  if (m_destinationHasBeenSet) {
+    payload.WithObject("Destination", m_destination.Jsonize());
   }
 
-  if(m_outputTypeHasBeenSet)
-  {
-   payload.WithString("OutputType", ReportOutputTypeMapper::GetNameForReportOutputType(m_outputType));
+  if (m_outputTypeHasBeenSet) {
+    payload.WithString("OutputType", ReportOutputTypeMapper::GetNameForReportOutputType(m_outputType));
   }
 
-  if(m_reportLevelHasBeenSet)
-  {
-   payload.WithString("ReportLevel", ReportLevelMapper::GetNameForReportLevel(m_reportLevel));
+  if (m_reportLevelHasBeenSet) {
+    payload.WithString("ReportLevel", ReportLevelMapper::GetNameForReportLevel(m_reportLevel));
   }
 
-  if(m_objectVersionIdsHasBeenSet)
-  {
-   payload.WithString("ObjectVersionIds", ObjectVersionIdsMapper::GetNameForObjectVersionIds(m_objectVersionIds));
+  if (m_objectVersionIdsHasBeenSet) {
+    payload.WithString("ObjectVersionIds", ObjectVersionIdsMapper::GetNameForObjectVersionIds(m_objectVersionIds));
   }
 
-  if(m_overridesHasBeenSet)
-  {
-   payload.WithObject("Overrides", m_overrides.Jsonize());
-
+  if (m_overridesHasBeenSet) {
+    payload.WithObject("Overrides", m_overrides.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DataSync
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataSync
+}  // namespace Aws

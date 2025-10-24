@@ -12,11 +12,4 @@ using namespace Aws::BedrockAgentRuntime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StopFlowExecutionRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String StopFlowExecutionRequest::SerializePayload() const { return {}; }

@@ -3,121 +3,94 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotanalytics/model/DatastoreSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotanalytics/model/DatastoreSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTAnalytics
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTAnalytics {
+namespace Model {
 
-DatastoreSummary::DatastoreSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DatastoreSummary::DatastoreSummary(JsonView jsonValue) { *this = jsonValue; }
 
-DatastoreSummary& DatastoreSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("datastoreName"))
-  {
+DatastoreSummary& DatastoreSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("datastoreName")) {
     m_datastoreName = jsonValue.GetString("datastoreName");
     m_datastoreNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("datastoreStorage"))
-  {
+  if (jsonValue.ValueExists("datastoreStorage")) {
     m_datastoreStorage = jsonValue.GetObject("datastoreStorage");
     m_datastoreStorageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = DatastoreStatusMapper::GetDatastoreStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("creationTime"))
-  {
+  if (jsonValue.ValueExists("creationTime")) {
     m_creationTime = jsonValue.GetDouble("creationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdateTime"))
-  {
+  if (jsonValue.ValueExists("lastUpdateTime")) {
     m_lastUpdateTime = jsonValue.GetDouble("lastUpdateTime");
     m_lastUpdateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastMessageArrivalTime"))
-  {
+  if (jsonValue.ValueExists("lastMessageArrivalTime")) {
     m_lastMessageArrivalTime = jsonValue.GetDouble("lastMessageArrivalTime");
     m_lastMessageArrivalTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("fileFormatType"))
-  {
+  if (jsonValue.ValueExists("fileFormatType")) {
     m_fileFormatType = FileFormatTypeMapper::GetFileFormatTypeForName(jsonValue.GetString("fileFormatType"));
     m_fileFormatTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("datastorePartitions"))
-  {
+  if (jsonValue.ValueExists("datastorePartitions")) {
     m_datastorePartitions = jsonValue.GetObject("datastorePartitions");
     m_datastorePartitionsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DatastoreSummary::Jsonize() const
-{
+JsonValue DatastoreSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_datastoreNameHasBeenSet)
-  {
-   payload.WithString("datastoreName", m_datastoreName);
-
+  if (m_datastoreNameHasBeenSet) {
+    payload.WithString("datastoreName", m_datastoreName);
   }
 
-  if(m_datastoreStorageHasBeenSet)
-  {
-   payload.WithObject("datastoreStorage", m_datastoreStorage.Jsonize());
-
+  if (m_datastoreStorageHasBeenSet) {
+    payload.WithObject("datastoreStorage", m_datastoreStorage.Jsonize());
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", DatastoreStatusMapper::GetNameForDatastoreStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", DatastoreStatusMapper::GetNameForDatastoreStatus(m_status));
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("creationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("creationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_lastUpdateTimeHasBeenSet)
-  {
-   payload.WithDouble("lastUpdateTime", m_lastUpdateTime.SecondsWithMSPrecision());
+  if (m_lastUpdateTimeHasBeenSet) {
+    payload.WithDouble("lastUpdateTime", m_lastUpdateTime.SecondsWithMSPrecision());
   }
 
-  if(m_lastMessageArrivalTimeHasBeenSet)
-  {
-   payload.WithDouble("lastMessageArrivalTime", m_lastMessageArrivalTime.SecondsWithMSPrecision());
+  if (m_lastMessageArrivalTimeHasBeenSet) {
+    payload.WithDouble("lastMessageArrivalTime", m_lastMessageArrivalTime.SecondsWithMSPrecision());
   }
 
-  if(m_fileFormatTypeHasBeenSet)
-  {
-   payload.WithString("fileFormatType", FileFormatTypeMapper::GetNameForFileFormatType(m_fileFormatType));
+  if (m_fileFormatTypeHasBeenSet) {
+    payload.WithString("fileFormatType", FileFormatTypeMapper::GetNameForFileFormatType(m_fileFormatType));
   }
 
-  if(m_datastorePartitionsHasBeenSet)
-  {
-   payload.WithObject("datastorePartitions", m_datastorePartitions.Jsonize());
-
+  if (m_datastorePartitionsHasBeenSet) {
+    payload.WithObject("datastorePartitions", m_datastorePartitions.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTAnalytics
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTAnalytics
+}  // namespace Aws

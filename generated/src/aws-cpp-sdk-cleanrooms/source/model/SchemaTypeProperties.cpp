@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
 
-SchemaTypeProperties::SchemaTypeProperties(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SchemaTypeProperties::SchemaTypeProperties(JsonView jsonValue) { *this = jsonValue; }
 
-SchemaTypeProperties& SchemaTypeProperties::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("idMappingTable"))
-  {
+SchemaTypeProperties& SchemaTypeProperties::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("idMappingTable")) {
     m_idMappingTable = jsonValue.GetObject("idMappingTable");
     m_idMappingTableHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SchemaTypeProperties::Jsonize() const
-{
+JsonValue SchemaTypeProperties::Jsonize() const {
   JsonValue payload;
 
-  if(m_idMappingTableHasBeenSet)
-  {
-   payload.WithObject("idMappingTable", m_idMappingTable.Jsonize());
-
+  if (m_idMappingTableHasBeenSet) {
+    payload.WithObject("idMappingTable", m_idMappingTable.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ssm-incidents/model/CreateReplicationSetRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ssm-incidents/model/CreateReplicationSetRequest.h>
 
 #include <utility>
 
@@ -12,41 +12,28 @@ using namespace Aws::SSMIncidents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateReplicationSetRequest::SerializePayload() const
-{
+Aws::String CreateReplicationSetRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
-  if(m_regionsHasBeenSet)
-  {
-   JsonValue regionsJsonMap;
-   for(auto& regionsItem : m_regions)
-   {
-     regionsJsonMap.WithObject(regionsItem.first, regionsItem.second.Jsonize());
-   }
-   payload.WithObject("regions", std::move(regionsJsonMap));
-
+  if (m_regionsHasBeenSet) {
+    JsonValue regionsJsonMap;
+    for (auto& regionsItem : m_regions) {
+      regionsJsonMap.WithObject(regionsItem.first, regionsItem.second.Jsonize());
+    }
+    payload.WithObject("regions", std::move(regionsJsonMap));
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

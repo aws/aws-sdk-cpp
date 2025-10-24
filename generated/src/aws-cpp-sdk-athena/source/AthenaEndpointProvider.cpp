@@ -5,12 +5,8 @@
 
 #include <aws/athena/AthenaEndpointProvider.h>
 
-namespace Aws
-{
-namespace Athena
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Athena
-} // namespace Aws
+namespace Aws {
+namespace Athena {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Athena
+}  // namespace Aws

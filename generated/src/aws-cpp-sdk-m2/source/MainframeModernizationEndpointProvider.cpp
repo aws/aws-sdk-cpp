@@ -5,12 +5,8 @@
 
 #include <aws/m2/MainframeModernizationEndpointProvider.h>
 
-namespace Aws
-{
-namespace MainframeModernization
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace MainframeModernization
-} // namespace Aws
+namespace Aws {
+namespace MainframeModernization {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace MainframeModernization
+}  // namespace Aws

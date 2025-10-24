@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/globalaccelerator/model/SocketAddress.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/globalaccelerator/model/SocketAddress.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GlobalAccelerator
-{
-namespace Model
-{
+namespace Aws {
+namespace GlobalAccelerator {
+namespace Model {
 
-SocketAddress::SocketAddress(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SocketAddress::SocketAddress(JsonView jsonValue) { *this = jsonValue; }
 
-SocketAddress& SocketAddress::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("IpAddress"))
-  {
+SocketAddress& SocketAddress::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("IpAddress")) {
     m_ipAddress = jsonValue.GetString("IpAddress");
     m_ipAddressHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Port"))
-  {
+  if (jsonValue.ValueExists("Port")) {
     m_port = jsonValue.GetInteger("Port");
     m_portHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SocketAddress::Jsonize() const
-{
+JsonValue SocketAddress::Jsonize() const {
   JsonValue payload;
 
-  if(m_ipAddressHasBeenSet)
-  {
-   payload.WithString("IpAddress", m_ipAddress);
-
+  if (m_ipAddressHasBeenSet) {
+    payload.WithString("IpAddress", m_ipAddress);
   }
 
-  if(m_portHasBeenSet)
-  {
-   payload.WithInteger("Port", m_port);
-
+  if (m_portHasBeenSet) {
+    payload.WithInteger("Port", m_port);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GlobalAccelerator
-} // namespace Aws
+}  // namespace Model
+}  // namespace GlobalAccelerator
+}  // namespace Aws

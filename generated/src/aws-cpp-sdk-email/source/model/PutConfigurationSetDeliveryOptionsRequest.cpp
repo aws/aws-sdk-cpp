@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/email/model/PutConfigurationSetDeliveryOptionsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/email/model/PutConfigurationSetDeliveryOptionsRequest.h>
 
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-Aws::String PutConfigurationSetDeliveryOptionsRequest::SerializePayload() const
-{
+Aws::String PutConfigurationSetDeliveryOptionsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=PutConfigurationSetDeliveryOptions&";
-  if(m_configurationSetNameHasBeenSet)
-  {
+  if (m_configurationSetNameHasBeenSet) {
     ss << "ConfigurationSetName=" << StringUtils::URLEncode(m_configurationSetName.c_str()) << "&";
   }
 
-  if(m_deliveryOptionsHasBeenSet)
-  {
+  if (m_deliveryOptionsHasBeenSet) {
     m_deliveryOptions.OutputToStream(ss, "DeliveryOptions");
   }
 
@@ -28,8 +25,4 @@ Aws::String PutConfigurationSetDeliveryOptionsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  PutConfigurationSetDeliveryOptionsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void PutConfigurationSetDeliveryOptionsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

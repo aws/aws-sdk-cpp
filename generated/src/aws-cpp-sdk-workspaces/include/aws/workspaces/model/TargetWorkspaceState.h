@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workspaces/WorkSpaces_EXPORTS.h>
 
-namespace Aws
-{
-namespace WorkSpaces
-{
-namespace Model
-{
-  enum class TargetWorkspaceState
-  {
-    NOT_SET,
-    AVAILABLE,
-    ADMIN_MAINTENANCE
-  };
+namespace Aws {
+namespace WorkSpaces {
+namespace Model {
+enum class TargetWorkspaceState { NOT_SET, AVAILABLE, ADMIN_MAINTENANCE };
 
-namespace TargetWorkspaceStateMapper
-{
+namespace TargetWorkspaceStateMapper {
 AWS_WORKSPACES_API TargetWorkspaceState GetTargetWorkspaceStateForName(const Aws::String& name);
 
 AWS_WORKSPACES_API Aws::String GetNameForTargetWorkspaceState(TargetWorkspaceState value);
-} // namespace TargetWorkspaceStateMapper
-} // namespace Model
-} // namespace WorkSpaces
-} // namespace Aws
+}  // namespace TargetWorkspaceStateMapper
+}  // namespace Model
+}  // namespace WorkSpaces
+}  // namespace Aws

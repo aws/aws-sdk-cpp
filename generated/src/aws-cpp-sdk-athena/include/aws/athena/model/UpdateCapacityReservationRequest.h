@@ -4,66 +4,73 @@
  */
 
 #pragma once
-#include <aws/athena/Athena_EXPORTS.h>
 #include <aws/athena/AthenaRequest.h>
+#include <aws/athena/Athena_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Athena
-{
-namespace Model
-{
+namespace Aws {
+namespace Athena {
+namespace Model {
 
+/**
+ */
+class UpdateCapacityReservationRequest : public AthenaRequest {
+ public:
+  AWS_ATHENA_API UpdateCapacityReservationRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "UpdateCapacityReservation"; }
+
+  AWS_ATHENA_API Aws::String SerializePayload() const override;
+
+  AWS_ATHENA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The new number of requested data processing units.</p>
    */
-  class UpdateCapacityReservationRequest : public AthenaRequest
-  {
-  public:
-    AWS_ATHENA_API UpdateCapacityReservationRequest() = default;
+  inline int GetTargetDpus() const { return m_targetDpus; }
+  inline bool TargetDpusHasBeenSet() const { return m_targetDpusHasBeenSet; }
+  inline void SetTargetDpus(int value) {
+    m_targetDpusHasBeenSet = true;
+    m_targetDpus = value;
+  }
+  inline UpdateCapacityReservationRequest& WithTargetDpus(int value) {
+    SetTargetDpus(value);
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "UpdateCapacityReservation"; }
+  ///@{
+  /**
+   * <p>The name of the capacity reservation.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  UpdateCapacityReservationRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  int m_targetDpus{0};
+  bool m_targetDpusHasBeenSet = false;
 
-    AWS_ATHENA_API Aws::String SerializePayload() const override;
+  Aws::String m_name;
+  bool m_nameHasBeenSet = false;
+};
 
-    AWS_ATHENA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    ///@{
-    /**
-     * <p>The new number of requested data processing units.</p>
-     */
-    inline int GetTargetDpus() const { return m_targetDpus; }
-    inline bool TargetDpusHasBeenSet() const { return m_targetDpusHasBeenSet; }
-    inline void SetTargetDpus(int value) { m_targetDpusHasBeenSet = true; m_targetDpus = value; }
-    inline UpdateCapacityReservationRequest& WithTargetDpus(int value) { SetTargetDpus(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The name of the capacity reservation.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    UpdateCapacityReservationRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
-  private:
-
-    int m_targetDpus{0};
-    bool m_targetDpusHasBeenSet = false;
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Athena
-} // namespace Aws
+}  // namespace Model
+}  // namespace Athena
+}  // namespace Aws

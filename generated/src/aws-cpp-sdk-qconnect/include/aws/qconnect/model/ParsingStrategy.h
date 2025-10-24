@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qconnect/QConnect_EXPORTS.h>
 
-namespace Aws
-{
-namespace QConnect
-{
-namespace Model
-{
-  enum class ParsingStrategy
-  {
-    NOT_SET,
-    BEDROCK_FOUNDATION_MODEL
-  };
+namespace Aws {
+namespace QConnect {
+namespace Model {
+enum class ParsingStrategy { NOT_SET, BEDROCK_FOUNDATION_MODEL };
 
-namespace ParsingStrategyMapper
-{
+namespace ParsingStrategyMapper {
 AWS_QCONNECT_API ParsingStrategy GetParsingStrategyForName(const Aws::String& name);
 
 AWS_QCONNECT_API Aws::String GetNameForParsingStrategy(ParsingStrategy value);
-} // namespace ParsingStrategyMapper
-} // namespace Model
-} // namespace QConnect
-} // namespace Aws
+}  // namespace ParsingStrategyMapper
+}  // namespace Model
+}  // namespace QConnect
+}  // namespace Aws

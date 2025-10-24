@@ -4,37 +4,29 @@
  */
 
 #include <aws/cloudfront/model/RealtimeMetricsSubscriptionConfig.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
-RealtimeMetricsSubscriptionConfig::RealtimeMetricsSubscriptionConfig(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+RealtimeMetricsSubscriptionConfig::RealtimeMetricsSubscriptionConfig(const XmlNode& xmlNode) { *this = xmlNode; }
 
-RealtimeMetricsSubscriptionConfig& RealtimeMetricsSubscriptionConfig::operator =(const XmlNode& xmlNode)
-{
+RealtimeMetricsSubscriptionConfig& RealtimeMetricsSubscriptionConfig::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode realtimeMetricsSubscriptionStatusNode = resultNode.FirstChild("RealtimeMetricsSubscriptionStatus");
-    if(!realtimeMetricsSubscriptionStatusNode.IsNull())
-    {
-      m_realtimeMetricsSubscriptionStatus = RealtimeMetricsSubscriptionStatusMapper::GetRealtimeMetricsSubscriptionStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(realtimeMetricsSubscriptionStatusNode.GetText()).c_str()));
+    if (!realtimeMetricsSubscriptionStatusNode.IsNull()) {
+      m_realtimeMetricsSubscriptionStatus = RealtimeMetricsSubscriptionStatusMapper::GetRealtimeMetricsSubscriptionStatusForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(realtimeMetricsSubscriptionStatusNode.GetText()).c_str()));
       m_realtimeMetricsSubscriptionStatusHasBeenSet = true;
     }
   }
@@ -42,17 +34,15 @@ RealtimeMetricsSubscriptionConfig& RealtimeMetricsSubscriptionConfig::operator =
   return *this;
 }
 
-void RealtimeMetricsSubscriptionConfig::AddToNode(XmlNode& parentNode) const
-{
+void RealtimeMetricsSubscriptionConfig::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_realtimeMetricsSubscriptionStatusHasBeenSet)
-  {
-   XmlNode realtimeMetricsSubscriptionStatusNode = parentNode.CreateChildElement("RealtimeMetricsSubscriptionStatus");
-   realtimeMetricsSubscriptionStatusNode.SetText(RealtimeMetricsSubscriptionStatusMapper::GetNameForRealtimeMetricsSubscriptionStatus(m_realtimeMetricsSubscriptionStatus));
+  if (m_realtimeMetricsSubscriptionStatusHasBeenSet) {
+    XmlNode realtimeMetricsSubscriptionStatusNode = parentNode.CreateChildElement("RealtimeMetricsSubscriptionStatus");
+    realtimeMetricsSubscriptionStatusNode.SetText(
+        RealtimeMetricsSubscriptionStatusMapper::GetNameForRealtimeMetricsSubscriptionStatus(m_realtimeMetricsSubscriptionStatus));
   }
-
 }
 
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

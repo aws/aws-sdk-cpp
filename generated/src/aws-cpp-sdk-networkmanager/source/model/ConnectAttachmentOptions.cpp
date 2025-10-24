@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/networkmanager/model/ConnectAttachmentOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/networkmanager/model/ConnectAttachmentOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace NetworkManager
-{
-namespace Model
-{
+namespace Aws {
+namespace NetworkManager {
+namespace Model {
 
-ConnectAttachmentOptions::ConnectAttachmentOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConnectAttachmentOptions::ConnectAttachmentOptions(JsonView jsonValue) { *this = jsonValue; }
 
-ConnectAttachmentOptions& ConnectAttachmentOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Protocol"))
-  {
+ConnectAttachmentOptions& ConnectAttachmentOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Protocol")) {
     m_protocol = TunnelProtocolMapper::GetTunnelProtocolForName(jsonValue.GetString("Protocol"));
     m_protocolHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ConnectAttachmentOptions::Jsonize() const
-{
+JsonValue ConnectAttachmentOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_protocolHasBeenSet)
-  {
-   payload.WithString("Protocol", TunnelProtocolMapper::GetNameForTunnelProtocol(m_protocol));
+  if (m_protocolHasBeenSet) {
+    payload.WithString("Protocol", TunnelProtocolMapper::GetNameForTunnelProtocol(m_protocol));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace NetworkManager
-} // namespace Aws
+}  // namespace Model
+}  // namespace NetworkManager
+}  // namespace Aws

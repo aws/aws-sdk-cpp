@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/bcm-dashboards/BCMDashboardsEndpointRules.h>
 #include <aws/bcm-dashboards/BCMDashboards_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -11,18 +12,12 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
-#include <aws/bcm-dashboards/BCMDashboardsEndpointRules.h>
-
-
-namespace Aws
-{
-namespace BCMDashboards
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace BCMDashboards {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using BCMDashboardsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using BCMDashboardsDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_BCMDASHBOARDS_API BCMDashboardsEndpointProvider : public BCMDashboardsDefaultEpProviderBase
-{
-public:
-    using BCMDashboardsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_BCMDASHBOARDS_API BCMDashboardsEndpointProvider : public BCMDashboardsDefaultEpProviderBase {
+ public:
+  using BCMDashboardsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    BCMDashboardsEndpointProvider()
-      : BCMDashboardsDefaultEpProviderBase(Aws::BCMDashboards::BCMDashboardsEndpointRules::GetRulesBlob(), Aws::BCMDashboards::BCMDashboardsEndpointRules::RulesBlobSize)
-    {}
+  BCMDashboardsEndpointProvider()
+      : BCMDashboardsDefaultEpProviderBase(Aws::BCMDashboards::BCMDashboardsEndpointRules::GetRulesBlob(),
+                                           Aws::BCMDashboards::BCMDashboardsEndpointRules::RulesBlobSize) {}
 
-    ~BCMDashboardsEndpointProvider()
-    {
-    }
+  ~BCMDashboardsEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace BCMDashboards
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace BCMDashboards
+}  // namespace Aws

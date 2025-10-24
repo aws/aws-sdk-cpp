@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/OutputSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconvert/model/OutputSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
 
-OutputSettings::OutputSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OutputSettings::OutputSettings(JsonView jsonValue) { *this = jsonValue; }
 
-OutputSettings& OutputSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("hlsSettings"))
-  {
+OutputSettings& OutputSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("hlsSettings")) {
     m_hlsSettings = jsonValue.GetObject("hlsSettings");
     m_hlsSettingsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OutputSettings::Jsonize() const
-{
+JsonValue OutputSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_hlsSettingsHasBeenSet)
-  {
-   payload.WithObject("hlsSettings", m_hlsSettings.Jsonize());
-
+  if (m_hlsSettingsHasBeenSet) {
+    payload.WithObject("hlsSettings", m_hlsSettings.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

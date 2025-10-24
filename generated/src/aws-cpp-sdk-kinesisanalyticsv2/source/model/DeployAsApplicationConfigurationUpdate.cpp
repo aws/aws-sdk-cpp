@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kinesisanalyticsv2/model/DeployAsApplicationConfigurationUpdate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kinesisanalyticsv2/model/DeployAsApplicationConfigurationUpdate.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace KinesisAnalyticsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace KinesisAnalyticsV2 {
+namespace Model {
 
-DeployAsApplicationConfigurationUpdate::DeployAsApplicationConfigurationUpdate(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DeployAsApplicationConfigurationUpdate::DeployAsApplicationConfigurationUpdate(JsonView jsonValue) { *this = jsonValue; }
 
-DeployAsApplicationConfigurationUpdate& DeployAsApplicationConfigurationUpdate::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("S3ContentLocationUpdate"))
-  {
+DeployAsApplicationConfigurationUpdate& DeployAsApplicationConfigurationUpdate::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("S3ContentLocationUpdate")) {
     m_s3ContentLocationUpdate = jsonValue.GetObject("S3ContentLocationUpdate");
     m_s3ContentLocationUpdateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DeployAsApplicationConfigurationUpdate::Jsonize() const
-{
+JsonValue DeployAsApplicationConfigurationUpdate::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3ContentLocationUpdateHasBeenSet)
-  {
-   payload.WithObject("S3ContentLocationUpdate", m_s3ContentLocationUpdate.Jsonize());
-
+  if (m_s3ContentLocationUpdateHasBeenSet) {
+    payload.WithObject("S3ContentLocationUpdate", m_s3ContentLocationUpdate.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace KinesisAnalyticsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace KinesisAnalyticsV2
+}  // namespace Aws

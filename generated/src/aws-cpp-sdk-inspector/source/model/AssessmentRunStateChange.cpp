@@ -3,58 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/inspector/model/AssessmentRunStateChange.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/inspector/model/AssessmentRunStateChange.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Inspector
-{
-namespace Model
-{
+namespace Aws {
+namespace Inspector {
+namespace Model {
 
-AssessmentRunStateChange::AssessmentRunStateChange(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AssessmentRunStateChange::AssessmentRunStateChange(JsonView jsonValue) { *this = jsonValue; }
 
-AssessmentRunStateChange& AssessmentRunStateChange::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("stateChangedAt"))
-  {
+AssessmentRunStateChange& AssessmentRunStateChange::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("stateChangedAt")) {
     m_stateChangedAt = jsonValue.GetDouble("stateChangedAt");
     m_stateChangedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("state"))
-  {
+  if (jsonValue.ValueExists("state")) {
     m_state = AssessmentRunStateMapper::GetAssessmentRunStateForName(jsonValue.GetString("state"));
     m_stateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AssessmentRunStateChange::Jsonize() const
-{
+JsonValue AssessmentRunStateChange::Jsonize() const {
   JsonValue payload;
 
-  if(m_stateChangedAtHasBeenSet)
-  {
-   payload.WithDouble("stateChangedAt", m_stateChangedAt.SecondsWithMSPrecision());
+  if (m_stateChangedAtHasBeenSet) {
+    payload.WithDouble("stateChangedAt", m_stateChangedAt.SecondsWithMSPrecision());
   }
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("state", AssessmentRunStateMapper::GetNameForAssessmentRunState(m_state));
+  if (m_stateHasBeenSet) {
+    payload.WithString("state", AssessmentRunStateMapper::GetNameForAssessmentRunState(m_state));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Inspector
-} // namespace Aws
+}  // namespace Model
+}  // namespace Inspector
+}  // namespace Aws

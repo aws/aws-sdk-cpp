@@ -4,69 +4,55 @@
  */
 
 #include <aws/ce/model/SubscriberType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
+namespace SubscriberTypeMapper {
 
-namespace Aws
-{
-  namespace CostExplorer
-  {
-    namespace Model
-    {
-      namespace SubscriberTypeMapper
-      {
+static const int EMAIL_HASH = HashingUtils::HashString("EMAIL");
+static const int SNS_HASH = HashingUtils::HashString("SNS");
 
-        static const int EMAIL_HASH = HashingUtils::HashString("EMAIL");
-        static const int SNS_HASH = HashingUtils::HashString("SNS");
+SubscriberType GetSubscriberTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == EMAIL_HASH) {
+    return SubscriberType::EMAIL;
+  } else if (hashCode == SNS_HASH) {
+    return SubscriberType::SNS;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<SubscriberType>(hashCode);
+  }
 
+  return SubscriberType::NOT_SET;
+}
 
-        SubscriberType GetSubscriberTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == EMAIL_HASH)
-          {
-            return SubscriberType::EMAIL;
-          }
-          else if (hashCode == SNS_HASH)
-          {
-            return SubscriberType::SNS;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<SubscriberType>(hashCode);
-          }
+Aws::String GetNameForSubscriberType(SubscriberType enumValue) {
+  switch (enumValue) {
+    case SubscriberType::NOT_SET:
+      return {};
+    case SubscriberType::EMAIL:
+      return "EMAIL";
+    case SubscriberType::SNS:
+      return "SNS";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return SubscriberType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForSubscriberType(SubscriberType enumValue)
-        {
-          switch(enumValue)
-          {
-          case SubscriberType::NOT_SET:
-            return {};
-          case SubscriberType::EMAIL:
-            return "EMAIL";
-          case SubscriberType::SNS:
-            return "SNS";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace SubscriberTypeMapper
-    } // namespace Model
-  } // namespace CostExplorer
-} // namespace Aws
+}  // namespace SubscriberTypeMapper
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

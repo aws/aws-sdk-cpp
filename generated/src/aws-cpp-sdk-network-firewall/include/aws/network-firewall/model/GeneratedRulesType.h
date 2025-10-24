@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 
-namespace Aws
-{
-namespace NetworkFirewall
-{
-namespace Model
-{
-  enum class GeneratedRulesType
-  {
-    NOT_SET,
-    ALLOWLIST,
-    DENYLIST,
-    REJECTLIST,
-    ALERTLIST
-  };
+namespace Aws {
+namespace NetworkFirewall {
+namespace Model {
+enum class GeneratedRulesType { NOT_SET, ALLOWLIST, DENYLIST, REJECTLIST, ALERTLIST };
 
-namespace GeneratedRulesTypeMapper
-{
+namespace GeneratedRulesTypeMapper {
 AWS_NETWORKFIREWALL_API GeneratedRulesType GetGeneratedRulesTypeForName(const Aws::String& name);
 
 AWS_NETWORKFIREWALL_API Aws::String GetNameForGeneratedRulesType(GeneratedRulesType value);
-} // namespace GeneratedRulesTypeMapper
-} // namespace Model
-} // namespace NetworkFirewall
-} // namespace Aws
+}  // namespace GeneratedRulesTypeMapper
+}  // namespace Model
+}  // namespace NetworkFirewall
+}  // namespace Aws

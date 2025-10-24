@@ -4,68 +4,75 @@
  */
 
 #pragma once
-#include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/cleanrooms/CleanRoomsRequest.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/cleanrooms/model/ConfiguredTableAnalysisRuleType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
 
+/**
+ */
+class GetConfiguredTableAnalysisRuleRequest : public CleanRoomsRequest {
+ public:
+  AWS_CLEANROOMS_API GetConfiguredTableAnalysisRuleRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "GetConfiguredTableAnalysisRule"; }
+
+  AWS_CLEANROOMS_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
+   * <p>The unique identifier for the configured table to retrieve. Currently accepts
+   * the configured table ID.</p>
    */
-  class GetConfiguredTableAnalysisRuleRequest : public CleanRoomsRequest
-  {
-  public:
-    AWS_CLEANROOMS_API GetConfiguredTableAnalysisRuleRequest() = default;
+  inline const Aws::String& GetConfiguredTableIdentifier() const { return m_configuredTableIdentifier; }
+  inline bool ConfiguredTableIdentifierHasBeenSet() const { return m_configuredTableIdentifierHasBeenSet; }
+  template <typename ConfiguredTableIdentifierT = Aws::String>
+  void SetConfiguredTableIdentifier(ConfiguredTableIdentifierT&& value) {
+    m_configuredTableIdentifierHasBeenSet = true;
+    m_configuredTableIdentifier = std::forward<ConfiguredTableIdentifierT>(value);
+  }
+  template <typename ConfiguredTableIdentifierT = Aws::String>
+  GetConfiguredTableAnalysisRuleRequest& WithConfiguredTableIdentifier(ConfiguredTableIdentifierT&& value) {
+    SetConfiguredTableIdentifier(std::forward<ConfiguredTableIdentifierT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "GetConfiguredTableAnalysisRule"; }
+  ///@{
+  /**
+   * <p>The analysis rule to be retrieved. Configured table analysis rules are
+   * uniquely identified by their configured table identifier and analysis rule
+   * type.</p>
+   */
+  inline ConfiguredTableAnalysisRuleType GetAnalysisRuleType() const { return m_analysisRuleType; }
+  inline bool AnalysisRuleTypeHasBeenSet() const { return m_analysisRuleTypeHasBeenSet; }
+  inline void SetAnalysisRuleType(ConfiguredTableAnalysisRuleType value) {
+    m_analysisRuleTypeHasBeenSet = true;
+    m_analysisRuleType = value;
+  }
+  inline GetConfiguredTableAnalysisRuleRequest& WithAnalysisRuleType(ConfiguredTableAnalysisRuleType value) {
+    SetAnalysisRuleType(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_configuredTableIdentifier;
+  bool m_configuredTableIdentifierHasBeenSet = false;
 
-    AWS_CLEANROOMS_API Aws::String SerializePayload() const override;
+  ConfiguredTableAnalysisRuleType m_analysisRuleType{ConfiguredTableAnalysisRuleType::NOT_SET};
+  bool m_analysisRuleTypeHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>The unique identifier for the configured table to retrieve. Currently accepts
-     * the configured table ID.</p>
-     */
-    inline const Aws::String& GetConfiguredTableIdentifier() const { return m_configuredTableIdentifier; }
-    inline bool ConfiguredTableIdentifierHasBeenSet() const { return m_configuredTableIdentifierHasBeenSet; }
-    template<typename ConfiguredTableIdentifierT = Aws::String>
-    void SetConfiguredTableIdentifier(ConfiguredTableIdentifierT&& value) { m_configuredTableIdentifierHasBeenSet = true; m_configuredTableIdentifier = std::forward<ConfiguredTableIdentifierT>(value); }
-    template<typename ConfiguredTableIdentifierT = Aws::String>
-    GetConfiguredTableAnalysisRuleRequest& WithConfiguredTableIdentifier(ConfiguredTableIdentifierT&& value) { SetConfiguredTableIdentifier(std::forward<ConfiguredTableIdentifierT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The analysis rule to be retrieved. Configured table analysis rules are
-     * uniquely identified by their configured table identifier and analysis rule
-     * type.</p>
-     */
-    inline ConfiguredTableAnalysisRuleType GetAnalysisRuleType() const { return m_analysisRuleType; }
-    inline bool AnalysisRuleTypeHasBeenSet() const { return m_analysisRuleTypeHasBeenSet; }
-    inline void SetAnalysisRuleType(ConfiguredTableAnalysisRuleType value) { m_analysisRuleTypeHasBeenSet = true; m_analysisRuleType = value; }
-    inline GetConfiguredTableAnalysisRuleRequest& WithAnalysisRuleType(ConfiguredTableAnalysisRuleType value) { SetAnalysisRuleType(value); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_configuredTableIdentifier;
-    bool m_configuredTableIdentifierHasBeenSet = false;
-
-    ConfiguredTableAnalysisRuleType m_analysisRuleType{ConfiguredTableAnalysisRuleType::NOT_SET};
-    bool m_analysisRuleTypeHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

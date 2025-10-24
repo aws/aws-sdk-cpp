@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsRoute53HostedZoneObjectDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsRoute53HostedZoneObjectDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsRoute53HostedZoneObjectDetails::AwsRoute53HostedZoneObjectDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsRoute53HostedZoneObjectDetails::AwsRoute53HostedZoneObjectDetails(JsonView jsonValue) { *this = jsonValue; }
 
-AwsRoute53HostedZoneObjectDetails& AwsRoute53HostedZoneObjectDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Id"))
-  {
+AwsRoute53HostedZoneObjectDetails& AwsRoute53HostedZoneObjectDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Config"))
-  {
+  if (jsonValue.ValueExists("Config")) {
     m_config = jsonValue.GetObject("Config");
     m_configHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsRoute53HostedZoneObjectDetails::Jsonize() const
-{
+JsonValue AwsRoute53HostedZoneObjectDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_configHasBeenSet)
-  {
-   payload.WithObject("Config", m_config.Jsonize());
-
+  if (m_configHasBeenSet) {
+    payload.WithObject("Config", m_config.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

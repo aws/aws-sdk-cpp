@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/repostspace/Repostspace_EXPORTS.h>
 
-namespace Aws
-{
-namespace repostspace
-{
-class RepostspaceEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace repostspace {
+class RepostspaceEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace repostspace
-} // namespace Aws
+}  // namespace repostspace
+}  // namespace Aws

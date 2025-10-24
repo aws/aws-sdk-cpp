@@ -12,31 +12,20 @@ using namespace Aws::Amplify::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateBackendEnvironmentRequest::SerializePayload() const
-{
+Aws::String CreateBackendEnvironmentRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_environmentNameHasBeenSet)
-  {
-   payload.WithString("environmentName", m_environmentName);
-
+  if (m_environmentNameHasBeenSet) {
+    payload.WithString("environmentName", m_environmentName);
   }
 
-  if(m_stackNameHasBeenSet)
-  {
-   payload.WithString("stackName", m_stackName);
-
+  if (m_stackNameHasBeenSet) {
+    payload.WithString("stackName", m_stackName);
   }
 
-  if(m_deploymentArtifactsHasBeenSet)
-  {
-   payload.WithString("deploymentArtifacts", m_deploymentArtifacts);
-
+  if (m_deploymentArtifactsHasBeenSet) {
+    payload.WithString("deploymentArtifacts", m_deploymentArtifacts);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

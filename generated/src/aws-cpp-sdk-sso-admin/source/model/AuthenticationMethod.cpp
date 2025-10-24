@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sso-admin/model/AuthenticationMethod.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sso-admin/model/AuthenticationMethod.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SSOAdmin
-{
-namespace Model
-{
+namespace Aws {
+namespace SSOAdmin {
+namespace Model {
 
-AuthenticationMethod::AuthenticationMethod(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AuthenticationMethod::AuthenticationMethod(JsonView jsonValue) { *this = jsonValue; }
 
-AuthenticationMethod& AuthenticationMethod::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Iam"))
-  {
+AuthenticationMethod& AuthenticationMethod::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Iam")) {
     m_iam = jsonValue.GetObject("Iam");
     m_iamHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AuthenticationMethod::Jsonize() const
-{
+JsonValue AuthenticationMethod::Jsonize() const {
   JsonValue payload;
 
-  if(m_iamHasBeenSet)
-  {
-   payload.WithObject("Iam", m_iam.Jsonize());
-
+  if (m_iamHasBeenSet) {
+    payload.WithObject("Iam", m_iam.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SSOAdmin
-} // namespace Aws
+}  // namespace Model
+}  // namespace SSOAdmin
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/outposts/model/CreateOrderRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/outposts/model/CreateOrderRequest.h>
 
 #include <utility>
 
@@ -12,40 +12,28 @@ using namespace Aws::Outposts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateOrderRequest::SerializePayload() const
-{
+Aws::String CreateOrderRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_outpostIdentifierHasBeenSet)
-  {
-   payload.WithString("OutpostIdentifier", m_outpostIdentifier);
-
+  if (m_outpostIdentifierHasBeenSet) {
+    payload.WithString("OutpostIdentifier", m_outpostIdentifier);
   }
 
-  if(m_lineItemsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> lineItemsJsonList(m_lineItems.size());
-   for(unsigned lineItemsIndex = 0; lineItemsIndex < lineItemsJsonList.GetLength(); ++lineItemsIndex)
-   {
-     lineItemsJsonList[lineItemsIndex].AsObject(m_lineItems[lineItemsIndex].Jsonize());
-   }
-   payload.WithArray("LineItems", std::move(lineItemsJsonList));
-
+  if (m_lineItemsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> lineItemsJsonList(m_lineItems.size());
+    for (unsigned lineItemsIndex = 0; lineItemsIndex < lineItemsJsonList.GetLength(); ++lineItemsIndex) {
+      lineItemsJsonList[lineItemsIndex].AsObject(m_lineItems[lineItemsIndex].Jsonize());
+    }
+    payload.WithArray("LineItems", std::move(lineItemsJsonList));
   }
 
-  if(m_paymentOptionHasBeenSet)
-  {
-   payload.WithString("PaymentOption", PaymentOptionMapper::GetNameForPaymentOption(m_paymentOption));
+  if (m_paymentOptionHasBeenSet) {
+    payload.WithString("PaymentOption", PaymentOptionMapper::GetNameForPaymentOption(m_paymentOption));
   }
 
-  if(m_paymentTermHasBeenSet)
-  {
-   payload.WithString("PaymentTerm", PaymentTermMapper::GetNameForPaymentTerm(m_paymentTerm));
+  if (m_paymentTermHasBeenSet) {
+    payload.WithString("PaymentTerm", PaymentTermMapper::GetNameForPaymentTerm(m_paymentTerm));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

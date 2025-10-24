@@ -3,124 +3,95 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/AthenaDatasetDefinition.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/AthenaDatasetDefinition.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-AthenaDatasetDefinition::AthenaDatasetDefinition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AthenaDatasetDefinition::AthenaDatasetDefinition(JsonView jsonValue) { *this = jsonValue; }
 
-AthenaDatasetDefinition& AthenaDatasetDefinition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Catalog"))
-  {
+AthenaDatasetDefinition& AthenaDatasetDefinition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Catalog")) {
     m_catalog = jsonValue.GetString("Catalog");
     m_catalogHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Database"))
-  {
+  if (jsonValue.ValueExists("Database")) {
     m_database = jsonValue.GetString("Database");
     m_databaseHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("QueryString"))
-  {
+  if (jsonValue.ValueExists("QueryString")) {
     m_queryString = jsonValue.GetString("QueryString");
     m_queryStringHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WorkGroup"))
-  {
+  if (jsonValue.ValueExists("WorkGroup")) {
     m_workGroup = jsonValue.GetString("WorkGroup");
     m_workGroupHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OutputS3Uri"))
-  {
+  if (jsonValue.ValueExists("OutputS3Uri")) {
     m_outputS3Uri = jsonValue.GetString("OutputS3Uri");
     m_outputS3UriHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("KmsKeyId"))
-  {
+  if (jsonValue.ValueExists("KmsKeyId")) {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
     m_kmsKeyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OutputFormat"))
-  {
+  if (jsonValue.ValueExists("OutputFormat")) {
     m_outputFormat = AthenaResultFormatMapper::GetAthenaResultFormatForName(jsonValue.GetString("OutputFormat"));
     m_outputFormatHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OutputCompression"))
-  {
-    m_outputCompression = AthenaResultCompressionTypeMapper::GetAthenaResultCompressionTypeForName(jsonValue.GetString("OutputCompression"));
+  if (jsonValue.ValueExists("OutputCompression")) {
+    m_outputCompression =
+        AthenaResultCompressionTypeMapper::GetAthenaResultCompressionTypeForName(jsonValue.GetString("OutputCompression"));
     m_outputCompressionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AthenaDatasetDefinition::Jsonize() const
-{
+JsonValue AthenaDatasetDefinition::Jsonize() const {
   JsonValue payload;
 
-  if(m_catalogHasBeenSet)
-  {
-   payload.WithString("Catalog", m_catalog);
-
+  if (m_catalogHasBeenSet) {
+    payload.WithString("Catalog", m_catalog);
   }
 
-  if(m_databaseHasBeenSet)
-  {
-   payload.WithString("Database", m_database);
-
+  if (m_databaseHasBeenSet) {
+    payload.WithString("Database", m_database);
   }
 
-  if(m_queryStringHasBeenSet)
-  {
-   payload.WithString("QueryString", m_queryString);
-
+  if (m_queryStringHasBeenSet) {
+    payload.WithString("QueryString", m_queryString);
   }
 
-  if(m_workGroupHasBeenSet)
-  {
-   payload.WithString("WorkGroup", m_workGroup);
-
+  if (m_workGroupHasBeenSet) {
+    payload.WithString("WorkGroup", m_workGroup);
   }
 
-  if(m_outputS3UriHasBeenSet)
-  {
-   payload.WithString("OutputS3Uri", m_outputS3Uri);
-
+  if (m_outputS3UriHasBeenSet) {
+    payload.WithString("OutputS3Uri", m_outputS3Uri);
   }
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
-   payload.WithString("KmsKeyId", m_kmsKeyId);
-
+  if (m_kmsKeyIdHasBeenSet) {
+    payload.WithString("KmsKeyId", m_kmsKeyId);
   }
 
-  if(m_outputFormatHasBeenSet)
-  {
-   payload.WithString("OutputFormat", AthenaResultFormatMapper::GetNameForAthenaResultFormat(m_outputFormat));
+  if (m_outputFormatHasBeenSet) {
+    payload.WithString("OutputFormat", AthenaResultFormatMapper::GetNameForAthenaResultFormat(m_outputFormat));
   }
 
-  if(m_outputCompressionHasBeenSet)
-  {
-   payload.WithString("OutputCompression", AthenaResultCompressionTypeMapper::GetNameForAthenaResultCompressionType(m_outputCompression));
+  if (m_outputCompressionHasBeenSet) {
+    payload.WithString("OutputCompression", AthenaResultCompressionTypeMapper::GetNameForAthenaResultCompressionType(m_outputCompression));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

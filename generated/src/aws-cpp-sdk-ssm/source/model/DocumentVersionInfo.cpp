@@ -3,144 +3,110 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ssm/model/DocumentVersionInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ssm/model/DocumentVersionInfo.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SSM
-{
-namespace Model
-{
+namespace Aws {
+namespace SSM {
+namespace Model {
 
-DocumentVersionInfo::DocumentVersionInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DocumentVersionInfo::DocumentVersionInfo(JsonView jsonValue) { *this = jsonValue; }
 
-DocumentVersionInfo& DocumentVersionInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+DocumentVersionInfo& DocumentVersionInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DisplayName"))
-  {
+  if (jsonValue.ValueExists("DisplayName")) {
     m_displayName = jsonValue.GetString("DisplayName");
     m_displayNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DocumentVersion"))
-  {
+  if (jsonValue.ValueExists("DocumentVersion")) {
     m_documentVersion = jsonValue.GetString("DocumentVersion");
     m_documentVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VersionName"))
-  {
+  if (jsonValue.ValueExists("VersionName")) {
     m_versionName = jsonValue.GetString("VersionName");
     m_versionNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedDate"))
-  {
+  if (jsonValue.ValueExists("CreatedDate")) {
     m_createdDate = jsonValue.GetDouble("CreatedDate");
     m_createdDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IsDefaultVersion"))
-  {
+  if (jsonValue.ValueExists("IsDefaultVersion")) {
     m_isDefaultVersion = jsonValue.GetBool("IsDefaultVersion");
     m_isDefaultVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DocumentFormat"))
-  {
+  if (jsonValue.ValueExists("DocumentFormat")) {
     m_documentFormat = DocumentFormatMapper::GetDocumentFormatForName(jsonValue.GetString("DocumentFormat"));
     m_documentFormatHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = DocumentStatusMapper::GetDocumentStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StatusInformation"))
-  {
+  if (jsonValue.ValueExists("StatusInformation")) {
     m_statusInformation = jsonValue.GetString("StatusInformation");
     m_statusInformationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ReviewStatus"))
-  {
+  if (jsonValue.ValueExists("ReviewStatus")) {
     m_reviewStatus = ReviewStatusMapper::GetReviewStatusForName(jsonValue.GetString("ReviewStatus"));
     m_reviewStatusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DocumentVersionInfo::Jsonize() const
-{
+JsonValue DocumentVersionInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_displayNameHasBeenSet)
-  {
-   payload.WithString("DisplayName", m_displayName);
-
+  if (m_displayNameHasBeenSet) {
+    payload.WithString("DisplayName", m_displayName);
   }
 
-  if(m_documentVersionHasBeenSet)
-  {
-   payload.WithString("DocumentVersion", m_documentVersion);
-
+  if (m_documentVersionHasBeenSet) {
+    payload.WithString("DocumentVersion", m_documentVersion);
   }
 
-  if(m_versionNameHasBeenSet)
-  {
-   payload.WithString("VersionName", m_versionName);
-
+  if (m_versionNameHasBeenSet) {
+    payload.WithString("VersionName", m_versionName);
   }
 
-  if(m_createdDateHasBeenSet)
-  {
-   payload.WithDouble("CreatedDate", m_createdDate.SecondsWithMSPrecision());
+  if (m_createdDateHasBeenSet) {
+    payload.WithDouble("CreatedDate", m_createdDate.SecondsWithMSPrecision());
   }
 
-  if(m_isDefaultVersionHasBeenSet)
-  {
-   payload.WithBool("IsDefaultVersion", m_isDefaultVersion);
-
+  if (m_isDefaultVersionHasBeenSet) {
+    payload.WithBool("IsDefaultVersion", m_isDefaultVersion);
   }
 
-  if(m_documentFormatHasBeenSet)
-  {
-   payload.WithString("DocumentFormat", DocumentFormatMapper::GetNameForDocumentFormat(m_documentFormat));
+  if (m_documentFormatHasBeenSet) {
+    payload.WithString("DocumentFormat", DocumentFormatMapper::GetNameForDocumentFormat(m_documentFormat));
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", DocumentStatusMapper::GetNameForDocumentStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", DocumentStatusMapper::GetNameForDocumentStatus(m_status));
   }
 
-  if(m_statusInformationHasBeenSet)
-  {
-   payload.WithString("StatusInformation", m_statusInformation);
-
+  if (m_statusInformationHasBeenSet) {
+    payload.WithString("StatusInformation", m_statusInformation);
   }
 
-  if(m_reviewStatusHasBeenSet)
-  {
-   payload.WithString("ReviewStatus", ReviewStatusMapper::GetNameForReviewStatus(m_reviewStatus));
+  if (m_reviewStatusHasBeenSet) {
+    payload.WithString("ReviewStatus", ReviewStatusMapper::GetNameForReviewStatus(m_reviewStatus));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SSM
-} // namespace Aws
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

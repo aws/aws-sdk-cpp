@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/greengrassv2/model/SystemResourceLimits.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/greengrassv2/model/SystemResourceLimits.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GreengrassV2
-{
-namespace Model
-{
+namespace Aws {
+namespace GreengrassV2 {
+namespace Model {
 
-SystemResourceLimits::SystemResourceLimits(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SystemResourceLimits::SystemResourceLimits(JsonView jsonValue) { *this = jsonValue; }
 
-SystemResourceLimits& SystemResourceLimits::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("memory"))
-  {
+SystemResourceLimits& SystemResourceLimits::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("memory")) {
     m_memory = jsonValue.GetInt64("memory");
     m_memoryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("cpus"))
-  {
+  if (jsonValue.ValueExists("cpus")) {
     m_cpus = jsonValue.GetDouble("cpus");
     m_cpusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SystemResourceLimits::Jsonize() const
-{
+JsonValue SystemResourceLimits::Jsonize() const {
   JsonValue payload;
 
-  if(m_memoryHasBeenSet)
-  {
-   payload.WithInt64("memory", m_memory);
-
+  if (m_memoryHasBeenSet) {
+    payload.WithInt64("memory", m_memory);
   }
 
-  if(m_cpusHasBeenSet)
-  {
-   payload.WithDouble("cpus", m_cpus);
-
+  if (m_cpusHasBeenSet) {
+    payload.WithDouble("cpus", m_cpus);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GreengrassV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace GreengrassV2
+}  // namespace Aws

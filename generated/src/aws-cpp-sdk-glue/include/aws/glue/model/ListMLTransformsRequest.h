@@ -4,120 +4,147 @@
  */
 
 #pragma once
-#include <aws/glue/Glue_EXPORTS.h>
-#include <aws/glue/GlueRequest.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glue/GlueRequest.h>
+#include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/model/TransformFilterCriteria.h>
 #include <aws/glue/model/TransformSortCriteria.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
+namespace Aws {
+namespace Glue {
+namespace Model {
 
+/**
+ */
+class ListMLTransformsRequest : public GlueRequest {
+ public:
+  AWS_GLUE_API ListMLTransformsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "ListMLTransforms"; }
+
+  AWS_GLUE_API Aws::String SerializePayload() const override;
+
+  AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>A continuation token, if this is a continuation request.</p>
    */
-  class ListMLTransformsRequest : public GlueRequest
-  {
-  public:
-    AWS_GLUE_API ListMLTransformsRequest() = default;
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListMLTransformsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "ListMLTransforms"; }
+  ///@{
+  /**
+   * <p>The maximum size of a list to return.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline ListMLTransformsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
 
-    AWS_GLUE_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>A <code>TransformFilterCriteria</code> used to filter the machine learning
+   * transforms.</p>
+   */
+  inline const TransformFilterCriteria& GetFilter() const { return m_filter; }
+  inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+  template <typename FilterT = TransformFilterCriteria>
+  void SetFilter(FilterT&& value) {
+    m_filterHasBeenSet = true;
+    m_filter = std::forward<FilterT>(value);
+  }
+  template <typename FilterT = TransformFilterCriteria>
+  ListMLTransformsRequest& WithFilter(FilterT&& value) {
+    SetFilter(std::forward<FilterT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+  ///@{
+  /**
+   * <p>A <code>TransformSortCriteria</code> used to sort the machine learning
+   * transforms.</p>
+   */
+  inline const TransformSortCriteria& GetSort() const { return m_sort; }
+  inline bool SortHasBeenSet() const { return m_sortHasBeenSet; }
+  template <typename SortT = TransformSortCriteria>
+  void SetSort(SortT&& value) {
+    m_sortHasBeenSet = true;
+    m_sort = std::forward<SortT>(value);
+  }
+  template <typename SortT = TransformSortCriteria>
+  ListMLTransformsRequest& WithSort(SortT&& value) {
+    SetSort(std::forward<SortT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>Specifies to return only these tagged resources.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  ListMLTransformsRequest& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+  ListMLTransformsRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>A continuation token, if this is a continuation request.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListMLTransformsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
+  int m_maxResults{0};
+  bool m_maxResultsHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The maximum size of a list to return.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListMLTransformsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
+  TransformFilterCriteria m_filter;
+  bool m_filterHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>A <code>TransformFilterCriteria</code> used to filter the machine learning
-     * transforms.</p>
-     */
-    inline const TransformFilterCriteria& GetFilter() const { return m_filter; }
-    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    template<typename FilterT = TransformFilterCriteria>
-    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
-    template<typename FilterT = TransformFilterCriteria>
-    ListMLTransformsRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
-    ///@}
+  TransformSortCriteria m_sort;
+  bool m_sortHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>A <code>TransformSortCriteria</code> used to sort the machine learning
-     * transforms.</p>
-     */
-    inline const TransformSortCriteria& GetSort() const { return m_sort; }
-    inline bool SortHasBeenSet() const { return m_sortHasBeenSet; }
-    template<typename SortT = TransformSortCriteria>
-    void SetSort(SortT&& value) { m_sortHasBeenSet = true; m_sort = std::forward<SortT>(value); }
-    template<typename SortT = TransformSortCriteria>
-    ListMLTransformsRequest& WithSort(SortT&& value) { SetSort(std::forward<SortT>(value)); return *this;}
-    ///@}
+  Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_tagsHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>Specifies to return only these tagged resources.</p>
-     */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
-    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
-    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
-    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
-    ListMLTransformsRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
-    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
-    ListMLTransformsRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
-      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
-    }
-    ///@}
-  private:
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
-
-    TransformFilterCriteria m_filter;
-    bool m_filterHasBeenSet = false;
-
-    TransformSortCriteria m_sort;
-    bool m_sortHasBeenSet = false;
-
-    Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

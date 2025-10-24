@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BillingConductor
-{
-namespace Model
-{
+namespace Aws {
+namespace BillingConductor {
+namespace Model {
 
-Tiering::Tiering(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Tiering::Tiering(JsonView jsonValue) { *this = jsonValue; }
 
-Tiering& Tiering::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FreeTier"))
-  {
+Tiering& Tiering::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FreeTier")) {
     m_freeTier = jsonValue.GetObject("FreeTier");
     m_freeTierHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Tiering::Jsonize() const
-{
+JsonValue Tiering::Jsonize() const {
   JsonValue payload;
 
-  if(m_freeTierHasBeenSet)
-  {
-   payload.WithObject("FreeTier", m_freeTier.Jsonize());
-
+  if (m_freeTierHasBeenSet) {
+    payload.WithObject("FreeTier", m_freeTier.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BillingConductor
-} // namespace Aws
+}  // namespace Model
+}  // namespace BillingConductor
+}  // namespace Aws

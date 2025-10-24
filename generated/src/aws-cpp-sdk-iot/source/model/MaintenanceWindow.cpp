@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/MaintenanceWindow.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot/model/MaintenanceWindow.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
+namespace Aws {
+namespace IoT {
+namespace Model {
 
-MaintenanceWindow::MaintenanceWindow(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MaintenanceWindow::MaintenanceWindow(JsonView jsonValue) { *this = jsonValue; }
 
-MaintenanceWindow& MaintenanceWindow::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("startTime"))
-  {
+MaintenanceWindow& MaintenanceWindow::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("startTime")) {
     m_startTime = jsonValue.GetString("startTime");
     m_startTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("durationInMinutes"))
-  {
+  if (jsonValue.ValueExists("durationInMinutes")) {
     m_durationInMinutes = jsonValue.GetInteger("durationInMinutes");
     m_durationInMinutesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MaintenanceWindow::Jsonize() const
-{
+JsonValue MaintenanceWindow::Jsonize() const {
   JsonValue payload;
 
-  if(m_startTimeHasBeenSet)
-  {
-   payload.WithString("startTime", m_startTime);
-
+  if (m_startTimeHasBeenSet) {
+    payload.WithString("startTime", m_startTime);
   }
 
-  if(m_durationInMinutesHasBeenSet)
-  {
-   payload.WithInteger("durationInMinutes", m_durationInMinutes);
-
+  if (m_durationInMinutesHasBeenSet) {
+    payload.WithInteger("durationInMinutes", m_durationInMinutes);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

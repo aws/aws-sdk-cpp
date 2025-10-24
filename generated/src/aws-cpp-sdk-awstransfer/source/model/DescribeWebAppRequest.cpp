@@ -12,27 +12,18 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeWebAppRequest::SerializePayload() const
-{
+Aws::String DescribeWebAppRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_webAppIdHasBeenSet)
-  {
-   payload.WithString("WebAppId", m_webAppId);
-
+  if (m_webAppIdHasBeenSet) {
+    payload.WithString("WebAppId", m_webAppId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeWebAppRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeWebAppRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TransferService.DescribeWebApp"));
   return headers;
-
 }
-
-
-
-

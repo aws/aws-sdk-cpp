@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTTwinMaker
-{
-namespace Model
-{
-  enum class InterpolationType
-  {
-    NOT_SET,
-    LINEAR
-  };
+namespace Aws {
+namespace IoTTwinMaker {
+namespace Model {
+enum class InterpolationType { NOT_SET, LINEAR };
 
-namespace InterpolationTypeMapper
-{
+namespace InterpolationTypeMapper {
 AWS_IOTTWINMAKER_API InterpolationType GetInterpolationTypeForName(const Aws::String& name);
 
 AWS_IOTTWINMAKER_API Aws::String GetNameForInterpolationType(InterpolationType value);
-} // namespace InterpolationTypeMapper
-} // namespace Model
-} // namespace IoTTwinMaker
-} // namespace Aws
+}  // namespace InterpolationTypeMapper
+}  // namespace Model
+}  // namespace IoTTwinMaker
+}  // namespace Aws

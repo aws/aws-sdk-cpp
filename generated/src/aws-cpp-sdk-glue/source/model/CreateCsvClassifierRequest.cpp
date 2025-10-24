@@ -3,164 +3,124 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/CreateCsvClassifierRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/CreateCsvClassifierRequest.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
+namespace Aws {
+namespace Glue {
+namespace Model {
 
-CreateCsvClassifierRequest::CreateCsvClassifierRequest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CreateCsvClassifierRequest::CreateCsvClassifierRequest(JsonView jsonValue) { *this = jsonValue; }
 
-CreateCsvClassifierRequest& CreateCsvClassifierRequest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+CreateCsvClassifierRequest& CreateCsvClassifierRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Delimiter"))
-  {
+  if (jsonValue.ValueExists("Delimiter")) {
     m_delimiter = jsonValue.GetString("Delimiter");
     m_delimiterHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("QuoteSymbol"))
-  {
+  if (jsonValue.ValueExists("QuoteSymbol")) {
     m_quoteSymbol = jsonValue.GetString("QuoteSymbol");
     m_quoteSymbolHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ContainsHeader"))
-  {
+  if (jsonValue.ValueExists("ContainsHeader")) {
     m_containsHeader = CsvHeaderOptionMapper::GetCsvHeaderOptionForName(jsonValue.GetString("ContainsHeader"));
     m_containsHeaderHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Header"))
-  {
+  if (jsonValue.ValueExists("Header")) {
     Aws::Utils::Array<JsonView> headerJsonList = jsonValue.GetArray("Header");
-    for(unsigned headerIndex = 0; headerIndex < headerJsonList.GetLength(); ++headerIndex)
-    {
+    for (unsigned headerIndex = 0; headerIndex < headerJsonList.GetLength(); ++headerIndex) {
       m_header.push_back(headerJsonList[headerIndex].AsString());
     }
     m_headerHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DisableValueTrimming"))
-  {
+  if (jsonValue.ValueExists("DisableValueTrimming")) {
     m_disableValueTrimming = jsonValue.GetBool("DisableValueTrimming");
     m_disableValueTrimmingHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AllowSingleColumn"))
-  {
+  if (jsonValue.ValueExists("AllowSingleColumn")) {
     m_allowSingleColumn = jsonValue.GetBool("AllowSingleColumn");
     m_allowSingleColumnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CustomDatatypeConfigured"))
-  {
+  if (jsonValue.ValueExists("CustomDatatypeConfigured")) {
     m_customDatatypeConfigured = jsonValue.GetBool("CustomDatatypeConfigured");
     m_customDatatypeConfiguredHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CustomDatatypes"))
-  {
+  if (jsonValue.ValueExists("CustomDatatypes")) {
     Aws::Utils::Array<JsonView> customDatatypesJsonList = jsonValue.GetArray("CustomDatatypes");
-    for(unsigned customDatatypesIndex = 0; customDatatypesIndex < customDatatypesJsonList.GetLength(); ++customDatatypesIndex)
-    {
+    for (unsigned customDatatypesIndex = 0; customDatatypesIndex < customDatatypesJsonList.GetLength(); ++customDatatypesIndex) {
       m_customDatatypes.push_back(customDatatypesJsonList[customDatatypesIndex].AsString());
     }
     m_customDatatypesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Serde"))
-  {
+  if (jsonValue.ValueExists("Serde")) {
     m_serde = CsvSerdeOptionMapper::GetCsvSerdeOptionForName(jsonValue.GetString("Serde"));
     m_serdeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CreateCsvClassifierRequest::Jsonize() const
-{
+JsonValue CreateCsvClassifierRequest::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_delimiterHasBeenSet)
-  {
-   payload.WithString("Delimiter", m_delimiter);
-
+  if (m_delimiterHasBeenSet) {
+    payload.WithString("Delimiter", m_delimiter);
   }
 
-  if(m_quoteSymbolHasBeenSet)
-  {
-   payload.WithString("QuoteSymbol", m_quoteSymbol);
-
+  if (m_quoteSymbolHasBeenSet) {
+    payload.WithString("QuoteSymbol", m_quoteSymbol);
   }
 
-  if(m_containsHeaderHasBeenSet)
-  {
-   payload.WithString("ContainsHeader", CsvHeaderOptionMapper::GetNameForCsvHeaderOption(m_containsHeader));
+  if (m_containsHeaderHasBeenSet) {
+    payload.WithString("ContainsHeader", CsvHeaderOptionMapper::GetNameForCsvHeaderOption(m_containsHeader));
   }
 
-  if(m_headerHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> headerJsonList(m_header.size());
-   for(unsigned headerIndex = 0; headerIndex < headerJsonList.GetLength(); ++headerIndex)
-   {
-     headerJsonList[headerIndex].AsString(m_header[headerIndex]);
-   }
-   payload.WithArray("Header", std::move(headerJsonList));
-
+  if (m_headerHasBeenSet) {
+    Aws::Utils::Array<JsonValue> headerJsonList(m_header.size());
+    for (unsigned headerIndex = 0; headerIndex < headerJsonList.GetLength(); ++headerIndex) {
+      headerJsonList[headerIndex].AsString(m_header[headerIndex]);
+    }
+    payload.WithArray("Header", std::move(headerJsonList));
   }
 
-  if(m_disableValueTrimmingHasBeenSet)
-  {
-   payload.WithBool("DisableValueTrimming", m_disableValueTrimming);
-
+  if (m_disableValueTrimmingHasBeenSet) {
+    payload.WithBool("DisableValueTrimming", m_disableValueTrimming);
   }
 
-  if(m_allowSingleColumnHasBeenSet)
-  {
-   payload.WithBool("AllowSingleColumn", m_allowSingleColumn);
-
+  if (m_allowSingleColumnHasBeenSet) {
+    payload.WithBool("AllowSingleColumn", m_allowSingleColumn);
   }
 
-  if(m_customDatatypeConfiguredHasBeenSet)
-  {
-   payload.WithBool("CustomDatatypeConfigured", m_customDatatypeConfigured);
-
+  if (m_customDatatypeConfiguredHasBeenSet) {
+    payload.WithBool("CustomDatatypeConfigured", m_customDatatypeConfigured);
   }
 
-  if(m_customDatatypesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> customDatatypesJsonList(m_customDatatypes.size());
-   for(unsigned customDatatypesIndex = 0; customDatatypesIndex < customDatatypesJsonList.GetLength(); ++customDatatypesIndex)
-   {
-     customDatatypesJsonList[customDatatypesIndex].AsString(m_customDatatypes[customDatatypesIndex]);
-   }
-   payload.WithArray("CustomDatatypes", std::move(customDatatypesJsonList));
-
+  if (m_customDatatypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> customDatatypesJsonList(m_customDatatypes.size());
+    for (unsigned customDatatypesIndex = 0; customDatatypesIndex < customDatatypesJsonList.GetLength(); ++customDatatypesIndex) {
+      customDatatypesJsonList[customDatatypesIndex].AsString(m_customDatatypes[customDatatypesIndex]);
+    }
+    payload.WithArray("CustomDatatypes", std::move(customDatatypesJsonList));
   }
 
-  if(m_serdeHasBeenSet)
-  {
-   payload.WithString("Serde", CsvSerdeOptionMapper::GetNameForCsvSerdeOption(m_serde));
+  if (m_serdeHasBeenSet) {
+    payload.WithString("Serde", CsvSerdeOptionMapper::GetNameForCsvSerdeOption(m_serde));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

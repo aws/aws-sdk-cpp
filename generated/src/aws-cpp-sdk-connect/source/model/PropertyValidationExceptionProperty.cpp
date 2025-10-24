@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-PropertyValidationExceptionProperty::PropertyValidationExceptionProperty(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PropertyValidationExceptionProperty::PropertyValidationExceptionProperty(JsonView jsonValue) { *this = jsonValue; }
 
-PropertyValidationExceptionProperty& PropertyValidationExceptionProperty::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PropertyPath"))
-  {
+PropertyValidationExceptionProperty& PropertyValidationExceptionProperty::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PropertyPath")) {
     m_propertyPath = jsonValue.GetString("PropertyPath");
     m_propertyPathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Reason"))
-  {
+  if (jsonValue.ValueExists("Reason")) {
     m_reason = PropertyValidationExceptionReasonMapper::GetPropertyValidationExceptionReasonForName(jsonValue.GetString("Reason"));
     m_reasonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Message"))
-  {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PropertyValidationExceptionProperty::Jsonize() const
-{
+JsonValue PropertyValidationExceptionProperty::Jsonize() const {
   JsonValue payload;
 
-  if(m_propertyPathHasBeenSet)
-  {
-   payload.WithString("PropertyPath", m_propertyPath);
-
+  if (m_propertyPathHasBeenSet) {
+    payload.WithString("PropertyPath", m_propertyPath);
   }
 
-  if(m_reasonHasBeenSet)
-  {
-   payload.WithString("Reason", PropertyValidationExceptionReasonMapper::GetNameForPropertyValidationExceptionReason(m_reason));
+  if (m_reasonHasBeenSet) {
+    payload.WithString("Reason", PropertyValidationExceptionReasonMapper::GetNameForPropertyValidationExceptionReason(m_reason));
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

@@ -12,19 +12,12 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdatePhoneNumberSettingsRequest::SerializePayload() const
-{
+Aws::String UpdatePhoneNumberSettingsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_callingNameHasBeenSet)
-  {
-   payload.WithString("CallingName", m_callingName);
-
+  if (m_callingNameHasBeenSet) {
+    payload.WithString("CallingName", m_callingName);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

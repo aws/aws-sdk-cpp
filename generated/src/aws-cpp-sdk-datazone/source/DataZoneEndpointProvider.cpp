@@ -5,12 +5,8 @@
 
 #include <aws/datazone/DataZoneEndpointProvider.h>
 
-namespace Aws
-{
-namespace DataZone
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace DataZone
-} // namespace Aws
+namespace Aws {
+namespace DataZone {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace DataZone
+}  // namespace Aws

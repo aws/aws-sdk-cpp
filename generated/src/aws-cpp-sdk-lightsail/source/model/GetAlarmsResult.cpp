@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lightsail/model/GetAlarmsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/lightsail/model/GetAlarmsResult.h>
 
 #include <utility>
 
@@ -17,37 +17,28 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAlarmsResult::GetAlarmsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetAlarmsResult::GetAlarmsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetAlarmsResult& GetAlarmsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetAlarmsResult& GetAlarmsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("alarms"))
-  {
+  if (jsonValue.ValueExists("alarms")) {
     Aws::Utils::Array<JsonView> alarmsJsonList = jsonValue.GetArray("alarms");
-    for(unsigned alarmsIndex = 0; alarmsIndex < alarmsJsonList.GetLength(); ++alarmsIndex)
-    {
+    for (unsigned alarmsIndex = 0; alarmsIndex < alarmsJsonList.GetLength(); ++alarmsIndex) {
       m_alarms.push_back(alarmsJsonList[alarmsIndex].AsObject());
     }
     m_alarmsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextPageToken"))
-  {
+  if (jsonValue.ValueExists("nextPageToken")) {
     m_nextPageToken = jsonValue.GetString("nextPageToken");
     m_nextPageTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

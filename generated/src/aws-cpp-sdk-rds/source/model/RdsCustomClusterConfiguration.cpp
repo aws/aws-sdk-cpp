@@ -3,50 +3,40 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/RdsCustomClusterConfiguration.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/rds/model/RdsCustomClusterConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace RDS
-{
-namespace Model
-{
+namespace Aws {
+namespace RDS {
+namespace Model {
 
-RdsCustomClusterConfiguration::RdsCustomClusterConfiguration(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+RdsCustomClusterConfiguration::RdsCustomClusterConfiguration(const XmlNode& xmlNode) { *this = xmlNode; }
 
-RdsCustomClusterConfiguration& RdsCustomClusterConfiguration::operator =(const XmlNode& xmlNode)
-{
+RdsCustomClusterConfiguration& RdsCustomClusterConfiguration::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode interconnectSubnetIdNode = resultNode.FirstChild("InterconnectSubnetId");
-    if(!interconnectSubnetIdNode.IsNull())
-    {
+    if (!interconnectSubnetIdNode.IsNull()) {
       m_interconnectSubnetId = Aws::Utils::Xml::DecodeEscapedXmlText(interconnectSubnetIdNode.GetText());
       m_interconnectSubnetIdHasBeenSet = true;
     }
     XmlNode transitGatewayMulticastDomainIdNode = resultNode.FirstChild("TransitGatewayMulticastDomainId");
-    if(!transitGatewayMulticastDomainIdNode.IsNull())
-    {
+    if (!transitGatewayMulticastDomainIdNode.IsNull()) {
       m_transitGatewayMulticastDomainId = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayMulticastDomainIdNode.GetText());
       m_transitGatewayMulticastDomainIdHasBeenSet = true;
     }
     XmlNode replicaModeNode = resultNode.FirstChild("ReplicaMode");
-    if(!replicaModeNode.IsNull())
-    {
-      m_replicaMode = ReplicaModeMapper::GetReplicaModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(replicaModeNode.GetText()).c_str()));
+    if (!replicaModeNode.IsNull()) {
+      m_replicaMode = ReplicaModeMapper::GetReplicaModeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(replicaModeNode.GetText()).c_str()));
       m_replicaModeHasBeenSet = true;
     }
   }
@@ -54,41 +44,36 @@ RdsCustomClusterConfiguration& RdsCustomClusterConfiguration::operator =(const X
   return *this;
 }
 
-void RdsCustomClusterConfiguration::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_interconnectSubnetIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".InterconnectSubnetId=" << StringUtils::URLEncode(m_interconnectSubnetId.c_str()) << "&";
+void RdsCustomClusterConfiguration::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                   const char* locationValue) const {
+  if (m_interconnectSubnetIdHasBeenSet) {
+    oStream << location << index << locationValue << ".InterconnectSubnetId=" << StringUtils::URLEncode(m_interconnectSubnetId.c_str())
+            << "&";
   }
 
-  if(m_transitGatewayMulticastDomainIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".TransitGatewayMulticastDomainId=" << StringUtils::URLEncode(m_transitGatewayMulticastDomainId.c_str()) << "&";
+  if (m_transitGatewayMulticastDomainIdHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".TransitGatewayMulticastDomainId=" << StringUtils::URLEncode(m_transitGatewayMulticastDomainId.c_str()) << "&";
   }
 
-  if(m_replicaModeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ReplicaMode=" << StringUtils::URLEncode(ReplicaModeMapper::GetNameForReplicaMode(m_replicaMode)) << "&";
-  }
-
-}
-
-void RdsCustomClusterConfiguration::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_interconnectSubnetIdHasBeenSet)
-  {
-      oStream << location << ".InterconnectSubnetId=" << StringUtils::URLEncode(m_interconnectSubnetId.c_str()) << "&";
-  }
-  if(m_transitGatewayMulticastDomainIdHasBeenSet)
-  {
-      oStream << location << ".TransitGatewayMulticastDomainId=" << StringUtils::URLEncode(m_transitGatewayMulticastDomainId.c_str()) << "&";
-  }
-  if(m_replicaModeHasBeenSet)
-  {
-      oStream << location << ".ReplicaMode=" << StringUtils::URLEncode(ReplicaModeMapper::GetNameForReplicaMode(m_replicaMode)) << "&";
+  if (m_replicaModeHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".ReplicaMode=" << StringUtils::URLEncode(ReplicaModeMapper::GetNameForReplicaMode(m_replicaMode)) << "&";
   }
 }
 
-} // namespace Model
-} // namespace RDS
-} // namespace Aws
+void RdsCustomClusterConfiguration::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_interconnectSubnetIdHasBeenSet) {
+    oStream << location << ".InterconnectSubnetId=" << StringUtils::URLEncode(m_interconnectSubnetId.c_str()) << "&";
+  }
+  if (m_transitGatewayMulticastDomainIdHasBeenSet) {
+    oStream << location << ".TransitGatewayMulticastDomainId=" << StringUtils::URLEncode(m_transitGatewayMulticastDomainId.c_str()) << "&";
+  }
+  if (m_replicaModeHasBeenSet) {
+    oStream << location << ".ReplicaMode=" << StringUtils::URLEncode(ReplicaModeMapper::GetNameForReplicaMode(m_replicaMode)) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace RDS
+}  // namespace Aws

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
 
-ProtectedJobS3OutputConfigurationOutput::ProtectedJobS3OutputConfigurationOutput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProtectedJobS3OutputConfigurationOutput::ProtectedJobS3OutputConfigurationOutput(JsonView jsonValue) { *this = jsonValue; }
 
-ProtectedJobS3OutputConfigurationOutput& ProtectedJobS3OutputConfigurationOutput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("bucket"))
-  {
+ProtectedJobS3OutputConfigurationOutput& ProtectedJobS3OutputConfigurationOutput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("bucket")) {
     m_bucket = jsonValue.GetString("bucket");
     m_bucketHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("keyPrefix"))
-  {
+  if (jsonValue.ValueExists("keyPrefix")) {
     m_keyPrefix = jsonValue.GetString("keyPrefix");
     m_keyPrefixHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ProtectedJobS3OutputConfigurationOutput::Jsonize() const
-{
+JsonValue ProtectedJobS3OutputConfigurationOutput::Jsonize() const {
   JsonValue payload;
 
-  if(m_bucketHasBeenSet)
-  {
-   payload.WithString("bucket", m_bucket);
-
+  if (m_bucketHasBeenSet) {
+    payload.WithString("bucket", m_bucket);
   }
 
-  if(m_keyPrefixHasBeenSet)
-  {
-   payload.WithString("keyPrefix", m_keyPrefix);
-
+  if (m_keyPrefixHasBeenSet) {
+    payload.WithString("keyPrefix", m_keyPrefix);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

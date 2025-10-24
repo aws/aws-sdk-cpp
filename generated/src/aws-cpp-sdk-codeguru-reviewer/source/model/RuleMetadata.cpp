@@ -11,45 +11,32 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeGuruReviewer
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeGuruReviewer {
+namespace Model {
 
-RuleMetadata::RuleMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RuleMetadata::RuleMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-RuleMetadata& RuleMetadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RuleId"))
-  {
+RuleMetadata& RuleMetadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RuleId")) {
     m_ruleId = jsonValue.GetString("RuleId");
     m_ruleIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RuleName"))
-  {
+  if (jsonValue.ValueExists("RuleName")) {
     m_ruleName = jsonValue.GetString("RuleName");
     m_ruleNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ShortDescription"))
-  {
+  if (jsonValue.ValueExists("ShortDescription")) {
     m_shortDescription = jsonValue.GetString("ShortDescription");
     m_shortDescriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LongDescription"))
-  {
+  if (jsonValue.ValueExists("LongDescription")) {
     m_longDescription = jsonValue.GetString("LongDescription");
     m_longDescriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RuleTags"))
-  {
+  if (jsonValue.ValueExists("RuleTags")) {
     Aws::Utils::Array<JsonView> ruleTagsJsonList = jsonValue.GetArray("RuleTags");
-    for(unsigned ruleTagsIndex = 0; ruleTagsIndex < ruleTagsJsonList.GetLength(); ++ruleTagsIndex)
-    {
+    for (unsigned ruleTagsIndex = 0; ruleTagsIndex < ruleTagsJsonList.GetLength(); ++ruleTagsIndex) {
       m_ruleTags.push_back(ruleTagsJsonList[ruleTagsIndex].AsString());
     }
     m_ruleTagsHasBeenSet = true;
@@ -57,48 +44,36 @@ RuleMetadata& RuleMetadata::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue RuleMetadata::Jsonize() const
-{
+JsonValue RuleMetadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_ruleIdHasBeenSet)
-  {
-   payload.WithString("RuleId", m_ruleId);
-
+  if (m_ruleIdHasBeenSet) {
+    payload.WithString("RuleId", m_ruleId);
   }
 
-  if(m_ruleNameHasBeenSet)
-  {
-   payload.WithString("RuleName", m_ruleName);
-
+  if (m_ruleNameHasBeenSet) {
+    payload.WithString("RuleName", m_ruleName);
   }
 
-  if(m_shortDescriptionHasBeenSet)
-  {
-   payload.WithString("ShortDescription", m_shortDescription);
-
+  if (m_shortDescriptionHasBeenSet) {
+    payload.WithString("ShortDescription", m_shortDescription);
   }
 
-  if(m_longDescriptionHasBeenSet)
-  {
-   payload.WithString("LongDescription", m_longDescription);
-
+  if (m_longDescriptionHasBeenSet) {
+    payload.WithString("LongDescription", m_longDescription);
   }
 
-  if(m_ruleTagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> ruleTagsJsonList(m_ruleTags.size());
-   for(unsigned ruleTagsIndex = 0; ruleTagsIndex < ruleTagsJsonList.GetLength(); ++ruleTagsIndex)
-   {
-     ruleTagsJsonList[ruleTagsIndex].AsString(m_ruleTags[ruleTagsIndex]);
-   }
-   payload.WithArray("RuleTags", std::move(ruleTagsJsonList));
-
+  if (m_ruleTagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> ruleTagsJsonList(m_ruleTags.size());
+    for (unsigned ruleTagsIndex = 0; ruleTagsIndex < ruleTagsJsonList.GetLength(); ++ruleTagsIndex) {
+      ruleTagsJsonList[ruleTagsIndex].AsString(m_ruleTags[ruleTagsIndex]);
+    }
+    payload.WithArray("RuleTags", std::move(ruleTagsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeGuruReviewer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeGuruReviewer
+}  // namespace Aws

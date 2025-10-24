@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/organizations/Organizations_EXPORTS.h>
 
-namespace Aws
-{
-namespace Organizations
-{
-namespace Model
-{
-  enum class HandshakeState
-  {
-    NOT_SET,
-    REQUESTED,
-    OPEN,
-    CANCELED,
-    ACCEPTED,
-    DECLINED,
-    EXPIRED
-  };
+namespace Aws {
+namespace Organizations {
+namespace Model {
+enum class HandshakeState { NOT_SET, REQUESTED, OPEN, CANCELED, ACCEPTED, DECLINED, EXPIRED };
 
-namespace HandshakeStateMapper
-{
+namespace HandshakeStateMapper {
 AWS_ORGANIZATIONS_API HandshakeState GetHandshakeStateForName(const Aws::String& name);
 
 AWS_ORGANIZATIONS_API Aws::String GetNameForHandshakeState(HandshakeState value);
-} // namespace HandshakeStateMapper
-} // namespace Model
-} // namespace Organizations
-} // namespace Aws
+}  // namespace HandshakeStateMapper
+}  // namespace Model
+}  // namespace Organizations
+}  // namespace Aws

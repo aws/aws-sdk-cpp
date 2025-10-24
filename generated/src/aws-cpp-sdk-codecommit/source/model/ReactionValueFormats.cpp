@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeCommit
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeCommit {
+namespace Model {
 
-ReactionValueFormats::ReactionValueFormats(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReactionValueFormats::ReactionValueFormats(JsonView jsonValue) { *this = jsonValue; }
 
-ReactionValueFormats& ReactionValueFormats::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("emoji"))
-  {
+ReactionValueFormats& ReactionValueFormats::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("emoji")) {
     m_emoji = jsonValue.GetString("emoji");
     m_emojiHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("shortCode"))
-  {
+  if (jsonValue.ValueExists("shortCode")) {
     m_shortCode = jsonValue.GetString("shortCode");
     m_shortCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("unicode"))
-  {
+  if (jsonValue.ValueExists("unicode")) {
     m_unicode = jsonValue.GetString("unicode");
     m_unicodeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ReactionValueFormats::Jsonize() const
-{
+JsonValue ReactionValueFormats::Jsonize() const {
   JsonValue payload;
 
-  if(m_emojiHasBeenSet)
-  {
-   payload.WithString("emoji", m_emoji);
-
+  if (m_emojiHasBeenSet) {
+    payload.WithString("emoji", m_emoji);
   }
 
-  if(m_shortCodeHasBeenSet)
-  {
-   payload.WithString("shortCode", m_shortCode);
-
+  if (m_shortCodeHasBeenSet) {
+    payload.WithString("shortCode", m_shortCode);
   }
 
-  if(m_unicodeHasBeenSet)
-  {
-   payload.WithString("unicode", m_unicode);
-
+  if (m_unicodeHasBeenSet) {
+    payload.WithString("unicode", m_unicode);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeCommit
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeCommit
+}  // namespace Aws

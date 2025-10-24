@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class Vc3Telecine
-  {
-    NOT_SET,
-    NONE,
-    HARD
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class Vc3Telecine { NOT_SET, NONE, HARD };
 
-namespace Vc3TelecineMapper
-{
+namespace Vc3TelecineMapper {
 AWS_MEDIACONVERT_API Vc3Telecine GetVc3TelecineForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForVc3Telecine(Vc3Telecine value);
-} // namespace Vc3TelecineMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Vc3TelecineMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/geo-routes/GeoRoutesEndpointRules.h>
+#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace GeoRoutes
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace GeoRoutes {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using GeoRoutesClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using GeoRoutesDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_GEOROUTES_API GeoRoutesEndpointProvider : public GeoRoutesDefaultEpProviderBase
-{
-public:
-    using GeoRoutesResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_GEOROUTES_API GeoRoutesEndpointProvider : public GeoRoutesDefaultEpProviderBase {
+ public:
+  using GeoRoutesResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    GeoRoutesEndpointProvider()
-      : GeoRoutesDefaultEpProviderBase(Aws::GeoRoutes::GeoRoutesEndpointRules::GetRulesBlob(), Aws::GeoRoutes::GeoRoutesEndpointRules::RulesBlobSize)
-    {}
+  GeoRoutesEndpointProvider()
+      : GeoRoutesDefaultEpProviderBase(Aws::GeoRoutes::GeoRoutesEndpointRules::GetRulesBlob(),
+                                       Aws::GeoRoutes::GeoRoutesEndpointRules::RulesBlobSize) {}
 
-    ~GeoRoutesEndpointProvider()
-    {
-    }
+  ~GeoRoutesEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace GeoRoutes
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace GeoRoutes
+}  // namespace Aws

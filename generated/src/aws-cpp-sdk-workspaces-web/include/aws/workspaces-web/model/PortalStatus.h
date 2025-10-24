@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
 
-namespace Aws
-{
-namespace WorkSpacesWeb
-{
-namespace Model
-{
-  enum class PortalStatus
-  {
-    NOT_SET,
-    Incomplete,
-    Pending,
-    Active
-  };
+namespace Aws {
+namespace WorkSpacesWeb {
+namespace Model {
+enum class PortalStatus { NOT_SET, Incomplete, Pending, Active };
 
-namespace PortalStatusMapper
-{
+namespace PortalStatusMapper {
 AWS_WORKSPACESWEB_API PortalStatus GetPortalStatusForName(const Aws::String& name);
 
 AWS_WORKSPACESWEB_API Aws::String GetNameForPortalStatus(PortalStatus value);
-} // namespace PortalStatusMapper
-} // namespace Model
-} // namespace WorkSpacesWeb
-} // namespace Aws
+}  // namespace PortalStatusMapper
+}  // namespace Model
+}  // namespace WorkSpacesWeb
+}  // namespace Aws

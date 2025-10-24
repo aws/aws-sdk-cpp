@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticache/ElastiCache_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElastiCache
-{
-namespace Model
-{
-  enum class MultiAZStatus
-  {
-    NOT_SET,
-    enabled,
-    disabled
-  };
+namespace Aws {
+namespace ElastiCache {
+namespace Model {
+enum class MultiAZStatus { NOT_SET, enabled, disabled };
 
-namespace MultiAZStatusMapper
-{
+namespace MultiAZStatusMapper {
 AWS_ELASTICACHE_API MultiAZStatus GetMultiAZStatusForName(const Aws::String& name);
 
 AWS_ELASTICACHE_API Aws::String GetNameForMultiAZStatus(MultiAZStatus value);
-} // namespace MultiAZStatusMapper
-} // namespace Model
-} // namespace ElastiCache
-} // namespace Aws
+}  // namespace MultiAZStatusMapper
+}  // namespace Model
+}  // namespace ElastiCache
+}  // namespace Aws

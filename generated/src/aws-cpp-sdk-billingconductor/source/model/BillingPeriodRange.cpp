@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BillingConductor
-{
-namespace Model
-{
+namespace Aws {
+namespace BillingConductor {
+namespace Model {
 
-BillingPeriodRange::BillingPeriodRange(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BillingPeriodRange::BillingPeriodRange(JsonView jsonValue) { *this = jsonValue; }
 
-BillingPeriodRange& BillingPeriodRange::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("InclusiveStartBillingPeriod"))
-  {
+BillingPeriodRange& BillingPeriodRange::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("InclusiveStartBillingPeriod")) {
     m_inclusiveStartBillingPeriod = jsonValue.GetString("InclusiveStartBillingPeriod");
     m_inclusiveStartBillingPeriodHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExclusiveEndBillingPeriod"))
-  {
+  if (jsonValue.ValueExists("ExclusiveEndBillingPeriod")) {
     m_exclusiveEndBillingPeriod = jsonValue.GetString("ExclusiveEndBillingPeriod");
     m_exclusiveEndBillingPeriodHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BillingPeriodRange::Jsonize() const
-{
+JsonValue BillingPeriodRange::Jsonize() const {
   JsonValue payload;
 
-  if(m_inclusiveStartBillingPeriodHasBeenSet)
-  {
-   payload.WithString("InclusiveStartBillingPeriod", m_inclusiveStartBillingPeriod);
-
+  if (m_inclusiveStartBillingPeriodHasBeenSet) {
+    payload.WithString("InclusiveStartBillingPeriod", m_inclusiveStartBillingPeriod);
   }
 
-  if(m_exclusiveEndBillingPeriodHasBeenSet)
-  {
-   payload.WithString("ExclusiveEndBillingPeriod", m_exclusiveEndBillingPeriod);
-
+  if (m_exclusiveEndBillingPeriodHasBeenSet) {
+    payload.WithString("ExclusiveEndBillingPeriod", m_exclusiveEndBillingPeriod);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BillingConductor
-} // namespace Aws
+}  // namespace Model
+}  // namespace BillingConductor
+}  // namespace Aws

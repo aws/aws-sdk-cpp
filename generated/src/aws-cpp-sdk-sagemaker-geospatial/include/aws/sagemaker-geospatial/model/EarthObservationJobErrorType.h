@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker-geospatial/SageMakerGeospatial_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker-geospatial/SageMakerGeospatial_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMakerGeospatial
-{
-namespace Model
-{
-  enum class EarthObservationJobErrorType
-  {
-    NOT_SET,
-    CLIENT_ERROR,
-    SERVER_ERROR
-  };
+namespace Aws {
+namespace SageMakerGeospatial {
+namespace Model {
+enum class EarthObservationJobErrorType { NOT_SET, CLIENT_ERROR, SERVER_ERROR };
 
-namespace EarthObservationJobErrorTypeMapper
-{
+namespace EarthObservationJobErrorTypeMapper {
 AWS_SAGEMAKERGEOSPATIAL_API EarthObservationJobErrorType GetEarthObservationJobErrorTypeForName(const Aws::String& name);
 
 AWS_SAGEMAKERGEOSPATIAL_API Aws::String GetNameForEarthObservationJobErrorType(EarthObservationJobErrorType value);
-} // namespace EarthObservationJobErrorTypeMapper
-} // namespace Model
-} // namespace SageMakerGeospatial
-} // namespace Aws
+}  // namespace EarthObservationJobErrorTypeMapper
+}  // namespace Model
+}  // namespace SageMakerGeospatial
+}  // namespace Aws

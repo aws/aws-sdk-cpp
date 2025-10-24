@@ -4,8 +4,8 @@
  */
 
 #include <aws/chime-sdk-messaging/model/ListChannelsModeratedByAppInstanceUserRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -15,51 +15,37 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String ListChannelsModeratedByAppInstanceUserRequest::SerializePayload() const
-{
-  return {};
-}
+Aws::String ListChannelsModeratedByAppInstanceUserRequest::SerializePayload() const { return {}; }
 
-Aws::Http::HeaderValueCollection ListChannelsModeratedByAppInstanceUserRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListChannelsModeratedByAppInstanceUserRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_chimeBearerHasBeenSet)
-  {
+  if (m_chimeBearerHasBeenSet) {
     ss << m_chimeBearer;
-    headers.emplace("x-amz-chime-bearer",  ss.str());
+    headers.emplace("x-amz-chime-bearer", ss.str());
     ss.str("");
   }
 
   return headers;
-
 }
 
-void ListChannelsModeratedByAppInstanceUserRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_appInstanceUserArnHasBeenSet)
-    {
-      ss << m_appInstanceUserArn;
-      uri.AddQueryStringParameter("app-instance-user-arn", ss.str());
-      ss.str("");
-    }
+void ListChannelsModeratedByAppInstanceUserRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_appInstanceUserArnHasBeenSet) {
+    ss << m_appInstanceUserArn;
+    uri.AddQueryStringParameter("app-instance-user-arn", ss.str());
+    ss.str("");
+  }
 
-    if(m_maxResultsHasBeenSet)
-    {
-      ss << m_maxResults;
-      uri.AddQueryStringParameter("max-results", ss.str());
-      ss.str("");
-    }
+  if (m_maxResultsHasBeenSet) {
+    ss << m_maxResults;
+    uri.AddQueryStringParameter("max-results", ss.str());
+    ss.str("");
+  }
 
-    if(m_nextTokenHasBeenSet)
-    {
-      ss << m_nextToken;
-      uri.AddQueryStringParameter("next-token", ss.str());
-      ss.str("");
-    }
-
+  if (m_nextTokenHasBeenSet) {
+    ss << m_nextToken;
+    uri.AddQueryStringParameter("next-token", ss.str());
+    ss.str("");
+  }
 }
-
-
-

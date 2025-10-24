@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/notifications/model/ListNotificationConfigurationsRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/notifications/model/ListNotificationConfigurationsRequest.h>
 
 #include <utility>
 
@@ -15,57 +15,43 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String ListNotificationConfigurationsRequest::SerializePayload() const
-{
-  return {};
+Aws::String ListNotificationConfigurationsRequest::SerializePayload() const { return {}; }
+
+void ListNotificationConfigurationsRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_eventRuleSourceHasBeenSet) {
+    ss << m_eventRuleSource;
+    uri.AddQueryStringParameter("eventRuleSource", ss.str());
+    ss.str("");
+  }
+
+  if (m_channelArnHasBeenSet) {
+    ss << m_channelArn;
+    uri.AddQueryStringParameter("channelArn", ss.str());
+    ss.str("");
+  }
+
+  if (m_statusHasBeenSet) {
+    ss << NotificationConfigurationStatusMapper::GetNameForNotificationConfigurationStatus(m_status);
+    uri.AddQueryStringParameter("status", ss.str());
+    ss.str("");
+  }
+
+  if (m_subtypeHasBeenSet) {
+    ss << NotificationConfigurationSubtypeMapper::GetNameForNotificationConfigurationSubtype(m_subtype);
+    uri.AddQueryStringParameter("subtype", ss.str());
+    ss.str("");
+  }
+
+  if (m_maxResultsHasBeenSet) {
+    ss << m_maxResults;
+    uri.AddQueryStringParameter("maxResults", ss.str());
+    ss.str("");
+  }
+
+  if (m_nextTokenHasBeenSet) {
+    ss << m_nextToken;
+    uri.AddQueryStringParameter("nextToken", ss.str());
+    ss.str("");
+  }
 }
-
-void ListNotificationConfigurationsRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_eventRuleSourceHasBeenSet)
-    {
-      ss << m_eventRuleSource;
-      uri.AddQueryStringParameter("eventRuleSource", ss.str());
-      ss.str("");
-    }
-
-    if(m_channelArnHasBeenSet)
-    {
-      ss << m_channelArn;
-      uri.AddQueryStringParameter("channelArn", ss.str());
-      ss.str("");
-    }
-
-    if(m_statusHasBeenSet)
-    {
-      ss << NotificationConfigurationStatusMapper::GetNameForNotificationConfigurationStatus(m_status);
-      uri.AddQueryStringParameter("status", ss.str());
-      ss.str("");
-    }
-
-    if(m_subtypeHasBeenSet)
-    {
-      ss << NotificationConfigurationSubtypeMapper::GetNameForNotificationConfigurationSubtype(m_subtype);
-      uri.AddQueryStringParameter("subtype", ss.str());
-      ss.str("");
-    }
-
-    if(m_maxResultsHasBeenSet)
-    {
-      ss << m_maxResults;
-      uri.AddQueryStringParameter("maxResults", ss.str());
-      ss.str("");
-    }
-
-    if(m_nextTokenHasBeenSet)
-    {
-      ss << m_nextToken;
-      uri.AddQueryStringParameter("nextToken", ss.str());
-      ss.str("");
-    }
-
-}
-
-
-

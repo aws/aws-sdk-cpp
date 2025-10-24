@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
 
-ProtectedJobOutputConfigurationOutput::ProtectedJobOutputConfigurationOutput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProtectedJobOutputConfigurationOutput::ProtectedJobOutputConfigurationOutput(JsonView jsonValue) { *this = jsonValue; }
 
-ProtectedJobOutputConfigurationOutput& ProtectedJobOutputConfigurationOutput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("s3"))
-  {
+ProtectedJobOutputConfigurationOutput& ProtectedJobOutputConfigurationOutput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("s3")) {
     m_s3 = jsonValue.GetObject("s3");
     m_s3HasBeenSet = true;
   }
-  if(jsonValue.ValueExists("member"))
-  {
+  if (jsonValue.ValueExists("member")) {
     m_member = jsonValue.GetObject("member");
     m_memberHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ProtectedJobOutputConfigurationOutput::Jsonize() const
-{
+JsonValue ProtectedJobOutputConfigurationOutput::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3HasBeenSet)
-  {
-   payload.WithObject("s3", m_s3.Jsonize());
-
+  if (m_s3HasBeenSet) {
+    payload.WithObject("s3", m_s3.Jsonize());
   }
 
-  if(m_memberHasBeenSet)
-  {
-   payload.WithObject("member", m_member.Jsonize());
-
+  if (m_memberHasBeenSet) {
+    payload.WithObject("member", m_member.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

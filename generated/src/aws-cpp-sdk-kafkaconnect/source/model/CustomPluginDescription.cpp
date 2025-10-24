@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kafkaconnect/model/CustomPluginDescription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kafkaconnect/model/CustomPluginDescription.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace KafkaConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace KafkaConnect {
+namespace Model {
 
-CustomPluginDescription::CustomPluginDescription(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CustomPluginDescription::CustomPluginDescription(JsonView jsonValue) { *this = jsonValue; }
 
-CustomPluginDescription& CustomPluginDescription::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("customPluginArn"))
-  {
+CustomPluginDescription& CustomPluginDescription::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("customPluginArn")) {
     m_customPluginArn = jsonValue.GetString("customPluginArn");
     m_customPluginArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("revision"))
-  {
+  if (jsonValue.ValueExists("revision")) {
     m_revision = jsonValue.GetInt64("revision");
     m_revisionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CustomPluginDescription::Jsonize() const
-{
+JsonValue CustomPluginDescription::Jsonize() const {
   JsonValue payload;
 
-  if(m_customPluginArnHasBeenSet)
-  {
-   payload.WithString("customPluginArn", m_customPluginArn);
-
+  if (m_customPluginArnHasBeenSet) {
+    payload.WithString("customPluginArn", m_customPluginArn);
   }
 
-  if(m_revisionHasBeenSet)
-  {
-   payload.WithInt64("revision", m_revision);
-
+  if (m_revisionHasBeenSet) {
+    payload.WithInt64("revision", m_revision);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace KafkaConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace KafkaConnect
+}  // namespace Aws

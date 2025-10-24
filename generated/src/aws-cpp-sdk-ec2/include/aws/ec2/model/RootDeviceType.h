@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class RootDeviceType
-  {
-    NOT_SET,
-    ebs,
-    instance_store
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class RootDeviceType { NOT_SET, ebs, instance_store };
 
-namespace RootDeviceTypeMapper
-{
+namespace RootDeviceTypeMapper {
 AWS_EC2_API RootDeviceType GetRootDeviceTypeForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForRootDeviceType(RootDeviceType value);
-} // namespace RootDeviceTypeMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace RootDeviceTypeMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

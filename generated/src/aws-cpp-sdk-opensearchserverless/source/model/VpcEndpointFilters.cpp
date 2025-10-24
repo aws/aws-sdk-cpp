@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/opensearchserverless/model/VpcEndpointFilters.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/opensearchserverless/model/VpcEndpointFilters.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace OpenSearchServerless
-{
-namespace Model
-{
+namespace Aws {
+namespace OpenSearchServerless {
+namespace Model {
 
-VpcEndpointFilters::VpcEndpointFilters(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VpcEndpointFilters::VpcEndpointFilters(JsonView jsonValue) { *this = jsonValue; }
 
-VpcEndpointFilters& VpcEndpointFilters::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("status"))
-  {
+VpcEndpointFilters& VpcEndpointFilters::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("status")) {
     m_status = VpcEndpointStatusMapper::GetVpcEndpointStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VpcEndpointFilters::Jsonize() const
-{
+JsonValue VpcEndpointFilters::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", VpcEndpointStatusMapper::GetNameForVpcEndpointStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", VpcEndpointStatusMapper::GetNameForVpcEndpointStatus(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace OpenSearchServerless
-} // namespace Aws
+}  // namespace Model
+}  // namespace OpenSearchServerless
+}  // namespace Aws

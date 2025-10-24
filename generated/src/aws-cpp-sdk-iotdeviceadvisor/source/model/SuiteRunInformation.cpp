@@ -3,144 +3,110 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotdeviceadvisor/model/SuiteRunInformation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotdeviceadvisor/model/SuiteRunInformation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTDeviceAdvisor
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTDeviceAdvisor {
+namespace Model {
 
-SuiteRunInformation::SuiteRunInformation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SuiteRunInformation::SuiteRunInformation(JsonView jsonValue) { *this = jsonValue; }
 
-SuiteRunInformation& SuiteRunInformation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("suiteDefinitionId"))
-  {
+SuiteRunInformation& SuiteRunInformation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("suiteDefinitionId")) {
     m_suiteDefinitionId = jsonValue.GetString("suiteDefinitionId");
     m_suiteDefinitionIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("suiteDefinitionVersion"))
-  {
+  if (jsonValue.ValueExists("suiteDefinitionVersion")) {
     m_suiteDefinitionVersion = jsonValue.GetString("suiteDefinitionVersion");
     m_suiteDefinitionVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("suiteDefinitionName"))
-  {
+  if (jsonValue.ValueExists("suiteDefinitionName")) {
     m_suiteDefinitionName = jsonValue.GetString("suiteDefinitionName");
     m_suiteDefinitionNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("suiteRunId"))
-  {
+  if (jsonValue.ValueExists("suiteRunId")) {
     m_suiteRunId = jsonValue.GetString("suiteRunId");
     m_suiteRunIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
-  {
+  if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetDouble("createdAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("startedAt"))
-  {
+  if (jsonValue.ValueExists("startedAt")) {
     m_startedAt = jsonValue.GetDouble("startedAt");
     m_startedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("endAt"))
-  {
+  if (jsonValue.ValueExists("endAt")) {
     m_endAt = jsonValue.GetDouble("endAt");
     m_endAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = SuiteRunStatusMapper::GetSuiteRunStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("passed"))
-  {
+  if (jsonValue.ValueExists("passed")) {
     m_passed = jsonValue.GetInteger("passed");
     m_passedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("failed"))
-  {
+  if (jsonValue.ValueExists("failed")) {
     m_failed = jsonValue.GetInteger("failed");
     m_failedHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SuiteRunInformation::Jsonize() const
-{
+JsonValue SuiteRunInformation::Jsonize() const {
   JsonValue payload;
 
-  if(m_suiteDefinitionIdHasBeenSet)
-  {
-   payload.WithString("suiteDefinitionId", m_suiteDefinitionId);
-
+  if (m_suiteDefinitionIdHasBeenSet) {
+    payload.WithString("suiteDefinitionId", m_suiteDefinitionId);
   }
 
-  if(m_suiteDefinitionVersionHasBeenSet)
-  {
-   payload.WithString("suiteDefinitionVersion", m_suiteDefinitionVersion);
-
+  if (m_suiteDefinitionVersionHasBeenSet) {
+    payload.WithString("suiteDefinitionVersion", m_suiteDefinitionVersion);
   }
 
-  if(m_suiteDefinitionNameHasBeenSet)
-  {
-   payload.WithString("suiteDefinitionName", m_suiteDefinitionName);
-
+  if (m_suiteDefinitionNameHasBeenSet) {
+    payload.WithString("suiteDefinitionName", m_suiteDefinitionName);
   }
 
-  if(m_suiteRunIdHasBeenSet)
-  {
-   payload.WithString("suiteRunId", m_suiteRunId);
-
+  if (m_suiteRunIdHasBeenSet) {
+    payload.WithString("suiteRunId", m_suiteRunId);
   }
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
-  if(m_startedAtHasBeenSet)
-  {
-   payload.WithDouble("startedAt", m_startedAt.SecondsWithMSPrecision());
+  if (m_startedAtHasBeenSet) {
+    payload.WithDouble("startedAt", m_startedAt.SecondsWithMSPrecision());
   }
 
-  if(m_endAtHasBeenSet)
-  {
-   payload.WithDouble("endAt", m_endAt.SecondsWithMSPrecision());
+  if (m_endAtHasBeenSet) {
+    payload.WithDouble("endAt", m_endAt.SecondsWithMSPrecision());
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", SuiteRunStatusMapper::GetNameForSuiteRunStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", SuiteRunStatusMapper::GetNameForSuiteRunStatus(m_status));
   }
 
-  if(m_passedHasBeenSet)
-  {
-   payload.WithInteger("passed", m_passed);
-
+  if (m_passedHasBeenSet) {
+    payload.WithInteger("passed", m_passed);
   }
 
-  if(m_failedHasBeenSet)
-  {
-   payload.WithInteger("failed", m_failed);
-
+  if (m_failedHasBeenSet) {
+    payload.WithInteger("failed", m_failed);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTDeviceAdvisor
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTDeviceAdvisor
+}  // namespace Aws

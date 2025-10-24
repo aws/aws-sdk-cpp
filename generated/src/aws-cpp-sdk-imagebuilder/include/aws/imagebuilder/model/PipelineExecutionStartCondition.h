@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 
-namespace Aws
-{
-namespace imagebuilder
-{
-namespace Model
-{
-  enum class PipelineExecutionStartCondition
-  {
-    NOT_SET,
-    EXPRESSION_MATCH_ONLY,
-    EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE
-  };
+namespace Aws {
+namespace imagebuilder {
+namespace Model {
+enum class PipelineExecutionStartCondition { NOT_SET, EXPRESSION_MATCH_ONLY, EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE };
 
-namespace PipelineExecutionStartConditionMapper
-{
+namespace PipelineExecutionStartConditionMapper {
 AWS_IMAGEBUILDER_API PipelineExecutionStartCondition GetPipelineExecutionStartConditionForName(const Aws::String& name);
 
 AWS_IMAGEBUILDER_API Aws::String GetNameForPipelineExecutionStartCondition(PipelineExecutionStartCondition value);
-} // namespace PipelineExecutionStartConditionMapper
-} // namespace Model
-} // namespace imagebuilder
-} // namespace Aws
+}  // namespace PipelineExecutionStartConditionMapper
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

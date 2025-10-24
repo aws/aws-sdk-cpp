@@ -4,63 +4,68 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/payment-cryptography/PaymentCryptography_EXPORTS.h>
 #include <aws/payment-cryptography/model/Key.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace PaymentCryptography
-{
-namespace Model
-{
-  class DeleteKeyResult
-  {
-  public:
-    AWS_PAYMENTCRYPTOGRAPHY_API DeleteKeyResult() = default;
-    AWS_PAYMENTCRYPTOGRAPHY_API DeleteKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_PAYMENTCRYPTOGRAPHY_API DeleteKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace PaymentCryptography {
+namespace Model {
+class DeleteKeyResult {
+ public:
+  AWS_PAYMENTCRYPTOGRAPHY_API DeleteKeyResult() = default;
+  AWS_PAYMENTCRYPTOGRAPHY_API DeleteKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_PAYMENTCRYPTOGRAPHY_API DeleteKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>The <code>KeyARN</code> of the key that is scheduled for deletion.</p>
+   */
+  inline const Key& GetKey() const { return m_key; }
+  template <typename KeyT = Key>
+  void SetKey(KeyT&& value) {
+    m_keyHasBeenSet = true;
+    m_key = std::forward<KeyT>(value);
+  }
+  template <typename KeyT = Key>
+  DeleteKeyResult& WithKey(KeyT&& value) {
+    SetKey(std::forward<KeyT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The <code>KeyARN</code> of the key that is scheduled for deletion.</p>
-     */
-    inline const Key& GetKey() const { return m_key; }
-    template<typename KeyT = Key>
-    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
-    template<typename KeyT = Key>
-    DeleteKeyResult& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    DeleteKeyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  DeleteKeyResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Key m_key;
+  bool m_keyHasBeenSet = false;
 
-    Key m_key;
-    bool m_keyHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace PaymentCryptography
-} // namespace Aws
+}  // namespace Model
+}  // namespace PaymentCryptography
+}  // namespace Aws

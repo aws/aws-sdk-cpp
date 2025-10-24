@@ -3,71 +3,58 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsEcsClusterConfigurationExecuteCommandConfigurationDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsEcsClusterConfigurationExecuteCommandConfigurationDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsEcsClusterConfigurationExecuteCommandConfigurationDetails::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails(JsonView jsonValue)
-{
+AwsEcsClusterConfigurationExecuteCommandConfigurationDetails::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails(
+    JsonView jsonValue) {
   *this = jsonValue;
 }
 
-AwsEcsClusterConfigurationExecuteCommandConfigurationDetails& AwsEcsClusterConfigurationExecuteCommandConfigurationDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("KmsKeyId"))
-  {
+AwsEcsClusterConfigurationExecuteCommandConfigurationDetails& AwsEcsClusterConfigurationExecuteCommandConfigurationDetails::operator=(
+    JsonView jsonValue) {
+  if (jsonValue.ValueExists("KmsKeyId")) {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
     m_kmsKeyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LogConfiguration"))
-  {
+  if (jsonValue.ValueExists("LogConfiguration")) {
     m_logConfiguration = jsonValue.GetObject("LogConfiguration");
     m_logConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Logging"))
-  {
+  if (jsonValue.ValueExists("Logging")) {
     m_logging = jsonValue.GetString("Logging");
     m_loggingHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsEcsClusterConfigurationExecuteCommandConfigurationDetails::Jsonize() const
-{
+JsonValue AwsEcsClusterConfigurationExecuteCommandConfigurationDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
-   payload.WithString("KmsKeyId", m_kmsKeyId);
-
+  if (m_kmsKeyIdHasBeenSet) {
+    payload.WithString("KmsKeyId", m_kmsKeyId);
   }
 
-  if(m_logConfigurationHasBeenSet)
-  {
-   payload.WithObject("LogConfiguration", m_logConfiguration.Jsonize());
-
+  if (m_logConfigurationHasBeenSet) {
+    payload.WithObject("LogConfiguration", m_logConfiguration.Jsonize());
   }
 
-  if(m_loggingHasBeenSet)
-  {
-   payload.WithString("Logging", m_logging);
-
+  if (m_loggingHasBeenSet) {
+    payload.WithString("Logging", m_logging);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

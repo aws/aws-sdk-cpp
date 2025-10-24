@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppRunner
-{
-namespace Model
-{
+namespace Aws {
+namespace AppRunner {
+namespace Model {
 
-ListVpcIngressConnectionsFilter::ListVpcIngressConnectionsFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ListVpcIngressConnectionsFilter::ListVpcIngressConnectionsFilter(JsonView jsonValue) { *this = jsonValue; }
 
-ListVpcIngressConnectionsFilter& ListVpcIngressConnectionsFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ServiceArn"))
-  {
+ListVpcIngressConnectionsFilter& ListVpcIngressConnectionsFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ServiceArn")) {
     m_serviceArn = jsonValue.GetString("ServiceArn");
     m_serviceArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VpcEndpointId"))
-  {
+  if (jsonValue.ValueExists("VpcEndpointId")) {
     m_vpcEndpointId = jsonValue.GetString("VpcEndpointId");
     m_vpcEndpointIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ListVpcIngressConnectionsFilter::Jsonize() const
-{
+JsonValue ListVpcIngressConnectionsFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_serviceArnHasBeenSet)
-  {
-   payload.WithString("ServiceArn", m_serviceArn);
-
+  if (m_serviceArnHasBeenSet) {
+    payload.WithString("ServiceArn", m_serviceArn);
   }
 
-  if(m_vpcEndpointIdHasBeenSet)
-  {
-   payload.WithString("VpcEndpointId", m_vpcEndpointId);
-
+  if (m_vpcEndpointIdHasBeenSet) {
+    payload.WithString("VpcEndpointId", m_vpcEndpointId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppRunner
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppRunner
+}  // namespace Aws

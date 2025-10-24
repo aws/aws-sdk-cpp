@@ -11,72 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-ConfigStreamDeliveryInfo::ConfigStreamDeliveryInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConfigStreamDeliveryInfo::ConfigStreamDeliveryInfo(JsonView jsonValue) { *this = jsonValue; }
 
-ConfigStreamDeliveryInfo& ConfigStreamDeliveryInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("lastStatus"))
-  {
+ConfigStreamDeliveryInfo& ConfigStreamDeliveryInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("lastStatus")) {
     m_lastStatus = DeliveryStatusMapper::GetDeliveryStatusForName(jsonValue.GetString("lastStatus"));
     m_lastStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastErrorCode"))
-  {
+  if (jsonValue.ValueExists("lastErrorCode")) {
     m_lastErrorCode = jsonValue.GetString("lastErrorCode");
     m_lastErrorCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastErrorMessage"))
-  {
+  if (jsonValue.ValueExists("lastErrorMessage")) {
     m_lastErrorMessage = jsonValue.GetString("lastErrorMessage");
     m_lastErrorMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastStatusChangeTime"))
-  {
+  if (jsonValue.ValueExists("lastStatusChangeTime")) {
     m_lastStatusChangeTime = jsonValue.GetDouble("lastStatusChangeTime");
     m_lastStatusChangeTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ConfigStreamDeliveryInfo::Jsonize() const
-{
+JsonValue ConfigStreamDeliveryInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_lastStatusHasBeenSet)
-  {
-   payload.WithString("lastStatus", DeliveryStatusMapper::GetNameForDeliveryStatus(m_lastStatus));
+  if (m_lastStatusHasBeenSet) {
+    payload.WithString("lastStatus", DeliveryStatusMapper::GetNameForDeliveryStatus(m_lastStatus));
   }
 
-  if(m_lastErrorCodeHasBeenSet)
-  {
-   payload.WithString("lastErrorCode", m_lastErrorCode);
-
+  if (m_lastErrorCodeHasBeenSet) {
+    payload.WithString("lastErrorCode", m_lastErrorCode);
   }
 
-  if(m_lastErrorMessageHasBeenSet)
-  {
-   payload.WithString("lastErrorMessage", m_lastErrorMessage);
-
+  if (m_lastErrorMessageHasBeenSet) {
+    payload.WithString("lastErrorMessage", m_lastErrorMessage);
   }
 
-  if(m_lastStatusChangeTimeHasBeenSet)
-  {
-   payload.WithDouble("lastStatusChangeTime", m_lastStatusChangeTime.SecondsWithMSPrecision());
+  if (m_lastStatusChangeTimeHasBeenSet) {
+    payload.WithDouble("lastStatusChangeTime", m_lastStatusChangeTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

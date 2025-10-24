@@ -5,12 +5,8 @@
 
 #include <aws/omics/OmicsEndpointProvider.h>
 
-namespace Aws
-{
-namespace Omics
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Omics
-} // namespace Aws
+namespace Aws {
+namespace Omics {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Omics
+}  // namespace Aws

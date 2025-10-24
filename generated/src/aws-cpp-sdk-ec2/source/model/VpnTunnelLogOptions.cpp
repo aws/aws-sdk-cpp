@@ -3,37 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/VpnTunnelLogOptions.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/VpnTunnelLogOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-VpnTunnelLogOptions::VpnTunnelLogOptions(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+VpnTunnelLogOptions::VpnTunnelLogOptions(const XmlNode& xmlNode) { *this = xmlNode; }
 
-VpnTunnelLogOptions& VpnTunnelLogOptions::operator =(const XmlNode& xmlNode)
-{
+VpnTunnelLogOptions& VpnTunnelLogOptions::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode cloudWatchLogOptionsNode = resultNode.FirstChild("cloudWatchLogOptions");
-    if(!cloudWatchLogOptionsNode.IsNull())
-    {
+    if (!cloudWatchLogOptionsNode.IsNull()) {
       m_cloudWatchLogOptions = cloudWatchLogOptionsNode;
       m_cloudWatchLogOptionsHasBeenSet = true;
     }
@@ -42,27 +33,22 @@ VpnTunnelLogOptions& VpnTunnelLogOptions::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void VpnTunnelLogOptions::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_cloudWatchLogOptionsHasBeenSet)
-  {
-      Aws::StringStream cloudWatchLogOptionsLocationAndMemberSs;
-      cloudWatchLogOptionsLocationAndMemberSs << location << index << locationValue << ".CloudWatchLogOptions";
-      m_cloudWatchLogOptions.OutputToStream(oStream, cloudWatchLogOptionsLocationAndMemberSs.str().c_str());
-  }
-
-}
-
-void VpnTunnelLogOptions::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_cloudWatchLogOptionsHasBeenSet)
-  {
-      Aws::String cloudWatchLogOptionsLocationAndMember(location);
-      cloudWatchLogOptionsLocationAndMember += ".CloudWatchLogOptions";
-      m_cloudWatchLogOptions.OutputToStream(oStream, cloudWatchLogOptionsLocationAndMember.c_str());
+void VpnTunnelLogOptions::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_cloudWatchLogOptionsHasBeenSet) {
+    Aws::StringStream cloudWatchLogOptionsLocationAndMemberSs;
+    cloudWatchLogOptionsLocationAndMemberSs << location << index << locationValue << ".CloudWatchLogOptions";
+    m_cloudWatchLogOptions.OutputToStream(oStream, cloudWatchLogOptionsLocationAndMemberSs.str().c_str());
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void VpnTunnelLogOptions::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_cloudWatchLogOptionsHasBeenSet) {
+    Aws::String cloudWatchLogOptionsLocationAndMember(location);
+    cloudWatchLogOptionsLocationAndMember += ".CloudWatchLogOptions";
+    m_cloudWatchLogOptions.OutputToStream(oStream, cloudWatchLogOptionsLocationAndMember.c_str());
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

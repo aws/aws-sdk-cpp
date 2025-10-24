@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/route53-recovery-readiness/model/TargetResource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/route53-recovery-readiness/model/TargetResource.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Route53RecoveryReadiness
-{
-namespace Model
-{
+namespace Aws {
+namespace Route53RecoveryReadiness {
+namespace Model {
 
-TargetResource::TargetResource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TargetResource::TargetResource(JsonView jsonValue) { *this = jsonValue; }
 
-TargetResource& TargetResource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("nLBResource"))
-  {
+TargetResource& TargetResource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("nLBResource")) {
     m_nLBResource = jsonValue.GetObject("nLBResource");
     m_nLBResourceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("r53Resource"))
-  {
+  if (jsonValue.ValueExists("r53Resource")) {
     m_r53Resource = jsonValue.GetObject("r53Resource");
     m_r53ResourceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TargetResource::Jsonize() const
-{
+JsonValue TargetResource::Jsonize() const {
   JsonValue payload;
 
-  if(m_nLBResourceHasBeenSet)
-  {
-   payload.WithObject("nLBResource", m_nLBResource.Jsonize());
-
+  if (m_nLBResourceHasBeenSet) {
+    payload.WithObject("nLBResource", m_nLBResource.Jsonize());
   }
 
-  if(m_r53ResourceHasBeenSet)
-  {
-   payload.WithObject("r53Resource", m_r53Resource.Jsonize());
-
+  if (m_r53ResourceHasBeenSet) {
+    payload.WithObject("r53Resource", m_r53Resource.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Route53RecoveryReadiness
-} // namespace Aws
+}  // namespace Model
+}  // namespace Route53RecoveryReadiness
+}  // namespace Aws

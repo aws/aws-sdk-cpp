@@ -5,12 +5,8 @@
 
 #include <aws/databrew/GlueDataBrewEndpointProvider.h>
 
-namespace Aws
-{
-namespace GlueDataBrew
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace GlueDataBrew
-} // namespace Aws
+namespace Aws {
+namespace GlueDataBrew {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace GlueDataBrew
+}  // namespace Aws

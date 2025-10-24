@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/ssm-sap/SsmSap_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm-sap/SsmSap_EXPORTS.h>
 
-namespace Aws
-{
-namespace SsmSap
-{
-namespace Model
-{
-  enum class RuleResultStatus
-  {
-    NOT_SET,
-    PASSED,
-    FAILED,
-    WARNING,
-    INFO,
-    UNKNOWN
-  };
+namespace Aws {
+namespace SsmSap {
+namespace Model {
+enum class RuleResultStatus { NOT_SET, PASSED, FAILED, WARNING, INFO, UNKNOWN };
 
-namespace RuleResultStatusMapper
-{
+namespace RuleResultStatusMapper {
 AWS_SSMSAP_API RuleResultStatus GetRuleResultStatusForName(const Aws::String& name);
 
 AWS_SSMSAP_API Aws::String GetNameForRuleResultStatus(RuleResultStatus value);
-} // namespace RuleResultStatusMapper
-} // namespace Model
-} // namespace SsmSap
-} // namespace Aws
+}  // namespace RuleResultStatusMapper
+}  // namespace Model
+}  // namespace SsmSap
+}  // namespace Aws

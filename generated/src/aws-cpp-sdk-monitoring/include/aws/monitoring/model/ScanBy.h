@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/monitoring/CloudWatch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/monitoring/CloudWatch_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudWatch
-{
-namespace Model
-{
-  enum class ScanBy
-  {
-    NOT_SET,
-    TimestampDescending,
-    TimestampAscending
-  };
+namespace Aws {
+namespace CloudWatch {
+namespace Model {
+enum class ScanBy { NOT_SET, TimestampDescending, TimestampAscending };
 
-namespace ScanByMapper
-{
+namespace ScanByMapper {
 AWS_CLOUDWATCH_API ScanBy GetScanByForName(const Aws::String& name);
 
 AWS_CLOUDWATCH_API Aws::String GetNameForScanBy(ScanBy value);
-} // namespace ScanByMapper
-} // namespace Model
-} // namespace CloudWatch
-} // namespace Aws
+}  // namespace ScanByMapper
+}  // namespace Model
+}  // namespace CloudWatch
+}  // namespace Aws

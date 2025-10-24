@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fsx/model/OpenZFSOriginSnapshotConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fsx/model/OpenZFSOriginSnapshotConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
+namespace Aws {
+namespace FSx {
+namespace Model {
 
-OpenZFSOriginSnapshotConfiguration::OpenZFSOriginSnapshotConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OpenZFSOriginSnapshotConfiguration::OpenZFSOriginSnapshotConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-OpenZFSOriginSnapshotConfiguration& OpenZFSOriginSnapshotConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SnapshotARN"))
-  {
+OpenZFSOriginSnapshotConfiguration& OpenZFSOriginSnapshotConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SnapshotARN")) {
     m_snapshotARN = jsonValue.GetString("SnapshotARN");
     m_snapshotARNHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CopyStrategy"))
-  {
+  if (jsonValue.ValueExists("CopyStrategy")) {
     m_copyStrategy = OpenZFSCopyStrategyMapper::GetOpenZFSCopyStrategyForName(jsonValue.GetString("CopyStrategy"));
     m_copyStrategyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OpenZFSOriginSnapshotConfiguration::Jsonize() const
-{
+JsonValue OpenZFSOriginSnapshotConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_snapshotARNHasBeenSet)
-  {
-   payload.WithString("SnapshotARN", m_snapshotARN);
-
+  if (m_snapshotARNHasBeenSet) {
+    payload.WithString("SnapshotARN", m_snapshotARN);
   }
 
-  if(m_copyStrategyHasBeenSet)
-  {
-   payload.WithString("CopyStrategy", OpenZFSCopyStrategyMapper::GetNameForOpenZFSCopyStrategy(m_copyStrategy));
+  if (m_copyStrategyHasBeenSet) {
+    payload.WithString("CopyStrategy", OpenZFSCopyStrategyMapper::GetNameForOpenZFSCopyStrategy(m_copyStrategy));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

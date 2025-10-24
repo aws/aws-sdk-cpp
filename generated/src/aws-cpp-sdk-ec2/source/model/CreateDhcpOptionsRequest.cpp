@@ -3,39 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/CreateDhcpOptionsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/CreateDhcpOptionsRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateDhcpOptionsRequest::SerializePayload() const
-{
+Aws::String CreateDhcpOptionsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateDhcpOptions&";
-  if(m_dhcpConfigurationsHasBeenSet)
-  {
+  if (m_dhcpConfigurationsHasBeenSet) {
     unsigned dhcpConfigurationsCount = 1;
-    for(auto& item : m_dhcpConfigurations)
-    {
+    for (auto& item : m_dhcpConfigurations) {
       item.OutputToStream(ss, "DhcpConfiguration.", dhcpConfigurationsCount, "");
       dhcpConfigurationsCount++;
     }
   }
 
-  if(m_tagSpecificationsHasBeenSet)
-  {
+  if (m_tagSpecificationsHasBeenSet) {
     unsigned tagSpecificationsCount = 1;
-    for(auto& item : m_tagSpecifications)
-    {
+    for (auto& item : m_tagSpecifications) {
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -43,8 +37,4 @@ Aws::String CreateDhcpOptionsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CreateDhcpOptionsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateDhcpOptionsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

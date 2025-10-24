@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/GetBlueprintRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/GetBlueprintRequest.h>
 
 #include <utility>
 
@@ -12,39 +12,26 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetBlueprintRequest::SerializePayload() const
-{
+Aws::String GetBlueprintRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_includeBlueprintHasBeenSet)
-  {
-   payload.WithBool("IncludeBlueprint", m_includeBlueprint);
-
+  if (m_includeBlueprintHasBeenSet) {
+    payload.WithBool("IncludeBlueprint", m_includeBlueprint);
   }
 
-  if(m_includeParameterSpecHasBeenSet)
-  {
-   payload.WithBool("IncludeParameterSpec", m_includeParameterSpec);
-
+  if (m_includeParameterSpecHasBeenSet) {
+    payload.WithBool("IncludeParameterSpec", m_includeParameterSpec);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetBlueprintRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetBlueprintRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSGlue.GetBlueprint"));
   return headers;
-
 }
-
-
-
-

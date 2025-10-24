@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CognitoSync
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoSync {
+namespace Model {
 
-CognitoStreams::CognitoStreams(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CognitoStreams::CognitoStreams(JsonView jsonValue) { *this = jsonValue; }
 
-CognitoStreams& CognitoStreams::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("StreamName"))
-  {
+CognitoStreams& CognitoStreams::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("StreamName")) {
     m_streamName = jsonValue.GetString("StreamName");
     m_streamNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RoleArn"))
-  {
+  if (jsonValue.ValueExists("RoleArn")) {
     m_roleArn = jsonValue.GetString("RoleArn");
     m_roleArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StreamingStatus"))
-  {
+  if (jsonValue.ValueExists("StreamingStatus")) {
     m_streamingStatus = StreamingStatusMapper::GetStreamingStatusForName(jsonValue.GetString("StreamingStatus"));
     m_streamingStatusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CognitoStreams::Jsonize() const
-{
+JsonValue CognitoStreams::Jsonize() const {
   JsonValue payload;
 
-  if(m_streamNameHasBeenSet)
-  {
-   payload.WithString("StreamName", m_streamName);
-
+  if (m_streamNameHasBeenSet) {
+    payload.WithString("StreamName", m_streamName);
   }
 
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("RoleArn", m_roleArn);
-
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("RoleArn", m_roleArn);
   }
 
-  if(m_streamingStatusHasBeenSet)
-  {
-   payload.WithString("StreamingStatus", StreamingStatusMapper::GetNameForStreamingStatus(m_streamingStatus));
+  if (m_streamingStatusHasBeenSet) {
+    payload.WithString("StreamingStatus", StreamingStatusMapper::GetNameForStreamingStatus(m_streamingStatus));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CognitoSync
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoSync
+}  // namespace Aws

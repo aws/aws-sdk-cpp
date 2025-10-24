@@ -3,50 +3,41 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeTransitGatewayConnectPeersRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DescribeTransitGatewayConnectPeersRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeTransitGatewayConnectPeersRequest::SerializePayload() const
-{
+Aws::String DescribeTransitGatewayConnectPeersRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeTransitGatewayConnectPeers&";
-  if(m_transitGatewayConnectPeerIdsHasBeenSet)
-  {
+  if (m_transitGatewayConnectPeerIdsHasBeenSet) {
     unsigned transitGatewayConnectPeerIdsCount = 1;
-    for(auto& item : m_transitGatewayConnectPeerIds)
-    {
-      ss << "TransitGatewayConnectPeerIds." << transitGatewayConnectPeerIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_transitGatewayConnectPeerIds) {
+      ss << "TransitGatewayConnectPeerIds." << transitGatewayConnectPeerIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       transitGatewayConnectPeerIdsCount++;
     }
   }
 
-  if(m_filtersHasBeenSet)
-  {
+  if (m_filtersHasBeenSet) {
     unsigned filtersCount = 1;
-    for(auto& item : m_filters)
-    {
+    for (auto& item : m_filters) {
       item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
+  if (m_maxResultsHasBeenSet) {
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -54,8 +45,4 @@ Aws::String DescribeTransitGatewayConnectPeersRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeTransitGatewayConnectPeersRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeTransitGatewayConnectPeersRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

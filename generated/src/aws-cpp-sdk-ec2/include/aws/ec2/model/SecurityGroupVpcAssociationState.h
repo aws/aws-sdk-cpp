@@ -4,32 +4,27 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class SecurityGroupVpcAssociationState
-  {
-    NOT_SET,
-    associating,
-    associated,
-    association_failed,
-    disassociating,
-    disassociated,
-    disassociation_failed
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class SecurityGroupVpcAssociationState {
+  NOT_SET,
+  associating,
+  associated,
+  association_failed,
+  disassociating,
+  disassociated,
+  disassociation_failed
+};
 
-namespace SecurityGroupVpcAssociationStateMapper
-{
+namespace SecurityGroupVpcAssociationStateMapper {
 AWS_EC2_API SecurityGroupVpcAssociationState GetSecurityGroupVpcAssociationStateForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForSecurityGroupVpcAssociationState(SecurityGroupVpcAssociationState value);
-} // namespace SecurityGroupVpcAssociationStateMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace SecurityGroupVpcAssociationStateMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

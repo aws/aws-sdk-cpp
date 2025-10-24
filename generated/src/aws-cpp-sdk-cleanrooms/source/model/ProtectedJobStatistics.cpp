@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
 
-ProtectedJobStatistics::ProtectedJobStatistics(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProtectedJobStatistics::ProtectedJobStatistics(JsonView jsonValue) { *this = jsonValue; }
 
-ProtectedJobStatistics& ProtectedJobStatistics::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("totalDurationInMillis"))
-  {
+ProtectedJobStatistics& ProtectedJobStatistics::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("totalDurationInMillis")) {
     m_totalDurationInMillis = jsonValue.GetInt64("totalDurationInMillis");
     m_totalDurationInMillisHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("billedResourceUtilization"))
-  {
+  if (jsonValue.ValueExists("billedResourceUtilization")) {
     m_billedResourceUtilization = jsonValue.GetObject("billedResourceUtilization");
     m_billedResourceUtilizationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ProtectedJobStatistics::Jsonize() const
-{
+JsonValue ProtectedJobStatistics::Jsonize() const {
   JsonValue payload;
 
-  if(m_totalDurationInMillisHasBeenSet)
-  {
-   payload.WithInt64("totalDurationInMillis", m_totalDurationInMillis);
-
+  if (m_totalDurationInMillisHasBeenSet) {
+    payload.WithInt64("totalDurationInMillis", m_totalDurationInMillis);
   }
 
-  if(m_billedResourceUtilizationHasBeenSet)
-  {
-   payload.WithObject("billedResourceUtilization", m_billedResourceUtilization.Jsonize());
-
+  if (m_billedResourceUtilizationHasBeenSet) {
+    payload.WithObject("billedResourceUtilization", m_billedResourceUtilization.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

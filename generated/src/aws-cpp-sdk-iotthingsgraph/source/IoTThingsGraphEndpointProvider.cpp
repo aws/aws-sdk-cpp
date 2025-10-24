@@ -5,12 +5,8 @@
 
 #include <aws/iotthingsgraph/IoTThingsGraphEndpointProvider.h>
 
-namespace Aws
-{
-namespace IoTThingsGraph
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace IoTThingsGraph
-} // namespace Aws
+namespace Aws {
+namespace IoTThingsGraph {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace IoTThingsGraph
+}  // namespace Aws

@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCampaigns
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCampaigns {
+namespace Model {
 
-InstanceIdFilter::InstanceIdFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InstanceIdFilter::InstanceIdFilter(JsonView jsonValue) { *this = jsonValue; }
 
-InstanceIdFilter& InstanceIdFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("value"))
-  {
+InstanceIdFilter& InstanceIdFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetString("value");
     m_valueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("operator"))
-  {
+  if (jsonValue.ValueExists("operator")) {
     m_operator = InstanceIdFilterOperatorMapper::GetInstanceIdFilterOperatorForName(jsonValue.GetString("operator"));
     m_operatorHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InstanceIdFilter::Jsonize() const
-{
+JsonValue InstanceIdFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("value", m_value);
   }
 
-  if(m_operatorHasBeenSet)
-  {
-   payload.WithString("operator", InstanceIdFilterOperatorMapper::GetNameForInstanceIdFilterOperator(m_operator));
+  if (m_operatorHasBeenSet) {
+    payload.WithString("operator", InstanceIdFilterOperatorMapper::GetNameForInstanceIdFilterOperator(m_operator));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCampaigns
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCampaigns
+}  // namespace Aws

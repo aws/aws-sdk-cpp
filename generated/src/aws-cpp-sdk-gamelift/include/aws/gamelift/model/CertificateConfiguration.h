@@ -6,60 +6,59 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/CertificateType.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace GameLift
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace GameLift {
+namespace Model {
 
+/**
+ * <p>Determines whether a TLS/SSL certificate is generated for a fleet. This
+ * feature must be enabled when creating the fleet. All instances in a fleet share
+ * the same certificate. The certificate can be retrieved by calling the <a
+ * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">Amazon
+ * GameLift Servers Server SDK</a> operation <code>GetInstanceCertificate</code>.
+ * </p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CertificateConfiguration">AWS
+ * API Reference</a></p>
+ */
+class CertificateConfiguration {
+ public:
+  AWS_GAMELIFT_API CertificateConfiguration() = default;
+  AWS_GAMELIFT_API CertificateConfiguration(Aws::Utils::Json::JsonView jsonValue);
+  AWS_GAMELIFT_API CertificateConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Determines whether a TLS/SSL certificate is generated for a fleet. This
-   * feature must be enabled when creating the fleet. All instances in a fleet share
-   * the same certificate. The certificate can be retrieved by calling the <a
-   * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">Amazon
-   * GameLift Servers Server SDK</a> operation <code>GetInstanceCertificate</code>.
-   * </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CertificateConfiguration">AWS
-   * API Reference</a></p>
+   * <p>Indicates whether a TLS/SSL certificate is generated for a fleet. </p>
+   * <p>Valid values include: </p> <ul> <li> <p> <b>GENERATED</b> - Generate a
+   * TLS/SSL certificate for this fleet.</p> </li> <li> <p> <b>DISABLED</b> -
+   * (default) Do not generate a TLS/SSL certificate for this fleet. </p> </li> </ul>
    */
-  class CertificateConfiguration
-  {
-  public:
-    AWS_GAMELIFT_API CertificateConfiguration() = default;
-    AWS_GAMELIFT_API CertificateConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AWS_GAMELIFT_API CertificateConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline CertificateType GetCertificateType() const { return m_certificateType; }
+  inline bool CertificateTypeHasBeenSet() const { return m_certificateTypeHasBeenSet; }
+  inline void SetCertificateType(CertificateType value) {
+    m_certificateTypeHasBeenSet = true;
+    m_certificateType = value;
+  }
+  inline CertificateConfiguration& WithCertificateType(CertificateType value) {
+    SetCertificateType(value);
+    return *this;
+  }
+  ///@}
+ private:
+  CertificateType m_certificateType{CertificateType::NOT_SET};
+  bool m_certificateTypeHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>Indicates whether a TLS/SSL certificate is generated for a fleet. </p>
-     * <p>Valid values include: </p> <ul> <li> <p> <b>GENERATED</b> - Generate a
-     * TLS/SSL certificate for this fleet.</p> </li> <li> <p> <b>DISABLED</b> -
-     * (default) Do not generate a TLS/SSL certificate for this fleet. </p> </li> </ul>
-     */
-    inline CertificateType GetCertificateType() const { return m_certificateType; }
-    inline bool CertificateTypeHasBeenSet() const { return m_certificateTypeHasBeenSet; }
-    inline void SetCertificateType(CertificateType value) { m_certificateTypeHasBeenSet = true; m_certificateType = value; }
-    inline CertificateConfiguration& WithCertificateType(CertificateType value) { SetCertificateType(value); return *this;}
-    ///@}
-  private:
-
-    CertificateType m_certificateType{CertificateType::NOT_SET};
-    bool m_certificateTypeHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace GameLift
-} // namespace Aws
+}  // namespace Model
+}  // namespace GameLift
+}  // namespace Aws

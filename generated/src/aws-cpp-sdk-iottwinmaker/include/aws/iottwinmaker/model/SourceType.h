@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTTwinMaker
-{
-namespace Model
-{
-  enum class SourceType
-  {
-    NOT_SET,
-    s3,
-    iotsitewise,
-    iottwinmaker
-  };
+namespace Aws {
+namespace IoTTwinMaker {
+namespace Model {
+enum class SourceType { NOT_SET, s3, iotsitewise, iottwinmaker };
 
-namespace SourceTypeMapper
-{
+namespace SourceTypeMapper {
 AWS_IOTTWINMAKER_API SourceType GetSourceTypeForName(const Aws::String& name);
 
 AWS_IOTTWINMAKER_API Aws::String GetNameForSourceType(SourceType value);
-} // namespace SourceTypeMapper
-} // namespace Model
-} // namespace IoTTwinMaker
-} // namespace Aws
+}  // namespace SourceTypeMapper
+}  // namespace Model
+}  // namespace IoTTwinMaker
+}  // namespace Aws

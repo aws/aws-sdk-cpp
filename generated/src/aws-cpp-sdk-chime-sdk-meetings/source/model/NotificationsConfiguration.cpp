@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMeetings
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMeetings {
+namespace Model {
 
-NotificationsConfiguration::NotificationsConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NotificationsConfiguration::NotificationsConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-NotificationsConfiguration& NotificationsConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("LambdaFunctionArn"))
-  {
+NotificationsConfiguration& NotificationsConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("LambdaFunctionArn")) {
     m_lambdaFunctionArn = jsonValue.GetString("LambdaFunctionArn");
     m_lambdaFunctionArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SnsTopicArn"))
-  {
+  if (jsonValue.ValueExists("SnsTopicArn")) {
     m_snsTopicArn = jsonValue.GetString("SnsTopicArn");
     m_snsTopicArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SqsQueueArn"))
-  {
+  if (jsonValue.ValueExists("SqsQueueArn")) {
     m_sqsQueueArn = jsonValue.GetString("SqsQueueArn");
     m_sqsQueueArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NotificationsConfiguration::Jsonize() const
-{
+JsonValue NotificationsConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_lambdaFunctionArnHasBeenSet)
-  {
-   payload.WithString("LambdaFunctionArn", m_lambdaFunctionArn);
-
+  if (m_lambdaFunctionArnHasBeenSet) {
+    payload.WithString("LambdaFunctionArn", m_lambdaFunctionArn);
   }
 
-  if(m_snsTopicArnHasBeenSet)
-  {
-   payload.WithString("SnsTopicArn", m_snsTopicArn);
-
+  if (m_snsTopicArnHasBeenSet) {
+    payload.WithString("SnsTopicArn", m_snsTopicArn);
   }
 
-  if(m_sqsQueueArnHasBeenSet)
-  {
-   payload.WithString("SqsQueueArn", m_sqsQueueArn);
-
+  if (m_sqsQueueArnHasBeenSet) {
+    payload.WithString("SqsQueueArn", m_sqsQueueArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMeetings
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMeetings
+}  // namespace Aws

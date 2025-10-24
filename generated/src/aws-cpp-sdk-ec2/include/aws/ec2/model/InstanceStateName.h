@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class InstanceStateName
-  {
-    NOT_SET,
-    pending,
-    running,
-    shutting_down,
-    terminated,
-    stopping,
-    stopped
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class InstanceStateName { NOT_SET, pending, running, shutting_down, terminated, stopping, stopped };
 
-namespace InstanceStateNameMapper
-{
+namespace InstanceStateNameMapper {
 AWS_EC2_API InstanceStateName GetInstanceStateNameForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForInstanceStateName(InstanceStateName value);
-} // namespace InstanceStateNameMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace InstanceStateNameMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

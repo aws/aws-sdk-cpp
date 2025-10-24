@@ -6,65 +6,70 @@
 #pragma once
 #include <aws/groundstation/GroundStation_EXPORTS.h>
 #include <aws/groundstation/model/EirpUnits.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace GroundStation
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace GroundStation {
+namespace Model {
 
+/**
+ * <p>Object that represents EIRP.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/Eirp">AWS
+ * API Reference</a></p>
+ */
+class Eirp {
+ public:
+  AWS_GROUNDSTATION_API Eirp() = default;
+  AWS_GROUNDSTATION_API Eirp(Aws::Utils::Json::JsonView jsonValue);
+  AWS_GROUNDSTATION_API Eirp& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Object that represents EIRP.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/Eirp">AWS
-   * API Reference</a></p>
+   * <p>Units of an EIRP.</p>
    */
-  class Eirp
-  {
-  public:
-    AWS_GROUNDSTATION_API Eirp() = default;
-    AWS_GROUNDSTATION_API Eirp(Aws::Utils::Json::JsonView jsonValue);
-    AWS_GROUNDSTATION_API Eirp& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline EirpUnits GetUnits() const { return m_units; }
+  inline bool UnitsHasBeenSet() const { return m_unitsHasBeenSet; }
+  inline void SetUnits(EirpUnits value) {
+    m_unitsHasBeenSet = true;
+    m_units = value;
+  }
+  inline Eirp& WithUnits(EirpUnits value) {
+    SetUnits(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>Value of an EIRP. Valid values are between 20.0 to 50.0 dBW.</p>
+   */
+  inline double GetValue() const { return m_value; }
+  inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+  inline void SetValue(double value) {
+    m_valueHasBeenSet = true;
+    m_value = value;
+  }
+  inline Eirp& WithValue(double value) {
+    SetValue(value);
+    return *this;
+  }
+  ///@}
+ private:
+  EirpUnits m_units{EirpUnits::NOT_SET};
+  bool m_unitsHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>Units of an EIRP.</p>
-     */
-    inline EirpUnits GetUnits() const { return m_units; }
-    inline bool UnitsHasBeenSet() const { return m_unitsHasBeenSet; }
-    inline void SetUnits(EirpUnits value) { m_unitsHasBeenSet = true; m_units = value; }
-    inline Eirp& WithUnits(EirpUnits value) { SetUnits(value); return *this;}
-    ///@}
+  double m_value{0.0};
+  bool m_valueHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>Value of an EIRP. Valid values are between 20.0 to 50.0 dBW.</p>
-     */
-    inline double GetValue() const { return m_value; }
-    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
-    inline Eirp& WithValue(double value) { SetValue(value); return *this;}
-    ///@}
-  private:
-
-    EirpUnits m_units{EirpUnits::NOT_SET};
-    bool m_unitsHasBeenSet = false;
-
-    double m_value{0.0};
-    bool m_valueHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace GroundStation
-} // namespace Aws
+}  // namespace Model
+}  // namespace GroundStation
+}  // namespace Aws

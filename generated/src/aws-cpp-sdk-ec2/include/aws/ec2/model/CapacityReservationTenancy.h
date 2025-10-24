@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class CapacityReservationTenancy
-  {
-    NOT_SET,
-    default_,
-    dedicated
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class CapacityReservationTenancy { NOT_SET, default_, dedicated };
 
-namespace CapacityReservationTenancyMapper
-{
+namespace CapacityReservationTenancyMapper {
 AWS_EC2_API CapacityReservationTenancy GetCapacityReservationTenancyForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForCapacityReservationTenancy(CapacityReservationTenancy value);
-} // namespace CapacityReservationTenancyMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace CapacityReservationTenancyMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

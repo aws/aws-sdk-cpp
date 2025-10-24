@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/route53-recovery-control-config/model/UpdateControlPanelRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/route53-recovery-control-config/model/UpdateControlPanelRequest.h>
 
 #include <utility>
 
@@ -12,25 +12,16 @@ using namespace Aws::Route53RecoveryControlConfig::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateControlPanelRequest::SerializePayload() const
-{
+Aws::String UpdateControlPanelRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_controlPanelArnHasBeenSet)
-  {
-   payload.WithString("ControlPanelArn", m_controlPanelArn);
-
+  if (m_controlPanelArnHasBeenSet) {
+    payload.WithString("ControlPanelArn", m_controlPanelArn);
   }
 
-  if(m_controlPanelNameHasBeenSet)
-  {
-   payload.WithString("ControlPanelName", m_controlPanelName);
-
+  if (m_controlPanelNameHasBeenSet) {
+    payload.WithString("ControlPanelName", m_controlPanelName);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

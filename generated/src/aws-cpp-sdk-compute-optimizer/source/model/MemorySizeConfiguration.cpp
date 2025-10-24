@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
 
-MemorySizeConfiguration::MemorySizeConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MemorySizeConfiguration::MemorySizeConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-MemorySizeConfiguration& MemorySizeConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("memory"))
-  {
+MemorySizeConfiguration& MemorySizeConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("memory")) {
     m_memory = jsonValue.GetInteger("memory");
     m_memoryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("memoryReservation"))
-  {
+  if (jsonValue.ValueExists("memoryReservation")) {
     m_memoryReservation = jsonValue.GetInteger("memoryReservation");
     m_memoryReservationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MemorySizeConfiguration::Jsonize() const
-{
+JsonValue MemorySizeConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_memoryHasBeenSet)
-  {
-   payload.WithInteger("memory", m_memory);
-
+  if (m_memoryHasBeenSet) {
+    payload.WithInteger("memory", m_memory);
   }
 
-  if(m_memoryReservationHasBeenSet)
-  {
-   payload.WithInteger("memoryReservation", m_memoryReservation);
-
+  if (m_memoryReservationHasBeenSet) {
+    payload.WithInteger("memoryReservation", m_memoryReservation);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

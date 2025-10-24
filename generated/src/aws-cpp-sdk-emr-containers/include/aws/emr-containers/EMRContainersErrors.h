@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/emr-containers/EMRContainers_EXPORTS.h>
 
-namespace Aws
-{
-namespace EMRContainers
-{
-enum class EMRContainersErrors
-{
-  //From Core//
+namespace Aws {
+namespace EMRContainers {
+enum class EMRContainersErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class EMRContainersErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,13 +44,12 @@ enum class EMRContainersErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  E_K_S_REQUEST_THROTTLED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  E_K_S_REQUEST_THROTTLED = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER
 };
 
-class AWS_EMRCONTAINERS_API EMRContainersError : public Aws::Client::AWSError<EMRContainersErrors>
-{
-public:
+class AWS_EMRCONTAINERS_API EMRContainersError : public Aws::Client::AWSError<EMRContainersErrors> {
+ public:
   EMRContainersError() {}
   EMRContainersError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<EMRContainersErrors>(rhs) {}
   EMRContainersError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<EMRContainersErrors>(rhs) {}
@@ -64,10 +60,9 @@ public:
   T GetModeledError();
 };
 
-namespace EMRContainersErrorMapper
-{
-  AWS_EMRCONTAINERS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace EMRContainersErrorMapper {
+AWS_EMRCONTAINERS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace EMRContainers
-} // namespace Aws
+}  // namespace EMRContainers
+}  // namespace Aws

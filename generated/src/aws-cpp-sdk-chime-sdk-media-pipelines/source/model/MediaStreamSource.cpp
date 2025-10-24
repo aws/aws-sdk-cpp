@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-MediaStreamSource::MediaStreamSource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MediaStreamSource::MediaStreamSource(JsonView jsonValue) { *this = jsonValue; }
 
-MediaStreamSource& MediaStreamSource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SourceType"))
-  {
+MediaStreamSource& MediaStreamSource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SourceType")) {
     m_sourceType = MediaPipelineSourceTypeMapper::GetMediaPipelineSourceTypeForName(jsonValue.GetString("SourceType"));
     m_sourceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourceArn"))
-  {
+  if (jsonValue.ValueExists("SourceArn")) {
     m_sourceArn = jsonValue.GetString("SourceArn");
     m_sourceArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MediaStreamSource::Jsonize() const
-{
+JsonValue MediaStreamSource::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceTypeHasBeenSet)
-  {
-   payload.WithString("SourceType", MediaPipelineSourceTypeMapper::GetNameForMediaPipelineSourceType(m_sourceType));
+  if (m_sourceTypeHasBeenSet) {
+    payload.WithString("SourceType", MediaPipelineSourceTypeMapper::GetNameForMediaPipelineSourceType(m_sourceType));
   }
 
-  if(m_sourceArnHasBeenSet)
-  {
-   payload.WithString("SourceArn", m_sourceArn);
-
+  if (m_sourceArnHasBeenSet) {
+    payload.WithString("SourceArn", m_sourceArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

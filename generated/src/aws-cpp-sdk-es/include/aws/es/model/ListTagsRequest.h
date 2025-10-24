@@ -4,63 +4,63 @@
  */
 
 #pragma once
-#include <aws/es/ElasticsearchService_EXPORTS.h>
-#include <aws/es/ElasticsearchServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/es/ElasticsearchServiceRequest.h>
+#include <aws/es/ElasticsearchService_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Http
-{
-    class URI;
-} //namespace Http
-namespace ElasticsearchService
-{
-namespace Model
-{
+namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
+namespace ElasticsearchService {
+namespace Model {
 
+/**
+ * <p>Container for the parameters to the <code><a>ListTags</a></code> operation.
+ * Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are
+ * attached that you want to view are attached.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListTagsRequest">AWS
+ * API Reference</a></p>
+ */
+class ListTagsRequest : public ElasticsearchServiceRequest {
+ public:
+  AWS_ELASTICSEARCHSERVICE_API ListTagsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "ListTags"; }
+
+  AWS_ELASTICSEARCHSERVICE_API Aws::String SerializePayload() const override;
+
+  AWS_ELASTICSEARCHSERVICE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+  ///@{
   /**
-   * <p>Container for the parameters to the <code><a>ListTags</a></code> operation.
-   * Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are
-   * attached that you want to view are attached.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListTagsRequest">AWS
-   * API Reference</a></p>
+   * <p> Specify the <code>ARN</code> for the Elasticsearch domain to which the tags
+   * are attached that you want to view.</p>
    */
-  class ListTagsRequest : public ElasticsearchServiceRequest
-  {
-  public:
-    AWS_ELASTICSEARCHSERVICE_API ListTagsRequest() = default;
+  inline const Aws::String& GetARN() const { return m_aRN; }
+  inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
+  template <typename ARNT = Aws::String>
+  void SetARN(ARNT&& value) {
+    m_aRNHasBeenSet = true;
+    m_aRN = std::forward<ARNT>(value);
+  }
+  template <typename ARNT = Aws::String>
+  ListTagsRequest& WithARN(ARNT&& value) {
+    SetARN(std::forward<ARNT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_aRN;
+  bool m_aRNHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "ListTags"; }
-
-    AWS_ELASTICSEARCHSERVICE_API Aws::String SerializePayload() const override;
-
-    AWS_ELASTICSEARCHSERVICE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
-
-    ///@{
-    /**
-     * <p> Specify the <code>ARN</code> for the Elasticsearch domain to which the tags
-     * are attached that you want to view.</p>
-     */
-    inline const Aws::String& GetARN() const { return m_aRN; }
-    inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
-    template<typename ARNT = Aws::String>
-    void SetARN(ARNT&& value) { m_aRNHasBeenSet = true; m_aRN = std::forward<ARNT>(value); }
-    template<typename ARNT = Aws::String>
-    ListTagsRequest& WithARN(ARNT&& value) { SetARN(std::forward<ARNT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_aRN;
-    bool m_aRNHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace ElasticsearchService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ElasticsearchService
+}  // namespace Aws

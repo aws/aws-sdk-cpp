@@ -11,95 +11,70 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AuditManager
-{
-namespace Model
-{
+namespace Aws {
+namespace AuditManager {
+namespace Model {
 
-ControlDomainInsights::ControlDomainInsights(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ControlDomainInsights::ControlDomainInsights(JsonView jsonValue) { *this = jsonValue; }
 
-ControlDomainInsights& ControlDomainInsights::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+ControlDomainInsights& ControlDomainInsights::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("id"))
-  {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("controlsCountByNoncompliantEvidence"))
-  {
+  if (jsonValue.ValueExists("controlsCountByNoncompliantEvidence")) {
     m_controlsCountByNoncompliantEvidence = jsonValue.GetInteger("controlsCountByNoncompliantEvidence");
     m_controlsCountByNoncompliantEvidenceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("totalControlsCount"))
-  {
+  if (jsonValue.ValueExists("totalControlsCount")) {
     m_totalControlsCount = jsonValue.GetInteger("totalControlsCount");
     m_totalControlsCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("evidenceInsights"))
-  {
+  if (jsonValue.ValueExists("evidenceInsights")) {
     m_evidenceInsights = jsonValue.GetObject("evidenceInsights");
     m_evidenceInsightsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdated"))
-  {
+  if (jsonValue.ValueExists("lastUpdated")) {
     m_lastUpdated = jsonValue.GetDouble("lastUpdated");
     m_lastUpdatedHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ControlDomainInsights::Jsonize() const
-{
+JsonValue ControlDomainInsights::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_controlsCountByNoncompliantEvidenceHasBeenSet)
-  {
-   payload.WithInteger("controlsCountByNoncompliantEvidence", m_controlsCountByNoncompliantEvidence);
-
+  if (m_controlsCountByNoncompliantEvidenceHasBeenSet) {
+    payload.WithInteger("controlsCountByNoncompliantEvidence", m_controlsCountByNoncompliantEvidence);
   }
 
-  if(m_totalControlsCountHasBeenSet)
-  {
-   payload.WithInteger("totalControlsCount", m_totalControlsCount);
-
+  if (m_totalControlsCountHasBeenSet) {
+    payload.WithInteger("totalControlsCount", m_totalControlsCount);
   }
 
-  if(m_evidenceInsightsHasBeenSet)
-  {
-   payload.WithObject("evidenceInsights", m_evidenceInsights.Jsonize());
-
+  if (m_evidenceInsightsHasBeenSet) {
+    payload.WithObject("evidenceInsights", m_evidenceInsights.Jsonize());
   }
 
-  if(m_lastUpdatedHasBeenSet)
-  {
-   payload.WithDouble("lastUpdated", m_lastUpdated.SecondsWithMSPrecision());
+  if (m_lastUpdatedHasBeenSet) {
+    payload.WithDouble("lastUpdated", m_lastUpdated.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AuditManager
-} // namespace Aws
+}  // namespace Model
+}  // namespace AuditManager
+}  // namespace Aws

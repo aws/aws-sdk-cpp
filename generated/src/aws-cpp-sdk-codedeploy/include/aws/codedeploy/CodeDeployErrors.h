@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 
-namespace Aws
-{
-namespace CodeDeploy
-{
-enum class CodeDeployErrors
-{
-  //From Core//
+namespace Aws {
+namespace CodeDeploy {
+enum class CodeDeployErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class CodeDeployErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class CodeDeployErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ALARMS_LIMIT_EXCEEDED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ALARMS_LIMIT_EXCEEDED = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   APPLICATION_ALREADY_EXISTS,
   APPLICATION_DOES_NOT_EXIST,
   APPLICATION_LIMIT_EXCEEDED,
@@ -157,9 +154,8 @@ enum class CodeDeployErrors
   UNSUPPORTED_ACTION_FOR_DEPLOYMENT_TYPE
 };
 
-class AWS_CODEDEPLOY_API CodeDeployError : public Aws::Client::AWSError<CodeDeployErrors>
-{
-public:
+class AWS_CODEDEPLOY_API CodeDeployError : public Aws::Client::AWSError<CodeDeployErrors> {
+ public:
   CodeDeployError() {}
   CodeDeployError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CodeDeployErrors>(rhs) {}
   CodeDeployError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CodeDeployErrors>(rhs) {}
@@ -170,10 +166,9 @@ public:
   T GetModeledError();
 };
 
-namespace CodeDeployErrorMapper
-{
-  AWS_CODEDEPLOY_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace CodeDeployErrorMapper {
+AWS_CODEDEPLOY_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace CodeDeploy
-} // namespace Aws
+}  // namespace CodeDeploy
+}  // namespace Aws

@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/SnapshotDestinationConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/SnapshotDestinationConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-SnapshotDestinationConfiguration::SnapshotDestinationConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SnapshotDestinationConfiguration::SnapshotDestinationConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-SnapshotDestinationConfiguration& SnapshotDestinationConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("S3Destinations"))
-  {
+SnapshotDestinationConfiguration& SnapshotDestinationConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("S3Destinations")) {
     Aws::Utils::Array<JsonView> s3DestinationsJsonList = jsonValue.GetArray("S3Destinations");
-    for(unsigned s3DestinationsIndex = 0; s3DestinationsIndex < s3DestinationsJsonList.GetLength(); ++s3DestinationsIndex)
-    {
+    for (unsigned s3DestinationsIndex = 0; s3DestinationsIndex < s3DestinationsJsonList.GetLength(); ++s3DestinationsIndex) {
       m_s3Destinations.push_back(s3DestinationsJsonList[s3DestinationsIndex].AsObject());
     }
     m_s3DestinationsHasBeenSet = true;
@@ -37,24 +28,20 @@ SnapshotDestinationConfiguration& SnapshotDestinationConfiguration::operator =(J
   return *this;
 }
 
-JsonValue SnapshotDestinationConfiguration::Jsonize() const
-{
+JsonValue SnapshotDestinationConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3DestinationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> s3DestinationsJsonList(m_s3Destinations.size());
-   for(unsigned s3DestinationsIndex = 0; s3DestinationsIndex < s3DestinationsJsonList.GetLength(); ++s3DestinationsIndex)
-   {
-     s3DestinationsJsonList[s3DestinationsIndex].AsObject(m_s3Destinations[s3DestinationsIndex].Jsonize());
-   }
-   payload.WithArray("S3Destinations", std::move(s3DestinationsJsonList));
-
+  if (m_s3DestinationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> s3DestinationsJsonList(m_s3Destinations.size());
+    for (unsigned s3DestinationsIndex = 0; s3DestinationsIndex < s3DestinationsJsonList.GetLength(); ++s3DestinationsIndex) {
+      s3DestinationsJsonList[s3DestinationsIndex].AsObject(m_s3Destinations[s3DestinationsIndex].Jsonize());
+    }
+    payload.WithArray("S3Destinations", std::move(s3DestinationsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

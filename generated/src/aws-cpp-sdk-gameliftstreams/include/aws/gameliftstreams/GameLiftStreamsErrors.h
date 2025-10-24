@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/gameliftstreams/GameLiftStreams_EXPORTS.h>
 
-namespace Aws
-{
-namespace GameLiftStreams
-{
-enum class GameLiftStreamsErrors
-{
-  //From Core//
+namespace Aws {
+namespace GameLiftStreams {
+enum class GameLiftStreamsErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class GameLiftStreamsErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,14 +44,13 @@ enum class GameLiftStreamsErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER,
   SERVICE_QUOTA_EXCEEDED
 };
 
-class AWS_GAMELIFTSTREAMS_API GameLiftStreamsError : public Aws::Client::AWSError<GameLiftStreamsErrors>
-{
-public:
+class AWS_GAMELIFTSTREAMS_API GameLiftStreamsError : public Aws::Client::AWSError<GameLiftStreamsErrors> {
+ public:
   GameLiftStreamsError() {}
   GameLiftStreamsError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<GameLiftStreamsErrors>(rhs) {}
   GameLiftStreamsError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<GameLiftStreamsErrors>(rhs) {}
@@ -65,10 +61,9 @@ public:
   T GetModeledError();
 };
 
-namespace GameLiftStreamsErrorMapper
-{
-  AWS_GAMELIFTSTREAMS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace GameLiftStreamsErrorMapper {
+AWS_GAMELIFTSTREAMS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace GameLiftStreams
-} // namespace Aws
+}  // namespace GameLiftStreams
+}  // namespace Aws

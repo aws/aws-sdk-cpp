@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class BareMetal
-  {
-    NOT_SET,
-    included,
-    required,
-    excluded
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class BareMetal { NOT_SET, included, required, excluded };
 
-namespace BareMetalMapper
-{
+namespace BareMetalMapper {
 AWS_EC2_API BareMetal GetBareMetalForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForBareMetal(BareMetal value);
-} // namespace BareMetalMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace BareMetalMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

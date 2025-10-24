@@ -13,43 +13,33 @@ using namespace Aws::Utils;
 using namespace Aws::IoTAnalytics;
 using namespace Aws::IoTAnalytics::Model;
 
-namespace Aws
-{
-namespace IoTAnalytics
-{
-template<> AWS_IOTANALYTICS_API ResourceAlreadyExistsException IoTAnalyticsError::GetModeledError()
-{
+namespace Aws {
+namespace IoTAnalytics {
+template <>
+AWS_IOTANALYTICS_API ResourceAlreadyExistsException IoTAnalyticsError::GetModeledError() {
   assert(this->GetErrorType() == IoTAnalyticsErrors::RESOURCE_ALREADY_EXISTS);
   return ResourceAlreadyExistsException(this->GetJsonPayload().View());
 }
 
-namespace IoTAnalyticsErrorMapper
-{
+namespace IoTAnalyticsErrorMapper {
 
 static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
-  {
+  if (hashCode == RESOURCE_ALREADY_EXISTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTAnalyticsErrors::RESOURCE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTAnalyticsErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == INVALID_REQUEST_HASH)
-  {
+  } else if (hashCode == INVALID_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTAnalyticsErrors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace IoTAnalyticsErrorMapper
-} // namespace IoTAnalytics
-} // namespace Aws
+}  // namespace IoTAnalyticsErrorMapper
+}  // namespace IoTAnalytics
+}  // namespace Aws

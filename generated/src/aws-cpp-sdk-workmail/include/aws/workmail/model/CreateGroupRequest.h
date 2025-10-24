@@ -4,82 +4,95 @@
  */
 
 #pragma once
-#include <aws/workmail/WorkMail_EXPORTS.h>
-#include <aws/workmail/WorkMailRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workmail/WorkMailRequest.h>
+#include <aws/workmail/WorkMail_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace WorkMail
-{
-namespace Model
-{
+namespace Aws {
+namespace WorkMail {
+namespace Model {
 
+/**
+ */
+class CreateGroupRequest : public WorkMailRequest {
+ public:
+  AWS_WORKMAIL_API CreateGroupRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "CreateGroup"; }
+
+  AWS_WORKMAIL_API Aws::String SerializePayload() const override;
+
+  AWS_WORKMAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The organization under which the group is to be created.</p>
    */
-  class CreateGroupRequest : public WorkMailRequest
-  {
-  public:
-    AWS_WORKMAIL_API CreateGroupRequest() = default;
+  inline const Aws::String& GetOrganizationId() const { return m_organizationId; }
+  inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
+  template <typename OrganizationIdT = Aws::String>
+  void SetOrganizationId(OrganizationIdT&& value) {
+    m_organizationIdHasBeenSet = true;
+    m_organizationId = std::forward<OrganizationIdT>(value);
+  }
+  template <typename OrganizationIdT = Aws::String>
+  CreateGroupRequest& WithOrganizationId(OrganizationIdT&& value) {
+    SetOrganizationId(std::forward<OrganizationIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "CreateGroup"; }
+  ///@{
+  /**
+   * <p>The name of the group.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  CreateGroupRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_WORKMAIL_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>If this parameter is enabled, the group will be hidden from the address
+   * book.</p>
+   */
+  inline bool GetHiddenFromGlobalAddressList() const { return m_hiddenFromGlobalAddressList; }
+  inline bool HiddenFromGlobalAddressListHasBeenSet() const { return m_hiddenFromGlobalAddressListHasBeenSet; }
+  inline void SetHiddenFromGlobalAddressList(bool value) {
+    m_hiddenFromGlobalAddressListHasBeenSet = true;
+    m_hiddenFromGlobalAddressList = value;
+  }
+  inline CreateGroupRequest& WithHiddenFromGlobalAddressList(bool value) {
+    SetHiddenFromGlobalAddressList(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_organizationId;
+  bool m_organizationIdHasBeenSet = false;
 
-    AWS_WORKMAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+  Aws::String m_name;
+  bool m_nameHasBeenSet = false;
 
+  bool m_hiddenFromGlobalAddressList{false};
+  bool m_hiddenFromGlobalAddressListHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The organization under which the group is to be created.</p>
-     */
-    inline const Aws::String& GetOrganizationId() const { return m_organizationId; }
-    inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
-    template<typename OrganizationIdT = Aws::String>
-    void SetOrganizationId(OrganizationIdT&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::forward<OrganizationIdT>(value); }
-    template<typename OrganizationIdT = Aws::String>
-    CreateGroupRequest& WithOrganizationId(OrganizationIdT&& value) { SetOrganizationId(std::forward<OrganizationIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The name of the group.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    CreateGroupRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>If this parameter is enabled, the group will be hidden from the address
-     * book.</p>
-     */
-    inline bool GetHiddenFromGlobalAddressList() const { return m_hiddenFromGlobalAddressList; }
-    inline bool HiddenFromGlobalAddressListHasBeenSet() const { return m_hiddenFromGlobalAddressListHasBeenSet; }
-    inline void SetHiddenFromGlobalAddressList(bool value) { m_hiddenFromGlobalAddressListHasBeenSet = true; m_hiddenFromGlobalAddressList = value; }
-    inline CreateGroupRequest& WithHiddenFromGlobalAddressList(bool value) { SetHiddenFromGlobalAddressList(value); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_organizationId;
-    bool m_organizationIdHasBeenSet = false;
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
-
-    bool m_hiddenFromGlobalAddressList{false};
-    bool m_hiddenFromGlobalAddressListHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace WorkMail
-} // namespace Aws
+}  // namespace Model
+}  // namespace WorkMail
+}  // namespace Aws

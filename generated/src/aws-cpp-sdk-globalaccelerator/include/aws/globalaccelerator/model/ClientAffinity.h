@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/globalaccelerator/GlobalAccelerator_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/globalaccelerator/GlobalAccelerator_EXPORTS.h>
 
-namespace Aws
-{
-namespace GlobalAccelerator
-{
-namespace Model
-{
-  enum class ClientAffinity
-  {
-    NOT_SET,
-    NONE,
-    SOURCE_IP
-  };
+namespace Aws {
+namespace GlobalAccelerator {
+namespace Model {
+enum class ClientAffinity { NOT_SET, NONE, SOURCE_IP };
 
-namespace ClientAffinityMapper
-{
+namespace ClientAffinityMapper {
 AWS_GLOBALACCELERATOR_API ClientAffinity GetClientAffinityForName(const Aws::String& name);
 
 AWS_GLOBALACCELERATOR_API Aws::String GetNameForClientAffinity(ClientAffinity value);
-} // namespace ClientAffinityMapper
-} // namespace Model
-} // namespace GlobalAccelerator
-} // namespace Aws
+}  // namespace ClientAffinityMapper
+}  // namespace Model
+}  // namespace GlobalAccelerator
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
-  enum class SlotTypeFilterOperator
-  {
-    NOT_SET,
-    CO,
-    EQ
-  };
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
+enum class SlotTypeFilterOperator { NOT_SET, CO, EQ };
 
-namespace SlotTypeFilterOperatorMapper
-{
+namespace SlotTypeFilterOperatorMapper {
 AWS_LEXMODELSV2_API SlotTypeFilterOperator GetSlotTypeFilterOperatorForName(const Aws::String& name);
 
 AWS_LEXMODELSV2_API Aws::String GetNameForSlotTypeFilterOperator(SlotTypeFilterOperator value);
-} // namespace SlotTypeFilterOperatorMapper
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace SlotTypeFilterOperatorMapper
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

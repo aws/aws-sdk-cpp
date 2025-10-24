@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/ListEventBridgeRuleTemplatesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/medialive/model/ListEventBridgeRuleTemplatesResult.h>
 
 #include <utility>
 
@@ -17,37 +17,31 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListEventBridgeRuleTemplatesResult::ListEventBridgeRuleTemplatesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListEventBridgeRuleTemplatesResult::ListEventBridgeRuleTemplatesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-ListEventBridgeRuleTemplatesResult& ListEventBridgeRuleTemplatesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListEventBridgeRuleTemplatesResult& ListEventBridgeRuleTemplatesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("eventBridgeRuleTemplates"))
-  {
+  if (jsonValue.ValueExists("eventBridgeRuleTemplates")) {
     Aws::Utils::Array<JsonView> eventBridgeRuleTemplatesJsonList = jsonValue.GetArray("eventBridgeRuleTemplates");
-    for(unsigned eventBridgeRuleTemplatesIndex = 0; eventBridgeRuleTemplatesIndex < eventBridgeRuleTemplatesJsonList.GetLength(); ++eventBridgeRuleTemplatesIndex)
-    {
+    for (unsigned eventBridgeRuleTemplatesIndex = 0; eventBridgeRuleTemplatesIndex < eventBridgeRuleTemplatesJsonList.GetLength();
+         ++eventBridgeRuleTemplatesIndex) {
       m_eventBridgeRuleTemplates.push_back(eventBridgeRuleTemplatesJsonList[eventBridgeRuleTemplatesIndex].AsObject());
     }
     m_eventBridgeRuleTemplatesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
 
-UnusedAccessConfiguration::UnusedAccessConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UnusedAccessConfiguration::UnusedAccessConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-UnusedAccessConfiguration& UnusedAccessConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("unusedAccessAge"))
-  {
+UnusedAccessConfiguration& UnusedAccessConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("unusedAccessAge")) {
     m_unusedAccessAge = jsonValue.GetInteger("unusedAccessAge");
     m_unusedAccessAgeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("analysisRule"))
-  {
+  if (jsonValue.ValueExists("analysisRule")) {
     m_analysisRule = jsonValue.GetObject("analysisRule");
     m_analysisRuleHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UnusedAccessConfiguration::Jsonize() const
-{
+JsonValue UnusedAccessConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_unusedAccessAgeHasBeenSet)
-  {
-   payload.WithInteger("unusedAccessAge", m_unusedAccessAge);
-
+  if (m_unusedAccessAgeHasBeenSet) {
+    payload.WithInteger("unusedAccessAge", m_unusedAccessAge);
   }
 
-  if(m_analysisRuleHasBeenSet)
-  {
-   payload.WithObject("analysisRule", m_analysisRule.Jsonize());
-
+  if (m_analysisRuleHasBeenSet) {
+    payload.WithObject("analysisRule", m_analysisRule.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

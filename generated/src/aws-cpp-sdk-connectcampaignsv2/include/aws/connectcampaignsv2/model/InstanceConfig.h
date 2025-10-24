@@ -5,80 +5,91 @@
 
 #pragma once
 #include <aws/connectcampaignsv2/ConnectCampaignsV2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/connectcampaignsv2/model/EncryptionConfig.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace ConnectCampaignsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace ConnectCampaignsV2 {
+namespace Model {
 
-  /**
-   * <p>Instance config object</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/InstanceConfig">AWS
-   * API Reference</a></p>
-   */
-  class InstanceConfig
-  {
-  public:
-    AWS_CONNECTCAMPAIGNSV2_API InstanceConfig() = default;
-    AWS_CONNECTCAMPAIGNSV2_API InstanceConfig(Aws::Utils::Json::JsonView jsonValue);
-    AWS_CONNECTCAMPAIGNSV2_API InstanceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_CONNECTCAMPAIGNSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
+/**
+ * <p>Instance config object</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/InstanceConfig">AWS
+ * API Reference</a></p>
+ */
+class InstanceConfig {
+ public:
+  AWS_CONNECTCAMPAIGNSV2_API InstanceConfig() = default;
+  AWS_CONNECTCAMPAIGNSV2_API InstanceConfig(Aws::Utils::Json::JsonView jsonValue);
+  AWS_CONNECTCAMPAIGNSV2_API InstanceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_CONNECTCAMPAIGNSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetConnectInstanceId() const { return m_connectInstanceId; }
-    inline bool ConnectInstanceIdHasBeenSet() const { return m_connectInstanceIdHasBeenSet; }
-    template<typename ConnectInstanceIdT = Aws::String>
-    void SetConnectInstanceId(ConnectInstanceIdT&& value) { m_connectInstanceIdHasBeenSet = true; m_connectInstanceId = std::forward<ConnectInstanceIdT>(value); }
-    template<typename ConnectInstanceIdT = Aws::String>
-    InstanceConfig& WithConnectInstanceId(ConnectInstanceIdT&& value) { SetConnectInstanceId(std::forward<ConnectInstanceIdT>(value)); return *this;}
-    ///@}
+  inline const Aws::String& GetConnectInstanceId() const { return m_connectInstanceId; }
+  inline bool ConnectInstanceIdHasBeenSet() const { return m_connectInstanceIdHasBeenSet; }
+  template <typename ConnectInstanceIdT = Aws::String>
+  void SetConnectInstanceId(ConnectInstanceIdT&& value) {
+    m_connectInstanceIdHasBeenSet = true;
+    m_connectInstanceId = std::forward<ConnectInstanceIdT>(value);
+  }
+  template <typename ConnectInstanceIdT = Aws::String>
+  InstanceConfig& WithConnectInstanceId(ConnectInstanceIdT&& value) {
+    SetConnectInstanceId(std::forward<ConnectInstanceIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    
-    inline const Aws::String& GetServiceLinkedRoleArn() const { return m_serviceLinkedRoleArn; }
-    inline bool ServiceLinkedRoleArnHasBeenSet() const { return m_serviceLinkedRoleArnHasBeenSet; }
-    template<typename ServiceLinkedRoleArnT = Aws::String>
-    void SetServiceLinkedRoleArn(ServiceLinkedRoleArnT&& value) { m_serviceLinkedRoleArnHasBeenSet = true; m_serviceLinkedRoleArn = std::forward<ServiceLinkedRoleArnT>(value); }
-    template<typename ServiceLinkedRoleArnT = Aws::String>
-    InstanceConfig& WithServiceLinkedRoleArn(ServiceLinkedRoleArnT&& value) { SetServiceLinkedRoleArn(std::forward<ServiceLinkedRoleArnT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const EncryptionConfig& GetEncryptionConfig() const { return m_encryptionConfig; }
-    inline bool EncryptionConfigHasBeenSet() const { return m_encryptionConfigHasBeenSet; }
-    template<typename EncryptionConfigT = EncryptionConfig>
-    void SetEncryptionConfig(EncryptionConfigT&& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = std::forward<EncryptionConfigT>(value); }
-    template<typename EncryptionConfigT = EncryptionConfig>
-    InstanceConfig& WithEncryptionConfig(EncryptionConfigT&& value) { SetEncryptionConfig(std::forward<EncryptionConfigT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetServiceLinkedRoleArn() const { return m_serviceLinkedRoleArn; }
+  inline bool ServiceLinkedRoleArnHasBeenSet() const { return m_serviceLinkedRoleArnHasBeenSet; }
+  template <typename ServiceLinkedRoleArnT = Aws::String>
+  void SetServiceLinkedRoleArn(ServiceLinkedRoleArnT&& value) {
+    m_serviceLinkedRoleArnHasBeenSet = true;
+    m_serviceLinkedRoleArn = std::forward<ServiceLinkedRoleArnT>(value);
+  }
+  template <typename ServiceLinkedRoleArnT = Aws::String>
+  InstanceConfig& WithServiceLinkedRoleArn(ServiceLinkedRoleArnT&& value) {
+    SetServiceLinkedRoleArn(std::forward<ServiceLinkedRoleArnT>(value));
+    return *this;
+  }
+  ///@}
 
-    Aws::String m_connectInstanceId;
-    bool m_connectInstanceIdHasBeenSet = false;
+  ///@{
 
-    Aws::String m_serviceLinkedRoleArn;
-    bool m_serviceLinkedRoleArnHasBeenSet = false;
+  inline const EncryptionConfig& GetEncryptionConfig() const { return m_encryptionConfig; }
+  inline bool EncryptionConfigHasBeenSet() const { return m_encryptionConfigHasBeenSet; }
+  template <typename EncryptionConfigT = EncryptionConfig>
+  void SetEncryptionConfig(EncryptionConfigT&& value) {
+    m_encryptionConfigHasBeenSet = true;
+    m_encryptionConfig = std::forward<EncryptionConfigT>(value);
+  }
+  template <typename EncryptionConfigT = EncryptionConfig>
+  InstanceConfig& WithEncryptionConfig(EncryptionConfigT&& value) {
+    SetEncryptionConfig(std::forward<EncryptionConfigT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_connectInstanceId;
+  bool m_connectInstanceIdHasBeenSet = false;
 
-    EncryptionConfig m_encryptionConfig;
-    bool m_encryptionConfigHasBeenSet = false;
-  };
+  Aws::String m_serviceLinkedRoleArn;
+  bool m_serviceLinkedRoleArnHasBeenSet = false;
 
-} // namespace Model
-} // namespace ConnectCampaignsV2
-} // namespace Aws
+  EncryptionConfig m_encryptionConfig;
+  bool m_encryptionConfigHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace ConnectCampaignsV2
+}  // namespace Aws

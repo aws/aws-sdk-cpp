@@ -3,68 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dynamodb/model/IncrementalExportSpecification.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dynamodb/model/IncrementalExportSpecification.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DynamoDB
-{
-namespace Model
-{
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
 
-IncrementalExportSpecification::IncrementalExportSpecification(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IncrementalExportSpecification::IncrementalExportSpecification(JsonView jsonValue) { *this = jsonValue; }
 
-IncrementalExportSpecification& IncrementalExportSpecification::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ExportFromTime"))
-  {
+IncrementalExportSpecification& IncrementalExportSpecification::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ExportFromTime")) {
     m_exportFromTime = jsonValue.GetDouble("ExportFromTime");
     m_exportFromTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExportToTime"))
-  {
+  if (jsonValue.ValueExists("ExportToTime")) {
     m_exportToTime = jsonValue.GetDouble("ExportToTime");
     m_exportToTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExportViewType"))
-  {
+  if (jsonValue.ValueExists("ExportViewType")) {
     m_exportViewType = ExportViewTypeMapper::GetExportViewTypeForName(jsonValue.GetString("ExportViewType"));
     m_exportViewTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IncrementalExportSpecification::Jsonize() const
-{
+JsonValue IncrementalExportSpecification::Jsonize() const {
   JsonValue payload;
 
-  if(m_exportFromTimeHasBeenSet)
-  {
-   payload.WithDouble("ExportFromTime", m_exportFromTime.SecondsWithMSPrecision());
+  if (m_exportFromTimeHasBeenSet) {
+    payload.WithDouble("ExportFromTime", m_exportFromTime.SecondsWithMSPrecision());
   }
 
-  if(m_exportToTimeHasBeenSet)
-  {
-   payload.WithDouble("ExportToTime", m_exportToTime.SecondsWithMSPrecision());
+  if (m_exportToTimeHasBeenSet) {
+    payload.WithDouble("ExportToTime", m_exportToTime.SecondsWithMSPrecision());
   }
 
-  if(m_exportViewTypeHasBeenSet)
-  {
-   payload.WithString("ExportViewType", ExportViewTypeMapper::GetNameForExportViewType(m_exportViewType));
+  if (m_exportViewTypeHasBeenSet) {
+    payload.WithString("ExportViewType", ExportViewTypeMapper::GetNameForExportViewType(m_exportViewType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DynamoDB
-} // namespace Aws
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws

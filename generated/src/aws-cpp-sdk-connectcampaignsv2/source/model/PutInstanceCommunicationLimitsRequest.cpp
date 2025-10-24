@@ -12,19 +12,12 @@ using namespace Aws::ConnectCampaignsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutInstanceCommunicationLimitsRequest::SerializePayload() const
-{
+Aws::String PutInstanceCommunicationLimitsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_communicationLimitsConfigHasBeenSet)
-  {
-   payload.WithObject("communicationLimitsConfig", m_communicationLimitsConfig.Jsonize());
-
+  if (m_communicationLimitsConfigHasBeenSet) {
+    payload.WithObject("communicationLimitsConfig", m_communicationLimitsConfig.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

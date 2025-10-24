@@ -3,37 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/AvailabilityZone.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticache/model/AvailabilityZone.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ElastiCache
-{
-namespace Model
-{
+namespace Aws {
+namespace ElastiCache {
+namespace Model {
 
-AvailabilityZone::AvailabilityZone(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+AvailabilityZone::AvailabilityZone(const XmlNode& xmlNode) { *this = xmlNode; }
 
-AvailabilityZone& AvailabilityZone::operator =(const XmlNode& xmlNode)
-{
+AvailabilityZone& AvailabilityZone::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode nameNode = resultNode.FirstChild("Name");
-    if(!nameNode.IsNull())
-    {
+    if (!nameNode.IsNull()) {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
     }
@@ -42,23 +33,18 @@ AvailabilityZone& AvailabilityZone::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_nameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
-  }
-
-}
-
-void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_nameHasBeenSet)
-  {
-      oStream << location << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_nameHasBeenSet) {
+    oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace ElastiCache
-} // namespace Aws
+void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_nameHasBeenSet) {
+    oStream << location << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace ElastiCache
+}  // namespace Aws

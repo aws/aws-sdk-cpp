@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCampaignsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCampaignsV2 {
+namespace Model {
 
-IntegrationConfig::IntegrationConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IntegrationConfig::IntegrationConfig(JsonView jsonValue) { *this = jsonValue; }
 
-IntegrationConfig& IntegrationConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("customerProfiles"))
-  {
+IntegrationConfig& IntegrationConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("customerProfiles")) {
     m_customerProfiles = jsonValue.GetObject("customerProfiles");
     m_customerProfilesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("qConnect"))
-  {
+  if (jsonValue.ValueExists("qConnect")) {
     m_qConnect = jsonValue.GetObject("qConnect");
     m_qConnectHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IntegrationConfig::Jsonize() const
-{
+JsonValue IntegrationConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_customerProfilesHasBeenSet)
-  {
-   payload.WithObject("customerProfiles", m_customerProfiles.Jsonize());
-
+  if (m_customerProfilesHasBeenSet) {
+    payload.WithObject("customerProfiles", m_customerProfiles.Jsonize());
   }
 
-  if(m_qConnectHasBeenSet)
-  {
-   payload.WithObject("qConnect", m_qConnect.Jsonize());
-
+  if (m_qConnectHasBeenSet) {
+    payload.WithObject("qConnect", m_qConnect.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCampaignsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCampaignsV2
+}  // namespace Aws

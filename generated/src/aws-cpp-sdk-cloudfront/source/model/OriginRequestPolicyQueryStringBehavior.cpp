@@ -4,83 +4,65 @@
  */
 
 #include <aws/cloudfront/model/OriginRequestPolicyQueryStringBehavior.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace CloudFront {
+namespace Model {
+namespace OriginRequestPolicyQueryStringBehaviorMapper {
 
-namespace Aws
-{
-  namespace CloudFront
-  {
-    namespace Model
-    {
-      namespace OriginRequestPolicyQueryStringBehaviorMapper
-      {
+static const int none_HASH = HashingUtils::HashString("none");
+static const int whitelist_HASH = HashingUtils::HashString("whitelist");
+static const int all_HASH = HashingUtils::HashString("all");
+static const int allExcept_HASH = HashingUtils::HashString("allExcept");
 
-        static const int none_HASH = HashingUtils::HashString("none");
-        static const int whitelist_HASH = HashingUtils::HashString("whitelist");
-        static const int all_HASH = HashingUtils::HashString("all");
-        static const int allExcept_HASH = HashingUtils::HashString("allExcept");
+OriginRequestPolicyQueryStringBehavior GetOriginRequestPolicyQueryStringBehaviorForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == none_HASH) {
+    return OriginRequestPolicyQueryStringBehavior::none;
+  } else if (hashCode == whitelist_HASH) {
+    return OriginRequestPolicyQueryStringBehavior::whitelist;
+  } else if (hashCode == all_HASH) {
+    return OriginRequestPolicyQueryStringBehavior::all;
+  } else if (hashCode == allExcept_HASH) {
+    return OriginRequestPolicyQueryStringBehavior::allExcept;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<OriginRequestPolicyQueryStringBehavior>(hashCode);
+  }
 
+  return OriginRequestPolicyQueryStringBehavior::NOT_SET;
+}
 
-        OriginRequestPolicyQueryStringBehavior GetOriginRequestPolicyQueryStringBehaviorForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == none_HASH)
-          {
-            return OriginRequestPolicyQueryStringBehavior::none;
-          }
-          else if (hashCode == whitelist_HASH)
-          {
-            return OriginRequestPolicyQueryStringBehavior::whitelist;
-          }
-          else if (hashCode == all_HASH)
-          {
-            return OriginRequestPolicyQueryStringBehavior::all;
-          }
-          else if (hashCode == allExcept_HASH)
-          {
-            return OriginRequestPolicyQueryStringBehavior::allExcept;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<OriginRequestPolicyQueryStringBehavior>(hashCode);
-          }
+Aws::String GetNameForOriginRequestPolicyQueryStringBehavior(OriginRequestPolicyQueryStringBehavior enumValue) {
+  switch (enumValue) {
+    case OriginRequestPolicyQueryStringBehavior::NOT_SET:
+      return {};
+    case OriginRequestPolicyQueryStringBehavior::none:
+      return "none";
+    case OriginRequestPolicyQueryStringBehavior::whitelist:
+      return "whitelist";
+    case OriginRequestPolicyQueryStringBehavior::all:
+      return "all";
+    case OriginRequestPolicyQueryStringBehavior::allExcept:
+      return "allExcept";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return OriginRequestPolicyQueryStringBehavior::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForOriginRequestPolicyQueryStringBehavior(OriginRequestPolicyQueryStringBehavior enumValue)
-        {
-          switch(enumValue)
-          {
-          case OriginRequestPolicyQueryStringBehavior::NOT_SET:
-            return {};
-          case OriginRequestPolicyQueryStringBehavior::none:
-            return "none";
-          case OriginRequestPolicyQueryStringBehavior::whitelist:
-            return "whitelist";
-          case OriginRequestPolicyQueryStringBehavior::all:
-            return "all";
-          case OriginRequestPolicyQueryStringBehavior::allExcept:
-            return "allExcept";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace OriginRequestPolicyQueryStringBehaviorMapper
-    } // namespace Model
-  } // namespace CloudFront
-} // namespace Aws
+}  // namespace OriginRequestPolicyQueryStringBehaviorMapper
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

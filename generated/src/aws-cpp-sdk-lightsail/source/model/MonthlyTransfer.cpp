@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lightsail/model/MonthlyTransfer.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lightsail/model/MonthlyTransfer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
+namespace Aws {
+namespace Lightsail {
+namespace Model {
 
-MonthlyTransfer::MonthlyTransfer(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MonthlyTransfer::MonthlyTransfer(JsonView jsonValue) { *this = jsonValue; }
 
-MonthlyTransfer& MonthlyTransfer::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("gbPerMonthAllocated"))
-  {
+MonthlyTransfer& MonthlyTransfer::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("gbPerMonthAllocated")) {
     m_gbPerMonthAllocated = jsonValue.GetInteger("gbPerMonthAllocated");
     m_gbPerMonthAllocatedHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MonthlyTransfer::Jsonize() const
-{
+JsonValue MonthlyTransfer::Jsonize() const {
   JsonValue payload;
 
-  if(m_gbPerMonthAllocatedHasBeenSet)
-  {
-   payload.WithInteger("gbPerMonthAllocated", m_gbPerMonthAllocated);
-
+  if (m_gbPerMonthAllocatedHasBeenSet) {
+    payload.WithInteger("gbPerMonthAllocated", m_gbPerMonthAllocated);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

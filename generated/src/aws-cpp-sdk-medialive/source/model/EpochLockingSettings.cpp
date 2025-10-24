@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/EpochLockingSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/EpochLockingSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-EpochLockingSettings::EpochLockingSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EpochLockingSettings::EpochLockingSettings(JsonView jsonValue) { *this = jsonValue; }
 
-EpochLockingSettings& EpochLockingSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("customEpoch"))
-  {
+EpochLockingSettings& EpochLockingSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("customEpoch")) {
     m_customEpoch = jsonValue.GetString("customEpoch");
     m_customEpochHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("jamSyncTime"))
-  {
+  if (jsonValue.ValueExists("jamSyncTime")) {
     m_jamSyncTime = jsonValue.GetString("jamSyncTime");
     m_jamSyncTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EpochLockingSettings::Jsonize() const
-{
+JsonValue EpochLockingSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_customEpochHasBeenSet)
-  {
-   payload.WithString("customEpoch", m_customEpoch);
-
+  if (m_customEpochHasBeenSet) {
+    payload.WithString("customEpoch", m_customEpoch);
   }
 
-  if(m_jamSyncTimeHasBeenSet)
-  {
-   payload.WithString("jamSyncTime", m_jamSyncTime);
-
+  if (m_jamSyncTimeHasBeenSet) {
+    payload.WithString("jamSyncTime", m_jamSyncTime);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

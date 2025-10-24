@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/imagebuilder/model/SystemsManagerAgent.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/imagebuilder/model/SystemsManagerAgent.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace imagebuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace imagebuilder {
+namespace Model {
 
-SystemsManagerAgent::SystemsManagerAgent(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SystemsManagerAgent::SystemsManagerAgent(JsonView jsonValue) { *this = jsonValue; }
 
-SystemsManagerAgent& SystemsManagerAgent::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("uninstallAfterBuild"))
-  {
+SystemsManagerAgent& SystemsManagerAgent::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("uninstallAfterBuild")) {
     m_uninstallAfterBuild = jsonValue.GetBool("uninstallAfterBuild");
     m_uninstallAfterBuildHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SystemsManagerAgent::Jsonize() const
-{
+JsonValue SystemsManagerAgent::Jsonize() const {
   JsonValue payload;
 
-  if(m_uninstallAfterBuildHasBeenSet)
-  {
-   payload.WithBool("uninstallAfterBuild", m_uninstallAfterBuild);
-
+  if (m_uninstallAfterBuildHasBeenSet) {
+    payload.WithBool("uninstallAfterBuild", m_uninstallAfterBuild);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace imagebuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

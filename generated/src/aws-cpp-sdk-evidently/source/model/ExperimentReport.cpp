@@ -3,81 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/evidently/model/ExperimentReport.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/evidently/model/ExperimentReport.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudWatchEvidently
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudWatchEvidently {
+namespace Model {
 
-ExperimentReport::ExperimentReport(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExperimentReport::ExperimentReport(JsonView jsonValue) { *this = jsonValue; }
 
-ExperimentReport& ExperimentReport::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("content"))
-  {
+ExperimentReport& ExperimentReport::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("content")) {
     m_content = jsonValue.GetString("content");
     m_contentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("metricName"))
-  {
+  if (jsonValue.ValueExists("metricName")) {
     m_metricName = jsonValue.GetString("metricName");
     m_metricNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("reportName"))
-  {
+  if (jsonValue.ValueExists("reportName")) {
     m_reportName = ExperimentReportNameMapper::GetExperimentReportNameForName(jsonValue.GetString("reportName"));
     m_reportNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("treatmentName"))
-  {
+  if (jsonValue.ValueExists("treatmentName")) {
     m_treatmentName = jsonValue.GetString("treatmentName");
     m_treatmentNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExperimentReport::Jsonize() const
-{
+JsonValue ExperimentReport::Jsonize() const {
   JsonValue payload;
 
-  if(m_contentHasBeenSet)
-  {
-   payload.WithString("content", m_content);
-
+  if (m_contentHasBeenSet) {
+    payload.WithString("content", m_content);
   }
 
-  if(m_metricNameHasBeenSet)
-  {
-   payload.WithString("metricName", m_metricName);
-
+  if (m_metricNameHasBeenSet) {
+    payload.WithString("metricName", m_metricName);
   }
 
-  if(m_reportNameHasBeenSet)
-  {
-   payload.WithString("reportName", ExperimentReportNameMapper::GetNameForExperimentReportName(m_reportName));
+  if (m_reportNameHasBeenSet) {
+    payload.WithString("reportName", ExperimentReportNameMapper::GetNameForExperimentReportName(m_reportName));
   }
 
-  if(m_treatmentNameHasBeenSet)
-  {
-   payload.WithString("treatmentName", m_treatmentName);
-
+  if (m_treatmentNameHasBeenSet) {
+    payload.WithString("treatmentName", m_treatmentName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudWatchEvidently
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudWatchEvidently
+}  // namespace Aws

@@ -3,34 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/DescribeClusterVersionsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/DescribeClusterVersionsRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeClusterVersionsRequest::SerializePayload() const
-{
+Aws::String DescribeClusterVersionsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeClusterVersions&";
-  if(m_clusterVersionHasBeenSet)
-  {
+  if (m_clusterVersionHasBeenSet) {
     ss << "ClusterVersion=" << StringUtils::URLEncode(m_clusterVersion.c_str()) << "&";
   }
 
-  if(m_clusterParameterGroupFamilyHasBeenSet)
-  {
+  if (m_clusterParameterGroupFamilyHasBeenSet) {
     ss << "ClusterParameterGroupFamily=" << StringUtils::URLEncode(m_clusterParameterGroupFamily.c_str()) << "&";
   }
 
-  if(m_maxRecordsHasBeenSet)
-  {
+  if (m_maxRecordsHasBeenSet) {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
 
-  if(m_markerHasBeenSet)
-  {
+  if (m_markerHasBeenSet) {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
 
@@ -38,8 +33,4 @@ Aws::String DescribeClusterVersionsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeClusterVersionsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeClusterVersionsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

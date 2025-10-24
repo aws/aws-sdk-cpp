@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint/model/JourneyPushMessage.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint/model/JourneyPushMessage.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Pinpoint
-{
-namespace Model
-{
+namespace Aws {
+namespace Pinpoint {
+namespace Model {
 
-JourneyPushMessage::JourneyPushMessage(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+JourneyPushMessage::JourneyPushMessage(JsonView jsonValue) { *this = jsonValue; }
 
-JourneyPushMessage& JourneyPushMessage::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TimeToLive"))
-  {
+JourneyPushMessage& JourneyPushMessage::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TimeToLive")) {
     m_timeToLive = jsonValue.GetString("TimeToLive");
     m_timeToLiveHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue JourneyPushMessage::Jsonize() const
-{
+JsonValue JourneyPushMessage::Jsonize() const {
   JsonValue payload;
 
-  if(m_timeToLiveHasBeenSet)
-  {
-   payload.WithString("TimeToLive", m_timeToLive);
-
+  if (m_timeToLiveHasBeenSet) {
+    payload.WithString("TimeToLive", m_timeToLive);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

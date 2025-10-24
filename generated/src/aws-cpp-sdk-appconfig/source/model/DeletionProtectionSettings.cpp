@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppConfig
-{
-namespace Model
-{
+namespace Aws {
+namespace AppConfig {
+namespace Model {
 
-DeletionProtectionSettings::DeletionProtectionSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DeletionProtectionSettings::DeletionProtectionSettings(JsonView jsonValue) { *this = jsonValue; }
 
-DeletionProtectionSettings& DeletionProtectionSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Enabled"))
-  {
+DeletionProtectionSettings& DeletionProtectionSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Enabled")) {
     m_enabled = jsonValue.GetBool("Enabled");
     m_enabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProtectionPeriodInMinutes"))
-  {
+  if (jsonValue.ValueExists("ProtectionPeriodInMinutes")) {
     m_protectionPeriodInMinutes = jsonValue.GetInteger("ProtectionPeriodInMinutes");
     m_protectionPeriodInMinutesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DeletionProtectionSettings::Jsonize() const
-{
+JsonValue DeletionProtectionSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_enabledHasBeenSet)
-  {
-   payload.WithBool("Enabled", m_enabled);
-
+  if (m_enabledHasBeenSet) {
+    payload.WithBool("Enabled", m_enabled);
   }
 
-  if(m_protectionPeriodInMinutesHasBeenSet)
-  {
-   payload.WithInteger("ProtectionPeriodInMinutes", m_protectionPeriodInMinutes);
-
+  if (m_protectionPeriodInMinutesHasBeenSet) {
+    payload.WithInteger("ProtectionPeriodInMinutes", m_protectionPeriodInMinutes);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppConfig
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppConfig
+}  // namespace Aws

@@ -7,33 +7,28 @@
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace AutoScaling
-{
-namespace Model
-{
-  enum class InstanceRefreshStatus
-  {
-    NOT_SET,
-    Pending,
-    InProgress,
-    Successful,
-    Failed,
-    Cancelling,
-    Cancelled,
-    RollbackInProgress,
-    RollbackFailed,
-    RollbackSuccessful,
-    Baking
-  };
+namespace Aws {
+namespace AutoScaling {
+namespace Model {
+enum class InstanceRefreshStatus {
+  NOT_SET,
+  Pending,
+  InProgress,
+  Successful,
+  Failed,
+  Cancelling,
+  Cancelled,
+  RollbackInProgress,
+  RollbackFailed,
+  RollbackSuccessful,
+  Baking
+};
 
-namespace InstanceRefreshStatusMapper
-{
+namespace InstanceRefreshStatusMapper {
 AWS_AUTOSCALING_API InstanceRefreshStatus GetInstanceRefreshStatusForName(const Aws::String& name);
 
 AWS_AUTOSCALING_API Aws::String GetNameForInstanceRefreshStatus(InstanceRefreshStatus value);
-} // namespace InstanceRefreshStatusMapper
-} // namespace Model
-} // namespace AutoScaling
-} // namespace Aws
+}  // namespace InstanceRefreshStatusMapper
+}  // namespace Model
+}  // namespace AutoScaling
+}  // namespace Aws

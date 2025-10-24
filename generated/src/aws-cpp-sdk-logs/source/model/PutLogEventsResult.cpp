@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/logs/model/PutLogEventsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/logs/model/PutLogEventsResult.h>
 
 #include <utility>
 
@@ -17,38 +17,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutLogEventsResult::PutLogEventsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+PutLogEventsResult::PutLogEventsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-PutLogEventsResult& PutLogEventsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+PutLogEventsResult& PutLogEventsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextSequenceToken"))
-  {
+  if (jsonValue.ValueExists("nextSequenceToken")) {
     m_nextSequenceToken = jsonValue.GetString("nextSequenceToken");
     m_nextSequenceTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("rejectedLogEventsInfo"))
-  {
+  if (jsonValue.ValueExists("rejectedLogEventsInfo")) {
     m_rejectedLogEventsInfo = jsonValue.GetObject("rejectedLogEventsInfo");
     m_rejectedLogEventsInfoHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("rejectedEntityInfo"))
-  {
+  if (jsonValue.ValueExists("rejectedEntityInfo")) {
     m_rejectedEntityInfo = jsonValue.GetObject("rejectedEntityInfo");
     m_rejectedEntityInfoHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

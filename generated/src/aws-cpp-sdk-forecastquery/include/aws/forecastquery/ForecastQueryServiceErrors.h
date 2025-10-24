@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/forecastquery/ForecastQueryService_EXPORTS.h>
 
-namespace Aws
-{
-namespace ForecastQueryService
-{
-enum class ForecastQueryServiceErrors
-{
-  //From Core//
+namespace Aws {
+namespace ForecastQueryService {
+enum class ForecastQueryServiceErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class ForecastQueryServiceErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,29 +44,31 @@ enum class ForecastQueryServiceErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INVALID_INPUT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INVALID_INPUT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_NEXT_TOKEN,
   LIMIT_EXCEEDED,
   RESOURCE_IN_USE
 };
 
-class AWS_FORECASTQUERYSERVICE_API ForecastQueryServiceError : public Aws::Client::AWSError<ForecastQueryServiceErrors>
-{
-public:
+class AWS_FORECASTQUERYSERVICE_API ForecastQueryServiceError : public Aws::Client::AWSError<ForecastQueryServiceErrors> {
+ public:
   ForecastQueryServiceError() {}
-  ForecastQueryServiceError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ForecastQueryServiceErrors>(rhs) {}
-  ForecastQueryServiceError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ForecastQueryServiceErrors>(rhs) {}
-  ForecastQueryServiceError(const Aws::Client::AWSError<ForecastQueryServiceErrors>& rhs) : Aws::Client::AWSError<ForecastQueryServiceErrors>(rhs) {}
-  ForecastQueryServiceError(Aws::Client::AWSError<ForecastQueryServiceErrors>&& rhs) : Aws::Client::AWSError<ForecastQueryServiceErrors>(rhs) {}
+  ForecastQueryServiceError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs)
+      : Aws::Client::AWSError<ForecastQueryServiceErrors>(rhs) {}
+  ForecastQueryServiceError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs)
+      : Aws::Client::AWSError<ForecastQueryServiceErrors>(rhs) {}
+  ForecastQueryServiceError(const Aws::Client::AWSError<ForecastQueryServiceErrors>& rhs)
+      : Aws::Client::AWSError<ForecastQueryServiceErrors>(rhs) {}
+  ForecastQueryServiceError(Aws::Client::AWSError<ForecastQueryServiceErrors>&& rhs)
+      : Aws::Client::AWSError<ForecastQueryServiceErrors>(rhs) {}
 
   template <typename T>
   T GetModeledError();
 };
 
-namespace ForecastQueryServiceErrorMapper
-{
-  AWS_FORECASTQUERYSERVICE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace ForecastQueryServiceErrorMapper {
+AWS_FORECASTQUERYSERVICE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace ForecastQueryService
-} // namespace Aws
+}  // namespace ForecastQueryService
+}  // namespace Aws

@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApplicationInsights
-{
-namespace Model
-{
+namespace Aws {
+namespace ApplicationInsights {
+namespace Model {
 
-RelatedObservations::RelatedObservations(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RelatedObservations::RelatedObservations(JsonView jsonValue) { *this = jsonValue; }
 
-RelatedObservations& RelatedObservations::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ObservationList"))
-  {
+RelatedObservations& RelatedObservations::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ObservationList")) {
     Aws::Utils::Array<JsonView> observationListJsonList = jsonValue.GetArray("ObservationList");
-    for(unsigned observationListIndex = 0; observationListIndex < observationListJsonList.GetLength(); ++observationListIndex)
-    {
+    for (unsigned observationListIndex = 0; observationListIndex < observationListJsonList.GetLength(); ++observationListIndex) {
       m_observationList.push_back(observationListJsonList[observationListIndex].AsObject());
     }
     m_observationListHasBeenSet = true;
@@ -37,24 +28,20 @@ RelatedObservations& RelatedObservations::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue RelatedObservations::Jsonize() const
-{
+JsonValue RelatedObservations::Jsonize() const {
   JsonValue payload;
 
-  if(m_observationListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> observationListJsonList(m_observationList.size());
-   for(unsigned observationListIndex = 0; observationListIndex < observationListJsonList.GetLength(); ++observationListIndex)
-   {
-     observationListJsonList[observationListIndex].AsObject(m_observationList[observationListIndex].Jsonize());
-   }
-   payload.WithArray("ObservationList", std::move(observationListJsonList));
-
+  if (m_observationListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> observationListJsonList(m_observationList.size());
+    for (unsigned observationListIndex = 0; observationListIndex < observationListJsonList.GetLength(); ++observationListIndex) {
+      observationListJsonList[observationListIndex].AsObject(m_observationList[observationListIndex].Jsonize());
+    }
+    payload.WithArray("ObservationList", std::move(observationListJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApplicationInsights
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApplicationInsights
+}  // namespace Aws

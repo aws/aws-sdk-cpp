@@ -3,23 +3,18 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticbeanstalk/model/DescribeAccountAttributesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticbeanstalk/model/DescribeAccountAttributesRequest.h>
 
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeAccountAttributesRequest::SerializePayload() const
-{
+Aws::String DescribeAccountAttributesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeAccountAttributes&";
   ss << "Version=2010-12-01";
   return ss.str();
 }
 
-
-void  DescribeAccountAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeAccountAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

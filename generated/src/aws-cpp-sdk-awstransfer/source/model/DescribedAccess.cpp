@@ -11,115 +11,87 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Transfer
-{
-namespace Model
-{
+namespace Aws {
+namespace Transfer {
+namespace Model {
 
-DescribedAccess::DescribedAccess(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DescribedAccess::DescribedAccess(JsonView jsonValue) { *this = jsonValue; }
 
-DescribedAccess& DescribedAccess::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("HomeDirectory"))
-  {
+DescribedAccess& DescribedAccess::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("HomeDirectory")) {
     m_homeDirectory = jsonValue.GetString("HomeDirectory");
     m_homeDirectoryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HomeDirectoryMappings"))
-  {
+  if (jsonValue.ValueExists("HomeDirectoryMappings")) {
     Aws::Utils::Array<JsonView> homeDirectoryMappingsJsonList = jsonValue.GetArray("HomeDirectoryMappings");
-    for(unsigned homeDirectoryMappingsIndex = 0; homeDirectoryMappingsIndex < homeDirectoryMappingsJsonList.GetLength(); ++homeDirectoryMappingsIndex)
-    {
+    for (unsigned homeDirectoryMappingsIndex = 0; homeDirectoryMappingsIndex < homeDirectoryMappingsJsonList.GetLength();
+         ++homeDirectoryMappingsIndex) {
       m_homeDirectoryMappings.push_back(homeDirectoryMappingsJsonList[homeDirectoryMappingsIndex].AsObject());
     }
     m_homeDirectoryMappingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HomeDirectoryType"))
-  {
+  if (jsonValue.ValueExists("HomeDirectoryType")) {
     m_homeDirectoryType = HomeDirectoryTypeMapper::GetHomeDirectoryTypeForName(jsonValue.GetString("HomeDirectoryType"));
     m_homeDirectoryTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Policy"))
-  {
+  if (jsonValue.ValueExists("Policy")) {
     m_policy = jsonValue.GetString("Policy");
     m_policyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PosixProfile"))
-  {
+  if (jsonValue.ValueExists("PosixProfile")) {
     m_posixProfile = jsonValue.GetObject("PosixProfile");
     m_posixProfileHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Role"))
-  {
+  if (jsonValue.ValueExists("Role")) {
     m_role = jsonValue.GetString("Role");
     m_roleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExternalId"))
-  {
+  if (jsonValue.ValueExists("ExternalId")) {
     m_externalId = jsonValue.GetString("ExternalId");
     m_externalIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DescribedAccess::Jsonize() const
-{
+JsonValue DescribedAccess::Jsonize() const {
   JsonValue payload;
 
-  if(m_homeDirectoryHasBeenSet)
-  {
-   payload.WithString("HomeDirectory", m_homeDirectory);
-
+  if (m_homeDirectoryHasBeenSet) {
+    payload.WithString("HomeDirectory", m_homeDirectory);
   }
 
-  if(m_homeDirectoryMappingsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> homeDirectoryMappingsJsonList(m_homeDirectoryMappings.size());
-   for(unsigned homeDirectoryMappingsIndex = 0; homeDirectoryMappingsIndex < homeDirectoryMappingsJsonList.GetLength(); ++homeDirectoryMappingsIndex)
-   {
-     homeDirectoryMappingsJsonList[homeDirectoryMappingsIndex].AsObject(m_homeDirectoryMappings[homeDirectoryMappingsIndex].Jsonize());
-   }
-   payload.WithArray("HomeDirectoryMappings", std::move(homeDirectoryMappingsJsonList));
-
+  if (m_homeDirectoryMappingsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> homeDirectoryMappingsJsonList(m_homeDirectoryMappings.size());
+    for (unsigned homeDirectoryMappingsIndex = 0; homeDirectoryMappingsIndex < homeDirectoryMappingsJsonList.GetLength();
+         ++homeDirectoryMappingsIndex) {
+      homeDirectoryMappingsJsonList[homeDirectoryMappingsIndex].AsObject(m_homeDirectoryMappings[homeDirectoryMappingsIndex].Jsonize());
+    }
+    payload.WithArray("HomeDirectoryMappings", std::move(homeDirectoryMappingsJsonList));
   }
 
-  if(m_homeDirectoryTypeHasBeenSet)
-  {
-   payload.WithString("HomeDirectoryType", HomeDirectoryTypeMapper::GetNameForHomeDirectoryType(m_homeDirectoryType));
+  if (m_homeDirectoryTypeHasBeenSet) {
+    payload.WithString("HomeDirectoryType", HomeDirectoryTypeMapper::GetNameForHomeDirectoryType(m_homeDirectoryType));
   }
 
-  if(m_policyHasBeenSet)
-  {
-   payload.WithString("Policy", m_policy);
-
+  if (m_policyHasBeenSet) {
+    payload.WithString("Policy", m_policy);
   }
 
-  if(m_posixProfileHasBeenSet)
-  {
-   payload.WithObject("PosixProfile", m_posixProfile.Jsonize());
-
+  if (m_posixProfileHasBeenSet) {
+    payload.WithObject("PosixProfile", m_posixProfile.Jsonize());
   }
 
-  if(m_roleHasBeenSet)
-  {
-   payload.WithString("Role", m_role);
-
+  if (m_roleHasBeenSet) {
+    payload.WithString("Role", m_role);
   }
 
-  if(m_externalIdHasBeenSet)
-  {
-   payload.WithString("ExternalId", m_externalId);
-
+  if (m_externalIdHasBeenSet) {
+    payload.WithString("ExternalId", m_externalId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Transfer
-} // namespace Aws
+}  // namespace Model
+}  // namespace Transfer
+}  // namespace Aws

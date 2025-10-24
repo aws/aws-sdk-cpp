@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::DirectConnect;
 
-AWSError<CoreErrors> DirectConnectErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> DirectConnectErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = DirectConnectErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

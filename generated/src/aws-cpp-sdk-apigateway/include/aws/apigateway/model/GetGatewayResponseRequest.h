@@ -4,69 +4,76 @@
  */
 
 #pragma once
-#include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/model/GatewayResponseType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace APIGateway
-{
-namespace Model
-{
+namespace Aws {
+namespace APIGateway {
+namespace Model {
 
+/**
+ * <p>Gets a GatewayResponse of a specified response type on the given
+ * RestApi.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetGatewayResponseRequest">AWS
+ * API Reference</a></p>
+ */
+class GetGatewayResponseRequest : public APIGatewayRequest {
+ public:
+  AWS_APIGATEWAY_API GetGatewayResponseRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "GetGatewayResponse"; }
+
+  AWS_APIGATEWAY_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
-   * <p>Gets a GatewayResponse of a specified response type on the given
-   * RestApi.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetGatewayResponseRequest">AWS
-   * API Reference</a></p>
+   * <p>The string identifier of the associated RestApi.</p>
    */
-  class GetGatewayResponseRequest : public APIGatewayRequest
-  {
-  public:
-    AWS_APIGATEWAY_API GetGatewayResponseRequest() = default;
+  inline const Aws::String& GetRestApiId() const { return m_restApiId; }
+  inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
+  template <typename RestApiIdT = Aws::String>
+  void SetRestApiId(RestApiIdT&& value) {
+    m_restApiIdHasBeenSet = true;
+    m_restApiId = std::forward<RestApiIdT>(value);
+  }
+  template <typename RestApiIdT = Aws::String>
+  GetGatewayResponseRequest& WithRestApiId(RestApiIdT&& value) {
+    SetRestApiId(std::forward<RestApiIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "GetGatewayResponse"; }
+  ///@{
+  /**
+   * <p>The response type of the associated GatewayResponse.</p>
+   */
+  inline GatewayResponseType GetResponseType() const { return m_responseType; }
+  inline bool ResponseTypeHasBeenSet() const { return m_responseTypeHasBeenSet; }
+  inline void SetResponseType(GatewayResponseType value) {
+    m_responseTypeHasBeenSet = true;
+    m_responseType = value;
+  }
+  inline GetGatewayResponseRequest& WithResponseType(GatewayResponseType value) {
+    SetResponseType(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_restApiId;
+  bool m_restApiIdHasBeenSet = false;
 
-    AWS_APIGATEWAY_API Aws::String SerializePayload() const override;
+  GatewayResponseType m_responseType{GatewayResponseType::NOT_SET};
+  bool m_responseTypeHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
-    inline const Aws::String& GetRestApiId() const { return m_restApiId; }
-    inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
-    template<typename RestApiIdT = Aws::String>
-    void SetRestApiId(RestApiIdT&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::forward<RestApiIdT>(value); }
-    template<typename RestApiIdT = Aws::String>
-    GetGatewayResponseRequest& WithRestApiId(RestApiIdT&& value) { SetRestApiId(std::forward<RestApiIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The response type of the associated GatewayResponse.</p>
-     */
-    inline GatewayResponseType GetResponseType() const { return m_responseType; }
-    inline bool ResponseTypeHasBeenSet() const { return m_responseTypeHasBeenSet; }
-    inline void SetResponseType(GatewayResponseType value) { m_responseTypeHasBeenSet = true; m_responseType = value; }
-    inline GetGatewayResponseRequest& WithResponseType(GatewayResponseType value) { SetResponseType(value); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_restApiId;
-    bool m_restApiIdHasBeenSet = false;
-
-    GatewayResponseType m_responseType{GatewayResponseType::NOT_SET};
-    bool m_responseTypeHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace APIGateway
-} // namespace Aws
+}  // namespace Model
+}  // namespace APIGateway
+}  // namespace Aws

@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dynamodb/DynamoDB_EXPORTS.h>
 
-namespace Aws
-{
-namespace DynamoDB
-{
-namespace Model
-{
-  enum class BackupStatus
-  {
-    NOT_SET,
-    CREATING,
-    DELETED,
-    AVAILABLE
-  };
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
+enum class BackupStatus { NOT_SET, CREATING, DELETED, AVAILABLE };
 
-namespace BackupStatusMapper
-{
+namespace BackupStatusMapper {
 AWS_DYNAMODB_API BackupStatus GetBackupStatusForName(const Aws::String& name);
 
 AWS_DYNAMODB_API Aws::String GetNameForBackupStatus(BackupStatus value);
-} // namespace BackupStatusMapper
-} // namespace Model
-} // namespace DynamoDB
-} // namespace Aws
+}  // namespace BackupStatusMapper
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws

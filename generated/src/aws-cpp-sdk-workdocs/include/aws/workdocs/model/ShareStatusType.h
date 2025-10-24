@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/workdocs/WorkDocs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workdocs/WorkDocs_EXPORTS.h>
 
-namespace Aws
-{
-namespace WorkDocs
-{
-namespace Model
-{
-  enum class ShareStatusType
-  {
-    NOT_SET,
-    SUCCESS,
-    FAILURE
-  };
+namespace Aws {
+namespace WorkDocs {
+namespace Model {
+enum class ShareStatusType { NOT_SET, SUCCESS, FAILURE };
 
-namespace ShareStatusTypeMapper
-{
+namespace ShareStatusTypeMapper {
 AWS_WORKDOCS_API ShareStatusType GetShareStatusTypeForName(const Aws::String& name);
 
 AWS_WORKDOCS_API Aws::String GetNameForShareStatusType(ShareStatusType value);
-} // namespace ShareStatusTypeMapper
-} // namespace Model
-} // namespace WorkDocs
-} // namespace Aws
+}  // namespace ShareStatusTypeMapper
+}  // namespace Model
+}  // namespace WorkDocs
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediatailor/model/UpdateSourceLocationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediatailor/model/UpdateSourceLocationRequest.h>
 
 #include <utility>
 
@@ -12,42 +12,30 @@ using namespace Aws::MediaTailor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateSourceLocationRequest::SerializePayload() const
-{
+Aws::String UpdateSourceLocationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_accessConfigurationHasBeenSet)
-  {
-   payload.WithObject("AccessConfiguration", m_accessConfiguration.Jsonize());
-
+  if (m_accessConfigurationHasBeenSet) {
+    payload.WithObject("AccessConfiguration", m_accessConfiguration.Jsonize());
   }
 
-  if(m_defaultSegmentDeliveryConfigurationHasBeenSet)
-  {
-   payload.WithObject("DefaultSegmentDeliveryConfiguration", m_defaultSegmentDeliveryConfiguration.Jsonize());
-
+  if (m_defaultSegmentDeliveryConfigurationHasBeenSet) {
+    payload.WithObject("DefaultSegmentDeliveryConfiguration", m_defaultSegmentDeliveryConfiguration.Jsonize());
   }
 
-  if(m_httpConfigurationHasBeenSet)
-  {
-   payload.WithObject("HttpConfiguration", m_httpConfiguration.Jsonize());
-
+  if (m_httpConfigurationHasBeenSet) {
+    payload.WithObject("HttpConfiguration", m_httpConfiguration.Jsonize());
   }
 
-  if(m_segmentDeliveryConfigurationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> segmentDeliveryConfigurationsJsonList(m_segmentDeliveryConfigurations.size());
-   for(unsigned segmentDeliveryConfigurationsIndex = 0; segmentDeliveryConfigurationsIndex < segmentDeliveryConfigurationsJsonList.GetLength(); ++segmentDeliveryConfigurationsIndex)
-   {
-     segmentDeliveryConfigurationsJsonList[segmentDeliveryConfigurationsIndex].AsObject(m_segmentDeliveryConfigurations[segmentDeliveryConfigurationsIndex].Jsonize());
-   }
-   payload.WithArray("SegmentDeliveryConfigurations", std::move(segmentDeliveryConfigurationsJsonList));
-
+  if (m_segmentDeliveryConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> segmentDeliveryConfigurationsJsonList(m_segmentDeliveryConfigurations.size());
+    for (unsigned segmentDeliveryConfigurationsIndex = 0;
+         segmentDeliveryConfigurationsIndex < segmentDeliveryConfigurationsJsonList.GetLength(); ++segmentDeliveryConfigurationsIndex) {
+      segmentDeliveryConfigurationsJsonList[segmentDeliveryConfigurationsIndex].AsObject(
+          m_segmentDeliveryConfigurations[segmentDeliveryConfigurationsIndex].Jsonize());
+    }
+    payload.WithArray("SegmentDeliveryConfigurations", std::move(segmentDeliveryConfigurationsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

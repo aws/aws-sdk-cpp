@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/UpdateJobRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iot/model/UpdateJobRequest.h>
 
 #include <utility>
 
@@ -15,60 +15,41 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String UpdateJobRequest::SerializePayload() const
-{
+Aws::String UpdateJobRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_presignedUrlConfigHasBeenSet)
-  {
-   payload.WithObject("presignedUrlConfig", m_presignedUrlConfig.Jsonize());
-
+  if (m_presignedUrlConfigHasBeenSet) {
+    payload.WithObject("presignedUrlConfig", m_presignedUrlConfig.Jsonize());
   }
 
-  if(m_jobExecutionsRolloutConfigHasBeenSet)
-  {
-   payload.WithObject("jobExecutionsRolloutConfig", m_jobExecutionsRolloutConfig.Jsonize());
-
+  if (m_jobExecutionsRolloutConfigHasBeenSet) {
+    payload.WithObject("jobExecutionsRolloutConfig", m_jobExecutionsRolloutConfig.Jsonize());
   }
 
-  if(m_abortConfigHasBeenSet)
-  {
-   payload.WithObject("abortConfig", m_abortConfig.Jsonize());
-
+  if (m_abortConfigHasBeenSet) {
+    payload.WithObject("abortConfig", m_abortConfig.Jsonize());
   }
 
-  if(m_timeoutConfigHasBeenSet)
-  {
-   payload.WithObject("timeoutConfig", m_timeoutConfig.Jsonize());
-
+  if (m_timeoutConfigHasBeenSet) {
+    payload.WithObject("timeoutConfig", m_timeoutConfig.Jsonize());
   }
 
-  if(m_jobExecutionsRetryConfigHasBeenSet)
-  {
-   payload.WithObject("jobExecutionsRetryConfig", m_jobExecutionsRetryConfig.Jsonize());
-
+  if (m_jobExecutionsRetryConfigHasBeenSet) {
+    payload.WithObject("jobExecutionsRetryConfig", m_jobExecutionsRetryConfig.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-void UpdateJobRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_namespaceIdHasBeenSet)
-    {
-      ss << m_namespaceId;
-      uri.AddQueryStringParameter("namespaceId", ss.str());
-      ss.str("");
-    }
-
+void UpdateJobRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_namespaceIdHasBeenSet) {
+    ss << m_namespaceId;
+    uri.AddQueryStringParameter("namespaceId", ss.str());
+    ss.str("");
+  }
 }
-
-
-

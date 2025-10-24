@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/detective/model/DisassociateMembershipRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/detective/model/DisassociateMembershipRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::Detective::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DisassociateMembershipRequest::SerializePayload() const
-{
+Aws::String DisassociateMembershipRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_graphArnHasBeenSet)
-  {
-   payload.WithString("GraphArn", m_graphArn);
-
+  if (m_graphArnHasBeenSet) {
+    payload.WithString("GraphArn", m_graphArn);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

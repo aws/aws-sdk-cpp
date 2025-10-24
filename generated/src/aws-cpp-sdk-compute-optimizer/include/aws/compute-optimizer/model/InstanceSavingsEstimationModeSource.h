@@ -7,26 +7,16 @@
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
-  enum class InstanceSavingsEstimationModeSource
-  {
-    NOT_SET,
-    PublicPricing,
-    CostExplorerRightsizing,
-    CostOptimizationHub
-  };
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
+enum class InstanceSavingsEstimationModeSource { NOT_SET, PublicPricing, CostExplorerRightsizing, CostOptimizationHub };
 
-namespace InstanceSavingsEstimationModeSourceMapper
-{
+namespace InstanceSavingsEstimationModeSourceMapper {
 AWS_COMPUTEOPTIMIZER_API InstanceSavingsEstimationModeSource GetInstanceSavingsEstimationModeSourceForName(const Aws::String& name);
 
 AWS_COMPUTEOPTIMIZER_API Aws::String GetNameForInstanceSavingsEstimationModeSource(InstanceSavingsEstimationModeSource value);
-} // namespace InstanceSavingsEstimationModeSourceMapper
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace InstanceSavingsEstimationModeSourceMapper
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

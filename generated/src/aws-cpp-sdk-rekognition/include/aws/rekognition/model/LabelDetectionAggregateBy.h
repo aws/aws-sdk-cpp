@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rekognition/Rekognition_EXPORTS.h>
 
-namespace Aws
-{
-namespace Rekognition
-{
-namespace Model
-{
-  enum class LabelDetectionAggregateBy
-  {
-    NOT_SET,
-    TIMESTAMPS,
-    SEGMENTS
-  };
+namespace Aws {
+namespace Rekognition {
+namespace Model {
+enum class LabelDetectionAggregateBy { NOT_SET, TIMESTAMPS, SEGMENTS };
 
-namespace LabelDetectionAggregateByMapper
-{
+namespace LabelDetectionAggregateByMapper {
 AWS_REKOGNITION_API LabelDetectionAggregateBy GetLabelDetectionAggregateByForName(const Aws::String& name);
 
 AWS_REKOGNITION_API Aws::String GetNameForLabelDetectionAggregateBy(LabelDetectionAggregateBy value);
-} // namespace LabelDetectionAggregateByMapper
-} // namespace Model
-} // namespace Rekognition
-} // namespace Aws
+}  // namespace LabelDetectionAggregateByMapper
+}  // namespace Model
+}  // namespace Rekognition
+}  // namespace Aws

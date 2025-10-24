@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kendra/model/ConfluenceSpaceToIndexFieldMapping.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kendra/model/ConfluenceSpaceToIndexFieldMapping.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace kendra
-{
-namespace Model
-{
+namespace Aws {
+namespace kendra {
+namespace Model {
 
-ConfluenceSpaceToIndexFieldMapping::ConfluenceSpaceToIndexFieldMapping(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConfluenceSpaceToIndexFieldMapping::ConfluenceSpaceToIndexFieldMapping(JsonView jsonValue) { *this = jsonValue; }
 
-ConfluenceSpaceToIndexFieldMapping& ConfluenceSpaceToIndexFieldMapping::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DataSourceFieldName"))
-  {
+ConfluenceSpaceToIndexFieldMapping& ConfluenceSpaceToIndexFieldMapping::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DataSourceFieldName")) {
     m_dataSourceFieldName = ConfluenceSpaceFieldNameMapper::GetConfluenceSpaceFieldNameForName(jsonValue.GetString("DataSourceFieldName"));
     m_dataSourceFieldNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DateFieldFormat"))
-  {
+  if (jsonValue.ValueExists("DateFieldFormat")) {
     m_dateFieldFormat = jsonValue.GetString("DateFieldFormat");
     m_dateFieldFormatHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IndexFieldName"))
-  {
+  if (jsonValue.ValueExists("IndexFieldName")) {
     m_indexFieldName = jsonValue.GetString("IndexFieldName");
     m_indexFieldNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ConfluenceSpaceToIndexFieldMapping::Jsonize() const
-{
+JsonValue ConfluenceSpaceToIndexFieldMapping::Jsonize() const {
   JsonValue payload;
 
-  if(m_dataSourceFieldNameHasBeenSet)
-  {
-   payload.WithString("DataSourceFieldName", ConfluenceSpaceFieldNameMapper::GetNameForConfluenceSpaceFieldName(m_dataSourceFieldName));
+  if (m_dataSourceFieldNameHasBeenSet) {
+    payload.WithString("DataSourceFieldName", ConfluenceSpaceFieldNameMapper::GetNameForConfluenceSpaceFieldName(m_dataSourceFieldName));
   }
 
-  if(m_dateFieldFormatHasBeenSet)
-  {
-   payload.WithString("DateFieldFormat", m_dateFieldFormat);
-
+  if (m_dateFieldFormatHasBeenSet) {
+    payload.WithString("DateFieldFormat", m_dateFieldFormat);
   }
 
-  if(m_indexFieldNameHasBeenSet)
-  {
-   payload.WithString("IndexFieldName", m_indexFieldName);
-
+  if (m_indexFieldNameHasBeenSet) {
+    payload.WithString("IndexFieldName", m_indexFieldName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace kendra
-} // namespace Aws
+}  // namespace Model
+}  // namespace kendra
+}  // namespace Aws

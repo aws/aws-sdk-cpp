@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class WordCloudWordCasing
-  {
-    NOT_SET,
-    LOWER_CASE,
-    EXISTING_CASE
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class WordCloudWordCasing { NOT_SET, LOWER_CASE, EXISTING_CASE };
 
-namespace WordCloudWordCasingMapper
-{
+namespace WordCloudWordCasingMapper {
 AWS_QUICKSIGHT_API WordCloudWordCasing GetWordCloudWordCasingForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForWordCloudWordCasing(WordCloudWordCasing value);
-} // namespace WordCloudWordCasingMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace WordCloudWordCasingMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

@@ -3,47 +3,39 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/CreateInstanceEventWindowRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/CreateInstanceEventWindowRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateInstanceEventWindowRequest::SerializePayload() const
-{
+Aws::String CreateInstanceEventWindowRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateInstanceEventWindow&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_nameHasBeenSet)
-  {
+  if (m_nameHasBeenSet) {
     ss << "Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
 
-  if(m_timeRangesHasBeenSet)
-  {
+  if (m_timeRangesHasBeenSet) {
     unsigned timeRangesCount = 1;
-    for(auto& item : m_timeRanges)
-    {
+    for (auto& item : m_timeRanges) {
       item.OutputToStream(ss, "TimeRange.", timeRangesCount, "");
       timeRangesCount++;
     }
   }
 
-  if(m_cronExpressionHasBeenSet)
-  {
+  if (m_cronExpressionHasBeenSet) {
     ss << "CronExpression=" << StringUtils::URLEncode(m_cronExpression.c_str()) << "&";
   }
 
-  if(m_tagSpecificationsHasBeenSet)
-  {
+  if (m_tagSpecificationsHasBeenSet) {
     unsigned tagSpecificationsCount = 1;
-    for(auto& item : m_tagSpecifications)
-    {
+    for (auto& item : m_tagSpecifications) {
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
@@ -53,8 +45,4 @@ Aws::String CreateInstanceEventWindowRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CreateInstanceEventWindowRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateInstanceEventWindowRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::Polly;
 
-AWSError<CoreErrors> PollyErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> PollyErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = PollyErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeVpcEndpointConnectionNotificationsResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/DescribeVpcEndpointConnectionNotificationsResponse.h>
 
 #include <utility>
 
@@ -17,30 +17,26 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeVpcEndpointConnectionNotificationsResponse::DescribeVpcEndpointConnectionNotificationsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeVpcEndpointConnectionNotificationsResponse::DescribeVpcEndpointConnectionNotificationsResponse(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-DescribeVpcEndpointConnectionNotificationsResponse& DescribeVpcEndpointConnectionNotificationsResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeVpcEndpointConnectionNotificationsResponse& DescribeVpcEndpointConnectionNotificationsResponse::operator=(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeVpcEndpointConnectionNotificationsResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeVpcEndpointConnectionNotificationsResponse")) {
     resultNode = rootNode.FirstChild("DescribeVpcEndpointConnectionNotificationsResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode connectionNotificationSetNode = resultNode.FirstChild("connectionNotificationSet");
-    if(!connectionNotificationSetNode.IsNull())
-    {
+    if (!connectionNotificationSetNode.IsNull()) {
       XmlNode connectionNotificationSetMember = connectionNotificationSetNode.FirstChild("item");
       m_connectionNotificationSetHasBeenSet = !connectionNotificationSetMember.IsNull();
-      while(!connectionNotificationSetMember.IsNull())
-      {
+      while (!connectionNotificationSetMember.IsNull()) {
         m_connectionNotificationSet.push_back(connectionNotificationSetMember);
         connectionNotificationSetMember = connectionNotificationSetMember.NextNode("item");
       }
@@ -48,8 +44,7 @@ DescribeVpcEndpointConnectionNotificationsResponse& DescribeVpcEndpointConnectio
       m_connectionNotificationSetHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
+    if (!nextTokenNode.IsNull()) {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
       m_nextTokenHasBeenSet = true;
     }
@@ -57,12 +52,12 @@ DescribeVpcEndpointConnectionNotificationsResponse& DescribeVpcEndpointConnectio
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeVpcEndpointConnectionNotificationsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeVpcEndpointConnectionNotificationsResponse",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

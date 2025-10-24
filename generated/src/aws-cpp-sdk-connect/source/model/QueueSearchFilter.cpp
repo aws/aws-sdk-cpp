@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-QueueSearchFilter::QueueSearchFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+QueueSearchFilter::QueueSearchFilter(JsonView jsonValue) { *this = jsonValue; }
 
-QueueSearchFilter& QueueSearchFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TagFilter"))
-  {
+QueueSearchFilter& QueueSearchFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TagFilter")) {
     m_tagFilter = jsonValue.GetObject("TagFilter");
     m_tagFilterHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue QueueSearchFilter::Jsonize() const
-{
+JsonValue QueueSearchFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_tagFilterHasBeenSet)
-  {
-   payload.WithObject("TagFilter", m_tagFilter.Jsonize());
-
+  if (m_tagFilterHasBeenSet) {
+    payload.WithObject("TagFilter", m_tagFilter.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

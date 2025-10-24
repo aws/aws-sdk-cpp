@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConnect
-{
-namespace Model
-{
-  enum class ContentQualityAnalysisState
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace MediaConnect {
+namespace Model {
+enum class ContentQualityAnalysisState { NOT_SET, ENABLED, DISABLED };
 
-namespace ContentQualityAnalysisStateMapper
-{
+namespace ContentQualityAnalysisStateMapper {
 AWS_MEDIACONNECT_API ContentQualityAnalysisState GetContentQualityAnalysisStateForName(const Aws::String& name);
 
 AWS_MEDIACONNECT_API Aws::String GetNameForContentQualityAnalysisState(ContentQualityAnalysisState value);
-} // namespace ContentQualityAnalysisStateMapper
-} // namespace Model
-} // namespace MediaConnect
-} // namespace Aws
+}  // namespace ContentQualityAnalysisStateMapper
+}  // namespace Model
+}  // namespace MediaConnect
+}  // namespace Aws

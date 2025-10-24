@@ -10,28 +10,20 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-Aws::String DetachLoadBalancersRequest::SerializePayload() const
-{
+Aws::String DetachLoadBalancersRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DetachLoadBalancers&";
-  if(m_autoScalingGroupNameHasBeenSet)
-  {
+  if (m_autoScalingGroupNameHasBeenSet) {
     ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
 
-  if(m_loadBalancerNamesHasBeenSet)
-  {
-    if (m_loadBalancerNames.empty())
-    {
+  if (m_loadBalancerNamesHasBeenSet) {
+    if (m_loadBalancerNames.empty()) {
       ss << "LoadBalancerNames=&";
-    }
-    else
-    {
+    } else {
       unsigned loadBalancerNamesCount = 1;
-      for(auto& item : m_loadBalancerNames)
-      {
-        ss << "LoadBalancerNames.member." << loadBalancerNamesCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_loadBalancerNames) {
+        ss << "LoadBalancerNames.member." << loadBalancerNamesCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         loadBalancerNamesCount++;
       }
     }
@@ -41,8 +33,4 @@ Aws::String DetachLoadBalancersRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DetachLoadBalancersRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DetachLoadBalancersRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

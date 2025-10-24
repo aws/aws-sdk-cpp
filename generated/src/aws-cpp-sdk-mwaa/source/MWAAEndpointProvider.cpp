@@ -5,12 +5,8 @@
 
 #include <aws/mwaa/MWAAEndpointProvider.h>
 
-namespace Aws
-{
-namespace MWAA
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace MWAA
-} // namespace Aws
+namespace Aws {
+namespace MWAA {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace MWAA
+}  // namespace Aws

@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/panorama/Panorama_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/panorama/PanoramaEndpointRules.h>
+#include <aws/panorama/Panorama_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace Panorama
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace Panorama {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using PanoramaClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using PanoramaDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_PANORAMA_API PanoramaEndpointProvider : public PanoramaDefaultEpProviderBase
-{
-public:
-    using PanoramaResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_PANORAMA_API PanoramaEndpointProvider : public PanoramaDefaultEpProviderBase {
+ public:
+  using PanoramaResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    PanoramaEndpointProvider()
-      : PanoramaDefaultEpProviderBase(Aws::Panorama::PanoramaEndpointRules::GetRulesBlob(), Aws::Panorama::PanoramaEndpointRules::RulesBlobSize)
-    {}
+  PanoramaEndpointProvider()
+      : PanoramaDefaultEpProviderBase(Aws::Panorama::PanoramaEndpointRules::GetRulesBlob(),
+                                      Aws::Panorama::PanoramaEndpointRules::RulesBlobSize) {}
 
-    ~PanoramaEndpointProvider()
-    {
-    }
+  ~PanoramaEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace Panorama
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace Panorama
+}  // namespace Aws

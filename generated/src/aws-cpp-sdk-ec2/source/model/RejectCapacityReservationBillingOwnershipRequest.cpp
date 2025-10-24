@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/RejectCapacityReservationBillingOwnershipRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/RejectCapacityReservationBillingOwnershipRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String RejectCapacityReservationBillingOwnershipRequest::SerializePayload() const
-{
+Aws::String RejectCapacityReservationBillingOwnershipRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=RejectCapacityReservationBillingOwnership&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_capacityReservationIdHasBeenSet)
-  {
+  if (m_capacityReservationIdHasBeenSet) {
     ss << "CapacityReservationId=" << StringUtils::URLEncode(m_capacityReservationId.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String RejectCapacityReservationBillingOwnershipRequest::SerializePayload()
   return ss.str();
 }
 
-
-void  RejectCapacityReservationBillingOwnershipRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void RejectCapacityReservationBillingOwnershipRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

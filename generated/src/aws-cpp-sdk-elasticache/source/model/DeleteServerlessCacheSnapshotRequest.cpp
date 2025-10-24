@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/DeleteServerlessCacheSnapshotRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticache/model/DeleteServerlessCacheSnapshotRequest.h>
 
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteServerlessCacheSnapshotRequest::SerializePayload() const
-{
+Aws::String DeleteServerlessCacheSnapshotRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteServerlessCacheSnapshot&";
-  if(m_serverlessCacheSnapshotNameHasBeenSet)
-  {
+  if (m_serverlessCacheSnapshotNameHasBeenSet) {
     ss << "ServerlessCacheSnapshotName=" << StringUtils::URLEncode(m_serverlessCacheSnapshotName.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteServerlessCacheSnapshotRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteServerlessCacheSnapshotRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteServerlessCacheSnapshotRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

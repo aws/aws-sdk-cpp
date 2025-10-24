@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lookoutmetrics/model/MetricSetDimensionFilter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lookoutmetrics/model/MetricSetDimensionFilter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LookoutMetrics
-{
-namespace Model
-{
+namespace Aws {
+namespace LookoutMetrics {
+namespace Model {
 
-MetricSetDimensionFilter::MetricSetDimensionFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MetricSetDimensionFilter::MetricSetDimensionFilter(JsonView jsonValue) { *this = jsonValue; }
 
-MetricSetDimensionFilter& MetricSetDimensionFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+MetricSetDimensionFilter& MetricSetDimensionFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FilterList"))
-  {
+  if (jsonValue.ValueExists("FilterList")) {
     Aws::Utils::Array<JsonView> filterListJsonList = jsonValue.GetArray("FilterList");
-    for(unsigned filterListIndex = 0; filterListIndex < filterListJsonList.GetLength(); ++filterListIndex)
-    {
+    for (unsigned filterListIndex = 0; filterListIndex < filterListJsonList.GetLength(); ++filterListIndex) {
       m_filterList.push_back(filterListJsonList[filterListIndex].AsObject());
     }
     m_filterListHasBeenSet = true;
@@ -42,30 +32,24 @@ MetricSetDimensionFilter& MetricSetDimensionFilter::operator =(JsonView jsonValu
   return *this;
 }
 
-JsonValue MetricSetDimensionFilter::Jsonize() const
-{
+JsonValue MetricSetDimensionFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_filterListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> filterListJsonList(m_filterList.size());
-   for(unsigned filterListIndex = 0; filterListIndex < filterListJsonList.GetLength(); ++filterListIndex)
-   {
-     filterListJsonList[filterListIndex].AsObject(m_filterList[filterListIndex].Jsonize());
-   }
-   payload.WithArray("FilterList", std::move(filterListJsonList));
-
+  if (m_filterListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> filterListJsonList(m_filterList.size());
+    for (unsigned filterListIndex = 0; filterListIndex < filterListJsonList.GetLength(); ++filterListIndex) {
+      filterListJsonList[filterListIndex].AsObject(m_filterList[filterListIndex].Jsonize());
+    }
+    payload.WithArray("FilterList", std::move(filterListJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LookoutMetrics
-} // namespace Aws
+}  // namespace Model
+}  // namespace LookoutMetrics
+}  // namespace Aws

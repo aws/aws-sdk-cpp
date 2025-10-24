@@ -11,95 +11,70 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeConnections
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeConnections {
+namespace Model {
 
-Revision::Revision(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Revision::Revision(JsonView jsonValue) { *this = jsonValue; }
 
-Revision& Revision::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Branch"))
-  {
+Revision& Revision::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Branch")) {
     m_branch = jsonValue.GetString("Branch");
     m_branchHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Directory"))
-  {
+  if (jsonValue.ValueExists("Directory")) {
     m_directory = jsonValue.GetString("Directory");
     m_directoryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OwnerId"))
-  {
+  if (jsonValue.ValueExists("OwnerId")) {
     m_ownerId = jsonValue.GetString("OwnerId");
     m_ownerIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RepositoryName"))
-  {
+  if (jsonValue.ValueExists("RepositoryName")) {
     m_repositoryName = jsonValue.GetString("RepositoryName");
     m_repositoryNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProviderType"))
-  {
+  if (jsonValue.ValueExists("ProviderType")) {
     m_providerType = ProviderTypeMapper::GetProviderTypeForName(jsonValue.GetString("ProviderType"));
     m_providerTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Sha"))
-  {
+  if (jsonValue.ValueExists("Sha")) {
     m_sha = jsonValue.GetString("Sha");
     m_shaHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Revision::Jsonize() const
-{
+JsonValue Revision::Jsonize() const {
   JsonValue payload;
 
-  if(m_branchHasBeenSet)
-  {
-   payload.WithString("Branch", m_branch);
-
+  if (m_branchHasBeenSet) {
+    payload.WithString("Branch", m_branch);
   }
 
-  if(m_directoryHasBeenSet)
-  {
-   payload.WithString("Directory", m_directory);
-
+  if (m_directoryHasBeenSet) {
+    payload.WithString("Directory", m_directory);
   }
 
-  if(m_ownerIdHasBeenSet)
-  {
-   payload.WithString("OwnerId", m_ownerId);
-
+  if (m_ownerIdHasBeenSet) {
+    payload.WithString("OwnerId", m_ownerId);
   }
 
-  if(m_repositoryNameHasBeenSet)
-  {
-   payload.WithString("RepositoryName", m_repositoryName);
-
+  if (m_repositoryNameHasBeenSet) {
+    payload.WithString("RepositoryName", m_repositoryName);
   }
 
-  if(m_providerTypeHasBeenSet)
-  {
-   payload.WithString("ProviderType", ProviderTypeMapper::GetNameForProviderType(m_providerType));
+  if (m_providerTypeHasBeenSet) {
+    payload.WithString("ProviderType", ProviderTypeMapper::GetNameForProviderType(m_providerType));
   }
 
-  if(m_shaHasBeenSet)
-  {
-   payload.WithString("Sha", m_sha);
-
+  if (m_shaHasBeenSet) {
+    payload.WithString("Sha", m_sha);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeConnections
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeConnections
+}  // namespace Aws

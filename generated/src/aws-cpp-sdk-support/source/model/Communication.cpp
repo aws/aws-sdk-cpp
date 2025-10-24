@@ -3,53 +3,40 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/support/model/Communication.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/support/model/Communication.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Support
-{
-namespace Model
-{
+namespace Aws {
+namespace Support {
+namespace Model {
 
-Communication::Communication(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Communication::Communication(JsonView jsonValue) { *this = jsonValue; }
 
-Communication& Communication::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("caseId"))
-  {
+Communication& Communication::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("caseId")) {
     m_caseId = jsonValue.GetString("caseId");
     m_caseIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("body"))
-  {
+  if (jsonValue.ValueExists("body")) {
     m_body = jsonValue.GetString("body");
     m_bodyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("submittedBy"))
-  {
+  if (jsonValue.ValueExists("submittedBy")) {
     m_submittedBy = jsonValue.GetString("submittedBy");
     m_submittedByHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("timeCreated"))
-  {
+  if (jsonValue.ValueExists("timeCreated")) {
     m_timeCreated = jsonValue.GetString("timeCreated");
     m_timeCreatedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("attachmentSet"))
-  {
+  if (jsonValue.ValueExists("attachmentSet")) {
     Aws::Utils::Array<JsonView> attachmentSetJsonList = jsonValue.GetArray("attachmentSet");
-    for(unsigned attachmentSetIndex = 0; attachmentSetIndex < attachmentSetJsonList.GetLength(); ++attachmentSetIndex)
-    {
+    for (unsigned attachmentSetIndex = 0; attachmentSetIndex < attachmentSetJsonList.GetLength(); ++attachmentSetIndex) {
       m_attachmentSet.push_back(attachmentSetJsonList[attachmentSetIndex].AsObject());
     }
     m_attachmentSetHasBeenSet = true;
@@ -57,48 +44,36 @@ Communication& Communication::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue Communication::Jsonize() const
-{
+JsonValue Communication::Jsonize() const {
   JsonValue payload;
 
-  if(m_caseIdHasBeenSet)
-  {
-   payload.WithString("caseId", m_caseId);
-
+  if (m_caseIdHasBeenSet) {
+    payload.WithString("caseId", m_caseId);
   }
 
-  if(m_bodyHasBeenSet)
-  {
-   payload.WithString("body", m_body);
-
+  if (m_bodyHasBeenSet) {
+    payload.WithString("body", m_body);
   }
 
-  if(m_submittedByHasBeenSet)
-  {
-   payload.WithString("submittedBy", m_submittedBy);
-
+  if (m_submittedByHasBeenSet) {
+    payload.WithString("submittedBy", m_submittedBy);
   }
 
-  if(m_timeCreatedHasBeenSet)
-  {
-   payload.WithString("timeCreated", m_timeCreated);
-
+  if (m_timeCreatedHasBeenSet) {
+    payload.WithString("timeCreated", m_timeCreated);
   }
 
-  if(m_attachmentSetHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> attachmentSetJsonList(m_attachmentSet.size());
-   for(unsigned attachmentSetIndex = 0; attachmentSetIndex < attachmentSetJsonList.GetLength(); ++attachmentSetIndex)
-   {
-     attachmentSetJsonList[attachmentSetIndex].AsObject(m_attachmentSet[attachmentSetIndex].Jsonize());
-   }
-   payload.WithArray("attachmentSet", std::move(attachmentSetJsonList));
-
+  if (m_attachmentSetHasBeenSet) {
+    Aws::Utils::Array<JsonValue> attachmentSetJsonList(m_attachmentSet.size());
+    for (unsigned attachmentSetIndex = 0; attachmentSetIndex < attachmentSetJsonList.GetLength(); ++attachmentSetIndex) {
+      attachmentSetJsonList[attachmentSetIndex].AsObject(m_attachmentSet[attachmentSetIndex].Jsonize());
+    }
+    payload.WithArray("attachmentSet", std::move(attachmentSetJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Support
-} // namespace Aws
+}  // namespace Model
+}  // namespace Support
+}  // namespace Aws

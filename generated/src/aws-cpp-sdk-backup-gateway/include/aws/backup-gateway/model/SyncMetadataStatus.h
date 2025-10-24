@@ -7,28 +7,16 @@
 #include <aws/backup-gateway/BackupGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace BackupGateway
-{
-namespace Model
-{
-  enum class SyncMetadataStatus
-  {
-    NOT_SET,
-    CREATED,
-    RUNNING,
-    FAILED,
-    PARTIALLY_FAILED,
-    SUCCEEDED
-  };
+namespace Aws {
+namespace BackupGateway {
+namespace Model {
+enum class SyncMetadataStatus { NOT_SET, CREATED, RUNNING, FAILED, PARTIALLY_FAILED, SUCCEEDED };
 
-namespace SyncMetadataStatusMapper
-{
+namespace SyncMetadataStatusMapper {
 AWS_BACKUPGATEWAY_API SyncMetadataStatus GetSyncMetadataStatusForName(const Aws::String& name);
 
 AWS_BACKUPGATEWAY_API Aws::String GetNameForSyncMetadataStatus(SyncMetadataStatus value);
-} // namespace SyncMetadataStatusMapper
-} // namespace Model
-} // namespace BackupGateway
-} // namespace Aws
+}  // namespace SyncMetadataStatusMapper
+}  // namespace Model
+}  // namespace BackupGateway
+}  // namespace Aws

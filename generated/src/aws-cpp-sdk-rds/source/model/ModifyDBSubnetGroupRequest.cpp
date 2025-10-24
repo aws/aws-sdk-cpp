@@ -3,40 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/ModifyDBSubnetGroupRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/ModifyDBSubnetGroupRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyDBSubnetGroupRequest::SerializePayload() const
-{
+Aws::String ModifyDBSubnetGroupRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyDBSubnetGroup&";
-  if(m_dBSubnetGroupNameHasBeenSet)
-  {
+  if (m_dBSubnetGroupNameHasBeenSet) {
     ss << "DBSubnetGroupName=" << StringUtils::URLEncode(m_dBSubnetGroupName.c_str()) << "&";
   }
 
-  if(m_dBSubnetGroupDescriptionHasBeenSet)
-  {
+  if (m_dBSubnetGroupDescriptionHasBeenSet) {
     ss << "DBSubnetGroupDescription=" << StringUtils::URLEncode(m_dBSubnetGroupDescription.c_str()) << "&";
   }
 
-  if(m_subnetIdsHasBeenSet)
-  {
-    if (m_subnetIds.empty())
-    {
+  if (m_subnetIdsHasBeenSet) {
+    if (m_subnetIds.empty()) {
       ss << "SubnetIds=&";
-    }
-    else
-    {
+    } else {
       unsigned subnetIdsCount = 1;
-      for(auto& item : m_subnetIds)
-      {
-        ss << "SubnetIds.SubnetIdentifier." << subnetIdsCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_subnetIds) {
+        ss << "SubnetIds.SubnetIdentifier." << subnetIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         subnetIdsCount++;
       }
     }
@@ -46,8 +37,4 @@ Aws::String ModifyDBSubnetGroupRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ModifyDBSubnetGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ModifyDBSubnetGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

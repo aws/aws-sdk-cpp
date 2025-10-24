@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
 
-AnalysisSchema::AnalysisSchema(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AnalysisSchema::AnalysisSchema(JsonView jsonValue) { *this = jsonValue; }
 
-AnalysisSchema& AnalysisSchema::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("referencedTables"))
-  {
+AnalysisSchema& AnalysisSchema::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("referencedTables")) {
     Aws::Utils::Array<JsonView> referencedTablesJsonList = jsonValue.GetArray("referencedTables");
-    for(unsigned referencedTablesIndex = 0; referencedTablesIndex < referencedTablesJsonList.GetLength(); ++referencedTablesIndex)
-    {
+    for (unsigned referencedTablesIndex = 0; referencedTablesIndex < referencedTablesJsonList.GetLength(); ++referencedTablesIndex) {
       m_referencedTables.push_back(referencedTablesJsonList[referencedTablesIndex].AsString());
     }
     m_referencedTablesHasBeenSet = true;
@@ -37,24 +28,20 @@ AnalysisSchema& AnalysisSchema::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue AnalysisSchema::Jsonize() const
-{
+JsonValue AnalysisSchema::Jsonize() const {
   JsonValue payload;
 
-  if(m_referencedTablesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> referencedTablesJsonList(m_referencedTables.size());
-   for(unsigned referencedTablesIndex = 0; referencedTablesIndex < referencedTablesJsonList.GetLength(); ++referencedTablesIndex)
-   {
-     referencedTablesJsonList[referencedTablesIndex].AsString(m_referencedTables[referencedTablesIndex]);
-   }
-   payload.WithArray("referencedTables", std::move(referencedTablesJsonList));
-
+  if (m_referencedTablesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> referencedTablesJsonList(m_referencedTables.size());
+    for (unsigned referencedTablesIndex = 0; referencedTablesIndex < referencedTablesJsonList.GetLength(); ++referencedTablesIndex) {
+      referencedTablesJsonList[referencedTablesIndex].AsString(m_referencedTables[referencedTablesIndex]);
+    }
+    payload.WithArray("referencedTables", std::move(referencedTablesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

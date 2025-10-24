@@ -4,31 +4,26 @@
  */
 
 #pragma once
-#include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lightsail/Lightsail_EXPORTS.h>
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
-  enum class LoadBalancerAttributeName
-  {
-    NOT_SET,
-    HealthCheckPath,
-    SessionStickinessEnabled,
-    SessionStickiness_LB_CookieDurationSeconds,
-    HttpsRedirectionEnabled,
-    TlsPolicyName
-  };
+namespace Aws {
+namespace Lightsail {
+namespace Model {
+enum class LoadBalancerAttributeName {
+  NOT_SET,
+  HealthCheckPath,
+  SessionStickinessEnabled,
+  SessionStickiness_LB_CookieDurationSeconds,
+  HttpsRedirectionEnabled,
+  TlsPolicyName
+};
 
-namespace LoadBalancerAttributeNameMapper
-{
+namespace LoadBalancerAttributeNameMapper {
 AWS_LIGHTSAIL_API LoadBalancerAttributeName GetLoadBalancerAttributeNameForName(const Aws::String& name);
 
 AWS_LIGHTSAIL_API Aws::String GetNameForLoadBalancerAttributeName(LoadBalancerAttributeName value);
-} // namespace LoadBalancerAttributeNameMapper
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace LoadBalancerAttributeNameMapper
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

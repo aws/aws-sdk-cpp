@@ -4,11 +4,10 @@
  */
 
 #include <aws/cloudfront/model/ListOriginRequestPolicies2020_05_31Request.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
-#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
@@ -17,35 +16,25 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
+Aws::String ListOriginRequestPolicies2020_05_31Request::SerializePayload() const { return {}; }
 
-Aws::String ListOriginRequestPolicies2020_05_31Request::SerializePayload() const
-{
-  return {};
+void ListOriginRequestPolicies2020_05_31Request::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_typeHasBeenSet) {
+    ss << OriginRequestPolicyTypeMapper::GetNameForOriginRequestPolicyType(m_type);
+    uri.AddQueryStringParameter("Type", ss.str());
+    ss.str("");
+  }
+
+  if (m_markerHasBeenSet) {
+    ss << m_marker;
+    uri.AddQueryStringParameter("Marker", ss.str());
+    ss.str("");
+  }
+
+  if (m_maxItemsHasBeenSet) {
+    ss << m_maxItems;
+    uri.AddQueryStringParameter("MaxItems", ss.str());
+    ss.str("");
+  }
 }
-
-void ListOriginRequestPolicies2020_05_31Request::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_typeHasBeenSet)
-    {
-      ss << OriginRequestPolicyTypeMapper::GetNameForOriginRequestPolicyType(m_type);
-      uri.AddQueryStringParameter("Type", ss.str());
-      ss.str("");
-    }
-
-    if(m_markerHasBeenSet)
-    {
-      ss << m_marker;
-      uri.AddQueryStringParameter("Marker", ss.str());
-      ss.str("");
-    }
-
-    if(m_maxItemsHasBeenSet)
-    {
-      ss << m_maxItems;
-      uri.AddQueryStringParameter("MaxItems", ss.str());
-      ss.str("");
-    }
-
-}
-

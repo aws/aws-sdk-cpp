@@ -5,12 +5,8 @@
 
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimeEndpointProvider.h>
 
-namespace Aws
-{
-namespace AugmentedAIRuntime
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace AugmentedAIRuntime
-} // namespace Aws
+namespace Aws {
+namespace AugmentedAIRuntime {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace AugmentedAIRuntime
+}  // namespace Aws

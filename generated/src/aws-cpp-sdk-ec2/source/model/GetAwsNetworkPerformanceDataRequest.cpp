@@ -3,49 +3,41 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/GetAwsNetworkPerformanceDataRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/GetAwsNetworkPerformanceDataRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String GetAwsNetworkPerformanceDataRequest::SerializePayload() const
-{
+Aws::String GetAwsNetworkPerformanceDataRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetAwsNetworkPerformanceData&";
-  if(m_dataQueriesHasBeenSet)
-  {
+  if (m_dataQueriesHasBeenSet) {
     unsigned dataQueriesCount = 1;
-    for(auto& item : m_dataQueries)
-    {
+    for (auto& item : m_dataQueries) {
       item.OutputToStream(ss, "DataQuery.", dataQueriesCount, "");
       dataQueriesCount++;
     }
   }
 
-  if(m_startTimeHasBeenSet)
-  {
+  if (m_startTimeHasBeenSet) {
     ss << "StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_endTimeHasBeenSet)
-  {
+  if (m_endTimeHasBeenSet) {
     ss << "EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
+  if (m_maxResultsHasBeenSet) {
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -53,8 +45,4 @@ Aws::String GetAwsNetworkPerformanceDataRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetAwsNetworkPerformanceDataRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetAwsNetworkPerformanceDataRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

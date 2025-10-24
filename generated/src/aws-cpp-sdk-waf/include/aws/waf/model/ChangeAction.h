@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/waf/WAF_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/waf/WAF_EXPORTS.h>
 
-namespace Aws
-{
-namespace WAF
-{
-namespace Model
-{
-  enum class ChangeAction
-  {
-    NOT_SET,
-    INSERT,
-    DELETE_
-  };
+namespace Aws {
+namespace WAF {
+namespace Model {
+enum class ChangeAction { NOT_SET, INSERT, DELETE_ };
 
-namespace ChangeActionMapper
-{
+namespace ChangeActionMapper {
 AWS_WAF_API ChangeAction GetChangeActionForName(const Aws::String& name);
 
 AWS_WAF_API Aws::String GetNameForChangeAction(ChangeAction value);
-} // namespace ChangeActionMapper
-} // namespace Model
-} // namespace WAF
-} // namespace Aws
+}  // namespace ChangeActionMapper
+}  // namespace Model
+}  // namespace WAF
+}  // namespace Aws

@@ -11,31 +11,23 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-InforNexusMetadata::InforNexusMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InforNexusMetadata::InforNexusMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-InforNexusMetadata& InforNexusMetadata::operator =(JsonView jsonValue)
-{
+InforNexusMetadata& InforNexusMetadata::operator=(JsonView jsonValue) {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
 }
 
-JsonValue InforNexusMetadata::Jsonize() const
-{
+JsonValue InforNexusMetadata::Jsonize() const {
   JsonValue payload;
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

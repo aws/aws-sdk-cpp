@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/auditmanager/AuditManager_EXPORTS.h>
 
-namespace Aws
-{
-namespace AuditManager
-{
-class AuditManagerEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace AuditManager {
+class AuditManagerEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace AuditManager
-} // namespace Aws
+}  // namespace AuditManager
+}  // namespace Aws

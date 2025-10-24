@@ -3,80 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/InferenceRecommendationsJobStep.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/InferenceRecommendationsJobStep.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-InferenceRecommendationsJobStep::InferenceRecommendationsJobStep(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InferenceRecommendationsJobStep::InferenceRecommendationsJobStep(JsonView jsonValue) { *this = jsonValue; }
 
-InferenceRecommendationsJobStep& InferenceRecommendationsJobStep::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("StepType"))
-  {
+InferenceRecommendationsJobStep& InferenceRecommendationsJobStep::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("StepType")) {
     m_stepType = RecommendationStepTypeMapper::GetRecommendationStepTypeForName(jsonValue.GetString("StepType"));
     m_stepTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("JobName"))
-  {
+  if (jsonValue.ValueExists("JobName")) {
     m_jobName = jsonValue.GetString("JobName");
     m_jobNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = RecommendationJobStatusMapper::GetRecommendationJobStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InferenceBenchmark"))
-  {
+  if (jsonValue.ValueExists("InferenceBenchmark")) {
     m_inferenceBenchmark = jsonValue.GetObject("InferenceBenchmark");
     m_inferenceBenchmarkHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InferenceRecommendationsJobStep::Jsonize() const
-{
+JsonValue InferenceRecommendationsJobStep::Jsonize() const {
   JsonValue payload;
 
-  if(m_stepTypeHasBeenSet)
-  {
-   payload.WithString("StepType", RecommendationStepTypeMapper::GetNameForRecommendationStepType(m_stepType));
+  if (m_stepTypeHasBeenSet) {
+    payload.WithString("StepType", RecommendationStepTypeMapper::GetNameForRecommendationStepType(m_stepType));
   }
 
-  if(m_jobNameHasBeenSet)
-  {
-   payload.WithString("JobName", m_jobName);
-
+  if (m_jobNameHasBeenSet) {
+    payload.WithString("JobName", m_jobName);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", RecommendationJobStatusMapper::GetNameForRecommendationJobStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", RecommendationJobStatusMapper::GetNameForRecommendationJobStatus(m_status));
   }
 
-  if(m_inferenceBenchmarkHasBeenSet)
-  {
-   payload.WithObject("InferenceBenchmark", m_inferenceBenchmark.Jsonize());
-
+  if (m_inferenceBenchmarkHasBeenSet) {
+    payload.WithObject("InferenceBenchmark", m_inferenceBenchmark.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mturk-requester/model/ApproveAssignmentRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mturk-requester/model/ApproveAssignmentRequest.h>
 
 #include <utility>
 
@@ -12,39 +12,26 @@ using namespace Aws::MTurk::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ApproveAssignmentRequest::SerializePayload() const
-{
+Aws::String ApproveAssignmentRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_assignmentIdHasBeenSet)
-  {
-   payload.WithString("AssignmentId", m_assignmentId);
-
+  if (m_assignmentIdHasBeenSet) {
+    payload.WithString("AssignmentId", m_assignmentId);
   }
 
-  if(m_requesterFeedbackHasBeenSet)
-  {
-   payload.WithString("RequesterFeedback", m_requesterFeedback);
-
+  if (m_requesterFeedbackHasBeenSet) {
+    payload.WithString("RequesterFeedback", m_requesterFeedback);
   }
 
-  if(m_overrideRejectionHasBeenSet)
-  {
-   payload.WithBool("OverrideRejection", m_overrideRejection);
-
+  if (m_overrideRejectionHasBeenSet) {
+    payload.WithBool("OverrideRejection", m_overrideRejection);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ApproveAssignmentRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ApproveAssignmentRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "MTurkRequesterServiceV20170117.ApproveAssignment"));
   return headers;
-
 }
-
-
-
-

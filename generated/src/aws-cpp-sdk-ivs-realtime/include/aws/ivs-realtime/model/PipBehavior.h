@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
 
-namespace Aws
-{
-namespace ivsrealtime
-{
-namespace Model
-{
-  enum class PipBehavior
-  {
-    NOT_SET,
-    STATIC_,
-    DYNAMIC
-  };
+namespace Aws {
+namespace ivsrealtime {
+namespace Model {
+enum class PipBehavior { NOT_SET, STATIC_, DYNAMIC };
 
-namespace PipBehaviorMapper
-{
+namespace PipBehaviorMapper {
 AWS_IVSREALTIME_API PipBehavior GetPipBehaviorForName(const Aws::String& name);
 
 AWS_IVSREALTIME_API Aws::String GetNameForPipBehavior(PipBehavior value);
-} // namespace PipBehaviorMapper
-} // namespace Model
-} // namespace ivsrealtime
-} // namespace Aws
+}  // namespace PipBehaviorMapper
+}  // namespace Model
+}  // namespace ivsrealtime
+}  // namespace Aws

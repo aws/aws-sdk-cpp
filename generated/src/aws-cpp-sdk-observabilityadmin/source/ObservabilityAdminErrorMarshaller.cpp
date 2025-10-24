@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::ObservabilityAdmin;
 
-AWSError<CoreErrors> ObservabilityAdminErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> ObservabilityAdminErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = ObservabilityAdminErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

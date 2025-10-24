@@ -12,44 +12,30 @@ using namespace Aws::AppRunner::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateObservabilityConfigurationRequest::SerializePayload() const
-{
+Aws::String CreateObservabilityConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_observabilityConfigurationNameHasBeenSet)
-  {
-   payload.WithString("ObservabilityConfigurationName", m_observabilityConfigurationName);
-
+  if (m_observabilityConfigurationNameHasBeenSet) {
+    payload.WithString("ObservabilityConfigurationName", m_observabilityConfigurationName);
   }
 
-  if(m_traceConfigurationHasBeenSet)
-  {
-   payload.WithObject("TraceConfiguration", m_traceConfiguration.Jsonize());
-
+  if (m_traceConfigurationHasBeenSet) {
+    payload.WithObject("TraceConfiguration", m_traceConfiguration.Jsonize());
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("Tags", std::move(tagsJsonList));
-
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateObservabilityConfigurationRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateObservabilityConfigurationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AppRunner.CreateObservabilityConfiguration"));
   return headers;
-
 }
-
-
-
-

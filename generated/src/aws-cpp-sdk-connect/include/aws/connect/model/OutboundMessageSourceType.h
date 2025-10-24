@@ -7,25 +7,16 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
-  enum class OutboundMessageSourceType
-  {
-    NOT_SET,
-    TEMPLATE,
-    RAW
-  };
+namespace Aws {
+namespace Connect {
+namespace Model {
+enum class OutboundMessageSourceType { NOT_SET, TEMPLATE, RAW };
 
-namespace OutboundMessageSourceTypeMapper
-{
+namespace OutboundMessageSourceTypeMapper {
 AWS_CONNECT_API OutboundMessageSourceType GetOutboundMessageSourceTypeForName(const Aws::String& name);
 
 AWS_CONNECT_API Aws::String GetNameForOutboundMessageSourceType(OutboundMessageSourceType value);
-} // namespace OutboundMessageSourceTypeMapper
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace OutboundMessageSourceTypeMapper
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

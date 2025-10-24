@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudSearchDomain
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudSearchDomain {
+namespace Model {
 
-SearchStatus::SearchStatus(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SearchStatus::SearchStatus(JsonView jsonValue) { *this = jsonValue; }
 
-SearchStatus& SearchStatus::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("timems"))
-  {
+SearchStatus& SearchStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("timems")) {
     m_timems = jsonValue.GetInt64("timems");
     m_timemsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("rid"))
-  {
+  if (jsonValue.ValueExists("rid")) {
     m_rid = jsonValue.GetString("rid");
     m_ridHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SearchStatus::Jsonize() const
-{
+JsonValue SearchStatus::Jsonize() const {
   JsonValue payload;
 
-  if(m_timemsHasBeenSet)
-  {
-   payload.WithInt64("timems", m_timems);
-
+  if (m_timemsHasBeenSet) {
+    payload.WithInt64("timems", m_timems);
   }
 
-  if(m_ridHasBeenSet)
-  {
-   payload.WithString("rid", m_rid);
-
+  if (m_ridHasBeenSet) {
+    payload.WithString("rid", m_rid);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudSearchDomain
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudSearchDomain
+}  // namespace Aws

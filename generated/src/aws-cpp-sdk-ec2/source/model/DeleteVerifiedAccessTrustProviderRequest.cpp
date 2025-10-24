@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DeleteVerifiedAccessTrustProviderRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DeleteVerifiedAccessTrustProviderRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteVerifiedAccessTrustProviderRequest::SerializePayload() const
-{
+Aws::String DeleteVerifiedAccessTrustProviderRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteVerifiedAccessTrustProvider&";
-  if(m_verifiedAccessTrustProviderIdHasBeenSet)
-  {
+  if (m_verifiedAccessTrustProviderIdHasBeenSet) {
     ss << "VerifiedAccessTrustProviderId=" << StringUtils::URLEncode(m_verifiedAccessTrustProviderId.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
+  if (m_clientTokenHasBeenSet) {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String DeleteVerifiedAccessTrustProviderRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteVerifiedAccessTrustProviderRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteVerifiedAccessTrustProviderRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

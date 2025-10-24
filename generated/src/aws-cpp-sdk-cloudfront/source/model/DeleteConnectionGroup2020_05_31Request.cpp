@@ -4,10 +4,9 @@
  */
 
 #include <aws/cloudfront/model/DeleteConnectionGroup2020_05_31Request.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
@@ -15,21 +14,14 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
+Aws::String DeleteConnectionGroup2020_05_31Request::SerializePayload() const { return {}; }
 
-Aws::String DeleteConnectionGroup2020_05_31Request::SerializePayload() const
-{
-  return {};
-}
-
-
-Aws::Http::HeaderValueCollection DeleteConnectionGroup2020_05_31Request::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteConnectionGroup2020_05_31Request::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_ifMatchHasBeenSet)
-  {
+  if (m_ifMatchHasBeenSet) {
     ss << m_ifMatch;
-    headers.emplace("if-match",  ss.str());
+    headers.emplace("if-match", ss.str());
     ss.str("");
   }
 

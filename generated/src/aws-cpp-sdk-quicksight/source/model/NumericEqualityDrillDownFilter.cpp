@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/NumericEqualityDrillDownFilter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/NumericEqualityDrillDownFilter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-NumericEqualityDrillDownFilter::NumericEqualityDrillDownFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NumericEqualityDrillDownFilter::NumericEqualityDrillDownFilter(JsonView jsonValue) { *this = jsonValue; }
 
-NumericEqualityDrillDownFilter& NumericEqualityDrillDownFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Column"))
-  {
+NumericEqualityDrillDownFilter& NumericEqualityDrillDownFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Column")) {
     m_column = jsonValue.GetObject("Column");
     m_columnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Value"))
-  {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetDouble("Value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NumericEqualityDrillDownFilter::Jsonize() const
-{
+JsonValue NumericEqualityDrillDownFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_columnHasBeenSet)
-  {
-   payload.WithObject("Column", m_column.Jsonize());
-
+  if (m_columnHasBeenSet) {
+    payload.WithObject("Column", m_column.Jsonize());
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithDouble("Value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithDouble("Value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

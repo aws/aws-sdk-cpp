@@ -3,237 +3,184 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/scheduler/model/EcsParameters.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/scheduler/model/EcsParameters.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Scheduler
-{
-namespace Model
-{
+namespace Aws {
+namespace Scheduler {
+namespace Model {
 
-EcsParameters::EcsParameters(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EcsParameters::EcsParameters(JsonView jsonValue) { *this = jsonValue; }
 
-EcsParameters& EcsParameters::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CapacityProviderStrategy"))
-  {
+EcsParameters& EcsParameters::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CapacityProviderStrategy")) {
     Aws::Utils::Array<JsonView> capacityProviderStrategyJsonList = jsonValue.GetArray("CapacityProviderStrategy");
-    for(unsigned capacityProviderStrategyIndex = 0; capacityProviderStrategyIndex < capacityProviderStrategyJsonList.GetLength(); ++capacityProviderStrategyIndex)
-    {
+    for (unsigned capacityProviderStrategyIndex = 0; capacityProviderStrategyIndex < capacityProviderStrategyJsonList.GetLength();
+         ++capacityProviderStrategyIndex) {
       m_capacityProviderStrategy.push_back(capacityProviderStrategyJsonList[capacityProviderStrategyIndex].AsObject());
     }
     m_capacityProviderStrategyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EnableECSManagedTags"))
-  {
+  if (jsonValue.ValueExists("EnableECSManagedTags")) {
     m_enableECSManagedTags = jsonValue.GetBool("EnableECSManagedTags");
     m_enableECSManagedTagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EnableExecuteCommand"))
-  {
+  if (jsonValue.ValueExists("EnableExecuteCommand")) {
     m_enableExecuteCommand = jsonValue.GetBool("EnableExecuteCommand");
     m_enableExecuteCommandHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Group"))
-  {
+  if (jsonValue.ValueExists("Group")) {
     m_group = jsonValue.GetString("Group");
     m_groupHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LaunchType"))
-  {
+  if (jsonValue.ValueExists("LaunchType")) {
     m_launchType = LaunchTypeMapper::GetLaunchTypeForName(jsonValue.GetString("LaunchType"));
     m_launchTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NetworkConfiguration"))
-  {
+  if (jsonValue.ValueExists("NetworkConfiguration")) {
     m_networkConfiguration = jsonValue.GetObject("NetworkConfiguration");
     m_networkConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PlacementConstraints"))
-  {
+  if (jsonValue.ValueExists("PlacementConstraints")) {
     Aws::Utils::Array<JsonView> placementConstraintsJsonList = jsonValue.GetArray("PlacementConstraints");
-    for(unsigned placementConstraintsIndex = 0; placementConstraintsIndex < placementConstraintsJsonList.GetLength(); ++placementConstraintsIndex)
-    {
+    for (unsigned placementConstraintsIndex = 0; placementConstraintsIndex < placementConstraintsJsonList.GetLength();
+         ++placementConstraintsIndex) {
       m_placementConstraints.push_back(placementConstraintsJsonList[placementConstraintsIndex].AsObject());
     }
     m_placementConstraintsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PlacementStrategy"))
-  {
+  if (jsonValue.ValueExists("PlacementStrategy")) {
     Aws::Utils::Array<JsonView> placementStrategyJsonList = jsonValue.GetArray("PlacementStrategy");
-    for(unsigned placementStrategyIndex = 0; placementStrategyIndex < placementStrategyJsonList.GetLength(); ++placementStrategyIndex)
-    {
+    for (unsigned placementStrategyIndex = 0; placementStrategyIndex < placementStrategyJsonList.GetLength(); ++placementStrategyIndex) {
       m_placementStrategy.push_back(placementStrategyJsonList[placementStrategyIndex].AsObject());
     }
     m_placementStrategyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PlatformVersion"))
-  {
+  if (jsonValue.ValueExists("PlatformVersion")) {
     m_platformVersion = jsonValue.GetString("PlatformVersion");
     m_platformVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PropagateTags"))
-  {
+  if (jsonValue.ValueExists("PropagateTags")) {
     m_propagateTags = PropagateTagsMapper::GetPropagateTagsForName(jsonValue.GetString("PropagateTags"));
     m_propagateTagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ReferenceId"))
-  {
+  if (jsonValue.ValueExists("ReferenceId")) {
     m_referenceId = jsonValue.GetString("ReferenceId");
     m_referenceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Tags"))
-  {
+  if (jsonValue.ValueExists("Tags")) {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
-    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-    {
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
       Aws::Map<Aws::String, JsonView> tagMapJsonMap = tagsJsonList[tagsIndex].GetAllObjects();
       Aws::Map<Aws::String, Aws::String> tagMapMap;
-      for(auto& tagMapItem : tagMapJsonMap)
-      {
+      for (auto& tagMapItem : tagMapJsonMap) {
         tagMapMap[tagMapItem.first] = tagMapItem.second.AsString();
       }
       m_tags.push_back(std::move(tagMapMap));
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TaskCount"))
-  {
+  if (jsonValue.ValueExists("TaskCount")) {
     m_taskCount = jsonValue.GetInteger("TaskCount");
     m_taskCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TaskDefinitionArn"))
-  {
+  if (jsonValue.ValueExists("TaskDefinitionArn")) {
     m_taskDefinitionArn = jsonValue.GetString("TaskDefinitionArn");
     m_taskDefinitionArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EcsParameters::Jsonize() const
-{
+JsonValue EcsParameters::Jsonize() const {
   JsonValue payload;
 
-  if(m_capacityProviderStrategyHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> capacityProviderStrategyJsonList(m_capacityProviderStrategy.size());
-   for(unsigned capacityProviderStrategyIndex = 0; capacityProviderStrategyIndex < capacityProviderStrategyJsonList.GetLength(); ++capacityProviderStrategyIndex)
-   {
-     capacityProviderStrategyJsonList[capacityProviderStrategyIndex].AsObject(m_capacityProviderStrategy[capacityProviderStrategyIndex].Jsonize());
-   }
-   payload.WithArray("CapacityProviderStrategy", std::move(capacityProviderStrategyJsonList));
-
+  if (m_capacityProviderStrategyHasBeenSet) {
+    Aws::Utils::Array<JsonValue> capacityProviderStrategyJsonList(m_capacityProviderStrategy.size());
+    for (unsigned capacityProviderStrategyIndex = 0; capacityProviderStrategyIndex < capacityProviderStrategyJsonList.GetLength();
+         ++capacityProviderStrategyIndex) {
+      capacityProviderStrategyJsonList[capacityProviderStrategyIndex].AsObject(
+          m_capacityProviderStrategy[capacityProviderStrategyIndex].Jsonize());
+    }
+    payload.WithArray("CapacityProviderStrategy", std::move(capacityProviderStrategyJsonList));
   }
 
-  if(m_enableECSManagedTagsHasBeenSet)
-  {
-   payload.WithBool("EnableECSManagedTags", m_enableECSManagedTags);
-
+  if (m_enableECSManagedTagsHasBeenSet) {
+    payload.WithBool("EnableECSManagedTags", m_enableECSManagedTags);
   }
 
-  if(m_enableExecuteCommandHasBeenSet)
-  {
-   payload.WithBool("EnableExecuteCommand", m_enableExecuteCommand);
-
+  if (m_enableExecuteCommandHasBeenSet) {
+    payload.WithBool("EnableExecuteCommand", m_enableExecuteCommand);
   }
 
-  if(m_groupHasBeenSet)
-  {
-   payload.WithString("Group", m_group);
-
+  if (m_groupHasBeenSet) {
+    payload.WithString("Group", m_group);
   }
 
-  if(m_launchTypeHasBeenSet)
-  {
-   payload.WithString("LaunchType", LaunchTypeMapper::GetNameForLaunchType(m_launchType));
+  if (m_launchTypeHasBeenSet) {
+    payload.WithString("LaunchType", LaunchTypeMapper::GetNameForLaunchType(m_launchType));
   }
 
-  if(m_networkConfigurationHasBeenSet)
-  {
-   payload.WithObject("NetworkConfiguration", m_networkConfiguration.Jsonize());
-
+  if (m_networkConfigurationHasBeenSet) {
+    payload.WithObject("NetworkConfiguration", m_networkConfiguration.Jsonize());
   }
 
-  if(m_placementConstraintsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> placementConstraintsJsonList(m_placementConstraints.size());
-   for(unsigned placementConstraintsIndex = 0; placementConstraintsIndex < placementConstraintsJsonList.GetLength(); ++placementConstraintsIndex)
-   {
-     placementConstraintsJsonList[placementConstraintsIndex].AsObject(m_placementConstraints[placementConstraintsIndex].Jsonize());
-   }
-   payload.WithArray("PlacementConstraints", std::move(placementConstraintsJsonList));
-
+  if (m_placementConstraintsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> placementConstraintsJsonList(m_placementConstraints.size());
+    for (unsigned placementConstraintsIndex = 0; placementConstraintsIndex < placementConstraintsJsonList.GetLength();
+         ++placementConstraintsIndex) {
+      placementConstraintsJsonList[placementConstraintsIndex].AsObject(m_placementConstraints[placementConstraintsIndex].Jsonize());
+    }
+    payload.WithArray("PlacementConstraints", std::move(placementConstraintsJsonList));
   }
 
-  if(m_placementStrategyHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> placementStrategyJsonList(m_placementStrategy.size());
-   for(unsigned placementStrategyIndex = 0; placementStrategyIndex < placementStrategyJsonList.GetLength(); ++placementStrategyIndex)
-   {
-     placementStrategyJsonList[placementStrategyIndex].AsObject(m_placementStrategy[placementStrategyIndex].Jsonize());
-   }
-   payload.WithArray("PlacementStrategy", std::move(placementStrategyJsonList));
-
+  if (m_placementStrategyHasBeenSet) {
+    Aws::Utils::Array<JsonValue> placementStrategyJsonList(m_placementStrategy.size());
+    for (unsigned placementStrategyIndex = 0; placementStrategyIndex < placementStrategyJsonList.GetLength(); ++placementStrategyIndex) {
+      placementStrategyJsonList[placementStrategyIndex].AsObject(m_placementStrategy[placementStrategyIndex].Jsonize());
+    }
+    payload.WithArray("PlacementStrategy", std::move(placementStrategyJsonList));
   }
 
-  if(m_platformVersionHasBeenSet)
-  {
-   payload.WithString("PlatformVersion", m_platformVersion);
-
+  if (m_platformVersionHasBeenSet) {
+    payload.WithString("PlatformVersion", m_platformVersion);
   }
 
-  if(m_propagateTagsHasBeenSet)
-  {
-   payload.WithString("PropagateTags", PropagateTagsMapper::GetNameForPropagateTags(m_propagateTags));
+  if (m_propagateTagsHasBeenSet) {
+    payload.WithString("PropagateTags", PropagateTagsMapper::GetNameForPropagateTags(m_propagateTags));
   }
 
-  if(m_referenceIdHasBeenSet)
-  {
-   payload.WithString("ReferenceId", m_referenceId);
-
+  if (m_referenceIdHasBeenSet) {
+    payload.WithString("ReferenceId", m_referenceId);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     JsonValue tagMapJsonMap;
-     for(auto& tagMapItem : m_tags[tagsIndex])
-     {
-       tagMapJsonMap.WithString(tagMapItem.first, tagMapItem.second);
-     }
-     tagsJsonList[tagsIndex].AsObject(std::move(tagMapJsonMap));
-   }
-   payload.WithArray("Tags", std::move(tagsJsonList));
-
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      JsonValue tagMapJsonMap;
+      for (auto& tagMapItem : m_tags[tagsIndex]) {
+        tagMapJsonMap.WithString(tagMapItem.first, tagMapItem.second);
+      }
+      tagsJsonList[tagsIndex].AsObject(std::move(tagMapJsonMap));
+    }
+    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
-  if(m_taskCountHasBeenSet)
-  {
-   payload.WithInteger("TaskCount", m_taskCount);
-
+  if (m_taskCountHasBeenSet) {
+    payload.WithInteger("TaskCount", m_taskCount);
   }
 
-  if(m_taskDefinitionArnHasBeenSet)
-  {
-   payload.WithString("TaskDefinitionArn", m_taskDefinitionArn);
-
+  if (m_taskDefinitionArnHasBeenSet) {
+    payload.WithString("TaskDefinitionArn", m_taskDefinitionArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Scheduler
-} // namespace Aws
+}  // namespace Model
+}  // namespace Scheduler
+}  // namespace Aws

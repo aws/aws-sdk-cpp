@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApiGatewayV2
-{
-namespace Model
-{
+namespace Aws {
+namespace ApiGatewayV2 {
+namespace Model {
 
-ApiMapping::ApiMapping(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ApiMapping::ApiMapping(JsonView jsonValue) { *this = jsonValue; }
 
-ApiMapping& ApiMapping::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("apiId"))
-  {
+ApiMapping& ApiMapping::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("apiId")) {
     m_apiId = jsonValue.GetString("apiId");
     m_apiIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("apiMappingId"))
-  {
+  if (jsonValue.ValueExists("apiMappingId")) {
     m_apiMappingId = jsonValue.GetString("apiMappingId");
     m_apiMappingIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("apiMappingKey"))
-  {
+  if (jsonValue.ValueExists("apiMappingKey")) {
     m_apiMappingKey = jsonValue.GetString("apiMappingKey");
     m_apiMappingKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("stage"))
-  {
+  if (jsonValue.ValueExists("stage")) {
     m_stage = jsonValue.GetString("stage");
     m_stageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ApiMapping::Jsonize() const
-{
+JsonValue ApiMapping::Jsonize() const {
   JsonValue payload;
 
-  if(m_apiIdHasBeenSet)
-  {
-   payload.WithString("apiId", m_apiId);
-
+  if (m_apiIdHasBeenSet) {
+    payload.WithString("apiId", m_apiId);
   }
 
-  if(m_apiMappingIdHasBeenSet)
-  {
-   payload.WithString("apiMappingId", m_apiMappingId);
-
+  if (m_apiMappingIdHasBeenSet) {
+    payload.WithString("apiMappingId", m_apiMappingId);
   }
 
-  if(m_apiMappingKeyHasBeenSet)
-  {
-   payload.WithString("apiMappingKey", m_apiMappingKey);
-
+  if (m_apiMappingKeyHasBeenSet) {
+    payload.WithString("apiMappingKey", m_apiMappingKey);
   }
 
-  if(m_stageHasBeenSet)
-  {
-   payload.WithString("stage", m_stage);
-
+  if (m_stageHasBeenSet) {
+    payload.WithString("stage", m_stage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApiGatewayV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApiGatewayV2
+}  // namespace Aws

@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-ContactSearchSummaryQueueInfo::ContactSearchSummaryQueueInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ContactSearchSummaryQueueInfo::ContactSearchSummaryQueueInfo(JsonView jsonValue) { *this = jsonValue; }
 
-ContactSearchSummaryQueueInfo& ContactSearchSummaryQueueInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Id"))
-  {
+ContactSearchSummaryQueueInfo& ContactSearchSummaryQueueInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EnqueueTimestamp"))
-  {
+  if (jsonValue.ValueExists("EnqueueTimestamp")) {
     m_enqueueTimestamp = jsonValue.GetDouble("EnqueueTimestamp");
     m_enqueueTimestampHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ContactSearchSummaryQueueInfo::Jsonize() const
-{
+JsonValue ContactSearchSummaryQueueInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
-  if(m_enqueueTimestampHasBeenSet)
-  {
-   payload.WithDouble("EnqueueTimestamp", m_enqueueTimestamp.SecondsWithMSPrecision());
+  if (m_enqueueTimestampHasBeenSet) {
+    payload.WithDouble("EnqueueTimestamp", m_enqueueTimestamp.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

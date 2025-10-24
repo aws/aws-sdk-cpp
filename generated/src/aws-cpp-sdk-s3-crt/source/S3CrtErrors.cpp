@@ -13,18 +13,15 @@ using namespace Aws::Utils;
 using namespace Aws::S3Crt;
 using namespace Aws::S3Crt::Model;
 
-namespace Aws
-{
-namespace S3Crt
-{
-template<> AWS_S3CRT_API InvalidObjectState S3CrtError::GetModeledError()
-{
+namespace Aws {
+namespace S3Crt {
+template <>
+AWS_S3CRT_API InvalidObjectState S3CrtError::GetModeledError() {
   assert(this->GetErrorType() == S3CrtErrors::INVALID_OBJECT_STATE);
   return InvalidObjectState(this->GetXmlPayload().GetRootElement());
 }
 
-namespace S3CrtErrorMapper
-{
+namespace S3CrtErrorMapper {
 
 static const int NO_SUCH_UPLOAD_HASH = HashingUtils::HashString("NoSuchUpload");
 static const int ENCRYPTION_TYPE_MISMATCH_HASH = HashingUtils::HashString("EncryptionTypeMismatch");
@@ -40,66 +37,39 @@ static const int OBJECT_NOT_IN_ACTIVE_TIER_HASH = HashingUtils::HashString("Obje
 static const int BUCKET_ALREADY_EXISTS_HASH = HashingUtils::HashString("BucketAlreadyExists");
 static const int INVALID_OBJECT_STATE_HASH = HashingUtils::HashString("InvalidObjectState");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == NO_SUCH_UPLOAD_HASH)
-  {
+  if (hashCode == NO_SUCH_UPLOAD_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(S3CrtErrors::NO_SUCH_UPLOAD), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == ENCRYPTION_TYPE_MISMATCH_HASH)
-  {
+  } else if (hashCode == ENCRYPTION_TYPE_MISMATCH_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(S3CrtErrors::ENCRYPTION_TYPE_MISMATCH), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_REQUEST_HASH)
-  {
+  } else if (hashCode == INVALID_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(S3CrtErrors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == BUCKET_ALREADY_OWNED_BY_YOU_HASH)
-  {
+  } else if (hashCode == BUCKET_ALREADY_OWNED_BY_YOU_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(S3CrtErrors::BUCKET_ALREADY_OWNED_BY_YOU), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_WRITE_OFFSET_HASH)
-  {
+  } else if (hashCode == INVALID_WRITE_OFFSET_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(S3CrtErrors::INVALID_WRITE_OFFSET), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == OBJECT_ALREADY_IN_ACTIVE_TIER_HASH)
-  {
+  } else if (hashCode == OBJECT_ALREADY_IN_ACTIVE_TIER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(S3CrtErrors::OBJECT_ALREADY_IN_ACTIVE_TIER), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == NO_SUCH_BUCKET_HASH)
-  {
+  } else if (hashCode == NO_SUCH_BUCKET_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(S3CrtErrors::NO_SUCH_BUCKET), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == TOO_MANY_PARTS_HASH)
-  {
+  } else if (hashCode == TOO_MANY_PARTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(S3CrtErrors::TOO_MANY_PARTS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == IDEMPOTENCY_PARAMETER_MISMATCH_HASH)
-  {
+  } else if (hashCode == IDEMPOTENCY_PARAMETER_MISMATCH_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(S3CrtErrors::IDEMPOTENCY_PARAMETER_MISMATCH), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == NO_SUCH_KEY_HASH)
-  {
+  } else if (hashCode == NO_SUCH_KEY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(S3CrtErrors::NO_SUCH_KEY), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == OBJECT_NOT_IN_ACTIVE_TIER_HASH)
-  {
+  } else if (hashCode == OBJECT_NOT_IN_ACTIVE_TIER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(S3CrtErrors::OBJECT_NOT_IN_ACTIVE_TIER), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == BUCKET_ALREADY_EXISTS_HASH)
-  {
+  } else if (hashCode == BUCKET_ALREADY_EXISTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(S3CrtErrors::BUCKET_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_OBJECT_STATE_HASH)
-  {
+  } else if (hashCode == INVALID_OBJECT_STATE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(S3CrtErrors::INVALID_OBJECT_STATE), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace S3CrtErrorMapper
-} // namespace S3Crt
-} // namespace Aws
+}  // namespace S3CrtErrorMapper
+}  // namespace S3Crt
+}  // namespace Aws

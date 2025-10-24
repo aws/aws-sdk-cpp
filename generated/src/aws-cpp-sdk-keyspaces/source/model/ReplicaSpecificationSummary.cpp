@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/keyspaces/model/ReplicaSpecificationSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/keyspaces/model/ReplicaSpecificationSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Keyspaces
-{
-namespace Model
-{
+namespace Aws {
+namespace Keyspaces {
+namespace Model {
 
-ReplicaSpecificationSummary::ReplicaSpecificationSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReplicaSpecificationSummary::ReplicaSpecificationSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ReplicaSpecificationSummary& ReplicaSpecificationSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("region"))
-  {
+ReplicaSpecificationSummary& ReplicaSpecificationSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("region")) {
     m_region = jsonValue.GetString("region");
     m_regionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = TableStatusMapper::GetTableStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("capacitySpecification"))
-  {
+  if (jsonValue.ValueExists("capacitySpecification")) {
     m_capacitySpecification = jsonValue.GetObject("capacitySpecification");
     m_capacitySpecificationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ReplicaSpecificationSummary::Jsonize() const
-{
+JsonValue ReplicaSpecificationSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_regionHasBeenSet)
-  {
-   payload.WithString("region", m_region);
-
+  if (m_regionHasBeenSet) {
+    payload.WithString("region", m_region);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", TableStatusMapper::GetNameForTableStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", TableStatusMapper::GetNameForTableStatus(m_status));
   }
 
-  if(m_capacitySpecificationHasBeenSet)
-  {
-   payload.WithObject("capacitySpecification", m_capacitySpecification.Jsonize());
-
+  if (m_capacitySpecificationHasBeenSet) {
+    payload.WithObject("capacitySpecification", m_capacitySpecification.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Keyspaces
-} // namespace Aws
+}  // namespace Model
+}  // namespace Keyspaces
+}  // namespace Aws

@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::ResourceGroupsTaggingAPI;
 
-AWSError<CoreErrors> ResourceGroupsTaggingAPIErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> ResourceGroupsTaggingAPIErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = ResourceGroupsTaggingAPIErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

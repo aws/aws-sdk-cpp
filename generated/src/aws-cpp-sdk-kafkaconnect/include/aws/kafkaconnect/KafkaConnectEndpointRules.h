@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/kafkaconnect/KafkaConnect_EXPORTS.h>
 
-namespace Aws
-{
-namespace KafkaConnect
-{
-class KafkaConnectEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace KafkaConnect {
+class KafkaConnectEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace KafkaConnect
-} // namespace Aws
+}  // namespace KafkaConnect
+}  // namespace Aws

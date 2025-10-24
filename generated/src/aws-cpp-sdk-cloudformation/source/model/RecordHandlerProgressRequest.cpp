@@ -10,42 +10,35 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String RecordHandlerProgressRequest::SerializePayload() const
-{
+Aws::String RecordHandlerProgressRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=RecordHandlerProgress&";
-  if(m_bearerTokenHasBeenSet)
-  {
+  if (m_bearerTokenHasBeenSet) {
     ss << "BearerToken=" << StringUtils::URLEncode(m_bearerToken.c_str()) << "&";
   }
 
-  if(m_operationStatusHasBeenSet)
-  {
+  if (m_operationStatusHasBeenSet) {
     ss << "OperationStatus=" << StringUtils::URLEncode(OperationStatusMapper::GetNameForOperationStatus(m_operationStatus)) << "&";
   }
 
-  if(m_currentOperationStatusHasBeenSet)
-  {
-    ss << "CurrentOperationStatus=" << StringUtils::URLEncode(OperationStatusMapper::GetNameForOperationStatus(m_currentOperationStatus)) << "&";
+  if (m_currentOperationStatusHasBeenSet) {
+    ss << "CurrentOperationStatus=" << StringUtils::URLEncode(OperationStatusMapper::GetNameForOperationStatus(m_currentOperationStatus))
+       << "&";
   }
 
-  if(m_statusMessageHasBeenSet)
-  {
+  if (m_statusMessageHasBeenSet) {
     ss << "StatusMessage=" << StringUtils::URLEncode(m_statusMessage.c_str()) << "&";
   }
 
-  if(m_errorCodeHasBeenSet)
-  {
+  if (m_errorCodeHasBeenSet) {
     ss << "ErrorCode=" << StringUtils::URLEncode(HandlerErrorCodeMapper::GetNameForHandlerErrorCode(m_errorCode)) << "&";
   }
 
-  if(m_resourceModelHasBeenSet)
-  {
+  if (m_resourceModelHasBeenSet) {
     ss << "ResourceModel=" << StringUtils::URLEncode(m_resourceModel.c_str()) << "&";
   }
 
-  if(m_clientRequestTokenHasBeenSet)
-  {
+  if (m_clientRequestTokenHasBeenSet) {
     ss << "ClientRequestToken=" << StringUtils::URLEncode(m_clientRequestToken.c_str()) << "&";
   }
 
@@ -53,8 +46,4 @@ Aws::String RecordHandlerProgressRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  RecordHandlerProgressRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void RecordHandlerProgressRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

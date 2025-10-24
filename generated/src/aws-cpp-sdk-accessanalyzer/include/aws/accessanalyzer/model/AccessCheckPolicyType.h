@@ -7,25 +7,16 @@
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
-  enum class AccessCheckPolicyType
-  {
-    NOT_SET,
-    IDENTITY_POLICY,
-    RESOURCE_POLICY
-  };
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
+enum class AccessCheckPolicyType { NOT_SET, IDENTITY_POLICY, RESOURCE_POLICY };
 
-namespace AccessCheckPolicyTypeMapper
-{
+namespace AccessCheckPolicyTypeMapper {
 AWS_ACCESSANALYZER_API AccessCheckPolicyType GetAccessCheckPolicyTypeForName(const Aws::String& name);
 
 AWS_ACCESSANALYZER_API Aws::String GetNameForAccessCheckPolicyType(AccessCheckPolicyType value);
-} // namespace AccessCheckPolicyTypeMapper
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace AccessCheckPolicyTypeMapper
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

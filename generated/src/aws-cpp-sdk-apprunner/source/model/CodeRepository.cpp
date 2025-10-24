@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppRunner
-{
-namespace Model
-{
+namespace Aws {
+namespace AppRunner {
+namespace Model {
 
-CodeRepository::CodeRepository(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CodeRepository::CodeRepository(JsonView jsonValue) { *this = jsonValue; }
 
-CodeRepository& CodeRepository::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RepositoryUrl"))
-  {
+CodeRepository& CodeRepository::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RepositoryUrl")) {
     m_repositoryUrl = jsonValue.GetString("RepositoryUrl");
     m_repositoryUrlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourceCodeVersion"))
-  {
+  if (jsonValue.ValueExists("SourceCodeVersion")) {
     m_sourceCodeVersion = jsonValue.GetObject("SourceCodeVersion");
     m_sourceCodeVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CodeConfiguration"))
-  {
+  if (jsonValue.ValueExists("CodeConfiguration")) {
     m_codeConfiguration = jsonValue.GetObject("CodeConfiguration");
     m_codeConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourceDirectory"))
-  {
+  if (jsonValue.ValueExists("SourceDirectory")) {
     m_sourceDirectory = jsonValue.GetString("SourceDirectory");
     m_sourceDirectoryHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CodeRepository::Jsonize() const
-{
+JsonValue CodeRepository::Jsonize() const {
   JsonValue payload;
 
-  if(m_repositoryUrlHasBeenSet)
-  {
-   payload.WithString("RepositoryUrl", m_repositoryUrl);
-
+  if (m_repositoryUrlHasBeenSet) {
+    payload.WithString("RepositoryUrl", m_repositoryUrl);
   }
 
-  if(m_sourceCodeVersionHasBeenSet)
-  {
-   payload.WithObject("SourceCodeVersion", m_sourceCodeVersion.Jsonize());
-
+  if (m_sourceCodeVersionHasBeenSet) {
+    payload.WithObject("SourceCodeVersion", m_sourceCodeVersion.Jsonize());
   }
 
-  if(m_codeConfigurationHasBeenSet)
-  {
-   payload.WithObject("CodeConfiguration", m_codeConfiguration.Jsonize());
-
+  if (m_codeConfigurationHasBeenSet) {
+    payload.WithObject("CodeConfiguration", m_codeConfiguration.Jsonize());
   }
 
-  if(m_sourceDirectoryHasBeenSet)
-  {
-   payload.WithString("SourceDirectory", m_sourceDirectory);
-
+  if (m_sourceDirectoryHasBeenSet) {
+    payload.WithString("SourceDirectory", m_sourceDirectory);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppRunner
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppRunner
+}  // namespace Aws

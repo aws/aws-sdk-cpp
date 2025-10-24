@@ -4,76 +4,60 @@
  */
 
 #include <aws/cloudcontrol/model/Operation.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace CloudControlApi {
+namespace Model {
+namespace OperationMapper {
 
-namespace Aws
-{
-  namespace CloudControlApi
-  {
-    namespace Model
-    {
-      namespace OperationMapper
-      {
+static const int CREATE_HASH = HashingUtils::HashString("CREATE");
+static const int DELETE__HASH = HashingUtils::HashString("DELETE");
+static const int UPDATE_HASH = HashingUtils::HashString("UPDATE");
 
-        static const int CREATE_HASH = HashingUtils::HashString("CREATE");
-        static const int DELETE__HASH = HashingUtils::HashString("DELETE");
-        static const int UPDATE_HASH = HashingUtils::HashString("UPDATE");
+Operation GetOperationForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == CREATE_HASH) {
+    return Operation::CREATE;
+  } else if (hashCode == DELETE__HASH) {
+    return Operation::DELETE_;
+  } else if (hashCode == UPDATE_HASH) {
+    return Operation::UPDATE;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<Operation>(hashCode);
+  }
 
+  return Operation::NOT_SET;
+}
 
-        Operation GetOperationForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == CREATE_HASH)
-          {
-            return Operation::CREATE;
-          }
-          else if (hashCode == DELETE__HASH)
-          {
-            return Operation::DELETE_;
-          }
-          else if (hashCode == UPDATE_HASH)
-          {
-            return Operation::UPDATE;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<Operation>(hashCode);
-          }
+Aws::String GetNameForOperation(Operation enumValue) {
+  switch (enumValue) {
+    case Operation::NOT_SET:
+      return {};
+    case Operation::CREATE:
+      return "CREATE";
+    case Operation::DELETE_:
+      return "DELETE";
+    case Operation::UPDATE:
+      return "UPDATE";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return Operation::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForOperation(Operation enumValue)
-        {
-          switch(enumValue)
-          {
-          case Operation::NOT_SET:
-            return {};
-          case Operation::CREATE:
-            return "CREATE";
-          case Operation::DELETE_:
-            return "DELETE";
-          case Operation::UPDATE:
-            return "UPDATE";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace OperationMapper
-    } // namespace Model
-  } // namespace CloudControlApi
-} // namespace Aws
+}  // namespace OperationMapper
+}  // namespace Model
+}  // namespace CloudControlApi
+}  // namespace Aws

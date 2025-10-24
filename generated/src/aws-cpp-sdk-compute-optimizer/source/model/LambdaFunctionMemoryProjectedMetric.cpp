@@ -11,61 +11,47 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
 
-LambdaFunctionMemoryProjectedMetric::LambdaFunctionMemoryProjectedMetric(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LambdaFunctionMemoryProjectedMetric::LambdaFunctionMemoryProjectedMetric(JsonView jsonValue) { *this = jsonValue; }
 
-LambdaFunctionMemoryProjectedMetric& LambdaFunctionMemoryProjectedMetric::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+LambdaFunctionMemoryProjectedMetric& LambdaFunctionMemoryProjectedMetric::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = LambdaFunctionMemoryMetricNameMapper::GetLambdaFunctionMemoryMetricNameForName(jsonValue.GetString("name"));
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("statistic"))
-  {
-    m_statistic = LambdaFunctionMemoryMetricStatisticMapper::GetLambdaFunctionMemoryMetricStatisticForName(jsonValue.GetString("statistic"));
+  if (jsonValue.ValueExists("statistic")) {
+    m_statistic =
+        LambdaFunctionMemoryMetricStatisticMapper::GetLambdaFunctionMemoryMetricStatisticForName(jsonValue.GetString("statistic"));
     m_statisticHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("value"))
-  {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetDouble("value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LambdaFunctionMemoryProjectedMetric::Jsonize() const
-{
+JsonValue LambdaFunctionMemoryProjectedMetric::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", LambdaFunctionMemoryMetricNameMapper::GetNameForLambdaFunctionMemoryMetricName(m_name));
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", LambdaFunctionMemoryMetricNameMapper::GetNameForLambdaFunctionMemoryMetricName(m_name));
   }
 
-  if(m_statisticHasBeenSet)
-  {
-   payload.WithString("statistic", LambdaFunctionMemoryMetricStatisticMapper::GetNameForLambdaFunctionMemoryMetricStatistic(m_statistic));
+  if (m_statisticHasBeenSet) {
+    payload.WithString("statistic", LambdaFunctionMemoryMetricStatisticMapper::GetNameForLambdaFunctionMemoryMetricStatistic(m_statistic));
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithDouble("value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithDouble("value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/elasticfilesystem/EFS_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/elasticfilesystem/EFSEndpointRules.h>
+#include <aws/elasticfilesystem/EFS_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace EFS
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace EFS {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using EFSClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -34,28 +29,21 @@ using EFSBuiltInParameters = Aws::Endpoint::BuiltInParameters;
  * Inherit from this Base class / "Interface" should you want to provide a custom endpoint provider.
  * The SDK must use service-specific type for each service per specification.
  */
-using EFSEndpointProviderBase =
-    EndpointProviderBase<EFSClientConfiguration, EFSBuiltInParameters, EFSClientContextParameters>;
+using EFSEndpointProviderBase = EndpointProviderBase<EFSClientConfiguration, EFSBuiltInParameters, EFSClientContextParameters>;
 
-using EFSDefaultEpProviderBase =
-    DefaultEndpointProvider<EFSClientConfiguration, EFSBuiltInParameters, EFSClientContextParameters>;
+using EFSDefaultEpProviderBase = DefaultEndpointProvider<EFSClientConfiguration, EFSBuiltInParameters, EFSClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_EFS_API EFSEndpointProvider : public EFSDefaultEpProviderBase
-{
-public:
-    using EFSResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_EFS_API EFSEndpointProvider : public EFSDefaultEpProviderBase {
+ public:
+  using EFSResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    EFSEndpointProvider()
-      : EFSDefaultEpProviderBase(Aws::EFS::EFSEndpointRules::GetRulesBlob(), Aws::EFS::EFSEndpointRules::RulesBlobSize)
-    {}
+  EFSEndpointProvider() : EFSDefaultEpProviderBase(Aws::EFS::EFSEndpointRules::GetRulesBlob(), Aws::EFS::EFSEndpointRules::RulesBlobSize) {}
 
-    ~EFSEndpointProvider()
-    {
-    }
+  ~EFSEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace EFS
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace EFS
+}  // namespace Aws

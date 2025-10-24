@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-AutomatedEvaluationCustomMetricSource::AutomatedEvaluationCustomMetricSource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AutomatedEvaluationCustomMetricSource::AutomatedEvaluationCustomMetricSource(JsonView jsonValue) { *this = jsonValue; }
 
-AutomatedEvaluationCustomMetricSource& AutomatedEvaluationCustomMetricSource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("customMetricDefinition"))
-  {
+AutomatedEvaluationCustomMetricSource& AutomatedEvaluationCustomMetricSource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("customMetricDefinition")) {
     m_customMetricDefinition = jsonValue.GetObject("customMetricDefinition");
     m_customMetricDefinitionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AutomatedEvaluationCustomMetricSource::Jsonize() const
-{
+JsonValue AutomatedEvaluationCustomMetricSource::Jsonize() const {
   JsonValue payload;
 
-  if(m_customMetricDefinitionHasBeenSet)
-  {
-   payload.WithObject("customMetricDefinition", m_customMetricDefinition.Jsonize());
-
+  if (m_customMetricDefinitionHasBeenSet) {
+    payload.WithObject("customMetricDefinition", m_customMetricDefinition.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

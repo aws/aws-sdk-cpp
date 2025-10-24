@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DisassociateSubnetCidrBlockRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DisassociateSubnetCidrBlockRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DisassociateSubnetCidrBlockRequest::SerializePayload() const
-{
+Aws::String DisassociateSubnetCidrBlockRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DisassociateSubnetCidrBlock&";
-  if(m_associationIdHasBeenSet)
-  {
+  if (m_associationIdHasBeenSet) {
     ss << "AssociationId=" << StringUtils::URLEncode(m_associationId.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DisassociateSubnetCidrBlockRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DisassociateSubnetCidrBlockRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DisassociateSubnetCidrBlockRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

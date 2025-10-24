@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/evidently/model/MetricGoal.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/evidently/model/MetricGoal.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudWatchEvidently
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudWatchEvidently {
+namespace Model {
 
-MetricGoal::MetricGoal(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MetricGoal::MetricGoal(JsonView jsonValue) { *this = jsonValue; }
 
-MetricGoal& MetricGoal::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("desiredChange"))
-  {
+MetricGoal& MetricGoal::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("desiredChange")) {
     m_desiredChange = ChangeDirectionEnumMapper::GetChangeDirectionEnumForName(jsonValue.GetString("desiredChange"));
     m_desiredChangeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("metricDefinition"))
-  {
+  if (jsonValue.ValueExists("metricDefinition")) {
     m_metricDefinition = jsonValue.GetObject("metricDefinition");
     m_metricDefinitionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MetricGoal::Jsonize() const
-{
+JsonValue MetricGoal::Jsonize() const {
   JsonValue payload;
 
-  if(m_desiredChangeHasBeenSet)
-  {
-   payload.WithString("desiredChange", ChangeDirectionEnumMapper::GetNameForChangeDirectionEnum(m_desiredChange));
+  if (m_desiredChangeHasBeenSet) {
+    payload.WithString("desiredChange", ChangeDirectionEnumMapper::GetNameForChangeDirectionEnum(m_desiredChange));
   }
 
-  if(m_metricDefinitionHasBeenSet)
-  {
-   payload.WithObject("metricDefinition", m_metricDefinition.Jsonize());
-
+  if (m_metricDefinitionHasBeenSet) {
+    payload.WithObject("metricDefinition", m_metricDefinition.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudWatchEvidently
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudWatchEvidently
+}  // namespace Aws

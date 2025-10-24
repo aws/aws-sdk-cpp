@@ -7,25 +7,16 @@
 #include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace BedrockDataAutomationRuntime
-{
-namespace Model
-{
-  enum class BlueprintStage
-  {
-    NOT_SET,
-    DEVELOPMENT,
-    LIVE
-  };
+namespace Aws {
+namespace BedrockDataAutomationRuntime {
+namespace Model {
+enum class BlueprintStage { NOT_SET, DEVELOPMENT, LIVE };
 
-namespace BlueprintStageMapper
-{
+namespace BlueprintStageMapper {
 AWS_BEDROCKDATAAUTOMATIONRUNTIME_API BlueprintStage GetBlueprintStageForName(const Aws::String& name);
 
 AWS_BEDROCKDATAAUTOMATIONRUNTIME_API Aws::String GetNameForBlueprintStage(BlueprintStage value);
-} // namespace BlueprintStageMapper
-} // namespace Model
-} // namespace BedrockDataAutomationRuntime
-} // namespace Aws
+}  // namespace BlueprintStageMapper
+}  // namespace Model
+}  // namespace BedrockDataAutomationRuntime
+}  // namespace Aws

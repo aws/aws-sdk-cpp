@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/sso-oidc/SSOOIDC_EXPORTS.h>
 
-namespace Aws
-{
-namespace SSOOIDC
-{
-enum class SSOOIDCErrors
-{
-  //From Core//
+namespace Aws {
+namespace SSOOIDC {
+enum class SSOOIDCErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class SSOOIDCErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class SSOOIDCErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  AUTHORIZATION_PENDING= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  AUTHORIZATION_PENDING = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   EXPIRED_TOKEN,
   INTERNAL_SERVER,
   INVALID_CLIENT,
@@ -61,9 +58,8 @@ enum class SSOOIDCErrors
   UNSUPPORTED_GRANT_TYPE
 };
 
-class AWS_SSOOIDC_API SSOOIDCError : public Aws::Client::AWSError<SSOOIDCErrors>
-{
-public:
+class AWS_SSOOIDC_API SSOOIDCError : public Aws::Client::AWSError<SSOOIDCErrors> {
+ public:
   SSOOIDCError() {}
   SSOOIDCError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<SSOOIDCErrors>(rhs) {}
   SSOOIDCError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<SSOOIDCErrors>(rhs) {}
@@ -74,10 +70,9 @@ public:
   T GetModeledError();
 };
 
-namespace SSOOIDCErrorMapper
-{
-  AWS_SSOOIDC_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace SSOOIDCErrorMapper {
+AWS_SSOOIDC_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace SSOOIDC
-} // namespace Aws
+}  // namespace SSOOIDC
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/events/model/TestEventPatternRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/events/model/TestEventPatternRequest.h>
 
 #include <utility>
 
@@ -12,33 +12,22 @@ using namespace Aws::CloudWatchEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String TestEventPatternRequest::SerializePayload() const
-{
+Aws::String TestEventPatternRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_eventPatternHasBeenSet)
-  {
-   payload.WithString("EventPattern", m_eventPattern);
-
+  if (m_eventPatternHasBeenSet) {
+    payload.WithString("EventPattern", m_eventPattern);
   }
 
-  if(m_eventHasBeenSet)
-  {
-   payload.WithString("Event", m_event);
-
+  if (m_eventHasBeenSet) {
+    payload.WithString("Event", m_event);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection TestEventPatternRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection TestEventPatternRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSEvents.TestEventPattern"));
   return headers;
-
 }
-
-
-
-

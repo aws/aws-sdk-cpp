@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsWafRegionalRuleGroupRulesActionDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsWafRegionalRuleGroupRulesActionDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsWafRegionalRuleGroupRulesActionDetails::AwsWafRegionalRuleGroupRulesActionDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsWafRegionalRuleGroupRulesActionDetails::AwsWafRegionalRuleGroupRulesActionDetails(JsonView jsonValue) { *this = jsonValue; }
 
-AwsWafRegionalRuleGroupRulesActionDetails& AwsWafRegionalRuleGroupRulesActionDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Type"))
-  {
+AwsWafRegionalRuleGroupRulesActionDetails& AwsWafRegionalRuleGroupRulesActionDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Type")) {
     m_type = jsonValue.GetString("Type");
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsWafRegionalRuleGroupRulesActionDetails::Jsonize() const
-{
+JsonValue AwsWafRegionalRuleGroupRulesActionDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", m_type);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

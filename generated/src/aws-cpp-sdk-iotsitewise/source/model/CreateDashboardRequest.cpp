@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotsitewise/model/CreateDashboardRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotsitewise/model/CreateDashboardRequest.h>
 
 #include <utility>
 
@@ -12,54 +12,36 @@ using namespace Aws::IoTSiteWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateDashboardRequest::SerializePayload() const
-{
+Aws::String CreateDashboardRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_projectIdHasBeenSet)
-  {
-   payload.WithString("projectId", m_projectId);
-
+  if (m_projectIdHasBeenSet) {
+    payload.WithString("projectId", m_projectId);
   }
 
-  if(m_dashboardNameHasBeenSet)
-  {
-   payload.WithString("dashboardName", m_dashboardName);
-
+  if (m_dashboardNameHasBeenSet) {
+    payload.WithString("dashboardName", m_dashboardName);
   }
 
-  if(m_dashboardDescriptionHasBeenSet)
-  {
-   payload.WithString("dashboardDescription", m_dashboardDescription);
-
+  if (m_dashboardDescriptionHasBeenSet) {
+    payload.WithString("dashboardDescription", m_dashboardDescription);
   }
 
-  if(m_dashboardDefinitionHasBeenSet)
-  {
-   payload.WithString("dashboardDefinition", m_dashboardDefinition);
-
+  if (m_dashboardDefinitionHasBeenSet) {
+    payload.WithString("dashboardDefinition", m_dashboardDefinition);
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

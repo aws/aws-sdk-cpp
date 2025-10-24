@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/CustomPosixUserConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/CustomPosixUserConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-CustomPosixUserConfig::CustomPosixUserConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CustomPosixUserConfig::CustomPosixUserConfig(JsonView jsonValue) { *this = jsonValue; }
 
-CustomPosixUserConfig& CustomPosixUserConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Uid"))
-  {
+CustomPosixUserConfig& CustomPosixUserConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Uid")) {
     m_uid = jsonValue.GetInt64("Uid");
     m_uidHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Gid"))
-  {
+  if (jsonValue.ValueExists("Gid")) {
     m_gid = jsonValue.GetInt64("Gid");
     m_gidHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CustomPosixUserConfig::Jsonize() const
-{
+JsonValue CustomPosixUserConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_uidHasBeenSet)
-  {
-   payload.WithInt64("Uid", m_uid);
-
+  if (m_uidHasBeenSet) {
+    payload.WithInt64("Uid", m_uid);
   }
 
-  if(m_gidHasBeenSet)
-  {
-   payload.WithInt64("Gid", m_gid);
-
+  if (m_gidHasBeenSet) {
+    payload.WithInt64("Gid", m_gid);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

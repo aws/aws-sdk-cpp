@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-AudioArtifactsConfiguration::AudioArtifactsConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AudioArtifactsConfiguration::AudioArtifactsConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-AudioArtifactsConfiguration& AudioArtifactsConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MuxType"))
-  {
+AudioArtifactsConfiguration& AudioArtifactsConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MuxType")) {
     m_muxType = AudioMuxTypeMapper::GetAudioMuxTypeForName(jsonValue.GetString("MuxType"));
     m_muxTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AudioArtifactsConfiguration::Jsonize() const
-{
+JsonValue AudioArtifactsConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_muxTypeHasBeenSet)
-  {
-   payload.WithString("MuxType", AudioMuxTypeMapper::GetNameForAudioMuxType(m_muxType));
+  if (m_muxTypeHasBeenSet) {
+    payload.WithString("MuxType", AudioMuxTypeMapper::GetNameForAudioMuxType(m_muxType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

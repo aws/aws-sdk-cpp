@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/networkmanager/NetworkManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/networkmanager/NetworkManager_EXPORTS.h>
 
-namespace Aws
-{
-namespace NetworkManager
-{
-namespace Model
-{
-  enum class RouteTableType
-  {
-    NOT_SET,
-    TRANSIT_GATEWAY_ROUTE_TABLE,
-    CORE_NETWORK_SEGMENT,
-    NETWORK_FUNCTION_GROUP
-  };
+namespace Aws {
+namespace NetworkManager {
+namespace Model {
+enum class RouteTableType { NOT_SET, TRANSIT_GATEWAY_ROUTE_TABLE, CORE_NETWORK_SEGMENT, NETWORK_FUNCTION_GROUP };
 
-namespace RouteTableTypeMapper
-{
+namespace RouteTableTypeMapper {
 AWS_NETWORKMANAGER_API RouteTableType GetRouteTableTypeForName(const Aws::String& name);
 
 AWS_NETWORKMANAGER_API Aws::String GetNameForRouteTableType(RouteTableType value);
-} // namespace RouteTableTypeMapper
-} // namespace Model
-} // namespace NetworkManager
-} // namespace Aws
+}  // namespace RouteTableTypeMapper
+}  // namespace Model
+}  // namespace NetworkManager
+}  // namespace Aws

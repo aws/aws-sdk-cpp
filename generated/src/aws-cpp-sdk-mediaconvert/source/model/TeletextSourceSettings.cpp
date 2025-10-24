@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/TeletextSourceSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconvert/model/TeletextSourceSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
 
-TeletextSourceSettings::TeletextSourceSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TeletextSourceSettings::TeletextSourceSettings(JsonView jsonValue) { *this = jsonValue; }
 
-TeletextSourceSettings& TeletextSourceSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("pageNumber"))
-  {
+TeletextSourceSettings& TeletextSourceSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("pageNumber")) {
     m_pageNumber = jsonValue.GetString("pageNumber");
     m_pageNumberHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TeletextSourceSettings::Jsonize() const
-{
+JsonValue TeletextSourceSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_pageNumberHasBeenSet)
-  {
-   payload.WithString("pageNumber", m_pageNumber);
-
+  if (m_pageNumberHasBeenSet) {
+    payload.WithString("pageNumber", m_pageNumber);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

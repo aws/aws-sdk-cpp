@@ -3,92 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediatailor/model/Transition.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediatailor/model/Transition.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaTailor
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaTailor {
+namespace Model {
 
-Transition::Transition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Transition::Transition(JsonView jsonValue) { *this = jsonValue; }
 
-Transition& Transition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DurationMillis"))
-  {
+Transition& Transition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DurationMillis")) {
     m_durationMillis = jsonValue.GetInt64("DurationMillis");
     m_durationMillisHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RelativePosition"))
-  {
+  if (jsonValue.ValueExists("RelativePosition")) {
     m_relativePosition = RelativePositionMapper::GetRelativePositionForName(jsonValue.GetString("RelativePosition"));
     m_relativePositionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RelativeProgram"))
-  {
+  if (jsonValue.ValueExists("RelativeProgram")) {
     m_relativeProgram = jsonValue.GetString("RelativeProgram");
     m_relativeProgramHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ScheduledStartTimeMillis"))
-  {
+  if (jsonValue.ValueExists("ScheduledStartTimeMillis")) {
     m_scheduledStartTimeMillis = jsonValue.GetInt64("ScheduledStartTimeMillis");
     m_scheduledStartTimeMillisHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = jsonValue.GetString("Type");
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Transition::Jsonize() const
-{
+JsonValue Transition::Jsonize() const {
   JsonValue payload;
 
-  if(m_durationMillisHasBeenSet)
-  {
-   payload.WithInt64("DurationMillis", m_durationMillis);
-
+  if (m_durationMillisHasBeenSet) {
+    payload.WithInt64("DurationMillis", m_durationMillis);
   }
 
-  if(m_relativePositionHasBeenSet)
-  {
-   payload.WithString("RelativePosition", RelativePositionMapper::GetNameForRelativePosition(m_relativePosition));
+  if (m_relativePositionHasBeenSet) {
+    payload.WithString("RelativePosition", RelativePositionMapper::GetNameForRelativePosition(m_relativePosition));
   }
 
-  if(m_relativeProgramHasBeenSet)
-  {
-   payload.WithString("RelativeProgram", m_relativeProgram);
-
+  if (m_relativeProgramHasBeenSet) {
+    payload.WithString("RelativeProgram", m_relativeProgram);
   }
 
-  if(m_scheduledStartTimeMillisHasBeenSet)
-  {
-   payload.WithInt64("ScheduledStartTimeMillis", m_scheduledStartTimeMillis);
-
+  if (m_scheduledStartTimeMillisHasBeenSet) {
+    payload.WithInt64("ScheduledStartTimeMillis", m_scheduledStartTimeMillis);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", m_type);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaTailor
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaTailor
+}  // namespace Aws

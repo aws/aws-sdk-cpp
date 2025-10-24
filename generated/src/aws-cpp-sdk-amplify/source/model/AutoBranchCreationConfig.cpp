@@ -11,148 +11,109 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Amplify
-{
-namespace Model
-{
+namespace Aws {
+namespace Amplify {
+namespace Model {
 
-AutoBranchCreationConfig::AutoBranchCreationConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AutoBranchCreationConfig::AutoBranchCreationConfig(JsonView jsonValue) { *this = jsonValue; }
 
-AutoBranchCreationConfig& AutoBranchCreationConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("stage"))
-  {
+AutoBranchCreationConfig& AutoBranchCreationConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("stage")) {
     m_stage = StageMapper::GetStageForName(jsonValue.GetString("stage"));
     m_stageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("framework"))
-  {
+  if (jsonValue.ValueExists("framework")) {
     m_framework = jsonValue.GetString("framework");
     m_frameworkHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("enableAutoBuild"))
-  {
+  if (jsonValue.ValueExists("enableAutoBuild")) {
     m_enableAutoBuild = jsonValue.GetBool("enableAutoBuild");
     m_enableAutoBuildHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("environmentVariables"))
-  {
+  if (jsonValue.ValueExists("environmentVariables")) {
     Aws::Map<Aws::String, JsonView> environmentVariablesJsonMap = jsonValue.GetObject("environmentVariables").GetAllObjects();
-    for(auto& environmentVariablesItem : environmentVariablesJsonMap)
-    {
+    for (auto& environmentVariablesItem : environmentVariablesJsonMap) {
       m_environmentVariables[environmentVariablesItem.first] = environmentVariablesItem.second.AsString();
     }
     m_environmentVariablesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("basicAuthCredentials"))
-  {
+  if (jsonValue.ValueExists("basicAuthCredentials")) {
     m_basicAuthCredentials = jsonValue.GetString("basicAuthCredentials");
     m_basicAuthCredentialsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("enableBasicAuth"))
-  {
+  if (jsonValue.ValueExists("enableBasicAuth")) {
     m_enableBasicAuth = jsonValue.GetBool("enableBasicAuth");
     m_enableBasicAuthHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("enablePerformanceMode"))
-  {
+  if (jsonValue.ValueExists("enablePerformanceMode")) {
     m_enablePerformanceMode = jsonValue.GetBool("enablePerformanceMode");
     m_enablePerformanceModeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("buildSpec"))
-  {
+  if (jsonValue.ValueExists("buildSpec")) {
     m_buildSpec = jsonValue.GetString("buildSpec");
     m_buildSpecHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("enablePullRequestPreview"))
-  {
+  if (jsonValue.ValueExists("enablePullRequestPreview")) {
     m_enablePullRequestPreview = jsonValue.GetBool("enablePullRequestPreview");
     m_enablePullRequestPreviewHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("pullRequestEnvironmentName"))
-  {
+  if (jsonValue.ValueExists("pullRequestEnvironmentName")) {
     m_pullRequestEnvironmentName = jsonValue.GetString("pullRequestEnvironmentName");
     m_pullRequestEnvironmentNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AutoBranchCreationConfig::Jsonize() const
-{
+JsonValue AutoBranchCreationConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_stageHasBeenSet)
-  {
-   payload.WithString("stage", StageMapper::GetNameForStage(m_stage));
+  if (m_stageHasBeenSet) {
+    payload.WithString("stage", StageMapper::GetNameForStage(m_stage));
   }
 
-  if(m_frameworkHasBeenSet)
-  {
-   payload.WithString("framework", m_framework);
-
+  if (m_frameworkHasBeenSet) {
+    payload.WithString("framework", m_framework);
   }
 
-  if(m_enableAutoBuildHasBeenSet)
-  {
-   payload.WithBool("enableAutoBuild", m_enableAutoBuild);
-
+  if (m_enableAutoBuildHasBeenSet) {
+    payload.WithBool("enableAutoBuild", m_enableAutoBuild);
   }
 
-  if(m_environmentVariablesHasBeenSet)
-  {
-   JsonValue environmentVariablesJsonMap;
-   for(auto& environmentVariablesItem : m_environmentVariables)
-   {
-     environmentVariablesJsonMap.WithString(environmentVariablesItem.first, environmentVariablesItem.second);
-   }
-   payload.WithObject("environmentVariables", std::move(environmentVariablesJsonMap));
-
+  if (m_environmentVariablesHasBeenSet) {
+    JsonValue environmentVariablesJsonMap;
+    for (auto& environmentVariablesItem : m_environmentVariables) {
+      environmentVariablesJsonMap.WithString(environmentVariablesItem.first, environmentVariablesItem.second);
+    }
+    payload.WithObject("environmentVariables", std::move(environmentVariablesJsonMap));
   }
 
-  if(m_basicAuthCredentialsHasBeenSet)
-  {
-   payload.WithString("basicAuthCredentials", m_basicAuthCredentials);
-
+  if (m_basicAuthCredentialsHasBeenSet) {
+    payload.WithString("basicAuthCredentials", m_basicAuthCredentials);
   }
 
-  if(m_enableBasicAuthHasBeenSet)
-  {
-   payload.WithBool("enableBasicAuth", m_enableBasicAuth);
-
+  if (m_enableBasicAuthHasBeenSet) {
+    payload.WithBool("enableBasicAuth", m_enableBasicAuth);
   }
 
-  if(m_enablePerformanceModeHasBeenSet)
-  {
-   payload.WithBool("enablePerformanceMode", m_enablePerformanceMode);
-
+  if (m_enablePerformanceModeHasBeenSet) {
+    payload.WithBool("enablePerformanceMode", m_enablePerformanceMode);
   }
 
-  if(m_buildSpecHasBeenSet)
-  {
-   payload.WithString("buildSpec", m_buildSpec);
-
+  if (m_buildSpecHasBeenSet) {
+    payload.WithString("buildSpec", m_buildSpec);
   }
 
-  if(m_enablePullRequestPreviewHasBeenSet)
-  {
-   payload.WithBool("enablePullRequestPreview", m_enablePullRequestPreview);
-
+  if (m_enablePullRequestPreviewHasBeenSet) {
+    payload.WithBool("enablePullRequestPreview", m_enablePullRequestPreview);
   }
 
-  if(m_pullRequestEnvironmentNameHasBeenSet)
-  {
-   payload.WithString("pullRequestEnvironmentName", m_pullRequestEnvironmentName);
-
+  if (m_pullRequestEnvironmentNameHasBeenSet) {
+    payload.WithString("pullRequestEnvironmentName", m_pullRequestEnvironmentName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Amplify
-} // namespace Aws
+}  // namespace Model
+}  // namespace Amplify
+}  // namespace Aws

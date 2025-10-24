@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/frauddetector/FraudDetector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/frauddetector/FraudDetector_EXPORTS.h>
 
-namespace Aws
-{
-namespace FraudDetector
-{
-namespace Model
-{
-  enum class ModelVersionStatus
-  {
-    NOT_SET,
-    ACTIVE,
-    INACTIVE,
-    TRAINING_CANCELLED
-  };
+namespace Aws {
+namespace FraudDetector {
+namespace Model {
+enum class ModelVersionStatus { NOT_SET, ACTIVE, INACTIVE, TRAINING_CANCELLED };
 
-namespace ModelVersionStatusMapper
-{
+namespace ModelVersionStatusMapper {
 AWS_FRAUDDETECTOR_API ModelVersionStatus GetModelVersionStatusForName(const Aws::String& name);
 
 AWS_FRAUDDETECTOR_API Aws::String GetNameForModelVersionStatus(ModelVersionStatus value);
-} // namespace ModelVersionStatusMapper
-} // namespace Model
-} // namespace FraudDetector
-} // namespace Aws
+}  // namespace ModelVersionStatusMapper
+}  // namespace Model
+}  // namespace FraudDetector
+}  // namespace Aws

@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCases
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCases {
+namespace Model {
 
-SlaInputContent::SlaInputContent(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SlaInputContent::SlaInputContent(JsonView jsonValue) { *this = jsonValue; }
 
-SlaInputContent& SlaInputContent::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("slaInputConfiguration"))
-  {
+SlaInputContent& SlaInputContent::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("slaInputConfiguration")) {
     m_slaInputConfiguration = jsonValue.GetObject("slaInputConfiguration");
     m_slaInputConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SlaInputContent::Jsonize() const
-{
+JsonValue SlaInputContent::Jsonize() const {
   JsonValue payload;
 
-  if(m_slaInputConfigurationHasBeenSet)
-  {
-   payload.WithObject("slaInputConfiguration", m_slaInputConfiguration.Jsonize());
-
+  if (m_slaInputConfigurationHasBeenSet) {
+    payload.WithObject("slaInputConfiguration", m_slaInputConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCases
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCases
+}  // namespace Aws

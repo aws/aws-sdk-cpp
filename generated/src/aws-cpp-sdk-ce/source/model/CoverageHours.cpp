@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Model
-{
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
 
-CoverageHours::CoverageHours(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CoverageHours::CoverageHours(JsonView jsonValue) { *this = jsonValue; }
 
-CoverageHours& CoverageHours::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("OnDemandHours"))
-  {
+CoverageHours& CoverageHours::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("OnDemandHours")) {
     m_onDemandHours = jsonValue.GetString("OnDemandHours");
     m_onDemandHoursHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ReservedHours"))
-  {
+  if (jsonValue.ValueExists("ReservedHours")) {
     m_reservedHours = jsonValue.GetString("ReservedHours");
     m_reservedHoursHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TotalRunningHours"))
-  {
+  if (jsonValue.ValueExists("TotalRunningHours")) {
     m_totalRunningHours = jsonValue.GetString("TotalRunningHours");
     m_totalRunningHoursHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CoverageHoursPercentage"))
-  {
+  if (jsonValue.ValueExists("CoverageHoursPercentage")) {
     m_coverageHoursPercentage = jsonValue.GetString("CoverageHoursPercentage");
     m_coverageHoursPercentageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CoverageHours::Jsonize() const
-{
+JsonValue CoverageHours::Jsonize() const {
   JsonValue payload;
 
-  if(m_onDemandHoursHasBeenSet)
-  {
-   payload.WithString("OnDemandHours", m_onDemandHours);
-
+  if (m_onDemandHoursHasBeenSet) {
+    payload.WithString("OnDemandHours", m_onDemandHours);
   }
 
-  if(m_reservedHoursHasBeenSet)
-  {
-   payload.WithString("ReservedHours", m_reservedHours);
-
+  if (m_reservedHoursHasBeenSet) {
+    payload.WithString("ReservedHours", m_reservedHours);
   }
 
-  if(m_totalRunningHoursHasBeenSet)
-  {
-   payload.WithString("TotalRunningHours", m_totalRunningHours);
-
+  if (m_totalRunningHoursHasBeenSet) {
+    payload.WithString("TotalRunningHours", m_totalRunningHours);
   }
 
-  if(m_coverageHoursPercentageHasBeenSet)
-  {
-   payload.WithString("CoverageHoursPercentage", m_coverageHoursPercentage);
-
+  if (m_coverageHoursPercentageHasBeenSet) {
+    payload.WithString("CoverageHoursPercentage", m_coverageHoursPercentage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

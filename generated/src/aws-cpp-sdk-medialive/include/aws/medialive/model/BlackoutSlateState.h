@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
-  enum class BlackoutSlateState
-  {
-    NOT_SET,
-    DISABLED,
-    ENABLED
-  };
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+enum class BlackoutSlateState { NOT_SET, DISABLED, ENABLED };
 
-namespace BlackoutSlateStateMapper
-{
+namespace BlackoutSlateStateMapper {
 AWS_MEDIALIVE_API BlackoutSlateState GetBlackoutSlateStateForName(const Aws::String& name);
 
 AWS_MEDIALIVE_API Aws::String GetNameForBlackoutSlateState(BlackoutSlateState value);
-} // namespace BlackoutSlateStateMapper
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace BlackoutSlateStateMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/medical-imaging/MedicalImaging_EXPORTS.h>
 
-namespace Aws
-{
-namespace MedicalImaging
-{
-class MedicalImagingEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace MedicalImaging {
+class MedicalImagingEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace MedicalImaging
-} // namespace Aws
+}  // namespace MedicalImaging
+}  // namespace Aws

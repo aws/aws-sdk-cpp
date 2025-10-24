@@ -5,12 +5,8 @@
 
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptionsEndpointProvider.h>
 
-namespace Aws
-{
-namespace LicenseManagerUserSubscriptions
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace LicenseManagerUserSubscriptions
-} // namespace Aws
+namespace Aws {
+namespace LicenseManagerUserSubscriptions {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace LicenseManagerUserSubscriptions
+}  // namespace Aws

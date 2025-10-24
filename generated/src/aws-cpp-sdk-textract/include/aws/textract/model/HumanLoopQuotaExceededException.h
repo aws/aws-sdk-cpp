@@ -4,87 +4,98 @@
  */
 
 #pragma once
-#include <aws/textract/Textract_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/textract/Textract_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace Textract
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Textract {
+namespace Model {
 
+/**
+ * <p>Indicates you have exceeded the maximum number of active human in the loop
+ * workflows available</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/HumanLoopQuotaExceededException">AWS
+ * API Reference</a></p>
+ */
+class HumanLoopQuotaExceededException {
+ public:
+  AWS_TEXTRACT_API HumanLoopQuotaExceededException() = default;
+  AWS_TEXTRACT_API HumanLoopQuotaExceededException(Aws::Utils::Json::JsonView jsonValue);
+  AWS_TEXTRACT_API HumanLoopQuotaExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Indicates you have exceeded the maximum number of active human in the loop
-   * workflows available</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/HumanLoopQuotaExceededException">AWS
-   * API Reference</a></p>
+   * <p>The resource type.</p>
    */
-  class HumanLoopQuotaExceededException
-  {
-  public:
-    AWS_TEXTRACT_API HumanLoopQuotaExceededException() = default;
-    AWS_TEXTRACT_API HumanLoopQuotaExceededException(Aws::Utils::Json::JsonView jsonValue);
-    AWS_TEXTRACT_API HumanLoopQuotaExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetResourceType() const { return m_resourceType; }
+  inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+  template <typename ResourceTypeT = Aws::String>
+  void SetResourceType(ResourceTypeT&& value) {
+    m_resourceTypeHasBeenSet = true;
+    m_resourceType = std::forward<ResourceTypeT>(value);
+  }
+  template <typename ResourceTypeT = Aws::String>
+  HumanLoopQuotaExceededException& WithResourceType(ResourceTypeT&& value) {
+    SetResourceType(std::forward<ResourceTypeT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The quota code.</p>
+   */
+  inline const Aws::String& GetQuotaCode() const { return m_quotaCode; }
+  inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }
+  template <typename QuotaCodeT = Aws::String>
+  void SetQuotaCode(QuotaCodeT&& value) {
+    m_quotaCodeHasBeenSet = true;
+    m_quotaCode = std::forward<QuotaCodeT>(value);
+  }
+  template <typename QuotaCodeT = Aws::String>
+  HumanLoopQuotaExceededException& WithQuotaCode(QuotaCodeT&& value) {
+    SetQuotaCode(std::forward<QuotaCodeT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The resource type.</p>
-     */
-    inline const Aws::String& GetResourceType() const { return m_resourceType; }
-    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    template<typename ResourceTypeT = Aws::String>
-    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
-    template<typename ResourceTypeT = Aws::String>
-    HumanLoopQuotaExceededException& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The service code.</p>
+   */
+  inline const Aws::String& GetServiceCode() const { return m_serviceCode; }
+  inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
+  template <typename ServiceCodeT = Aws::String>
+  void SetServiceCode(ServiceCodeT&& value) {
+    m_serviceCodeHasBeenSet = true;
+    m_serviceCode = std::forward<ServiceCodeT>(value);
+  }
+  template <typename ServiceCodeT = Aws::String>
+  HumanLoopQuotaExceededException& WithServiceCode(ServiceCodeT&& value) {
+    SetServiceCode(std::forward<ServiceCodeT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_resourceType;
+  bool m_resourceTypeHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The quota code.</p>
-     */
-    inline const Aws::String& GetQuotaCode() const { return m_quotaCode; }
-    inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }
-    template<typename QuotaCodeT = Aws::String>
-    void SetQuotaCode(QuotaCodeT&& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = std::forward<QuotaCodeT>(value); }
-    template<typename QuotaCodeT = Aws::String>
-    HumanLoopQuotaExceededException& WithQuotaCode(QuotaCodeT&& value) { SetQuotaCode(std::forward<QuotaCodeT>(value)); return *this;}
-    ///@}
+  Aws::String m_quotaCode;
+  bool m_quotaCodeHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The service code.</p>
-     */
-    inline const Aws::String& GetServiceCode() const { return m_serviceCode; }
-    inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
-    template<typename ServiceCodeT = Aws::String>
-    void SetServiceCode(ServiceCodeT&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::forward<ServiceCodeT>(value); }
-    template<typename ServiceCodeT = Aws::String>
-    HumanLoopQuotaExceededException& WithServiceCode(ServiceCodeT&& value) { SetServiceCode(std::forward<ServiceCodeT>(value)); return *this;}
-    ///@}
-  private:
+  Aws::String m_serviceCode;
+  bool m_serviceCodeHasBeenSet = false;
+};
 
-    Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet = false;
-
-    Aws::String m_quotaCode;
-    bool m_quotaCodeHasBeenSet = false;
-
-    Aws::String m_serviceCode;
-    bool m_serviceCodeHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Textract
-} // namespace Aws
+}  // namespace Model
+}  // namespace Textract
+}  // namespace Aws

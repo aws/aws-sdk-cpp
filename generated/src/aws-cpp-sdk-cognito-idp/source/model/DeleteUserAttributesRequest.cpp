@@ -12,38 +12,27 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteUserAttributesRequest::SerializePayload() const
-{
+Aws::String DeleteUserAttributesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_userAttributeNamesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> userAttributeNamesJsonList(m_userAttributeNames.size());
-   for(unsigned userAttributeNamesIndex = 0; userAttributeNamesIndex < userAttributeNamesJsonList.GetLength(); ++userAttributeNamesIndex)
-   {
-     userAttributeNamesJsonList[userAttributeNamesIndex].AsString(m_userAttributeNames[userAttributeNamesIndex]);
-   }
-   payload.WithArray("UserAttributeNames", std::move(userAttributeNamesJsonList));
-
+  if (m_userAttributeNamesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> userAttributeNamesJsonList(m_userAttributeNames.size());
+    for (unsigned userAttributeNamesIndex = 0; userAttributeNamesIndex < userAttributeNamesJsonList.GetLength();
+         ++userAttributeNamesIndex) {
+      userAttributeNamesJsonList[userAttributeNamesIndex].AsString(m_userAttributeNames[userAttributeNamesIndex]);
+    }
+    payload.WithArray("UserAttributeNames", std::move(userAttributeNamesJsonList));
   }
 
-  if(m_accessTokenHasBeenSet)
-  {
-   payload.WithString("AccessToken", m_accessToken);
-
+  if (m_accessTokenHasBeenSet) {
+    payload.WithString("AccessToken", m_accessToken);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteUserAttributesRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteUserAttributesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityProviderService.DeleteUserAttributes"));
   return headers;
-
 }
-
-
-
-

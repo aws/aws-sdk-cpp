@@ -12,24 +12,16 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateSipMediaApplicationCallRequest::SerializePayload() const
-{
+Aws::String UpdateSipMediaApplicationCallRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_argumentsHasBeenSet)
-  {
-   JsonValue argumentsJsonMap;
-   for(auto& argumentsItem : m_arguments)
-   {
-     argumentsJsonMap.WithString(argumentsItem.first, argumentsItem.second);
-   }
-   payload.WithObject("Arguments", std::move(argumentsJsonMap));
-
+  if (m_argumentsHasBeenSet) {
+    JsonValue argumentsJsonMap;
+    for (auto& argumentsItem : m_arguments) {
+      argumentsJsonMap.WithString(argumentsItem.first, argumentsItem.second);
+    }
+    payload.WithObject("Arguments", std::move(argumentsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

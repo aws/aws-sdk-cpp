@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/importexport/model/ListJobsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/importexport/model/ListJobsRequest.h>
 
 using namespace Aws::ImportExport::Model;
 using namespace Aws::Utils;
 
-Aws::String ListJobsRequest::SerializePayload() const
-{
+Aws::String ListJobsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ListJobs&";
-  if(m_maxJobsHasBeenSet)
-  {
+  if (m_maxJobsHasBeenSet) {
     ss << "MaxJobs=" << m_maxJobs << "&";
   }
 
-  if(m_markerHasBeenSet)
-  {
+  if (m_markerHasBeenSet) {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
 
-  if(m_aPIVersionHasBeenSet)
-  {
+  if (m_aPIVersionHasBeenSet) {
     ss << "APIVersion=" << StringUtils::URLEncode(m_aPIVersion.c_str()) << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String ListJobsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ListJobsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ListJobsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

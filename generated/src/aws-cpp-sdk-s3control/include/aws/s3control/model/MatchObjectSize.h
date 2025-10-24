@@ -6,66 +6,70 @@
 #pragma once
 #include <aws/s3control/S3Control_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Xml
-{
-  class XmlNode;
-} // namespace Xml
-} // namespace Utils
-namespace S3Control
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Xml {
+class XmlNode;
+}  // namespace Xml
+}  // namespace Utils
+namespace S3Control {
+namespace Model {
 
+/**
+ * <p> A filter condition that specifies the object size range of included objects
+ * in bytes. Only integers are supported. </p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/MatchObjectSize">AWS
+ * API Reference</a></p>
+ */
+class MatchObjectSize {
+ public:
+  AWS_S3CONTROL_API MatchObjectSize() = default;
+  AWS_S3CONTROL_API MatchObjectSize(const Aws::Utils::Xml::XmlNode& xmlNode);
+  AWS_S3CONTROL_API MatchObjectSize& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+  AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+
+  ///@{
   /**
-   * <p> A filter condition that specifies the object size range of included objects
-   * in bytes. Only integers are supported. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/MatchObjectSize">AWS
-   * API Reference</a></p>
+   * <p> Specifies the minimum object size in Bytes. The value must be a positive
+   * number, greater than 0 and less than 5 TB. </p>
    */
-  class MatchObjectSize
-  {
-  public:
-    AWS_S3CONTROL_API MatchObjectSize() = default;
-    AWS_S3CONTROL_API MatchObjectSize(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AWS_S3CONTROL_API MatchObjectSize& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+  inline long long GetBytesGreaterThan() const { return m_bytesGreaterThan; }
+  inline bool BytesGreaterThanHasBeenSet() const { return m_bytesGreaterThanHasBeenSet; }
+  inline void SetBytesGreaterThan(long long value) {
+    m_bytesGreaterThanHasBeenSet = true;
+    m_bytesGreaterThan = value;
+  }
+  inline MatchObjectSize& WithBytesGreaterThan(long long value) {
+    SetBytesGreaterThan(value);
+    return *this;
+  }
+  ///@}
 
-    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+  ///@{
+  /**
+   * <p> Specifies the maximum object size in Bytes. The value must be a positive
+   * number, greater than the minimum object size and less than 5 TB. </p>
+   */
+  inline long long GetBytesLessThan() const { return m_bytesLessThan; }
+  inline bool BytesLessThanHasBeenSet() const { return m_bytesLessThanHasBeenSet; }
+  inline void SetBytesLessThan(long long value) {
+    m_bytesLessThanHasBeenSet = true;
+    m_bytesLessThan = value;
+  }
+  inline MatchObjectSize& WithBytesLessThan(long long value) {
+    SetBytesLessThan(value);
+    return *this;
+  }
+  ///@}
+ private:
+  long long m_bytesGreaterThan{0};
+  bool m_bytesGreaterThanHasBeenSet = false;
 
+  long long m_bytesLessThan{0};
+  bool m_bytesLessThanHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p> Specifies the minimum object size in Bytes. The value must be a positive
-     * number, greater than 0 and less than 5 TB. </p>
-     */
-    inline long long GetBytesGreaterThan() const { return m_bytesGreaterThan; }
-    inline bool BytesGreaterThanHasBeenSet() const { return m_bytesGreaterThanHasBeenSet; }
-    inline void SetBytesGreaterThan(long long value) { m_bytesGreaterThanHasBeenSet = true; m_bytesGreaterThan = value; }
-    inline MatchObjectSize& WithBytesGreaterThan(long long value) { SetBytesGreaterThan(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p> Specifies the maximum object size in Bytes. The value must be a positive
-     * number, greater than the minimum object size and less than 5 TB. </p>
-     */
-    inline long long GetBytesLessThan() const { return m_bytesLessThan; }
-    inline bool BytesLessThanHasBeenSet() const { return m_bytesLessThanHasBeenSet; }
-    inline void SetBytesLessThan(long long value) { m_bytesLessThanHasBeenSet = true; m_bytesLessThan = value; }
-    inline MatchObjectSize& WithBytesLessThan(long long value) { SetBytesLessThan(value); return *this;}
-    ///@}
-  private:
-
-    long long m_bytesGreaterThan{0};
-    bool m_bytesGreaterThanHasBeenSet = false;
-
-    long long m_bytesLessThan{0};
-    bool m_bytesLessThanHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace S3Control
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Control
+}  // namespace Aws

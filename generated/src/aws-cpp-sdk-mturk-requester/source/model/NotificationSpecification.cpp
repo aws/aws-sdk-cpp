@@ -3,48 +3,36 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mturk-requester/model/NotificationSpecification.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mturk-requester/model/NotificationSpecification.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MTurk
-{
-namespace Model
-{
+namespace Aws {
+namespace MTurk {
+namespace Model {
 
-NotificationSpecification::NotificationSpecification(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NotificationSpecification::NotificationSpecification(JsonView jsonValue) { *this = jsonValue; }
 
-NotificationSpecification& NotificationSpecification::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Destination"))
-  {
+NotificationSpecification& NotificationSpecification::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Destination")) {
     m_destination = jsonValue.GetString("Destination");
     m_destinationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Transport"))
-  {
+  if (jsonValue.ValueExists("Transport")) {
     m_transport = NotificationTransportMapper::GetNotificationTransportForName(jsonValue.GetString("Transport"));
     m_transportHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Version"))
-  {
+  if (jsonValue.ValueExists("Version")) {
     m_version = jsonValue.GetString("Version");
     m_versionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EventTypes"))
-  {
+  if (jsonValue.ValueExists("EventTypes")) {
     Aws::Utils::Array<JsonView> eventTypesJsonList = jsonValue.GetArray("EventTypes");
-    for(unsigned eventTypesIndex = 0; eventTypesIndex < eventTypesJsonList.GetLength(); ++eventTypesIndex)
-    {
+    for (unsigned eventTypesIndex = 0; eventTypesIndex < eventTypesJsonList.GetLength(); ++eventTypesIndex) {
       m_eventTypes.push_back(EventTypeMapper::GetEventTypeForName(eventTypesJsonList[eventTypesIndex].AsString()));
     }
     m_eventTypesHasBeenSet = true;
@@ -52,41 +40,32 @@ NotificationSpecification& NotificationSpecification::operator =(JsonView jsonVa
   return *this;
 }
 
-JsonValue NotificationSpecification::Jsonize() const
-{
+JsonValue NotificationSpecification::Jsonize() const {
   JsonValue payload;
 
-  if(m_destinationHasBeenSet)
-  {
-   payload.WithString("Destination", m_destination);
-
+  if (m_destinationHasBeenSet) {
+    payload.WithString("Destination", m_destination);
   }
 
-  if(m_transportHasBeenSet)
-  {
-   payload.WithString("Transport", NotificationTransportMapper::GetNameForNotificationTransport(m_transport));
+  if (m_transportHasBeenSet) {
+    payload.WithString("Transport", NotificationTransportMapper::GetNameForNotificationTransport(m_transport));
   }
 
-  if(m_versionHasBeenSet)
-  {
-   payload.WithString("Version", m_version);
-
+  if (m_versionHasBeenSet) {
+    payload.WithString("Version", m_version);
   }
 
-  if(m_eventTypesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> eventTypesJsonList(m_eventTypes.size());
-   for(unsigned eventTypesIndex = 0; eventTypesIndex < eventTypesJsonList.GetLength(); ++eventTypesIndex)
-   {
-     eventTypesJsonList[eventTypesIndex].AsString(EventTypeMapper::GetNameForEventType(m_eventTypes[eventTypesIndex]));
-   }
-   payload.WithArray("EventTypes", std::move(eventTypesJsonList));
-
+  if (m_eventTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> eventTypesJsonList(m_eventTypes.size());
+    for (unsigned eventTypesIndex = 0; eventTypesIndex < eventTypesJsonList.GetLength(); ++eventTypesIndex) {
+      eventTypesJsonList[eventTypesIndex].AsString(EventTypeMapper::GetNameForEventType(m_eventTypes[eventTypesIndex]));
+    }
+    payload.WithArray("EventTypes", std::move(eventTypesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MTurk
-} // namespace Aws
+}  // namespace Model
+}  // namespace MTurk
+}  // namespace Aws

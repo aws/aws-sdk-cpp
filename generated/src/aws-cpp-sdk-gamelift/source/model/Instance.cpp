@@ -3,144 +3,110 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/gamelift/model/Instance.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/gamelift/model/Instance.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GameLift
-{
-namespace Model
-{
+namespace Aws {
+namespace GameLift {
+namespace Model {
 
-Instance::Instance(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Instance::Instance(JsonView jsonValue) { *this = jsonValue; }
 
-Instance& Instance::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FleetId"))
-  {
+Instance& Instance::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FleetId")) {
     m_fleetId = jsonValue.GetString("FleetId");
     m_fleetIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FleetArn"))
-  {
+  if (jsonValue.ValueExists("FleetArn")) {
     m_fleetArn = jsonValue.GetString("FleetArn");
     m_fleetArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InstanceId"))
-  {
+  if (jsonValue.ValueExists("InstanceId")) {
     m_instanceId = jsonValue.GetString("InstanceId");
     m_instanceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IpAddress"))
-  {
+  if (jsonValue.ValueExists("IpAddress")) {
     m_ipAddress = jsonValue.GetString("IpAddress");
     m_ipAddressHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DnsName"))
-  {
+  if (jsonValue.ValueExists("DnsName")) {
     m_dnsName = jsonValue.GetString("DnsName");
     m_dnsNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OperatingSystem"))
-  {
+  if (jsonValue.ValueExists("OperatingSystem")) {
     m_operatingSystem = OperatingSystemMapper::GetOperatingSystemForName(jsonValue.GetString("OperatingSystem"));
     m_operatingSystemHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = EC2InstanceTypeMapper::GetEC2InstanceTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = InstanceStatusMapper::GetInstanceStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Location"))
-  {
+  if (jsonValue.ValueExists("Location")) {
     m_location = jsonValue.GetString("Location");
     m_locationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Instance::Jsonize() const
-{
+JsonValue Instance::Jsonize() const {
   JsonValue payload;
 
-  if(m_fleetIdHasBeenSet)
-  {
-   payload.WithString("FleetId", m_fleetId);
-
+  if (m_fleetIdHasBeenSet) {
+    payload.WithString("FleetId", m_fleetId);
   }
 
-  if(m_fleetArnHasBeenSet)
-  {
-   payload.WithString("FleetArn", m_fleetArn);
-
+  if (m_fleetArnHasBeenSet) {
+    payload.WithString("FleetArn", m_fleetArn);
   }
 
-  if(m_instanceIdHasBeenSet)
-  {
-   payload.WithString("InstanceId", m_instanceId);
-
+  if (m_instanceIdHasBeenSet) {
+    payload.WithString("InstanceId", m_instanceId);
   }
 
-  if(m_ipAddressHasBeenSet)
-  {
-   payload.WithString("IpAddress", m_ipAddress);
-
+  if (m_ipAddressHasBeenSet) {
+    payload.WithString("IpAddress", m_ipAddress);
   }
 
-  if(m_dnsNameHasBeenSet)
-  {
-   payload.WithString("DnsName", m_dnsName);
-
+  if (m_dnsNameHasBeenSet) {
+    payload.WithString("DnsName", m_dnsName);
   }
 
-  if(m_operatingSystemHasBeenSet)
-  {
-   payload.WithString("OperatingSystem", OperatingSystemMapper::GetNameForOperatingSystem(m_operatingSystem));
+  if (m_operatingSystemHasBeenSet) {
+    payload.WithString("OperatingSystem", OperatingSystemMapper::GetNameForOperatingSystem(m_operatingSystem));
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", EC2InstanceTypeMapper::GetNameForEC2InstanceType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", EC2InstanceTypeMapper::GetNameForEC2InstanceType(m_type));
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", InstanceStatusMapper::GetNameForInstanceStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", InstanceStatusMapper::GetNameForInstanceStatus(m_status));
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_locationHasBeenSet)
-  {
-   payload.WithString("Location", m_location);
-
+  if (m_locationHasBeenSet) {
+    payload.WithString("Location", m_location);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GameLift
-} // namespace Aws
+}  // namespace Model
+}  // namespace GameLift
+}  // namespace Aws

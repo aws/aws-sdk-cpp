@@ -5,19 +5,16 @@
 
 #pragma once
 
-#include <aws/s3control/S3Control_EXPORTS.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
+#include <aws/s3control/S3Control_EXPORTS.h>
 
-namespace Aws
-{
-namespace Client
-{
+namespace Aws {
+namespace Client {
 
-class AWS_S3CONTROL_API S3ControlErrorMarshaller : public Aws::Client::XmlErrorMarshaller
-{
-public:
+class AWS_S3CONTROL_API S3ControlErrorMarshaller : public Aws::Client::XmlErrorMarshaller {
+ public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Client
-} // namespace Aws
+}  // namespace Client
+}  // namespace Aws

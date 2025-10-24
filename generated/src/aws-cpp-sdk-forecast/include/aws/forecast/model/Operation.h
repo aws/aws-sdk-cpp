@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/forecast/ForecastService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/forecast/ForecastService_EXPORTS.h>
 
-namespace Aws
-{
-namespace ForecastService
-{
-namespace Model
-{
-  enum class Operation
-  {
-    NOT_SET,
-    ADD,
-    SUBTRACT,
-    MULTIPLY,
-    DIVIDE
-  };
+namespace Aws {
+namespace ForecastService {
+namespace Model {
+enum class Operation { NOT_SET, ADD, SUBTRACT, MULTIPLY, DIVIDE };
 
-namespace OperationMapper
-{
+namespace OperationMapper {
 AWS_FORECASTSERVICE_API Operation GetOperationForName(const Aws::String& name);
 
 AWS_FORECASTSERVICE_API Aws::String GetNameForOperation(Operation value);
-} // namespace OperationMapper
-} // namespace Model
-} // namespace ForecastService
-} // namespace Aws
+}  // namespace OperationMapper
+}  // namespace Model
+}  // namespace ForecastService
+}  // namespace Aws

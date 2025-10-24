@@ -12,27 +12,18 @@ using namespace Aws::ARCRegionswitch::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetPlanInRegionRequest::SerializePayload() const
-{
+Aws::String GetPlanInRegionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetPlanInRegionRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetPlanInRegionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ArcRegionSwitch.GetPlanInRegion"));
   return headers;
-
 }
-
-
-
-

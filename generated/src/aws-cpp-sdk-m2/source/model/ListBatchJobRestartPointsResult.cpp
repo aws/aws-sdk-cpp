@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/m2/model/ListBatchJobRestartPointsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/m2/model/ListBatchJobRestartPointsResult.h>
 
 #include <utility>
 
@@ -17,19 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListBatchJobRestartPointsResult::ListBatchJobRestartPointsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListBatchJobRestartPointsResult::ListBatchJobRestartPointsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListBatchJobRestartPointsResult& ListBatchJobRestartPointsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListBatchJobRestartPointsResult& ListBatchJobRestartPointsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("batchJobSteps"))
-  {
+  if (jsonValue.ValueExists("batchJobSteps")) {
     Aws::Utils::Array<JsonView> batchJobStepsJsonList = jsonValue.GetArray("batchJobSteps");
-    for(unsigned batchJobStepsIndex = 0; batchJobStepsIndex < batchJobStepsJsonList.GetLength(); ++batchJobStepsIndex)
-    {
+    for (unsigned batchJobStepsIndex = 0; batchJobStepsIndex < batchJobStepsJsonList.GetLength(); ++batchJobStepsIndex) {
       m_batchJobSteps.push_back(batchJobStepsJsonList[batchJobStepsIndex].AsObject());
     }
     m_batchJobStepsHasBeenSet = true;
@@ -37,12 +31,10 @@ ListBatchJobRestartPointsResult& ListBatchJobRestartPointsResult::operator =(con
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

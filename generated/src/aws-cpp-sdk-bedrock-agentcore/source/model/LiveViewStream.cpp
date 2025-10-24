@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentCore
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentCore {
+namespace Model {
 
-LiveViewStream::LiveViewStream(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LiveViewStream::LiveViewStream(JsonView jsonValue) { *this = jsonValue; }
 
-LiveViewStream& LiveViewStream::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("streamEndpoint"))
-  {
+LiveViewStream& LiveViewStream::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("streamEndpoint")) {
     m_streamEndpoint = jsonValue.GetString("streamEndpoint");
     m_streamEndpointHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LiveViewStream::Jsonize() const
-{
+JsonValue LiveViewStream::Jsonize() const {
   JsonValue payload;
 
-  if(m_streamEndpointHasBeenSet)
-  {
-   payload.WithString("streamEndpoint", m_streamEndpoint);
-
+  if (m_streamEndpointHasBeenSet) {
+    payload.WithString("streamEndpoint", m_streamEndpoint);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentCore
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentCore
+}  // namespace Aws

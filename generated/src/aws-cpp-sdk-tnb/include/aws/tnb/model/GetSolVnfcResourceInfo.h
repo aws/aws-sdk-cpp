@@ -6,57 +6,56 @@
 #pragma once
 #include <aws/tnb/Tnb_EXPORTS.h>
 #include <aws/tnb/model/GetSolVnfcResourceInfoMetadata.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace tnb
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace tnb {
+namespace Model {
 
+/**
+ * <p>Details of resource associated with a network function.</p> <p>A network
+ * instance is a single network created in Amazon Web Services TNB that can be
+ * deployed and on which life-cycle operations (like terminate, update, and delete)
+ * can be performed.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/GetSolVnfcResourceInfo">AWS
+ * API Reference</a></p>
+ */
+class GetSolVnfcResourceInfo {
+ public:
+  AWS_TNB_API GetSolVnfcResourceInfo() = default;
+  AWS_TNB_API GetSolVnfcResourceInfo(Aws::Utils::Json::JsonView jsonValue);
+  AWS_TNB_API GetSolVnfcResourceInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_TNB_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Details of resource associated with a network function.</p> <p>A network
-   * instance is a single network created in Amazon Web Services TNB that can be
-   * deployed and on which life-cycle operations (like terminate, update, and delete)
-   * can be performed.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/tnb-2008-10-21/GetSolVnfcResourceInfo">AWS
-   * API Reference</a></p>
+   * <p>The metadata of the network function compute.</p>
    */
-  class GetSolVnfcResourceInfo
-  {
-  public:
-    AWS_TNB_API GetSolVnfcResourceInfo() = default;
-    AWS_TNB_API GetSolVnfcResourceInfo(Aws::Utils::Json::JsonView jsonValue);
-    AWS_TNB_API GetSolVnfcResourceInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_TNB_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const GetSolVnfcResourceInfoMetadata& GetMetadata() const { return m_metadata; }
+  inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+  template <typename MetadataT = GetSolVnfcResourceInfoMetadata>
+  void SetMetadata(MetadataT&& value) {
+    m_metadataHasBeenSet = true;
+    m_metadata = std::forward<MetadataT>(value);
+  }
+  template <typename MetadataT = GetSolVnfcResourceInfoMetadata>
+  GetSolVnfcResourceInfo& WithMetadata(MetadataT&& value) {
+    SetMetadata(std::forward<MetadataT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  GetSolVnfcResourceInfoMetadata m_metadata;
+  bool m_metadataHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>The metadata of the network function compute.</p>
-     */
-    inline const GetSolVnfcResourceInfoMetadata& GetMetadata() const { return m_metadata; }
-    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    template<typename MetadataT = GetSolVnfcResourceInfoMetadata>
-    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
-    template<typename MetadataT = GetSolVnfcResourceInfoMetadata>
-    GetSolVnfcResourceInfo& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
-    ///@}
-  private:
-
-    GetSolVnfcResourceInfoMetadata m_metadata;
-    bool m_metadataHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace tnb
-} // namespace Aws
+}  // namespace Model
+}  // namespace tnb
+}  // namespace Aws

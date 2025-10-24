@@ -5,12 +5,8 @@
 
 #include <aws/rekognition/RekognitionEndpointProvider.h>
 
-namespace Aws
-{
-namespace Rekognition
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Rekognition
-} // namespace Aws
+namespace Aws {
+namespace Rekognition {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Rekognition
+}  // namespace Aws

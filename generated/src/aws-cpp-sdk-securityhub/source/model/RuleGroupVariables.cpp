@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/RuleGroupVariables.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/RuleGroupVariables.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-RuleGroupVariables::RuleGroupVariables(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RuleGroupVariables::RuleGroupVariables(JsonView jsonValue) { *this = jsonValue; }
 
-RuleGroupVariables& RuleGroupVariables::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("IpSets"))
-  {
+RuleGroupVariables& RuleGroupVariables::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("IpSets")) {
     m_ipSets = jsonValue.GetObject("IpSets");
     m_ipSetsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PortSets"))
-  {
+  if (jsonValue.ValueExists("PortSets")) {
     m_portSets = jsonValue.GetObject("PortSets");
     m_portSetsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RuleGroupVariables::Jsonize() const
-{
+JsonValue RuleGroupVariables::Jsonize() const {
   JsonValue payload;
 
-  if(m_ipSetsHasBeenSet)
-  {
-   payload.WithObject("IpSets", m_ipSets.Jsonize());
-
+  if (m_ipSetsHasBeenSet) {
+    payload.WithObject("IpSets", m_ipSets.Jsonize());
   }
 
-  if(m_portSetsHasBeenSet)
-  {
-   payload.WithObject("PortSets", m_portSets.Jsonize());
-
+  if (m_portSetsHasBeenSet) {
+    payload.WithObject("PortSets", m_portSets.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

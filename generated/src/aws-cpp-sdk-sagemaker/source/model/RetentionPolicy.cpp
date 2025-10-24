@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/RetentionPolicy.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/RetentionPolicy.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-RetentionPolicy::RetentionPolicy(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RetentionPolicy::RetentionPolicy(JsonView jsonValue) { *this = jsonValue; }
 
-RetentionPolicy& RetentionPolicy::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("HomeEfsFileSystem"))
-  {
+RetentionPolicy& RetentionPolicy::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("HomeEfsFileSystem")) {
     m_homeEfsFileSystem = RetentionTypeMapper::GetRetentionTypeForName(jsonValue.GetString("HomeEfsFileSystem"));
     m_homeEfsFileSystemHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RetentionPolicy::Jsonize() const
-{
+JsonValue RetentionPolicy::Jsonize() const {
   JsonValue payload;
 
-  if(m_homeEfsFileSystemHasBeenSet)
-  {
-   payload.WithString("HomeEfsFileSystem", RetentionTypeMapper::GetNameForRetentionType(m_homeEfsFileSystem));
+  if (m_homeEfsFileSystemHasBeenSet) {
+    payload.WithString("HomeEfsFileSystem", RetentionTypeMapper::GetNameForRetentionType(m_homeEfsFileSystem));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

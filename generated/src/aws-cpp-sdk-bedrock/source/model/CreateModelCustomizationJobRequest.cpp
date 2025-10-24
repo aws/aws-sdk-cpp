@@ -12,117 +12,80 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateModelCustomizationJobRequest::SerializePayload() const
-{
+Aws::String CreateModelCustomizationJobRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_jobNameHasBeenSet)
-  {
-   payload.WithString("jobName", m_jobName);
-
+  if (m_jobNameHasBeenSet) {
+    payload.WithString("jobName", m_jobName);
   }
 
-  if(m_customModelNameHasBeenSet)
-  {
-   payload.WithString("customModelName", m_customModelName);
-
+  if (m_customModelNameHasBeenSet) {
+    payload.WithString("customModelName", m_customModelName);
   }
 
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("roleArn", m_roleArn);
-
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("roleArn", m_roleArn);
   }
 
-  if(m_clientRequestTokenHasBeenSet)
-  {
-   payload.WithString("clientRequestToken", m_clientRequestToken);
-
+  if (m_clientRequestTokenHasBeenSet) {
+    payload.WithString("clientRequestToken", m_clientRequestToken);
   }
 
-  if(m_baseModelIdentifierHasBeenSet)
-  {
-   payload.WithString("baseModelIdentifier", m_baseModelIdentifier);
-
+  if (m_baseModelIdentifierHasBeenSet) {
+    payload.WithString("baseModelIdentifier", m_baseModelIdentifier);
   }
 
-  if(m_customizationTypeHasBeenSet)
-  {
-   payload.WithString("customizationType", CustomizationTypeMapper::GetNameForCustomizationType(m_customizationType));
+  if (m_customizationTypeHasBeenSet) {
+    payload.WithString("customizationType", CustomizationTypeMapper::GetNameForCustomizationType(m_customizationType));
   }
 
-  if(m_customModelKmsKeyIdHasBeenSet)
-  {
-   payload.WithString("customModelKmsKeyId", m_customModelKmsKeyId);
-
+  if (m_customModelKmsKeyIdHasBeenSet) {
+    payload.WithString("customModelKmsKeyId", m_customModelKmsKeyId);
   }
 
-  if(m_jobTagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> jobTagsJsonList(m_jobTags.size());
-   for(unsigned jobTagsIndex = 0; jobTagsIndex < jobTagsJsonList.GetLength(); ++jobTagsIndex)
-   {
-     jobTagsJsonList[jobTagsIndex].AsObject(m_jobTags[jobTagsIndex].Jsonize());
-   }
-   payload.WithArray("jobTags", std::move(jobTagsJsonList));
-
+  if (m_jobTagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> jobTagsJsonList(m_jobTags.size());
+    for (unsigned jobTagsIndex = 0; jobTagsIndex < jobTagsJsonList.GetLength(); ++jobTagsIndex) {
+      jobTagsJsonList[jobTagsIndex].AsObject(m_jobTags[jobTagsIndex].Jsonize());
+    }
+    payload.WithArray("jobTags", std::move(jobTagsJsonList));
   }
 
-  if(m_customModelTagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> customModelTagsJsonList(m_customModelTags.size());
-   for(unsigned customModelTagsIndex = 0; customModelTagsIndex < customModelTagsJsonList.GetLength(); ++customModelTagsIndex)
-   {
-     customModelTagsJsonList[customModelTagsIndex].AsObject(m_customModelTags[customModelTagsIndex].Jsonize());
-   }
-   payload.WithArray("customModelTags", std::move(customModelTagsJsonList));
-
+  if (m_customModelTagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> customModelTagsJsonList(m_customModelTags.size());
+    for (unsigned customModelTagsIndex = 0; customModelTagsIndex < customModelTagsJsonList.GetLength(); ++customModelTagsIndex) {
+      customModelTagsJsonList[customModelTagsIndex].AsObject(m_customModelTags[customModelTagsIndex].Jsonize());
+    }
+    payload.WithArray("customModelTags", std::move(customModelTagsJsonList));
   }
 
-  if(m_trainingDataConfigHasBeenSet)
-  {
-   payload.WithObject("trainingDataConfig", m_trainingDataConfig.Jsonize());
-
+  if (m_trainingDataConfigHasBeenSet) {
+    payload.WithObject("trainingDataConfig", m_trainingDataConfig.Jsonize());
   }
 
-  if(m_validationDataConfigHasBeenSet)
-  {
-   payload.WithObject("validationDataConfig", m_validationDataConfig.Jsonize());
-
+  if (m_validationDataConfigHasBeenSet) {
+    payload.WithObject("validationDataConfig", m_validationDataConfig.Jsonize());
   }
 
-  if(m_outputDataConfigHasBeenSet)
-  {
-   payload.WithObject("outputDataConfig", m_outputDataConfig.Jsonize());
-
+  if (m_outputDataConfigHasBeenSet) {
+    payload.WithObject("outputDataConfig", m_outputDataConfig.Jsonize());
   }
 
-  if(m_hyperParametersHasBeenSet)
-  {
-   JsonValue hyperParametersJsonMap;
-   for(auto& hyperParametersItem : m_hyperParameters)
-   {
-     hyperParametersJsonMap.WithString(hyperParametersItem.first, hyperParametersItem.second);
-   }
-   payload.WithObject("hyperParameters", std::move(hyperParametersJsonMap));
-
+  if (m_hyperParametersHasBeenSet) {
+    JsonValue hyperParametersJsonMap;
+    for (auto& hyperParametersItem : m_hyperParameters) {
+      hyperParametersJsonMap.WithString(hyperParametersItem.first, hyperParametersItem.second);
+    }
+    payload.WithObject("hyperParameters", std::move(hyperParametersJsonMap));
   }
 
-  if(m_vpcConfigHasBeenSet)
-  {
-   payload.WithObject("vpcConfig", m_vpcConfig.Jsonize());
-
+  if (m_vpcConfigHasBeenSet) {
+    payload.WithObject("vpcConfig", m_vpcConfig.Jsonize());
   }
 
-  if(m_customizationConfigHasBeenSet)
-  {
-   payload.WithObject("customizationConfig", m_customizationConfig.Jsonize());
-
+  if (m_customizationConfigHasBeenSet) {
+    payload.WithObject("customizationConfig", m_customizationConfig.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeVpcEndpointServicesResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/DescribeVpcEndpointServicesResponse.h>
 
 #include <utility>
 
@@ -17,30 +17,25 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeVpcEndpointServicesResponse::DescribeVpcEndpointServicesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeVpcEndpointServicesResponse::DescribeVpcEndpointServicesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-DescribeVpcEndpointServicesResponse& DescribeVpcEndpointServicesResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeVpcEndpointServicesResponse& DescribeVpcEndpointServicesResponse::operator=(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeVpcEndpointServicesResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeVpcEndpointServicesResponse")) {
     resultNode = rootNode.FirstChild("DescribeVpcEndpointServicesResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode serviceNamesNode = resultNode.FirstChild("serviceNameSet");
-    if(!serviceNamesNode.IsNull())
-    {
+    if (!serviceNamesNode.IsNull()) {
       XmlNode serviceNamesMember = serviceNamesNode.FirstChild("item");
       m_serviceNamesHasBeenSet = !serviceNamesMember.IsNull();
-      while(!serviceNamesMember.IsNull())
-      {
+      while (!serviceNamesMember.IsNull()) {
         m_serviceNames.push_back(serviceNamesMember.GetText());
         serviceNamesMember = serviceNamesMember.NextNode("item");
       }
@@ -48,12 +43,10 @@ DescribeVpcEndpointServicesResponse& DescribeVpcEndpointServicesResponse::operat
       m_serviceNamesHasBeenSet = true;
     }
     XmlNode serviceDetailsNode = resultNode.FirstChild("serviceDetailSet");
-    if(!serviceDetailsNode.IsNull())
-    {
+    if (!serviceDetailsNode.IsNull()) {
       XmlNode serviceDetailsMember = serviceDetailsNode.FirstChild("item");
       m_serviceDetailsHasBeenSet = !serviceDetailsMember.IsNull();
-      while(!serviceDetailsMember.IsNull())
-      {
+      while (!serviceDetailsMember.IsNull()) {
         m_serviceDetails.push_back(serviceDetailsMember);
         serviceDetailsMember = serviceDetailsMember.NextNode("item");
       }
@@ -61,8 +54,7 @@ DescribeVpcEndpointServicesResponse& DescribeVpcEndpointServicesResponse::operat
       m_serviceDetailsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
+    if (!nextTokenNode.IsNull()) {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
       m_nextTokenHasBeenSet = true;
     }
@@ -70,12 +62,11 @@ DescribeVpcEndpointServicesResponse& DescribeVpcEndpointServicesResponse::operat
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeVpcEndpointServicesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeVpcEndpointServicesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

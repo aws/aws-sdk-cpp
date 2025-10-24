@@ -5,12 +5,8 @@
 
 #include <aws/auditmanager/AuditManagerEndpointProvider.h>
 
-namespace Aws
-{
-namespace AuditManager
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace AuditManager
-} // namespace Aws
+namespace Aws {
+namespace AuditManager {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace AuditManager
+}  // namespace Aws

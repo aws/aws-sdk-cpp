@@ -4,68 +4,75 @@
  */
 
 #pragma once
-#include <aws/sso-admin/SSOAdmin_EXPORTS.h>
-#include <aws/sso-admin/SSOAdminRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sso-admin/SSOAdminRequest.h>
+#include <aws/sso-admin/SSOAdmin_EXPORTS.h>
 #include <aws/sso-admin/model/AuthenticationMethodType.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace SSOAdmin
-{
-namespace Model
-{
+namespace Aws {
+namespace SSOAdmin {
+namespace Model {
 
+/**
+ */
+class DeleteApplicationAuthenticationMethodRequest : public SSOAdminRequest {
+ public:
+  AWS_SSOADMIN_API DeleteApplicationAuthenticationMethodRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeleteApplicationAuthenticationMethod"; }
+
+  AWS_SSOADMIN_API Aws::String SerializePayload() const override;
+
+  AWS_SSOADMIN_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>Specifies the ARN of the application with the authentication method to
+   * delete.</p>
    */
-  class DeleteApplicationAuthenticationMethodRequest : public SSOAdminRequest
-  {
-  public:
-    AWS_SSOADMIN_API DeleteApplicationAuthenticationMethodRequest() = default;
+  inline const Aws::String& GetApplicationArn() const { return m_applicationArn; }
+  inline bool ApplicationArnHasBeenSet() const { return m_applicationArnHasBeenSet; }
+  template <typename ApplicationArnT = Aws::String>
+  void SetApplicationArn(ApplicationArnT&& value) {
+    m_applicationArnHasBeenSet = true;
+    m_applicationArn = std::forward<ApplicationArnT>(value);
+  }
+  template <typename ApplicationArnT = Aws::String>
+  DeleteApplicationAuthenticationMethodRequest& WithApplicationArn(ApplicationArnT&& value) {
+    SetApplicationArn(std::forward<ApplicationArnT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DeleteApplicationAuthenticationMethod"; }
+  ///@{
+  /**
+   * <p>Specifies the authentication method type to delete from the application.</p>
+   */
+  inline AuthenticationMethodType GetAuthenticationMethodType() const { return m_authenticationMethodType; }
+  inline bool AuthenticationMethodTypeHasBeenSet() const { return m_authenticationMethodTypeHasBeenSet; }
+  inline void SetAuthenticationMethodType(AuthenticationMethodType value) {
+    m_authenticationMethodTypeHasBeenSet = true;
+    m_authenticationMethodType = value;
+  }
+  inline DeleteApplicationAuthenticationMethodRequest& WithAuthenticationMethodType(AuthenticationMethodType value) {
+    SetAuthenticationMethodType(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_applicationArn;
+  bool m_applicationArnHasBeenSet = false;
 
-    AWS_SSOADMIN_API Aws::String SerializePayload() const override;
+  AuthenticationMethodType m_authenticationMethodType{AuthenticationMethodType::NOT_SET};
+  bool m_authenticationMethodTypeHasBeenSet = false;
+};
 
-    AWS_SSOADMIN_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    ///@{
-    /**
-     * <p>Specifies the ARN of the application with the authentication method to
-     * delete.</p>
-     */
-    inline const Aws::String& GetApplicationArn() const { return m_applicationArn; }
-    inline bool ApplicationArnHasBeenSet() const { return m_applicationArnHasBeenSet; }
-    template<typename ApplicationArnT = Aws::String>
-    void SetApplicationArn(ApplicationArnT&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::forward<ApplicationArnT>(value); }
-    template<typename ApplicationArnT = Aws::String>
-    DeleteApplicationAuthenticationMethodRequest& WithApplicationArn(ApplicationArnT&& value) { SetApplicationArn(std::forward<ApplicationArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Specifies the authentication method type to delete from the application.</p>
-     */
-    inline AuthenticationMethodType GetAuthenticationMethodType() const { return m_authenticationMethodType; }
-    inline bool AuthenticationMethodTypeHasBeenSet() const { return m_authenticationMethodTypeHasBeenSet; }
-    inline void SetAuthenticationMethodType(AuthenticationMethodType value) { m_authenticationMethodTypeHasBeenSet = true; m_authenticationMethodType = value; }
-    inline DeleteApplicationAuthenticationMethodRequest& WithAuthenticationMethodType(AuthenticationMethodType value) { SetAuthenticationMethodType(value); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_applicationArn;
-    bool m_applicationArnHasBeenSet = false;
-
-    AuthenticationMethodType m_authenticationMethodType{AuthenticationMethodType::NOT_SET};
-    bool m_authenticationMethodTypeHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SSOAdmin
-} // namespace Aws
+}  // namespace Model
+}  // namespace SSOAdmin
+}  // namespace Aws

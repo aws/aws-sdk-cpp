@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTSiteWise
-{
-namespace Model
-{
-  enum class ListAssetsFilter
-  {
-    NOT_SET,
-    ALL,
-    TOP_LEVEL
-  };
+namespace Aws {
+namespace IoTSiteWise {
+namespace Model {
+enum class ListAssetsFilter { NOT_SET, ALL, TOP_LEVEL };
 
-namespace ListAssetsFilterMapper
-{
+namespace ListAssetsFilterMapper {
 AWS_IOTSITEWISE_API ListAssetsFilter GetListAssetsFilterForName(const Aws::String& name);
 
 AWS_IOTSITEWISE_API Aws::String GetNameForListAssetsFilter(ListAssetsFilter value);
-} // namespace ListAssetsFilterMapper
-} // namespace Model
-} // namespace IoTSiteWise
-} // namespace Aws
+}  // namespace ListAssetsFilterMapper
+}  // namespace Model
+}  // namespace IoTSiteWise
+}  // namespace Aws

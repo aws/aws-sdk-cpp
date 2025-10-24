@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/comprehend/ComprehendRequest.h>
 
-namespace Aws
-{
-namespace Comprehend
-{
-} // namespace Comprehend
-} // namespace Aws
+namespace Aws {
+namespace Comprehend {}  // namespace Comprehend
+}  // namespace Aws

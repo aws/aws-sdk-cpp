@@ -5,12 +5,8 @@
 
 #include <aws/appmesh/AppMeshEndpointProvider.h>
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace AppMesh
-} // namespace Aws
+namespace Aws {
+namespace AppMesh {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace AppMesh
+}  // namespace Aws

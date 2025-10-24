@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/AxisLabelReferenceOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/AxisLabelReferenceOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-AxisLabelReferenceOptions::AxisLabelReferenceOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AxisLabelReferenceOptions::AxisLabelReferenceOptions(JsonView jsonValue) { *this = jsonValue; }
 
-AxisLabelReferenceOptions& AxisLabelReferenceOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FieldId"))
-  {
+AxisLabelReferenceOptions& AxisLabelReferenceOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FieldId")) {
     m_fieldId = jsonValue.GetString("FieldId");
     m_fieldIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Column"))
-  {
+  if (jsonValue.ValueExists("Column")) {
     m_column = jsonValue.GetObject("Column");
     m_columnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AxisLabelReferenceOptions::Jsonize() const
-{
+JsonValue AxisLabelReferenceOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_fieldIdHasBeenSet)
-  {
-   payload.WithString("FieldId", m_fieldId);
-
+  if (m_fieldIdHasBeenSet) {
+    payload.WithString("FieldId", m_fieldId);
   }
 
-  if(m_columnHasBeenSet)
-  {
-   payload.WithObject("Column", m_column.Jsonize());
-
+  if (m_columnHasBeenSet) {
+    payload.WithObject("Column", m_column.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

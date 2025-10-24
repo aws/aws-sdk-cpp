@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/ssm-sap/SsmSap_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm-sap/SsmSap_EXPORTS.h>
 
-namespace Aws
-{
-namespace SsmSap
-{
-namespace Model
-{
-  enum class PermissionActionType
-  {
-    NOT_SET,
-    RESTORE
-  };
+namespace Aws {
+namespace SsmSap {
+namespace Model {
+enum class PermissionActionType { NOT_SET, RESTORE };
 
-namespace PermissionActionTypeMapper
-{
+namespace PermissionActionTypeMapper {
 AWS_SSMSAP_API PermissionActionType GetPermissionActionTypeForName(const Aws::String& name);
 
 AWS_SSMSAP_API Aws::String GetNameForPermissionActionType(PermissionActionType value);
-} // namespace PermissionActionTypeMapper
-} // namespace Model
-} // namespace SsmSap
-} // namespace Aws
+}  // namespace PermissionActionTypeMapper
+}  // namespace Model
+}  // namespace SsmSap
+}  // namespace Aws

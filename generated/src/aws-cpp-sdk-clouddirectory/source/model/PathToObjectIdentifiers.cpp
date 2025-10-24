@@ -11,30 +11,20 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudDirectory
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudDirectory {
+namespace Model {
 
-PathToObjectIdentifiers::PathToObjectIdentifiers(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PathToObjectIdentifiers::PathToObjectIdentifiers(JsonView jsonValue) { *this = jsonValue; }
 
-PathToObjectIdentifiers& PathToObjectIdentifiers::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Path"))
-  {
+PathToObjectIdentifiers& PathToObjectIdentifiers::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Path")) {
     m_path = jsonValue.GetString("Path");
     m_pathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ObjectIdentifiers"))
-  {
+  if (jsonValue.ValueExists("ObjectIdentifiers")) {
     Aws::Utils::Array<JsonView> objectIdentifiersJsonList = jsonValue.GetArray("ObjectIdentifiers");
-    for(unsigned objectIdentifiersIndex = 0; objectIdentifiersIndex < objectIdentifiersJsonList.GetLength(); ++objectIdentifiersIndex)
-    {
+    for (unsigned objectIdentifiersIndex = 0; objectIdentifiersIndex < objectIdentifiersJsonList.GetLength(); ++objectIdentifiersIndex) {
       m_objectIdentifiers.push_back(objectIdentifiersJsonList[objectIdentifiersIndex].AsString());
     }
     m_objectIdentifiersHasBeenSet = true;
@@ -42,30 +32,24 @@ PathToObjectIdentifiers& PathToObjectIdentifiers::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue PathToObjectIdentifiers::Jsonize() const
-{
+JsonValue PathToObjectIdentifiers::Jsonize() const {
   JsonValue payload;
 
-  if(m_pathHasBeenSet)
-  {
-   payload.WithString("Path", m_path);
-
+  if (m_pathHasBeenSet) {
+    payload.WithString("Path", m_path);
   }
 
-  if(m_objectIdentifiersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> objectIdentifiersJsonList(m_objectIdentifiers.size());
-   for(unsigned objectIdentifiersIndex = 0; objectIdentifiersIndex < objectIdentifiersJsonList.GetLength(); ++objectIdentifiersIndex)
-   {
-     objectIdentifiersJsonList[objectIdentifiersIndex].AsString(m_objectIdentifiers[objectIdentifiersIndex]);
-   }
-   payload.WithArray("ObjectIdentifiers", std::move(objectIdentifiersJsonList));
-
+  if (m_objectIdentifiersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> objectIdentifiersJsonList(m_objectIdentifiers.size());
+    for (unsigned objectIdentifiersIndex = 0; objectIdentifiersIndex < objectIdentifiersJsonList.GetLength(); ++objectIdentifiersIndex) {
+      objectIdentifiersJsonList[objectIdentifiersIndex].AsString(m_objectIdentifiers[objectIdentifiersIndex]);
+    }
+    payload.WithArray("ObjectIdentifiers", std::move(objectIdentifiersJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudDirectory
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudDirectory
+}  // namespace Aws

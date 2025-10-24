@@ -3,58 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/inspector2/model/CisSecurityLevelFilter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/inspector2/model/CisSecurityLevelFilter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Inspector2
-{
-namespace Model
-{
+namespace Aws {
+namespace Inspector2 {
+namespace Model {
 
-CisSecurityLevelFilter::CisSecurityLevelFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CisSecurityLevelFilter::CisSecurityLevelFilter(JsonView jsonValue) { *this = jsonValue; }
 
-CisSecurityLevelFilter& CisSecurityLevelFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("comparison"))
-  {
+CisSecurityLevelFilter& CisSecurityLevelFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("comparison")) {
     m_comparison = CisSecurityLevelComparisonMapper::GetCisSecurityLevelComparisonForName(jsonValue.GetString("comparison"));
     m_comparisonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("value"))
-  {
+  if (jsonValue.ValueExists("value")) {
     m_value = CisSecurityLevelMapper::GetCisSecurityLevelForName(jsonValue.GetString("value"));
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CisSecurityLevelFilter::Jsonize() const
-{
+JsonValue CisSecurityLevelFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_comparisonHasBeenSet)
-  {
-   payload.WithString("comparison", CisSecurityLevelComparisonMapper::GetNameForCisSecurityLevelComparison(m_comparison));
+  if (m_comparisonHasBeenSet) {
+    payload.WithString("comparison", CisSecurityLevelComparisonMapper::GetNameForCisSecurityLevelComparison(m_comparison));
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("value", CisSecurityLevelMapper::GetNameForCisSecurityLevel(m_value));
+  if (m_valueHasBeenSet) {
+    payload.WithString("value", CisSecurityLevelMapper::GetNameForCisSecurityLevel(m_value));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Inspector2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Inspector2
+}  // namespace Aws

@@ -3,89 +3,75 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lexv2-models/model/IntentClassificationTestResultItemCounts.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lexv2-models/model/IntentClassificationTestResultItemCounts.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
 
-IntentClassificationTestResultItemCounts::IntentClassificationTestResultItemCounts(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IntentClassificationTestResultItemCounts::IntentClassificationTestResultItemCounts(JsonView jsonValue) { *this = jsonValue; }
 
-IntentClassificationTestResultItemCounts& IntentClassificationTestResultItemCounts::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("totalResultCount"))
-  {
+IntentClassificationTestResultItemCounts& IntentClassificationTestResultItemCounts::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("totalResultCount")) {
     m_totalResultCount = jsonValue.GetInteger("totalResultCount");
     m_totalResultCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("speechTranscriptionResultCounts"))
-  {
-    Aws::Map<Aws::String, JsonView> speechTranscriptionResultCountsJsonMap = jsonValue.GetObject("speechTranscriptionResultCounts").GetAllObjects();
-    for(auto& speechTranscriptionResultCountsItem : speechTranscriptionResultCountsJsonMap)
-    {
-      m_speechTranscriptionResultCounts[TestResultMatchStatusMapper::GetTestResultMatchStatusForName(speechTranscriptionResultCountsItem.first)] = speechTranscriptionResultCountsItem.second.AsInteger();
+  if (jsonValue.ValueExists("speechTranscriptionResultCounts")) {
+    Aws::Map<Aws::String, JsonView> speechTranscriptionResultCountsJsonMap =
+        jsonValue.GetObject("speechTranscriptionResultCounts").GetAllObjects();
+    for (auto& speechTranscriptionResultCountsItem : speechTranscriptionResultCountsJsonMap) {
+      m_speechTranscriptionResultCounts[TestResultMatchStatusMapper::GetTestResultMatchStatusForName(
+          speechTranscriptionResultCountsItem.first)] = speechTranscriptionResultCountsItem.second.AsInteger();
     }
     m_speechTranscriptionResultCountsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("intentMatchResultCounts"))
-  {
+  if (jsonValue.ValueExists("intentMatchResultCounts")) {
     Aws::Map<Aws::String, JsonView> intentMatchResultCountsJsonMap = jsonValue.GetObject("intentMatchResultCounts").GetAllObjects();
-    for(auto& intentMatchResultCountsItem : intentMatchResultCountsJsonMap)
-    {
-      m_intentMatchResultCounts[TestResultMatchStatusMapper::GetTestResultMatchStatusForName(intentMatchResultCountsItem.first)] = intentMatchResultCountsItem.second.AsInteger();
+    for (auto& intentMatchResultCountsItem : intentMatchResultCountsJsonMap) {
+      m_intentMatchResultCounts[TestResultMatchStatusMapper::GetTestResultMatchStatusForName(intentMatchResultCountsItem.first)] =
+          intentMatchResultCountsItem.second.AsInteger();
     }
     m_intentMatchResultCountsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IntentClassificationTestResultItemCounts::Jsonize() const
-{
+JsonValue IntentClassificationTestResultItemCounts::Jsonize() const {
   JsonValue payload;
 
-  if(m_totalResultCountHasBeenSet)
-  {
-   payload.WithInteger("totalResultCount", m_totalResultCount);
-
+  if (m_totalResultCountHasBeenSet) {
+    payload.WithInteger("totalResultCount", m_totalResultCount);
   }
 
-  if(m_speechTranscriptionResultCountsHasBeenSet)
-  {
-   JsonValue speechTranscriptionResultCountsJsonMap;
-   for(auto& speechTranscriptionResultCountsItem : m_speechTranscriptionResultCounts)
-   {
-     speechTranscriptionResultCountsJsonMap.WithInteger(TestResultMatchStatusMapper::GetNameForTestResultMatchStatus(speechTranscriptionResultCountsItem.first), speechTranscriptionResultCountsItem.second);
-   }
-   payload.WithObject("speechTranscriptionResultCounts", std::move(speechTranscriptionResultCountsJsonMap));
-
+  if (m_speechTranscriptionResultCountsHasBeenSet) {
+    JsonValue speechTranscriptionResultCountsJsonMap;
+    for (auto& speechTranscriptionResultCountsItem : m_speechTranscriptionResultCounts) {
+      speechTranscriptionResultCountsJsonMap.WithInteger(
+          TestResultMatchStatusMapper::GetNameForTestResultMatchStatus(speechTranscriptionResultCountsItem.first),
+          speechTranscriptionResultCountsItem.second);
+    }
+    payload.WithObject("speechTranscriptionResultCounts", std::move(speechTranscriptionResultCountsJsonMap));
   }
 
-  if(m_intentMatchResultCountsHasBeenSet)
-  {
-   JsonValue intentMatchResultCountsJsonMap;
-   for(auto& intentMatchResultCountsItem : m_intentMatchResultCounts)
-   {
-     intentMatchResultCountsJsonMap.WithInteger(TestResultMatchStatusMapper::GetNameForTestResultMatchStatus(intentMatchResultCountsItem.first), intentMatchResultCountsItem.second);
-   }
-   payload.WithObject("intentMatchResultCounts", std::move(intentMatchResultCountsJsonMap));
-
+  if (m_intentMatchResultCountsHasBeenSet) {
+    JsonValue intentMatchResultCountsJsonMap;
+    for (auto& intentMatchResultCountsItem : m_intentMatchResultCounts) {
+      intentMatchResultCountsJsonMap.WithInteger(
+          TestResultMatchStatusMapper::GetNameForTestResultMatchStatus(intentMatchResultCountsItem.first),
+          intentMatchResultCountsItem.second);
+    }
+    payload.WithObject("intentMatchResultCounts", std::move(intentMatchResultCountsJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

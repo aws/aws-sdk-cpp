@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class AppNetworkAccessType
-  {
-    NOT_SET,
-    PublicInternetOnly,
-    VpcOnly
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class AppNetworkAccessType { NOT_SET, PublicInternetOnly, VpcOnly };
 
-namespace AppNetworkAccessTypeMapper
-{
+namespace AppNetworkAccessTypeMapper {
 AWS_SAGEMAKER_API AppNetworkAccessType GetAppNetworkAccessTypeForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForAppNetworkAccessType(AppNetworkAccessType value);
-} // namespace AppNetworkAccessTypeMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace AppNetworkAccessTypeMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

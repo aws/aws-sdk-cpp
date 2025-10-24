@@ -3,70 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancingv2/model/TrustStoreStatus.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/elasticloadbalancingv2/model/TrustStoreStatus.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace ElasticLoadBalancingv2 {
+namespace Model {
+namespace TrustStoreStatusMapper {
 
-namespace Aws
-{
-  namespace ElasticLoadBalancingv2
-  {
-    namespace Model
-    {
-      namespace TrustStoreStatusMapper
-      {
+static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
+static const int CREATING_HASH = HashingUtils::HashString("CREATING");
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
+TrustStoreStatus GetTrustStoreStatusForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == ACTIVE_HASH) {
+    return TrustStoreStatus::ACTIVE;
+  } else if (hashCode == CREATING_HASH) {
+    return TrustStoreStatus::CREATING;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<TrustStoreStatus>(hashCode);
+  }
 
+  return TrustStoreStatus::NOT_SET;
+}
 
-        TrustStoreStatus GetTrustStoreStatusForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ACTIVE_HASH)
-          {
-            return TrustStoreStatus::ACTIVE;
-          }
-          else if (hashCode == CREATING_HASH)
-          {
-            return TrustStoreStatus::CREATING;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<TrustStoreStatus>(hashCode);
-          }
+Aws::String GetNameForTrustStoreStatus(TrustStoreStatus enumValue) {
+  switch (enumValue) {
+    case TrustStoreStatus::NOT_SET:
+      return {};
+    case TrustStoreStatus::ACTIVE:
+      return "ACTIVE";
+    case TrustStoreStatus::CREATING:
+      return "CREATING";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return TrustStoreStatus::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForTrustStoreStatus(TrustStoreStatus enumValue)
-        {
-          switch(enumValue)
-          {
-          case TrustStoreStatus::NOT_SET:
-            return {};
-          case TrustStoreStatus::ACTIVE:
-            return "ACTIVE";
-          case TrustStoreStatus::CREATING:
-            return "CREATING";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace TrustStoreStatusMapper
-    } // namespace Model
-  } // namespace ElasticLoadBalancingv2
-} // namespace Aws
+}  // namespace TrustStoreStatusMapper
+}  // namespace Model
+}  // namespace ElasticLoadBalancingv2
+}  // namespace Aws

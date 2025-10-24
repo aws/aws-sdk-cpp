@@ -10,35 +10,26 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeNotificationConfigurationsRequest::SerializePayload() const
-{
+Aws::String DescribeNotificationConfigurationsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeNotificationConfigurations&";
-  if(m_autoScalingGroupNamesHasBeenSet)
-  {
-    if (m_autoScalingGroupNames.empty())
-    {
+  if (m_autoScalingGroupNamesHasBeenSet) {
+    if (m_autoScalingGroupNames.empty()) {
       ss << "AutoScalingGroupNames=&";
-    }
-    else
-    {
+    } else {
       unsigned autoScalingGroupNamesCount = 1;
-      for(auto& item : m_autoScalingGroupNames)
-      {
-        ss << "AutoScalingGroupNames.member." << autoScalingGroupNamesCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_autoScalingGroupNames) {
+        ss << "AutoScalingGroupNames.member." << autoScalingGroupNamesCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         autoScalingGroupNamesCount++;
       }
     }
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  if(m_maxRecordsHasBeenSet)
-  {
+  if (m_maxRecordsHasBeenSet) {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
 
@@ -46,8 +37,4 @@ Aws::String DescribeNotificationConfigurationsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeNotificationConfigurationsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeNotificationConfigurationsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

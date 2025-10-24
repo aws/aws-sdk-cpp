@@ -11,116 +11,86 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeCommit
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeCommit {
+namespace Model {
 
-ApprovalRuleTemplate::ApprovalRuleTemplate(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ApprovalRuleTemplate::ApprovalRuleTemplate(JsonView jsonValue) { *this = jsonValue; }
 
-ApprovalRuleTemplate& ApprovalRuleTemplate::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("approvalRuleTemplateId"))
-  {
+ApprovalRuleTemplate& ApprovalRuleTemplate::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("approvalRuleTemplateId")) {
     m_approvalRuleTemplateId = jsonValue.GetString("approvalRuleTemplateId");
     m_approvalRuleTemplateIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("approvalRuleTemplateName"))
-  {
+  if (jsonValue.ValueExists("approvalRuleTemplateName")) {
     m_approvalRuleTemplateName = jsonValue.GetString("approvalRuleTemplateName");
     m_approvalRuleTemplateNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("approvalRuleTemplateDescription"))
-  {
+  if (jsonValue.ValueExists("approvalRuleTemplateDescription")) {
     m_approvalRuleTemplateDescription = jsonValue.GetString("approvalRuleTemplateDescription");
     m_approvalRuleTemplateDescriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("approvalRuleTemplateContent"))
-  {
+  if (jsonValue.ValueExists("approvalRuleTemplateContent")) {
     m_approvalRuleTemplateContent = jsonValue.GetString("approvalRuleTemplateContent");
     m_approvalRuleTemplateContentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ruleContentSha256"))
-  {
+  if (jsonValue.ValueExists("ruleContentSha256")) {
     m_ruleContentSha256 = jsonValue.GetString("ruleContentSha256");
     m_ruleContentSha256HasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastModifiedDate"))
-  {
+  if (jsonValue.ValueExists("lastModifiedDate")) {
     m_lastModifiedDate = jsonValue.GetDouble("lastModifiedDate");
     m_lastModifiedDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("creationDate"))
-  {
+  if (jsonValue.ValueExists("creationDate")) {
     m_creationDate = jsonValue.GetDouble("creationDate");
     m_creationDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastModifiedUser"))
-  {
+  if (jsonValue.ValueExists("lastModifiedUser")) {
     m_lastModifiedUser = jsonValue.GetString("lastModifiedUser");
     m_lastModifiedUserHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ApprovalRuleTemplate::Jsonize() const
-{
+JsonValue ApprovalRuleTemplate::Jsonize() const {
   JsonValue payload;
 
-  if(m_approvalRuleTemplateIdHasBeenSet)
-  {
-   payload.WithString("approvalRuleTemplateId", m_approvalRuleTemplateId);
-
+  if (m_approvalRuleTemplateIdHasBeenSet) {
+    payload.WithString("approvalRuleTemplateId", m_approvalRuleTemplateId);
   }
 
-  if(m_approvalRuleTemplateNameHasBeenSet)
-  {
-   payload.WithString("approvalRuleTemplateName", m_approvalRuleTemplateName);
-
+  if (m_approvalRuleTemplateNameHasBeenSet) {
+    payload.WithString("approvalRuleTemplateName", m_approvalRuleTemplateName);
   }
 
-  if(m_approvalRuleTemplateDescriptionHasBeenSet)
-  {
-   payload.WithString("approvalRuleTemplateDescription", m_approvalRuleTemplateDescription);
-
+  if (m_approvalRuleTemplateDescriptionHasBeenSet) {
+    payload.WithString("approvalRuleTemplateDescription", m_approvalRuleTemplateDescription);
   }
 
-  if(m_approvalRuleTemplateContentHasBeenSet)
-  {
-   payload.WithString("approvalRuleTemplateContent", m_approvalRuleTemplateContent);
-
+  if (m_approvalRuleTemplateContentHasBeenSet) {
+    payload.WithString("approvalRuleTemplateContent", m_approvalRuleTemplateContent);
   }
 
-  if(m_ruleContentSha256HasBeenSet)
-  {
-   payload.WithString("ruleContentSha256", m_ruleContentSha256);
-
+  if (m_ruleContentSha256HasBeenSet) {
+    payload.WithString("ruleContentSha256", m_ruleContentSha256);
   }
 
-  if(m_lastModifiedDateHasBeenSet)
-  {
-   payload.WithDouble("lastModifiedDate", m_lastModifiedDate.SecondsWithMSPrecision());
+  if (m_lastModifiedDateHasBeenSet) {
+    payload.WithDouble("lastModifiedDate", m_lastModifiedDate.SecondsWithMSPrecision());
   }
 
-  if(m_creationDateHasBeenSet)
-  {
-   payload.WithDouble("creationDate", m_creationDate.SecondsWithMSPrecision());
+  if (m_creationDateHasBeenSet) {
+    payload.WithDouble("creationDate", m_creationDate.SecondsWithMSPrecision());
   }
 
-  if(m_lastModifiedUserHasBeenSet)
-  {
-   payload.WithString("lastModifiedUser", m_lastModifiedUser);
-
+  if (m_lastModifiedUserHasBeenSet) {
+    payload.WithString("lastModifiedUser", m_lastModifiedUser);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeCommit
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeCommit
+}  // namespace Aws

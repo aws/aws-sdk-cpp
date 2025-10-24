@@ -3,34 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeExportTasksRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DescribeExportTasksRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeExportTasksRequest::SerializePayload() const
-{
+Aws::String DescribeExportTasksRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeExportTasks&";
-  if(m_filtersHasBeenSet)
-  {
+  if (m_filtersHasBeenSet) {
     unsigned filtersCount = 1;
-    for(auto& item : m_filters)
-    {
+    for (auto& item : m_filters) {
       item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }
 
-  if(m_exportTaskIdsHasBeenSet)
-  {
+  if (m_exportTaskIdsHasBeenSet) {
     unsigned exportTaskIdsCount = 1;
-    for(auto& item : m_exportTaskIds)
-    {
-      ss << "ExportTaskId." << exportTaskIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_exportTaskIds) {
+      ss << "ExportTaskId." << exportTaskIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       exportTaskIdsCount++;
     }
   }
@@ -39,8 +33,4 @@ Aws::String DescribeExportTasksRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeExportTasksRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeExportTasksRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -11,35 +11,24 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-OAuth2Properties::OAuth2Properties(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OAuth2Properties::OAuth2Properties(JsonView jsonValue) { *this = jsonValue; }
 
-OAuth2Properties& OAuth2Properties::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("tokenUrl"))
-  {
+OAuth2Properties& OAuth2Properties::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("tokenUrl")) {
     m_tokenUrl = jsonValue.GetString("tokenUrl");
     m_tokenUrlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("oAuth2GrantType"))
-  {
+  if (jsonValue.ValueExists("oAuth2GrantType")) {
     m_oAuth2GrantType = OAuth2GrantTypeMapper::GetOAuth2GrantTypeForName(jsonValue.GetString("oAuth2GrantType"));
     m_oAuth2GrantTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tokenUrlCustomProperties"))
-  {
+  if (jsonValue.ValueExists("tokenUrlCustomProperties")) {
     Aws::Map<Aws::String, JsonView> tokenUrlCustomPropertiesJsonMap = jsonValue.GetObject("tokenUrlCustomProperties").GetAllObjects();
-    for(auto& tokenUrlCustomPropertiesItem : tokenUrlCustomPropertiesJsonMap)
-    {
+    for (auto& tokenUrlCustomPropertiesItem : tokenUrlCustomPropertiesJsonMap) {
       m_tokenUrlCustomProperties[tokenUrlCustomPropertiesItem.first] = tokenUrlCustomPropertiesItem.second.AsString();
     }
     m_tokenUrlCustomPropertiesHasBeenSet = true;
@@ -47,35 +36,28 @@ OAuth2Properties& OAuth2Properties::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue OAuth2Properties::Jsonize() const
-{
+JsonValue OAuth2Properties::Jsonize() const {
   JsonValue payload;
 
-  if(m_tokenUrlHasBeenSet)
-  {
-   payload.WithString("tokenUrl", m_tokenUrl);
-
+  if (m_tokenUrlHasBeenSet) {
+    payload.WithString("tokenUrl", m_tokenUrl);
   }
 
-  if(m_oAuth2GrantTypeHasBeenSet)
-  {
-   payload.WithString("oAuth2GrantType", OAuth2GrantTypeMapper::GetNameForOAuth2GrantType(m_oAuth2GrantType));
+  if (m_oAuth2GrantTypeHasBeenSet) {
+    payload.WithString("oAuth2GrantType", OAuth2GrantTypeMapper::GetNameForOAuth2GrantType(m_oAuth2GrantType));
   }
 
-  if(m_tokenUrlCustomPropertiesHasBeenSet)
-  {
-   JsonValue tokenUrlCustomPropertiesJsonMap;
-   for(auto& tokenUrlCustomPropertiesItem : m_tokenUrlCustomProperties)
-   {
-     tokenUrlCustomPropertiesJsonMap.WithString(tokenUrlCustomPropertiesItem.first, tokenUrlCustomPropertiesItem.second);
-   }
-   payload.WithObject("tokenUrlCustomProperties", std::move(tokenUrlCustomPropertiesJsonMap));
-
+  if (m_tokenUrlCustomPropertiesHasBeenSet) {
+    JsonValue tokenUrlCustomPropertiesJsonMap;
+    for (auto& tokenUrlCustomPropertiesItem : m_tokenUrlCustomProperties) {
+      tokenUrlCustomPropertiesJsonMap.WithString(tokenUrlCustomPropertiesItem.first, tokenUrlCustomPropertiesItem.second);
+    }
+    payload.WithObject("tokenUrlCustomProperties", std::move(tokenUrlCustomPropertiesJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

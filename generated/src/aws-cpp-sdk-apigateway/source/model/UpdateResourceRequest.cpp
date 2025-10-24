@@ -12,24 +12,16 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateResourceRequest::SerializePayload() const
-{
+Aws::String UpdateResourceRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_patchOperationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> patchOperationsJsonList(m_patchOperations.size());
-   for(unsigned patchOperationsIndex = 0; patchOperationsIndex < patchOperationsJsonList.GetLength(); ++patchOperationsIndex)
-   {
-     patchOperationsJsonList[patchOperationsIndex].AsObject(m_patchOperations[patchOperationsIndex].Jsonize());
-   }
-   payload.WithArray("patchOperations", std::move(patchOperationsJsonList));
-
+  if (m_patchOperationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> patchOperationsJsonList(m_patchOperations.size());
+    for (unsigned patchOperationsIndex = 0; patchOperationsIndex < patchOperationsJsonList.GetLength(); ++patchOperationsIndex) {
+      patchOperationsJsonList[patchOperationsIndex].AsObject(m_patchOperations[patchOperationsIndex].Jsonize());
+    }
+    payload.WithArray("patchOperations", std::move(patchOperationsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

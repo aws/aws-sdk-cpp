@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class DolbyVisionMapping
-  {
-    NOT_SET,
-    HDR10_NOMAP,
-    HDR10_1000
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class DolbyVisionMapping { NOT_SET, HDR10_NOMAP, HDR10_1000 };
 
-namespace DolbyVisionMappingMapper
-{
+namespace DolbyVisionMappingMapper {
 AWS_MEDIACONVERT_API DolbyVisionMapping GetDolbyVisionMappingForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForDolbyVisionMapping(DolbyVisionMapping value);
-} // namespace DolbyVisionMappingMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace DolbyVisionMappingMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

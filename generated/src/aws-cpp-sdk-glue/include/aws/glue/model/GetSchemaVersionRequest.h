@@ -4,93 +4,106 @@
  */
 
 #pragma once
-#include <aws/glue/Glue_EXPORTS.h>
-#include <aws/glue/GlueRequest.h>
-#include <aws/glue/model/SchemaId.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glue/GlueRequest.h>
+#include <aws/glue/Glue_EXPORTS.h>
+#include <aws/glue/model/SchemaId.h>
 #include <aws/glue/model/SchemaVersionNumber.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
+namespace Aws {
+namespace Glue {
+namespace Model {
 
+/**
+ */
+class GetSchemaVersionRequest : public GlueRequest {
+ public:
+  AWS_GLUE_API GetSchemaVersionRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "GetSchemaVersion"; }
+
+  AWS_GLUE_API Aws::String SerializePayload() const override;
+
+  AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>This is a wrapper structure to contain schema identity fields. The structure
+   * contains:</p> <ul> <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of
+   * the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and
+   * <code>RegistryName</code> has to be provided.</p> </li> <li>
+   * <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or
+   * <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
+   * </li> </ul>
    */
-  class GetSchemaVersionRequest : public GlueRequest
-  {
-  public:
-    AWS_GLUE_API GetSchemaVersionRequest() = default;
+  inline const SchemaId& GetSchemaId() const { return m_schemaId; }
+  inline bool SchemaIdHasBeenSet() const { return m_schemaIdHasBeenSet; }
+  template <typename SchemaIdT = SchemaId>
+  void SetSchemaId(SchemaIdT&& value) {
+    m_schemaIdHasBeenSet = true;
+    m_schemaId = std::forward<SchemaIdT>(value);
+  }
+  template <typename SchemaIdT = SchemaId>
+  GetSchemaVersionRequest& WithSchemaId(SchemaIdT&& value) {
+    SetSchemaId(std::forward<SchemaIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "GetSchemaVersion"; }
+  ///@{
+  /**
+   * <p>The <code>SchemaVersionId</code> of the schema version. This field is
+   * required for fetching by schema ID. Either this or the <code>SchemaId</code>
+   * wrapper has to be provided.</p>
+   */
+  inline const Aws::String& GetSchemaVersionId() const { return m_schemaVersionId; }
+  inline bool SchemaVersionIdHasBeenSet() const { return m_schemaVersionIdHasBeenSet; }
+  template <typename SchemaVersionIdT = Aws::String>
+  void SetSchemaVersionId(SchemaVersionIdT&& value) {
+    m_schemaVersionIdHasBeenSet = true;
+    m_schemaVersionId = std::forward<SchemaVersionIdT>(value);
+  }
+  template <typename SchemaVersionIdT = Aws::String>
+  GetSchemaVersionRequest& WithSchemaVersionId(SchemaVersionIdT&& value) {
+    SetSchemaVersionId(std::forward<SchemaVersionIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_GLUE_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>The version number of the schema.</p>
+   */
+  inline const SchemaVersionNumber& GetSchemaVersionNumber() const { return m_schemaVersionNumber; }
+  inline bool SchemaVersionNumberHasBeenSet() const { return m_schemaVersionNumberHasBeenSet; }
+  template <typename SchemaVersionNumberT = SchemaVersionNumber>
+  void SetSchemaVersionNumber(SchemaVersionNumberT&& value) {
+    m_schemaVersionNumberHasBeenSet = true;
+    m_schemaVersionNumber = std::forward<SchemaVersionNumberT>(value);
+  }
+  template <typename SchemaVersionNumberT = SchemaVersionNumber>
+  GetSchemaVersionRequest& WithSchemaVersionNumber(SchemaVersionNumberT&& value) {
+    SetSchemaVersionNumber(std::forward<SchemaVersionNumberT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  SchemaId m_schemaId;
+  bool m_schemaIdHasBeenSet = false;
 
-    AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+  Aws::String m_schemaVersionId;
+  bool m_schemaVersionIdHasBeenSet = false;
 
+  SchemaVersionNumber m_schemaVersionNumber;
+  bool m_schemaVersionNumberHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>This is a wrapper structure to contain schema identity fields. The structure
-     * contains:</p> <ul> <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of
-     * the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and
-     * <code>RegistryName</code> has to be provided.</p> </li> <li>
-     * <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or
-     * <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-     * </li> </ul>
-     */
-    inline const SchemaId& GetSchemaId() const { return m_schemaId; }
-    inline bool SchemaIdHasBeenSet() const { return m_schemaIdHasBeenSet; }
-    template<typename SchemaIdT = SchemaId>
-    void SetSchemaId(SchemaIdT&& value) { m_schemaIdHasBeenSet = true; m_schemaId = std::forward<SchemaIdT>(value); }
-    template<typename SchemaIdT = SchemaId>
-    GetSchemaVersionRequest& WithSchemaId(SchemaIdT&& value) { SetSchemaId(std::forward<SchemaIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The <code>SchemaVersionId</code> of the schema version. This field is
-     * required for fetching by schema ID. Either this or the <code>SchemaId</code>
-     * wrapper has to be provided.</p>
-     */
-    inline const Aws::String& GetSchemaVersionId() const { return m_schemaVersionId; }
-    inline bool SchemaVersionIdHasBeenSet() const { return m_schemaVersionIdHasBeenSet; }
-    template<typename SchemaVersionIdT = Aws::String>
-    void SetSchemaVersionId(SchemaVersionIdT&& value) { m_schemaVersionIdHasBeenSet = true; m_schemaVersionId = std::forward<SchemaVersionIdT>(value); }
-    template<typename SchemaVersionIdT = Aws::String>
-    GetSchemaVersionRequest& WithSchemaVersionId(SchemaVersionIdT&& value) { SetSchemaVersionId(std::forward<SchemaVersionIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The version number of the schema.</p>
-     */
-    inline const SchemaVersionNumber& GetSchemaVersionNumber() const { return m_schemaVersionNumber; }
-    inline bool SchemaVersionNumberHasBeenSet() const { return m_schemaVersionNumberHasBeenSet; }
-    template<typename SchemaVersionNumberT = SchemaVersionNumber>
-    void SetSchemaVersionNumber(SchemaVersionNumberT&& value) { m_schemaVersionNumberHasBeenSet = true; m_schemaVersionNumber = std::forward<SchemaVersionNumberT>(value); }
-    template<typename SchemaVersionNumberT = SchemaVersionNumber>
-    GetSchemaVersionRequest& WithSchemaVersionNumber(SchemaVersionNumberT&& value) { SetSchemaVersionNumber(std::forward<SchemaVersionNumberT>(value)); return *this;}
-    ///@}
-  private:
-
-    SchemaId m_schemaId;
-    bool m_schemaIdHasBeenSet = false;
-
-    Aws::String m_schemaVersionId;
-    bool m_schemaVersionIdHasBeenSet = false;
-
-    SchemaVersionNumber m_schemaVersionNumber;
-    bool m_schemaVersionNumberHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

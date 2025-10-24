@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-VirtualGatewayTlsValidationContext::VirtualGatewayTlsValidationContext(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VirtualGatewayTlsValidationContext::VirtualGatewayTlsValidationContext(JsonView jsonValue) { *this = jsonValue; }
 
-VirtualGatewayTlsValidationContext& VirtualGatewayTlsValidationContext::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("subjectAlternativeNames"))
-  {
+VirtualGatewayTlsValidationContext& VirtualGatewayTlsValidationContext::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("subjectAlternativeNames")) {
     m_subjectAlternativeNames = jsonValue.GetObject("subjectAlternativeNames");
     m_subjectAlternativeNamesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("trust"))
-  {
+  if (jsonValue.ValueExists("trust")) {
     m_trust = jsonValue.GetObject("trust");
     m_trustHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VirtualGatewayTlsValidationContext::Jsonize() const
-{
+JsonValue VirtualGatewayTlsValidationContext::Jsonize() const {
   JsonValue payload;
 
-  if(m_subjectAlternativeNamesHasBeenSet)
-  {
-   payload.WithObject("subjectAlternativeNames", m_subjectAlternativeNames.Jsonize());
-
+  if (m_subjectAlternativeNamesHasBeenSet) {
+    payload.WithObject("subjectAlternativeNames", m_subjectAlternativeNames.Jsonize());
   }
 
-  if(m_trustHasBeenSet)
-  {
-   payload.WithObject("trust", m_trust.Jsonize());
-
+  if (m_trustHasBeenSet) {
+    payload.WithObject("trust", m_trust.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

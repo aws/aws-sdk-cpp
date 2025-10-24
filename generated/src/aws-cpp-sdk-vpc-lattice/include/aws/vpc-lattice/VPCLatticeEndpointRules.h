@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
 
-namespace Aws
-{
-namespace VPCLattice
-{
-class VPCLatticeEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace VPCLattice {
+class VPCLatticeEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace VPCLattice
-} // namespace Aws
+}  // namespace VPCLattice
+}  // namespace Aws

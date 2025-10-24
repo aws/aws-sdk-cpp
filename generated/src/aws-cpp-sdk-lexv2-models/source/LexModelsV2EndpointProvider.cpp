@@ -5,12 +5,8 @@
 
 #include <aws/lexv2-models/LexModelsV2EndpointProvider.h>
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace LexModelsV2
-} // namespace Aws
+namespace Aws {
+namespace LexModelsV2 {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace LexModelsV2
+}  // namespace Aws

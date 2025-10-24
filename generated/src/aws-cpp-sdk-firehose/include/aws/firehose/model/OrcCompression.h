@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/firehose/Firehose_EXPORTS.h>
 
-namespace Aws
-{
-namespace Firehose
-{
-namespace Model
-{
-  enum class OrcCompression
-  {
-    NOT_SET,
-    NONE,
-    ZLIB,
-    SNAPPY
-  };
+namespace Aws {
+namespace Firehose {
+namespace Model {
+enum class OrcCompression { NOT_SET, NONE, ZLIB, SNAPPY };
 
-namespace OrcCompressionMapper
-{
+namespace OrcCompressionMapper {
 AWS_FIREHOSE_API OrcCompression GetOrcCompressionForName(const Aws::String& name);
 
 AWS_FIREHOSE_API Aws::String GetNameForOrcCompression(OrcCompression value);
-} // namespace OrcCompressionMapper
-} // namespace Model
-} // namespace Firehose
-} // namespace Aws
+}  // namespace OrcCompressionMapper
+}  // namespace Model
+}  // namespace Firehose
+}  // namespace Aws

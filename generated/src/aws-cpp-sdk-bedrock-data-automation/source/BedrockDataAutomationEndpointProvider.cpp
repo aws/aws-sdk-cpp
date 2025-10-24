@@ -5,12 +5,8 @@
 
 #include <aws/bedrock-data-automation/BedrockDataAutomationEndpointProvider.h>
 
-namespace Aws
-{
-namespace BedrockDataAutomation
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace BedrockDataAutomation
-} // namespace Aws
+namespace Aws {
+namespace BedrockDataAutomation {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace BedrockDataAutomation
+}  // namespace Aws

@@ -4,42 +4,37 @@
  */
 
 #pragma once
-#include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mailmanager/MailManager_EXPORTS.h>
 
-namespace Aws
-{
-namespace MailManager
-{
-namespace Model
-{
-  enum class RetentionPeriod
-  {
-    NOT_SET,
-    THREE_MONTHS,
-    SIX_MONTHS,
-    NINE_MONTHS,
-    ONE_YEAR,
-    EIGHTEEN_MONTHS,
-    TWO_YEARS,
-    THIRTY_MONTHS,
-    THREE_YEARS,
-    FOUR_YEARS,
-    FIVE_YEARS,
-    SIX_YEARS,
-    SEVEN_YEARS,
-    EIGHT_YEARS,
-    NINE_YEARS,
-    TEN_YEARS,
-    PERMANENT
-  };
+namespace Aws {
+namespace MailManager {
+namespace Model {
+enum class RetentionPeriod {
+  NOT_SET,
+  THREE_MONTHS,
+  SIX_MONTHS,
+  NINE_MONTHS,
+  ONE_YEAR,
+  EIGHTEEN_MONTHS,
+  TWO_YEARS,
+  THIRTY_MONTHS,
+  THREE_YEARS,
+  FOUR_YEARS,
+  FIVE_YEARS,
+  SIX_YEARS,
+  SEVEN_YEARS,
+  EIGHT_YEARS,
+  NINE_YEARS,
+  TEN_YEARS,
+  PERMANENT
+};
 
-namespace RetentionPeriodMapper
-{
+namespace RetentionPeriodMapper {
 AWS_MAILMANAGER_API RetentionPeriod GetRetentionPeriodForName(const Aws::String& name);
 
 AWS_MAILMANAGER_API Aws::String GetNameForRetentionPeriod(RetentionPeriod value);
-} // namespace RetentionPeriodMapper
-} // namespace Model
-} // namespace MailManager
-} // namespace Aws
+}  // namespace RetentionPeriodMapper
+}  // namespace Model
+}  // namespace MailManager
+}  // namespace Aws

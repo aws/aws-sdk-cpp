@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/networkmanager/model/CreateConnectAttachmentRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/networkmanager/model/CreateConnectAttachmentRequest.h>
 
 #include <utility>
 
@@ -12,54 +12,36 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateConnectAttachmentRequest::SerializePayload() const
-{
+Aws::String CreateConnectAttachmentRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_coreNetworkIdHasBeenSet)
-  {
-   payload.WithString("CoreNetworkId", m_coreNetworkId);
-
+  if (m_coreNetworkIdHasBeenSet) {
+    payload.WithString("CoreNetworkId", m_coreNetworkId);
   }
 
-  if(m_edgeLocationHasBeenSet)
-  {
-   payload.WithString("EdgeLocation", m_edgeLocation);
-
+  if (m_edgeLocationHasBeenSet) {
+    payload.WithString("EdgeLocation", m_edgeLocation);
   }
 
-  if(m_transportAttachmentIdHasBeenSet)
-  {
-   payload.WithString("TransportAttachmentId", m_transportAttachmentId);
-
+  if (m_transportAttachmentIdHasBeenSet) {
+    payload.WithString("TransportAttachmentId", m_transportAttachmentId);
   }
 
-  if(m_optionsHasBeenSet)
-  {
-   payload.WithObject("Options", m_options.Jsonize());
-
+  if (m_optionsHasBeenSet) {
+    payload.WithObject("Options", m_options.Jsonize());
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("Tags", std::move(tagsJsonList));
-
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("ClientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("ClientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

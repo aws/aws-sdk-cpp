@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApplicationAutoScaling
-{
-namespace Model
-{
+namespace Aws {
+namespace ApplicationAutoScaling {
+namespace Model {
 
-PredefinedMetricSpecification::PredefinedMetricSpecification(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PredefinedMetricSpecification::PredefinedMetricSpecification(JsonView jsonValue) { *this = jsonValue; }
 
-PredefinedMetricSpecification& PredefinedMetricSpecification::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PredefinedMetricType"))
-  {
+PredefinedMetricSpecification& PredefinedMetricSpecification::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PredefinedMetricType")) {
     m_predefinedMetricType = MetricTypeMapper::GetMetricTypeForName(jsonValue.GetString("PredefinedMetricType"));
     m_predefinedMetricTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceLabel"))
-  {
+  if (jsonValue.ValueExists("ResourceLabel")) {
     m_resourceLabel = jsonValue.GetString("ResourceLabel");
     m_resourceLabelHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PredefinedMetricSpecification::Jsonize() const
-{
+JsonValue PredefinedMetricSpecification::Jsonize() const {
   JsonValue payload;
 
-  if(m_predefinedMetricTypeHasBeenSet)
-  {
-   payload.WithString("PredefinedMetricType", MetricTypeMapper::GetNameForMetricType(m_predefinedMetricType));
+  if (m_predefinedMetricTypeHasBeenSet) {
+    payload.WithString("PredefinedMetricType", MetricTypeMapper::GetNameForMetricType(m_predefinedMetricType));
   }
 
-  if(m_resourceLabelHasBeenSet)
-  {
-   payload.WithString("ResourceLabel", m_resourceLabel);
-
+  if (m_resourceLabelHasBeenSet) {
+    payload.WithString("ResourceLabel", m_resourceLabel);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApplicationAutoScaling
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApplicationAutoScaling
+}  // namespace Aws

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-DownloadUrlMetadata::DownloadUrlMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DownloadUrlMetadata::DownloadUrlMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-DownloadUrlMetadata& DownloadUrlMetadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Url"))
-  {
+DownloadUrlMetadata& DownloadUrlMetadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Url")) {
     m_url = jsonValue.GetString("Url");
     m_urlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UrlExpiry"))
-  {
+  if (jsonValue.ValueExists("UrlExpiry")) {
     m_urlExpiry = jsonValue.GetString("UrlExpiry");
     m_urlExpiryHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DownloadUrlMetadata::Jsonize() const
-{
+JsonValue DownloadUrlMetadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_urlHasBeenSet)
-  {
-   payload.WithString("Url", m_url);
-
+  if (m_urlHasBeenSet) {
+    payload.WithString("Url", m_url);
   }
 
-  if(m_urlExpiryHasBeenSet)
-  {
-   payload.WithString("UrlExpiry", m_urlExpiry);
-
+  if (m_urlExpiryHasBeenSet) {
+    payload.WithString("UrlExpiry", m_urlExpiry);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

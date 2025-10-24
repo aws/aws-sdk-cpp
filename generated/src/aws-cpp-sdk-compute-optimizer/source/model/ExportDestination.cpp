@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
 
-ExportDestination::ExportDestination(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExportDestination::ExportDestination(JsonView jsonValue) { *this = jsonValue; }
 
-ExportDestination& ExportDestination::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("s3"))
-  {
+ExportDestination& ExportDestination::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("s3")) {
     m_s3 = jsonValue.GetObject("s3");
     m_s3HasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExportDestination::Jsonize() const
-{
+JsonValue ExportDestination::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3HasBeenSet)
-  {
-   payload.WithObject("s3", m_s3.Jsonize());
-
+  if (m_s3HasBeenSet) {
+    payload.WithObject("s3", m_s3.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

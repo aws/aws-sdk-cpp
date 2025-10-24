@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/machinelearning/MachineLearning_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/machinelearning/MachineLearning_EXPORTS.h>
 
-namespace Aws
-{
-namespace MachineLearning
-{
-namespace Model
-{
-  enum class EntityStatus
-  {
-    NOT_SET,
-    PENDING,
-    INPROGRESS,
-    FAILED,
-    COMPLETED,
-    DELETED
-  };
+namespace Aws {
+namespace MachineLearning {
+namespace Model {
+enum class EntityStatus { NOT_SET, PENDING, INPROGRESS, FAILED, COMPLETED, DELETED };
 
-namespace EntityStatusMapper
-{
+namespace EntityStatusMapper {
 AWS_MACHINELEARNING_API EntityStatus GetEntityStatusForName(const Aws::String& name);
 
 AWS_MACHINELEARNING_API Aws::String GetNameForEntityStatus(EntityStatus value);
-} // namespace EntityStatusMapper
-} // namespace Model
-} // namespace MachineLearning
-} // namespace Aws
+}  // namespace EntityStatusMapper
+}  // namespace Model
+}  // namespace MachineLearning
+}  // namespace Aws

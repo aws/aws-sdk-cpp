@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/kendra/Kendra_EXPORTS.h>
 
-namespace Aws
-{
-namespace kendra
-{
-enum class KendraErrors
-{
-  //From Core//
+namespace Aws {
+namespace kendra {
+enum class KendraErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class KendraErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class KendraErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   FEATURED_RESULTS_CONFLICT,
   INTERNAL_SERVER,
   INVALID_REQUEST,
@@ -57,9 +54,8 @@ enum class KendraErrors
   SERVICE_QUOTA_EXCEEDED
 };
 
-class AWS_KENDRA_API KendraError : public Aws::Client::AWSError<KendraErrors>
-{
-public:
+class AWS_KENDRA_API KendraError : public Aws::Client::AWSError<KendraErrors> {
+ public:
   KendraError() {}
   KendraError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<KendraErrors>(rhs) {}
   KendraError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<KendraErrors>(rhs) {}
@@ -70,10 +66,9 @@ public:
   T GetModeledError();
 };
 
-namespace KendraErrorMapper
-{
-  AWS_KENDRA_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace KendraErrorMapper {
+AWS_KENDRA_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace kendra
-} // namespace Aws
+}  // namespace kendra
+}  // namespace Aws

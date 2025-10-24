@@ -3,58 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/inspector2/model/CisTargetStatusReasonFilter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/inspector2/model/CisTargetStatusReasonFilter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Inspector2
-{
-namespace Model
-{
+namespace Aws {
+namespace Inspector2 {
+namespace Model {
 
-CisTargetStatusReasonFilter::CisTargetStatusReasonFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CisTargetStatusReasonFilter::CisTargetStatusReasonFilter(JsonView jsonValue) { *this = jsonValue; }
 
-CisTargetStatusReasonFilter& CisTargetStatusReasonFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("comparison"))
-  {
+CisTargetStatusReasonFilter& CisTargetStatusReasonFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("comparison")) {
     m_comparison = CisTargetStatusComparisonMapper::GetCisTargetStatusComparisonForName(jsonValue.GetString("comparison"));
     m_comparisonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("value"))
-  {
+  if (jsonValue.ValueExists("value")) {
     m_value = CisTargetStatusReasonMapper::GetCisTargetStatusReasonForName(jsonValue.GetString("value"));
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CisTargetStatusReasonFilter::Jsonize() const
-{
+JsonValue CisTargetStatusReasonFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_comparisonHasBeenSet)
-  {
-   payload.WithString("comparison", CisTargetStatusComparisonMapper::GetNameForCisTargetStatusComparison(m_comparison));
+  if (m_comparisonHasBeenSet) {
+    payload.WithString("comparison", CisTargetStatusComparisonMapper::GetNameForCisTargetStatusComparison(m_comparison));
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("value", CisTargetStatusReasonMapper::GetNameForCisTargetStatusReason(m_value));
+  if (m_valueHasBeenSet) {
+    payload.WithString("value", CisTargetStatusReasonMapper::GetNameForCisTargetStatusReason(m_value));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Inspector2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Inspector2
+}  // namespace Aws

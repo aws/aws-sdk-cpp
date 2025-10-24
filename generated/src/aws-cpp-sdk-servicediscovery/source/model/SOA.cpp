@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/servicediscovery/model/SOA.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/servicediscovery/model/SOA.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ServiceDiscovery
-{
-namespace Model
-{
+namespace Aws {
+namespace ServiceDiscovery {
+namespace Model {
 
-SOA::SOA(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SOA::SOA(JsonView jsonValue) { *this = jsonValue; }
 
-SOA& SOA::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TTL"))
-  {
+SOA& SOA::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TTL")) {
     m_tTL = jsonValue.GetInt64("TTL");
     m_tTLHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SOA::Jsonize() const
-{
+JsonValue SOA::Jsonize() const {
   JsonValue payload;
 
-  if(m_tTLHasBeenSet)
-  {
-   payload.WithInt64("TTL", m_tTL);
-
+  if (m_tTLHasBeenSet) {
+    payload.WithInt64("TTL", m_tTL);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ServiceDiscovery
-} // namespace Aws
+}  // namespace Model
+}  // namespace ServiceDiscovery
+}  // namespace Aws

@@ -11,51 +11,39 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
 
-UserPoolAddOnsType::UserPoolAddOnsType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UserPoolAddOnsType::UserPoolAddOnsType(JsonView jsonValue) { *this = jsonValue; }
 
-UserPoolAddOnsType& UserPoolAddOnsType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AdvancedSecurityMode"))
-  {
-    m_advancedSecurityMode = AdvancedSecurityModeTypeMapper::GetAdvancedSecurityModeTypeForName(jsonValue.GetString("AdvancedSecurityMode"));
+UserPoolAddOnsType& UserPoolAddOnsType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AdvancedSecurityMode")) {
+    m_advancedSecurityMode =
+        AdvancedSecurityModeTypeMapper::GetAdvancedSecurityModeTypeForName(jsonValue.GetString("AdvancedSecurityMode"));
     m_advancedSecurityModeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AdvancedSecurityAdditionalFlows"))
-  {
+  if (jsonValue.ValueExists("AdvancedSecurityAdditionalFlows")) {
     m_advancedSecurityAdditionalFlows = jsonValue.GetObject("AdvancedSecurityAdditionalFlows");
     m_advancedSecurityAdditionalFlowsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UserPoolAddOnsType::Jsonize() const
-{
+JsonValue UserPoolAddOnsType::Jsonize() const {
   JsonValue payload;
 
-  if(m_advancedSecurityModeHasBeenSet)
-  {
-   payload.WithString("AdvancedSecurityMode", AdvancedSecurityModeTypeMapper::GetNameForAdvancedSecurityModeType(m_advancedSecurityMode));
+  if (m_advancedSecurityModeHasBeenSet) {
+    payload.WithString("AdvancedSecurityMode", AdvancedSecurityModeTypeMapper::GetNameForAdvancedSecurityModeType(m_advancedSecurityMode));
   }
 
-  if(m_advancedSecurityAdditionalFlowsHasBeenSet)
-  {
-   payload.WithObject("AdvancedSecurityAdditionalFlows", m_advancedSecurityAdditionalFlows.Jsonize());
-
+  if (m_advancedSecurityAdditionalFlowsHasBeenSet) {
+    payload.WithObject("AdvancedSecurityAdditionalFlows", m_advancedSecurityAdditionalFlows.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

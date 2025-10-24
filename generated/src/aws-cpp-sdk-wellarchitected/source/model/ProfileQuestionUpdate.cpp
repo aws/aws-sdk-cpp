@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wellarchitected/model/ProfileQuestionUpdate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wellarchitected/model/ProfileQuestionUpdate.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WellArchitected
-{
-namespace Model
-{
+namespace Aws {
+namespace WellArchitected {
+namespace Model {
 
-ProfileQuestionUpdate::ProfileQuestionUpdate(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProfileQuestionUpdate::ProfileQuestionUpdate(JsonView jsonValue) { *this = jsonValue; }
 
-ProfileQuestionUpdate& ProfileQuestionUpdate::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("QuestionId"))
-  {
+ProfileQuestionUpdate& ProfileQuestionUpdate::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("QuestionId")) {
     m_questionId = jsonValue.GetString("QuestionId");
     m_questionIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SelectedChoiceIds"))
-  {
+  if (jsonValue.ValueExists("SelectedChoiceIds")) {
     Aws::Utils::Array<JsonView> selectedChoiceIdsJsonList = jsonValue.GetArray("SelectedChoiceIds");
-    for(unsigned selectedChoiceIdsIndex = 0; selectedChoiceIdsIndex < selectedChoiceIdsJsonList.GetLength(); ++selectedChoiceIdsIndex)
-    {
+    for (unsigned selectedChoiceIdsIndex = 0; selectedChoiceIdsIndex < selectedChoiceIdsJsonList.GetLength(); ++selectedChoiceIdsIndex) {
       m_selectedChoiceIds.push_back(selectedChoiceIdsJsonList[selectedChoiceIdsIndex].AsString());
     }
     m_selectedChoiceIdsHasBeenSet = true;
@@ -42,30 +32,24 @@ ProfileQuestionUpdate& ProfileQuestionUpdate::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ProfileQuestionUpdate::Jsonize() const
-{
+JsonValue ProfileQuestionUpdate::Jsonize() const {
   JsonValue payload;
 
-  if(m_questionIdHasBeenSet)
-  {
-   payload.WithString("QuestionId", m_questionId);
-
+  if (m_questionIdHasBeenSet) {
+    payload.WithString("QuestionId", m_questionId);
   }
 
-  if(m_selectedChoiceIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> selectedChoiceIdsJsonList(m_selectedChoiceIds.size());
-   for(unsigned selectedChoiceIdsIndex = 0; selectedChoiceIdsIndex < selectedChoiceIdsJsonList.GetLength(); ++selectedChoiceIdsIndex)
-   {
-     selectedChoiceIdsJsonList[selectedChoiceIdsIndex].AsString(m_selectedChoiceIds[selectedChoiceIdsIndex]);
-   }
-   payload.WithArray("SelectedChoiceIds", std::move(selectedChoiceIdsJsonList));
-
+  if (m_selectedChoiceIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> selectedChoiceIdsJsonList(m_selectedChoiceIds.size());
+    for (unsigned selectedChoiceIdsIndex = 0; selectedChoiceIdsIndex < selectedChoiceIdsJsonList.GetLength(); ++selectedChoiceIdsIndex) {
+      selectedChoiceIdsJsonList[selectedChoiceIdsIndex].AsString(m_selectedChoiceIds[selectedChoiceIdsIndex]);
+    }
+    payload.WithArray("SelectedChoiceIds", std::move(selectedChoiceIdsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WellArchitected
-} // namespace Aws
+}  // namespace Model
+}  // namespace WellArchitected
+}  // namespace Aws

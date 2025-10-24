@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
 
-HttpHeader::HttpHeader(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+HttpHeader::HttpHeader(JsonView jsonValue) { *this = jsonValue; }
 
-HttpHeader& HttpHeader::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("headerName"))
-  {
+HttpHeader& HttpHeader::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("headerName")) {
     m_headerName = jsonValue.GetString("headerName");
     m_headerNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("headerValue"))
-  {
+  if (jsonValue.ValueExists("headerValue")) {
     m_headerValue = jsonValue.GetString("headerValue");
     m_headerValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue HttpHeader::Jsonize() const
-{
+JsonValue HttpHeader::Jsonize() const {
   JsonValue payload;
 
-  if(m_headerNameHasBeenSet)
-  {
-   payload.WithString("headerName", m_headerName);
-
+  if (m_headerNameHasBeenSet) {
+    payload.WithString("headerName", m_headerName);
   }
 
-  if(m_headerValueHasBeenSet)
-  {
-   payload.WithString("headerValue", m_headerValue);
-
+  if (m_headerValueHasBeenSet) {
+    payload.WithString("headerValue", m_headerValue);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

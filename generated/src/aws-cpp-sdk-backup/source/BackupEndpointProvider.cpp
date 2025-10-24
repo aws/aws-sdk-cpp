@@ -5,12 +5,8 @@
 
 #include <aws/backup/BackupEndpointProvider.h>
 
-namespace Aws
-{
-namespace Backup
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Backup
-} // namespace Aws
+namespace Aws {
+namespace Backup {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Backup
+}  // namespace Aws

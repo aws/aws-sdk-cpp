@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/ListClusterNodesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sagemaker/model/ListClusterNodesResult.h>
 
 #include <utility>
 
@@ -17,24 +17,18 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListClusterNodesResult::ListClusterNodesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListClusterNodesResult::ListClusterNodesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListClusterNodesResult& ListClusterNodesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListClusterNodesResult& ListClusterNodesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ClusterNodeSummaries"))
-  {
+  if (jsonValue.ValueExists("ClusterNodeSummaries")) {
     Aws::Utils::Array<JsonView> clusterNodeSummariesJsonList = jsonValue.GetArray("ClusterNodeSummaries");
-    for(unsigned clusterNodeSummariesIndex = 0; clusterNodeSummariesIndex < clusterNodeSummariesJsonList.GetLength(); ++clusterNodeSummariesIndex)
-    {
+    for (unsigned clusterNodeSummariesIndex = 0; clusterNodeSummariesIndex < clusterNodeSummariesJsonList.GetLength();
+         ++clusterNodeSummariesIndex) {
       m_clusterNodeSummaries.push_back(clusterNodeSummariesJsonList[clusterNodeSummariesIndex].AsObject());
     }
     m_clusterNodeSummariesHasBeenSet = true;
@@ -42,12 +36,10 @@ ListClusterNodesResult& ListClusterNodesResult::operator =(const Aws::AmazonWebS
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

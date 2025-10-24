@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker-geospatial/model/OutputResolutionStackInput.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker-geospatial/model/OutputResolutionStackInput.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMakerGeospatial
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMakerGeospatial {
+namespace Model {
 
-OutputResolutionStackInput::OutputResolutionStackInput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OutputResolutionStackInput::OutputResolutionStackInput(JsonView jsonValue) { *this = jsonValue; }
 
-OutputResolutionStackInput& OutputResolutionStackInput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Predefined"))
-  {
+OutputResolutionStackInput& OutputResolutionStackInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Predefined")) {
     m_predefined = PredefinedResolutionMapper::GetPredefinedResolutionForName(jsonValue.GetString("Predefined"));
     m_predefinedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UserDefined"))
-  {
+  if (jsonValue.ValueExists("UserDefined")) {
     m_userDefined = jsonValue.GetObject("UserDefined");
     m_userDefinedHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OutputResolutionStackInput::Jsonize() const
-{
+JsonValue OutputResolutionStackInput::Jsonize() const {
   JsonValue payload;
 
-  if(m_predefinedHasBeenSet)
-  {
-   payload.WithString("Predefined", PredefinedResolutionMapper::GetNameForPredefinedResolution(m_predefined));
+  if (m_predefinedHasBeenSet) {
+    payload.WithString("Predefined", PredefinedResolutionMapper::GetNameForPredefinedResolution(m_predefined));
   }
 
-  if(m_userDefinedHasBeenSet)
-  {
-   payload.WithObject("UserDefined", m_userDefined.Jsonize());
-
+  if (m_userDefinedHasBeenSet) {
+    payload.WithObject("UserDefined", m_userDefined.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMakerGeospatial
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMakerGeospatial
+}  // namespace Aws

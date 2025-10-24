@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm/SSM_EXPORTS.h>
 
-namespace Aws
-{
-namespace SSM
-{
-namespace Model
-{
-  enum class ComplianceUploadType
-  {
-    NOT_SET,
-    COMPLETE,
-    PARTIAL
-  };
+namespace Aws {
+namespace SSM {
+namespace Model {
+enum class ComplianceUploadType { NOT_SET, COMPLETE, PARTIAL };
 
-namespace ComplianceUploadTypeMapper
-{
+namespace ComplianceUploadTypeMapper {
 AWS_SSM_API ComplianceUploadType GetComplianceUploadTypeForName(const Aws::String& name);
 
 AWS_SSM_API Aws::String GetNameForComplianceUploadType(ComplianceUploadType value);
-} // namespace ComplianceUploadTypeMapper
-} // namespace Model
-} // namespace SSM
-} // namespace Aws
+}  // namespace ComplianceUploadTypeMapper
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

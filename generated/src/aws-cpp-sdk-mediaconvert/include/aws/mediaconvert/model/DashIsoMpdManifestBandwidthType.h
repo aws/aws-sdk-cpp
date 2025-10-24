@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class DashIsoMpdManifestBandwidthType
-  {
-    NOT_SET,
-    AVERAGE,
-    MAX
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class DashIsoMpdManifestBandwidthType { NOT_SET, AVERAGE, MAX };
 
-namespace DashIsoMpdManifestBandwidthTypeMapper
-{
+namespace DashIsoMpdManifestBandwidthTypeMapper {
 AWS_MEDIACONVERT_API DashIsoMpdManifestBandwidthType GetDashIsoMpdManifestBandwidthTypeForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForDashIsoMpdManifestBandwidthType(DashIsoMpdManifestBandwidthType value);
-} // namespace DashIsoMpdManifestBandwidthTypeMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace DashIsoMpdManifestBandwidthTypeMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

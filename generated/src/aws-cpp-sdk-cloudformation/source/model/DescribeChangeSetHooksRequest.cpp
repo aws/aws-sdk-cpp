@@ -10,27 +10,22 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeChangeSetHooksRequest::SerializePayload() const
-{
+Aws::String DescribeChangeSetHooksRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeChangeSetHooks&";
-  if(m_changeSetNameHasBeenSet)
-  {
+  if (m_changeSetNameHasBeenSet) {
     ss << "ChangeSetName=" << StringUtils::URLEncode(m_changeSetName.c_str()) << "&";
   }
 
-  if(m_stackNameHasBeenSet)
-  {
+  if (m_stackNameHasBeenSet) {
     ss << "StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  if(m_logicalResourceIdHasBeenSet)
-  {
+  if (m_logicalResourceIdHasBeenSet) {
     ss << "LogicalResourceId=" << StringUtils::URLEncode(m_logicalResourceId.c_str()) << "&";
   }
 
@@ -38,8 +33,4 @@ Aws::String DescribeChangeSetHooksRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeChangeSetHooksRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeChangeSetHooksRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

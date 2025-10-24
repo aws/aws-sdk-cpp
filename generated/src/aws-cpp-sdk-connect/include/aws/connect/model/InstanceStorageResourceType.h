@@ -7,36 +7,31 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
-  enum class InstanceStorageResourceType
-  {
-    NOT_SET,
-    CHAT_TRANSCRIPTS,
-    CALL_RECORDINGS,
-    SCHEDULED_REPORTS,
-    MEDIA_STREAMS,
-    CONTACT_TRACE_RECORDS,
-    AGENT_EVENTS,
-    REAL_TIME_CONTACT_ANALYSIS_SEGMENTS,
-    ATTACHMENTS,
-    CONTACT_EVALUATIONS,
-    SCREEN_RECORDINGS,
-    REAL_TIME_CONTACT_ANALYSIS_CHAT_SEGMENTS,
-    REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS,
-    EMAIL_MESSAGES
-  };
+namespace Aws {
+namespace Connect {
+namespace Model {
+enum class InstanceStorageResourceType {
+  NOT_SET,
+  CHAT_TRANSCRIPTS,
+  CALL_RECORDINGS,
+  SCHEDULED_REPORTS,
+  MEDIA_STREAMS,
+  CONTACT_TRACE_RECORDS,
+  AGENT_EVENTS,
+  REAL_TIME_CONTACT_ANALYSIS_SEGMENTS,
+  ATTACHMENTS,
+  CONTACT_EVALUATIONS,
+  SCREEN_RECORDINGS,
+  REAL_TIME_CONTACT_ANALYSIS_CHAT_SEGMENTS,
+  REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS,
+  EMAIL_MESSAGES
+};
 
-namespace InstanceStorageResourceTypeMapper
-{
+namespace InstanceStorageResourceTypeMapper {
 AWS_CONNECT_API InstanceStorageResourceType GetInstanceStorageResourceTypeForName(const Aws::String& name);
 
 AWS_CONNECT_API Aws::String GetNameForInstanceStorageResourceType(InstanceStorageResourceType value);
-} // namespace InstanceStorageResourceTypeMapper
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace InstanceStorageResourceTypeMapper
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

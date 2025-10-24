@@ -7,24 +7,16 @@
 #include <aws/codestar-connections/CodeStarconnections_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CodeStarconnections
-{
-namespace Model
-{
-  enum class SyncConfigurationType
-  {
-    NOT_SET,
-    CFN_STACK_SYNC
-  };
+namespace Aws {
+namespace CodeStarconnections {
+namespace Model {
+enum class SyncConfigurationType { NOT_SET, CFN_STACK_SYNC };
 
-namespace SyncConfigurationTypeMapper
-{
+namespace SyncConfigurationTypeMapper {
 AWS_CODESTARCONNECTIONS_API SyncConfigurationType GetSyncConfigurationTypeForName(const Aws::String& name);
 
 AWS_CODESTARCONNECTIONS_API Aws::String GetNameForSyncConfigurationType(SyncConfigurationType value);
-} // namespace SyncConfigurationTypeMapper
-} // namespace Model
-} // namespace CodeStarconnections
-} // namespace Aws
+}  // namespace SyncConfigurationTypeMapper
+}  // namespace Model
+}  // namespace CodeStarconnections
+}  // namespace Aws

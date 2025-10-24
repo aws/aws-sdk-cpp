@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/budgets/Budgets_EXPORTS.h>
 
-namespace Aws
-{
-namespace Budgets
-{
-class BudgetsEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace Budgets {
+class BudgetsEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace Budgets
-} // namespace Aws
+}  // namespace Budgets
+}  // namespace Aws

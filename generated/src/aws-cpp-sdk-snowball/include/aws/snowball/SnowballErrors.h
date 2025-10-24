@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/snowball/Snowball_EXPORTS.h>
 
-namespace Aws
-{
-namespace Snowball
-{
-enum class SnowballErrors
-{
-  //From Core//
+namespace Aws {
+namespace Snowball {
+enum class SnowballErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class SnowballErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class SnowballErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CLUSTER_LIMIT_EXCEEDED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CLUSTER_LIMIT_EXCEEDED = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CONFLICT,
   EC2_REQUEST_FAILED,
   INVALID_ADDRESS,
@@ -60,9 +57,8 @@ enum class SnowballErrors
   UNSUPPORTED_ADDRESS
 };
 
-class AWS_SNOWBALL_API SnowballError : public Aws::Client::AWSError<SnowballErrors>
-{
-public:
+class AWS_SNOWBALL_API SnowballError : public Aws::Client::AWSError<SnowballErrors> {
+ public:
   SnowballError() {}
   SnowballError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<SnowballErrors>(rhs) {}
   SnowballError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<SnowballErrors>(rhs) {}
@@ -73,10 +69,9 @@ public:
   T GetModeledError();
 };
 
-namespace SnowballErrorMapper
-{
-  AWS_SNOWBALL_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace SnowballErrorMapper {
+AWS_SNOWBALL_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace Snowball
-} // namespace Aws
+}  // namespace Snowball
+}  // namespace Aws

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BCMDashboards
-{
-namespace Model
-{
+namespace Aws {
+namespace BCMDashboards {
+namespace Model {
 
-WidgetConfig::WidgetConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+WidgetConfig::WidgetConfig(JsonView jsonValue) { *this = jsonValue; }
 
-WidgetConfig& WidgetConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("queryParameters"))
-  {
+WidgetConfig& WidgetConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("queryParameters")) {
     m_queryParameters = jsonValue.GetObject("queryParameters");
     m_queryParametersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("displayConfig"))
-  {
+  if (jsonValue.ValueExists("displayConfig")) {
     m_displayConfig = jsonValue.GetObject("displayConfig");
     m_displayConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue WidgetConfig::Jsonize() const
-{
+JsonValue WidgetConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_queryParametersHasBeenSet)
-  {
-   payload.WithObject("queryParameters", m_queryParameters.Jsonize());
-
+  if (m_queryParametersHasBeenSet) {
+    payload.WithObject("queryParameters", m_queryParameters.Jsonize());
   }
 
-  if(m_displayConfigHasBeenSet)
-  {
-   payload.WithObject("displayConfig", m_displayConfig.Jsonize());
-
+  if (m_displayConfigHasBeenSet) {
+    payload.WithObject("displayConfig", m_displayConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BCMDashboards
-} // namespace Aws
+}  // namespace Model
+}  // namespace BCMDashboards
+}  // namespace Aws

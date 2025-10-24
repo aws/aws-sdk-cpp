@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::CloudWatchRUM;
 
-AWSError<CoreErrors> CloudWatchRUMErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> CloudWatchRUMErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = CloudWatchRUMErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

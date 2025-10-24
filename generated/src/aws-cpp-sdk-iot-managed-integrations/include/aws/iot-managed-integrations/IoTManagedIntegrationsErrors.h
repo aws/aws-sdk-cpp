@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTManagedIntegrations
-{
-enum class IoTManagedIntegrationsErrors
-{
-  //From Core//
+namespace Aws {
+namespace IoTManagedIntegrations {
+enum class IoTManagedIntegrationsErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class IoTManagedIntegrationsErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class IoTManagedIntegrationsErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER,
   INVALID_REQUEST,
   LIMIT_EXCEEDED,
@@ -55,23 +52,25 @@ enum class IoTManagedIntegrationsErrors
   UNAUTHORIZED
 };
 
-class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsError : public Aws::Client::AWSError<IoTManagedIntegrationsErrors>
-{
-public:
+class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsError : public Aws::Client::AWSError<IoTManagedIntegrationsErrors> {
+ public:
   IoTManagedIntegrationsError() {}
-  IoTManagedIntegrationsError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<IoTManagedIntegrationsErrors>(rhs) {}
-  IoTManagedIntegrationsError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<IoTManagedIntegrationsErrors>(rhs) {}
-  IoTManagedIntegrationsError(const Aws::Client::AWSError<IoTManagedIntegrationsErrors>& rhs) : Aws::Client::AWSError<IoTManagedIntegrationsErrors>(rhs) {}
-  IoTManagedIntegrationsError(Aws::Client::AWSError<IoTManagedIntegrationsErrors>&& rhs) : Aws::Client::AWSError<IoTManagedIntegrationsErrors>(rhs) {}
+  IoTManagedIntegrationsError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs)
+      : Aws::Client::AWSError<IoTManagedIntegrationsErrors>(rhs) {}
+  IoTManagedIntegrationsError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs)
+      : Aws::Client::AWSError<IoTManagedIntegrationsErrors>(rhs) {}
+  IoTManagedIntegrationsError(const Aws::Client::AWSError<IoTManagedIntegrationsErrors>& rhs)
+      : Aws::Client::AWSError<IoTManagedIntegrationsErrors>(rhs) {}
+  IoTManagedIntegrationsError(Aws::Client::AWSError<IoTManagedIntegrationsErrors>&& rhs)
+      : Aws::Client::AWSError<IoTManagedIntegrationsErrors>(rhs) {}
 
   template <typename T>
   T GetModeledError();
 };
 
-namespace IoTManagedIntegrationsErrorMapper
-{
-  AWS_IOTMANAGEDINTEGRATIONS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace IoTManagedIntegrationsErrorMapper {
+AWS_IOTMANAGEDINTEGRATIONS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace IoTManagedIntegrations
-} // namespace Aws
+}  // namespace IoTManagedIntegrations
+}  // namespace Aws

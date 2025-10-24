@@ -12,33 +12,22 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateRepositoryNameRequest::SerializePayload() const
-{
+Aws::String UpdateRepositoryNameRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_oldNameHasBeenSet)
-  {
-   payload.WithString("oldName", m_oldName);
-
+  if (m_oldNameHasBeenSet) {
+    payload.WithString("oldName", m_oldName);
   }
 
-  if(m_newNameHasBeenSet)
-  {
-   payload.WithString("newName", m_newName);
-
+  if (m_newNameHasBeenSet) {
+    payload.WithString("newName", m_newName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateRepositoryNameRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateRepositoryNameRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeCommit_20150413.UpdateRepositoryName"));
   return headers;
-
 }
-
-
-
-

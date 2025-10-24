@@ -3,33 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/license-manager/model/ReportContext.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/license-manager/model/ReportContext.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LicenseManager
-{
-namespace Model
-{
+namespace Aws {
+namespace LicenseManager {
+namespace Model {
 
-ReportContext::ReportContext(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReportContext::ReportContext(JsonView jsonValue) { *this = jsonValue; }
 
-ReportContext& ReportContext::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("licenseConfigurationArns"))
-  {
+ReportContext& ReportContext::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("licenseConfigurationArns")) {
     Aws::Utils::Array<JsonView> licenseConfigurationArnsJsonList = jsonValue.GetArray("licenseConfigurationArns");
-    for(unsigned licenseConfigurationArnsIndex = 0; licenseConfigurationArnsIndex < licenseConfigurationArnsJsonList.GetLength(); ++licenseConfigurationArnsIndex)
-    {
+    for (unsigned licenseConfigurationArnsIndex = 0; licenseConfigurationArnsIndex < licenseConfigurationArnsJsonList.GetLength();
+         ++licenseConfigurationArnsIndex) {
       m_licenseConfigurationArns.push_back(licenseConfigurationArnsJsonList[licenseConfigurationArnsIndex].AsString());
     }
     m_licenseConfigurationArnsHasBeenSet = true;
@@ -37,24 +29,21 @@ ReportContext& ReportContext::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ReportContext::Jsonize() const
-{
+JsonValue ReportContext::Jsonize() const {
   JsonValue payload;
 
-  if(m_licenseConfigurationArnsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> licenseConfigurationArnsJsonList(m_licenseConfigurationArns.size());
-   for(unsigned licenseConfigurationArnsIndex = 0; licenseConfigurationArnsIndex < licenseConfigurationArnsJsonList.GetLength(); ++licenseConfigurationArnsIndex)
-   {
-     licenseConfigurationArnsJsonList[licenseConfigurationArnsIndex].AsString(m_licenseConfigurationArns[licenseConfigurationArnsIndex]);
-   }
-   payload.WithArray("licenseConfigurationArns", std::move(licenseConfigurationArnsJsonList));
-
+  if (m_licenseConfigurationArnsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> licenseConfigurationArnsJsonList(m_licenseConfigurationArns.size());
+    for (unsigned licenseConfigurationArnsIndex = 0; licenseConfigurationArnsIndex < licenseConfigurationArnsJsonList.GetLength();
+         ++licenseConfigurationArnsIndex) {
+      licenseConfigurationArnsJsonList[licenseConfigurationArnsIndex].AsString(m_licenseConfigurationArns[licenseConfigurationArnsIndex]);
+    }
+    payload.WithArray("licenseConfigurationArns", std::move(licenseConfigurationArnsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LicenseManager
-} // namespace Aws
+}  // namespace Model
+}  // namespace LicenseManager
+}  // namespace Aws

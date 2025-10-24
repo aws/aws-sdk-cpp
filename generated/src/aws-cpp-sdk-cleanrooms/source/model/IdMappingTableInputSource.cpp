@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
 
-IdMappingTableInputSource::IdMappingTableInputSource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IdMappingTableInputSource::IdMappingTableInputSource(JsonView jsonValue) { *this = jsonValue; }
 
-IdMappingTableInputSource& IdMappingTableInputSource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("idNamespaceAssociationId"))
-  {
+IdMappingTableInputSource& IdMappingTableInputSource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("idNamespaceAssociationId")) {
     m_idNamespaceAssociationId = jsonValue.GetString("idNamespaceAssociationId");
     m_idNamespaceAssociationIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = IdNamespaceTypeMapper::GetIdNamespaceTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IdMappingTableInputSource::Jsonize() const
-{
+JsonValue IdMappingTableInputSource::Jsonize() const {
   JsonValue payload;
 
-  if(m_idNamespaceAssociationIdHasBeenSet)
-  {
-   payload.WithString("idNamespaceAssociationId", m_idNamespaceAssociationId);
-
+  if (m_idNamespaceAssociationIdHasBeenSet) {
+    payload.WithString("idNamespaceAssociationId", m_idNamespaceAssociationId);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", IdNamespaceTypeMapper::GetNameForIdNamespaceType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", IdNamespaceTypeMapper::GetNameForIdNamespaceType(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticfilesystem/model/BackupPolicy.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/elasticfilesystem/model/BackupPolicy.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EFS
-{
-namespace Model
-{
+namespace Aws {
+namespace EFS {
+namespace Model {
 
-BackupPolicy::BackupPolicy(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BackupPolicy::BackupPolicy(JsonView jsonValue) { *this = jsonValue; }
 
-BackupPolicy& BackupPolicy::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Status"))
-  {
+BackupPolicy& BackupPolicy::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Status")) {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BackupPolicy::Jsonize() const
-{
+JsonValue BackupPolicy::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", StatusMapper::GetNameForStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", StatusMapper::GetNameForStatus(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EFS
-} // namespace Aws
+}  // namespace Model
+}  // namespace EFS
+}  // namespace Aws

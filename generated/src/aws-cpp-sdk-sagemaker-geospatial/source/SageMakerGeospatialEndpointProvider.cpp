@@ -5,12 +5,8 @@
 
 #include <aws/sagemaker-geospatial/SageMakerGeospatialEndpointProvider.h>
 
-namespace Aws
-{
-namespace SageMakerGeospatial
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace SageMakerGeospatial
-} // namespace Aws
+namespace Aws {
+namespace SageMakerGeospatial {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace SageMakerGeospatial
+}  // namespace Aws

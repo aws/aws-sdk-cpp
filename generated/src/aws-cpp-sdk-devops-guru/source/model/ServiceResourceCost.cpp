@@ -3,92 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/devops-guru/model/ServiceResourceCost.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/devops-guru/model/ServiceResourceCost.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DevOpsGuru
-{
-namespace Model
-{
+namespace Aws {
+namespace DevOpsGuru {
+namespace Model {
 
-ServiceResourceCost::ServiceResourceCost(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ServiceResourceCost::ServiceResourceCost(JsonView jsonValue) { *this = jsonValue; }
 
-ServiceResourceCost& ServiceResourceCost::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Type"))
-  {
+ServiceResourceCost& ServiceResourceCost::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Type")) {
     m_type = jsonValue.GetString("Type");
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("State"))
-  {
+  if (jsonValue.ValueExists("State")) {
     m_state = CostEstimationServiceResourceStateMapper::GetCostEstimationServiceResourceStateForName(jsonValue.GetString("State"));
     m_stateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Count"))
-  {
+  if (jsonValue.ValueExists("Count")) {
     m_count = jsonValue.GetInteger("Count");
     m_countHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UnitCost"))
-  {
+  if (jsonValue.ValueExists("UnitCost")) {
     m_unitCost = jsonValue.GetDouble("UnitCost");
     m_unitCostHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Cost"))
-  {
+  if (jsonValue.ValueExists("Cost")) {
     m_cost = jsonValue.GetDouble("Cost");
     m_costHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ServiceResourceCost::Jsonize() const
-{
+JsonValue ServiceResourceCost::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", m_type);
   }
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("State", CostEstimationServiceResourceStateMapper::GetNameForCostEstimationServiceResourceState(m_state));
+  if (m_stateHasBeenSet) {
+    payload.WithString("State", CostEstimationServiceResourceStateMapper::GetNameForCostEstimationServiceResourceState(m_state));
   }
 
-  if(m_countHasBeenSet)
-  {
-   payload.WithInteger("Count", m_count);
-
+  if (m_countHasBeenSet) {
+    payload.WithInteger("Count", m_count);
   }
 
-  if(m_unitCostHasBeenSet)
-  {
-   payload.WithDouble("UnitCost", m_unitCost);
-
+  if (m_unitCostHasBeenSet) {
+    payload.WithDouble("UnitCost", m_unitCost);
   }
 
-  if(m_costHasBeenSet)
-  {
-   payload.WithDouble("Cost", m_cost);
-
+  if (m_costHasBeenSet) {
+    payload.WithDouble("Cost", m_cost);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DevOpsGuru
-} // namespace Aws
+}  // namespace Model
+}  // namespace DevOpsGuru
+}  // namespace Aws

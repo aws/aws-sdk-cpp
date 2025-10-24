@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lookoutmetrics/model/DetectedMetricSetConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lookoutmetrics/model/DetectedMetricSetConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LookoutMetrics
-{
-namespace Model
-{
+namespace Aws {
+namespace LookoutMetrics {
+namespace Model {
 
-DetectedMetricSetConfig::DetectedMetricSetConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DetectedMetricSetConfig::DetectedMetricSetConfig(JsonView jsonValue) { *this = jsonValue; }
 
-DetectedMetricSetConfig& DetectedMetricSetConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Offset"))
-  {
+DetectedMetricSetConfig& DetectedMetricSetConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Offset")) {
     m_offset = jsonValue.GetObject("Offset");
     m_offsetHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MetricSetFrequency"))
-  {
+  if (jsonValue.ValueExists("MetricSetFrequency")) {
     m_metricSetFrequency = jsonValue.GetObject("MetricSetFrequency");
     m_metricSetFrequencyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MetricSource"))
-  {
+  if (jsonValue.ValueExists("MetricSource")) {
     m_metricSource = jsonValue.GetObject("MetricSource");
     m_metricSourceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DetectedMetricSetConfig::Jsonize() const
-{
+JsonValue DetectedMetricSetConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_offsetHasBeenSet)
-  {
-   payload.WithObject("Offset", m_offset.Jsonize());
-
+  if (m_offsetHasBeenSet) {
+    payload.WithObject("Offset", m_offset.Jsonize());
   }
 
-  if(m_metricSetFrequencyHasBeenSet)
-  {
-   payload.WithObject("MetricSetFrequency", m_metricSetFrequency.Jsonize());
-
+  if (m_metricSetFrequencyHasBeenSet) {
+    payload.WithObject("MetricSetFrequency", m_metricSetFrequency.Jsonize());
   }
 
-  if(m_metricSourceHasBeenSet)
-  {
-   payload.WithObject("MetricSource", m_metricSource.Jsonize());
-
+  if (m_metricSourceHasBeenSet) {
+    payload.WithObject("MetricSource", m_metricSource.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LookoutMetrics
-} // namespace Aws
+}  // namespace Model
+}  // namespace LookoutMetrics
+}  // namespace Aws

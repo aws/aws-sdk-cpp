@@ -5,12 +5,8 @@
 
 #include <aws/emr-serverless/EMRServerlessEndpointProvider.h>
 
-namespace Aws
-{
-namespace EMRServerless
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace EMRServerless
-} // namespace Aws
+namespace Aws {
+namespace EMRServerless {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace EMRServerless
+}  // namespace Aws

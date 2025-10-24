@@ -6,51 +6,49 @@
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace MediaConvert
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace MediaConvert {
+namespace Model {
 
+/**
+ * Settings for a noise reducer filter<p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/NoiseReducerFilterSettings">AWS
+ * API Reference</a></p>
+ */
+class NoiseReducerFilterSettings {
+ public:
+  AWS_MEDIACONVERT_API NoiseReducerFilterSettings() = default;
+  AWS_MEDIACONVERT_API NoiseReducerFilterSettings(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MEDIACONVERT_API NoiseReducerFilterSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * Settings for a noise reducer filter<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/NoiseReducerFilterSettings">AWS
-   * API Reference</a></p>
+   * Relative strength of noise reducing filter. Higher values produce stronger
+   * filtering.
    */
-  class NoiseReducerFilterSettings
-  {
-  public:
-    AWS_MEDIACONVERT_API NoiseReducerFilterSettings() = default;
-    AWS_MEDIACONVERT_API NoiseReducerFilterSettings(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MEDIACONVERT_API NoiseReducerFilterSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetStrength() const { return m_strength; }
+  inline bool StrengthHasBeenSet() const { return m_strengthHasBeenSet; }
+  inline void SetStrength(int value) {
+    m_strengthHasBeenSet = true;
+    m_strength = value;
+  }
+  inline NoiseReducerFilterSettings& WithStrength(int value) {
+    SetStrength(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_strength{0};
+  bool m_strengthHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * Relative strength of noise reducing filter. Higher values produce stronger
-     * filtering.
-     */
-    inline int GetStrength() const { return m_strength; }
-    inline bool StrengthHasBeenSet() const { return m_strengthHasBeenSet; }
-    inline void SetStrength(int value) { m_strengthHasBeenSet = true; m_strength = value; }
-    inline NoiseReducerFilterSettings& WithStrength(int value) { SetStrength(value); return *this;}
-    ///@}
-  private:
-
-    int m_strength{0};
-    bool m_strengthHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

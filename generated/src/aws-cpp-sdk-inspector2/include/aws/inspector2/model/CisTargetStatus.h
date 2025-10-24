@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector2/Inspector2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Inspector2
-{
-namespace Model
-{
-  enum class CisTargetStatus
-  {
-    NOT_SET,
-    TIMED_OUT,
-    CANCELLED,
-    COMPLETED
-  };
+namespace Aws {
+namespace Inspector2 {
+namespace Model {
+enum class CisTargetStatus { NOT_SET, TIMED_OUT, CANCELLED, COMPLETED };
 
-namespace CisTargetStatusMapper
-{
+namespace CisTargetStatusMapper {
 AWS_INSPECTOR2_API CisTargetStatus GetCisTargetStatusForName(const Aws::String& name);
 
 AWS_INSPECTOR2_API Aws::String GetNameForCisTargetStatus(CisTargetStatus value);
-} // namespace CisTargetStatusMapper
-} // namespace Model
-} // namespace Inspector2
-} // namespace Aws
+}  // namespace CisTargetStatusMapper
+}  // namespace Model
+}  // namespace Inspector2
+}  // namespace Aws

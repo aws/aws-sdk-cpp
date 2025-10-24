@@ -7,25 +7,16 @@
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace BedrockRuntime
-{
-namespace Model
-{
-  enum class PerformanceConfigLatency
-  {
-    NOT_SET,
-    standard,
-    optimized
-  };
+namespace Aws {
+namespace BedrockRuntime {
+namespace Model {
+enum class PerformanceConfigLatency { NOT_SET, standard, optimized };
 
-namespace PerformanceConfigLatencyMapper
-{
+namespace PerformanceConfigLatencyMapper {
 AWS_BEDROCKRUNTIME_API PerformanceConfigLatency GetPerformanceConfigLatencyForName(const Aws::String& name);
 
 AWS_BEDROCKRUNTIME_API Aws::String GetNameForPerformanceConfigLatency(PerformanceConfigLatency value);
-} // namespace PerformanceConfigLatencyMapper
-} // namespace Model
-} // namespace BedrockRuntime
-} // namespace Aws
+}  // namespace PerformanceConfigLatencyMapper
+}  // namespace Model
+}  // namespace BedrockRuntime
+}  // namespace Aws

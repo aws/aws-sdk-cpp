@@ -3,39 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/robomaker/model/LoggingConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/robomaker/model/LoggingConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace RoboMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace RoboMaker {
+namespace Model {
 
-LoggingConfig::LoggingConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LoggingConfig::LoggingConfig(JsonView jsonValue) { *this = jsonValue; }
 
-LoggingConfig& LoggingConfig::operator =(JsonView jsonValue)
-{
+LoggingConfig& LoggingConfig::operator=(JsonView jsonValue) {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
 }
 
-JsonValue LoggingConfig::Jsonize() const
-{
+JsonValue LoggingConfig::Jsonize() const {
   JsonValue payload;
 
   return payload;
 }
 
-} // namespace Model
-} // namespace RoboMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace RoboMaker
+}  // namespace Aws

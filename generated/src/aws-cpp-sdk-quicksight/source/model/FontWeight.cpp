@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/FontWeight.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/FontWeight.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-FontWeight::FontWeight(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FontWeight::FontWeight(JsonView jsonValue) { *this = jsonValue; }
 
-FontWeight& FontWeight::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+FontWeight& FontWeight::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = FontWeightNameMapper::GetFontWeightNameForName(jsonValue.GetString("Name"));
     m_nameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FontWeight::Jsonize() const
-{
+JsonValue FontWeight::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", FontWeightNameMapper::GetNameForFontWeightName(m_name));
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", FontWeightNameMapper::GetNameForFontWeightName(m_name));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

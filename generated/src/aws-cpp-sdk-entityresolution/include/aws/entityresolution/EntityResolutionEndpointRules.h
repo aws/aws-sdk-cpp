@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
 
-namespace Aws
-{
-namespace EntityResolution
-{
-class EntityResolutionEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace EntityResolution {
+class EntityResolutionEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace EntityResolution
-} // namespace Aws
+}  // namespace EntityResolution
+}  // namespace Aws

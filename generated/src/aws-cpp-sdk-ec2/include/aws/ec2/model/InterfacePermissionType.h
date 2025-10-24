@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class InterfacePermissionType
-  {
-    NOT_SET,
-    INSTANCE_ATTACH,
-    EIP_ASSOCIATE
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class InterfacePermissionType { NOT_SET, INSTANCE_ATTACH, EIP_ASSOCIATE };
 
-namespace InterfacePermissionTypeMapper
-{
+namespace InterfacePermissionTypeMapper {
 AWS_EC2_API InterfacePermissionType GetInterfacePermissionTypeForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForInterfacePermissionType(InterfacePermissionType value);
-} // namespace InterfacePermissionTypeMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace InterfacePermissionTypeMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

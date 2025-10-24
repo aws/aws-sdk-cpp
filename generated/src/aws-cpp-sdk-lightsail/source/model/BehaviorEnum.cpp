@@ -3,70 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lightsail/model/BehaviorEnum.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/lightsail/model/BehaviorEnum.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace Lightsail {
+namespace Model {
+namespace BehaviorEnumMapper {
 
-namespace Aws
-{
-  namespace Lightsail
-  {
-    namespace Model
-    {
-      namespace BehaviorEnumMapper
-      {
+static const int dont_cache_HASH = HashingUtils::HashString("dont-cache");
+static const int cache_HASH = HashingUtils::HashString("cache");
 
-        static const int dont_cache_HASH = HashingUtils::HashString("dont-cache");
-        static const int cache_HASH = HashingUtils::HashString("cache");
+BehaviorEnum GetBehaviorEnumForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == dont_cache_HASH) {
+    return BehaviorEnum::dont_cache;
+  } else if (hashCode == cache_HASH) {
+    return BehaviorEnum::cache;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<BehaviorEnum>(hashCode);
+  }
 
+  return BehaviorEnum::NOT_SET;
+}
 
-        BehaviorEnum GetBehaviorEnumForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == dont_cache_HASH)
-          {
-            return BehaviorEnum::dont_cache;
-          }
-          else if (hashCode == cache_HASH)
-          {
-            return BehaviorEnum::cache;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<BehaviorEnum>(hashCode);
-          }
+Aws::String GetNameForBehaviorEnum(BehaviorEnum enumValue) {
+  switch (enumValue) {
+    case BehaviorEnum::NOT_SET:
+      return {};
+    case BehaviorEnum::dont_cache:
+      return "dont-cache";
+    case BehaviorEnum::cache:
+      return "cache";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return BehaviorEnum::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForBehaviorEnum(BehaviorEnum enumValue)
-        {
-          switch(enumValue)
-          {
-          case BehaviorEnum::NOT_SET:
-            return {};
-          case BehaviorEnum::dont_cache:
-            return "dont-cache";
-          case BehaviorEnum::cache:
-            return "cache";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace BehaviorEnumMapper
-    } // namespace Model
-  } // namespace Lightsail
-} // namespace Aws
+}  // namespace BehaviorEnumMapper
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

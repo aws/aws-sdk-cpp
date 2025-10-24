@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
 
-namespace Aws
-{
-namespace ResilienceHub
-{
-namespace Model
-{
-  enum class ExcludeRecommendationReason
-  {
-    NOT_SET,
-    AlreadyImplemented,
-    NotRelevant,
-    ComplexityOfImplementation
-  };
+namespace Aws {
+namespace ResilienceHub {
+namespace Model {
+enum class ExcludeRecommendationReason { NOT_SET, AlreadyImplemented, NotRelevant, ComplexityOfImplementation };
 
-namespace ExcludeRecommendationReasonMapper
-{
+namespace ExcludeRecommendationReasonMapper {
 AWS_RESILIENCEHUB_API ExcludeRecommendationReason GetExcludeRecommendationReasonForName(const Aws::String& name);
 
 AWS_RESILIENCEHUB_API Aws::String GetNameForExcludeRecommendationReason(ExcludeRecommendationReason value);
-} // namespace ExcludeRecommendationReasonMapper
-} // namespace Model
-} // namespace ResilienceHub
-} // namespace Aws
+}  // namespace ExcludeRecommendationReasonMapper
+}  // namespace Model
+}  // namespace ResilienceHub
+}  // namespace Aws

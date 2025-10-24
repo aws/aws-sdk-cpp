@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 
-namespace Aws
-{
-namespace imagebuilder
-{
-namespace Model
-{
-  enum class Ownership
-  {
-    NOT_SET,
-    Self,
-    Shared,
-    Amazon,
-    ThirdParty,
-    AWSMarketplace
-  };
+namespace Aws {
+namespace imagebuilder {
+namespace Model {
+enum class Ownership { NOT_SET, Self, Shared, Amazon, ThirdParty, AWSMarketplace };
 
-namespace OwnershipMapper
-{
+namespace OwnershipMapper {
 AWS_IMAGEBUILDER_API Ownership GetOwnershipForName(const Aws::String& name);
 
 AWS_IMAGEBUILDER_API Aws::String GetNameForOwnership(Ownership value);
-} // namespace OwnershipMapper
-} // namespace Model
-} // namespace imagebuilder
-} // namespace Aws
+}  // namespace OwnershipMapper
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rekognition/model/AudioMetadata.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rekognition/model/AudioMetadata.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Rekognition
-{
-namespace Model
-{
+namespace Aws {
+namespace Rekognition {
+namespace Model {
 
-AudioMetadata::AudioMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AudioMetadata::AudioMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-AudioMetadata& AudioMetadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Codec"))
-  {
+AudioMetadata& AudioMetadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Codec")) {
     m_codec = jsonValue.GetString("Codec");
     m_codecHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DurationMillis"))
-  {
+  if (jsonValue.ValueExists("DurationMillis")) {
     m_durationMillis = jsonValue.GetInt64("DurationMillis");
     m_durationMillisHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SampleRate"))
-  {
+  if (jsonValue.ValueExists("SampleRate")) {
     m_sampleRate = jsonValue.GetInt64("SampleRate");
     m_sampleRateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NumberOfChannels"))
-  {
+  if (jsonValue.ValueExists("NumberOfChannels")) {
     m_numberOfChannels = jsonValue.GetInt64("NumberOfChannels");
     m_numberOfChannelsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AudioMetadata::Jsonize() const
-{
+JsonValue AudioMetadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_codecHasBeenSet)
-  {
-   payload.WithString("Codec", m_codec);
-
+  if (m_codecHasBeenSet) {
+    payload.WithString("Codec", m_codec);
   }
 
-  if(m_durationMillisHasBeenSet)
-  {
-   payload.WithInt64("DurationMillis", m_durationMillis);
-
+  if (m_durationMillisHasBeenSet) {
+    payload.WithInt64("DurationMillis", m_durationMillis);
   }
 
-  if(m_sampleRateHasBeenSet)
-  {
-   payload.WithInt64("SampleRate", m_sampleRate);
-
+  if (m_sampleRateHasBeenSet) {
+    payload.WithInt64("SampleRate", m_sampleRate);
   }
 
-  if(m_numberOfChannelsHasBeenSet)
-  {
-   payload.WithInt64("NumberOfChannels", m_numberOfChannels);
-
+  if (m_numberOfChannelsHasBeenSet) {
+    payload.WithInt64("NumberOfChannels", m_numberOfChannels);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Rekognition
-} // namespace Aws
+}  // namespace Model
+}  // namespace Rekognition
+}  // namespace Aws

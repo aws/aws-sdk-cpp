@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-KinesisVideoStreamConfig::KinesisVideoStreamConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+KinesisVideoStreamConfig::KinesisVideoStreamConfig(JsonView jsonValue) { *this = jsonValue; }
 
-KinesisVideoStreamConfig& KinesisVideoStreamConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Prefix"))
-  {
+KinesisVideoStreamConfig& KinesisVideoStreamConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Prefix")) {
     m_prefix = jsonValue.GetString("Prefix");
     m_prefixHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RetentionPeriodHours"))
-  {
+  if (jsonValue.ValueExists("RetentionPeriodHours")) {
     m_retentionPeriodHours = jsonValue.GetInteger("RetentionPeriodHours");
     m_retentionPeriodHoursHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EncryptionConfig"))
-  {
+  if (jsonValue.ValueExists("EncryptionConfig")) {
     m_encryptionConfig = jsonValue.GetObject("EncryptionConfig");
     m_encryptionConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue KinesisVideoStreamConfig::Jsonize() const
-{
+JsonValue KinesisVideoStreamConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_prefixHasBeenSet)
-  {
-   payload.WithString("Prefix", m_prefix);
-
+  if (m_prefixHasBeenSet) {
+    payload.WithString("Prefix", m_prefix);
   }
 
-  if(m_retentionPeriodHoursHasBeenSet)
-  {
-   payload.WithInteger("RetentionPeriodHours", m_retentionPeriodHours);
-
+  if (m_retentionPeriodHoursHasBeenSet) {
+    payload.WithInteger("RetentionPeriodHours", m_retentionPeriodHours);
   }
 
-  if(m_encryptionConfigHasBeenSet)
-  {
-   payload.WithObject("EncryptionConfig", m_encryptionConfig.Jsonize());
-
+  if (m_encryptionConfigHasBeenSet) {
+    payload.WithObject("EncryptionConfig", m_encryptionConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

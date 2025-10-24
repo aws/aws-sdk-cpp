@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/budgets/Budgets_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/budgets/Budgets_EXPORTS.h>
 
-namespace Aws
-{
-namespace Budgets
-{
-enum class BudgetsErrors
-{
-  //From Core//
+namespace Aws {
+namespace Budgets {
+enum class BudgetsErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class BudgetsErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class BudgetsErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  BILLING_VIEW_HEALTH_STATUS= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BILLING_VIEW_HEALTH_STATUS = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CREATION_LIMIT_EXCEEDED,
   DUPLICATE_RECORD,
   EXPIRED_NEXT_TOKEN,
@@ -59,9 +56,8 @@ enum class BudgetsErrors
   SERVICE_QUOTA_EXCEEDED
 };
 
-class AWS_BUDGETS_API BudgetsError : public Aws::Client::AWSError<BudgetsErrors>
-{
-public:
+class AWS_BUDGETS_API BudgetsError : public Aws::Client::AWSError<BudgetsErrors> {
+ public:
   BudgetsError() {}
   BudgetsError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<BudgetsErrors>(rhs) {}
   BudgetsError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<BudgetsErrors>(rhs) {}
@@ -72,10 +68,9 @@ public:
   T GetModeledError();
 };
 
-namespace BudgetsErrorMapper
-{
-  AWS_BUDGETS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace BudgetsErrorMapper {
+AWS_BUDGETS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace Budgets
-} // namespace Aws
+}  // namespace Budgets
+}  // namespace Aws

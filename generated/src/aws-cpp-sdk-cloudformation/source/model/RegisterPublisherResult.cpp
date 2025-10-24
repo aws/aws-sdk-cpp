@@ -4,10 +4,10 @@
  */
 
 #include <aws/cloudformation/model/RegisterPublisherResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
@@ -17,26 +17,19 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RegisterPublisherResult::RegisterPublisherResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+RegisterPublisherResult::RegisterPublisherResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-RegisterPublisherResult& RegisterPublisherResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+RegisterPublisherResult& RegisterPublisherResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "RegisterPublisherResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "RegisterPublisherResult")) {
     resultNode = rootNode.FirstChild("RegisterPublisherResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode publisherIdNode = resultNode.FirstChild("PublisherId");
-    if(!publisherIdNode.IsNull())
-    {
+    if (!publisherIdNode.IsNull()) {
       m_publisherId = Aws::Utils::Xml::DecodeEscapedXmlText(publisherIdNode.GetText());
       m_publisherIdHasBeenSet = true;
     }
@@ -46,7 +39,7 @@ RegisterPublisherResult& RegisterPublisherResult::operator =(const Aws::AmazonWe
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::RegisterPublisherResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::RegisterPublisherResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

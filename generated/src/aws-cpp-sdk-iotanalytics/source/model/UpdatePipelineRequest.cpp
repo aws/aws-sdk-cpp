@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotanalytics/model/UpdatePipelineRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotanalytics/model/UpdatePipelineRequest.h>
 
 #include <utility>
 
@@ -12,24 +12,17 @@ using namespace Aws::IoTAnalytics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdatePipelineRequest::SerializePayload() const
-{
+Aws::String UpdatePipelineRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_pipelineActivitiesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> pipelineActivitiesJsonList(m_pipelineActivities.size());
-   for(unsigned pipelineActivitiesIndex = 0; pipelineActivitiesIndex < pipelineActivitiesJsonList.GetLength(); ++pipelineActivitiesIndex)
-   {
-     pipelineActivitiesJsonList[pipelineActivitiesIndex].AsObject(m_pipelineActivities[pipelineActivitiesIndex].Jsonize());
-   }
-   payload.WithArray("pipelineActivities", std::move(pipelineActivitiesJsonList));
-
+  if (m_pipelineActivitiesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> pipelineActivitiesJsonList(m_pipelineActivities.size());
+    for (unsigned pipelineActivitiesIndex = 0; pipelineActivitiesIndex < pipelineActivitiesJsonList.GetLength();
+         ++pipelineActivitiesIndex) {
+      pipelineActivitiesJsonList[pipelineActivitiesIndex].AsObject(m_pipelineActivities[pipelineActivitiesIndex].Jsonize());
+    }
+    payload.WithArray("pipelineActivities", std::move(pipelineActivitiesJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

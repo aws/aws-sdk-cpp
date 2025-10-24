@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCases
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCases {
+namespace Model {
 
-BasicLayout::BasicLayout(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BasicLayout::BasicLayout(JsonView jsonValue) { *this = jsonValue; }
 
-BasicLayout& BasicLayout::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("topPanel"))
-  {
+BasicLayout& BasicLayout::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("topPanel")) {
     m_topPanel = jsonValue.GetObject("topPanel");
     m_topPanelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("moreInfo"))
-  {
+  if (jsonValue.ValueExists("moreInfo")) {
     m_moreInfo = jsonValue.GetObject("moreInfo");
     m_moreInfoHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BasicLayout::Jsonize() const
-{
+JsonValue BasicLayout::Jsonize() const {
   JsonValue payload;
 
-  if(m_topPanelHasBeenSet)
-  {
-   payload.WithObject("topPanel", m_topPanel.Jsonize());
-
+  if (m_topPanelHasBeenSet) {
+    payload.WithObject("topPanel", m_topPanel.Jsonize());
   }
 
-  if(m_moreInfoHasBeenSet)
-  {
-   payload.WithObject("moreInfo", m_moreInfo.Jsonize());
-
+  if (m_moreInfoHasBeenSet) {
+    payload.WithObject("moreInfo", m_moreInfo.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCases
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCases
+}  // namespace Aws

@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTManagedIntegrations
-{
-namespace Model
-{
-  enum class SchemaVersionFormat
-  {
-    NOT_SET,
-    AWS,
-    ZCL,
-    CONNECTOR
-  };
+namespace Aws {
+namespace IoTManagedIntegrations {
+namespace Model {
+enum class SchemaVersionFormat { NOT_SET, AWS, ZCL, CONNECTOR };
 
-namespace SchemaVersionFormatMapper
-{
+namespace SchemaVersionFormatMapper {
 AWS_IOTMANAGEDINTEGRATIONS_API SchemaVersionFormat GetSchemaVersionFormatForName(const Aws::String& name);
 
 AWS_IOTMANAGEDINTEGRATIONS_API Aws::String GetNameForSchemaVersionFormat(SchemaVersionFormat value);
-} // namespace SchemaVersionFormatMapper
-} // namespace Model
-} // namespace IoTManagedIntegrations
-} // namespace Aws
+}  // namespace SchemaVersionFormatMapper
+}  // namespace Model
+}  // namespace IoTManagedIntegrations
+}  // namespace Aws

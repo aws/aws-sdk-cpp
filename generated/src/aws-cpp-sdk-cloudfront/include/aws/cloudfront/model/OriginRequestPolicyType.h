@@ -7,25 +7,16 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
-  enum class OriginRequestPolicyType
-  {
-    NOT_SET,
-    managed,
-    custom
-  };
+namespace Aws {
+namespace CloudFront {
+namespace Model {
+enum class OriginRequestPolicyType { NOT_SET, managed, custom };
 
-namespace OriginRequestPolicyTypeMapper
-{
+namespace OriginRequestPolicyTypeMapper {
 AWS_CLOUDFRONT_API OriginRequestPolicyType GetOriginRequestPolicyTypeForName(const Aws::String& name);
 
 AWS_CLOUDFRONT_API Aws::String GetNameForOriginRequestPolicyType(OriginRequestPolicyType value);
-} // namespace OriginRequestPolicyTypeMapper
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace OriginRequestPolicyTypeMapper
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

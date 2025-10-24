@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/opensearch/model/DryRunResults.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/opensearch/model/DryRunResults.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace OpenSearchService
-{
-namespace Model
-{
+namespace Aws {
+namespace OpenSearchService {
+namespace Model {
 
-DryRunResults::DryRunResults(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DryRunResults::DryRunResults(JsonView jsonValue) { *this = jsonValue; }
 
-DryRunResults& DryRunResults::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DeploymentType"))
-  {
+DryRunResults& DryRunResults::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DeploymentType")) {
     m_deploymentType = jsonValue.GetString("DeploymentType");
     m_deploymentTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Message"))
-  {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DryRunResults::Jsonize() const
-{
+JsonValue DryRunResults::Jsonize() const {
   JsonValue payload;
 
-  if(m_deploymentTypeHasBeenSet)
-  {
-   payload.WithString("DeploymentType", m_deploymentType);
-
+  if (m_deploymentTypeHasBeenSet) {
+    payload.WithString("DeploymentType", m_deploymentType);
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace OpenSearchService
-} // namespace Aws
+}  // namespace Model
+}  // namespace OpenSearchService
+}  // namespace Aws

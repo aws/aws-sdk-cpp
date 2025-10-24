@@ -4,8 +4,8 @@
  */
 
 #include <aws/cleanroomsml/model/GetTrainedModelRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -15,22 +15,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String GetTrainedModelRequest::SerializePayload() const
-{
-  return {};
+Aws::String GetTrainedModelRequest::SerializePayload() const { return {}; }
+
+void GetTrainedModelRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_versionIdentifierHasBeenSet) {
+    ss << m_versionIdentifier;
+    uri.AddQueryStringParameter("versionIdentifier", ss.str());
+    ss.str("");
+  }
 }
-
-void GetTrainedModelRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_versionIdentifierHasBeenSet)
-    {
-      ss << m_versionIdentifier;
-      uri.AddQueryStringParameter("versionIdentifier", ss.str());
-      ss.str("");
-    }
-
-}
-
-
-

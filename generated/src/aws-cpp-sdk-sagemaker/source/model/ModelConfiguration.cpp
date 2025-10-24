@@ -3,80 +3,63 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/ModelConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/ModelConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-ModelConfiguration::ModelConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ModelConfiguration::ModelConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ModelConfiguration& ModelConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("InferenceSpecificationName"))
-  {
+ModelConfiguration& ModelConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("InferenceSpecificationName")) {
     m_inferenceSpecificationName = jsonValue.GetString("InferenceSpecificationName");
     m_inferenceSpecificationNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EnvironmentParameters"))
-  {
+  if (jsonValue.ValueExists("EnvironmentParameters")) {
     Aws::Utils::Array<JsonView> environmentParametersJsonList = jsonValue.GetArray("EnvironmentParameters");
-    for(unsigned environmentParametersIndex = 0; environmentParametersIndex < environmentParametersJsonList.GetLength(); ++environmentParametersIndex)
-    {
+    for (unsigned environmentParametersIndex = 0; environmentParametersIndex < environmentParametersJsonList.GetLength();
+         ++environmentParametersIndex) {
       m_environmentParameters.push_back(environmentParametersJsonList[environmentParametersIndex].AsObject());
     }
     m_environmentParametersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CompilationJobName"))
-  {
+  if (jsonValue.ValueExists("CompilationJobName")) {
     m_compilationJobName = jsonValue.GetString("CompilationJobName");
     m_compilationJobNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ModelConfiguration::Jsonize() const
-{
+JsonValue ModelConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_inferenceSpecificationNameHasBeenSet)
-  {
-   payload.WithString("InferenceSpecificationName", m_inferenceSpecificationName);
-
+  if (m_inferenceSpecificationNameHasBeenSet) {
+    payload.WithString("InferenceSpecificationName", m_inferenceSpecificationName);
   }
 
-  if(m_environmentParametersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> environmentParametersJsonList(m_environmentParameters.size());
-   for(unsigned environmentParametersIndex = 0; environmentParametersIndex < environmentParametersJsonList.GetLength(); ++environmentParametersIndex)
-   {
-     environmentParametersJsonList[environmentParametersIndex].AsObject(m_environmentParameters[environmentParametersIndex].Jsonize());
-   }
-   payload.WithArray("EnvironmentParameters", std::move(environmentParametersJsonList));
-
+  if (m_environmentParametersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> environmentParametersJsonList(m_environmentParameters.size());
+    for (unsigned environmentParametersIndex = 0; environmentParametersIndex < environmentParametersJsonList.GetLength();
+         ++environmentParametersIndex) {
+      environmentParametersJsonList[environmentParametersIndex].AsObject(m_environmentParameters[environmentParametersIndex].Jsonize());
+    }
+    payload.WithArray("EnvironmentParameters", std::move(environmentParametersJsonList));
   }
 
-  if(m_compilationJobNameHasBeenSet)
-  {
-   payload.WithString("CompilationJobName", m_compilationJobName);
-
+  if (m_compilationJobNameHasBeenSet) {
+    payload.WithString("CompilationJobName", m_compilationJobName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

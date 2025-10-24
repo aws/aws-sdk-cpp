@@ -5,12 +5,8 @@
 
 #include <aws/monitoring/CloudWatchEndpointProvider.h>
 
-namespace Aws
-{
-namespace CloudWatch
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace CloudWatch
-} // namespace Aws
+namespace Aws {
+namespace CloudWatch {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace CloudWatch
+}  // namespace Aws

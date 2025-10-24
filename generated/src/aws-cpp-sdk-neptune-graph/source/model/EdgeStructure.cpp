@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/neptune-graph/model/EdgeStructure.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/neptune-graph/model/EdgeStructure.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace NeptuneGraph
-{
-namespace Model
-{
+namespace Aws {
+namespace NeptuneGraph {
+namespace Model {
 
-EdgeStructure::EdgeStructure(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EdgeStructure::EdgeStructure(JsonView jsonValue) { *this = jsonValue; }
 
-EdgeStructure& EdgeStructure::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("count"))
-  {
+EdgeStructure& EdgeStructure::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("count")) {
     m_count = jsonValue.GetInt64("count");
     m_countHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("edgeProperties"))
-  {
+  if (jsonValue.ValueExists("edgeProperties")) {
     Aws::Utils::Array<JsonView> edgePropertiesJsonList = jsonValue.GetArray("edgeProperties");
-    for(unsigned edgePropertiesIndex = 0; edgePropertiesIndex < edgePropertiesJsonList.GetLength(); ++edgePropertiesIndex)
-    {
+    for (unsigned edgePropertiesIndex = 0; edgePropertiesIndex < edgePropertiesJsonList.GetLength(); ++edgePropertiesIndex) {
       m_edgeProperties.push_back(edgePropertiesJsonList[edgePropertiesIndex].AsString());
     }
     m_edgePropertiesHasBeenSet = true;
@@ -42,30 +32,24 @@ EdgeStructure& EdgeStructure::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue EdgeStructure::Jsonize() const
-{
+JsonValue EdgeStructure::Jsonize() const {
   JsonValue payload;
 
-  if(m_countHasBeenSet)
-  {
-   payload.WithInt64("count", m_count);
-
+  if (m_countHasBeenSet) {
+    payload.WithInt64("count", m_count);
   }
 
-  if(m_edgePropertiesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> edgePropertiesJsonList(m_edgeProperties.size());
-   for(unsigned edgePropertiesIndex = 0; edgePropertiesIndex < edgePropertiesJsonList.GetLength(); ++edgePropertiesIndex)
-   {
-     edgePropertiesJsonList[edgePropertiesIndex].AsString(m_edgeProperties[edgePropertiesIndex]);
-   }
-   payload.WithArray("edgeProperties", std::move(edgePropertiesJsonList));
-
+  if (m_edgePropertiesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> edgePropertiesJsonList(m_edgeProperties.size());
+    for (unsigned edgePropertiesIndex = 0; edgePropertiesIndex < edgePropertiesJsonList.GetLength(); ++edgePropertiesIndex) {
+      edgePropertiesJsonList[edgePropertiesIndex].AsString(m_edgeProperties[edgePropertiesIndex]);
+    }
+    payload.WithArray("edgeProperties", std::move(edgePropertiesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace NeptuneGraph
-} // namespace Aws
+}  // namespace Model
+}  // namespace NeptuneGraph
+}  // namespace Aws

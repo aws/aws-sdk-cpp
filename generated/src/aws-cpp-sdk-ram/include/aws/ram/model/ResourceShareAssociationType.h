@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ram/RAM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ram/RAM_EXPORTS.h>
 
-namespace Aws
-{
-namespace RAM
-{
-namespace Model
-{
-  enum class ResourceShareAssociationType
-  {
-    NOT_SET,
-    PRINCIPAL,
-    RESOURCE
-  };
+namespace Aws {
+namespace RAM {
+namespace Model {
+enum class ResourceShareAssociationType { NOT_SET, PRINCIPAL, RESOURCE };
 
-namespace ResourceShareAssociationTypeMapper
-{
+namespace ResourceShareAssociationTypeMapper {
 AWS_RAM_API ResourceShareAssociationType GetResourceShareAssociationTypeForName(const Aws::String& name);
 
 AWS_RAM_API Aws::String GetNameForResourceShareAssociationType(ResourceShareAssociationType value);
-} // namespace ResourceShareAssociationTypeMapper
-} // namespace Model
-} // namespace RAM
-} // namespace Aws
+}  // namespace ResourceShareAssociationTypeMapper
+}  // namespace Model
+}  // namespace RAM
+}  // namespace Aws

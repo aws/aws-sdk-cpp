@@ -11,31 +11,23 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudDirectory
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudDirectory {
+namespace Model {
 
-BatchDetachTypedLinkResponse::BatchDetachTypedLinkResponse(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchDetachTypedLinkResponse::BatchDetachTypedLinkResponse(JsonView jsonValue) { *this = jsonValue; }
 
-BatchDetachTypedLinkResponse& BatchDetachTypedLinkResponse::operator =(JsonView jsonValue)
-{
+BatchDetachTypedLinkResponse& BatchDetachTypedLinkResponse::operator=(JsonView jsonValue) {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
 }
 
-JsonValue BatchDetachTypedLinkResponse::Jsonize() const
-{
+JsonValue BatchDetachTypedLinkResponse::Jsonize() const {
   JsonValue payload;
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudDirectory
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudDirectory
+}  // namespace Aws

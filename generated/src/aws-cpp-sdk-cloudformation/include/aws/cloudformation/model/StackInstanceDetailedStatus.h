@@ -7,31 +7,26 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CloudFormation
-{
-namespace Model
-{
-  enum class StackInstanceDetailedStatus
-  {
-    NOT_SET,
-    PENDING,
-    RUNNING,
-    SUCCEEDED,
-    FAILED,
-    CANCELLED,
-    INOPERABLE,
-    SKIPPED_SUSPENDED_ACCOUNT,
-    FAILED_IMPORT
-  };
+namespace Aws {
+namespace CloudFormation {
+namespace Model {
+enum class StackInstanceDetailedStatus {
+  NOT_SET,
+  PENDING,
+  RUNNING,
+  SUCCEEDED,
+  FAILED,
+  CANCELLED,
+  INOPERABLE,
+  SKIPPED_SUSPENDED_ACCOUNT,
+  FAILED_IMPORT
+};
 
-namespace StackInstanceDetailedStatusMapper
-{
+namespace StackInstanceDetailedStatusMapper {
 AWS_CLOUDFORMATION_API StackInstanceDetailedStatus GetStackInstanceDetailedStatusForName(const Aws::String& name);
 
 AWS_CLOUDFORMATION_API Aws::String GetNameForStackInstanceDetailedStatus(StackInstanceDetailedStatus value);
-} // namespace StackInstanceDetailedStatusMapper
-} // namespace Model
-} // namespace CloudFormation
-} // namespace Aws
+}  // namespace StackInstanceDetailedStatusMapper
+}  // namespace Model
+}  // namespace CloudFormation
+}  // namespace Aws

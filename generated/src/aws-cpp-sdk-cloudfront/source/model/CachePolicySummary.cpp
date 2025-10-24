@@ -4,42 +4,33 @@
  */
 
 #include <aws/cloudfront/model/CachePolicySummary.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
-CachePolicySummary::CachePolicySummary(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+CachePolicySummary::CachePolicySummary(const XmlNode& xmlNode) { *this = xmlNode; }
 
-CachePolicySummary& CachePolicySummary::operator =(const XmlNode& xmlNode)
-{
+CachePolicySummary& CachePolicySummary::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode typeNode = resultNode.FirstChild("Type");
-    if(!typeNode.IsNull())
-    {
-      m_type = CachePolicyTypeMapper::GetCachePolicyTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
+    if (!typeNode.IsNull()) {
+      m_type = CachePolicyTypeMapper::GetCachePolicyTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
     }
     XmlNode cachePolicyNode = resultNode.FirstChild("CachePolicy");
-    if(!cachePolicyNode.IsNull())
-    {
+    if (!cachePolicyNode.IsNull()) {
       m_cachePolicy = cachePolicyNode;
       m_cachePolicyHasBeenSet = true;
     }
@@ -48,23 +39,19 @@ CachePolicySummary& CachePolicySummary::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void CachePolicySummary::AddToNode(XmlNode& parentNode) const
-{
+void CachePolicySummary::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_typeHasBeenSet)
-  {
-   XmlNode typeNode = parentNode.CreateChildElement("Type");
-   typeNode.SetText(CachePolicyTypeMapper::GetNameForCachePolicyType(m_type));
+  if (m_typeHasBeenSet) {
+    XmlNode typeNode = parentNode.CreateChildElement("Type");
+    typeNode.SetText(CachePolicyTypeMapper::GetNameForCachePolicyType(m_type));
   }
 
-  if(m_cachePolicyHasBeenSet)
-  {
-   XmlNode cachePolicyNode = parentNode.CreateChildElement("CachePolicy");
-   m_cachePolicy.AddToNode(cachePolicyNode);
+  if (m_cachePolicyHasBeenSet) {
+    XmlNode cachePolicyNode = parentNode.CreateChildElement("CachePolicy");
+    m_cachePolicy.AddToNode(cachePolicyNode);
   }
-
 }
 
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sso-admin/model/PermissionsBoundary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sso-admin/model/PermissionsBoundary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SSOAdmin
-{
-namespace Model
-{
+namespace Aws {
+namespace SSOAdmin {
+namespace Model {
 
-PermissionsBoundary::PermissionsBoundary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PermissionsBoundary::PermissionsBoundary(JsonView jsonValue) { *this = jsonValue; }
 
-PermissionsBoundary& PermissionsBoundary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CustomerManagedPolicyReference"))
-  {
+PermissionsBoundary& PermissionsBoundary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CustomerManagedPolicyReference")) {
     m_customerManagedPolicyReference = jsonValue.GetObject("CustomerManagedPolicyReference");
     m_customerManagedPolicyReferenceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ManagedPolicyArn"))
-  {
+  if (jsonValue.ValueExists("ManagedPolicyArn")) {
     m_managedPolicyArn = jsonValue.GetString("ManagedPolicyArn");
     m_managedPolicyArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PermissionsBoundary::Jsonize() const
-{
+JsonValue PermissionsBoundary::Jsonize() const {
   JsonValue payload;
 
-  if(m_customerManagedPolicyReferenceHasBeenSet)
-  {
-   payload.WithObject("CustomerManagedPolicyReference", m_customerManagedPolicyReference.Jsonize());
-
+  if (m_customerManagedPolicyReferenceHasBeenSet) {
+    payload.WithObject("CustomerManagedPolicyReference", m_customerManagedPolicyReference.Jsonize());
   }
 
-  if(m_managedPolicyArnHasBeenSet)
-  {
-   payload.WithString("ManagedPolicyArn", m_managedPolicyArn);
-
+  if (m_managedPolicyArnHasBeenSet) {
+    payload.WithString("ManagedPolicyArn", m_managedPolicyArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SSOAdmin
-} // namespace Aws
+}  // namespace Model
+}  // namespace SSOAdmin
+}  // namespace Aws

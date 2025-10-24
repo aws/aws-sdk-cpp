@@ -11,166 +11,125 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Transfer
-{
-namespace Model
-{
+namespace Aws {
+namespace Transfer {
+namespace Model {
 
-DescribedUser::DescribedUser(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DescribedUser::DescribedUser(JsonView jsonValue) { *this = jsonValue; }
 
-DescribedUser& DescribedUser::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Arn"))
-  {
+DescribedUser& DescribedUser::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HomeDirectory"))
-  {
+  if (jsonValue.ValueExists("HomeDirectory")) {
     m_homeDirectory = jsonValue.GetString("HomeDirectory");
     m_homeDirectoryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HomeDirectoryMappings"))
-  {
+  if (jsonValue.ValueExists("HomeDirectoryMappings")) {
     Aws::Utils::Array<JsonView> homeDirectoryMappingsJsonList = jsonValue.GetArray("HomeDirectoryMappings");
-    for(unsigned homeDirectoryMappingsIndex = 0; homeDirectoryMappingsIndex < homeDirectoryMappingsJsonList.GetLength(); ++homeDirectoryMappingsIndex)
-    {
+    for (unsigned homeDirectoryMappingsIndex = 0; homeDirectoryMappingsIndex < homeDirectoryMappingsJsonList.GetLength();
+         ++homeDirectoryMappingsIndex) {
       m_homeDirectoryMappings.push_back(homeDirectoryMappingsJsonList[homeDirectoryMappingsIndex].AsObject());
     }
     m_homeDirectoryMappingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HomeDirectoryType"))
-  {
+  if (jsonValue.ValueExists("HomeDirectoryType")) {
     m_homeDirectoryType = HomeDirectoryTypeMapper::GetHomeDirectoryTypeForName(jsonValue.GetString("HomeDirectoryType"));
     m_homeDirectoryTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Policy"))
-  {
+  if (jsonValue.ValueExists("Policy")) {
     m_policy = jsonValue.GetString("Policy");
     m_policyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PosixProfile"))
-  {
+  if (jsonValue.ValueExists("PosixProfile")) {
     m_posixProfile = jsonValue.GetObject("PosixProfile");
     m_posixProfileHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Role"))
-  {
+  if (jsonValue.ValueExists("Role")) {
     m_role = jsonValue.GetString("Role");
     m_roleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SshPublicKeys"))
-  {
+  if (jsonValue.ValueExists("SshPublicKeys")) {
     Aws::Utils::Array<JsonView> sshPublicKeysJsonList = jsonValue.GetArray("SshPublicKeys");
-    for(unsigned sshPublicKeysIndex = 0; sshPublicKeysIndex < sshPublicKeysJsonList.GetLength(); ++sshPublicKeysIndex)
-    {
+    for (unsigned sshPublicKeysIndex = 0; sshPublicKeysIndex < sshPublicKeysJsonList.GetLength(); ++sshPublicKeysIndex) {
       m_sshPublicKeys.push_back(sshPublicKeysJsonList[sshPublicKeysIndex].AsObject());
     }
     m_sshPublicKeysHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Tags"))
-  {
+  if (jsonValue.ValueExists("Tags")) {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
-    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-    {
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UserName"))
-  {
+  if (jsonValue.ValueExists("UserName")) {
     m_userName = jsonValue.GetString("UserName");
     m_userNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DescribedUser::Jsonize() const
-{
+JsonValue DescribedUser::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_homeDirectoryHasBeenSet)
-  {
-   payload.WithString("HomeDirectory", m_homeDirectory);
-
+  if (m_homeDirectoryHasBeenSet) {
+    payload.WithString("HomeDirectory", m_homeDirectory);
   }
 
-  if(m_homeDirectoryMappingsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> homeDirectoryMappingsJsonList(m_homeDirectoryMappings.size());
-   for(unsigned homeDirectoryMappingsIndex = 0; homeDirectoryMappingsIndex < homeDirectoryMappingsJsonList.GetLength(); ++homeDirectoryMappingsIndex)
-   {
-     homeDirectoryMappingsJsonList[homeDirectoryMappingsIndex].AsObject(m_homeDirectoryMappings[homeDirectoryMappingsIndex].Jsonize());
-   }
-   payload.WithArray("HomeDirectoryMappings", std::move(homeDirectoryMappingsJsonList));
-
+  if (m_homeDirectoryMappingsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> homeDirectoryMappingsJsonList(m_homeDirectoryMappings.size());
+    for (unsigned homeDirectoryMappingsIndex = 0; homeDirectoryMappingsIndex < homeDirectoryMappingsJsonList.GetLength();
+         ++homeDirectoryMappingsIndex) {
+      homeDirectoryMappingsJsonList[homeDirectoryMappingsIndex].AsObject(m_homeDirectoryMappings[homeDirectoryMappingsIndex].Jsonize());
+    }
+    payload.WithArray("HomeDirectoryMappings", std::move(homeDirectoryMappingsJsonList));
   }
 
-  if(m_homeDirectoryTypeHasBeenSet)
-  {
-   payload.WithString("HomeDirectoryType", HomeDirectoryTypeMapper::GetNameForHomeDirectoryType(m_homeDirectoryType));
+  if (m_homeDirectoryTypeHasBeenSet) {
+    payload.WithString("HomeDirectoryType", HomeDirectoryTypeMapper::GetNameForHomeDirectoryType(m_homeDirectoryType));
   }
 
-  if(m_policyHasBeenSet)
-  {
-   payload.WithString("Policy", m_policy);
-
+  if (m_policyHasBeenSet) {
+    payload.WithString("Policy", m_policy);
   }
 
-  if(m_posixProfileHasBeenSet)
-  {
-   payload.WithObject("PosixProfile", m_posixProfile.Jsonize());
-
+  if (m_posixProfileHasBeenSet) {
+    payload.WithObject("PosixProfile", m_posixProfile.Jsonize());
   }
 
-  if(m_roleHasBeenSet)
-  {
-   payload.WithString("Role", m_role);
-
+  if (m_roleHasBeenSet) {
+    payload.WithString("Role", m_role);
   }
 
-  if(m_sshPublicKeysHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> sshPublicKeysJsonList(m_sshPublicKeys.size());
-   for(unsigned sshPublicKeysIndex = 0; sshPublicKeysIndex < sshPublicKeysJsonList.GetLength(); ++sshPublicKeysIndex)
-   {
-     sshPublicKeysJsonList[sshPublicKeysIndex].AsObject(m_sshPublicKeys[sshPublicKeysIndex].Jsonize());
-   }
-   payload.WithArray("SshPublicKeys", std::move(sshPublicKeysJsonList));
-
+  if (m_sshPublicKeysHasBeenSet) {
+    Aws::Utils::Array<JsonValue> sshPublicKeysJsonList(m_sshPublicKeys.size());
+    for (unsigned sshPublicKeysIndex = 0; sshPublicKeysIndex < sshPublicKeysJsonList.GetLength(); ++sshPublicKeysIndex) {
+      sshPublicKeysJsonList[sshPublicKeysIndex].AsObject(m_sshPublicKeys[sshPublicKeysIndex].Jsonize());
+    }
+    payload.WithArray("SshPublicKeys", std::move(sshPublicKeysJsonList));
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("Tags", std::move(tagsJsonList));
-
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
-  if(m_userNameHasBeenSet)
-  {
-   payload.WithString("UserName", m_userName);
-
+  if (m_userNameHasBeenSet) {
+    payload.WithString("UserName", m_userName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Transfer
-} // namespace Aws
+}  // namespace Model
+}  // namespace Transfer
+}  // namespace Aws

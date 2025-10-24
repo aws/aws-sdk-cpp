@@ -11,82 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeDeploy
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeDeploy {
+namespace Model {
 
-LifecycleEvent::LifecycleEvent(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LifecycleEvent::LifecycleEvent(JsonView jsonValue) { *this = jsonValue; }
 
-LifecycleEvent& LifecycleEvent::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("lifecycleEventName"))
-  {
+LifecycleEvent& LifecycleEvent::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("lifecycleEventName")) {
     m_lifecycleEventName = jsonValue.GetString("lifecycleEventName");
     m_lifecycleEventNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("diagnostics"))
-  {
+  if (jsonValue.ValueExists("diagnostics")) {
     m_diagnostics = jsonValue.GetObject("diagnostics");
     m_diagnosticsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("startTime"))
-  {
+  if (jsonValue.ValueExists("startTime")) {
     m_startTime = jsonValue.GetDouble("startTime");
     m_startTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("endTime"))
-  {
+  if (jsonValue.ValueExists("endTime")) {
     m_endTime = jsonValue.GetDouble("endTime");
     m_endTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = LifecycleEventStatusMapper::GetLifecycleEventStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LifecycleEvent::Jsonize() const
-{
+JsonValue LifecycleEvent::Jsonize() const {
   JsonValue payload;
 
-  if(m_lifecycleEventNameHasBeenSet)
-  {
-   payload.WithString("lifecycleEventName", m_lifecycleEventName);
-
+  if (m_lifecycleEventNameHasBeenSet) {
+    payload.WithString("lifecycleEventName", m_lifecycleEventName);
   }
 
-  if(m_diagnosticsHasBeenSet)
-  {
-   payload.WithObject("diagnostics", m_diagnostics.Jsonize());
-
+  if (m_diagnosticsHasBeenSet) {
+    payload.WithObject("diagnostics", m_diagnostics.Jsonize());
   }
 
-  if(m_startTimeHasBeenSet)
-  {
-   payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
+  if (m_startTimeHasBeenSet) {
+    payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
   }
 
-  if(m_endTimeHasBeenSet)
-  {
-   payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
+  if (m_endTimeHasBeenSet) {
+    payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", LifecycleEventStatusMapper::GetNameForLifecycleEventStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", LifecycleEventStatusMapper::GetNameForLifecycleEventStatus(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeDeploy
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeDeploy
+}  // namespace Aws

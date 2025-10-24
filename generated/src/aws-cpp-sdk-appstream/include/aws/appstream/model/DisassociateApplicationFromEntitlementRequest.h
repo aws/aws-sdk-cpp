@@ -4,83 +4,96 @@
  */
 
 #pragma once
-#include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/appstream/AppStreamRequest.h>
+#include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace AppStream
-{
-namespace Model
-{
+namespace Aws {
+namespace AppStream {
+namespace Model {
 
+/**
+ */
+class DisassociateApplicationFromEntitlementRequest : public AppStreamRequest {
+ public:
+  AWS_APPSTREAM_API DisassociateApplicationFromEntitlementRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DisassociateApplicationFromEntitlement"; }
+
+  AWS_APPSTREAM_API Aws::String SerializePayload() const override;
+
+  AWS_APPSTREAM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The name of the stack with which the entitlement is associated.</p>
    */
-  class DisassociateApplicationFromEntitlementRequest : public AppStreamRequest
-  {
-  public:
-    AWS_APPSTREAM_API DisassociateApplicationFromEntitlementRequest() = default;
+  inline const Aws::String& GetStackName() const { return m_stackName; }
+  inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
+  template <typename StackNameT = Aws::String>
+  void SetStackName(StackNameT&& value) {
+    m_stackNameHasBeenSet = true;
+    m_stackName = std::forward<StackNameT>(value);
+  }
+  template <typename StackNameT = Aws::String>
+  DisassociateApplicationFromEntitlementRequest& WithStackName(StackNameT&& value) {
+    SetStackName(std::forward<StackNameT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DisassociateApplicationFromEntitlement"; }
+  ///@{
+  /**
+   * <p>The name of the entitlement.</p>
+   */
+  inline const Aws::String& GetEntitlementName() const { return m_entitlementName; }
+  inline bool EntitlementNameHasBeenSet() const { return m_entitlementNameHasBeenSet; }
+  template <typename EntitlementNameT = Aws::String>
+  void SetEntitlementName(EntitlementNameT&& value) {
+    m_entitlementNameHasBeenSet = true;
+    m_entitlementName = std::forward<EntitlementNameT>(value);
+  }
+  template <typename EntitlementNameT = Aws::String>
+  DisassociateApplicationFromEntitlementRequest& WithEntitlementName(EntitlementNameT&& value) {
+    SetEntitlementName(std::forward<EntitlementNameT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_APPSTREAM_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>The identifier of the application to remove from the entitlement.</p>
+   */
+  inline const Aws::String& GetApplicationIdentifier() const { return m_applicationIdentifier; }
+  inline bool ApplicationIdentifierHasBeenSet() const { return m_applicationIdentifierHasBeenSet; }
+  template <typename ApplicationIdentifierT = Aws::String>
+  void SetApplicationIdentifier(ApplicationIdentifierT&& value) {
+    m_applicationIdentifierHasBeenSet = true;
+    m_applicationIdentifier = std::forward<ApplicationIdentifierT>(value);
+  }
+  template <typename ApplicationIdentifierT = Aws::String>
+  DisassociateApplicationFromEntitlementRequest& WithApplicationIdentifier(ApplicationIdentifierT&& value) {
+    SetApplicationIdentifier(std::forward<ApplicationIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_stackName;
+  bool m_stackNameHasBeenSet = false;
 
-    AWS_APPSTREAM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+  Aws::String m_entitlementName;
+  bool m_entitlementNameHasBeenSet = false;
 
+  Aws::String m_applicationIdentifier;
+  bool m_applicationIdentifierHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The name of the stack with which the entitlement is associated.</p>
-     */
-    inline const Aws::String& GetStackName() const { return m_stackName; }
-    inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
-    template<typename StackNameT = Aws::String>
-    void SetStackName(StackNameT&& value) { m_stackNameHasBeenSet = true; m_stackName = std::forward<StackNameT>(value); }
-    template<typename StackNameT = Aws::String>
-    DisassociateApplicationFromEntitlementRequest& WithStackName(StackNameT&& value) { SetStackName(std::forward<StackNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The name of the entitlement.</p>
-     */
-    inline const Aws::String& GetEntitlementName() const { return m_entitlementName; }
-    inline bool EntitlementNameHasBeenSet() const { return m_entitlementNameHasBeenSet; }
-    template<typename EntitlementNameT = Aws::String>
-    void SetEntitlementName(EntitlementNameT&& value) { m_entitlementNameHasBeenSet = true; m_entitlementName = std::forward<EntitlementNameT>(value); }
-    template<typename EntitlementNameT = Aws::String>
-    DisassociateApplicationFromEntitlementRequest& WithEntitlementName(EntitlementNameT&& value) { SetEntitlementName(std::forward<EntitlementNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The identifier of the application to remove from the entitlement.</p>
-     */
-    inline const Aws::String& GetApplicationIdentifier() const { return m_applicationIdentifier; }
-    inline bool ApplicationIdentifierHasBeenSet() const { return m_applicationIdentifierHasBeenSet; }
-    template<typename ApplicationIdentifierT = Aws::String>
-    void SetApplicationIdentifier(ApplicationIdentifierT&& value) { m_applicationIdentifierHasBeenSet = true; m_applicationIdentifier = std::forward<ApplicationIdentifierT>(value); }
-    template<typename ApplicationIdentifierT = Aws::String>
-    DisassociateApplicationFromEntitlementRequest& WithApplicationIdentifier(ApplicationIdentifierT&& value) { SetApplicationIdentifier(std::forward<ApplicationIdentifierT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_stackName;
-    bool m_stackNameHasBeenSet = false;
-
-    Aws::String m_entitlementName;
-    bool m_entitlementNameHasBeenSet = false;
-
-    Aws::String m_applicationIdentifier;
-    bool m_applicationIdentifierHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace AppStream
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppStream
+}  // namespace Aws

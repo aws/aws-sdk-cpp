@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/CodeGenNodeArg.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/CodeGenNodeArg.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
+namespace Aws {
+namespace Glue {
+namespace Model {
 
-CodeGenNodeArg::CodeGenNodeArg(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CodeGenNodeArg::CodeGenNodeArg(JsonView jsonValue) { *this = jsonValue; }
 
-CodeGenNodeArg& CodeGenNodeArg::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+CodeGenNodeArg& CodeGenNodeArg::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Value"))
-  {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetString("Value");
     m_valueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Param"))
-  {
+  if (jsonValue.ValueExists("Param")) {
     m_param = jsonValue.GetBool("Param");
     m_paramHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CodeGenNodeArg::Jsonize() const
-{
+JsonValue CodeGenNodeArg::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("Value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("Value", m_value);
   }
 
-  if(m_paramHasBeenSet)
-  {
-   payload.WithBool("Param", m_param);
-
+  if (m_paramHasBeenSet) {
+    payload.WithBool("Param", m_param);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

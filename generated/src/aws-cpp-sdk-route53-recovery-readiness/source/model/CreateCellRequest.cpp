@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/route53-recovery-readiness/model/CreateCellRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/route53-recovery-readiness/model/CreateCellRequest.h>
 
 #include <utility>
 
@@ -12,41 +12,28 @@ using namespace Aws::Route53RecoveryReadiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateCellRequest::SerializePayload() const
-{
+Aws::String CreateCellRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_cellNameHasBeenSet)
-  {
-   payload.WithString("cellName", m_cellName);
-
+  if (m_cellNameHasBeenSet) {
+    payload.WithString("cellName", m_cellName);
   }
 
-  if(m_cellsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> cellsJsonList(m_cells.size());
-   for(unsigned cellsIndex = 0; cellsIndex < cellsJsonList.GetLength(); ++cellsIndex)
-   {
-     cellsJsonList[cellsIndex].AsString(m_cells[cellsIndex]);
-   }
-   payload.WithArray("cells", std::move(cellsJsonList));
-
+  if (m_cellsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> cellsJsonList(m_cells.size());
+    for (unsigned cellsIndex = 0; cellsIndex < cellsJsonList.GetLength(); ++cellsIndex) {
+      cellsJsonList[cellsIndex].AsString(m_cells[cellsIndex]);
+    }
+    payload.WithArray("cells", std::move(cellsJsonList));
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

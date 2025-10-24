@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-RealTimeContactAnalysisCategoryDetails::RealTimeContactAnalysisCategoryDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RealTimeContactAnalysisCategoryDetails::RealTimeContactAnalysisCategoryDetails(JsonView jsonValue) { *this = jsonValue; }
 
-RealTimeContactAnalysisCategoryDetails& RealTimeContactAnalysisCategoryDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PointsOfInterest"))
-  {
+RealTimeContactAnalysisCategoryDetails& RealTimeContactAnalysisCategoryDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PointsOfInterest")) {
     Aws::Utils::Array<JsonView> pointsOfInterestJsonList = jsonValue.GetArray("PointsOfInterest");
-    for(unsigned pointsOfInterestIndex = 0; pointsOfInterestIndex < pointsOfInterestJsonList.GetLength(); ++pointsOfInterestIndex)
-    {
+    for (unsigned pointsOfInterestIndex = 0; pointsOfInterestIndex < pointsOfInterestJsonList.GetLength(); ++pointsOfInterestIndex) {
       m_pointsOfInterest.push_back(pointsOfInterestJsonList[pointsOfInterestIndex].AsObject());
     }
     m_pointsOfInterestHasBeenSet = true;
@@ -37,24 +28,20 @@ RealTimeContactAnalysisCategoryDetails& RealTimeContactAnalysisCategoryDetails::
   return *this;
 }
 
-JsonValue RealTimeContactAnalysisCategoryDetails::Jsonize() const
-{
+JsonValue RealTimeContactAnalysisCategoryDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_pointsOfInterestHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> pointsOfInterestJsonList(m_pointsOfInterest.size());
-   for(unsigned pointsOfInterestIndex = 0; pointsOfInterestIndex < pointsOfInterestJsonList.GetLength(); ++pointsOfInterestIndex)
-   {
-     pointsOfInterestJsonList[pointsOfInterestIndex].AsObject(m_pointsOfInterest[pointsOfInterestIndex].Jsonize());
-   }
-   payload.WithArray("PointsOfInterest", std::move(pointsOfInterestJsonList));
-
+  if (m_pointsOfInterestHasBeenSet) {
+    Aws::Utils::Array<JsonValue> pointsOfInterestJsonList(m_pointsOfInterest.size());
+    for (unsigned pointsOfInterestIndex = 0; pointsOfInterestIndex < pointsOfInterestJsonList.GetLength(); ++pointsOfInterestIndex) {
+      pointsOfInterestJsonList[pointsOfInterestIndex].AsObject(m_pointsOfInterest[pointsOfInterestIndex].Jsonize());
+    }
+    payload.WithArray("PointsOfInterest", std::move(pointsOfInterestJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

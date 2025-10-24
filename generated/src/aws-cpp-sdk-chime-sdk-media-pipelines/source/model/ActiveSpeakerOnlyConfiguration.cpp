@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-ActiveSpeakerOnlyConfiguration::ActiveSpeakerOnlyConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ActiveSpeakerOnlyConfiguration::ActiveSpeakerOnlyConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ActiveSpeakerOnlyConfiguration& ActiveSpeakerOnlyConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ActiveSpeakerPosition"))
-  {
+ActiveSpeakerOnlyConfiguration& ActiveSpeakerOnlyConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ActiveSpeakerPosition")) {
     m_activeSpeakerPosition = ActiveSpeakerPositionMapper::GetActiveSpeakerPositionForName(jsonValue.GetString("ActiveSpeakerPosition"));
     m_activeSpeakerPositionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ActiveSpeakerOnlyConfiguration::Jsonize() const
-{
+JsonValue ActiveSpeakerOnlyConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_activeSpeakerPositionHasBeenSet)
-  {
-   payload.WithString("ActiveSpeakerPosition", ActiveSpeakerPositionMapper::GetNameForActiveSpeakerPosition(m_activeSpeakerPosition));
+  if (m_activeSpeakerPositionHasBeenSet) {
+    payload.WithString("ActiveSpeakerPosition", ActiveSpeakerPositionMapper::GetNameForActiveSpeakerPosition(m_activeSpeakerPosition));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

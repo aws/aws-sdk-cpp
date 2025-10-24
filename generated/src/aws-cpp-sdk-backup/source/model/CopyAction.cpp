@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Backup
-{
-namespace Model
-{
+namespace Aws {
+namespace Backup {
+namespace Model {
 
-CopyAction::CopyAction(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CopyAction::CopyAction(JsonView jsonValue) { *this = jsonValue; }
 
-CopyAction& CopyAction::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Lifecycle"))
-  {
+CopyAction& CopyAction::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Lifecycle")) {
     m_lifecycle = jsonValue.GetObject("Lifecycle");
     m_lifecycleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DestinationBackupVaultArn"))
-  {
+  if (jsonValue.ValueExists("DestinationBackupVaultArn")) {
     m_destinationBackupVaultArn = jsonValue.GetString("DestinationBackupVaultArn");
     m_destinationBackupVaultArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CopyAction::Jsonize() const
-{
+JsonValue CopyAction::Jsonize() const {
   JsonValue payload;
 
-  if(m_lifecycleHasBeenSet)
-  {
-   payload.WithObject("Lifecycle", m_lifecycle.Jsonize());
-
+  if (m_lifecycleHasBeenSet) {
+    payload.WithObject("Lifecycle", m_lifecycle.Jsonize());
   }
 
-  if(m_destinationBackupVaultArnHasBeenSet)
-  {
-   payload.WithString("DestinationBackupVaultArn", m_destinationBackupVaultArn);
-
+  if (m_destinationBackupVaultArnHasBeenSet) {
+    payload.WithString("DestinationBackupVaultArn", m_destinationBackupVaultArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Backup
-} // namespace Aws
+}  // namespace Model
+}  // namespace Backup
+}  // namespace Aws

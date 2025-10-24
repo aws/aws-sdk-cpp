@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/UploadSigningCertificateResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/iam/model/UploadSigningCertificateResult.h>
 
 #include <utility>
 
@@ -17,26 +17,19 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UploadSigningCertificateResult::UploadSigningCertificateResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+UploadSigningCertificateResult::UploadSigningCertificateResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-UploadSigningCertificateResult& UploadSigningCertificateResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+UploadSigningCertificateResult& UploadSigningCertificateResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "UploadSigningCertificateResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "UploadSigningCertificateResult")) {
     resultNode = rootNode.FirstChild("UploadSigningCertificateResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode certificateNode = resultNode.FirstChild("Certificate");
-    if(!certificateNode.IsNull())
-    {
+    if (!certificateNode.IsNull()) {
       m_certificate = certificateNode;
       m_certificateHasBeenSet = true;
     }
@@ -46,7 +39,7 @@ UploadSigningCertificateResult& UploadSigningCertificateResult::operator =(const
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::UploadSigningCertificateResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::UploadSigningCertificateResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

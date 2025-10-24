@@ -4,82 +4,97 @@
  */
 
 #pragma once
-#include <aws/ssm/SSM_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ssm/SSM_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace SSM
-{
-namespace Model
-{
-  class ListNodesSummaryResult
-  {
-  public:
-    AWS_SSM_API ListNodesSummaryResult() = default;
-    AWS_SSM_API ListNodesSummaryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_SSM_API ListNodesSummaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace SSM {
+namespace Model {
+class ListNodesSummaryResult {
+ public:
+  AWS_SSM_API ListNodesSummaryResult() = default;
+  AWS_SSM_API ListNodesSummaryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_SSM_API ListNodesSummaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>A collection of objects reporting information about your managed nodes, such
+   * as the count of nodes by operating system.</p>
+   */
+  inline const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& GetSummary() const { return m_summary; }
+  template <typename SummaryT = Aws::Vector<Aws::Map<Aws::String, Aws::String>>>
+  void SetSummary(SummaryT&& value) {
+    m_summaryHasBeenSet = true;
+    m_summary = std::forward<SummaryT>(value);
+  }
+  template <typename SummaryT = Aws::Vector<Aws::Map<Aws::String, Aws::String>>>
+  ListNodesSummaryResult& WithSummary(SummaryT&& value) {
+    SetSummary(std::forward<SummaryT>(value));
+    return *this;
+  }
+  template <typename SummaryT = Aws::Map<Aws::String, Aws::String>>
+  ListNodesSummaryResult& AddSummary(SummaryT&& value) {
+    m_summaryHasBeenSet = true;
+    m_summary.emplace_back(std::forward<SummaryT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>A collection of objects reporting information about your managed nodes, such
-     * as the count of nodes by operating system.</p>
-     */
-    inline const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& GetSummary() const { return m_summary; }
-    template<typename SummaryT = Aws::Vector<Aws::Map<Aws::String, Aws::String>>>
-    void SetSummary(SummaryT&& value) { m_summaryHasBeenSet = true; m_summary = std::forward<SummaryT>(value); }
-    template<typename SummaryT = Aws::Vector<Aws::Map<Aws::String, Aws::String>>>
-    ListNodesSummaryResult& WithSummary(SummaryT&& value) { SetSummary(std::forward<SummaryT>(value)); return *this;}
-    template<typename SummaryT = Aws::Map<Aws::String, Aws::String>>
-    ListNodesSummaryResult& AddSummary(SummaryT&& value) { m_summaryHasBeenSet = true; m_summary.emplace_back(std::forward<SummaryT>(value)); return *this; }
-    ///@}
+  ///@{
+  /**
+   * <p>The token to use when requesting the next set of items. If there are no
+   * additional items to return, the string is empty.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListNodesSummaryResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListNodesSummaryResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    ListNodesSummaryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  ListNodesSummaryResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_summary;
+  bool m_summaryHasBeenSet = false;
 
-    Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_summary;
-    bool m_summaryHasBeenSet = false;
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SSM
-} // namespace Aws
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

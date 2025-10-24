@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/chime/Chime_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/chime/Chime_EXPORTS.h>
 
-namespace Aws
-{
-namespace Chime
-{
-enum class ChimeErrors
-{
-  //From Core//
+namespace Aws {
+namespace Chime {
+enum class ChimeErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class ChimeErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class ChimeErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BAD_REQUEST = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CONFLICT,
   FORBIDDEN,
   NOT_FOUND,
@@ -58,9 +55,8 @@ enum class ChimeErrors
   UNPROCESSABLE_ENTITY
 };
 
-class AWS_CHIME_API ChimeError : public Aws::Client::AWSError<ChimeErrors>
-{
-public:
+class AWS_CHIME_API ChimeError : public Aws::Client::AWSError<ChimeErrors> {
+ public:
   ChimeError() {}
   ChimeError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ChimeErrors>(rhs) {}
   ChimeError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ChimeErrors>(rhs) {}
@@ -71,10 +67,9 @@ public:
   T GetModeledError();
 };
 
-namespace ChimeErrorMapper
-{
-  AWS_CHIME_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace ChimeErrorMapper {
+AWS_CHIME_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace Chime
-} // namespace Aws
+}  // namespace Chime
+}  // namespace Aws

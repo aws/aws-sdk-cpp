@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconnect/model/BridgeSource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconnect/model/BridgeSource.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConnect {
+namespace Model {
 
-BridgeSource::BridgeSource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BridgeSource::BridgeSource(JsonView jsonValue) { *this = jsonValue; }
 
-BridgeSource& BridgeSource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("flowSource"))
-  {
+BridgeSource& BridgeSource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("flowSource")) {
     m_flowSource = jsonValue.GetObject("flowSource");
     m_flowSourceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("networkSource"))
-  {
+  if (jsonValue.ValueExists("networkSource")) {
     m_networkSource = jsonValue.GetObject("networkSource");
     m_networkSourceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BridgeSource::Jsonize() const
-{
+JsonValue BridgeSource::Jsonize() const {
   JsonValue payload;
 
-  if(m_flowSourceHasBeenSet)
-  {
-   payload.WithObject("flowSource", m_flowSource.Jsonize());
-
+  if (m_flowSourceHasBeenSet) {
+    payload.WithObject("flowSource", m_flowSource.Jsonize());
   }
 
-  if(m_networkSourceHasBeenSet)
-  {
-   payload.WithObject("networkSource", m_networkSource.Jsonize());
-
+  if (m_networkSourceHasBeenSet) {
+    payload.WithObject("networkSource", m_networkSource.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConnect
+}  // namespace Aws

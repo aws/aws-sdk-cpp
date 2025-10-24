@@ -11,61 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
 
-BudgetParameter::BudgetParameter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BudgetParameter::BudgetParameter(JsonView jsonValue) { *this = jsonValue; }
 
-BudgetParameter& BudgetParameter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+BudgetParameter& BudgetParameter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = AccessBudgetTypeMapper::GetAccessBudgetTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("budget"))
-  {
+  if (jsonValue.ValueExists("budget")) {
     m_budget = jsonValue.GetInteger("budget");
     m_budgetHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("autoRefresh"))
-  {
+  if (jsonValue.ValueExists("autoRefresh")) {
     m_autoRefresh = AutoRefreshModeMapper::GetAutoRefreshModeForName(jsonValue.GetString("autoRefresh"));
     m_autoRefreshHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BudgetParameter::Jsonize() const
-{
+JsonValue BudgetParameter::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", AccessBudgetTypeMapper::GetNameForAccessBudgetType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", AccessBudgetTypeMapper::GetNameForAccessBudgetType(m_type));
   }
 
-  if(m_budgetHasBeenSet)
-  {
-   payload.WithInteger("budget", m_budget);
-
+  if (m_budgetHasBeenSet) {
+    payload.WithInteger("budget", m_budget);
   }
 
-  if(m_autoRefreshHasBeenSet)
-  {
-   payload.WithString("autoRefresh", AutoRefreshModeMapper::GetNameForAutoRefreshMode(m_autoRefresh));
+  if (m_autoRefreshHasBeenSet) {
+    payload.WithString("autoRefresh", AutoRefreshModeMapper::GetNameForAutoRefreshMode(m_autoRefresh));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

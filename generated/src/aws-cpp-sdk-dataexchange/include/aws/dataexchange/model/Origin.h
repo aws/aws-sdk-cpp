@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/dataexchange/DataExchange_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dataexchange/DataExchange_EXPORTS.h>
 
-namespace Aws
-{
-namespace DataExchange
-{
-namespace Model
-{
-  enum class Origin
-  {
-    NOT_SET,
-    OWNED,
-    ENTITLED
-  };
+namespace Aws {
+namespace DataExchange {
+namespace Model {
+enum class Origin { NOT_SET, OWNED, ENTITLED };
 
-namespace OriginMapper
-{
+namespace OriginMapper {
 AWS_DATAEXCHANGE_API Origin GetOriginForName(const Aws::String& name);
 
 AWS_DATAEXCHANGE_API Aws::String GetNameForOrigin(Origin value);
-} // namespace OriginMapper
-} // namespace Model
-} // namespace DataExchange
-} // namespace Aws
+}  // namespace OriginMapper
+}  // namespace Model
+}  // namespace DataExchange
+}  // namespace Aws

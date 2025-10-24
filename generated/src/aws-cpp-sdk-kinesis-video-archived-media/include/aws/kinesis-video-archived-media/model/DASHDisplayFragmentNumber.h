@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/kinesis-video-archived-media/KinesisVideoArchivedMedia_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kinesis-video-archived-media/KinesisVideoArchivedMedia_EXPORTS.h>
 
-namespace Aws
-{
-namespace KinesisVideoArchivedMedia
-{
-namespace Model
-{
-  enum class DASHDisplayFragmentNumber
-  {
-    NOT_SET,
-    ALWAYS,
-    NEVER
-  };
+namespace Aws {
+namespace KinesisVideoArchivedMedia {
+namespace Model {
+enum class DASHDisplayFragmentNumber { NOT_SET, ALWAYS, NEVER };
 
-namespace DASHDisplayFragmentNumberMapper
-{
+namespace DASHDisplayFragmentNumberMapper {
 AWS_KINESISVIDEOARCHIVEDMEDIA_API DASHDisplayFragmentNumber GetDASHDisplayFragmentNumberForName(const Aws::String& name);
 
 AWS_KINESISVIDEOARCHIVEDMEDIA_API Aws::String GetNameForDASHDisplayFragmentNumber(DASHDisplayFragmentNumber value);
-} // namespace DASHDisplayFragmentNumberMapper
-} // namespace Model
-} // namespace KinesisVideoArchivedMedia
-} // namespace Aws
+}  // namespace DASHDisplayFragmentNumberMapper
+}  // namespace Model
+}  // namespace KinesisVideoArchivedMedia
+}  // namespace Aws

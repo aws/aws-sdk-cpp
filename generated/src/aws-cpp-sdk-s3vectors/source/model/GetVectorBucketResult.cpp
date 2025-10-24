@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3vectors/model/GetVectorBucketResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/s3vectors/model/GetVectorBucketResult.h>
 
 #include <utility>
 
@@ -17,28 +17,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetVectorBucketResult::GetVectorBucketResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetVectorBucketResult::GetVectorBucketResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetVectorBucketResult& GetVectorBucketResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetVectorBucketResult& GetVectorBucketResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("vectorBucket"))
-  {
+  if (jsonValue.ValueExists("vectorBucket")) {
     m_vectorBucket = jsonValue.GetObject("vectorBucket");
     m_vectorBucketHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

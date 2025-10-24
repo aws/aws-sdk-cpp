@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ComprehendMedical
-{
-namespace Model
-{
+namespace Aws {
+namespace ComprehendMedical {
+namespace Model {
 
-SNOMEDCTDetails::SNOMEDCTDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SNOMEDCTDetails::SNOMEDCTDetails(JsonView jsonValue) { *this = jsonValue; }
 
-SNOMEDCTDetails& SNOMEDCTDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Edition"))
-  {
+SNOMEDCTDetails& SNOMEDCTDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Edition")) {
     m_edition = jsonValue.GetString("Edition");
     m_editionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Language"))
-  {
+  if (jsonValue.ValueExists("Language")) {
     m_language = jsonValue.GetString("Language");
     m_languageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VersionDate"))
-  {
+  if (jsonValue.ValueExists("VersionDate")) {
     m_versionDate = jsonValue.GetString("VersionDate");
     m_versionDateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SNOMEDCTDetails::Jsonize() const
-{
+JsonValue SNOMEDCTDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_editionHasBeenSet)
-  {
-   payload.WithString("Edition", m_edition);
-
+  if (m_editionHasBeenSet) {
+    payload.WithString("Edition", m_edition);
   }
 
-  if(m_languageHasBeenSet)
-  {
-   payload.WithString("Language", m_language);
-
+  if (m_languageHasBeenSet) {
+    payload.WithString("Language", m_language);
   }
 
-  if(m_versionDateHasBeenSet)
-  {
-   payload.WithString("VersionDate", m_versionDate);
-
+  if (m_versionDateHasBeenSet) {
+    payload.WithString("VersionDate", m_versionDate);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ComprehendMedical
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComprehendMedical
+}  // namespace Aws

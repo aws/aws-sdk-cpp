@@ -4,37 +4,32 @@
  */
 
 #pragma once
-#include <aws/fms/FMS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fms/FMS_EXPORTS.h>
 
-namespace Aws
-{
-namespace FMS
-{
-namespace Model
-{
-  enum class SecurityServiceType
-  {
-    NOT_SET,
-    WAF,
-    WAFV2,
-    SHIELD_ADVANCED,
-    SECURITY_GROUPS_COMMON,
-    SECURITY_GROUPS_CONTENT_AUDIT,
-    SECURITY_GROUPS_USAGE_AUDIT,
-    NETWORK_FIREWALL,
-    DNS_FIREWALL,
-    THIRD_PARTY_FIREWALL,
-    IMPORT_NETWORK_FIREWALL,
-    NETWORK_ACL_COMMON
-  };
+namespace Aws {
+namespace FMS {
+namespace Model {
+enum class SecurityServiceType {
+  NOT_SET,
+  WAF,
+  WAFV2,
+  SHIELD_ADVANCED,
+  SECURITY_GROUPS_COMMON,
+  SECURITY_GROUPS_CONTENT_AUDIT,
+  SECURITY_GROUPS_USAGE_AUDIT,
+  NETWORK_FIREWALL,
+  DNS_FIREWALL,
+  THIRD_PARTY_FIREWALL,
+  IMPORT_NETWORK_FIREWALL,
+  NETWORK_ACL_COMMON
+};
 
-namespace SecurityServiceTypeMapper
-{
+namespace SecurityServiceTypeMapper {
 AWS_FMS_API SecurityServiceType GetSecurityServiceTypeForName(const Aws::String& name);
 
 AWS_FMS_API Aws::String GetNameForSecurityServiceType(SecurityServiceType value);
-} // namespace SecurityServiceTypeMapper
-} // namespace Model
-} // namespace FMS
-} // namespace Aws
+}  // namespace SecurityServiceTypeMapper
+}  // namespace Model
+}  // namespace FMS
+}  // namespace Aws

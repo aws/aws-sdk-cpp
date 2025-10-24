@@ -5,12 +5,8 @@
 
 #include <aws/pipes/PipesEndpointProvider.h>
 
-namespace Aws
-{
-namespace Pipes
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Pipes
-} // namespace Aws
+namespace Aws {
+namespace Pipes {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Pipes
+}  // namespace Aws

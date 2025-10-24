@@ -3,84 +3,66 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/discovery/model/ImportTaskFilterName.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/discovery/model/ImportTaskFilterName.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace ApplicationDiscoveryService {
+namespace Model {
+namespace ImportTaskFilterNameMapper {
 
-namespace Aws
-{
-  namespace ApplicationDiscoveryService
-  {
-    namespace Model
-    {
-      namespace ImportTaskFilterNameMapper
-      {
+static const int IMPORT_TASK_ID_HASH = HashingUtils::HashString("IMPORT_TASK_ID");
+static const int STATUS_HASH = HashingUtils::HashString("STATUS");
+static const int NAME_HASH = HashingUtils::HashString("NAME");
+static const int FILE_CLASSIFICATION_HASH = HashingUtils::HashString("FILE_CLASSIFICATION");
 
-        static const int IMPORT_TASK_ID_HASH = HashingUtils::HashString("IMPORT_TASK_ID");
-        static const int STATUS_HASH = HashingUtils::HashString("STATUS");
-        static const int NAME_HASH = HashingUtils::HashString("NAME");
-        static const int FILE_CLASSIFICATION_HASH = HashingUtils::HashString("FILE_CLASSIFICATION");
+ImportTaskFilterName GetImportTaskFilterNameForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == IMPORT_TASK_ID_HASH) {
+    return ImportTaskFilterName::IMPORT_TASK_ID;
+  } else if (hashCode == STATUS_HASH) {
+    return ImportTaskFilterName::STATUS;
+  } else if (hashCode == NAME_HASH) {
+    return ImportTaskFilterName::NAME;
+  } else if (hashCode == FILE_CLASSIFICATION_HASH) {
+    return ImportTaskFilterName::FILE_CLASSIFICATION;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<ImportTaskFilterName>(hashCode);
+  }
 
+  return ImportTaskFilterName::NOT_SET;
+}
 
-        ImportTaskFilterName GetImportTaskFilterNameForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == IMPORT_TASK_ID_HASH)
-          {
-            return ImportTaskFilterName::IMPORT_TASK_ID;
-          }
-          else if (hashCode == STATUS_HASH)
-          {
-            return ImportTaskFilterName::STATUS;
-          }
-          else if (hashCode == NAME_HASH)
-          {
-            return ImportTaskFilterName::NAME;
-          }
-          else if (hashCode == FILE_CLASSIFICATION_HASH)
-          {
-            return ImportTaskFilterName::FILE_CLASSIFICATION;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ImportTaskFilterName>(hashCode);
-          }
+Aws::String GetNameForImportTaskFilterName(ImportTaskFilterName enumValue) {
+  switch (enumValue) {
+    case ImportTaskFilterName::NOT_SET:
+      return {};
+    case ImportTaskFilterName::IMPORT_TASK_ID:
+      return "IMPORT_TASK_ID";
+    case ImportTaskFilterName::STATUS:
+      return "STATUS";
+    case ImportTaskFilterName::NAME:
+      return "NAME";
+    case ImportTaskFilterName::FILE_CLASSIFICATION:
+      return "FILE_CLASSIFICATION";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return ImportTaskFilterName::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForImportTaskFilterName(ImportTaskFilterName enumValue)
-        {
-          switch(enumValue)
-          {
-          case ImportTaskFilterName::NOT_SET:
-            return {};
-          case ImportTaskFilterName::IMPORT_TASK_ID:
-            return "IMPORT_TASK_ID";
-          case ImportTaskFilterName::STATUS:
-            return "STATUS";
-          case ImportTaskFilterName::NAME:
-            return "NAME";
-          case ImportTaskFilterName::FILE_CLASSIFICATION:
-            return "FILE_CLASSIFICATION";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace ImportTaskFilterNameMapper
-    } // namespace Model
-  } // namespace ApplicationDiscoveryService
-} // namespace Aws
+}  // namespace ImportTaskFilterNameMapper
+}  // namespace Model
+}  // namespace ApplicationDiscoveryService
+}  // namespace Aws

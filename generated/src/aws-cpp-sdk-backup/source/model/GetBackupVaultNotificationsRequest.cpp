@@ -12,11 +12,4 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetBackupVaultNotificationsRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetBackupVaultNotificationsRequest::SerializePayload() const { return {}; }

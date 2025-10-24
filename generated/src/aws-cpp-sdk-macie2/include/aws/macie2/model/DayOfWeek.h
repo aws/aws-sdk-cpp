@@ -4,33 +4,19 @@
  */
 
 #pragma once
-#include <aws/macie2/Macie2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/macie2/Macie2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
-  enum class DayOfWeek
-  {
-    NOT_SET,
-    SUNDAY,
-    MONDAY,
-    TUESDAY,
-    WEDNESDAY,
-    THURSDAY,
-    FRIDAY,
-    SATURDAY
-  };
+namespace Aws {
+namespace Macie2 {
+namespace Model {
+enum class DayOfWeek { NOT_SET, SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY };
 
-namespace DayOfWeekMapper
-{
+namespace DayOfWeekMapper {
 AWS_MACIE2_API DayOfWeek GetDayOfWeekForName(const Aws::String& name);
 
 AWS_MACIE2_API Aws::String GetNameForDayOfWeek(DayOfWeek value);
-} // namespace DayOfWeekMapper
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace DayOfWeekMapper
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

@@ -12,27 +12,18 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteWebAppRequest::SerializePayload() const
-{
+Aws::String DeleteWebAppRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_webAppIdHasBeenSet)
-  {
-   payload.WithString("WebAppId", m_webAppId);
-
+  if (m_webAppIdHasBeenSet) {
+    payload.WithString("WebAppId", m_webAppId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteWebAppRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteWebAppRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TransferService.DeleteWebApp"));
   return headers;
-
 }
-
-
-
-

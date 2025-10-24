@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ModifyIdentityIdFormatRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ModifyIdentityIdFormatRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyIdentityIdFormatRequest::SerializePayload() const
-{
+Aws::String ModifyIdentityIdFormatRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyIdentityIdFormat&";
-  if(m_resourceHasBeenSet)
-  {
+  if (m_resourceHasBeenSet) {
     ss << "Resource=" << StringUtils::URLEncode(m_resource.c_str()) << "&";
   }
 
-  if(m_useLongIdsHasBeenSet)
-  {
+  if (m_useLongIdsHasBeenSet) {
     ss << "UseLongIds=" << std::boolalpha << m_useLongIds << "&";
   }
 
-  if(m_principalArnHasBeenSet)
-  {
+  if (m_principalArnHasBeenSet) {
     ss << "PrincipalArn=" << StringUtils::URLEncode(m_principalArn.c_str()) << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String ModifyIdentityIdFormatRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ModifyIdentityIdFormatRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ModifyIdentityIdFormatRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

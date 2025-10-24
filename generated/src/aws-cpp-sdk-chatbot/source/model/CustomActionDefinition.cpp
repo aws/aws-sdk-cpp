@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace chatbot
-{
-namespace Model
-{
+namespace Aws {
+namespace chatbot {
+namespace Model {
 
-CustomActionDefinition::CustomActionDefinition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CustomActionDefinition::CustomActionDefinition(JsonView jsonValue) { *this = jsonValue; }
 
-CustomActionDefinition& CustomActionDefinition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CommandText"))
-  {
+CustomActionDefinition& CustomActionDefinition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CommandText")) {
     m_commandText = jsonValue.GetString("CommandText");
     m_commandTextHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CustomActionDefinition::Jsonize() const
-{
+JsonValue CustomActionDefinition::Jsonize() const {
   JsonValue payload;
 
-  if(m_commandTextHasBeenSet)
-  {
-   payload.WithString("CommandText", m_commandText);
-
+  if (m_commandTextHasBeenSet) {
+    payload.WithString("CommandText", m_commandText);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace chatbot
-} // namespace Aws
+}  // namespace Model
+}  // namespace chatbot
+}  // namespace Aws

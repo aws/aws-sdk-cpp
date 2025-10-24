@@ -3,92 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/OutputConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/OutputConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-OutputConfig::OutputConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OutputConfig::OutputConfig(JsonView jsonValue) { *this = jsonValue; }
 
-OutputConfig& OutputConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("S3OutputLocation"))
-  {
+OutputConfig& OutputConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("S3OutputLocation")) {
     m_s3OutputLocation = jsonValue.GetString("S3OutputLocation");
     m_s3OutputLocationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TargetDevice"))
-  {
+  if (jsonValue.ValueExists("TargetDevice")) {
     m_targetDevice = TargetDeviceMapper::GetTargetDeviceForName(jsonValue.GetString("TargetDevice"));
     m_targetDeviceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TargetPlatform"))
-  {
+  if (jsonValue.ValueExists("TargetPlatform")) {
     m_targetPlatform = jsonValue.GetObject("TargetPlatform");
     m_targetPlatformHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CompilerOptions"))
-  {
+  if (jsonValue.ValueExists("CompilerOptions")) {
     m_compilerOptions = jsonValue.GetString("CompilerOptions");
     m_compilerOptionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("KmsKeyId"))
-  {
+  if (jsonValue.ValueExists("KmsKeyId")) {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
     m_kmsKeyIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OutputConfig::Jsonize() const
-{
+JsonValue OutputConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3OutputLocationHasBeenSet)
-  {
-   payload.WithString("S3OutputLocation", m_s3OutputLocation);
-
+  if (m_s3OutputLocationHasBeenSet) {
+    payload.WithString("S3OutputLocation", m_s3OutputLocation);
   }
 
-  if(m_targetDeviceHasBeenSet)
-  {
-   payload.WithString("TargetDevice", TargetDeviceMapper::GetNameForTargetDevice(m_targetDevice));
+  if (m_targetDeviceHasBeenSet) {
+    payload.WithString("TargetDevice", TargetDeviceMapper::GetNameForTargetDevice(m_targetDevice));
   }
 
-  if(m_targetPlatformHasBeenSet)
-  {
-   payload.WithObject("TargetPlatform", m_targetPlatform.Jsonize());
-
+  if (m_targetPlatformHasBeenSet) {
+    payload.WithObject("TargetPlatform", m_targetPlatform.Jsonize());
   }
 
-  if(m_compilerOptionsHasBeenSet)
-  {
-   payload.WithString("CompilerOptions", m_compilerOptions);
-
+  if (m_compilerOptionsHasBeenSet) {
+    payload.WithString("CompilerOptions", m_compilerOptions);
   }
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
-   payload.WithString("KmsKeyId", m_kmsKeyId);
-
+  if (m_kmsKeyIdHasBeenSet) {
+    payload.WithString("KmsKeyId", m_kmsKeyId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

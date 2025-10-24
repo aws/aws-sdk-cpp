@@ -3,92 +3,72 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/HlsMediaStoreSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/HlsMediaStoreSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-HlsMediaStoreSettings::HlsMediaStoreSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+HlsMediaStoreSettings::HlsMediaStoreSettings(JsonView jsonValue) { *this = jsonValue; }
 
-HlsMediaStoreSettings& HlsMediaStoreSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("connectionRetryInterval"))
-  {
+HlsMediaStoreSettings& HlsMediaStoreSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("connectionRetryInterval")) {
     m_connectionRetryInterval = jsonValue.GetInteger("connectionRetryInterval");
     m_connectionRetryIntervalHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("filecacheDuration"))
-  {
+  if (jsonValue.ValueExists("filecacheDuration")) {
     m_filecacheDuration = jsonValue.GetInteger("filecacheDuration");
     m_filecacheDurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("mediaStoreStorageClass"))
-  {
-    m_mediaStoreStorageClass = HlsMediaStoreStorageClassMapper::GetHlsMediaStoreStorageClassForName(jsonValue.GetString("mediaStoreStorageClass"));
+  if (jsonValue.ValueExists("mediaStoreStorageClass")) {
+    m_mediaStoreStorageClass =
+        HlsMediaStoreStorageClassMapper::GetHlsMediaStoreStorageClassForName(jsonValue.GetString("mediaStoreStorageClass"));
     m_mediaStoreStorageClassHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("numRetries"))
-  {
+  if (jsonValue.ValueExists("numRetries")) {
     m_numRetries = jsonValue.GetInteger("numRetries");
     m_numRetriesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("restartDelay"))
-  {
+  if (jsonValue.ValueExists("restartDelay")) {
     m_restartDelay = jsonValue.GetInteger("restartDelay");
     m_restartDelayHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue HlsMediaStoreSettings::Jsonize() const
-{
+JsonValue HlsMediaStoreSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_connectionRetryIntervalHasBeenSet)
-  {
-   payload.WithInteger("connectionRetryInterval", m_connectionRetryInterval);
-
+  if (m_connectionRetryIntervalHasBeenSet) {
+    payload.WithInteger("connectionRetryInterval", m_connectionRetryInterval);
   }
 
-  if(m_filecacheDurationHasBeenSet)
-  {
-   payload.WithInteger("filecacheDuration", m_filecacheDuration);
-
+  if (m_filecacheDurationHasBeenSet) {
+    payload.WithInteger("filecacheDuration", m_filecacheDuration);
   }
 
-  if(m_mediaStoreStorageClassHasBeenSet)
-  {
-   payload.WithString("mediaStoreStorageClass", HlsMediaStoreStorageClassMapper::GetNameForHlsMediaStoreStorageClass(m_mediaStoreStorageClass));
+  if (m_mediaStoreStorageClassHasBeenSet) {
+    payload.WithString("mediaStoreStorageClass",
+                       HlsMediaStoreStorageClassMapper::GetNameForHlsMediaStoreStorageClass(m_mediaStoreStorageClass));
   }
 
-  if(m_numRetriesHasBeenSet)
-  {
-   payload.WithInteger("numRetries", m_numRetries);
-
+  if (m_numRetriesHasBeenSet) {
+    payload.WithInteger("numRetries", m_numRetries);
   }
 
-  if(m_restartDelayHasBeenSet)
-  {
-   payload.WithInteger("restartDelay", m_restartDelay);
-
+  if (m_restartDelayHasBeenSet) {
+    payload.WithInteger("restartDelay", m_restartDelay);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

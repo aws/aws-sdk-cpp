@@ -3,34 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/EnableMFADeviceRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/EnableMFADeviceRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String EnableMFADeviceRequest::SerializePayload() const
-{
+Aws::String EnableMFADeviceRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=EnableMFADevice&";
-  if(m_userNameHasBeenSet)
-  {
+  if (m_userNameHasBeenSet) {
     ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
   }
 
-  if(m_serialNumberHasBeenSet)
-  {
+  if (m_serialNumberHasBeenSet) {
     ss << "SerialNumber=" << StringUtils::URLEncode(m_serialNumber.c_str()) << "&";
   }
 
-  if(m_authenticationCode1HasBeenSet)
-  {
+  if (m_authenticationCode1HasBeenSet) {
     ss << "AuthenticationCode1=" << StringUtils::URLEncode(m_authenticationCode1.c_str()) << "&";
   }
 
-  if(m_authenticationCode2HasBeenSet)
-  {
+  if (m_authenticationCode2HasBeenSet) {
     ss << "AuthenticationCode2=" << StringUtils::URLEncode(m_authenticationCode2.c_str()) << "&";
   }
 
@@ -38,8 +33,4 @@ Aws::String EnableMFADeviceRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  EnableMFADeviceRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void EnableMFADeviceRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

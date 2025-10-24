@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AuditManager
-{
-namespace Model
-{
+namespace Aws {
+namespace AuditManager {
+namespace Model {
 
-Role::Role(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Role::Role(JsonView jsonValue) { *this = jsonValue; }
 
-Role& Role::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("roleType"))
-  {
+Role& Role::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("roleType")) {
     m_roleType = RoleTypeMapper::GetRoleTypeForName(jsonValue.GetString("roleType"));
     m_roleTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("roleArn"))
-  {
+  if (jsonValue.ValueExists("roleArn")) {
     m_roleArn = jsonValue.GetString("roleArn");
     m_roleArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Role::Jsonize() const
-{
+JsonValue Role::Jsonize() const {
   JsonValue payload;
 
-  if(m_roleTypeHasBeenSet)
-  {
-   payload.WithString("roleType", RoleTypeMapper::GetNameForRoleType(m_roleType));
+  if (m_roleTypeHasBeenSet) {
+    payload.WithString("roleType", RoleTypeMapper::GetNameForRoleType(m_roleType));
   }
 
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("roleArn", m_roleArn);
-
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("roleArn", m_roleArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AuditManager
-} // namespace Aws
+}  // namespace Model
+}  // namespace AuditManager
+}  // namespace Aws

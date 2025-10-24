@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kendra/model/AssociatePersonasToEntitiesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/kendra/model/AssociatePersonasToEntitiesResult.h>
 
 #include <utility>
 
@@ -17,19 +17,15 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AssociatePersonasToEntitiesResult::AssociatePersonasToEntitiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+AssociatePersonasToEntitiesResult::AssociatePersonasToEntitiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-AssociatePersonasToEntitiesResult& AssociatePersonasToEntitiesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+AssociatePersonasToEntitiesResult& AssociatePersonasToEntitiesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("FailedEntityList"))
-  {
+  if (jsonValue.ValueExists("FailedEntityList")) {
     Aws::Utils::Array<JsonView> failedEntityListJsonList = jsonValue.GetArray("FailedEntityList");
-    for(unsigned failedEntityListIndex = 0; failedEntityListIndex < failedEntityListJsonList.GetLength(); ++failedEntityListIndex)
-    {
+    for (unsigned failedEntityListIndex = 0; failedEntityListIndex < failedEntityListJsonList.GetLength(); ++failedEntityListIndex) {
       m_failedEntityList.push_back(failedEntityListJsonList[failedEntityListIndex].AsObject());
     }
     m_failedEntityListHasBeenSet = true;
@@ -37,12 +33,10 @@ AssociatePersonasToEntitiesResult& AssociatePersonasToEntitiesResult::operator =
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

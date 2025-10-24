@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lookoutmetrics/model/GetSampleDataRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lookoutmetrics/model/GetSampleDataRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::LookoutMetrics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetSampleDataRequest::SerializePayload() const
-{
+Aws::String GetSampleDataRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_s3SourceConfigHasBeenSet)
-  {
-   payload.WithObject("S3SourceConfig", m_s3SourceConfig.Jsonize());
-
+  if (m_s3SourceConfigHasBeenSet) {
+    payload.WithObject("S3SourceConfig", m_s3SourceConfig.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

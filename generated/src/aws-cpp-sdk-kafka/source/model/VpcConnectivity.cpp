@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kafka/model/VpcConnectivity.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kafka/model/VpcConnectivity.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Kafka
-{
-namespace Model
-{
+namespace Aws {
+namespace Kafka {
+namespace Model {
 
-VpcConnectivity::VpcConnectivity(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VpcConnectivity::VpcConnectivity(JsonView jsonValue) { *this = jsonValue; }
 
-VpcConnectivity& VpcConnectivity::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("clientAuthentication"))
-  {
+VpcConnectivity& VpcConnectivity::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("clientAuthentication")) {
     m_clientAuthentication = jsonValue.GetObject("clientAuthentication");
     m_clientAuthenticationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VpcConnectivity::Jsonize() const
-{
+JsonValue VpcConnectivity::Jsonize() const {
   JsonValue payload;
 
-  if(m_clientAuthenticationHasBeenSet)
-  {
-   payload.WithObject("clientAuthentication", m_clientAuthentication.Jsonize());
-
+  if (m_clientAuthenticationHasBeenSet) {
+    payload.WithObject("clientAuthentication", m_clientAuthentication.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Kafka
-} // namespace Aws
+}  // namespace Model
+}  // namespace Kafka
+}  // namespace Aws

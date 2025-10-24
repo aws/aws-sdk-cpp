@@ -3,132 +3,102 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/JobSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot/model/JobSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
+namespace Aws {
+namespace IoT {
+namespace Model {
 
-JobSummary::JobSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+JobSummary::JobSummary(JsonView jsonValue) { *this = jsonValue; }
 
-JobSummary& JobSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("jobArn"))
-  {
+JobSummary& JobSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("jobArn")) {
     m_jobArn = jsonValue.GetString("jobArn");
     m_jobArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("jobId"))
-  {
+  if (jsonValue.ValueExists("jobId")) {
     m_jobId = jsonValue.GetString("jobId");
     m_jobIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("thingGroupId"))
-  {
+  if (jsonValue.ValueExists("thingGroupId")) {
     m_thingGroupId = jsonValue.GetString("thingGroupId");
     m_thingGroupIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("targetSelection"))
-  {
+  if (jsonValue.ValueExists("targetSelection")) {
     m_targetSelection = TargetSelectionMapper::GetTargetSelectionForName(jsonValue.GetString("targetSelection"));
     m_targetSelectionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
-  {
+  if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetDouble("createdAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdatedAt"))
-  {
+  if (jsonValue.ValueExists("lastUpdatedAt")) {
     m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");
     m_lastUpdatedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("completedAt"))
-  {
+  if (jsonValue.ValueExists("completedAt")) {
     m_completedAt = jsonValue.GetDouble("completedAt");
     m_completedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("isConcurrent"))
-  {
+  if (jsonValue.ValueExists("isConcurrent")) {
     m_isConcurrent = jsonValue.GetBool("isConcurrent");
     m_isConcurrentHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue JobSummary::Jsonize() const
-{
+JsonValue JobSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_jobArnHasBeenSet)
-  {
-   payload.WithString("jobArn", m_jobArn);
-
+  if (m_jobArnHasBeenSet) {
+    payload.WithString("jobArn", m_jobArn);
   }
 
-  if(m_jobIdHasBeenSet)
-  {
-   payload.WithString("jobId", m_jobId);
-
+  if (m_jobIdHasBeenSet) {
+    payload.WithString("jobId", m_jobId);
   }
 
-  if(m_thingGroupIdHasBeenSet)
-  {
-   payload.WithString("thingGroupId", m_thingGroupId);
-
+  if (m_thingGroupIdHasBeenSet) {
+    payload.WithString("thingGroupId", m_thingGroupId);
   }
 
-  if(m_targetSelectionHasBeenSet)
-  {
-   payload.WithString("targetSelection", TargetSelectionMapper::GetNameForTargetSelection(m_targetSelection));
+  if (m_targetSelectionHasBeenSet) {
+    payload.WithString("targetSelection", TargetSelectionMapper::GetNameForTargetSelection(m_targetSelection));
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", JobStatusMapper::GetNameForJobStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", JobStatusMapper::GetNameForJobStatus(m_status));
   }
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
-  if(m_lastUpdatedAtHasBeenSet)
-  {
-   payload.WithDouble("lastUpdatedAt", m_lastUpdatedAt.SecondsWithMSPrecision());
+  if (m_lastUpdatedAtHasBeenSet) {
+    payload.WithDouble("lastUpdatedAt", m_lastUpdatedAt.SecondsWithMSPrecision());
   }
 
-  if(m_completedAtHasBeenSet)
-  {
-   payload.WithDouble("completedAt", m_completedAt.SecondsWithMSPrecision());
+  if (m_completedAtHasBeenSet) {
+    payload.WithDouble("completedAt", m_completedAt.SecondsWithMSPrecision());
   }
 
-  if(m_isConcurrentHasBeenSet)
-  {
-   payload.WithBool("isConcurrent", m_isConcurrent);
-
+  if (m_isConcurrentHasBeenSet) {
+    payload.WithBool("isConcurrent", m_isConcurrent);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

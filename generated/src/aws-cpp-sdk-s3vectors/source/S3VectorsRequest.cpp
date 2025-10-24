@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/s3vectors/S3VectorsRequest.h>
 
-namespace Aws
-{
-namespace S3Vectors
-{
-} // namespace S3Vectors
-} // namespace Aws
+namespace Aws {
+namespace S3Vectors {}  // namespace S3Vectors
+}  // namespace Aws

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticmapreduce/model/ReleaseLabelFilter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/elasticmapreduce/model/ReleaseLabelFilter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EMR
-{
-namespace Model
-{
+namespace Aws {
+namespace EMR {
+namespace Model {
 
-ReleaseLabelFilter::ReleaseLabelFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReleaseLabelFilter::ReleaseLabelFilter(JsonView jsonValue) { *this = jsonValue; }
 
-ReleaseLabelFilter& ReleaseLabelFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Prefix"))
-  {
+ReleaseLabelFilter& ReleaseLabelFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Prefix")) {
     m_prefix = jsonValue.GetString("Prefix");
     m_prefixHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Application"))
-  {
+  if (jsonValue.ValueExists("Application")) {
     m_application = jsonValue.GetString("Application");
     m_applicationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ReleaseLabelFilter::Jsonize() const
-{
+JsonValue ReleaseLabelFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_prefixHasBeenSet)
-  {
-   payload.WithString("Prefix", m_prefix);
-
+  if (m_prefixHasBeenSet) {
+    payload.WithString("Prefix", m_prefix);
   }
 
-  if(m_applicationHasBeenSet)
-  {
-   payload.WithString("Application", m_application);
-
+  if (m_applicationHasBeenSet) {
+    payload.WithString("Application", m_application);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EMR
-} // namespace Aws
+}  // namespace Model
+}  // namespace EMR
+}  // namespace Aws

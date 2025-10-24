@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::deadline;
 
-AWSError<CoreErrors> DeadlineErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> DeadlineErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = DeadlineErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

@@ -3,43 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3control/model/StorageLensDataExportEncryption.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3control/model/StorageLensDataExportEncryption.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Control
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Control {
+namespace Model {
 
-StorageLensDataExportEncryption::StorageLensDataExportEncryption(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+StorageLensDataExportEncryption::StorageLensDataExportEncryption(const XmlNode& xmlNode) { *this = xmlNode; }
 
-StorageLensDataExportEncryption& StorageLensDataExportEncryption::operator =(const XmlNode& xmlNode)
-{
+StorageLensDataExportEncryption& StorageLensDataExportEncryption::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode sSES3Node = resultNode.FirstChild("SSE-S3");
-    if(!sSES3Node.IsNull())
-    {
+    if (!sSES3Node.IsNull()) {
       m_sSES3 = sSES3Node;
       m_sSES3HasBeenSet = true;
     }
     XmlNode sSEKMSNode = resultNode.FirstChild("SSE-KMS");
-    if(!sSEKMSNode.IsNull())
-    {
+    if (!sSEKMSNode.IsNull()) {
       m_sSEKMS = sSEKMSNode;
       m_sSEKMSHasBeenSet = true;
     }
@@ -48,23 +38,19 @@ StorageLensDataExportEncryption& StorageLensDataExportEncryption::operator =(con
   return *this;
 }
 
-void StorageLensDataExportEncryption::AddToNode(XmlNode& parentNode) const
-{
+void StorageLensDataExportEncryption::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_sSES3HasBeenSet)
-  {
-   XmlNode sSES3Node = parentNode.CreateChildElement("SSE-S3");
-   m_sSES3.AddToNode(sSES3Node);
+  if (m_sSES3HasBeenSet) {
+    XmlNode sSES3Node = parentNode.CreateChildElement("SSE-S3");
+    m_sSES3.AddToNode(sSES3Node);
   }
 
-  if(m_sSEKMSHasBeenSet)
-  {
-   XmlNode sSEKMSNode = parentNode.CreateChildElement("SSE-KMS");
-   m_sSEKMS.AddToNode(sSEKMSNode);
+  if (m_sSEKMSHasBeenSet) {
+    XmlNode sSEKMSNode = parentNode.CreateChildElement("SSE-KMS");
+    m_sSEKMS.AddToNode(sSEKMSNode);
   }
-
 }
 
-} // namespace Model
-} // namespace S3Control
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Control
+}  // namespace Aws

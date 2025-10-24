@@ -3,42 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsRdsPendingCloudWatchLogsExports.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsRdsPendingCloudWatchLogsExports.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsRdsPendingCloudWatchLogsExports::AwsRdsPendingCloudWatchLogsExports(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsRdsPendingCloudWatchLogsExports::AwsRdsPendingCloudWatchLogsExports(JsonView jsonValue) { *this = jsonValue; }
 
-AwsRdsPendingCloudWatchLogsExports& AwsRdsPendingCloudWatchLogsExports::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("LogTypesToEnable"))
-  {
+AwsRdsPendingCloudWatchLogsExports& AwsRdsPendingCloudWatchLogsExports::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("LogTypesToEnable")) {
     Aws::Utils::Array<JsonView> logTypesToEnableJsonList = jsonValue.GetArray("LogTypesToEnable");
-    for(unsigned logTypesToEnableIndex = 0; logTypesToEnableIndex < logTypesToEnableJsonList.GetLength(); ++logTypesToEnableIndex)
-    {
+    for (unsigned logTypesToEnableIndex = 0; logTypesToEnableIndex < logTypesToEnableJsonList.GetLength(); ++logTypesToEnableIndex) {
       m_logTypesToEnable.push_back(logTypesToEnableJsonList[logTypesToEnableIndex].AsString());
     }
     m_logTypesToEnableHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LogTypesToDisable"))
-  {
+  if (jsonValue.ValueExists("LogTypesToDisable")) {
     Aws::Utils::Array<JsonView> logTypesToDisableJsonList = jsonValue.GetArray("LogTypesToDisable");
-    for(unsigned logTypesToDisableIndex = 0; logTypesToDisableIndex < logTypesToDisableJsonList.GetLength(); ++logTypesToDisableIndex)
-    {
+    for (unsigned logTypesToDisableIndex = 0; logTypesToDisableIndex < logTypesToDisableJsonList.GetLength(); ++logTypesToDisableIndex) {
       m_logTypesToDisable.push_back(logTypesToDisableJsonList[logTypesToDisableIndex].AsString());
     }
     m_logTypesToDisableHasBeenSet = true;
@@ -46,35 +35,28 @@ AwsRdsPendingCloudWatchLogsExports& AwsRdsPendingCloudWatchLogsExports::operator
   return *this;
 }
 
-JsonValue AwsRdsPendingCloudWatchLogsExports::Jsonize() const
-{
+JsonValue AwsRdsPendingCloudWatchLogsExports::Jsonize() const {
   JsonValue payload;
 
-  if(m_logTypesToEnableHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> logTypesToEnableJsonList(m_logTypesToEnable.size());
-   for(unsigned logTypesToEnableIndex = 0; logTypesToEnableIndex < logTypesToEnableJsonList.GetLength(); ++logTypesToEnableIndex)
-   {
-     logTypesToEnableJsonList[logTypesToEnableIndex].AsString(m_logTypesToEnable[logTypesToEnableIndex]);
-   }
-   payload.WithArray("LogTypesToEnable", std::move(logTypesToEnableJsonList));
-
+  if (m_logTypesToEnableHasBeenSet) {
+    Aws::Utils::Array<JsonValue> logTypesToEnableJsonList(m_logTypesToEnable.size());
+    for (unsigned logTypesToEnableIndex = 0; logTypesToEnableIndex < logTypesToEnableJsonList.GetLength(); ++logTypesToEnableIndex) {
+      logTypesToEnableJsonList[logTypesToEnableIndex].AsString(m_logTypesToEnable[logTypesToEnableIndex]);
+    }
+    payload.WithArray("LogTypesToEnable", std::move(logTypesToEnableJsonList));
   }
 
-  if(m_logTypesToDisableHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> logTypesToDisableJsonList(m_logTypesToDisable.size());
-   for(unsigned logTypesToDisableIndex = 0; logTypesToDisableIndex < logTypesToDisableJsonList.GetLength(); ++logTypesToDisableIndex)
-   {
-     logTypesToDisableJsonList[logTypesToDisableIndex].AsString(m_logTypesToDisable[logTypesToDisableIndex]);
-   }
-   payload.WithArray("LogTypesToDisable", std::move(logTypesToDisableJsonList));
-
+  if (m_logTypesToDisableHasBeenSet) {
+    Aws::Utils::Array<JsonValue> logTypesToDisableJsonList(m_logTypesToDisable.size());
+    for (unsigned logTypesToDisableIndex = 0; logTypesToDisableIndex < logTypesToDisableJsonList.GetLength(); ++logTypesToDisableIndex) {
+      logTypesToDisableJsonList[logTypesToDisableIndex].AsString(m_logTypesToDisable[logTypesToDisableIndex]);
+    }
+    payload.WithArray("LogTypesToDisable", std::move(logTypesToDisableJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

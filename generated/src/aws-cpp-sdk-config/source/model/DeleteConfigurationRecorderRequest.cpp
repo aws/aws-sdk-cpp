@@ -12,27 +12,18 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteConfigurationRecorderRequest::SerializePayload() const
-{
+Aws::String DeleteConfigurationRecorderRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_configurationRecorderNameHasBeenSet)
-  {
-   payload.WithString("ConfigurationRecorderName", m_configurationRecorderName);
-
+  if (m_configurationRecorderNameHasBeenSet) {
+    payload.WithString("ConfigurationRecorderName", m_configurationRecorderName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteConfigurationRecorderRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteConfigurationRecorderRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "StarlingDoveService.DeleteConfigurationRecorder"));
   return headers;
-
 }
-
-
-
-

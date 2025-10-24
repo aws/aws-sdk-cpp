@@ -4,10 +4,10 @@
  */
 
 #include <aws/appstream/model/DescribeUsageReportSubscriptionsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,37 +17,32 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeUsageReportSubscriptionsResult::DescribeUsageReportSubscriptionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeUsageReportSubscriptionsResult::DescribeUsageReportSubscriptionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-DescribeUsageReportSubscriptionsResult& DescribeUsageReportSubscriptionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeUsageReportSubscriptionsResult& DescribeUsageReportSubscriptionsResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("UsageReportSubscriptions"))
-  {
+  if (jsonValue.ValueExists("UsageReportSubscriptions")) {
     Aws::Utils::Array<JsonView> usageReportSubscriptionsJsonList = jsonValue.GetArray("UsageReportSubscriptions");
-    for(unsigned usageReportSubscriptionsIndex = 0; usageReportSubscriptionsIndex < usageReportSubscriptionsJsonList.GetLength(); ++usageReportSubscriptionsIndex)
-    {
+    for (unsigned usageReportSubscriptionsIndex = 0; usageReportSubscriptionsIndex < usageReportSubscriptionsJsonList.GetLength();
+         ++usageReportSubscriptionsIndex) {
       m_usageReportSubscriptions.push_back(usageReportSubscriptionsJsonList[usageReportSubscriptionsIndex].AsObject());
     }
     m_usageReportSubscriptionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

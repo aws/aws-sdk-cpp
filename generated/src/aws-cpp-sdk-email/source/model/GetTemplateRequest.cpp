@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/email/model/GetTemplateRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/email/model/GetTemplateRequest.h>
 
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-Aws::String GetTemplateRequest::SerializePayload() const
-{
+Aws::String GetTemplateRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetTemplate&";
-  if(m_templateNameHasBeenSet)
-  {
+  if (m_templateNameHasBeenSet) {
     ss << "TemplateName=" << StringUtils::URLEncode(m_templateName.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String GetTemplateRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetTemplateRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetTemplateRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

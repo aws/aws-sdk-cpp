@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AccountDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AccountDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AccountDetails::AccountDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AccountDetails::AccountDetails(JsonView jsonValue) { *this = jsonValue; }
 
-AccountDetails& AccountDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AccountId"))
-  {
+AccountDetails& AccountDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AccountId")) {
     m_accountId = jsonValue.GetString("AccountId");
     m_accountIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Email"))
-  {
+  if (jsonValue.ValueExists("Email")) {
     m_email = jsonValue.GetString("Email");
     m_emailHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AccountDetails::Jsonize() const
-{
+JsonValue AccountDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("AccountId", m_accountId);
-
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("AccountId", m_accountId);
   }
 
-  if(m_emailHasBeenSet)
-  {
-   payload.WithString("Email", m_email);
-
+  if (m_emailHasBeenSet) {
+    payload.WithString("Email", m_email);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

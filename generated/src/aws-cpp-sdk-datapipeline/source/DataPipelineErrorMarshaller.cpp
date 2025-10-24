@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::DataPipeline;
 
-AWSError<CoreErrors> DataPipelineErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> DataPipelineErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = DataPipelineErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

@@ -3,133 +3,102 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotthingsgraph/model/SystemInstanceSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotthingsgraph/model/SystemInstanceSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTThingsGraph
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTThingsGraph {
+namespace Model {
 
-SystemInstanceSummary::SystemInstanceSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SystemInstanceSummary::SystemInstanceSummary(JsonView jsonValue) { *this = jsonValue; }
 
-SystemInstanceSummary& SystemInstanceSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("id"))
-  {
+SystemInstanceSummary& SystemInstanceSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("arn"))
-  {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = SystemInstanceDeploymentStatusMapper::GetSystemInstanceDeploymentStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("target"))
-  {
+  if (jsonValue.ValueExists("target")) {
     m_target = DeploymentTargetMapper::GetDeploymentTargetForName(jsonValue.GetString("target"));
     m_targetHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("greengrassGroupName"))
-  {
+  if (jsonValue.ValueExists("greengrassGroupName")) {
     m_greengrassGroupName = jsonValue.GetString("greengrassGroupName");
     m_greengrassGroupNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
-  {
+  if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetDouble("createdAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("updatedAt"))
-  {
+  if (jsonValue.ValueExists("updatedAt")) {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
     m_updatedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("greengrassGroupId"))
-  {
+  if (jsonValue.ValueExists("greengrassGroupId")) {
     m_greengrassGroupId = jsonValue.GetString("greengrassGroupId");
     m_greengrassGroupIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("greengrassGroupVersionId"))
-  {
+  if (jsonValue.ValueExists("greengrassGroupVersionId")) {
     m_greengrassGroupVersionId = jsonValue.GetString("greengrassGroupVersionId");
     m_greengrassGroupVersionIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SystemInstanceSummary::Jsonize() const
-{
+JsonValue SystemInstanceSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", SystemInstanceDeploymentStatusMapper::GetNameForSystemInstanceDeploymentStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", SystemInstanceDeploymentStatusMapper::GetNameForSystemInstanceDeploymentStatus(m_status));
   }
 
-  if(m_targetHasBeenSet)
-  {
-   payload.WithString("target", DeploymentTargetMapper::GetNameForDeploymentTarget(m_target));
+  if (m_targetHasBeenSet) {
+    payload.WithString("target", DeploymentTargetMapper::GetNameForDeploymentTarget(m_target));
   }
 
-  if(m_greengrassGroupNameHasBeenSet)
-  {
-   payload.WithString("greengrassGroupName", m_greengrassGroupName);
-
+  if (m_greengrassGroupNameHasBeenSet) {
+    payload.WithString("greengrassGroupName", m_greengrassGroupName);
   }
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
-  if(m_updatedAtHasBeenSet)
-  {
-   payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
+  if (m_updatedAtHasBeenSet) {
+    payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
   }
 
-  if(m_greengrassGroupIdHasBeenSet)
-  {
-   payload.WithString("greengrassGroupId", m_greengrassGroupId);
-
+  if (m_greengrassGroupIdHasBeenSet) {
+    payload.WithString("greengrassGroupId", m_greengrassGroupId);
   }
 
-  if(m_greengrassGroupVersionIdHasBeenSet)
-  {
-   payload.WithString("greengrassGroupVersionId", m_greengrassGroupVersionId);
-
+  if (m_greengrassGroupVersionIdHasBeenSet) {
+    payload.WithString("greengrassGroupVersionId", m_greengrassGroupVersionId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTThingsGraph
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTThingsGraph
+}  // namespace Aws

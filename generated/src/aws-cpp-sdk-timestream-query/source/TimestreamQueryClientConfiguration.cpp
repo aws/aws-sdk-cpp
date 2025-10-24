@@ -5,22 +5,15 @@
 
 #include <aws/timestream-query/TimestreamQueryClientConfiguration.h>
 
-namespace Aws
-{
-namespace TimestreamQuery
-{
+namespace Aws {
+namespace TimestreamQuery {
 
-
-bool IsEndpointDiscoveryEnabled(const Aws::String& endpointOverride, const Aws::String &profileName)
-{
+bool IsEndpointDiscoveryEnabled(const Aws::String& endpointOverride, const Aws::String& profileName) {
   bool enabled = true;
 
-  if (!endpointOverride.empty())
-  {
+  if (!endpointOverride.empty()) {
     enabled = false;
-  }
-  else
-  {
+  } else {
     static const char* AWS_ENABLE_ENDPOINT_DISCOVERY_ENV_KEY = "AWS_ENABLE_ENDPOINT_DISCOVERY";
     static const char* AWS_ENABLE_ENDPOINT_DISCOVERY_PROFILE_KEY = "endpoint_discovery_enabled";
     static const char* AWS_EP_DISCOVERY_ENABLED = "true";
@@ -40,35 +33,33 @@ bool IsEndpointDiscoveryEnabled(const Aws::String& endpointOverride, const Aws::
   return enabled;
 }
 
-void TimestreamQueryClientConfiguration::LoadTimestreamQuerySpecificConfig(const Aws::String& inputProfileName)
-{
-  if(!enableEndpointDiscovery) {
+void TimestreamQueryClientConfiguration::LoadTimestreamQuerySpecificConfig(const Aws::String& inputProfileName) {
+  if (!enableEndpointDiscovery) {
     enableEndpointDiscovery = IsEndpointDiscoveryEnabled(this->endpointOverride, inputProfileName);
   }
 }
 
-TimestreamQueryClientConfiguration::TimestreamQueryClientConfiguration(const Client::ClientConfigurationInitValues &configuration)
-: BaseClientConfigClass(configuration), enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery)
-{
+TimestreamQueryClientConfiguration::TimestreamQueryClientConfiguration(const Client::ClientConfigurationInitValues& configuration)
+    : BaseClientConfigClass(configuration), enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery) {
   LoadTimestreamQuerySpecificConfig(this->profileName);
 }
 
 TimestreamQueryClientConfiguration::TimestreamQueryClientConfiguration(const char* inputProfileName, bool shouldDisableIMDS)
-: BaseClientConfigClass(inputProfileName, shouldDisableIMDS), enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery)
-{
+    : BaseClientConfigClass(inputProfileName, shouldDisableIMDS), enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery) {
   LoadTimestreamQuerySpecificConfig(Aws::String(inputProfileName));
 }
 
-TimestreamQueryClientConfiguration::TimestreamQueryClientConfiguration(bool useSmartDefaults, const char* defaultMode, bool shouldDisableIMDS)
-: BaseClientConfigClass(useSmartDefaults, defaultMode, shouldDisableIMDS), enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery)
-{
+TimestreamQueryClientConfiguration::TimestreamQueryClientConfiguration(bool useSmartDefaults, const char* defaultMode,
+                                                                       bool shouldDisableIMDS)
+    : BaseClientConfigClass(useSmartDefaults, defaultMode, shouldDisableIMDS),
+      enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery) {
   LoadTimestreamQuerySpecificConfig(this->profileName);
 }
 
-TimestreamQueryClientConfiguration::TimestreamQueryClientConfiguration(const Client::ClientConfiguration& config)  : BaseClientConfigClass(config), enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery){
+TimestreamQueryClientConfiguration::TimestreamQueryClientConfiguration(const Client::ClientConfiguration& config)
+    : BaseClientConfigClass(config), enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery) {
   LoadTimestreamQuerySpecificConfig(this->profileName);
 }
 
-
-} // namespace TimestreamQuery
-} // namespace Aws
+}  // namespace TimestreamQuery
+}  // namespace Aws

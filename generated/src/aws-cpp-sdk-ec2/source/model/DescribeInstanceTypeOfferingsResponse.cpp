@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeInstanceTypeOfferingsResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/DescribeInstanceTypeOfferingsResponse.h>
 
 #include <utility>
 
@@ -17,30 +17,25 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeInstanceTypeOfferingsResponse::DescribeInstanceTypeOfferingsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeInstanceTypeOfferingsResponse::DescribeInstanceTypeOfferingsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-DescribeInstanceTypeOfferingsResponse& DescribeInstanceTypeOfferingsResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeInstanceTypeOfferingsResponse& DescribeInstanceTypeOfferingsResponse::operator=(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeInstanceTypeOfferingsResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeInstanceTypeOfferingsResponse")) {
     resultNode = rootNode.FirstChild("DescribeInstanceTypeOfferingsResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode instanceTypeOfferingsNode = resultNode.FirstChild("instanceTypeOfferingSet");
-    if(!instanceTypeOfferingsNode.IsNull())
-    {
+    if (!instanceTypeOfferingsNode.IsNull()) {
       XmlNode instanceTypeOfferingsMember = instanceTypeOfferingsNode.FirstChild("item");
       m_instanceTypeOfferingsHasBeenSet = !instanceTypeOfferingsMember.IsNull();
-      while(!instanceTypeOfferingsMember.IsNull())
-      {
+      while (!instanceTypeOfferingsMember.IsNull()) {
         m_instanceTypeOfferings.push_back(instanceTypeOfferingsMember);
         instanceTypeOfferingsMember = instanceTypeOfferingsMember.NextNode("item");
       }
@@ -48,8 +43,7 @@ DescribeInstanceTypeOfferingsResponse& DescribeInstanceTypeOfferingsResponse::op
       m_instanceTypeOfferingsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
+    if (!nextTokenNode.IsNull()) {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
       m_nextTokenHasBeenSet = true;
     }
@@ -57,12 +51,12 @@ DescribeInstanceTypeOfferingsResponse& DescribeInstanceTypeOfferingsResponse::op
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeInstanceTypeOfferingsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeInstanceTypeOfferingsResponse",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

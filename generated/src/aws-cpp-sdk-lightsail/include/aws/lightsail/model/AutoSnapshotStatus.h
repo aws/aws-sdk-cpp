@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lightsail/Lightsail_EXPORTS.h>
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
-  enum class AutoSnapshotStatus
-  {
-    NOT_SET,
-    Success,
-    Failed,
-    InProgress,
-    NotFound
-  };
+namespace Aws {
+namespace Lightsail {
+namespace Model {
+enum class AutoSnapshotStatus { NOT_SET, Success, Failed, InProgress, NotFound };
 
-namespace AutoSnapshotStatusMapper
-{
+namespace AutoSnapshotStatusMapper {
 AWS_LIGHTSAIL_API AutoSnapshotStatus GetAutoSnapshotStatusForName(const Aws::String& name);
 
 AWS_LIGHTSAIL_API Aws::String GetNameForAutoSnapshotStatus(AutoSnapshotStatus value);
-} // namespace AutoSnapshotStatusMapper
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace AutoSnapshotStatusMapper
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

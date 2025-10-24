@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/fms/FMSRequest.h>
 
-namespace Aws
-{
-namespace FMS
-{
-} // namespace FMS
-} // namespace Aws
+namespace Aws {
+namespace FMS {}  // namespace FMS
+}  // namespace Aws

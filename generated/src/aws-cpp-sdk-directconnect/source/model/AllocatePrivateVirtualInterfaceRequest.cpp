@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/directconnect/model/AllocatePrivateVirtualInterfaceRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/directconnect/model/AllocatePrivateVirtualInterfaceRequest.h>
 
 #include <utility>
 
@@ -12,39 +12,26 @@ using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AllocatePrivateVirtualInterfaceRequest::SerializePayload() const
-{
+Aws::String AllocatePrivateVirtualInterfaceRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_connectionIdHasBeenSet)
-  {
-   payload.WithString("connectionId", m_connectionId);
-
+  if (m_connectionIdHasBeenSet) {
+    payload.WithString("connectionId", m_connectionId);
   }
 
-  if(m_ownerAccountHasBeenSet)
-  {
-   payload.WithString("ownerAccount", m_ownerAccount);
-
+  if (m_ownerAccountHasBeenSet) {
+    payload.WithString("ownerAccount", m_ownerAccount);
   }
 
-  if(m_newPrivateVirtualInterfaceAllocationHasBeenSet)
-  {
-   payload.WithObject("newPrivateVirtualInterfaceAllocation", m_newPrivateVirtualInterfaceAllocation.Jsonize());
-
+  if (m_newPrivateVirtualInterfaceAllocationHasBeenSet) {
+    payload.WithObject("newPrivateVirtualInterfaceAllocation", m_newPrivateVirtualInterfaceAllocation.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection AllocatePrivateVirtualInterfaceRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection AllocatePrivateVirtualInterfaceRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "OvertureService.AllocatePrivateVirtualInterface"));
   return headers;
-
 }
-
-
-
-

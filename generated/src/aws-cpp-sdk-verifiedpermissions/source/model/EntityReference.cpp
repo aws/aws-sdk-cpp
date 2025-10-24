@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/verifiedpermissions/model/EntityReference.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/verifiedpermissions/model/EntityReference.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace VerifiedPermissions
-{
-namespace Model
-{
+namespace Aws {
+namespace VerifiedPermissions {
+namespace Model {
 
-EntityReference::EntityReference(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EntityReference::EntityReference(JsonView jsonValue) { *this = jsonValue; }
 
-EntityReference& EntityReference::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("unspecified"))
-  {
+EntityReference& EntityReference::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("unspecified")) {
     m_unspecified = jsonValue.GetBool("unspecified");
     m_unspecifiedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("identifier"))
-  {
+  if (jsonValue.ValueExists("identifier")) {
     m_identifier = jsonValue.GetObject("identifier");
     m_identifierHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EntityReference::Jsonize() const
-{
+JsonValue EntityReference::Jsonize() const {
   JsonValue payload;
 
-  if(m_unspecifiedHasBeenSet)
-  {
-   payload.WithBool("unspecified", m_unspecified);
-
+  if (m_unspecifiedHasBeenSet) {
+    payload.WithBool("unspecified", m_unspecified);
   }
 
-  if(m_identifierHasBeenSet)
-  {
-   payload.WithObject("identifier", m_identifier.Jsonize());
-
+  if (m_identifierHasBeenSet) {
+    payload.WithObject("identifier", m_identifier.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace VerifiedPermissions
-} // namespace Aws
+}  // namespace Model
+}  // namespace VerifiedPermissions
+}  // namespace Aws

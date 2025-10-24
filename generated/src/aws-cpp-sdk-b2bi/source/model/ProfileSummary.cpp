@@ -11,104 +11,78 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace B2BI
-{
-namespace Model
-{
+namespace Aws {
+namespace B2BI {
+namespace Model {
 
-ProfileSummary::ProfileSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProfileSummary::ProfileSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ProfileSummary& ProfileSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("profileId"))
-  {
+ProfileSummary& ProfileSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("profileId")) {
     m_profileId = jsonValue.GetString("profileId");
     m_profileIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("businessName"))
-  {
+  if (jsonValue.ValueExists("businessName")) {
     m_businessName = jsonValue.GetString("businessName");
     m_businessNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("logging"))
-  {
+  if (jsonValue.ValueExists("logging")) {
     m_logging = LoggingMapper::GetLoggingForName(jsonValue.GetString("logging"));
     m_loggingHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("logGroupName"))
-  {
+  if (jsonValue.ValueExists("logGroupName")) {
     m_logGroupName = jsonValue.GetString("logGroupName");
     m_logGroupNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
-  {
+  if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("modifiedAt"))
-  {
+  if (jsonValue.ValueExists("modifiedAt")) {
     m_modifiedAt = jsonValue.GetString("modifiedAt");
     m_modifiedAtHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ProfileSummary::Jsonize() const
-{
+JsonValue ProfileSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_profileIdHasBeenSet)
-  {
-   payload.WithString("profileId", m_profileId);
-
+  if (m_profileIdHasBeenSet) {
+    payload.WithString("profileId", m_profileId);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_businessNameHasBeenSet)
-  {
-   payload.WithString("businessName", m_businessName);
-
+  if (m_businessNameHasBeenSet) {
+    payload.WithString("businessName", m_businessName);
   }
 
-  if(m_loggingHasBeenSet)
-  {
-   payload.WithString("logging", LoggingMapper::GetNameForLogging(m_logging));
+  if (m_loggingHasBeenSet) {
+    payload.WithString("logging", LoggingMapper::GetNameForLogging(m_logging));
   }
 
-  if(m_logGroupNameHasBeenSet)
-  {
-   payload.WithString("logGroupName", m_logGroupName);
-
+  if (m_logGroupNameHasBeenSet) {
+    payload.WithString("logGroupName", m_logGroupName);
   }
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_createdAtHasBeenSet) {
+    payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_modifiedAtHasBeenSet)
-  {
-   payload.WithString("modifiedAt", m_modifiedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_modifiedAtHasBeenSet) {
+    payload.WithString("modifiedAt", m_modifiedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace B2BI
-} // namespace Aws
+}  // namespace Model
+}  // namespace B2BI
+}  // namespace Aws

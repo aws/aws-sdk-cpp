@@ -12,11 +12,4 @@ using namespace Aws::BedrockAgentCore::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteMemoryRecordRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DeleteMemoryRecordRequest::SerializePayload() const { return {}; }

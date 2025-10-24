@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediatailor/model/AdMarkerPassthrough.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediatailor/model/AdMarkerPassthrough.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaTailor
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaTailor {
+namespace Model {
 
-AdMarkerPassthrough::AdMarkerPassthrough(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AdMarkerPassthrough::AdMarkerPassthrough(JsonView jsonValue) { *this = jsonValue; }
 
-AdMarkerPassthrough& AdMarkerPassthrough::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Enabled"))
-  {
+AdMarkerPassthrough& AdMarkerPassthrough::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Enabled")) {
     m_enabled = jsonValue.GetBool("Enabled");
     m_enabledHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AdMarkerPassthrough::Jsonize() const
-{
+JsonValue AdMarkerPassthrough::Jsonize() const {
   JsonValue payload;
 
-  if(m_enabledHasBeenSet)
-  {
-   payload.WithBool("Enabled", m_enabled);
-
+  if (m_enabledHasBeenSet) {
+    payload.WithBool("Enabled", m_enabled);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaTailor
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaTailor
+}  // namespace Aws

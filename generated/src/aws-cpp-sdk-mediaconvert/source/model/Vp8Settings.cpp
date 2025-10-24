@@ -3,176 +3,136 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/Vp8Settings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconvert/model/Vp8Settings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
 
-Vp8Settings::Vp8Settings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Vp8Settings::Vp8Settings(JsonView jsonValue) { *this = jsonValue; }
 
-Vp8Settings& Vp8Settings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("bitrate"))
-  {
+Vp8Settings& Vp8Settings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("bitrate")) {
     m_bitrate = jsonValue.GetInteger("bitrate");
     m_bitrateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("framerateControl"))
-  {
+  if (jsonValue.ValueExists("framerateControl")) {
     m_framerateControl = Vp8FramerateControlMapper::GetVp8FramerateControlForName(jsonValue.GetString("framerateControl"));
     m_framerateControlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("framerateConversionAlgorithm"))
-  {
-    m_framerateConversionAlgorithm = Vp8FramerateConversionAlgorithmMapper::GetVp8FramerateConversionAlgorithmForName(jsonValue.GetString("framerateConversionAlgorithm"));
+  if (jsonValue.ValueExists("framerateConversionAlgorithm")) {
+    m_framerateConversionAlgorithm = Vp8FramerateConversionAlgorithmMapper::GetVp8FramerateConversionAlgorithmForName(
+        jsonValue.GetString("framerateConversionAlgorithm"));
     m_framerateConversionAlgorithmHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("framerateDenominator"))
-  {
+  if (jsonValue.ValueExists("framerateDenominator")) {
     m_framerateDenominator = jsonValue.GetInteger("framerateDenominator");
     m_framerateDenominatorHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("framerateNumerator"))
-  {
+  if (jsonValue.ValueExists("framerateNumerator")) {
     m_framerateNumerator = jsonValue.GetInteger("framerateNumerator");
     m_framerateNumeratorHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("gopSize"))
-  {
+  if (jsonValue.ValueExists("gopSize")) {
     m_gopSize = jsonValue.GetDouble("gopSize");
     m_gopSizeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("hrdBufferSize"))
-  {
+  if (jsonValue.ValueExists("hrdBufferSize")) {
     m_hrdBufferSize = jsonValue.GetInteger("hrdBufferSize");
     m_hrdBufferSizeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("maxBitrate"))
-  {
+  if (jsonValue.ValueExists("maxBitrate")) {
     m_maxBitrate = jsonValue.GetInteger("maxBitrate");
     m_maxBitrateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("parControl"))
-  {
+  if (jsonValue.ValueExists("parControl")) {
     m_parControl = Vp8ParControlMapper::GetVp8ParControlForName(jsonValue.GetString("parControl"));
     m_parControlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("parDenominator"))
-  {
+  if (jsonValue.ValueExists("parDenominator")) {
     m_parDenominator = jsonValue.GetInteger("parDenominator");
     m_parDenominatorHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("parNumerator"))
-  {
+  if (jsonValue.ValueExists("parNumerator")) {
     m_parNumerator = jsonValue.GetInteger("parNumerator");
     m_parNumeratorHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("qualityTuningLevel"))
-  {
+  if (jsonValue.ValueExists("qualityTuningLevel")) {
     m_qualityTuningLevel = Vp8QualityTuningLevelMapper::GetVp8QualityTuningLevelForName(jsonValue.GetString("qualityTuningLevel"));
     m_qualityTuningLevelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("rateControlMode"))
-  {
+  if (jsonValue.ValueExists("rateControlMode")) {
     m_rateControlMode = Vp8RateControlModeMapper::GetVp8RateControlModeForName(jsonValue.GetString("rateControlMode"));
     m_rateControlModeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Vp8Settings::Jsonize() const
-{
+JsonValue Vp8Settings::Jsonize() const {
   JsonValue payload;
 
-  if(m_bitrateHasBeenSet)
-  {
-   payload.WithInteger("bitrate", m_bitrate);
-
+  if (m_bitrateHasBeenSet) {
+    payload.WithInteger("bitrate", m_bitrate);
   }
 
-  if(m_framerateControlHasBeenSet)
-  {
-   payload.WithString("framerateControl", Vp8FramerateControlMapper::GetNameForVp8FramerateControl(m_framerateControl));
+  if (m_framerateControlHasBeenSet) {
+    payload.WithString("framerateControl", Vp8FramerateControlMapper::GetNameForVp8FramerateControl(m_framerateControl));
   }
 
-  if(m_framerateConversionAlgorithmHasBeenSet)
-  {
-   payload.WithString("framerateConversionAlgorithm", Vp8FramerateConversionAlgorithmMapper::GetNameForVp8FramerateConversionAlgorithm(m_framerateConversionAlgorithm));
+  if (m_framerateConversionAlgorithmHasBeenSet) {
+    payload.WithString("framerateConversionAlgorithm",
+                       Vp8FramerateConversionAlgorithmMapper::GetNameForVp8FramerateConversionAlgorithm(m_framerateConversionAlgorithm));
   }
 
-  if(m_framerateDenominatorHasBeenSet)
-  {
-   payload.WithInteger("framerateDenominator", m_framerateDenominator);
-
+  if (m_framerateDenominatorHasBeenSet) {
+    payload.WithInteger("framerateDenominator", m_framerateDenominator);
   }
 
-  if(m_framerateNumeratorHasBeenSet)
-  {
-   payload.WithInteger("framerateNumerator", m_framerateNumerator);
-
+  if (m_framerateNumeratorHasBeenSet) {
+    payload.WithInteger("framerateNumerator", m_framerateNumerator);
   }
 
-  if(m_gopSizeHasBeenSet)
-  {
-   payload.WithDouble("gopSize", m_gopSize);
-
+  if (m_gopSizeHasBeenSet) {
+    payload.WithDouble("gopSize", m_gopSize);
   }
 
-  if(m_hrdBufferSizeHasBeenSet)
-  {
-   payload.WithInteger("hrdBufferSize", m_hrdBufferSize);
-
+  if (m_hrdBufferSizeHasBeenSet) {
+    payload.WithInteger("hrdBufferSize", m_hrdBufferSize);
   }
 
-  if(m_maxBitrateHasBeenSet)
-  {
-   payload.WithInteger("maxBitrate", m_maxBitrate);
-
+  if (m_maxBitrateHasBeenSet) {
+    payload.WithInteger("maxBitrate", m_maxBitrate);
   }
 
-  if(m_parControlHasBeenSet)
-  {
-   payload.WithString("parControl", Vp8ParControlMapper::GetNameForVp8ParControl(m_parControl));
+  if (m_parControlHasBeenSet) {
+    payload.WithString("parControl", Vp8ParControlMapper::GetNameForVp8ParControl(m_parControl));
   }
 
-  if(m_parDenominatorHasBeenSet)
-  {
-   payload.WithInteger("parDenominator", m_parDenominator);
-
+  if (m_parDenominatorHasBeenSet) {
+    payload.WithInteger("parDenominator", m_parDenominator);
   }
 
-  if(m_parNumeratorHasBeenSet)
-  {
-   payload.WithInteger("parNumerator", m_parNumerator);
-
+  if (m_parNumeratorHasBeenSet) {
+    payload.WithInteger("parNumerator", m_parNumerator);
   }
 
-  if(m_qualityTuningLevelHasBeenSet)
-  {
-   payload.WithString("qualityTuningLevel", Vp8QualityTuningLevelMapper::GetNameForVp8QualityTuningLevel(m_qualityTuningLevel));
+  if (m_qualityTuningLevelHasBeenSet) {
+    payload.WithString("qualityTuningLevel", Vp8QualityTuningLevelMapper::GetNameForVp8QualityTuningLevel(m_qualityTuningLevel));
   }
 
-  if(m_rateControlModeHasBeenSet)
-  {
-   payload.WithString("rateControlMode", Vp8RateControlModeMapper::GetNameForVp8RateControlMode(m_rateControlMode));
+  if (m_rateControlModeHasBeenSet) {
+    payload.WithString("rateControlMode", Vp8RateControlModeMapper::GetNameForVp8RateControlMode(m_rateControlMode));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

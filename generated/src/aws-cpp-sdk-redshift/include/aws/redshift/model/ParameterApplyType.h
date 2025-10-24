@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/redshift/Redshift_EXPORTS.h>
 
-namespace Aws
-{
-namespace Redshift
-{
-namespace Model
-{
-  enum class ParameterApplyType
-  {
-    NOT_SET,
-    static_,
-    dynamic
-  };
+namespace Aws {
+namespace Redshift {
+namespace Model {
+enum class ParameterApplyType { NOT_SET, static_, dynamic };
 
-namespace ParameterApplyTypeMapper
-{
+namespace ParameterApplyTypeMapper {
 AWS_REDSHIFT_API ParameterApplyType GetParameterApplyTypeForName(const Aws::String& name);
 
 AWS_REDSHIFT_API Aws::String GetNameForParameterApplyType(ParameterApplyType value);
-} // namespace ParameterApplyTypeMapper
-} // namespace Model
-} // namespace Redshift
-} // namespace Aws
+}  // namespace ParameterApplyTypeMapper
+}  // namespace Model
+}  // namespace Redshift
+}  // namespace Aws

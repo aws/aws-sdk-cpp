@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3tables/model/CreateNamespaceResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/s3tables/model/CreateNamespaceResult.h>
 
 #include <utility>
 
@@ -17,24 +17,17 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateNamespaceResult::CreateNamespaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+CreateNamespaceResult::CreateNamespaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-CreateNamespaceResult& CreateNamespaceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+CreateNamespaceResult& CreateNamespaceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("tableBucketARN"))
-  {
+  if (jsonValue.ValueExists("tableBucketARN")) {
     m_tableBucketARN = jsonValue.GetString("tableBucketARN");
     m_tableBucketARNHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("namespace"))
-  {
+  if (jsonValue.ValueExists("namespace")) {
     Aws::Utils::Array<JsonView> namespaceJsonList = jsonValue.GetArray("namespace");
-    for(unsigned namespaceIndex = 0; namespaceIndex < namespaceJsonList.GetLength(); ++namespaceIndex)
-    {
+    for (unsigned namespaceIndex = 0; namespaceIndex < namespaceJsonList.GetLength(); ++namespaceIndex) {
       m_namespace.push_back(namespaceJsonList[namespaceIndex].AsString());
     }
     m_namespaceHasBeenSet = true;
@@ -42,12 +35,10 @@ CreateNamespaceResult& CreateNamespaceResult::operator =(const Aws::AmazonWebSer
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

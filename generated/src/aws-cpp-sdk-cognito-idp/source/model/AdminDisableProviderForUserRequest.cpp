@@ -12,33 +12,22 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AdminDisableProviderForUserRequest::SerializePayload() const
-{
+Aws::String AdminDisableProviderForUserRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_userPoolIdHasBeenSet)
-  {
-   payload.WithString("UserPoolId", m_userPoolId);
-
+  if (m_userPoolIdHasBeenSet) {
+    payload.WithString("UserPoolId", m_userPoolId);
   }
 
-  if(m_userHasBeenSet)
-  {
-   payload.WithObject("User", m_user.Jsonize());
-
+  if (m_userHasBeenSet) {
+    payload.WithObject("User", m_user.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection AdminDisableProviderForUserRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection AdminDisableProviderForUserRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityProviderService.AdminDisableProviderForUser"));
   return headers;
-
 }
-
-
-
-

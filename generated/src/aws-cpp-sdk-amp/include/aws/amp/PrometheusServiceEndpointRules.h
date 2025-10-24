@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/amp/PrometheusService_EXPORTS.h>
 
-namespace Aws
-{
-namespace PrometheusService
-{
-class PrometheusServiceEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace PrometheusService {
+class PrometheusServiceEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace PrometheusService
-} // namespace Aws
+}  // namespace PrometheusService
+}  // namespace Aws

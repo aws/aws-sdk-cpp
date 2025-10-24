@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/RuleGroupDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/RuleGroupDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-RuleGroupDetails::RuleGroupDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RuleGroupDetails::RuleGroupDetails(JsonView jsonValue) { *this = jsonValue; }
 
-RuleGroupDetails& RuleGroupDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RuleVariables"))
-  {
+RuleGroupDetails& RuleGroupDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RuleVariables")) {
     m_ruleVariables = jsonValue.GetObject("RuleVariables");
     m_ruleVariablesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RulesSource"))
-  {
+  if (jsonValue.ValueExists("RulesSource")) {
     m_rulesSource = jsonValue.GetObject("RulesSource");
     m_rulesSourceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RuleGroupDetails::Jsonize() const
-{
+JsonValue RuleGroupDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_ruleVariablesHasBeenSet)
-  {
-   payload.WithObject("RuleVariables", m_ruleVariables.Jsonize());
-
+  if (m_ruleVariablesHasBeenSet) {
+    payload.WithObject("RuleVariables", m_ruleVariables.Jsonize());
   }
 
-  if(m_rulesSourceHasBeenSet)
-  {
-   payload.WithObject("RulesSource", m_rulesSource.Jsonize());
-
+  if (m_rulesSourceHasBeenSet) {
+    payload.WithObject("RulesSource", m_rulesSource.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

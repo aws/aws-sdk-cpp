@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/storagegateway/StorageGateway_EXPORTS.h>
 
-namespace Aws
-{
-namespace StorageGateway
-{
-namespace Model
-{
-  enum class AutomaticUpdatePolicy
-  {
-    NOT_SET,
-    ALL_VERSIONS,
-    EMERGENCY_VERSIONS_ONLY
-  };
+namespace Aws {
+namespace StorageGateway {
+namespace Model {
+enum class AutomaticUpdatePolicy { NOT_SET, ALL_VERSIONS, EMERGENCY_VERSIONS_ONLY };
 
-namespace AutomaticUpdatePolicyMapper
-{
+namespace AutomaticUpdatePolicyMapper {
 AWS_STORAGEGATEWAY_API AutomaticUpdatePolicy GetAutomaticUpdatePolicyForName(const Aws::String& name);
 
 AWS_STORAGEGATEWAY_API Aws::String GetNameForAutomaticUpdatePolicy(AutomaticUpdatePolicy value);
-} // namespace AutomaticUpdatePolicyMapper
-} // namespace Model
-} // namespace StorageGateway
-} // namespace Aws
+}  // namespace AutomaticUpdatePolicyMapper
+}  // namespace Model
+}  // namespace StorageGateway
+}  // namespace Aws

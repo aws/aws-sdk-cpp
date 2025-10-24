@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudTrailData
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudTrailData {
+namespace Model {
 
-AuditEventResultEntry::AuditEventResultEntry(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AuditEventResultEntry::AuditEventResultEntry(JsonView jsonValue) { *this = jsonValue; }
 
-AuditEventResultEntry& AuditEventResultEntry::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("eventID"))
-  {
+AuditEventResultEntry& AuditEventResultEntry::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("eventID")) {
     m_eventID = jsonValue.GetString("eventID");
     m_eventIDHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("id"))
-  {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AuditEventResultEntry::Jsonize() const
-{
+JsonValue AuditEventResultEntry::Jsonize() const {
   JsonValue payload;
 
-  if(m_eventIDHasBeenSet)
-  {
-   payload.WithString("eventID", m_eventID);
-
+  if (m_eventIDHasBeenSet) {
+    payload.WithString("eventID", m_eventID);
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudTrailData
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudTrailData
+}  // namespace Aws

@@ -3,71 +3,57 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/GetCapacityManagerMetricDimensionsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/GetCapacityManagerMetricDimensionsRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String GetCapacityManagerMetricDimensionsRequest::SerializePayload() const
-{
+Aws::String GetCapacityManagerMetricDimensionsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetCapacityManagerMetricDimensions&";
-  if(m_groupByHasBeenSet)
-  {
+  if (m_groupByHasBeenSet) {
     unsigned groupByCount = 1;
-    for(auto& item : m_groupBy)
-    {
-      ss << "GroupBy." << groupByCount << "="
-          << StringUtils::URLEncode(GroupByMapper::GetNameForGroupBy(item)) << "&";
+    for (auto& item : m_groupBy) {
+      ss << "GroupBy." << groupByCount << "=" << StringUtils::URLEncode(GroupByMapper::GetNameForGroupBy(item)) << "&";
       groupByCount++;
     }
   }
 
-  if(m_filterByHasBeenSet)
-  {
+  if (m_filterByHasBeenSet) {
     unsigned filterByCount = 1;
-    for(auto& item : m_filterBy)
-    {
+    for (auto& item : m_filterBy) {
       item.OutputToStream(ss, "FilterBy.", filterByCount, "");
       filterByCount++;
     }
   }
 
-  if(m_startTimeHasBeenSet)
-  {
+  if (m_startTimeHasBeenSet) {
     ss << "StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_endTimeHasBeenSet)
-  {
+  if (m_endTimeHasBeenSet) {
     ss << "EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_metricNamesHasBeenSet)
-  {
+  if (m_metricNamesHasBeenSet) {
     unsigned metricNamesCount = 1;
-    for(auto& item : m_metricNames)
-    {
-      ss << "MetricName." << metricNamesCount << "="
-          << StringUtils::URLEncode(MetricMapper::GetNameForMetric(item)) << "&";
+    for (auto& item : m_metricNames) {
+      ss << "MetricName." << metricNamesCount << "=" << StringUtils::URLEncode(MetricMapper::GetNameForMetric(item)) << "&";
       metricNamesCount++;
     }
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
+  if (m_maxResultsHasBeenSet) {
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -75,8 +61,4 @@ Aws::String GetCapacityManagerMetricDimensionsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetCapacityManagerMetricDimensionsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetCapacityManagerMetricDimensionsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

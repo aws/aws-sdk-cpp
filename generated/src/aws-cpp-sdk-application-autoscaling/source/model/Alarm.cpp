@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApplicationAutoScaling
-{
-namespace Model
-{
+namespace Aws {
+namespace ApplicationAutoScaling {
+namespace Model {
 
-Alarm::Alarm(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Alarm::Alarm(JsonView jsonValue) { *this = jsonValue; }
 
-Alarm& Alarm::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AlarmName"))
-  {
+Alarm& Alarm::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AlarmName")) {
     m_alarmName = jsonValue.GetString("AlarmName");
     m_alarmNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AlarmARN"))
-  {
+  if (jsonValue.ValueExists("AlarmARN")) {
     m_alarmARN = jsonValue.GetString("AlarmARN");
     m_alarmARNHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Alarm::Jsonize() const
-{
+JsonValue Alarm::Jsonize() const {
   JsonValue payload;
 
-  if(m_alarmNameHasBeenSet)
-  {
-   payload.WithString("AlarmName", m_alarmName);
-
+  if (m_alarmNameHasBeenSet) {
+    payload.WithString("AlarmName", m_alarmName);
   }
 
-  if(m_alarmARNHasBeenSet)
-  {
-   payload.WithString("AlarmARN", m_alarmARN);
-
+  if (m_alarmARNHasBeenSet) {
+    payload.WithString("AlarmARN", m_alarmARN);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApplicationAutoScaling
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApplicationAutoScaling
+}  // namespace Aws

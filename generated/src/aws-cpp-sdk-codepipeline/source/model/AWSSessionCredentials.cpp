@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
 
-AWSSessionCredentials::AWSSessionCredentials(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AWSSessionCredentials::AWSSessionCredentials(JsonView jsonValue) { *this = jsonValue; }
 
-AWSSessionCredentials& AWSSessionCredentials::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("accessKeyId"))
-  {
+AWSSessionCredentials& AWSSessionCredentials::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("accessKeyId")) {
     m_accessKeyId = jsonValue.GetString("accessKeyId");
     m_accessKeyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("secretAccessKey"))
-  {
+  if (jsonValue.ValueExists("secretAccessKey")) {
     m_secretAccessKey = jsonValue.GetString("secretAccessKey");
     m_secretAccessKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sessionToken"))
-  {
+  if (jsonValue.ValueExists("sessionToken")) {
     m_sessionToken = jsonValue.GetString("sessionToken");
     m_sessionTokenHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AWSSessionCredentials::Jsonize() const
-{
+JsonValue AWSSessionCredentials::Jsonize() const {
   JsonValue payload;
 
-  if(m_accessKeyIdHasBeenSet)
-  {
-   payload.WithString("accessKeyId", m_accessKeyId);
-
+  if (m_accessKeyIdHasBeenSet) {
+    payload.WithString("accessKeyId", m_accessKeyId);
   }
 
-  if(m_secretAccessKeyHasBeenSet)
-  {
-   payload.WithString("secretAccessKey", m_secretAccessKey);
-
+  if (m_secretAccessKeyHasBeenSet) {
+    payload.WithString("secretAccessKey", m_secretAccessKey);
   }
 
-  if(m_sessionTokenHasBeenSet)
-  {
-   payload.WithString("sessionToken", m_sessionToken);
-
+  if (m_sessionTokenHasBeenSet) {
+    payload.WithString("sessionToken", m_sessionToken);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

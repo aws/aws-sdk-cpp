@@ -4,73 +4,80 @@
  */
 
 #pragma once
-#include <aws/storagegateway/StorageGateway_EXPORTS.h>
-#include <aws/storagegateway/StorageGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/storagegateway/StorageGatewayRequest.h>
+#include <aws/storagegateway/StorageGateway_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace StorageGateway
-{
-namespace Model
-{
+namespace Aws {
+namespace StorageGateway {
+namespace Model {
 
+/**
+ * <p>A JSON object containing the following fields:</p> <ul> <li> <p>
+ * <a>DeleteBandwidthRateLimitInput$BandwidthType</a> </p> </li> </ul><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteBandwidthRateLimitInput">AWS
+ * API Reference</a></p>
+ */
+class DeleteBandwidthRateLimitRequest : public StorageGatewayRequest {
+ public:
+  AWS_STORAGEGATEWAY_API DeleteBandwidthRateLimitRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeleteBandwidthRateLimit"; }
+
+  AWS_STORAGEGATEWAY_API Aws::String SerializePayload() const override;
+
+  AWS_STORAGEGATEWAY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
+
+  inline const Aws::String& GetGatewayARN() const { return m_gatewayARN; }
+  inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
+  template <typename GatewayARNT = Aws::String>
+  void SetGatewayARN(GatewayARNT&& value) {
+    m_gatewayARNHasBeenSet = true;
+    m_gatewayARN = std::forward<GatewayARNT>(value);
+  }
+  template <typename GatewayARNT = Aws::String>
+  DeleteBandwidthRateLimitRequest& WithGatewayARN(GatewayARNT&& value) {
+    SetGatewayARN(std::forward<GatewayARNT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
-   * <p>A JSON object containing the following fields:</p> <ul> <li> <p>
-   * <a>DeleteBandwidthRateLimitInput$BandwidthType</a> </p> </li> </ul><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteBandwidthRateLimitInput">AWS
-   * API Reference</a></p>
+   * <p>One of the BandwidthType values that indicates the gateway bandwidth rate
+   * limit to delete.</p> <p>Valid Values: <code>UPLOAD</code> |
+   * <code>DOWNLOAD</code> | <code>ALL</code> </p>
    */
-  class DeleteBandwidthRateLimitRequest : public StorageGatewayRequest
-  {
-  public:
-    AWS_STORAGEGATEWAY_API DeleteBandwidthRateLimitRequest() = default;
+  inline const Aws::String& GetBandwidthType() const { return m_bandwidthType; }
+  inline bool BandwidthTypeHasBeenSet() const { return m_bandwidthTypeHasBeenSet; }
+  template <typename BandwidthTypeT = Aws::String>
+  void SetBandwidthType(BandwidthTypeT&& value) {
+    m_bandwidthTypeHasBeenSet = true;
+    m_bandwidthType = std::forward<BandwidthTypeT>(value);
+  }
+  template <typename BandwidthTypeT = Aws::String>
+  DeleteBandwidthRateLimitRequest& WithBandwidthType(BandwidthTypeT&& value) {
+    SetBandwidthType(std::forward<BandwidthTypeT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_gatewayARN;
+  bool m_gatewayARNHasBeenSet = false;
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DeleteBandwidthRateLimit"; }
+  Aws::String m_bandwidthType;
+  bool m_bandwidthTypeHasBeenSet = false;
+};
 
-    AWS_STORAGEGATEWAY_API Aws::String SerializePayload() const override;
-
-    AWS_STORAGEGATEWAY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    ///@{
-    
-    inline const Aws::String& GetGatewayARN() const { return m_gatewayARN; }
-    inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
-    template<typename GatewayARNT = Aws::String>
-    void SetGatewayARN(GatewayARNT&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::forward<GatewayARNT>(value); }
-    template<typename GatewayARNT = Aws::String>
-    DeleteBandwidthRateLimitRequest& WithGatewayARN(GatewayARNT&& value) { SetGatewayARN(std::forward<GatewayARNT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>One of the BandwidthType values that indicates the gateway bandwidth rate
-     * limit to delete.</p> <p>Valid Values: <code>UPLOAD</code> |
-     * <code>DOWNLOAD</code> | <code>ALL</code> </p>
-     */
-    inline const Aws::String& GetBandwidthType() const { return m_bandwidthType; }
-    inline bool BandwidthTypeHasBeenSet() const { return m_bandwidthTypeHasBeenSet; }
-    template<typename BandwidthTypeT = Aws::String>
-    void SetBandwidthType(BandwidthTypeT&& value) { m_bandwidthTypeHasBeenSet = true; m_bandwidthType = std::forward<BandwidthTypeT>(value); }
-    template<typename BandwidthTypeT = Aws::String>
-    DeleteBandwidthRateLimitRequest& WithBandwidthType(BandwidthTypeT&& value) { SetBandwidthType(std::forward<BandwidthTypeT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_gatewayARN;
-    bool m_gatewayARNHasBeenSet = false;
-
-    Aws::String m_bandwidthType;
-    bool m_bandwidthTypeHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace StorageGateway
-} // namespace Aws
+}  // namespace Model
+}  // namespace StorageGateway
+}  // namespace Aws

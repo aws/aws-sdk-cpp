@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Chime
-{
-namespace Model
-{
+namespace Aws {
+namespace Chime {
+namespace Model {
 
-RetentionSettings::RetentionSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RetentionSettings::RetentionSettings(JsonView jsonValue) { *this = jsonValue; }
 
-RetentionSettings& RetentionSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RoomRetentionSettings"))
-  {
+RetentionSettings& RetentionSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RoomRetentionSettings")) {
     m_roomRetentionSettings = jsonValue.GetObject("RoomRetentionSettings");
     m_roomRetentionSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ConversationRetentionSettings"))
-  {
+  if (jsonValue.ValueExists("ConversationRetentionSettings")) {
     m_conversationRetentionSettings = jsonValue.GetObject("ConversationRetentionSettings");
     m_conversationRetentionSettingsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RetentionSettings::Jsonize() const
-{
+JsonValue RetentionSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_roomRetentionSettingsHasBeenSet)
-  {
-   payload.WithObject("RoomRetentionSettings", m_roomRetentionSettings.Jsonize());
-
+  if (m_roomRetentionSettingsHasBeenSet) {
+    payload.WithObject("RoomRetentionSettings", m_roomRetentionSettings.Jsonize());
   }
 
-  if(m_conversationRetentionSettingsHasBeenSet)
-  {
-   payload.WithObject("ConversationRetentionSettings", m_conversationRetentionSettings.Jsonize());
-
+  if (m_conversationRetentionSettingsHasBeenSet) {
+    payload.WithObject("ConversationRetentionSettings", m_conversationRetentionSettings.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Chime
-} // namespace Aws
+}  // namespace Model
+}  // namespace Chime
+}  // namespace Aws

@@ -12,38 +12,26 @@ using namespace Aws::BCMDataExports::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetTableRequest::SerializePayload() const
-{
+Aws::String GetTableRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_tableNameHasBeenSet)
-  {
-   payload.WithString("TableName", m_tableName);
-
+  if (m_tableNameHasBeenSet) {
+    payload.WithString("TableName", m_tableName);
   }
 
-  if(m_tablePropertiesHasBeenSet)
-  {
-   JsonValue tablePropertiesJsonMap;
-   for(auto& tablePropertiesItem : m_tableProperties)
-   {
-     tablePropertiesJsonMap.WithString(tablePropertiesItem.first, tablePropertiesItem.second);
-   }
-   payload.WithObject("TableProperties", std::move(tablePropertiesJsonMap));
-
+  if (m_tablePropertiesHasBeenSet) {
+    JsonValue tablePropertiesJsonMap;
+    for (auto& tablePropertiesItem : m_tableProperties) {
+      tablePropertiesJsonMap.WithString(tablePropertiesItem.first, tablePropertiesItem.second);
+    }
+    payload.WithObject("TableProperties", std::move(tablePropertiesJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetTableRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetTableRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSBillingAndCostManagementDataExports.GetTable"));
   return headers;
-
 }
-
-
-
-

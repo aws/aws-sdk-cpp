@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/workdocs/WorkDocs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workdocs/WorkDocs_EXPORTS.h>
 
-namespace Aws
-{
-namespace WorkDocs
-{
-namespace Model
-{
-  enum class AdditionalResponseFieldType
-  {
-    NOT_SET,
-    WEBURL
-  };
+namespace Aws {
+namespace WorkDocs {
+namespace Model {
+enum class AdditionalResponseFieldType { NOT_SET, WEBURL };
 
-namespace AdditionalResponseFieldTypeMapper
-{
+namespace AdditionalResponseFieldTypeMapper {
 AWS_WORKDOCS_API AdditionalResponseFieldType GetAdditionalResponseFieldTypeForName(const Aws::String& name);
 
 AWS_WORKDOCS_API Aws::String GetNameForAdditionalResponseFieldType(AdditionalResponseFieldType value);
-} // namespace AdditionalResponseFieldTypeMapper
-} // namespace Model
-} // namespace WorkDocs
-} // namespace Aws
+}  // namespace AdditionalResponseFieldTypeMapper
+}  // namespace Model
+}  // namespace WorkDocs
+}  // namespace Aws

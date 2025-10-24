@@ -12,19 +12,12 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateQueueOutboundEmailConfigRequest::SerializePayload() const
-{
+Aws::String UpdateQueueOutboundEmailConfigRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_outboundEmailConfigHasBeenSet)
-  {
-   payload.WithObject("OutboundEmailConfig", m_outboundEmailConfig.Jsonize());
-
+  if (m_outboundEmailConfigHasBeenSet) {
+    payload.WithObject("OutboundEmailConfig", m_outboundEmailConfig.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

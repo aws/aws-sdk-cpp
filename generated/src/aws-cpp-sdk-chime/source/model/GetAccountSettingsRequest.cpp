@@ -12,11 +12,4 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetAccountSettingsRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetAccountSettingsRequest::SerializePayload() const { return {}; }

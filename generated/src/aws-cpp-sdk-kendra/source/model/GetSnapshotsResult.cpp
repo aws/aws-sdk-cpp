@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kendra/model/GetSnapshotsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/kendra/model/GetSnapshotsResult.h>
 
 #include <utility>
 
@@ -17,58 +17,47 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSnapshotsResult::GetSnapshotsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetSnapshotsResult::GetSnapshotsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetSnapshotsResult& GetSnapshotsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetSnapshotsResult& GetSnapshotsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("SnapShotTimeFilter"))
-  {
+  if (jsonValue.ValueExists("SnapShotTimeFilter")) {
     m_snapShotTimeFilter = jsonValue.GetObject("SnapShotTimeFilter");
     m_snapShotTimeFilterHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SnapshotsDataHeader"))
-  {
+  if (jsonValue.ValueExists("SnapshotsDataHeader")) {
     Aws::Utils::Array<JsonView> snapshotsDataHeaderJsonList = jsonValue.GetArray("SnapshotsDataHeader");
-    for(unsigned snapshotsDataHeaderIndex = 0; snapshotsDataHeaderIndex < snapshotsDataHeaderJsonList.GetLength(); ++snapshotsDataHeaderIndex)
-    {
+    for (unsigned snapshotsDataHeaderIndex = 0; snapshotsDataHeaderIndex < snapshotsDataHeaderJsonList.GetLength();
+         ++snapshotsDataHeaderIndex) {
       m_snapshotsDataHeader.push_back(snapshotsDataHeaderJsonList[snapshotsDataHeaderIndex].AsString());
     }
     m_snapshotsDataHeaderHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SnapshotsData"))
-  {
+  if (jsonValue.ValueExists("SnapshotsData")) {
     Aws::Utils::Array<JsonView> snapshotsDataJsonList = jsonValue.GetArray("SnapshotsData");
-    for(unsigned snapshotsDataIndex = 0; snapshotsDataIndex < snapshotsDataJsonList.GetLength(); ++snapshotsDataIndex)
-    {
+    for (unsigned snapshotsDataIndex = 0; snapshotsDataIndex < snapshotsDataJsonList.GetLength(); ++snapshotsDataIndex) {
       Aws::Utils::Array<JsonView> snapshotsDataRecordJsonList = snapshotsDataJsonList[snapshotsDataIndex].AsArray();
       Aws::Vector<Aws::String> snapshotsDataRecordList;
       snapshotsDataRecordList.reserve((size_t)snapshotsDataRecordJsonList.GetLength());
-      for(unsigned snapshotsDataRecordIndex = 0; snapshotsDataRecordIndex < snapshotsDataRecordJsonList.GetLength(); ++snapshotsDataRecordIndex)
-      {
+      for (unsigned snapshotsDataRecordIndex = 0; snapshotsDataRecordIndex < snapshotsDataRecordJsonList.GetLength();
+           ++snapshotsDataRecordIndex) {
         snapshotsDataRecordList.push_back(snapshotsDataRecordJsonList[snapshotsDataRecordIndex].AsString());
       }
       m_snapshotsData.push_back(std::move(snapshotsDataRecordList));
     }
     m_snapshotsDataHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

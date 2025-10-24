@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconnect/model/AddBridgeSourceRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconnect/model/AddBridgeSourceRequest.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConnect {
+namespace Model {
 
-AddBridgeSourceRequest::AddBridgeSourceRequest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AddBridgeSourceRequest::AddBridgeSourceRequest(JsonView jsonValue) { *this = jsonValue; }
 
-AddBridgeSourceRequest& AddBridgeSourceRequest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("flowSource"))
-  {
+AddBridgeSourceRequest& AddBridgeSourceRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("flowSource")) {
     m_flowSource = jsonValue.GetObject("flowSource");
     m_flowSourceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("networkSource"))
-  {
+  if (jsonValue.ValueExists("networkSource")) {
     m_networkSource = jsonValue.GetObject("networkSource");
     m_networkSourceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AddBridgeSourceRequest::Jsonize() const
-{
+JsonValue AddBridgeSourceRequest::Jsonize() const {
   JsonValue payload;
 
-  if(m_flowSourceHasBeenSet)
-  {
-   payload.WithObject("flowSource", m_flowSource.Jsonize());
-
+  if (m_flowSourceHasBeenSet) {
+    payload.WithObject("flowSource", m_flowSource.Jsonize());
   }
 
-  if(m_networkSourceHasBeenSet)
-  {
-   payload.WithObject("networkSource", m_networkSource.Jsonize());
-
+  if (m_networkSourceHasBeenSet) {
+    payload.WithObject("networkSource", m_networkSource.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConnect
+}  // namespace Aws

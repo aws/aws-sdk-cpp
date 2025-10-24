@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/opensearch/model/AuthorizedPrincipal.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/opensearch/model/AuthorizedPrincipal.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace OpenSearchService
-{
-namespace Model
-{
+namespace Aws {
+namespace OpenSearchService {
+namespace Model {
 
-AuthorizedPrincipal::AuthorizedPrincipal(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AuthorizedPrincipal::AuthorizedPrincipal(JsonView jsonValue) { *this = jsonValue; }
 
-AuthorizedPrincipal& AuthorizedPrincipal::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PrincipalType"))
-  {
+AuthorizedPrincipal& AuthorizedPrincipal::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PrincipalType")) {
     m_principalType = PrincipalTypeMapper::GetPrincipalTypeForName(jsonValue.GetString("PrincipalType"));
     m_principalTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Principal"))
-  {
+  if (jsonValue.ValueExists("Principal")) {
     m_principal = jsonValue.GetString("Principal");
     m_principalHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AuthorizedPrincipal::Jsonize() const
-{
+JsonValue AuthorizedPrincipal::Jsonize() const {
   JsonValue payload;
 
-  if(m_principalTypeHasBeenSet)
-  {
-   payload.WithString("PrincipalType", PrincipalTypeMapper::GetNameForPrincipalType(m_principalType));
+  if (m_principalTypeHasBeenSet) {
+    payload.WithString("PrincipalType", PrincipalTypeMapper::GetNameForPrincipalType(m_principalType));
   }
 
-  if(m_principalHasBeenSet)
-  {
-   payload.WithString("Principal", m_principal);
-
+  if (m_principalHasBeenSet) {
+    payload.WithString("Principal", m_principal);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace OpenSearchService
-} // namespace Aws
+}  // namespace Model
+}  // namespace OpenSearchService
+}  // namespace Aws

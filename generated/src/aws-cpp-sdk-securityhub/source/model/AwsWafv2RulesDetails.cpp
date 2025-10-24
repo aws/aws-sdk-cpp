@@ -3,93 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsWafv2RulesDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsWafv2RulesDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsWafv2RulesDetails::AwsWafv2RulesDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsWafv2RulesDetails::AwsWafv2RulesDetails(JsonView jsonValue) { *this = jsonValue; }
 
-AwsWafv2RulesDetails& AwsWafv2RulesDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Action"))
-  {
+AwsWafv2RulesDetails& AwsWafv2RulesDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Action")) {
     m_action = jsonValue.GetObject("Action");
     m_actionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OverrideAction"))
-  {
+  if (jsonValue.ValueExists("OverrideAction")) {
     m_overrideAction = jsonValue.GetString("OverrideAction");
     m_overrideActionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Priority"))
-  {
+  if (jsonValue.ValueExists("Priority")) {
     m_priority = jsonValue.GetInteger("Priority");
     m_priorityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VisibilityConfig"))
-  {
+  if (jsonValue.ValueExists("VisibilityConfig")) {
     m_visibilityConfig = jsonValue.GetObject("VisibilityConfig");
     m_visibilityConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsWafv2RulesDetails::Jsonize() const
-{
+JsonValue AwsWafv2RulesDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_actionHasBeenSet)
-  {
-   payload.WithObject("Action", m_action.Jsonize());
-
+  if (m_actionHasBeenSet) {
+    payload.WithObject("Action", m_action.Jsonize());
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_overrideActionHasBeenSet)
-  {
-   payload.WithString("OverrideAction", m_overrideAction);
-
+  if (m_overrideActionHasBeenSet) {
+    payload.WithString("OverrideAction", m_overrideAction);
   }
 
-  if(m_priorityHasBeenSet)
-  {
-   payload.WithInteger("Priority", m_priority);
-
+  if (m_priorityHasBeenSet) {
+    payload.WithInteger("Priority", m_priority);
   }
 
-  if(m_visibilityConfigHasBeenSet)
-  {
-   payload.WithObject("VisibilityConfig", m_visibilityConfig.Jsonize());
-
+  if (m_visibilityConfigHasBeenSet) {
+    payload.WithObject("VisibilityConfig", m_visibilityConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

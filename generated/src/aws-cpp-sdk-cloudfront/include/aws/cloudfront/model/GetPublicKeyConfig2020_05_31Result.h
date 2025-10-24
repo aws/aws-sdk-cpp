@@ -7,74 +7,85 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/model/PublicKeyConfig.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Xml
-{
-  class XmlDocument;
-} // namespace Xml
-} // namespace Utils
-namespace CloudFront
-{
-namespace Model
-{
-  class GetPublicKeyConfig2020_05_31Result
-  {
-  public:
-    AWS_CLOUDFRONT_API GetPublicKeyConfig2020_05_31Result() = default;
-    AWS_CLOUDFRONT_API GetPublicKeyConfig2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AWS_CLOUDFRONT_API GetPublicKeyConfig2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+namespace Utils {
+namespace Xml {
+class XmlDocument;
+}  // namespace Xml
+}  // namespace Utils
+namespace CloudFront {
+namespace Model {
+class GetPublicKeyConfig2020_05_31Result {
+ public:
+  AWS_CLOUDFRONT_API GetPublicKeyConfig2020_05_31Result() = default;
+  AWS_CLOUDFRONT_API GetPublicKeyConfig2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_CLOUDFRONT_API GetPublicKeyConfig2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
+  ///@{
+  /**
+   * <p>A public key configuration.</p>
+   */
+  inline const PublicKeyConfig& GetPublicKeyConfig() const { return m_publicKeyConfig; }
+  template <typename PublicKeyConfigT = PublicKeyConfig>
+  void SetPublicKeyConfig(PublicKeyConfigT&& value) {
+    m_publicKeyConfigHasBeenSet = true;
+    m_publicKeyConfig = std::forward<PublicKeyConfigT>(value);
+  }
+  template <typename PublicKeyConfigT = PublicKeyConfig>
+  GetPublicKeyConfig2020_05_31Result& WithPublicKeyConfig(PublicKeyConfigT&& value) {
+    SetPublicKeyConfig(std::forward<PublicKeyConfigT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>A public key configuration.</p>
-     */
-    inline const PublicKeyConfig& GetPublicKeyConfig() const { return m_publicKeyConfig; }
-    template<typename PublicKeyConfigT = PublicKeyConfig>
-    void SetPublicKeyConfig(PublicKeyConfigT&& value) { m_publicKeyConfigHasBeenSet = true; m_publicKeyConfig = std::forward<PublicKeyConfigT>(value); }
-    template<typename PublicKeyConfigT = PublicKeyConfig>
-    GetPublicKeyConfig2020_05_31Result& WithPublicKeyConfig(PublicKeyConfigT&& value) { SetPublicKeyConfig(std::forward<PublicKeyConfigT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The identifier for this version of the public key configuration.</p>
+   */
+  inline const Aws::String& GetETag() const { return m_eTag; }
+  template <typename ETagT = Aws::String>
+  void SetETag(ETagT&& value) {
+    m_eTagHasBeenSet = true;
+    m_eTag = std::forward<ETagT>(value);
+  }
+  template <typename ETagT = Aws::String>
+  GetPublicKeyConfig2020_05_31Result& WithETag(ETagT&& value) {
+    SetETag(std::forward<ETagT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The identifier for this version of the public key configuration.</p>
-     */
-    inline const Aws::String& GetETag() const { return m_eTag; }
-    template<typename ETagT = Aws::String>
-    void SetETag(ETagT&& value) { m_eTagHasBeenSet = true; m_eTag = std::forward<ETagT>(value); }
-    template<typename ETagT = Aws::String>
-    GetPublicKeyConfig2020_05_31Result& WithETag(ETagT&& value) { SetETag(std::forward<ETagT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    GetPublicKeyConfig2020_05_31Result& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  GetPublicKeyConfig2020_05_31Result& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  PublicKeyConfig m_publicKeyConfig;
+  bool m_publicKeyConfigHasBeenSet = false;
 
-    PublicKeyConfig m_publicKeyConfig;
-    bool m_publicKeyConfigHasBeenSet = false;
+  Aws::String m_eTag;
+  bool m_eTagHasBeenSet = false;
 
-    Aws::String m_eTag;
-    bool m_eTagHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

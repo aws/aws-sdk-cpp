@@ -11,61 +11,45 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudDirectory
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudDirectory {
+namespace Model {
 
-BatchGetObjectInformationResponse::BatchGetObjectInformationResponse(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchGetObjectInformationResponse::BatchGetObjectInformationResponse(JsonView jsonValue) { *this = jsonValue; }
 
-BatchGetObjectInformationResponse& BatchGetObjectInformationResponse::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SchemaFacets"))
-  {
+BatchGetObjectInformationResponse& BatchGetObjectInformationResponse::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SchemaFacets")) {
     Aws::Utils::Array<JsonView> schemaFacetsJsonList = jsonValue.GetArray("SchemaFacets");
-    for(unsigned schemaFacetsIndex = 0; schemaFacetsIndex < schemaFacetsJsonList.GetLength(); ++schemaFacetsIndex)
-    {
+    for (unsigned schemaFacetsIndex = 0; schemaFacetsIndex < schemaFacetsJsonList.GetLength(); ++schemaFacetsIndex) {
       m_schemaFacets.push_back(schemaFacetsJsonList[schemaFacetsIndex].AsObject());
     }
     m_schemaFacetsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ObjectIdentifier"))
-  {
+  if (jsonValue.ValueExists("ObjectIdentifier")) {
     m_objectIdentifier = jsonValue.GetString("ObjectIdentifier");
     m_objectIdentifierHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BatchGetObjectInformationResponse::Jsonize() const
-{
+JsonValue BatchGetObjectInformationResponse::Jsonize() const {
   JsonValue payload;
 
-  if(m_schemaFacetsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> schemaFacetsJsonList(m_schemaFacets.size());
-   for(unsigned schemaFacetsIndex = 0; schemaFacetsIndex < schemaFacetsJsonList.GetLength(); ++schemaFacetsIndex)
-   {
-     schemaFacetsJsonList[schemaFacetsIndex].AsObject(m_schemaFacets[schemaFacetsIndex].Jsonize());
-   }
-   payload.WithArray("SchemaFacets", std::move(schemaFacetsJsonList));
-
+  if (m_schemaFacetsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> schemaFacetsJsonList(m_schemaFacets.size());
+    for (unsigned schemaFacetsIndex = 0; schemaFacetsIndex < schemaFacetsJsonList.GetLength(); ++schemaFacetsIndex) {
+      schemaFacetsJsonList[schemaFacetsIndex].AsObject(m_schemaFacets[schemaFacetsIndex].Jsonize());
+    }
+    payload.WithArray("SchemaFacets", std::move(schemaFacetsJsonList));
   }
 
-  if(m_objectIdentifierHasBeenSet)
-  {
-   payload.WithString("ObjectIdentifier", m_objectIdentifier);
-
+  if (m_objectIdentifierHasBeenSet) {
+    payload.WithString("ObjectIdentifier", m_objectIdentifier);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudDirectory
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudDirectory
+}  // namespace Aws

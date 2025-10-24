@@ -3,122 +3,94 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotanalytics/model/Channel.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotanalytics/model/Channel.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTAnalytics
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTAnalytics {
+namespace Model {
 
-Channel::Channel(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Channel::Channel(JsonView jsonValue) { *this = jsonValue; }
 
-Channel& Channel::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+Channel& Channel::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("storage"))
-  {
+  if (jsonValue.ValueExists("storage")) {
     m_storage = jsonValue.GetObject("storage");
     m_storageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("arn"))
-  {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = ChannelStatusMapper::GetChannelStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("retentionPeriod"))
-  {
+  if (jsonValue.ValueExists("retentionPeriod")) {
     m_retentionPeriod = jsonValue.GetObject("retentionPeriod");
     m_retentionPeriodHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("creationTime"))
-  {
+  if (jsonValue.ValueExists("creationTime")) {
     m_creationTime = jsonValue.GetDouble("creationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdateTime"))
-  {
+  if (jsonValue.ValueExists("lastUpdateTime")) {
     m_lastUpdateTime = jsonValue.GetDouble("lastUpdateTime");
     m_lastUpdateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastMessageArrivalTime"))
-  {
+  if (jsonValue.ValueExists("lastMessageArrivalTime")) {
     m_lastMessageArrivalTime = jsonValue.GetDouble("lastMessageArrivalTime");
     m_lastMessageArrivalTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Channel::Jsonize() const
-{
+JsonValue Channel::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_storageHasBeenSet)
-  {
-   payload.WithObject("storage", m_storage.Jsonize());
-
+  if (m_storageHasBeenSet) {
+    payload.WithObject("storage", m_storage.Jsonize());
   }
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", ChannelStatusMapper::GetNameForChannelStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", ChannelStatusMapper::GetNameForChannelStatus(m_status));
   }
 
-  if(m_retentionPeriodHasBeenSet)
-  {
-   payload.WithObject("retentionPeriod", m_retentionPeriod.Jsonize());
-
+  if (m_retentionPeriodHasBeenSet) {
+    payload.WithObject("retentionPeriod", m_retentionPeriod.Jsonize());
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("creationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("creationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_lastUpdateTimeHasBeenSet)
-  {
-   payload.WithDouble("lastUpdateTime", m_lastUpdateTime.SecondsWithMSPrecision());
+  if (m_lastUpdateTimeHasBeenSet) {
+    payload.WithDouble("lastUpdateTime", m_lastUpdateTime.SecondsWithMSPrecision());
   }
 
-  if(m_lastMessageArrivalTimeHasBeenSet)
-  {
-   payload.WithDouble("lastMessageArrivalTime", m_lastMessageArrivalTime.SecondsWithMSPrecision());
+  if (m_lastMessageArrivalTimeHasBeenSet) {
+    payload.WithDouble("lastMessageArrivalTime", m_lastMessageArrivalTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTAnalytics
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTAnalytics
+}  // namespace Aws

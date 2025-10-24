@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/evidently/model/ProjectAppConfigResourceConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/evidently/model/ProjectAppConfigResourceConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudWatchEvidently
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudWatchEvidently {
+namespace Model {
 
-ProjectAppConfigResourceConfig::ProjectAppConfigResourceConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProjectAppConfigResourceConfig::ProjectAppConfigResourceConfig(JsonView jsonValue) { *this = jsonValue; }
 
-ProjectAppConfigResourceConfig& ProjectAppConfigResourceConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("applicationId"))
-  {
+ProjectAppConfigResourceConfig& ProjectAppConfigResourceConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("applicationId")) {
     m_applicationId = jsonValue.GetString("applicationId");
     m_applicationIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("environmentId"))
-  {
+  if (jsonValue.ValueExists("environmentId")) {
     m_environmentId = jsonValue.GetString("environmentId");
     m_environmentIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ProjectAppConfigResourceConfig::Jsonize() const
-{
+JsonValue ProjectAppConfigResourceConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_applicationIdHasBeenSet)
-  {
-   payload.WithString("applicationId", m_applicationId);
-
+  if (m_applicationIdHasBeenSet) {
+    payload.WithString("applicationId", m_applicationId);
   }
 
-  if(m_environmentIdHasBeenSet)
-  {
-   payload.WithString("environmentId", m_environmentId);
-
+  if (m_environmentIdHasBeenSet) {
+    payload.WithString("environmentId", m_environmentId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudWatchEvidently
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudWatchEvidently
+}  // namespace Aws

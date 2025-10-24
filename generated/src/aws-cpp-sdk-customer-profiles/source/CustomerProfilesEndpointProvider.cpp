@@ -5,12 +5,8 @@
 
 #include <aws/customer-profiles/CustomerProfilesEndpointProvider.h>
 
-namespace Aws
-{
-namespace CustomerProfiles
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace CustomerProfiles
-} // namespace Aws
+namespace Aws {
+namespace CustomerProfiles {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace CustomerProfiles
+}  // namespace Aws

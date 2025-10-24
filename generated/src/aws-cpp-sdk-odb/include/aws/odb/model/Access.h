@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/odb/Odb_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/odb/Odb_EXPORTS.h>
 
-namespace Aws
-{
-namespace odb
-{
-namespace Model
-{
-  enum class Access
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace odb {
+namespace Model {
+enum class Access { NOT_SET, ENABLED, DISABLED };
 
-namespace AccessMapper
-{
+namespace AccessMapper {
 AWS_ODB_API Access GetAccessForName(const Aws::String& name);
 
 AWS_ODB_API Aws::String GetNameForAccess(Access value);
-} // namespace AccessMapper
-} // namespace Model
-} // namespace odb
-} // namespace Aws
+}  // namespace AccessMapper
+}  // namespace Model
+}  // namespace odb
+}  // namespace Aws

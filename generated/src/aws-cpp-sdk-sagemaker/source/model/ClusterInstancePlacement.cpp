@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/ClusterInstancePlacement.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/ClusterInstancePlacement.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-ClusterInstancePlacement::ClusterInstancePlacement(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ClusterInstancePlacement::ClusterInstancePlacement(JsonView jsonValue) { *this = jsonValue; }
 
-ClusterInstancePlacement& ClusterInstancePlacement::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AvailabilityZone"))
-  {
+ClusterInstancePlacement& ClusterInstancePlacement::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AvailabilityZone")) {
     m_availabilityZone = jsonValue.GetString("AvailabilityZone");
     m_availabilityZoneHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AvailabilityZoneId"))
-  {
+  if (jsonValue.ValueExists("AvailabilityZoneId")) {
     m_availabilityZoneId = jsonValue.GetString("AvailabilityZoneId");
     m_availabilityZoneIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ClusterInstancePlacement::Jsonize() const
-{
+JsonValue ClusterInstancePlacement::Jsonize() const {
   JsonValue payload;
 
-  if(m_availabilityZoneHasBeenSet)
-  {
-   payload.WithString("AvailabilityZone", m_availabilityZone);
-
+  if (m_availabilityZoneHasBeenSet) {
+    payload.WithString("AvailabilityZone", m_availabilityZone);
   }
 
-  if(m_availabilityZoneIdHasBeenSet)
-  {
-   payload.WithString("AvailabilityZoneId", m_availabilityZoneId);
-
+  if (m_availabilityZoneIdHasBeenSet) {
+    payload.WithString("AvailabilityZoneId", m_availabilityZoneId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

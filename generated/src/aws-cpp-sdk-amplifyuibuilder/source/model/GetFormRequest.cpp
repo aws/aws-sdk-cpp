@@ -12,11 +12,4 @@ using namespace Aws::AmplifyUIBuilder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetFormRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetFormRequest::SerializePayload() const { return {}; }

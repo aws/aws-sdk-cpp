@@ -4,43 +4,36 @@
  */
 
 #pragma once
-#include <aws/freetier/FreeTier_EXPORTS.h>
-#include <aws/core/endpoint/AWSEndpoint.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
-#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/endpoint/AWSEndpoint.h>
 #include <aws/core/http/HttpRequest.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/freetier/FreeTier_EXPORTS.h>
 
-namespace Aws
-{
-namespace FreeTier
-{
-  class AWS_FREETIER_API FreeTierRequest : public Aws::AmazonSerializableWebServiceRequest
-  {
-  public:
-    using EndpointParameter = Aws::Endpoint::EndpointParameter;
-    using EndpointParameters = Aws::Endpoint::EndpointParameters;
+namespace Aws {
+namespace FreeTier {
+class AWS_FREETIER_API FreeTierRequest : public Aws::AmazonSerializableWebServiceRequest {
+ public:
+  using EndpointParameter = Aws::Endpoint::EndpointParameter;
+  using EndpointParameters = Aws::Endpoint::EndpointParameters;
 
-    virtual ~FreeTierRequest () {}
+  virtual ~FreeTierRequest() {}
 
-    void AddParametersToRequest(Aws::Http::HttpRequest& httpRequest) const { AWS_UNREFERENCED_PARAM(httpRequest); }
+  void AddParametersToRequest(Aws::Http::HttpRequest& httpRequest) const { AWS_UNREFERENCED_PARAM(httpRequest); }
 
-    inline Aws::Http::HeaderValueCollection GetHeaders() const override
-    {
-      auto headers = GetRequestSpecificHeaders();
+  inline Aws::Http::HeaderValueCollection GetHeaders() const override {
+    auto headers = GetRequestSpecificHeaders();
 
-      if(headers.size() == 0 || (headers.size() > 0 && headers.count(Aws::Http::CONTENT_TYPE_HEADER) == 0))
-      {
-        headers.emplace(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, Aws::AMZN_JSON_CONTENT_TYPE_1_0 ));
-      }
-      headers.emplace(Aws::Http::HeaderValuePair(Aws::Http::API_VERSION_HEADER, "2023-09-07"));
-      return headers;
+    if (headers.size() == 0 || (headers.size() > 0 && headers.count(Aws::Http::CONTENT_TYPE_HEADER) == 0)) {
+      headers.emplace(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, Aws::AMZN_JSON_CONTENT_TYPE_1_0));
     }
+    headers.emplace(Aws::Http::HeaderValuePair(Aws::Http::API_VERSION_HEADER, "2023-09-07"));
+    return headers;
+  }
 
-  protected:
-    virtual Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const { return Aws::Http::HeaderValueCollection(); }
+ protected:
+  virtual Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const { return Aws::Http::HeaderValueCollection(); }
+};
 
-  };
-
-
-} // namespace FreeTier
-} // namespace Aws
+}  // namespace FreeTier
+}  // namespace Aws

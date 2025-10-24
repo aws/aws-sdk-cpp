@@ -3,80 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/location/model/ListTrackersResponseEntry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/location/model/ListTrackersResponseEntry.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LocationService
-{
-namespace Model
-{
+namespace Aws {
+namespace LocationService {
+namespace Model {
 
-ListTrackersResponseEntry::ListTrackersResponseEntry(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ListTrackersResponseEntry::ListTrackersResponseEntry(JsonView jsonValue) { *this = jsonValue; }
 
-ListTrackersResponseEntry& ListTrackersResponseEntry::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TrackerName"))
-  {
+ListTrackersResponseEntry& ListTrackersResponseEntry::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TrackerName")) {
     m_trackerName = jsonValue.GetString("TrackerName");
     m_trackerNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreateTime"))
-  {
+  if (jsonValue.ValueExists("CreateTime")) {
     m_createTime = jsonValue.GetString("CreateTime");
     m_createTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UpdateTime"))
-  {
+  if (jsonValue.ValueExists("UpdateTime")) {
     m_updateTime = jsonValue.GetString("UpdateTime");
     m_updateTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ListTrackersResponseEntry::Jsonize() const
-{
+JsonValue ListTrackersResponseEntry::Jsonize() const {
   JsonValue payload;
 
-  if(m_trackerNameHasBeenSet)
-  {
-   payload.WithString("TrackerName", m_trackerName);
-
+  if (m_trackerNameHasBeenSet) {
+    payload.WithString("TrackerName", m_trackerName);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_createTimeHasBeenSet)
-  {
-   payload.WithString("CreateTime", m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_createTimeHasBeenSet) {
+    payload.WithString("CreateTime", m_createTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_updateTimeHasBeenSet)
-  {
-   payload.WithString("UpdateTime", m_updateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_updateTimeHasBeenSet) {
+    payload.WithString("UpdateTime", m_updateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LocationService
-} // namespace Aws
+}  // namespace Model
+}  // namespace LocationService
+}  // namespace Aws

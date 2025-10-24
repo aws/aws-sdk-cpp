@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElasticBeanstalk
-{
-namespace Model
-{
-  enum class ActionType
-  {
-    NOT_SET,
-    InstanceRefresh,
-    PlatformUpdate,
-    Unknown
-  };
+namespace Aws {
+namespace ElasticBeanstalk {
+namespace Model {
+enum class ActionType { NOT_SET, InstanceRefresh, PlatformUpdate, Unknown };
 
-namespace ActionTypeMapper
-{
+namespace ActionTypeMapper {
 AWS_ELASTICBEANSTALK_API ActionType GetActionTypeForName(const Aws::String& name);
 
 AWS_ELASTICBEANSTALK_API Aws::String GetNameForActionType(ActionType value);
-} // namespace ActionTypeMapper
-} // namespace Model
-} // namespace ElasticBeanstalk
-} // namespace Aws
+}  // namespace ActionTypeMapper
+}  // namespace Model
+}  // namespace ElasticBeanstalk
+}  // namespace Aws

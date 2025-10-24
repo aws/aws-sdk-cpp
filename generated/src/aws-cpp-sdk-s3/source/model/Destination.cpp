@@ -3,73 +3,59 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3/model/Destination.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3/model/Destination.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3
-{
-namespace Model
-{
+namespace Aws {
+namespace S3 {
+namespace Model {
 
-Destination::Destination(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+Destination::Destination(const XmlNode& xmlNode) { *this = xmlNode; }
 
-Destination& Destination::operator =(const XmlNode& xmlNode)
-{
+Destination& Destination::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode bucketNode = resultNode.FirstChild("Bucket");
-    if(!bucketNode.IsNull())
-    {
+    if (!bucketNode.IsNull()) {
       m_bucket = Aws::Utils::Xml::DecodeEscapedXmlText(bucketNode.GetText());
       m_bucketHasBeenSet = true;
     }
     XmlNode accountNode = resultNode.FirstChild("Account");
-    if(!accountNode.IsNull())
-    {
+    if (!accountNode.IsNull()) {
       m_account = Aws::Utils::Xml::DecodeEscapedXmlText(accountNode.GetText());
       m_accountHasBeenSet = true;
     }
     XmlNode storageClassNode = resultNode.FirstChild("StorageClass");
-    if(!storageClassNode.IsNull())
-    {
-      m_storageClass = StorageClassMapper::GetStorageClassForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageClassNode.GetText()).c_str()));
+    if (!storageClassNode.IsNull()) {
+      m_storageClass = StorageClassMapper::GetStorageClassForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageClassNode.GetText()).c_str()));
       m_storageClassHasBeenSet = true;
     }
     XmlNode accessControlTranslationNode = resultNode.FirstChild("AccessControlTranslation");
-    if(!accessControlTranslationNode.IsNull())
-    {
+    if (!accessControlTranslationNode.IsNull()) {
       m_accessControlTranslation = accessControlTranslationNode;
       m_accessControlTranslationHasBeenSet = true;
     }
     XmlNode encryptionConfigurationNode = resultNode.FirstChild("EncryptionConfiguration");
-    if(!encryptionConfigurationNode.IsNull())
-    {
+    if (!encryptionConfigurationNode.IsNull()) {
       m_encryptionConfiguration = encryptionConfigurationNode;
       m_encryptionConfigurationHasBeenSet = true;
     }
     XmlNode replicationTimeNode = resultNode.FirstChild("ReplicationTime");
-    if(!replicationTimeNode.IsNull())
-    {
+    if (!replicationTimeNode.IsNull()) {
       m_replicationTime = replicationTimeNode;
       m_replicationTimeHasBeenSet = true;
     }
     XmlNode metricsNode = resultNode.FirstChild("Metrics");
-    if(!metricsNode.IsNull())
-    {
+    if (!metricsNode.IsNull()) {
       m_metrics = metricsNode;
       m_metricsHasBeenSet = true;
     }
@@ -78,53 +64,44 @@ Destination& Destination::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void Destination::AddToNode(XmlNode& parentNode) const
-{
+void Destination::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_bucketHasBeenSet)
-  {
-   XmlNode bucketNode = parentNode.CreateChildElement("Bucket");
-   bucketNode.SetText(m_bucket);
+  if (m_bucketHasBeenSet) {
+    XmlNode bucketNode = parentNode.CreateChildElement("Bucket");
+    bucketNode.SetText(m_bucket);
   }
 
-  if(m_accountHasBeenSet)
-  {
-   XmlNode accountNode = parentNode.CreateChildElement("Account");
-   accountNode.SetText(m_account);
+  if (m_accountHasBeenSet) {
+    XmlNode accountNode = parentNode.CreateChildElement("Account");
+    accountNode.SetText(m_account);
   }
 
-  if(m_storageClassHasBeenSet)
-  {
-   XmlNode storageClassNode = parentNode.CreateChildElement("StorageClass");
-   storageClassNode.SetText(StorageClassMapper::GetNameForStorageClass(m_storageClass));
+  if (m_storageClassHasBeenSet) {
+    XmlNode storageClassNode = parentNode.CreateChildElement("StorageClass");
+    storageClassNode.SetText(StorageClassMapper::GetNameForStorageClass(m_storageClass));
   }
 
-  if(m_accessControlTranslationHasBeenSet)
-  {
-   XmlNode accessControlTranslationNode = parentNode.CreateChildElement("AccessControlTranslation");
-   m_accessControlTranslation.AddToNode(accessControlTranslationNode);
+  if (m_accessControlTranslationHasBeenSet) {
+    XmlNode accessControlTranslationNode = parentNode.CreateChildElement("AccessControlTranslation");
+    m_accessControlTranslation.AddToNode(accessControlTranslationNode);
   }
 
-  if(m_encryptionConfigurationHasBeenSet)
-  {
-   XmlNode encryptionConfigurationNode = parentNode.CreateChildElement("EncryptionConfiguration");
-   m_encryptionConfiguration.AddToNode(encryptionConfigurationNode);
+  if (m_encryptionConfigurationHasBeenSet) {
+    XmlNode encryptionConfigurationNode = parentNode.CreateChildElement("EncryptionConfiguration");
+    m_encryptionConfiguration.AddToNode(encryptionConfigurationNode);
   }
 
-  if(m_replicationTimeHasBeenSet)
-  {
-   XmlNode replicationTimeNode = parentNode.CreateChildElement("ReplicationTime");
-   m_replicationTime.AddToNode(replicationTimeNode);
+  if (m_replicationTimeHasBeenSet) {
+    XmlNode replicationTimeNode = parentNode.CreateChildElement("ReplicationTime");
+    m_replicationTime.AddToNode(replicationTimeNode);
   }
 
-  if(m_metricsHasBeenSet)
-  {
-   XmlNode metricsNode = parentNode.CreateChildElement("Metrics");
-   m_metrics.AddToNode(metricsNode);
+  if (m_metricsHasBeenSet) {
+    XmlNode metricsNode = parentNode.CreateChildElement("Metrics");
+    m_metrics.AddToNode(metricsNode);
   }
-
 }
 
-} // namespace Model
-} // namespace S3
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3
+}  // namespace Aws

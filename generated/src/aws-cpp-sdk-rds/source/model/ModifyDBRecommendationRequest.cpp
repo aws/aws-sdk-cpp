@@ -3,43 +3,34 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/ModifyDBRecommendationRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/ModifyDBRecommendationRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyDBRecommendationRequest::SerializePayload() const
-{
+Aws::String ModifyDBRecommendationRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyDBRecommendation&";
-  if(m_recommendationIdHasBeenSet)
-  {
+  if (m_recommendationIdHasBeenSet) {
     ss << "RecommendationId=" << StringUtils::URLEncode(m_recommendationId.c_str()) << "&";
   }
 
-  if(m_localeHasBeenSet)
-  {
+  if (m_localeHasBeenSet) {
     ss << "Locale=" << StringUtils::URLEncode(m_locale.c_str()) << "&";
   }
 
-  if(m_statusHasBeenSet)
-  {
+  if (m_statusHasBeenSet) {
     ss << "Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
 
-  if(m_recommendedActionUpdatesHasBeenSet)
-  {
-    if (m_recommendedActionUpdates.empty())
-    {
+  if (m_recommendedActionUpdatesHasBeenSet) {
+    if (m_recommendedActionUpdates.empty()) {
       ss << "RecommendedActionUpdates=&";
-    }
-    else
-    {
+    } else {
       unsigned recommendedActionUpdatesCount = 1;
-      for(auto& item : m_recommendedActionUpdates)
-      {
+      for (auto& item : m_recommendedActionUpdates) {
         item.OutputToStream(ss, "RecommendedActionUpdates.member.", recommendedActionUpdatesCount, "");
         recommendedActionUpdatesCount++;
       }
@@ -50,8 +41,4 @@ Aws::String ModifyDBRecommendationRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ModifyDBRecommendationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ModifyDBRecommendationRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

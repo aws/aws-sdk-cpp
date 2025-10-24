@@ -12,19 +12,12 @@ using namespace Aws::ChimeSDKIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateAppInstanceAdminRequest::SerializePayload() const
-{
+Aws::String CreateAppInstanceAdminRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_appInstanceAdminArnHasBeenSet)
-  {
-   payload.WithString("AppInstanceAdminArn", m_appInstanceAdminArn);
-
+  if (m_appInstanceAdminArnHasBeenSet) {
+    payload.WithString("AppInstanceAdminArn", m_appInstanceAdminArn);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

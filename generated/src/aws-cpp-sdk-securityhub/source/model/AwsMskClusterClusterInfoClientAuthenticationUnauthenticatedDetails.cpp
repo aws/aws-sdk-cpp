@@ -3,49 +3,42 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetails::AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetails(JsonView jsonValue)
-{
+AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetails::AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetails(
+    JsonView jsonValue) {
   *this = jsonValue;
 }
 
-AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetails& AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Enabled"))
-  {
+AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetails&
+AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Enabled")) {
     m_enabled = jsonValue.GetBool("Enabled");
     m_enabledHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetails::Jsonize() const
-{
+JsonValue AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_enabledHasBeenSet)
-  {
-   payload.WithBool("Enabled", m_enabled);
-
+  if (m_enabledHasBeenSet) {
+    payload.WithBool("Enabled", m_enabled);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

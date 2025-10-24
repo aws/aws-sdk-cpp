@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/datasync/model/Platform.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/datasync/model/Platform.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DataSync
-{
-namespace Model
-{
+namespace Aws {
+namespace DataSync {
+namespace Model {
 
-Platform::Platform(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Platform::Platform(JsonView jsonValue) { *this = jsonValue; }
 
-Platform& Platform::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Version"))
-  {
+Platform& Platform::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Version")) {
     m_version = jsonValue.GetString("Version");
     m_versionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Platform::Jsonize() const
-{
+JsonValue Platform::Jsonize() const {
   JsonValue payload;
 
-  if(m_versionHasBeenSet)
-  {
-   payload.WithString("Version", m_version);
-
+  if (m_versionHasBeenSet) {
+    payload.WithString("Version", m_version);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DataSync
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataSync
+}  // namespace Aws

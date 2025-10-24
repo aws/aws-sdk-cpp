@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/DeploymentStage.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/DeploymentStage.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-DeploymentStage::DeploymentStage(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DeploymentStage::DeploymentStage(JsonView jsonValue) { *this = jsonValue; }
 
-DeploymentStage& DeploymentStage::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("StageName"))
-  {
+DeploymentStage& DeploymentStage::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("StageName")) {
     m_stageName = jsonValue.GetString("StageName");
     m_stageNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DeviceSelectionConfig"))
-  {
+  if (jsonValue.ValueExists("DeviceSelectionConfig")) {
     m_deviceSelectionConfig = jsonValue.GetObject("DeviceSelectionConfig");
     m_deviceSelectionConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DeploymentConfig"))
-  {
+  if (jsonValue.ValueExists("DeploymentConfig")) {
     m_deploymentConfig = jsonValue.GetObject("DeploymentConfig");
     m_deploymentConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DeploymentStage::Jsonize() const
-{
+JsonValue DeploymentStage::Jsonize() const {
   JsonValue payload;
 
-  if(m_stageNameHasBeenSet)
-  {
-   payload.WithString("StageName", m_stageName);
-
+  if (m_stageNameHasBeenSet) {
+    payload.WithString("StageName", m_stageName);
   }
 
-  if(m_deviceSelectionConfigHasBeenSet)
-  {
-   payload.WithObject("DeviceSelectionConfig", m_deviceSelectionConfig.Jsonize());
-
+  if (m_deviceSelectionConfigHasBeenSet) {
+    payload.WithObject("DeviceSelectionConfig", m_deviceSelectionConfig.Jsonize());
   }
 
-  if(m_deploymentConfigHasBeenSet)
-  {
-   payload.WithObject("DeploymentConfig", m_deploymentConfig.Jsonize());
-
+  if (m_deploymentConfigHasBeenSet) {
+    payload.WithObject("DeploymentConfig", m_deploymentConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

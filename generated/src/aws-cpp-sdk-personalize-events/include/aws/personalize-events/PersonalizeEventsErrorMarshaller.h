@@ -5,19 +5,16 @@
 
 #pragma once
 
-#include <aws/personalize-events/PersonalizeEvents_EXPORTS.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
+#include <aws/personalize-events/PersonalizeEvents_EXPORTS.h>
 
-namespace Aws
-{
-namespace Client
-{
+namespace Aws {
+namespace Client {
 
-class AWS_PERSONALIZEEVENTS_API PersonalizeEventsErrorMarshaller : public Aws::Client::JsonErrorMarshaller
-{
-public:
+class AWS_PERSONALIZEEVENTS_API PersonalizeEventsErrorMarshaller : public Aws::Client::JsonErrorMarshaller {
+ public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Client
-} // namespace Aws
+}  // namespace Client
+}  // namespace Aws

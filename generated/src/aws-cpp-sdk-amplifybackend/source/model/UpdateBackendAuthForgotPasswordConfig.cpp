@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyBackend
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyBackend {
+namespace Model {
 
-UpdateBackendAuthForgotPasswordConfig::UpdateBackendAuthForgotPasswordConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UpdateBackendAuthForgotPasswordConfig::UpdateBackendAuthForgotPasswordConfig(JsonView jsonValue) { *this = jsonValue; }
 
-UpdateBackendAuthForgotPasswordConfig& UpdateBackendAuthForgotPasswordConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("deliveryMethod"))
-  {
+UpdateBackendAuthForgotPasswordConfig& UpdateBackendAuthForgotPasswordConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("deliveryMethod")) {
     m_deliveryMethod = DeliveryMethodMapper::GetDeliveryMethodForName(jsonValue.GetString("deliveryMethod"));
     m_deliveryMethodHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("emailSettings"))
-  {
+  if (jsonValue.ValueExists("emailSettings")) {
     m_emailSettings = jsonValue.GetObject("emailSettings");
     m_emailSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("smsSettings"))
-  {
+  if (jsonValue.ValueExists("smsSettings")) {
     m_smsSettings = jsonValue.GetObject("smsSettings");
     m_smsSettingsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UpdateBackendAuthForgotPasswordConfig::Jsonize() const
-{
+JsonValue UpdateBackendAuthForgotPasswordConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_deliveryMethodHasBeenSet)
-  {
-   payload.WithString("deliveryMethod", DeliveryMethodMapper::GetNameForDeliveryMethod(m_deliveryMethod));
+  if (m_deliveryMethodHasBeenSet) {
+    payload.WithString("deliveryMethod", DeliveryMethodMapper::GetNameForDeliveryMethod(m_deliveryMethod));
   }
 
-  if(m_emailSettingsHasBeenSet)
-  {
-   payload.WithObject("emailSettings", m_emailSettings.Jsonize());
-
+  if (m_emailSettingsHasBeenSet) {
+    payload.WithObject("emailSettings", m_emailSettings.Jsonize());
   }
 
-  if(m_smsSettingsHasBeenSet)
-  {
-   payload.WithObject("smsSettings", m_smsSettings.Jsonize());
-
+  if (m_smsSettingsHasBeenSet) {
+    payload.WithObject("smsSettings", m_smsSettings.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyBackend
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyBackend
+}  // namespace Aws

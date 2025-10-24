@@ -3,38 +3,32 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeReservedInstancesModificationsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DescribeReservedInstancesModificationsRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeReservedInstancesModificationsRequest::SerializePayload() const
-{
+Aws::String DescribeReservedInstancesModificationsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeReservedInstancesModifications&";
-  if(m_reservedInstancesModificationIdsHasBeenSet)
-  {
+  if (m_reservedInstancesModificationIdsHasBeenSet) {
     unsigned reservedInstancesModificationIdsCount = 1;
-    for(auto& item : m_reservedInstancesModificationIds)
-    {
-      ss << "ReservedInstancesModificationId." << reservedInstancesModificationIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_reservedInstancesModificationIds) {
+      ss << "ReservedInstancesModificationId." << reservedInstancesModificationIdsCount << "=" << StringUtils::URLEncode(item.c_str())
+         << "&";
       reservedInstancesModificationIdsCount++;
     }
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  if(m_filtersHasBeenSet)
-  {
+  if (m_filtersHasBeenSet) {
     unsigned filtersCount = 1;
-    for(auto& item : m_filters)
-    {
+    for (auto& item : m_filters) {
       item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
@@ -44,8 +38,4 @@ Aws::String DescribeReservedInstancesModificationsRequest::SerializePayload() co
   return ss.str();
 }
 
-
-void  DescribeReservedInstancesModificationsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeReservedInstancesModificationsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

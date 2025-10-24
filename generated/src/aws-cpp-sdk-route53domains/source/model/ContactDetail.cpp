@@ -3,98 +3,76 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/route53domains/model/ContactDetail.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/route53domains/model/ContactDetail.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Route53Domains
-{
-namespace Model
-{
+namespace Aws {
+namespace Route53Domains {
+namespace Model {
 
-ContactDetail::ContactDetail(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ContactDetail::ContactDetail(JsonView jsonValue) { *this = jsonValue; }
 
-ContactDetail& ContactDetail::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FirstName"))
-  {
+ContactDetail& ContactDetail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FirstName")) {
     m_firstName = jsonValue.GetString("FirstName");
     m_firstNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastName"))
-  {
+  if (jsonValue.ValueExists("LastName")) {
     m_lastName = jsonValue.GetString("LastName");
     m_lastNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ContactType"))
-  {
+  if (jsonValue.ValueExists("ContactType")) {
     m_contactType = ContactTypeMapper::GetContactTypeForName(jsonValue.GetString("ContactType"));
     m_contactTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OrganizationName"))
-  {
+  if (jsonValue.ValueExists("OrganizationName")) {
     m_organizationName = jsonValue.GetString("OrganizationName");
     m_organizationNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AddressLine1"))
-  {
+  if (jsonValue.ValueExists("AddressLine1")) {
     m_addressLine1 = jsonValue.GetString("AddressLine1");
     m_addressLine1HasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AddressLine2"))
-  {
+  if (jsonValue.ValueExists("AddressLine2")) {
     m_addressLine2 = jsonValue.GetString("AddressLine2");
     m_addressLine2HasBeenSet = true;
   }
-  if(jsonValue.ValueExists("City"))
-  {
+  if (jsonValue.ValueExists("City")) {
     m_city = jsonValue.GetString("City");
     m_cityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("State"))
-  {
+  if (jsonValue.ValueExists("State")) {
     m_state = jsonValue.GetString("State");
     m_stateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CountryCode"))
-  {
+  if (jsonValue.ValueExists("CountryCode")) {
     m_countryCode = CountryCodeMapper::GetCountryCodeForName(jsonValue.GetString("CountryCode"));
     m_countryCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ZipCode"))
-  {
+  if (jsonValue.ValueExists("ZipCode")) {
     m_zipCode = jsonValue.GetString("ZipCode");
     m_zipCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PhoneNumber"))
-  {
+  if (jsonValue.ValueExists("PhoneNumber")) {
     m_phoneNumber = jsonValue.GetString("PhoneNumber");
     m_phoneNumberHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Email"))
-  {
+  if (jsonValue.ValueExists("Email")) {
     m_email = jsonValue.GetString("Email");
     m_emailHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Fax"))
-  {
+  if (jsonValue.ValueExists("Fax")) {
     m_fax = jsonValue.GetString("Fax");
     m_faxHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExtraParams"))
-  {
+  if (jsonValue.ValueExists("ExtraParams")) {
     Aws::Utils::Array<JsonView> extraParamsJsonList = jsonValue.GetArray("ExtraParams");
-    for(unsigned extraParamsIndex = 0; extraParamsIndex < extraParamsJsonList.GetLength(); ++extraParamsIndex)
-    {
+    for (unsigned extraParamsIndex = 0; extraParamsIndex < extraParamsJsonList.GetLength(); ++extraParamsIndex) {
       m_extraParams.push_back(extraParamsJsonList[extraParamsIndex].AsObject());
     }
     m_extraParamsHasBeenSet = true;
@@ -102,100 +80,72 @@ ContactDetail& ContactDetail::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ContactDetail::Jsonize() const
-{
+JsonValue ContactDetail::Jsonize() const {
   JsonValue payload;
 
-  if(m_firstNameHasBeenSet)
-  {
-   payload.WithString("FirstName", m_firstName);
-
+  if (m_firstNameHasBeenSet) {
+    payload.WithString("FirstName", m_firstName);
   }
 
-  if(m_lastNameHasBeenSet)
-  {
-   payload.WithString("LastName", m_lastName);
-
+  if (m_lastNameHasBeenSet) {
+    payload.WithString("LastName", m_lastName);
   }
 
-  if(m_contactTypeHasBeenSet)
-  {
-   payload.WithString("ContactType", ContactTypeMapper::GetNameForContactType(m_contactType));
+  if (m_contactTypeHasBeenSet) {
+    payload.WithString("ContactType", ContactTypeMapper::GetNameForContactType(m_contactType));
   }
 
-  if(m_organizationNameHasBeenSet)
-  {
-   payload.WithString("OrganizationName", m_organizationName);
-
+  if (m_organizationNameHasBeenSet) {
+    payload.WithString("OrganizationName", m_organizationName);
   }
 
-  if(m_addressLine1HasBeenSet)
-  {
-   payload.WithString("AddressLine1", m_addressLine1);
-
+  if (m_addressLine1HasBeenSet) {
+    payload.WithString("AddressLine1", m_addressLine1);
   }
 
-  if(m_addressLine2HasBeenSet)
-  {
-   payload.WithString("AddressLine2", m_addressLine2);
-
+  if (m_addressLine2HasBeenSet) {
+    payload.WithString("AddressLine2", m_addressLine2);
   }
 
-  if(m_cityHasBeenSet)
-  {
-   payload.WithString("City", m_city);
-
+  if (m_cityHasBeenSet) {
+    payload.WithString("City", m_city);
   }
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("State", m_state);
-
+  if (m_stateHasBeenSet) {
+    payload.WithString("State", m_state);
   }
 
-  if(m_countryCodeHasBeenSet)
-  {
-   payload.WithString("CountryCode", CountryCodeMapper::GetNameForCountryCode(m_countryCode));
+  if (m_countryCodeHasBeenSet) {
+    payload.WithString("CountryCode", CountryCodeMapper::GetNameForCountryCode(m_countryCode));
   }
 
-  if(m_zipCodeHasBeenSet)
-  {
-   payload.WithString("ZipCode", m_zipCode);
-
+  if (m_zipCodeHasBeenSet) {
+    payload.WithString("ZipCode", m_zipCode);
   }
 
-  if(m_phoneNumberHasBeenSet)
-  {
-   payload.WithString("PhoneNumber", m_phoneNumber);
-
+  if (m_phoneNumberHasBeenSet) {
+    payload.WithString("PhoneNumber", m_phoneNumber);
   }
 
-  if(m_emailHasBeenSet)
-  {
-   payload.WithString("Email", m_email);
-
+  if (m_emailHasBeenSet) {
+    payload.WithString("Email", m_email);
   }
 
-  if(m_faxHasBeenSet)
-  {
-   payload.WithString("Fax", m_fax);
-
+  if (m_faxHasBeenSet) {
+    payload.WithString("Fax", m_fax);
   }
 
-  if(m_extraParamsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> extraParamsJsonList(m_extraParams.size());
-   for(unsigned extraParamsIndex = 0; extraParamsIndex < extraParamsJsonList.GetLength(); ++extraParamsIndex)
-   {
-     extraParamsJsonList[extraParamsIndex].AsObject(m_extraParams[extraParamsIndex].Jsonize());
-   }
-   payload.WithArray("ExtraParams", std::move(extraParamsJsonList));
-
+  if (m_extraParamsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> extraParamsJsonList(m_extraParams.size());
+    for (unsigned extraParamsIndex = 0; extraParamsIndex < extraParamsJsonList.GetLength(); ++extraParamsIndex) {
+      extraParamsJsonList[extraParamsIndex].AsObject(m_extraParams[extraParamsIndex].Jsonize());
+    }
+    payload.WithArray("ExtraParams", std::move(extraParamsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Route53Domains
-} // namespace Aws
+}  // namespace Model
+}  // namespace Route53Domains
+}  // namespace Aws

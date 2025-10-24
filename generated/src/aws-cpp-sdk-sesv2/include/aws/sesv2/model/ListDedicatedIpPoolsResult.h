@@ -4,87 +4,102 @@
  */
 
 #pragma once
-#include <aws/sesv2/SESV2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sesv2/SESV2_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace SESV2
-{
-namespace Model
-{
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace SESV2 {
+namespace Model {
+/**
+ * <p>A list of dedicated IP pools.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListDedicatedIpPoolsResponse">AWS
+ * API Reference</a></p>
+ */
+class ListDedicatedIpPoolsResult {
+ public:
+  AWS_SESV2_API ListDedicatedIpPoolsResult() = default;
+  AWS_SESV2_API ListDedicatedIpPoolsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_SESV2_API ListDedicatedIpPoolsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
   /**
-   * <p>A list of dedicated IP pools.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListDedicatedIpPoolsResponse">AWS
-   * API Reference</a></p>
+   * <p>A list of all of the dedicated IP pools that are associated with your Amazon
+   * Web Services account in the current Region.</p>
    */
-  class ListDedicatedIpPoolsResult
-  {
-  public:
-    AWS_SESV2_API ListDedicatedIpPoolsResult() = default;
-    AWS_SESV2_API ListDedicatedIpPoolsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_SESV2_API ListDedicatedIpPoolsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  inline const Aws::Vector<Aws::String>& GetDedicatedIpPools() const { return m_dedicatedIpPools; }
+  template <typename DedicatedIpPoolsT = Aws::Vector<Aws::String>>
+  void SetDedicatedIpPools(DedicatedIpPoolsT&& value) {
+    m_dedicatedIpPoolsHasBeenSet = true;
+    m_dedicatedIpPools = std::forward<DedicatedIpPoolsT>(value);
+  }
+  template <typename DedicatedIpPoolsT = Aws::Vector<Aws::String>>
+  ListDedicatedIpPoolsResult& WithDedicatedIpPools(DedicatedIpPoolsT&& value) {
+    SetDedicatedIpPools(std::forward<DedicatedIpPoolsT>(value));
+    return *this;
+  }
+  template <typename DedicatedIpPoolsT = Aws::String>
+  ListDedicatedIpPoolsResult& AddDedicatedIpPools(DedicatedIpPoolsT&& value) {
+    m_dedicatedIpPoolsHasBeenSet = true;
+    m_dedicatedIpPools.emplace_back(std::forward<DedicatedIpPoolsT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>A token that indicates that there are additional IP pools to list. To view
+   * additional IP pools, issue another request to <code>ListDedicatedIpPools</code>,
+   * passing this token in the <code>NextToken</code> parameter.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListDedicatedIpPoolsResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>A list of all of the dedicated IP pools that are associated with your Amazon
-     * Web Services account in the current Region.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetDedicatedIpPools() const { return m_dedicatedIpPools; }
-    template<typename DedicatedIpPoolsT = Aws::Vector<Aws::String>>
-    void SetDedicatedIpPools(DedicatedIpPoolsT&& value) { m_dedicatedIpPoolsHasBeenSet = true; m_dedicatedIpPools = std::forward<DedicatedIpPoolsT>(value); }
-    template<typename DedicatedIpPoolsT = Aws::Vector<Aws::String>>
-    ListDedicatedIpPoolsResult& WithDedicatedIpPools(DedicatedIpPoolsT&& value) { SetDedicatedIpPools(std::forward<DedicatedIpPoolsT>(value)); return *this;}
-    template<typename DedicatedIpPoolsT = Aws::String>
-    ListDedicatedIpPoolsResult& AddDedicatedIpPools(DedicatedIpPoolsT&& value) { m_dedicatedIpPoolsHasBeenSet = true; m_dedicatedIpPools.emplace_back(std::forward<DedicatedIpPoolsT>(value)); return *this; }
-    ///@}
+  ///@{
 
-    ///@{
-    /**
-     * <p>A token that indicates that there are additional IP pools to list. To view
-     * additional IP pools, issue another request to <code>ListDedicatedIpPools</code>,
-     * passing this token in the <code>NextToken</code> parameter.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListDedicatedIpPoolsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  ListDedicatedIpPoolsResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<Aws::String> m_dedicatedIpPools;
+  bool m_dedicatedIpPoolsHasBeenSet = false;
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    ListDedicatedIpPoolsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
-    Aws::Vector<Aws::String> m_dedicatedIpPools;
-    bool m_dedicatedIpPoolsHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SESV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace SESV2
+}  // namespace Aws

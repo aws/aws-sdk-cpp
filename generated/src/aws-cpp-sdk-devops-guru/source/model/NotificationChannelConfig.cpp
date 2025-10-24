@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/devops-guru/model/NotificationChannelConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/devops-guru/model/NotificationChannelConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DevOpsGuru
-{
-namespace Model
-{
+namespace Aws {
+namespace DevOpsGuru {
+namespace Model {
 
-NotificationChannelConfig::NotificationChannelConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NotificationChannelConfig::NotificationChannelConfig(JsonView jsonValue) { *this = jsonValue; }
 
-NotificationChannelConfig& NotificationChannelConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Sns"))
-  {
+NotificationChannelConfig& NotificationChannelConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Sns")) {
     m_sns = jsonValue.GetObject("Sns");
     m_snsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Filters"))
-  {
+  if (jsonValue.ValueExists("Filters")) {
     m_filters = jsonValue.GetObject("Filters");
     m_filtersHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NotificationChannelConfig::Jsonize() const
-{
+JsonValue NotificationChannelConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_snsHasBeenSet)
-  {
-   payload.WithObject("Sns", m_sns.Jsonize());
-
+  if (m_snsHasBeenSet) {
+    payload.WithObject("Sns", m_sns.Jsonize());
   }
 
-  if(m_filtersHasBeenSet)
-  {
-   payload.WithObject("Filters", m_filters.Jsonize());
-
+  if (m_filtersHasBeenSet) {
+    payload.WithObject("Filters", m_filters.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DevOpsGuru
-} // namespace Aws
+}  // namespace Model
+}  // namespace DevOpsGuru
+}  // namespace Aws

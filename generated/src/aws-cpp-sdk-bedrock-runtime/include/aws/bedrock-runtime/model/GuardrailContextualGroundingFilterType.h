@@ -7,25 +7,16 @@
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace BedrockRuntime
-{
-namespace Model
-{
-  enum class GuardrailContextualGroundingFilterType
-  {
-    NOT_SET,
-    GROUNDING,
-    RELEVANCE
-  };
+namespace Aws {
+namespace BedrockRuntime {
+namespace Model {
+enum class GuardrailContextualGroundingFilterType { NOT_SET, GROUNDING, RELEVANCE };
 
-namespace GuardrailContextualGroundingFilterTypeMapper
-{
+namespace GuardrailContextualGroundingFilterTypeMapper {
 AWS_BEDROCKRUNTIME_API GuardrailContextualGroundingFilterType GetGuardrailContextualGroundingFilterTypeForName(const Aws::String& name);
 
 AWS_BEDROCKRUNTIME_API Aws::String GetNameForGuardrailContextualGroundingFilterType(GuardrailContextualGroundingFilterType value);
-} // namespace GuardrailContextualGroundingFilterTypeMapper
-} // namespace Model
-} // namespace BedrockRuntime
-} // namespace Aws
+}  // namespace GuardrailContextualGroundingFilterTypeMapper
+}  // namespace Model
+}  // namespace BedrockRuntime
+}  // namespace Aws

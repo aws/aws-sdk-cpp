@@ -12,24 +12,18 @@ using namespace Aws::CleanRooms::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String BatchGetSchemaAnalysisRuleRequest::SerializePayload() const
-{
+Aws::String BatchGetSchemaAnalysisRuleRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_schemaAnalysisRuleRequestsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> schemaAnalysisRuleRequestsJsonList(m_schemaAnalysisRuleRequests.size());
-   for(unsigned schemaAnalysisRuleRequestsIndex = 0; schemaAnalysisRuleRequestsIndex < schemaAnalysisRuleRequestsJsonList.GetLength(); ++schemaAnalysisRuleRequestsIndex)
-   {
-     schemaAnalysisRuleRequestsJsonList[schemaAnalysisRuleRequestsIndex].AsObject(m_schemaAnalysisRuleRequests[schemaAnalysisRuleRequestsIndex].Jsonize());
-   }
-   payload.WithArray("schemaAnalysisRuleRequests", std::move(schemaAnalysisRuleRequestsJsonList));
-
+  if (m_schemaAnalysisRuleRequestsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> schemaAnalysisRuleRequestsJsonList(m_schemaAnalysisRuleRequests.size());
+    for (unsigned schemaAnalysisRuleRequestsIndex = 0; schemaAnalysisRuleRequestsIndex < schemaAnalysisRuleRequestsJsonList.GetLength();
+         ++schemaAnalysisRuleRequestsIndex) {
+      schemaAnalysisRuleRequestsJsonList[schemaAnalysisRuleRequestsIndex].AsObject(
+          m_schemaAnalysisRuleRequests[schemaAnalysisRuleRequestsIndex].Jsonize());
+    }
+    payload.WithArray("schemaAnalysisRuleRequests", std::move(schemaAnalysisRuleRequestsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

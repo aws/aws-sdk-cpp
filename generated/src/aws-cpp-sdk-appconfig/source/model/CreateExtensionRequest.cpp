@@ -13,78 +13,56 @@ using namespace Aws::AppConfig::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateExtensionRequest::SerializePayload() const
-{
+Aws::String CreateExtensionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_actionsHasBeenSet)
-  {
-   JsonValue actionsJsonMap;
-   for(auto& actionsItem : m_actions)
-   {
-     Aws::Utils::Array<JsonValue> actionListJsonList(actionsItem.second.size());
-     for(unsigned actionListIndex = 0; actionListIndex < actionListJsonList.GetLength(); ++actionListIndex)
-     {
-       actionListJsonList[actionListIndex].AsObject(actionsItem.second[actionListIndex].Jsonize());
-     }
-     actionsJsonMap.WithArray(ActionPointMapper::GetNameForActionPoint(actionsItem.first), std::move(actionListJsonList));
-   }
-   payload.WithObject("Actions", std::move(actionsJsonMap));
-
+  if (m_actionsHasBeenSet) {
+    JsonValue actionsJsonMap;
+    for (auto& actionsItem : m_actions) {
+      Aws::Utils::Array<JsonValue> actionListJsonList(actionsItem.second.size());
+      for (unsigned actionListIndex = 0; actionListIndex < actionListJsonList.GetLength(); ++actionListIndex) {
+        actionListJsonList[actionListIndex].AsObject(actionsItem.second[actionListIndex].Jsonize());
+      }
+      actionsJsonMap.WithArray(ActionPointMapper::GetNameForActionPoint(actionsItem.first), std::move(actionListJsonList));
+    }
+    payload.WithObject("Actions", std::move(actionsJsonMap));
   }
 
-  if(m_parametersHasBeenSet)
-  {
-   JsonValue parametersJsonMap;
-   for(auto& parametersItem : m_parameters)
-   {
-     parametersJsonMap.WithObject(parametersItem.first, parametersItem.second.Jsonize());
-   }
-   payload.WithObject("Parameters", std::move(parametersJsonMap));
-
+  if (m_parametersHasBeenSet) {
+    JsonValue parametersJsonMap;
+    for (auto& parametersItem : m_parameters) {
+      parametersJsonMap.WithObject(parametersItem.first, parametersItem.second.Jsonize());
+    }
+    payload.WithObject("Parameters", std::move(parametersJsonMap));
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("Tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateExtensionRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateExtensionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_latestVersionNumberHasBeenSet)
-  {
+  if (m_latestVersionNumberHasBeenSet) {
     ss << m_latestVersionNumber;
-    headers.emplace("latest-version-number",  ss.str());
+    headers.emplace("latest-version-number", ss.str());
     ss.str("");
   }
 
   return headers;
-
 }
-
-
-
-

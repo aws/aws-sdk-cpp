@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 
-namespace Aws
-{
-namespace Rekognition
-{
-class RekognitionEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace Rekognition {
+class RekognitionEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace Rekognition
-} // namespace Aws
+}  // namespace Rekognition
+}  // namespace Aws

@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::OSIS;
 
-AWSError<CoreErrors> OSISErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> OSISErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = OSISErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

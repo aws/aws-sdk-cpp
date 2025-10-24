@@ -10,37 +10,31 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String ListTypeRegistrationsRequest::SerializePayload() const
-{
+Aws::String ListTypeRegistrationsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ListTypeRegistrations&";
-  if(m_typeHasBeenSet)
-  {
+  if (m_typeHasBeenSet) {
     ss << "Type=" << StringUtils::URLEncode(RegistryTypeMapper::GetNameForRegistryType(m_type)) << "&";
   }
 
-  if(m_typeNameHasBeenSet)
-  {
+  if (m_typeNameHasBeenSet) {
     ss << "TypeName=" << StringUtils::URLEncode(m_typeName.c_str()) << "&";
   }
 
-  if(m_typeArnHasBeenSet)
-  {
+  if (m_typeArnHasBeenSet) {
     ss << "TypeArn=" << StringUtils::URLEncode(m_typeArn.c_str()) << "&";
   }
 
-  if(m_registrationStatusFilterHasBeenSet)
-  {
-    ss << "RegistrationStatusFilter=" << StringUtils::URLEncode(RegistrationStatusMapper::GetNameForRegistrationStatus(m_registrationStatusFilter)) << "&";
+  if (m_registrationStatusFilterHasBeenSet) {
+    ss << "RegistrationStatusFilter="
+       << StringUtils::URLEncode(RegistrationStatusMapper::GetNameForRegistrationStatus(m_registrationStatusFilter)) << "&";
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
+  if (m_maxResultsHasBeenSet) {
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
@@ -48,8 +42,4 @@ Aws::String ListTypeRegistrationsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ListTypeRegistrationsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ListTypeRegistrationsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

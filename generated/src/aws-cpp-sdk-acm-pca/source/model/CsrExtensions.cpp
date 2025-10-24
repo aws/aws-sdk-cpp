@@ -11,30 +11,21 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ACMPCA
-{
-namespace Model
-{
+namespace Aws {
+namespace ACMPCA {
+namespace Model {
 
-CsrExtensions::CsrExtensions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CsrExtensions::CsrExtensions(JsonView jsonValue) { *this = jsonValue; }
 
-CsrExtensions& CsrExtensions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("KeyUsage"))
-  {
+CsrExtensions& CsrExtensions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("KeyUsage")) {
     m_keyUsage = jsonValue.GetObject("KeyUsage");
     m_keyUsageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SubjectInformationAccess"))
-  {
+  if (jsonValue.ValueExists("SubjectInformationAccess")) {
     Aws::Utils::Array<JsonView> subjectInformationAccessJsonList = jsonValue.GetArray("SubjectInformationAccess");
-    for(unsigned subjectInformationAccessIndex = 0; subjectInformationAccessIndex < subjectInformationAccessJsonList.GetLength(); ++subjectInformationAccessIndex)
-    {
+    for (unsigned subjectInformationAccessIndex = 0; subjectInformationAccessIndex < subjectInformationAccessJsonList.GetLength();
+         ++subjectInformationAccessIndex) {
       m_subjectInformationAccess.push_back(subjectInformationAccessJsonList[subjectInformationAccessIndex].AsObject());
     }
     m_subjectInformationAccessHasBeenSet = true;
@@ -42,30 +33,26 @@ CsrExtensions& CsrExtensions::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue CsrExtensions::Jsonize() const
-{
+JsonValue CsrExtensions::Jsonize() const {
   JsonValue payload;
 
-  if(m_keyUsageHasBeenSet)
-  {
-   payload.WithObject("KeyUsage", m_keyUsage.Jsonize());
-
+  if (m_keyUsageHasBeenSet) {
+    payload.WithObject("KeyUsage", m_keyUsage.Jsonize());
   }
 
-  if(m_subjectInformationAccessHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> subjectInformationAccessJsonList(m_subjectInformationAccess.size());
-   for(unsigned subjectInformationAccessIndex = 0; subjectInformationAccessIndex < subjectInformationAccessJsonList.GetLength(); ++subjectInformationAccessIndex)
-   {
-     subjectInformationAccessJsonList[subjectInformationAccessIndex].AsObject(m_subjectInformationAccess[subjectInformationAccessIndex].Jsonize());
-   }
-   payload.WithArray("SubjectInformationAccess", std::move(subjectInformationAccessJsonList));
-
+  if (m_subjectInformationAccessHasBeenSet) {
+    Aws::Utils::Array<JsonValue> subjectInformationAccessJsonList(m_subjectInformationAccess.size());
+    for (unsigned subjectInformationAccessIndex = 0; subjectInformationAccessIndex < subjectInformationAccessJsonList.GetLength();
+         ++subjectInformationAccessIndex) {
+      subjectInformationAccessJsonList[subjectInformationAccessIndex].AsObject(
+          m_subjectInformationAccess[subjectInformationAccessIndex].Jsonize());
+    }
+    payload.WithArray("SubjectInformationAccess", std::move(subjectInformationAccessJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ACMPCA
-} // namespace Aws
+}  // namespace Model
+}  // namespace ACMPCA
+}  // namespace Aws

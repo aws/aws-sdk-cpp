@@ -6,66 +6,70 @@
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace MediaConvert
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace MediaConvert {
+namespace Model {
 
+/**
+ * Specify the offset between the upper-left corner of the video frame and the top
+ * left corner of the overlay.<p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/MotionImageInsertionOffset">AWS
+ * API Reference</a></p>
+ */
+class MotionImageInsertionOffset {
+ public:
+  AWS_MEDIACONVERT_API MotionImageInsertionOffset() = default;
+  AWS_MEDIACONVERT_API MotionImageInsertionOffset(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MEDIACONVERT_API MotionImageInsertionOffset& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * Specify the offset between the upper-left corner of the video frame and the top
-   * left corner of the overlay.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/MotionImageInsertionOffset">AWS
-   * API Reference</a></p>
+   * Set the distance, in pixels, between the overlay and the left edge of the video
+   * frame.
    */
-  class MotionImageInsertionOffset
-  {
-  public:
-    AWS_MEDIACONVERT_API MotionImageInsertionOffset() = default;
-    AWS_MEDIACONVERT_API MotionImageInsertionOffset(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MEDIACONVERT_API MotionImageInsertionOffset& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetImageX() const { return m_imageX; }
+  inline bool ImageXHasBeenSet() const { return m_imageXHasBeenSet; }
+  inline void SetImageX(int value) {
+    m_imageXHasBeenSet = true;
+    m_imageX = value;
+  }
+  inline MotionImageInsertionOffset& WithImageX(int value) {
+    SetImageX(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * Set the distance, in pixels, between the overlay and the top edge of the video
+   * frame.
+   */
+  inline int GetImageY() const { return m_imageY; }
+  inline bool ImageYHasBeenSet() const { return m_imageYHasBeenSet; }
+  inline void SetImageY(int value) {
+    m_imageYHasBeenSet = true;
+    m_imageY = value;
+  }
+  inline MotionImageInsertionOffset& WithImageY(int value) {
+    SetImageY(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_imageX{0};
+  bool m_imageXHasBeenSet = false;
 
-    ///@{
-    /**
-     * Set the distance, in pixels, between the overlay and the left edge of the video
-     * frame.
-     */
-    inline int GetImageX() const { return m_imageX; }
-    inline bool ImageXHasBeenSet() const { return m_imageXHasBeenSet; }
-    inline void SetImageX(int value) { m_imageXHasBeenSet = true; m_imageX = value; }
-    inline MotionImageInsertionOffset& WithImageX(int value) { SetImageX(value); return *this;}
-    ///@}
+  int m_imageY{0};
+  bool m_imageYHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * Set the distance, in pixels, between the overlay and the top edge of the video
-     * frame.
-     */
-    inline int GetImageY() const { return m_imageY; }
-    inline bool ImageYHasBeenSet() const { return m_imageYHasBeenSet; }
-    inline void SetImageY(int value) { m_imageYHasBeenSet = true; m_imageY = value; }
-    inline MotionImageInsertionOffset& WithImageY(int value) { SetImageY(value); return *this;}
-    ///@}
-  private:
-
-    int m_imageX{0};
-    bool m_imageXHasBeenSet = false;
-
-    int m_imageY{0};
-    bool m_imageYHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

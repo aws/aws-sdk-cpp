@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-RedshiftQueryEngineRedshiftStorageConfiguration::RedshiftQueryEngineRedshiftStorageConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RedshiftQueryEngineRedshiftStorageConfiguration::RedshiftQueryEngineRedshiftStorageConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-RedshiftQueryEngineRedshiftStorageConfiguration& RedshiftQueryEngineRedshiftStorageConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("databaseName"))
-  {
+RedshiftQueryEngineRedshiftStorageConfiguration& RedshiftQueryEngineRedshiftStorageConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("databaseName")) {
     m_databaseName = jsonValue.GetString("databaseName");
     m_databaseNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RedshiftQueryEngineRedshiftStorageConfiguration::Jsonize() const
-{
+JsonValue RedshiftQueryEngineRedshiftStorageConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_databaseNameHasBeenSet)
-  {
-   payload.WithString("databaseName", m_databaseName);
-
+  if (m_databaseNameHasBeenSet) {
+    payload.WithString("databaseName", m_databaseName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

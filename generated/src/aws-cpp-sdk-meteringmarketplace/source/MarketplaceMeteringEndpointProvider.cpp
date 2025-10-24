@@ -5,12 +5,8 @@
 
 #include <aws/meteringmarketplace/MarketplaceMeteringEndpointProvider.h>
 
-namespace Aws
-{
-namespace MarketplaceMetering
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace MarketplaceMetering
-} // namespace Aws
+namespace Aws {
+namespace MarketplaceMetering {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace MarketplaceMetering
+}  // namespace Aws

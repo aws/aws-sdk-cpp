@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
 
-PipelineRollbackMetadata::PipelineRollbackMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PipelineRollbackMetadata::PipelineRollbackMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-PipelineRollbackMetadata& PipelineRollbackMetadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("rollbackTargetPipelineExecutionId"))
-  {
+PipelineRollbackMetadata& PipelineRollbackMetadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("rollbackTargetPipelineExecutionId")) {
     m_rollbackTargetPipelineExecutionId = jsonValue.GetString("rollbackTargetPipelineExecutionId");
     m_rollbackTargetPipelineExecutionIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PipelineRollbackMetadata::Jsonize() const
-{
+JsonValue PipelineRollbackMetadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_rollbackTargetPipelineExecutionIdHasBeenSet)
-  {
-   payload.WithString("rollbackTargetPipelineExecutionId", m_rollbackTargetPipelineExecutionId);
-
+  if (m_rollbackTargetPipelineExecutionIdHasBeenSet) {
+    payload.WithString("rollbackTargetPipelineExecutionId", m_rollbackTargetPipelineExecutionId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

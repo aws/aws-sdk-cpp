@@ -12,44 +12,30 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AdminResetUserPasswordRequest::SerializePayload() const
-{
+Aws::String AdminResetUserPasswordRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_userPoolIdHasBeenSet)
-  {
-   payload.WithString("UserPoolId", m_userPoolId);
-
+  if (m_userPoolIdHasBeenSet) {
+    payload.WithString("UserPoolId", m_userPoolId);
   }
 
-  if(m_usernameHasBeenSet)
-  {
-   payload.WithString("Username", m_username);
-
+  if (m_usernameHasBeenSet) {
+    payload.WithString("Username", m_username);
   }
 
-  if(m_clientMetadataHasBeenSet)
-  {
-   JsonValue clientMetadataJsonMap;
-   for(auto& clientMetadataItem : m_clientMetadata)
-   {
-     clientMetadataJsonMap.WithString(clientMetadataItem.first, clientMetadataItem.second);
-   }
-   payload.WithObject("ClientMetadata", std::move(clientMetadataJsonMap));
-
+  if (m_clientMetadataHasBeenSet) {
+    JsonValue clientMetadataJsonMap;
+    for (auto& clientMetadataItem : m_clientMetadata) {
+      clientMetadataJsonMap.WithString(clientMetadataItem.first, clientMetadataItem.second);
+    }
+    payload.WithObject("ClientMetadata", std::move(clientMetadataJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection AdminResetUserPasswordRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection AdminResetUserPasswordRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityProviderService.AdminResetUserPassword"));
   return headers;
-
 }
-
-
-
-

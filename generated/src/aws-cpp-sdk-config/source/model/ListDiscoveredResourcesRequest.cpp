@@ -12,61 +12,42 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListDiscoveredResourcesRequest::SerializePayload() const
-{
+Aws::String ListDiscoveredResourcesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("resourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
+  if (m_resourceTypeHasBeenSet) {
+    payload.WithString("resourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
   }
 
-  if(m_resourceIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> resourceIdsJsonList(m_resourceIds.size());
-   for(unsigned resourceIdsIndex = 0; resourceIdsIndex < resourceIdsJsonList.GetLength(); ++resourceIdsIndex)
-   {
-     resourceIdsJsonList[resourceIdsIndex].AsString(m_resourceIds[resourceIdsIndex]);
-   }
-   payload.WithArray("resourceIds", std::move(resourceIdsJsonList));
-
+  if (m_resourceIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> resourceIdsJsonList(m_resourceIds.size());
+    for (unsigned resourceIdsIndex = 0; resourceIdsIndex < resourceIdsJsonList.GetLength(); ++resourceIdsIndex) {
+      resourceIdsJsonList[resourceIdsIndex].AsString(m_resourceIds[resourceIdsIndex]);
+    }
+    payload.WithArray("resourceIds", std::move(resourceIdsJsonList));
   }
 
-  if(m_resourceNameHasBeenSet)
-  {
-   payload.WithString("resourceName", m_resourceName);
-
+  if (m_resourceNameHasBeenSet) {
+    payload.WithString("resourceName", m_resourceName);
   }
 
-  if(m_limitHasBeenSet)
-  {
-   payload.WithInteger("limit", m_limit);
-
+  if (m_limitHasBeenSet) {
+    payload.WithInteger("limit", m_limit);
   }
 
-  if(m_includeDeletedResourcesHasBeenSet)
-  {
-   payload.WithBool("includeDeletedResources", m_includeDeletedResources);
-
+  if (m_includeDeletedResourcesHasBeenSet) {
+    payload.WithBool("includeDeletedResources", m_includeDeletedResources);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("nextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("nextToken", m_nextToken);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ListDiscoveredResourcesRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListDiscoveredResourcesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "StarlingDoveService.ListDiscoveredResources"));
   return headers;
-
 }
-
-
-
-

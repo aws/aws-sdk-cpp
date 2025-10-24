@@ -5,12 +5,8 @@
 
 #include <aws/internetmonitor/InternetMonitorEndpointProvider.h>
 
-namespace Aws
-{
-namespace InternetMonitor
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace InternetMonitor
-} // namespace Aws
+namespace Aws {
+namespace InternetMonitor {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace InternetMonitor
+}  // namespace Aws

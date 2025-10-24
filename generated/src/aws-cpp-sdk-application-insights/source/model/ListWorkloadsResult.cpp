@@ -4,10 +4,10 @@
  */
 
 #include <aws/application-insights/model/ListWorkloadsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,37 +17,28 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListWorkloadsResult::ListWorkloadsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListWorkloadsResult::ListWorkloadsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListWorkloadsResult& ListWorkloadsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListWorkloadsResult& ListWorkloadsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("WorkloadList"))
-  {
+  if (jsonValue.ValueExists("WorkloadList")) {
     Aws::Utils::Array<JsonView> workloadListJsonList = jsonValue.GetArray("WorkloadList");
-    for(unsigned workloadListIndex = 0; workloadListIndex < workloadListJsonList.GetLength(); ++workloadListIndex)
-    {
+    for (unsigned workloadListIndex = 0; workloadListIndex < workloadListJsonList.GetLength(); ++workloadListIndex) {
       m_workloadList.push_back(workloadListJsonList[workloadListIndex].AsObject());
     }
     m_workloadListHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

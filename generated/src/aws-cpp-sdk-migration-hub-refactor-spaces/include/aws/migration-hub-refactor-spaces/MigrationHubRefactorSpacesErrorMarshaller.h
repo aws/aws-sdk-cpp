@@ -5,19 +5,16 @@
 
 #pragma once
 
-#include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpaces_EXPORTS.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
+#include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpaces_EXPORTS.h>
 
-namespace Aws
-{
-namespace Client
-{
+namespace Aws {
+namespace Client {
 
-class AWS_MIGRATIONHUBREFACTORSPACES_API MigrationHubRefactorSpacesErrorMarshaller : public Aws::Client::JsonErrorMarshaller
-{
-public:
+class AWS_MIGRATIONHUBREFACTORSPACES_API MigrationHubRefactorSpacesErrorMarshaller : public Aws::Client::JsonErrorMarshaller {
+ public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Client
-} // namespace Aws
+}  // namespace Client
+}  // namespace Aws

@@ -3,49 +3,39 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint/model/RawEmail.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint/model/RawEmail.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Pinpoint
-{
-namespace Model
-{
+namespace Aws {
+namespace Pinpoint {
+namespace Model {
 
-RawEmail::RawEmail(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RawEmail::RawEmail(JsonView jsonValue) { *this = jsonValue; }
 
-RawEmail& RawEmail::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Data"))
-  {
+RawEmail& RawEmail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Data")) {
     m_data = HashingUtils::Base64Decode(jsonValue.GetString("Data"));
     m_dataHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RawEmail::Jsonize() const
-{
+JsonValue RawEmail::Jsonize() const {
   JsonValue payload;
 
-  if(m_dataHasBeenSet)
-  {
-   payload.WithString("Data", HashingUtils::Base64Encode(m_data));
+  if (m_dataHasBeenSet) {
+    payload.WithString("Data", HashingUtils::Base64Encode(m_data));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

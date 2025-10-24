@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-DataTransferApi::DataTransferApi(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DataTransferApi::DataTransferApi(JsonView jsonValue) { *this = jsonValue; }
 
-DataTransferApi& DataTransferApi::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+DataTransferApi& DataTransferApi::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = DataTransferApiTypeMapper::GetDataTransferApiTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DataTransferApi::Jsonize() const
-{
+JsonValue DataTransferApi::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", DataTransferApiTypeMapper::GetNameForDataTransferApiType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", DataTransferApiTypeMapper::GetNameForDataTransferApiType(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

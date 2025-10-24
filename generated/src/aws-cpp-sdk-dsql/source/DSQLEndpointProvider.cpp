@@ -5,12 +5,8 @@
 
 #include <aws/dsql/DSQLEndpointProvider.h>
 
-namespace Aws
-{
-namespace DSQL
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace DSQL
-} // namespace Aws
+namespace Aws {
+namespace DSQL {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace DSQL
+}  // namespace Aws

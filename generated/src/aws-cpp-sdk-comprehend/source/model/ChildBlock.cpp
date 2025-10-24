@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Comprehend {
+namespace Model {
 
-ChildBlock::ChildBlock(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ChildBlock::ChildBlock(JsonView jsonValue) { *this = jsonValue; }
 
-ChildBlock& ChildBlock::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ChildBlockId"))
-  {
+ChildBlock& ChildBlock::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ChildBlockId")) {
     m_childBlockId = jsonValue.GetString("ChildBlockId");
     m_childBlockIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BeginOffset"))
-  {
+  if (jsonValue.ValueExists("BeginOffset")) {
     m_beginOffset = jsonValue.GetInteger("BeginOffset");
     m_beginOffsetHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EndOffset"))
-  {
+  if (jsonValue.ValueExists("EndOffset")) {
     m_endOffset = jsonValue.GetInteger("EndOffset");
     m_endOffsetHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ChildBlock::Jsonize() const
-{
+JsonValue ChildBlock::Jsonize() const {
   JsonValue payload;
 
-  if(m_childBlockIdHasBeenSet)
-  {
-   payload.WithString("ChildBlockId", m_childBlockId);
-
+  if (m_childBlockIdHasBeenSet) {
+    payload.WithString("ChildBlockId", m_childBlockId);
   }
 
-  if(m_beginOffsetHasBeenSet)
-  {
-   payload.WithInteger("BeginOffset", m_beginOffset);
-
+  if (m_beginOffsetHasBeenSet) {
+    payload.WithInteger("BeginOffset", m_beginOffset);
   }
 
-  if(m_endOffsetHasBeenSet)
-  {
-   payload.WithInteger("EndOffset", m_endOffset);
-
+  if (m_endOffsetHasBeenSet) {
+    payload.WithInteger("EndOffset", m_endOffset);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

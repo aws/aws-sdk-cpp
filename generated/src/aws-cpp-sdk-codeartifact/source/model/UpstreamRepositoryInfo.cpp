@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeArtifact
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeArtifact {
+namespace Model {
 
-UpstreamRepositoryInfo::UpstreamRepositoryInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UpstreamRepositoryInfo::UpstreamRepositoryInfo(JsonView jsonValue) { *this = jsonValue; }
 
-UpstreamRepositoryInfo& UpstreamRepositoryInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("repositoryName"))
-  {
+UpstreamRepositoryInfo& UpstreamRepositoryInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("repositoryName")) {
     m_repositoryName = jsonValue.GetString("repositoryName");
     m_repositoryNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UpstreamRepositoryInfo::Jsonize() const
-{
+JsonValue UpstreamRepositoryInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_repositoryNameHasBeenSet)
-  {
-   payload.WithString("repositoryName", m_repositoryName);
-
+  if (m_repositoryNameHasBeenSet) {
+    payload.WithString("repositoryName", m_repositoryName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeArtifact
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeArtifact
+}  // namespace Aws

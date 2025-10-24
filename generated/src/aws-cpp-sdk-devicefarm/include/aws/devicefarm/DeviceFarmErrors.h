@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 
-namespace Aws
-{
-namespace DeviceFarm
-{
-enum class DeviceFarmErrors
-{
-  //From Core//
+namespace Aws {
+namespace DeviceFarm {
+enum class DeviceFarmErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class DeviceFarmErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class DeviceFarmErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ARGUMENT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ARGUMENT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CANNOT_DELETE,
   IDEMPOTENCY,
   INTERNAL_SERVICE,
@@ -61,9 +58,8 @@ enum class DeviceFarmErrors
   TOO_MANY_TAGS
 };
 
-class AWS_DEVICEFARM_API DeviceFarmError : public Aws::Client::AWSError<DeviceFarmErrors>
-{
-public:
+class AWS_DEVICEFARM_API DeviceFarmError : public Aws::Client::AWSError<DeviceFarmErrors> {
+ public:
   DeviceFarmError() {}
   DeviceFarmError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<DeviceFarmErrors>(rhs) {}
   DeviceFarmError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<DeviceFarmErrors>(rhs) {}
@@ -74,10 +70,9 @@ public:
   T GetModeledError();
 };
 
-namespace DeviceFarmErrorMapper
-{
-  AWS_DEVICEFARM_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace DeviceFarmErrorMapper {
+AWS_DEVICEFARM_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace DeviceFarm
-} // namespace Aws
+}  // namespace DeviceFarm
+}  // namespace Aws

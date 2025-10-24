@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/datazone/model/CreateEnvironmentProfilePolicyGrantDetail.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/datazone/model/CreateEnvironmentProfilePolicyGrantDetail.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DataZone
-{
-namespace Model
-{
+namespace Aws {
+namespace DataZone {
+namespace Model {
 
-CreateEnvironmentProfilePolicyGrantDetail::CreateEnvironmentProfilePolicyGrantDetail(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CreateEnvironmentProfilePolicyGrantDetail::CreateEnvironmentProfilePolicyGrantDetail(JsonView jsonValue) { *this = jsonValue; }
 
-CreateEnvironmentProfilePolicyGrantDetail& CreateEnvironmentProfilePolicyGrantDetail::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("domainUnitId"))
-  {
+CreateEnvironmentProfilePolicyGrantDetail& CreateEnvironmentProfilePolicyGrantDetail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("domainUnitId")) {
     m_domainUnitId = jsonValue.GetString("domainUnitId");
     m_domainUnitIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CreateEnvironmentProfilePolicyGrantDetail::Jsonize() const
-{
+JsonValue CreateEnvironmentProfilePolicyGrantDetail::Jsonize() const {
   JsonValue payload;
 
-  if(m_domainUnitIdHasBeenSet)
-  {
-   payload.WithString("domainUnitId", m_domainUnitId);
-
+  if (m_domainUnitIdHasBeenSet) {
+    payload.WithString("domainUnitId", m_domainUnitId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DataZone
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

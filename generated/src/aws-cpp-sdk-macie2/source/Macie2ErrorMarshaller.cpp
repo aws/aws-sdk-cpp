@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::Macie2;
 
-AWSError<CoreErrors> Macie2ErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> Macie2ErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = Macie2ErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

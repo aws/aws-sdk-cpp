@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/greengrassv2/model/AssociateClientDeviceWithCoreDeviceErrorEntry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/greengrassv2/model/AssociateClientDeviceWithCoreDeviceErrorEntry.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GreengrassV2
-{
-namespace Model
-{
+namespace Aws {
+namespace GreengrassV2 {
+namespace Model {
 
-AssociateClientDeviceWithCoreDeviceErrorEntry::AssociateClientDeviceWithCoreDeviceErrorEntry(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AssociateClientDeviceWithCoreDeviceErrorEntry::AssociateClientDeviceWithCoreDeviceErrorEntry(JsonView jsonValue) { *this = jsonValue; }
 
-AssociateClientDeviceWithCoreDeviceErrorEntry& AssociateClientDeviceWithCoreDeviceErrorEntry::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("thingName"))
-  {
+AssociateClientDeviceWithCoreDeviceErrorEntry& AssociateClientDeviceWithCoreDeviceErrorEntry::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("thingName")) {
     m_thingName = jsonValue.GetString("thingName");
     m_thingNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("code"))
-  {
+  if (jsonValue.ValueExists("code")) {
     m_code = jsonValue.GetString("code");
     m_codeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("message"))
-  {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AssociateClientDeviceWithCoreDeviceErrorEntry::Jsonize() const
-{
+JsonValue AssociateClientDeviceWithCoreDeviceErrorEntry::Jsonize() const {
   JsonValue payload;
 
-  if(m_thingNameHasBeenSet)
-  {
-   payload.WithString("thingName", m_thingName);
-
+  if (m_thingNameHasBeenSet) {
+    payload.WithString("thingName", m_thingName);
   }
 
-  if(m_codeHasBeenSet)
-  {
-   payload.WithString("code", m_code);
-
+  if (m_codeHasBeenSet) {
+    payload.WithString("code", m_code);
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GreengrassV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace GreengrassV2
+}  // namespace Aws

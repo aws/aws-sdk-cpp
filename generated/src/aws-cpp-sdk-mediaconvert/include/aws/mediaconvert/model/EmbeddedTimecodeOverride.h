@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class EmbeddedTimecodeOverride
-  {
-    NOT_SET,
-    NONE,
-    USE_MDPM
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class EmbeddedTimecodeOverride { NOT_SET, NONE, USE_MDPM };
 
-namespace EmbeddedTimecodeOverrideMapper
-{
+namespace EmbeddedTimecodeOverrideMapper {
 AWS_MEDIACONVERT_API EmbeddedTimecodeOverride GetEmbeddedTimecodeOverrideForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForEmbeddedTimecodeOverride(EmbeddedTimecodeOverride value);
-} // namespace EmbeddedTimecodeOverrideMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace EmbeddedTimecodeOverrideMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

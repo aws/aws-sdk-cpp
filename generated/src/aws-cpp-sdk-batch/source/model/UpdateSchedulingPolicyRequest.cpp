@@ -12,25 +12,16 @@ using namespace Aws::Batch::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateSchedulingPolicyRequest::SerializePayload() const
-{
+Aws::String UpdateSchedulingPolicyRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_fairsharePolicyHasBeenSet)
-  {
-   payload.WithObject("fairsharePolicy", m_fairsharePolicy.Jsonize());
-
+  if (m_fairsharePolicyHasBeenSet) {
+    payload.WithObject("fairsharePolicy", m_fairsharePolicy.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

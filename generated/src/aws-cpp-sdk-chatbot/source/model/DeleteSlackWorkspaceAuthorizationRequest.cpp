@@ -12,19 +12,12 @@ using namespace Aws::chatbot::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteSlackWorkspaceAuthorizationRequest::SerializePayload() const
-{
+Aws::String DeleteSlackWorkspaceAuthorizationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_slackTeamIdHasBeenSet)
-  {
-   payload.WithString("SlackTeamId", m_slackTeamId);
-
+  if (m_slackTeamIdHasBeenSet) {
+    payload.WithString("SlackTeamId", m_slackTeamId);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

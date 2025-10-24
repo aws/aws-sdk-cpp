@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kafka/model/UserIdentity.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kafka/model/UserIdentity.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Kafka
-{
-namespace Model
-{
+namespace Aws {
+namespace Kafka {
+namespace Model {
 
-UserIdentity::UserIdentity(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UserIdentity::UserIdentity(JsonView jsonValue) { *this = jsonValue; }
 
-UserIdentity& UserIdentity::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+UserIdentity& UserIdentity::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = UserIdentityTypeMapper::GetUserIdentityTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("principalId"))
-  {
+  if (jsonValue.ValueExists("principalId")) {
     m_principalId = jsonValue.GetString("principalId");
     m_principalIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UserIdentity::Jsonize() const
-{
+JsonValue UserIdentity::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", UserIdentityTypeMapper::GetNameForUserIdentityType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", UserIdentityTypeMapper::GetNameForUserIdentityType(m_type));
   }
 
-  if(m_principalIdHasBeenSet)
-  {
-   payload.WithString("principalId", m_principalId);
-
+  if (m_principalIdHasBeenSet) {
+    payload.WithString("principalId", m_principalId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Kafka
-} // namespace Aws
+}  // namespace Model
+}  // namespace Kafka
+}  // namespace Aws

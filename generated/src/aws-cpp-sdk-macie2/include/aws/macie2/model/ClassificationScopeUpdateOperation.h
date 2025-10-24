@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/macie2/Macie2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/macie2/Macie2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
-  enum class ClassificationScopeUpdateOperation
-  {
-    NOT_SET,
-    ADD,
-    REPLACE,
-    REMOVE
-  };
+namespace Aws {
+namespace Macie2 {
+namespace Model {
+enum class ClassificationScopeUpdateOperation { NOT_SET, ADD, REPLACE, REMOVE };
 
-namespace ClassificationScopeUpdateOperationMapper
-{
+namespace ClassificationScopeUpdateOperationMapper {
 AWS_MACIE2_API ClassificationScopeUpdateOperation GetClassificationScopeUpdateOperationForName(const Aws::String& name);
 
 AWS_MACIE2_API Aws::String GetNameForClassificationScopeUpdateOperation(ClassificationScopeUpdateOperation value);
-} // namespace ClassificationScopeUpdateOperationMapper
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace ClassificationScopeUpdateOperationMapper
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

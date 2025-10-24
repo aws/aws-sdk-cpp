@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
 
-namespace Aws
-{
-namespace ResilienceHub
-{
-namespace Model
-{
-  enum class TemplateFormat
-  {
-    NOT_SET,
-    CfnYaml,
-    CfnJson
-  };
+namespace Aws {
+namespace ResilienceHub {
+namespace Model {
+enum class TemplateFormat { NOT_SET, CfnYaml, CfnJson };
 
-namespace TemplateFormatMapper
-{
+namespace TemplateFormatMapper {
 AWS_RESILIENCEHUB_API TemplateFormat GetTemplateFormatForName(const Aws::String& name);
 
 AWS_RESILIENCEHUB_API Aws::String GetNameForTemplateFormat(TemplateFormat value);
-} // namespace TemplateFormatMapper
-} // namespace Model
-} // namespace ResilienceHub
-} // namespace Aws
+}  // namespace TemplateFormatMapper
+}  // namespace Model
+}  // namespace ResilienceHub
+}  // namespace Aws

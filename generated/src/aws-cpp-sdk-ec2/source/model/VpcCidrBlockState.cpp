@@ -3,43 +3,34 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/VpcCidrBlockState.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/VpcCidrBlockState.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-VpcCidrBlockState::VpcCidrBlockState(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+VpcCidrBlockState::VpcCidrBlockState(const XmlNode& xmlNode) { *this = xmlNode; }
 
-VpcCidrBlockState& VpcCidrBlockState::operator =(const XmlNode& xmlNode)
-{
+VpcCidrBlockState& VpcCidrBlockState::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode stateNode = resultNode.FirstChild("state");
-    if(!stateNode.IsNull())
-    {
-      m_state = VpcCidrBlockStateCodeMapper::GetVpcCidrBlockStateCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
+    if (!stateNode.IsNull()) {
+      m_state = VpcCidrBlockStateCodeMapper::GetVpcCidrBlockStateCodeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
-    if(!statusMessageNode.IsNull())
-    {
+    if (!statusMessageNode.IsNull()) {
       m_statusMessage = Aws::Utils::Xml::DecodeEscapedXmlText(statusMessageNode.GetText());
       m_statusMessageHasBeenSet = true;
     }
@@ -48,32 +39,27 @@ VpcCidrBlockState& VpcCidrBlockState::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void VpcCidrBlockState::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_stateHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(VpcCidrBlockStateCodeMapper::GetNameForVpcCidrBlockStateCode(m_state)) << "&";
+void VpcCidrBlockState::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_stateHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".State=" << StringUtils::URLEncode(VpcCidrBlockStateCodeMapper::GetNameForVpcCidrBlockStateCode(m_state)) << "&";
   }
 
-  if(m_statusMessageHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".StatusMessage=" << StringUtils::URLEncode(m_statusMessage.c_str()) << "&";
-  }
-
-}
-
-void VpcCidrBlockState::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_stateHasBeenSet)
-  {
-      oStream << location << ".State=" << StringUtils::URLEncode(VpcCidrBlockStateCodeMapper::GetNameForVpcCidrBlockStateCode(m_state)) << "&";
-  }
-  if(m_statusMessageHasBeenSet)
-  {
-      oStream << location << ".StatusMessage=" << StringUtils::URLEncode(m_statusMessage.c_str()) << "&";
+  if (m_statusMessageHasBeenSet) {
+    oStream << location << index << locationValue << ".StatusMessage=" << StringUtils::URLEncode(m_statusMessage.c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void VpcCidrBlockState::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_stateHasBeenSet) {
+    oStream << location << ".State=" << StringUtils::URLEncode(VpcCidrBlockStateCodeMapper::GetNameForVpcCidrBlockStateCode(m_state))
+            << "&";
+  }
+  if (m_statusMessageHasBeenSet) {
+    oStream << location << ".StatusMessage=" << StringUtils::URLEncode(m_statusMessage.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

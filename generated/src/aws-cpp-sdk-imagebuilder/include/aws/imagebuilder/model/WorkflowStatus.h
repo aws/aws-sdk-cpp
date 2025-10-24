@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 
-namespace Aws
-{
-namespace imagebuilder
-{
-namespace Model
-{
-  enum class WorkflowStatus
-  {
-    NOT_SET,
-    DEPRECATED
-  };
+namespace Aws {
+namespace imagebuilder {
+namespace Model {
+enum class WorkflowStatus { NOT_SET, DEPRECATED };
 
-namespace WorkflowStatusMapper
-{
+namespace WorkflowStatusMapper {
 AWS_IMAGEBUILDER_API WorkflowStatus GetWorkflowStatusForName(const Aws::String& name);
 
 AWS_IMAGEBUILDER_API Aws::String GetNameForWorkflowStatus(WorkflowStatus value);
-} // namespace WorkflowStatusMapper
-} // namespace Model
-} // namespace imagebuilder
-} // namespace Aws
+}  // namespace WorkflowStatusMapper
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

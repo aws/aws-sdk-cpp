@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediapackage-vod/model/CreateAssetRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediapackage-vod/model/CreateAssetRequest.h>
 
 #include <utility>
 
@@ -12,54 +12,36 @@ using namespace Aws::MediaPackageVod::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateAssetRequest::SerializePayload() const
-{
+Aws::String CreateAssetRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_packagingGroupIdHasBeenSet)
-  {
-   payload.WithString("packagingGroupId", m_packagingGroupId);
-
+  if (m_packagingGroupIdHasBeenSet) {
+    payload.WithString("packagingGroupId", m_packagingGroupId);
   }
 
-  if(m_resourceIdHasBeenSet)
-  {
-   payload.WithString("resourceId", m_resourceId);
-
+  if (m_resourceIdHasBeenSet) {
+    payload.WithString("resourceId", m_resourceId);
   }
 
-  if(m_sourceArnHasBeenSet)
-  {
-   payload.WithString("sourceArn", m_sourceArn);
-
+  if (m_sourceArnHasBeenSet) {
+    payload.WithString("sourceArn", m_sourceArn);
   }
 
-  if(m_sourceRoleArnHasBeenSet)
-  {
-   payload.WithString("sourceRoleArn", m_sourceRoleArn);
-
+  if (m_sourceRoleArnHasBeenSet) {
+    payload.WithString("sourceRoleArn", m_sourceRoleArn);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

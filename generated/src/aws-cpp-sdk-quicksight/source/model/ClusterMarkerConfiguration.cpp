@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/ClusterMarkerConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/ClusterMarkerConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-ClusterMarkerConfiguration::ClusterMarkerConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ClusterMarkerConfiguration::ClusterMarkerConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ClusterMarkerConfiguration& ClusterMarkerConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ClusterMarker"))
-  {
+ClusterMarkerConfiguration& ClusterMarkerConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ClusterMarker")) {
     m_clusterMarker = jsonValue.GetObject("ClusterMarker");
     m_clusterMarkerHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ClusterMarkerConfiguration::Jsonize() const
-{
+JsonValue ClusterMarkerConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_clusterMarkerHasBeenSet)
-  {
-   payload.WithObject("ClusterMarker", m_clusterMarker.Jsonize());
-
+  if (m_clusterMarkerHasBeenSet) {
+    payload.WithObject("ClusterMarker", m_clusterMarker.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

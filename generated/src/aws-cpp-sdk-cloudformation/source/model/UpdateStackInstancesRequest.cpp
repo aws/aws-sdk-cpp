@@ -10,85 +10,62 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String UpdateStackInstancesRequest::SerializePayload() const
-{
+Aws::String UpdateStackInstancesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=UpdateStackInstances&";
-  if(m_stackSetNameHasBeenSet)
-  {
+  if (m_stackSetNameHasBeenSet) {
     ss << "StackSetName=" << StringUtils::URLEncode(m_stackSetName.c_str()) << "&";
   }
 
-  if(m_accountsHasBeenSet)
-  {
-    if (m_accounts.empty())
-    {
+  if (m_accountsHasBeenSet) {
+    if (m_accounts.empty()) {
       ss << "Accounts=&";
-    }
-    else
-    {
+    } else {
       unsigned accountsCount = 1;
-      for(auto& item : m_accounts)
-      {
-        ss << "Accounts.member." << accountsCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_accounts) {
+        ss << "Accounts.member." << accountsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         accountsCount++;
       }
     }
   }
 
-  if(m_deploymentTargetsHasBeenSet)
-  {
+  if (m_deploymentTargetsHasBeenSet) {
     m_deploymentTargets.OutputToStream(ss, "DeploymentTargets");
   }
 
-  if(m_regionsHasBeenSet)
-  {
-    if (m_regions.empty())
-    {
+  if (m_regionsHasBeenSet) {
+    if (m_regions.empty()) {
       ss << "Regions=&";
-    }
-    else
-    {
+    } else {
       unsigned regionsCount = 1;
-      for(auto& item : m_regions)
-      {
-        ss << "Regions.member." << regionsCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_regions) {
+        ss << "Regions.member." << regionsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         regionsCount++;
       }
     }
   }
 
-  if(m_parameterOverridesHasBeenSet)
-  {
-    if (m_parameterOverrides.empty())
-    {
+  if (m_parameterOverridesHasBeenSet) {
+    if (m_parameterOverrides.empty()) {
       ss << "ParameterOverrides=&";
-    }
-    else
-    {
+    } else {
       unsigned parameterOverridesCount = 1;
-      for(auto& item : m_parameterOverrides)
-      {
+      for (auto& item : m_parameterOverrides) {
         item.OutputToStream(ss, "ParameterOverrides.member.", parameterOverridesCount, "");
         parameterOverridesCount++;
       }
     }
   }
 
-  if(m_operationPreferencesHasBeenSet)
-  {
+  if (m_operationPreferencesHasBeenSet) {
     m_operationPreferences.OutputToStream(ss, "OperationPreferences");
   }
 
-  if(m_operationIdHasBeenSet)
-  {
+  if (m_operationIdHasBeenSet) {
     ss << "OperationId=" << StringUtils::URLEncode(m_operationId.c_str()) << "&";
   }
 
-  if(m_callAsHasBeenSet)
-  {
+  if (m_callAsHasBeenSet) {
     ss << "CallAs=" << StringUtils::URLEncode(CallAsMapper::GetNameForCallAs(m_callAs)) << "&";
   }
 
@@ -96,8 +73,4 @@ Aws::String UpdateStackInstancesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  UpdateStackInstancesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void UpdateStackInstancesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

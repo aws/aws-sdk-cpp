@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class ReferenceLineValueLabelRelativePosition
-  {
-    NOT_SET,
-    BEFORE_CUSTOM_LABEL,
-    AFTER_CUSTOM_LABEL
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class ReferenceLineValueLabelRelativePosition { NOT_SET, BEFORE_CUSTOM_LABEL, AFTER_CUSTOM_LABEL };
 
-namespace ReferenceLineValueLabelRelativePositionMapper
-{
+namespace ReferenceLineValueLabelRelativePositionMapper {
 AWS_QUICKSIGHT_API ReferenceLineValueLabelRelativePosition GetReferenceLineValueLabelRelativePositionForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForReferenceLineValueLabelRelativePosition(ReferenceLineValueLabelRelativePosition value);
-} // namespace ReferenceLineValueLabelRelativePositionMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace ReferenceLineValueLabelRelativePositionMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

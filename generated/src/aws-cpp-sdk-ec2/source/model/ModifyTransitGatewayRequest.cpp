@@ -3,34 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ModifyTransitGatewayRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ModifyTransitGatewayRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyTransitGatewayRequest::SerializePayload() const
-{
+Aws::String ModifyTransitGatewayRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyTransitGateway&";
-  if(m_transitGatewayIdHasBeenSet)
-  {
+  if (m_transitGatewayIdHasBeenSet) {
     ss << "TransitGatewayId=" << StringUtils::URLEncode(m_transitGatewayId.c_str()) << "&";
   }
 
-  if(m_descriptionHasBeenSet)
-  {
+  if (m_descriptionHasBeenSet) {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
-  if(m_optionsHasBeenSet)
-  {
+  if (m_optionsHasBeenSet) {
     m_options.OutputToStream(ss, "Options");
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -38,8 +33,4 @@ Aws::String ModifyTransitGatewayRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ModifyTransitGatewayRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ModifyTransitGatewayRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
 
-S3PublicAccessBlockConfiguration::S3PublicAccessBlockConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+S3PublicAccessBlockConfiguration::S3PublicAccessBlockConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-S3PublicAccessBlockConfiguration& S3PublicAccessBlockConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ignorePublicAcls"))
-  {
+S3PublicAccessBlockConfiguration& S3PublicAccessBlockConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ignorePublicAcls")) {
     m_ignorePublicAcls = jsonValue.GetBool("ignorePublicAcls");
     m_ignorePublicAclsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("restrictPublicBuckets"))
-  {
+  if (jsonValue.ValueExists("restrictPublicBuckets")) {
     m_restrictPublicBuckets = jsonValue.GetBool("restrictPublicBuckets");
     m_restrictPublicBucketsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue S3PublicAccessBlockConfiguration::Jsonize() const
-{
+JsonValue S3PublicAccessBlockConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_ignorePublicAclsHasBeenSet)
-  {
-   payload.WithBool("ignorePublicAcls", m_ignorePublicAcls);
-
+  if (m_ignorePublicAclsHasBeenSet) {
+    payload.WithBool("ignorePublicAcls", m_ignorePublicAcls);
   }
 
-  if(m_restrictPublicBucketsHasBeenSet)
-  {
-   payload.WithBool("restrictPublicBuckets", m_restrictPublicBuckets);
-
+  if (m_restrictPublicBucketsHasBeenSet) {
+    payload.WithBool("restrictPublicBuckets", m_restrictPublicBuckets);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

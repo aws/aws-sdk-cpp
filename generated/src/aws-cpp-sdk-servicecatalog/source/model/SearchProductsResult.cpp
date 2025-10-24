@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/servicecatalog/model/SearchProductsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/servicecatalog/model/SearchProductsResult.h>
 
 #include <utility>
 
@@ -17,53 +17,43 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SearchProductsResult::SearchProductsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+SearchProductsResult::SearchProductsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-SearchProductsResult& SearchProductsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+SearchProductsResult& SearchProductsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("ProductViewSummaries"))
-  {
+  if (jsonValue.ValueExists("ProductViewSummaries")) {
     Aws::Utils::Array<JsonView> productViewSummariesJsonList = jsonValue.GetArray("ProductViewSummaries");
-    for(unsigned productViewSummariesIndex = 0; productViewSummariesIndex < productViewSummariesJsonList.GetLength(); ++productViewSummariesIndex)
-    {
+    for (unsigned productViewSummariesIndex = 0; productViewSummariesIndex < productViewSummariesJsonList.GetLength();
+         ++productViewSummariesIndex) {
       m_productViewSummaries.push_back(productViewSummariesJsonList[productViewSummariesIndex].AsObject());
     }
     m_productViewSummariesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProductViewAggregations"))
-  {
+  if (jsonValue.ValueExists("ProductViewAggregations")) {
     Aws::Map<Aws::String, JsonView> productViewAggregationsJsonMap = jsonValue.GetObject("ProductViewAggregations").GetAllObjects();
-    for(auto& productViewAggregationsItem : productViewAggregationsJsonMap)
-    {
+    for (auto& productViewAggregationsItem : productViewAggregationsJsonMap) {
       Aws::Utils::Array<JsonView> productViewAggregationValuesJsonList = productViewAggregationsItem.second.AsArray();
       Aws::Vector<ProductViewAggregationValue> productViewAggregationValuesList;
       productViewAggregationValuesList.reserve((size_t)productViewAggregationValuesJsonList.GetLength());
-      for(unsigned productViewAggregationValuesIndex = 0; productViewAggregationValuesIndex < productViewAggregationValuesJsonList.GetLength(); ++productViewAggregationValuesIndex)
-      {
+      for (unsigned productViewAggregationValuesIndex = 0;
+           productViewAggregationValuesIndex < productViewAggregationValuesJsonList.GetLength(); ++productViewAggregationValuesIndex) {
         productViewAggregationValuesList.push_back(productViewAggregationValuesJsonList[productViewAggregationValuesIndex].AsObject());
       }
       m_productViewAggregations[productViewAggregationsItem.first] = std::move(productViewAggregationValuesList);
     }
     m_productViewAggregationsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextPageToken"))
-  {
+  if (jsonValue.ValueExists("NextPageToken")) {
     m_nextPageToken = jsonValue.GetString("NextPageToken");
     m_nextPageTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

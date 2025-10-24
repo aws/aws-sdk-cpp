@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/kinesis-video-webrtc-storage/KinesisVideoWebRTCStorageRequest.h>
 
-namespace Aws
-{
-namespace KinesisVideoWebRTCStorage
-{
-} // namespace KinesisVideoWebRTCStorage
-} // namespace Aws
+namespace Aws {
+namespace KinesisVideoWebRTCStorage {}  // namespace KinesisVideoWebRTCStorage
+}  // namespace Aws

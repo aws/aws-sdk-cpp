@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/imagebuilder/model/StartResourceStateUpdateRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/imagebuilder/model/StartResourceStateUpdateRequest.h>
 
 #include <utility>
 
@@ -12,54 +12,36 @@ using namespace Aws::imagebuilder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartResourceStateUpdateRequest::SerializePayload() const
-{
+Aws::String StartResourceStateUpdateRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceArnHasBeenSet)
-  {
-   payload.WithString("resourceArn", m_resourceArn);
-
+  if (m_resourceArnHasBeenSet) {
+    payload.WithString("resourceArn", m_resourceArn);
   }
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithObject("state", m_state.Jsonize());
-
+  if (m_stateHasBeenSet) {
+    payload.WithObject("state", m_state.Jsonize());
   }
 
-  if(m_executionRoleHasBeenSet)
-  {
-   payload.WithString("executionRole", m_executionRole);
-
+  if (m_executionRoleHasBeenSet) {
+    payload.WithString("executionRole", m_executionRole);
   }
 
-  if(m_includeResourcesHasBeenSet)
-  {
-   payload.WithObject("includeResources", m_includeResources.Jsonize());
-
+  if (m_includeResourcesHasBeenSet) {
+    payload.WithObject("includeResources", m_includeResources.Jsonize());
   }
 
-  if(m_exclusionRulesHasBeenSet)
-  {
-   payload.WithObject("exclusionRules", m_exclusionRules.Jsonize());
-
+  if (m_exclusionRulesHasBeenSet) {
+    payload.WithObject("exclusionRules", m_exclusionRules.Jsonize());
   }
 
-  if(m_updateAtHasBeenSet)
-  {
-   payload.WithDouble("updateAt", m_updateAt.SecondsWithMSPrecision());
+  if (m_updateAtHasBeenSet) {
+    payload.WithDouble("updateAt", m_updateAt.SecondsWithMSPrecision());
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

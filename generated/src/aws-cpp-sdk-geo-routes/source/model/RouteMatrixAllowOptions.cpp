@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/geo-routes/model/RouteMatrixAllowOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/geo-routes/model/RouteMatrixAllowOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GeoRoutes
-{
-namespace Model
-{
+namespace Aws {
+namespace GeoRoutes {
+namespace Model {
 
-RouteMatrixAllowOptions::RouteMatrixAllowOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RouteMatrixAllowOptions::RouteMatrixAllowOptions(JsonView jsonValue) { *this = jsonValue; }
 
-RouteMatrixAllowOptions& RouteMatrixAllowOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Hot"))
-  {
+RouteMatrixAllowOptions& RouteMatrixAllowOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Hot")) {
     m_hot = jsonValue.GetBool("Hot");
     m_hotHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Hov"))
-  {
+  if (jsonValue.ValueExists("Hov")) {
     m_hov = jsonValue.GetBool("Hov");
     m_hovHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RouteMatrixAllowOptions::Jsonize() const
-{
+JsonValue RouteMatrixAllowOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_hotHasBeenSet)
-  {
-   payload.WithBool("Hot", m_hot);
-
+  if (m_hotHasBeenSet) {
+    payload.WithBool("Hot", m_hot);
   }
 
-  if(m_hovHasBeenSet)
-  {
-   payload.WithBool("Hov", m_hov);
-
+  if (m_hovHasBeenSet) {
+    payload.WithBool("Hov", m_hov);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GeoRoutes
-} // namespace Aws
+}  // namespace Model
+}  // namespace GeoRoutes
+}  // namespace Aws

@@ -11,95 +11,70 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-RealTimeContactAnalysisSegmentEvent::RealTimeContactAnalysisSegmentEvent(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RealTimeContactAnalysisSegmentEvent::RealTimeContactAnalysisSegmentEvent(JsonView jsonValue) { *this = jsonValue; }
 
-RealTimeContactAnalysisSegmentEvent& RealTimeContactAnalysisSegmentEvent::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Id"))
-  {
+RealTimeContactAnalysisSegmentEvent& RealTimeContactAnalysisSegmentEvent::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ParticipantId"))
-  {
+  if (jsonValue.ValueExists("ParticipantId")) {
     m_participantId = jsonValue.GetString("ParticipantId");
     m_participantIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ParticipantRole"))
-  {
+  if (jsonValue.ValueExists("ParticipantRole")) {
     m_participantRole = ParticipantRoleMapper::GetParticipantRoleForName(jsonValue.GetString("ParticipantRole"));
     m_participantRoleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DisplayName"))
-  {
+  if (jsonValue.ValueExists("DisplayName")) {
     m_displayName = jsonValue.GetString("DisplayName");
     m_displayNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EventType"))
-  {
+  if (jsonValue.ValueExists("EventType")) {
     m_eventType = jsonValue.GetString("EventType");
     m_eventTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Time"))
-  {
+  if (jsonValue.ValueExists("Time")) {
     m_time = jsonValue.GetObject("Time");
     m_timeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RealTimeContactAnalysisSegmentEvent::Jsonize() const
-{
+JsonValue RealTimeContactAnalysisSegmentEvent::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
-  if(m_participantIdHasBeenSet)
-  {
-   payload.WithString("ParticipantId", m_participantId);
-
+  if (m_participantIdHasBeenSet) {
+    payload.WithString("ParticipantId", m_participantId);
   }
 
-  if(m_participantRoleHasBeenSet)
-  {
-   payload.WithString("ParticipantRole", ParticipantRoleMapper::GetNameForParticipantRole(m_participantRole));
+  if (m_participantRoleHasBeenSet) {
+    payload.WithString("ParticipantRole", ParticipantRoleMapper::GetNameForParticipantRole(m_participantRole));
   }
 
-  if(m_displayNameHasBeenSet)
-  {
-   payload.WithString("DisplayName", m_displayName);
-
+  if (m_displayNameHasBeenSet) {
+    payload.WithString("DisplayName", m_displayName);
   }
 
-  if(m_eventTypeHasBeenSet)
-  {
-   payload.WithString("EventType", m_eventType);
-
+  if (m_eventTypeHasBeenSet) {
+    payload.WithString("EventType", m_eventType);
   }
 
-  if(m_timeHasBeenSet)
-  {
-   payload.WithObject("Time", m_time.Jsonize());
-
+  if (m_timeHasBeenSet) {
+    payload.WithObject("Time", m_time.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

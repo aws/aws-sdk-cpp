@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-ComplianceByConfigRule::ComplianceByConfigRule(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ComplianceByConfigRule::ComplianceByConfigRule(JsonView jsonValue) { *this = jsonValue; }
 
-ComplianceByConfigRule& ComplianceByConfigRule::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ConfigRuleName"))
-  {
+ComplianceByConfigRule& ComplianceByConfigRule::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ConfigRuleName")) {
     m_configRuleName = jsonValue.GetString("ConfigRuleName");
     m_configRuleNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Compliance"))
-  {
+  if (jsonValue.ValueExists("Compliance")) {
     m_compliance = jsonValue.GetObject("Compliance");
     m_complianceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ComplianceByConfigRule::Jsonize() const
-{
+JsonValue ComplianceByConfigRule::Jsonize() const {
   JsonValue payload;
 
-  if(m_configRuleNameHasBeenSet)
-  {
-   payload.WithString("ConfigRuleName", m_configRuleName);
-
+  if (m_configRuleNameHasBeenSet) {
+    payload.WithString("ConfigRuleName", m_configRuleName);
   }
 
-  if(m_complianceHasBeenSet)
-  {
-   payload.WithObject("Compliance", m_compliance.Jsonize());
-
+  if (m_complianceHasBeenSet) {
+    payload.WithObject("Compliance", m_compliance.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

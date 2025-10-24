@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/monitoring/model/DescribeAnomalyDetectorsResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/monitoring/model/DescribeAnomalyDetectorsResult.h>
 
 #include <utility>
 
@@ -17,30 +17,22 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAnomalyDetectorsResult::DescribeAnomalyDetectorsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+DescribeAnomalyDetectorsResult::DescribeAnomalyDetectorsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-DescribeAnomalyDetectorsResult& DescribeAnomalyDetectorsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeAnomalyDetectorsResult& DescribeAnomalyDetectorsResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeAnomalyDetectorsResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeAnomalyDetectorsResult")) {
     resultNode = rootNode.FirstChild("DescribeAnomalyDetectorsResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode anomalyDetectorsNode = resultNode.FirstChild("AnomalyDetectors");
-    if(!anomalyDetectorsNode.IsNull())
-    {
+    if (!anomalyDetectorsNode.IsNull()) {
       XmlNode anomalyDetectorsMember = anomalyDetectorsNode.FirstChild("member");
       m_anomalyDetectorsHasBeenSet = !anomalyDetectorsMember.IsNull();
-      while(!anomalyDetectorsMember.IsNull())
-      {
+      while (!anomalyDetectorsMember.IsNull()) {
         m_anomalyDetectors.push_back(anomalyDetectorsMember);
         anomalyDetectorsMember = anomalyDetectorsMember.NextNode("member");
       }
@@ -48,8 +40,7 @@ DescribeAnomalyDetectorsResult& DescribeAnomalyDetectorsResult::operator =(const
       m_anomalyDetectorsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    if(!nextTokenNode.IsNull())
-    {
+    if (!nextTokenNode.IsNull()) {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
       m_nextTokenHasBeenSet = true;
     }
@@ -59,7 +50,8 @@ DescribeAnomalyDetectorsResult& DescribeAnomalyDetectorsResult::operator =(const
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::CloudWatch::Model::DescribeAnomalyDetectorsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::CloudWatch::Model::DescribeAnomalyDetectorsResult",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

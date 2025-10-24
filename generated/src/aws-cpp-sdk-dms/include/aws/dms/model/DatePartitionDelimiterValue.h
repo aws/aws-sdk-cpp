@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 
-namespace Aws
-{
-namespace DatabaseMigrationService
-{
-namespace Model
-{
-  enum class DatePartitionDelimiterValue
-  {
-    NOT_SET,
-    SLASH,
-    UNDERSCORE,
-    DASH,
-    NONE
-  };
+namespace Aws {
+namespace DatabaseMigrationService {
+namespace Model {
+enum class DatePartitionDelimiterValue { NOT_SET, SLASH, UNDERSCORE, DASH, NONE };
 
-namespace DatePartitionDelimiterValueMapper
-{
+namespace DatePartitionDelimiterValueMapper {
 AWS_DATABASEMIGRATIONSERVICE_API DatePartitionDelimiterValue GetDatePartitionDelimiterValueForName(const Aws::String& name);
 
 AWS_DATABASEMIGRATIONSERVICE_API Aws::String GetNameForDatePartitionDelimiterValue(DatePartitionDelimiterValue value);
-} // namespace DatePartitionDelimiterValueMapper
-} // namespace Model
-} // namespace DatabaseMigrationService
-} // namespace Aws
+}  // namespace DatePartitionDelimiterValueMapper
+}  // namespace Model
+}  // namespace DatabaseMigrationService
+}  // namespace Aws

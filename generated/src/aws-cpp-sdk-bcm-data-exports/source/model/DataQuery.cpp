@@ -11,34 +11,23 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BCMDataExports
-{
-namespace Model
-{
+namespace Aws {
+namespace BCMDataExports {
+namespace Model {
 
-DataQuery::DataQuery(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DataQuery::DataQuery(JsonView jsonValue) { *this = jsonValue; }
 
-DataQuery& DataQuery::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("QueryStatement"))
-  {
+DataQuery& DataQuery::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("QueryStatement")) {
     m_queryStatement = jsonValue.GetString("QueryStatement");
     m_queryStatementHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TableConfigurations"))
-  {
+  if (jsonValue.ValueExists("TableConfigurations")) {
     Aws::Map<Aws::String, JsonView> tableConfigurationsJsonMap = jsonValue.GetObject("TableConfigurations").GetAllObjects();
-    for(auto& tableConfigurationsItem : tableConfigurationsJsonMap)
-    {
+    for (auto& tableConfigurationsItem : tableConfigurationsJsonMap) {
       Aws::Map<Aws::String, JsonView> tablePropertiesJsonMap = tableConfigurationsItem.second.GetAllObjects();
       Aws::Map<Aws::String, Aws::String> tablePropertiesMap;
-      for(auto& tablePropertiesItem : tablePropertiesJsonMap)
-      {
+      for (auto& tablePropertiesItem : tablePropertiesJsonMap) {
         tablePropertiesMap[tablePropertiesItem.first] = tablePropertiesItem.second.AsString();
       }
       m_tableConfigurations[tableConfigurationsItem.first] = std::move(tablePropertiesMap);
@@ -48,35 +37,28 @@ DataQuery& DataQuery::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue DataQuery::Jsonize() const
-{
+JsonValue DataQuery::Jsonize() const {
   JsonValue payload;
 
-  if(m_queryStatementHasBeenSet)
-  {
-   payload.WithString("QueryStatement", m_queryStatement);
-
+  if (m_queryStatementHasBeenSet) {
+    payload.WithString("QueryStatement", m_queryStatement);
   }
 
-  if(m_tableConfigurationsHasBeenSet)
-  {
-   JsonValue tableConfigurationsJsonMap;
-   for(auto& tableConfigurationsItem : m_tableConfigurations)
-   {
-     JsonValue tablePropertiesJsonMap;
-     for(auto& tablePropertiesItem : tableConfigurationsItem.second)
-     {
-       tablePropertiesJsonMap.WithString(tablePropertiesItem.first, tablePropertiesItem.second);
-     }
-     tableConfigurationsJsonMap.WithObject(tableConfigurationsItem.first, std::move(tablePropertiesJsonMap));
-   }
-   payload.WithObject("TableConfigurations", std::move(tableConfigurationsJsonMap));
-
+  if (m_tableConfigurationsHasBeenSet) {
+    JsonValue tableConfigurationsJsonMap;
+    for (auto& tableConfigurationsItem : m_tableConfigurations) {
+      JsonValue tablePropertiesJsonMap;
+      for (auto& tablePropertiesItem : tableConfigurationsItem.second) {
+        tablePropertiesJsonMap.WithString(tablePropertiesItem.first, tablePropertiesItem.second);
+      }
+      tableConfigurationsJsonMap.WithObject(tableConfigurationsItem.first, std::move(tablePropertiesJsonMap));
+    }
+    payload.WithObject("TableConfigurations", std::move(tableConfigurationsJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BCMDataExports
-} // namespace Aws
+}  // namespace Model
+}  // namespace BCMDataExports
+}  // namespace Aws

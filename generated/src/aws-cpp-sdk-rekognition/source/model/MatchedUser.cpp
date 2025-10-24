@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rekognition/model/MatchedUser.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rekognition/model/MatchedUser.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Rekognition
-{
-namespace Model
-{
+namespace Aws {
+namespace Rekognition {
+namespace Model {
 
-MatchedUser::MatchedUser(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MatchedUser::MatchedUser(JsonView jsonValue) { *this = jsonValue; }
 
-MatchedUser& MatchedUser::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("UserId"))
-  {
+MatchedUser& MatchedUser::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("UserId")) {
     m_userId = jsonValue.GetString("UserId");
     m_userIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UserStatus"))
-  {
+  if (jsonValue.ValueExists("UserStatus")) {
     m_userStatus = UserStatusMapper::GetUserStatusForName(jsonValue.GetString("UserStatus"));
     m_userStatusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MatchedUser::Jsonize() const
-{
+JsonValue MatchedUser::Jsonize() const {
   JsonValue payload;
 
-  if(m_userIdHasBeenSet)
-  {
-   payload.WithString("UserId", m_userId);
-
+  if (m_userIdHasBeenSet) {
+    payload.WithString("UserId", m_userId);
   }
 
-  if(m_userStatusHasBeenSet)
-  {
-   payload.WithString("UserStatus", UserStatusMapper::GetNameForUserStatus(m_userStatus));
+  if (m_userStatusHasBeenSet) {
+    payload.WithString("UserStatus", UserStatusMapper::GetNameForUserStatus(m_userStatus));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Rekognition
-} // namespace Aws
+}  // namespace Model
+}  // namespace Rekognition
+}  // namespace Aws

@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kendra/model/Correction.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kendra/model/Correction.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace kendra
-{
-namespace Model
-{
+namespace Aws {
+namespace kendra {
+namespace Model {
 
-Correction::Correction(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Correction::Correction(JsonView jsonValue) { *this = jsonValue; }
 
-Correction& Correction::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("BeginOffset"))
-  {
+Correction& Correction::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("BeginOffset")) {
     m_beginOffset = jsonValue.GetInteger("BeginOffset");
     m_beginOffsetHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EndOffset"))
-  {
+  if (jsonValue.ValueExists("EndOffset")) {
     m_endOffset = jsonValue.GetInteger("EndOffset");
     m_endOffsetHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Term"))
-  {
+  if (jsonValue.ValueExists("Term")) {
     m_term = jsonValue.GetString("Term");
     m_termHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CorrectedTerm"))
-  {
+  if (jsonValue.ValueExists("CorrectedTerm")) {
     m_correctedTerm = jsonValue.GetString("CorrectedTerm");
     m_correctedTermHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Correction::Jsonize() const
-{
+JsonValue Correction::Jsonize() const {
   JsonValue payload;
 
-  if(m_beginOffsetHasBeenSet)
-  {
-   payload.WithInteger("BeginOffset", m_beginOffset);
-
+  if (m_beginOffsetHasBeenSet) {
+    payload.WithInteger("BeginOffset", m_beginOffset);
   }
 
-  if(m_endOffsetHasBeenSet)
-  {
-   payload.WithInteger("EndOffset", m_endOffset);
-
+  if (m_endOffsetHasBeenSet) {
+    payload.WithInteger("EndOffset", m_endOffset);
   }
 
-  if(m_termHasBeenSet)
-  {
-   payload.WithString("Term", m_term);
-
+  if (m_termHasBeenSet) {
+    payload.WithString("Term", m_term);
   }
 
-  if(m_correctedTermHasBeenSet)
-  {
-   payload.WithString("CorrectedTerm", m_correctedTerm);
-
+  if (m_correctedTermHasBeenSet) {
+    payload.WithString("CorrectedTerm", m_correctedTerm);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace kendra
-} // namespace Aws
+}  // namespace Model
+}  // namespace kendra
+}  // namespace Aws

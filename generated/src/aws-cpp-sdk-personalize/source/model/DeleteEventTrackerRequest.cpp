@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/personalize/model/DeleteEventTrackerRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/personalize/model/DeleteEventTrackerRequest.h>
 
 #include <utility>
 
@@ -12,27 +12,18 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteEventTrackerRequest::SerializePayload() const
-{
+Aws::String DeleteEventTrackerRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_eventTrackerArnHasBeenSet)
-  {
-   payload.WithString("eventTrackerArn", m_eventTrackerArn);
-
+  if (m_eventTrackerArnHasBeenSet) {
+    payload.WithString("eventTrackerArn", m_eventTrackerArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteEventTrackerRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteEventTrackerRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonPersonalize.DeleteEventTracker"));
   return headers;
-
 }
-
-
-
-

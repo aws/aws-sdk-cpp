@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/sso-admin/SSOAdmin_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sso-admin/SSOAdmin_EXPORTS.h>
 
-namespace Aws
-{
-namespace SSOAdmin
-{
-namespace Model
-{
-  enum class StatusValues
-  {
-    NOT_SET,
-    IN_PROGRESS,
-    FAILED,
-    SUCCEEDED
-  };
+namespace Aws {
+namespace SSOAdmin {
+namespace Model {
+enum class StatusValues { NOT_SET, IN_PROGRESS, FAILED, SUCCEEDED };
 
-namespace StatusValuesMapper
-{
+namespace StatusValuesMapper {
 AWS_SSOADMIN_API StatusValues GetStatusValuesForName(const Aws::String& name);
 
 AWS_SSOADMIN_API Aws::String GetNameForStatusValues(StatusValues value);
-} // namespace StatusValuesMapper
-} // namespace Model
-} // namespace SSOAdmin
-} // namespace Aws
+}  // namespace StatusValuesMapper
+}  // namespace Model
+}  // namespace SSOAdmin
+}  // namespace Aws

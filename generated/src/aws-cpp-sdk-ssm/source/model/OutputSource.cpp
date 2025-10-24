@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ssm/model/OutputSource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ssm/model/OutputSource.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SSM
-{
-namespace Model
-{
+namespace Aws {
+namespace SSM {
+namespace Model {
 
-OutputSource::OutputSource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OutputSource::OutputSource(JsonView jsonValue) { *this = jsonValue; }
 
-OutputSource& OutputSource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("OutputSourceId"))
-  {
+OutputSource& OutputSource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("OutputSourceId")) {
     m_outputSourceId = jsonValue.GetString("OutputSourceId");
     m_outputSourceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OutputSourceType"))
-  {
+  if (jsonValue.ValueExists("OutputSourceType")) {
     m_outputSourceType = jsonValue.GetString("OutputSourceType");
     m_outputSourceTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OutputSource::Jsonize() const
-{
+JsonValue OutputSource::Jsonize() const {
   JsonValue payload;
 
-  if(m_outputSourceIdHasBeenSet)
-  {
-   payload.WithString("OutputSourceId", m_outputSourceId);
-
+  if (m_outputSourceIdHasBeenSet) {
+    payload.WithString("OutputSourceId", m_outputSourceId);
   }
 
-  if(m_outputSourceTypeHasBeenSet)
-  {
-   payload.WithString("OutputSourceType", m_outputSourceType);
-
+  if (m_outputSourceTypeHasBeenSet) {
+    payload.WithString("OutputSourceType", m_outputSourceType);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SSM
-} // namespace Aws
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

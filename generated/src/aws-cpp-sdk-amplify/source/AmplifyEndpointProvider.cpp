@@ -5,12 +5,8 @@
 
 #include <aws/amplify/AmplifyEndpointProvider.h>
 
-namespace Aws
-{
-namespace Amplify
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Amplify
-} // namespace Aws
+namespace Aws {
+namespace Amplify {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Amplify
+}  // namespace Aws

@@ -3,43 +3,34 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancingv2/model/LoadBalancerState.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticloadbalancingv2/model/LoadBalancerState.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ElasticLoadBalancingv2
-{
-namespace Model
-{
+namespace Aws {
+namespace ElasticLoadBalancingv2 {
+namespace Model {
 
-LoadBalancerState::LoadBalancerState(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+LoadBalancerState::LoadBalancerState(const XmlNode& xmlNode) { *this = xmlNode; }
 
-LoadBalancerState& LoadBalancerState::operator =(const XmlNode& xmlNode)
-{
+LoadBalancerState& LoadBalancerState::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode codeNode = resultNode.FirstChild("Code");
-    if(!codeNode.IsNull())
-    {
-      m_code = LoadBalancerStateEnumMapper::GetLoadBalancerStateEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText()).c_str()));
+    if (!codeNode.IsNull()) {
+      m_code = LoadBalancerStateEnumMapper::GetLoadBalancerStateEnumForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText()).c_str()));
       m_codeHasBeenSet = true;
     }
     XmlNode reasonNode = resultNode.FirstChild("Reason");
-    if(!reasonNode.IsNull())
-    {
+    if (!reasonNode.IsNull()) {
       m_reason = Aws::Utils::Xml::DecodeEscapedXmlText(reasonNode.GetText());
       m_reasonHasBeenSet = true;
     }
@@ -48,32 +39,26 @@ LoadBalancerState& LoadBalancerState::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void LoadBalancerState::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_codeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Code=" << StringUtils::URLEncode(LoadBalancerStateEnumMapper::GetNameForLoadBalancerStateEnum(m_code)) << "&";
+void LoadBalancerState::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_codeHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".Code=" << StringUtils::URLEncode(LoadBalancerStateEnumMapper::GetNameForLoadBalancerStateEnum(m_code)) << "&";
   }
 
-  if(m_reasonHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Reason=" << StringUtils::URLEncode(m_reason.c_str()) << "&";
-  }
-
-}
-
-void LoadBalancerState::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_codeHasBeenSet)
-  {
-      oStream << location << ".Code=" << StringUtils::URLEncode(LoadBalancerStateEnumMapper::GetNameForLoadBalancerStateEnum(m_code)) << "&";
-  }
-  if(m_reasonHasBeenSet)
-  {
-      oStream << location << ".Reason=" << StringUtils::URLEncode(m_reason.c_str()) << "&";
+  if (m_reasonHasBeenSet) {
+    oStream << location << index << locationValue << ".Reason=" << StringUtils::URLEncode(m_reason.c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace ElasticLoadBalancingv2
-} // namespace Aws
+void LoadBalancerState::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_codeHasBeenSet) {
+    oStream << location << ".Code=" << StringUtils::URLEncode(LoadBalancerStateEnumMapper::GetNameForLoadBalancerStateEnum(m_code)) << "&";
+  }
+  if (m_reasonHasBeenSet) {
+    oStream << location << ".Reason=" << StringUtils::URLEncode(m_reason.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace ElasticLoadBalancingv2
+}  // namespace Aws

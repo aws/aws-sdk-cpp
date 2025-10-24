@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/macie2/Macie2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/macie2/Macie2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
-  enum class ManagedDataIdentifierSelector
-  {
-    NOT_SET,
-    ALL,
-    EXCLUDE,
-    INCLUDE,
-    NONE,
-    RECOMMENDED
-  };
+namespace Aws {
+namespace Macie2 {
+namespace Model {
+enum class ManagedDataIdentifierSelector { NOT_SET, ALL, EXCLUDE, INCLUDE, NONE, RECOMMENDED };
 
-namespace ManagedDataIdentifierSelectorMapper
-{
+namespace ManagedDataIdentifierSelectorMapper {
 AWS_MACIE2_API ManagedDataIdentifierSelector GetManagedDataIdentifierSelectorForName(const Aws::String& name);
 
 AWS_MACIE2_API Aws::String GetNameForManagedDataIdentifierSelector(ManagedDataIdentifierSelector value);
-} // namespace ManagedDataIdentifierSelectorMapper
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace ManagedDataIdentifierSelectorMapper
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

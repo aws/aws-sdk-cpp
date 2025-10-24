@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class BandwidthReductionFilterSharpening
-  {
-    NOT_SET,
-    LOW,
-    MEDIUM,
-    HIGH,
-    OFF
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class BandwidthReductionFilterSharpening { NOT_SET, LOW, MEDIUM, HIGH, OFF };
 
-namespace BandwidthReductionFilterSharpeningMapper
-{
+namespace BandwidthReductionFilterSharpeningMapper {
 AWS_MEDIACONVERT_API BandwidthReductionFilterSharpening GetBandwidthReductionFilterSharpeningForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForBandwidthReductionFilterSharpening(BandwidthReductionFilterSharpening value);
-} // namespace BandwidthReductionFilterSharpeningMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace BandwidthReductionFilterSharpeningMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

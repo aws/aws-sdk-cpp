@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
 
-AdminCreateUserConfigType::AdminCreateUserConfigType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AdminCreateUserConfigType::AdminCreateUserConfigType(JsonView jsonValue) { *this = jsonValue; }
 
-AdminCreateUserConfigType& AdminCreateUserConfigType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AllowAdminCreateUserOnly"))
-  {
+AdminCreateUserConfigType& AdminCreateUserConfigType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AllowAdminCreateUserOnly")) {
     m_allowAdminCreateUserOnly = jsonValue.GetBool("AllowAdminCreateUserOnly");
     m_allowAdminCreateUserOnlyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UnusedAccountValidityDays"))
-  {
+  if (jsonValue.ValueExists("UnusedAccountValidityDays")) {
     m_unusedAccountValidityDays = jsonValue.GetInteger("UnusedAccountValidityDays");
     m_unusedAccountValidityDaysHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InviteMessageTemplate"))
-  {
+  if (jsonValue.ValueExists("InviteMessageTemplate")) {
     m_inviteMessageTemplate = jsonValue.GetObject("InviteMessageTemplate");
     m_inviteMessageTemplateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AdminCreateUserConfigType::Jsonize() const
-{
+JsonValue AdminCreateUserConfigType::Jsonize() const {
   JsonValue payload;
 
-  if(m_allowAdminCreateUserOnlyHasBeenSet)
-  {
-   payload.WithBool("AllowAdminCreateUserOnly", m_allowAdminCreateUserOnly);
-
+  if (m_allowAdminCreateUserOnlyHasBeenSet) {
+    payload.WithBool("AllowAdminCreateUserOnly", m_allowAdminCreateUserOnly);
   }
 
-  if(m_unusedAccountValidityDaysHasBeenSet)
-  {
-   payload.WithInteger("UnusedAccountValidityDays", m_unusedAccountValidityDays);
-
+  if (m_unusedAccountValidityDaysHasBeenSet) {
+    payload.WithInteger("UnusedAccountValidityDays", m_unusedAccountValidityDays);
   }
 
-  if(m_inviteMessageTemplateHasBeenSet)
-  {
-   payload.WithObject("InviteMessageTemplate", m_inviteMessageTemplate.Jsonize());
-
+  if (m_inviteMessageTemplateHasBeenSet) {
+    payload.WithObject("InviteMessageTemplate", m_inviteMessageTemplate.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

@@ -4,10 +4,10 @@
  */
 
 #include <aws/amplifybackend/model/GetBackendStorageResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,43 +17,33 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBackendStorageResult::GetBackendStorageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetBackendStorageResult::GetBackendStorageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetBackendStorageResult& GetBackendStorageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetBackendStorageResult& GetBackendStorageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("appId"))
-  {
+  if (jsonValue.ValueExists("appId")) {
     m_appId = jsonValue.GetString("appId");
     m_appIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("backendEnvironmentName"))
-  {
+  if (jsonValue.ValueExists("backendEnvironmentName")) {
     m_backendEnvironmentName = jsonValue.GetString("backendEnvironmentName");
     m_backendEnvironmentNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceConfig"))
-  {
+  if (jsonValue.ValueExists("resourceConfig")) {
     m_resourceConfig = jsonValue.GetObject("resourceConfig");
     m_resourceConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceName"))
-  {
+  if (jsonValue.ValueExists("resourceName")) {
     m_resourceName = jsonValue.GetString("resourceName");
     m_resourceNameHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

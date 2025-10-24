@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/personalize/Personalize_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/personalize/Personalize_EXPORTS.h>
 
-namespace Aws
-{
-namespace Personalize
-{
-namespace Model
-{
-  enum class TrainingMode
-  {
-    NOT_SET,
-    FULL,
-    UPDATE,
-    AUTOTRAIN
-  };
+namespace Aws {
+namespace Personalize {
+namespace Model {
+enum class TrainingMode { NOT_SET, FULL, UPDATE, AUTOTRAIN };
 
-namespace TrainingModeMapper
-{
+namespace TrainingModeMapper {
 AWS_PERSONALIZE_API TrainingMode GetTrainingModeForName(const Aws::String& name);
 
 AWS_PERSONALIZE_API Aws::String GetNameForTrainingMode(TrainingMode value);
-} // namespace TrainingModeMapper
-} // namespace Model
-} // namespace Personalize
-} // namespace Aws
+}  // namespace TrainingModeMapper
+}  // namespace Model
+}  // namespace Personalize
+}  // namespace Aws

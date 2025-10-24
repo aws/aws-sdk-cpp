@@ -12,30 +12,20 @@ using namespace Aws::AuditManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String BatchDisassociateAssessmentReportEvidenceRequest::SerializePayload() const
-{
+Aws::String BatchDisassociateAssessmentReportEvidenceRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_evidenceFolderIdHasBeenSet)
-  {
-   payload.WithString("evidenceFolderId", m_evidenceFolderId);
-
+  if (m_evidenceFolderIdHasBeenSet) {
+    payload.WithString("evidenceFolderId", m_evidenceFolderId);
   }
 
-  if(m_evidenceIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> evidenceIdsJsonList(m_evidenceIds.size());
-   for(unsigned evidenceIdsIndex = 0; evidenceIdsIndex < evidenceIdsJsonList.GetLength(); ++evidenceIdsIndex)
-   {
-     evidenceIdsJsonList[evidenceIdsIndex].AsString(m_evidenceIds[evidenceIdsIndex]);
-   }
-   payload.WithArray("evidenceIds", std::move(evidenceIdsJsonList));
-
+  if (m_evidenceIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> evidenceIdsJsonList(m_evidenceIds.size());
+    for (unsigned evidenceIdsIndex = 0; evidenceIdsIndex < evidenceIdsJsonList.GetLength(); ++evidenceIdsIndex) {
+      evidenceIdsJsonList[evidenceIdsIndex].AsString(m_evidenceIds[evidenceIdsIndex]);
+    }
+    payload.WithArray("evidenceIds", std::move(evidenceIdsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

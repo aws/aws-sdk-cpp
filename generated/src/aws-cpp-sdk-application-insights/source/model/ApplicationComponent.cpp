@@ -11,59 +11,43 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApplicationInsights
-{
-namespace Model
-{
+namespace Aws {
+namespace ApplicationInsights {
+namespace Model {
 
-ApplicationComponent::ApplicationComponent(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ApplicationComponent::ApplicationComponent(JsonView jsonValue) { *this = jsonValue; }
 
-ApplicationComponent& ApplicationComponent::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ComponentName"))
-  {
+ApplicationComponent& ApplicationComponent::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ComponentName")) {
     m_componentName = jsonValue.GetString("ComponentName");
     m_componentNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ComponentRemarks"))
-  {
+  if (jsonValue.ValueExists("ComponentRemarks")) {
     m_componentRemarks = jsonValue.GetString("ComponentRemarks");
     m_componentRemarksHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceType"))
-  {
+  if (jsonValue.ValueExists("ResourceType")) {
     m_resourceType = jsonValue.GetString("ResourceType");
     m_resourceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OsType"))
-  {
+  if (jsonValue.ValueExists("OsType")) {
     m_osType = OsTypeMapper::GetOsTypeForName(jsonValue.GetString("OsType"));
     m_osTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Tier"))
-  {
+  if (jsonValue.ValueExists("Tier")) {
     m_tier = TierMapper::GetTierForName(jsonValue.GetString("Tier"));
     m_tierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Monitor"))
-  {
+  if (jsonValue.ValueExists("Monitor")) {
     m_monitor = jsonValue.GetBool("Monitor");
     m_monitorHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DetectedWorkload"))
-  {
+  if (jsonValue.ValueExists("DetectedWorkload")) {
     Aws::Map<Aws::String, JsonView> detectedWorkloadJsonMap = jsonValue.GetObject("DetectedWorkload").GetAllObjects();
-    for(auto& detectedWorkloadItem : detectedWorkloadJsonMap)
-    {
+    for (auto& detectedWorkloadItem : detectedWorkloadJsonMap) {
       Aws::Map<Aws::String, JsonView> workloadMetaDataJsonMap = detectedWorkloadItem.second.GetAllObjects();
       Aws::Map<Aws::String, Aws::String> workloadMetaDataMap;
-      for(auto& workloadMetaDataItem : workloadMetaDataJsonMap)
-      {
+      for (auto& workloadMetaDataItem : workloadMetaDataJsonMap) {
         workloadMetaDataMap[workloadMetaDataItem.first] = workloadMetaDataItem.second.AsString();
       }
       m_detectedWorkload[TierMapper::GetTierForName(detectedWorkloadItem.first)] = std::move(workloadMetaDataMap);
@@ -73,63 +57,48 @@ ApplicationComponent& ApplicationComponent::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ApplicationComponent::Jsonize() const
-{
+JsonValue ApplicationComponent::Jsonize() const {
   JsonValue payload;
 
-  if(m_componentNameHasBeenSet)
-  {
-   payload.WithString("ComponentName", m_componentName);
-
+  if (m_componentNameHasBeenSet) {
+    payload.WithString("ComponentName", m_componentName);
   }
 
-  if(m_componentRemarksHasBeenSet)
-  {
-   payload.WithString("ComponentRemarks", m_componentRemarks);
-
+  if (m_componentRemarksHasBeenSet) {
+    payload.WithString("ComponentRemarks", m_componentRemarks);
   }
 
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("ResourceType", m_resourceType);
-
+  if (m_resourceTypeHasBeenSet) {
+    payload.WithString("ResourceType", m_resourceType);
   }
 
-  if(m_osTypeHasBeenSet)
-  {
-   payload.WithString("OsType", OsTypeMapper::GetNameForOsType(m_osType));
+  if (m_osTypeHasBeenSet) {
+    payload.WithString("OsType", OsTypeMapper::GetNameForOsType(m_osType));
   }
 
-  if(m_tierHasBeenSet)
-  {
-   payload.WithString("Tier", TierMapper::GetNameForTier(m_tier));
+  if (m_tierHasBeenSet) {
+    payload.WithString("Tier", TierMapper::GetNameForTier(m_tier));
   }
 
-  if(m_monitorHasBeenSet)
-  {
-   payload.WithBool("Monitor", m_monitor);
-
+  if (m_monitorHasBeenSet) {
+    payload.WithBool("Monitor", m_monitor);
   }
 
-  if(m_detectedWorkloadHasBeenSet)
-  {
-   JsonValue detectedWorkloadJsonMap;
-   for(auto& detectedWorkloadItem : m_detectedWorkload)
-   {
-     JsonValue workloadMetaDataJsonMap;
-     for(auto& workloadMetaDataItem : detectedWorkloadItem.second)
-     {
-       workloadMetaDataJsonMap.WithString(workloadMetaDataItem.first, workloadMetaDataItem.second);
-     }
-     detectedWorkloadJsonMap.WithObject(TierMapper::GetNameForTier(detectedWorkloadItem.first), std::move(workloadMetaDataJsonMap));
-   }
-   payload.WithObject("DetectedWorkload", std::move(detectedWorkloadJsonMap));
-
+  if (m_detectedWorkloadHasBeenSet) {
+    JsonValue detectedWorkloadJsonMap;
+    for (auto& detectedWorkloadItem : m_detectedWorkload) {
+      JsonValue workloadMetaDataJsonMap;
+      for (auto& workloadMetaDataItem : detectedWorkloadItem.second) {
+        workloadMetaDataJsonMap.WithString(workloadMetaDataItem.first, workloadMetaDataItem.second);
+      }
+      detectedWorkloadJsonMap.WithObject(TierMapper::GetNameForTier(detectedWorkloadItem.first), std::move(workloadMetaDataJsonMap));
+    }
+    payload.WithObject("DetectedWorkload", std::move(detectedWorkloadJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApplicationInsights
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApplicationInsights
+}  // namespace Aws

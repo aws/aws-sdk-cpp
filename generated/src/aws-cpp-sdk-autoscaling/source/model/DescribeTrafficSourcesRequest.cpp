@@ -10,27 +10,22 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeTrafficSourcesRequest::SerializePayload() const
-{
+Aws::String DescribeTrafficSourcesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeTrafficSources&";
-  if(m_autoScalingGroupNameHasBeenSet)
-  {
+  if (m_autoScalingGroupNameHasBeenSet) {
     ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
 
-  if(m_trafficSourceTypeHasBeenSet)
-  {
+  if (m_trafficSourceTypeHasBeenSet) {
     ss << "TrafficSourceType=" << StringUtils::URLEncode(m_trafficSourceType.c_str()) << "&";
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  if(m_maxRecordsHasBeenSet)
-  {
+  if (m_maxRecordsHasBeenSet) {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
 
@@ -38,8 +33,4 @@ Aws::String DescribeTrafficSourcesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeTrafficSourcesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeTrafficSourcesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

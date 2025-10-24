@@ -3,35 +3,27 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/GetContextKeysForPrincipalPolicyRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/GetContextKeysForPrincipalPolicyRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String GetContextKeysForPrincipalPolicyRequest::SerializePayload() const
-{
+Aws::String GetContextKeysForPrincipalPolicyRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetContextKeysForPrincipalPolicy&";
-  if(m_policySourceArnHasBeenSet)
-  {
+  if (m_policySourceArnHasBeenSet) {
     ss << "PolicySourceArn=" << StringUtils::URLEncode(m_policySourceArn.c_str()) << "&";
   }
 
-  if(m_policyInputListHasBeenSet)
-  {
-    if (m_policyInputList.empty())
-    {
+  if (m_policyInputListHasBeenSet) {
+    if (m_policyInputList.empty()) {
       ss << "PolicyInputList=&";
-    }
-    else
-    {
+    } else {
       unsigned policyInputListCount = 1;
-      for(auto& item : m_policyInputList)
-      {
-        ss << "PolicyInputList.member." << policyInputListCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_policyInputList) {
+        ss << "PolicyInputList.member." << policyInputListCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         policyInputListCount++;
       }
     }
@@ -41,8 +33,4 @@ Aws::String GetContextKeysForPrincipalPolicyRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetContextKeysForPrincipalPolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetContextKeysForPrincipalPolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

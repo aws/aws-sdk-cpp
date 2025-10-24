@@ -3,41 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ClassicLoadBalancersConfig.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/ClassicLoadBalancersConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-ClassicLoadBalancersConfig::ClassicLoadBalancersConfig(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+ClassicLoadBalancersConfig::ClassicLoadBalancersConfig(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ClassicLoadBalancersConfig& ClassicLoadBalancersConfig::operator =(const XmlNode& xmlNode)
-{
+ClassicLoadBalancersConfig& ClassicLoadBalancersConfig::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode classicLoadBalancersNode = resultNode.FirstChild("classicLoadBalancers");
-    if(!classicLoadBalancersNode.IsNull())
-    {
+    if (!classicLoadBalancersNode.IsNull()) {
       XmlNode classicLoadBalancersMember = classicLoadBalancersNode.FirstChild("item");
       m_classicLoadBalancersHasBeenSet = !classicLoadBalancersMember.IsNull();
-      while(!classicLoadBalancersMember.IsNull())
-      {
+      while (!classicLoadBalancersMember.IsNull()) {
         m_classicLoadBalancers.push_back(classicLoadBalancersMember);
         classicLoadBalancersMember = classicLoadBalancersMember.NextNode("item");
       }
@@ -49,35 +39,29 @@ ClassicLoadBalancersConfig& ClassicLoadBalancersConfig::operator =(const XmlNode
   return *this;
 }
 
-void ClassicLoadBalancersConfig::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_classicLoadBalancersHasBeenSet)
-  {
-      unsigned classicLoadBalancersIdx = 1;
-      for(auto& item : m_classicLoadBalancers)
-      {
-        Aws::StringStream classicLoadBalancersSs;
-        classicLoadBalancersSs << location << index << locationValue << ".ClassicLoadBalancers." << classicLoadBalancersIdx++;
-        item.OutputToStream(oStream, classicLoadBalancersSs.str().c_str());
-      }
-  }
-
-}
-
-void ClassicLoadBalancersConfig::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_classicLoadBalancersHasBeenSet)
-  {
-      unsigned classicLoadBalancersIdx = 1;
-      for(auto& item : m_classicLoadBalancers)
-      {
-        Aws::StringStream classicLoadBalancersSs;
-        classicLoadBalancersSs << location << ".ClassicLoadBalancers." << classicLoadBalancersIdx++;
-        item.OutputToStream(oStream, classicLoadBalancersSs.str().c_str());
-      }
+void ClassicLoadBalancersConfig::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                const char* locationValue) const {
+  if (m_classicLoadBalancersHasBeenSet) {
+    unsigned classicLoadBalancersIdx = 1;
+    for (auto& item : m_classicLoadBalancers) {
+      Aws::StringStream classicLoadBalancersSs;
+      classicLoadBalancersSs << location << index << locationValue << ".ClassicLoadBalancers." << classicLoadBalancersIdx++;
+      item.OutputToStream(oStream, classicLoadBalancersSs.str().c_str());
+    }
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void ClassicLoadBalancersConfig::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_classicLoadBalancersHasBeenSet) {
+    unsigned classicLoadBalancersIdx = 1;
+    for (auto& item : m_classicLoadBalancers) {
+      Aws::StringStream classicLoadBalancersSs;
+      classicLoadBalancersSs << location << ".ClassicLoadBalancers." << classicLoadBalancersIdx++;
+      item.OutputToStream(oStream, classicLoadBalancersSs.str().c_str());
+    }
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/license-manager/model/ReportFrequency.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/license-manager/model/ReportFrequency.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LicenseManager
-{
-namespace Model
-{
+namespace Aws {
+namespace LicenseManager {
+namespace Model {
 
-ReportFrequency::ReportFrequency(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReportFrequency::ReportFrequency(JsonView jsonValue) { *this = jsonValue; }
 
-ReportFrequency& ReportFrequency::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("value"))
-  {
+ReportFrequency& ReportFrequency::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetInteger("value");
     m_valueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("period"))
-  {
+  if (jsonValue.ValueExists("period")) {
     m_period = ReportFrequencyTypeMapper::GetReportFrequencyTypeForName(jsonValue.GetString("period"));
     m_periodHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ReportFrequency::Jsonize() const
-{
+JsonValue ReportFrequency::Jsonize() const {
   JsonValue payload;
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithInteger("value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithInteger("value", m_value);
   }
 
-  if(m_periodHasBeenSet)
-  {
-   payload.WithString("period", ReportFrequencyTypeMapper::GetNameForReportFrequencyType(m_period));
+  if (m_periodHasBeenSet) {
+    payload.WithString("period", ReportFrequencyTypeMapper::GetNameForReportFrequencyType(m_period));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LicenseManager
-} // namespace Aws
+}  // namespace Model
+}  // namespace LicenseManager
+}  // namespace Aws

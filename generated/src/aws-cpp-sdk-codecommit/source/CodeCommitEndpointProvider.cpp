@@ -5,12 +5,8 @@
 
 #include <aws/codecommit/CodeCommitEndpointProvider.h>
 
-namespace Aws
-{
-namespace CodeCommit
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace CodeCommit
-} // namespace Aws
+namespace Aws {
+namespace CodeCommit {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace CodeCommit
+}  // namespace Aws

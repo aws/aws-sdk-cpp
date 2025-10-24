@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wafv2/model/WAFLimitsExceededException.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wafv2/model/WAFLimitsExceededException.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WAFV2
-{
-namespace Model
-{
+namespace Aws {
+namespace WAFV2 {
+namespace Model {
 
-WAFLimitsExceededException::WAFLimitsExceededException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+WAFLimitsExceededException::WAFLimitsExceededException(JsonView jsonValue) { *this = jsonValue; }
 
-WAFLimitsExceededException& WAFLimitsExceededException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Message"))
-  {
+WAFLimitsExceededException& WAFLimitsExceededException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourceType"))
-  {
+  if (jsonValue.ValueExists("SourceType")) {
     m_sourceType = jsonValue.GetString("SourceType");
     m_sourceTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue WAFLimitsExceededException::Jsonize() const
-{
+JsonValue WAFLimitsExceededException::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
-  if(m_sourceTypeHasBeenSet)
-  {
-   payload.WithString("SourceType", m_sourceType);
-
+  if (m_sourceTypeHasBeenSet) {
+    payload.WithString("SourceType", m_sourceType);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WAFV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace WAFV2
+}  // namespace Aws

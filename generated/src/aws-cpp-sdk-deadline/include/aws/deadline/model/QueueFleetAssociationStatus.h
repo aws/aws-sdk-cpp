@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/deadline/Deadline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/deadline/Deadline_EXPORTS.h>
 
-namespace Aws
-{
-namespace deadline
-{
-namespace Model
-{
-  enum class QueueFleetAssociationStatus
-  {
-    NOT_SET,
-    ACTIVE,
-    STOP_SCHEDULING_AND_COMPLETE_TASKS,
-    STOP_SCHEDULING_AND_CANCEL_TASKS,
-    STOPPED
-  };
+namespace Aws {
+namespace deadline {
+namespace Model {
+enum class QueueFleetAssociationStatus { NOT_SET, ACTIVE, STOP_SCHEDULING_AND_COMPLETE_TASKS, STOP_SCHEDULING_AND_CANCEL_TASKS, STOPPED };
 
-namespace QueueFleetAssociationStatusMapper
-{
+namespace QueueFleetAssociationStatusMapper {
 AWS_DEADLINE_API QueueFleetAssociationStatus GetQueueFleetAssociationStatusForName(const Aws::String& name);
 
 AWS_DEADLINE_API Aws::String GetNameForQueueFleetAssociationStatus(QueueFleetAssociationStatus value);
-} // namespace QueueFleetAssociationStatusMapper
-} // namespace Model
-} // namespace deadline
-} // namespace Aws
+}  // namespace QueueFleetAssociationStatusMapper
+}  // namespace Model
+}  // namespace deadline
+}  // namespace Aws

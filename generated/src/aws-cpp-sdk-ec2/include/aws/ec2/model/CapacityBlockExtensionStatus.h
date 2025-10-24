@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class CapacityBlockExtensionStatus
-  {
-    NOT_SET,
-    payment_pending,
-    payment_failed,
-    payment_succeeded
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class CapacityBlockExtensionStatus { NOT_SET, payment_pending, payment_failed, payment_succeeded };
 
-namespace CapacityBlockExtensionStatusMapper
-{
+namespace CapacityBlockExtensionStatusMapper {
 AWS_EC2_API CapacityBlockExtensionStatus GetCapacityBlockExtensionStatusForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForCapacityBlockExtensionStatus(CapacityBlockExtensionStatus value);
-} // namespace CapacityBlockExtensionStatusMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace CapacityBlockExtensionStatusMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

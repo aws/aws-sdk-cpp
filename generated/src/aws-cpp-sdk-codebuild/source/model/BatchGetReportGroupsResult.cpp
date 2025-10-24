@@ -4,10 +4,10 @@
  */
 
 #include <aws/codebuild/model/BatchGetReportGroupsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,28 +17,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetReportGroupsResult::BatchGetReportGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+BatchGetReportGroupsResult::BatchGetReportGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-BatchGetReportGroupsResult& BatchGetReportGroupsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+BatchGetReportGroupsResult& BatchGetReportGroupsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("reportGroups"))
-  {
+  if (jsonValue.ValueExists("reportGroups")) {
     Aws::Utils::Array<JsonView> reportGroupsJsonList = jsonValue.GetArray("reportGroups");
-    for(unsigned reportGroupsIndex = 0; reportGroupsIndex < reportGroupsJsonList.GetLength(); ++reportGroupsIndex)
-    {
+    for (unsigned reportGroupsIndex = 0; reportGroupsIndex < reportGroupsJsonList.GetLength(); ++reportGroupsIndex) {
       m_reportGroups.push_back(reportGroupsJsonList[reportGroupsIndex].AsObject());
     }
     m_reportGroupsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("reportGroupsNotFound"))
-  {
+  if (jsonValue.ValueExists("reportGroupsNotFound")) {
     Aws::Utils::Array<JsonView> reportGroupsNotFoundJsonList = jsonValue.GetArray("reportGroupsNotFound");
-    for(unsigned reportGroupsNotFoundIndex = 0; reportGroupsNotFoundIndex < reportGroupsNotFoundJsonList.GetLength(); ++reportGroupsNotFoundIndex)
-    {
+    for (unsigned reportGroupsNotFoundIndex = 0; reportGroupsNotFoundIndex < reportGroupsNotFoundJsonList.GetLength();
+         ++reportGroupsNotFoundIndex) {
       m_reportGroupsNotFound.push_back(reportGroupsNotFoundJsonList[reportGroupsNotFoundIndex].AsString());
     }
     m_reportGroupsNotFoundHasBeenSet = true;
@@ -46,12 +39,10 @@ BatchGetReportGroupsResult& BatchGetReportGroupsResult::operator =(const Aws::Am
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

@@ -6,52 +6,50 @@
 #pragma once
 #include <aws/lookoutequipment/LookoutEquipment_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace LookoutEquipment
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace LookoutEquipment {
+namespace Model {
 
+/**
+ * <p> Entity that comprises information abount unsupported timestamps in the
+ * dataset. </p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UnsupportedTimestamps">AWS
+ * API Reference</a></p>
+ */
+class UnsupportedTimestamps {
+ public:
+  AWS_LOOKOUTEQUIPMENT_API UnsupportedTimestamps() = default;
+  AWS_LOOKOUTEQUIPMENT_API UnsupportedTimestamps(Aws::Utils::Json::JsonView jsonValue);
+  AWS_LOOKOUTEQUIPMENT_API UnsupportedTimestamps& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p> Entity that comprises information abount unsupported timestamps in the
-   * dataset. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UnsupportedTimestamps">AWS
-   * API Reference</a></p>
+   * <p> Indicates the total number of unsupported timestamps across the ingested
+   * data. </p>
    */
-  class UnsupportedTimestamps
-  {
-  public:
-    AWS_LOOKOUTEQUIPMENT_API UnsupportedTimestamps() = default;
-    AWS_LOOKOUTEQUIPMENT_API UnsupportedTimestamps(Aws::Utils::Json::JsonView jsonValue);
-    AWS_LOOKOUTEQUIPMENT_API UnsupportedTimestamps& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetTotalNumberOfUnsupportedTimestamps() const { return m_totalNumberOfUnsupportedTimestamps; }
+  inline bool TotalNumberOfUnsupportedTimestampsHasBeenSet() const { return m_totalNumberOfUnsupportedTimestampsHasBeenSet; }
+  inline void SetTotalNumberOfUnsupportedTimestamps(int value) {
+    m_totalNumberOfUnsupportedTimestampsHasBeenSet = true;
+    m_totalNumberOfUnsupportedTimestamps = value;
+  }
+  inline UnsupportedTimestamps& WithTotalNumberOfUnsupportedTimestamps(int value) {
+    SetTotalNumberOfUnsupportedTimestamps(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_totalNumberOfUnsupportedTimestamps{0};
+  bool m_totalNumberOfUnsupportedTimestampsHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p> Indicates the total number of unsupported timestamps across the ingested
-     * data. </p>
-     */
-    inline int GetTotalNumberOfUnsupportedTimestamps() const { return m_totalNumberOfUnsupportedTimestamps; }
-    inline bool TotalNumberOfUnsupportedTimestampsHasBeenSet() const { return m_totalNumberOfUnsupportedTimestampsHasBeenSet; }
-    inline void SetTotalNumberOfUnsupportedTimestamps(int value) { m_totalNumberOfUnsupportedTimestampsHasBeenSet = true; m_totalNumberOfUnsupportedTimestamps = value; }
-    inline UnsupportedTimestamps& WithTotalNumberOfUnsupportedTimestamps(int value) { SetTotalNumberOfUnsupportedTimestamps(value); return *this;}
-    ///@}
-  private:
-
-    int m_totalNumberOfUnsupportedTimestamps{0};
-    bool m_totalNumberOfUnsupportedTimestampsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace LookoutEquipment
-} // namespace Aws
+}  // namespace Model
+}  // namespace LookoutEquipment
+}  // namespace Aws

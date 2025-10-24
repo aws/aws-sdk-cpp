@@ -3,95 +3,79 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticbeanstalk/model/ConfigurationSettingsDescription.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticbeanstalk/model/ConfigurationSettingsDescription.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ElasticBeanstalk
-{
-namespace Model
-{
+namespace Aws {
+namespace ElasticBeanstalk {
+namespace Model {
 
-ConfigurationSettingsDescription::ConfigurationSettingsDescription(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+ConfigurationSettingsDescription::ConfigurationSettingsDescription(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ConfigurationSettingsDescription& ConfigurationSettingsDescription::operator =(const XmlNode& xmlNode)
-{
+ConfigurationSettingsDescription& ConfigurationSettingsDescription::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode solutionStackNameNode = resultNode.FirstChild("SolutionStackName");
-    if(!solutionStackNameNode.IsNull())
-    {
+    if (!solutionStackNameNode.IsNull()) {
       m_solutionStackName = Aws::Utils::Xml::DecodeEscapedXmlText(solutionStackNameNode.GetText());
       m_solutionStackNameHasBeenSet = true;
     }
     XmlNode platformArnNode = resultNode.FirstChild("PlatformArn");
-    if(!platformArnNode.IsNull())
-    {
+    if (!platformArnNode.IsNull()) {
       m_platformArn = Aws::Utils::Xml::DecodeEscapedXmlText(platformArnNode.GetText());
       m_platformArnHasBeenSet = true;
     }
     XmlNode applicationNameNode = resultNode.FirstChild("ApplicationName");
-    if(!applicationNameNode.IsNull())
-    {
+    if (!applicationNameNode.IsNull()) {
       m_applicationName = Aws::Utils::Xml::DecodeEscapedXmlText(applicationNameNode.GetText());
       m_applicationNameHasBeenSet = true;
     }
     XmlNode templateNameNode = resultNode.FirstChild("TemplateName");
-    if(!templateNameNode.IsNull())
-    {
+    if (!templateNameNode.IsNull()) {
       m_templateName = Aws::Utils::Xml::DecodeEscapedXmlText(templateNameNode.GetText());
       m_templateNameHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
-    if(!descriptionNode.IsNull())
-    {
+    if (!descriptionNode.IsNull()) {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
     XmlNode environmentNameNode = resultNode.FirstChild("EnvironmentName");
-    if(!environmentNameNode.IsNull())
-    {
+    if (!environmentNameNode.IsNull()) {
       m_environmentName = Aws::Utils::Xml::DecodeEscapedXmlText(environmentNameNode.GetText());
       m_environmentNameHasBeenSet = true;
     }
     XmlNode deploymentStatusNode = resultNode.FirstChild("DeploymentStatus");
-    if(!deploymentStatusNode.IsNull())
-    {
-      m_deploymentStatus = ConfigurationDeploymentStatusMapper::GetConfigurationDeploymentStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deploymentStatusNode.GetText()).c_str()));
+    if (!deploymentStatusNode.IsNull()) {
+      m_deploymentStatus = ConfigurationDeploymentStatusMapper::GetConfigurationDeploymentStatusForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deploymentStatusNode.GetText()).c_str()));
       m_deploymentStatusHasBeenSet = true;
     }
     XmlNode dateCreatedNode = resultNode.FirstChild("DateCreated");
-    if(!dateCreatedNode.IsNull())
-    {
-      m_dateCreated = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dateCreatedNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+    if (!dateCreatedNode.IsNull()) {
+      m_dateCreated = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dateCreatedNode.GetText()).c_str()).c_str(),
+                               Aws::Utils::DateFormat::ISO_8601);
       m_dateCreatedHasBeenSet = true;
     }
     XmlNode dateUpdatedNode = resultNode.FirstChild("DateUpdated");
-    if(!dateUpdatedNode.IsNull())
-    {
-      m_dateUpdated = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dateUpdatedNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+    if (!dateUpdatedNode.IsNull()) {
+      m_dateUpdated = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dateUpdatedNode.GetText()).c_str()).c_str(),
+                               Aws::Utils::DateFormat::ISO_8601);
       m_dateUpdatedHasBeenSet = true;
     }
     XmlNode optionSettingsNode = resultNode.FirstChild("OptionSettings");
-    if(!optionSettingsNode.IsNull())
-    {
+    if (!optionSettingsNode.IsNull()) {
       XmlNode optionSettingsMember = optionSettingsNode.FirstChild("member");
       m_optionSettingsHasBeenSet = !optionSettingsMember.IsNull();
-      while(!optionSettingsMember.IsNull())
-      {
+      while (!optionSettingsMember.IsNull()) {
         m_optionSettings.push_back(optionSettingsMember);
         optionSettingsMember = optionSettingsMember.NextNode("member");
       }
@@ -103,62 +87,55 @@ ConfigurationSettingsDescription& ConfigurationSettingsDescription::operator =(c
   return *this;
 }
 
-void ConfigurationSettingsDescription::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_solutionStackNameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".SolutionStackName=" << StringUtils::URLEncode(m_solutionStackName.c_str()) << "&";
+void ConfigurationSettingsDescription::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                      const char* locationValue) const {
+  if (m_solutionStackNameHasBeenSet) {
+    oStream << location << index << locationValue << ".SolutionStackName=" << StringUtils::URLEncode(m_solutionStackName.c_str()) << "&";
   }
 
-  if(m_platformArnHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".PlatformArn=" << StringUtils::URLEncode(m_platformArn.c_str()) << "&";
+  if (m_platformArnHasBeenSet) {
+    oStream << location << index << locationValue << ".PlatformArn=" << StringUtils::URLEncode(m_platformArn.c_str()) << "&";
   }
 
-  if(m_applicationNameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
+  if (m_applicationNameHasBeenSet) {
+    oStream << location << index << locationValue << ".ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
   }
 
-  if(m_templateNameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".TemplateName=" << StringUtils::URLEncode(m_templateName.c_str()) << "&";
+  if (m_templateNameHasBeenSet) {
+    oStream << location << index << locationValue << ".TemplateName=" << StringUtils::URLEncode(m_templateName.c_str()) << "&";
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  if (m_descriptionHasBeenSet) {
+    oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
-  if(m_environmentNameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".EnvironmentName=" << StringUtils::URLEncode(m_environmentName.c_str()) << "&";
+  if (m_environmentNameHasBeenSet) {
+    oStream << location << index << locationValue << ".EnvironmentName=" << StringUtils::URLEncode(m_environmentName.c_str()) << "&";
   }
 
-  if(m_deploymentStatusHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".DeploymentStatus=" << StringUtils::URLEncode(ConfigurationDeploymentStatusMapper::GetNameForConfigurationDeploymentStatus(m_deploymentStatus)) << "&";
+  if (m_deploymentStatusHasBeenSet) {
+    oStream << location << index << locationValue << ".DeploymentStatus="
+            << StringUtils::URLEncode(ConfigurationDeploymentStatusMapper::GetNameForConfigurationDeploymentStatus(m_deploymentStatus))
+            << "&";
   }
 
-  if(m_dateCreatedHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".DateCreated=" << StringUtils::URLEncode(m_dateCreated.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  if (m_dateCreatedHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".DateCreated=" << StringUtils::URLEncode(m_dateCreated.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_dateUpdatedHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".DateUpdated=" << StringUtils::URLEncode(m_dateUpdated.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  if (m_dateUpdatedHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".DateUpdated=" << StringUtils::URLEncode(m_dateUpdated.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_optionSettingsHasBeenSet)
-  {
-      unsigned optionSettingsIdx = 1;
-      for(auto& item : m_optionSettings)
-      {
-        Aws::StringStream optionSettingsSs;
-        optionSettingsSs << location << index << locationValue << ".OptionSettings.member." << optionSettingsIdx++;
-        item.OutputToStream(oStream, optionSettingsSs.str().c_str());
-      }
+  if (m_optionSettingsHasBeenSet) {
+    unsigned optionSettingsIdx = 1;
+    for (auto& item : m_optionSettings) {
+      Aws::StringStream optionSettingsSs;
+      optionSettingsSs << location << index << locationValue << ".OptionSettings.member." << optionSettingsIdx++;
+      item.OutputToStream(oStream, optionSettingsSs.str().c_str());
+    }
   }
 
   Aws::StringStream responseMetadataLocationAndMemberSs;
@@ -166,59 +143,51 @@ void ConfigurationSettingsDescription::OutputToStream(Aws::OStream& oStream, con
   m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
 }
 
-void ConfigurationSettingsDescription::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_solutionStackNameHasBeenSet)
-  {
-      oStream << location << ".SolutionStackName=" << StringUtils::URLEncode(m_solutionStackName.c_str()) << "&";
+void ConfigurationSettingsDescription::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_solutionStackNameHasBeenSet) {
+    oStream << location << ".SolutionStackName=" << StringUtils::URLEncode(m_solutionStackName.c_str()) << "&";
   }
-  if(m_platformArnHasBeenSet)
-  {
-      oStream << location << ".PlatformArn=" << StringUtils::URLEncode(m_platformArn.c_str()) << "&";
+  if (m_platformArnHasBeenSet) {
+    oStream << location << ".PlatformArn=" << StringUtils::URLEncode(m_platformArn.c_str()) << "&";
   }
-  if(m_applicationNameHasBeenSet)
-  {
-      oStream << location << ".ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
+  if (m_applicationNameHasBeenSet) {
+    oStream << location << ".ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
   }
-  if(m_templateNameHasBeenSet)
-  {
-      oStream << location << ".TemplateName=" << StringUtils::URLEncode(m_templateName.c_str()) << "&";
+  if (m_templateNameHasBeenSet) {
+    oStream << location << ".TemplateName=" << StringUtils::URLEncode(m_templateName.c_str()) << "&";
   }
-  if(m_descriptionHasBeenSet)
-  {
-      oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  if (m_descriptionHasBeenSet) {
+    oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
-  if(m_environmentNameHasBeenSet)
-  {
-      oStream << location << ".EnvironmentName=" << StringUtils::URLEncode(m_environmentName.c_str()) << "&";
+  if (m_environmentNameHasBeenSet) {
+    oStream << location << ".EnvironmentName=" << StringUtils::URLEncode(m_environmentName.c_str()) << "&";
   }
-  if(m_deploymentStatusHasBeenSet)
-  {
-      oStream << location << ".DeploymentStatus=" << StringUtils::URLEncode(ConfigurationDeploymentStatusMapper::GetNameForConfigurationDeploymentStatus(m_deploymentStatus)) << "&";
+  if (m_deploymentStatusHasBeenSet) {
+    oStream << location << ".DeploymentStatus="
+            << StringUtils::URLEncode(ConfigurationDeploymentStatusMapper::GetNameForConfigurationDeploymentStatus(m_deploymentStatus))
+            << "&";
   }
-  if(m_dateCreatedHasBeenSet)
-  {
-      oStream << location << ".DateCreated=" << StringUtils::URLEncode(m_dateCreated.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  if (m_dateCreatedHasBeenSet) {
+    oStream << location << ".DateCreated=" << StringUtils::URLEncode(m_dateCreated.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str())
+            << "&";
   }
-  if(m_dateUpdatedHasBeenSet)
-  {
-      oStream << location << ".DateUpdated=" << StringUtils::URLEncode(m_dateUpdated.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  if (m_dateUpdatedHasBeenSet) {
+    oStream << location << ".DateUpdated=" << StringUtils::URLEncode(m_dateUpdated.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str())
+            << "&";
   }
-  if(m_optionSettingsHasBeenSet)
-  {
-      unsigned optionSettingsIdx = 1;
-      for(auto& item : m_optionSettings)
-      {
-        Aws::StringStream optionSettingsSs;
-        optionSettingsSs << location << ".OptionSettings.member." << optionSettingsIdx++;
-        item.OutputToStream(oStream, optionSettingsSs.str().c_str());
-      }
+  if (m_optionSettingsHasBeenSet) {
+    unsigned optionSettingsIdx = 1;
+    for (auto& item : m_optionSettings) {
+      Aws::StringStream optionSettingsSs;
+      optionSettingsSs << location << ".OptionSettings.member." << optionSettingsIdx++;
+      item.OutputToStream(oStream, optionSettingsSs.str().c_str());
+    }
   }
   Aws::String responseMetadataLocationAndMember(location);
   responseMetadataLocationAndMember += ".ResponseMetadata";
   m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMember.c_str());
 }
 
-} // namespace Model
-} // namespace ElasticBeanstalk
-} // namespace Aws
+}  // namespace Model
+}  // namespace ElasticBeanstalk
+}  // namespace Aws

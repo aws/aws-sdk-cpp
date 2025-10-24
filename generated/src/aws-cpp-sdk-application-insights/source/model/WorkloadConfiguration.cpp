@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApplicationInsights
-{
-namespace Model
-{
+namespace Aws {
+namespace ApplicationInsights {
+namespace Model {
 
-WorkloadConfiguration::WorkloadConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+WorkloadConfiguration::WorkloadConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-WorkloadConfiguration& WorkloadConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("WorkloadName"))
-  {
+WorkloadConfiguration& WorkloadConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("WorkloadName")) {
     m_workloadName = jsonValue.GetString("WorkloadName");
     m_workloadNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Tier"))
-  {
+  if (jsonValue.ValueExists("Tier")) {
     m_tier = TierMapper::GetTierForName(jsonValue.GetString("Tier"));
     m_tierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Configuration"))
-  {
+  if (jsonValue.ValueExists("Configuration")) {
     m_configuration = jsonValue.GetString("Configuration");
     m_configurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue WorkloadConfiguration::Jsonize() const
-{
+JsonValue WorkloadConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_workloadNameHasBeenSet)
-  {
-   payload.WithString("WorkloadName", m_workloadName);
-
+  if (m_workloadNameHasBeenSet) {
+    payload.WithString("WorkloadName", m_workloadName);
   }
 
-  if(m_tierHasBeenSet)
-  {
-   payload.WithString("Tier", TierMapper::GetNameForTier(m_tier));
+  if (m_tierHasBeenSet) {
+    payload.WithString("Tier", TierMapper::GetNameForTier(m_tier));
   }
 
-  if(m_configurationHasBeenSet)
-  {
-   payload.WithString("Configuration", m_configuration);
-
+  if (m_configurationHasBeenSet) {
+    payload.WithString("Configuration", m_configuration);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApplicationInsights
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApplicationInsights
+}  // namespace Aws

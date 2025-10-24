@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
 
-VpcConfiguration::VpcConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VpcConfiguration::VpcConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-VpcConfiguration& VpcConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("vpcId"))
-  {
+VpcConfiguration& VpcConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("vpcId")) {
     m_vpcId = jsonValue.GetString("vpcId");
     m_vpcIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VpcConfiguration::Jsonize() const
-{
+JsonValue VpcConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_vpcIdHasBeenSet)
-  {
-   payload.WithString("vpcId", m_vpcId);
-
+  if (m_vpcIdHasBeenSet) {
+    payload.WithString("vpcId", m_vpcId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

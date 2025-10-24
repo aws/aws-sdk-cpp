@@ -13,18 +13,15 @@ using namespace Aws::Utils;
 using namespace Aws::SNS;
 using namespace Aws::SNS::Model;
 
-namespace Aws
-{
-namespace SNS
-{
-template<> AWS_SNS_API VerificationException SNSError::GetModeledError()
-{
+namespace Aws {
+namespace SNS {
+template <>
+AWS_SNS_API VerificationException SNSError::GetModeledError() {
   assert(this->GetErrorType() == SNSErrors::VERIFICATION);
   return VerificationException(this->GetXmlPayload().GetRootElement());
 }
 
-namespace SNSErrorMapper
-{
+namespace SNSErrorMapper {
 
 static const int VERIFICATION_HASH = HashingUtils::HashString("VerificationException");
 static const int K_M_S_INVALID_STATE_HASH = HashingUtils::HashString("KMSInvalidState");
@@ -57,134 +54,73 @@ static const int STALE_TAG_HASH = HashingUtils::HashString("StaleTag");
 static const int EMPTY_BATCH_REQUEST_HASH = HashingUtils::HashString("EmptyBatchRequest");
 static const int INVALID_BATCH_ENTRY_ID_HASH = HashingUtils::HashString("InvalidBatchEntryId");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == VERIFICATION_HASH)
-  {
+  if (hashCode == VERIFICATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::VERIFICATION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == K_M_S_INVALID_STATE_HASH)
-  {
+  } else if (hashCode == K_M_S_INVALID_STATE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::K_M_S_INVALID_STATE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == BATCH_REQUEST_TOO_LONG_HASH)
-  {
+  } else if (hashCode == BATCH_REQUEST_TOO_LONG_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::BATCH_REQUEST_TOO_LONG), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == SUBSCRIPTION_LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == SUBSCRIPTION_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::SUBSCRIPTION_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == TOPIC_LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == TOPIC_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::TOPIC_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == AUTHORIZATION_ERROR_HASH)
-  {
+  } else if (hashCode == AUTHORIZATION_ERROR_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::AUTHORIZATION_ERROR), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INTERNAL_ERROR_HASH)
-  {
+  } else if (hashCode == INTERNAL_ERROR_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::INTERNAL_ERROR), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == ENDPOINT_DISABLED_HASH)
-  {
+  } else if (hashCode == ENDPOINT_DISABLED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::ENDPOINT_DISABLED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == TOO_MANY_ENTRIES_IN_BATCH_REQUEST_HASH)
-  {
+  } else if (hashCode == TOO_MANY_ENTRIES_IN_BATCH_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::TOO_MANY_ENTRIES_IN_BATCH_REQUEST), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_PARAMETER_HASH)
-  {
+  } else if (hashCode == INVALID_PARAMETER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == K_M_S_NOT_FOUND_HASH)
-  {
+  } else if (hashCode == K_M_S_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::K_M_S_NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == FILTER_POLICY_LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == FILTER_POLICY_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::FILTER_POLICY_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == OPTED_OUT_HASH)
-  {
+  } else if (hashCode == OPTED_OUT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::OPTED_OUT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == TAG_LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == TAG_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::TAG_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == CONCURRENT_ACCESS_HASH)
-  {
+  } else if (hashCode == CONCURRENT_ACCESS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::CONCURRENT_ACCESS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == K_M_S_THROTTLING_HASH)
-  {
+  } else if (hashCode == K_M_S_THROTTLING_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::K_M_S_THROTTLING), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == BATCH_ENTRY_IDS_NOT_DISTINCT_HASH)
-  {
+  } else if (hashCode == BATCH_ENTRY_IDS_NOT_DISTINCT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::BATCH_ENTRY_IDS_NOT_DISTINCT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == TAG_POLICY_HASH)
-  {
+  } else if (hashCode == TAG_POLICY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::TAG_POLICY), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == REPLAY_LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == REPLAY_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::REPLAY_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_STATE_HASH)
-  {
+  } else if (hashCode == INVALID_STATE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::INVALID_STATE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == PLATFORM_APPLICATION_DISABLED_HASH)
-  {
+  } else if (hashCode == PLATFORM_APPLICATION_DISABLED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::PLATFORM_APPLICATION_DISABLED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == USER_ERROR_HASH)
-  {
+  } else if (hashCode == USER_ERROR_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::USER_ERROR), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == K_M_S_OPT_IN_REQUIRED_HASH)
-  {
+  } else if (hashCode == K_M_S_OPT_IN_REQUIRED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::K_M_S_OPT_IN_REQUIRED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == NOT_FOUND_HASH)
-  {
+  } else if (hashCode == NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::NOT_FOUND), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == K_M_S_DISABLED_HASH)
-  {
+  } else if (hashCode == K_M_S_DISABLED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::K_M_S_DISABLED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == K_M_S_ACCESS_DENIED_HASH)
-  {
+  } else if (hashCode == K_M_S_ACCESS_DENIED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::K_M_S_ACCESS_DENIED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_SECURITY_HASH)
-  {
+  } else if (hashCode == INVALID_SECURITY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::INVALID_SECURITY), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == STALE_TAG_HASH)
-  {
+  } else if (hashCode == STALE_TAG_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::STALE_TAG), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == EMPTY_BATCH_REQUEST_HASH)
-  {
+  } else if (hashCode == EMPTY_BATCH_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::EMPTY_BATCH_REQUEST), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_BATCH_ENTRY_ID_HASH)
-  {
+  } else if (hashCode == INVALID_BATCH_ENTRY_ID_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::INVALID_BATCH_ENTRY_ID), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace SNSErrorMapper
-} // namespace SNS
-} // namespace Aws
+}  // namespace SNSErrorMapper
+}  // namespace SNS
+}  // namespace Aws

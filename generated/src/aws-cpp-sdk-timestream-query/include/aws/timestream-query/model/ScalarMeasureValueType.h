@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/timestream-query/TimestreamQuery_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/timestream-query/TimestreamQuery_EXPORTS.h>
 
-namespace Aws
-{
-namespace TimestreamQuery
-{
-namespace Model
-{
-  enum class ScalarMeasureValueType
-  {
-    NOT_SET,
-    BIGINT,
-    BOOLEAN,
-    DOUBLE,
-    VARCHAR,
-    TIMESTAMP
-  };
+namespace Aws {
+namespace TimestreamQuery {
+namespace Model {
+enum class ScalarMeasureValueType { NOT_SET, BIGINT, BOOLEAN, DOUBLE, VARCHAR, TIMESTAMP };
 
-namespace ScalarMeasureValueTypeMapper
-{
+namespace ScalarMeasureValueTypeMapper {
 AWS_TIMESTREAMQUERY_API ScalarMeasureValueType GetScalarMeasureValueTypeForName(const Aws::String& name);
 
 AWS_TIMESTREAMQUERY_API Aws::String GetNameForScalarMeasureValueType(ScalarMeasureValueType value);
-} // namespace ScalarMeasureValueTypeMapper
-} // namespace Model
-} // namespace TimestreamQuery
-} // namespace Aws
+}  // namespace ScalarMeasureValueTypeMapper
+}  // namespace Model
+}  // namespace TimestreamQuery
+}  // namespace Aws

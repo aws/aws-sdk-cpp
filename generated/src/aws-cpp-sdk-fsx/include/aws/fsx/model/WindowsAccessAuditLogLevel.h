@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fsx/FSx_EXPORTS.h>
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
-  enum class WindowsAccessAuditLogLevel
-  {
-    NOT_SET,
-    DISABLED,
-    SUCCESS_ONLY,
-    FAILURE_ONLY,
-    SUCCESS_AND_FAILURE
-  };
+namespace Aws {
+namespace FSx {
+namespace Model {
+enum class WindowsAccessAuditLogLevel { NOT_SET, DISABLED, SUCCESS_ONLY, FAILURE_ONLY, SUCCESS_AND_FAILURE };
 
-namespace WindowsAccessAuditLogLevelMapper
-{
+namespace WindowsAccessAuditLogLevelMapper {
 AWS_FSX_API WindowsAccessAuditLogLevel GetWindowsAccessAuditLogLevelForName(const Aws::String& name);
 
 AWS_FSX_API Aws::String GetNameForWindowsAccessAuditLogLevel(WindowsAccessAuditLogLevel value);
-} // namespace WindowsAccessAuditLogLevelMapper
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace WindowsAccessAuditLogLevelMapper
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

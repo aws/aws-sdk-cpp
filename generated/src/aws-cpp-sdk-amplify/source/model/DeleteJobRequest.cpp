@@ -12,11 +12,4 @@ using namespace Aws::Amplify::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteJobRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DeleteJobRequest::SerializePayload() const { return {}; }

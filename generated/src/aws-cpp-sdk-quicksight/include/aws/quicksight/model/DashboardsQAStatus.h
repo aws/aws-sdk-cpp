@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class DashboardsQAStatus
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class DashboardsQAStatus { NOT_SET, ENABLED, DISABLED };
 
-namespace DashboardsQAStatusMapper
-{
+namespace DashboardsQAStatusMapper {
 AWS_QUICKSIGHT_API DashboardsQAStatus GetDashboardsQAStatusForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForDashboardsQAStatus(DashboardsQAStatus value);
-} // namespace DashboardsQAStatusMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace DashboardsQAStatusMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

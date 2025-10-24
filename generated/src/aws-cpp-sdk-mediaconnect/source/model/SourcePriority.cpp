@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconnect/model/SourcePriority.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconnect/model/SourcePriority.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConnect {
+namespace Model {
 
-SourcePriority::SourcePriority(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SourcePriority::SourcePriority(JsonView jsonValue) { *this = jsonValue; }
 
-SourcePriority& SourcePriority::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("primarySource"))
-  {
+SourcePriority& SourcePriority::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("primarySource")) {
     m_primarySource = jsonValue.GetString("primarySource");
     m_primarySourceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SourcePriority::Jsonize() const
-{
+JsonValue SourcePriority::Jsonize() const {
   JsonValue payload;
 
-  if(m_primarySourceHasBeenSet)
-  {
-   payload.WithString("primarySource", m_primarySource);
-
+  if (m_primarySourceHasBeenSet) {
+    payload.WithString("primarySource", m_primarySource);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConnect
+}  // namespace Aws

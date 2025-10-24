@@ -7,24 +7,16 @@
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CodeBuild
-{
-namespace Model
-{
-  enum class FileSystemType
-  {
-    NOT_SET,
-    EFS
-  };
+namespace Aws {
+namespace CodeBuild {
+namespace Model {
+enum class FileSystemType { NOT_SET, EFS };
 
-namespace FileSystemTypeMapper
-{
+namespace FileSystemTypeMapper {
 AWS_CODEBUILD_API FileSystemType GetFileSystemTypeForName(const Aws::String& name);
 
 AWS_CODEBUILD_API Aws::String GetNameForFileSystemType(FileSystemType value);
-} // namespace FileSystemTypeMapper
-} // namespace Model
-} // namespace CodeBuild
-} // namespace Aws
+}  // namespace FileSystemTypeMapper
+}  // namespace Model
+}  // namespace CodeBuild
+}  // namespace Aws

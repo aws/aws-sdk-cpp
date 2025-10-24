@@ -12,11 +12,4 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetDataSourceRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetDataSourceRequest::SerializePayload() const { return {}; }

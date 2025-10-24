@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/ebs/EBS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ebs/EBS_EXPORTS.h>
 
-namespace Aws
-{
-namespace EBS
-{
-namespace Model
-{
-  enum class ResourceNotFoundExceptionReason
-  {
-    NOT_SET,
-    SNAPSHOT_NOT_FOUND,
-    GRANT_NOT_FOUND,
-    DEPENDENCY_RESOURCE_NOT_FOUND,
-    IMAGE_NOT_FOUND
-  };
+namespace Aws {
+namespace EBS {
+namespace Model {
+enum class ResourceNotFoundExceptionReason { NOT_SET, SNAPSHOT_NOT_FOUND, GRANT_NOT_FOUND, DEPENDENCY_RESOURCE_NOT_FOUND, IMAGE_NOT_FOUND };
 
-namespace ResourceNotFoundExceptionReasonMapper
-{
+namespace ResourceNotFoundExceptionReasonMapper {
 AWS_EBS_API ResourceNotFoundExceptionReason GetResourceNotFoundExceptionReasonForName(const Aws::String& name);
 
 AWS_EBS_API Aws::String GetNameForResourceNotFoundExceptionReason(ResourceNotFoundExceptionReason value);
-} // namespace ResourceNotFoundExceptionReasonMapper
-} // namespace Model
-} // namespace EBS
-} // namespace Aws
+}  // namespace ResourceNotFoundExceptionReasonMapper
+}  // namespace Model
+}  // namespace EBS
+}  // namespace Aws

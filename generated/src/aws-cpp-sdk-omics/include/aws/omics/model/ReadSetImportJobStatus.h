@@ -4,33 +4,19 @@
  */
 
 #pragma once
-#include <aws/omics/Omics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/omics/Omics_EXPORTS.h>
 
-namespace Aws
-{
-namespace Omics
-{
-namespace Model
-{
-  enum class ReadSetImportJobStatus
-  {
-    NOT_SET,
-    SUBMITTED,
-    IN_PROGRESS,
-    CANCELLING,
-    CANCELLED,
-    FAILED,
-    COMPLETED,
-    COMPLETED_WITH_FAILURES
-  };
+namespace Aws {
+namespace Omics {
+namespace Model {
+enum class ReadSetImportJobStatus { NOT_SET, SUBMITTED, IN_PROGRESS, CANCELLING, CANCELLED, FAILED, COMPLETED, COMPLETED_WITH_FAILURES };
 
-namespace ReadSetImportJobStatusMapper
-{
+namespace ReadSetImportJobStatusMapper {
 AWS_OMICS_API ReadSetImportJobStatus GetReadSetImportJobStatusForName(const Aws::String& name);
 
 AWS_OMICS_API Aws::String GetNameForReadSetImportJobStatus(ReadSetImportJobStatus value);
-} // namespace ReadSetImportJobStatusMapper
-} // namespace Model
-} // namespace Omics
-} // namespace Aws
+}  // namespace ReadSetImportJobStatusMapper
+}  // namespace Model
+}  // namespace Omics
+}  // namespace Aws

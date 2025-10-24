@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-ConformancePackComplianceScore::ConformancePackComplianceScore(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConformancePackComplianceScore::ConformancePackComplianceScore(JsonView jsonValue) { *this = jsonValue; }
 
-ConformancePackComplianceScore& ConformancePackComplianceScore::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Score"))
-  {
+ConformancePackComplianceScore& ConformancePackComplianceScore::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Score")) {
     m_score = jsonValue.GetString("Score");
     m_scoreHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ConformancePackName"))
-  {
+  if (jsonValue.ValueExists("ConformancePackName")) {
     m_conformancePackName = jsonValue.GetString("ConformancePackName");
     m_conformancePackNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastUpdatedTime"))
-  {
+  if (jsonValue.ValueExists("LastUpdatedTime")) {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
     m_lastUpdatedTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ConformancePackComplianceScore::Jsonize() const
-{
+JsonValue ConformancePackComplianceScore::Jsonize() const {
   JsonValue payload;
 
-  if(m_scoreHasBeenSet)
-  {
-   payload.WithString("Score", m_score);
-
+  if (m_scoreHasBeenSet) {
+    payload.WithString("Score", m_score);
   }
 
-  if(m_conformancePackNameHasBeenSet)
-  {
-   payload.WithString("ConformancePackName", m_conformancePackName);
-
+  if (m_conformancePackNameHasBeenSet) {
+    payload.WithString("ConformancePackName", m_conformancePackName);
   }
 
-  if(m_lastUpdatedTimeHasBeenSet)
-  {
-   payload.WithDouble("LastUpdatedTime", m_lastUpdatedTime.SecondsWithMSPrecision());
+  if (m_lastUpdatedTimeHasBeenSet) {
+    payload.WithDouble("LastUpdatedTime", m_lastUpdatedTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ecs/model/HostEntry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ecs/model/HostEntry.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ECS
-{
-namespace Model
-{
+namespace Aws {
+namespace ECS {
+namespace Model {
 
-HostEntry::HostEntry(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+HostEntry::HostEntry(JsonView jsonValue) { *this = jsonValue; }
 
-HostEntry& HostEntry::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("hostname"))
-  {
+HostEntry& HostEntry::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("hostname")) {
     m_hostname = jsonValue.GetString("hostname");
     m_hostnameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ipAddress"))
-  {
+  if (jsonValue.ValueExists("ipAddress")) {
     m_ipAddress = jsonValue.GetString("ipAddress");
     m_ipAddressHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue HostEntry::Jsonize() const
-{
+JsonValue HostEntry::Jsonize() const {
   JsonValue payload;
 
-  if(m_hostnameHasBeenSet)
-  {
-   payload.WithString("hostname", m_hostname);
-
+  if (m_hostnameHasBeenSet) {
+    payload.WithString("hostname", m_hostname);
   }
 
-  if(m_ipAddressHasBeenSet)
-  {
-   payload.WithString("ipAddress", m_ipAddress);
-
+  if (m_ipAddressHasBeenSet) {
+    payload.WithString("ipAddress", m_ipAddress);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ECS
-} // namespace Aws
+}  // namespace Model
+}  // namespace ECS
+}  // namespace Aws

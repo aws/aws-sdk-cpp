@@ -11,60 +11,45 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Comprehend {
+namespace Model {
 
-RelationshipsListItem::RelationshipsListItem(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RelationshipsListItem::RelationshipsListItem(JsonView jsonValue) { *this = jsonValue; }
 
-RelationshipsListItem& RelationshipsListItem::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Ids"))
-  {
+RelationshipsListItem& RelationshipsListItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Ids")) {
     Aws::Utils::Array<JsonView> idsJsonList = jsonValue.GetArray("Ids");
-    for(unsigned idsIndex = 0; idsIndex < idsJsonList.GetLength(); ++idsIndex)
-    {
+    for (unsigned idsIndex = 0; idsIndex < idsJsonList.GetLength(); ++idsIndex) {
       m_ids.push_back(idsJsonList[idsIndex].AsString());
     }
     m_idsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = RelationshipTypeMapper::GetRelationshipTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RelationshipsListItem::Jsonize() const
-{
+JsonValue RelationshipsListItem::Jsonize() const {
   JsonValue payload;
 
-  if(m_idsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> idsJsonList(m_ids.size());
-   for(unsigned idsIndex = 0; idsIndex < idsJsonList.GetLength(); ++idsIndex)
-   {
-     idsJsonList[idsIndex].AsString(m_ids[idsIndex]);
-   }
-   payload.WithArray("Ids", std::move(idsJsonList));
-
+  if (m_idsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> idsJsonList(m_ids.size());
+    for (unsigned idsIndex = 0; idsIndex < idsJsonList.GetLength(); ++idsIndex) {
+      idsJsonList[idsIndex].AsString(m_ids[idsIndex]);
+    }
+    payload.WithArray("Ids", std::move(idsJsonList));
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", RelationshipTypeMapper::GetNameForRelationshipType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", RelationshipTypeMapper::GetNameForRelationshipType(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

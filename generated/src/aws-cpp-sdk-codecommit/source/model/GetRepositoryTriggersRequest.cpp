@@ -12,27 +12,18 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetRepositoryTriggersRequest::SerializePayload() const
-{
+Aws::String GetRepositoryTriggersRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_repositoryNameHasBeenSet)
-  {
-   payload.WithString("repositoryName", m_repositoryName);
-
+  if (m_repositoryNameHasBeenSet) {
+    payload.WithString("repositoryName", m_repositoryName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetRepositoryTriggersRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetRepositoryTriggersRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeCommit_20150413.GetRepositoryTriggers"));
   return headers;
-
 }
-
-
-
-

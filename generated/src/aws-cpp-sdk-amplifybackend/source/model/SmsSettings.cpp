@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyBackend
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyBackend {
+namespace Model {
 
-SmsSettings::SmsSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SmsSettings::SmsSettings(JsonView jsonValue) { *this = jsonValue; }
 
-SmsSettings& SmsSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("smsMessage"))
-  {
+SmsSettings& SmsSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("smsMessage")) {
     m_smsMessage = jsonValue.GetString("smsMessage");
     m_smsMessageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SmsSettings::Jsonize() const
-{
+JsonValue SmsSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_smsMessageHasBeenSet)
-  {
-   payload.WithString("smsMessage", m_smsMessage);
-
+  if (m_smsMessageHasBeenSet) {
+    payload.WithString("smsMessage", m_smsMessage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyBackend
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyBackend
+}  // namespace Aws

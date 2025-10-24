@@ -5,12 +5,8 @@
 
 #include <aws/codebuild/CodeBuildEndpointProvider.h>
 
-namespace Aws
-{
-namespace CodeBuild
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace CodeBuild
-} // namespace Aws
+namespace Aws {
+namespace CodeBuild {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace CodeBuild
+}  // namespace Aws

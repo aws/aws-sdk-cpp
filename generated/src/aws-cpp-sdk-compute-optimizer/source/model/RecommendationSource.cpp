@@ -11,51 +11,40 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
 
-RecommendationSource::RecommendationSource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RecommendationSource::RecommendationSource(JsonView jsonValue) { *this = jsonValue; }
 
-RecommendationSource& RecommendationSource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("recommendationSourceArn"))
-  {
+RecommendationSource& RecommendationSource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("recommendationSourceArn")) {
     m_recommendationSourceArn = jsonValue.GetString("recommendationSourceArn");
     m_recommendationSourceArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("recommendationSourceType"))
-  {
-    m_recommendationSourceType = RecommendationSourceTypeMapper::GetRecommendationSourceTypeForName(jsonValue.GetString("recommendationSourceType"));
+  if (jsonValue.ValueExists("recommendationSourceType")) {
+    m_recommendationSourceType =
+        RecommendationSourceTypeMapper::GetRecommendationSourceTypeForName(jsonValue.GetString("recommendationSourceType"));
     m_recommendationSourceTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RecommendationSource::Jsonize() const
-{
+JsonValue RecommendationSource::Jsonize() const {
   JsonValue payload;
 
-  if(m_recommendationSourceArnHasBeenSet)
-  {
-   payload.WithString("recommendationSourceArn", m_recommendationSourceArn);
-
+  if (m_recommendationSourceArnHasBeenSet) {
+    payload.WithString("recommendationSourceArn", m_recommendationSourceArn);
   }
 
-  if(m_recommendationSourceTypeHasBeenSet)
-  {
-   payload.WithString("recommendationSourceType", RecommendationSourceTypeMapper::GetNameForRecommendationSourceType(m_recommendationSourceType));
+  if (m_recommendationSourceTypeHasBeenSet) {
+    payload.WithString("recommendationSourceType",
+                       RecommendationSourceTypeMapper::GetNameForRecommendationSourceType(m_recommendationSourceType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

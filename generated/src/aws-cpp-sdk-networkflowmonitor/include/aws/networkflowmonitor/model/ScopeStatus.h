@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/networkflowmonitor/NetworkFlowMonitor_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/networkflowmonitor/NetworkFlowMonitor_EXPORTS.h>
 
-namespace Aws
-{
-namespace NetworkFlowMonitor
-{
-namespace Model
-{
-  enum class ScopeStatus
-  {
-    NOT_SET,
-    SUCCEEDED,
-    IN_PROGRESS,
-    FAILED,
-    DEACTIVATING,
-    DEACTIVATED
-  };
+namespace Aws {
+namespace NetworkFlowMonitor {
+namespace Model {
+enum class ScopeStatus { NOT_SET, SUCCEEDED, IN_PROGRESS, FAILED, DEACTIVATING, DEACTIVATED };
 
-namespace ScopeStatusMapper
-{
+namespace ScopeStatusMapper {
 AWS_NETWORKFLOWMONITOR_API ScopeStatus GetScopeStatusForName(const Aws::String& name);
 
 AWS_NETWORKFLOWMONITOR_API Aws::String GetNameForScopeStatus(ScopeStatus value);
-} // namespace ScopeStatusMapper
-} // namespace Model
-} // namespace NetworkFlowMonitor
-} // namespace Aws
+}  // namespace ScopeStatusMapper
+}  // namespace Model
+}  // namespace NetworkFlowMonitor
+}  // namespace Aws

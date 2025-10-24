@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm/SSM_EXPORTS.h>
 
-namespace Aws
-{
-namespace SSM
-{
-namespace Model
-{
-  enum class InventoryDeletionStatus
-  {
-    NOT_SET,
-    InProgress,
-    Complete
-  };
+namespace Aws {
+namespace SSM {
+namespace Model {
+enum class InventoryDeletionStatus { NOT_SET, InProgress, Complete };
 
-namespace InventoryDeletionStatusMapper
-{
+namespace InventoryDeletionStatusMapper {
 AWS_SSM_API InventoryDeletionStatus GetInventoryDeletionStatusForName(const Aws::String& name);
 
 AWS_SSM_API Aws::String GetNameForInventoryDeletionStatus(InventoryDeletionStatus value);
-} // namespace InventoryDeletionStatusMapper
-} // namespace Model
-} // namespace SSM
-} // namespace Aws
+}  // namespace InventoryDeletionStatusMapper
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

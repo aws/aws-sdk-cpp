@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/polly/Polly_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/polly/Polly_EXPORTS.h>
 
-namespace Aws
-{
-namespace Polly
-{
-namespace Model
-{
-  enum class SpeechMarkType
-  {
-    NOT_SET,
-    sentence,
-    ssml,
-    viseme,
-    word
-  };
+namespace Aws {
+namespace Polly {
+namespace Model {
+enum class SpeechMarkType { NOT_SET, sentence, ssml, viseme, word };
 
-namespace SpeechMarkTypeMapper
-{
+namespace SpeechMarkTypeMapper {
 AWS_POLLY_API SpeechMarkType GetSpeechMarkTypeForName(const Aws::String& name);
 
 AWS_POLLY_API Aws::String GetNameForSpeechMarkType(SpeechMarkType value);
-} // namespace SpeechMarkTypeMapper
-} // namespace Model
-} // namespace Polly
-} // namespace Aws
+}  // namespace SpeechMarkTypeMapper
+}  // namespace Model
+}  // namespace Polly
+}  // namespace Aws

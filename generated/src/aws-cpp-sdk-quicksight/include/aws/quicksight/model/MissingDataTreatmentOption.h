@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class MissingDataTreatmentOption
-  {
-    NOT_SET,
-    INTERPOLATE,
-    SHOW_AS_ZERO,
-    SHOW_AS_BLANK
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class MissingDataTreatmentOption { NOT_SET, INTERPOLATE, SHOW_AS_ZERO, SHOW_AS_BLANK };
 
-namespace MissingDataTreatmentOptionMapper
-{
+namespace MissingDataTreatmentOptionMapper {
 AWS_QUICKSIGHT_API MissingDataTreatmentOption GetMissingDataTreatmentOptionForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForMissingDataTreatmentOption(MissingDataTreatmentOption value);
-} // namespace MissingDataTreatmentOptionMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace MissingDataTreatmentOptionMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

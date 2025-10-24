@@ -5,19 +5,16 @@
 
 #pragma once
 
-#include <aws/workspaces-thin-client/WorkSpacesThinClient_EXPORTS.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
+#include <aws/workspaces-thin-client/WorkSpacesThinClient_EXPORTS.h>
 
-namespace Aws
-{
-namespace Client
-{
+namespace Aws {
+namespace Client {
 
-class AWS_WORKSPACESTHINCLIENT_API WorkSpacesThinClientErrorMarshaller : public Aws::Client::JsonErrorMarshaller
-{
-public:
+class AWS_WORKSPACESTHINCLIENT_API WorkSpacesThinClientErrorMarshaller : public Aws::Client::JsonErrorMarshaller {
+ public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Client
-} // namespace Aws
+}  // namespace Client
+}  // namespace Aws

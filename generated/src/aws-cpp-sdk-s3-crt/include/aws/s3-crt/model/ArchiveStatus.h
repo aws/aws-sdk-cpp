@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/s3-crt/S3Crt_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3-crt/S3Crt_EXPORTS.h>
 
-namespace Aws
-{
-namespace S3Crt
-{
-namespace Model
-{
-  enum class ArchiveStatus
-  {
-    NOT_SET,
-    ARCHIVE_ACCESS,
-    DEEP_ARCHIVE_ACCESS
-  };
+namespace Aws {
+namespace S3Crt {
+namespace Model {
+enum class ArchiveStatus { NOT_SET, ARCHIVE_ACCESS, DEEP_ARCHIVE_ACCESS };
 
-namespace ArchiveStatusMapper
-{
+namespace ArchiveStatusMapper {
 AWS_S3CRT_API ArchiveStatus GetArchiveStatusForName(const Aws::String& name);
 
 AWS_S3CRT_API Aws::String GetNameForArchiveStatus(ArchiveStatus value);
-} // namespace ArchiveStatusMapper
-} // namespace Model
-} // namespace S3Crt
-} // namespace Aws
+}  // namespace ArchiveStatusMapper
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

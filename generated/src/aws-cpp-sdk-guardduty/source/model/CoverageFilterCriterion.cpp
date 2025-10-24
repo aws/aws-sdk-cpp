@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/guardduty/model/CoverageFilterCriterion.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/guardduty/model/CoverageFilterCriterion.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GuardDuty
-{
-namespace Model
-{
+namespace Aws {
+namespace GuardDuty {
+namespace Model {
 
-CoverageFilterCriterion::CoverageFilterCriterion(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CoverageFilterCriterion::CoverageFilterCriterion(JsonView jsonValue) { *this = jsonValue; }
 
-CoverageFilterCriterion& CoverageFilterCriterion::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("criterionKey"))
-  {
+CoverageFilterCriterion& CoverageFilterCriterion::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("criterionKey")) {
     m_criterionKey = CoverageFilterCriterionKeyMapper::GetCoverageFilterCriterionKeyForName(jsonValue.GetString("criterionKey"));
     m_criterionKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("filterCondition"))
-  {
+  if (jsonValue.ValueExists("filterCondition")) {
     m_filterCondition = jsonValue.GetObject("filterCondition");
     m_filterConditionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CoverageFilterCriterion::Jsonize() const
-{
+JsonValue CoverageFilterCriterion::Jsonize() const {
   JsonValue payload;
 
-  if(m_criterionKeyHasBeenSet)
-  {
-   payload.WithString("criterionKey", CoverageFilterCriterionKeyMapper::GetNameForCoverageFilterCriterionKey(m_criterionKey));
+  if (m_criterionKeyHasBeenSet) {
+    payload.WithString("criterionKey", CoverageFilterCriterionKeyMapper::GetNameForCoverageFilterCriterionKey(m_criterionKey));
   }
 
-  if(m_filterConditionHasBeenSet)
-  {
-   payload.WithObject("filterCondition", m_filterCondition.Jsonize());
-
+  if (m_filterConditionHasBeenSet) {
+    payload.WithObject("filterCondition", m_filterCondition.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GuardDuty
-} // namespace Aws
+}  // namespace Model
+}  // namespace GuardDuty
+}  // namespace Aws

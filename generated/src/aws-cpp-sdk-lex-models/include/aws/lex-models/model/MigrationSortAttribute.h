@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
 
-namespace Aws
-{
-namespace LexModelBuildingService
-{
-namespace Model
-{
-  enum class MigrationSortAttribute
-  {
-    NOT_SET,
-    V1_BOT_NAME,
-    MIGRATION_DATE_TIME
-  };
+namespace Aws {
+namespace LexModelBuildingService {
+namespace Model {
+enum class MigrationSortAttribute { NOT_SET, V1_BOT_NAME, MIGRATION_DATE_TIME };
 
-namespace MigrationSortAttributeMapper
-{
+namespace MigrationSortAttributeMapper {
 AWS_LEXMODELBUILDINGSERVICE_API MigrationSortAttribute GetMigrationSortAttributeForName(const Aws::String& name);
 
 AWS_LEXMODELBUILDINGSERVICE_API Aws::String GetNameForMigrationSortAttribute(MigrationSortAttribute value);
-} // namespace MigrationSortAttributeMapper
-} // namespace Model
-} // namespace LexModelBuildingService
-} // namespace Aws
+}  // namespace MigrationSortAttributeMapper
+}  // namespace Model
+}  // namespace LexModelBuildingService
+}  // namespace Aws

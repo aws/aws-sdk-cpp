@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/RuleGroupVariablesIpSetsDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/RuleGroupVariablesIpSetsDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-RuleGroupVariablesIpSetsDetails::RuleGroupVariablesIpSetsDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RuleGroupVariablesIpSetsDetails::RuleGroupVariablesIpSetsDetails(JsonView jsonValue) { *this = jsonValue; }
 
-RuleGroupVariablesIpSetsDetails& RuleGroupVariablesIpSetsDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Definition"))
-  {
+RuleGroupVariablesIpSetsDetails& RuleGroupVariablesIpSetsDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Definition")) {
     Aws::Utils::Array<JsonView> definitionJsonList = jsonValue.GetArray("Definition");
-    for(unsigned definitionIndex = 0; definitionIndex < definitionJsonList.GetLength(); ++definitionIndex)
-    {
+    for (unsigned definitionIndex = 0; definitionIndex < definitionJsonList.GetLength(); ++definitionIndex) {
       m_definition.push_back(definitionJsonList[definitionIndex].AsString());
     }
     m_definitionHasBeenSet = true;
@@ -37,24 +28,20 @@ RuleGroupVariablesIpSetsDetails& RuleGroupVariablesIpSetsDetails::operator =(Jso
   return *this;
 }
 
-JsonValue RuleGroupVariablesIpSetsDetails::Jsonize() const
-{
+JsonValue RuleGroupVariablesIpSetsDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_definitionHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> definitionJsonList(m_definition.size());
-   for(unsigned definitionIndex = 0; definitionIndex < definitionJsonList.GetLength(); ++definitionIndex)
-   {
-     definitionJsonList[definitionIndex].AsString(m_definition[definitionIndex]);
-   }
-   payload.WithArray("Definition", std::move(definitionJsonList));
-
+  if (m_definitionHasBeenSet) {
+    Aws::Utils::Array<JsonValue> definitionJsonList(m_definition.size());
+    for (unsigned definitionIndex = 0; definitionIndex < definitionJsonList.GetLength(); ++definitionIndex) {
+      definitionJsonList[definitionIndex].AsString(m_definition[definitionIndex]);
+    }
+    payload.WithArray("Definition", std::move(definitionJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

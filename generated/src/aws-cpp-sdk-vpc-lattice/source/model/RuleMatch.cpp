@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/vpc-lattice/model/RuleMatch.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/vpc-lattice/model/RuleMatch.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace VPCLattice
-{
-namespace Model
-{
+namespace Aws {
+namespace VPCLattice {
+namespace Model {
 
-RuleMatch::RuleMatch(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RuleMatch::RuleMatch(JsonView jsonValue) { *this = jsonValue; }
 
-RuleMatch& RuleMatch::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("httpMatch"))
-  {
+RuleMatch& RuleMatch::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("httpMatch")) {
     m_httpMatch = jsonValue.GetObject("httpMatch");
     m_httpMatchHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RuleMatch::Jsonize() const
-{
+JsonValue RuleMatch::Jsonize() const {
   JsonValue payload;
 
-  if(m_httpMatchHasBeenSet)
-  {
-   payload.WithObject("httpMatch", m_httpMatch.Jsonize());
-
+  if (m_httpMatchHasBeenSet) {
+    payload.WithObject("httpMatch", m_httpMatch.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace VPCLattice
-} // namespace Aws
+}  // namespace Model
+}  // namespace VPCLattice
+}  // namespace Aws

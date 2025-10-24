@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/networkmanager/NetworkManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/networkmanager/NetworkManager_EXPORTS.h>
 
-namespace Aws
-{
-namespace NetworkManager
-{
-namespace Model
-{
-  enum class ChangeSetState
-  {
-    NOT_SET,
-    PENDING_GENERATION,
-    FAILED_GENERATION,
-    READY_TO_EXECUTE,
-    EXECUTING,
-    EXECUTION_SUCCEEDED,
-    OUT_OF_DATE
-  };
+namespace Aws {
+namespace NetworkManager {
+namespace Model {
+enum class ChangeSetState { NOT_SET, PENDING_GENERATION, FAILED_GENERATION, READY_TO_EXECUTE, EXECUTING, EXECUTION_SUCCEEDED, OUT_OF_DATE };
 
-namespace ChangeSetStateMapper
-{
+namespace ChangeSetStateMapper {
 AWS_NETWORKMANAGER_API ChangeSetState GetChangeSetStateForName(const Aws::String& name);
 
 AWS_NETWORKMANAGER_API Aws::String GetNameForChangeSetState(ChangeSetState value);
-} // namespace ChangeSetStateMapper
-} // namespace Model
-} // namespace NetworkManager
-} // namespace Aws
+}  // namespace ChangeSetStateMapper
+}  // namespace Model
+}  // namespace NetworkManager
+}  // namespace Aws

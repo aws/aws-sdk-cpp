@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-AmplitudeSourceProperties::AmplitudeSourceProperties(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AmplitudeSourceProperties::AmplitudeSourceProperties(JsonView jsonValue) { *this = jsonValue; }
 
-AmplitudeSourceProperties& AmplitudeSourceProperties::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("object"))
-  {
+AmplitudeSourceProperties& AmplitudeSourceProperties::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("object")) {
     m_object = jsonValue.GetString("object");
     m_objectHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AmplitudeSourceProperties::Jsonize() const
-{
+JsonValue AmplitudeSourceProperties::Jsonize() const {
   JsonValue payload;
 
-  if(m_objectHasBeenSet)
-  {
-   payload.WithString("object", m_object);
-
+  if (m_objectHasBeenSet) {
+    payload.WithString("object", m_object);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

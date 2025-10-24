@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/StatePersistenceConfigurations.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/StatePersistenceConfigurations.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-StatePersistenceConfigurations::StatePersistenceConfigurations(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StatePersistenceConfigurations::StatePersistenceConfigurations(JsonView jsonValue) { *this = jsonValue; }
 
-StatePersistenceConfigurations& StatePersistenceConfigurations::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Enabled"))
-  {
+StatePersistenceConfigurations& StatePersistenceConfigurations::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Enabled")) {
     m_enabled = jsonValue.GetBool("Enabled");
     m_enabledHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StatePersistenceConfigurations::Jsonize() const
-{
+JsonValue StatePersistenceConfigurations::Jsonize() const {
   JsonValue payload;
 
-  if(m_enabledHasBeenSet)
-  {
-   payload.WithBool("Enabled", m_enabled);
-
+  if (m_enabledHasBeenSet) {
+    payload.WithBool("Enabled", m_enabled);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

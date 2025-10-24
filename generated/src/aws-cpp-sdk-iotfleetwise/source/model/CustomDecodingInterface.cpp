@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotfleetwise/model/CustomDecodingInterface.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotfleetwise/model/CustomDecodingInterface.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTFleetWise
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTFleetWise {
+namespace Model {
 
-CustomDecodingInterface::CustomDecodingInterface(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CustomDecodingInterface::CustomDecodingInterface(JsonView jsonValue) { *this = jsonValue; }
 
-CustomDecodingInterface& CustomDecodingInterface::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+CustomDecodingInterface& CustomDecodingInterface::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CustomDecodingInterface::Jsonize() const
-{
+JsonValue CustomDecodingInterface::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTFleetWise
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTFleetWise
+}  // namespace Aws

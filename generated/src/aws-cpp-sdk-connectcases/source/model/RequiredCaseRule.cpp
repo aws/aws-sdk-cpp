@@ -11,30 +11,20 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCases
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCases {
+namespace Model {
 
-RequiredCaseRule::RequiredCaseRule(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RequiredCaseRule::RequiredCaseRule(JsonView jsonValue) { *this = jsonValue; }
 
-RequiredCaseRule& RequiredCaseRule::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("defaultValue"))
-  {
+RequiredCaseRule& RequiredCaseRule::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("defaultValue")) {
     m_defaultValue = jsonValue.GetBool("defaultValue");
     m_defaultValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("conditions"))
-  {
+  if (jsonValue.ValueExists("conditions")) {
     Aws::Utils::Array<JsonView> conditionsJsonList = jsonValue.GetArray("conditions");
-    for(unsigned conditionsIndex = 0; conditionsIndex < conditionsJsonList.GetLength(); ++conditionsIndex)
-    {
+    for (unsigned conditionsIndex = 0; conditionsIndex < conditionsJsonList.GetLength(); ++conditionsIndex) {
       m_conditions.push_back(conditionsJsonList[conditionsIndex].AsObject());
     }
     m_conditionsHasBeenSet = true;
@@ -42,30 +32,24 @@ RequiredCaseRule& RequiredCaseRule::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue RequiredCaseRule::Jsonize() const
-{
+JsonValue RequiredCaseRule::Jsonize() const {
   JsonValue payload;
 
-  if(m_defaultValueHasBeenSet)
-  {
-   payload.WithBool("defaultValue", m_defaultValue);
-
+  if (m_defaultValueHasBeenSet) {
+    payload.WithBool("defaultValue", m_defaultValue);
   }
 
-  if(m_conditionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> conditionsJsonList(m_conditions.size());
-   for(unsigned conditionsIndex = 0; conditionsIndex < conditionsJsonList.GetLength(); ++conditionsIndex)
-   {
-     conditionsJsonList[conditionsIndex].AsObject(m_conditions[conditionsIndex].Jsonize());
-   }
-   payload.WithArray("conditions", std::move(conditionsJsonList));
-
+  if (m_conditionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> conditionsJsonList(m_conditions.size());
+    for (unsigned conditionsIndex = 0; conditionsIndex < conditionsJsonList.GetLength(); ++conditionsIndex) {
+      conditionsJsonList[conditionsIndex].AsObject(m_conditions[conditionsIndex].Jsonize());
+    }
+    payload.WithArray("conditions", std::move(conditionsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCases
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCases
+}  // namespace Aws

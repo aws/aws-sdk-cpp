@@ -4,69 +4,55 @@
  */
 
 #include <aws/acm-pca/model/AuditReportResponseFormat.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace ACMPCA {
+namespace Model {
+namespace AuditReportResponseFormatMapper {
 
-namespace Aws
-{
-  namespace ACMPCA
-  {
-    namespace Model
-    {
-      namespace AuditReportResponseFormatMapper
-      {
+static const int JSON_HASH = HashingUtils::HashString("JSON");
+static const int CSV_HASH = HashingUtils::HashString("CSV");
 
-        static const int JSON_HASH = HashingUtils::HashString("JSON");
-        static const int CSV_HASH = HashingUtils::HashString("CSV");
+AuditReportResponseFormat GetAuditReportResponseFormatForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == JSON_HASH) {
+    return AuditReportResponseFormat::JSON;
+  } else if (hashCode == CSV_HASH) {
+    return AuditReportResponseFormat::CSV;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<AuditReportResponseFormat>(hashCode);
+  }
 
+  return AuditReportResponseFormat::NOT_SET;
+}
 
-        AuditReportResponseFormat GetAuditReportResponseFormatForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == JSON_HASH)
-          {
-            return AuditReportResponseFormat::JSON;
-          }
-          else if (hashCode == CSV_HASH)
-          {
-            return AuditReportResponseFormat::CSV;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<AuditReportResponseFormat>(hashCode);
-          }
+Aws::String GetNameForAuditReportResponseFormat(AuditReportResponseFormat enumValue) {
+  switch (enumValue) {
+    case AuditReportResponseFormat::NOT_SET:
+      return {};
+    case AuditReportResponseFormat::JSON:
+      return "JSON";
+    case AuditReportResponseFormat::CSV:
+      return "CSV";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return AuditReportResponseFormat::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForAuditReportResponseFormat(AuditReportResponseFormat enumValue)
-        {
-          switch(enumValue)
-          {
-          case AuditReportResponseFormat::NOT_SET:
-            return {};
-          case AuditReportResponseFormat::JSON:
-            return "JSON";
-          case AuditReportResponseFormat::CSV:
-            return "CSV";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace AuditReportResponseFormatMapper
-    } // namespace Model
-  } // namespace ACMPCA
-} // namespace Aws
+}  // namespace AuditReportResponseFormatMapper
+}  // namespace Model
+}  // namespace ACMPCA
+}  // namespace Aws

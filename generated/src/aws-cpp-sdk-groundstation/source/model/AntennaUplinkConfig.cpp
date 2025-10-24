@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/groundstation/model/AntennaUplinkConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/groundstation/model/AntennaUplinkConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GroundStation
-{
-namespace Model
-{
+namespace Aws {
+namespace GroundStation {
+namespace Model {
 
-AntennaUplinkConfig::AntennaUplinkConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AntennaUplinkConfig::AntennaUplinkConfig(JsonView jsonValue) { *this = jsonValue; }
 
-AntennaUplinkConfig& AntennaUplinkConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("spectrumConfig"))
-  {
+AntennaUplinkConfig& AntennaUplinkConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("spectrumConfig")) {
     m_spectrumConfig = jsonValue.GetObject("spectrumConfig");
     m_spectrumConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("targetEirp"))
-  {
+  if (jsonValue.ValueExists("targetEirp")) {
     m_targetEirp = jsonValue.GetObject("targetEirp");
     m_targetEirpHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("transmitDisabled"))
-  {
+  if (jsonValue.ValueExists("transmitDisabled")) {
     m_transmitDisabled = jsonValue.GetBool("transmitDisabled");
     m_transmitDisabledHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AntennaUplinkConfig::Jsonize() const
-{
+JsonValue AntennaUplinkConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_spectrumConfigHasBeenSet)
-  {
-   payload.WithObject("spectrumConfig", m_spectrumConfig.Jsonize());
-
+  if (m_spectrumConfigHasBeenSet) {
+    payload.WithObject("spectrumConfig", m_spectrumConfig.Jsonize());
   }
 
-  if(m_targetEirpHasBeenSet)
-  {
-   payload.WithObject("targetEirp", m_targetEirp.Jsonize());
-
+  if (m_targetEirpHasBeenSet) {
+    payload.WithObject("targetEirp", m_targetEirp.Jsonize());
   }
 
-  if(m_transmitDisabledHasBeenSet)
-  {
-   payload.WithBool("transmitDisabled", m_transmitDisabled);
-
+  if (m_transmitDisabledHasBeenSet) {
+    payload.WithBool("transmitDisabled", m_transmitDisabled);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GroundStation
-} // namespace Aws
+}  // namespace Model
+}  // namespace GroundStation
+}  // namespace Aws

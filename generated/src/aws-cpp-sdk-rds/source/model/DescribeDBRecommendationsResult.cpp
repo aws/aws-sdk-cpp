@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/DescribeDBRecommendationsResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/rds/model/DescribeDBRecommendationsResult.h>
 
 #include <utility>
 
@@ -17,30 +17,22 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDBRecommendationsResult::DescribeDBRecommendationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+DescribeDBRecommendationsResult::DescribeDBRecommendationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-DescribeDBRecommendationsResult& DescribeDBRecommendationsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeDBRecommendationsResult& DescribeDBRecommendationsResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeDBRecommendationsResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeDBRecommendationsResult")) {
     resultNode = rootNode.FirstChild("DescribeDBRecommendationsResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode dBRecommendationsNode = resultNode.FirstChild("DBRecommendations");
-    if(!dBRecommendationsNode.IsNull())
-    {
+    if (!dBRecommendationsNode.IsNull()) {
       XmlNode dBRecommendationsMember = dBRecommendationsNode.FirstChild("member");
       m_dBRecommendationsHasBeenSet = !dBRecommendationsMember.IsNull();
-      while(!dBRecommendationsMember.IsNull())
-      {
+      while (!dBRecommendationsMember.IsNull()) {
         m_dBRecommendations.push_back(dBRecommendationsMember);
         dBRecommendationsMember = dBRecommendationsMember.NextNode("member");
       }
@@ -48,8 +40,7 @@ DescribeDBRecommendationsResult& DescribeDBRecommendationsResult::operator =(con
       m_dBRecommendationsHasBeenSet = true;
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    if(!markerNode.IsNull())
-    {
+    if (!markerNode.IsNull()) {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
       m_markerHasBeenSet = true;
     }
@@ -59,7 +50,7 @@ DescribeDBRecommendationsResult& DescribeDBRecommendationsResult::operator =(con
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DescribeDBRecommendationsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DescribeDBRecommendationsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

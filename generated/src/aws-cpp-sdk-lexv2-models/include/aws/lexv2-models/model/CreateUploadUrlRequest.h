@@ -4,33 +4,28 @@
  */
 
 #pragma once
-#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/lexv2-models/LexModelsV2Request.h>
+#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
 
-  /**
-   */
-  class CreateUploadUrlRequest : public LexModelsV2Request
-  {
-  public:
-    AWS_LEXMODELSV2_API CreateUploadUrlRequest() = default;
+/**
+ */
+class CreateUploadUrlRequest : public LexModelsV2Request {
+ public:
+  AWS_LEXMODELSV2_API CreateUploadUrlRequest() = default;
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "CreateUploadUrl"; }
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "CreateUploadUrl"; }
 
-    AWS_LEXMODELSV2_API Aws::String SerializePayload() const override;
+  AWS_LEXMODELSV2_API Aws::String SerializePayload() const override;
+};
 
-  };
-
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

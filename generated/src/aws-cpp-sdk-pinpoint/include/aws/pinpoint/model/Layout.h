@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/pinpoint/Pinpoint_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pinpoint/Pinpoint_EXPORTS.h>
 
-namespace Aws
-{
-namespace Pinpoint
-{
-namespace Model
-{
-  enum class Layout
-  {
-    NOT_SET,
-    BOTTOM_BANNER,
-    TOP_BANNER,
-    OVERLAYS,
-    MOBILE_FEED,
-    MIDDLE_BANNER,
-    CAROUSEL
-  };
+namespace Aws {
+namespace Pinpoint {
+namespace Model {
+enum class Layout { NOT_SET, BOTTOM_BANNER, TOP_BANNER, OVERLAYS, MOBILE_FEED, MIDDLE_BANNER, CAROUSEL };
 
-namespace LayoutMapper
-{
+namespace LayoutMapper {
 AWS_PINPOINT_API Layout GetLayoutForName(const Aws::String& name);
 
 AWS_PINPOINT_API Aws::String GetNameForLayout(Layout value);
-} // namespace LayoutMapper
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace LayoutMapper
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTManagedIntegrations
-{
-namespace Model
-{
-  enum class OtaProtocol
-  {
-    NOT_SET,
-    HTTP
-  };
+namespace Aws {
+namespace IoTManagedIntegrations {
+namespace Model {
+enum class OtaProtocol { NOT_SET, HTTP };
 
-namespace OtaProtocolMapper
-{
+namespace OtaProtocolMapper {
 AWS_IOTMANAGEDINTEGRATIONS_API OtaProtocol GetOtaProtocolForName(const Aws::String& name);
 
 AWS_IOTMANAGEDINTEGRATIONS_API Aws::String GetNameForOtaProtocol(OtaProtocol value);
-} // namespace OtaProtocolMapper
-} // namespace Model
-} // namespace IoTManagedIntegrations
-} // namespace Aws
+}  // namespace OtaProtocolMapper
+}  // namespace Model
+}  // namespace IoTManagedIntegrations
+}  // namespace Aws

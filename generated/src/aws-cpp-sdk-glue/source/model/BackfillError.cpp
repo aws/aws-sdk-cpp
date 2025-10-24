@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/BackfillError.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/BackfillError.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
+namespace Aws {
+namespace Glue {
+namespace Model {
 
-BackfillError::BackfillError(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BackfillError::BackfillError(JsonView jsonValue) { *this = jsonValue; }
 
-BackfillError& BackfillError::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Code"))
-  {
+BackfillError& BackfillError::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Code")) {
     m_code = BackfillErrorCodeMapper::GetBackfillErrorCodeForName(jsonValue.GetString("Code"));
     m_codeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Partitions"))
-  {
+  if (jsonValue.ValueExists("Partitions")) {
     Aws::Utils::Array<JsonView> partitionsJsonList = jsonValue.GetArray("Partitions");
-    for(unsigned partitionsIndex = 0; partitionsIndex < partitionsJsonList.GetLength(); ++partitionsIndex)
-    {
+    for (unsigned partitionsIndex = 0; partitionsIndex < partitionsJsonList.GetLength(); ++partitionsIndex) {
       m_partitions.push_back(partitionsJsonList[partitionsIndex].AsObject());
     }
     m_partitionsHasBeenSet = true;
@@ -42,29 +32,24 @@ BackfillError& BackfillError::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue BackfillError::Jsonize() const
-{
+JsonValue BackfillError::Jsonize() const {
   JsonValue payload;
 
-  if(m_codeHasBeenSet)
-  {
-   payload.WithString("Code", BackfillErrorCodeMapper::GetNameForBackfillErrorCode(m_code));
+  if (m_codeHasBeenSet) {
+    payload.WithString("Code", BackfillErrorCodeMapper::GetNameForBackfillErrorCode(m_code));
   }
 
-  if(m_partitionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> partitionsJsonList(m_partitions.size());
-   for(unsigned partitionsIndex = 0; partitionsIndex < partitionsJsonList.GetLength(); ++partitionsIndex)
-   {
-     partitionsJsonList[partitionsIndex].AsObject(m_partitions[partitionsIndex].Jsonize());
-   }
-   payload.WithArray("Partitions", std::move(partitionsJsonList));
-
+  if (m_partitionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> partitionsJsonList(m_partitions.size());
+    for (unsigned partitionsIndex = 0; partitionsIndex < partitionsJsonList.GetLength(); ++partitionsIndex) {
+      partitionsJsonList[partitionsIndex].AsObject(m_partitions[partitionsIndex].Jsonize());
+    }
+    payload.WithArray("Partitions", std::move(partitionsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

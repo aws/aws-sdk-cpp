@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lambda/model/SnapStart.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lambda/model/SnapStart.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Lambda
-{
-namespace Model
-{
+namespace Aws {
+namespace Lambda {
+namespace Model {
 
-SnapStart::SnapStart(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SnapStart::SnapStart(JsonView jsonValue) { *this = jsonValue; }
 
-SnapStart& SnapStart::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ApplyOn"))
-  {
+SnapStart& SnapStart::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ApplyOn")) {
     m_applyOn = SnapStartApplyOnMapper::GetSnapStartApplyOnForName(jsonValue.GetString("ApplyOn"));
     m_applyOnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SnapStart::Jsonize() const
-{
+JsonValue SnapStart::Jsonize() const {
   JsonValue payload;
 
-  if(m_applyOnHasBeenSet)
-  {
-   payload.WithString("ApplyOn", SnapStartApplyOnMapper::GetNameForSnapStartApplyOn(m_applyOn));
+  if (m_applyOnHasBeenSet) {
+    payload.WithString("ApplyOn", SnapStartApplyOnMapper::GetNameForSnapStartApplyOn(m_applyOn));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Lambda
-} // namespace Aws
+}  // namespace Model
+}  // namespace Lambda
+}  // namespace Aws

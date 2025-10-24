@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudDirectory
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudDirectory {
+namespace Model {
 
-BatchListObjectAttributes::BatchListObjectAttributes(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchListObjectAttributes::BatchListObjectAttributes(JsonView jsonValue) { *this = jsonValue; }
 
-BatchListObjectAttributes& BatchListObjectAttributes::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ObjectReference"))
-  {
+BatchListObjectAttributes& BatchListObjectAttributes::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ObjectReference")) {
     m_objectReference = jsonValue.GetObject("ObjectReference");
     m_objectReferenceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MaxResults"))
-  {
+  if (jsonValue.ValueExists("MaxResults")) {
     m_maxResults = jsonValue.GetInteger("MaxResults");
     m_maxResultsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FacetFilter"))
-  {
+  if (jsonValue.ValueExists("FacetFilter")) {
     m_facetFilter = jsonValue.GetObject("FacetFilter");
     m_facetFilterHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BatchListObjectAttributes::Jsonize() const
-{
+JsonValue BatchListObjectAttributes::Jsonize() const {
   JsonValue payload;
 
-  if(m_objectReferenceHasBeenSet)
-  {
-   payload.WithObject("ObjectReference", m_objectReference.Jsonize());
-
+  if (m_objectReferenceHasBeenSet) {
+    payload.WithObject("ObjectReference", m_objectReference.Jsonize());
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("MaxResults", m_maxResults);
   }
 
-  if(m_facetFilterHasBeenSet)
-  {
-   payload.WithObject("FacetFilter", m_facetFilter.Jsonize());
-
+  if (m_facetFilterHasBeenSet) {
+    payload.WithObject("FacetFilter", m_facetFilter.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudDirectory
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudDirectory
+}  // namespace Aws

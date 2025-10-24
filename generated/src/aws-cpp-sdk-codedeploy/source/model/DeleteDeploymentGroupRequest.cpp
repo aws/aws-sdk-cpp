@@ -12,33 +12,22 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteDeploymentGroupRequest::SerializePayload() const
-{
+Aws::String DeleteDeploymentGroupRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_applicationNameHasBeenSet)
-  {
-   payload.WithString("applicationName", m_applicationName);
-
+  if (m_applicationNameHasBeenSet) {
+    payload.WithString("applicationName", m_applicationName);
   }
 
-  if(m_deploymentGroupNameHasBeenSet)
-  {
-   payload.WithString("deploymentGroupName", m_deploymentGroupName);
-
+  if (m_deploymentGroupNameHasBeenSet) {
+    payload.WithString("deploymentGroupName", m_deploymentGroupName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteDeploymentGroupRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteDeploymentGroupRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeDeploy_20141006.DeleteDeploymentGroup"));
   return headers;
-
 }
-
-
-
-

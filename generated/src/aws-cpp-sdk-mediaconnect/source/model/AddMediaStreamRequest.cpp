@@ -3,68 +3,52 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconnect/model/AddMediaStreamRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconnect/model/AddMediaStreamRequest.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConnect {
+namespace Model {
 
-AddMediaStreamRequest::AddMediaStreamRequest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AddMediaStreamRequest::AddMediaStreamRequest(JsonView jsonValue) { *this = jsonValue; }
 
-AddMediaStreamRequest& AddMediaStreamRequest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("attributes"))
-  {
+AddMediaStreamRequest& AddMediaStreamRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("attributes")) {
     m_attributes = jsonValue.GetObject("attributes");
     m_attributesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("clockRate"))
-  {
+  if (jsonValue.ValueExists("clockRate")) {
     m_clockRate = jsonValue.GetInteger("clockRate");
     m_clockRateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("mediaStreamId"))
-  {
+  if (jsonValue.ValueExists("mediaStreamId")) {
     m_mediaStreamId = jsonValue.GetInteger("mediaStreamId");
     m_mediaStreamIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("mediaStreamName"))
-  {
+  if (jsonValue.ValueExists("mediaStreamName")) {
     m_mediaStreamName = jsonValue.GetString("mediaStreamName");
     m_mediaStreamNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("mediaStreamType"))
-  {
+  if (jsonValue.ValueExists("mediaStreamType")) {
     m_mediaStreamType = MediaStreamTypeMapper::GetMediaStreamTypeForName(jsonValue.GetString("mediaStreamType"));
     m_mediaStreamTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("videoFormat"))
-  {
+  if (jsonValue.ValueExists("videoFormat")) {
     m_videoFormat = jsonValue.GetString("videoFormat");
     m_videoFormatHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("mediaStreamTags"))
-  {
+  if (jsonValue.ValueExists("mediaStreamTags")) {
     Aws::Map<Aws::String, JsonView> mediaStreamTagsJsonMap = jsonValue.GetObject("mediaStreamTags").GetAllObjects();
-    for(auto& mediaStreamTagsItem : mediaStreamTagsJsonMap)
-    {
+    for (auto& mediaStreamTagsItem : mediaStreamTagsJsonMap) {
       m_mediaStreamTags[mediaStreamTagsItem.first] = mediaStreamTagsItem.second.AsString();
     }
     m_mediaStreamTagsHasBeenSet = true;
@@ -72,65 +56,48 @@ AddMediaStreamRequest& AddMediaStreamRequest::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue AddMediaStreamRequest::Jsonize() const
-{
+JsonValue AddMediaStreamRequest::Jsonize() const {
   JsonValue payload;
 
-  if(m_attributesHasBeenSet)
-  {
-   payload.WithObject("attributes", m_attributes.Jsonize());
-
+  if (m_attributesHasBeenSet) {
+    payload.WithObject("attributes", m_attributes.Jsonize());
   }
 
-  if(m_clockRateHasBeenSet)
-  {
-   payload.WithInteger("clockRate", m_clockRate);
-
+  if (m_clockRateHasBeenSet) {
+    payload.WithInteger("clockRate", m_clockRate);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_mediaStreamIdHasBeenSet)
-  {
-   payload.WithInteger("mediaStreamId", m_mediaStreamId);
-
+  if (m_mediaStreamIdHasBeenSet) {
+    payload.WithInteger("mediaStreamId", m_mediaStreamId);
   }
 
-  if(m_mediaStreamNameHasBeenSet)
-  {
-   payload.WithString("mediaStreamName", m_mediaStreamName);
-
+  if (m_mediaStreamNameHasBeenSet) {
+    payload.WithString("mediaStreamName", m_mediaStreamName);
   }
 
-  if(m_mediaStreamTypeHasBeenSet)
-  {
-   payload.WithString("mediaStreamType", MediaStreamTypeMapper::GetNameForMediaStreamType(m_mediaStreamType));
+  if (m_mediaStreamTypeHasBeenSet) {
+    payload.WithString("mediaStreamType", MediaStreamTypeMapper::GetNameForMediaStreamType(m_mediaStreamType));
   }
 
-  if(m_videoFormatHasBeenSet)
-  {
-   payload.WithString("videoFormat", m_videoFormat);
-
+  if (m_videoFormatHasBeenSet) {
+    payload.WithString("videoFormat", m_videoFormat);
   }
 
-  if(m_mediaStreamTagsHasBeenSet)
-  {
-   JsonValue mediaStreamTagsJsonMap;
-   for(auto& mediaStreamTagsItem : m_mediaStreamTags)
-   {
-     mediaStreamTagsJsonMap.WithString(mediaStreamTagsItem.first, mediaStreamTagsItem.second);
-   }
-   payload.WithObject("mediaStreamTags", std::move(mediaStreamTagsJsonMap));
-
+  if (m_mediaStreamTagsHasBeenSet) {
+    JsonValue mediaStreamTagsJsonMap;
+    for (auto& mediaStreamTagsItem : m_mediaStreamTags) {
+      mediaStreamTagsJsonMap.WithString(mediaStreamTagsItem.first, mediaStreamTagsItem.second);
+    }
+    payload.WithObject("mediaStreamTags", std::move(mediaStreamTagsJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConnect
+}  // namespace Aws

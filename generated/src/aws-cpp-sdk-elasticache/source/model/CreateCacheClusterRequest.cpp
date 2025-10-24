@@ -3,253 +3,192 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/CreateCacheClusterRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticache/model/CreateCacheClusterRequest.h>
 
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateCacheClusterRequest::SerializePayload() const
-{
+Aws::String CreateCacheClusterRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateCacheCluster&";
-  if(m_cacheClusterIdHasBeenSet)
-  {
+  if (m_cacheClusterIdHasBeenSet) {
     ss << "CacheClusterId=" << StringUtils::URLEncode(m_cacheClusterId.c_str()) << "&";
   }
 
-  if(m_replicationGroupIdHasBeenSet)
-  {
+  if (m_replicationGroupIdHasBeenSet) {
     ss << "ReplicationGroupId=" << StringUtils::URLEncode(m_replicationGroupId.c_str()) << "&";
   }
 
-  if(m_aZModeHasBeenSet)
-  {
+  if (m_aZModeHasBeenSet) {
     ss << "AZMode=" << StringUtils::URLEncode(AZModeMapper::GetNameForAZMode(m_aZMode)) << "&";
   }
 
-  if(m_preferredAvailabilityZoneHasBeenSet)
-  {
+  if (m_preferredAvailabilityZoneHasBeenSet) {
     ss << "PreferredAvailabilityZone=" << StringUtils::URLEncode(m_preferredAvailabilityZone.c_str()) << "&";
   }
 
-  if(m_preferredAvailabilityZonesHasBeenSet)
-  {
-    if (m_preferredAvailabilityZones.empty())
-    {
+  if (m_preferredAvailabilityZonesHasBeenSet) {
+    if (m_preferredAvailabilityZones.empty()) {
       ss << "PreferredAvailabilityZones=&";
-    }
-    else
-    {
+    } else {
       unsigned preferredAvailabilityZonesCount = 1;
-      for(auto& item : m_preferredAvailabilityZones)
-      {
+      for (auto& item : m_preferredAvailabilityZones) {
         ss << "PreferredAvailabilityZones.PreferredAvailabilityZone." << preferredAvailabilityZonesCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+           << StringUtils::URLEncode(item.c_str()) << "&";
         preferredAvailabilityZonesCount++;
       }
     }
   }
 
-  if(m_numCacheNodesHasBeenSet)
-  {
+  if (m_numCacheNodesHasBeenSet) {
     ss << "NumCacheNodes=" << m_numCacheNodes << "&";
   }
 
-  if(m_cacheNodeTypeHasBeenSet)
-  {
+  if (m_cacheNodeTypeHasBeenSet) {
     ss << "CacheNodeType=" << StringUtils::URLEncode(m_cacheNodeType.c_str()) << "&";
   }
 
-  if(m_engineHasBeenSet)
-  {
+  if (m_engineHasBeenSet) {
     ss << "Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
   }
 
-  if(m_engineVersionHasBeenSet)
-  {
+  if (m_engineVersionHasBeenSet) {
     ss << "EngineVersion=" << StringUtils::URLEncode(m_engineVersion.c_str()) << "&";
   }
 
-  if(m_cacheParameterGroupNameHasBeenSet)
-  {
+  if (m_cacheParameterGroupNameHasBeenSet) {
     ss << "CacheParameterGroupName=" << StringUtils::URLEncode(m_cacheParameterGroupName.c_str()) << "&";
   }
 
-  if(m_cacheSubnetGroupNameHasBeenSet)
-  {
+  if (m_cacheSubnetGroupNameHasBeenSet) {
     ss << "CacheSubnetGroupName=" << StringUtils::URLEncode(m_cacheSubnetGroupName.c_str()) << "&";
   }
 
-  if(m_cacheSecurityGroupNamesHasBeenSet)
-  {
-    if (m_cacheSecurityGroupNames.empty())
-    {
+  if (m_cacheSecurityGroupNamesHasBeenSet) {
+    if (m_cacheSecurityGroupNames.empty()) {
       ss << "CacheSecurityGroupNames=&";
-    }
-    else
-    {
+    } else {
       unsigned cacheSecurityGroupNamesCount = 1;
-      for(auto& item : m_cacheSecurityGroupNames)
-      {
+      for (auto& item : m_cacheSecurityGroupNames) {
         ss << "CacheSecurityGroupNames.CacheSecurityGroupName." << cacheSecurityGroupNamesCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+           << StringUtils::URLEncode(item.c_str()) << "&";
         cacheSecurityGroupNamesCount++;
       }
     }
   }
 
-  if(m_securityGroupIdsHasBeenSet)
-  {
-    if (m_securityGroupIds.empty())
-    {
+  if (m_securityGroupIdsHasBeenSet) {
+    if (m_securityGroupIds.empty()) {
       ss << "SecurityGroupIds=&";
-    }
-    else
-    {
+    } else {
       unsigned securityGroupIdsCount = 1;
-      for(auto& item : m_securityGroupIds)
-      {
-        ss << "SecurityGroupIds.SecurityGroupId." << securityGroupIdsCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_securityGroupIds) {
+        ss << "SecurityGroupIds.SecurityGroupId." << securityGroupIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         securityGroupIdsCount++;
       }
     }
   }
 
-  if(m_tagsHasBeenSet)
-  {
-    if (m_tags.empty())
-    {
+  if (m_tagsHasBeenSet) {
+    if (m_tags.empty()) {
       ss << "Tags=&";
-    }
-    else
-    {
+    } else {
       unsigned tagsCount = 1;
-      for(auto& item : m_tags)
-      {
+      for (auto& item : m_tags) {
         item.OutputToStream(ss, "Tags.Tag.", tagsCount, "");
         tagsCount++;
       }
     }
   }
 
-  if(m_snapshotArnsHasBeenSet)
-  {
-    if (m_snapshotArns.empty())
-    {
+  if (m_snapshotArnsHasBeenSet) {
+    if (m_snapshotArns.empty()) {
       ss << "SnapshotArns=&";
-    }
-    else
-    {
+    } else {
       unsigned snapshotArnsCount = 1;
-      for(auto& item : m_snapshotArns)
-      {
-        ss << "SnapshotArns.SnapshotArn." << snapshotArnsCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_snapshotArns) {
+        ss << "SnapshotArns.SnapshotArn." << snapshotArnsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         snapshotArnsCount++;
       }
     }
   }
 
-  if(m_snapshotNameHasBeenSet)
-  {
+  if (m_snapshotNameHasBeenSet) {
     ss << "SnapshotName=" << StringUtils::URLEncode(m_snapshotName.c_str()) << "&";
   }
 
-  if(m_preferredMaintenanceWindowHasBeenSet)
-  {
+  if (m_preferredMaintenanceWindowHasBeenSet) {
     ss << "PreferredMaintenanceWindow=" << StringUtils::URLEncode(m_preferredMaintenanceWindow.c_str()) << "&";
   }
 
-  if(m_portHasBeenSet)
-  {
+  if (m_portHasBeenSet) {
     ss << "Port=" << m_port << "&";
   }
 
-  if(m_notificationTopicArnHasBeenSet)
-  {
+  if (m_notificationTopicArnHasBeenSet) {
     ss << "NotificationTopicArn=" << StringUtils::URLEncode(m_notificationTopicArn.c_str()) << "&";
   }
 
-  if(m_autoMinorVersionUpgradeHasBeenSet)
-  {
+  if (m_autoMinorVersionUpgradeHasBeenSet) {
     ss << "AutoMinorVersionUpgrade=" << std::boolalpha << m_autoMinorVersionUpgrade << "&";
   }
 
-  if(m_snapshotRetentionLimitHasBeenSet)
-  {
+  if (m_snapshotRetentionLimitHasBeenSet) {
     ss << "SnapshotRetentionLimit=" << m_snapshotRetentionLimit << "&";
   }
 
-  if(m_snapshotWindowHasBeenSet)
-  {
+  if (m_snapshotWindowHasBeenSet) {
     ss << "SnapshotWindow=" << StringUtils::URLEncode(m_snapshotWindow.c_str()) << "&";
   }
 
-  if(m_authTokenHasBeenSet)
-  {
+  if (m_authTokenHasBeenSet) {
     ss << "AuthToken=" << StringUtils::URLEncode(m_authToken.c_str()) << "&";
   }
 
-  if(m_outpostModeHasBeenSet)
-  {
+  if (m_outpostModeHasBeenSet) {
     ss << "OutpostMode=" << StringUtils::URLEncode(OutpostModeMapper::GetNameForOutpostMode(m_outpostMode)) << "&";
   }
 
-  if(m_preferredOutpostArnHasBeenSet)
-  {
+  if (m_preferredOutpostArnHasBeenSet) {
     ss << "PreferredOutpostArn=" << StringUtils::URLEncode(m_preferredOutpostArn.c_str()) << "&";
   }
 
-  if(m_preferredOutpostArnsHasBeenSet)
-  {
-    if (m_preferredOutpostArns.empty())
-    {
+  if (m_preferredOutpostArnsHasBeenSet) {
+    if (m_preferredOutpostArns.empty()) {
       ss << "PreferredOutpostArns=&";
-    }
-    else
-    {
+    } else {
       unsigned preferredOutpostArnsCount = 1;
-      for(auto& item : m_preferredOutpostArns)
-      {
-        ss << "PreferredOutpostArns.PreferredOutpostArn." << preferredOutpostArnsCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_preferredOutpostArns) {
+        ss << "PreferredOutpostArns.PreferredOutpostArn." << preferredOutpostArnsCount << "=" << StringUtils::URLEncode(item.c_str())
+           << "&";
         preferredOutpostArnsCount++;
       }
     }
   }
 
-  if(m_logDeliveryConfigurationsHasBeenSet)
-  {
-    if (m_logDeliveryConfigurations.empty())
-    {
+  if (m_logDeliveryConfigurationsHasBeenSet) {
+    if (m_logDeliveryConfigurations.empty()) {
       ss << "LogDeliveryConfigurations=&";
-    }
-    else
-    {
+    } else {
       unsigned logDeliveryConfigurationsCount = 1;
-      for(auto& item : m_logDeliveryConfigurations)
-      {
+      for (auto& item : m_logDeliveryConfigurations) {
         item.OutputToStream(ss, "LogDeliveryConfigurations.LogDeliveryConfigurationRequest.", logDeliveryConfigurationsCount, "");
         logDeliveryConfigurationsCount++;
       }
     }
   }
 
-  if(m_transitEncryptionEnabledHasBeenSet)
-  {
+  if (m_transitEncryptionEnabledHasBeenSet) {
     ss << "TransitEncryptionEnabled=" << std::boolalpha << m_transitEncryptionEnabled << "&";
   }
 
-  if(m_networkTypeHasBeenSet)
-  {
+  if (m_networkTypeHasBeenSet) {
     ss << "NetworkType=" << StringUtils::URLEncode(NetworkTypeMapper::GetNameForNetworkType(m_networkType)) << "&";
   }
 
-  if(m_ipDiscoveryHasBeenSet)
-  {
+  if (m_ipDiscoveryHasBeenSet) {
     ss << "IpDiscovery=" << StringUtils::URLEncode(IpDiscoveryMapper::GetNameForIpDiscovery(m_ipDiscovery)) << "&";
   }
 
@@ -257,8 +196,4 @@ Aws::String CreateCacheClusterRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CreateCacheClusterRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateCacheClusterRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

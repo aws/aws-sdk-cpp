@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/monitoring/model/DescribeAlarmsForMetricResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/monitoring/model/DescribeAlarmsForMetricResult.h>
 
 #include <utility>
 
@@ -17,30 +17,22 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAlarmsForMetricResult::DescribeAlarmsForMetricResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+DescribeAlarmsForMetricResult::DescribeAlarmsForMetricResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-DescribeAlarmsForMetricResult& DescribeAlarmsForMetricResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeAlarmsForMetricResult& DescribeAlarmsForMetricResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeAlarmsForMetricResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeAlarmsForMetricResult")) {
     resultNode = rootNode.FirstChild("DescribeAlarmsForMetricResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode metricAlarmsNode = resultNode.FirstChild("MetricAlarms");
-    if(!metricAlarmsNode.IsNull())
-    {
+    if (!metricAlarmsNode.IsNull()) {
       XmlNode metricAlarmsMember = metricAlarmsNode.FirstChild("member");
       m_metricAlarmsHasBeenSet = !metricAlarmsMember.IsNull();
-      while(!metricAlarmsMember.IsNull())
-      {
+      while (!metricAlarmsMember.IsNull()) {
         m_metricAlarms.push_back(metricAlarmsMember);
         metricAlarmsMember = metricAlarmsMember.NextNode("member");
       }
@@ -53,7 +45,8 @@ DescribeAlarmsForMetricResult& DescribeAlarmsForMetricResult::operator =(const A
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::CloudWatch::Model::DescribeAlarmsForMetricResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::CloudWatch::Model::DescribeAlarmsForMetricResult",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

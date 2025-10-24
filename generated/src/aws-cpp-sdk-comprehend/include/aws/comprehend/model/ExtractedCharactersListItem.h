@@ -6,64 +6,68 @@
 #pragma once
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Comprehend {
+namespace Model {
 
+/**
+ * <p>Array of the number of characters extracted from each page.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ExtractedCharactersListItem">AWS
+ * API Reference</a></p>
+ */
+class ExtractedCharactersListItem {
+ public:
+  AWS_COMPREHEND_API ExtractedCharactersListItem() = default;
+  AWS_COMPREHEND_API ExtractedCharactersListItem(Aws::Utils::Json::JsonView jsonValue);
+  AWS_COMPREHEND_API ExtractedCharactersListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Array of the number of characters extracted from each page.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ExtractedCharactersListItem">AWS
-   * API Reference</a></p>
+   * <p>Page number.</p>
    */
-  class ExtractedCharactersListItem
-  {
-  public:
-    AWS_COMPREHEND_API ExtractedCharactersListItem() = default;
-    AWS_COMPREHEND_API ExtractedCharactersListItem(Aws::Utils::Json::JsonView jsonValue);
-    AWS_COMPREHEND_API ExtractedCharactersListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetPage() const { return m_page; }
+  inline bool PageHasBeenSet() const { return m_pageHasBeenSet; }
+  inline void SetPage(int value) {
+    m_pageHasBeenSet = true;
+    m_page = value;
+  }
+  inline ExtractedCharactersListItem& WithPage(int value) {
+    SetPage(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>Number of characters extracted from each page.</p>
+   */
+  inline int GetCount() const { return m_count; }
+  inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
+  inline void SetCount(int value) {
+    m_countHasBeenSet = true;
+    m_count = value;
+  }
+  inline ExtractedCharactersListItem& WithCount(int value) {
+    SetCount(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_page{0};
+  bool m_pageHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>Page number.</p>
-     */
-    inline int GetPage() const { return m_page; }
-    inline bool PageHasBeenSet() const { return m_pageHasBeenSet; }
-    inline void SetPage(int value) { m_pageHasBeenSet = true; m_page = value; }
-    inline ExtractedCharactersListItem& WithPage(int value) { SetPage(value); return *this;}
-    ///@}
+  int m_count{0};
+  bool m_countHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>Number of characters extracted from each page.</p>
-     */
-    inline int GetCount() const { return m_count; }
-    inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
-    inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
-    inline ExtractedCharactersListItem& WithCount(int value) { SetCount(value); return *this;}
-    ///@}
-  private:
-
-    int m_page{0};
-    bool m_pageHasBeenSet = false;
-
-    int m_count{0};
-    bool m_countHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

@@ -7,26 +7,16 @@
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
-  enum class JobType
-  {
-    NOT_SET,
-    BATCH,
-    INCREMENTAL,
-    DELETE_ONLY
-  };
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
+enum class JobType { NOT_SET, BATCH, INCREMENTAL, DELETE_ONLY };
 
-namespace JobTypeMapper
-{
+namespace JobTypeMapper {
 AWS_CLEANROOMS_API JobType GetJobTypeForName(const Aws::String& name);
 
 AWS_CLEANROOMS_API Aws::String GetNameForJobType(JobType value);
-} // namespace JobTypeMapper
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace JobTypeMapper
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

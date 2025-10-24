@@ -5,12 +5,8 @@
 
 #include <aws/personalize/PersonalizeEndpointProvider.h>
 
-namespace Aws
-{
-namespace Personalize
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Personalize
-} // namespace Aws
+namespace Aws {
+namespace Personalize {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Personalize
+}  // namespace Aws

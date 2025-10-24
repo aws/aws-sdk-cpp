@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lightsail/Lightsail_EXPORTS.h>
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
-  enum class BlueprintType
-  {
-    NOT_SET,
-    os,
-    app
-  };
+namespace Aws {
+namespace Lightsail {
+namespace Model {
+enum class BlueprintType { NOT_SET, os, app };
 
-namespace BlueprintTypeMapper
-{
+namespace BlueprintTypeMapper {
 AWS_LIGHTSAIL_API BlueprintType GetBlueprintTypeForName(const Aws::String& name);
 
 AWS_LIGHTSAIL_API Aws::String GetNameForBlueprintType(BlueprintType value);
-} // namespace BlueprintTypeMapper
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace BlueprintTypeMapper
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

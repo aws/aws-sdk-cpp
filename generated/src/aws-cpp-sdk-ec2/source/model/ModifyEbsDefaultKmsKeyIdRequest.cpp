@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ModifyEbsDefaultKmsKeyIdRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ModifyEbsDefaultKmsKeyIdRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyEbsDefaultKmsKeyIdRequest::SerializePayload() const
-{
+Aws::String ModifyEbsDefaultKmsKeyIdRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyEbsDefaultKmsKeyId&";
-  if(m_kmsKeyIdHasBeenSet)
-  {
+  if (m_kmsKeyIdHasBeenSet) {
     ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String ModifyEbsDefaultKmsKeyIdRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ModifyEbsDefaultKmsKeyIdRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ModifyEbsDefaultKmsKeyIdRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

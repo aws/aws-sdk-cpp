@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sso-admin/model/TrustedTokenIssuerUpdateConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sso-admin/model/TrustedTokenIssuerUpdateConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SSOAdmin
-{
-namespace Model
-{
+namespace Aws {
+namespace SSOAdmin {
+namespace Model {
 
-TrustedTokenIssuerUpdateConfiguration::TrustedTokenIssuerUpdateConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TrustedTokenIssuerUpdateConfiguration::TrustedTokenIssuerUpdateConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-TrustedTokenIssuerUpdateConfiguration& TrustedTokenIssuerUpdateConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("OidcJwtConfiguration"))
-  {
+TrustedTokenIssuerUpdateConfiguration& TrustedTokenIssuerUpdateConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("OidcJwtConfiguration")) {
     m_oidcJwtConfiguration = jsonValue.GetObject("OidcJwtConfiguration");
     m_oidcJwtConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TrustedTokenIssuerUpdateConfiguration::Jsonize() const
-{
+JsonValue TrustedTokenIssuerUpdateConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_oidcJwtConfigurationHasBeenSet)
-  {
-   payload.WithObject("OidcJwtConfiguration", m_oidcJwtConfiguration.Jsonize());
-
+  if (m_oidcJwtConfigurationHasBeenSet) {
+    payload.WithObject("OidcJwtConfiguration", m_oidcJwtConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SSOAdmin
-} // namespace Aws
+}  // namespace Model
+}  // namespace SSOAdmin
+}  // namespace Aws

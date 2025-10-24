@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class LineInterpolation
-  {
-    NOT_SET,
-    LINEAR,
-    SMOOTH,
-    STEPPED
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class LineInterpolation { NOT_SET, LINEAR, SMOOTH, STEPPED };
 
-namespace LineInterpolationMapper
-{
+namespace LineInterpolationMapper {
 AWS_QUICKSIGHT_API LineInterpolation GetLineInterpolationForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForLineInterpolation(LineInterpolation value);
-} // namespace LineInterpolationMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace LineInterpolationMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

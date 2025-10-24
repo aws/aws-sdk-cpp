@@ -11,30 +11,21 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-CitationEvent::CitationEvent(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CitationEvent::CitationEvent(JsonView jsonValue) { *this = jsonValue; }
 
-CitationEvent& CitationEvent::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("generatedResponsePart"))
-  {
+CitationEvent& CitationEvent::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("generatedResponsePart")) {
     m_generatedResponsePart = jsonValue.GetObject("generatedResponsePart");
     m_generatedResponsePartHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("retrievedReferences"))
-  {
+  if (jsonValue.ValueExists("retrievedReferences")) {
     Aws::Utils::Array<JsonView> retrievedReferencesJsonList = jsonValue.GetArray("retrievedReferences");
-    for(unsigned retrievedReferencesIndex = 0; retrievedReferencesIndex < retrievedReferencesJsonList.GetLength(); ++retrievedReferencesIndex)
-    {
+    for (unsigned retrievedReferencesIndex = 0; retrievedReferencesIndex < retrievedReferencesJsonList.GetLength();
+         ++retrievedReferencesIndex) {
       m_retrievedReferences.push_back(retrievedReferencesJsonList[retrievedReferencesIndex].AsObject());
     }
     m_retrievedReferencesHasBeenSet = true;
@@ -42,30 +33,25 @@ CitationEvent& CitationEvent::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue CitationEvent::Jsonize() const
-{
+JsonValue CitationEvent::Jsonize() const {
   JsonValue payload;
 
-  if(m_generatedResponsePartHasBeenSet)
-  {
-   payload.WithObject("generatedResponsePart", m_generatedResponsePart.Jsonize());
-
+  if (m_generatedResponsePartHasBeenSet) {
+    payload.WithObject("generatedResponsePart", m_generatedResponsePart.Jsonize());
   }
 
-  if(m_retrievedReferencesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> retrievedReferencesJsonList(m_retrievedReferences.size());
-   for(unsigned retrievedReferencesIndex = 0; retrievedReferencesIndex < retrievedReferencesJsonList.GetLength(); ++retrievedReferencesIndex)
-   {
-     retrievedReferencesJsonList[retrievedReferencesIndex].AsObject(m_retrievedReferences[retrievedReferencesIndex].Jsonize());
-   }
-   payload.WithArray("retrievedReferences", std::move(retrievedReferencesJsonList));
-
+  if (m_retrievedReferencesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> retrievedReferencesJsonList(m_retrievedReferences.size());
+    for (unsigned retrievedReferencesIndex = 0; retrievedReferencesIndex < retrievedReferencesJsonList.GetLength();
+         ++retrievedReferencesIndex) {
+      retrievedReferencesJsonList[retrievedReferencesIndex].AsObject(m_retrievedReferences[retrievedReferencesIndex].Jsonize());
+    }
+    payload.WithArray("retrievedReferences", std::move(retrievedReferencesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

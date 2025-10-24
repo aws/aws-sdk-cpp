@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MigrationHub
-{
-namespace Model
-{
+namespace Aws {
+namespace MigrationHub {
+namespace Model {
 
-SourceResource::SourceResource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SourceResource::SourceResource(JsonView jsonValue) { *this = jsonValue; }
 
-SourceResource& SourceResource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+SourceResource& SourceResource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StatusDetail"))
-  {
+  if (jsonValue.ValueExists("StatusDetail")) {
     m_statusDetail = jsonValue.GetString("StatusDetail");
     m_statusDetailHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SourceResource::Jsonize() const
-{
+JsonValue SourceResource::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_statusDetailHasBeenSet)
-  {
-   payload.WithString("StatusDetail", m_statusDetail);
-
+  if (m_statusDetailHasBeenSet) {
+    payload.WithString("StatusDetail", m_statusDetail);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MigrationHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace MigrationHub
+}  // namespace Aws

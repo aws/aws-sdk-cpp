@@ -5,134 +5,163 @@
 
 #pragma once
 #include <aws/amplifyuibuilder/AmplifyUIBuilder_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/amplifyuibuilder/model/FieldPosition.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace AmplifyUIBuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace AmplifyUIBuilder {
+namespace Model {
 
+/**
+ * <p>Stores the configuration information for a visual helper element for a form.
+ * A sectional element can be a header, a text block, or a divider. These elements
+ * are static and not associated with any data.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/SectionalElement">AWS
+ * API Reference</a></p>
+ */
+class SectionalElement {
+ public:
+  AWS_AMPLIFYUIBUILDER_API SectionalElement() = default;
+  AWS_AMPLIFYUIBUILDER_API SectionalElement(Aws::Utils::Json::JsonView jsonValue);
+  AWS_AMPLIFYUIBUILDER_API SectionalElement& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Stores the configuration information for a visual helper element for a form.
-   * A sectional element can be a header, a text block, or a divider. These elements
-   * are static and not associated with any data.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/SectionalElement">AWS
-   * API Reference</a></p>
+   * <p>The type of sectional element. Valid values are <code>Heading</code>,
+   * <code>Text</code>, and <code>Divider</code>.</p>
    */
-  class SectionalElement
-  {
-  public:
-    AWS_AMPLIFYUIBUILDER_API SectionalElement() = default;
-    AWS_AMPLIFYUIBUILDER_API SectionalElement(Aws::Utils::Json::JsonView jsonValue);
-    AWS_AMPLIFYUIBUILDER_API SectionalElement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  template <typename TypeT = Aws::String>
+  void SetType(TypeT&& value) {
+    m_typeHasBeenSet = true;
+    m_type = std::forward<TypeT>(value);
+  }
+  template <typename TypeT = Aws::String>
+  SectionalElement& WithType(TypeT&& value) {
+    SetType(std::forward<TypeT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>Specifies the position of the text in a field for a <code>Text</code>
+   * sectional element.</p>
+   */
+  inline const FieldPosition& GetPosition() const { return m_position; }
+  inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
+  template <typename PositionT = FieldPosition>
+  void SetPosition(PositionT&& value) {
+    m_positionHasBeenSet = true;
+    m_position = std::forward<PositionT>(value);
+  }
+  template <typename PositionT = FieldPosition>
+  SectionalElement& WithPosition(PositionT&& value) {
+    SetPosition(std::forward<PositionT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The type of sectional element. Valid values are <code>Heading</code>,
-     * <code>Text</code>, and <code>Divider</code>.</p>
-     */
-    inline const Aws::String& GetType() const { return m_type; }
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    template<typename TypeT = Aws::String>
-    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
-    template<typename TypeT = Aws::String>
-    SectionalElement& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The text for a <code>Text</code> sectional element.</p>
+   */
+  inline const Aws::String& GetText() const { return m_text; }
+  inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
+  template <typename TextT = Aws::String>
+  void SetText(TextT&& value) {
+    m_textHasBeenSet = true;
+    m_text = std::forward<TextT>(value);
+  }
+  template <typename TextT = Aws::String>
+  SectionalElement& WithText(TextT&& value) {
+    SetText(std::forward<TextT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Specifies the position of the text in a field for a <code>Text</code>
-     * sectional element.</p>
-     */
-    inline const FieldPosition& GetPosition() const { return m_position; }
-    inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
-    template<typename PositionT = FieldPosition>
-    void SetPosition(PositionT&& value) { m_positionHasBeenSet = true; m_position = std::forward<PositionT>(value); }
-    template<typename PositionT = FieldPosition>
-    SectionalElement& WithPosition(PositionT&& value) { SetPosition(std::forward<PositionT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>Specifies the size of the font for a <code>Heading</code> sectional element.
+   * Valid values are <code>1 | 2 | 3 | 4 | 5 | 6</code>.</p>
+   */
+  inline int GetLevel() const { return m_level; }
+  inline bool LevelHasBeenSet() const { return m_levelHasBeenSet; }
+  inline void SetLevel(int value) {
+    m_levelHasBeenSet = true;
+    m_level = value;
+  }
+  inline SectionalElement& WithLevel(int value) {
+    SetLevel(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The text for a <code>Text</code> sectional element.</p>
-     */
-    inline const Aws::String& GetText() const { return m_text; }
-    inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    template<typename TextT = Aws::String>
-    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
-    template<typename TextT = Aws::String>
-    SectionalElement& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>Specifies the orientation for a <code>Divider</code> sectional element. Valid
+   * values are <code>horizontal</code> or <code>vertical</code>.</p>
+   */
+  inline const Aws::String& GetOrientation() const { return m_orientation; }
+  inline bool OrientationHasBeenSet() const { return m_orientationHasBeenSet; }
+  template <typename OrientationT = Aws::String>
+  void SetOrientation(OrientationT&& value) {
+    m_orientationHasBeenSet = true;
+    m_orientation = std::forward<OrientationT>(value);
+  }
+  template <typename OrientationT = Aws::String>
+  SectionalElement& WithOrientation(OrientationT&& value) {
+    SetOrientation(std::forward<OrientationT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Specifies the size of the font for a <code>Heading</code> sectional element.
-     * Valid values are <code>1 | 2 | 3 | 4 | 5 | 6</code>.</p>
-     */
-    inline int GetLevel() const { return m_level; }
-    inline bool LevelHasBeenSet() const { return m_levelHasBeenSet; }
-    inline void SetLevel(int value) { m_levelHasBeenSet = true; m_level = value; }
-    inline SectionalElement& WithLevel(int value) { SetLevel(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>Excludes a sectional element that was generated by default for a specified
+   * data model.</p>
+   */
+  inline bool GetExcluded() const { return m_excluded; }
+  inline bool ExcludedHasBeenSet() const { return m_excludedHasBeenSet; }
+  inline void SetExcluded(bool value) {
+    m_excludedHasBeenSet = true;
+    m_excluded = value;
+  }
+  inline SectionalElement& WithExcluded(bool value) {
+    SetExcluded(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_type;
+  bool m_typeHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>Specifies the orientation for a <code>Divider</code> sectional element. Valid
-     * values are <code>horizontal</code> or <code>vertical</code>.</p>
-     */
-    inline const Aws::String& GetOrientation() const { return m_orientation; }
-    inline bool OrientationHasBeenSet() const { return m_orientationHasBeenSet; }
-    template<typename OrientationT = Aws::String>
-    void SetOrientation(OrientationT&& value) { m_orientationHasBeenSet = true; m_orientation = std::forward<OrientationT>(value); }
-    template<typename OrientationT = Aws::String>
-    SectionalElement& WithOrientation(OrientationT&& value) { SetOrientation(std::forward<OrientationT>(value)); return *this;}
-    ///@}
+  FieldPosition m_position;
+  bool m_positionHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>Excludes a sectional element that was generated by default for a specified
-     * data model.</p>
-     */
-    inline bool GetExcluded() const { return m_excluded; }
-    inline bool ExcludedHasBeenSet() const { return m_excludedHasBeenSet; }
-    inline void SetExcluded(bool value) { m_excludedHasBeenSet = true; m_excluded = value; }
-    inline SectionalElement& WithExcluded(bool value) { SetExcluded(value); return *this;}
-    ///@}
-  private:
+  Aws::String m_text;
+  bool m_textHasBeenSet = false;
 
-    Aws::String m_type;
-    bool m_typeHasBeenSet = false;
+  int m_level{0};
+  bool m_levelHasBeenSet = false;
 
-    FieldPosition m_position;
-    bool m_positionHasBeenSet = false;
+  Aws::String m_orientation;
+  bool m_orientationHasBeenSet = false;
 
-    Aws::String m_text;
-    bool m_textHasBeenSet = false;
+  bool m_excluded{false};
+  bool m_excludedHasBeenSet = false;
+};
 
-    int m_level{0};
-    bool m_levelHasBeenSet = false;
-
-    Aws::String m_orientation;
-    bool m_orientationHasBeenSet = false;
-
-    bool m_excluded{false};
-    bool m_excludedHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

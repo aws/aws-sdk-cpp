@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class RecurringChargeFrequency
-  {
-    NOT_SET,
-    Hourly
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class RecurringChargeFrequency { NOT_SET, Hourly };
 
-namespace RecurringChargeFrequencyMapper
-{
+namespace RecurringChargeFrequencyMapper {
 AWS_EC2_API RecurringChargeFrequency GetRecurringChargeFrequencyForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForRecurringChargeFrequency(RecurringChargeFrequency value);
-} // namespace RecurringChargeFrequencyMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace RecurringChargeFrequencyMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws
