@@ -17,6 +17,12 @@ aws configure set aws_access_key_id (${sts}[1] -replace " " -replace "`"" -repla
 aws configure set aws_secret_access_key (${sts}[2] -replace " " -replace "`"" -replace ",")
 aws configure set aws_session_token (${sts}[3] -replace " " -replace "`"" -replace ",")
 aws configure list
+$BUILD_TYPE=$(cat build-request.json | jq .buildType | tr -d \\)
+Write-Host BUILD_TYPE:$BUILD_TYPE
+Push-Location "${env:CATAPULT_WORKSPACE_DIR}\\aws-sdk-cpp"
+if ($BUILD_TYPE -eq "PREVIEW") { $SERVICE_ID = (git status generated/src/aws-cpp-sdk-* --porcelain | Select-String "generated/src/" | ForEach-Object { if($_ -match "generated/src/aws-cpp-sdk-([^/]*)") { $matches[1] } } | Sort-Object -Unique) -join "," } else { $SERVICE_ID="" }
+Write-Host "SERVICE_ID: $SERVICE_ID"
+Pop-Location
 # Run tests
 cd "${env:PREFIX_DIR}\\win-build"
-python3 ../aws-sdk-cpp/tools/scripts/run_integration_tests.py --testDir ./bin/Debug
+if ($SERVICE_ID) { & python ../aws-sdk-cpp/tools/scripts/run_integration_tests.py --testDir ./bin/Debug --serviceId $SERVICE_ID } else { & python ../aws-sdk-cpp/tools/scripts/run_integration_tests.py --testDir ./bin/Debug }
