@@ -14,8 +14,10 @@
 #include <aws/location/LocationServiceRequest.h>
 #include <aws/location/LocationServiceServiceClientModel.h>
 #include <aws/location/LocationService_EXPORTS.h>
+#include <aws/location/model/AndroidApp.h>
 #include <aws/location/model/ApiKeyFilter.h>
 #include <aws/location/model/ApiKeyRestrictions.h>
+#include <aws/location/model/AppleApp.h>
 #include <aws/location/model/AssociateTrackerConsumerRequest.h>
 #include <aws/location/model/AssociateTrackerConsumerResult.h>
 #include <aws/location/model/BatchDeleteDevicePositionHistoryError.h>

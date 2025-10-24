@@ -9,6 +9,7 @@
 #include <aws/datazone/model/AthenaPropertiesPatch.h>
 #include <aws/datazone/model/GluePropertiesPatch.h>
 #include <aws/datazone/model/IamPropertiesPatch.h>
+#include <aws/datazone/model/MlflowPropertiesPatch.h>
 #include <aws/datazone/model/RedshiftPropertiesPatch.h>
 #include <aws/datazone/model/S3PropertiesPatch.h>
 #include <aws/datazone/model/SparkEmrPropertiesPatch.h>
@@ -93,6 +94,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The MLflow properties of a connection.</p>
+     */
+    inline const MlflowPropertiesPatch& GetMlflowProperties() const { return m_mlflowProperties; }
+    inline bool MlflowPropertiesHasBeenSet() const { return m_mlflowPropertiesHasBeenSet; }
+    template<typename MlflowPropertiesT = MlflowPropertiesPatch>
+    void SetMlflowProperties(MlflowPropertiesT&& value) { m_mlflowPropertiesHasBeenSet = true; m_mlflowProperties = std::forward<MlflowPropertiesT>(value); }
+    template<typename MlflowPropertiesT = MlflowPropertiesPatch>
+    ConnectionPropertiesPatch& WithMlflowProperties(MlflowPropertiesT&& value) { SetMlflowProperties(std::forward<MlflowPropertiesT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Redshift properties of a connection properties patch.</p>
      */
     inline const RedshiftPropertiesPatch& GetRedshiftProperties() const { return m_redshiftProperties; }
@@ -139,6 +152,9 @@ namespace Model
 
     IamPropertiesPatch m_iamProperties;
     bool m_iamPropertiesHasBeenSet = false;
+
+    MlflowPropertiesPatch m_mlflowProperties;
+    bool m_mlflowPropertiesHasBeenSet = false;
 
     RedshiftPropertiesPatch m_redshiftProperties;
     bool m_redshiftPropertiesHasBeenSet = false;

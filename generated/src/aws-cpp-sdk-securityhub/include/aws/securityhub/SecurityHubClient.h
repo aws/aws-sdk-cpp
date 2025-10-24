@@ -508,7 +508,7 @@ namespace SecurityHub
          * <code>BatchUpdateFindingsV2</code> don't affect the value of
          * f<code>inding_info.modified_time</code>,
          * <code>finding_info.modified_time_dt</code>, <code>time</code>, <code>time_dt for
-         * a finding</code>. This API is in private preview and subject to
+         * a finding</code>. This API is in public preview and subject to
          * change.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindingsV2">AWS
          * API Reference</a></p>
@@ -614,8 +614,8 @@ namespace SecurityHub
         }
 
         /**
-         * <p>Enables aggregation across Amazon Web Services Regions. This API is in
-         * private preview and subject to change.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables aggregation across Amazon Web Services Regions. This API is in public
+         * preview and subject to change.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateAggregatorV2">AWS
          * API Reference</a></p>
          */
@@ -666,7 +666,7 @@ namespace SecurityHub
         }
 
         /**
-         * <p>Creates a V2 automation rule. This API is in private preview and subject to
+         * <p>Creates a V2 automation rule. This API is in public preview and subject to
          * change.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateAutomationRuleV2">AWS
          * API Reference</a></p>
@@ -946,7 +946,7 @@ namespace SecurityHub
         }
 
         /**
-         * <p>Deletes the Aggregator V2. This API is in private preview and subject to
+         * <p>Deletes the Aggregator V2. This API is in public preview and subject to
          * change.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteAggregatorV2">AWS
          * API Reference</a></p>
@@ -972,7 +972,7 @@ namespace SecurityHub
         }
 
         /**
-         * <p>Deletes a V2 automation rule. This API is in private preview and subject to
+         * <p>Deletes a V2 automation rule. This API is in public preview and subject to
          * change.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteAutomationRuleV2">AWS
          * API Reference</a></p>
@@ -1284,8 +1284,8 @@ namespace SecurityHub
         }
 
         /**
-         * <p>Gets information about the product integration. This API is in private
-         * preview and subject to change.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about the product integration. This API is in public preview
+         * and subject to change.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeProductsV2">AWS
          * API Reference</a></p>
          */
@@ -1311,7 +1311,7 @@ namespace SecurityHub
 
         /**
          * <p>Returns details about the service resource in your account. This API is in
-         * private preview and subject to change.</p><p><h3>See Also:</h3>   <a
+         * public preview and subject to change.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeSecurityHubV2">AWS
          * API Reference</a></p>
          */
@@ -1480,7 +1480,7 @@ namespace SecurityHub
 
         /**
          * <p>Disable the service for the current Amazon Web Services Region or specified
-         * Amazon Web Services Region. This API is in private preview and subject to
+         * Amazon Web Services Region. This API is in public preview and subject to
          * change.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableSecurityHubV2">AWS
          * API Reference</a></p>
@@ -1659,7 +1659,7 @@ namespace SecurityHub
 
         /**
          * <p>Enables the service in account for the current Amazon Web Services Region or
-         * specified Amazon Web Services Region. This API is in private preview and subject
+         * specified Amazon Web Services Region. This API is in public preview and subject
          * to change.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableSecurityHubV2">AWS
          * API Reference</a></p>
@@ -1714,7 +1714,7 @@ namespace SecurityHub
 
         /**
          * <p>Returns the configuration of the specified Aggregator V2. This API is in
-         * private preview and subject to change.</p><p><h3>See Also:</h3>   <a
+         * public preview and subject to change.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetAggregatorV2">AWS
          * API Reference</a></p>
          */
@@ -1739,7 +1739,7 @@ namespace SecurityHub
         }
 
         /**
-         * <p>Returns an automation rule for the V2 service. This API is in private preview
+         * <p>Returns an automation rule for the V2 service. This API is in public preview
          * and subject to change.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetAutomationRuleV2">AWS
          * API Reference</a></p>
@@ -1942,7 +1942,7 @@ namespace SecurityHub
          * <code>GetFindingStatisticsV2</code> use
          * <code>securityhub:GetAdhocInsightResults</code> in the <code>Action</code>
          * element of an IAM policy statement. You must have permission to perform the
-         * <code>s</code> action. This API is in private preview and subject to
+         * <code>s</code> action. This API is in public preview and subject to
          * change.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingStatisticsV2">AWS
          * API Reference</a></p>
@@ -2000,7 +2000,7 @@ namespace SecurityHub
          * <code>GetFindings</code> and <code>GetFindingsV2</code> both use
          * <code>securityhub:GetFindings</code> in the <code>Action</code> element of an
          * IAM policy statement. You must have permission to perform the
-         * <code>securityhub:GetFindings</code> action. This API is in private preview and
+         * <code>securityhub:GetFindings</code> action. This API is in public preview and
          * subject to change.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingsV2">AWS
          * API Reference</a></p>
@@ -2140,8 +2140,8 @@ namespace SecurityHub
 
         /**
          * <p>Retrieves statistical information about Amazon Web Services resources and
-         * their associated security findings. This API is in private preview and subject
-         * to change.</p><p><h3>See Also:</h3>   <a
+         * their associated security findings. This API is in public preview and subject to
+         * change.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetResourcesStatisticsV2">AWS
          * API Reference</a></p>
          */
@@ -2166,7 +2166,7 @@ namespace SecurityHub
         }
 
         /**
-         * <p>Returns a list of resources. This API is in private preview and subject to
+         * <p>Returns a list of resources. This API is in public preview and subject to
          * change.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetResourcesV2">AWS
          * API Reference</a></p>
@@ -2257,8 +2257,8 @@ namespace SecurityHub
         }
 
         /**
-         * <p>Retrieves a list of V2 aggregators. This API is in private preview and
-         * subject to change.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list of V2 aggregators. This API is in public preview and subject
+         * to change.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListAggregatorsV2">AWS
          * API Reference</a></p>
          */
@@ -2310,7 +2310,7 @@ namespace SecurityHub
 
         /**
          * <p>Returns a list of automation rules and metadata for the calling account. This
-         * API is in private preview and subject to change.</p><p><h3>See Also:</h3>   <a
+         * API is in public preview and subject to change.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListAutomationRulesV2">AWS
          * API Reference</a></p>
          */
@@ -2774,7 +2774,7 @@ namespace SecurityHub
         }
 
         /**
-         * <p>Udpates the configuration for the Aggregator V2. This API is in private
+         * <p>Udpates the configuration for the Aggregator V2. This API is in public
          * preview and subject to change.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateAggregatorV2">AWS
          * API Reference</a></p>
@@ -2800,7 +2800,7 @@ namespace SecurityHub
         }
 
         /**
-         * <p>Updates a V2 automation rule. This API is in private preview and subject to
+         * <p>Updates a V2 automation rule. This API is in public preview and subject to
          * change.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateAutomationRuleV2">AWS
          * API Reference</a></p>

@@ -36,7 +36,8 @@ namespace Model
     TERADATA,
     VERTICA,
     WORKFLOWS_MWAA,
-    AMAZON_Q
+    AMAZON_Q,
+    MLFLOW
   };
 
 namespace ConnectionTypeMapper

@@ -45,14 +45,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the ARN that uniquely identifies a resource.</p>
+     * <p>The global identifier used to identify a resource.</p>
      */
-    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
-    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    template<typename ResourceArnT = Aws::String>
-    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
-    template<typename ResourceArnT = Aws::String>
-    ResourceResult& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
+    inline const Aws::String& GetResourceGuid() const { return m_resourceGuid; }
+    inline bool ResourceGuidHasBeenSet() const { return m_resourceGuidHasBeenSet; }
+    template<typename ResourceGuidT = Aws::String>
+    void SetResourceGuid(ResourceGuidT&& value) { m_resourceGuidHasBeenSet = true; m_resourceGuid = std::forward<ResourceGuidT>(value); }
+    template<typename ResourceGuidT = Aws::String>
+    ResourceResult& WithResourceGuid(ResourceGuidT&& value) { SetResourceGuid(std::forward<ResourceGuidT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -190,8 +190,8 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet = false;
+    Aws::String m_resourceGuid;
+    bool m_resourceGuidHasBeenSet = false;
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;

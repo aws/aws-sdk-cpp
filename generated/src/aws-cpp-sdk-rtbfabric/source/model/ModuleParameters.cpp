@@ -35,6 +35,11 @@ ModuleParameters& ModuleParameters::operator =(JsonView jsonValue)
     m_openRtbAttribute = jsonValue.GetObject("openRtbAttribute");
     m_openRtbAttributeHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("rateLimiter"))
+  {
+    m_rateLimiter = jsonValue.GetObject("rateLimiter");
+    m_rateLimiterHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -51,6 +56,12 @@ JsonValue ModuleParameters::Jsonize() const
   if(m_openRtbAttributeHasBeenSet)
   {
    payload.WithObject("openRtbAttribute", m_openRtbAttribute.Jsonize());
+
+  }
+
+  if(m_rateLimiterHasBeenSet)
+  {
+   payload.WithObject("rateLimiter", m_rateLimiter.Jsonize());
 
   }
 

@@ -50,6 +50,11 @@ InferenceComponentSpecification& InferenceComponentSpecification::operator =(Jso
     m_baseInferenceComponentName = jsonValue.GetString("BaseInferenceComponentName");
     m_baseInferenceComponentNameHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("DataCacheConfig"))
+  {
+    m_dataCacheConfig = jsonValue.GetObject("DataCacheConfig");
+    m_dataCacheConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -84,6 +89,12 @@ JsonValue InferenceComponentSpecification::Jsonize() const
   if(m_baseInferenceComponentNameHasBeenSet)
   {
    payload.WithString("BaseInferenceComponentName", m_baseInferenceComponentName);
+
+  }
+
+  if(m_dataCacheConfigHasBeenSet)
+  {
+   payload.WithObject("DataCacheConfig", m_dataCacheConfig.Jsonize());
 
   }
 

@@ -25,10 +25,10 @@ ResourceResult::ResourceResult(JsonView jsonValue)
 
 ResourceResult& ResourceResult::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("ResourceArn"))
+  if(jsonValue.ValueExists("ResourceGuid"))
   {
-    m_resourceArn = jsonValue.GetString("ResourceArn");
-    m_resourceArnHasBeenSet = true;
+    m_resourceGuid = jsonValue.GetString("ResourceGuid");
+    m_resourceGuidHasBeenSet = true;
   }
   if(jsonValue.ValueExists("ResourceId"))
   {
@@ -100,9 +100,9 @@ JsonValue ResourceResult::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_resourceArnHasBeenSet)
+  if(m_resourceGuidHasBeenSet)
   {
-   payload.WithString("ResourceArn", m_resourceArn);
+   payload.WithString("ResourceGuid", m_resourceGuid);
 
   }
 

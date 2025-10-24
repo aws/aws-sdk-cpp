@@ -835,6 +835,8 @@
 #include <aws/securityhub/model/OcsfDateFilter.h>
 #include <aws/securityhub/model/OcsfFindingFilters.h>
 #include <aws/securityhub/model/OcsfFindingIdentifier.h>
+#include <aws/securityhub/model/OcsfIpField.h>
+#include <aws/securityhub/model/OcsfIpFilter.h>
 #include <aws/securityhub/model/OcsfMapField.h>
 #include <aws/securityhub/model/OcsfMapFilter.h>
 #include <aws/securityhub/model/OcsfNumberField.h>

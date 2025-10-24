@@ -21,6 +21,9 @@ namespace Aws
       {
 
         static const int resources_tags_HASH = HashingUtils::HashString("resources.tags");
+        static const int compliance_control_parameters_HASH = HashingUtils::HashString("compliance.control_parameters");
+        static const int databucket_tags_HASH = HashingUtils::HashString("databucket.tags");
+        static const int finding_info_tags_HASH = HashingUtils::HashString("finding_info.tags");
 
 
         OcsfMapField GetOcsfMapFieldForName(const Aws::String& name)
@@ -29,6 +32,18 @@ namespace Aws
           if (hashCode == resources_tags_HASH)
           {
             return OcsfMapField::resources_tags;
+          }
+          else if (hashCode == compliance_control_parameters_HASH)
+          {
+            return OcsfMapField::compliance_control_parameters;
+          }
+          else if (hashCode == databucket_tags_HASH)
+          {
+            return OcsfMapField::databucket_tags;
+          }
+          else if (hashCode == finding_info_tags_HASH)
+          {
+            return OcsfMapField::finding_info_tags;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +63,12 @@ namespace Aws
             return {};
           case OcsfMapField::resources_tags:
             return "resources.tags";
+          case OcsfMapField::compliance_control_parameters:
+            return "compliance.control_parameters";
+          case OcsfMapField::databucket_tags:
+            return "databucket.tags";
+          case OcsfMapField::finding_info_tags:
+            return "finding_info.tags";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

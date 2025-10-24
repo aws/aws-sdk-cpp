@@ -61,6 +61,15 @@ ResourcesCompositeFilter& ResourcesCompositeFilter::operator =(JsonView jsonValu
     }
     m_mapFiltersHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("NestedCompositeFilters"))
+  {
+    Aws::Utils::Array<JsonView> nestedCompositeFiltersJsonList = jsonValue.GetArray("NestedCompositeFilters");
+    for(unsigned nestedCompositeFiltersIndex = 0; nestedCompositeFiltersIndex < nestedCompositeFiltersJsonList.GetLength(); ++nestedCompositeFiltersIndex)
+    {
+      m_nestedCompositeFilters.push_back(nestedCompositeFiltersJsonList[nestedCompositeFiltersIndex].AsObject());
+    }
+    m_nestedCompositeFiltersHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("Operator"))
   {
     m_operator = AllowedOperatorsMapper::GetAllowedOperatorsForName(jsonValue.GetString("Operator"));
@@ -114,6 +123,17 @@ JsonValue ResourcesCompositeFilter::Jsonize() const
      mapFiltersJsonList[mapFiltersIndex].AsObject(m_mapFilters[mapFiltersIndex].Jsonize());
    }
    payload.WithArray("MapFilters", std::move(mapFiltersJsonList));
+
+  }
+
+  if(m_nestedCompositeFiltersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> nestedCompositeFiltersJsonList(m_nestedCompositeFilters.size());
+   for(unsigned nestedCompositeFiltersIndex = 0; nestedCompositeFiltersIndex < nestedCompositeFiltersJsonList.GetLength(); ++nestedCompositeFiltersIndex)
+   {
+     nestedCompositeFiltersJsonList[nestedCompositeFiltersIndex].AsObject(m_nestedCompositeFilters[nestedCompositeFiltersIndex].Jsonize());
+   }
+   payload.WithArray("NestedCompositeFilters", std::move(nestedCompositeFiltersJsonList));
 
   }
 

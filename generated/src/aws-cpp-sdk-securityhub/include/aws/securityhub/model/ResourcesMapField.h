@@ -16,7 +16,7 @@ namespace Model
   enum class ResourcesMapField
   {
     NOT_SET,
-    tags
+    ResourceTags
   };
 
 namespace ResourcesMapFieldMapper

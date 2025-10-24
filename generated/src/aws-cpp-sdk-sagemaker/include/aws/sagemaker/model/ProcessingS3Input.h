@@ -105,7 +105,7 @@ namespace Model
     ///@{
     /**
      * <p>Whether to distribute the data from Amazon S3 to all processing instances
-     * with <code>FullyReplicated</code>, or whether the data from Amazon S3 is shared
+     * with <code>FullyReplicated</code>, or whether the data from Amazon S3 is sharded
      * by Amazon S3 key, downloading one shard of data to each processing instance.</p>
      */
     inline ProcessingS3DataDistributionType GetS3DataDistributionType() const { return m_s3DataDistributionType; }

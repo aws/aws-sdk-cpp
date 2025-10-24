@@ -12,6 +12,7 @@
 #include <aws/securityhub/model/OcsfBooleanFilter.h>
 #include <aws/securityhub/model/OcsfNumberFilter.h>
 #include <aws/securityhub/model/OcsfMapFilter.h>
+#include <aws/securityhub/model/OcsfIpFilter.h>
 #include <utility>
 
 namespace Aws
@@ -116,6 +117,41 @@ namespace Model
 
     ///@{
     /**
+     * <p>A list of IP address filters that allowing you to filter findings based on IP
+     * address properties.</p>
+     */
+    inline const Aws::Vector<OcsfIpFilter>& GetIpFilters() const { return m_ipFilters; }
+    inline bool IpFiltersHasBeenSet() const { return m_ipFiltersHasBeenSet; }
+    template<typename IpFiltersT = Aws::Vector<OcsfIpFilter>>
+    void SetIpFilters(IpFiltersT&& value) { m_ipFiltersHasBeenSet = true; m_ipFilters = std::forward<IpFiltersT>(value); }
+    template<typename IpFiltersT = Aws::Vector<OcsfIpFilter>>
+    CompositeFilter& WithIpFilters(IpFiltersT&& value) { SetIpFilters(std::forward<IpFiltersT>(value)); return *this;}
+    template<typename IpFiltersT = OcsfIpFilter>
+    CompositeFilter& AddIpFilters(IpFiltersT&& value) { m_ipFiltersHasBeenSet = true; m_ipFilters.emplace_back(std::forward<IpFiltersT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p> Provides an additional level of filtering, creating a three-layer nested
+     * structure. The first layer is a <code>CompositeFilters</code> array with a
+     * <code>CompositeOperator</code> (<code>AND</code>/<code>OR</code>). The second
+     * layer is a <code>CompositeFilter</code> object that contains direct filters and
+     * <code>NestedCompositeFilters</code>. The third layer is
+     * <code>NestedCompositeFilters</code>, which contains additional filter
+     * conditions. </p>
+     */
+    inline const Aws::Vector<CompositeFilter>& GetNestedCompositeFilters() const { return m_nestedCompositeFilters; }
+    inline bool NestedCompositeFiltersHasBeenSet() const { return m_nestedCompositeFiltersHasBeenSet; }
+    template<typename NestedCompositeFiltersT = Aws::Vector<CompositeFilter>>
+    void SetNestedCompositeFilters(NestedCompositeFiltersT&& value) { m_nestedCompositeFiltersHasBeenSet = true; m_nestedCompositeFilters = std::forward<NestedCompositeFiltersT>(value); }
+    template<typename NestedCompositeFiltersT = Aws::Vector<CompositeFilter>>
+    CompositeFilter& WithNestedCompositeFilters(NestedCompositeFiltersT&& value) { SetNestedCompositeFilters(std::forward<NestedCompositeFiltersT>(value)); return *this;}
+    template<typename NestedCompositeFiltersT = CompositeFilter>
+    CompositeFilter& AddNestedCompositeFilters(NestedCompositeFiltersT&& value) { m_nestedCompositeFiltersHasBeenSet = true; m_nestedCompositeFilters.emplace_back(std::forward<NestedCompositeFiltersT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The logical operator used to combine multiple filter conditions.</p>
      */
     inline AllowedOperators GetOperator() const { return m_operator; }
@@ -139,6 +175,12 @@ namespace Model
 
     Aws::Vector<OcsfMapFilter> m_mapFilters;
     bool m_mapFiltersHasBeenSet = false;
+
+    Aws::Vector<OcsfIpFilter> m_ipFilters;
+    bool m_ipFiltersHasBeenSet = false;
+
+    Aws::Vector<CompositeFilter> m_nestedCompositeFilters;
+    bool m_nestedCompositeFiltersHasBeenSet = false;
 
     AllowedOperators m_operator{AllowedOperators::NOT_SET};
     bool m_operatorHasBeenSet = false;

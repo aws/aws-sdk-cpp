@@ -55,7 +55,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> The error code for the unprocessed security control. </p>
+     * <p> The error code for the unprocessed security control. The
+     * <code>NOT_FOUND</code> value has been deprecated and replaced by the
+     * <code>RESOURCE_NOT_FOUND</code> value. </p>
      */
     inline UnprocessedErrorCode GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }

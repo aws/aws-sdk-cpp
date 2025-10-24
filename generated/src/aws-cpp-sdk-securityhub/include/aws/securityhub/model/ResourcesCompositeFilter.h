@@ -101,6 +101,26 @@ namespace Model
 
     ///@{
     /**
+     * <p> Provides an additional level of filtering, creating a three-layer nested
+     * structure. The first layer is a <code>CompositeFilters</code> array with a
+     * <code>CompositeOperator</code> (<code>AND</code>/<code>OR</code>). The second
+     * layer is a <code>CompositeFilter</code> object that contains direct filters and
+     * <code>NestedCompositeFilters</code>. The third layer is
+     * <code>NestedCompositeFilters</code>, which contains additional filter
+     * conditions. </p>
+     */
+    inline const Aws::Vector<ResourcesCompositeFilter>& GetNestedCompositeFilters() const { return m_nestedCompositeFilters; }
+    inline bool NestedCompositeFiltersHasBeenSet() const { return m_nestedCompositeFiltersHasBeenSet; }
+    template<typename NestedCompositeFiltersT = Aws::Vector<ResourcesCompositeFilter>>
+    void SetNestedCompositeFilters(NestedCompositeFiltersT&& value) { m_nestedCompositeFiltersHasBeenSet = true; m_nestedCompositeFilters = std::forward<NestedCompositeFiltersT>(value); }
+    template<typename NestedCompositeFiltersT = Aws::Vector<ResourcesCompositeFilter>>
+    ResourcesCompositeFilter& WithNestedCompositeFilters(NestedCompositeFiltersT&& value) { SetNestedCompositeFilters(std::forward<NestedCompositeFiltersT>(value)); return *this;}
+    template<typename NestedCompositeFiltersT = ResourcesCompositeFilter>
+    ResourcesCompositeFilter& AddNestedCompositeFilters(NestedCompositeFiltersT&& value) { m_nestedCompositeFiltersHasBeenSet = true; m_nestedCompositeFilters.emplace_back(std::forward<NestedCompositeFiltersT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The logical operator used to combine multiple filter conditions.</p>
      */
     inline AllowedOperators GetOperator() const { return m_operator; }
@@ -121,6 +141,9 @@ namespace Model
 
     Aws::Vector<ResourcesMapFilter> m_mapFilters;
     bool m_mapFiltersHasBeenSet = false;
+
+    Aws::Vector<ResourcesCompositeFilter> m_nestedCompositeFilters;
+    bool m_nestedCompositeFiltersHasBeenSet = false;
 
     AllowedOperators m_operator{AllowedOperators::NOT_SET};
     bool m_operatorHasBeenSet = false;
