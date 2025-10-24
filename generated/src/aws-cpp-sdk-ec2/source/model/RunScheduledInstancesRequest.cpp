@@ -3,39 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/RunScheduledInstancesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/RunScheduledInstancesRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String RunScheduledInstancesRequest::SerializePayload() const
-{
+Aws::String RunScheduledInstancesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=RunScheduledInstances&";
-  if(m_clientTokenHasBeenSet)
-  {
+  if (m_clientTokenHasBeenSet) {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_instanceCountHasBeenSet)
-  {
+  if (m_instanceCountHasBeenSet) {
     ss << "InstanceCount=" << m_instanceCount << "&";
   }
 
-  if(m_launchSpecificationHasBeenSet)
-  {
+  if (m_launchSpecificationHasBeenSet) {
     m_launchSpecification.OutputToStream(ss, "LaunchSpecification");
   }
 
-  if(m_scheduledInstanceIdHasBeenSet)
-  {
+  if (m_scheduledInstanceIdHasBeenSet) {
     ss << "ScheduledInstanceId=" << StringUtils::URLEncode(m_scheduledInstanceId.c_str()) << "&";
   }
 
@@ -43,8 +37,4 @@ Aws::String RunScheduledInstancesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  RunScheduledInstancesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void RunScheduledInstancesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

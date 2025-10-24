@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/EnableAddressTransferResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/EnableAddressTransferResponse.h>
 
 #include <utility>
 
@@ -17,26 +17,19 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-EnableAddressTransferResponse::EnableAddressTransferResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+EnableAddressTransferResponse::EnableAddressTransferResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-EnableAddressTransferResponse& EnableAddressTransferResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+EnableAddressTransferResponse& EnableAddressTransferResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "EnableAddressTransferResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "EnableAddressTransferResponse")) {
     resultNode = rootNode.FirstChild("EnableAddressTransferResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode addressTransferNode = resultNode.FirstChild("addressTransfer");
-    if(!addressTransferNode.IsNull())
-    {
+    if (!addressTransferNode.IsNull()) {
       m_addressTransfer = addressTransferNode;
       m_addressTransferHasBeenSet = true;
     }
@@ -44,12 +37,11 @@ EnableAddressTransferResponse& EnableAddressTransferResponse::operator =(const A
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::EnableAddressTransferResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::EnableAddressTransferResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

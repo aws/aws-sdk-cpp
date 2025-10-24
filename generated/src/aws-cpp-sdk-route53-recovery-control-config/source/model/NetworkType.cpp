@@ -3,70 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/route53-recovery-control-config/model/NetworkType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/route53-recovery-control-config/model/NetworkType.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace Route53RecoveryControlConfig {
+namespace Model {
+namespace NetworkTypeMapper {
 
-namespace Aws
-{
-  namespace Route53RecoveryControlConfig
-  {
-    namespace Model
-    {
-      namespace NetworkTypeMapper
-      {
+static const int IPV4_HASH = HashingUtils::HashString("IPV4");
+static const int DUALSTACK_HASH = HashingUtils::HashString("DUALSTACK");
 
-        static const int IPV4_HASH = HashingUtils::HashString("IPV4");
-        static const int DUALSTACK_HASH = HashingUtils::HashString("DUALSTACK");
+NetworkType GetNetworkTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == IPV4_HASH) {
+    return NetworkType::IPV4;
+  } else if (hashCode == DUALSTACK_HASH) {
+    return NetworkType::DUALSTACK;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<NetworkType>(hashCode);
+  }
 
+  return NetworkType::NOT_SET;
+}
 
-        NetworkType GetNetworkTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == IPV4_HASH)
-          {
-            return NetworkType::IPV4;
-          }
-          else if (hashCode == DUALSTACK_HASH)
-          {
-            return NetworkType::DUALSTACK;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<NetworkType>(hashCode);
-          }
+Aws::String GetNameForNetworkType(NetworkType enumValue) {
+  switch (enumValue) {
+    case NetworkType::NOT_SET:
+      return {};
+    case NetworkType::IPV4:
+      return "IPV4";
+    case NetworkType::DUALSTACK:
+      return "DUALSTACK";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return NetworkType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForNetworkType(NetworkType enumValue)
-        {
-          switch(enumValue)
-          {
-          case NetworkType::NOT_SET:
-            return {};
-          case NetworkType::IPV4:
-            return "IPV4";
-          case NetworkType::DUALSTACK:
-            return "DUALSTACK";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace NetworkTypeMapper
-    } // namespace Model
-  } // namespace Route53RecoveryControlConfig
-} // namespace Aws
+}  // namespace NetworkTypeMapper
+}  // namespace Model
+}  // namespace Route53RecoveryControlConfig
+}  // namespace Aws

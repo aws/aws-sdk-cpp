@@ -12,44 +12,31 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AdminDeleteUserAttributesRequest::SerializePayload() const
-{
+Aws::String AdminDeleteUserAttributesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_userPoolIdHasBeenSet)
-  {
-   payload.WithString("UserPoolId", m_userPoolId);
-
+  if (m_userPoolIdHasBeenSet) {
+    payload.WithString("UserPoolId", m_userPoolId);
   }
 
-  if(m_usernameHasBeenSet)
-  {
-   payload.WithString("Username", m_username);
-
+  if (m_usernameHasBeenSet) {
+    payload.WithString("Username", m_username);
   }
 
-  if(m_userAttributeNamesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> userAttributeNamesJsonList(m_userAttributeNames.size());
-   for(unsigned userAttributeNamesIndex = 0; userAttributeNamesIndex < userAttributeNamesJsonList.GetLength(); ++userAttributeNamesIndex)
-   {
-     userAttributeNamesJsonList[userAttributeNamesIndex].AsString(m_userAttributeNames[userAttributeNamesIndex]);
-   }
-   payload.WithArray("UserAttributeNames", std::move(userAttributeNamesJsonList));
-
+  if (m_userAttributeNamesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> userAttributeNamesJsonList(m_userAttributeNames.size());
+    for (unsigned userAttributeNamesIndex = 0; userAttributeNamesIndex < userAttributeNamesJsonList.GetLength();
+         ++userAttributeNamesIndex) {
+      userAttributeNamesJsonList[userAttributeNamesIndex].AsString(m_userAttributeNames[userAttributeNamesIndex]);
+    }
+    payload.WithArray("UserAttributeNames", std::move(userAttributeNamesJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection AdminDeleteUserAttributesRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection AdminDeleteUserAttributesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityProviderService.AdminDeleteUserAttributes"));
   return headers;
-
 }
-
-
-
-

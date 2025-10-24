@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
 
-DeviceSecretVerifierConfigType::DeviceSecretVerifierConfigType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DeviceSecretVerifierConfigType::DeviceSecretVerifierConfigType(JsonView jsonValue) { *this = jsonValue; }
 
-DeviceSecretVerifierConfigType& DeviceSecretVerifierConfigType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PasswordVerifier"))
-  {
+DeviceSecretVerifierConfigType& DeviceSecretVerifierConfigType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PasswordVerifier")) {
     m_passwordVerifier = jsonValue.GetString("PasswordVerifier");
     m_passwordVerifierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Salt"))
-  {
+  if (jsonValue.ValueExists("Salt")) {
     m_salt = jsonValue.GetString("Salt");
     m_saltHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DeviceSecretVerifierConfigType::Jsonize() const
-{
+JsonValue DeviceSecretVerifierConfigType::Jsonize() const {
   JsonValue payload;
 
-  if(m_passwordVerifierHasBeenSet)
-  {
-   payload.WithString("PasswordVerifier", m_passwordVerifier);
-
+  if (m_passwordVerifierHasBeenSet) {
+    payload.WithString("PasswordVerifier", m_passwordVerifier);
   }
 
-  if(m_saltHasBeenSet)
-  {
-   payload.WithString("Salt", m_salt);
-
+  if (m_saltHasBeenSet) {
+    payload.WithString("Salt", m_salt);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

@@ -11,73 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-MetadataCatalogDetail::MetadataCatalogDetail(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MetadataCatalogDetail::MetadataCatalogDetail(JsonView jsonValue) { *this = jsonValue; }
 
-MetadataCatalogDetail& MetadataCatalogDetail::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("catalogType"))
-  {
+MetadataCatalogDetail& MetadataCatalogDetail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("catalogType")) {
     m_catalogType = CatalogTypeMapper::GetCatalogTypeForName(jsonValue.GetString("catalogType"));
     m_catalogTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tableName"))
-  {
+  if (jsonValue.ValueExists("tableName")) {
     m_tableName = jsonValue.GetString("tableName");
     m_tableNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tableRegistrationOutput"))
-  {
+  if (jsonValue.ValueExists("tableRegistrationOutput")) {
     m_tableRegistrationOutput = jsonValue.GetObject("tableRegistrationOutput");
     m_tableRegistrationOutputHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("partitionRegistrationOutput"))
-  {
+  if (jsonValue.ValueExists("partitionRegistrationOutput")) {
     m_partitionRegistrationOutput = jsonValue.GetObject("partitionRegistrationOutput");
     m_partitionRegistrationOutputHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MetadataCatalogDetail::Jsonize() const
-{
+JsonValue MetadataCatalogDetail::Jsonize() const {
   JsonValue payload;
 
-  if(m_catalogTypeHasBeenSet)
-  {
-   payload.WithString("catalogType", CatalogTypeMapper::GetNameForCatalogType(m_catalogType));
+  if (m_catalogTypeHasBeenSet) {
+    payload.WithString("catalogType", CatalogTypeMapper::GetNameForCatalogType(m_catalogType));
   }
 
-  if(m_tableNameHasBeenSet)
-  {
-   payload.WithString("tableName", m_tableName);
-
+  if (m_tableNameHasBeenSet) {
+    payload.WithString("tableName", m_tableName);
   }
 
-  if(m_tableRegistrationOutputHasBeenSet)
-  {
-   payload.WithObject("tableRegistrationOutput", m_tableRegistrationOutput.Jsonize());
-
+  if (m_tableRegistrationOutputHasBeenSet) {
+    payload.WithObject("tableRegistrationOutput", m_tableRegistrationOutput.Jsonize());
   }
 
-  if(m_partitionRegistrationOutputHasBeenSet)
-  {
-   payload.WithObject("partitionRegistrationOutput", m_partitionRegistrationOutput.Jsonize());
-
+  if (m_partitionRegistrationOutputHasBeenSet) {
+    payload.WithObject("partitionRegistrationOutput", m_partitionRegistrationOutput.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

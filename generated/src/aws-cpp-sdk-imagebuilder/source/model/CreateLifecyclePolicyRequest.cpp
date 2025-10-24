@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/imagebuilder/model/CreateLifecyclePolicyRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/imagebuilder/model/CreateLifecyclePolicyRequest.h>
 
 #include <utility>
 
@@ -12,75 +12,52 @@ using namespace Aws::imagebuilder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateLifecyclePolicyRequest::SerializePayload() const
-{
+Aws::String CreateLifecyclePolicyRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", LifecyclePolicyStatusMapper::GetNameForLifecyclePolicyStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", LifecyclePolicyStatusMapper::GetNameForLifecyclePolicyStatus(m_status));
   }
 
-  if(m_executionRoleHasBeenSet)
-  {
-   payload.WithString("executionRole", m_executionRole);
-
+  if (m_executionRoleHasBeenSet) {
+    payload.WithString("executionRole", m_executionRole);
   }
 
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("resourceType", LifecyclePolicyResourceTypeMapper::GetNameForLifecyclePolicyResourceType(m_resourceType));
+  if (m_resourceTypeHasBeenSet) {
+    payload.WithString("resourceType", LifecyclePolicyResourceTypeMapper::GetNameForLifecyclePolicyResourceType(m_resourceType));
   }
 
-  if(m_policyDetailsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> policyDetailsJsonList(m_policyDetails.size());
-   for(unsigned policyDetailsIndex = 0; policyDetailsIndex < policyDetailsJsonList.GetLength(); ++policyDetailsIndex)
-   {
-     policyDetailsJsonList[policyDetailsIndex].AsObject(m_policyDetails[policyDetailsIndex].Jsonize());
-   }
-   payload.WithArray("policyDetails", std::move(policyDetailsJsonList));
-
+  if (m_policyDetailsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> policyDetailsJsonList(m_policyDetails.size());
+    for (unsigned policyDetailsIndex = 0; policyDetailsIndex < policyDetailsJsonList.GetLength(); ++policyDetailsIndex) {
+      policyDetailsJsonList[policyDetailsIndex].AsObject(m_policyDetails[policyDetailsIndex].Jsonize());
+    }
+    payload.WithArray("policyDetails", std::move(policyDetailsJsonList));
   }
 
-  if(m_resourceSelectionHasBeenSet)
-  {
-   payload.WithObject("resourceSelection", m_resourceSelection.Jsonize());
-
+  if (m_resourceSelectionHasBeenSet) {
+    payload.WithObject("resourceSelection", m_resourceSelection.Jsonize());
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

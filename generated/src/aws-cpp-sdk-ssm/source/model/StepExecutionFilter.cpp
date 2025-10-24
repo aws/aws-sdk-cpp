@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ssm/model/StepExecutionFilter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ssm/model/StepExecutionFilter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SSM
-{
-namespace Model
-{
+namespace Aws {
+namespace SSM {
+namespace Model {
 
-StepExecutionFilter::StepExecutionFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StepExecutionFilter::StepExecutionFilter(JsonView jsonValue) { *this = jsonValue; }
 
-StepExecutionFilter& StepExecutionFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Key"))
-  {
+StepExecutionFilter& StepExecutionFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Key")) {
     m_key = StepExecutionFilterKeyMapper::GetStepExecutionFilterKeyForName(jsonValue.GetString("Key"));
     m_keyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Values"))
-  {
+  if (jsonValue.ValueExists("Values")) {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
-    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-    {
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());
     }
     m_valuesHasBeenSet = true;
@@ -42,29 +32,24 @@ StepExecutionFilter& StepExecutionFilter::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue StepExecutionFilter::Jsonize() const
-{
+JsonValue StepExecutionFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_keyHasBeenSet)
-  {
-   payload.WithString("Key", StepExecutionFilterKeyMapper::GetNameForStepExecutionFilterKey(m_key));
+  if (m_keyHasBeenSet) {
+    payload.WithString("Key", StepExecutionFilterKeyMapper::GetNameForStepExecutionFilterKey(m_key));
   }
 
-  if(m_valuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
-   for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-   {
-     valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
-   }
-   payload.WithArray("Values", std::move(valuesJsonList));
-
+  if (m_valuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
+      valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
+    }
+    payload.WithArray("Values", std::move(valuesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SSM
-} // namespace Aws
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

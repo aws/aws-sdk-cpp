@@ -6,65 +6,69 @@
 #pragma once
 #include <aws/xray/XRay_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace XRay
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace XRay {
+namespace Model {
 
+/**
+ * <p>An entry in a histogram for a statistic. A histogram maps the range of
+ * observed values on the X axis, and the prevalence of each value on the Y
+ * axis.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/HistogramEntry">AWS
+ * API Reference</a></p>
+ */
+class HistogramEntry {
+ public:
+  AWS_XRAY_API HistogramEntry() = default;
+  AWS_XRAY_API HistogramEntry(Aws::Utils::Json::JsonView jsonValue);
+  AWS_XRAY_API HistogramEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>An entry in a histogram for a statistic. A histogram maps the range of
-   * observed values on the X axis, and the prevalence of each value on the Y
-   * axis.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/HistogramEntry">AWS
-   * API Reference</a></p>
+   * <p>The value of the entry.</p>
    */
-  class HistogramEntry
-  {
-  public:
-    AWS_XRAY_API HistogramEntry() = default;
-    AWS_XRAY_API HistogramEntry(Aws::Utils::Json::JsonView jsonValue);
-    AWS_XRAY_API HistogramEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline double GetValue() const { return m_value; }
+  inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+  inline void SetValue(double value) {
+    m_valueHasBeenSet = true;
+    m_value = value;
+  }
+  inline HistogramEntry& WithValue(double value) {
+    SetValue(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The prevalence of the entry.</p>
+   */
+  inline int GetCount() const { return m_count; }
+  inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
+  inline void SetCount(int value) {
+    m_countHasBeenSet = true;
+    m_count = value;
+  }
+  inline HistogramEntry& WithCount(int value) {
+    SetCount(value);
+    return *this;
+  }
+  ///@}
+ private:
+  double m_value{0.0};
+  bool m_valueHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The value of the entry.</p>
-     */
-    inline double GetValue() const { return m_value; }
-    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
-    inline HistogramEntry& WithValue(double value) { SetValue(value); return *this;}
-    ///@}
+  int m_count{0};
+  bool m_countHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The prevalence of the entry.</p>
-     */
-    inline int GetCount() const { return m_count; }
-    inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
-    inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
-    inline HistogramEntry& WithCount(int value) { SetCount(value); return *this;}
-    ///@}
-  private:
-
-    double m_value{0.0};
-    bool m_valueHasBeenSet = false;
-
-    int m_count{0};
-    bool m_countHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace XRay
-} // namespace Aws
+}  // namespace Model
+}  // namespace XRay
+}  // namespace Aws

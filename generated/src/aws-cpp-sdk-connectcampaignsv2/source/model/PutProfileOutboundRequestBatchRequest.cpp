@@ -12,24 +12,18 @@ using namespace Aws::ConnectCampaignsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutProfileOutboundRequestBatchRequest::SerializePayload() const
-{
+Aws::String PutProfileOutboundRequestBatchRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_profileOutboundRequestsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> profileOutboundRequestsJsonList(m_profileOutboundRequests.size());
-   for(unsigned profileOutboundRequestsIndex = 0; profileOutboundRequestsIndex < profileOutboundRequestsJsonList.GetLength(); ++profileOutboundRequestsIndex)
-   {
-     profileOutboundRequestsJsonList[profileOutboundRequestsIndex].AsObject(m_profileOutboundRequests[profileOutboundRequestsIndex].Jsonize());
-   }
-   payload.WithArray("profileOutboundRequests", std::move(profileOutboundRequestsJsonList));
-
+  if (m_profileOutboundRequestsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> profileOutboundRequestsJsonList(m_profileOutboundRequests.size());
+    for (unsigned profileOutboundRequestsIndex = 0; profileOutboundRequestsIndex < profileOutboundRequestsJsonList.GetLength();
+         ++profileOutboundRequestsIndex) {
+      profileOutboundRequestsJsonList[profileOutboundRequestsIndex].AsObject(
+          m_profileOutboundRequests[profileOutboundRequestsIndex].Jsonize());
+    }
+    payload.WithArray("profileOutboundRequests", std::move(profileOutboundRequestsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

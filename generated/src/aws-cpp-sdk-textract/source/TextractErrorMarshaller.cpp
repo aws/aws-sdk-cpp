@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::Textract;
 
-AWSError<CoreErrors> TextractErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> TextractErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = TextractErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

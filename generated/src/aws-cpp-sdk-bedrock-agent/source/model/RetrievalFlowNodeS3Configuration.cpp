@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-RetrievalFlowNodeS3Configuration::RetrievalFlowNodeS3Configuration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RetrievalFlowNodeS3Configuration::RetrievalFlowNodeS3Configuration(JsonView jsonValue) { *this = jsonValue; }
 
-RetrievalFlowNodeS3Configuration& RetrievalFlowNodeS3Configuration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("bucketName"))
-  {
+RetrievalFlowNodeS3Configuration& RetrievalFlowNodeS3Configuration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("bucketName")) {
     m_bucketName = jsonValue.GetString("bucketName");
     m_bucketNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RetrievalFlowNodeS3Configuration::Jsonize() const
-{
+JsonValue RetrievalFlowNodeS3Configuration::Jsonize() const {
   JsonValue payload;
 
-  if(m_bucketNameHasBeenSet)
-  {
-   payload.WithString("bucketName", m_bucketName);
-
+  if (m_bucketNameHasBeenSet) {
+    payload.WithString("bucketName", m_bucketName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

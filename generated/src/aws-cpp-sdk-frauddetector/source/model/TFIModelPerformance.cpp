@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/frauddetector/model/TFIModelPerformance.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/frauddetector/model/TFIModelPerformance.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FraudDetector
-{
-namespace Model
-{
+namespace Aws {
+namespace FraudDetector {
+namespace Model {
 
-TFIModelPerformance::TFIModelPerformance(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TFIModelPerformance::TFIModelPerformance(JsonView jsonValue) { *this = jsonValue; }
 
-TFIModelPerformance& TFIModelPerformance::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("auc"))
-  {
+TFIModelPerformance& TFIModelPerformance::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("auc")) {
     m_auc = jsonValue.GetDouble("auc");
     m_aucHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("uncertaintyRange"))
-  {
+  if (jsonValue.ValueExists("uncertaintyRange")) {
     m_uncertaintyRange = jsonValue.GetObject("uncertaintyRange");
     m_uncertaintyRangeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TFIModelPerformance::Jsonize() const
-{
+JsonValue TFIModelPerformance::Jsonize() const {
   JsonValue payload;
 
-  if(m_aucHasBeenSet)
-  {
-   payload.WithDouble("auc", m_auc);
-
+  if (m_aucHasBeenSet) {
+    payload.WithDouble("auc", m_auc);
   }
 
-  if(m_uncertaintyRangeHasBeenSet)
-  {
-   payload.WithObject("uncertaintyRange", m_uncertaintyRange.Jsonize());
-
+  if (m_uncertaintyRangeHasBeenSet) {
+    payload.WithObject("uncertaintyRange", m_uncertaintyRange.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FraudDetector
-} // namespace Aws
+}  // namespace Model
+}  // namespace FraudDetector
+}  // namespace Aws

@@ -11,73 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudHSMV2
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudHSMV2 {
+namespace Model {
 
-DestinationBackup::DestinationBackup(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DestinationBackup::DestinationBackup(JsonView jsonValue) { *this = jsonValue; }
 
-DestinationBackup& DestinationBackup::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CreateTimestamp"))
-  {
+DestinationBackup& DestinationBackup::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CreateTimestamp")) {
     m_createTimestamp = jsonValue.GetDouble("CreateTimestamp");
     m_createTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourceRegion"))
-  {
+  if (jsonValue.ValueExists("SourceRegion")) {
     m_sourceRegion = jsonValue.GetString("SourceRegion");
     m_sourceRegionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourceBackup"))
-  {
+  if (jsonValue.ValueExists("SourceBackup")) {
     m_sourceBackup = jsonValue.GetString("SourceBackup");
     m_sourceBackupHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourceCluster"))
-  {
+  if (jsonValue.ValueExists("SourceCluster")) {
     m_sourceCluster = jsonValue.GetString("SourceCluster");
     m_sourceClusterHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DestinationBackup::Jsonize() const
-{
+JsonValue DestinationBackup::Jsonize() const {
   JsonValue payload;
 
-  if(m_createTimestampHasBeenSet)
-  {
-   payload.WithDouble("CreateTimestamp", m_createTimestamp.SecondsWithMSPrecision());
+  if (m_createTimestampHasBeenSet) {
+    payload.WithDouble("CreateTimestamp", m_createTimestamp.SecondsWithMSPrecision());
   }
 
-  if(m_sourceRegionHasBeenSet)
-  {
-   payload.WithString("SourceRegion", m_sourceRegion);
-
+  if (m_sourceRegionHasBeenSet) {
+    payload.WithString("SourceRegion", m_sourceRegion);
   }
 
-  if(m_sourceBackupHasBeenSet)
-  {
-   payload.WithString("SourceBackup", m_sourceBackup);
-
+  if (m_sourceBackupHasBeenSet) {
+    payload.WithString("SourceBackup", m_sourceBackup);
   }
 
-  if(m_sourceClusterHasBeenSet)
-  {
-   payload.WithString("SourceCluster", m_sourceCluster);
-
+  if (m_sourceClusterHasBeenSet) {
+    payload.WithString("SourceCluster", m_sourceCluster);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudHSMV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudHSMV2
+}  // namespace Aws

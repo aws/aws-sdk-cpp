@@ -11,60 +11,45 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-ExecutionRecord::ExecutionRecord(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExecutionRecord::ExecutionRecord(JsonView jsonValue) { *this = jsonValue; }
 
-ExecutionRecord& ExecutionRecord::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("executionId"))
-  {
+ExecutionRecord& ExecutionRecord::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("executionId")) {
     m_executionId = jsonValue.GetString("executionId");
     m_executionIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("executionStatus"))
-  {
+  if (jsonValue.ValueExists("executionStatus")) {
     m_executionStatus = ExecutionStatusMapper::GetExecutionStatusForName(jsonValue.GetString("executionStatus"));
     m_executionStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("executionResult"))
-  {
+  if (jsonValue.ValueExists("executionResult")) {
     m_executionResult = jsonValue.GetObject("executionResult");
     m_executionResultHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("startedAt"))
-  {
+  if (jsonValue.ValueExists("startedAt")) {
     m_startedAt = jsonValue.GetDouble("startedAt");
     m_startedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdatedAt"))
-  {
+  if (jsonValue.ValueExists("lastUpdatedAt")) {
     m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");
     m_lastUpdatedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("dataPullStartTime"))
-  {
+  if (jsonValue.ValueExists("dataPullStartTime")) {
     m_dataPullStartTime = jsonValue.GetDouble("dataPullStartTime");
     m_dataPullStartTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("dataPullEndTime"))
-  {
+  if (jsonValue.ValueExists("dataPullEndTime")) {
     m_dataPullEndTime = jsonValue.GetDouble("dataPullEndTime");
     m_dataPullEndTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("metadataCatalogDetails"))
-  {
+  if (jsonValue.ValueExists("metadataCatalogDetails")) {
     Aws::Utils::Array<JsonView> metadataCatalogDetailsJsonList = jsonValue.GetArray("metadataCatalogDetails");
-    for(unsigned metadataCatalogDetailsIndex = 0; metadataCatalogDetailsIndex < metadataCatalogDetailsJsonList.GetLength(); ++metadataCatalogDetailsIndex)
-    {
+    for (unsigned metadataCatalogDetailsIndex = 0; metadataCatalogDetailsIndex < metadataCatalogDetailsJsonList.GetLength();
+         ++metadataCatalogDetailsIndex) {
       m_metadataCatalogDetails.push_back(metadataCatalogDetailsJsonList[metadataCatalogDetailsIndex].AsObject());
     }
     m_metadataCatalogDetailsHasBeenSet = true;
@@ -72,61 +57,49 @@ ExecutionRecord& ExecutionRecord::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ExecutionRecord::Jsonize() const
-{
+JsonValue ExecutionRecord::Jsonize() const {
   JsonValue payload;
 
-  if(m_executionIdHasBeenSet)
-  {
-   payload.WithString("executionId", m_executionId);
-
+  if (m_executionIdHasBeenSet) {
+    payload.WithString("executionId", m_executionId);
   }
 
-  if(m_executionStatusHasBeenSet)
-  {
-   payload.WithString("executionStatus", ExecutionStatusMapper::GetNameForExecutionStatus(m_executionStatus));
+  if (m_executionStatusHasBeenSet) {
+    payload.WithString("executionStatus", ExecutionStatusMapper::GetNameForExecutionStatus(m_executionStatus));
   }
 
-  if(m_executionResultHasBeenSet)
-  {
-   payload.WithObject("executionResult", m_executionResult.Jsonize());
-
+  if (m_executionResultHasBeenSet) {
+    payload.WithObject("executionResult", m_executionResult.Jsonize());
   }
 
-  if(m_startedAtHasBeenSet)
-  {
-   payload.WithDouble("startedAt", m_startedAt.SecondsWithMSPrecision());
+  if (m_startedAtHasBeenSet) {
+    payload.WithDouble("startedAt", m_startedAt.SecondsWithMSPrecision());
   }
 
-  if(m_lastUpdatedAtHasBeenSet)
-  {
-   payload.WithDouble("lastUpdatedAt", m_lastUpdatedAt.SecondsWithMSPrecision());
+  if (m_lastUpdatedAtHasBeenSet) {
+    payload.WithDouble("lastUpdatedAt", m_lastUpdatedAt.SecondsWithMSPrecision());
   }
 
-  if(m_dataPullStartTimeHasBeenSet)
-  {
-   payload.WithDouble("dataPullStartTime", m_dataPullStartTime.SecondsWithMSPrecision());
+  if (m_dataPullStartTimeHasBeenSet) {
+    payload.WithDouble("dataPullStartTime", m_dataPullStartTime.SecondsWithMSPrecision());
   }
 
-  if(m_dataPullEndTimeHasBeenSet)
-  {
-   payload.WithDouble("dataPullEndTime", m_dataPullEndTime.SecondsWithMSPrecision());
+  if (m_dataPullEndTimeHasBeenSet) {
+    payload.WithDouble("dataPullEndTime", m_dataPullEndTime.SecondsWithMSPrecision());
   }
 
-  if(m_metadataCatalogDetailsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> metadataCatalogDetailsJsonList(m_metadataCatalogDetails.size());
-   for(unsigned metadataCatalogDetailsIndex = 0; metadataCatalogDetailsIndex < metadataCatalogDetailsJsonList.GetLength(); ++metadataCatalogDetailsIndex)
-   {
-     metadataCatalogDetailsJsonList[metadataCatalogDetailsIndex].AsObject(m_metadataCatalogDetails[metadataCatalogDetailsIndex].Jsonize());
-   }
-   payload.WithArray("metadataCatalogDetails", std::move(metadataCatalogDetailsJsonList));
-
+  if (m_metadataCatalogDetailsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> metadataCatalogDetailsJsonList(m_metadataCatalogDetails.size());
+    for (unsigned metadataCatalogDetailsIndex = 0; metadataCatalogDetailsIndex < metadataCatalogDetailsJsonList.GetLength();
+         ++metadataCatalogDetailsIndex) {
+      metadataCatalogDetailsJsonList[metadataCatalogDetailsIndex].AsObject(m_metadataCatalogDetails[metadataCatalogDetailsIndex].Jsonize());
+    }
+    payload.WithArray("metadataCatalogDetails", std::move(metadataCatalogDetailsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

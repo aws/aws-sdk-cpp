@@ -12,77 +12,55 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListInsightsMetricDataRequest::SerializePayload() const
-{
+Aws::String ListInsightsMetricDataRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_eventSourceHasBeenSet)
-  {
-   payload.WithString("EventSource", m_eventSource);
-
+  if (m_eventSourceHasBeenSet) {
+    payload.WithString("EventSource", m_eventSource);
   }
 
-  if(m_eventNameHasBeenSet)
-  {
-   payload.WithString("EventName", m_eventName);
-
+  if (m_eventNameHasBeenSet) {
+    payload.WithString("EventName", m_eventName);
   }
 
-  if(m_insightTypeHasBeenSet)
-  {
-   payload.WithString("InsightType", InsightTypeMapper::GetNameForInsightType(m_insightType));
+  if (m_insightTypeHasBeenSet) {
+    payload.WithString("InsightType", InsightTypeMapper::GetNameForInsightType(m_insightType));
   }
 
-  if(m_errorCodeHasBeenSet)
-  {
-   payload.WithString("ErrorCode", m_errorCode);
-
+  if (m_errorCodeHasBeenSet) {
+    payload.WithString("ErrorCode", m_errorCode);
   }
 
-  if(m_startTimeHasBeenSet)
-  {
-   payload.WithDouble("StartTime", m_startTime.SecondsWithMSPrecision());
+  if (m_startTimeHasBeenSet) {
+    payload.WithDouble("StartTime", m_startTime.SecondsWithMSPrecision());
   }
 
-  if(m_endTimeHasBeenSet)
-  {
-   payload.WithDouble("EndTime", m_endTime.SecondsWithMSPrecision());
+  if (m_endTimeHasBeenSet) {
+    payload.WithDouble("EndTime", m_endTime.SecondsWithMSPrecision());
   }
 
-  if(m_periodHasBeenSet)
-  {
-   payload.WithInteger("Period", m_period);
-
+  if (m_periodHasBeenSet) {
+    payload.WithInteger("Period", m_period);
   }
 
-  if(m_dataTypeHasBeenSet)
-  {
-   payload.WithString("DataType", InsightsMetricDataTypeMapper::GetNameForInsightsMetricDataType(m_dataType));
+  if (m_dataTypeHasBeenSet) {
+    payload.WithString("DataType", InsightsMetricDataTypeMapper::GetNameForInsightsMetricDataType(m_dataType));
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("MaxResults", m_maxResults);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ListInsightsMetricDataRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListInsightsMetricDataRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListInsightsMetricData"));
+  headers.insert(
+      Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.ListInsightsMetricData"));
   return headers;
-
 }
-
-
-
-

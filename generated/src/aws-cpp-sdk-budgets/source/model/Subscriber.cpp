@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Budgets
-{
-namespace Model
-{
+namespace Aws {
+namespace Budgets {
+namespace Model {
 
-Subscriber::Subscriber(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Subscriber::Subscriber(JsonView jsonValue) { *this = jsonValue; }
 
-Subscriber& Subscriber::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SubscriptionType"))
-  {
+Subscriber& Subscriber::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SubscriptionType")) {
     m_subscriptionType = SubscriptionTypeMapper::GetSubscriptionTypeForName(jsonValue.GetString("SubscriptionType"));
     m_subscriptionTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Address"))
-  {
+  if (jsonValue.ValueExists("Address")) {
     m_address = jsonValue.GetString("Address");
     m_addressHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Subscriber::Jsonize() const
-{
+JsonValue Subscriber::Jsonize() const {
   JsonValue payload;
 
-  if(m_subscriptionTypeHasBeenSet)
-  {
-   payload.WithString("SubscriptionType", SubscriptionTypeMapper::GetNameForSubscriptionType(m_subscriptionType));
+  if (m_subscriptionTypeHasBeenSet) {
+    payload.WithString("SubscriptionType", SubscriptionTypeMapper::GetNameForSubscriptionType(m_subscriptionType));
   }
 
-  if(m_addressHasBeenSet)
-  {
-   payload.WithString("Address", m_address);
-
+  if (m_addressHasBeenSet) {
+    payload.WithString("Address", m_address);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Budgets
-} // namespace Aws
+}  // namespace Model
+}  // namespace Budgets
+}  // namespace Aws

@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-ResourceFilters::ResourceFilters(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResourceFilters::ResourceFilters(JsonView jsonValue) { *this = jsonValue; }
 
-ResourceFilters& ResourceFilters::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AccountId"))
-  {
+ResourceFilters& ResourceFilters::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AccountId")) {
     m_accountId = jsonValue.GetString("AccountId");
     m_accountIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceId"))
-  {
+  if (jsonValue.ValueExists("ResourceId")) {
     m_resourceId = jsonValue.GetString("ResourceId");
     m_resourceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceName"))
-  {
+  if (jsonValue.ValueExists("ResourceName")) {
     m_resourceName = jsonValue.GetString("ResourceName");
     m_resourceNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Region"))
-  {
+  if (jsonValue.ValueExists("Region")) {
     m_region = jsonValue.GetString("Region");
     m_regionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResourceFilters::Jsonize() const
-{
+JsonValue ResourceFilters::Jsonize() const {
   JsonValue payload;
 
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("AccountId", m_accountId);
-
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("AccountId", m_accountId);
   }
 
-  if(m_resourceIdHasBeenSet)
-  {
-   payload.WithString("ResourceId", m_resourceId);
-
+  if (m_resourceIdHasBeenSet) {
+    payload.WithString("ResourceId", m_resourceId);
   }
 
-  if(m_resourceNameHasBeenSet)
-  {
-   payload.WithString("ResourceName", m_resourceName);
-
+  if (m_resourceNameHasBeenSet) {
+    payload.WithString("ResourceName", m_resourceName);
   }
 
-  if(m_regionHasBeenSet)
-  {
-   payload.WithString("Region", m_region);
-
+  if (m_regionHasBeenSet) {
+    payload.WithString("Region", m_region);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

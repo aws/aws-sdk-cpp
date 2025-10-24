@@ -5,12 +5,8 @@
 
 #include <aws/pricing/PricingEndpointProvider.h>
 
-namespace Aws
-{
-namespace Pricing
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Pricing
-} // namespace Aws
+namespace Aws {
+namespace Pricing {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Pricing
+}  // namespace Aws

@@ -3,103 +3,78 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/finspace/model/NetworkACLEntry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/finspace/model/NetworkACLEntry.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace finspace
-{
-namespace Model
-{
+namespace Aws {
+namespace finspace {
+namespace Model {
 
-NetworkACLEntry::NetworkACLEntry(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NetworkACLEntry::NetworkACLEntry(JsonView jsonValue) { *this = jsonValue; }
 
-NetworkACLEntry& NetworkACLEntry::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ruleNumber"))
-  {
+NetworkACLEntry& NetworkACLEntry::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ruleNumber")) {
     m_ruleNumber = jsonValue.GetInteger("ruleNumber");
     m_ruleNumberHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("protocol"))
-  {
+  if (jsonValue.ValueExists("protocol")) {
     m_protocol = jsonValue.GetString("protocol");
     m_protocolHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ruleAction"))
-  {
+  if (jsonValue.ValueExists("ruleAction")) {
     m_ruleAction = RuleActionMapper::GetRuleActionForName(jsonValue.GetString("ruleAction"));
     m_ruleActionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("portRange"))
-  {
+  if (jsonValue.ValueExists("portRange")) {
     m_portRange = jsonValue.GetObject("portRange");
     m_portRangeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("icmpTypeCode"))
-  {
+  if (jsonValue.ValueExists("icmpTypeCode")) {
     m_icmpTypeCode = jsonValue.GetObject("icmpTypeCode");
     m_icmpTypeCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("cidrBlock"))
-  {
+  if (jsonValue.ValueExists("cidrBlock")) {
     m_cidrBlock = jsonValue.GetString("cidrBlock");
     m_cidrBlockHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NetworkACLEntry::Jsonize() const
-{
+JsonValue NetworkACLEntry::Jsonize() const {
   JsonValue payload;
 
-  if(m_ruleNumberHasBeenSet)
-  {
-   payload.WithInteger("ruleNumber", m_ruleNumber);
-
+  if (m_ruleNumberHasBeenSet) {
+    payload.WithInteger("ruleNumber", m_ruleNumber);
   }
 
-  if(m_protocolHasBeenSet)
-  {
-   payload.WithString("protocol", m_protocol);
-
+  if (m_protocolHasBeenSet) {
+    payload.WithString("protocol", m_protocol);
   }
 
-  if(m_ruleActionHasBeenSet)
-  {
-   payload.WithString("ruleAction", RuleActionMapper::GetNameForRuleAction(m_ruleAction));
+  if (m_ruleActionHasBeenSet) {
+    payload.WithString("ruleAction", RuleActionMapper::GetNameForRuleAction(m_ruleAction));
   }
 
-  if(m_portRangeHasBeenSet)
-  {
-   payload.WithObject("portRange", m_portRange.Jsonize());
-
+  if (m_portRangeHasBeenSet) {
+    payload.WithObject("portRange", m_portRange.Jsonize());
   }
 
-  if(m_icmpTypeCodeHasBeenSet)
-  {
-   payload.WithObject("icmpTypeCode", m_icmpTypeCode.Jsonize());
-
+  if (m_icmpTypeCodeHasBeenSet) {
+    payload.WithObject("icmpTypeCode", m_icmpTypeCode.Jsonize());
   }
 
-  if(m_cidrBlockHasBeenSet)
-  {
-   payload.WithString("cidrBlock", m_cidrBlock);
-
+  if (m_cidrBlockHasBeenSet) {
+    payload.WithString("cidrBlock", m_cidrBlock);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace finspace
-} // namespace Aws
+}  // namespace Model
+}  // namespace finspace
+}  // namespace Aws

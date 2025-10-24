@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medical-imaging/model/ListImageSetVersionsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/medical-imaging/model/ListImageSetVersionsResult.h>
 
 #include <utility>
 
@@ -17,37 +17,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListImageSetVersionsResult::ListImageSetVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListImageSetVersionsResult::ListImageSetVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListImageSetVersionsResult& ListImageSetVersionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListImageSetVersionsResult& ListImageSetVersionsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("imageSetPropertiesList"))
-  {
+  if (jsonValue.ValueExists("imageSetPropertiesList")) {
     Aws::Utils::Array<JsonView> imageSetPropertiesListJsonList = jsonValue.GetArray("imageSetPropertiesList");
-    for(unsigned imageSetPropertiesListIndex = 0; imageSetPropertiesListIndex < imageSetPropertiesListJsonList.GetLength(); ++imageSetPropertiesListIndex)
-    {
+    for (unsigned imageSetPropertiesListIndex = 0; imageSetPropertiesListIndex < imageSetPropertiesListJsonList.GetLength();
+         ++imageSetPropertiesListIndex) {
       m_imageSetPropertiesList.push_back(imageSetPropertiesListJsonList[imageSetPropertiesListIndex].AsObject());
     }
     m_imageSetPropertiesListHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

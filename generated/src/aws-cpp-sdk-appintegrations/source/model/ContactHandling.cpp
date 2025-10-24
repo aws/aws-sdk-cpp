@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppIntegrationsService
-{
-namespace Model
-{
+namespace Aws {
+namespace AppIntegrationsService {
+namespace Model {
 
-ContactHandling::ContactHandling(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ContactHandling::ContactHandling(JsonView jsonValue) { *this = jsonValue; }
 
-ContactHandling& ContactHandling::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Scope"))
-  {
+ContactHandling& ContactHandling::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Scope")) {
     m_scope = ContactHandlingScopeMapper::GetContactHandlingScopeForName(jsonValue.GetString("Scope"));
     m_scopeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ContactHandling::Jsonize() const
-{
+JsonValue ContactHandling::Jsonize() const {
   JsonValue payload;
 
-  if(m_scopeHasBeenSet)
-  {
-   payload.WithString("Scope", ContactHandlingScopeMapper::GetNameForContactHandlingScope(m_scope));
+  if (m_scopeHasBeenSet) {
+    payload.WithString("Scope", ContactHandlingScopeMapper::GetNameForContactHandlingScope(m_scope));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppIntegrationsService
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppIntegrationsService
+}  // namespace Aws

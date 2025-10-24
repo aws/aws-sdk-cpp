@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 
-namespace Aws
-{
-namespace GeoRoutes
-{
-namespace Model
-{
-  enum class RouteDirection
-  {
-    NOT_SET,
-    East,
-    North,
-    South,
-    West
-  };
+namespace Aws {
+namespace GeoRoutes {
+namespace Model {
+enum class RouteDirection { NOT_SET, East, North, South, West };
 
-namespace RouteDirectionMapper
-{
+namespace RouteDirectionMapper {
 AWS_GEOROUTES_API RouteDirection GetRouteDirectionForName(const Aws::String& name);
 
 AWS_GEOROUTES_API Aws::String GetNameForRouteDirection(RouteDirection value);
-} // namespace RouteDirectionMapper
-} // namespace Model
-} // namespace GeoRoutes
-} // namespace Aws
+}  // namespace RouteDirectionMapper
+}  // namespace Model
+}  // namespace GeoRoutes
+}  // namespace Aws

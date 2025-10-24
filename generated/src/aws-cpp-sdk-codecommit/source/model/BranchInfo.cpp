@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeCommit
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeCommit {
+namespace Model {
 
-BranchInfo::BranchInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BranchInfo::BranchInfo(JsonView jsonValue) { *this = jsonValue; }
 
-BranchInfo& BranchInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("branchName"))
-  {
+BranchInfo& BranchInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("branchName")) {
     m_branchName = jsonValue.GetString("branchName");
     m_branchNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("commitId"))
-  {
+  if (jsonValue.ValueExists("commitId")) {
     m_commitId = jsonValue.GetString("commitId");
     m_commitIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BranchInfo::Jsonize() const
-{
+JsonValue BranchInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_branchNameHasBeenSet)
-  {
-   payload.WithString("branchName", m_branchName);
-
+  if (m_branchNameHasBeenSet) {
+    payload.WithString("branchName", m_branchName);
   }
 
-  if(m_commitIdHasBeenSet)
-  {
-   payload.WithString("commitId", m_commitId);
-
+  if (m_commitIdHasBeenSet) {
+    payload.WithString("commitId", m_commitId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeCommit
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeCommit
+}  // namespace Aws

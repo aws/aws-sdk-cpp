@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/grafana/ManagedGrafana_EXPORTS.h>
 
-namespace Aws
-{
-namespace ManagedGrafana
-{
-enum class ManagedGrafanaErrors
-{
-  //From Core//
+namespace Aws {
+namespace ManagedGrafana {
+enum class ManagedGrafanaErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class ManagedGrafanaErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,14 +44,13 @@ enum class ManagedGrafanaErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER,
   SERVICE_QUOTA_EXCEEDED
 };
 
-class AWS_MANAGEDGRAFANA_API ManagedGrafanaError : public Aws::Client::AWSError<ManagedGrafanaErrors>
-{
-public:
+class AWS_MANAGEDGRAFANA_API ManagedGrafanaError : public Aws::Client::AWSError<ManagedGrafanaErrors> {
+ public:
   ManagedGrafanaError() {}
   ManagedGrafanaError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ManagedGrafanaErrors>(rhs) {}
   ManagedGrafanaError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ManagedGrafanaErrors>(rhs) {}
@@ -65,10 +61,9 @@ public:
   T GetModeledError();
 };
 
-namespace ManagedGrafanaErrorMapper
-{
-  AWS_MANAGEDGRAFANA_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace ManagedGrafanaErrorMapper {
+AWS_MANAGEDGRAFANA_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace ManagedGrafana
-} // namespace Aws
+}  // namespace ManagedGrafana
+}  // namespace Aws

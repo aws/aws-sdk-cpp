@@ -5,12 +5,8 @@
 
 #include <aws/keyspacesstreams/KeyspacesStreamsEndpointProvider.h>
 
-namespace Aws
-{
-namespace KeyspacesStreams
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace KeyspacesStreams
-} // namespace Aws
+namespace Aws {
+namespace KeyspacesStreams {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace KeyspacesStreams
+}  // namespace Aws

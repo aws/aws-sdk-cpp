@@ -12,27 +12,18 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteDeliveryChannelRequest::SerializePayload() const
-{
+Aws::String DeleteDeliveryChannelRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_deliveryChannelNameHasBeenSet)
-  {
-   payload.WithString("DeliveryChannelName", m_deliveryChannelName);
-
+  if (m_deliveryChannelNameHasBeenSet) {
+    payload.WithString("DeliveryChannelName", m_deliveryChannelName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteDeliveryChannelRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteDeliveryChannelRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "StarlingDoveService.DeleteDeliveryChannel"));
   return headers;
-
 }
-
-
-
-

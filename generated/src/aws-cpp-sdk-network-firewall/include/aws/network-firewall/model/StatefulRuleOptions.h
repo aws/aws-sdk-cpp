@@ -6,59 +6,58 @@
 #pragma once
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/model/RuleOrder.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace NetworkFirewall
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace NetworkFirewall {
+namespace Model {
 
+/**
+ * <p>Additional options governing how Network Firewall handles the rule group. You
+ * can only use these for stateful rule groups.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/StatefulRuleOptions">AWS
+ * API Reference</a></p>
+ */
+class StatefulRuleOptions {
+ public:
+  AWS_NETWORKFIREWALL_API StatefulRuleOptions() = default;
+  AWS_NETWORKFIREWALL_API StatefulRuleOptions(Aws::Utils::Json::JsonView jsonValue);
+  AWS_NETWORKFIREWALL_API StatefulRuleOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Additional options governing how Network Firewall handles the rule group. You
-   * can only use these for stateful rule groups.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/StatefulRuleOptions">AWS
-   * API Reference</a></p>
+   * <p>Indicates how to manage the order of the rule evaluation for the rule group.
+   * <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are
+   * provided to the rule engine as Suricata compatible strings, and Suricata
+   * evaluates them based on certain settings. For more information, see <a
+   * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
+   * order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.
+   * </p>
    */
-  class StatefulRuleOptions
-  {
-  public:
-    AWS_NETWORKFIREWALL_API StatefulRuleOptions() = default;
-    AWS_NETWORKFIREWALL_API StatefulRuleOptions(Aws::Utils::Json::JsonView jsonValue);
-    AWS_NETWORKFIREWALL_API StatefulRuleOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline RuleOrder GetRuleOrder() const { return m_ruleOrder; }
+  inline bool RuleOrderHasBeenSet() const { return m_ruleOrderHasBeenSet; }
+  inline void SetRuleOrder(RuleOrder value) {
+    m_ruleOrderHasBeenSet = true;
+    m_ruleOrder = value;
+  }
+  inline StatefulRuleOptions& WithRuleOrder(RuleOrder value) {
+    SetRuleOrder(value);
+    return *this;
+  }
+  ///@}
+ private:
+  RuleOrder m_ruleOrder{RuleOrder::NOT_SET};
+  bool m_ruleOrderHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>Indicates how to manage the order of the rule evaluation for the rule group.
-     * <code>DEFAULT_ACTION_ORDER</code> is the default behavior. Stateful rules are
-     * provided to the rule engine as Suricata compatible strings, and Suricata
-     * evaluates them based on certain settings. For more information, see <a
-     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
-     * order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.
-     * </p>
-     */
-    inline RuleOrder GetRuleOrder() const { return m_ruleOrder; }
-    inline bool RuleOrderHasBeenSet() const { return m_ruleOrderHasBeenSet; }
-    inline void SetRuleOrder(RuleOrder value) { m_ruleOrderHasBeenSet = true; m_ruleOrder = value; }
-    inline StatefulRuleOptions& WithRuleOrder(RuleOrder value) { SetRuleOrder(value); return *this;}
-    ///@}
-  private:
-
-    RuleOrder m_ruleOrder{RuleOrder::NOT_SET};
-    bool m_ruleOrderHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace NetworkFirewall
-} // namespace Aws
+}  // namespace Model
+}  // namespace NetworkFirewall
+}  // namespace Aws

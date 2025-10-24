@@ -4,33 +4,19 @@
  */
 
 #pragma once
-#include <aws/observabilityadmin/ObservabilityAdmin_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/observabilityadmin/ObservabilityAdmin_EXPORTS.h>
 
-namespace Aws
-{
-namespace ObservabilityAdmin
-{
-namespace Model
-{
-  enum class Status
-  {
-    NOT_SET,
-    NOT_STARTED,
-    STARTING,
-    FAILED_START,
-    RUNNING,
-    STOPPING,
-    FAILED_STOP,
-    STOPPED
-  };
+namespace Aws {
+namespace ObservabilityAdmin {
+namespace Model {
+enum class Status { NOT_SET, NOT_STARTED, STARTING, FAILED_START, RUNNING, STOPPING, FAILED_STOP, STOPPED };
 
-namespace StatusMapper
-{
+namespace StatusMapper {
 AWS_OBSERVABILITYADMIN_API Status GetStatusForName(const Aws::String& name);
 
 AWS_OBSERVABILITYADMIN_API Aws::String GetNameForStatus(Status value);
-} // namespace StatusMapper
-} // namespace Model
-} // namespace ObservabilityAdmin
-} // namespace Aws
+}  // namespace StatusMapper
+}  // namespace Model
+}  // namespace ObservabilityAdmin
+}  // namespace Aws

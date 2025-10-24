@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/xray/XRay_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/xray/XRay_EXPORTS.h>
 
-namespace Aws
-{
-namespace XRay
-{
-namespace Model
-{
-  enum class TraceSegmentDestinationStatus
-  {
-    NOT_SET,
-    PENDING,
-    ACTIVE
-  };
+namespace Aws {
+namespace XRay {
+namespace Model {
+enum class TraceSegmentDestinationStatus { NOT_SET, PENDING, ACTIVE };
 
-namespace TraceSegmentDestinationStatusMapper
-{
+namespace TraceSegmentDestinationStatusMapper {
 AWS_XRAY_API TraceSegmentDestinationStatus GetTraceSegmentDestinationStatusForName(const Aws::String& name);
 
 AWS_XRAY_API Aws::String GetNameForTraceSegmentDestinationStatus(TraceSegmentDestinationStatus value);
-} // namespace TraceSegmentDestinationStatusMapper
-} // namespace Model
-} // namespace XRay
-} // namespace Aws
+}  // namespace TraceSegmentDestinationStatusMapper
+}  // namespace Model
+}  // namespace XRay
+}  // namespace Aws

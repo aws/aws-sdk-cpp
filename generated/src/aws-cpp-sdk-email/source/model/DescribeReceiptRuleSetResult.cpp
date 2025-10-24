@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/email/model/DescribeReceiptRuleSetResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/email/model/DescribeReceiptRuleSetResult.h>
 
 #include <utility>
 
@@ -17,36 +17,27 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeReceiptRuleSetResult::DescribeReceiptRuleSetResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+DescribeReceiptRuleSetResult::DescribeReceiptRuleSetResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-DescribeReceiptRuleSetResult& DescribeReceiptRuleSetResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeReceiptRuleSetResult& DescribeReceiptRuleSetResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeReceiptRuleSetResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeReceiptRuleSetResult")) {
     resultNode = rootNode.FirstChild("DescribeReceiptRuleSetResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode metadataNode = resultNode.FirstChild("Metadata");
-    if(!metadataNode.IsNull())
-    {
+    if (!metadataNode.IsNull()) {
       m_metadata = metadataNode;
       m_metadataHasBeenSet = true;
     }
     XmlNode rulesNode = resultNode.FirstChild("Rules");
-    if(!rulesNode.IsNull())
-    {
+    if (!rulesNode.IsNull()) {
       XmlNode rulesMember = rulesNode.FirstChild("member");
       m_rulesHasBeenSet = !rulesMember.IsNull();
-      while(!rulesMember.IsNull())
-      {
+      while (!rulesMember.IsNull()) {
         m_rules.push_back(rulesMember);
         rulesMember = rulesMember.NextNode("member");
       }
@@ -59,7 +50,7 @@ DescribeReceiptRuleSetResult& DescribeReceiptRuleSetResult::operator =(const Aws
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::SES::Model::DescribeReceiptRuleSetResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::SES::Model::DescribeReceiptRuleSetResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/location/model/BatchPutGeofenceRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/location/model/BatchPutGeofenceRequest.h>
 
 #include <utility>
 
@@ -12,24 +12,16 @@ using namespace Aws::LocationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String BatchPutGeofenceRequest::SerializePayload() const
-{
+Aws::String BatchPutGeofenceRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_entriesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> entriesJsonList(m_entries.size());
-   for(unsigned entriesIndex = 0; entriesIndex < entriesJsonList.GetLength(); ++entriesIndex)
-   {
-     entriesJsonList[entriesIndex].AsObject(m_entries[entriesIndex].Jsonize());
-   }
-   payload.WithArray("Entries", std::move(entriesJsonList));
-
+  if (m_entriesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> entriesJsonList(m_entries.size());
+    for (unsigned entriesIndex = 0; entriesIndex < entriesJsonList.GetLength(); ++entriesIndex) {
+      entriesJsonList[entriesIndex].AsObject(m_entries[entriesIndex].Jsonize());
+    }
+    payload.WithArray("Entries", std::move(entriesJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

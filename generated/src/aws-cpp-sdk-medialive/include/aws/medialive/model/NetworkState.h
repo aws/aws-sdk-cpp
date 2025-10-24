@@ -4,35 +4,19 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
-  enum class NetworkState
-  {
-    NOT_SET,
-    CREATING,
-    CREATE_FAILED,
-    ACTIVE,
-    DELETING,
-    IDLE,
-    IN_USE,
-    UPDATING,
-    DELETE_FAILED,
-    DELETED
-  };
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+enum class NetworkState { NOT_SET, CREATING, CREATE_FAILED, ACTIVE, DELETING, IDLE, IN_USE, UPDATING, DELETE_FAILED, DELETED };
 
-namespace NetworkStateMapper
-{
+namespace NetworkStateMapper {
 AWS_MEDIALIVE_API NetworkState GetNetworkStateForName(const Aws::String& name);
 
 AWS_MEDIALIVE_API Aws::String GetNameForNetworkState(NetworkState value);
-} // namespace NetworkStateMapper
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace NetworkStateMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

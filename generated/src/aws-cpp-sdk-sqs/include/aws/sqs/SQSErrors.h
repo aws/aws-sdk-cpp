@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/sqs/SQS_EXPORTS.h>
 
-namespace Aws
-{
-namespace SQS
-{
-enum class SQSErrors
-{
-  //From Core//
+namespace Aws {
+namespace SQS {
+enum class SQSErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class SQSErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class SQSErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  BATCH_ENTRY_IDS_NOT_DISTINCT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BATCH_ENTRY_IDS_NOT_DISTINCT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   BATCH_REQUEST_TOO_LONG,
   EMPTY_BATCH_REQUEST,
   INVALID_ADDRESS,
@@ -75,9 +72,8 @@ enum class SQSErrors
   UNSUPPORTED_OPERATION
 };
 
-class AWS_SQS_API SQSError : public Aws::Client::AWSError<SQSErrors>
-{
-public:
+class AWS_SQS_API SQSError : public Aws::Client::AWSError<SQSErrors> {
+ public:
   SQSError() {}
   SQSError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<SQSErrors>(rhs) {}
   SQSError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<SQSErrors>(rhs) {}
@@ -88,10 +84,9 @@ public:
   T GetModeledError();
 };
 
-namespace SQSErrorMapper
-{
-  AWS_SQS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace SQSErrorMapper {
+AWS_SQS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace SQS
-} // namespace Aws
+}  // namespace SQS
+}  // namespace Aws

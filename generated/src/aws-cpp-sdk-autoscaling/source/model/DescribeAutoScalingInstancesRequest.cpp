@@ -10,35 +10,26 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeAutoScalingInstancesRequest::SerializePayload() const
-{
+Aws::String DescribeAutoScalingInstancesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeAutoScalingInstances&";
-  if(m_instanceIdsHasBeenSet)
-  {
-    if (m_instanceIds.empty())
-    {
+  if (m_instanceIdsHasBeenSet) {
+    if (m_instanceIds.empty()) {
       ss << "InstanceIds=&";
-    }
-    else
-    {
+    } else {
       unsigned instanceIdsCount = 1;
-      for(auto& item : m_instanceIds)
-      {
-        ss << "InstanceIds.member." << instanceIdsCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_instanceIds) {
+        ss << "InstanceIds.member." << instanceIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         instanceIdsCount++;
       }
     }
   }
 
-  if(m_maxRecordsHasBeenSet)
-  {
+  if (m_maxRecordsHasBeenSet) {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
@@ -46,8 +37,4 @@ Aws::String DescribeAutoScalingInstancesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeAutoScalingInstancesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeAutoScalingInstancesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

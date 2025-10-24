@@ -3,60 +3,49 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails(JsonView jsonValue)
-{
+AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails& AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ReadOnly"))
-  {
+AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails& AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails::operator=(
+    JsonView jsonValue) {
+  if (jsonValue.ValueExists("ReadOnly")) {
     m_readOnly = jsonValue.GetBool("ReadOnly");
     m_readOnlyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourceContainer"))
-  {
+  if (jsonValue.ValueExists("SourceContainer")) {
     m_sourceContainer = jsonValue.GetString("SourceContainer");
     m_sourceContainerHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails::Jsonize() const
-{
+JsonValue AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_readOnlyHasBeenSet)
-  {
-   payload.WithBool("ReadOnly", m_readOnly);
-
+  if (m_readOnlyHasBeenSet) {
+    payload.WithBool("ReadOnly", m_readOnly);
   }
 
-  if(m_sourceContainerHasBeenSet)
-  {
-   payload.WithString("SourceContainer", m_sourceContainer);
-
+  if (m_sourceContainerHasBeenSet) {
+    payload.WithString("SourceContainer", m_sourceContainer);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

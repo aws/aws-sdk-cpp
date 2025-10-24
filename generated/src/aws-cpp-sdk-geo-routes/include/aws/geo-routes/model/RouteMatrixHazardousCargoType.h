@@ -4,37 +4,32 @@
  */
 
 #pragma once
-#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 
-namespace Aws
-{
-namespace GeoRoutes
-{
-namespace Model
-{
-  enum class RouteMatrixHazardousCargoType
-  {
-    NOT_SET,
-    Combustible,
-    Corrosive,
-    Explosive,
-    Flammable,
-    Gas,
-    HarmfulToWater,
-    Organic,
-    Other,
-    Poison,
-    PoisonousInhalation,
-    Radioactive
-  };
+namespace Aws {
+namespace GeoRoutes {
+namespace Model {
+enum class RouteMatrixHazardousCargoType {
+  NOT_SET,
+  Combustible,
+  Corrosive,
+  Explosive,
+  Flammable,
+  Gas,
+  HarmfulToWater,
+  Organic,
+  Other,
+  Poison,
+  PoisonousInhalation,
+  Radioactive
+};
 
-namespace RouteMatrixHazardousCargoTypeMapper
-{
+namespace RouteMatrixHazardousCargoTypeMapper {
 AWS_GEOROUTES_API RouteMatrixHazardousCargoType GetRouteMatrixHazardousCargoTypeForName(const Aws::String& name);
 
 AWS_GEOROUTES_API Aws::String GetNameForRouteMatrixHazardousCargoType(RouteMatrixHazardousCargoType value);
-} // namespace RouteMatrixHazardousCargoTypeMapper
-} // namespace Model
-} // namespace GeoRoutes
-} // namespace Aws
+}  // namespace RouteMatrixHazardousCargoTypeMapper
+}  // namespace Model
+}  // namespace GeoRoutes
+}  // namespace Aws

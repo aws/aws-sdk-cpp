@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/iotevents/IoTEvents_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTEvents
-{
-class IoTEventsEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace IoTEvents {
+class IoTEventsEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace IoTEvents
-} // namespace Aws
+}  // namespace IoTEvents
+}  // namespace Aws

@@ -3,43 +3,34 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/VolumeStatusDetails.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/VolumeStatusDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-VolumeStatusDetails::VolumeStatusDetails(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+VolumeStatusDetails::VolumeStatusDetails(const XmlNode& xmlNode) { *this = xmlNode; }
 
-VolumeStatusDetails& VolumeStatusDetails::operator =(const XmlNode& xmlNode)
-{
+VolumeStatusDetails& VolumeStatusDetails::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode nameNode = resultNode.FirstChild("name");
-    if(!nameNode.IsNull())
-    {
-      m_name = VolumeStatusNameMapper::GetVolumeStatusNameForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText()).c_str()));
+    if (!nameNode.IsNull()) {
+      m_name = VolumeStatusNameMapper::GetVolumeStatusNameForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText()).c_str()));
       m_nameHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
-    if(!statusNode.IsNull())
-    {
+    if (!statusNode.IsNull()) {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
     }
@@ -48,32 +39,26 @@ VolumeStatusDetails& VolumeStatusDetails::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void VolumeStatusDetails::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_nameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(VolumeStatusNameMapper::GetNameForVolumeStatusName(m_name)) << "&";
+void VolumeStatusDetails::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_nameHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".Name=" << StringUtils::URLEncode(VolumeStatusNameMapper::GetNameForVolumeStatusName(m_name)) << "&";
   }
 
-  if(m_statusHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
-  }
-
-}
-
-void VolumeStatusDetails::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_nameHasBeenSet)
-  {
-      oStream << location << ".Name=" << StringUtils::URLEncode(VolumeStatusNameMapper::GetNameForVolumeStatusName(m_name)) << "&";
-  }
-  if(m_statusHasBeenSet)
-  {
-      oStream << location << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
+  if (m_statusHasBeenSet) {
+    oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void VolumeStatusDetails::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_nameHasBeenSet) {
+    oStream << location << ".Name=" << StringUtils::URLEncode(VolumeStatusNameMapper::GetNameForVolumeStatusName(m_name)) << "&";
+  }
+  if (m_statusHasBeenSet) {
+    oStream << location << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

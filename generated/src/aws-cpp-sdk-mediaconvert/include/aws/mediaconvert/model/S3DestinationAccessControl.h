@@ -6,54 +6,53 @@
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/S3ObjectCannedAcl.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace MediaConvert
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace MediaConvert {
+namespace Model {
 
+/**
+ * Optional. Have MediaConvert automatically apply Amazon S3 access control for the
+ * outputs in this output group. When you don't use this setting, S3 automatically
+ * applies the default access control list PRIVATE.<p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/S3DestinationAccessControl">AWS
+ * API Reference</a></p>
+ */
+class S3DestinationAccessControl {
+ public:
+  AWS_MEDIACONVERT_API S3DestinationAccessControl() = default;
+  AWS_MEDIACONVERT_API S3DestinationAccessControl(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MEDIACONVERT_API S3DestinationAccessControl& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * Optional. Have MediaConvert automatically apply Amazon S3 access control for the
-   * outputs in this output group. When you don't use this setting, S3 automatically
-   * applies the default access control list PRIVATE.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/S3DestinationAccessControl">AWS
-   * API Reference</a></p>
+   * Choose an Amazon S3 canned ACL for MediaConvert to apply to this output.
    */
-  class S3DestinationAccessControl
-  {
-  public:
-    AWS_MEDIACONVERT_API S3DestinationAccessControl() = default;
-    AWS_MEDIACONVERT_API S3DestinationAccessControl(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MEDIACONVERT_API S3DestinationAccessControl& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline S3ObjectCannedAcl GetCannedAcl() const { return m_cannedAcl; }
+  inline bool CannedAclHasBeenSet() const { return m_cannedAclHasBeenSet; }
+  inline void SetCannedAcl(S3ObjectCannedAcl value) {
+    m_cannedAclHasBeenSet = true;
+    m_cannedAcl = value;
+  }
+  inline S3DestinationAccessControl& WithCannedAcl(S3ObjectCannedAcl value) {
+    SetCannedAcl(value);
+    return *this;
+  }
+  ///@}
+ private:
+  S3ObjectCannedAcl m_cannedAcl{S3ObjectCannedAcl::NOT_SET};
+  bool m_cannedAclHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * Choose an Amazon S3 canned ACL for MediaConvert to apply to this output.
-     */
-    inline S3ObjectCannedAcl GetCannedAcl() const { return m_cannedAcl; }
-    inline bool CannedAclHasBeenSet() const { return m_cannedAclHasBeenSet; }
-    inline void SetCannedAcl(S3ObjectCannedAcl value) { m_cannedAclHasBeenSet = true; m_cannedAcl = value; }
-    inline S3DestinationAccessControl& WithCannedAcl(S3ObjectCannedAcl value) { SetCannedAcl(value); return *this;}
-    ///@}
-  private:
-
-    S3ObjectCannedAcl m_cannedAcl{S3ObjectCannedAcl::NOT_SET};
-    bool m_cannedAclHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

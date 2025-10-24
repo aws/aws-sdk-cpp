@@ -10,12 +10,10 @@
 using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils;
 
-Aws::String IndexDocumentsRequest::SerializePayload() const
-{
+Aws::String IndexDocumentsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=IndexDocuments&";
-  if(m_domainNameHasBeenSet)
-  {
+  if (m_domainNameHasBeenSet) {
     ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String IndexDocumentsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  IndexDocumentsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void IndexDocumentsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

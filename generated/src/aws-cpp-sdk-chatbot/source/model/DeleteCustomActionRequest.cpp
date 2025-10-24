@@ -12,19 +12,12 @@ using namespace Aws::chatbot::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteCustomActionRequest::SerializePayload() const
-{
+Aws::String DeleteCustomActionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_customActionArnHasBeenSet)
-  {
-   payload.WithString("CustomActionArn", m_customActionArn);
-
+  if (m_customActionArnHasBeenSet) {
+    payload.WithString("CustomActionArn", m_customActionArn);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

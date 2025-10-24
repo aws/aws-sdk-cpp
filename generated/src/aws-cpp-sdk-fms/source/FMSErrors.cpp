@@ -11,12 +11,9 @@ using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::FMS;
 
-namespace Aws
-{
-namespace FMS
-{
-namespace FMSErrorMapper
-{
+namespace Aws {
+namespace FMS {
+namespace FMSErrorMapper {
 
 static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalErrorException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
@@ -24,34 +21,23 @@ static const int INVALID_TYPE_HASH = HashingUtils::HashString("InvalidTypeExcept
 static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
 static const int INVALID_OPERATION_HASH = HashingUtils::HashString("InvalidOperationException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INTERNAL_ERROR_HASH)
-  {
+  if (hashCode == INTERNAL_ERROR_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FMSErrors::INTERNAL_ERROR), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FMSErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == INVALID_TYPE_HASH)
-  {
+  } else if (hashCode == INVALID_TYPE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FMSErrors::INVALID_TYPE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_INPUT_HASH)
-  {
+  } else if (hashCode == INVALID_INPUT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FMSErrors::INVALID_INPUT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_OPERATION_HASH)
-  {
+  } else if (hashCode == INVALID_OPERATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FMSErrors::INVALID_OPERATION), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace FMSErrorMapper
-} // namespace FMS
-} // namespace Aws
+}  // namespace FMSErrorMapper
+}  // namespace FMS
+}  // namespace Aws

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCampaignsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCampaignsV2 {
+namespace Model {
 
-SuccessfulProfileOutboundRequest::SuccessfulProfileOutboundRequest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SuccessfulProfileOutboundRequest::SuccessfulProfileOutboundRequest(JsonView jsonValue) { *this = jsonValue; }
 
-SuccessfulProfileOutboundRequest& SuccessfulProfileOutboundRequest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("clientToken"))
-  {
+SuccessfulProfileOutboundRequest& SuccessfulProfileOutboundRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("clientToken")) {
     m_clientToken = jsonValue.GetString("clientToken");
     m_clientTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("id"))
-  {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SuccessfulProfileOutboundRequest::Jsonize() const
-{
+JsonValue SuccessfulProfileOutboundRequest::Jsonize() const {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCampaignsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCampaignsV2
+}  // namespace Aws

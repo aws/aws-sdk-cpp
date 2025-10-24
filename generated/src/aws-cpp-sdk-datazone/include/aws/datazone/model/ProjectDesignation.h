@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datazone/DataZone_EXPORTS.h>
 
-namespace Aws
-{
-namespace DataZone
-{
-namespace Model
-{
-  enum class ProjectDesignation
-  {
-    NOT_SET,
-    OWNER,
-    CONTRIBUTOR,
-    PROJECT_CATALOG_STEWARD
-  };
+namespace Aws {
+namespace DataZone {
+namespace Model {
+enum class ProjectDesignation { NOT_SET, OWNER, CONTRIBUTOR, PROJECT_CATALOG_STEWARD };
 
-namespace ProjectDesignationMapper
-{
+namespace ProjectDesignationMapper {
 AWS_DATAZONE_API ProjectDesignation GetProjectDesignationForName(const Aws::String& name);
 
 AWS_DATAZONE_API Aws::String GetNameForProjectDesignation(ProjectDesignation value);
-} // namespace ProjectDesignationMapper
-} // namespace Model
-} // namespace DataZone
-} // namespace Aws
+}  // namespace ProjectDesignationMapper
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

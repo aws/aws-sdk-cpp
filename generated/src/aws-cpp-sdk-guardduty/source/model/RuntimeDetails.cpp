@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/guardduty/model/RuntimeDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/guardduty/model/RuntimeDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GuardDuty
-{
-namespace Model
-{
+namespace Aws {
+namespace GuardDuty {
+namespace Model {
 
-RuntimeDetails::RuntimeDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RuntimeDetails::RuntimeDetails(JsonView jsonValue) { *this = jsonValue; }
 
-RuntimeDetails& RuntimeDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("process"))
-  {
+RuntimeDetails& RuntimeDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("process")) {
     m_process = jsonValue.GetObject("process");
     m_processHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("context"))
-  {
+  if (jsonValue.ValueExists("context")) {
     m_context = jsonValue.GetObject("context");
     m_contextHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RuntimeDetails::Jsonize() const
-{
+JsonValue RuntimeDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_processHasBeenSet)
-  {
-   payload.WithObject("process", m_process.Jsonize());
-
+  if (m_processHasBeenSet) {
+    payload.WithObject("process", m_process.Jsonize());
   }
 
-  if(m_contextHasBeenSet)
-  {
-   payload.WithObject("context", m_context.Jsonize());
-
+  if (m_contextHasBeenSet) {
+    payload.WithObject("context", m_context.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GuardDuty
-} // namespace Aws
+}  // namespace Model
+}  // namespace GuardDuty
+}  // namespace Aws

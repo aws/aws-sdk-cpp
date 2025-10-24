@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 
-namespace Aws
-{
-namespace PartnerCentralSelling
-{
-class PartnerCentralSellingEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace PartnerCentralSelling {
+class PartnerCentralSellingEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace PartnerCentralSelling
-} // namespace Aws
+}  // namespace PartnerCentralSelling
+}  // namespace Aws

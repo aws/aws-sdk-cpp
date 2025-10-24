@@ -11,37 +11,27 @@ using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::Health;
 
-namespace Aws
-{
-namespace Health
-{
-namespace HealthErrorMapper
-{
+namespace Aws {
+namespace Health {
+namespace HealthErrorMapper {
 
 static const int INVALID_PAGINATION_TOKEN_HASH = HashingUtils::HashString("InvalidPaginationToken");
 static const int UNSUPPORTED_LOCALE_HASH = HashingUtils::HashString("UnsupportedLocale");
 static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INVALID_PAGINATION_TOKEN_HASH)
-  {
+  if (hashCode == INVALID_PAGINATION_TOKEN_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(HealthErrors::INVALID_PAGINATION_TOKEN), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == UNSUPPORTED_LOCALE_HASH)
-  {
+  } else if (hashCode == UNSUPPORTED_LOCALE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(HealthErrors::UNSUPPORTED_LOCALE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == CONCURRENT_MODIFICATION_HASH)
-  {
+  } else if (hashCode == CONCURRENT_MODIFICATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(HealthErrors::CONCURRENT_MODIFICATION), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace HealthErrorMapper
-} // namespace Health
-} // namespace Aws
+}  // namespace HealthErrorMapper
+}  // namespace Health
+}  // namespace Aws

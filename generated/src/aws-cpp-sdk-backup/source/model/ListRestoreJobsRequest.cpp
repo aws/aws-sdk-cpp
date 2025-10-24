@@ -4,8 +4,8 @@
  */
 
 #include <aws/backup/model/ListRestoreJobsRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -15,85 +15,67 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String ListRestoreJobsRequest::SerializePayload() const
-{
-  return {};
+Aws::String ListRestoreJobsRequest::SerializePayload() const { return {}; }
+
+void ListRestoreJobsRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_nextTokenHasBeenSet) {
+    ss << m_nextToken;
+    uri.AddQueryStringParameter("nextToken", ss.str());
+    ss.str("");
+  }
+
+  if (m_maxResultsHasBeenSet) {
+    ss << m_maxResults;
+    uri.AddQueryStringParameter("maxResults", ss.str());
+    ss.str("");
+  }
+
+  if (m_byAccountIdHasBeenSet) {
+    ss << m_byAccountId;
+    uri.AddQueryStringParameter("accountId", ss.str());
+    ss.str("");
+  }
+
+  if (m_byResourceTypeHasBeenSet) {
+    ss << m_byResourceType;
+    uri.AddQueryStringParameter("resourceType", ss.str());
+    ss.str("");
+  }
+
+  if (m_byCreatedBeforeHasBeenSet) {
+    ss << m_byCreatedBefore.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
+    uri.AddQueryStringParameter("createdBefore", ss.str());
+    ss.str("");
+  }
+
+  if (m_byCreatedAfterHasBeenSet) {
+    ss << m_byCreatedAfter.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
+    uri.AddQueryStringParameter("createdAfter", ss.str());
+    ss.str("");
+  }
+
+  if (m_byStatusHasBeenSet) {
+    ss << RestoreJobStatusMapper::GetNameForRestoreJobStatus(m_byStatus);
+    uri.AddQueryStringParameter("status", ss.str());
+    ss.str("");
+  }
+
+  if (m_byCompleteBeforeHasBeenSet) {
+    ss << m_byCompleteBefore.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
+    uri.AddQueryStringParameter("completeBefore", ss.str());
+    ss.str("");
+  }
+
+  if (m_byCompleteAfterHasBeenSet) {
+    ss << m_byCompleteAfter.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
+    uri.AddQueryStringParameter("completeAfter", ss.str());
+    ss.str("");
+  }
+
+  if (m_byRestoreTestingPlanArnHasBeenSet) {
+    ss << m_byRestoreTestingPlanArn;
+    uri.AddQueryStringParameter("restoreTestingPlanArn", ss.str());
+    ss.str("");
+  }
 }
-
-void ListRestoreJobsRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_nextTokenHasBeenSet)
-    {
-      ss << m_nextToken;
-      uri.AddQueryStringParameter("nextToken", ss.str());
-      ss.str("");
-    }
-
-    if(m_maxResultsHasBeenSet)
-    {
-      ss << m_maxResults;
-      uri.AddQueryStringParameter("maxResults", ss.str());
-      ss.str("");
-    }
-
-    if(m_byAccountIdHasBeenSet)
-    {
-      ss << m_byAccountId;
-      uri.AddQueryStringParameter("accountId", ss.str());
-      ss.str("");
-    }
-
-    if(m_byResourceTypeHasBeenSet)
-    {
-      ss << m_byResourceType;
-      uri.AddQueryStringParameter("resourceType", ss.str());
-      ss.str("");
-    }
-
-    if(m_byCreatedBeforeHasBeenSet)
-    {
-      ss << m_byCreatedBefore.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
-      uri.AddQueryStringParameter("createdBefore", ss.str());
-      ss.str("");
-    }
-
-    if(m_byCreatedAfterHasBeenSet)
-    {
-      ss << m_byCreatedAfter.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
-      uri.AddQueryStringParameter("createdAfter", ss.str());
-      ss.str("");
-    }
-
-    if(m_byStatusHasBeenSet)
-    {
-      ss << RestoreJobStatusMapper::GetNameForRestoreJobStatus(m_byStatus);
-      uri.AddQueryStringParameter("status", ss.str());
-      ss.str("");
-    }
-
-    if(m_byCompleteBeforeHasBeenSet)
-    {
-      ss << m_byCompleteBefore.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
-      uri.AddQueryStringParameter("completeBefore", ss.str());
-      ss.str("");
-    }
-
-    if(m_byCompleteAfterHasBeenSet)
-    {
-      ss << m_byCompleteAfter.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
-      uri.AddQueryStringParameter("completeAfter", ss.str());
-      ss.str("");
-    }
-
-    if(m_byRestoreTestingPlanArnHasBeenSet)
-    {
-      ss << m_byRestoreTestingPlanArn;
-      uri.AddQueryStringParameter("restoreTestingPlanArn", ss.str());
-      ss.str("");
-    }
-
-}
-
-
-

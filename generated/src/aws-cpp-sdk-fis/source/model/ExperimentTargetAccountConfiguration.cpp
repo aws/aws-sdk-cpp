@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fis/model/ExperimentTargetAccountConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fis/model/ExperimentTargetAccountConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FIS
-{
-namespace Model
-{
+namespace Aws {
+namespace FIS {
+namespace Model {
 
-ExperimentTargetAccountConfiguration::ExperimentTargetAccountConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExperimentTargetAccountConfiguration::ExperimentTargetAccountConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ExperimentTargetAccountConfiguration& ExperimentTargetAccountConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("roleArn"))
-  {
+ExperimentTargetAccountConfiguration& ExperimentTargetAccountConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("roleArn")) {
     m_roleArn = jsonValue.GetString("roleArn");
     m_roleArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("accountId"))
-  {
+  if (jsonValue.ValueExists("accountId")) {
     m_accountId = jsonValue.GetString("accountId");
     m_accountIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExperimentTargetAccountConfiguration::Jsonize() const
-{
+JsonValue ExperimentTargetAccountConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("roleArn", m_roleArn);
-
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("roleArn", m_roleArn);
   }
 
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("accountId", m_accountId);
-
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("accountId", m_accountId);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FIS
-} // namespace Aws
+}  // namespace Model
+}  // namespace FIS
+}  // namespace Aws

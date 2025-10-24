@@ -11,70 +11,55 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Comprehend {
+namespace Model {
 
-DocumentReaderConfig::DocumentReaderConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DocumentReaderConfig::DocumentReaderConfig(JsonView jsonValue) { *this = jsonValue; }
 
-DocumentReaderConfig& DocumentReaderConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DocumentReadAction"))
-  {
+DocumentReaderConfig& DocumentReaderConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DocumentReadAction")) {
     m_documentReadAction = DocumentReadActionMapper::GetDocumentReadActionForName(jsonValue.GetString("DocumentReadAction"));
     m_documentReadActionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DocumentReadMode"))
-  {
+  if (jsonValue.ValueExists("DocumentReadMode")) {
     m_documentReadMode = DocumentReadModeMapper::GetDocumentReadModeForName(jsonValue.GetString("DocumentReadMode"));
     m_documentReadModeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FeatureTypes"))
-  {
+  if (jsonValue.ValueExists("FeatureTypes")) {
     Aws::Utils::Array<JsonView> featureTypesJsonList = jsonValue.GetArray("FeatureTypes");
-    for(unsigned featureTypesIndex = 0; featureTypesIndex < featureTypesJsonList.GetLength(); ++featureTypesIndex)
-    {
-      m_featureTypes.push_back(DocumentReadFeatureTypesMapper::GetDocumentReadFeatureTypesForName(featureTypesJsonList[featureTypesIndex].AsString()));
+    for (unsigned featureTypesIndex = 0; featureTypesIndex < featureTypesJsonList.GetLength(); ++featureTypesIndex) {
+      m_featureTypes.push_back(
+          DocumentReadFeatureTypesMapper::GetDocumentReadFeatureTypesForName(featureTypesJsonList[featureTypesIndex].AsString()));
     }
     m_featureTypesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DocumentReaderConfig::Jsonize() const
-{
+JsonValue DocumentReaderConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_documentReadActionHasBeenSet)
-  {
-   payload.WithString("DocumentReadAction", DocumentReadActionMapper::GetNameForDocumentReadAction(m_documentReadAction));
+  if (m_documentReadActionHasBeenSet) {
+    payload.WithString("DocumentReadAction", DocumentReadActionMapper::GetNameForDocumentReadAction(m_documentReadAction));
   }
 
-  if(m_documentReadModeHasBeenSet)
-  {
-   payload.WithString("DocumentReadMode", DocumentReadModeMapper::GetNameForDocumentReadMode(m_documentReadMode));
+  if (m_documentReadModeHasBeenSet) {
+    payload.WithString("DocumentReadMode", DocumentReadModeMapper::GetNameForDocumentReadMode(m_documentReadMode));
   }
 
-  if(m_featureTypesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> featureTypesJsonList(m_featureTypes.size());
-   for(unsigned featureTypesIndex = 0; featureTypesIndex < featureTypesJsonList.GetLength(); ++featureTypesIndex)
-   {
-     featureTypesJsonList[featureTypesIndex].AsString(DocumentReadFeatureTypesMapper::GetNameForDocumentReadFeatureTypes(m_featureTypes[featureTypesIndex]));
-   }
-   payload.WithArray("FeatureTypes", std::move(featureTypesJsonList));
-
+  if (m_featureTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> featureTypesJsonList(m_featureTypes.size());
+    for (unsigned featureTypesIndex = 0; featureTypesIndex < featureTypesJsonList.GetLength(); ++featureTypesIndex) {
+      featureTypesJsonList[featureTypesIndex].AsString(
+          DocumentReadFeatureTypesMapper::GetNameForDocumentReadFeatureTypes(m_featureTypes[featureTypesIndex]));
+    }
+    payload.WithArray("FeatureTypes", std::move(featureTypesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

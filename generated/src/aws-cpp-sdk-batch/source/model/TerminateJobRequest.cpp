@@ -12,25 +12,16 @@ using namespace Aws::Batch::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String TerminateJobRequest::SerializePayload() const
-{
+Aws::String TerminateJobRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_jobIdHasBeenSet)
-  {
-   payload.WithString("jobId", m_jobId);
-
+  if (m_jobIdHasBeenSet) {
+    payload.WithString("jobId", m_jobId);
   }
 
-  if(m_reasonHasBeenSet)
-  {
-   payload.WithString("reason", m_reason);
-
+  if (m_reasonHasBeenSet) {
+    payload.WithString("reason", m_reason);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

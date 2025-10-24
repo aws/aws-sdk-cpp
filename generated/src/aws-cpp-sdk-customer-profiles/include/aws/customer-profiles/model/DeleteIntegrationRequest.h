@@ -4,66 +4,73 @@
  */
 
 #pragma once
-#include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
-#include <aws/customer-profiles/CustomerProfilesRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/customer-profiles/CustomerProfilesRequest.h>
+#include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace CustomerProfiles
-{
-namespace Model
-{
+namespace Aws {
+namespace CustomerProfiles {
+namespace Model {
 
+/**
+ */
+class DeleteIntegrationRequest : public CustomerProfilesRequest {
+ public:
+  AWS_CUSTOMERPROFILES_API DeleteIntegrationRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeleteIntegration"; }
+
+  AWS_CUSTOMERPROFILES_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
+   * <p>The unique name of the domain.</p>
    */
-  class DeleteIntegrationRequest : public CustomerProfilesRequest
-  {
-  public:
-    AWS_CUSTOMERPROFILES_API DeleteIntegrationRequest() = default;
+  inline const Aws::String& GetDomainName() const { return m_domainName; }
+  inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+  template <typename DomainNameT = Aws::String>
+  void SetDomainName(DomainNameT&& value) {
+    m_domainNameHasBeenSet = true;
+    m_domainName = std::forward<DomainNameT>(value);
+  }
+  template <typename DomainNameT = Aws::String>
+  DeleteIntegrationRequest& WithDomainName(DomainNameT&& value) {
+    SetDomainName(std::forward<DomainNameT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DeleteIntegration"; }
+  ///@{
+  /**
+   * <p>The URI of the S3 bucket or any other type of data source.</p>
+   */
+  inline const Aws::String& GetUri() const { return m_uri; }
+  inline bool UriHasBeenSet() const { return m_uriHasBeenSet; }
+  template <typename UriT = Aws::String>
+  void SetUri(UriT&& value) {
+    m_uriHasBeenSet = true;
+    m_uri = std::forward<UriT>(value);
+  }
+  template <typename UriT = Aws::String>
+  DeleteIntegrationRequest& WithUri(UriT&& value) {
+    SetUri(std::forward<UriT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_domainName;
+  bool m_domainNameHasBeenSet = false;
 
-    AWS_CUSTOMERPROFILES_API Aws::String SerializePayload() const override;
+  Aws::String m_uri;
+  bool m_uriHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>The unique name of the domain.</p>
-     */
-    inline const Aws::String& GetDomainName() const { return m_domainName; }
-    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    template<typename DomainNameT = Aws::String>
-    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
-    template<typename DomainNameT = Aws::String>
-    DeleteIntegrationRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The URI of the S3 bucket or any other type of data source.</p>
-     */
-    inline const Aws::String& GetUri() const { return m_uri; }
-    inline bool UriHasBeenSet() const { return m_uriHasBeenSet; }
-    template<typename UriT = Aws::String>
-    void SetUri(UriT&& value) { m_uriHasBeenSet = true; m_uri = std::forward<UriT>(value); }
-    template<typename UriT = Aws::String>
-    DeleteIntegrationRequest& WithUri(UriT&& value) { SetUri(std::forward<UriT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_domainName;
-    bool m_domainNameHasBeenSet = false;
-
-    Aws::String m_uri;
-    bool m_uriHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace CustomerProfiles
-} // namespace Aws
+}  // namespace Model
+}  // namespace CustomerProfiles
+}  // namespace Aws

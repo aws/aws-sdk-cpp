@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/kinesis-video-archived-media/KinesisVideoArchivedMedia_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kinesis-video-archived-media/KinesisVideoArchivedMedia_EXPORTS.h>
 
-namespace Aws
-{
-namespace KinesisVideoArchivedMedia
-{
-namespace Model
-{
-  enum class HLSPlaybackMode
-  {
-    NOT_SET,
-    LIVE,
-    LIVE_REPLAY,
-    ON_DEMAND
-  };
+namespace Aws {
+namespace KinesisVideoArchivedMedia {
+namespace Model {
+enum class HLSPlaybackMode { NOT_SET, LIVE, LIVE_REPLAY, ON_DEMAND };
 
-namespace HLSPlaybackModeMapper
-{
+namespace HLSPlaybackModeMapper {
 AWS_KINESISVIDEOARCHIVEDMEDIA_API HLSPlaybackMode GetHLSPlaybackModeForName(const Aws::String& name);
 
 AWS_KINESISVIDEOARCHIVEDMEDIA_API Aws::String GetNameForHLSPlaybackMode(HLSPlaybackMode value);
-} // namespace HLSPlaybackModeMapper
-} // namespace Model
-} // namespace KinesisVideoArchivedMedia
-} // namespace Aws
+}  // namespace HLSPlaybackModeMapper
+}  // namespace Model
+}  // namespace KinesisVideoArchivedMedia
+}  // namespace Aws

@@ -5,12 +5,8 @@
 
 #include <aws/partnercentral-selling/PartnerCentralSellingEndpointProvider.h>
 
-namespace Aws
-{
-namespace PartnerCentralSelling
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace PartnerCentralSelling
-} // namespace Aws
+namespace Aws {
+namespace PartnerCentralSelling {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace PartnerCentralSelling
+}  // namespace Aws

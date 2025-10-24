@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/license-manager-linux-subscriptions/LicenseManagerLinuxSubscriptions_EXPORTS.h>
 
-namespace Aws
-{
-namespace LicenseManagerLinuxSubscriptions
-{
-class LicenseManagerLinuxSubscriptionsEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace LicenseManagerLinuxSubscriptions {
+class LicenseManagerLinuxSubscriptionsEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace LicenseManagerLinuxSubscriptions
-} // namespace Aws
+}  // namespace LicenseManagerLinuxSubscriptions
+}  // namespace Aws

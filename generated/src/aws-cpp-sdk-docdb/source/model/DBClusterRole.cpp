@@ -3,43 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/docdb/model/DBClusterRole.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/docdb/model/DBClusterRole.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DocDB
-{
-namespace Model
-{
+namespace Aws {
+namespace DocDB {
+namespace Model {
 
-DBClusterRole::DBClusterRole(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+DBClusterRole::DBClusterRole(const XmlNode& xmlNode) { *this = xmlNode; }
 
-DBClusterRole& DBClusterRole::operator =(const XmlNode& xmlNode)
-{
+DBClusterRole& DBClusterRole::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode roleArnNode = resultNode.FirstChild("RoleArn");
-    if(!roleArnNode.IsNull())
-    {
+    if (!roleArnNode.IsNull()) {
       m_roleArn = Aws::Utils::Xml::DecodeEscapedXmlText(roleArnNode.GetText());
       m_roleArnHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    if(!statusNode.IsNull())
-    {
+    if (!statusNode.IsNull()) {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
     }
@@ -48,32 +38,25 @@ DBClusterRole& DBClusterRole::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void DBClusterRole::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_roleArnHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".RoleArn=" << StringUtils::URLEncode(m_roleArn.c_str()) << "&";
+void DBClusterRole::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_roleArnHasBeenSet) {
+    oStream << location << index << locationValue << ".RoleArn=" << StringUtils::URLEncode(m_roleArn.c_str()) << "&";
   }
 
-  if(m_statusHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
-  }
-
-}
-
-void DBClusterRole::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_roleArnHasBeenSet)
-  {
-      oStream << location << ".RoleArn=" << StringUtils::URLEncode(m_roleArn.c_str()) << "&";
-  }
-  if(m_statusHasBeenSet)
-  {
-      oStream << location << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
+  if (m_statusHasBeenSet) {
+    oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace DocDB
-} // namespace Aws
+void DBClusterRole::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_roleArnHasBeenSet) {
+    oStream << location << ".RoleArn=" << StringUtils::URLEncode(m_roleArn.c_str()) << "&";
+  }
+  if (m_statusHasBeenSet) {
+    oStream << location << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace DocDB
+}  // namespace Aws

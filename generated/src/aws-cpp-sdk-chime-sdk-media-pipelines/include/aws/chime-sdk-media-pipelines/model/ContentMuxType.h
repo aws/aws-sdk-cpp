@@ -7,24 +7,16 @@
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelines_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
-  enum class ContentMuxType
-  {
-    NOT_SET,
-    ContentOnly
-  };
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
+enum class ContentMuxType { NOT_SET, ContentOnly };
 
-namespace ContentMuxTypeMapper
-{
+namespace ContentMuxTypeMapper {
 AWS_CHIMESDKMEDIAPIPELINES_API ContentMuxType GetContentMuxTypeForName(const Aws::String& name);
 
 AWS_CHIMESDKMEDIAPIPELINES_API Aws::String GetNameForContentMuxType(ContentMuxType value);
-} // namespace ContentMuxTypeMapper
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace ContentMuxTypeMapper
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

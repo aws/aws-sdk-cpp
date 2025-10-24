@@ -7,25 +7,16 @@
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ACMPCA
-{
-namespace Model
-{
-  enum class CertificateAuthorityUsageMode
-  {
-    NOT_SET,
-    GENERAL_PURPOSE,
-    SHORT_LIVED_CERTIFICATE
-  };
+namespace Aws {
+namespace ACMPCA {
+namespace Model {
+enum class CertificateAuthorityUsageMode { NOT_SET, GENERAL_PURPOSE, SHORT_LIVED_CERTIFICATE };
 
-namespace CertificateAuthorityUsageModeMapper
-{
+namespace CertificateAuthorityUsageModeMapper {
 AWS_ACMPCA_API CertificateAuthorityUsageMode GetCertificateAuthorityUsageModeForName(const Aws::String& name);
 
 AWS_ACMPCA_API Aws::String GetNameForCertificateAuthorityUsageMode(CertificateAuthorityUsageMode value);
-} // namespace CertificateAuthorityUsageModeMapper
-} // namespace Model
-} // namespace ACMPCA
-} // namespace Aws
+}  // namespace CertificateAuthorityUsageModeMapper
+}  // namespace Model
+}  // namespace ACMPCA
+}  // namespace Aws

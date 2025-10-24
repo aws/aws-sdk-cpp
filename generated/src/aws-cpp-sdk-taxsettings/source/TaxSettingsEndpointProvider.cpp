@@ -5,12 +5,8 @@
 
 #include <aws/taxsettings/TaxSettingsEndpointProvider.h>
 
-namespace Aws
-{
-namespace TaxSettings
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace TaxSettings
-} // namespace Aws
+namespace Aws {
+namespace TaxSettings {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace TaxSettings
+}  // namespace Aws

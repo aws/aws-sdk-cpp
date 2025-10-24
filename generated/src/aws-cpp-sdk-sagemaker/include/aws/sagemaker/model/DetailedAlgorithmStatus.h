@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class DetailedAlgorithmStatus
-  {
-    NOT_SET,
-    NotStarted,
-    InProgress,
-    Completed,
-    Failed
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class DetailedAlgorithmStatus { NOT_SET, NotStarted, InProgress, Completed, Failed };
 
-namespace DetailedAlgorithmStatusMapper
-{
+namespace DetailedAlgorithmStatusMapper {
 AWS_SAGEMAKER_API DetailedAlgorithmStatus GetDetailedAlgorithmStatusForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForDetailedAlgorithmStatus(DetailedAlgorithmStatus value);
-} // namespace DetailedAlgorithmStatusMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace DetailedAlgorithmStatusMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

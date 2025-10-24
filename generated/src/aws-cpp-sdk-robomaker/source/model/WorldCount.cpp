@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/robomaker/model/WorldCount.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/robomaker/model/WorldCount.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace RoboMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace RoboMaker {
+namespace Model {
 
-WorldCount::WorldCount(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+WorldCount::WorldCount(JsonView jsonValue) { *this = jsonValue; }
 
-WorldCount& WorldCount::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("floorplanCount"))
-  {
+WorldCount& WorldCount::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("floorplanCount")) {
     m_floorplanCount = jsonValue.GetInteger("floorplanCount");
     m_floorplanCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("interiorCountPerFloorplan"))
-  {
+  if (jsonValue.ValueExists("interiorCountPerFloorplan")) {
     m_interiorCountPerFloorplan = jsonValue.GetInteger("interiorCountPerFloorplan");
     m_interiorCountPerFloorplanHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue WorldCount::Jsonize() const
-{
+JsonValue WorldCount::Jsonize() const {
   JsonValue payload;
 
-  if(m_floorplanCountHasBeenSet)
-  {
-   payload.WithInteger("floorplanCount", m_floorplanCount);
-
+  if (m_floorplanCountHasBeenSet) {
+    payload.WithInteger("floorplanCount", m_floorplanCount);
   }
 
-  if(m_interiorCountPerFloorplanHasBeenSet)
-  {
-   payload.WithInteger("interiorCountPerFloorplan", m_interiorCountPerFloorplan);
-
+  if (m_interiorCountPerFloorplanHasBeenSet) {
+    payload.WithInteger("interiorCountPerFloorplan", m_interiorCountPerFloorplan);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace RoboMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace RoboMaker
+}  // namespace Aws

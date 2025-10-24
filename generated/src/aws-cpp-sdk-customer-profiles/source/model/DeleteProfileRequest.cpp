@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/customer-profiles/model/DeleteProfileRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/customer-profiles/model/DeleteProfileRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::CustomerProfiles::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteProfileRequest::SerializePayload() const
-{
+Aws::String DeleteProfileRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_profileIdHasBeenSet)
-  {
-   payload.WithString("ProfileId", m_profileId);
-
+  if (m_profileIdHasBeenSet) {
+    payload.WithString("ProfileId", m_profileId);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

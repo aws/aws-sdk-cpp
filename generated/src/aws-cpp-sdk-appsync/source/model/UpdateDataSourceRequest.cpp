@@ -12,77 +12,52 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateDataSourceRequest::SerializePayload() const
-{
+Aws::String UpdateDataSourceRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", DataSourceTypeMapper::GetNameForDataSourceType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", DataSourceTypeMapper::GetNameForDataSourceType(m_type));
   }
 
-  if(m_serviceRoleArnHasBeenSet)
-  {
-   payload.WithString("serviceRoleArn", m_serviceRoleArn);
-
+  if (m_serviceRoleArnHasBeenSet) {
+    payload.WithString("serviceRoleArn", m_serviceRoleArn);
   }
 
-  if(m_dynamodbConfigHasBeenSet)
-  {
-   payload.WithObject("dynamodbConfig", m_dynamodbConfig.Jsonize());
-
+  if (m_dynamodbConfigHasBeenSet) {
+    payload.WithObject("dynamodbConfig", m_dynamodbConfig.Jsonize());
   }
 
-  if(m_lambdaConfigHasBeenSet)
-  {
-   payload.WithObject("lambdaConfig", m_lambdaConfig.Jsonize());
-
+  if (m_lambdaConfigHasBeenSet) {
+    payload.WithObject("lambdaConfig", m_lambdaConfig.Jsonize());
   }
 
-  if(m_elasticsearchConfigHasBeenSet)
-  {
-   payload.WithObject("elasticsearchConfig", m_elasticsearchConfig.Jsonize());
-
+  if (m_elasticsearchConfigHasBeenSet) {
+    payload.WithObject("elasticsearchConfig", m_elasticsearchConfig.Jsonize());
   }
 
-  if(m_openSearchServiceConfigHasBeenSet)
-  {
-   payload.WithObject("openSearchServiceConfig", m_openSearchServiceConfig.Jsonize());
-
+  if (m_openSearchServiceConfigHasBeenSet) {
+    payload.WithObject("openSearchServiceConfig", m_openSearchServiceConfig.Jsonize());
   }
 
-  if(m_httpConfigHasBeenSet)
-  {
-   payload.WithObject("httpConfig", m_httpConfig.Jsonize());
-
+  if (m_httpConfigHasBeenSet) {
+    payload.WithObject("httpConfig", m_httpConfig.Jsonize());
   }
 
-  if(m_relationalDatabaseConfigHasBeenSet)
-  {
-   payload.WithObject("relationalDatabaseConfig", m_relationalDatabaseConfig.Jsonize());
-
+  if (m_relationalDatabaseConfigHasBeenSet) {
+    payload.WithObject("relationalDatabaseConfig", m_relationalDatabaseConfig.Jsonize());
   }
 
-  if(m_eventBridgeConfigHasBeenSet)
-  {
-   payload.WithObject("eventBridgeConfig", m_eventBridgeConfig.Jsonize());
-
+  if (m_eventBridgeConfigHasBeenSet) {
+    payload.WithObject("eventBridgeConfig", m_eventBridgeConfig.Jsonize());
   }
 
-  if(m_metricsConfigHasBeenSet)
-  {
-   payload.WithString("metricsConfig", DataSourceLevelMetricsConfigMapper::GetNameForDataSourceLevelMetricsConfig(m_metricsConfig));
+  if (m_metricsConfigHasBeenSet) {
+    payload.WithString("metricsConfig", DataSourceLevelMetricsConfigMapper::GetNameForDataSourceLevelMetricsConfig(m_metricsConfig));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -12,27 +12,18 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetQueryRuntimeStatisticsRequest::SerializePayload() const
-{
+Aws::String GetQueryRuntimeStatisticsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_queryExecutionIdHasBeenSet)
-  {
-   payload.WithString("QueryExecutionId", m_queryExecutionId);
-
+  if (m_queryExecutionIdHasBeenSet) {
+    payload.WithString("QueryExecutionId", m_queryExecutionId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetQueryRuntimeStatisticsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetQueryRuntimeStatisticsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonAthena.GetQueryRuntimeStatistics"));
   return headers;
-
 }
-
-
-
-

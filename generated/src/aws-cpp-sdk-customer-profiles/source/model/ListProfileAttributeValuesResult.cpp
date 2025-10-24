@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/customer-profiles/model/ListProfileAttributeValuesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/customer-profiles/model/ListProfileAttributeValuesResult.h>
 
 #include <utility>
 
@@ -17,29 +17,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListProfileAttributeValuesResult::ListProfileAttributeValuesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListProfileAttributeValuesResult::ListProfileAttributeValuesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListProfileAttributeValuesResult& ListProfileAttributeValuesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListProfileAttributeValuesResult& ListProfileAttributeValuesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("DomainName"))
-  {
+  if (jsonValue.ValueExists("DomainName")) {
     m_domainName = jsonValue.GetString("DomainName");
     m_domainNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AttributeName"))
-  {
+  if (jsonValue.ValueExists("AttributeName")) {
     m_attributeName = jsonValue.GetString("AttributeName");
     m_attributeNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Items"))
-  {
+  if (jsonValue.ValueExists("Items")) {
     Aws::Utils::Array<JsonView> itemsJsonList = jsonValue.GetArray("Items");
-    for(unsigned itemsIndex = 0; itemsIndex < itemsJsonList.GetLength(); ++itemsIndex)
-    {
+    for (unsigned itemsIndex = 0; itemsIndex < itemsJsonList.GetLength(); ++itemsIndex) {
       m_items.push_back(itemsJsonList[itemsIndex].AsObject());
     }
     m_itemsHasBeenSet = true;
@@ -47,12 +39,10 @@ ListProfileAttributeValuesResult& ListProfileAttributeValuesResult::operator =(c
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   m_statusCode = static_cast<int>(result.GetResponseCode());
   m_statusCodeHasBeenSet = true;

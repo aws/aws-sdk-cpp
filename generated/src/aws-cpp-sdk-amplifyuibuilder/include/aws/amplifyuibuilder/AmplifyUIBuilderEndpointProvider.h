@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/amplifyuibuilder/AmplifyUIBuilderEndpointRules.h>
 #include <aws/amplifyuibuilder/AmplifyUIBuilder_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -11,18 +12,12 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
-#include <aws/amplifyuibuilder/AmplifyUIBuilderEndpointRules.h>
-
-
-namespace Aws
-{
-namespace AmplifyUIBuilder
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using AmplifyUIBuilderClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -38,24 +33,22 @@ using AmplifyUIBuilderEndpointProviderBase =
     EndpointProviderBase<AmplifyUIBuilderClientConfiguration, AmplifyUIBuilderBuiltInParameters, AmplifyUIBuilderClientContextParameters>;
 
 using AmplifyUIBuilderDefaultEpProviderBase =
-    DefaultEndpointProvider<AmplifyUIBuilderClientConfiguration, AmplifyUIBuilderBuiltInParameters, AmplifyUIBuilderClientContextParameters>;
+    DefaultEndpointProvider<AmplifyUIBuilderClientConfiguration, AmplifyUIBuilderBuiltInParameters,
+                            AmplifyUIBuilderClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_AMPLIFYUIBUILDER_API AmplifyUIBuilderEndpointProvider : public AmplifyUIBuilderDefaultEpProviderBase
-{
-public:
-    using AmplifyUIBuilderResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_AMPLIFYUIBUILDER_API AmplifyUIBuilderEndpointProvider : public AmplifyUIBuilderDefaultEpProviderBase {
+ public:
+  using AmplifyUIBuilderResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    AmplifyUIBuilderEndpointProvider()
-      : AmplifyUIBuilderDefaultEpProviderBase(Aws::AmplifyUIBuilder::AmplifyUIBuilderEndpointRules::GetRulesBlob(), Aws::AmplifyUIBuilder::AmplifyUIBuilderEndpointRules::RulesBlobSize)
-    {}
+  AmplifyUIBuilderEndpointProvider()
+      : AmplifyUIBuilderDefaultEpProviderBase(Aws::AmplifyUIBuilder::AmplifyUIBuilderEndpointRules::GetRulesBlob(),
+                                              Aws::AmplifyUIBuilder::AmplifyUIBuilderEndpointRules::RulesBlobSize) {}
 
-    ~AmplifyUIBuilderEndpointProvider()
-    {
-    }
+  ~AmplifyUIBuilderEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

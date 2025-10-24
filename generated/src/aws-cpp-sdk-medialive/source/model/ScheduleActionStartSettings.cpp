@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/ScheduleActionStartSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/ScheduleActionStartSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-ScheduleActionStartSettings::ScheduleActionStartSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ScheduleActionStartSettings::ScheduleActionStartSettings(JsonView jsonValue) { *this = jsonValue; }
 
-ScheduleActionStartSettings& ScheduleActionStartSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("fixedModeScheduleActionStartSettings"))
-  {
+ScheduleActionStartSettings& ScheduleActionStartSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("fixedModeScheduleActionStartSettings")) {
     m_fixedModeScheduleActionStartSettings = jsonValue.GetObject("fixedModeScheduleActionStartSettings");
     m_fixedModeScheduleActionStartSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("followModeScheduleActionStartSettings"))
-  {
+  if (jsonValue.ValueExists("followModeScheduleActionStartSettings")) {
     m_followModeScheduleActionStartSettings = jsonValue.GetObject("followModeScheduleActionStartSettings");
     m_followModeScheduleActionStartSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("immediateModeScheduleActionStartSettings"))
-  {
+  if (jsonValue.ValueExists("immediateModeScheduleActionStartSettings")) {
     m_immediateModeScheduleActionStartSettings = jsonValue.GetObject("immediateModeScheduleActionStartSettings");
     m_immediateModeScheduleActionStartSettingsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ScheduleActionStartSettings::Jsonize() const
-{
+JsonValue ScheduleActionStartSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_fixedModeScheduleActionStartSettingsHasBeenSet)
-  {
-   payload.WithObject("fixedModeScheduleActionStartSettings", m_fixedModeScheduleActionStartSettings.Jsonize());
-
+  if (m_fixedModeScheduleActionStartSettingsHasBeenSet) {
+    payload.WithObject("fixedModeScheduleActionStartSettings", m_fixedModeScheduleActionStartSettings.Jsonize());
   }
 
-  if(m_followModeScheduleActionStartSettingsHasBeenSet)
-  {
-   payload.WithObject("followModeScheduleActionStartSettings", m_followModeScheduleActionStartSettings.Jsonize());
-
+  if (m_followModeScheduleActionStartSettingsHasBeenSet) {
+    payload.WithObject("followModeScheduleActionStartSettings", m_followModeScheduleActionStartSettings.Jsonize());
   }
 
-  if(m_immediateModeScheduleActionStartSettingsHasBeenSet)
-  {
-   payload.WithObject("immediateModeScheduleActionStartSettings", m_immediateModeScheduleActionStartSettings.Jsonize());
-
+  if (m_immediateModeScheduleActionStartSettingsHasBeenSet) {
+    payload.WithObject("immediateModeScheduleActionStartSettings", m_immediateModeScheduleActionStartSettings.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

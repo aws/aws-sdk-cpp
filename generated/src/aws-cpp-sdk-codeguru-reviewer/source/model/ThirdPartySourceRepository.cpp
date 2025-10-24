@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeGuruReviewer
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeGuruReviewer {
+namespace Model {
 
-ThirdPartySourceRepository::ThirdPartySourceRepository(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ThirdPartySourceRepository::ThirdPartySourceRepository(JsonView jsonValue) { *this = jsonValue; }
 
-ThirdPartySourceRepository& ThirdPartySourceRepository::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+ThirdPartySourceRepository& ThirdPartySourceRepository::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ConnectionArn"))
-  {
+  if (jsonValue.ValueExists("ConnectionArn")) {
     m_connectionArn = jsonValue.GetString("ConnectionArn");
     m_connectionArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Owner"))
-  {
+  if (jsonValue.ValueExists("Owner")) {
     m_owner = jsonValue.GetString("Owner");
     m_ownerHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ThirdPartySourceRepository::Jsonize() const
-{
+JsonValue ThirdPartySourceRepository::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_connectionArnHasBeenSet)
-  {
-   payload.WithString("ConnectionArn", m_connectionArn);
-
+  if (m_connectionArnHasBeenSet) {
+    payload.WithString("ConnectionArn", m_connectionArn);
   }
 
-  if(m_ownerHasBeenSet)
-  {
-   payload.WithString("Owner", m_owner);
-
+  if (m_ownerHasBeenSet) {
+    payload.WithString("Owner", m_owner);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeGuruReviewer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeGuruReviewer
+}  // namespace Aws

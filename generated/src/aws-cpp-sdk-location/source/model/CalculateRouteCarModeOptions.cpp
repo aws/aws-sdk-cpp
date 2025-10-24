@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/location/model/CalculateRouteCarModeOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/location/model/CalculateRouteCarModeOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LocationService
-{
-namespace Model
-{
+namespace Aws {
+namespace LocationService {
+namespace Model {
 
-CalculateRouteCarModeOptions::CalculateRouteCarModeOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CalculateRouteCarModeOptions::CalculateRouteCarModeOptions(JsonView jsonValue) { *this = jsonValue; }
 
-CalculateRouteCarModeOptions& CalculateRouteCarModeOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AvoidFerries"))
-  {
+CalculateRouteCarModeOptions& CalculateRouteCarModeOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AvoidFerries")) {
     m_avoidFerries = jsonValue.GetBool("AvoidFerries");
     m_avoidFerriesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AvoidTolls"))
-  {
+  if (jsonValue.ValueExists("AvoidTolls")) {
     m_avoidTolls = jsonValue.GetBool("AvoidTolls");
     m_avoidTollsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CalculateRouteCarModeOptions::Jsonize() const
-{
+JsonValue CalculateRouteCarModeOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_avoidFerriesHasBeenSet)
-  {
-   payload.WithBool("AvoidFerries", m_avoidFerries);
-
+  if (m_avoidFerriesHasBeenSet) {
+    payload.WithBool("AvoidFerries", m_avoidFerries);
   }
 
-  if(m_avoidTollsHasBeenSet)
-  {
-   payload.WithBool("AvoidTolls", m_avoidTolls);
-
+  if (m_avoidTollsHasBeenSet) {
+    payload.WithBool("AvoidTolls", m_avoidTolls);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LocationService
-} // namespace Aws
+}  // namespace Model
+}  // namespace LocationService
+}  // namespace Aws

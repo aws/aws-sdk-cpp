@@ -5,12 +5,8 @@
 
 #include <aws/greengrassv2/GreengrassV2EndpointProvider.h>
 
-namespace Aws
-{
-namespace GreengrassV2
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace GreengrassV2
-} // namespace Aws
+namespace Aws {
+namespace GreengrassV2 {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace GreengrassV2
+}  // namespace Aws

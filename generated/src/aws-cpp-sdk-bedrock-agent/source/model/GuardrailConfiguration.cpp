@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-GuardrailConfiguration::GuardrailConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GuardrailConfiguration::GuardrailConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-GuardrailConfiguration& GuardrailConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("guardrailIdentifier"))
-  {
+GuardrailConfiguration& GuardrailConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("guardrailIdentifier")) {
     m_guardrailIdentifier = jsonValue.GetString("guardrailIdentifier");
     m_guardrailIdentifierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("guardrailVersion"))
-  {
+  if (jsonValue.ValueExists("guardrailVersion")) {
     m_guardrailVersion = jsonValue.GetString("guardrailVersion");
     m_guardrailVersionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GuardrailConfiguration::Jsonize() const
-{
+JsonValue GuardrailConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_guardrailIdentifierHasBeenSet)
-  {
-   payload.WithString("guardrailIdentifier", m_guardrailIdentifier);
-
+  if (m_guardrailIdentifierHasBeenSet) {
+    payload.WithString("guardrailIdentifier", m_guardrailIdentifier);
   }
 
-  if(m_guardrailVersionHasBeenSet)
-  {
-   payload.WithString("guardrailVersion", m_guardrailVersion);
-
+  if (m_guardrailVersionHasBeenSet) {
+    payload.WithString("guardrailVersion", m_guardrailVersion);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

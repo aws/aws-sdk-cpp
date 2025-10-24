@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/es/ElasticsearchService_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElasticsearchService
-{
-namespace Model
-{
-  enum class VpcEndpointErrorCode
-  {
-    NOT_SET,
-    ENDPOINT_NOT_FOUND,
-    SERVER_ERROR
-  };
+namespace Aws {
+namespace ElasticsearchService {
+namespace Model {
+enum class VpcEndpointErrorCode { NOT_SET, ENDPOINT_NOT_FOUND, SERVER_ERROR };
 
-namespace VpcEndpointErrorCodeMapper
-{
+namespace VpcEndpointErrorCodeMapper {
 AWS_ELASTICSEARCHSERVICE_API VpcEndpointErrorCode GetVpcEndpointErrorCodeForName(const Aws::String& name);
 
 AWS_ELASTICSEARCHSERVICE_API Aws::String GetNameForVpcEndpointErrorCode(VpcEndpointErrorCode value);
-} // namespace VpcEndpointErrorCodeMapper
-} // namespace Model
-} // namespace ElasticsearchService
-} // namespace Aws
+}  // namespace VpcEndpointErrorCodeMapper
+}  // namespace Model
+}  // namespace ElasticsearchService
+}  // namespace Aws

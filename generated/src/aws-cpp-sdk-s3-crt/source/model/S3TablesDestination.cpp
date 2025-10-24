@@ -3,43 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3-crt/model/S3TablesDestination.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3-crt/model/S3TablesDestination.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Crt
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Crt {
+namespace Model {
 
-S3TablesDestination::S3TablesDestination(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+S3TablesDestination::S3TablesDestination(const XmlNode& xmlNode) { *this = xmlNode; }
 
-S3TablesDestination& S3TablesDestination::operator =(const XmlNode& xmlNode)
-{
+S3TablesDestination& S3TablesDestination::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode tableBucketArnNode = resultNode.FirstChild("TableBucketArn");
-    if(!tableBucketArnNode.IsNull())
-    {
+    if (!tableBucketArnNode.IsNull()) {
       m_tableBucketArn = Aws::Utils::Xml::DecodeEscapedXmlText(tableBucketArnNode.GetText());
       m_tableBucketArnHasBeenSet = true;
     }
     XmlNode tableNameNode = resultNode.FirstChild("TableName");
-    if(!tableNameNode.IsNull())
-    {
+    if (!tableNameNode.IsNull()) {
       m_tableName = Aws::Utils::Xml::DecodeEscapedXmlText(tableNameNode.GetText());
       m_tableNameHasBeenSet = true;
     }
@@ -48,23 +38,19 @@ S3TablesDestination& S3TablesDestination::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void S3TablesDestination::AddToNode(XmlNode& parentNode) const
-{
+void S3TablesDestination::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_tableBucketArnHasBeenSet)
-  {
-   XmlNode tableBucketArnNode = parentNode.CreateChildElement("TableBucketArn");
-   tableBucketArnNode.SetText(m_tableBucketArn);
+  if (m_tableBucketArnHasBeenSet) {
+    XmlNode tableBucketArnNode = parentNode.CreateChildElement("TableBucketArn");
+    tableBucketArnNode.SetText(m_tableBucketArn);
   }
 
-  if(m_tableNameHasBeenSet)
-  {
-   XmlNode tableNameNode = parentNode.CreateChildElement("TableName");
-   tableNameNode.SetText(m_tableName);
+  if (m_tableNameHasBeenSet) {
+    XmlNode tableNameNode = parentNode.CreateChildElement("TableName");
+    tableNameNode.SetText(m_tableName);
   }
-
 }
 
-} // namespace Model
-} // namespace S3Crt
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

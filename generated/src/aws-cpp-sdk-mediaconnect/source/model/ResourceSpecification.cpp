@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconnect/model/ResourceSpecification.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconnect/model/ResourceSpecification.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConnect {
+namespace Model {
 
-ResourceSpecification::ResourceSpecification(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResourceSpecification::ResourceSpecification(JsonView jsonValue) { *this = jsonValue; }
 
-ResourceSpecification& ResourceSpecification::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("reservedBitrate"))
-  {
+ResourceSpecification& ResourceSpecification::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("reservedBitrate")) {
     m_reservedBitrate = jsonValue.GetInteger("reservedBitrate");
     m_reservedBitrateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceType"))
-  {
+  if (jsonValue.ValueExists("resourceType")) {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
     m_resourceTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResourceSpecification::Jsonize() const
-{
+JsonValue ResourceSpecification::Jsonize() const {
   JsonValue payload;
 
-  if(m_reservedBitrateHasBeenSet)
-  {
-   payload.WithInteger("reservedBitrate", m_reservedBitrate);
-
+  if (m_reservedBitrateHasBeenSet) {
+    payload.WithInteger("reservedBitrate", m_reservedBitrate);
   }
 
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("resourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
+  if (m_resourceTypeHasBeenSet) {
+    payload.WithString("resourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConnect
+}  // namespace Aws

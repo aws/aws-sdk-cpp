@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/docdb-elastic/model/Shard.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/docdb-elastic/model/Shard.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DocDBElastic
-{
-namespace Model
-{
+namespace Aws {
+namespace DocDBElastic {
+namespace Model {
 
-Shard::Shard(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Shard::Shard(JsonView jsonValue) { *this = jsonValue; }
 
-Shard& Shard::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("createTime"))
-  {
+Shard& Shard::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("createTime")) {
     m_createTime = jsonValue.GetString("createTime");
     m_createTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("shardId"))
-  {
+  if (jsonValue.ValueExists("shardId")) {
     m_shardId = jsonValue.GetString("shardId");
     m_shardIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Shard::Jsonize() const
-{
+JsonValue Shard::Jsonize() const {
   JsonValue payload;
 
-  if(m_createTimeHasBeenSet)
-  {
-   payload.WithString("createTime", m_createTime);
-
+  if (m_createTimeHasBeenSet) {
+    payload.WithString("createTime", m_createTime);
   }
 
-  if(m_shardIdHasBeenSet)
-  {
-   payload.WithString("shardId", m_shardId);
-
+  if (m_shardIdHasBeenSet) {
+    payload.WithString("shardId", m_shardId);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", StatusMapper::GetNameForStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", StatusMapper::GetNameForStatus(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DocDBElastic
-} // namespace Aws
+}  // namespace Model
+}  // namespace DocDBElastic
+}  // namespace Aws

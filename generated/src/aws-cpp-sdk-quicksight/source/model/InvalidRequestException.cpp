@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/InvalidRequestException.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/InvalidRequestException.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-InvalidRequestException::InvalidRequestException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InvalidRequestException::InvalidRequestException(JsonView jsonValue) { *this = jsonValue; }
 
-InvalidRequestException& InvalidRequestException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Message"))
-  {
+InvalidRequestException& InvalidRequestException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RequestId"))
-  {
+  if (jsonValue.ValueExists("RequestId")) {
     m_requestId = jsonValue.GetString("RequestId");
     m_requestIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InvalidRequestException::Jsonize() const
-{
+JsonValue InvalidRequestException::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
-  if(m_requestIdHasBeenSet)
-  {
-   payload.WithString("RequestId", m_requestId);
-
+  if (m_requestIdHasBeenSet) {
+    payload.WithString("RequestId", m_requestId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

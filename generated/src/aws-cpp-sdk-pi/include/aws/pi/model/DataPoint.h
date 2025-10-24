@@ -4,71 +4,76 @@
  */
 
 #pragma once
-#include <aws/pi/PI_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/pi/PI_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace PI
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace PI {
+namespace Model {
 
+/**
+ * <p>A timestamp, and a single numerical value, which together represent a
+ * measurement at a particular point in time.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/DataPoint">AWS API
+ * Reference</a></p>
+ */
+class DataPoint {
+ public:
+  AWS_PI_API DataPoint() = default;
+  AWS_PI_API DataPoint(Aws::Utils::Json::JsonView jsonValue);
+  AWS_PI_API DataPoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_PI_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>A timestamp, and a single numerical value, which together represent a
-   * measurement at a particular point in time.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/DataPoint">AWS API
-   * Reference</a></p>
+   * <p>The time, in epoch format, associated with a particular
+   * <code>Value</code>.</p>
    */
-  class DataPoint
-  {
-  public:
-    AWS_PI_API DataPoint() = default;
-    AWS_PI_API DataPoint(Aws::Utils::Json::JsonView jsonValue);
-    AWS_PI_API DataPoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_PI_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
+  inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
+  template <typename TimestampT = Aws::Utils::DateTime>
+  void SetTimestamp(TimestampT&& value) {
+    m_timestampHasBeenSet = true;
+    m_timestamp = std::forward<TimestampT>(value);
+  }
+  template <typename TimestampT = Aws::Utils::DateTime>
+  DataPoint& WithTimestamp(TimestampT&& value) {
+    SetTimestamp(std::forward<TimestampT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The actual value associated with a particular <code>Timestamp</code>.</p>
+   */
+  inline double GetValue() const { return m_value; }
+  inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+  inline void SetValue(double value) {
+    m_valueHasBeenSet = true;
+    m_value = value;
+  }
+  inline DataPoint& WithValue(double value) {
+    SetValue(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Utils::DateTime m_timestamp{};
+  bool m_timestampHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The time, in epoch format, associated with a particular
-     * <code>Value</code>.</p>
-     */
-    inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
-    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-    template<typename TimestampT = Aws::Utils::DateTime>
-    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
-    template<typename TimestampT = Aws::Utils::DateTime>
-    DataPoint& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
-    ///@}
+  double m_value{0.0};
+  bool m_valueHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The actual value associated with a particular <code>Timestamp</code>.</p>
-     */
-    inline double GetValue() const { return m_value; }
-    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
-    inline DataPoint& WithValue(double value) { SetValue(value); return *this;}
-    ///@}
-  private:
-
-    Aws::Utils::DateTime m_timestamp{};
-    bool m_timestampHasBeenSet = false;
-
-    double m_value{0.0};
-    bool m_valueHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace PI
-} // namespace Aws
+}  // namespace Model
+}  // namespace PI
+}  // namespace Aws

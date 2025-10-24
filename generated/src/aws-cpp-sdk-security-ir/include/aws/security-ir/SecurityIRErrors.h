@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/security-ir/SecurityIR_EXPORTS.h>
 
-namespace Aws
-{
-namespace SecurityIR
-{
-enum class SecurityIRErrors
-{
-  //From Core//
+namespace Aws {
+namespace SecurityIR {
+enum class SecurityIRErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class SecurityIRErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,16 +44,15 @@ enum class SecurityIRErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER,
   INVALID_TOKEN,
   SECURITY_INCIDENT_RESPONSE_NOT_ACTIVE,
   SERVICE_QUOTA_EXCEEDED
 };
 
-class AWS_SECURITYIR_API SecurityIRError : public Aws::Client::AWSError<SecurityIRErrors>
-{
-public:
+class AWS_SECURITYIR_API SecurityIRError : public Aws::Client::AWSError<SecurityIRErrors> {
+ public:
   SecurityIRError() {}
   SecurityIRError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<SecurityIRErrors>(rhs) {}
   SecurityIRError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<SecurityIRErrors>(rhs) {}
@@ -67,10 +63,9 @@ public:
   T GetModeledError();
 };
 
-namespace SecurityIRErrorMapper
-{
-  AWS_SECURITYIR_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace SecurityIRErrorMapper {
+AWS_SECURITYIR_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace SecurityIR
-} // namespace Aws
+}  // namespace SecurityIR
+}  // namespace Aws

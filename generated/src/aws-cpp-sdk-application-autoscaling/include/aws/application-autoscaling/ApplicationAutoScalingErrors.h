@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/application-autoscaling/ApplicationAutoScaling_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/application-autoscaling/ApplicationAutoScaling_EXPORTS.h>
 
-namespace Aws
-{
-namespace ApplicationAutoScaling
-{
-enum class ApplicationAutoScalingErrors
-{
-  //From Core//
+namespace Aws {
+namespace ApplicationAutoScaling {
+enum class ApplicationAutoScalingErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class ApplicationAutoScalingErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class ApplicationAutoScalingErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONCURRENT_UPDATE= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONCURRENT_UPDATE = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   FAILED_RESOURCE_ACCESS,
   INTERNAL_SERVICE,
   INVALID_NEXT_TOKEN,
@@ -56,23 +53,25 @@ enum class ApplicationAutoScalingErrors
   TOO_MANY_TAGS
 };
 
-class AWS_APPLICATIONAUTOSCALING_API ApplicationAutoScalingError : public Aws::Client::AWSError<ApplicationAutoScalingErrors>
-{
-public:
+class AWS_APPLICATIONAUTOSCALING_API ApplicationAutoScalingError : public Aws::Client::AWSError<ApplicationAutoScalingErrors> {
+ public:
   ApplicationAutoScalingError() {}
-  ApplicationAutoScalingError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ApplicationAutoScalingErrors>(rhs) {}
-  ApplicationAutoScalingError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ApplicationAutoScalingErrors>(rhs) {}
-  ApplicationAutoScalingError(const Aws::Client::AWSError<ApplicationAutoScalingErrors>& rhs) : Aws::Client::AWSError<ApplicationAutoScalingErrors>(rhs) {}
-  ApplicationAutoScalingError(Aws::Client::AWSError<ApplicationAutoScalingErrors>&& rhs) : Aws::Client::AWSError<ApplicationAutoScalingErrors>(rhs) {}
+  ApplicationAutoScalingError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs)
+      : Aws::Client::AWSError<ApplicationAutoScalingErrors>(rhs) {}
+  ApplicationAutoScalingError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs)
+      : Aws::Client::AWSError<ApplicationAutoScalingErrors>(rhs) {}
+  ApplicationAutoScalingError(const Aws::Client::AWSError<ApplicationAutoScalingErrors>& rhs)
+      : Aws::Client::AWSError<ApplicationAutoScalingErrors>(rhs) {}
+  ApplicationAutoScalingError(Aws::Client::AWSError<ApplicationAutoScalingErrors>&& rhs)
+      : Aws::Client::AWSError<ApplicationAutoScalingErrors>(rhs) {}
 
   template <typename T>
   T GetModeledError();
 };
 
-namespace ApplicationAutoScalingErrorMapper
-{
-  AWS_APPLICATIONAUTOSCALING_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace ApplicationAutoScalingErrorMapper {
+AWS_APPLICATIONAUTOSCALING_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace ApplicationAutoScaling
-} // namespace Aws
+}  // namespace ApplicationAutoScaling
+}  // namespace Aws

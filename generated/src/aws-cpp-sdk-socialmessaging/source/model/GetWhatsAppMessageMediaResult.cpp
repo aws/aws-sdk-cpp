@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/socialmessaging/model/GetWhatsAppMessageMediaResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/socialmessaging/model/GetWhatsAppMessageMediaResult.h>
 
 #include <utility>
 
@@ -17,33 +17,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetWhatsAppMessageMediaResult::GetWhatsAppMessageMediaResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetWhatsAppMessageMediaResult::GetWhatsAppMessageMediaResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetWhatsAppMessageMediaResult& GetWhatsAppMessageMediaResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetWhatsAppMessageMediaResult& GetWhatsAppMessageMediaResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("mimeType"))
-  {
+  if (jsonValue.ValueExists("mimeType")) {
     m_mimeType = jsonValue.GetString("mimeType");
     m_mimeTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("fileSize"))
-  {
+  if (jsonValue.ValueExists("fileSize")) {
     m_fileSize = jsonValue.GetInt64("fileSize");
     m_fileSizeHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

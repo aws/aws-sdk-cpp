@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class ColumnDataSubType
-  {
-    NOT_SET,
-    FLOAT,
-    FIXED
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class ColumnDataSubType { NOT_SET, FLOAT, FIXED };
 
-namespace ColumnDataSubTypeMapper
-{
+namespace ColumnDataSubTypeMapper {
 AWS_QUICKSIGHT_API ColumnDataSubType GetColumnDataSubTypeForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForColumnDataSubType(ColumnDataSubType value);
-} // namespace ColumnDataSubTypeMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace ColumnDataSubTypeMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

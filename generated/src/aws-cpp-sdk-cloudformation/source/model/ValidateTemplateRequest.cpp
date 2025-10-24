@@ -10,17 +10,14 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String ValidateTemplateRequest::SerializePayload() const
-{
+Aws::String ValidateTemplateRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ValidateTemplate&";
-  if(m_templateBodyHasBeenSet)
-  {
+  if (m_templateBodyHasBeenSet) {
     ss << "TemplateBody=" << StringUtils::URLEncode(m_templateBody.c_str()) << "&";
   }
 
-  if(m_templateURLHasBeenSet)
-  {
+  if (m_templateURLHasBeenSet) {
     ss << "TemplateURL=" << StringUtils::URLEncode(m_templateURL.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String ValidateTemplateRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ValidateTemplateRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ValidateTemplateRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

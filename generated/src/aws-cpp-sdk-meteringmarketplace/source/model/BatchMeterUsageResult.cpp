@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/meteringmarketplace/model/BatchMeterUsageResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/meteringmarketplace/model/BatchMeterUsageResult.h>
 
 #include <utility>
 
@@ -17,28 +17,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchMeterUsageResult::BatchMeterUsageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+BatchMeterUsageResult::BatchMeterUsageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-BatchMeterUsageResult& BatchMeterUsageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+BatchMeterUsageResult& BatchMeterUsageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Results"))
-  {
+  if (jsonValue.ValueExists("Results")) {
     Aws::Utils::Array<JsonView> resultsJsonList = jsonValue.GetArray("Results");
-    for(unsigned resultsIndex = 0; resultsIndex < resultsJsonList.GetLength(); ++resultsIndex)
-    {
+    for (unsigned resultsIndex = 0; resultsIndex < resultsJsonList.GetLength(); ++resultsIndex) {
       m_results.push_back(resultsJsonList[resultsIndex].AsObject());
     }
     m_resultsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UnprocessedRecords"))
-  {
+  if (jsonValue.ValueExists("UnprocessedRecords")) {
     Aws::Utils::Array<JsonView> unprocessedRecordsJsonList = jsonValue.GetArray("UnprocessedRecords");
-    for(unsigned unprocessedRecordsIndex = 0; unprocessedRecordsIndex < unprocessedRecordsJsonList.GetLength(); ++unprocessedRecordsIndex)
-    {
+    for (unsigned unprocessedRecordsIndex = 0; unprocessedRecordsIndex < unprocessedRecordsJsonList.GetLength();
+         ++unprocessedRecordsIndex) {
       m_unprocessedRecords.push_back(unprocessedRecordsJsonList[unprocessedRecordsIndex].AsObject());
     }
     m_unprocessedRecordsHasBeenSet = true;
@@ -46,12 +39,10 @@ BatchMeterUsageResult& BatchMeterUsageResult::operator =(const Aws::AmazonWebSer
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

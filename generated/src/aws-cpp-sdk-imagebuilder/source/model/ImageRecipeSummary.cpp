@@ -3,63 +3,48 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/imagebuilder/model/ImageRecipeSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/imagebuilder/model/ImageRecipeSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace imagebuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace imagebuilder {
+namespace Model {
 
-ImageRecipeSummary::ImageRecipeSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ImageRecipeSummary::ImageRecipeSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ImageRecipeSummary& ImageRecipeSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("arn"))
-  {
+ImageRecipeSummary& ImageRecipeSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("platform"))
-  {
+  if (jsonValue.ValueExists("platform")) {
     m_platform = PlatformMapper::GetPlatformForName(jsonValue.GetString("platform"));
     m_platformHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("owner"))
-  {
+  if (jsonValue.ValueExists("owner")) {
     m_owner = jsonValue.GetString("owner");
     m_ownerHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("parentImage"))
-  {
+  if (jsonValue.ValueExists("parentImage")) {
     m_parentImage = jsonValue.GetString("parentImage");
     m_parentImageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("dateCreated"))
-  {
+  if (jsonValue.ValueExists("dateCreated")) {
     m_dateCreated = jsonValue.GetString("dateCreated");
     m_dateCreatedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tags"))
-  {
+  if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
+    for (auto& tagsItem : tagsJsonMap) {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
@@ -67,59 +52,44 @@ ImageRecipeSummary& ImageRecipeSummary::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ImageRecipeSummary::Jsonize() const
-{
+JsonValue ImageRecipeSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_platformHasBeenSet)
-  {
-   payload.WithString("platform", PlatformMapper::GetNameForPlatform(m_platform));
+  if (m_platformHasBeenSet) {
+    payload.WithString("platform", PlatformMapper::GetNameForPlatform(m_platform));
   }
 
-  if(m_ownerHasBeenSet)
-  {
-   payload.WithString("owner", m_owner);
-
+  if (m_ownerHasBeenSet) {
+    payload.WithString("owner", m_owner);
   }
 
-  if(m_parentImageHasBeenSet)
-  {
-   payload.WithString("parentImage", m_parentImage);
-
+  if (m_parentImageHasBeenSet) {
+    payload.WithString("parentImage", m_parentImage);
   }
 
-  if(m_dateCreatedHasBeenSet)
-  {
-   payload.WithString("dateCreated", m_dateCreated);
-
+  if (m_dateCreatedHasBeenSet) {
+    payload.WithString("dateCreated", m_dateCreated);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace imagebuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

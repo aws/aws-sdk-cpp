@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntime_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMakerFeatureStoreRuntime
-{
-class SageMakerFeatureStoreRuntimeEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace SageMakerFeatureStoreRuntime {
+class SageMakerFeatureStoreRuntimeEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace SageMakerFeatureStoreRuntime
-} // namespace Aws
+}  // namespace SageMakerFeatureStoreRuntime
+}  // namespace Aws

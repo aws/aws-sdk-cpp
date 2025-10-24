@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dms/model/CancelReplicationTaskAssessmentRunRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dms/model/CancelReplicationTaskAssessmentRunRequest.h>
 
 #include <utility>
 
@@ -12,27 +12,18 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CancelReplicationTaskAssessmentRunRequest::SerializePayload() const
-{
+Aws::String CancelReplicationTaskAssessmentRunRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_replicationTaskAssessmentRunArnHasBeenSet)
-  {
-   payload.WithString("ReplicationTaskAssessmentRunArn", m_replicationTaskAssessmentRunArn);
-
+  if (m_replicationTaskAssessmentRunArnHasBeenSet) {
+    payload.WithString("ReplicationTaskAssessmentRunArn", m_replicationTaskAssessmentRunArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CancelReplicationTaskAssessmentRunRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CancelReplicationTaskAssessmentRunRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonDMSv20160101.CancelReplicationTaskAssessmentRun"));
   return headers;
-
 }
-
-
-
-

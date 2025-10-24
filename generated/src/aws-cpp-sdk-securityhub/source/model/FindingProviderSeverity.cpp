@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/FindingProviderSeverity.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/FindingProviderSeverity.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-FindingProviderSeverity::FindingProviderSeverity(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FindingProviderSeverity::FindingProviderSeverity(JsonView jsonValue) { *this = jsonValue; }
 
-FindingProviderSeverity& FindingProviderSeverity::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Label"))
-  {
+FindingProviderSeverity& FindingProviderSeverity::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Label")) {
     m_label = SeverityLabelMapper::GetSeverityLabelForName(jsonValue.GetString("Label"));
     m_labelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Original"))
-  {
+  if (jsonValue.ValueExists("Original")) {
     m_original = jsonValue.GetString("Original");
     m_originalHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FindingProviderSeverity::Jsonize() const
-{
+JsonValue FindingProviderSeverity::Jsonize() const {
   JsonValue payload;
 
-  if(m_labelHasBeenSet)
-  {
-   payload.WithString("Label", SeverityLabelMapper::GetNameForSeverityLabel(m_label));
+  if (m_labelHasBeenSet) {
+    payload.WithString("Label", SeverityLabelMapper::GetNameForSeverityLabel(m_label));
   }
 
-  if(m_originalHasBeenSet)
-  {
-   payload.WithString("Original", m_original);
-
+  if (m_originalHasBeenSet) {
+    payload.WithString("Original", m_original);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

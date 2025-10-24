@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/GetAccessKeyLastUsedRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/GetAccessKeyLastUsedRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String GetAccessKeyLastUsedRequest::SerializePayload() const
-{
+Aws::String GetAccessKeyLastUsedRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetAccessKeyLastUsed&";
-  if(m_accessKeyIdHasBeenSet)
-  {
+  if (m_accessKeyIdHasBeenSet) {
     ss << "AccessKeyId=" << StringUtils::URLEncode(m_accessKeyId.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String GetAccessKeyLastUsedRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetAccessKeyLastUsedRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetAccessKeyLastUsedRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

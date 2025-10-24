@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/billing/Billing_EXPORTS.h>
 
-namespace Aws
-{
-namespace Billing
-{
-class BillingEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace Billing {
+class BillingEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace Billing
-} // namespace Aws
+}  // namespace Billing
+}  // namespace Aws

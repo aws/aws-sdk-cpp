@@ -4,69 +4,55 @@
  */
 
 #include <aws/bedrock/model/GuardrailContentFilterAction.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace Bedrock {
+namespace Model {
+namespace GuardrailContentFilterActionMapper {
 
-namespace Aws
-{
-  namespace Bedrock
-  {
-    namespace Model
-    {
-      namespace GuardrailContentFilterActionMapper
-      {
+static const int BLOCK_HASH = HashingUtils::HashString("BLOCK");
+static const int NONE_HASH = HashingUtils::HashString("NONE");
 
-        static const int BLOCK_HASH = HashingUtils::HashString("BLOCK");
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+GuardrailContentFilterAction GetGuardrailContentFilterActionForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == BLOCK_HASH) {
+    return GuardrailContentFilterAction::BLOCK;
+  } else if (hashCode == NONE_HASH) {
+    return GuardrailContentFilterAction::NONE;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<GuardrailContentFilterAction>(hashCode);
+  }
 
+  return GuardrailContentFilterAction::NOT_SET;
+}
 
-        GuardrailContentFilterAction GetGuardrailContentFilterActionForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == BLOCK_HASH)
-          {
-            return GuardrailContentFilterAction::BLOCK;
-          }
-          else if (hashCode == NONE_HASH)
-          {
-            return GuardrailContentFilterAction::NONE;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<GuardrailContentFilterAction>(hashCode);
-          }
+Aws::String GetNameForGuardrailContentFilterAction(GuardrailContentFilterAction enumValue) {
+  switch (enumValue) {
+    case GuardrailContentFilterAction::NOT_SET:
+      return {};
+    case GuardrailContentFilterAction::BLOCK:
+      return "BLOCK";
+    case GuardrailContentFilterAction::NONE:
+      return "NONE";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return GuardrailContentFilterAction::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForGuardrailContentFilterAction(GuardrailContentFilterAction enumValue)
-        {
-          switch(enumValue)
-          {
-          case GuardrailContentFilterAction::NOT_SET:
-            return {};
-          case GuardrailContentFilterAction::BLOCK:
-            return "BLOCK";
-          case GuardrailContentFilterAction::NONE:
-            return "NONE";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace GuardrailContentFilterActionMapper
-    } // namespace Model
-  } // namespace Bedrock
-} // namespace Aws
+}  // namespace GuardrailContentFilterActionMapper
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class ActionConnectorErrorType
-  {
-    NOT_SET,
-    INTERNAL_FAILURE
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class ActionConnectorErrorType { NOT_SET, INTERNAL_FAILURE };
 
-namespace ActionConnectorErrorTypeMapper
-{
+namespace ActionConnectorErrorTypeMapper {
 AWS_QUICKSIGHT_API ActionConnectorErrorType GetActionConnectorErrorTypeForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForActionConnectorErrorType(ActionConnectorErrorType value);
-} // namespace ActionConnectorErrorTypeMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace ActionConnectorErrorTypeMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

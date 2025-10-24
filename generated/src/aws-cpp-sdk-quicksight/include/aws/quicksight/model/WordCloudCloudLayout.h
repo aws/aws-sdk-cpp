@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class WordCloudCloudLayout
-  {
-    NOT_SET,
-    FLUID,
-    NORMAL
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class WordCloudCloudLayout { NOT_SET, FLUID, NORMAL };
 
-namespace WordCloudCloudLayoutMapper
-{
+namespace WordCloudCloudLayoutMapper {
 AWS_QUICKSIGHT_API WordCloudCloudLayout GetWordCloudCloudLayoutForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForWordCloudCloudLayout(WordCloudCloudLayout value);
-} // namespace WordCloudCloudLayoutMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace WordCloudCloudLayoutMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

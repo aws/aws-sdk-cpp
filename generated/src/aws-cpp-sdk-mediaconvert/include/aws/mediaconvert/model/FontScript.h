@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class FontScript
-  {
-    NOT_SET,
-    AUTOMATIC,
-    HANS,
-    HANT
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class FontScript { NOT_SET, AUTOMATIC, HANS, HANT };
 
-namespace FontScriptMapper
-{
+namespace FontScriptMapper {
 AWS_MEDIACONVERT_API FontScript GetFontScriptForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForFontScript(FontScript value);
-} // namespace FontScriptMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace FontScriptMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

@@ -7,26 +7,16 @@
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
-  enum class FlowErrorCode
-  {
-    NOT_SET,
-    VALIDATION,
-    INTERNAL_SERVER,
-    NODE_EXECUTION_FAILED
-  };
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
+enum class FlowErrorCode { NOT_SET, VALIDATION, INTERNAL_SERVER, NODE_EXECUTION_FAILED };
 
-namespace FlowErrorCodeMapper
-{
+namespace FlowErrorCodeMapper {
 AWS_BEDROCKAGENTRUNTIME_API FlowErrorCode GetFlowErrorCodeForName(const Aws::String& name);
 
 AWS_BEDROCKAGENTRUNTIME_API Aws::String GetNameForFlowErrorCode(FlowErrorCode value);
-} // namespace FlowErrorCodeMapper
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace FlowErrorCodeMapper
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
-  enum class VoiceEngine
-  {
-    NOT_SET,
-    standard,
-    neural,
-    long_form,
-    generative
-  };
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
+enum class VoiceEngine { NOT_SET, standard, neural, long_form, generative };
 
-namespace VoiceEngineMapper
-{
+namespace VoiceEngineMapper {
 AWS_LEXMODELSV2_API VoiceEngine GetVoiceEngineForName(const Aws::String& name);
 
 AWS_LEXMODELSV2_API Aws::String GetNameForVoiceEngine(VoiceEngine value);
-} // namespace VoiceEngineMapper
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace VoiceEngineMapper
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

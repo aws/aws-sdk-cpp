@@ -6,71 +6,76 @@
 #pragma once
 #include <aws/applicationcostprofiler/ApplicationCostProfiler_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace ApplicationCostProfiler
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace ApplicationCostProfiler {
+namespace Model {
 
+/**
+ * <p>Represents the Amazon Simple Storage Service (Amazon S3) location where AWS
+ * Application Cost Profiler reports are generated and then written
+ * to.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/AWSApplicationCostProfiler-2020-09-10/S3Location">AWS
+ * API Reference</a></p>
+ */
+class S3Location {
+ public:
+  AWS_APPLICATIONCOSTPROFILER_API S3Location() = default;
+  AWS_APPLICATIONCOSTPROFILER_API S3Location(Aws::Utils::Json::JsonView jsonValue);
+  AWS_APPLICATIONCOSTPROFILER_API S3Location& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_APPLICATIONCOSTPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Represents the Amazon Simple Storage Service (Amazon S3) location where AWS
-   * Application Cost Profiler reports are generated and then written
-   * to.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/AWSApplicationCostProfiler-2020-09-10/S3Location">AWS
-   * API Reference</a></p>
+   * <p>Name of the S3 bucket.</p>
    */
-  class S3Location
-  {
-  public:
-    AWS_APPLICATIONCOSTPROFILER_API S3Location() = default;
-    AWS_APPLICATIONCOSTPROFILER_API S3Location(Aws::Utils::Json::JsonView jsonValue);
-    AWS_APPLICATIONCOSTPROFILER_API S3Location& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_APPLICATIONCOSTPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetBucket() const { return m_bucket; }
+  inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+  template <typename BucketT = Aws::String>
+  void SetBucket(BucketT&& value) {
+    m_bucketHasBeenSet = true;
+    m_bucket = std::forward<BucketT>(value);
+  }
+  template <typename BucketT = Aws::String>
+  S3Location& WithBucket(BucketT&& value) {
+    SetBucket(std::forward<BucketT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>Prefix for the location to write to.</p>
+   */
+  inline const Aws::String& GetPrefix() const { return m_prefix; }
+  inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
+  template <typename PrefixT = Aws::String>
+  void SetPrefix(PrefixT&& value) {
+    m_prefixHasBeenSet = true;
+    m_prefix = std::forward<PrefixT>(value);
+  }
+  template <typename PrefixT = Aws::String>
+  S3Location& WithPrefix(PrefixT&& value) {
+    SetPrefix(std::forward<PrefixT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_bucket;
+  bool m_bucketHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>Name of the S3 bucket.</p>
-     */
-    inline const Aws::String& GetBucket() const { return m_bucket; }
-    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-    template<typename BucketT = Aws::String>
-    void SetBucket(BucketT&& value) { m_bucketHasBeenSet = true; m_bucket = std::forward<BucketT>(value); }
-    template<typename BucketT = Aws::String>
-    S3Location& WithBucket(BucketT&& value) { SetBucket(std::forward<BucketT>(value)); return *this;}
-    ///@}
+  Aws::String m_prefix;
+  bool m_prefixHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>Prefix for the location to write to.</p>
-     */
-    inline const Aws::String& GetPrefix() const { return m_prefix; }
-    inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-    template<typename PrefixT = Aws::String>
-    void SetPrefix(PrefixT&& value) { m_prefixHasBeenSet = true; m_prefix = std::forward<PrefixT>(value); }
-    template<typename PrefixT = Aws::String>
-    S3Location& WithPrefix(PrefixT&& value) { SetPrefix(std::forward<PrefixT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_bucket;
-    bool m_bucketHasBeenSet = false;
-
-    Aws::String m_prefix;
-    bool m_prefixHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace ApplicationCostProfiler
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApplicationCostProfiler
+}  // namespace Aws

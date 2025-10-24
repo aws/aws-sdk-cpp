@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ACM
-{
-namespace Model
-{
+namespace Aws {
+namespace ACM {
+namespace Model {
 
-KeyUsage::KeyUsage(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+KeyUsage::KeyUsage(JsonView jsonValue) { *this = jsonValue; }
 
-KeyUsage& KeyUsage::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+KeyUsage& KeyUsage::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = KeyUsageNameMapper::GetKeyUsageNameForName(jsonValue.GetString("Name"));
     m_nameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue KeyUsage::Jsonize() const
-{
+JsonValue KeyUsage::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", KeyUsageNameMapper::GetNameForKeyUsageName(m_name));
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", KeyUsageNameMapper::GetNameForKeyUsageName(m_name));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ACM
-} // namespace Aws
+}  // namespace Model
+}  // namespace ACM
+}  // namespace Aws

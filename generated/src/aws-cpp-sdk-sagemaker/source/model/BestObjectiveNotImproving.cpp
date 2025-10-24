@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/BestObjectiveNotImproving.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/BestObjectiveNotImproving.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-BestObjectiveNotImproving::BestObjectiveNotImproving(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BestObjectiveNotImproving::BestObjectiveNotImproving(JsonView jsonValue) { *this = jsonValue; }
 
-BestObjectiveNotImproving& BestObjectiveNotImproving::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MaxNumberOfTrainingJobsNotImproving"))
-  {
+BestObjectiveNotImproving& BestObjectiveNotImproving::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MaxNumberOfTrainingJobsNotImproving")) {
     m_maxNumberOfTrainingJobsNotImproving = jsonValue.GetInteger("MaxNumberOfTrainingJobsNotImproving");
     m_maxNumberOfTrainingJobsNotImprovingHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BestObjectiveNotImproving::Jsonize() const
-{
+JsonValue BestObjectiveNotImproving::Jsonize() const {
   JsonValue payload;
 
-  if(m_maxNumberOfTrainingJobsNotImprovingHasBeenSet)
-  {
-   payload.WithInteger("MaxNumberOfTrainingJobsNotImproving", m_maxNumberOfTrainingJobsNotImproving);
-
+  if (m_maxNumberOfTrainingJobsNotImprovingHasBeenSet) {
+    payload.WithInteger("MaxNumberOfTrainingJobsNotImproving", m_maxNumberOfTrainingJobsNotImproving);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

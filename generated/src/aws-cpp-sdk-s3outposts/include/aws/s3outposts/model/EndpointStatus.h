@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/s3outposts/S3Outposts_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3outposts/S3Outposts_EXPORTS.h>
 
-namespace Aws
-{
-namespace S3Outposts
-{
-namespace Model
-{
-  enum class EndpointStatus
-  {
-    NOT_SET,
-    Pending,
-    Available,
-    Deleting,
-    Create_Failed,
-    Delete_Failed
-  };
+namespace Aws {
+namespace S3Outposts {
+namespace Model {
+enum class EndpointStatus { NOT_SET, Pending, Available, Deleting, Create_Failed, Delete_Failed };
 
-namespace EndpointStatusMapper
-{
+namespace EndpointStatusMapper {
 AWS_S3OUTPOSTS_API EndpointStatus GetEndpointStatusForName(const Aws::String& name);
 
 AWS_S3OUTPOSTS_API Aws::String GetNameForEndpointStatus(EndpointStatus value);
-} // namespace EndpointStatusMapper
-} // namespace Model
-} // namespace S3Outposts
-} // namespace Aws
+}  // namespace EndpointStatusMapper
+}  // namespace Model
+}  // namespace S3Outposts
+}  // namespace Aws

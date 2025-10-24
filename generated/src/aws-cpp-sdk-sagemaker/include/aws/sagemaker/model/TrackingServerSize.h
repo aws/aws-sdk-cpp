@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class TrackingServerSize
-  {
-    NOT_SET,
-    Small,
-    Medium,
-    Large
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class TrackingServerSize { NOT_SET, Small, Medium, Large };
 
-namespace TrackingServerSizeMapper
-{
+namespace TrackingServerSizeMapper {
 AWS_SAGEMAKER_API TrackingServerSize GetTrackingServerSizeForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForTrackingServerSize(TrackingServerSize value);
-} // namespace TrackingServerSizeMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace TrackingServerSizeMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

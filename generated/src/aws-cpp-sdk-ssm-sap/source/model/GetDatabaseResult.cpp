@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ssm-sap/model/GetDatabaseResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ssm-sap/model/GetDatabaseResult.h>
 
 #include <utility>
 
@@ -17,24 +17,17 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDatabaseResult::GetDatabaseResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetDatabaseResult::GetDatabaseResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetDatabaseResult& GetDatabaseResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetDatabaseResult& GetDatabaseResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Database"))
-  {
+  if (jsonValue.ValueExists("Database")) {
     m_database = jsonValue.GetObject("Database");
     m_databaseHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Tags"))
-  {
+  if (jsonValue.ValueExists("Tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
+    for (auto& tagsItem : tagsJsonMap) {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
@@ -42,12 +35,10 @@ GetDatabaseResult& GetDatabaseResult::operator =(const Aws::AmazonWebServiceResu
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

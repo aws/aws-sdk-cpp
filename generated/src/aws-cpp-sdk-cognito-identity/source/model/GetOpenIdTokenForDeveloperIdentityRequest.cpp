@@ -12,61 +12,42 @@ using namespace Aws::CognitoIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetOpenIdTokenForDeveloperIdentityRequest::SerializePayload() const
-{
+Aws::String GetOpenIdTokenForDeveloperIdentityRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_identityPoolIdHasBeenSet)
-  {
-   payload.WithString("IdentityPoolId", m_identityPoolId);
-
+  if (m_identityPoolIdHasBeenSet) {
+    payload.WithString("IdentityPoolId", m_identityPoolId);
   }
 
-  if(m_identityIdHasBeenSet)
-  {
-   payload.WithString("IdentityId", m_identityId);
-
+  if (m_identityIdHasBeenSet) {
+    payload.WithString("IdentityId", m_identityId);
   }
 
-  if(m_loginsHasBeenSet)
-  {
-   JsonValue loginsJsonMap;
-   for(auto& loginsItem : m_logins)
-   {
-     loginsJsonMap.WithString(loginsItem.first, loginsItem.second);
-   }
-   payload.WithObject("Logins", std::move(loginsJsonMap));
-
+  if (m_loginsHasBeenSet) {
+    JsonValue loginsJsonMap;
+    for (auto& loginsItem : m_logins) {
+      loginsJsonMap.WithString(loginsItem.first, loginsItem.second);
+    }
+    payload.WithObject("Logins", std::move(loginsJsonMap));
   }
 
-  if(m_principalTagsHasBeenSet)
-  {
-   JsonValue principalTagsJsonMap;
-   for(auto& principalTagsItem : m_principalTags)
-   {
-     principalTagsJsonMap.WithString(principalTagsItem.first, principalTagsItem.second);
-   }
-   payload.WithObject("PrincipalTags", std::move(principalTagsJsonMap));
-
+  if (m_principalTagsHasBeenSet) {
+    JsonValue principalTagsJsonMap;
+    for (auto& principalTagsItem : m_principalTags) {
+      principalTagsJsonMap.WithString(principalTagsItem.first, principalTagsItem.second);
+    }
+    payload.WithObject("PrincipalTags", std::move(principalTagsJsonMap));
   }
 
-  if(m_tokenDurationHasBeenSet)
-  {
-   payload.WithInt64("TokenDuration", m_tokenDuration);
-
+  if (m_tokenDurationHasBeenSet) {
+    payload.WithInt64("TokenDuration", m_tokenDuration);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetOpenIdTokenForDeveloperIdentityRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetOpenIdTokenForDeveloperIdentityRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityService.GetOpenIdTokenForDeveloperIdentity"));
   return headers;
-
 }
-
-
-
-

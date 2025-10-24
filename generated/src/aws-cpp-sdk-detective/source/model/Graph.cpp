@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/detective/model/Graph.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/detective/model/Graph.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Detective
-{
-namespace Model
-{
+namespace Aws {
+namespace Detective {
+namespace Model {
 
-Graph::Graph(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Graph::Graph(JsonView jsonValue) { *this = jsonValue; }
 
-Graph& Graph::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Arn"))
-  {
+Graph& Graph::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedTime"))
-  {
+  if (jsonValue.ValueExists("CreatedTime")) {
     m_createdTime = jsonValue.GetString("CreatedTime");
     m_createdTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Graph::Jsonize() const
-{
+JsonValue Graph::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_createdTimeHasBeenSet)
-  {
-   payload.WithString("CreatedTime", m_createdTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_createdTimeHasBeenSet) {
+    payload.WithString("CreatedTime", m_createdTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Detective
-} // namespace Aws
+}  // namespace Model
+}  // namespace Detective
+}  // namespace Aws

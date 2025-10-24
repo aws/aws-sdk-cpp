@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/trustedadvisor/model/RecommendationResourceExclusion.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/trustedadvisor/model/RecommendationResourceExclusion.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace TrustedAdvisor
-{
-namespace Model
-{
+namespace Aws {
+namespace TrustedAdvisor {
+namespace Model {
 
-RecommendationResourceExclusion::RecommendationResourceExclusion(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RecommendationResourceExclusion::RecommendationResourceExclusion(JsonView jsonValue) { *this = jsonValue; }
 
-RecommendationResourceExclusion& RecommendationResourceExclusion::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("arn"))
-  {
+RecommendationResourceExclusion& RecommendationResourceExclusion::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("isExcluded"))
-  {
+  if (jsonValue.ValueExists("isExcluded")) {
     m_isExcluded = jsonValue.GetBool("isExcluded");
     m_isExcludedHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RecommendationResourceExclusion::Jsonize() const
-{
+JsonValue RecommendationResourceExclusion::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_isExcludedHasBeenSet)
-  {
-   payload.WithBool("isExcluded", m_isExcluded);
-
+  if (m_isExcludedHasBeenSet) {
+    payload.WithBool("isExcluded", m_isExcluded);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace TrustedAdvisor
-} // namespace Aws
+}  // namespace Model
+}  // namespace TrustedAdvisor
+}  // namespace Aws

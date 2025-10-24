@@ -12,27 +12,18 @@ using namespace Aws::B2BI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetCapabilityRequest::SerializePayload() const
-{
+Aws::String GetCapabilityRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_capabilityIdHasBeenSet)
-  {
-   payload.WithString("capabilityId", m_capabilityId);
-
+  if (m_capabilityIdHasBeenSet) {
+    payload.WithString("capabilityId", m_capabilityId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetCapabilityRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetCapabilityRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "B2BI.GetCapability"));
   return headers;
-
 }
-
-
-
-

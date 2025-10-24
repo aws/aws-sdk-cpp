@@ -12,27 +12,18 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeSecurityPolicyRequest::SerializePayload() const
-{
+Aws::String DescribeSecurityPolicyRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_securityPolicyNameHasBeenSet)
-  {
-   payload.WithString("SecurityPolicyName", m_securityPolicyName);
-
+  if (m_securityPolicyNameHasBeenSet) {
+    payload.WithString("SecurityPolicyName", m_securityPolicyName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeSecurityPolicyRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeSecurityPolicyRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TransferService.DescribeSecurityPolicy"));
   return headers;
-
 }
-
-
-
-

@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/networkmanager/model/GetCoreNetworkPolicyRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/networkmanager/model/GetCoreNetworkPolicyRequest.h>
 
 #include <utility>
 
@@ -15,29 +15,19 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String GetCoreNetworkPolicyRequest::SerializePayload() const
-{
-  return {};
+Aws::String GetCoreNetworkPolicyRequest::SerializePayload() const { return {}; }
+
+void GetCoreNetworkPolicyRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_policyVersionIdHasBeenSet) {
+    ss << m_policyVersionId;
+    uri.AddQueryStringParameter("policyVersionId", ss.str());
+    ss.str("");
+  }
+
+  if (m_aliasHasBeenSet) {
+    ss << CoreNetworkPolicyAliasMapper::GetNameForCoreNetworkPolicyAlias(m_alias);
+    uri.AddQueryStringParameter("alias", ss.str());
+    ss.str("");
+  }
 }
-
-void GetCoreNetworkPolicyRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_policyVersionIdHasBeenSet)
-    {
-      ss << m_policyVersionId;
-      uri.AddQueryStringParameter("policyVersionId", ss.str());
-      ss.str("");
-    }
-
-    if(m_aliasHasBeenSet)
-    {
-      ss << CoreNetworkPolicyAliasMapper::GetNameForCoreNetworkPolicyAlias(m_alias);
-      uri.AddQueryStringParameter("alias", ss.str());
-      ss.str("");
-    }
-
-}
-
-
-

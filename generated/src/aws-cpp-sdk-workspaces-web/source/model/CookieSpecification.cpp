@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workspaces-web/model/CookieSpecification.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workspaces-web/model/CookieSpecification.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WorkSpacesWeb
-{
-namespace Model
-{
+namespace Aws {
+namespace WorkSpacesWeb {
+namespace Model {
 
-CookieSpecification::CookieSpecification(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CookieSpecification::CookieSpecification(JsonView jsonValue) { *this = jsonValue; }
 
-CookieSpecification& CookieSpecification::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("domain"))
-  {
+CookieSpecification& CookieSpecification::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("domain")) {
     m_domain = jsonValue.GetString("domain");
     m_domainHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("path"))
-  {
+  if (jsonValue.ValueExists("path")) {
     m_path = jsonValue.GetString("path");
     m_pathHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CookieSpecification::Jsonize() const
-{
+JsonValue CookieSpecification::Jsonize() const {
   JsonValue payload;
 
-  if(m_domainHasBeenSet)
-  {
-   payload.WithString("domain", m_domain);
-
+  if (m_domainHasBeenSet) {
+    payload.WithString("domain", m_domain);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_pathHasBeenSet)
-  {
-   payload.WithString("path", m_path);
-
+  if (m_pathHasBeenSet) {
+    payload.WithString("path", m_path);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WorkSpacesWeb
-} // namespace Aws
+}  // namespace Model
+}  // namespace WorkSpacesWeb
+}  // namespace Aws

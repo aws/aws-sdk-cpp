@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeGuruProfiler
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeGuruProfiler {
+namespace Model {
 
-Match::Match(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Match::Match(JsonView jsonValue) { *this = jsonValue; }
 
-Match& Match::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("frameAddress"))
-  {
+Match& Match::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("frameAddress")) {
     m_frameAddress = jsonValue.GetString("frameAddress");
     m_frameAddressHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("targetFramesIndex"))
-  {
+  if (jsonValue.ValueExists("targetFramesIndex")) {
     m_targetFramesIndex = jsonValue.GetInteger("targetFramesIndex");
     m_targetFramesIndexHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("thresholdBreachValue"))
-  {
+  if (jsonValue.ValueExists("thresholdBreachValue")) {
     m_thresholdBreachValue = jsonValue.GetDouble("thresholdBreachValue");
     m_thresholdBreachValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Match::Jsonize() const
-{
+JsonValue Match::Jsonize() const {
   JsonValue payload;
 
-  if(m_frameAddressHasBeenSet)
-  {
-   payload.WithString("frameAddress", m_frameAddress);
-
+  if (m_frameAddressHasBeenSet) {
+    payload.WithString("frameAddress", m_frameAddress);
   }
 
-  if(m_targetFramesIndexHasBeenSet)
-  {
-   payload.WithInteger("targetFramesIndex", m_targetFramesIndex);
-
+  if (m_targetFramesIndexHasBeenSet) {
+    payload.WithInteger("targetFramesIndex", m_targetFramesIndex);
   }
 
-  if(m_thresholdBreachValueHasBeenSet)
-  {
-   payload.WithDouble("thresholdBreachValue", m_thresholdBreachValue);
-
+  if (m_thresholdBreachValueHasBeenSet) {
+    payload.WithDouble("thresholdBreachValue", m_thresholdBreachValue);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeGuruProfiler
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeGuruProfiler
+}  // namespace Aws

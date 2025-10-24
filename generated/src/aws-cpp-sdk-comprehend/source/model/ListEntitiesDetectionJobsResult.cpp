@@ -4,10 +4,10 @@
  */
 
 #include <aws/comprehend/model/ListEntitiesDetectionJobsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,37 +17,31 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListEntitiesDetectionJobsResult::ListEntitiesDetectionJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListEntitiesDetectionJobsResult::ListEntitiesDetectionJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListEntitiesDetectionJobsResult& ListEntitiesDetectionJobsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListEntitiesDetectionJobsResult& ListEntitiesDetectionJobsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("EntitiesDetectionJobPropertiesList"))
-  {
+  if (jsonValue.ValueExists("EntitiesDetectionJobPropertiesList")) {
     Aws::Utils::Array<JsonView> entitiesDetectionJobPropertiesListJsonList = jsonValue.GetArray("EntitiesDetectionJobPropertiesList");
-    for(unsigned entitiesDetectionJobPropertiesListIndex = 0; entitiesDetectionJobPropertiesListIndex < entitiesDetectionJobPropertiesListJsonList.GetLength(); ++entitiesDetectionJobPropertiesListIndex)
-    {
-      m_entitiesDetectionJobPropertiesList.push_back(entitiesDetectionJobPropertiesListJsonList[entitiesDetectionJobPropertiesListIndex].AsObject());
+    for (unsigned entitiesDetectionJobPropertiesListIndex = 0;
+         entitiesDetectionJobPropertiesListIndex < entitiesDetectionJobPropertiesListJsonList.GetLength();
+         ++entitiesDetectionJobPropertiesListIndex) {
+      m_entitiesDetectionJobPropertiesList.push_back(
+          entitiesDetectionJobPropertiesListJsonList[entitiesDetectionJobPropertiesListIndex].AsObject());
     }
     m_entitiesDetectionJobPropertiesListHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

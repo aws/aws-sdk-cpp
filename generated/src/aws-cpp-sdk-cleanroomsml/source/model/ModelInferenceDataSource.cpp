@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRoomsML
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRoomsML {
+namespace Model {
 
-ModelInferenceDataSource::ModelInferenceDataSource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ModelInferenceDataSource::ModelInferenceDataSource(JsonView jsonValue) { *this = jsonValue; }
 
-ModelInferenceDataSource& ModelInferenceDataSource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("mlInputChannelArn"))
-  {
+ModelInferenceDataSource& ModelInferenceDataSource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("mlInputChannelArn")) {
     m_mlInputChannelArn = jsonValue.GetString("mlInputChannelArn");
     m_mlInputChannelArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ModelInferenceDataSource::Jsonize() const
-{
+JsonValue ModelInferenceDataSource::Jsonize() const {
   JsonValue payload;
 
-  if(m_mlInputChannelArnHasBeenSet)
-  {
-   payload.WithString("mlInputChannelArn", m_mlInputChannelArn);
-
+  if (m_mlInputChannelArnHasBeenSet) {
+    payload.WithString("mlInputChannelArn", m_mlInputChannelArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRoomsML
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRoomsML
+}  // namespace Aws

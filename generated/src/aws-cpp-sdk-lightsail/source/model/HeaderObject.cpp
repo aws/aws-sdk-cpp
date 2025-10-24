@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lightsail/model/HeaderObject.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lightsail/model/HeaderObject.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
+namespace Aws {
+namespace Lightsail {
+namespace Model {
 
-HeaderObject::HeaderObject(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+HeaderObject::HeaderObject(JsonView jsonValue) { *this = jsonValue; }
 
-HeaderObject& HeaderObject::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("option"))
-  {
+HeaderObject& HeaderObject::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("option")) {
     m_option = ForwardValuesMapper::GetForwardValuesForName(jsonValue.GetString("option"));
     m_optionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("headersAllowList"))
-  {
+  if (jsonValue.ValueExists("headersAllowList")) {
     Aws::Utils::Array<JsonView> headersAllowListJsonList = jsonValue.GetArray("headersAllowList");
-    for(unsigned headersAllowListIndex = 0; headersAllowListIndex < headersAllowListJsonList.GetLength(); ++headersAllowListIndex)
-    {
+    for (unsigned headersAllowListIndex = 0; headersAllowListIndex < headersAllowListJsonList.GetLength(); ++headersAllowListIndex) {
       m_headersAllowList.push_back(HeaderEnumMapper::GetHeaderEnumForName(headersAllowListJsonList[headersAllowListIndex].AsString()));
     }
     m_headersAllowListHasBeenSet = true;
@@ -42,29 +32,25 @@ HeaderObject& HeaderObject::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue HeaderObject::Jsonize() const
-{
+JsonValue HeaderObject::Jsonize() const {
   JsonValue payload;
 
-  if(m_optionHasBeenSet)
-  {
-   payload.WithString("option", ForwardValuesMapper::GetNameForForwardValues(m_option));
+  if (m_optionHasBeenSet) {
+    payload.WithString("option", ForwardValuesMapper::GetNameForForwardValues(m_option));
   }
 
-  if(m_headersAllowListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> headersAllowListJsonList(m_headersAllowList.size());
-   for(unsigned headersAllowListIndex = 0; headersAllowListIndex < headersAllowListJsonList.GetLength(); ++headersAllowListIndex)
-   {
-     headersAllowListJsonList[headersAllowListIndex].AsString(HeaderEnumMapper::GetNameForHeaderEnum(m_headersAllowList[headersAllowListIndex]));
-   }
-   payload.WithArray("headersAllowList", std::move(headersAllowListJsonList));
-
+  if (m_headersAllowListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> headersAllowListJsonList(m_headersAllowList.size());
+    for (unsigned headersAllowListIndex = 0; headersAllowListIndex < headersAllowListJsonList.GetLength(); ++headersAllowListIndex) {
+      headersAllowListJsonList[headersAllowListIndex].AsString(
+          HeaderEnumMapper::GetNameForHeaderEnum(m_headersAllowList[headersAllowListIndex]));
+    }
+    payload.WithArray("headersAllowList", std::move(headersAllowListJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

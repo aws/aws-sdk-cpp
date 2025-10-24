@@ -10,28 +10,20 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-Aws::String AttachLoadBalancerTargetGroupsRequest::SerializePayload() const
-{
+Aws::String AttachLoadBalancerTargetGroupsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=AttachLoadBalancerTargetGroups&";
-  if(m_autoScalingGroupNameHasBeenSet)
-  {
+  if (m_autoScalingGroupNameHasBeenSet) {
     ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
 
-  if(m_targetGroupARNsHasBeenSet)
-  {
-    if (m_targetGroupARNs.empty())
-    {
+  if (m_targetGroupARNsHasBeenSet) {
+    if (m_targetGroupARNs.empty()) {
       ss << "TargetGroupARNs=&";
-    }
-    else
-    {
+    } else {
       unsigned targetGroupARNsCount = 1;
-      for(auto& item : m_targetGroupARNs)
-      {
-        ss << "TargetGroupARNs.member." << targetGroupARNsCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_targetGroupARNs) {
+        ss << "TargetGroupARNs.member." << targetGroupARNsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         targetGroupARNsCount++;
       }
     }
@@ -41,8 +33,4 @@ Aws::String AttachLoadBalancerTargetGroupsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  AttachLoadBalancerTargetGroupsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void AttachLoadBalancerTargetGroupsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

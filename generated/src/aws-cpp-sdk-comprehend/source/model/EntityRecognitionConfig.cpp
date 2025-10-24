@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Comprehend {
+namespace Model {
 
-EntityRecognitionConfig::EntityRecognitionConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EntityRecognitionConfig::EntityRecognitionConfig(JsonView jsonValue) { *this = jsonValue; }
 
-EntityRecognitionConfig& EntityRecognitionConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EntityTypes"))
-  {
+EntityRecognitionConfig& EntityRecognitionConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EntityTypes")) {
     Aws::Utils::Array<JsonView> entityTypesJsonList = jsonValue.GetArray("EntityTypes");
-    for(unsigned entityTypesIndex = 0; entityTypesIndex < entityTypesJsonList.GetLength(); ++entityTypesIndex)
-    {
+    for (unsigned entityTypesIndex = 0; entityTypesIndex < entityTypesJsonList.GetLength(); ++entityTypesIndex) {
       m_entityTypes.push_back(entityTypesJsonList[entityTypesIndex].AsObject());
     }
     m_entityTypesHasBeenSet = true;
@@ -37,24 +28,20 @@ EntityRecognitionConfig& EntityRecognitionConfig::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue EntityRecognitionConfig::Jsonize() const
-{
+JsonValue EntityRecognitionConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_entityTypesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> entityTypesJsonList(m_entityTypes.size());
-   for(unsigned entityTypesIndex = 0; entityTypesIndex < entityTypesJsonList.GetLength(); ++entityTypesIndex)
-   {
-     entityTypesJsonList[entityTypesIndex].AsObject(m_entityTypes[entityTypesIndex].Jsonize());
-   }
-   payload.WithArray("EntityTypes", std::move(entityTypesJsonList));
-
+  if (m_entityTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> entityTypesJsonList(m_entityTypes.size());
+    for (unsigned entityTypesIndex = 0; entityTypesIndex < entityTypesJsonList.GetLength(); ++entityTypesIndex) {
+      entityTypesJsonList[entityTypesIndex].AsObject(m_entityTypes[entityTypesIndex].Jsonize());
+    }
+    payload.WithArray("EntityTypes", std::move(entityTypesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/textract/model/QueriesConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/textract/model/QueriesConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Textract
-{
-namespace Model
-{
+namespace Aws {
+namespace Textract {
+namespace Model {
 
-QueriesConfig::QueriesConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+QueriesConfig::QueriesConfig(JsonView jsonValue) { *this = jsonValue; }
 
-QueriesConfig& QueriesConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Queries"))
-  {
+QueriesConfig& QueriesConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Queries")) {
     Aws::Utils::Array<JsonView> queriesJsonList = jsonValue.GetArray("Queries");
-    for(unsigned queriesIndex = 0; queriesIndex < queriesJsonList.GetLength(); ++queriesIndex)
-    {
+    for (unsigned queriesIndex = 0; queriesIndex < queriesJsonList.GetLength(); ++queriesIndex) {
       m_queries.push_back(queriesJsonList[queriesIndex].AsObject());
     }
     m_queriesHasBeenSet = true;
@@ -37,24 +28,20 @@ QueriesConfig& QueriesConfig::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue QueriesConfig::Jsonize() const
-{
+JsonValue QueriesConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_queriesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> queriesJsonList(m_queries.size());
-   for(unsigned queriesIndex = 0; queriesIndex < queriesJsonList.GetLength(); ++queriesIndex)
-   {
-     queriesJsonList[queriesIndex].AsObject(m_queries[queriesIndex].Jsonize());
-   }
-   payload.WithArray("Queries", std::move(queriesJsonList));
-
+  if (m_queriesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> queriesJsonList(m_queries.size());
+    for (unsigned queriesIndex = 0; queriesIndex < queriesJsonList.GetLength(); ++queriesIndex) {
+      queriesJsonList[queriesIndex].AsObject(m_queries[queriesIndex].Jsonize());
+    }
+    payload.WithArray("Queries", std::move(queriesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Textract
-} // namespace Aws
+}  // namespace Model
+}  // namespace Textract
+}  // namespace Aws

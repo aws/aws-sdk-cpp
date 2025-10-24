@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/DescribeReservedNodeOfferingsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/DescribeReservedNodeOfferingsRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeReservedNodeOfferingsRequest::SerializePayload() const
-{
+Aws::String DescribeReservedNodeOfferingsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeReservedNodeOfferings&";
-  if(m_reservedNodeOfferingIdHasBeenSet)
-  {
+  if (m_reservedNodeOfferingIdHasBeenSet) {
     ss << "ReservedNodeOfferingId=" << StringUtils::URLEncode(m_reservedNodeOfferingId.c_str()) << "&";
   }
 
-  if(m_maxRecordsHasBeenSet)
-  {
+  if (m_maxRecordsHasBeenSet) {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
 
-  if(m_markerHasBeenSet)
-  {
+  if (m_markerHasBeenSet) {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String DescribeReservedNodeOfferingsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeReservedNodeOfferingsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeReservedNodeOfferingsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

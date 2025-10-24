@@ -3,111 +3,85 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dlm/model/LifecyclePolicySummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dlm/model/LifecyclePolicySummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DLM
-{
-namespace Model
-{
+namespace Aws {
+namespace DLM {
+namespace Model {
 
-LifecyclePolicySummary::LifecyclePolicySummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LifecyclePolicySummary::LifecyclePolicySummary(JsonView jsonValue) { *this = jsonValue; }
 
-LifecyclePolicySummary& LifecyclePolicySummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PolicyId"))
-  {
+LifecyclePolicySummary& LifecyclePolicySummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PolicyId")) {
     m_policyId = jsonValue.GetString("PolicyId");
     m_policyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("State"))
-  {
+  if (jsonValue.ValueExists("State")) {
     m_state = GettablePolicyStateValuesMapper::GetGettablePolicyStateValuesForName(jsonValue.GetString("State"));
     m_stateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Tags"))
-  {
+  if (jsonValue.ValueExists("Tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
+    for (auto& tagsItem : tagsJsonMap) {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PolicyType"))
-  {
+  if (jsonValue.ValueExists("PolicyType")) {
     m_policyType = PolicyTypeValuesMapper::GetPolicyTypeValuesForName(jsonValue.GetString("PolicyType"));
     m_policyTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DefaultPolicy"))
-  {
+  if (jsonValue.ValueExists("DefaultPolicy")) {
     m_defaultPolicy = jsonValue.GetBool("DefaultPolicy");
     m_defaultPolicyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LifecyclePolicySummary::Jsonize() const
-{
+JsonValue LifecyclePolicySummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_policyIdHasBeenSet)
-  {
-   payload.WithString("PolicyId", m_policyId);
-
+  if (m_policyIdHasBeenSet) {
+    payload.WithString("PolicyId", m_policyId);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("State", GettablePolicyStateValuesMapper::GetNameForGettablePolicyStateValues(m_state));
+  if (m_stateHasBeenSet) {
+    payload.WithString("State", GettablePolicyStateValuesMapper::GetNameForGettablePolicyStateValues(m_state));
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("Tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
-  if(m_policyTypeHasBeenSet)
-  {
-   payload.WithString("PolicyType", PolicyTypeValuesMapper::GetNameForPolicyTypeValues(m_policyType));
+  if (m_policyTypeHasBeenSet) {
+    payload.WithString("PolicyType", PolicyTypeValuesMapper::GetNameForPolicyTypeValues(m_policyType));
   }
 
-  if(m_defaultPolicyHasBeenSet)
-  {
-   payload.WithBool("DefaultPolicy", m_defaultPolicy);
-
+  if (m_defaultPolicyHasBeenSet) {
+    payload.WithBool("DefaultPolicy", m_defaultPolicy);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DLM
-} // namespace Aws
+}  // namespace Model
+}  // namespace DLM
+}  // namespace Aws

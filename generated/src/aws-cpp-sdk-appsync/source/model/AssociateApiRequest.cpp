@@ -12,19 +12,12 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AssociateApiRequest::SerializePayload() const
-{
+Aws::String AssociateApiRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_apiIdHasBeenSet)
-  {
-   payload.WithString("apiId", m_apiId);
-
+  if (m_apiIdHasBeenSet) {
+    payload.WithString("apiId", m_apiId);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

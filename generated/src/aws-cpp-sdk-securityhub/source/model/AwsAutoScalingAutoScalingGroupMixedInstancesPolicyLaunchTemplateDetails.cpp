@@ -3,38 +3,32 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails(JsonView jsonValue)
-{
+AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails::
+    AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails& AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("LaunchTemplateSpecification"))
-  {
+AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails&
+AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("LaunchTemplateSpecification")) {
     m_launchTemplateSpecification = jsonValue.GetObject("LaunchTemplateSpecification");
     m_launchTemplateSpecificationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Overrides"))
-  {
+  if (jsonValue.ValueExists("Overrides")) {
     Aws::Utils::Array<JsonView> overridesJsonList = jsonValue.GetArray("Overrides");
-    for(unsigned overridesIndex = 0; overridesIndex < overridesJsonList.GetLength(); ++overridesIndex)
-    {
+    for (unsigned overridesIndex = 0; overridesIndex < overridesJsonList.GetLength(); ++overridesIndex) {
       m_overrides.push_back(overridesJsonList[overridesIndex].AsObject());
     }
     m_overridesHasBeenSet = true;
@@ -42,30 +36,24 @@ AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails& AwsAuto
   return *this;
 }
 
-JsonValue AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails::Jsonize() const
-{
+JsonValue AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_launchTemplateSpecificationHasBeenSet)
-  {
-   payload.WithObject("LaunchTemplateSpecification", m_launchTemplateSpecification.Jsonize());
-
+  if (m_launchTemplateSpecificationHasBeenSet) {
+    payload.WithObject("LaunchTemplateSpecification", m_launchTemplateSpecification.Jsonize());
   }
 
-  if(m_overridesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> overridesJsonList(m_overrides.size());
-   for(unsigned overridesIndex = 0; overridesIndex < overridesJsonList.GetLength(); ++overridesIndex)
-   {
-     overridesJsonList[overridesIndex].AsObject(m_overrides[overridesIndex].Jsonize());
-   }
-   payload.WithArray("Overrides", std::move(overridesJsonList));
-
+  if (m_overridesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> overridesJsonList(m_overrides.size());
+    for (unsigned overridesIndex = 0; overridesIndex < overridesJsonList.GetLength(); ++overridesIndex) {
+      overridesJsonList[overridesIndex].AsObject(m_overrides[overridesIndex].Jsonize());
+    }
+    payload.WithArray("Overrides", std::move(overridesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

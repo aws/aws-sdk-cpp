@@ -4,33 +4,28 @@
  */
 
 #pragma once
-#include <aws/ecr-public/ECRPublic_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecr-public/ECRPublic_EXPORTS.h>
 
-namespace Aws
-{
-namespace ECRPublic
-{
-namespace Model
-{
-  enum class ImageFailureCode
-  {
-    NOT_SET,
-    InvalidImageDigest,
-    InvalidImageTag,
-    ImageTagDoesNotMatchDigest,
-    ImageNotFound,
-    MissingDigestAndTag,
-    ImageReferencedByManifestList,
-    KmsError
-  };
+namespace Aws {
+namespace ECRPublic {
+namespace Model {
+enum class ImageFailureCode {
+  NOT_SET,
+  InvalidImageDigest,
+  InvalidImageTag,
+  ImageTagDoesNotMatchDigest,
+  ImageNotFound,
+  MissingDigestAndTag,
+  ImageReferencedByManifestList,
+  KmsError
+};
 
-namespace ImageFailureCodeMapper
-{
+namespace ImageFailureCodeMapper {
 AWS_ECRPUBLIC_API ImageFailureCode GetImageFailureCodeForName(const Aws::String& name);
 
 AWS_ECRPUBLIC_API Aws::String GetNameForImageFailureCode(ImageFailureCode value);
-} // namespace ImageFailureCodeMapper
-} // namespace Model
-} // namespace ECRPublic
-} // namespace Aws
+}  // namespace ImageFailureCodeMapper
+}  // namespace Model
+}  // namespace ECRPublic
+}  // namespace Aws

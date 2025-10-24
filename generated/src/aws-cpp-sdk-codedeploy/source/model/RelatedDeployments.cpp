@@ -11,61 +11,52 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeDeploy
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeDeploy {
+namespace Model {
 
-RelatedDeployments::RelatedDeployments(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RelatedDeployments::RelatedDeployments(JsonView jsonValue) { *this = jsonValue; }
 
-RelatedDeployments& RelatedDeployments::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("autoUpdateOutdatedInstancesRootDeploymentId"))
-  {
+RelatedDeployments& RelatedDeployments::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("autoUpdateOutdatedInstancesRootDeploymentId")) {
     m_autoUpdateOutdatedInstancesRootDeploymentId = jsonValue.GetString("autoUpdateOutdatedInstancesRootDeploymentId");
     m_autoUpdateOutdatedInstancesRootDeploymentIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("autoUpdateOutdatedInstancesDeploymentIds"))
-  {
-    Aws::Utils::Array<JsonView> autoUpdateOutdatedInstancesDeploymentIdsJsonList = jsonValue.GetArray("autoUpdateOutdatedInstancesDeploymentIds");
-    for(unsigned autoUpdateOutdatedInstancesDeploymentIdsIndex = 0; autoUpdateOutdatedInstancesDeploymentIdsIndex < autoUpdateOutdatedInstancesDeploymentIdsJsonList.GetLength(); ++autoUpdateOutdatedInstancesDeploymentIdsIndex)
-    {
-      m_autoUpdateOutdatedInstancesDeploymentIds.push_back(autoUpdateOutdatedInstancesDeploymentIdsJsonList[autoUpdateOutdatedInstancesDeploymentIdsIndex].AsString());
+  if (jsonValue.ValueExists("autoUpdateOutdatedInstancesDeploymentIds")) {
+    Aws::Utils::Array<JsonView> autoUpdateOutdatedInstancesDeploymentIdsJsonList =
+        jsonValue.GetArray("autoUpdateOutdatedInstancesDeploymentIds");
+    for (unsigned autoUpdateOutdatedInstancesDeploymentIdsIndex = 0;
+         autoUpdateOutdatedInstancesDeploymentIdsIndex < autoUpdateOutdatedInstancesDeploymentIdsJsonList.GetLength();
+         ++autoUpdateOutdatedInstancesDeploymentIdsIndex) {
+      m_autoUpdateOutdatedInstancesDeploymentIds.push_back(
+          autoUpdateOutdatedInstancesDeploymentIdsJsonList[autoUpdateOutdatedInstancesDeploymentIdsIndex].AsString());
     }
     m_autoUpdateOutdatedInstancesDeploymentIdsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RelatedDeployments::Jsonize() const
-{
+JsonValue RelatedDeployments::Jsonize() const {
   JsonValue payload;
 
-  if(m_autoUpdateOutdatedInstancesRootDeploymentIdHasBeenSet)
-  {
-   payload.WithString("autoUpdateOutdatedInstancesRootDeploymentId", m_autoUpdateOutdatedInstancesRootDeploymentId);
-
+  if (m_autoUpdateOutdatedInstancesRootDeploymentIdHasBeenSet) {
+    payload.WithString("autoUpdateOutdatedInstancesRootDeploymentId", m_autoUpdateOutdatedInstancesRootDeploymentId);
   }
 
-  if(m_autoUpdateOutdatedInstancesDeploymentIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> autoUpdateOutdatedInstancesDeploymentIdsJsonList(m_autoUpdateOutdatedInstancesDeploymentIds.size());
-   for(unsigned autoUpdateOutdatedInstancesDeploymentIdsIndex = 0; autoUpdateOutdatedInstancesDeploymentIdsIndex < autoUpdateOutdatedInstancesDeploymentIdsJsonList.GetLength(); ++autoUpdateOutdatedInstancesDeploymentIdsIndex)
-   {
-     autoUpdateOutdatedInstancesDeploymentIdsJsonList[autoUpdateOutdatedInstancesDeploymentIdsIndex].AsString(m_autoUpdateOutdatedInstancesDeploymentIds[autoUpdateOutdatedInstancesDeploymentIdsIndex]);
-   }
-   payload.WithArray("autoUpdateOutdatedInstancesDeploymentIds", std::move(autoUpdateOutdatedInstancesDeploymentIdsJsonList));
-
+  if (m_autoUpdateOutdatedInstancesDeploymentIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> autoUpdateOutdatedInstancesDeploymentIdsJsonList(m_autoUpdateOutdatedInstancesDeploymentIds.size());
+    for (unsigned autoUpdateOutdatedInstancesDeploymentIdsIndex = 0;
+         autoUpdateOutdatedInstancesDeploymentIdsIndex < autoUpdateOutdatedInstancesDeploymentIdsJsonList.GetLength();
+         ++autoUpdateOutdatedInstancesDeploymentIdsIndex) {
+      autoUpdateOutdatedInstancesDeploymentIdsJsonList[autoUpdateOutdatedInstancesDeploymentIdsIndex].AsString(
+          m_autoUpdateOutdatedInstancesDeploymentIds[autoUpdateOutdatedInstancesDeploymentIdsIndex]);
+    }
+    payload.WithArray("autoUpdateOutdatedInstancesDeploymentIds", std::move(autoUpdateOutdatedInstancesDeploymentIdsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeDeploy
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeDeploy
+}  // namespace Aws

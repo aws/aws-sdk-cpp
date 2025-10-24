@@ -3,114 +3,86 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/BehaviorCriteria.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot/model/BehaviorCriteria.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
+namespace Aws {
+namespace IoT {
+namespace Model {
 
-BehaviorCriteria::BehaviorCriteria(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BehaviorCriteria::BehaviorCriteria(JsonView jsonValue) { *this = jsonValue; }
 
-BehaviorCriteria& BehaviorCriteria::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("comparisonOperator"))
-  {
+BehaviorCriteria& BehaviorCriteria::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("comparisonOperator")) {
     m_comparisonOperator = ComparisonOperatorMapper::GetComparisonOperatorForName(jsonValue.GetString("comparisonOperator"));
     m_comparisonOperatorHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("value"))
-  {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetObject("value");
     m_valueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("durationSeconds"))
-  {
+  if (jsonValue.ValueExists("durationSeconds")) {
     m_durationSeconds = jsonValue.GetInteger("durationSeconds");
     m_durationSecondsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("consecutiveDatapointsToAlarm"))
-  {
+  if (jsonValue.ValueExists("consecutiveDatapointsToAlarm")) {
     m_consecutiveDatapointsToAlarm = jsonValue.GetInteger("consecutiveDatapointsToAlarm");
     m_consecutiveDatapointsToAlarmHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("consecutiveDatapointsToClear"))
-  {
+  if (jsonValue.ValueExists("consecutiveDatapointsToClear")) {
     m_consecutiveDatapointsToClear = jsonValue.GetInteger("consecutiveDatapointsToClear");
     m_consecutiveDatapointsToClearHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("statisticalThreshold"))
-  {
+  if (jsonValue.ValueExists("statisticalThreshold")) {
     m_statisticalThreshold = jsonValue.GetObject("statisticalThreshold");
     m_statisticalThresholdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("mlDetectionConfig"))
-  {
+  if (jsonValue.ValueExists("mlDetectionConfig")) {
     m_mlDetectionConfig = jsonValue.GetObject("mlDetectionConfig");
     m_mlDetectionConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BehaviorCriteria::Jsonize() const
-{
+JsonValue BehaviorCriteria::Jsonize() const {
   JsonValue payload;
 
-  if(m_comparisonOperatorHasBeenSet)
-  {
-   payload.WithString("comparisonOperator", ComparisonOperatorMapper::GetNameForComparisonOperator(m_comparisonOperator));
+  if (m_comparisonOperatorHasBeenSet) {
+    payload.WithString("comparisonOperator", ComparisonOperatorMapper::GetNameForComparisonOperator(m_comparisonOperator));
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithObject("value", m_value.Jsonize());
-
+  if (m_valueHasBeenSet) {
+    payload.WithObject("value", m_value.Jsonize());
   }
 
-  if(m_durationSecondsHasBeenSet)
-  {
-   payload.WithInteger("durationSeconds", m_durationSeconds);
-
+  if (m_durationSecondsHasBeenSet) {
+    payload.WithInteger("durationSeconds", m_durationSeconds);
   }
 
-  if(m_consecutiveDatapointsToAlarmHasBeenSet)
-  {
-   payload.WithInteger("consecutiveDatapointsToAlarm", m_consecutiveDatapointsToAlarm);
-
+  if (m_consecutiveDatapointsToAlarmHasBeenSet) {
+    payload.WithInteger("consecutiveDatapointsToAlarm", m_consecutiveDatapointsToAlarm);
   }
 
-  if(m_consecutiveDatapointsToClearHasBeenSet)
-  {
-   payload.WithInteger("consecutiveDatapointsToClear", m_consecutiveDatapointsToClear);
-
+  if (m_consecutiveDatapointsToClearHasBeenSet) {
+    payload.WithInteger("consecutiveDatapointsToClear", m_consecutiveDatapointsToClear);
   }
 
-  if(m_statisticalThresholdHasBeenSet)
-  {
-   payload.WithObject("statisticalThreshold", m_statisticalThreshold.Jsonize());
-
+  if (m_statisticalThresholdHasBeenSet) {
+    payload.WithObject("statisticalThreshold", m_statisticalThreshold.Jsonize());
   }
 
-  if(m_mlDetectionConfigHasBeenSet)
-  {
-   payload.WithObject("mlDetectionConfig", m_mlDetectionConfig.Jsonize());
-
+  if (m_mlDetectionConfigHasBeenSet) {
+    payload.WithObject("mlDetectionConfig", m_mlDetectionConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotanalytics/model/IotSiteWiseCustomerManagedDatastoreS3Storage.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotanalytics/model/IotSiteWiseCustomerManagedDatastoreS3Storage.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTAnalytics
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTAnalytics {
+namespace Model {
 
-IotSiteWiseCustomerManagedDatastoreS3Storage::IotSiteWiseCustomerManagedDatastoreS3Storage(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IotSiteWiseCustomerManagedDatastoreS3Storage::IotSiteWiseCustomerManagedDatastoreS3Storage(JsonView jsonValue) { *this = jsonValue; }
 
-IotSiteWiseCustomerManagedDatastoreS3Storage& IotSiteWiseCustomerManagedDatastoreS3Storage::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("bucket"))
-  {
+IotSiteWiseCustomerManagedDatastoreS3Storage& IotSiteWiseCustomerManagedDatastoreS3Storage::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("bucket")) {
     m_bucket = jsonValue.GetString("bucket");
     m_bucketHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("keyPrefix"))
-  {
+  if (jsonValue.ValueExists("keyPrefix")) {
     m_keyPrefix = jsonValue.GetString("keyPrefix");
     m_keyPrefixHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IotSiteWiseCustomerManagedDatastoreS3Storage::Jsonize() const
-{
+JsonValue IotSiteWiseCustomerManagedDatastoreS3Storage::Jsonize() const {
   JsonValue payload;
 
-  if(m_bucketHasBeenSet)
-  {
-   payload.WithString("bucket", m_bucket);
-
+  if (m_bucketHasBeenSet) {
+    payload.WithString("bucket", m_bucket);
   }
 
-  if(m_keyPrefixHasBeenSet)
-  {
-   payload.WithString("keyPrefix", m_keyPrefix);
-
+  if (m_keyPrefixHasBeenSet) {
+    payload.WithString("keyPrefix", m_keyPrefix);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTAnalytics
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTAnalytics
+}  // namespace Aws

@@ -15,30 +15,27 @@ using namespace Aws::Utils;
 using namespace Aws::RedshiftDataAPIService;
 using namespace Aws::RedshiftDataAPIService::Model;
 
-namespace Aws
-{
-namespace RedshiftDataAPIService
-{
-template<> AWS_REDSHIFTDATAAPISERVICE_API BatchExecuteStatementException RedshiftDataAPIServiceError::GetModeledError()
-{
+namespace Aws {
+namespace RedshiftDataAPIService {
+template <>
+AWS_REDSHIFTDATAAPISERVICE_API BatchExecuteStatementException RedshiftDataAPIServiceError::GetModeledError() {
   assert(this->GetErrorType() == RedshiftDataAPIServiceErrors::BATCH_EXECUTE_STATEMENT);
   return BatchExecuteStatementException(this->GetJsonPayload().View());
 }
 
-template<> AWS_REDSHIFTDATAAPISERVICE_API ExecuteStatementException RedshiftDataAPIServiceError::GetModeledError()
-{
+template <>
+AWS_REDSHIFTDATAAPISERVICE_API ExecuteStatementException RedshiftDataAPIServiceError::GetModeledError() {
   assert(this->GetErrorType() == RedshiftDataAPIServiceErrors::EXECUTE_STATEMENT);
   return ExecuteStatementException(this->GetJsonPayload().View());
 }
 
-template<> AWS_REDSHIFTDATAAPISERVICE_API ResourceNotFoundException RedshiftDataAPIServiceError::GetModeledError()
-{
+template <>
+AWS_REDSHIFTDATAAPISERVICE_API ResourceNotFoundException RedshiftDataAPIServiceError::GetModeledError() {
   assert(this->GetErrorType() == RedshiftDataAPIServiceErrors::RESOURCE_NOT_FOUND);
   return ResourceNotFoundException(this->GetJsonPayload().View());
 }
 
-namespace RedshiftDataAPIServiceErrorMapper
-{
+namespace RedshiftDataAPIServiceErrorMapper {
 
 static const int BATCH_EXECUTE_STATEMENT_HASH = HashingUtils::HashString("BatchExecuteStatementException");
 static const int EXECUTE_STATEMENT_HASH = HashingUtils::HashString("ExecuteStatementException");
@@ -48,42 +45,30 @@ static const int QUERY_TIMEOUT_HASH = HashingUtils::HashString("QueryTimeoutExce
 static const int ACTIVE_SESSIONS_EXCEEDED_HASH = HashingUtils::HashString("ActiveSessionsExceededException");
 static const int ACTIVE_STATEMENTS_EXCEEDED_HASH = HashingUtils::HashString("ActiveStatementsExceededException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == BATCH_EXECUTE_STATEMENT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftDataAPIServiceErrors::BATCH_EXECUTE_STATEMENT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == EXECUTE_STATEMENT_HASH)
-  {
+  if (hashCode == BATCH_EXECUTE_STATEMENT_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftDataAPIServiceErrors::BATCH_EXECUTE_STATEMENT),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == EXECUTE_STATEMENT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftDataAPIServiceErrors::EXECUTE_STATEMENT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INTERNAL_SERVER_HASH)
-  {
+  } else if (hashCode == INTERNAL_SERVER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftDataAPIServiceErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DATABASE_CONNECTION_HASH)
-  {
+  } else if (hashCode == DATABASE_CONNECTION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftDataAPIServiceErrors::DATABASE_CONNECTION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == QUERY_TIMEOUT_HASH)
-  {
+  } else if (hashCode == QUERY_TIMEOUT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftDataAPIServiceErrors::QUERY_TIMEOUT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == ACTIVE_SESSIONS_EXCEEDED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftDataAPIServiceErrors::ACTIVE_SESSIONS_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == ACTIVE_STATEMENTS_EXCEEDED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftDataAPIServiceErrors::ACTIVE_STATEMENTS_EXCEEDED), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == ACTIVE_SESSIONS_EXCEEDED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftDataAPIServiceErrors::ACTIVE_SESSIONS_EXCEEDED),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == ACTIVE_STATEMENTS_EXCEEDED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftDataAPIServiceErrors::ACTIVE_STATEMENTS_EXCEEDED),
+                                RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace RedshiftDataAPIServiceErrorMapper
-} // namespace RedshiftDataAPIService
-} // namespace Aws
+}  // namespace RedshiftDataAPIServiceErrorMapper
+}  // namespace RedshiftDataAPIService
+}  // namespace Aws

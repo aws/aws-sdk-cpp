@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class FleetOnDemandAllocationStrategy
-  {
-    NOT_SET,
-    lowest_price,
-    prioritized
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class FleetOnDemandAllocationStrategy { NOT_SET, lowest_price, prioritized };
 
-namespace FleetOnDemandAllocationStrategyMapper
-{
+namespace FleetOnDemandAllocationStrategyMapper {
 AWS_EC2_API FleetOnDemandAllocationStrategy GetFleetOnDemandAllocationStrategyForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForFleetOnDemandAllocationStrategy(FleetOnDemandAllocationStrategy value);
-} // namespace FleetOnDemandAllocationStrategyMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace FleetOnDemandAllocationStrategyMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

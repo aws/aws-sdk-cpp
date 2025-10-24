@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCases
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCases {
+namespace Model {
 
-CaseSummary::CaseSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CaseSummary::CaseSummary(JsonView jsonValue) { *this = jsonValue; }
 
-CaseSummary& CaseSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("caseId"))
-  {
+CaseSummary& CaseSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("caseId")) {
     m_caseId = jsonValue.GetString("caseId");
     m_caseIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("templateId"))
-  {
+  if (jsonValue.ValueExists("templateId")) {
     m_templateId = jsonValue.GetString("templateId");
     m_templateIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CaseSummary::Jsonize() const
-{
+JsonValue CaseSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_caseIdHasBeenSet)
-  {
-   payload.WithString("caseId", m_caseId);
-
+  if (m_caseIdHasBeenSet) {
+    payload.WithString("caseId", m_caseId);
   }
 
-  if(m_templateIdHasBeenSet)
-  {
-   payload.WithString("templateId", m_templateId);
-
+  if (m_templateIdHasBeenSet) {
+    payload.WithString("templateId", m_templateId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCases
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCases
+}  // namespace Aws

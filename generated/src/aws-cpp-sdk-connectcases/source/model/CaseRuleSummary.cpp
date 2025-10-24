@@ -11,84 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCases
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCases {
+namespace Model {
 
-CaseRuleSummary::CaseRuleSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CaseRuleSummary::CaseRuleSummary(JsonView jsonValue) { *this = jsonValue; }
 
-CaseRuleSummary& CaseRuleSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("caseRuleId"))
-  {
+CaseRuleSummary& CaseRuleSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("caseRuleId")) {
     m_caseRuleId = jsonValue.GetString("caseRuleId");
     m_caseRuleIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("caseRuleArn"))
-  {
+  if (jsonValue.ValueExists("caseRuleArn")) {
     m_caseRuleArn = jsonValue.GetString("caseRuleArn");
     m_caseRuleArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ruleType"))
-  {
+  if (jsonValue.ValueExists("ruleType")) {
     m_ruleType = RuleTypeMapper::GetRuleTypeForName(jsonValue.GetString("ruleType"));
     m_ruleTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CaseRuleSummary::Jsonize() const
-{
+JsonValue CaseRuleSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_caseRuleIdHasBeenSet)
-  {
-   payload.WithString("caseRuleId", m_caseRuleId);
-
+  if (m_caseRuleIdHasBeenSet) {
+    payload.WithString("caseRuleId", m_caseRuleId);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_caseRuleArnHasBeenSet)
-  {
-   payload.WithString("caseRuleArn", m_caseRuleArn);
-
+  if (m_caseRuleArnHasBeenSet) {
+    payload.WithString("caseRuleArn", m_caseRuleArn);
   }
 
-  if(m_ruleTypeHasBeenSet)
-  {
-   payload.WithString("ruleType", RuleTypeMapper::GetNameForRuleType(m_ruleType));
+  if (m_ruleTypeHasBeenSet) {
+    payload.WithString("ruleType", RuleTypeMapper::GetNameForRuleType(m_ruleType));
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCases
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCases
+}  // namespace Aws

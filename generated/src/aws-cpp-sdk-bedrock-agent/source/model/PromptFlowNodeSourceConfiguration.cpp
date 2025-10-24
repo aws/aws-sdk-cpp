@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-PromptFlowNodeSourceConfiguration::PromptFlowNodeSourceConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PromptFlowNodeSourceConfiguration::PromptFlowNodeSourceConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-PromptFlowNodeSourceConfiguration& PromptFlowNodeSourceConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("resource"))
-  {
+PromptFlowNodeSourceConfiguration& PromptFlowNodeSourceConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("resource")) {
     m_resource = jsonValue.GetObject("resource");
     m_resourceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("inline"))
-  {
+  if (jsonValue.ValueExists("inline")) {
     m_inline = jsonValue.GetObject("inline");
     m_inlineHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PromptFlowNodeSourceConfiguration::Jsonize() const
-{
+JsonValue PromptFlowNodeSourceConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_resourceHasBeenSet)
-  {
-   payload.WithObject("resource", m_resource.Jsonize());
-
+  if (m_resourceHasBeenSet) {
+    payload.WithObject("resource", m_resource.Jsonize());
   }
 
-  if(m_inlineHasBeenSet)
-  {
-   payload.WithObject("inline", m_inline.Jsonize());
-
+  if (m_inlineHasBeenSet) {
+    payload.WithObject("inline", m_inline.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

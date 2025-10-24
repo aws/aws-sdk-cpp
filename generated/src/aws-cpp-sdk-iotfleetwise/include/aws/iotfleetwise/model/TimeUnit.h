@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTFleetWise
-{
-namespace Model
-{
-  enum class TimeUnit
-  {
-    NOT_SET,
-    MILLISECOND,
-    SECOND,
-    MINUTE,
-    HOUR
-  };
+namespace Aws {
+namespace IoTFleetWise {
+namespace Model {
+enum class TimeUnit { NOT_SET, MILLISECOND, SECOND, MINUTE, HOUR };
 
-namespace TimeUnitMapper
-{
+namespace TimeUnitMapper {
 AWS_IOTFLEETWISE_API TimeUnit GetTimeUnitForName(const Aws::String& name);
 
 AWS_IOTFLEETWISE_API Aws::String GetNameForTimeUnit(TimeUnit value);
-} // namespace TimeUnitMapper
-} // namespace Model
-} // namespace IoTFleetWise
-} // namespace Aws
+}  // namespace TimeUnitMapper
+}  // namespace Model
+}  // namespace IoTFleetWise
+}  // namespace Aws

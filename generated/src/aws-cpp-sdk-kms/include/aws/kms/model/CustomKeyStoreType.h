@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/kms/KMS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kms/KMS_EXPORTS.h>
 
-namespace Aws
-{
-namespace KMS
-{
-namespace Model
-{
-  enum class CustomKeyStoreType
-  {
-    NOT_SET,
-    AWS_CLOUDHSM,
-    EXTERNAL_KEY_STORE
-  };
+namespace Aws {
+namespace KMS {
+namespace Model {
+enum class CustomKeyStoreType { NOT_SET, AWS_CLOUDHSM, EXTERNAL_KEY_STORE };
 
-namespace CustomKeyStoreTypeMapper
-{
+namespace CustomKeyStoreTypeMapper {
 AWS_KMS_API CustomKeyStoreType GetCustomKeyStoreTypeForName(const Aws::String& name);
 
 AWS_KMS_API Aws::String GetNameForCustomKeyStoreType(CustomKeyStoreType value);
-} // namespace CustomKeyStoreTypeMapper
-} // namespace Model
-} // namespace KMS
-} // namespace Aws
+}  // namespace CustomKeyStoreTypeMapper
+}  // namespace Model
+}  // namespace KMS
+}  // namespace Aws

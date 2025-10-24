@@ -3,79 +3,65 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/AuthorizeSecurityGroupIngressRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/AuthorizeSecurityGroupIngressRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String AuthorizeSecurityGroupIngressRequest::SerializePayload() const
-{
+Aws::String AuthorizeSecurityGroupIngressRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=AuthorizeSecurityGroupIngress&";
-  if(m_cidrIpHasBeenSet)
-  {
+  if (m_cidrIpHasBeenSet) {
     ss << "CidrIp=" << StringUtils::URLEncode(m_cidrIp.c_str()) << "&";
   }
 
-  if(m_fromPortHasBeenSet)
-  {
+  if (m_fromPortHasBeenSet) {
     ss << "FromPort=" << m_fromPort << "&";
   }
 
-  if(m_groupIdHasBeenSet)
-  {
+  if (m_groupIdHasBeenSet) {
     ss << "GroupId=" << StringUtils::URLEncode(m_groupId.c_str()) << "&";
   }
 
-  if(m_groupNameHasBeenSet)
-  {
+  if (m_groupNameHasBeenSet) {
     ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
   }
 
-  if(m_ipPermissionsHasBeenSet)
-  {
+  if (m_ipPermissionsHasBeenSet) {
     unsigned ipPermissionsCount = 1;
-    for(auto& item : m_ipPermissions)
-    {
+    for (auto& item : m_ipPermissions) {
       item.OutputToStream(ss, "IpPermissions.", ipPermissionsCount, "");
       ipPermissionsCount++;
     }
   }
 
-  if(m_ipProtocolHasBeenSet)
-  {
+  if (m_ipProtocolHasBeenSet) {
     ss << "IpProtocol=" << StringUtils::URLEncode(m_ipProtocol.c_str()) << "&";
   }
 
-  if(m_sourceSecurityGroupNameHasBeenSet)
-  {
+  if (m_sourceSecurityGroupNameHasBeenSet) {
     ss << "SourceSecurityGroupName=" << StringUtils::URLEncode(m_sourceSecurityGroupName.c_str()) << "&";
   }
 
-  if(m_sourceSecurityGroupOwnerIdHasBeenSet)
-  {
+  if (m_sourceSecurityGroupOwnerIdHasBeenSet) {
     ss << "SourceSecurityGroupOwnerId=" << StringUtils::URLEncode(m_sourceSecurityGroupOwnerId.c_str()) << "&";
   }
 
-  if(m_toPortHasBeenSet)
-  {
+  if (m_toPortHasBeenSet) {
     ss << "ToPort=" << m_toPort << "&";
   }
 
-  if(m_tagSpecificationsHasBeenSet)
-  {
+  if (m_tagSpecificationsHasBeenSet) {
     unsigned tagSpecificationsCount = 1;
-    for(auto& item : m_tagSpecifications)
-    {
+    for (auto& item : m_tagSpecifications) {
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -83,8 +69,4 @@ Aws::String AuthorizeSecurityGroupIngressRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  AuthorizeSecurityGroupIngressRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void AuthorizeSecurityGroupIngressRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

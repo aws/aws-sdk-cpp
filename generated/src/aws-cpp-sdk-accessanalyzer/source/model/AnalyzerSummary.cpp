@@ -11,145 +11,109 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
 
-AnalyzerSummary::AnalyzerSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AnalyzerSummary::AnalyzerSummary(JsonView jsonValue) { *this = jsonValue; }
 
-AnalyzerSummary& AnalyzerSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("arn"))
-  {
+AnalyzerSummary& AnalyzerSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = TypeMapper::GetTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
-  {
+  if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastResourceAnalyzed"))
-  {
+  if (jsonValue.ValueExists("lastResourceAnalyzed")) {
     m_lastResourceAnalyzed = jsonValue.GetString("lastResourceAnalyzed");
     m_lastResourceAnalyzedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastResourceAnalyzedAt"))
-  {
+  if (jsonValue.ValueExists("lastResourceAnalyzedAt")) {
     m_lastResourceAnalyzedAt = jsonValue.GetString("lastResourceAnalyzedAt");
     m_lastResourceAnalyzedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tags"))
-  {
+  if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
+    for (auto& tagsItem : tagsJsonMap) {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = AnalyzerStatusMapper::GetAnalyzerStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("statusReason"))
-  {
+  if (jsonValue.ValueExists("statusReason")) {
     m_statusReason = jsonValue.GetObject("statusReason");
     m_statusReasonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("configuration"))
-  {
+  if (jsonValue.ValueExists("configuration")) {
     m_configuration = jsonValue.GetObject("configuration");
     m_configurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AnalyzerSummary::Jsonize() const
-{
+JsonValue AnalyzerSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", TypeMapper::GetNameForType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", TypeMapper::GetNameForType(m_type));
   }
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_createdAtHasBeenSet) {
+    payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_lastResourceAnalyzedHasBeenSet)
-  {
-   payload.WithString("lastResourceAnalyzed", m_lastResourceAnalyzed);
-
+  if (m_lastResourceAnalyzedHasBeenSet) {
+    payload.WithString("lastResourceAnalyzed", m_lastResourceAnalyzed);
   }
 
-  if(m_lastResourceAnalyzedAtHasBeenSet)
-  {
-   payload.WithString("lastResourceAnalyzedAt", m_lastResourceAnalyzedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_lastResourceAnalyzedAtHasBeenSet) {
+    payload.WithString("lastResourceAnalyzedAt", m_lastResourceAnalyzedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", AnalyzerStatusMapper::GetNameForAnalyzerStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", AnalyzerStatusMapper::GetNameForAnalyzerStatus(m_status));
   }
 
-  if(m_statusReasonHasBeenSet)
-  {
-   payload.WithObject("statusReason", m_statusReason.Jsonize());
-
+  if (m_statusReasonHasBeenSet) {
+    payload.WithObject("statusReason", m_statusReason.Jsonize());
   }
 
-  if(m_configurationHasBeenSet)
-  {
-   payload.WithObject("configuration", m_configuration.Jsonize());
-
+  if (m_configurationHasBeenSet) {
+    payload.WithObject("configuration", m_configuration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

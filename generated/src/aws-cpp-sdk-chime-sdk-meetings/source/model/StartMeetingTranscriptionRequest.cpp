@@ -12,19 +12,12 @@ using namespace Aws::ChimeSDKMeetings::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartMeetingTranscriptionRequest::SerializePayload() const
-{
+Aws::String StartMeetingTranscriptionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_transcriptionConfigurationHasBeenSet)
-  {
-   payload.WithObject("TranscriptionConfiguration", m_transcriptionConfiguration.Jsonize());
-
+  if (m_transcriptionConfigurationHasBeenSet) {
+    payload.WithObject("TranscriptionConfiguration", m_transcriptionConfiguration.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

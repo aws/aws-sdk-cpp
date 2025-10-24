@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
 
-IamRoleConfiguration::IamRoleConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IamRoleConfiguration::IamRoleConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-IamRoleConfiguration& IamRoleConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("trustPolicy"))
-  {
+IamRoleConfiguration& IamRoleConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("trustPolicy")) {
     m_trustPolicy = jsonValue.GetString("trustPolicy");
     m_trustPolicyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IamRoleConfiguration::Jsonize() const
-{
+JsonValue IamRoleConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_trustPolicyHasBeenSet)
-  {
-   payload.WithString("trustPolicy", m_trustPolicy);
-
+  if (m_trustPolicyHasBeenSet) {
+    payload.WithString("trustPolicy", m_trustPolicy);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Athena
-{
-namespace Model
-{
+namespace Aws {
+namespace Athena {
+namespace Model {
 
-UnprocessedQueryExecutionId::UnprocessedQueryExecutionId(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UnprocessedQueryExecutionId::UnprocessedQueryExecutionId(JsonView jsonValue) { *this = jsonValue; }
 
-UnprocessedQueryExecutionId& UnprocessedQueryExecutionId::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("QueryExecutionId"))
-  {
+UnprocessedQueryExecutionId& UnprocessedQueryExecutionId::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("QueryExecutionId")) {
     m_queryExecutionId = jsonValue.GetString("QueryExecutionId");
     m_queryExecutionIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorCode"))
-  {
+  if (jsonValue.ValueExists("ErrorCode")) {
     m_errorCode = jsonValue.GetString("ErrorCode");
     m_errorCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorMessage"))
-  {
+  if (jsonValue.ValueExists("ErrorMessage")) {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
     m_errorMessageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UnprocessedQueryExecutionId::Jsonize() const
-{
+JsonValue UnprocessedQueryExecutionId::Jsonize() const {
   JsonValue payload;
 
-  if(m_queryExecutionIdHasBeenSet)
-  {
-   payload.WithString("QueryExecutionId", m_queryExecutionId);
-
+  if (m_queryExecutionIdHasBeenSet) {
+    payload.WithString("QueryExecutionId", m_queryExecutionId);
   }
 
-  if(m_errorCodeHasBeenSet)
-  {
-   payload.WithString("ErrorCode", m_errorCode);
-
+  if (m_errorCodeHasBeenSet) {
+    payload.WithString("ErrorCode", m_errorCode);
   }
 
-  if(m_errorMessageHasBeenSet)
-  {
-   payload.WithString("ErrorMessage", m_errorMessage);
-
+  if (m_errorMessageHasBeenSet) {
+    payload.WithString("ErrorMessage", m_errorMessage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Athena
-} // namespace Aws
+}  // namespace Model
+}  // namespace Athena
+}  // namespace Aws

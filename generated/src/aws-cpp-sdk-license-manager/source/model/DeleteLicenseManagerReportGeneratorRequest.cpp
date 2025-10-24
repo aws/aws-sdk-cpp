@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/license-manager/model/DeleteLicenseManagerReportGeneratorRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/license-manager/model/DeleteLicenseManagerReportGeneratorRequest.h>
 
 #include <utility>
 
@@ -12,27 +12,18 @@ using namespace Aws::LicenseManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteLicenseManagerReportGeneratorRequest::SerializePayload() const
-{
+Aws::String DeleteLicenseManagerReportGeneratorRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_licenseManagerReportGeneratorArnHasBeenSet)
-  {
-   payload.WithString("LicenseManagerReportGeneratorArn", m_licenseManagerReportGeneratorArn);
-
+  if (m_licenseManagerReportGeneratorArnHasBeenSet) {
+    payload.WithString("LicenseManagerReportGeneratorArn", m_licenseManagerReportGeneratorArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteLicenseManagerReportGeneratorRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteLicenseManagerReportGeneratorRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSLicenseManager.DeleteLicenseManagerReportGenerator"));
   return headers;
-
 }
-
-
-
-

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/geo-routes/model/RouteVehicleLicensePlate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/geo-routes/model/RouteVehicleLicensePlate.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GeoRoutes
-{
-namespace Model
-{
+namespace Aws {
+namespace GeoRoutes {
+namespace Model {
 
-RouteVehicleLicensePlate::RouteVehicleLicensePlate(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RouteVehicleLicensePlate::RouteVehicleLicensePlate(JsonView jsonValue) { *this = jsonValue; }
 
-RouteVehicleLicensePlate& RouteVehicleLicensePlate::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("LastCharacter"))
-  {
+RouteVehicleLicensePlate& RouteVehicleLicensePlate::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("LastCharacter")) {
     m_lastCharacter = jsonValue.GetString("LastCharacter");
     m_lastCharacterHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RouteVehicleLicensePlate::Jsonize() const
-{
+JsonValue RouteVehicleLicensePlate::Jsonize() const {
   JsonValue payload;
 
-  if(m_lastCharacterHasBeenSet)
-  {
-   payload.WithString("LastCharacter", m_lastCharacter);
-
+  if (m_lastCharacterHasBeenSet) {
+    payload.WithString("LastCharacter", m_lastCharacter);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GeoRoutes
-} // namespace Aws
+}  // namespace Model
+}  // namespace GeoRoutes
+}  // namespace Aws

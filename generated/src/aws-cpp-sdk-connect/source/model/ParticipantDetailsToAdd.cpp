@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-ParticipantDetailsToAdd::ParticipantDetailsToAdd(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ParticipantDetailsToAdd::ParticipantDetailsToAdd(JsonView jsonValue) { *this = jsonValue; }
 
-ParticipantDetailsToAdd& ParticipantDetailsToAdd::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ParticipantRole"))
-  {
+ParticipantDetailsToAdd& ParticipantDetailsToAdd::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ParticipantRole")) {
     m_participantRole = ParticipantRoleMapper::GetParticipantRoleForName(jsonValue.GetString("ParticipantRole"));
     m_participantRoleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DisplayName"))
-  {
+  if (jsonValue.ValueExists("DisplayName")) {
     m_displayName = jsonValue.GetString("DisplayName");
     m_displayNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ParticipantCapabilities"))
-  {
+  if (jsonValue.ValueExists("ParticipantCapabilities")) {
     m_participantCapabilities = jsonValue.GetObject("ParticipantCapabilities");
     m_participantCapabilitiesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ParticipantDetailsToAdd::Jsonize() const
-{
+JsonValue ParticipantDetailsToAdd::Jsonize() const {
   JsonValue payload;
 
-  if(m_participantRoleHasBeenSet)
-  {
-   payload.WithString("ParticipantRole", ParticipantRoleMapper::GetNameForParticipantRole(m_participantRole));
+  if (m_participantRoleHasBeenSet) {
+    payload.WithString("ParticipantRole", ParticipantRoleMapper::GetNameForParticipantRole(m_participantRole));
   }
 
-  if(m_displayNameHasBeenSet)
-  {
-   payload.WithString("DisplayName", m_displayName);
-
+  if (m_displayNameHasBeenSet) {
+    payload.WithString("DisplayName", m_displayName);
   }
 
-  if(m_participantCapabilitiesHasBeenSet)
-  {
-   payload.WithObject("ParticipantCapabilities", m_participantCapabilities.Jsonize());
-
+  if (m_participantCapabilitiesHasBeenSet) {
+    payload.WithObject("ParticipantCapabilities", m_participantCapabilities.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

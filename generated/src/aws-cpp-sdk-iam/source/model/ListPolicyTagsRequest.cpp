@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/ListPolicyTagsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/ListPolicyTagsRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String ListPolicyTagsRequest::SerializePayload() const
-{
+Aws::String ListPolicyTagsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ListPolicyTags&";
-  if(m_policyArnHasBeenSet)
-  {
+  if (m_policyArnHasBeenSet) {
     ss << "PolicyArn=" << StringUtils::URLEncode(m_policyArn.c_str()) << "&";
   }
 
-  if(m_markerHasBeenSet)
-  {
+  if (m_markerHasBeenSet) {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
 
-  if(m_maxItemsHasBeenSet)
-  {
+  if (m_maxItemsHasBeenSet) {
     ss << "MaxItems=" << m_maxItems << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String ListPolicyTagsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ListPolicyTagsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ListPolicyTagsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

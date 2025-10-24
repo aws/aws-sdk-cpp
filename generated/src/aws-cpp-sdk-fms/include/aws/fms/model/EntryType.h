@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/fms/FMS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fms/FMS_EXPORTS.h>
 
-namespace Aws
-{
-namespace FMS
-{
-namespace Model
-{
-  enum class EntryType
-  {
-    NOT_SET,
-    FMS_MANAGED_FIRST_ENTRY,
-    FMS_MANAGED_LAST_ENTRY,
-    CUSTOM_ENTRY
-  };
+namespace Aws {
+namespace FMS {
+namespace Model {
+enum class EntryType { NOT_SET, FMS_MANAGED_FIRST_ENTRY, FMS_MANAGED_LAST_ENTRY, CUSTOM_ENTRY };
 
-namespace EntryTypeMapper
-{
+namespace EntryTypeMapper {
 AWS_FMS_API EntryType GetEntryTypeForName(const Aws::String& name);
 
 AWS_FMS_API Aws::String GetNameForEntryType(EntryType value);
-} // namespace EntryTypeMapper
-} // namespace Model
-} // namespace FMS
-} // namespace Aws
+}  // namespace EntryTypeMapper
+}  // namespace Model
+}  // namespace FMS
+}  // namespace Aws

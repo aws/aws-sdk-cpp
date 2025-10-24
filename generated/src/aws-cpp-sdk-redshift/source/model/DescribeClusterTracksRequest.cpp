@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/DescribeClusterTracksRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/DescribeClusterTracksRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeClusterTracksRequest::SerializePayload() const
-{
+Aws::String DescribeClusterTracksRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeClusterTracks&";
-  if(m_maintenanceTrackNameHasBeenSet)
-  {
+  if (m_maintenanceTrackNameHasBeenSet) {
     ss << "MaintenanceTrackName=" << StringUtils::URLEncode(m_maintenanceTrackName.c_str()) << "&";
   }
 
-  if(m_maxRecordsHasBeenSet)
-  {
+  if (m_maxRecordsHasBeenSet) {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
 
-  if(m_markerHasBeenSet)
-  {
+  if (m_markerHasBeenSet) {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String DescribeClusterTracksRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeClusterTracksRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeClusterTracksRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

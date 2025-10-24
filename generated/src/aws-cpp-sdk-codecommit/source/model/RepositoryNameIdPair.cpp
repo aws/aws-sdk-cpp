@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeCommit
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeCommit {
+namespace Model {
 
-RepositoryNameIdPair::RepositoryNameIdPair(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RepositoryNameIdPair::RepositoryNameIdPair(JsonView jsonValue) { *this = jsonValue; }
 
-RepositoryNameIdPair& RepositoryNameIdPair::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("repositoryName"))
-  {
+RepositoryNameIdPair& RepositoryNameIdPair::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("repositoryName")) {
     m_repositoryName = jsonValue.GetString("repositoryName");
     m_repositoryNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("repositoryId"))
-  {
+  if (jsonValue.ValueExists("repositoryId")) {
     m_repositoryId = jsonValue.GetString("repositoryId");
     m_repositoryIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RepositoryNameIdPair::Jsonize() const
-{
+JsonValue RepositoryNameIdPair::Jsonize() const {
   JsonValue payload;
 
-  if(m_repositoryNameHasBeenSet)
-  {
-   payload.WithString("repositoryName", m_repositoryName);
-
+  if (m_repositoryNameHasBeenSet) {
+    payload.WithString("repositoryName", m_repositoryName);
   }
 
-  if(m_repositoryIdHasBeenSet)
-  {
-   payload.WithString("repositoryId", m_repositoryId);
-
+  if (m_repositoryIdHasBeenSet) {
+    payload.WithString("repositoryId", m_repositoryId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeCommit
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeCommit
+}  // namespace Aws

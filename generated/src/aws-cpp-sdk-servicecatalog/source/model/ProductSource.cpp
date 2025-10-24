@@ -3,63 +3,51 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/servicecatalog/model/ProductSource.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/servicecatalog/model/ProductSource.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace ServiceCatalog {
+namespace Model {
+namespace ProductSourceMapper {
 
-namespace Aws
-{
-  namespace ServiceCatalog
-  {
-    namespace Model
-    {
-      namespace ProductSourceMapper
-      {
+static const int ACCOUNT_HASH = HashingUtils::HashString("ACCOUNT");
 
-        static const int ACCOUNT_HASH = HashingUtils::HashString("ACCOUNT");
+ProductSource GetProductSourceForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == ACCOUNT_HASH) {
+    return ProductSource::ACCOUNT;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<ProductSource>(hashCode);
+  }
 
+  return ProductSource::NOT_SET;
+}
 
-        ProductSource GetProductSourceForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ACCOUNT_HASH)
-          {
-            return ProductSource::ACCOUNT;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ProductSource>(hashCode);
-          }
+Aws::String GetNameForProductSource(ProductSource enumValue) {
+  switch (enumValue) {
+    case ProductSource::NOT_SET:
+      return {};
+    case ProductSource::ACCOUNT:
+      return "ACCOUNT";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return ProductSource::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForProductSource(ProductSource enumValue)
-        {
-          switch(enumValue)
-          {
-          case ProductSource::NOT_SET:
-            return {};
-          case ProductSource::ACCOUNT:
-            return "ACCOUNT";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace ProductSourceMapper
-    } // namespace Model
-  } // namespace ServiceCatalog
-} // namespace Aws
+}  // namespace ProductSourceMapper
+}  // namespace Model
+}  // namespace ServiceCatalog
+}  // namespace Aws

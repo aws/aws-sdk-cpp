@@ -6,53 +6,51 @@
 #pragma once
 #include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace IoTFleetWise
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace IoTFleetWise {
+namespace Model {
 
+/**
+ * <p>Information about a collection scheme that uses a time period to decide how
+ * often to collect data.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/TimeBasedCollectionScheme">AWS
+ * API Reference</a></p>
+ */
+class TimeBasedCollectionScheme {
+ public:
+  AWS_IOTFLEETWISE_API TimeBasedCollectionScheme() = default;
+  AWS_IOTFLEETWISE_API TimeBasedCollectionScheme(Aws::Utils::Json::JsonView jsonValue);
+  AWS_IOTFLEETWISE_API TimeBasedCollectionScheme& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Information about a collection scheme that uses a time period to decide how
-   * often to collect data.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/TimeBasedCollectionScheme">AWS
-   * API Reference</a></p>
+   * <p>The time period (in milliseconds) to decide how often to collect data. For
+   * example, if the time period is <code>60000</code>, the Edge Agent software
+   * collects data once every minute.</p>
    */
-  class TimeBasedCollectionScheme
-  {
-  public:
-    AWS_IOTFLEETWISE_API TimeBasedCollectionScheme() = default;
-    AWS_IOTFLEETWISE_API TimeBasedCollectionScheme(Aws::Utils::Json::JsonView jsonValue);
-    AWS_IOTFLEETWISE_API TimeBasedCollectionScheme& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline long long GetPeriodMs() const { return m_periodMs; }
+  inline bool PeriodMsHasBeenSet() const { return m_periodMsHasBeenSet; }
+  inline void SetPeriodMs(long long value) {
+    m_periodMsHasBeenSet = true;
+    m_periodMs = value;
+  }
+  inline TimeBasedCollectionScheme& WithPeriodMs(long long value) {
+    SetPeriodMs(value);
+    return *this;
+  }
+  ///@}
+ private:
+  long long m_periodMs{0};
+  bool m_periodMsHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>The time period (in milliseconds) to decide how often to collect data. For
-     * example, if the time period is <code>60000</code>, the Edge Agent software
-     * collects data once every minute.</p>
-     */
-    inline long long GetPeriodMs() const { return m_periodMs; }
-    inline bool PeriodMsHasBeenSet() const { return m_periodMsHasBeenSet; }
-    inline void SetPeriodMs(long long value) { m_periodMsHasBeenSet = true; m_periodMs = value; }
-    inline TimeBasedCollectionScheme& WithPeriodMs(long long value) { SetPeriodMs(value); return *this;}
-    ///@}
-  private:
-
-    long long m_periodMs{0};
-    bool m_periodMsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace IoTFleetWise
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTFleetWise
+}  // namespace Aws

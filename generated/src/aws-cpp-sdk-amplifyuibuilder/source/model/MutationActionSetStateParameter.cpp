@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyUIBuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Model {
 
-MutationActionSetStateParameter::MutationActionSetStateParameter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MutationActionSetStateParameter::MutationActionSetStateParameter(JsonView jsonValue) { *this = jsonValue; }
 
-MutationActionSetStateParameter& MutationActionSetStateParameter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("componentName"))
-  {
+MutationActionSetStateParameter& MutationActionSetStateParameter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("componentName")) {
     m_componentName = jsonValue.GetString("componentName");
     m_componentNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("property"))
-  {
+  if (jsonValue.ValueExists("property")) {
     m_property = jsonValue.GetString("property");
     m_propertyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("set"))
-  {
+  if (jsonValue.ValueExists("set")) {
     m_set = jsonValue.GetObject("set");
     m_setHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MutationActionSetStateParameter::Jsonize() const
-{
+JsonValue MutationActionSetStateParameter::Jsonize() const {
   JsonValue payload;
 
-  if(m_componentNameHasBeenSet)
-  {
-   payload.WithString("componentName", m_componentName);
-
+  if (m_componentNameHasBeenSet) {
+    payload.WithString("componentName", m_componentName);
   }
 
-  if(m_propertyHasBeenSet)
-  {
-   payload.WithString("property", m_property);
-
+  if (m_propertyHasBeenSet) {
+    payload.WithString("property", m_property);
   }
 
-  if(m_setHasBeenSet)
-  {
-   payload.WithObject("set", m_set.Jsonize());
-
+  if (m_setHasBeenSet) {
+    payload.WithObject("set", m_set.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

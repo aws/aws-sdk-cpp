@@ -4,186 +4,245 @@
  */
 
 #pragma once
-#include <aws/databrew/GlueDataBrew_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/databrew/GlueDataBrew_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace GlueDataBrew
-{
-namespace Model
-{
-  class DescribeScheduleResult
-  {
-  public:
-    AWS_GLUEDATABREW_API DescribeScheduleResult() = default;
-    AWS_GLUEDATABREW_API DescribeScheduleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_GLUEDATABREW_API DescribeScheduleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace GlueDataBrew {
+namespace Model {
+class DescribeScheduleResult {
+ public:
+  AWS_GLUEDATABREW_API DescribeScheduleResult() = default;
+  AWS_GLUEDATABREW_API DescribeScheduleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_GLUEDATABREW_API DescribeScheduleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>The date and time that the schedule was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreateDate() const { return m_createDate; }
+  template <typename CreateDateT = Aws::Utils::DateTime>
+  void SetCreateDate(CreateDateT&& value) {
+    m_createDateHasBeenSet = true;
+    m_createDate = std::forward<CreateDateT>(value);
+  }
+  template <typename CreateDateT = Aws::Utils::DateTime>
+  DescribeScheduleResult& WithCreateDate(CreateDateT&& value) {
+    SetCreateDate(std::forward<CreateDateT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The date and time that the schedule was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreateDate() const { return m_createDate; }
-    template<typename CreateDateT = Aws::Utils::DateTime>
-    void SetCreateDate(CreateDateT&& value) { m_createDateHasBeenSet = true; m_createDate = std::forward<CreateDateT>(value); }
-    template<typename CreateDateT = Aws::Utils::DateTime>
-    DescribeScheduleResult& WithCreateDate(CreateDateT&& value) { SetCreateDate(std::forward<CreateDateT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The identifier (user name) of the user who created the schedule. </p>
+   */
+  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+  template <typename CreatedByT = Aws::String>
+  void SetCreatedBy(CreatedByT&& value) {
+    m_createdByHasBeenSet = true;
+    m_createdBy = std::forward<CreatedByT>(value);
+  }
+  template <typename CreatedByT = Aws::String>
+  DescribeScheduleResult& WithCreatedBy(CreatedByT&& value) {
+    SetCreatedBy(std::forward<CreatedByT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The identifier (user name) of the user who created the schedule. </p>
-     */
-    inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
-    template<typename CreatedByT = Aws::String>
-    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
-    template<typename CreatedByT = Aws::String>
-    DescribeScheduleResult& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The name or names of one or more jobs to be run by using the schedule.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetJobNames() const { return m_jobNames; }
+  template <typename JobNamesT = Aws::Vector<Aws::String>>
+  void SetJobNames(JobNamesT&& value) {
+    m_jobNamesHasBeenSet = true;
+    m_jobNames = std::forward<JobNamesT>(value);
+  }
+  template <typename JobNamesT = Aws::Vector<Aws::String>>
+  DescribeScheduleResult& WithJobNames(JobNamesT&& value) {
+    SetJobNames(std::forward<JobNamesT>(value));
+    return *this;
+  }
+  template <typename JobNamesT = Aws::String>
+  DescribeScheduleResult& AddJobNames(JobNamesT&& value) {
+    m_jobNamesHasBeenSet = true;
+    m_jobNames.emplace_back(std::forward<JobNamesT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The name or names of one or more jobs to be run by using the schedule.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetJobNames() const { return m_jobNames; }
-    template<typename JobNamesT = Aws::Vector<Aws::String>>
-    void SetJobNames(JobNamesT&& value) { m_jobNamesHasBeenSet = true; m_jobNames = std::forward<JobNamesT>(value); }
-    template<typename JobNamesT = Aws::Vector<Aws::String>>
-    DescribeScheduleResult& WithJobNames(JobNamesT&& value) { SetJobNames(std::forward<JobNamesT>(value)); return *this;}
-    template<typename JobNamesT = Aws::String>
-    DescribeScheduleResult& AddJobNames(JobNamesT&& value) { m_jobNamesHasBeenSet = true; m_jobNames.emplace_back(std::forward<JobNamesT>(value)); return *this; }
-    ///@}
+  ///@{
+  /**
+   * <p>The identifier (user name) of the user who last modified the schedule.</p>
+   */
+  inline const Aws::String& GetLastModifiedBy() const { return m_lastModifiedBy; }
+  template <typename LastModifiedByT = Aws::String>
+  void SetLastModifiedBy(LastModifiedByT&& value) {
+    m_lastModifiedByHasBeenSet = true;
+    m_lastModifiedBy = std::forward<LastModifiedByT>(value);
+  }
+  template <typename LastModifiedByT = Aws::String>
+  DescribeScheduleResult& WithLastModifiedBy(LastModifiedByT&& value) {
+    SetLastModifiedBy(std::forward<LastModifiedByT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The identifier (user name) of the user who last modified the schedule.</p>
-     */
-    inline const Aws::String& GetLastModifiedBy() const { return m_lastModifiedBy; }
-    template<typename LastModifiedByT = Aws::String>
-    void SetLastModifiedBy(LastModifiedByT&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = std::forward<LastModifiedByT>(value); }
-    template<typename LastModifiedByT = Aws::String>
-    DescribeScheduleResult& WithLastModifiedBy(LastModifiedByT&& value) { SetLastModifiedBy(std::forward<LastModifiedByT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The date and time that the schedule was last modified.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastModifiedDate() const { return m_lastModifiedDate; }
+  template <typename LastModifiedDateT = Aws::Utils::DateTime>
+  void SetLastModifiedDate(LastModifiedDateT&& value) {
+    m_lastModifiedDateHasBeenSet = true;
+    m_lastModifiedDate = std::forward<LastModifiedDateT>(value);
+  }
+  template <typename LastModifiedDateT = Aws::Utils::DateTime>
+  DescribeScheduleResult& WithLastModifiedDate(LastModifiedDateT&& value) {
+    SetLastModifiedDate(std::forward<LastModifiedDateT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The date and time that the schedule was last modified.</p>
-     */
-    inline const Aws::Utils::DateTime& GetLastModifiedDate() const { return m_lastModifiedDate; }
-    template<typename LastModifiedDateT = Aws::Utils::DateTime>
-    void SetLastModifiedDate(LastModifiedDateT&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::forward<LastModifiedDateT>(value); }
-    template<typename LastModifiedDateT = Aws::Utils::DateTime>
-    DescribeScheduleResult& WithLastModifiedDate(LastModifiedDateT&& value) { SetLastModifiedDate(std::forward<LastModifiedDateT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the schedule.</p>
+   */
+  inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
+  template <typename ResourceArnT = Aws::String>
+  void SetResourceArn(ResourceArnT&& value) {
+    m_resourceArnHasBeenSet = true;
+    m_resourceArn = std::forward<ResourceArnT>(value);
+  }
+  template <typename ResourceArnT = Aws::String>
+  DescribeScheduleResult& WithResourceArn(ResourceArnT&& value) {
+    SetResourceArn(std::forward<ResourceArnT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the schedule.</p>
-     */
-    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
-    template<typename ResourceArnT = Aws::String>
-    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
-    template<typename ResourceArnT = Aws::String>
-    DescribeScheduleResult& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The date or dates and time or times when the jobs are to be run for the
+   * schedule. For more information, see <a
+   * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
+   * expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
+   */
+  inline const Aws::String& GetCronExpression() const { return m_cronExpression; }
+  template <typename CronExpressionT = Aws::String>
+  void SetCronExpression(CronExpressionT&& value) {
+    m_cronExpressionHasBeenSet = true;
+    m_cronExpression = std::forward<CronExpressionT>(value);
+  }
+  template <typename CronExpressionT = Aws::String>
+  DescribeScheduleResult& WithCronExpression(CronExpressionT&& value) {
+    SetCronExpression(std::forward<CronExpressionT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The date or dates and time or times when the jobs are to be run for the
-     * schedule. For more information, see <a
-     * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
-     * expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
-     */
-    inline const Aws::String& GetCronExpression() const { return m_cronExpression; }
-    template<typename CronExpressionT = Aws::String>
-    void SetCronExpression(CronExpressionT&& value) { m_cronExpressionHasBeenSet = true; m_cronExpression = std::forward<CronExpressionT>(value); }
-    template<typename CronExpressionT = Aws::String>
-    DescribeScheduleResult& WithCronExpression(CronExpressionT&& value) { SetCronExpression(std::forward<CronExpressionT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>Metadata tags associated with this schedule.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  DescribeScheduleResult& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+  DescribeScheduleResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Metadata tags associated with this schedule.</p>
-     */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
-    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
-    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
-    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
-    DescribeScheduleResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
-    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
-    DescribeScheduleResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
-      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
-    }
-    ///@}
+  ///@{
+  /**
+   * <p>The name of the schedule.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  DescribeScheduleResult& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The name of the schedule.</p>
-     */
-    inline const Aws::String& GetName() const { return m_name; }
-    template<typename NameT = Aws::String>
-    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
-    template<typename NameT = Aws::String>
-    DescribeScheduleResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    DescribeScheduleResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  DescribeScheduleResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Utils::DateTime m_createDate{};
+  bool m_createDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createDate{};
-    bool m_createDateHasBeenSet = false;
+  Aws::String m_createdBy;
+  bool m_createdByHasBeenSet = false;
 
-    Aws::String m_createdBy;
-    bool m_createdByHasBeenSet = false;
+  Aws::Vector<Aws::String> m_jobNames;
+  bool m_jobNamesHasBeenSet = false;
 
-    Aws::Vector<Aws::String> m_jobNames;
-    bool m_jobNamesHasBeenSet = false;
+  Aws::String m_lastModifiedBy;
+  bool m_lastModifiedByHasBeenSet = false;
 
-    Aws::String m_lastModifiedBy;
-    bool m_lastModifiedByHasBeenSet = false;
+  Aws::Utils::DateTime m_lastModifiedDate{};
+  bool m_lastModifiedDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedDate{};
-    bool m_lastModifiedDateHasBeenSet = false;
+  Aws::String m_resourceArn;
+  bool m_resourceArnHasBeenSet = false;
 
-    Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet = false;
+  Aws::String m_cronExpression;
+  bool m_cronExpressionHasBeenSet = false;
 
-    Aws::String m_cronExpression;
-    bool m_cronExpressionHasBeenSet = false;
+  Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_tagsHasBeenSet = false;
 
-    Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet = false;
+  Aws::String m_name;
+  bool m_nameHasBeenSet = false;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace GlueDataBrew
-} // namespace Aws
+}  // namespace Model
+}  // namespace GlueDataBrew
+}  // namespace Aws

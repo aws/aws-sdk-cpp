@@ -4,315 +4,426 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/quicksight/model/ColumnDataRole.h>
-#include <aws/quicksight/model/TopicTimeGranularity.h>
-#include <aws/quicksight/model/DefaultFormatting.h>
-#include <aws/quicksight/model/DefaultAggregation.h>
-#include <aws/quicksight/model/ComparativeOrder.h>
-#include <aws/quicksight/model/SemanticType.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/AuthorSpecifiedAggregation.h>
 #include <aws/quicksight/model/CellValueSynonym.h>
+#include <aws/quicksight/model/ColumnDataRole.h>
+#include <aws/quicksight/model/ComparativeOrder.h>
+#include <aws/quicksight/model/DefaultAggregation.h>
+#include <aws/quicksight/model/DefaultFormatting.h>
+#include <aws/quicksight/model/SemanticType.h>
+#include <aws/quicksight/model/TopicTimeGranularity.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace QuickSight {
+namespace Model {
 
+/**
+ * <p>A structure that represents a calculated field.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TopicCalculatedField">AWS
+ * API Reference</a></p>
+ */
+class TopicCalculatedField {
+ public:
+  AWS_QUICKSIGHT_API TopicCalculatedField() = default;
+  AWS_QUICKSIGHT_API TopicCalculatedField(Aws::Utils::Json::JsonView jsonValue);
+  AWS_QUICKSIGHT_API TopicCalculatedField& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>A structure that represents a calculated field.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TopicCalculatedField">AWS
-   * API Reference</a></p>
+   * <p>The calculated field name.</p>
    */
-  class TopicCalculatedField
-  {
-  public:
-    AWS_QUICKSIGHT_API TopicCalculatedField() = default;
-    AWS_QUICKSIGHT_API TopicCalculatedField(Aws::Utils::Json::JsonView jsonValue);
-    AWS_QUICKSIGHT_API TopicCalculatedField& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetCalculatedFieldName() const { return m_calculatedFieldName; }
+  inline bool CalculatedFieldNameHasBeenSet() const { return m_calculatedFieldNameHasBeenSet; }
+  template <typename CalculatedFieldNameT = Aws::String>
+  void SetCalculatedFieldName(CalculatedFieldNameT&& value) {
+    m_calculatedFieldNameHasBeenSet = true;
+    m_calculatedFieldName = std::forward<CalculatedFieldNameT>(value);
+  }
+  template <typename CalculatedFieldNameT = Aws::String>
+  TopicCalculatedField& WithCalculatedFieldName(CalculatedFieldNameT&& value) {
+    SetCalculatedFieldName(std::forward<CalculatedFieldNameT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The calculated field description.</p>
+   */
+  inline const Aws::String& GetCalculatedFieldDescription() const { return m_calculatedFieldDescription; }
+  inline bool CalculatedFieldDescriptionHasBeenSet() const { return m_calculatedFieldDescriptionHasBeenSet; }
+  template <typename CalculatedFieldDescriptionT = Aws::String>
+  void SetCalculatedFieldDescription(CalculatedFieldDescriptionT&& value) {
+    m_calculatedFieldDescriptionHasBeenSet = true;
+    m_calculatedFieldDescription = std::forward<CalculatedFieldDescriptionT>(value);
+  }
+  template <typename CalculatedFieldDescriptionT = Aws::String>
+  TopicCalculatedField& WithCalculatedFieldDescription(CalculatedFieldDescriptionT&& value) {
+    SetCalculatedFieldDescription(std::forward<CalculatedFieldDescriptionT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The calculated field name.</p>
-     */
-    inline const Aws::String& GetCalculatedFieldName() const { return m_calculatedFieldName; }
-    inline bool CalculatedFieldNameHasBeenSet() const { return m_calculatedFieldNameHasBeenSet; }
-    template<typename CalculatedFieldNameT = Aws::String>
-    void SetCalculatedFieldName(CalculatedFieldNameT&& value) { m_calculatedFieldNameHasBeenSet = true; m_calculatedFieldName = std::forward<CalculatedFieldNameT>(value); }
-    template<typename CalculatedFieldNameT = Aws::String>
-    TopicCalculatedField& WithCalculatedFieldName(CalculatedFieldNameT&& value) { SetCalculatedFieldName(std::forward<CalculatedFieldNameT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The calculated field expression.</p>
+   */
+  inline const Aws::String& GetExpression() const { return m_expression; }
+  inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
+  template <typename ExpressionT = Aws::String>
+  void SetExpression(ExpressionT&& value) {
+    m_expressionHasBeenSet = true;
+    m_expression = std::forward<ExpressionT>(value);
+  }
+  template <typename ExpressionT = Aws::String>
+  TopicCalculatedField& WithExpression(ExpressionT&& value) {
+    SetExpression(std::forward<ExpressionT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The calculated field description.</p>
-     */
-    inline const Aws::String& GetCalculatedFieldDescription() const { return m_calculatedFieldDescription; }
-    inline bool CalculatedFieldDescriptionHasBeenSet() const { return m_calculatedFieldDescriptionHasBeenSet; }
-    template<typename CalculatedFieldDescriptionT = Aws::String>
-    void SetCalculatedFieldDescription(CalculatedFieldDescriptionT&& value) { m_calculatedFieldDescriptionHasBeenSet = true; m_calculatedFieldDescription = std::forward<CalculatedFieldDescriptionT>(value); }
-    template<typename CalculatedFieldDescriptionT = Aws::String>
-    TopicCalculatedField& WithCalculatedFieldDescription(CalculatedFieldDescriptionT&& value) { SetCalculatedFieldDescription(std::forward<CalculatedFieldDescriptionT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The other names or aliases for the calculated field.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetCalculatedFieldSynonyms() const { return m_calculatedFieldSynonyms; }
+  inline bool CalculatedFieldSynonymsHasBeenSet() const { return m_calculatedFieldSynonymsHasBeenSet; }
+  template <typename CalculatedFieldSynonymsT = Aws::Vector<Aws::String>>
+  void SetCalculatedFieldSynonyms(CalculatedFieldSynonymsT&& value) {
+    m_calculatedFieldSynonymsHasBeenSet = true;
+    m_calculatedFieldSynonyms = std::forward<CalculatedFieldSynonymsT>(value);
+  }
+  template <typename CalculatedFieldSynonymsT = Aws::Vector<Aws::String>>
+  TopicCalculatedField& WithCalculatedFieldSynonyms(CalculatedFieldSynonymsT&& value) {
+    SetCalculatedFieldSynonyms(std::forward<CalculatedFieldSynonymsT>(value));
+    return *this;
+  }
+  template <typename CalculatedFieldSynonymsT = Aws::String>
+  TopicCalculatedField& AddCalculatedFieldSynonyms(CalculatedFieldSynonymsT&& value) {
+    m_calculatedFieldSynonymsHasBeenSet = true;
+    m_calculatedFieldSynonyms.emplace_back(std::forward<CalculatedFieldSynonymsT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The calculated field expression.</p>
-     */
-    inline const Aws::String& GetExpression() const { return m_expression; }
-    inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-    template<typename ExpressionT = Aws::String>
-    void SetExpression(ExpressionT&& value) { m_expressionHasBeenSet = true; m_expression = std::forward<ExpressionT>(value); }
-    template<typename ExpressionT = Aws::String>
-    TopicCalculatedField& WithExpression(ExpressionT&& value) { SetExpression(std::forward<ExpressionT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>A boolean value that indicates if a calculated field is included in the
+   * topic.</p>
+   */
+  inline bool GetIsIncludedInTopic() const { return m_isIncludedInTopic; }
+  inline bool IsIncludedInTopicHasBeenSet() const { return m_isIncludedInTopicHasBeenSet; }
+  inline void SetIsIncludedInTopic(bool value) {
+    m_isIncludedInTopicHasBeenSet = true;
+    m_isIncludedInTopic = value;
+  }
+  inline TopicCalculatedField& WithIsIncludedInTopic(bool value) {
+    SetIsIncludedInTopic(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The other names or aliases for the calculated field.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetCalculatedFieldSynonyms() const { return m_calculatedFieldSynonyms; }
-    inline bool CalculatedFieldSynonymsHasBeenSet() const { return m_calculatedFieldSynonymsHasBeenSet; }
-    template<typename CalculatedFieldSynonymsT = Aws::Vector<Aws::String>>
-    void SetCalculatedFieldSynonyms(CalculatedFieldSynonymsT&& value) { m_calculatedFieldSynonymsHasBeenSet = true; m_calculatedFieldSynonyms = std::forward<CalculatedFieldSynonymsT>(value); }
-    template<typename CalculatedFieldSynonymsT = Aws::Vector<Aws::String>>
-    TopicCalculatedField& WithCalculatedFieldSynonyms(CalculatedFieldSynonymsT&& value) { SetCalculatedFieldSynonyms(std::forward<CalculatedFieldSynonymsT>(value)); return *this;}
-    template<typename CalculatedFieldSynonymsT = Aws::String>
-    TopicCalculatedField& AddCalculatedFieldSynonyms(CalculatedFieldSynonymsT&& value) { m_calculatedFieldSynonymsHasBeenSet = true; m_calculatedFieldSynonyms.emplace_back(std::forward<CalculatedFieldSynonymsT>(value)); return *this; }
-    ///@}
+  ///@{
+  /**
+   * <p>A Boolean value that indicates if a calculated field is visible in the
+   * autocomplete.</p>
+   */
+  inline bool GetDisableIndexing() const { return m_disableIndexing; }
+  inline bool DisableIndexingHasBeenSet() const { return m_disableIndexingHasBeenSet; }
+  inline void SetDisableIndexing(bool value) {
+    m_disableIndexingHasBeenSet = true;
+    m_disableIndexing = value;
+  }
+  inline TopicCalculatedField& WithDisableIndexing(bool value) {
+    SetDisableIndexing(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>A boolean value that indicates if a calculated field is included in the
-     * topic.</p>
-     */
-    inline bool GetIsIncludedInTopic() const { return m_isIncludedInTopic; }
-    inline bool IsIncludedInTopicHasBeenSet() const { return m_isIncludedInTopicHasBeenSet; }
-    inline void SetIsIncludedInTopic(bool value) { m_isIncludedInTopicHasBeenSet = true; m_isIncludedInTopic = value; }
-    inline TopicCalculatedField& WithIsIncludedInTopic(bool value) { SetIsIncludedInTopic(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The column data role for a calculated field. Valid values for this structure
+   * are <code>DIMENSION</code> and <code>MEASURE</code>.</p>
+   */
+  inline ColumnDataRole GetColumnDataRole() const { return m_columnDataRole; }
+  inline bool ColumnDataRoleHasBeenSet() const { return m_columnDataRoleHasBeenSet; }
+  inline void SetColumnDataRole(ColumnDataRole value) {
+    m_columnDataRoleHasBeenSet = true;
+    m_columnDataRole = value;
+  }
+  inline TopicCalculatedField& WithColumnDataRole(ColumnDataRole value) {
+    SetColumnDataRole(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>A Boolean value that indicates if a calculated field is visible in the
-     * autocomplete.</p>
-     */
-    inline bool GetDisableIndexing() const { return m_disableIndexing; }
-    inline bool DisableIndexingHasBeenSet() const { return m_disableIndexingHasBeenSet; }
-    inline void SetDisableIndexing(bool value) { m_disableIndexingHasBeenSet = true; m_disableIndexing = value; }
-    inline TopicCalculatedField& WithDisableIndexing(bool value) { SetDisableIndexing(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The level of time precision that is used to aggregate <code>DateTime</code>
+   * values.</p>
+   */
+  inline TopicTimeGranularity GetTimeGranularity() const { return m_timeGranularity; }
+  inline bool TimeGranularityHasBeenSet() const { return m_timeGranularityHasBeenSet; }
+  inline void SetTimeGranularity(TopicTimeGranularity value) {
+    m_timeGranularityHasBeenSet = true;
+    m_timeGranularity = value;
+  }
+  inline TopicCalculatedField& WithTimeGranularity(TopicTimeGranularity value) {
+    SetTimeGranularity(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The column data role for a calculated field. Valid values for this structure
-     * are <code>DIMENSION</code> and <code>MEASURE</code>.</p>
-     */
-    inline ColumnDataRole GetColumnDataRole() const { return m_columnDataRole; }
-    inline bool ColumnDataRoleHasBeenSet() const { return m_columnDataRoleHasBeenSet; }
-    inline void SetColumnDataRole(ColumnDataRole value) { m_columnDataRoleHasBeenSet = true; m_columnDataRole = value; }
-    inline TopicCalculatedField& WithColumnDataRole(ColumnDataRole value) { SetColumnDataRole(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The default formatting definition.</p>
+   */
+  inline const DefaultFormatting& GetDefaultFormatting() const { return m_defaultFormatting; }
+  inline bool DefaultFormattingHasBeenSet() const { return m_defaultFormattingHasBeenSet; }
+  template <typename DefaultFormattingT = DefaultFormatting>
+  void SetDefaultFormatting(DefaultFormattingT&& value) {
+    m_defaultFormattingHasBeenSet = true;
+    m_defaultFormatting = std::forward<DefaultFormattingT>(value);
+  }
+  template <typename DefaultFormattingT = DefaultFormatting>
+  TopicCalculatedField& WithDefaultFormatting(DefaultFormattingT&& value) {
+    SetDefaultFormatting(std::forward<DefaultFormattingT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The level of time precision that is used to aggregate <code>DateTime</code>
-     * values.</p>
-     */
-    inline TopicTimeGranularity GetTimeGranularity() const { return m_timeGranularity; }
-    inline bool TimeGranularityHasBeenSet() const { return m_timeGranularityHasBeenSet; }
-    inline void SetTimeGranularity(TopicTimeGranularity value) { m_timeGranularityHasBeenSet = true; m_timeGranularity = value; }
-    inline TopicCalculatedField& WithTimeGranularity(TopicTimeGranularity value) { SetTimeGranularity(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The default aggregation. Valid values for this structure are
+   * <code>SUM</code>, <code>MAX</code>, <code>MIN</code>, <code>COUNT</code>,
+   * <code>DISTINCT_COUNT</code>, and <code>AVERAGE</code>.</p>
+   */
+  inline DefaultAggregation GetAggregation() const { return m_aggregation; }
+  inline bool AggregationHasBeenSet() const { return m_aggregationHasBeenSet; }
+  inline void SetAggregation(DefaultAggregation value) {
+    m_aggregationHasBeenSet = true;
+    m_aggregation = value;
+  }
+  inline TopicCalculatedField& WithAggregation(DefaultAggregation value) {
+    SetAggregation(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The default formatting definition.</p>
-     */
-    inline const DefaultFormatting& GetDefaultFormatting() const { return m_defaultFormatting; }
-    inline bool DefaultFormattingHasBeenSet() const { return m_defaultFormattingHasBeenSet; }
-    template<typename DefaultFormattingT = DefaultFormatting>
-    void SetDefaultFormatting(DefaultFormattingT&& value) { m_defaultFormattingHasBeenSet = true; m_defaultFormatting = std::forward<DefaultFormattingT>(value); }
-    template<typename DefaultFormattingT = DefaultFormatting>
-    TopicCalculatedField& WithDefaultFormatting(DefaultFormattingT&& value) { SetDefaultFormatting(std::forward<DefaultFormattingT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The order in which data is displayed for the calculated field when it's used
+   * in a comparative context.</p>
+   */
+  inline const ComparativeOrder& GetComparativeOrder() const { return m_comparativeOrder; }
+  inline bool ComparativeOrderHasBeenSet() const { return m_comparativeOrderHasBeenSet; }
+  template <typename ComparativeOrderT = ComparativeOrder>
+  void SetComparativeOrder(ComparativeOrderT&& value) {
+    m_comparativeOrderHasBeenSet = true;
+    m_comparativeOrder = std::forward<ComparativeOrderT>(value);
+  }
+  template <typename ComparativeOrderT = ComparativeOrder>
+  TopicCalculatedField& WithComparativeOrder(ComparativeOrderT&& value) {
+    SetComparativeOrder(std::forward<ComparativeOrderT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The default aggregation. Valid values for this structure are
-     * <code>SUM</code>, <code>MAX</code>, <code>MIN</code>, <code>COUNT</code>,
-     * <code>DISTINCT_COUNT</code>, and <code>AVERAGE</code>.</p>
-     */
-    inline DefaultAggregation GetAggregation() const { return m_aggregation; }
-    inline bool AggregationHasBeenSet() const { return m_aggregationHasBeenSet; }
-    inline void SetAggregation(DefaultAggregation value) { m_aggregationHasBeenSet = true; m_aggregation = value; }
-    inline TopicCalculatedField& WithAggregation(DefaultAggregation value) { SetAggregation(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The semantic type.</p>
+   */
+  inline const SemanticType& GetSemanticType() const { return m_semanticType; }
+  inline bool SemanticTypeHasBeenSet() const { return m_semanticTypeHasBeenSet; }
+  template <typename SemanticTypeT = SemanticType>
+  void SetSemanticType(SemanticTypeT&& value) {
+    m_semanticTypeHasBeenSet = true;
+    m_semanticType = std::forward<SemanticTypeT>(value);
+  }
+  template <typename SemanticTypeT = SemanticType>
+  TopicCalculatedField& WithSemanticType(SemanticTypeT&& value) {
+    SetSemanticType(std::forward<SemanticTypeT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The order in which data is displayed for the calculated field when it's used
-     * in a comparative context.</p>
-     */
-    inline const ComparativeOrder& GetComparativeOrder() const { return m_comparativeOrder; }
-    inline bool ComparativeOrderHasBeenSet() const { return m_comparativeOrderHasBeenSet; }
-    template<typename ComparativeOrderT = ComparativeOrder>
-    void SetComparativeOrder(ComparativeOrderT&& value) { m_comparativeOrderHasBeenSet = true; m_comparativeOrder = std::forward<ComparativeOrderT>(value); }
-    template<typename ComparativeOrderT = ComparativeOrder>
-    TopicCalculatedField& WithComparativeOrder(ComparativeOrderT&& value) { SetComparativeOrder(std::forward<ComparativeOrderT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The list of aggregation types that are allowed for the calculated field.
+   * Valid values for this structure are <code>COUNT</code>,
+   * <code>DISTINCT_COUNT</code>, <code>MIN</code>, <code>MAX</code>,
+   * <code>MEDIAN</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>STDEV</code>,
+   * <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, and
+   * <code>PERCENTILE</code>.</p>
+   */
+  inline const Aws::Vector<AuthorSpecifiedAggregation>& GetAllowedAggregations() const { return m_allowedAggregations; }
+  inline bool AllowedAggregationsHasBeenSet() const { return m_allowedAggregationsHasBeenSet; }
+  template <typename AllowedAggregationsT = Aws::Vector<AuthorSpecifiedAggregation>>
+  void SetAllowedAggregations(AllowedAggregationsT&& value) {
+    m_allowedAggregationsHasBeenSet = true;
+    m_allowedAggregations = std::forward<AllowedAggregationsT>(value);
+  }
+  template <typename AllowedAggregationsT = Aws::Vector<AuthorSpecifiedAggregation>>
+  TopicCalculatedField& WithAllowedAggregations(AllowedAggregationsT&& value) {
+    SetAllowedAggregations(std::forward<AllowedAggregationsT>(value));
+    return *this;
+  }
+  inline TopicCalculatedField& AddAllowedAggregations(AuthorSpecifiedAggregation value) {
+    m_allowedAggregationsHasBeenSet = true;
+    m_allowedAggregations.push_back(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The semantic type.</p>
-     */
-    inline const SemanticType& GetSemanticType() const { return m_semanticType; }
-    inline bool SemanticTypeHasBeenSet() const { return m_semanticTypeHasBeenSet; }
-    template<typename SemanticTypeT = SemanticType>
-    void SetSemanticType(SemanticTypeT&& value) { m_semanticTypeHasBeenSet = true; m_semanticType = std::forward<SemanticTypeT>(value); }
-    template<typename SemanticTypeT = SemanticType>
-    TopicCalculatedField& WithSemanticType(SemanticTypeT&& value) { SetSemanticType(std::forward<SemanticTypeT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The list of aggregation types that are not allowed for the calculated field.
+   * Valid values for this structure are <code>COUNT</code>,
+   * <code>DISTINCT_COUNT</code>, <code>MIN</code>, <code>MAX</code>,
+   * <code>MEDIAN</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>STDEV</code>,
+   * <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, and
+   * <code>PERCENTILE</code>.</p>
+   */
+  inline const Aws::Vector<AuthorSpecifiedAggregation>& GetNotAllowedAggregations() const { return m_notAllowedAggregations; }
+  inline bool NotAllowedAggregationsHasBeenSet() const { return m_notAllowedAggregationsHasBeenSet; }
+  template <typename NotAllowedAggregationsT = Aws::Vector<AuthorSpecifiedAggregation>>
+  void SetNotAllowedAggregations(NotAllowedAggregationsT&& value) {
+    m_notAllowedAggregationsHasBeenSet = true;
+    m_notAllowedAggregations = std::forward<NotAllowedAggregationsT>(value);
+  }
+  template <typename NotAllowedAggregationsT = Aws::Vector<AuthorSpecifiedAggregation>>
+  TopicCalculatedField& WithNotAllowedAggregations(NotAllowedAggregationsT&& value) {
+    SetNotAllowedAggregations(std::forward<NotAllowedAggregationsT>(value));
+    return *this;
+  }
+  inline TopicCalculatedField& AddNotAllowedAggregations(AuthorSpecifiedAggregation value) {
+    m_notAllowedAggregationsHasBeenSet = true;
+    m_notAllowedAggregations.push_back(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The list of aggregation types that are allowed for the calculated field.
-     * Valid values for this structure are <code>COUNT</code>,
-     * <code>DISTINCT_COUNT</code>, <code>MIN</code>, <code>MAX</code>,
-     * <code>MEDIAN</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>STDEV</code>,
-     * <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, and
-     * <code>PERCENTILE</code>.</p>
-     */
-    inline const Aws::Vector<AuthorSpecifiedAggregation>& GetAllowedAggregations() const { return m_allowedAggregations; }
-    inline bool AllowedAggregationsHasBeenSet() const { return m_allowedAggregationsHasBeenSet; }
-    template<typename AllowedAggregationsT = Aws::Vector<AuthorSpecifiedAggregation>>
-    void SetAllowedAggregations(AllowedAggregationsT&& value) { m_allowedAggregationsHasBeenSet = true; m_allowedAggregations = std::forward<AllowedAggregationsT>(value); }
-    template<typename AllowedAggregationsT = Aws::Vector<AuthorSpecifiedAggregation>>
-    TopicCalculatedField& WithAllowedAggregations(AllowedAggregationsT&& value) { SetAllowedAggregations(std::forward<AllowedAggregationsT>(value)); return *this;}
-    inline TopicCalculatedField& AddAllowedAggregations(AuthorSpecifiedAggregation value) { m_allowedAggregationsHasBeenSet = true; m_allowedAggregations.push_back(value); return *this; }
-    ///@}
+  ///@{
+  /**
+   * <p>A Boolean value that indicates whether to never aggregate calculated field in
+   * filters.</p>
+   */
+  inline bool GetNeverAggregateInFilter() const { return m_neverAggregateInFilter; }
+  inline bool NeverAggregateInFilterHasBeenSet() const { return m_neverAggregateInFilterHasBeenSet; }
+  inline void SetNeverAggregateInFilter(bool value) {
+    m_neverAggregateInFilterHasBeenSet = true;
+    m_neverAggregateInFilter = value;
+  }
+  inline TopicCalculatedField& WithNeverAggregateInFilter(bool value) {
+    SetNeverAggregateInFilter(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The list of aggregation types that are not allowed for the calculated field.
-     * Valid values for this structure are <code>COUNT</code>,
-     * <code>DISTINCT_COUNT</code>, <code>MIN</code>, <code>MAX</code>,
-     * <code>MEDIAN</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>STDEV</code>,
-     * <code>STDEVP</code>, <code>VAR</code>, <code>VARP</code>, and
-     * <code>PERCENTILE</code>.</p>
-     */
-    inline const Aws::Vector<AuthorSpecifiedAggregation>& GetNotAllowedAggregations() const { return m_notAllowedAggregations; }
-    inline bool NotAllowedAggregationsHasBeenSet() const { return m_notAllowedAggregationsHasBeenSet; }
-    template<typename NotAllowedAggregationsT = Aws::Vector<AuthorSpecifiedAggregation>>
-    void SetNotAllowedAggregations(NotAllowedAggregationsT&& value) { m_notAllowedAggregationsHasBeenSet = true; m_notAllowedAggregations = std::forward<NotAllowedAggregationsT>(value); }
-    template<typename NotAllowedAggregationsT = Aws::Vector<AuthorSpecifiedAggregation>>
-    TopicCalculatedField& WithNotAllowedAggregations(NotAllowedAggregationsT&& value) { SetNotAllowedAggregations(std::forward<NotAllowedAggregationsT>(value)); return *this;}
-    inline TopicCalculatedField& AddNotAllowedAggregations(AuthorSpecifiedAggregation value) { m_notAllowedAggregationsHasBeenSet = true; m_notAllowedAggregations.push_back(value); return *this; }
-    ///@}
+  ///@{
+  /**
+   * <p>The other names or aliases for the calculated field cell value.</p>
+   */
+  inline const Aws::Vector<CellValueSynonym>& GetCellValueSynonyms() const { return m_cellValueSynonyms; }
+  inline bool CellValueSynonymsHasBeenSet() const { return m_cellValueSynonymsHasBeenSet; }
+  template <typename CellValueSynonymsT = Aws::Vector<CellValueSynonym>>
+  void SetCellValueSynonyms(CellValueSynonymsT&& value) {
+    m_cellValueSynonymsHasBeenSet = true;
+    m_cellValueSynonyms = std::forward<CellValueSynonymsT>(value);
+  }
+  template <typename CellValueSynonymsT = Aws::Vector<CellValueSynonym>>
+  TopicCalculatedField& WithCellValueSynonyms(CellValueSynonymsT&& value) {
+    SetCellValueSynonyms(std::forward<CellValueSynonymsT>(value));
+    return *this;
+  }
+  template <typename CellValueSynonymsT = CellValueSynonym>
+  TopicCalculatedField& AddCellValueSynonyms(CellValueSynonymsT&& value) {
+    m_cellValueSynonymsHasBeenSet = true;
+    m_cellValueSynonyms.emplace_back(std::forward<CellValueSynonymsT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>A Boolean value that indicates whether to never aggregate calculated field in
-     * filters.</p>
-     */
-    inline bool GetNeverAggregateInFilter() const { return m_neverAggregateInFilter; }
-    inline bool NeverAggregateInFilterHasBeenSet() const { return m_neverAggregateInFilterHasBeenSet; }
-    inline void SetNeverAggregateInFilter(bool value) { m_neverAggregateInFilterHasBeenSet = true; m_neverAggregateInFilter = value; }
-    inline TopicCalculatedField& WithNeverAggregateInFilter(bool value) { SetNeverAggregateInFilter(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The non additive for the table style target.</p>
+   */
+  inline bool GetNonAdditive() const { return m_nonAdditive; }
+  inline bool NonAdditiveHasBeenSet() const { return m_nonAdditiveHasBeenSet; }
+  inline void SetNonAdditive(bool value) {
+    m_nonAdditiveHasBeenSet = true;
+    m_nonAdditive = value;
+  }
+  inline TopicCalculatedField& WithNonAdditive(bool value) {
+    SetNonAdditive(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_calculatedFieldName;
+  bool m_calculatedFieldNameHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The other names or aliases for the calculated field cell value.</p>
-     */
-    inline const Aws::Vector<CellValueSynonym>& GetCellValueSynonyms() const { return m_cellValueSynonyms; }
-    inline bool CellValueSynonymsHasBeenSet() const { return m_cellValueSynonymsHasBeenSet; }
-    template<typename CellValueSynonymsT = Aws::Vector<CellValueSynonym>>
-    void SetCellValueSynonyms(CellValueSynonymsT&& value) { m_cellValueSynonymsHasBeenSet = true; m_cellValueSynonyms = std::forward<CellValueSynonymsT>(value); }
-    template<typename CellValueSynonymsT = Aws::Vector<CellValueSynonym>>
-    TopicCalculatedField& WithCellValueSynonyms(CellValueSynonymsT&& value) { SetCellValueSynonyms(std::forward<CellValueSynonymsT>(value)); return *this;}
-    template<typename CellValueSynonymsT = CellValueSynonym>
-    TopicCalculatedField& AddCellValueSynonyms(CellValueSynonymsT&& value) { m_cellValueSynonymsHasBeenSet = true; m_cellValueSynonyms.emplace_back(std::forward<CellValueSynonymsT>(value)); return *this; }
-    ///@}
+  Aws::String m_calculatedFieldDescription;
+  bool m_calculatedFieldDescriptionHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The non additive for the table style target.</p>
-     */
-    inline bool GetNonAdditive() const { return m_nonAdditive; }
-    inline bool NonAdditiveHasBeenSet() const { return m_nonAdditiveHasBeenSet; }
-    inline void SetNonAdditive(bool value) { m_nonAdditiveHasBeenSet = true; m_nonAdditive = value; }
-    inline TopicCalculatedField& WithNonAdditive(bool value) { SetNonAdditive(value); return *this;}
-    ///@}
-  private:
+  Aws::String m_expression;
+  bool m_expressionHasBeenSet = false;
 
-    Aws::String m_calculatedFieldName;
-    bool m_calculatedFieldNameHasBeenSet = false;
+  Aws::Vector<Aws::String> m_calculatedFieldSynonyms;
+  bool m_calculatedFieldSynonymsHasBeenSet = false;
 
-    Aws::String m_calculatedFieldDescription;
-    bool m_calculatedFieldDescriptionHasBeenSet = false;
+  bool m_isIncludedInTopic{false};
+  bool m_isIncludedInTopicHasBeenSet = false;
 
-    Aws::String m_expression;
-    bool m_expressionHasBeenSet = false;
+  bool m_disableIndexing{false};
+  bool m_disableIndexingHasBeenSet = false;
 
-    Aws::Vector<Aws::String> m_calculatedFieldSynonyms;
-    bool m_calculatedFieldSynonymsHasBeenSet = false;
+  ColumnDataRole m_columnDataRole{ColumnDataRole::NOT_SET};
+  bool m_columnDataRoleHasBeenSet = false;
 
-    bool m_isIncludedInTopic{false};
-    bool m_isIncludedInTopicHasBeenSet = false;
+  TopicTimeGranularity m_timeGranularity{TopicTimeGranularity::NOT_SET};
+  bool m_timeGranularityHasBeenSet = false;
 
-    bool m_disableIndexing{false};
-    bool m_disableIndexingHasBeenSet = false;
+  DefaultFormatting m_defaultFormatting;
+  bool m_defaultFormattingHasBeenSet = false;
 
-    ColumnDataRole m_columnDataRole{ColumnDataRole::NOT_SET};
-    bool m_columnDataRoleHasBeenSet = false;
+  DefaultAggregation m_aggregation{DefaultAggregation::NOT_SET};
+  bool m_aggregationHasBeenSet = false;
 
-    TopicTimeGranularity m_timeGranularity{TopicTimeGranularity::NOT_SET};
-    bool m_timeGranularityHasBeenSet = false;
+  ComparativeOrder m_comparativeOrder;
+  bool m_comparativeOrderHasBeenSet = false;
 
-    DefaultFormatting m_defaultFormatting;
-    bool m_defaultFormattingHasBeenSet = false;
+  SemanticType m_semanticType;
+  bool m_semanticTypeHasBeenSet = false;
 
-    DefaultAggregation m_aggregation{DefaultAggregation::NOT_SET};
-    bool m_aggregationHasBeenSet = false;
+  Aws::Vector<AuthorSpecifiedAggregation> m_allowedAggregations;
+  bool m_allowedAggregationsHasBeenSet = false;
 
-    ComparativeOrder m_comparativeOrder;
-    bool m_comparativeOrderHasBeenSet = false;
+  Aws::Vector<AuthorSpecifiedAggregation> m_notAllowedAggregations;
+  bool m_notAllowedAggregationsHasBeenSet = false;
 
-    SemanticType m_semanticType;
-    bool m_semanticTypeHasBeenSet = false;
+  bool m_neverAggregateInFilter{false};
+  bool m_neverAggregateInFilterHasBeenSet = false;
 
-    Aws::Vector<AuthorSpecifiedAggregation> m_allowedAggregations;
-    bool m_allowedAggregationsHasBeenSet = false;
+  Aws::Vector<CellValueSynonym> m_cellValueSynonyms;
+  bool m_cellValueSynonymsHasBeenSet = false;
 
-    Aws::Vector<AuthorSpecifiedAggregation> m_notAllowedAggregations;
-    bool m_notAllowedAggregationsHasBeenSet = false;
+  bool m_nonAdditive{false};
+  bool m_nonAdditiveHasBeenSet = false;
+};
 
-    bool m_neverAggregateInFilter{false};
-    bool m_neverAggregateInFilterHasBeenSet = false;
-
-    Aws::Vector<CellValueSynonym> m_cellValueSynonyms;
-    bool m_cellValueSynonymsHasBeenSet = false;
-
-    bool m_nonAdditive{false};
-    bool m_nonAdditiveHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

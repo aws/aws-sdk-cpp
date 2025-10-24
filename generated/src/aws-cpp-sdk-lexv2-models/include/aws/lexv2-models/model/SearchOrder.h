@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
-  enum class SearchOrder
-  {
-    NOT_SET,
-    Ascending,
-    Descending
-  };
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
+enum class SearchOrder { NOT_SET, Ascending, Descending };
 
-namespace SearchOrderMapper
-{
+namespace SearchOrderMapper {
 AWS_LEXMODELSV2_API SearchOrder GetSearchOrderForName(const Aws::String& name);
 
 AWS_LEXMODELSV2_API Aws::String GetNameForSearchOrder(SearchOrder value);
-} // namespace SearchOrderMapper
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace SearchOrderMapper
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

@@ -12,27 +12,18 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteDocumentClassifierRequest::SerializePayload() const
-{
+Aws::String DeleteDocumentClassifierRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_documentClassifierArnHasBeenSet)
-  {
-   payload.WithString("DocumentClassifierArn", m_documentClassifierArn);
-
+  if (m_documentClassifierArnHasBeenSet) {
+    payload.WithString("DocumentClassifierArn", m_documentClassifierArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteDocumentClassifierRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteDocumentClassifierRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Comprehend_20171127.DeleteDocumentClassifier"));
   return headers;
-
 }
-
-
-
-

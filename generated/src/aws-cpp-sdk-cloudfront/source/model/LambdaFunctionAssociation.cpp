@@ -4,49 +4,40 @@
  */
 
 #include <aws/cloudfront/model/LambdaFunctionAssociation.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
-LambdaFunctionAssociation::LambdaFunctionAssociation(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+LambdaFunctionAssociation::LambdaFunctionAssociation(const XmlNode& xmlNode) { *this = xmlNode; }
 
-LambdaFunctionAssociation& LambdaFunctionAssociation::operator =(const XmlNode& xmlNode)
-{
+LambdaFunctionAssociation& LambdaFunctionAssociation::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode lambdaFunctionARNNode = resultNode.FirstChild("LambdaFunctionARN");
-    if(!lambdaFunctionARNNode.IsNull())
-    {
+    if (!lambdaFunctionARNNode.IsNull()) {
       m_lambdaFunctionARN = Aws::Utils::Xml::DecodeEscapedXmlText(lambdaFunctionARNNode.GetText());
       m_lambdaFunctionARNHasBeenSet = true;
     }
     XmlNode eventTypeNode = resultNode.FirstChild("EventType");
-    if(!eventTypeNode.IsNull())
-    {
-      m_eventType = EventTypeMapper::GetEventTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(eventTypeNode.GetText()).c_str()));
+    if (!eventTypeNode.IsNull()) {
+      m_eventType =
+          EventTypeMapper::GetEventTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(eventTypeNode.GetText()).c_str()));
       m_eventTypeHasBeenSet = true;
     }
     XmlNode includeBodyNode = resultNode.FirstChild("IncludeBody");
-    if(!includeBodyNode.IsNull())
-    {
-      m_includeBody = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(includeBodyNode.GetText()).c_str()).c_str());
+    if (!includeBodyNode.IsNull()) {
+      m_includeBody =
+          StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(includeBodyNode.GetText()).c_str()).c_str());
       m_includeBodyHasBeenSet = true;
     }
   }
@@ -54,31 +45,26 @@ LambdaFunctionAssociation& LambdaFunctionAssociation::operator =(const XmlNode& 
   return *this;
 }
 
-void LambdaFunctionAssociation::AddToNode(XmlNode& parentNode) const
-{
+void LambdaFunctionAssociation::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_lambdaFunctionARNHasBeenSet)
-  {
-   XmlNode lambdaFunctionARNNode = parentNode.CreateChildElement("LambdaFunctionARN");
-   lambdaFunctionARNNode.SetText(m_lambdaFunctionARN);
+  if (m_lambdaFunctionARNHasBeenSet) {
+    XmlNode lambdaFunctionARNNode = parentNode.CreateChildElement("LambdaFunctionARN");
+    lambdaFunctionARNNode.SetText(m_lambdaFunctionARN);
   }
 
-  if(m_eventTypeHasBeenSet)
-  {
-   XmlNode eventTypeNode = parentNode.CreateChildElement("EventType");
-   eventTypeNode.SetText(EventTypeMapper::GetNameForEventType(m_eventType));
+  if (m_eventTypeHasBeenSet) {
+    XmlNode eventTypeNode = parentNode.CreateChildElement("EventType");
+    eventTypeNode.SetText(EventTypeMapper::GetNameForEventType(m_eventType));
   }
 
-  if(m_includeBodyHasBeenSet)
-  {
-   XmlNode includeBodyNode = parentNode.CreateChildElement("IncludeBody");
-   ss << std::boolalpha << m_includeBody;
-   includeBodyNode.SetText(ss.str());
-   ss.str("");
+  if (m_includeBodyHasBeenSet) {
+    XmlNode includeBodyNode = parentNode.CreateChildElement("IncludeBody");
+    ss << std::boolalpha << m_includeBody;
+    includeBodyNode.SetText(ss.str());
+    ss.str("");
   }
-
 }
 
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/xray/model/RootCauseException.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/xray/model/RootCauseException.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace XRay
-{
-namespace Model
-{
+namespace Aws {
+namespace XRay {
+namespace Model {
 
-RootCauseException::RootCauseException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RootCauseException::RootCauseException(JsonView jsonValue) { *this = jsonValue; }
 
-RootCauseException& RootCauseException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+RootCauseException& RootCauseException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Message"))
-  {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RootCauseException::Jsonize() const
-{
+JsonValue RootCauseException::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace XRay
-} // namespace Aws
+}  // namespace Model
+}  // namespace XRay
+}  // namespace Aws

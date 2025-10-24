@@ -3,48 +3,40 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kendra/model/UserGroupResolutionConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kendra/model/UserGroupResolutionConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace kendra
-{
-namespace Model
-{
+namespace Aws {
+namespace kendra {
+namespace Model {
 
-UserGroupResolutionConfiguration::UserGroupResolutionConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UserGroupResolutionConfiguration::UserGroupResolutionConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-UserGroupResolutionConfiguration& UserGroupResolutionConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("UserGroupResolutionMode"))
-  {
-    m_userGroupResolutionMode = UserGroupResolutionModeMapper::GetUserGroupResolutionModeForName(jsonValue.GetString("UserGroupResolutionMode"));
+UserGroupResolutionConfiguration& UserGroupResolutionConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("UserGroupResolutionMode")) {
+    m_userGroupResolutionMode =
+        UserGroupResolutionModeMapper::GetUserGroupResolutionModeForName(jsonValue.GetString("UserGroupResolutionMode"));
     m_userGroupResolutionModeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UserGroupResolutionConfiguration::Jsonize() const
-{
+JsonValue UserGroupResolutionConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_userGroupResolutionModeHasBeenSet)
-  {
-   payload.WithString("UserGroupResolutionMode", UserGroupResolutionModeMapper::GetNameForUserGroupResolutionMode(m_userGroupResolutionMode));
+  if (m_userGroupResolutionModeHasBeenSet) {
+    payload.WithString("UserGroupResolutionMode",
+                       UserGroupResolutionModeMapper::GetNameForUserGroupResolutionMode(m_userGroupResolutionMode));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace kendra
-} // namespace Aws
+}  // namespace Model
+}  // namespace kendra
+}  // namespace Aws

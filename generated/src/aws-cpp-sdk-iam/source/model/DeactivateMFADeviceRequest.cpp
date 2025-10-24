@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/DeactivateMFADeviceRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/DeactivateMFADeviceRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String DeactivateMFADeviceRequest::SerializePayload() const
-{
+Aws::String DeactivateMFADeviceRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeactivateMFADevice&";
-  if(m_userNameHasBeenSet)
-  {
+  if (m_userNameHasBeenSet) {
     ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
   }
 
-  if(m_serialNumberHasBeenSet)
-  {
+  if (m_serialNumberHasBeenSet) {
     ss << "SerialNumber=" << StringUtils::URLEncode(m_serialNumber.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DeactivateMFADeviceRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeactivateMFADeviceRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeactivateMFADeviceRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

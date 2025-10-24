@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-FlowAliasConcurrencyConfiguration::FlowAliasConcurrencyConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FlowAliasConcurrencyConfiguration::FlowAliasConcurrencyConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-FlowAliasConcurrencyConfiguration& FlowAliasConcurrencyConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+FlowAliasConcurrencyConfiguration& FlowAliasConcurrencyConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = ConcurrencyTypeMapper::GetConcurrencyTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("maxConcurrency"))
-  {
+  if (jsonValue.ValueExists("maxConcurrency")) {
     m_maxConcurrency = jsonValue.GetInteger("maxConcurrency");
     m_maxConcurrencyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FlowAliasConcurrencyConfiguration::Jsonize() const
-{
+JsonValue FlowAliasConcurrencyConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", ConcurrencyTypeMapper::GetNameForConcurrencyType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", ConcurrencyTypeMapper::GetNameForConcurrencyType(m_type));
   }
 
-  if(m_maxConcurrencyHasBeenSet)
-  {
-   payload.WithInteger("maxConcurrency", m_maxConcurrency);
-
+  if (m_maxConcurrencyHasBeenSet) {
+    payload.WithInteger("maxConcurrency", m_maxConcurrency);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

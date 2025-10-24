@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/qldb/QLDB_EXPORTS.h>
 
-namespace Aws
-{
-namespace QLDB
-{
-enum class QLDBErrors
-{
-  //From Core//
+namespace Aws {
+namespace QLDB {
+enum class QLDBErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class QLDBErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,16 +44,15 @@ enum class QLDBErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INVALID_PARAMETER= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INVALID_PARAMETER = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   LIMIT_EXCEEDED,
   RESOURCE_ALREADY_EXISTS,
   RESOURCE_IN_USE,
   RESOURCE_PRECONDITION_NOT_MET
 };
 
-class AWS_QLDB_API QLDBError : public Aws::Client::AWSError<QLDBErrors>
-{
-public:
+class AWS_QLDB_API QLDBError : public Aws::Client::AWSError<QLDBErrors> {
+ public:
   QLDBError() {}
   QLDBError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<QLDBErrors>(rhs) {}
   QLDBError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<QLDBErrors>(rhs) {}
@@ -67,10 +63,9 @@ public:
   T GetModeledError();
 };
 
-namespace QLDBErrorMapper
-{
-  AWS_QLDB_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace QLDBErrorMapper {
+AWS_QLDB_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace QLDB
-} // namespace Aws
+}  // namespace QLDB
+}  // namespace Aws

@@ -12,25 +12,16 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateProvisionedModelThroughputRequest::SerializePayload() const
-{
+Aws::String UpdateProvisionedModelThroughputRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_desiredProvisionedModelNameHasBeenSet)
-  {
-   payload.WithString("desiredProvisionedModelName", m_desiredProvisionedModelName);
-
+  if (m_desiredProvisionedModelNameHasBeenSet) {
+    payload.WithString("desiredProvisionedModelName", m_desiredProvisionedModelName);
   }
 
-  if(m_desiredModelIdHasBeenSet)
-  {
-   payload.WithString("desiredModelId", m_desiredModelId);
-
+  if (m_desiredModelIdHasBeenSet) {
+    payload.WithString("desiredModelId", m_desiredModelId);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

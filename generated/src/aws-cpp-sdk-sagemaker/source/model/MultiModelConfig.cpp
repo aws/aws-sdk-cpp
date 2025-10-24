@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/MultiModelConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/MultiModelConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-MultiModelConfig::MultiModelConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MultiModelConfig::MultiModelConfig(JsonView jsonValue) { *this = jsonValue; }
 
-MultiModelConfig& MultiModelConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ModelCacheSetting"))
-  {
+MultiModelConfig& MultiModelConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ModelCacheSetting")) {
     m_modelCacheSetting = ModelCacheSettingMapper::GetModelCacheSettingForName(jsonValue.GetString("ModelCacheSetting"));
     m_modelCacheSettingHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MultiModelConfig::Jsonize() const
-{
+JsonValue MultiModelConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_modelCacheSettingHasBeenSet)
-  {
-   payload.WithString("ModelCacheSetting", ModelCacheSettingMapper::GetNameForModelCacheSetting(m_modelCacheSetting));
+  if (m_modelCacheSettingHasBeenSet) {
+    payload.WithString("ModelCacheSetting", ModelCacheSettingMapper::GetNameForModelCacheSetting(m_modelCacheSetting));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

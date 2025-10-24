@@ -12,25 +12,16 @@ using namespace Aws::BedrockAgent::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateFlowVersionRequest::SerializePayload() const
-{
+Aws::String CreateFlowVersionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

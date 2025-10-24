@@ -7,25 +7,16 @@
 #include <aws/amplifyuibuilder/AmplifyUIBuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace AmplifyUIBuilder
-{
-namespace Model
-{
-  enum class SortDirection
-  {
-    NOT_SET,
-    ASC,
-    DESC
-  };
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Model {
+enum class SortDirection { NOT_SET, ASC, DESC };
 
-namespace SortDirectionMapper
-{
+namespace SortDirectionMapper {
 AWS_AMPLIFYUIBUILDER_API SortDirection GetSortDirectionForName(const Aws::String& name);
 
 AWS_AMPLIFYUIBUILDER_API Aws::String GetNameForSortDirection(SortDirection value);
-} // namespace SortDirectionMapper
-} // namespace Model
-} // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace SortDirectionMapper
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

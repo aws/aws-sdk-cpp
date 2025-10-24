@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/transcribestreaming/model/CallAnalyticsLanguageWithScore.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/transcribestreaming/model/CallAnalyticsLanguageWithScore.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace TranscribeStreamingService
-{
-namespace Model
-{
+namespace Aws {
+namespace TranscribeStreamingService {
+namespace Model {
 
-CallAnalyticsLanguageWithScore::CallAnalyticsLanguageWithScore(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CallAnalyticsLanguageWithScore::CallAnalyticsLanguageWithScore(JsonView jsonValue) { *this = jsonValue; }
 
-CallAnalyticsLanguageWithScore& CallAnalyticsLanguageWithScore::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("LanguageCode"))
-  {
+CallAnalyticsLanguageWithScore& CallAnalyticsLanguageWithScore::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("LanguageCode")) {
     m_languageCode = CallAnalyticsLanguageCodeMapper::GetCallAnalyticsLanguageCodeForName(jsonValue.GetString("LanguageCode"));
     m_languageCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Score"))
-  {
+  if (jsonValue.ValueExists("Score")) {
     m_score = jsonValue.GetDouble("Score");
     m_scoreHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CallAnalyticsLanguageWithScore::Jsonize() const
-{
+JsonValue CallAnalyticsLanguageWithScore::Jsonize() const {
   JsonValue payload;
 
-  if(m_languageCodeHasBeenSet)
-  {
-   payload.WithString("LanguageCode", CallAnalyticsLanguageCodeMapper::GetNameForCallAnalyticsLanguageCode(m_languageCode));
+  if (m_languageCodeHasBeenSet) {
+    payload.WithString("LanguageCode", CallAnalyticsLanguageCodeMapper::GetNameForCallAnalyticsLanguageCode(m_languageCode));
   }
 
-  if(m_scoreHasBeenSet)
-  {
-   payload.WithDouble("Score", m_score);
-
+  if (m_scoreHasBeenSet) {
+    payload.WithDouble("Score", m_score);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace TranscribeStreamingService
-} // namespace Aws
+}  // namespace Model
+}  // namespace TranscribeStreamingService
+}  // namespace Aws

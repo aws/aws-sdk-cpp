@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/ColumnTag.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/ColumnTag.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-ColumnTag::ColumnTag(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ColumnTag::ColumnTag(JsonView jsonValue) { *this = jsonValue; }
 
-ColumnTag& ColumnTag::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ColumnGeographicRole"))
-  {
+ColumnTag& ColumnTag::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ColumnGeographicRole")) {
     m_columnGeographicRole = GeoSpatialDataRoleMapper::GetGeoSpatialDataRoleForName(jsonValue.GetString("ColumnGeographicRole"));
     m_columnGeographicRoleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ColumnDescription"))
-  {
+  if (jsonValue.ValueExists("ColumnDescription")) {
     m_columnDescription = jsonValue.GetObject("ColumnDescription");
     m_columnDescriptionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ColumnTag::Jsonize() const
-{
+JsonValue ColumnTag::Jsonize() const {
   JsonValue payload;
 
-  if(m_columnGeographicRoleHasBeenSet)
-  {
-   payload.WithString("ColumnGeographicRole", GeoSpatialDataRoleMapper::GetNameForGeoSpatialDataRole(m_columnGeographicRole));
+  if (m_columnGeographicRoleHasBeenSet) {
+    payload.WithString("ColumnGeographicRole", GeoSpatialDataRoleMapper::GetNameForGeoSpatialDataRole(m_columnGeographicRole));
   }
 
-  if(m_columnDescriptionHasBeenSet)
-  {
-   payload.WithObject("ColumnDescription", m_columnDescription.Jsonize());
-
+  if (m_columnDescriptionHasBeenSet) {
+    payload.WithObject("ColumnDescription", m_columnDescription.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

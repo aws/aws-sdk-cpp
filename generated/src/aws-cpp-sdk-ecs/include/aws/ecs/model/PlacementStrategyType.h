@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecs/ECS_EXPORTS.h>
 
-namespace Aws
-{
-namespace ECS
-{
-namespace Model
-{
-  enum class PlacementStrategyType
-  {
-    NOT_SET,
-    random,
-    spread,
-    binpack
-  };
+namespace Aws {
+namespace ECS {
+namespace Model {
+enum class PlacementStrategyType { NOT_SET, random, spread, binpack };
 
-namespace PlacementStrategyTypeMapper
-{
+namespace PlacementStrategyTypeMapper {
 AWS_ECS_API PlacementStrategyType GetPlacementStrategyTypeForName(const Aws::String& name);
 
 AWS_ECS_API Aws::String GetNameForPlacementStrategyType(PlacementStrategyType value);
-} // namespace PlacementStrategyTypeMapper
-} // namespace Model
-} // namespace ECS
-} // namespace Aws
+}  // namespace PlacementStrategyTypeMapper
+}  // namespace Model
+}  // namespace ECS
+}  // namespace Aws

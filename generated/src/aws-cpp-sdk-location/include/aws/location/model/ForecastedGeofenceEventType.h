@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/location/LocationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/location/LocationService_EXPORTS.h>
 
-namespace Aws
-{
-namespace LocationService
-{
-namespace Model
-{
-  enum class ForecastedGeofenceEventType
-  {
-    NOT_SET,
-    ENTER,
-    EXIT,
-    IDLE
-  };
+namespace Aws {
+namespace LocationService {
+namespace Model {
+enum class ForecastedGeofenceEventType { NOT_SET, ENTER, EXIT, IDLE };
 
-namespace ForecastedGeofenceEventTypeMapper
-{
+namespace ForecastedGeofenceEventTypeMapper {
 AWS_LOCATIONSERVICE_API ForecastedGeofenceEventType GetForecastedGeofenceEventTypeForName(const Aws::String& name);
 
 AWS_LOCATIONSERVICE_API Aws::String GetNameForForecastedGeofenceEventType(ForecastedGeofenceEventType value);
-} // namespace ForecastedGeofenceEventTypeMapper
-} // namespace Model
-} // namespace LocationService
-} // namespace Aws
+}  // namespace ForecastedGeofenceEventTypeMapper
+}  // namespace Model
+}  // namespace LocationService
+}  // namespace Aws

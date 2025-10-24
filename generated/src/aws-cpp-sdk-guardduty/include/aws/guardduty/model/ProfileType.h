@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/guardduty/GuardDuty_EXPORTS.h>
 
-namespace Aws
-{
-namespace GuardDuty
-{
-namespace Model
-{
-  enum class ProfileType
-  {
-    NOT_SET,
-    FREQUENCY
-  };
+namespace Aws {
+namespace GuardDuty {
+namespace Model {
+enum class ProfileType { NOT_SET, FREQUENCY };
 
-namespace ProfileTypeMapper
-{
+namespace ProfileTypeMapper {
 AWS_GUARDDUTY_API ProfileType GetProfileTypeForName(const Aws::String& name);
 
 AWS_GUARDDUTY_API Aws::String GetNameForProfileType(ProfileType value);
-} // namespace ProfileTypeMapper
-} // namespace Model
-} // namespace GuardDuty
-} // namespace Aws
+}  // namespace ProfileTypeMapper
+}  // namespace Model
+}  // namespace GuardDuty
+}  // namespace Aws

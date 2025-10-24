@@ -11,48 +11,34 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyUIBuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Model {
 
-CreateThemeData::CreateThemeData(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CreateThemeData::CreateThemeData(JsonView jsonValue) { *this = jsonValue; }
 
-CreateThemeData& CreateThemeData::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+CreateThemeData& CreateThemeData::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("values"))
-  {
+  if (jsonValue.ValueExists("values")) {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
-    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-    {
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
       m_values.push_back(valuesJsonList[valuesIndex].AsObject());
     }
     m_valuesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("overrides"))
-  {
+  if (jsonValue.ValueExists("overrides")) {
     Aws::Utils::Array<JsonView> overridesJsonList = jsonValue.GetArray("overrides");
-    for(unsigned overridesIndex = 0; overridesIndex < overridesJsonList.GetLength(); ++overridesIndex)
-    {
+    for (unsigned overridesIndex = 0; overridesIndex < overridesJsonList.GetLength(); ++overridesIndex) {
       m_overrides.push_back(overridesJsonList[overridesIndex].AsObject());
     }
     m_overridesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tags"))
-  {
+  if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
+    for (auto& tagsItem : tagsJsonMap) {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
@@ -60,52 +46,40 @@ CreateThemeData& CreateThemeData::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue CreateThemeData::Jsonize() const
-{
+JsonValue CreateThemeData::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_valuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
-   for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-   {
-     valuesJsonList[valuesIndex].AsObject(m_values[valuesIndex].Jsonize());
-   }
-   payload.WithArray("values", std::move(valuesJsonList));
-
+  if (m_valuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
+      valuesJsonList[valuesIndex].AsObject(m_values[valuesIndex].Jsonize());
+    }
+    payload.WithArray("values", std::move(valuesJsonList));
   }
 
-  if(m_overridesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> overridesJsonList(m_overrides.size());
-   for(unsigned overridesIndex = 0; overridesIndex < overridesJsonList.GetLength(); ++overridesIndex)
-   {
-     overridesJsonList[overridesIndex].AsObject(m_overrides[overridesIndex].Jsonize());
-   }
-   payload.WithArray("overrides", std::move(overridesJsonList));
-
+  if (m_overridesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> overridesJsonList(m_overrides.size());
+    for (unsigned overridesIndex = 0; overridesIndex < overridesJsonList.GetLength(); ++overridesIndex) {
+      overridesJsonList[overridesIndex].AsObject(m_overrides[overridesIndex].Jsonize());
+    }
+    payload.WithArray("overrides", std::move(overridesJsonList));
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

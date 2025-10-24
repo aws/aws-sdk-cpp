@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/importexport/ImportExportRequest.h>
 
-namespace Aws
-{
-namespace ImportExport
-{
-} // namespace ImportExport
-} // namespace Aws
+namespace Aws {
+namespace ImportExport {}  // namespace ImportExport
+}  // namespace Aws

@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeCommit
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeCommit {
+namespace Model {
 
-ApprovalRuleEventMetadata::ApprovalRuleEventMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ApprovalRuleEventMetadata::ApprovalRuleEventMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-ApprovalRuleEventMetadata& ApprovalRuleEventMetadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("approvalRuleName"))
-  {
+ApprovalRuleEventMetadata& ApprovalRuleEventMetadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("approvalRuleName")) {
     m_approvalRuleName = jsonValue.GetString("approvalRuleName");
     m_approvalRuleNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("approvalRuleId"))
-  {
+  if (jsonValue.ValueExists("approvalRuleId")) {
     m_approvalRuleId = jsonValue.GetString("approvalRuleId");
     m_approvalRuleIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("approvalRuleContent"))
-  {
+  if (jsonValue.ValueExists("approvalRuleContent")) {
     m_approvalRuleContent = jsonValue.GetString("approvalRuleContent");
     m_approvalRuleContentHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ApprovalRuleEventMetadata::Jsonize() const
-{
+JsonValue ApprovalRuleEventMetadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_approvalRuleNameHasBeenSet)
-  {
-   payload.WithString("approvalRuleName", m_approvalRuleName);
-
+  if (m_approvalRuleNameHasBeenSet) {
+    payload.WithString("approvalRuleName", m_approvalRuleName);
   }
 
-  if(m_approvalRuleIdHasBeenSet)
-  {
-   payload.WithString("approvalRuleId", m_approvalRuleId);
-
+  if (m_approvalRuleIdHasBeenSet) {
+    payload.WithString("approvalRuleId", m_approvalRuleId);
   }
 
-  if(m_approvalRuleContentHasBeenSet)
-  {
-   payload.WithString("approvalRuleContent", m_approvalRuleContent);
-
+  if (m_approvalRuleContentHasBeenSet) {
+    payload.WithString("approvalRuleContent", m_approvalRuleContent);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeCommit
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeCommit
+}  // namespace Aws

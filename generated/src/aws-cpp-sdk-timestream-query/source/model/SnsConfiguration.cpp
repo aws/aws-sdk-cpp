@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/timestream-query/model/SnsConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/timestream-query/model/SnsConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace TimestreamQuery
-{
-namespace Model
-{
+namespace Aws {
+namespace TimestreamQuery {
+namespace Model {
 
-SnsConfiguration::SnsConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SnsConfiguration::SnsConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-SnsConfiguration& SnsConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TopicArn"))
-  {
+SnsConfiguration& SnsConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TopicArn")) {
     m_topicArn = jsonValue.GetString("TopicArn");
     m_topicArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SnsConfiguration::Jsonize() const
-{
+JsonValue SnsConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_topicArnHasBeenSet)
-  {
-   payload.WithString("TopicArn", m_topicArn);
-
+  if (m_topicArnHasBeenSet) {
+    payload.WithString("TopicArn", m_topicArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace TimestreamQuery
-} // namespace Aws
+}  // namespace Model
+}  // namespace TimestreamQuery
+}  // namespace Aws

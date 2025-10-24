@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::S3Tables;
 
-AWSError<CoreErrors> S3TablesErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> S3TablesErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = S3TablesErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

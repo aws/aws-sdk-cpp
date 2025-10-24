@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/devicefarm/model/GetAccountSettingsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/devicefarm/model/GetAccountSettingsResult.h>
 
 #include <utility>
 
@@ -17,28 +17,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAccountSettingsResult::GetAccountSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetAccountSettingsResult::GetAccountSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetAccountSettingsResult& GetAccountSettingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetAccountSettingsResult& GetAccountSettingsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("accountSettings"))
-  {
+  if (jsonValue.ValueExists("accountSettings")) {
     m_accountSettings = jsonValue.GetObject("accountSettings");
     m_accountSettingsHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

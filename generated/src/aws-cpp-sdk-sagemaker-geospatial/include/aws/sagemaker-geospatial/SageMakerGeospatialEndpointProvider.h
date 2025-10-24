@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/sagemaker-geospatial/SageMakerGeospatial_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/sagemaker-geospatial/SageMakerGeospatialEndpointRules.h>
+#include <aws/sagemaker-geospatial/SageMakerGeospatial_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace SageMakerGeospatial
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace SageMakerGeospatial {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using SageMakerGeospatialClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -35,27 +30,26 @@ using SageMakerGeospatialBuiltInParameters = Aws::Endpoint::BuiltInParameters;
  * The SDK must use service-specific type for each service per specification.
  */
 using SageMakerGeospatialEndpointProviderBase =
-    EndpointProviderBase<SageMakerGeospatialClientConfiguration, SageMakerGeospatialBuiltInParameters, SageMakerGeospatialClientContextParameters>;
+    EndpointProviderBase<SageMakerGeospatialClientConfiguration, SageMakerGeospatialBuiltInParameters,
+                         SageMakerGeospatialClientContextParameters>;
 
 using SageMakerGeospatialDefaultEpProviderBase =
-    DefaultEndpointProvider<SageMakerGeospatialClientConfiguration, SageMakerGeospatialBuiltInParameters, SageMakerGeospatialClientContextParameters>;
+    DefaultEndpointProvider<SageMakerGeospatialClientConfiguration, SageMakerGeospatialBuiltInParameters,
+                            SageMakerGeospatialClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_SAGEMAKERGEOSPATIAL_API SageMakerGeospatialEndpointProvider : public SageMakerGeospatialDefaultEpProviderBase
-{
-public:
-    using SageMakerGeospatialResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_SAGEMAKERGEOSPATIAL_API SageMakerGeospatialEndpointProvider : public SageMakerGeospatialDefaultEpProviderBase {
+ public:
+  using SageMakerGeospatialResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    SageMakerGeospatialEndpointProvider()
-      : SageMakerGeospatialDefaultEpProviderBase(Aws::SageMakerGeospatial::SageMakerGeospatialEndpointRules::GetRulesBlob(), Aws::SageMakerGeospatial::SageMakerGeospatialEndpointRules::RulesBlobSize)
-    {}
+  SageMakerGeospatialEndpointProvider()
+      : SageMakerGeospatialDefaultEpProviderBase(Aws::SageMakerGeospatial::SageMakerGeospatialEndpointRules::GetRulesBlob(),
+                                                 Aws::SageMakerGeospatial::SageMakerGeospatialEndpointRules::RulesBlobSize) {}
 
-    ~SageMakerGeospatialEndpointProvider()
-    {
-    }
+  ~SageMakerGeospatialEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace SageMakerGeospatial
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace SageMakerGeospatial
+}  // namespace Aws

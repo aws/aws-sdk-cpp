@@ -10,12 +10,10 @@
 using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteDomainRequest::SerializePayload() const
-{
+Aws::String DeleteDomainRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteDomain&";
-  if(m_domainNameHasBeenSet)
-  {
+  if (m_domainNameHasBeenSet) {
     ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteDomainRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteDomainRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteDomainRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

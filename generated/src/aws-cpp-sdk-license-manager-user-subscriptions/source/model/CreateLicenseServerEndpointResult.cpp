@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/license-manager-user-subscriptions/model/CreateLicenseServerEndpointResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/license-manager-user-subscriptions/model/CreateLicenseServerEndpointResult.h>
 
 #include <utility>
 
@@ -17,33 +17,27 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateLicenseServerEndpointResult::CreateLicenseServerEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+CreateLicenseServerEndpointResult::CreateLicenseServerEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-CreateLicenseServerEndpointResult& CreateLicenseServerEndpointResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+CreateLicenseServerEndpointResult& CreateLicenseServerEndpointResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("IdentityProviderArn"))
-  {
+  if (jsonValue.ValueExists("IdentityProviderArn")) {
     m_identityProviderArn = jsonValue.GetString("IdentityProviderArn");
     m_identityProviderArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LicenseServerEndpointArn"))
-  {
+  if (jsonValue.ValueExists("LicenseServerEndpointArn")) {
     m_licenseServerEndpointArn = jsonValue.GetString("LicenseServerEndpointArn");
     m_licenseServerEndpointArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

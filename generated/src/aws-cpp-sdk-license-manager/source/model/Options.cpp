@@ -3,48 +3,40 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/license-manager/model/Options.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/license-manager/model/Options.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LicenseManager
-{
-namespace Model
-{
+namespace Aws {
+namespace LicenseManager {
+namespace Model {
 
-Options::Options(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Options::Options(JsonView jsonValue) { *this = jsonValue; }
 
-Options& Options::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ActivationOverrideBehavior"))
-  {
-    m_activationOverrideBehavior = ActivationOverrideBehaviorMapper::GetActivationOverrideBehaviorForName(jsonValue.GetString("ActivationOverrideBehavior"));
+Options& Options::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ActivationOverrideBehavior")) {
+    m_activationOverrideBehavior =
+        ActivationOverrideBehaviorMapper::GetActivationOverrideBehaviorForName(jsonValue.GetString("ActivationOverrideBehavior"));
     m_activationOverrideBehaviorHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Options::Jsonize() const
-{
+JsonValue Options::Jsonize() const {
   JsonValue payload;
 
-  if(m_activationOverrideBehaviorHasBeenSet)
-  {
-   payload.WithString("ActivationOverrideBehavior", ActivationOverrideBehaviorMapper::GetNameForActivationOverrideBehavior(m_activationOverrideBehavior));
+  if (m_activationOverrideBehaviorHasBeenSet) {
+    payload.WithString("ActivationOverrideBehavior",
+                       ActivationOverrideBehaviorMapper::GetNameForActivationOverrideBehavior(m_activationOverrideBehavior));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LicenseManager
-} // namespace Aws
+}  // namespace Model
+}  // namespace LicenseManager
+}  // namespace Aws

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppStream
-{
-namespace Model
-{
+namespace Aws {
+namespace AppStream {
+namespace Model {
 
-ApplicationSettings::ApplicationSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ApplicationSettings::ApplicationSettings(JsonView jsonValue) { *this = jsonValue; }
 
-ApplicationSettings& ApplicationSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Enabled"))
-  {
+ApplicationSettings& ApplicationSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Enabled")) {
     m_enabled = jsonValue.GetBool("Enabled");
     m_enabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SettingsGroup"))
-  {
+  if (jsonValue.ValueExists("SettingsGroup")) {
     m_settingsGroup = jsonValue.GetString("SettingsGroup");
     m_settingsGroupHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ApplicationSettings::Jsonize() const
-{
+JsonValue ApplicationSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_enabledHasBeenSet)
-  {
-   payload.WithBool("Enabled", m_enabled);
-
+  if (m_enabledHasBeenSet) {
+    payload.WithBool("Enabled", m_enabled);
   }
 
-  if(m_settingsGroupHasBeenSet)
-  {
-   payload.WithString("SettingsGroup", m_settingsGroup);
-
+  if (m_settingsGroupHasBeenSet) {
+    payload.WithString("SettingsGroup", m_settingsGroup);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppStream
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppStream
+}  // namespace Aws

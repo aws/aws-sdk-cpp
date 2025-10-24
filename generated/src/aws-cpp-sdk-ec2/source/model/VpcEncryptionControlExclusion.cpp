@@ -3,43 +3,34 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/VpcEncryptionControlExclusion.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/VpcEncryptionControlExclusion.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-VpcEncryptionControlExclusion::VpcEncryptionControlExclusion(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+VpcEncryptionControlExclusion::VpcEncryptionControlExclusion(const XmlNode& xmlNode) { *this = xmlNode; }
 
-VpcEncryptionControlExclusion& VpcEncryptionControlExclusion::operator =(const XmlNode& xmlNode)
-{
+VpcEncryptionControlExclusion& VpcEncryptionControlExclusion::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode stateNode = resultNode.FirstChild("state");
-    if(!stateNode.IsNull())
-    {
-      m_state = VpcEncryptionControlExclusionStateMapper::GetVpcEncryptionControlExclusionStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
+    if (!stateNode.IsNull()) {
+      m_state = VpcEncryptionControlExclusionStateMapper::GetVpcEncryptionControlExclusionStateForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode stateMessageNode = resultNode.FirstChild("stateMessage");
-    if(!stateMessageNode.IsNull())
-    {
+    if (!stateMessageNode.IsNull()) {
       m_stateMessage = Aws::Utils::Xml::DecodeEscapedXmlText(stateMessageNode.GetText());
       m_stateMessageHasBeenSet = true;
     }
@@ -48,32 +39,30 @@ VpcEncryptionControlExclusion& VpcEncryptionControlExclusion::operator =(const X
   return *this;
 }
 
-void VpcEncryptionControlExclusion::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_stateHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(VpcEncryptionControlExclusionStateMapper::GetNameForVpcEncryptionControlExclusionState(m_state)) << "&";
+void VpcEncryptionControlExclusion::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                   const char* locationValue) const {
+  if (m_stateHasBeenSet) {
+    oStream << location << index << locationValue << ".State="
+            << StringUtils::URLEncode(VpcEncryptionControlExclusionStateMapper::GetNameForVpcEncryptionControlExclusionState(m_state))
+            << "&";
   }
 
-  if(m_stateMessageHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".StateMessage=" << StringUtils::URLEncode(m_stateMessage.c_str()) << "&";
-  }
-
-}
-
-void VpcEncryptionControlExclusion::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_stateHasBeenSet)
-  {
-      oStream << location << ".State=" << StringUtils::URLEncode(VpcEncryptionControlExclusionStateMapper::GetNameForVpcEncryptionControlExclusionState(m_state)) << "&";
-  }
-  if(m_stateMessageHasBeenSet)
-  {
-      oStream << location << ".StateMessage=" << StringUtils::URLEncode(m_stateMessage.c_str()) << "&";
+  if (m_stateMessageHasBeenSet) {
+    oStream << location << index << locationValue << ".StateMessage=" << StringUtils::URLEncode(m_stateMessage.c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void VpcEncryptionControlExclusion::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_stateHasBeenSet) {
+    oStream << location << ".State="
+            << StringUtils::URLEncode(VpcEncryptionControlExclusionStateMapper::GetNameForVpcEncryptionControlExclusionState(m_state))
+            << "&";
+  }
+  if (m_stateMessageHasBeenSet) {
+    oStream << location << ".StateMessage=" << StringUtils::URLEncode(m_stateMessage.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

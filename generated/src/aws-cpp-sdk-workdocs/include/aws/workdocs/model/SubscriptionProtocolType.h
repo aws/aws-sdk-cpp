@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/workdocs/WorkDocs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workdocs/WorkDocs_EXPORTS.h>
 
-namespace Aws
-{
-namespace WorkDocs
-{
-namespace Model
-{
-  enum class SubscriptionProtocolType
-  {
-    NOT_SET,
-    HTTPS,
-    SQS
-  };
+namespace Aws {
+namespace WorkDocs {
+namespace Model {
+enum class SubscriptionProtocolType { NOT_SET, HTTPS, SQS };
 
-namespace SubscriptionProtocolTypeMapper
-{
+namespace SubscriptionProtocolTypeMapper {
 AWS_WORKDOCS_API SubscriptionProtocolType GetSubscriptionProtocolTypeForName(const Aws::String& name);
 
 AWS_WORKDOCS_API Aws::String GetNameForSubscriptionProtocolType(SubscriptionProtocolType value);
-} // namespace SubscriptionProtocolTypeMapper
-} // namespace Model
-} // namespace WorkDocs
-} // namespace Aws
+}  // namespace SubscriptionProtocolTypeMapper
+}  // namespace Model
+}  // namespace WorkDocs
+}  // namespace Aws

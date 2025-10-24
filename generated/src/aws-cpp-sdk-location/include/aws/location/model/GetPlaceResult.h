@@ -4,63 +4,68 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/location/model/Place.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace LocationService
-{
-namespace Model
-{
-  class GetPlaceResult
-  {
-  public:
-    AWS_LOCATIONSERVICE_API GetPlaceResult() = default;
-    AWS_LOCATIONSERVICE_API GetPlaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_LOCATIONSERVICE_API GetPlaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace LocationService {
+namespace Model {
+class GetPlaceResult {
+ public:
+  AWS_LOCATIONSERVICE_API GetPlaceResult() = default;
+  AWS_LOCATIONSERVICE_API GetPlaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_LOCATIONSERVICE_API GetPlaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>Details about the result, such as its address and position.</p>
+   */
+  inline const Place& GetPlace() const { return m_place; }
+  template <typename PlaceT = Place>
+  void SetPlace(PlaceT&& value) {
+    m_placeHasBeenSet = true;
+    m_place = std::forward<PlaceT>(value);
+  }
+  template <typename PlaceT = Place>
+  GetPlaceResult& WithPlace(PlaceT&& value) {
+    SetPlace(std::forward<PlaceT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Details about the result, such as its address and position.</p>
-     */
-    inline const Place& GetPlace() const { return m_place; }
-    template<typename PlaceT = Place>
-    void SetPlace(PlaceT&& value) { m_placeHasBeenSet = true; m_place = std::forward<PlaceT>(value); }
-    template<typename PlaceT = Place>
-    GetPlaceResult& WithPlace(PlaceT&& value) { SetPlace(std::forward<PlaceT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    GetPlaceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  GetPlaceResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Place m_place;
+  bool m_placeHasBeenSet = false;
 
-    Place m_place;
-    bool m_placeHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace LocationService
-} // namespace Aws
+}  // namespace Model
+}  // namespace LocationService
+}  // namespace Aws

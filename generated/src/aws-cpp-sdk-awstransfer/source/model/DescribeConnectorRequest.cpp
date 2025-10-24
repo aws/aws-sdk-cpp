@@ -12,27 +12,18 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeConnectorRequest::SerializePayload() const
-{
+Aws::String DescribeConnectorRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_connectorIdHasBeenSet)
-  {
-   payload.WithString("ConnectorId", m_connectorId);
-
+  if (m_connectorIdHasBeenSet) {
+    payload.WithString("ConnectorId", m_connectorId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeConnectorRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeConnectorRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TransferService.DescribeConnector"));
   return headers;
-
 }
-
-
-
-

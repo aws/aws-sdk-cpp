@@ -7,60 +7,66 @@
 #include <aws/chime-sdk-voice/ChimeSDKVoice_EXPORTS.h>
 #include <aws/chime-sdk-voice/model/Termination.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace ChimeSDKVoice
-{
-namespace Model
-{
-  class GetVoiceConnectorTerminationResult
-  {
-  public:
-    AWS_CHIMESDKVOICE_API GetVoiceConnectorTerminationResult() = default;
-    AWS_CHIMESDKVOICE_API GetVoiceConnectorTerminationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_CHIMESDKVOICE_API GetVoiceConnectorTerminationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace ChimeSDKVoice {
+namespace Model {
+class GetVoiceConnectorTerminationResult {
+ public:
+  AWS_CHIMESDKVOICE_API GetVoiceConnectorTerminationResult() = default;
+  AWS_CHIMESDKVOICE_API GetVoiceConnectorTerminationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_CHIMESDKVOICE_API GetVoiceConnectorTerminationResult& operator=(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>The termination setting details.</p>
+   */
+  inline const Termination& GetTermination() const { return m_termination; }
+  template <typename TerminationT = Termination>
+  void SetTermination(TerminationT&& value) {
+    m_terminationHasBeenSet = true;
+    m_termination = std::forward<TerminationT>(value);
+  }
+  template <typename TerminationT = Termination>
+  GetVoiceConnectorTerminationResult& WithTermination(TerminationT&& value) {
+    SetTermination(std::forward<TerminationT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The termination setting details.</p>
-     */
-    inline const Termination& GetTermination() const { return m_termination; }
-    template<typename TerminationT = Termination>
-    void SetTermination(TerminationT&& value) { m_terminationHasBeenSet = true; m_termination = std::forward<TerminationT>(value); }
-    template<typename TerminationT = Termination>
-    GetVoiceConnectorTerminationResult& WithTermination(TerminationT&& value) { SetTermination(std::forward<TerminationT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    GetVoiceConnectorTerminationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  GetVoiceConnectorTerminationResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Termination m_termination;
+  bool m_terminationHasBeenSet = false;
 
-    Termination m_termination;
-    bool m_terminationHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace ChimeSDKVoice
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKVoice
+}  // namespace Aws

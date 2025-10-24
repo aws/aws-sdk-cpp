@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-PendingAggregationRequest::PendingAggregationRequest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PendingAggregationRequest::PendingAggregationRequest(JsonView jsonValue) { *this = jsonValue; }
 
-PendingAggregationRequest& PendingAggregationRequest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RequesterAccountId"))
-  {
+PendingAggregationRequest& PendingAggregationRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RequesterAccountId")) {
     m_requesterAccountId = jsonValue.GetString("RequesterAccountId");
     m_requesterAccountIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RequesterAwsRegion"))
-  {
+  if (jsonValue.ValueExists("RequesterAwsRegion")) {
     m_requesterAwsRegion = jsonValue.GetString("RequesterAwsRegion");
     m_requesterAwsRegionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PendingAggregationRequest::Jsonize() const
-{
+JsonValue PendingAggregationRequest::Jsonize() const {
   JsonValue payload;
 
-  if(m_requesterAccountIdHasBeenSet)
-  {
-   payload.WithString("RequesterAccountId", m_requesterAccountId);
-
+  if (m_requesterAccountIdHasBeenSet) {
+    payload.WithString("RequesterAccountId", m_requesterAccountId);
   }
 
-  if(m_requesterAwsRegionHasBeenSet)
-  {
-   payload.WithString("RequesterAwsRegion", m_requesterAwsRegion);
-
+  if (m_requesterAwsRegionHasBeenSet) {
+    payload.WithString("RequesterAwsRegion", m_requesterAwsRegion);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

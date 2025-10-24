@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentCoreControl
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentCoreControl {
+namespace Model {
 
-CustomConsolidationConfiguration::CustomConsolidationConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CustomConsolidationConfiguration::CustomConsolidationConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-CustomConsolidationConfiguration& CustomConsolidationConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("semanticConsolidationOverride"))
-  {
+CustomConsolidationConfiguration& CustomConsolidationConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("semanticConsolidationOverride")) {
     m_semanticConsolidationOverride = jsonValue.GetObject("semanticConsolidationOverride");
     m_semanticConsolidationOverrideHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("summaryConsolidationOverride"))
-  {
+  if (jsonValue.ValueExists("summaryConsolidationOverride")) {
     m_summaryConsolidationOverride = jsonValue.GetObject("summaryConsolidationOverride");
     m_summaryConsolidationOverrideHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("userPreferenceConsolidationOverride"))
-  {
+  if (jsonValue.ValueExists("userPreferenceConsolidationOverride")) {
     m_userPreferenceConsolidationOverride = jsonValue.GetObject("userPreferenceConsolidationOverride");
     m_userPreferenceConsolidationOverrideHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CustomConsolidationConfiguration::Jsonize() const
-{
+JsonValue CustomConsolidationConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_semanticConsolidationOverrideHasBeenSet)
-  {
-   payload.WithObject("semanticConsolidationOverride", m_semanticConsolidationOverride.Jsonize());
-
+  if (m_semanticConsolidationOverrideHasBeenSet) {
+    payload.WithObject("semanticConsolidationOverride", m_semanticConsolidationOverride.Jsonize());
   }
 
-  if(m_summaryConsolidationOverrideHasBeenSet)
-  {
-   payload.WithObject("summaryConsolidationOverride", m_summaryConsolidationOverride.Jsonize());
-
+  if (m_summaryConsolidationOverrideHasBeenSet) {
+    payload.WithObject("summaryConsolidationOverride", m_summaryConsolidationOverride.Jsonize());
   }
 
-  if(m_userPreferenceConsolidationOverrideHasBeenSet)
-  {
-   payload.WithObject("userPreferenceConsolidationOverride", m_userPreferenceConsolidationOverride.Jsonize());
-
+  if (m_userPreferenceConsolidationOverrideHasBeenSet) {
+    payload.WithObject("userPreferenceConsolidationOverride", m_userPreferenceConsolidationOverride.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentCoreControl
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentCoreControl
+}  // namespace Aws

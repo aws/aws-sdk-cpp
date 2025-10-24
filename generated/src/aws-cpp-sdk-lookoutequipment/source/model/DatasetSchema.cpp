@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lookoutequipment/model/DatasetSchema.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lookoutequipment/model/DatasetSchema.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LookoutEquipment
-{
-namespace Model
-{
+namespace Aws {
+namespace LookoutEquipment {
+namespace Model {
 
-DatasetSchema::DatasetSchema(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DatasetSchema::DatasetSchema(JsonView jsonValue) { *this = jsonValue; }
 
-DatasetSchema& DatasetSchema::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("InlineDataSchema"))
-  {
+DatasetSchema& DatasetSchema::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("InlineDataSchema")) {
     m_inlineDataSchema = jsonValue.GetString("InlineDataSchema");
     m_inlineDataSchemaHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DatasetSchema::Jsonize() const
-{
+JsonValue DatasetSchema::Jsonize() const {
   JsonValue payload;
 
-  if(m_inlineDataSchemaHasBeenSet)
-  {
-   payload.WithString("InlineDataSchema", m_inlineDataSchema);
-
+  if (m_inlineDataSchemaHasBeenSet) {
+    payload.WithString("InlineDataSchema", m_inlineDataSchema);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LookoutEquipment
-} // namespace Aws
+}  // namespace Model
+}  // namespace LookoutEquipment
+}  // namespace Aws

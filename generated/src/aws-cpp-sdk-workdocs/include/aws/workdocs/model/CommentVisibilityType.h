@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/workdocs/WorkDocs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workdocs/WorkDocs_EXPORTS.h>
 
-namespace Aws
-{
-namespace WorkDocs
-{
-namespace Model
-{
-  enum class CommentVisibilityType
-  {
-    NOT_SET,
-    PUBLIC_,
-    PRIVATE_
-  };
+namespace Aws {
+namespace WorkDocs {
+namespace Model {
+enum class CommentVisibilityType { NOT_SET, PUBLIC_, PRIVATE_ };
 
-namespace CommentVisibilityTypeMapper
-{
+namespace CommentVisibilityTypeMapper {
 AWS_WORKDOCS_API CommentVisibilityType GetCommentVisibilityTypeForName(const Aws::String& name);
 
 AWS_WORKDOCS_API Aws::String GetNameForCommentVisibilityType(CommentVisibilityType value);
-} // namespace CommentVisibilityTypeMapper
-} // namespace Model
-} // namespace WorkDocs
-} // namespace Aws
+}  // namespace CommentVisibilityTypeMapper
+}  // namespace Model
+}  // namespace WorkDocs
+}  // namespace Aws

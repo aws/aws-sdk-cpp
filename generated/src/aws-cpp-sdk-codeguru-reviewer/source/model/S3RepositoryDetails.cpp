@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeGuruReviewer
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeGuruReviewer {
+namespace Model {
 
-S3RepositoryDetails::S3RepositoryDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+S3RepositoryDetails::S3RepositoryDetails(JsonView jsonValue) { *this = jsonValue; }
 
-S3RepositoryDetails& S3RepositoryDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("BucketName"))
-  {
+S3RepositoryDetails& S3RepositoryDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("BucketName")) {
     m_bucketName = jsonValue.GetString("BucketName");
     m_bucketNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CodeArtifacts"))
-  {
+  if (jsonValue.ValueExists("CodeArtifacts")) {
     m_codeArtifacts = jsonValue.GetObject("CodeArtifacts");
     m_codeArtifactsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue S3RepositoryDetails::Jsonize() const
-{
+JsonValue S3RepositoryDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_bucketNameHasBeenSet)
-  {
-   payload.WithString("BucketName", m_bucketName);
-
+  if (m_bucketNameHasBeenSet) {
+    payload.WithString("BucketName", m_bucketName);
   }
 
-  if(m_codeArtifactsHasBeenSet)
-  {
-   payload.WithObject("CodeArtifacts", m_codeArtifacts.Jsonize());
-
+  if (m_codeArtifactsHasBeenSet) {
+    payload.WithObject("CodeArtifacts", m_codeArtifacts.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeGuruReviewer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeGuruReviewer
+}  // namespace Aws

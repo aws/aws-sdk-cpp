@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentCoreControl
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentCoreControl {
+namespace Model {
 
-RecordingConfig::RecordingConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RecordingConfig::RecordingConfig(JsonView jsonValue) { *this = jsonValue; }
 
-RecordingConfig& RecordingConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("enabled"))
-  {
+RecordingConfig& RecordingConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("enabled")) {
     m_enabled = jsonValue.GetBool("enabled");
     m_enabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("s3Location"))
-  {
+  if (jsonValue.ValueExists("s3Location")) {
     m_s3Location = jsonValue.GetObject("s3Location");
     m_s3LocationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RecordingConfig::Jsonize() const
-{
+JsonValue RecordingConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_enabledHasBeenSet)
-  {
-   payload.WithBool("enabled", m_enabled);
-
+  if (m_enabledHasBeenSet) {
+    payload.WithBool("enabled", m_enabled);
   }
 
-  if(m_s3LocationHasBeenSet)
-  {
-   payload.WithObject("s3Location", m_s3Location.Jsonize());
-
+  if (m_s3LocationHasBeenSet) {
+    payload.WithObject("s3Location", m_s3Location.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentCoreControl
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentCoreControl
+}  // namespace Aws

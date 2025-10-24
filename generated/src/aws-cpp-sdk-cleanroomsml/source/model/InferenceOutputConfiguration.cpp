@@ -11,30 +11,20 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRoomsML
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRoomsML {
+namespace Model {
 
-InferenceOutputConfiguration::InferenceOutputConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InferenceOutputConfiguration::InferenceOutputConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-InferenceOutputConfiguration& InferenceOutputConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("accept"))
-  {
+InferenceOutputConfiguration& InferenceOutputConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("accept")) {
     m_accept = jsonValue.GetString("accept");
     m_acceptHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("members"))
-  {
+  if (jsonValue.ValueExists("members")) {
     Aws::Utils::Array<JsonView> membersJsonList = jsonValue.GetArray("members");
-    for(unsigned membersIndex = 0; membersIndex < membersJsonList.GetLength(); ++membersIndex)
-    {
+    for (unsigned membersIndex = 0; membersIndex < membersJsonList.GetLength(); ++membersIndex) {
       m_members.push_back(membersJsonList[membersIndex].AsObject());
     }
     m_membersHasBeenSet = true;
@@ -42,30 +32,24 @@ InferenceOutputConfiguration& InferenceOutputConfiguration::operator =(JsonView 
   return *this;
 }
 
-JsonValue InferenceOutputConfiguration::Jsonize() const
-{
+JsonValue InferenceOutputConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_acceptHasBeenSet)
-  {
-   payload.WithString("accept", m_accept);
-
+  if (m_acceptHasBeenSet) {
+    payload.WithString("accept", m_accept);
   }
 
-  if(m_membersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> membersJsonList(m_members.size());
-   for(unsigned membersIndex = 0; membersIndex < membersJsonList.GetLength(); ++membersIndex)
-   {
-     membersJsonList[membersIndex].AsObject(m_members[membersIndex].Jsonize());
-   }
-   payload.WithArray("members", std::move(membersJsonList));
-
+  if (m_membersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> membersJsonList(m_members.size());
+    for (unsigned membersIndex = 0; membersIndex < membersJsonList.GetLength(); ++membersIndex) {
+      membersJsonList[membersIndex].AsObject(m_members[membersIndex].Jsonize());
+    }
+    payload.WithArray("members", std::move(membersJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRoomsML
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRoomsML
+}  // namespace Aws

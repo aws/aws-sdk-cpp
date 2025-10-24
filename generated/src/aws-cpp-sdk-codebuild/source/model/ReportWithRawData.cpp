@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeBuild
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeBuild {
+namespace Model {
 
-ReportWithRawData::ReportWithRawData(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReportWithRawData::ReportWithRawData(JsonView jsonValue) { *this = jsonValue; }
 
-ReportWithRawData& ReportWithRawData::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("reportArn"))
-  {
+ReportWithRawData& ReportWithRawData::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("reportArn")) {
     m_reportArn = jsonValue.GetString("reportArn");
     m_reportArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("data"))
-  {
+  if (jsonValue.ValueExists("data")) {
     m_data = jsonValue.GetString("data");
     m_dataHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ReportWithRawData::Jsonize() const
-{
+JsonValue ReportWithRawData::Jsonize() const {
   JsonValue payload;
 
-  if(m_reportArnHasBeenSet)
-  {
-   payload.WithString("reportArn", m_reportArn);
-
+  if (m_reportArnHasBeenSet) {
+    payload.WithString("reportArn", m_reportArn);
   }
 
-  if(m_dataHasBeenSet)
-  {
-   payload.WithString("data", m_data);
-
+  if (m_dataHasBeenSet) {
+    payload.WithString("data", m_data);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeBuild
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeBuild
+}  // namespace Aws

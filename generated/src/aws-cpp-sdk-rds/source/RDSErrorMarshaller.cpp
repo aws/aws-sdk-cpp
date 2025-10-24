@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::RDS;
 
-AWSError<CoreErrors> RDSErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> RDSErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = RDSErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

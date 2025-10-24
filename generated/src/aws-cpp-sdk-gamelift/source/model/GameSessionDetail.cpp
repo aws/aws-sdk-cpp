@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/gamelift/model/GameSessionDetail.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/gamelift/model/GameSessionDetail.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GameLift
-{
-namespace Model
-{
+namespace Aws {
+namespace GameLift {
+namespace Model {
 
-GameSessionDetail::GameSessionDetail(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GameSessionDetail::GameSessionDetail(JsonView jsonValue) { *this = jsonValue; }
 
-GameSessionDetail& GameSessionDetail::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("GameSession"))
-  {
+GameSessionDetail& GameSessionDetail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("GameSession")) {
     m_gameSession = jsonValue.GetObject("GameSession");
     m_gameSessionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProtectionPolicy"))
-  {
+  if (jsonValue.ValueExists("ProtectionPolicy")) {
     m_protectionPolicy = ProtectionPolicyMapper::GetProtectionPolicyForName(jsonValue.GetString("ProtectionPolicy"));
     m_protectionPolicyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GameSessionDetail::Jsonize() const
-{
+JsonValue GameSessionDetail::Jsonize() const {
   JsonValue payload;
 
-  if(m_gameSessionHasBeenSet)
-  {
-   payload.WithObject("GameSession", m_gameSession.Jsonize());
-
+  if (m_gameSessionHasBeenSet) {
+    payload.WithObject("GameSession", m_gameSession.Jsonize());
   }
 
-  if(m_protectionPolicyHasBeenSet)
-  {
-   payload.WithString("ProtectionPolicy", ProtectionPolicyMapper::GetNameForProtectionPolicy(m_protectionPolicy));
+  if (m_protectionPolicyHasBeenSet) {
+    payload.WithString("ProtectionPolicy", ProtectionPolicyMapper::GetNameForProtectionPolicy(m_protectionPolicy));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GameLift
-} // namespace Aws
+}  // namespace Model
+}  // namespace GameLift
+}  // namespace Aws

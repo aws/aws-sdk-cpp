@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-Expiry::Expiry(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Expiry::Expiry(JsonView jsonValue) { *this = jsonValue; }
 
-Expiry& Expiry::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DurationInSeconds"))
-  {
+Expiry& Expiry::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DurationInSeconds")) {
     m_durationInSeconds = jsonValue.GetInteger("DurationInSeconds");
     m_durationInSecondsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExpiryTimestamp"))
-  {
+  if (jsonValue.ValueExists("ExpiryTimestamp")) {
     m_expiryTimestamp = jsonValue.GetDouble("ExpiryTimestamp");
     m_expiryTimestampHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Expiry::Jsonize() const
-{
+JsonValue Expiry::Jsonize() const {
   JsonValue payload;
 
-  if(m_durationInSecondsHasBeenSet)
-  {
-   payload.WithInteger("DurationInSeconds", m_durationInSeconds);
-
+  if (m_durationInSecondsHasBeenSet) {
+    payload.WithInteger("DurationInSeconds", m_durationInSeconds);
   }
 
-  if(m_expiryTimestampHasBeenSet)
-  {
-   payload.WithDouble("ExpiryTimestamp", m_expiryTimestamp.SecondsWithMSPrecision());
+  if (m_expiryTimestampHasBeenSet) {
+    payload.WithDouble("ExpiryTimestamp", m_expiryTimestamp.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

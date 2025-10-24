@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/datazone/model/GetDataProductRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/datazone/model/GetDataProductRequest.h>
 
 #include <utility>
 
@@ -15,22 +15,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String GetDataProductRequest::SerializePayload() const
-{
-  return {};
+Aws::String GetDataProductRequest::SerializePayload() const { return {}; }
+
+void GetDataProductRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_revisionHasBeenSet) {
+    ss << m_revision;
+    uri.AddQueryStringParameter("revision", ss.str());
+    ss.str("");
+  }
 }
-
-void GetDataProductRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_revisionHasBeenSet)
-    {
-      ss << m_revision;
-      uri.AddQueryStringParameter("revision", ss.str());
-      ss.str("");
-    }
-
-}
-
-
-

@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApplicationAutoScaling
-{
-namespace Model
-{
+namespace Aws {
+namespace ApplicationAutoScaling {
+namespace Model {
 
-NotScaledReason::NotScaledReason(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NotScaledReason::NotScaledReason(JsonView jsonValue) { *this = jsonValue; }
 
-NotScaledReason& NotScaledReason::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Code"))
-  {
+NotScaledReason& NotScaledReason::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Code")) {
     m_code = jsonValue.GetString("Code");
     m_codeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MaxCapacity"))
-  {
+  if (jsonValue.ValueExists("MaxCapacity")) {
     m_maxCapacity = jsonValue.GetInteger("MaxCapacity");
     m_maxCapacityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MinCapacity"))
-  {
+  if (jsonValue.ValueExists("MinCapacity")) {
     m_minCapacity = jsonValue.GetInteger("MinCapacity");
     m_minCapacityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CurrentCapacity"))
-  {
+  if (jsonValue.ValueExists("CurrentCapacity")) {
     m_currentCapacity = jsonValue.GetInteger("CurrentCapacity");
     m_currentCapacityHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NotScaledReason::Jsonize() const
-{
+JsonValue NotScaledReason::Jsonize() const {
   JsonValue payload;
 
-  if(m_codeHasBeenSet)
-  {
-   payload.WithString("Code", m_code);
-
+  if (m_codeHasBeenSet) {
+    payload.WithString("Code", m_code);
   }
 
-  if(m_maxCapacityHasBeenSet)
-  {
-   payload.WithInteger("MaxCapacity", m_maxCapacity);
-
+  if (m_maxCapacityHasBeenSet) {
+    payload.WithInteger("MaxCapacity", m_maxCapacity);
   }
 
-  if(m_minCapacityHasBeenSet)
-  {
-   payload.WithInteger("MinCapacity", m_minCapacity);
-
+  if (m_minCapacityHasBeenSet) {
+    payload.WithInteger("MinCapacity", m_minCapacity);
   }
 
-  if(m_currentCapacityHasBeenSet)
-  {
-   payload.WithInteger("CurrentCapacity", m_currentCapacity);
-
+  if (m_currentCapacityHasBeenSet) {
+    payload.WithInteger("CurrentCapacity", m_currentCapacity);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApplicationAutoScaling
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApplicationAutoScaling
+}  // namespace Aws

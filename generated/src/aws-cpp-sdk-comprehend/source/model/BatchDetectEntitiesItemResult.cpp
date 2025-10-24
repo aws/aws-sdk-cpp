@@ -11,30 +11,20 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Comprehend {
+namespace Model {
 
-BatchDetectEntitiesItemResult::BatchDetectEntitiesItemResult(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchDetectEntitiesItemResult::BatchDetectEntitiesItemResult(JsonView jsonValue) { *this = jsonValue; }
 
-BatchDetectEntitiesItemResult& BatchDetectEntitiesItemResult::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Index"))
-  {
+BatchDetectEntitiesItemResult& BatchDetectEntitiesItemResult::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Index")) {
     m_index = jsonValue.GetInteger("Index");
     m_indexHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Entities"))
-  {
+  if (jsonValue.ValueExists("Entities")) {
     Aws::Utils::Array<JsonView> entitiesJsonList = jsonValue.GetArray("Entities");
-    for(unsigned entitiesIndex = 0; entitiesIndex < entitiesJsonList.GetLength(); ++entitiesIndex)
-    {
+    for (unsigned entitiesIndex = 0; entitiesIndex < entitiesJsonList.GetLength(); ++entitiesIndex) {
       m_entities.push_back(entitiesJsonList[entitiesIndex].AsObject());
     }
     m_entitiesHasBeenSet = true;
@@ -42,30 +32,24 @@ BatchDetectEntitiesItemResult& BatchDetectEntitiesItemResult::operator =(JsonVie
   return *this;
 }
 
-JsonValue BatchDetectEntitiesItemResult::Jsonize() const
-{
+JsonValue BatchDetectEntitiesItemResult::Jsonize() const {
   JsonValue payload;
 
-  if(m_indexHasBeenSet)
-  {
-   payload.WithInteger("Index", m_index);
-
+  if (m_indexHasBeenSet) {
+    payload.WithInteger("Index", m_index);
   }
 
-  if(m_entitiesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> entitiesJsonList(m_entities.size());
-   for(unsigned entitiesIndex = 0; entitiesIndex < entitiesJsonList.GetLength(); ++entitiesIndex)
-   {
-     entitiesJsonList[entitiesIndex].AsObject(m_entities[entitiesIndex].Jsonize());
-   }
-   payload.WithArray("Entities", std::move(entitiesJsonList));
-
+  if (m_entitiesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> entitiesJsonList(m_entities.size());
+    for (unsigned entitiesIndex = 0; entitiesIndex < entitiesJsonList.GetLength(); ++entitiesIndex) {
+      entitiesJsonList[entitiesIndex].AsObject(m_entities[entitiesIndex].Jsonize());
+    }
+    payload.WithArray("Entities", std::move(entitiesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

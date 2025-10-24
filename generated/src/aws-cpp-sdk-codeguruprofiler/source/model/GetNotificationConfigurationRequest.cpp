@@ -12,11 +12,4 @@ using namespace Aws::CodeGuruProfiler::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetNotificationConfigurationRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetNotificationConfigurationRequest::SerializePayload() const { return {}; }

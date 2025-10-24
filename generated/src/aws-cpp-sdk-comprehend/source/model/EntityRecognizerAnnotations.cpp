@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Comprehend {
+namespace Model {
 
-EntityRecognizerAnnotations::EntityRecognizerAnnotations(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EntityRecognizerAnnotations::EntityRecognizerAnnotations(JsonView jsonValue) { *this = jsonValue; }
 
-EntityRecognizerAnnotations& EntityRecognizerAnnotations::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("S3Uri"))
-  {
+EntityRecognizerAnnotations& EntityRecognizerAnnotations::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("S3Uri")) {
     m_s3Uri = jsonValue.GetString("S3Uri");
     m_s3UriHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TestS3Uri"))
-  {
+  if (jsonValue.ValueExists("TestS3Uri")) {
     m_testS3Uri = jsonValue.GetString("TestS3Uri");
     m_testS3UriHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EntityRecognizerAnnotations::Jsonize() const
-{
+JsonValue EntityRecognizerAnnotations::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3UriHasBeenSet)
-  {
-   payload.WithString("S3Uri", m_s3Uri);
-
+  if (m_s3UriHasBeenSet) {
+    payload.WithString("S3Uri", m_s3Uri);
   }
 
-  if(m_testS3UriHasBeenSet)
-  {
-   payload.WithString("TestS3Uri", m_testS3Uri);
-
+  if (m_testS3UriHasBeenSet) {
+    payload.WithString("TestS3Uri", m_testS3Uri);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

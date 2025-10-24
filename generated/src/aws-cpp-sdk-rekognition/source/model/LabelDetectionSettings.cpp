@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rekognition/model/LabelDetectionSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rekognition/model/LabelDetectionSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Rekognition
-{
-namespace Model
-{
+namespace Aws {
+namespace Rekognition {
+namespace Model {
 
-LabelDetectionSettings::LabelDetectionSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LabelDetectionSettings::LabelDetectionSettings(JsonView jsonValue) { *this = jsonValue; }
 
-LabelDetectionSettings& LabelDetectionSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("GeneralLabels"))
-  {
+LabelDetectionSettings& LabelDetectionSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("GeneralLabels")) {
     m_generalLabels = jsonValue.GetObject("GeneralLabels");
     m_generalLabelsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LabelDetectionSettings::Jsonize() const
-{
+JsonValue LabelDetectionSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_generalLabelsHasBeenSet)
-  {
-   payload.WithObject("GeneralLabels", m_generalLabels.Jsonize());
-
+  if (m_generalLabelsHasBeenSet) {
+    payload.WithObject("GeneralLabels", m_generalLabels.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Rekognition
-} // namespace Aws
+}  // namespace Model
+}  // namespace Rekognition
+}  // namespace Aws

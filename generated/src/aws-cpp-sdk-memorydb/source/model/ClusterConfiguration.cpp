@@ -3,234 +3,173 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/memorydb/model/ClusterConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/memorydb/model/ClusterConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MemoryDB
-{
-namespace Model
-{
+namespace Aws {
+namespace MemoryDB {
+namespace Model {
 
-ClusterConfiguration::ClusterConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ClusterConfiguration::ClusterConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ClusterConfiguration& ClusterConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+ClusterConfiguration& ClusterConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NodeType"))
-  {
+  if (jsonValue.ValueExists("NodeType")) {
     m_nodeType = jsonValue.GetString("NodeType");
     m_nodeTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Engine"))
-  {
+  if (jsonValue.ValueExists("Engine")) {
     m_engine = jsonValue.GetString("Engine");
     m_engineHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EngineVersion"))
-  {
+  if (jsonValue.ValueExists("EngineVersion")) {
     m_engineVersion = jsonValue.GetString("EngineVersion");
     m_engineVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MaintenanceWindow"))
-  {
+  if (jsonValue.ValueExists("MaintenanceWindow")) {
     m_maintenanceWindow = jsonValue.GetString("MaintenanceWindow");
     m_maintenanceWindowHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TopicArn"))
-  {
+  if (jsonValue.ValueExists("TopicArn")) {
     m_topicArn = jsonValue.GetString("TopicArn");
     m_topicArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Port"))
-  {
+  if (jsonValue.ValueExists("Port")) {
     m_port = jsonValue.GetInteger("Port");
     m_portHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ParameterGroupName"))
-  {
+  if (jsonValue.ValueExists("ParameterGroupName")) {
     m_parameterGroupName = jsonValue.GetString("ParameterGroupName");
     m_parameterGroupNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SubnetGroupName"))
-  {
+  if (jsonValue.ValueExists("SubnetGroupName")) {
     m_subnetGroupName = jsonValue.GetString("SubnetGroupName");
     m_subnetGroupNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VpcId"))
-  {
+  if (jsonValue.ValueExists("VpcId")) {
     m_vpcId = jsonValue.GetString("VpcId");
     m_vpcIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SnapshotRetentionLimit"))
-  {
+  if (jsonValue.ValueExists("SnapshotRetentionLimit")) {
     m_snapshotRetentionLimit = jsonValue.GetInteger("SnapshotRetentionLimit");
     m_snapshotRetentionLimitHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SnapshotWindow"))
-  {
+  if (jsonValue.ValueExists("SnapshotWindow")) {
     m_snapshotWindow = jsonValue.GetString("SnapshotWindow");
     m_snapshotWindowHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NumShards"))
-  {
+  if (jsonValue.ValueExists("NumShards")) {
     m_numShards = jsonValue.GetInteger("NumShards");
     m_numShardsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Shards"))
-  {
+  if (jsonValue.ValueExists("Shards")) {
     Aws::Utils::Array<JsonView> shardsJsonList = jsonValue.GetArray("Shards");
-    for(unsigned shardsIndex = 0; shardsIndex < shardsJsonList.GetLength(); ++shardsIndex)
-    {
+    for (unsigned shardsIndex = 0; shardsIndex < shardsJsonList.GetLength(); ++shardsIndex) {
       m_shards.push_back(shardsJsonList[shardsIndex].AsObject());
     }
     m_shardsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MultiRegionParameterGroupName"))
-  {
+  if (jsonValue.ValueExists("MultiRegionParameterGroupName")) {
     m_multiRegionParameterGroupName = jsonValue.GetString("MultiRegionParameterGroupName");
     m_multiRegionParameterGroupNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MultiRegionClusterName"))
-  {
+  if (jsonValue.ValueExists("MultiRegionClusterName")) {
     m_multiRegionClusterName = jsonValue.GetString("MultiRegionClusterName");
     m_multiRegionClusterNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ClusterConfiguration::Jsonize() const
-{
+JsonValue ClusterConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_nodeTypeHasBeenSet)
-  {
-   payload.WithString("NodeType", m_nodeType);
-
+  if (m_nodeTypeHasBeenSet) {
+    payload.WithString("NodeType", m_nodeType);
   }
 
-  if(m_engineHasBeenSet)
-  {
-   payload.WithString("Engine", m_engine);
-
+  if (m_engineHasBeenSet) {
+    payload.WithString("Engine", m_engine);
   }
 
-  if(m_engineVersionHasBeenSet)
-  {
-   payload.WithString("EngineVersion", m_engineVersion);
-
+  if (m_engineVersionHasBeenSet) {
+    payload.WithString("EngineVersion", m_engineVersion);
   }
 
-  if(m_maintenanceWindowHasBeenSet)
-  {
-   payload.WithString("MaintenanceWindow", m_maintenanceWindow);
-
+  if (m_maintenanceWindowHasBeenSet) {
+    payload.WithString("MaintenanceWindow", m_maintenanceWindow);
   }
 
-  if(m_topicArnHasBeenSet)
-  {
-   payload.WithString("TopicArn", m_topicArn);
-
+  if (m_topicArnHasBeenSet) {
+    payload.WithString("TopicArn", m_topicArn);
   }
 
-  if(m_portHasBeenSet)
-  {
-   payload.WithInteger("Port", m_port);
-
+  if (m_portHasBeenSet) {
+    payload.WithInteger("Port", m_port);
   }
 
-  if(m_parameterGroupNameHasBeenSet)
-  {
-   payload.WithString("ParameterGroupName", m_parameterGroupName);
-
+  if (m_parameterGroupNameHasBeenSet) {
+    payload.WithString("ParameterGroupName", m_parameterGroupName);
   }
 
-  if(m_subnetGroupNameHasBeenSet)
-  {
-   payload.WithString("SubnetGroupName", m_subnetGroupName);
-
+  if (m_subnetGroupNameHasBeenSet) {
+    payload.WithString("SubnetGroupName", m_subnetGroupName);
   }
 
-  if(m_vpcIdHasBeenSet)
-  {
-   payload.WithString("VpcId", m_vpcId);
-
+  if (m_vpcIdHasBeenSet) {
+    payload.WithString("VpcId", m_vpcId);
   }
 
-  if(m_snapshotRetentionLimitHasBeenSet)
-  {
-   payload.WithInteger("SnapshotRetentionLimit", m_snapshotRetentionLimit);
-
+  if (m_snapshotRetentionLimitHasBeenSet) {
+    payload.WithInteger("SnapshotRetentionLimit", m_snapshotRetentionLimit);
   }
 
-  if(m_snapshotWindowHasBeenSet)
-  {
-   payload.WithString("SnapshotWindow", m_snapshotWindow);
-
+  if (m_snapshotWindowHasBeenSet) {
+    payload.WithString("SnapshotWindow", m_snapshotWindow);
   }
 
-  if(m_numShardsHasBeenSet)
-  {
-   payload.WithInteger("NumShards", m_numShards);
-
+  if (m_numShardsHasBeenSet) {
+    payload.WithInteger("NumShards", m_numShards);
   }
 
-  if(m_shardsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> shardsJsonList(m_shards.size());
-   for(unsigned shardsIndex = 0; shardsIndex < shardsJsonList.GetLength(); ++shardsIndex)
-   {
-     shardsJsonList[shardsIndex].AsObject(m_shards[shardsIndex].Jsonize());
-   }
-   payload.WithArray("Shards", std::move(shardsJsonList));
-
+  if (m_shardsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> shardsJsonList(m_shards.size());
+    for (unsigned shardsIndex = 0; shardsIndex < shardsJsonList.GetLength(); ++shardsIndex) {
+      shardsJsonList[shardsIndex].AsObject(m_shards[shardsIndex].Jsonize());
+    }
+    payload.WithArray("Shards", std::move(shardsJsonList));
   }
 
-  if(m_multiRegionParameterGroupNameHasBeenSet)
-  {
-   payload.WithString("MultiRegionParameterGroupName", m_multiRegionParameterGroupName);
-
+  if (m_multiRegionParameterGroupNameHasBeenSet) {
+    payload.WithString("MultiRegionParameterGroupName", m_multiRegionParameterGroupName);
   }
 
-  if(m_multiRegionClusterNameHasBeenSet)
-  {
-   payload.WithString("MultiRegionClusterName", m_multiRegionClusterName);
-
+  if (m_multiRegionClusterNameHasBeenSet) {
+    payload.WithString("MultiRegionClusterName", m_multiRegionClusterName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MemoryDB
-} // namespace Aws
+}  // namespace Model
+}  // namespace MemoryDB
+}  // namespace Aws

@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Chime
-{
-namespace Model
-{
+namespace Aws {
+namespace Chime {
+namespace Model {
 
-BusinessCallingSettings::BusinessCallingSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BusinessCallingSettings::BusinessCallingSettings(JsonView jsonValue) { *this = jsonValue; }
 
-BusinessCallingSettings& BusinessCallingSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CdrBucket"))
-  {
+BusinessCallingSettings& BusinessCallingSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CdrBucket")) {
     m_cdrBucket = jsonValue.GetString("CdrBucket");
     m_cdrBucketHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BusinessCallingSettings::Jsonize() const
-{
+JsonValue BusinessCallingSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_cdrBucketHasBeenSet)
-  {
-   payload.WithString("CdrBucket", m_cdrBucket);
-
+  if (m_cdrBucketHasBeenSet) {
+    payload.WithString("CdrBucket", m_cdrBucket);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Chime
-} // namespace Aws
+}  // namespace Model
+}  // namespace Chime
+}  // namespace Aws

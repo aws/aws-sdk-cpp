@@ -6,64 +6,68 @@
 #pragma once
 #include <aws/m2/MainframeModernization_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace MainframeModernization
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace MainframeModernization {
+namespace Model {
 
+/**
+ * <p>The length of the records in the data set.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/RecordLength">AWS API
+ * Reference</a></p>
+ */
+class RecordLength {
+ public:
+  AWS_MAINFRAMEMODERNIZATION_API RecordLength() = default;
+  AWS_MAINFRAMEMODERNIZATION_API RecordLength(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MAINFRAMEMODERNIZATION_API RecordLength& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>The length of the records in the data set.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/RecordLength">AWS API
-   * Reference</a></p>
+   * <p>The maximum record length. In case of fixed, both minimum and maximum are the
+   * same.</p>
    */
-  class RecordLength
-  {
-  public:
-    AWS_MAINFRAMEMODERNIZATION_API RecordLength() = default;
-    AWS_MAINFRAMEMODERNIZATION_API RecordLength(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MAINFRAMEMODERNIZATION_API RecordLength& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetMax() const { return m_max; }
+  inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
+  inline void SetMax(int value) {
+    m_maxHasBeenSet = true;
+    m_max = value;
+  }
+  inline RecordLength& WithMax(int value) {
+    SetMax(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The minimum record length of a record.</p>
+   */
+  inline int GetMin() const { return m_min; }
+  inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
+  inline void SetMin(int value) {
+    m_minHasBeenSet = true;
+    m_min = value;
+  }
+  inline RecordLength& WithMin(int value) {
+    SetMin(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_max{0};
+  bool m_maxHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The maximum record length. In case of fixed, both minimum and maximum are the
-     * same.</p>
-     */
-    inline int GetMax() const { return m_max; }
-    inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
-    inline void SetMax(int value) { m_maxHasBeenSet = true; m_max = value; }
-    inline RecordLength& WithMax(int value) { SetMax(value); return *this;}
-    ///@}
+  int m_min{0};
+  bool m_minHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The minimum record length of a record.</p>
-     */
-    inline int GetMin() const { return m_min; }
-    inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
-    inline void SetMin(int value) { m_minHasBeenSet = true; m_min = value; }
-    inline RecordLength& WithMin(int value) { SetMin(value); return *this;}
-    ///@}
-  private:
-
-    int m_max{0};
-    bool m_maxHasBeenSet = false;
-
-    int m_min{0};
-    bool m_minHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace MainframeModernization
-} // namespace Aws
+}  // namespace Model
+}  // namespace MainframeModernization
+}  // namespace Aws

@@ -3,100 +3,76 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsRoute53HostedZoneDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsRoute53HostedZoneDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsRoute53HostedZoneDetails::AwsRoute53HostedZoneDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsRoute53HostedZoneDetails::AwsRoute53HostedZoneDetails(JsonView jsonValue) { *this = jsonValue; }
 
-AwsRoute53HostedZoneDetails& AwsRoute53HostedZoneDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("HostedZone"))
-  {
+AwsRoute53HostedZoneDetails& AwsRoute53HostedZoneDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("HostedZone")) {
     m_hostedZone = jsonValue.GetObject("HostedZone");
     m_hostedZoneHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Vpcs"))
-  {
+  if (jsonValue.ValueExists("Vpcs")) {
     Aws::Utils::Array<JsonView> vpcsJsonList = jsonValue.GetArray("Vpcs");
-    for(unsigned vpcsIndex = 0; vpcsIndex < vpcsJsonList.GetLength(); ++vpcsIndex)
-    {
+    for (unsigned vpcsIndex = 0; vpcsIndex < vpcsJsonList.GetLength(); ++vpcsIndex) {
       m_vpcs.push_back(vpcsJsonList[vpcsIndex].AsObject());
     }
     m_vpcsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NameServers"))
-  {
+  if (jsonValue.ValueExists("NameServers")) {
     Aws::Utils::Array<JsonView> nameServersJsonList = jsonValue.GetArray("NameServers");
-    for(unsigned nameServersIndex = 0; nameServersIndex < nameServersJsonList.GetLength(); ++nameServersIndex)
-    {
+    for (unsigned nameServersIndex = 0; nameServersIndex < nameServersJsonList.GetLength(); ++nameServersIndex) {
       m_nameServers.push_back(nameServersJsonList[nameServersIndex].AsString());
     }
     m_nameServersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("QueryLoggingConfig"))
-  {
+  if (jsonValue.ValueExists("QueryLoggingConfig")) {
     m_queryLoggingConfig = jsonValue.GetObject("QueryLoggingConfig");
     m_queryLoggingConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsRoute53HostedZoneDetails::Jsonize() const
-{
+JsonValue AwsRoute53HostedZoneDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_hostedZoneHasBeenSet)
-  {
-   payload.WithObject("HostedZone", m_hostedZone.Jsonize());
-
+  if (m_hostedZoneHasBeenSet) {
+    payload.WithObject("HostedZone", m_hostedZone.Jsonize());
   }
 
-  if(m_vpcsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> vpcsJsonList(m_vpcs.size());
-   for(unsigned vpcsIndex = 0; vpcsIndex < vpcsJsonList.GetLength(); ++vpcsIndex)
-   {
-     vpcsJsonList[vpcsIndex].AsObject(m_vpcs[vpcsIndex].Jsonize());
-   }
-   payload.WithArray("Vpcs", std::move(vpcsJsonList));
-
+  if (m_vpcsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> vpcsJsonList(m_vpcs.size());
+    for (unsigned vpcsIndex = 0; vpcsIndex < vpcsJsonList.GetLength(); ++vpcsIndex) {
+      vpcsJsonList[vpcsIndex].AsObject(m_vpcs[vpcsIndex].Jsonize());
+    }
+    payload.WithArray("Vpcs", std::move(vpcsJsonList));
   }
 
-  if(m_nameServersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> nameServersJsonList(m_nameServers.size());
-   for(unsigned nameServersIndex = 0; nameServersIndex < nameServersJsonList.GetLength(); ++nameServersIndex)
-   {
-     nameServersJsonList[nameServersIndex].AsString(m_nameServers[nameServersIndex]);
-   }
-   payload.WithArray("NameServers", std::move(nameServersJsonList));
-
+  if (m_nameServersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> nameServersJsonList(m_nameServers.size());
+    for (unsigned nameServersIndex = 0; nameServersIndex < nameServersJsonList.GetLength(); ++nameServersIndex) {
+      nameServersJsonList[nameServersIndex].AsString(m_nameServers[nameServersIndex]);
+    }
+    payload.WithArray("NameServers", std::move(nameServersJsonList));
   }
 
-  if(m_queryLoggingConfigHasBeenSet)
-  {
-   payload.WithObject("QueryLoggingConfig", m_queryLoggingConfig.Jsonize());
-
+  if (m_queryLoggingConfigHasBeenSet) {
+    payload.WithObject("QueryLoggingConfig", m_queryLoggingConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/datazone/model/SearchInventoryResultItem.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/datazone/model/SearchInventoryResultItem.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DataZone
-{
-namespace Model
-{
+namespace Aws {
+namespace DataZone {
+namespace Model {
 
-SearchInventoryResultItem::SearchInventoryResultItem(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SearchInventoryResultItem::SearchInventoryResultItem(JsonView jsonValue) { *this = jsonValue; }
 
-SearchInventoryResultItem& SearchInventoryResultItem::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("assetItem"))
-  {
+SearchInventoryResultItem& SearchInventoryResultItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("assetItem")) {
     m_assetItem = jsonValue.GetObject("assetItem");
     m_assetItemHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("dataProductItem"))
-  {
+  if (jsonValue.ValueExists("dataProductItem")) {
     m_dataProductItem = jsonValue.GetObject("dataProductItem");
     m_dataProductItemHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("glossaryItem"))
-  {
+  if (jsonValue.ValueExists("glossaryItem")) {
     m_glossaryItem = jsonValue.GetObject("glossaryItem");
     m_glossaryItemHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("glossaryTermItem"))
-  {
+  if (jsonValue.ValueExists("glossaryTermItem")) {
     m_glossaryTermItem = jsonValue.GetObject("glossaryTermItem");
     m_glossaryTermItemHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SearchInventoryResultItem::Jsonize() const
-{
+JsonValue SearchInventoryResultItem::Jsonize() const {
   JsonValue payload;
 
-  if(m_assetItemHasBeenSet)
-  {
-   payload.WithObject("assetItem", m_assetItem.Jsonize());
-
+  if (m_assetItemHasBeenSet) {
+    payload.WithObject("assetItem", m_assetItem.Jsonize());
   }
 
-  if(m_dataProductItemHasBeenSet)
-  {
-   payload.WithObject("dataProductItem", m_dataProductItem.Jsonize());
-
+  if (m_dataProductItemHasBeenSet) {
+    payload.WithObject("dataProductItem", m_dataProductItem.Jsonize());
   }
 
-  if(m_glossaryItemHasBeenSet)
-  {
-   payload.WithObject("glossaryItem", m_glossaryItem.Jsonize());
-
+  if (m_glossaryItemHasBeenSet) {
+    payload.WithObject("glossaryItem", m_glossaryItem.Jsonize());
   }
 
-  if(m_glossaryTermItemHasBeenSet)
-  {
-   payload.WithObject("glossaryTermItem", m_glossaryTermItem.Jsonize());
-
+  if (m_glossaryTermItemHasBeenSet) {
+    payload.WithObject("glossaryTermItem", m_glossaryTermItem.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DataZone
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

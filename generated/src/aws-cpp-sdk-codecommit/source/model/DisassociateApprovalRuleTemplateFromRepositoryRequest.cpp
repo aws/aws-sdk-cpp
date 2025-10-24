@@ -12,33 +12,22 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DisassociateApprovalRuleTemplateFromRepositoryRequest::SerializePayload() const
-{
+Aws::String DisassociateApprovalRuleTemplateFromRepositoryRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_approvalRuleTemplateNameHasBeenSet)
-  {
-   payload.WithString("approvalRuleTemplateName", m_approvalRuleTemplateName);
-
+  if (m_approvalRuleTemplateNameHasBeenSet) {
+    payload.WithString("approvalRuleTemplateName", m_approvalRuleTemplateName);
   }
 
-  if(m_repositoryNameHasBeenSet)
-  {
-   payload.WithString("repositoryName", m_repositoryName);
-
+  if (m_repositoryNameHasBeenSet) {
+    payload.WithString("repositoryName", m_repositoryName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DisassociateApprovalRuleTemplateFromRepositoryRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DisassociateApprovalRuleTemplateFromRepositoryRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeCommit_20150413.DisassociateApprovalRuleTemplateFromRepository"));
   return headers;
-
 }
-
-
-
-

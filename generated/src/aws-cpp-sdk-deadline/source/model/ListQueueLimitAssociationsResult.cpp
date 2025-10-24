@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/deadline/model/ListQueueLimitAssociationsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/deadline/model/ListQueueLimitAssociationsResult.h>
 
 #include <utility>
 
@@ -17,37 +17,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListQueueLimitAssociationsResult::ListQueueLimitAssociationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListQueueLimitAssociationsResult::ListQueueLimitAssociationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListQueueLimitAssociationsResult& ListQueueLimitAssociationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListQueueLimitAssociationsResult& ListQueueLimitAssociationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("queueLimitAssociations"))
-  {
+  if (jsonValue.ValueExists("queueLimitAssociations")) {
     Aws::Utils::Array<JsonView> queueLimitAssociationsJsonList = jsonValue.GetArray("queueLimitAssociations");
-    for(unsigned queueLimitAssociationsIndex = 0; queueLimitAssociationsIndex < queueLimitAssociationsJsonList.GetLength(); ++queueLimitAssociationsIndex)
-    {
+    for (unsigned queueLimitAssociationsIndex = 0; queueLimitAssociationsIndex < queueLimitAssociationsJsonList.GetLength();
+         ++queueLimitAssociationsIndex) {
       m_queueLimitAssociations.push_back(queueLimitAssociationsJsonList[queueLimitAssociationsIndex].AsObject());
     }
     m_queueLimitAssociationsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

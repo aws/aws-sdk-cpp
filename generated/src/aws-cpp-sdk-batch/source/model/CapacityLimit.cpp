@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Batch
-{
-namespace Model
-{
+namespace Aws {
+namespace Batch {
+namespace Model {
 
-CapacityLimit::CapacityLimit(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CapacityLimit::CapacityLimit(JsonView jsonValue) { *this = jsonValue; }
 
-CapacityLimit& CapacityLimit::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("maxCapacity"))
-  {
+CapacityLimit& CapacityLimit::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("maxCapacity")) {
     m_maxCapacity = jsonValue.GetInteger("maxCapacity");
     m_maxCapacityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("capacityUnit"))
-  {
+  if (jsonValue.ValueExists("capacityUnit")) {
     m_capacityUnit = jsonValue.GetString("capacityUnit");
     m_capacityUnitHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CapacityLimit::Jsonize() const
-{
+JsonValue CapacityLimit::Jsonize() const {
   JsonValue payload;
 
-  if(m_maxCapacityHasBeenSet)
-  {
-   payload.WithInteger("maxCapacity", m_maxCapacity);
-
+  if (m_maxCapacityHasBeenSet) {
+    payload.WithInteger("maxCapacity", m_maxCapacity);
   }
 
-  if(m_capacityUnitHasBeenSet)
-  {
-   payload.WithString("capacityUnit", m_capacityUnit);
-
+  if (m_capacityUnitHasBeenSet) {
+    payload.WithString("capacityUnit", m_capacityUnit);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Batch
-} // namespace Aws
+}  // namespace Model
+}  // namespace Batch
+}  // namespace Aws

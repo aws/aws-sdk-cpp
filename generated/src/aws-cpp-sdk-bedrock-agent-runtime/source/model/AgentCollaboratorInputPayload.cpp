@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-AgentCollaboratorInputPayload::AgentCollaboratorInputPayload(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AgentCollaboratorInputPayload::AgentCollaboratorInputPayload(JsonView jsonValue) { *this = jsonValue; }
 
-AgentCollaboratorInputPayload& AgentCollaboratorInputPayload::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+AgentCollaboratorInputPayload& AgentCollaboratorInputPayload::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = PayloadTypeMapper::GetPayloadTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("text"))
-  {
+  if (jsonValue.ValueExists("text")) {
     m_text = jsonValue.GetString("text");
     m_textHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("returnControlResults"))
-  {
+  if (jsonValue.ValueExists("returnControlResults")) {
     m_returnControlResults = jsonValue.GetObject("returnControlResults");
     m_returnControlResultsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AgentCollaboratorInputPayload::Jsonize() const
-{
+JsonValue AgentCollaboratorInputPayload::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", PayloadTypeMapper::GetNameForPayloadType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", PayloadTypeMapper::GetNameForPayloadType(m_type));
   }
 
-  if(m_textHasBeenSet)
-  {
-   payload.WithString("text", m_text);
-
+  if (m_textHasBeenSet) {
+    payload.WithString("text", m_text);
   }
 
-  if(m_returnControlResultsHasBeenSet)
-  {
-   payload.WithObject("returnControlResults", m_returnControlResults.Jsonize());
-
+  if (m_returnControlResultsHasBeenSet) {
+    payload.WithObject("returnControlResults", m_returnControlResults.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

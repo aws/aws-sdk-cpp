@@ -11,61 +11,45 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudDirectory
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudDirectory {
+namespace Model {
 
-BatchListObjectAttributesResponse::BatchListObjectAttributesResponse(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchListObjectAttributesResponse::BatchListObjectAttributesResponse(JsonView jsonValue) { *this = jsonValue; }
 
-BatchListObjectAttributesResponse& BatchListObjectAttributesResponse::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Attributes"))
-  {
+BatchListObjectAttributesResponse& BatchListObjectAttributesResponse::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Attributes")) {
     Aws::Utils::Array<JsonView> attributesJsonList = jsonValue.GetArray("Attributes");
-    for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
-    {
+    for (unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex) {
       m_attributes.push_back(attributesJsonList[attributesIndex].AsObject());
     }
     m_attributesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BatchListObjectAttributesResponse::Jsonize() const
-{
+JsonValue BatchListObjectAttributesResponse::Jsonize() const {
   JsonValue payload;
 
-  if(m_attributesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> attributesJsonList(m_attributes.size());
-   for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
-   {
-     attributesJsonList[attributesIndex].AsObject(m_attributes[attributesIndex].Jsonize());
-   }
-   payload.WithArray("Attributes", std::move(attributesJsonList));
-
+  if (m_attributesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> attributesJsonList(m_attributes.size());
+    for (unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex) {
+      attributesJsonList[attributesIndex].AsObject(m_attributes[attributesIndex].Jsonize());
+    }
+    payload.WithArray("Attributes", std::move(attributesJsonList));
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudDirectory
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudDirectory
+}  // namespace Aws

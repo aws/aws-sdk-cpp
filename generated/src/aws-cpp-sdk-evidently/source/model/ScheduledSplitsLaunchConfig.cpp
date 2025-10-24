@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/evidently/model/ScheduledSplitsLaunchConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/evidently/model/ScheduledSplitsLaunchConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudWatchEvidently
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudWatchEvidently {
+namespace Model {
 
-ScheduledSplitsLaunchConfig::ScheduledSplitsLaunchConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ScheduledSplitsLaunchConfig::ScheduledSplitsLaunchConfig(JsonView jsonValue) { *this = jsonValue; }
 
-ScheduledSplitsLaunchConfig& ScheduledSplitsLaunchConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("steps"))
-  {
+ScheduledSplitsLaunchConfig& ScheduledSplitsLaunchConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("steps")) {
     Aws::Utils::Array<JsonView> stepsJsonList = jsonValue.GetArray("steps");
-    for(unsigned stepsIndex = 0; stepsIndex < stepsJsonList.GetLength(); ++stepsIndex)
-    {
+    for (unsigned stepsIndex = 0; stepsIndex < stepsJsonList.GetLength(); ++stepsIndex) {
       m_steps.push_back(stepsJsonList[stepsIndex].AsObject());
     }
     m_stepsHasBeenSet = true;
@@ -37,24 +28,20 @@ ScheduledSplitsLaunchConfig& ScheduledSplitsLaunchConfig::operator =(JsonView js
   return *this;
 }
 
-JsonValue ScheduledSplitsLaunchConfig::Jsonize() const
-{
+JsonValue ScheduledSplitsLaunchConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_stepsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> stepsJsonList(m_steps.size());
-   for(unsigned stepsIndex = 0; stepsIndex < stepsJsonList.GetLength(); ++stepsIndex)
-   {
-     stepsJsonList[stepsIndex].AsObject(m_steps[stepsIndex].Jsonize());
-   }
-   payload.WithArray("steps", std::move(stepsJsonList));
-
+  if (m_stepsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> stepsJsonList(m_steps.size());
+    for (unsigned stepsIndex = 0; stepsIndex < stepsJsonList.GetLength(); ++stepsIndex) {
+      stepsJsonList[stepsIndex].AsObject(m_steps[stepsIndex].Jsonize());
+    }
+    payload.WithArray("steps", std::move(stepsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudWatchEvidently
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudWatchEvidently
+}  // namespace Aws

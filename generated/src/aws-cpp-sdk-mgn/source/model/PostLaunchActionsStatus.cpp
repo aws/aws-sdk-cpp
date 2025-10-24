@@ -3,69 +3,59 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mgn/model/PostLaunchActionsStatus.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mgn/model/PostLaunchActionsStatus.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace mgn
-{
-namespace Model
-{
+namespace Aws {
+namespace mgn {
+namespace Model {
 
-PostLaunchActionsStatus::PostLaunchActionsStatus(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PostLaunchActionsStatus::PostLaunchActionsStatus(JsonView jsonValue) { *this = jsonValue; }
 
-PostLaunchActionsStatus& PostLaunchActionsStatus::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("postLaunchActionsLaunchStatusList"))
-  {
+PostLaunchActionsStatus& PostLaunchActionsStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("postLaunchActionsLaunchStatusList")) {
     Aws::Utils::Array<JsonView> postLaunchActionsLaunchStatusListJsonList = jsonValue.GetArray("postLaunchActionsLaunchStatusList");
-    for(unsigned postLaunchActionsLaunchStatusListIndex = 0; postLaunchActionsLaunchStatusListIndex < postLaunchActionsLaunchStatusListJsonList.GetLength(); ++postLaunchActionsLaunchStatusListIndex)
-    {
-      m_postLaunchActionsLaunchStatusList.push_back(postLaunchActionsLaunchStatusListJsonList[postLaunchActionsLaunchStatusListIndex].AsObject());
+    for (unsigned postLaunchActionsLaunchStatusListIndex = 0;
+         postLaunchActionsLaunchStatusListIndex < postLaunchActionsLaunchStatusListJsonList.GetLength();
+         ++postLaunchActionsLaunchStatusListIndex) {
+      m_postLaunchActionsLaunchStatusList.push_back(
+          postLaunchActionsLaunchStatusListJsonList[postLaunchActionsLaunchStatusListIndex].AsObject());
     }
     m_postLaunchActionsLaunchStatusListHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ssmAgentDiscoveryDatetime"))
-  {
+  if (jsonValue.ValueExists("ssmAgentDiscoveryDatetime")) {
     m_ssmAgentDiscoveryDatetime = jsonValue.GetString("ssmAgentDiscoveryDatetime");
     m_ssmAgentDiscoveryDatetimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PostLaunchActionsStatus::Jsonize() const
-{
+JsonValue PostLaunchActionsStatus::Jsonize() const {
   JsonValue payload;
 
-  if(m_postLaunchActionsLaunchStatusListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> postLaunchActionsLaunchStatusListJsonList(m_postLaunchActionsLaunchStatusList.size());
-   for(unsigned postLaunchActionsLaunchStatusListIndex = 0; postLaunchActionsLaunchStatusListIndex < postLaunchActionsLaunchStatusListJsonList.GetLength(); ++postLaunchActionsLaunchStatusListIndex)
-   {
-     postLaunchActionsLaunchStatusListJsonList[postLaunchActionsLaunchStatusListIndex].AsObject(m_postLaunchActionsLaunchStatusList[postLaunchActionsLaunchStatusListIndex].Jsonize());
-   }
-   payload.WithArray("postLaunchActionsLaunchStatusList", std::move(postLaunchActionsLaunchStatusListJsonList));
-
+  if (m_postLaunchActionsLaunchStatusListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> postLaunchActionsLaunchStatusListJsonList(m_postLaunchActionsLaunchStatusList.size());
+    for (unsigned postLaunchActionsLaunchStatusListIndex = 0;
+         postLaunchActionsLaunchStatusListIndex < postLaunchActionsLaunchStatusListJsonList.GetLength();
+         ++postLaunchActionsLaunchStatusListIndex) {
+      postLaunchActionsLaunchStatusListJsonList[postLaunchActionsLaunchStatusListIndex].AsObject(
+          m_postLaunchActionsLaunchStatusList[postLaunchActionsLaunchStatusListIndex].Jsonize());
+    }
+    payload.WithArray("postLaunchActionsLaunchStatusList", std::move(postLaunchActionsLaunchStatusListJsonList));
   }
 
-  if(m_ssmAgentDiscoveryDatetimeHasBeenSet)
-  {
-   payload.WithString("ssmAgentDiscoveryDatetime", m_ssmAgentDiscoveryDatetime);
-
+  if (m_ssmAgentDiscoveryDatetimeHasBeenSet) {
+    payload.WithString("ssmAgentDiscoveryDatetime", m_ssmAgentDiscoveryDatetime);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace mgn
-} // namespace Aws
+}  // namespace Model
+}  // namespace mgn
+}  // namespace Aws

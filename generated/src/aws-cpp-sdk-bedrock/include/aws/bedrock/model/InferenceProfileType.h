@@ -7,25 +7,16 @@
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
-  enum class InferenceProfileType
-  {
-    NOT_SET,
-    SYSTEM_DEFINED,
-    APPLICATION
-  };
+namespace Aws {
+namespace Bedrock {
+namespace Model {
+enum class InferenceProfileType { NOT_SET, SYSTEM_DEFINED, APPLICATION };
 
-namespace InferenceProfileTypeMapper
-{
+namespace InferenceProfileTypeMapper {
 AWS_BEDROCK_API InferenceProfileType GetInferenceProfileTypeForName(const Aws::String& name);
 
 AWS_BEDROCK_API Aws::String GetNameForInferenceProfileType(InferenceProfileType value);
-} // namespace InferenceProfileTypeMapper
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace InferenceProfileTypeMapper
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift-data/model/ResourceNotFoundException.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/redshift-data/model/ResourceNotFoundException.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace RedshiftDataAPIService
-{
-namespace Model
-{
+namespace Aws {
+namespace RedshiftDataAPIService {
+namespace Model {
 
-ResourceNotFoundException::ResourceNotFoundException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResourceNotFoundException::ResourceNotFoundException(JsonView jsonValue) { *this = jsonValue; }
 
-ResourceNotFoundException& ResourceNotFoundException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Message"))
-  {
+ResourceNotFoundException& ResourceNotFoundException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceId"))
-  {
+  if (jsonValue.ValueExists("ResourceId")) {
     m_resourceId = jsonValue.GetString("ResourceId");
     m_resourceIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResourceNotFoundException::Jsonize() const
-{
+JsonValue ResourceNotFoundException::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
-  if(m_resourceIdHasBeenSet)
-  {
-   payload.WithString("ResourceId", m_resourceId);
-
+  if (m_resourceIdHasBeenSet) {
+    payload.WithString("ResourceId", m_resourceId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace RedshiftDataAPIService
-} // namespace Aws
+}  // namespace Model
+}  // namespace RedshiftDataAPIService
+}  // namespace Aws

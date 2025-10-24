@@ -5,12 +5,8 @@
 
 #include <aws/macie2/Macie2EndpointProvider.h>
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Macie2
-} // namespace Aws
+namespace Aws {
+namespace Macie2 {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Macie2
+}  // namespace Aws

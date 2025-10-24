@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/ssm-incidents/SSMIncidents_EXPORTS.h>
 
-namespace Aws
-{
-namespace SSMIncidents
-{
-class SSMIncidentsEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace SSMIncidents {
+class SSMIncidentsEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace SSMIncidents
-} // namespace Aws
+}  // namespace SSMIncidents
+}  // namespace Aws

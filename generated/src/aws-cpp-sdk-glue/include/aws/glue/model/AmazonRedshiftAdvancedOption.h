@@ -4,72 +4,77 @@
  */
 
 #pragma once
-#include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glue/Glue_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace Glue
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Glue {
+namespace Model {
 
+/**
+ * <p>Specifies an optional value when connecting to the Redshift
+ * cluster.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/AmazonRedshiftAdvancedOption">AWS
+ * API Reference</a></p>
+ */
+class AmazonRedshiftAdvancedOption {
+ public:
+  AWS_GLUE_API AmazonRedshiftAdvancedOption() = default;
+  AWS_GLUE_API AmazonRedshiftAdvancedOption(Aws::Utils::Json::JsonView jsonValue);
+  AWS_GLUE_API AmazonRedshiftAdvancedOption& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Specifies an optional value when connecting to the Redshift
-   * cluster.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/AmazonRedshiftAdvancedOption">AWS
-   * API Reference</a></p>
+   * <p>The key for the additional connection option.</p>
    */
-  class AmazonRedshiftAdvancedOption
-  {
-  public:
-    AWS_GLUE_API AmazonRedshiftAdvancedOption() = default;
-    AWS_GLUE_API AmazonRedshiftAdvancedOption(Aws::Utils::Json::JsonView jsonValue);
-    AWS_GLUE_API AmazonRedshiftAdvancedOption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetKey() const { return m_key; }
+  inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+  template <typename KeyT = Aws::String>
+  void SetKey(KeyT&& value) {
+    m_keyHasBeenSet = true;
+    m_key = std::forward<KeyT>(value);
+  }
+  template <typename KeyT = Aws::String>
+  AmazonRedshiftAdvancedOption& WithKey(KeyT&& value) {
+    SetKey(std::forward<KeyT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The value for the additional connection option.</p>
+   */
+  inline const Aws::String& GetValue() const { return m_value; }
+  inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+  template <typename ValueT = Aws::String>
+  void SetValue(ValueT&& value) {
+    m_valueHasBeenSet = true;
+    m_value = std::forward<ValueT>(value);
+  }
+  template <typename ValueT = Aws::String>
+  AmazonRedshiftAdvancedOption& WithValue(ValueT&& value) {
+    SetValue(std::forward<ValueT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_key;
+  bool m_keyHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The key for the additional connection option.</p>
-     */
-    inline const Aws::String& GetKey() const { return m_key; }
-    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    template<typename KeyT = Aws::String>
-    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
-    template<typename KeyT = Aws::String>
-    AmazonRedshiftAdvancedOption& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
-    ///@}
+  Aws::String m_value;
+  bool m_valueHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The value for the additional connection option.</p>
-     */
-    inline const Aws::String& GetValue() const { return m_value; }
-    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    template<typename ValueT = Aws::String>
-    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
-    template<typename ValueT = Aws::String>
-    AmazonRedshiftAdvancedOption& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_key;
-    bool m_keyHasBeenSet = false;
-
-    Aws::String m_value;
-    bool m_valueHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

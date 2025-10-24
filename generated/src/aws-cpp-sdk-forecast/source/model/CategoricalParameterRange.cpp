@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/forecast/model/CategoricalParameterRange.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/forecast/model/CategoricalParameterRange.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ForecastService
-{
-namespace Model
-{
+namespace Aws {
+namespace ForecastService {
+namespace Model {
 
-CategoricalParameterRange::CategoricalParameterRange(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CategoricalParameterRange::CategoricalParameterRange(JsonView jsonValue) { *this = jsonValue; }
 
-CategoricalParameterRange& CategoricalParameterRange::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+CategoricalParameterRange& CategoricalParameterRange::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Values"))
-  {
+  if (jsonValue.ValueExists("Values")) {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
-    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-    {
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());
     }
     m_valuesHasBeenSet = true;
@@ -42,30 +32,24 @@ CategoricalParameterRange& CategoricalParameterRange::operator =(JsonView jsonVa
   return *this;
 }
 
-JsonValue CategoricalParameterRange::Jsonize() const
-{
+JsonValue CategoricalParameterRange::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_valuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
-   for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-   {
-     valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
-   }
-   payload.WithArray("Values", std::move(valuesJsonList));
-
+  if (m_valuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
+      valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
+    }
+    payload.WithArray("Values", std::move(valuesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ForecastService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ForecastService
+}  // namespace Aws

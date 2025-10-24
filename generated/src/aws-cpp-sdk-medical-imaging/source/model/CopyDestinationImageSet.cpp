@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medical-imaging/model/CopyDestinationImageSet.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medical-imaging/model/CopyDestinationImageSet.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MedicalImaging
-{
-namespace Model
-{
+namespace Aws {
+namespace MedicalImaging {
+namespace Model {
 
-CopyDestinationImageSet::CopyDestinationImageSet(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CopyDestinationImageSet::CopyDestinationImageSet(JsonView jsonValue) { *this = jsonValue; }
 
-CopyDestinationImageSet& CopyDestinationImageSet::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("imageSetId"))
-  {
+CopyDestinationImageSet& CopyDestinationImageSet::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("imageSetId")) {
     m_imageSetId = jsonValue.GetString("imageSetId");
     m_imageSetIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("latestVersionId"))
-  {
+  if (jsonValue.ValueExists("latestVersionId")) {
     m_latestVersionId = jsonValue.GetString("latestVersionId");
     m_latestVersionIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CopyDestinationImageSet::Jsonize() const
-{
+JsonValue CopyDestinationImageSet::Jsonize() const {
   JsonValue payload;
 
-  if(m_imageSetIdHasBeenSet)
-  {
-   payload.WithString("imageSetId", m_imageSetId);
-
+  if (m_imageSetIdHasBeenSet) {
+    payload.WithString("imageSetId", m_imageSetId);
   }
 
-  if(m_latestVersionIdHasBeenSet)
-  {
-   payload.WithString("latestVersionId", m_latestVersionId);
-
+  if (m_latestVersionIdHasBeenSet) {
+    payload.WithString("latestVersionId", m_latestVersionId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MedicalImaging
-} // namespace Aws
+}  // namespace Model
+}  // namespace MedicalImaging
+}  // namespace Aws

@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/transcribe/TranscribeService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/transcribe/TranscribeService_EXPORTS.h>
 
-namespace Aws
-{
-namespace TranscribeService
-{
-namespace Model
-{
-  enum class Specialty
-  {
-    NOT_SET,
-    PRIMARYCARE
-  };
+namespace Aws {
+namespace TranscribeService {
+namespace Model {
+enum class Specialty { NOT_SET, PRIMARYCARE };
 
-namespace SpecialtyMapper
-{
+namespace SpecialtyMapper {
 AWS_TRANSCRIBESERVICE_API Specialty GetSpecialtyForName(const Aws::String& name);
 
 AWS_TRANSCRIBESERVICE_API Aws::String GetNameForSpecialty(Specialty value);
-} // namespace SpecialtyMapper
-} // namespace Model
-} // namespace TranscribeService
-} // namespace Aws
+}  // namespace SpecialtyMapper
+}  // namespace Model
+}  // namespace TranscribeService
+}  // namespace Aws

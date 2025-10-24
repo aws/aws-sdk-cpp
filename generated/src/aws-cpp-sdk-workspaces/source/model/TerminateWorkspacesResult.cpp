@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workspaces/model/TerminateWorkspacesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/workspaces/model/TerminateWorkspacesResult.h>
 
 #include <utility>
 
@@ -17,19 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-TerminateWorkspacesResult::TerminateWorkspacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+TerminateWorkspacesResult::TerminateWorkspacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-TerminateWorkspacesResult& TerminateWorkspacesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+TerminateWorkspacesResult& TerminateWorkspacesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("FailedRequests"))
-  {
+  if (jsonValue.ValueExists("FailedRequests")) {
     Aws::Utils::Array<JsonView> failedRequestsJsonList = jsonValue.GetArray("FailedRequests");
-    for(unsigned failedRequestsIndex = 0; failedRequestsIndex < failedRequestsJsonList.GetLength(); ++failedRequestsIndex)
-    {
+    for (unsigned failedRequestsIndex = 0; failedRequestsIndex < failedRequestsJsonList.GetLength(); ++failedRequestsIndex) {
       m_failedRequests.push_back(failedRequestsJsonList[failedRequestsIndex].AsObject());
     }
     m_failedRequestsHasBeenSet = true;
@@ -37,12 +31,10 @@ TerminateWorkspacesResult& TerminateWorkspacesResult::operator =(const Aws::Amaz
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

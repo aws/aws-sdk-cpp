@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-DescribeConfigRulesFilters::DescribeConfigRulesFilters(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DescribeConfigRulesFilters::DescribeConfigRulesFilters(JsonView jsonValue) { *this = jsonValue; }
 
-DescribeConfigRulesFilters& DescribeConfigRulesFilters::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EvaluationMode"))
-  {
+DescribeConfigRulesFilters& DescribeConfigRulesFilters::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EvaluationMode")) {
     m_evaluationMode = EvaluationModeMapper::GetEvaluationModeForName(jsonValue.GetString("EvaluationMode"));
     m_evaluationModeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DescribeConfigRulesFilters::Jsonize() const
-{
+JsonValue DescribeConfigRulesFilters::Jsonize() const {
   JsonValue payload;
 
-  if(m_evaluationModeHasBeenSet)
-  {
-   payload.WithString("EvaluationMode", EvaluationModeMapper::GetNameForEvaluationMode(m_evaluationMode));
+  if (m_evaluationModeHasBeenSet) {
+    payload.WithString("EvaluationMode", EvaluationModeMapper::GetNameForEvaluationMode(m_evaluationMode));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

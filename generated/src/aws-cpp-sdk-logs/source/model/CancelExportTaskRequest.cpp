@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/logs/model/CancelExportTaskRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/logs/model/CancelExportTaskRequest.h>
 
 #include <utility>
 
@@ -12,27 +12,18 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CancelExportTaskRequest::SerializePayload() const
-{
+Aws::String CancelExportTaskRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_taskIdHasBeenSet)
-  {
-   payload.WithString("taskId", m_taskId);
-
+  if (m_taskIdHasBeenSet) {
+    payload.WithString("taskId", m_taskId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CancelExportTaskRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CancelExportTaskRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Logs_20140328.CancelExportTask"));
   return headers;
-
 }
-
-
-
-

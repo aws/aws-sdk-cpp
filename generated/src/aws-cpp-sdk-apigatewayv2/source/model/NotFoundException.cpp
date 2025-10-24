@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApiGatewayV2
-{
-namespace Model
-{
+namespace Aws {
+namespace ApiGatewayV2 {
+namespace Model {
 
-NotFoundException::NotFoundException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NotFoundException::NotFoundException(JsonView jsonValue) { *this = jsonValue; }
 
-NotFoundException& NotFoundException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("message"))
-  {
+NotFoundException& NotFoundException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceType"))
-  {
+  if (jsonValue.ValueExists("resourceType")) {
     m_resourceType = jsonValue.GetString("resourceType");
     m_resourceTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NotFoundException::Jsonize() const
-{
+JsonValue NotFoundException::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("resourceType", m_resourceType);
-
+  if (m_resourceTypeHasBeenSet) {
+    payload.WithString("resourceType", m_resourceType);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApiGatewayV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApiGatewayV2
+}  // namespace Aws

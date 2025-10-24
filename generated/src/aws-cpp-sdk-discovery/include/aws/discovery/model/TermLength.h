@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/discovery/ApplicationDiscoveryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/discovery/ApplicationDiscoveryService_EXPORTS.h>
 
-namespace Aws
-{
-namespace ApplicationDiscoveryService
-{
-namespace Model
-{
-  enum class TermLength
-  {
-    NOT_SET,
-    ONE_YEAR,
-    THREE_YEAR
-  };
+namespace Aws {
+namespace ApplicationDiscoveryService {
+namespace Model {
+enum class TermLength { NOT_SET, ONE_YEAR, THREE_YEAR };
 
-namespace TermLengthMapper
-{
+namespace TermLengthMapper {
 AWS_APPLICATIONDISCOVERYSERVICE_API TermLength GetTermLengthForName(const Aws::String& name);
 
 AWS_APPLICATIONDISCOVERYSERVICE_API Aws::String GetNameForTermLength(TermLength value);
-} // namespace TermLengthMapper
-} // namespace Model
-} // namespace ApplicationDiscoveryService
-} // namespace Aws
+}  // namespace TermLengthMapper
+}  // namespace Model
+}  // namespace ApplicationDiscoveryService
+}  // namespace Aws

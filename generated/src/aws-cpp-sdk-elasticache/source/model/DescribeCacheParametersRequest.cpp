@@ -3,34 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/DescribeCacheParametersRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticache/model/DescribeCacheParametersRequest.h>
 
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeCacheParametersRequest::SerializePayload() const
-{
+Aws::String DescribeCacheParametersRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeCacheParameters&";
-  if(m_cacheParameterGroupNameHasBeenSet)
-  {
+  if (m_cacheParameterGroupNameHasBeenSet) {
     ss << "CacheParameterGroupName=" << StringUtils::URLEncode(m_cacheParameterGroupName.c_str()) << "&";
   }
 
-  if(m_sourceHasBeenSet)
-  {
+  if (m_sourceHasBeenSet) {
     ss << "Source=" << StringUtils::URLEncode(m_source.c_str()) << "&";
   }
 
-  if(m_maxRecordsHasBeenSet)
-  {
+  if (m_maxRecordsHasBeenSet) {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
 
-  if(m_markerHasBeenSet)
-  {
+  if (m_markerHasBeenSet) {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
 
@@ -38,8 +33,4 @@ Aws::String DescribeCacheParametersRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeCacheParametersRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeCacheParametersRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

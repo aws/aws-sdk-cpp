@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/macie2/Macie2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/macie2/Macie2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
-  enum class ScopeFilterKey
-  {
-    NOT_SET,
-    OBJECT_EXTENSION,
-    OBJECT_LAST_MODIFIED_DATE,
-    OBJECT_SIZE,
-    OBJECT_KEY
-  };
+namespace Aws {
+namespace Macie2 {
+namespace Model {
+enum class ScopeFilterKey { NOT_SET, OBJECT_EXTENSION, OBJECT_LAST_MODIFIED_DATE, OBJECT_SIZE, OBJECT_KEY };
 
-namespace ScopeFilterKeyMapper
-{
+namespace ScopeFilterKeyMapper {
 AWS_MACIE2_API ScopeFilterKey GetScopeFilterKeyForName(const Aws::String& name);
 
 AWS_MACIE2_API Aws::String GetNameForScopeFilterKey(ScopeFilterKey value);
-} // namespace ScopeFilterKeyMapper
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace ScopeFilterKeyMapper
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

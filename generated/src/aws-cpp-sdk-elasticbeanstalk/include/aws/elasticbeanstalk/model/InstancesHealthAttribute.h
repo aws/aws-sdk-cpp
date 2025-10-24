@@ -4,37 +4,32 @@
  */
 
 #pragma once
-#include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElasticBeanstalk
-{
-namespace Model
-{
-  enum class InstancesHealthAttribute
-  {
-    NOT_SET,
-    HealthStatus,
-    Color,
-    Causes,
-    ApplicationMetrics,
-    RefreshedAt,
-    LaunchedAt,
-    System,
-    Deployment,
-    AvailabilityZone,
-    InstanceType,
-    All
-  };
+namespace Aws {
+namespace ElasticBeanstalk {
+namespace Model {
+enum class InstancesHealthAttribute {
+  NOT_SET,
+  HealthStatus,
+  Color,
+  Causes,
+  ApplicationMetrics,
+  RefreshedAt,
+  LaunchedAt,
+  System,
+  Deployment,
+  AvailabilityZone,
+  InstanceType,
+  All
+};
 
-namespace InstancesHealthAttributeMapper
-{
+namespace InstancesHealthAttributeMapper {
 AWS_ELASTICBEANSTALK_API InstancesHealthAttribute GetInstancesHealthAttributeForName(const Aws::String& name);
 
 AWS_ELASTICBEANSTALK_API Aws::String GetNameForInstancesHealthAttribute(InstancesHealthAttribute value);
-} // namespace InstancesHealthAttributeMapper
-} // namespace Model
-} // namespace ElasticBeanstalk
-} // namespace Aws
+}  // namespace InstancesHealthAttributeMapper
+}  // namespace Model
+}  // namespace ElasticBeanstalk
+}  // namespace Aws

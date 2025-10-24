@@ -3,115 +3,86 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/guardduty/model/VolumeDetail.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/guardduty/model/VolumeDetail.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GuardDuty
-{
-namespace Model
-{
+namespace Aws {
+namespace GuardDuty {
+namespace Model {
 
-VolumeDetail::VolumeDetail(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VolumeDetail::VolumeDetail(JsonView jsonValue) { *this = jsonValue; }
 
-VolumeDetail& VolumeDetail::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("volumeArn"))
-  {
+VolumeDetail& VolumeDetail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("volumeArn")) {
     m_volumeArn = jsonValue.GetString("volumeArn");
     m_volumeArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("volumeType"))
-  {
+  if (jsonValue.ValueExists("volumeType")) {
     m_volumeType = jsonValue.GetString("volumeType");
     m_volumeTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("deviceName"))
-  {
+  if (jsonValue.ValueExists("deviceName")) {
     m_deviceName = jsonValue.GetString("deviceName");
     m_deviceNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("volumeSizeInGB"))
-  {
+  if (jsonValue.ValueExists("volumeSizeInGB")) {
     m_volumeSizeInGB = jsonValue.GetInteger("volumeSizeInGB");
     m_volumeSizeInGBHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("encryptionType"))
-  {
+  if (jsonValue.ValueExists("encryptionType")) {
     m_encryptionType = jsonValue.GetString("encryptionType");
     m_encryptionTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("snapshotArn"))
-  {
+  if (jsonValue.ValueExists("snapshotArn")) {
     m_snapshotArn = jsonValue.GetString("snapshotArn");
     m_snapshotArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("kmsKeyArn"))
-  {
+  if (jsonValue.ValueExists("kmsKeyArn")) {
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
     m_kmsKeyArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VolumeDetail::Jsonize() const
-{
+JsonValue VolumeDetail::Jsonize() const {
   JsonValue payload;
 
-  if(m_volumeArnHasBeenSet)
-  {
-   payload.WithString("volumeArn", m_volumeArn);
-
+  if (m_volumeArnHasBeenSet) {
+    payload.WithString("volumeArn", m_volumeArn);
   }
 
-  if(m_volumeTypeHasBeenSet)
-  {
-   payload.WithString("volumeType", m_volumeType);
-
+  if (m_volumeTypeHasBeenSet) {
+    payload.WithString("volumeType", m_volumeType);
   }
 
-  if(m_deviceNameHasBeenSet)
-  {
-   payload.WithString("deviceName", m_deviceName);
-
+  if (m_deviceNameHasBeenSet) {
+    payload.WithString("deviceName", m_deviceName);
   }
 
-  if(m_volumeSizeInGBHasBeenSet)
-  {
-   payload.WithInteger("volumeSizeInGB", m_volumeSizeInGB);
-
+  if (m_volumeSizeInGBHasBeenSet) {
+    payload.WithInteger("volumeSizeInGB", m_volumeSizeInGB);
   }
 
-  if(m_encryptionTypeHasBeenSet)
-  {
-   payload.WithString("encryptionType", m_encryptionType);
-
+  if (m_encryptionTypeHasBeenSet) {
+    payload.WithString("encryptionType", m_encryptionType);
   }
 
-  if(m_snapshotArnHasBeenSet)
-  {
-   payload.WithString("snapshotArn", m_snapshotArn);
-
+  if (m_snapshotArnHasBeenSet) {
+    payload.WithString("snapshotArn", m_snapshotArn);
   }
 
-  if(m_kmsKeyArnHasBeenSet)
-  {
-   payload.WithString("kmsKeyArn", m_kmsKeyArn);
-
+  if (m_kmsKeyArnHasBeenSet) {
+    payload.WithString("kmsKeyArn", m_kmsKeyArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GuardDuty
-} // namespace Aws
+}  // namespace Model
+}  // namespace GuardDuty
+}  // namespace Aws

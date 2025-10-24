@@ -3,40 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/AcceptTransitGatewayMulticastDomainAssociationsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/AcceptTransitGatewayMulticastDomainAssociationsRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String AcceptTransitGatewayMulticastDomainAssociationsRequest::SerializePayload() const
-{
+Aws::String AcceptTransitGatewayMulticastDomainAssociationsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=AcceptTransitGatewayMulticastDomainAssociations&";
-  if(m_transitGatewayMulticastDomainIdHasBeenSet)
-  {
+  if (m_transitGatewayMulticastDomainIdHasBeenSet) {
     ss << "TransitGatewayMulticastDomainId=" << StringUtils::URLEncode(m_transitGatewayMulticastDomainId.c_str()) << "&";
   }
 
-  if(m_transitGatewayAttachmentIdHasBeenSet)
-  {
+  if (m_transitGatewayAttachmentIdHasBeenSet) {
     ss << "TransitGatewayAttachmentId=" << StringUtils::URLEncode(m_transitGatewayAttachmentId.c_str()) << "&";
   }
 
-  if(m_subnetIdsHasBeenSet)
-  {
+  if (m_subnetIdsHasBeenSet) {
     unsigned subnetIdsCount = 1;
-    for(auto& item : m_subnetIds)
-    {
-      ss << "SubnetIds." << subnetIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_subnetIds) {
+      ss << "SubnetIds." << subnetIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       subnetIdsCount++;
     }
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -44,8 +37,6 @@ Aws::String AcceptTransitGatewayMulticastDomainAssociationsRequest::SerializePay
   return ss.str();
 }
 
-
-void  AcceptTransitGatewayMulticastDomainAssociationsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
+void AcceptTransitGatewayMulticastDomainAssociationsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const {
   uri.SetQueryString(SerializePayload());
 }

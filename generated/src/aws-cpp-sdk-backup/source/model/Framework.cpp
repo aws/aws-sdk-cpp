@@ -11,95 +11,70 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Backup
-{
-namespace Model
-{
+namespace Aws {
+namespace Backup {
+namespace Model {
 
-Framework::Framework(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Framework::Framework(JsonView jsonValue) { *this = jsonValue; }
 
-Framework& Framework::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FrameworkName"))
-  {
+Framework& Framework::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FrameworkName")) {
     m_frameworkName = jsonValue.GetString("FrameworkName");
     m_frameworkNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FrameworkArn"))
-  {
+  if (jsonValue.ValueExists("FrameworkArn")) {
     m_frameworkArn = jsonValue.GetString("FrameworkArn");
     m_frameworkArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FrameworkDescription"))
-  {
+  if (jsonValue.ValueExists("FrameworkDescription")) {
     m_frameworkDescription = jsonValue.GetString("FrameworkDescription");
     m_frameworkDescriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NumberOfControls"))
-  {
+  if (jsonValue.ValueExists("NumberOfControls")) {
     m_numberOfControls = jsonValue.GetInteger("NumberOfControls");
     m_numberOfControlsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DeploymentStatus"))
-  {
+  if (jsonValue.ValueExists("DeploymentStatus")) {
     m_deploymentStatus = jsonValue.GetString("DeploymentStatus");
     m_deploymentStatusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Framework::Jsonize() const
-{
+JsonValue Framework::Jsonize() const {
   JsonValue payload;
 
-  if(m_frameworkNameHasBeenSet)
-  {
-   payload.WithString("FrameworkName", m_frameworkName);
-
+  if (m_frameworkNameHasBeenSet) {
+    payload.WithString("FrameworkName", m_frameworkName);
   }
 
-  if(m_frameworkArnHasBeenSet)
-  {
-   payload.WithString("FrameworkArn", m_frameworkArn);
-
+  if (m_frameworkArnHasBeenSet) {
+    payload.WithString("FrameworkArn", m_frameworkArn);
   }
 
-  if(m_frameworkDescriptionHasBeenSet)
-  {
-   payload.WithString("FrameworkDescription", m_frameworkDescription);
-
+  if (m_frameworkDescriptionHasBeenSet) {
+    payload.WithString("FrameworkDescription", m_frameworkDescription);
   }
 
-  if(m_numberOfControlsHasBeenSet)
-  {
-   payload.WithInteger("NumberOfControls", m_numberOfControls);
-
+  if (m_numberOfControlsHasBeenSet) {
+    payload.WithInteger("NumberOfControls", m_numberOfControls);
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_deploymentStatusHasBeenSet)
-  {
-   payload.WithString("DeploymentStatus", m_deploymentStatus);
-
+  if (m_deploymentStatusHasBeenSet) {
+    payload.WithString("DeploymentStatus", m_deploymentStatus);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Backup
-} // namespace Aws
+}  // namespace Model
+}  // namespace Backup
+}  // namespace Aws

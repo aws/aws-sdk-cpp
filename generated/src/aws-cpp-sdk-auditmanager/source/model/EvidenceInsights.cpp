@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AuditManager
-{
-namespace Model
-{
+namespace Aws {
+namespace AuditManager {
+namespace Model {
 
-EvidenceInsights::EvidenceInsights(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EvidenceInsights::EvidenceInsights(JsonView jsonValue) { *this = jsonValue; }
 
-EvidenceInsights& EvidenceInsights::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("noncompliantEvidenceCount"))
-  {
+EvidenceInsights& EvidenceInsights::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("noncompliantEvidenceCount")) {
     m_noncompliantEvidenceCount = jsonValue.GetInteger("noncompliantEvidenceCount");
     m_noncompliantEvidenceCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("compliantEvidenceCount"))
-  {
+  if (jsonValue.ValueExists("compliantEvidenceCount")) {
     m_compliantEvidenceCount = jsonValue.GetInteger("compliantEvidenceCount");
     m_compliantEvidenceCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("inconclusiveEvidenceCount"))
-  {
+  if (jsonValue.ValueExists("inconclusiveEvidenceCount")) {
     m_inconclusiveEvidenceCount = jsonValue.GetInteger("inconclusiveEvidenceCount");
     m_inconclusiveEvidenceCountHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EvidenceInsights::Jsonize() const
-{
+JsonValue EvidenceInsights::Jsonize() const {
   JsonValue payload;
 
-  if(m_noncompliantEvidenceCountHasBeenSet)
-  {
-   payload.WithInteger("noncompliantEvidenceCount", m_noncompliantEvidenceCount);
-
+  if (m_noncompliantEvidenceCountHasBeenSet) {
+    payload.WithInteger("noncompliantEvidenceCount", m_noncompliantEvidenceCount);
   }
 
-  if(m_compliantEvidenceCountHasBeenSet)
-  {
-   payload.WithInteger("compliantEvidenceCount", m_compliantEvidenceCount);
-
+  if (m_compliantEvidenceCountHasBeenSet) {
+    payload.WithInteger("compliantEvidenceCount", m_compliantEvidenceCount);
   }
 
-  if(m_inconclusiveEvidenceCountHasBeenSet)
-  {
-   payload.WithInteger("inconclusiveEvidenceCount", m_inconclusiveEvidenceCount);
-
+  if (m_inconclusiveEvidenceCountHasBeenSet) {
+    payload.WithInteger("inconclusiveEvidenceCount", m_inconclusiveEvidenceCount);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AuditManager
-} // namespace Aws
+}  // namespace Model
+}  // namespace AuditManager
+}  // namespace Aws

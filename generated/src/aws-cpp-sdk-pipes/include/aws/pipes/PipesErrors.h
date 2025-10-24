@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/pipes/Pipes_EXPORTS.h>
 
-namespace Aws
-{
-namespace Pipes
-{
-enum class PipesErrors
-{
-  //From Core//
+namespace Aws {
+namespace Pipes {
+enum class PipesErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class PipesErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,15 +44,14 @@ enum class PipesErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL,
   NOT_FOUND,
   SERVICE_QUOTA_EXCEEDED
 };
 
-class AWS_PIPES_API PipesError : public Aws::Client::AWSError<PipesErrors>
-{
-public:
+class AWS_PIPES_API PipesError : public Aws::Client::AWSError<PipesErrors> {
+ public:
   PipesError() {}
   PipesError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<PipesErrors>(rhs) {}
   PipesError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<PipesErrors>(rhs) {}
@@ -66,10 +62,9 @@ public:
   T GetModeledError();
 };
 
-namespace PipesErrorMapper
-{
-  AWS_PIPES_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace PipesErrorMapper {
+AWS_PIPES_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace Pipes
-} // namespace Aws
+}  // namespace Pipes
+}  // namespace Aws

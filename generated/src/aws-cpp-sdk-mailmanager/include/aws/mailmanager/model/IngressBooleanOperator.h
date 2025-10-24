@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mailmanager/MailManager_EXPORTS.h>
 
-namespace Aws
-{
-namespace MailManager
-{
-namespace Model
-{
-  enum class IngressBooleanOperator
-  {
-    NOT_SET,
-    IS_TRUE,
-    IS_FALSE
-  };
+namespace Aws {
+namespace MailManager {
+namespace Model {
+enum class IngressBooleanOperator { NOT_SET, IS_TRUE, IS_FALSE };
 
-namespace IngressBooleanOperatorMapper
-{
+namespace IngressBooleanOperatorMapper {
 AWS_MAILMANAGER_API IngressBooleanOperator GetIngressBooleanOperatorForName(const Aws::String& name);
 
 AWS_MAILMANAGER_API Aws::String GetNameForIngressBooleanOperator(IngressBooleanOperator value);
-} // namespace IngressBooleanOperatorMapper
-} // namespace Model
-} // namespace MailManager
-} // namespace Aws
+}  // namespace IngressBooleanOperatorMapper
+}  // namespace Model
+}  // namespace MailManager
+}  // namespace Aws

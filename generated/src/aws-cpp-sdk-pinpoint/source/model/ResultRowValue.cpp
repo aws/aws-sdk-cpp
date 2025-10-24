@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint/model/ResultRowValue.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint/model/ResultRowValue.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Pinpoint
-{
-namespace Model
-{
+namespace Aws {
+namespace Pinpoint {
+namespace Model {
 
-ResultRowValue::ResultRowValue(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResultRowValue::ResultRowValue(JsonView jsonValue) { *this = jsonValue; }
 
-ResultRowValue& ResultRowValue::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Key"))
-  {
+ResultRowValue& ResultRowValue::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Key")) {
     m_key = jsonValue.GetString("Key");
     m_keyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = jsonValue.GetString("Type");
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Value"))
-  {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetString("Value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResultRowValue::Jsonize() const
-{
+JsonValue ResultRowValue::Jsonize() const {
   JsonValue payload;
 
-  if(m_keyHasBeenSet)
-  {
-   payload.WithString("Key", m_key);
-
+  if (m_keyHasBeenSet) {
+    payload.WithString("Key", m_key);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", m_type);
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("Value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("Value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

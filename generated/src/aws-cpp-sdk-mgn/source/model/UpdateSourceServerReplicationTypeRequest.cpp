@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mgn/model/UpdateSourceServerReplicationTypeRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mgn/model/UpdateSourceServerReplicationTypeRequest.h>
 
 #include <utility>
 
@@ -12,30 +12,20 @@ using namespace Aws::mgn::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateSourceServerReplicationTypeRequest::SerializePayload() const
-{
+Aws::String UpdateSourceServerReplicationTypeRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_accountIDHasBeenSet)
-  {
-   payload.WithString("accountID", m_accountID);
-
+  if (m_accountIDHasBeenSet) {
+    payload.WithString("accountID", m_accountID);
   }
 
-  if(m_replicationTypeHasBeenSet)
-  {
-   payload.WithString("replicationType", ReplicationTypeMapper::GetNameForReplicationType(m_replicationType));
+  if (m_replicationTypeHasBeenSet) {
+    payload.WithString("replicationType", ReplicationTypeMapper::GetNameForReplicationType(m_replicationType));
   }
 
-  if(m_sourceServerIDHasBeenSet)
-  {
-   payload.WithString("sourceServerID", m_sourceServerID);
-
+  if (m_sourceServerIDHasBeenSet) {
+    payload.WithString("sourceServerID", m_sourceServerID);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

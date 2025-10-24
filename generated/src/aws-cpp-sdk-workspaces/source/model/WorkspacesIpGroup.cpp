@@ -3,48 +3,36 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workspaces/model/WorkspacesIpGroup.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workspaces/model/WorkspacesIpGroup.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WorkSpaces
-{
-namespace Model
-{
+namespace Aws {
+namespace WorkSpaces {
+namespace Model {
 
-WorkspacesIpGroup::WorkspacesIpGroup(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+WorkspacesIpGroup::WorkspacesIpGroup(JsonView jsonValue) { *this = jsonValue; }
 
-WorkspacesIpGroup& WorkspacesIpGroup::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("groupId"))
-  {
+WorkspacesIpGroup& WorkspacesIpGroup::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("groupId")) {
     m_groupId = jsonValue.GetString("groupId");
     m_groupIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("groupName"))
-  {
+  if (jsonValue.ValueExists("groupName")) {
     m_groupName = jsonValue.GetString("groupName");
     m_groupNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("groupDesc"))
-  {
+  if (jsonValue.ValueExists("groupDesc")) {
     m_groupDesc = jsonValue.GetString("groupDesc");
     m_groupDescHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("userRules"))
-  {
+  if (jsonValue.ValueExists("userRules")) {
     Aws::Utils::Array<JsonView> userRulesJsonList = jsonValue.GetArray("userRules");
-    for(unsigned userRulesIndex = 0; userRulesIndex < userRulesJsonList.GetLength(); ++userRulesIndex)
-    {
+    for (unsigned userRulesIndex = 0; userRulesIndex < userRulesJsonList.GetLength(); ++userRulesIndex) {
       m_userRules.push_back(userRulesJsonList[userRulesIndex].AsObject());
     }
     m_userRulesHasBeenSet = true;
@@ -52,42 +40,32 @@ WorkspacesIpGroup& WorkspacesIpGroup::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue WorkspacesIpGroup::Jsonize() const
-{
+JsonValue WorkspacesIpGroup::Jsonize() const {
   JsonValue payload;
 
-  if(m_groupIdHasBeenSet)
-  {
-   payload.WithString("groupId", m_groupId);
-
+  if (m_groupIdHasBeenSet) {
+    payload.WithString("groupId", m_groupId);
   }
 
-  if(m_groupNameHasBeenSet)
-  {
-   payload.WithString("groupName", m_groupName);
-
+  if (m_groupNameHasBeenSet) {
+    payload.WithString("groupName", m_groupName);
   }
 
-  if(m_groupDescHasBeenSet)
-  {
-   payload.WithString("groupDesc", m_groupDesc);
-
+  if (m_groupDescHasBeenSet) {
+    payload.WithString("groupDesc", m_groupDesc);
   }
 
-  if(m_userRulesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> userRulesJsonList(m_userRules.size());
-   for(unsigned userRulesIndex = 0; userRulesIndex < userRulesJsonList.GetLength(); ++userRulesIndex)
-   {
-     userRulesJsonList[userRulesIndex].AsObject(m_userRules[userRulesIndex].Jsonize());
-   }
-   payload.WithArray("userRules", std::move(userRulesJsonList));
-
+  if (m_userRulesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> userRulesJsonList(m_userRules.size());
+    for (unsigned userRulesIndex = 0; userRulesIndex < userRulesJsonList.GetLength(); ++userRulesIndex) {
+      userRulesJsonList[userRulesIndex].AsObject(m_userRules[userRulesIndex].Jsonize());
+    }
+    payload.WithArray("userRules", std::move(userRulesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WorkSpaces
-} // namespace Aws
+}  // namespace Model
+}  // namespace WorkSpaces
+}  // namespace Aws

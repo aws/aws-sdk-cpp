@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector2/Inspector2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Inspector2
-{
-namespace Model
-{
-  enum class CisResultStatusComparison
-  {
-    NOT_SET,
-    EQUALS
-  };
+namespace Aws {
+namespace Inspector2 {
+namespace Model {
+enum class CisResultStatusComparison { NOT_SET, EQUALS };
 
-namespace CisResultStatusComparisonMapper
-{
+namespace CisResultStatusComparisonMapper {
 AWS_INSPECTOR2_API CisResultStatusComparison GetCisResultStatusComparisonForName(const Aws::String& name);
 
 AWS_INSPECTOR2_API Aws::String GetNameForCisResultStatusComparison(CisResultStatusComparison value);
-} // namespace CisResultStatusComparisonMapper
-} // namespace Model
-} // namespace Inspector2
-} // namespace Aws
+}  // namespace CisResultStatusComparisonMapper
+}  // namespace Model
+}  // namespace Inspector2
+}  // namespace Aws

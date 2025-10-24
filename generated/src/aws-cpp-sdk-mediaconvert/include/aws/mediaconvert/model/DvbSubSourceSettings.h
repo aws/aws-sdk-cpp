@@ -6,52 +6,50 @@
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace MediaConvert
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace MediaConvert {
+namespace Model {
 
+/**
+ * DVB Sub Source Settings<p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DvbSubSourceSettings">AWS
+ * API Reference</a></p>
+ */
+class DvbSubSourceSettings {
+ public:
+  AWS_MEDIACONVERT_API DvbSubSourceSettings() = default;
+  AWS_MEDIACONVERT_API DvbSubSourceSettings(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MEDIACONVERT_API DvbSubSourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * DVB Sub Source Settings<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DvbSubSourceSettings">AWS
-   * API Reference</a></p>
+   * When using DVB-Sub with Burn-in, use this PID for the source content. Unused for
+   * DVB-Sub passthrough. All DVB-Sub content is passed through, regardless of
+   * selectors.
    */
-  class DvbSubSourceSettings
-  {
-  public:
-    AWS_MEDIACONVERT_API DvbSubSourceSettings() = default;
-    AWS_MEDIACONVERT_API DvbSubSourceSettings(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MEDIACONVERT_API DvbSubSourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetPid() const { return m_pid; }
+  inline bool PidHasBeenSet() const { return m_pidHasBeenSet; }
+  inline void SetPid(int value) {
+    m_pidHasBeenSet = true;
+    m_pid = value;
+  }
+  inline DvbSubSourceSettings& WithPid(int value) {
+    SetPid(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_pid{0};
+  bool m_pidHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * When using DVB-Sub with Burn-in, use this PID for the source content. Unused for
-     * DVB-Sub passthrough. All DVB-Sub content is passed through, regardless of
-     * selectors.
-     */
-    inline int GetPid() const { return m_pid; }
-    inline bool PidHasBeenSet() const { return m_pidHasBeenSet; }
-    inline void SetPid(int value) { m_pidHasBeenSet = true; m_pid = value; }
-    inline DvbSubSourceSettings& WithPid(int value) { SetPid(value); return *this;}
-    ///@}
-  private:
-
-    int m_pid{0};
-    bool m_pidHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

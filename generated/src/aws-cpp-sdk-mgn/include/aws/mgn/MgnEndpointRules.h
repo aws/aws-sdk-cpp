@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/mgn/Mgn_EXPORTS.h>
 
-namespace Aws
-{
-namespace mgn
-{
-class MgnEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace mgn {
+class MgnEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace mgn
-} // namespace Aws
+}  // namespace mgn
+}  // namespace Aws

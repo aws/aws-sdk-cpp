@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/xray/model/GetInsightEventsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/xray/model/GetInsightEventsRequest.h>
 
 #include <utility>
 
@@ -12,31 +12,20 @@ using namespace Aws::XRay::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetInsightEventsRequest::SerializePayload() const
-{
+Aws::String GetInsightEventsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_insightIdHasBeenSet)
-  {
-   payload.WithString("InsightId", m_insightId);
-
+  if (m_insightIdHasBeenSet) {
+    payload.WithString("InsightId", m_insightId);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("MaxResults", m_maxResults);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

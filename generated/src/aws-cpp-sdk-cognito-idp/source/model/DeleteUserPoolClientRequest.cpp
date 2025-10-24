@@ -12,33 +12,22 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteUserPoolClientRequest::SerializePayload() const
-{
+Aws::String DeleteUserPoolClientRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_userPoolIdHasBeenSet)
-  {
-   payload.WithString("UserPoolId", m_userPoolId);
-
+  if (m_userPoolIdHasBeenSet) {
+    payload.WithString("UserPoolId", m_userPoolId);
   }
 
-  if(m_clientIdHasBeenSet)
-  {
-   payload.WithString("ClientId", m_clientId);
-
+  if (m_clientIdHasBeenSet) {
+    payload.WithString("ClientId", m_clientId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteUserPoolClientRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteUserPoolClientRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityProviderService.DeleteUserPoolClient"));
   return headers;
-
 }
-
-
-
-

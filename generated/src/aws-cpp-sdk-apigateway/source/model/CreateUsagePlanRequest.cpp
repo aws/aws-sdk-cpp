@@ -12,59 +12,40 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateUsagePlanRequest::SerializePayload() const
-{
+Aws::String CreateUsagePlanRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_apiStagesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> apiStagesJsonList(m_apiStages.size());
-   for(unsigned apiStagesIndex = 0; apiStagesIndex < apiStagesJsonList.GetLength(); ++apiStagesIndex)
-   {
-     apiStagesJsonList[apiStagesIndex].AsObject(m_apiStages[apiStagesIndex].Jsonize());
-   }
-   payload.WithArray("apiStages", std::move(apiStagesJsonList));
-
+  if (m_apiStagesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> apiStagesJsonList(m_apiStages.size());
+    for (unsigned apiStagesIndex = 0; apiStagesIndex < apiStagesJsonList.GetLength(); ++apiStagesIndex) {
+      apiStagesJsonList[apiStagesIndex].AsObject(m_apiStages[apiStagesIndex].Jsonize());
+    }
+    payload.WithArray("apiStages", std::move(apiStagesJsonList));
   }
 
-  if(m_throttleHasBeenSet)
-  {
-   payload.WithObject("throttle", m_throttle.Jsonize());
-
+  if (m_throttleHasBeenSet) {
+    payload.WithObject("throttle", m_throttle.Jsonize());
   }
 
-  if(m_quotaHasBeenSet)
-  {
-   payload.WithObject("quota", m_quota.Jsonize());
-
+  if (m_quotaHasBeenSet) {
+    payload.WithObject("quota", m_quota.Jsonize());
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

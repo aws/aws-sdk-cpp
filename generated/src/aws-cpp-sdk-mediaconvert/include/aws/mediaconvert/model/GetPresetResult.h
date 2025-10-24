@@ -4,64 +4,69 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/Preset.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace MediaConvert
-{
-namespace Model
-{
-  class GetPresetResult
-  {
-  public:
-    AWS_MEDIACONVERT_API GetPresetResult() = default;
-    AWS_MEDIACONVERT_API GetPresetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_MEDIACONVERT_API GetPresetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace MediaConvert {
+namespace Model {
+class GetPresetResult {
+ public:
+  AWS_MEDIACONVERT_API GetPresetResult() = default;
+  AWS_MEDIACONVERT_API GetPresetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_MEDIACONVERT_API GetPresetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * A preset is a collection of preconfigured media conversion settings that you
+   * want MediaConvert to apply to the output during the conversion process.
+   */
+  inline const Preset& GetPreset() const { return m_preset; }
+  template <typename PresetT = Preset>
+  void SetPreset(PresetT&& value) {
+    m_presetHasBeenSet = true;
+    m_preset = std::forward<PresetT>(value);
+  }
+  template <typename PresetT = Preset>
+  GetPresetResult& WithPreset(PresetT&& value) {
+    SetPreset(std::forward<PresetT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * A preset is a collection of preconfigured media conversion settings that you
-     * want MediaConvert to apply to the output during the conversion process.
-     */
-    inline const Preset& GetPreset() const { return m_preset; }
-    template<typename PresetT = Preset>
-    void SetPreset(PresetT&& value) { m_presetHasBeenSet = true; m_preset = std::forward<PresetT>(value); }
-    template<typename PresetT = Preset>
-    GetPresetResult& WithPreset(PresetT&& value) { SetPreset(std::forward<PresetT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    GetPresetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  GetPresetResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Preset m_preset;
+  bool m_presetHasBeenSet = false;
 
-    Preset m_preset;
-    bool m_presetHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

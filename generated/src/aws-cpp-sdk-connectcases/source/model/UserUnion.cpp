@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCases
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCases {
+namespace Model {
 
-UserUnion::UserUnion(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UserUnion::UserUnion(JsonView jsonValue) { *this = jsonValue; }
 
-UserUnion& UserUnion::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("userArn"))
-  {
+UserUnion& UserUnion::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("userArn")) {
     m_userArn = jsonValue.GetString("userArn");
     m_userArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("customEntity"))
-  {
+  if (jsonValue.ValueExists("customEntity")) {
     m_customEntity = jsonValue.GetString("customEntity");
     m_customEntityHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UserUnion::Jsonize() const
-{
+JsonValue UserUnion::Jsonize() const {
   JsonValue payload;
 
-  if(m_userArnHasBeenSet)
-  {
-   payload.WithString("userArn", m_userArn);
-
+  if (m_userArnHasBeenSet) {
+    payload.WithString("userArn", m_userArn);
   }
 
-  if(m_customEntityHasBeenSet)
-  {
-   payload.WithString("customEntity", m_customEntity);
-
+  if (m_customEntityHasBeenSet) {
+    payload.WithString("customEntity", m_customEntity);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCases
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCases
+}  // namespace Aws

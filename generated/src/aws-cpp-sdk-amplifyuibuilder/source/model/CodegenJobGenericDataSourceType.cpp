@@ -4,62 +4,50 @@
  */
 
 #include <aws/amplifyuibuilder/model/CodegenJobGenericDataSourceType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Model {
+namespace CodegenJobGenericDataSourceTypeMapper {
 
-namespace Aws
-{
-  namespace AmplifyUIBuilder
-  {
-    namespace Model
-    {
-      namespace CodegenJobGenericDataSourceTypeMapper
-      {
+static const int DataStore_HASH = HashingUtils::HashString("DataStore");
 
-        static const int DataStore_HASH = HashingUtils::HashString("DataStore");
+CodegenJobGenericDataSourceType GetCodegenJobGenericDataSourceTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == DataStore_HASH) {
+    return CodegenJobGenericDataSourceType::DataStore;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<CodegenJobGenericDataSourceType>(hashCode);
+  }
 
+  return CodegenJobGenericDataSourceType::NOT_SET;
+}
 
-        CodegenJobGenericDataSourceType GetCodegenJobGenericDataSourceTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == DataStore_HASH)
-          {
-            return CodegenJobGenericDataSourceType::DataStore;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<CodegenJobGenericDataSourceType>(hashCode);
-          }
+Aws::String GetNameForCodegenJobGenericDataSourceType(CodegenJobGenericDataSourceType enumValue) {
+  switch (enumValue) {
+    case CodegenJobGenericDataSourceType::NOT_SET:
+      return {};
+    case CodegenJobGenericDataSourceType::DataStore:
+      return "DataStore";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return CodegenJobGenericDataSourceType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForCodegenJobGenericDataSourceType(CodegenJobGenericDataSourceType enumValue)
-        {
-          switch(enumValue)
-          {
-          case CodegenJobGenericDataSourceType::NOT_SET:
-            return {};
-          case CodegenJobGenericDataSourceType::DataStore:
-            return "DataStore";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace CodegenJobGenericDataSourceTypeMapper
-    } // namespace Model
-  } // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace CodegenJobGenericDataSourceTypeMapper
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

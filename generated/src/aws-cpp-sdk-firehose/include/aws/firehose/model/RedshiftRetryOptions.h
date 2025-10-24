@@ -6,55 +6,53 @@
 #pragma once
 #include <aws/firehose/Firehose_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace Firehose
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Firehose {
+namespace Model {
 
+/**
+ * <p>Configures retry behavior in case Firehose is unable to deliver documents to
+ * Amazon Redshift.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/RedshiftRetryOptions">AWS
+ * API Reference</a></p>
+ */
+class RedshiftRetryOptions {
+ public:
+  AWS_FIREHOSE_API RedshiftRetryOptions() = default;
+  AWS_FIREHOSE_API RedshiftRetryOptions(Aws::Utils::Json::JsonView jsonValue);
+  AWS_FIREHOSE_API RedshiftRetryOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Configures retry behavior in case Firehose is unable to deliver documents to
-   * Amazon Redshift.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/RedshiftRetryOptions">AWS
-   * API Reference</a></p>
+   * <p>The length of time during which Firehose retries delivery after a failure,
+   * starting from the initial request and including the first attempt. The default
+   * value is 3600 seconds (60 minutes). Firehose does not retry if the value of
+   * <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt
+   * takes longer than the current value.</p>
    */
-  class RedshiftRetryOptions
-  {
-  public:
-    AWS_FIREHOSE_API RedshiftRetryOptions() = default;
-    AWS_FIREHOSE_API RedshiftRetryOptions(Aws::Utils::Json::JsonView jsonValue);
-    AWS_FIREHOSE_API RedshiftRetryOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetDurationInSeconds() const { return m_durationInSeconds; }
+  inline bool DurationInSecondsHasBeenSet() const { return m_durationInSecondsHasBeenSet; }
+  inline void SetDurationInSeconds(int value) {
+    m_durationInSecondsHasBeenSet = true;
+    m_durationInSeconds = value;
+  }
+  inline RedshiftRetryOptions& WithDurationInSeconds(int value) {
+    SetDurationInSeconds(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_durationInSeconds{0};
+  bool m_durationInSecondsHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>The length of time during which Firehose retries delivery after a failure,
-     * starting from the initial request and including the first attempt. The default
-     * value is 3600 seconds (60 minutes). Firehose does not retry if the value of
-     * <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt
-     * takes longer than the current value.</p>
-     */
-    inline int GetDurationInSeconds() const { return m_durationInSeconds; }
-    inline bool DurationInSecondsHasBeenSet() const { return m_durationInSecondsHasBeenSet; }
-    inline void SetDurationInSeconds(int value) { m_durationInSecondsHasBeenSet = true; m_durationInSeconds = value; }
-    inline RedshiftRetryOptions& WithDurationInSeconds(int value) { SetDurationInSeconds(value); return *this;}
-    ///@}
-  private:
-
-    int m_durationInSeconds{0};
-    bool m_durationInSecondsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Firehose
-} // namespace Aws
+}  // namespace Model
+}  // namespace Firehose
+}  // namespace Aws

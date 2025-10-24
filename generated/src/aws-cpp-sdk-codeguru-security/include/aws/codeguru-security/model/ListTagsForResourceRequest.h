@@ -4,53 +4,54 @@
  */
 
 #pragma once
-#include <aws/codeguru-security/CodeGuruSecurity_EXPORTS.h>
 #include <aws/codeguru-security/CodeGuruSecurityRequest.h>
+#include <aws/codeguru-security/CodeGuruSecurity_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace CodeGuruSecurity
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeGuruSecurity {
+namespace Model {
 
+/**
+ */
+class ListTagsForResourceRequest : public CodeGuruSecurityRequest {
+ public:
+  AWS_CODEGURUSECURITY_API ListTagsForResourceRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "ListTagsForResource"; }
+
+  AWS_CODEGURUSECURITY_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
+   * <p>The ARN of the <code>ScanName</code> object. You can retrieve this ARN by
+   * calling <code>CreateScan</code>, <code>ListScans</code>, or
+   * <code>GetScan</code>.</p>
    */
-  class ListTagsForResourceRequest : public CodeGuruSecurityRequest
-  {
-  public:
-    AWS_CODEGURUSECURITY_API ListTagsForResourceRequest() = default;
+  inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
+  inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+  template <typename ResourceArnT = Aws::String>
+  void SetResourceArn(ResourceArnT&& value) {
+    m_resourceArnHasBeenSet = true;
+    m_resourceArn = std::forward<ResourceArnT>(value);
+  }
+  template <typename ResourceArnT = Aws::String>
+  ListTagsForResourceRequest& WithResourceArn(ResourceArnT&& value) {
+    SetResourceArn(std::forward<ResourceArnT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_resourceArn;
+  bool m_resourceArnHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "ListTagsForResource"; }
-
-    AWS_CODEGURUSECURITY_API Aws::String SerializePayload() const override;
-
-
-    ///@{
-    /**
-     * <p>The ARN of the <code>ScanName</code> object. You can retrieve this ARN by
-     * calling <code>CreateScan</code>, <code>ListScans</code>, or
-     * <code>GetScan</code>.</p>
-     */
-    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
-    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    template<typename ResourceArnT = Aws::String>
-    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
-    template<typename ResourceArnT = Aws::String>
-    ListTagsForResourceRequest& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace CodeGuruSecurity
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeGuruSecurity
+}  // namespace Aws

@@ -3,58 +3,48 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/datasync/model/QopConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/datasync/model/QopConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DataSync
-{
-namespace Model
-{
+namespace Aws {
+namespace DataSync {
+namespace Model {
 
-QopConfiguration::QopConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+QopConfiguration::QopConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-QopConfiguration& QopConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RpcProtection"))
-  {
+QopConfiguration& QopConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RpcProtection")) {
     m_rpcProtection = HdfsRpcProtectionMapper::GetHdfsRpcProtectionForName(jsonValue.GetString("RpcProtection"));
     m_rpcProtectionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DataTransferProtection"))
-  {
-    m_dataTransferProtection = HdfsDataTransferProtectionMapper::GetHdfsDataTransferProtectionForName(jsonValue.GetString("DataTransferProtection"));
+  if (jsonValue.ValueExists("DataTransferProtection")) {
+    m_dataTransferProtection =
+        HdfsDataTransferProtectionMapper::GetHdfsDataTransferProtectionForName(jsonValue.GetString("DataTransferProtection"));
     m_dataTransferProtectionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue QopConfiguration::Jsonize() const
-{
+JsonValue QopConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_rpcProtectionHasBeenSet)
-  {
-   payload.WithString("RpcProtection", HdfsRpcProtectionMapper::GetNameForHdfsRpcProtection(m_rpcProtection));
+  if (m_rpcProtectionHasBeenSet) {
+    payload.WithString("RpcProtection", HdfsRpcProtectionMapper::GetNameForHdfsRpcProtection(m_rpcProtection));
   }
 
-  if(m_dataTransferProtectionHasBeenSet)
-  {
-   payload.WithString("DataTransferProtection", HdfsDataTransferProtectionMapper::GetNameForHdfsDataTransferProtection(m_dataTransferProtection));
+  if (m_dataTransferProtectionHasBeenSet) {
+    payload.WithString("DataTransferProtection",
+                       HdfsDataTransferProtectionMapper::GetNameForHdfsDataTransferProtection(m_dataTransferProtection));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DataSync
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataSync
+}  // namespace Aws

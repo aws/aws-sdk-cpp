@@ -10,48 +10,35 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateStackRefactorRequest::SerializePayload() const
-{
+Aws::String CreateStackRefactorRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateStackRefactor&";
-  if(m_descriptionHasBeenSet)
-  {
+  if (m_descriptionHasBeenSet) {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
-  if(m_enableStackCreationHasBeenSet)
-  {
+  if (m_enableStackCreationHasBeenSet) {
     ss << "EnableStackCreation=" << std::boolalpha << m_enableStackCreation << "&";
   }
 
-  if(m_resourceMappingsHasBeenSet)
-  {
-    if (m_resourceMappings.empty())
-    {
+  if (m_resourceMappingsHasBeenSet) {
+    if (m_resourceMappings.empty()) {
       ss << "ResourceMappings=&";
-    }
-    else
-    {
+    } else {
       unsigned resourceMappingsCount = 1;
-      for(auto& item : m_resourceMappings)
-      {
+      for (auto& item : m_resourceMappings) {
         item.OutputToStream(ss, "ResourceMappings.member.", resourceMappingsCount, "");
         resourceMappingsCount++;
       }
     }
   }
 
-  if(m_stackDefinitionsHasBeenSet)
-  {
-    if (m_stackDefinitions.empty())
-    {
+  if (m_stackDefinitionsHasBeenSet) {
+    if (m_stackDefinitions.empty()) {
       ss << "StackDefinitions=&";
-    }
-    else
-    {
+    } else {
       unsigned stackDefinitionsCount = 1;
-      for(auto& item : m_stackDefinitions)
-      {
+      for (auto& item : m_stackDefinitions) {
         item.OutputToStream(ss, "StackDefinitions.member.", stackDefinitionsCount, "");
         stackDefinitionsCount++;
       }
@@ -62,8 +49,4 @@ Aws::String CreateStackRefactorRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CreateStackRefactorRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateStackRefactorRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

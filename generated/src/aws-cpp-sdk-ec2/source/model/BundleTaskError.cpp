@@ -3,43 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/BundleTaskError.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/BundleTaskError.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-BundleTaskError::BundleTaskError(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+BundleTaskError::BundleTaskError(const XmlNode& xmlNode) { *this = xmlNode; }
 
-BundleTaskError& BundleTaskError::operator =(const XmlNode& xmlNode)
-{
+BundleTaskError& BundleTaskError::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode codeNode = resultNode.FirstChild("code");
-    if(!codeNode.IsNull())
-    {
+    if (!codeNode.IsNull()) {
       m_code = Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText());
       m_codeHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("message");
-    if(!messageNode.IsNull())
-    {
+    if (!messageNode.IsNull()) {
       m_message = Aws::Utils::Xml::DecodeEscapedXmlText(messageNode.GetText());
       m_messageHasBeenSet = true;
     }
@@ -48,32 +38,25 @@ BundleTaskError& BundleTaskError::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void BundleTaskError::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_codeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Code=" << StringUtils::URLEncode(m_code.c_str()) << "&";
+void BundleTaskError::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_codeHasBeenSet) {
+    oStream << location << index << locationValue << ".Code=" << StringUtils::URLEncode(m_code.c_str()) << "&";
   }
 
-  if(m_messageHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
-  }
-
-}
-
-void BundleTaskError::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_codeHasBeenSet)
-  {
-      oStream << location << ".Code=" << StringUtils::URLEncode(m_code.c_str()) << "&";
-  }
-  if(m_messageHasBeenSet)
-  {
-      oStream << location << ".Message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
+  if (m_messageHasBeenSet) {
+    oStream << location << index << locationValue << ".Message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void BundleTaskError::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_codeHasBeenSet) {
+    oStream << location << ".Code=" << StringUtils::URLEncode(m_code.c_str()) << "&";
+  }
+  if (m_messageHasBeenSet) {
+    oStream << location << ".Message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

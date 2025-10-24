@@ -3,126 +3,94 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint/model/APNSSandboxChannelRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint/model/APNSSandboxChannelRequest.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Pinpoint
-{
-namespace Model
-{
+namespace Aws {
+namespace Pinpoint {
+namespace Model {
 
-APNSSandboxChannelRequest::APNSSandboxChannelRequest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+APNSSandboxChannelRequest::APNSSandboxChannelRequest(JsonView jsonValue) { *this = jsonValue; }
 
-APNSSandboxChannelRequest& APNSSandboxChannelRequest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("BundleId"))
-  {
+APNSSandboxChannelRequest& APNSSandboxChannelRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("BundleId")) {
     m_bundleId = jsonValue.GetString("BundleId");
     m_bundleIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Certificate"))
-  {
+  if (jsonValue.ValueExists("Certificate")) {
     m_certificate = jsonValue.GetString("Certificate");
     m_certificateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DefaultAuthenticationMethod"))
-  {
+  if (jsonValue.ValueExists("DefaultAuthenticationMethod")) {
     m_defaultAuthenticationMethod = jsonValue.GetString("DefaultAuthenticationMethod");
     m_defaultAuthenticationMethodHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Enabled"))
-  {
+  if (jsonValue.ValueExists("Enabled")) {
     m_enabled = jsonValue.GetBool("Enabled");
     m_enabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PrivateKey"))
-  {
+  if (jsonValue.ValueExists("PrivateKey")) {
     m_privateKey = jsonValue.GetString("PrivateKey");
     m_privateKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TeamId"))
-  {
+  if (jsonValue.ValueExists("TeamId")) {
     m_teamId = jsonValue.GetString("TeamId");
     m_teamIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TokenKey"))
-  {
+  if (jsonValue.ValueExists("TokenKey")) {
     m_tokenKey = jsonValue.GetString("TokenKey");
     m_tokenKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TokenKeyId"))
-  {
+  if (jsonValue.ValueExists("TokenKeyId")) {
     m_tokenKeyId = jsonValue.GetString("TokenKeyId");
     m_tokenKeyIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue APNSSandboxChannelRequest::Jsonize() const
-{
+JsonValue APNSSandboxChannelRequest::Jsonize() const {
   JsonValue payload;
 
-  if(m_bundleIdHasBeenSet)
-  {
-   payload.WithString("BundleId", m_bundleId);
-
+  if (m_bundleIdHasBeenSet) {
+    payload.WithString("BundleId", m_bundleId);
   }
 
-  if(m_certificateHasBeenSet)
-  {
-   payload.WithString("Certificate", m_certificate);
-
+  if (m_certificateHasBeenSet) {
+    payload.WithString("Certificate", m_certificate);
   }
 
-  if(m_defaultAuthenticationMethodHasBeenSet)
-  {
-   payload.WithString("DefaultAuthenticationMethod", m_defaultAuthenticationMethod);
-
+  if (m_defaultAuthenticationMethodHasBeenSet) {
+    payload.WithString("DefaultAuthenticationMethod", m_defaultAuthenticationMethod);
   }
 
-  if(m_enabledHasBeenSet)
-  {
-   payload.WithBool("Enabled", m_enabled);
-
+  if (m_enabledHasBeenSet) {
+    payload.WithBool("Enabled", m_enabled);
   }
 
-  if(m_privateKeyHasBeenSet)
-  {
-   payload.WithString("PrivateKey", m_privateKey);
-
+  if (m_privateKeyHasBeenSet) {
+    payload.WithString("PrivateKey", m_privateKey);
   }
 
-  if(m_teamIdHasBeenSet)
-  {
-   payload.WithString("TeamId", m_teamId);
-
+  if (m_teamIdHasBeenSet) {
+    payload.WithString("TeamId", m_teamId);
   }
 
-  if(m_tokenKeyHasBeenSet)
-  {
-   payload.WithString("TokenKey", m_tokenKey);
-
+  if (m_tokenKeyHasBeenSet) {
+    payload.WithString("TokenKey", m_tokenKey);
   }
 
-  if(m_tokenKeyIdHasBeenSet)
-  {
-   payload.WithString("TokenKeyId", m_tokenKeyId);
-
+  if (m_tokenKeyIdHasBeenSet) {
+    payload.WithString("TokenKeyId", m_tokenKeyId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

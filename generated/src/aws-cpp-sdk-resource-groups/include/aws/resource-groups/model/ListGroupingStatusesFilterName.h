@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/resource-groups/ResourceGroups_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/resource-groups/ResourceGroups_EXPORTS.h>
 
-namespace Aws
-{
-namespace ResourceGroups
-{
-namespace Model
-{
-  enum class ListGroupingStatusesFilterName
-  {
-    NOT_SET,
-    status,
-    resource_arn
-  };
+namespace Aws {
+namespace ResourceGroups {
+namespace Model {
+enum class ListGroupingStatusesFilterName { NOT_SET, status, resource_arn };
 
-namespace ListGroupingStatusesFilterNameMapper
-{
+namespace ListGroupingStatusesFilterNameMapper {
 AWS_RESOURCEGROUPS_API ListGroupingStatusesFilterName GetListGroupingStatusesFilterNameForName(const Aws::String& name);
 
 AWS_RESOURCEGROUPS_API Aws::String GetNameForListGroupingStatusesFilterName(ListGroupingStatusesFilterName value);
-} // namespace ListGroupingStatusesFilterNameMapper
-} // namespace Model
-} // namespace ResourceGroups
-} // namespace Aws
+}  // namespace ListGroupingStatusesFilterNameMapper
+}  // namespace Model
+}  // namespace ResourceGroups
+}  // namespace Aws

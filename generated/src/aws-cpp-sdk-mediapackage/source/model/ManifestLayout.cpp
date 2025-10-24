@@ -3,77 +3,61 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediapackage/model/ManifestLayout.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/mediapackage/model/ManifestLayout.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace MediaPackage {
+namespace Model {
+namespace ManifestLayoutMapper {
 
-namespace Aws
-{
-  namespace MediaPackage
-  {
-    namespace Model
-    {
-      namespace ManifestLayoutMapper
-      {
+static const int FULL_HASH = HashingUtils::HashString("FULL");
+static const int COMPACT_HASH = HashingUtils::HashString("COMPACT");
+static const int DRM_TOP_LEVEL_COMPACT_HASH = HashingUtils::HashString("DRM_TOP_LEVEL_COMPACT");
 
-        static const int FULL_HASH = HashingUtils::HashString("FULL");
-        static const int COMPACT_HASH = HashingUtils::HashString("COMPACT");
-        static const int DRM_TOP_LEVEL_COMPACT_HASH = HashingUtils::HashString("DRM_TOP_LEVEL_COMPACT");
+ManifestLayout GetManifestLayoutForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == FULL_HASH) {
+    return ManifestLayout::FULL;
+  } else if (hashCode == COMPACT_HASH) {
+    return ManifestLayout::COMPACT;
+  } else if (hashCode == DRM_TOP_LEVEL_COMPACT_HASH) {
+    return ManifestLayout::DRM_TOP_LEVEL_COMPACT;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<ManifestLayout>(hashCode);
+  }
 
+  return ManifestLayout::NOT_SET;
+}
 
-        ManifestLayout GetManifestLayoutForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == FULL_HASH)
-          {
-            return ManifestLayout::FULL;
-          }
-          else if (hashCode == COMPACT_HASH)
-          {
-            return ManifestLayout::COMPACT;
-          }
-          else if (hashCode == DRM_TOP_LEVEL_COMPACT_HASH)
-          {
-            return ManifestLayout::DRM_TOP_LEVEL_COMPACT;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ManifestLayout>(hashCode);
-          }
+Aws::String GetNameForManifestLayout(ManifestLayout enumValue) {
+  switch (enumValue) {
+    case ManifestLayout::NOT_SET:
+      return {};
+    case ManifestLayout::FULL:
+      return "FULL";
+    case ManifestLayout::COMPACT:
+      return "COMPACT";
+    case ManifestLayout::DRM_TOP_LEVEL_COMPACT:
+      return "DRM_TOP_LEVEL_COMPACT";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return ManifestLayout::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForManifestLayout(ManifestLayout enumValue)
-        {
-          switch(enumValue)
-          {
-          case ManifestLayout::NOT_SET:
-            return {};
-          case ManifestLayout::FULL:
-            return "FULL";
-          case ManifestLayout::COMPACT:
-            return "COMPACT";
-          case ManifestLayout::DRM_TOP_LEVEL_COMPACT:
-            return "DRM_TOP_LEVEL_COMPACT";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace ManifestLayoutMapper
-    } // namespace Model
-  } // namespace MediaPackage
-} // namespace Aws
+}  // namespace ManifestLayoutMapper
+}  // namespace Model
+}  // namespace MediaPackage
+}  // namespace Aws

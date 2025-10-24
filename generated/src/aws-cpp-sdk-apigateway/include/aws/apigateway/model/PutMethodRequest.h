@@ -4,238 +4,307 @@
  */
 
 #pragma once
-#include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace APIGateway
-{
-namespace Model
-{
+namespace Aws {
+namespace APIGateway {
+namespace Model {
 
+/**
+ * <p>Request to add a method to an existing Resource resource.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutMethodRequest">AWS
+ * API Reference</a></p>
+ */
+class PutMethodRequest : public APIGatewayRequest {
+ public:
+  AWS_APIGATEWAY_API PutMethodRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "PutMethod"; }
+
+  AWS_APIGATEWAY_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
-   * <p>Request to add a method to an existing Resource resource.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutMethodRequest">AWS
-   * API Reference</a></p>
+   * <p>The string identifier of the associated RestApi.</p>
    */
-  class PutMethodRequest : public APIGatewayRequest
-  {
-  public:
-    AWS_APIGATEWAY_API PutMethodRequest() = default;
+  inline const Aws::String& GetRestApiId() const { return m_restApiId; }
+  inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
+  template <typename RestApiIdT = Aws::String>
+  void SetRestApiId(RestApiIdT&& value) {
+    m_restApiIdHasBeenSet = true;
+    m_restApiId = std::forward<RestApiIdT>(value);
+  }
+  template <typename RestApiIdT = Aws::String>
+  PutMethodRequest& WithRestApiId(RestApiIdT&& value) {
+    SetRestApiId(std::forward<RestApiIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "PutMethod"; }
+  ///@{
+  /**
+   * <p>The Resource identifier for the new Method resource.</p>
+   */
+  inline const Aws::String& GetResourceId() const { return m_resourceId; }
+  inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+  template <typename ResourceIdT = Aws::String>
+  void SetResourceId(ResourceIdT&& value) {
+    m_resourceIdHasBeenSet = true;
+    m_resourceId = std::forward<ResourceIdT>(value);
+  }
+  template <typename ResourceIdT = Aws::String>
+  PutMethodRequest& WithResourceId(ResourceIdT&& value) {
+    SetResourceId(std::forward<ResourceIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_APIGATEWAY_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>Specifies the method request's HTTP method type.</p>
+   */
+  inline const Aws::String& GetHttpMethod() const { return m_httpMethod; }
+  inline bool HttpMethodHasBeenSet() const { return m_httpMethodHasBeenSet; }
+  template <typename HttpMethodT = Aws::String>
+  void SetHttpMethod(HttpMethodT&& value) {
+    m_httpMethodHasBeenSet = true;
+    m_httpMethod = std::forward<HttpMethodT>(value);
+  }
+  template <typename HttpMethodT = Aws::String>
+  PutMethodRequest& WithHttpMethod(HttpMethodT&& value) {
+    SetHttpMethod(std::forward<HttpMethodT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The method's authorization type. Valid values are <code>NONE</code> for open
+   * access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code>
+   * for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a
+   * Cognito user pool.</p>
+   */
+  inline const Aws::String& GetAuthorizationType() const { return m_authorizationType; }
+  inline bool AuthorizationTypeHasBeenSet() const { return m_authorizationTypeHasBeenSet; }
+  template <typename AuthorizationTypeT = Aws::String>
+  void SetAuthorizationType(AuthorizationTypeT&& value) {
+    m_authorizationTypeHasBeenSet = true;
+    m_authorizationType = std::forward<AuthorizationTypeT>(value);
+  }
+  template <typename AuthorizationTypeT = Aws::String>
+  PutMethodRequest& WithAuthorizationType(AuthorizationTypeT&& value) {
+    SetAuthorizationType(std::forward<AuthorizationTypeT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
-    inline const Aws::String& GetRestApiId() const { return m_restApiId; }
-    inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
-    template<typename RestApiIdT = Aws::String>
-    void SetRestApiId(RestApiIdT&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::forward<RestApiIdT>(value); }
-    template<typename RestApiIdT = Aws::String>
-    PutMethodRequest& WithRestApiId(RestApiIdT&& value) { SetRestApiId(std::forward<RestApiIdT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>Specifies the identifier of an Authorizer to use on this Method, if the type
+   * is CUSTOM or COGNITO_USER_POOLS. The authorizer identifier is generated by API
+   * Gateway when you created the authorizer.</p>
+   */
+  inline const Aws::String& GetAuthorizerId() const { return m_authorizerId; }
+  inline bool AuthorizerIdHasBeenSet() const { return m_authorizerIdHasBeenSet; }
+  template <typename AuthorizerIdT = Aws::String>
+  void SetAuthorizerId(AuthorizerIdT&& value) {
+    m_authorizerIdHasBeenSet = true;
+    m_authorizerId = std::forward<AuthorizerIdT>(value);
+  }
+  template <typename AuthorizerIdT = Aws::String>
+  PutMethodRequest& WithAuthorizerId(AuthorizerIdT&& value) {
+    SetAuthorizerId(std::forward<AuthorizerIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The Resource identifier for the new Method resource.</p>
-     */
-    inline const Aws::String& GetResourceId() const { return m_resourceId; }
-    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    template<typename ResourceIdT = Aws::String>
-    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
-    template<typename ResourceIdT = Aws::String>
-    PutMethodRequest& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>Specifies whether the method required a valid ApiKey.</p>
+   */
+  inline bool GetApiKeyRequired() const { return m_apiKeyRequired; }
+  inline bool ApiKeyRequiredHasBeenSet() const { return m_apiKeyRequiredHasBeenSet; }
+  inline void SetApiKeyRequired(bool value) {
+    m_apiKeyRequiredHasBeenSet = true;
+    m_apiKeyRequired = value;
+  }
+  inline PutMethodRequest& WithApiKeyRequired(bool value) {
+    SetApiKeyRequired(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Specifies the method request's HTTP method type.</p>
-     */
-    inline const Aws::String& GetHttpMethod() const { return m_httpMethod; }
-    inline bool HttpMethodHasBeenSet() const { return m_httpMethodHasBeenSet; }
-    template<typename HttpMethodT = Aws::String>
-    void SetHttpMethod(HttpMethodT&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = std::forward<HttpMethodT>(value); }
-    template<typename HttpMethodT = Aws::String>
-    PutMethodRequest& WithHttpMethod(HttpMethodT&& value) { SetHttpMethod(std::forward<HttpMethodT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>A human-friendly operation identifier for the method. For example, you can
+   * assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET
+   * /pets</code> method in the <code>PetStore</code> example.</p>
+   */
+  inline const Aws::String& GetOperationName() const { return m_operationName; }
+  inline bool OperationNameHasBeenSet() const { return m_operationNameHasBeenSet; }
+  template <typename OperationNameT = Aws::String>
+  void SetOperationName(OperationNameT&& value) {
+    m_operationNameHasBeenSet = true;
+    m_operationName = std::forward<OperationNameT>(value);
+  }
+  template <typename OperationNameT = Aws::String>
+  PutMethodRequest& WithOperationName(OperationNameT&& value) {
+    SetOperationName(std::forward<OperationNameT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The method's authorization type. Valid values are <code>NONE</code> for open
-     * access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code>
-     * for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a
-     * Cognito user pool.</p>
-     */
-    inline const Aws::String& GetAuthorizationType() const { return m_authorizationType; }
-    inline bool AuthorizationTypeHasBeenSet() const { return m_authorizationTypeHasBeenSet; }
-    template<typename AuthorizationTypeT = Aws::String>
-    void SetAuthorizationType(AuthorizationTypeT&& value) { m_authorizationTypeHasBeenSet = true; m_authorizationType = std::forward<AuthorizationTypeT>(value); }
-    template<typename AuthorizationTypeT = Aws::String>
-    PutMethodRequest& WithAuthorizationType(AuthorizationTypeT&& value) { SetAuthorizationType(std::forward<AuthorizationTypeT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>A key-value map defining required or optional method request parameters that
+   * can be accepted by API Gateway. A key defines a method request parameter name
+   * matching the pattern of <code>method.request.{location}.{name}</code>, where
+   * <code>location</code> is <code>querystring</code>, <code>path</code>, or
+   * <code>header</code> and <code>name</code> is a valid and unique parameter name.
+   * The value associated with the key is a Boolean flag indicating whether the
+   * parameter is required (<code>true</code>) or optional (<code>false</code>). The
+   * method request parameter names defined here are available in Integration to be
+   * mapped to integration request parameters or body-mapping templates.</p>
+   */
+  inline const Aws::Map<Aws::String, bool>& GetRequestParameters() const { return m_requestParameters; }
+  inline bool RequestParametersHasBeenSet() const { return m_requestParametersHasBeenSet; }
+  template <typename RequestParametersT = Aws::Map<Aws::String, bool>>
+  void SetRequestParameters(RequestParametersT&& value) {
+    m_requestParametersHasBeenSet = true;
+    m_requestParameters = std::forward<RequestParametersT>(value);
+  }
+  template <typename RequestParametersT = Aws::Map<Aws::String, bool>>
+  PutMethodRequest& WithRequestParameters(RequestParametersT&& value) {
+    SetRequestParameters(std::forward<RequestParametersT>(value));
+    return *this;
+  }
+  inline PutMethodRequest& AddRequestParameters(Aws::String key, bool value) {
+    m_requestParametersHasBeenSet = true;
+    m_requestParameters.emplace(key, value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Specifies the identifier of an Authorizer to use on this Method, if the type
-     * is CUSTOM or COGNITO_USER_POOLS. The authorizer identifier is generated by API
-     * Gateway when you created the authorizer.</p>
-     */
-    inline const Aws::String& GetAuthorizerId() const { return m_authorizerId; }
-    inline bool AuthorizerIdHasBeenSet() const { return m_authorizerIdHasBeenSet; }
-    template<typename AuthorizerIdT = Aws::String>
-    void SetAuthorizerId(AuthorizerIdT&& value) { m_authorizerIdHasBeenSet = true; m_authorizerId = std::forward<AuthorizerIdT>(value); }
-    template<typename AuthorizerIdT = Aws::String>
-    PutMethodRequest& WithAuthorizerId(AuthorizerIdT&& value) { SetAuthorizerId(std::forward<AuthorizerIdT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>Specifies the Model resources used for the request's content type. Request
+   * models are represented as a key/value map, with a content type as the key and a
+   * Model name as the value.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetRequestModels() const { return m_requestModels; }
+  inline bool RequestModelsHasBeenSet() const { return m_requestModelsHasBeenSet; }
+  template <typename RequestModelsT = Aws::Map<Aws::String, Aws::String>>
+  void SetRequestModels(RequestModelsT&& value) {
+    m_requestModelsHasBeenSet = true;
+    m_requestModels = std::forward<RequestModelsT>(value);
+  }
+  template <typename RequestModelsT = Aws::Map<Aws::String, Aws::String>>
+  PutMethodRequest& WithRequestModels(RequestModelsT&& value) {
+    SetRequestModels(std::forward<RequestModelsT>(value));
+    return *this;
+  }
+  template <typename RequestModelsKeyT = Aws::String, typename RequestModelsValueT = Aws::String>
+  PutMethodRequest& AddRequestModels(RequestModelsKeyT&& key, RequestModelsValueT&& value) {
+    m_requestModelsHasBeenSet = true;
+    m_requestModels.emplace(std::forward<RequestModelsKeyT>(key), std::forward<RequestModelsValueT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Specifies whether the method required a valid ApiKey.</p>
-     */
-    inline bool GetApiKeyRequired() const { return m_apiKeyRequired; }
-    inline bool ApiKeyRequiredHasBeenSet() const { return m_apiKeyRequiredHasBeenSet; }
-    inline void SetApiKeyRequired(bool value) { m_apiKeyRequiredHasBeenSet = true; m_apiKeyRequired = value; }
-    inline PutMethodRequest& WithApiKeyRequired(bool value) { SetApiKeyRequired(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The identifier of a RequestValidator for validating the method request.</p>
+   */
+  inline const Aws::String& GetRequestValidatorId() const { return m_requestValidatorId; }
+  inline bool RequestValidatorIdHasBeenSet() const { return m_requestValidatorIdHasBeenSet; }
+  template <typename RequestValidatorIdT = Aws::String>
+  void SetRequestValidatorId(RequestValidatorIdT&& value) {
+    m_requestValidatorIdHasBeenSet = true;
+    m_requestValidatorId = std::forward<RequestValidatorIdT>(value);
+  }
+  template <typename RequestValidatorIdT = Aws::String>
+  PutMethodRequest& WithRequestValidatorId(RequestValidatorIdT&& value) {
+    SetRequestValidatorId(std::forward<RequestValidatorIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>A human-friendly operation identifier for the method. For example, you can
-     * assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET
-     * /pets</code> method in the <code>PetStore</code> example.</p>
-     */
-    inline const Aws::String& GetOperationName() const { return m_operationName; }
-    inline bool OperationNameHasBeenSet() const { return m_operationNameHasBeenSet; }
-    template<typename OperationNameT = Aws::String>
-    void SetOperationName(OperationNameT&& value) { m_operationNameHasBeenSet = true; m_operationName = std::forward<OperationNameT>(value); }
-    template<typename OperationNameT = Aws::String>
-    PutMethodRequest& WithOperationName(OperationNameT&& value) { SetOperationName(std::forward<OperationNameT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>A list of authorization scopes configured on the method. The scopes are used
+   * with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method
+   * invocation. The authorization works by matching the method scopes against the
+   * scopes parsed from the access token in the incoming request. The method
+   * invocation is authorized if any method scopes matches a claimed scope in the
+   * access token. Otherwise, the invocation is not authorized. When the method scope
+   * is configured, the client must provide an access token instead of an identity
+   * token for authorization purposes.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetAuthorizationScopes() const { return m_authorizationScopes; }
+  inline bool AuthorizationScopesHasBeenSet() const { return m_authorizationScopesHasBeenSet; }
+  template <typename AuthorizationScopesT = Aws::Vector<Aws::String>>
+  void SetAuthorizationScopes(AuthorizationScopesT&& value) {
+    m_authorizationScopesHasBeenSet = true;
+    m_authorizationScopes = std::forward<AuthorizationScopesT>(value);
+  }
+  template <typename AuthorizationScopesT = Aws::Vector<Aws::String>>
+  PutMethodRequest& WithAuthorizationScopes(AuthorizationScopesT&& value) {
+    SetAuthorizationScopes(std::forward<AuthorizationScopesT>(value));
+    return *this;
+  }
+  template <typename AuthorizationScopesT = Aws::String>
+  PutMethodRequest& AddAuthorizationScopes(AuthorizationScopesT&& value) {
+    m_authorizationScopesHasBeenSet = true;
+    m_authorizationScopes.emplace_back(std::forward<AuthorizationScopesT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_restApiId;
+  bool m_restApiIdHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>A key-value map defining required or optional method request parameters that
-     * can be accepted by API Gateway. A key defines a method request parameter name
-     * matching the pattern of <code>method.request.{location}.{name}</code>, where
-     * <code>location</code> is <code>querystring</code>, <code>path</code>, or
-     * <code>header</code> and <code>name</code> is a valid and unique parameter name.
-     * The value associated with the key is a Boolean flag indicating whether the
-     * parameter is required (<code>true</code>) or optional (<code>false</code>). The
-     * method request parameter names defined here are available in Integration to be
-     * mapped to integration request parameters or body-mapping templates.</p>
-     */
-    inline const Aws::Map<Aws::String, bool>& GetRequestParameters() const { return m_requestParameters; }
-    inline bool RequestParametersHasBeenSet() const { return m_requestParametersHasBeenSet; }
-    template<typename RequestParametersT = Aws::Map<Aws::String, bool>>
-    void SetRequestParameters(RequestParametersT&& value) { m_requestParametersHasBeenSet = true; m_requestParameters = std::forward<RequestParametersT>(value); }
-    template<typename RequestParametersT = Aws::Map<Aws::String, bool>>
-    PutMethodRequest& WithRequestParameters(RequestParametersT&& value) { SetRequestParameters(std::forward<RequestParametersT>(value)); return *this;}
-    inline PutMethodRequest& AddRequestParameters(Aws::String key, bool value) {
-      m_requestParametersHasBeenSet = true; m_requestParameters.emplace(key, value); return *this;
-    }
-    ///@}
+  Aws::String m_resourceId;
+  bool m_resourceIdHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>Specifies the Model resources used for the request's content type. Request
-     * models are represented as a key/value map, with a content type as the key and a
-     * Model name as the value.</p>
-     */
-    inline const Aws::Map<Aws::String, Aws::String>& GetRequestModels() const { return m_requestModels; }
-    inline bool RequestModelsHasBeenSet() const { return m_requestModelsHasBeenSet; }
-    template<typename RequestModelsT = Aws::Map<Aws::String, Aws::String>>
-    void SetRequestModels(RequestModelsT&& value) { m_requestModelsHasBeenSet = true; m_requestModels = std::forward<RequestModelsT>(value); }
-    template<typename RequestModelsT = Aws::Map<Aws::String, Aws::String>>
-    PutMethodRequest& WithRequestModels(RequestModelsT&& value) { SetRequestModels(std::forward<RequestModelsT>(value)); return *this;}
-    template<typename RequestModelsKeyT = Aws::String, typename RequestModelsValueT = Aws::String>
-    PutMethodRequest& AddRequestModels(RequestModelsKeyT&& key, RequestModelsValueT&& value) {
-      m_requestModelsHasBeenSet = true; m_requestModels.emplace(std::forward<RequestModelsKeyT>(key), std::forward<RequestModelsValueT>(value)); return *this;
-    }
-    ///@}
+  Aws::String m_httpMethod;
+  bool m_httpMethodHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The identifier of a RequestValidator for validating the method request.</p>
-     */
-    inline const Aws::String& GetRequestValidatorId() const { return m_requestValidatorId; }
-    inline bool RequestValidatorIdHasBeenSet() const { return m_requestValidatorIdHasBeenSet; }
-    template<typename RequestValidatorIdT = Aws::String>
-    void SetRequestValidatorId(RequestValidatorIdT&& value) { m_requestValidatorIdHasBeenSet = true; m_requestValidatorId = std::forward<RequestValidatorIdT>(value); }
-    template<typename RequestValidatorIdT = Aws::String>
-    PutMethodRequest& WithRequestValidatorId(RequestValidatorIdT&& value) { SetRequestValidatorId(std::forward<RequestValidatorIdT>(value)); return *this;}
-    ///@}
+  Aws::String m_authorizationType;
+  bool m_authorizationTypeHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>A list of authorization scopes configured on the method. The scopes are used
-     * with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method
-     * invocation. The authorization works by matching the method scopes against the
-     * scopes parsed from the access token in the incoming request. The method
-     * invocation is authorized if any method scopes matches a claimed scope in the
-     * access token. Otherwise, the invocation is not authorized. When the method scope
-     * is configured, the client must provide an access token instead of an identity
-     * token for authorization purposes.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetAuthorizationScopes() const { return m_authorizationScopes; }
-    inline bool AuthorizationScopesHasBeenSet() const { return m_authorizationScopesHasBeenSet; }
-    template<typename AuthorizationScopesT = Aws::Vector<Aws::String>>
-    void SetAuthorizationScopes(AuthorizationScopesT&& value) { m_authorizationScopesHasBeenSet = true; m_authorizationScopes = std::forward<AuthorizationScopesT>(value); }
-    template<typename AuthorizationScopesT = Aws::Vector<Aws::String>>
-    PutMethodRequest& WithAuthorizationScopes(AuthorizationScopesT&& value) { SetAuthorizationScopes(std::forward<AuthorizationScopesT>(value)); return *this;}
-    template<typename AuthorizationScopesT = Aws::String>
-    PutMethodRequest& AddAuthorizationScopes(AuthorizationScopesT&& value) { m_authorizationScopesHasBeenSet = true; m_authorizationScopes.emplace_back(std::forward<AuthorizationScopesT>(value)); return *this; }
-    ///@}
-  private:
+  Aws::String m_authorizerId;
+  bool m_authorizerIdHasBeenSet = false;
 
-    Aws::String m_restApiId;
-    bool m_restApiIdHasBeenSet = false;
+  bool m_apiKeyRequired{false};
+  bool m_apiKeyRequiredHasBeenSet = false;
 
-    Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet = false;
+  Aws::String m_operationName;
+  bool m_operationNameHasBeenSet = false;
 
-    Aws::String m_httpMethod;
-    bool m_httpMethodHasBeenSet = false;
+  Aws::Map<Aws::String, bool> m_requestParameters;
+  bool m_requestParametersHasBeenSet = false;
 
-    Aws::String m_authorizationType;
-    bool m_authorizationTypeHasBeenSet = false;
+  Aws::Map<Aws::String, Aws::String> m_requestModels;
+  bool m_requestModelsHasBeenSet = false;
 
-    Aws::String m_authorizerId;
-    bool m_authorizerIdHasBeenSet = false;
+  Aws::String m_requestValidatorId;
+  bool m_requestValidatorIdHasBeenSet = false;
 
-    bool m_apiKeyRequired{false};
-    bool m_apiKeyRequiredHasBeenSet = false;
+  Aws::Vector<Aws::String> m_authorizationScopes;
+  bool m_authorizationScopesHasBeenSet = false;
+};
 
-    Aws::String m_operationName;
-    bool m_operationNameHasBeenSet = false;
-
-    Aws::Map<Aws::String, bool> m_requestParameters;
-    bool m_requestParametersHasBeenSet = false;
-
-    Aws::Map<Aws::String, Aws::String> m_requestModels;
-    bool m_requestModelsHasBeenSet = false;
-
-    Aws::String m_requestValidatorId;
-    bool m_requestValidatorIdHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_authorizationScopes;
-    bool m_authorizationScopesHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace APIGateway
-} // namespace Aws
+}  // namespace Model
+}  // namespace APIGateway
+}  // namespace Aws

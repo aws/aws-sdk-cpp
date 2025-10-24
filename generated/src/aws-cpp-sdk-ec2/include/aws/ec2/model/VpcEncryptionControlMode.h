@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class VpcEncryptionControlMode
-  {
-    NOT_SET,
-    monitor,
-    enforce
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class VpcEncryptionControlMode { NOT_SET, monitor, enforce };
 
-namespace VpcEncryptionControlModeMapper
-{
+namespace VpcEncryptionControlModeMapper {
 AWS_EC2_API VpcEncryptionControlMode GetVpcEncryptionControlModeForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForVpcEncryptionControlMode(VpcEncryptionControlMode value);
-} // namespace VpcEncryptionControlModeMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace VpcEncryptionControlModeMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

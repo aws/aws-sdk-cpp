@@ -3,104 +3,78 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotsitewise/model/Aggregates.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotsitewise/model/Aggregates.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTSiteWise
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTSiteWise {
+namespace Model {
 
-Aggregates::Aggregates(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Aggregates::Aggregates(JsonView jsonValue) { *this = jsonValue; }
 
-Aggregates& Aggregates::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("average"))
-  {
+Aggregates& Aggregates::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("average")) {
     m_average = jsonValue.GetDouble("average");
     m_averageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("count"))
-  {
+  if (jsonValue.ValueExists("count")) {
     m_count = jsonValue.GetDouble("count");
     m_countHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("maximum"))
-  {
+  if (jsonValue.ValueExists("maximum")) {
     m_maximum = jsonValue.GetDouble("maximum");
     m_maximumHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("minimum"))
-  {
+  if (jsonValue.ValueExists("minimum")) {
     m_minimum = jsonValue.GetDouble("minimum");
     m_minimumHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sum"))
-  {
+  if (jsonValue.ValueExists("sum")) {
     m_sum = jsonValue.GetDouble("sum");
     m_sumHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("standardDeviation"))
-  {
+  if (jsonValue.ValueExists("standardDeviation")) {
     m_standardDeviation = jsonValue.GetDouble("standardDeviation");
     m_standardDeviationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Aggregates::Jsonize() const
-{
+JsonValue Aggregates::Jsonize() const {
   JsonValue payload;
 
-  if(m_averageHasBeenSet)
-  {
-   payload.WithDouble("average", m_average);
-
+  if (m_averageHasBeenSet) {
+    payload.WithDouble("average", m_average);
   }
 
-  if(m_countHasBeenSet)
-  {
-   payload.WithDouble("count", m_count);
-
+  if (m_countHasBeenSet) {
+    payload.WithDouble("count", m_count);
   }
 
-  if(m_maximumHasBeenSet)
-  {
-   payload.WithDouble("maximum", m_maximum);
-
+  if (m_maximumHasBeenSet) {
+    payload.WithDouble("maximum", m_maximum);
   }
 
-  if(m_minimumHasBeenSet)
-  {
-   payload.WithDouble("minimum", m_minimum);
-
+  if (m_minimumHasBeenSet) {
+    payload.WithDouble("minimum", m_minimum);
   }
 
-  if(m_sumHasBeenSet)
-  {
-   payload.WithDouble("sum", m_sum);
-
+  if (m_sumHasBeenSet) {
+    payload.WithDouble("sum", m_sum);
   }
 
-  if(m_standardDeviationHasBeenSet)
-  {
-   payload.WithDouble("standardDeviation", m_standardDeviation);
-
+  if (m_standardDeviationHasBeenSet) {
+    payload.WithDouble("standardDeviation", m_standardDeviation);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTSiteWise
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTSiteWise
+}  // namespace Aws

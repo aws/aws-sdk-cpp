@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/DeleteMLTransformRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/DeleteMLTransformRequest.h>
 
 #include <utility>
 
@@ -12,27 +12,18 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteMLTransformRequest::SerializePayload() const
-{
+Aws::String DeleteMLTransformRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_transformIdHasBeenSet)
-  {
-   payload.WithString("TransformId", m_transformId);
-
+  if (m_transformIdHasBeenSet) {
+    payload.WithString("TransformId", m_transformId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteMLTransformRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteMLTransformRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSGlue.DeleteMLTransform"));
   return headers;
-
 }
-
-
-
-

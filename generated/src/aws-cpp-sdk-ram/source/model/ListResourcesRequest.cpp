@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ram/model/ListResourcesRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ram/model/ListResourcesRequest.h>
 
 #include <utility>
 
@@ -12,69 +12,48 @@ using namespace Aws::RAM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListResourcesRequest::SerializePayload() const
-{
+Aws::String ListResourcesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceOwnerHasBeenSet)
-  {
-   payload.WithString("resourceOwner", ResourceOwnerMapper::GetNameForResourceOwner(m_resourceOwner));
+  if (m_resourceOwnerHasBeenSet) {
+    payload.WithString("resourceOwner", ResourceOwnerMapper::GetNameForResourceOwner(m_resourceOwner));
   }
 
-  if(m_principalHasBeenSet)
-  {
-   payload.WithString("principal", m_principal);
-
+  if (m_principalHasBeenSet) {
+    payload.WithString("principal", m_principal);
   }
 
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("resourceType", m_resourceType);
-
+  if (m_resourceTypeHasBeenSet) {
+    payload.WithString("resourceType", m_resourceType);
   }
 
-  if(m_resourceArnsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> resourceArnsJsonList(m_resourceArns.size());
-   for(unsigned resourceArnsIndex = 0; resourceArnsIndex < resourceArnsJsonList.GetLength(); ++resourceArnsIndex)
-   {
-     resourceArnsJsonList[resourceArnsIndex].AsString(m_resourceArns[resourceArnsIndex]);
-   }
-   payload.WithArray("resourceArns", std::move(resourceArnsJsonList));
-
+  if (m_resourceArnsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> resourceArnsJsonList(m_resourceArns.size());
+    for (unsigned resourceArnsIndex = 0; resourceArnsIndex < resourceArnsJsonList.GetLength(); ++resourceArnsIndex) {
+      resourceArnsJsonList[resourceArnsIndex].AsString(m_resourceArns[resourceArnsIndex]);
+    }
+    payload.WithArray("resourceArns", std::move(resourceArnsJsonList));
   }
 
-  if(m_resourceShareArnsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> resourceShareArnsJsonList(m_resourceShareArns.size());
-   for(unsigned resourceShareArnsIndex = 0; resourceShareArnsIndex < resourceShareArnsJsonList.GetLength(); ++resourceShareArnsIndex)
-   {
-     resourceShareArnsJsonList[resourceShareArnsIndex].AsString(m_resourceShareArns[resourceShareArnsIndex]);
-   }
-   payload.WithArray("resourceShareArns", std::move(resourceShareArnsJsonList));
-
+  if (m_resourceShareArnsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> resourceShareArnsJsonList(m_resourceShareArns.size());
+    for (unsigned resourceShareArnsIndex = 0; resourceShareArnsIndex < resourceShareArnsJsonList.GetLength(); ++resourceShareArnsIndex) {
+      resourceShareArnsJsonList[resourceShareArnsIndex].AsString(m_resourceShareArns[resourceShareArnsIndex]);
+    }
+    payload.WithArray("resourceShareArns", std::move(resourceShareArnsJsonList));
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("nextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("nextToken", m_nextToken);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("maxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("maxResults", m_maxResults);
   }
 
-  if(m_resourceRegionScopeHasBeenSet)
-  {
-   payload.WithString("resourceRegionScope", ResourceRegionScopeFilterMapper::GetNameForResourceRegionScopeFilter(m_resourceRegionScope));
+  if (m_resourceRegionScopeHasBeenSet) {
+    payload.WithString("resourceRegionScope", ResourceRegionScopeFilterMapper::GetNameForResourceRegionScopeFilter(m_resourceRegionScope));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

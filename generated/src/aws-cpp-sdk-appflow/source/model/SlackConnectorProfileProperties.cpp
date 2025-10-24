@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-SlackConnectorProfileProperties::SlackConnectorProfileProperties(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SlackConnectorProfileProperties::SlackConnectorProfileProperties(JsonView jsonValue) { *this = jsonValue; }
 
-SlackConnectorProfileProperties& SlackConnectorProfileProperties::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("instanceUrl"))
-  {
+SlackConnectorProfileProperties& SlackConnectorProfileProperties::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("instanceUrl")) {
     m_instanceUrl = jsonValue.GetString("instanceUrl");
     m_instanceUrlHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SlackConnectorProfileProperties::Jsonize() const
-{
+JsonValue SlackConnectorProfileProperties::Jsonize() const {
   JsonValue payload;
 
-  if(m_instanceUrlHasBeenSet)
-  {
-   payload.WithString("instanceUrl", m_instanceUrl);
-
+  if (m_instanceUrlHasBeenSet) {
+    payload.WithString("instanceUrl", m_instanceUrl);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

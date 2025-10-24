@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kinesisanalyticsv2/model/InputProcessingConfigurationUpdate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kinesisanalyticsv2/model/InputProcessingConfigurationUpdate.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace KinesisAnalyticsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace KinesisAnalyticsV2 {
+namespace Model {
 
-InputProcessingConfigurationUpdate::InputProcessingConfigurationUpdate(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InputProcessingConfigurationUpdate::InputProcessingConfigurationUpdate(JsonView jsonValue) { *this = jsonValue; }
 
-InputProcessingConfigurationUpdate& InputProcessingConfigurationUpdate::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("InputLambdaProcessorUpdate"))
-  {
+InputProcessingConfigurationUpdate& InputProcessingConfigurationUpdate::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("InputLambdaProcessorUpdate")) {
     m_inputLambdaProcessorUpdate = jsonValue.GetObject("InputLambdaProcessorUpdate");
     m_inputLambdaProcessorUpdateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InputProcessingConfigurationUpdate::Jsonize() const
-{
+JsonValue InputProcessingConfigurationUpdate::Jsonize() const {
   JsonValue payload;
 
-  if(m_inputLambdaProcessorUpdateHasBeenSet)
-  {
-   payload.WithObject("InputLambdaProcessorUpdate", m_inputLambdaProcessorUpdate.Jsonize());
-
+  if (m_inputLambdaProcessorUpdateHasBeenSet) {
+    payload.WithObject("InputLambdaProcessorUpdate", m_inputLambdaProcessorUpdate.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace KinesisAnalyticsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace KinesisAnalyticsV2
+}  // namespace Aws

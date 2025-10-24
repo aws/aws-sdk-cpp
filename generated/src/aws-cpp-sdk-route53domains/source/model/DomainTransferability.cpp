@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/route53domains/model/DomainTransferability.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/route53domains/model/DomainTransferability.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Route53Domains
-{
-namespace Model
-{
+namespace Aws {
+namespace Route53Domains {
+namespace Model {
 
-DomainTransferability::DomainTransferability(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DomainTransferability::DomainTransferability(JsonView jsonValue) { *this = jsonValue; }
 
-DomainTransferability& DomainTransferability::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Transferable"))
-  {
+DomainTransferability& DomainTransferability::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Transferable")) {
     m_transferable = TransferableMapper::GetTransferableForName(jsonValue.GetString("Transferable"));
     m_transferableHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DomainTransferability::Jsonize() const
-{
+JsonValue DomainTransferability::Jsonize() const {
   JsonValue payload;
 
-  if(m_transferableHasBeenSet)
-  {
-   payload.WithString("Transferable", TransferableMapper::GetNameForTransferable(m_transferable));
+  if (m_transferableHasBeenSet) {
+    payload.WithString("Transferable", TransferableMapper::GetNameForTransferable(m_transferable));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Route53Domains
-} // namespace Aws
+}  // namespace Model
+}  // namespace Route53Domains
+}  // namespace Aws

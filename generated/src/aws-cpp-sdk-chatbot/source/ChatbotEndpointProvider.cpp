@@ -5,12 +5,8 @@
 
 #include <aws/chatbot/ChatbotEndpointProvider.h>
 
-namespace Aws
-{
-namespace chatbot
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace chatbot
-} // namespace Aws
+namespace Aws {
+namespace chatbot {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace chatbot
+}  // namespace Aws

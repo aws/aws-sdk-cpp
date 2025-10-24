@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Braket
-{
-namespace Model
-{
+namespace Aws {
+namespace Braket {
+namespace Model {
 
-Association::Association(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Association::Association(JsonView jsonValue) { *this = jsonValue; }
 
-Association& Association::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("arn"))
-  {
+Association& Association::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = AssociationTypeMapper::GetAssociationTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Association::Jsonize() const
-{
+JsonValue Association::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", AssociationTypeMapper::GetNameForAssociationType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", AssociationTypeMapper::GetNameForAssociationType(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Braket
-} // namespace Aws
+}  // namespace Model
+}  // namespace Braket
+}  // namespace Aws

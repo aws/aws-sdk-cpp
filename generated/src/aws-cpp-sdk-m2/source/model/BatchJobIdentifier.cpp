@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/m2/model/BatchJobIdentifier.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/m2/model/BatchJobIdentifier.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MainframeModernization
-{
-namespace Model
-{
+namespace Aws {
+namespace MainframeModernization {
+namespace Model {
 
-BatchJobIdentifier::BatchJobIdentifier(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchJobIdentifier::BatchJobIdentifier(JsonView jsonValue) { *this = jsonValue; }
 
-BatchJobIdentifier& BatchJobIdentifier::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("fileBatchJobIdentifier"))
-  {
+BatchJobIdentifier& BatchJobIdentifier::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("fileBatchJobIdentifier")) {
     m_fileBatchJobIdentifier = jsonValue.GetObject("fileBatchJobIdentifier");
     m_fileBatchJobIdentifierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("restartBatchJobIdentifier"))
-  {
+  if (jsonValue.ValueExists("restartBatchJobIdentifier")) {
     m_restartBatchJobIdentifier = jsonValue.GetObject("restartBatchJobIdentifier");
     m_restartBatchJobIdentifierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("s3BatchJobIdentifier"))
-  {
+  if (jsonValue.ValueExists("s3BatchJobIdentifier")) {
     m_s3BatchJobIdentifier = jsonValue.GetObject("s3BatchJobIdentifier");
     m_s3BatchJobIdentifierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("scriptBatchJobIdentifier"))
-  {
+  if (jsonValue.ValueExists("scriptBatchJobIdentifier")) {
     m_scriptBatchJobIdentifier = jsonValue.GetObject("scriptBatchJobIdentifier");
     m_scriptBatchJobIdentifierHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BatchJobIdentifier::Jsonize() const
-{
+JsonValue BatchJobIdentifier::Jsonize() const {
   JsonValue payload;
 
-  if(m_fileBatchJobIdentifierHasBeenSet)
-  {
-   payload.WithObject("fileBatchJobIdentifier", m_fileBatchJobIdentifier.Jsonize());
-
+  if (m_fileBatchJobIdentifierHasBeenSet) {
+    payload.WithObject("fileBatchJobIdentifier", m_fileBatchJobIdentifier.Jsonize());
   }
 
-  if(m_restartBatchJobIdentifierHasBeenSet)
-  {
-   payload.WithObject("restartBatchJobIdentifier", m_restartBatchJobIdentifier.Jsonize());
-
+  if (m_restartBatchJobIdentifierHasBeenSet) {
+    payload.WithObject("restartBatchJobIdentifier", m_restartBatchJobIdentifier.Jsonize());
   }
 
-  if(m_s3BatchJobIdentifierHasBeenSet)
-  {
-   payload.WithObject("s3BatchJobIdentifier", m_s3BatchJobIdentifier.Jsonize());
-
+  if (m_s3BatchJobIdentifierHasBeenSet) {
+    payload.WithObject("s3BatchJobIdentifier", m_s3BatchJobIdentifier.Jsonize());
   }
 
-  if(m_scriptBatchJobIdentifierHasBeenSet)
-  {
-   payload.WithObject("scriptBatchJobIdentifier", m_scriptBatchJobIdentifier.Jsonize());
-
+  if (m_scriptBatchJobIdentifierHasBeenSet) {
+    payload.WithObject("scriptBatchJobIdentifier", m_scriptBatchJobIdentifier.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MainframeModernization
-} // namespace Aws
+}  // namespace Model
+}  // namespace MainframeModernization
+}  // namespace Aws

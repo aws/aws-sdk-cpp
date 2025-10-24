@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint/model/CreateEmailTemplateRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint/model/CreateEmailTemplateRequest.h>
 
 #include <utility>
 
@@ -12,18 +12,12 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateEmailTemplateRequest::SerializePayload() const
-{
+Aws::String CreateEmailTemplateRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_emailTemplateRequestHasBeenSet)
-  {
-   payload = m_emailTemplateRequest.Jsonize();
+  if (m_emailTemplateRequestHasBeenSet) {
+    payload = m_emailTemplateRequest.Jsonize();
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -3,124 +3,94 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/opensearch/model/ServiceSoftwareOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/opensearch/model/ServiceSoftwareOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace OpenSearchService
-{
-namespace Model
-{
+namespace Aws {
+namespace OpenSearchService {
+namespace Model {
 
-ServiceSoftwareOptions::ServiceSoftwareOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ServiceSoftwareOptions::ServiceSoftwareOptions(JsonView jsonValue) { *this = jsonValue; }
 
-ServiceSoftwareOptions& ServiceSoftwareOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CurrentVersion"))
-  {
+ServiceSoftwareOptions& ServiceSoftwareOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CurrentVersion")) {
     m_currentVersion = jsonValue.GetString("CurrentVersion");
     m_currentVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NewVersion"))
-  {
+  if (jsonValue.ValueExists("NewVersion")) {
     m_newVersion = jsonValue.GetString("NewVersion");
     m_newVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UpdateAvailable"))
-  {
+  if (jsonValue.ValueExists("UpdateAvailable")) {
     m_updateAvailable = jsonValue.GetBool("UpdateAvailable");
     m_updateAvailableHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Cancellable"))
-  {
+  if (jsonValue.ValueExists("Cancellable")) {
     m_cancellable = jsonValue.GetBool("Cancellable");
     m_cancellableHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UpdateStatus"))
-  {
+  if (jsonValue.ValueExists("UpdateStatus")) {
     m_updateStatus = DeploymentStatusMapper::GetDeploymentStatusForName(jsonValue.GetString("UpdateStatus"));
     m_updateStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AutomatedUpdateDate"))
-  {
+  if (jsonValue.ValueExists("AutomatedUpdateDate")) {
     m_automatedUpdateDate = jsonValue.GetDouble("AutomatedUpdateDate");
     m_automatedUpdateDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OptionalDeployment"))
-  {
+  if (jsonValue.ValueExists("OptionalDeployment")) {
     m_optionalDeployment = jsonValue.GetBool("OptionalDeployment");
     m_optionalDeploymentHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ServiceSoftwareOptions::Jsonize() const
-{
+JsonValue ServiceSoftwareOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_currentVersionHasBeenSet)
-  {
-   payload.WithString("CurrentVersion", m_currentVersion);
-
+  if (m_currentVersionHasBeenSet) {
+    payload.WithString("CurrentVersion", m_currentVersion);
   }
 
-  if(m_newVersionHasBeenSet)
-  {
-   payload.WithString("NewVersion", m_newVersion);
-
+  if (m_newVersionHasBeenSet) {
+    payload.WithString("NewVersion", m_newVersion);
   }
 
-  if(m_updateAvailableHasBeenSet)
-  {
-   payload.WithBool("UpdateAvailable", m_updateAvailable);
-
+  if (m_updateAvailableHasBeenSet) {
+    payload.WithBool("UpdateAvailable", m_updateAvailable);
   }
 
-  if(m_cancellableHasBeenSet)
-  {
-   payload.WithBool("Cancellable", m_cancellable);
-
+  if (m_cancellableHasBeenSet) {
+    payload.WithBool("Cancellable", m_cancellable);
   }
 
-  if(m_updateStatusHasBeenSet)
-  {
-   payload.WithString("UpdateStatus", DeploymentStatusMapper::GetNameForDeploymentStatus(m_updateStatus));
+  if (m_updateStatusHasBeenSet) {
+    payload.WithString("UpdateStatus", DeploymentStatusMapper::GetNameForDeploymentStatus(m_updateStatus));
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_automatedUpdateDateHasBeenSet)
-  {
-   payload.WithDouble("AutomatedUpdateDate", m_automatedUpdateDate.SecondsWithMSPrecision());
+  if (m_automatedUpdateDateHasBeenSet) {
+    payload.WithDouble("AutomatedUpdateDate", m_automatedUpdateDate.SecondsWithMSPrecision());
   }
 
-  if(m_optionalDeploymentHasBeenSet)
-  {
-   payload.WithBool("OptionalDeployment", m_optionalDeployment);
-
+  if (m_optionalDeploymentHasBeenSet) {
+    payload.WithBool("OptionalDeployment", m_optionalDeployment);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace OpenSearchService
-} // namespace Aws
+}  // namespace Model
+}  // namespace OpenSearchService
+}  // namespace Aws

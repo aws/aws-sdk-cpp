@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotsitewise/model/GatewayCapabilitySummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotsitewise/model/GatewayCapabilitySummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTSiteWise
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTSiteWise {
+namespace Model {
 
-GatewayCapabilitySummary::GatewayCapabilitySummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GatewayCapabilitySummary::GatewayCapabilitySummary(JsonView jsonValue) { *this = jsonValue; }
 
-GatewayCapabilitySummary& GatewayCapabilitySummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("capabilityNamespace"))
-  {
+GatewayCapabilitySummary& GatewayCapabilitySummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("capabilityNamespace")) {
     m_capabilityNamespace = jsonValue.GetString("capabilityNamespace");
     m_capabilityNamespaceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("capabilitySyncStatus"))
-  {
+  if (jsonValue.ValueExists("capabilitySyncStatus")) {
     m_capabilitySyncStatus = CapabilitySyncStatusMapper::GetCapabilitySyncStatusForName(jsonValue.GetString("capabilitySyncStatus"));
     m_capabilitySyncStatusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GatewayCapabilitySummary::Jsonize() const
-{
+JsonValue GatewayCapabilitySummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_capabilityNamespaceHasBeenSet)
-  {
-   payload.WithString("capabilityNamespace", m_capabilityNamespace);
-
+  if (m_capabilityNamespaceHasBeenSet) {
+    payload.WithString("capabilityNamespace", m_capabilityNamespace);
   }
 
-  if(m_capabilitySyncStatusHasBeenSet)
-  {
-   payload.WithString("capabilitySyncStatus", CapabilitySyncStatusMapper::GetNameForCapabilitySyncStatus(m_capabilitySyncStatus));
+  if (m_capabilitySyncStatusHasBeenSet) {
+    payload.WithString("capabilitySyncStatus", CapabilitySyncStatusMapper::GetNameForCapabilitySyncStatus(m_capabilitySyncStatus));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTSiteWise
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTSiteWise
+}  // namespace Aws

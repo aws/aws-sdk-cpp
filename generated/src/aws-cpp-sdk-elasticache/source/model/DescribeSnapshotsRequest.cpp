@@ -3,49 +3,41 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/DescribeSnapshotsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticache/model/DescribeSnapshotsRequest.h>
 
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeSnapshotsRequest::SerializePayload() const
-{
+Aws::String DescribeSnapshotsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeSnapshots&";
-  if(m_replicationGroupIdHasBeenSet)
-  {
+  if (m_replicationGroupIdHasBeenSet) {
     ss << "ReplicationGroupId=" << StringUtils::URLEncode(m_replicationGroupId.c_str()) << "&";
   }
 
-  if(m_cacheClusterIdHasBeenSet)
-  {
+  if (m_cacheClusterIdHasBeenSet) {
     ss << "CacheClusterId=" << StringUtils::URLEncode(m_cacheClusterId.c_str()) << "&";
   }
 
-  if(m_snapshotNameHasBeenSet)
-  {
+  if (m_snapshotNameHasBeenSet) {
     ss << "SnapshotName=" << StringUtils::URLEncode(m_snapshotName.c_str()) << "&";
   }
 
-  if(m_snapshotSourceHasBeenSet)
-  {
+  if (m_snapshotSourceHasBeenSet) {
     ss << "SnapshotSource=" << StringUtils::URLEncode(m_snapshotSource.c_str()) << "&";
   }
 
-  if(m_markerHasBeenSet)
-  {
+  if (m_markerHasBeenSet) {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
 
-  if(m_maxRecordsHasBeenSet)
-  {
+  if (m_maxRecordsHasBeenSet) {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
 
-  if(m_showNodeGroupConfigHasBeenSet)
-  {
+  if (m_showNodeGroupConfigHasBeenSet) {
     ss << "ShowNodeGroupConfig=" << std::boolalpha << m_showNodeGroupConfig << "&";
   }
 
@@ -53,8 +45,4 @@ Aws::String DescribeSnapshotsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeSnapshotsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeSnapshotsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

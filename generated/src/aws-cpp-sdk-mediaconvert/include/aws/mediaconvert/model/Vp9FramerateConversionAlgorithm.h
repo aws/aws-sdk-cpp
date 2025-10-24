@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class Vp9FramerateConversionAlgorithm
-  {
-    NOT_SET,
-    DUPLICATE_DROP,
-    INTERPOLATE,
-    FRAMEFORMER,
-    MAINTAIN_FRAME_COUNT
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class Vp9FramerateConversionAlgorithm { NOT_SET, DUPLICATE_DROP, INTERPOLATE, FRAMEFORMER, MAINTAIN_FRAME_COUNT };
 
-namespace Vp9FramerateConversionAlgorithmMapper
-{
+namespace Vp9FramerateConversionAlgorithmMapper {
 AWS_MEDIACONVERT_API Vp9FramerateConversionAlgorithm GetVp9FramerateConversionAlgorithmForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForVp9FramerateConversionAlgorithm(Vp9FramerateConversionAlgorithm value);
-} // namespace Vp9FramerateConversionAlgorithmMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Vp9FramerateConversionAlgorithmMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

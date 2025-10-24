@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lookoutvision/model/ImageSource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lookoutvision/model/ImageSource.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LookoutforVision
-{
-namespace Model
-{
+namespace Aws {
+namespace LookoutforVision {
+namespace Model {
 
-ImageSource::ImageSource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ImageSource::ImageSource(JsonView jsonValue) { *this = jsonValue; }
 
-ImageSource& ImageSource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Type"))
-  {
+ImageSource& ImageSource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Type")) {
     m_type = jsonValue.GetString("Type");
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ImageSource::Jsonize() const
-{
+JsonValue ImageSource::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", m_type);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LookoutforVision
-} // namespace Aws
+}  // namespace Model
+}  // namespace LookoutforVision
+}  // namespace Aws

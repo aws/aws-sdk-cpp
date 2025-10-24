@@ -3,70 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/IngestionRequestSource.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/quicksight/model/IngestionRequestSource.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+namespace IngestionRequestSourceMapper {
 
-namespace Aws
-{
-  namespace QuickSight
-  {
-    namespace Model
-    {
-      namespace IngestionRequestSourceMapper
-      {
+static const int MANUAL_HASH = HashingUtils::HashString("MANUAL");
+static const int SCHEDULED_HASH = HashingUtils::HashString("SCHEDULED");
 
-        static const int MANUAL_HASH = HashingUtils::HashString("MANUAL");
-        static const int SCHEDULED_HASH = HashingUtils::HashString("SCHEDULED");
+IngestionRequestSource GetIngestionRequestSourceForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == MANUAL_HASH) {
+    return IngestionRequestSource::MANUAL;
+  } else if (hashCode == SCHEDULED_HASH) {
+    return IngestionRequestSource::SCHEDULED;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<IngestionRequestSource>(hashCode);
+  }
 
+  return IngestionRequestSource::NOT_SET;
+}
 
-        IngestionRequestSource GetIngestionRequestSourceForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == MANUAL_HASH)
-          {
-            return IngestionRequestSource::MANUAL;
-          }
-          else if (hashCode == SCHEDULED_HASH)
-          {
-            return IngestionRequestSource::SCHEDULED;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<IngestionRequestSource>(hashCode);
-          }
+Aws::String GetNameForIngestionRequestSource(IngestionRequestSource enumValue) {
+  switch (enumValue) {
+    case IngestionRequestSource::NOT_SET:
+      return {};
+    case IngestionRequestSource::MANUAL:
+      return "MANUAL";
+    case IngestionRequestSource::SCHEDULED:
+      return "SCHEDULED";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return IngestionRequestSource::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForIngestionRequestSource(IngestionRequestSource enumValue)
-        {
-          switch(enumValue)
-          {
-          case IngestionRequestSource::NOT_SET:
-            return {};
-          case IngestionRequestSource::MANUAL:
-            return "MANUAL";
-          case IngestionRequestSource::SCHEDULED:
-            return "SCHEDULED";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace IngestionRequestSourceMapper
-    } // namespace Model
-  } // namespace QuickSight
-} // namespace Aws
+}  // namespace IngestionRequestSourceMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

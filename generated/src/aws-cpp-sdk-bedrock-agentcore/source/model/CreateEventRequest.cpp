@@ -12,64 +12,44 @@ using namespace Aws::BedrockAgentCore::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateEventRequest::SerializePayload() const
-{
+Aws::String CreateEventRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_actorIdHasBeenSet)
-  {
-   payload.WithString("actorId", m_actorId);
-
+  if (m_actorIdHasBeenSet) {
+    payload.WithString("actorId", m_actorId);
   }
 
-  if(m_sessionIdHasBeenSet)
-  {
-   payload.WithString("sessionId", m_sessionId);
-
+  if (m_sessionIdHasBeenSet) {
+    payload.WithString("sessionId", m_sessionId);
   }
 
-  if(m_eventTimestampHasBeenSet)
-  {
-   payload.WithDouble("eventTimestamp", m_eventTimestamp.SecondsWithMSPrecision());
+  if (m_eventTimestampHasBeenSet) {
+    payload.WithDouble("eventTimestamp", m_eventTimestamp.SecondsWithMSPrecision());
   }
 
-  if(m_payloadHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> payloadJsonList(m_payload.size());
-   for(unsigned payloadIndex = 0; payloadIndex < payloadJsonList.GetLength(); ++payloadIndex)
-   {
-     payloadJsonList[payloadIndex].AsObject(m_payload[payloadIndex].Jsonize());
-   }
-   payload.WithArray("payload", std::move(payloadJsonList));
-
+  if (m_payloadHasBeenSet) {
+    Aws::Utils::Array<JsonValue> payloadJsonList(m_payload.size());
+    for (unsigned payloadIndex = 0; payloadIndex < payloadJsonList.GetLength(); ++payloadIndex) {
+      payloadJsonList[payloadIndex].AsObject(m_payload[payloadIndex].Jsonize());
+    }
+    payload.WithArray("payload", std::move(payloadJsonList));
   }
 
-  if(m_branchHasBeenSet)
-  {
-   payload.WithObject("branch", m_branch.Jsonize());
-
+  if (m_branchHasBeenSet) {
+    payload.WithObject("branch", m_branch.Jsonize());
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
-  if(m_metadataHasBeenSet)
-  {
-   JsonValue metadataJsonMap;
-   for(auto& metadataItem : m_metadata)
-   {
-     metadataJsonMap.WithObject(metadataItem.first, metadataItem.second.Jsonize());
-   }
-   payload.WithObject("metadata", std::move(metadataJsonMap));
-
+  if (m_metadataHasBeenSet) {
+    JsonValue metadataJsonMap;
+    for (auto& metadataItem : m_metadata) {
+      metadataJsonMap.WithObject(metadataItem.first, metadataItem.second.Jsonize());
+    }
+    payload.WithObject("metadata", std::move(metadataJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

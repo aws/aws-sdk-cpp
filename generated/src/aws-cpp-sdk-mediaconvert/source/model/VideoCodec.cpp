@@ -3,154 +3,116 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/VideoCodec.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/mediaconvert/model/VideoCodec.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+namespace VideoCodecMapper {
 
-namespace Aws
-{
-  namespace MediaConvert
-  {
-    namespace Model
-    {
-      namespace VideoCodecMapper
-      {
+static const int AV1_HASH = HashingUtils::HashString("AV1");
+static const int AVC_INTRA_HASH = HashingUtils::HashString("AVC_INTRA");
+static const int FRAME_CAPTURE_HASH = HashingUtils::HashString("FRAME_CAPTURE");
+static const int GIF_HASH = HashingUtils::HashString("GIF");
+static const int H_264_HASH = HashingUtils::HashString("H_264");
+static const int H_265_HASH = HashingUtils::HashString("H_265");
+static const int MPEG2_HASH = HashingUtils::HashString("MPEG2");
+static const int PASSTHROUGH_HASH = HashingUtils::HashString("PASSTHROUGH");
+static const int PRORES_HASH = HashingUtils::HashString("PRORES");
+static const int UNCOMPRESSED_HASH = HashingUtils::HashString("UNCOMPRESSED");
+static const int VC3_HASH = HashingUtils::HashString("VC3");
+static const int VP8_HASH = HashingUtils::HashString("VP8");
+static const int VP9_HASH = HashingUtils::HashString("VP9");
+static const int XAVC_HASH = HashingUtils::HashString("XAVC");
 
-        static const int AV1_HASH = HashingUtils::HashString("AV1");
-        static const int AVC_INTRA_HASH = HashingUtils::HashString("AVC_INTRA");
-        static const int FRAME_CAPTURE_HASH = HashingUtils::HashString("FRAME_CAPTURE");
-        static const int GIF_HASH = HashingUtils::HashString("GIF");
-        static const int H_264_HASH = HashingUtils::HashString("H_264");
-        static const int H_265_HASH = HashingUtils::HashString("H_265");
-        static const int MPEG2_HASH = HashingUtils::HashString("MPEG2");
-        static const int PASSTHROUGH_HASH = HashingUtils::HashString("PASSTHROUGH");
-        static const int PRORES_HASH = HashingUtils::HashString("PRORES");
-        static const int UNCOMPRESSED_HASH = HashingUtils::HashString("UNCOMPRESSED");
-        static const int VC3_HASH = HashingUtils::HashString("VC3");
-        static const int VP8_HASH = HashingUtils::HashString("VP8");
-        static const int VP9_HASH = HashingUtils::HashString("VP9");
-        static const int XAVC_HASH = HashingUtils::HashString("XAVC");
+VideoCodec GetVideoCodecForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == AV1_HASH) {
+    return VideoCodec::AV1;
+  } else if (hashCode == AVC_INTRA_HASH) {
+    return VideoCodec::AVC_INTRA;
+  } else if (hashCode == FRAME_CAPTURE_HASH) {
+    return VideoCodec::FRAME_CAPTURE;
+  } else if (hashCode == GIF_HASH) {
+    return VideoCodec::GIF;
+  } else if (hashCode == H_264_HASH) {
+    return VideoCodec::H_264;
+  } else if (hashCode == H_265_HASH) {
+    return VideoCodec::H_265;
+  } else if (hashCode == MPEG2_HASH) {
+    return VideoCodec::MPEG2;
+  } else if (hashCode == PASSTHROUGH_HASH) {
+    return VideoCodec::PASSTHROUGH;
+  } else if (hashCode == PRORES_HASH) {
+    return VideoCodec::PRORES;
+  } else if (hashCode == UNCOMPRESSED_HASH) {
+    return VideoCodec::UNCOMPRESSED;
+  } else if (hashCode == VC3_HASH) {
+    return VideoCodec::VC3;
+  } else if (hashCode == VP8_HASH) {
+    return VideoCodec::VP8;
+  } else if (hashCode == VP9_HASH) {
+    return VideoCodec::VP9;
+  } else if (hashCode == XAVC_HASH) {
+    return VideoCodec::XAVC;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<VideoCodec>(hashCode);
+  }
 
+  return VideoCodec::NOT_SET;
+}
 
-        VideoCodec GetVideoCodecForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == AV1_HASH)
-          {
-            return VideoCodec::AV1;
-          }
-          else if (hashCode == AVC_INTRA_HASH)
-          {
-            return VideoCodec::AVC_INTRA;
-          }
-          else if (hashCode == FRAME_CAPTURE_HASH)
-          {
-            return VideoCodec::FRAME_CAPTURE;
-          }
-          else if (hashCode == GIF_HASH)
-          {
-            return VideoCodec::GIF;
-          }
-          else if (hashCode == H_264_HASH)
-          {
-            return VideoCodec::H_264;
-          }
-          else if (hashCode == H_265_HASH)
-          {
-            return VideoCodec::H_265;
-          }
-          else if (hashCode == MPEG2_HASH)
-          {
-            return VideoCodec::MPEG2;
-          }
-          else if (hashCode == PASSTHROUGH_HASH)
-          {
-            return VideoCodec::PASSTHROUGH;
-          }
-          else if (hashCode == PRORES_HASH)
-          {
-            return VideoCodec::PRORES;
-          }
-          else if (hashCode == UNCOMPRESSED_HASH)
-          {
-            return VideoCodec::UNCOMPRESSED;
-          }
-          else if (hashCode == VC3_HASH)
-          {
-            return VideoCodec::VC3;
-          }
-          else if (hashCode == VP8_HASH)
-          {
-            return VideoCodec::VP8;
-          }
-          else if (hashCode == VP9_HASH)
-          {
-            return VideoCodec::VP9;
-          }
-          else if (hashCode == XAVC_HASH)
-          {
-            return VideoCodec::XAVC;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<VideoCodec>(hashCode);
-          }
+Aws::String GetNameForVideoCodec(VideoCodec enumValue) {
+  switch (enumValue) {
+    case VideoCodec::NOT_SET:
+      return {};
+    case VideoCodec::AV1:
+      return "AV1";
+    case VideoCodec::AVC_INTRA:
+      return "AVC_INTRA";
+    case VideoCodec::FRAME_CAPTURE:
+      return "FRAME_CAPTURE";
+    case VideoCodec::GIF:
+      return "GIF";
+    case VideoCodec::H_264:
+      return "H_264";
+    case VideoCodec::H_265:
+      return "H_265";
+    case VideoCodec::MPEG2:
+      return "MPEG2";
+    case VideoCodec::PASSTHROUGH:
+      return "PASSTHROUGH";
+    case VideoCodec::PRORES:
+      return "PRORES";
+    case VideoCodec::UNCOMPRESSED:
+      return "UNCOMPRESSED";
+    case VideoCodec::VC3:
+      return "VC3";
+    case VideoCodec::VP8:
+      return "VP8";
+    case VideoCodec::VP9:
+      return "VP9";
+    case VideoCodec::XAVC:
+      return "XAVC";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return VideoCodec::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForVideoCodec(VideoCodec enumValue)
-        {
-          switch(enumValue)
-          {
-          case VideoCodec::NOT_SET:
-            return {};
-          case VideoCodec::AV1:
-            return "AV1";
-          case VideoCodec::AVC_INTRA:
-            return "AVC_INTRA";
-          case VideoCodec::FRAME_CAPTURE:
-            return "FRAME_CAPTURE";
-          case VideoCodec::GIF:
-            return "GIF";
-          case VideoCodec::H_264:
-            return "H_264";
-          case VideoCodec::H_265:
-            return "H_265";
-          case VideoCodec::MPEG2:
-            return "MPEG2";
-          case VideoCodec::PASSTHROUGH:
-            return "PASSTHROUGH";
-          case VideoCodec::PRORES:
-            return "PRORES";
-          case VideoCodec::UNCOMPRESSED:
-            return "UNCOMPRESSED";
-          case VideoCodec::VC3:
-            return "VC3";
-          case VideoCodec::VP8:
-            return "VP8";
-          case VideoCodec::VP9:
-            return "VP9";
-          case VideoCodec::XAVC:
-            return "XAVC";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace VideoCodecMapper
-    } // namespace Model
-  } // namespace MediaConvert
-} // namespace Aws
+}  // namespace VideoCodecMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

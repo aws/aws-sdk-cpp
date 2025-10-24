@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecs/ECS_EXPORTS.h>
 
-namespace Aws
-{
-namespace ECS
-{
-namespace Model
-{
-  enum class DeploymentRolloutState
-  {
-    NOT_SET,
-    COMPLETED,
-    FAILED,
-    IN_PROGRESS
-  };
+namespace Aws {
+namespace ECS {
+namespace Model {
+enum class DeploymentRolloutState { NOT_SET, COMPLETED, FAILED, IN_PROGRESS };
 
-namespace DeploymentRolloutStateMapper
-{
+namespace DeploymentRolloutStateMapper {
 AWS_ECS_API DeploymentRolloutState GetDeploymentRolloutStateForName(const Aws::String& name);
 
 AWS_ECS_API Aws::String GetNameForDeploymentRolloutState(DeploymentRolloutState value);
-} // namespace DeploymentRolloutStateMapper
-} // namespace Model
-} // namespace ECS
-} // namespace Aws
+}  // namespace DeploymentRolloutStateMapper
+}  // namespace Model
+}  // namespace ECS
+}  // namespace Aws

@@ -3,58 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lexv2-models/model/SessionDataSortBy.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lexv2-models/model/SessionDataSortBy.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
 
-SessionDataSortBy::SessionDataSortBy(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SessionDataSortBy::SessionDataSortBy(JsonView jsonValue) { *this = jsonValue; }
 
-SessionDataSortBy& SessionDataSortBy::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+SessionDataSortBy& SessionDataSortBy::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = AnalyticsSessionSortByNameMapper::GetAnalyticsSessionSortByNameForName(jsonValue.GetString("name"));
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("order"))
-  {
+  if (jsonValue.ValueExists("order")) {
     m_order = AnalyticsSortOrderMapper::GetAnalyticsSortOrderForName(jsonValue.GetString("order"));
     m_orderHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SessionDataSortBy::Jsonize() const
-{
+JsonValue SessionDataSortBy::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", AnalyticsSessionSortByNameMapper::GetNameForAnalyticsSessionSortByName(m_name));
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", AnalyticsSessionSortByNameMapper::GetNameForAnalyticsSessionSortByName(m_name));
   }
 
-  if(m_orderHasBeenSet)
-  {
-   payload.WithString("order", AnalyticsSortOrderMapper::GetNameForAnalyticsSortOrder(m_order));
+  if (m_orderHasBeenSet) {
+    payload.WithString("order", AnalyticsSortOrderMapper::GetNameForAnalyticsSortOrder(m_order));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

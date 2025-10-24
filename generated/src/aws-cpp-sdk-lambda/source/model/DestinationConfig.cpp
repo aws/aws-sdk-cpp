@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lambda/model/DestinationConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lambda/model/DestinationConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Lambda
-{
-namespace Model
-{
+namespace Aws {
+namespace Lambda {
+namespace Model {
 
-DestinationConfig::DestinationConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DestinationConfig::DestinationConfig(JsonView jsonValue) { *this = jsonValue; }
 
-DestinationConfig& DestinationConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("OnSuccess"))
-  {
+DestinationConfig& DestinationConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("OnSuccess")) {
     m_onSuccess = jsonValue.GetObject("OnSuccess");
     m_onSuccessHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OnFailure"))
-  {
+  if (jsonValue.ValueExists("OnFailure")) {
     m_onFailure = jsonValue.GetObject("OnFailure");
     m_onFailureHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DestinationConfig::Jsonize() const
-{
+JsonValue DestinationConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_onSuccessHasBeenSet)
-  {
-   payload.WithObject("OnSuccess", m_onSuccess.Jsonize());
-
+  if (m_onSuccessHasBeenSet) {
+    payload.WithObject("OnSuccess", m_onSuccess.Jsonize());
   }
 
-  if(m_onFailureHasBeenSet)
-  {
-   payload.WithObject("OnFailure", m_onFailure.Jsonize());
-
+  if (m_onFailureHasBeenSet) {
+    payload.WithObject("OnFailure", m_onFailure.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Lambda
-} // namespace Aws
+}  // namespace Model
+}  // namespace Lambda
+}  // namespace Aws

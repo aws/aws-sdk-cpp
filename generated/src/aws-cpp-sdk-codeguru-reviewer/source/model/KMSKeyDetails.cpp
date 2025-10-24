@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeGuruReviewer
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeGuruReviewer {
+namespace Model {
 
-KMSKeyDetails::KMSKeyDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+KMSKeyDetails::KMSKeyDetails(JsonView jsonValue) { *this = jsonValue; }
 
-KMSKeyDetails& KMSKeyDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("KMSKeyId"))
-  {
+KMSKeyDetails& KMSKeyDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("KMSKeyId")) {
     m_kMSKeyId = jsonValue.GetString("KMSKeyId");
     m_kMSKeyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EncryptionOption"))
-  {
+  if (jsonValue.ValueExists("EncryptionOption")) {
     m_encryptionOption = EncryptionOptionMapper::GetEncryptionOptionForName(jsonValue.GetString("EncryptionOption"));
     m_encryptionOptionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue KMSKeyDetails::Jsonize() const
-{
+JsonValue KMSKeyDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_kMSKeyIdHasBeenSet)
-  {
-   payload.WithString("KMSKeyId", m_kMSKeyId);
-
+  if (m_kMSKeyIdHasBeenSet) {
+    payload.WithString("KMSKeyId", m_kMSKeyId);
   }
 
-  if(m_encryptionOptionHasBeenSet)
-  {
-   payload.WithString("EncryptionOption", EncryptionOptionMapper::GetNameForEncryptionOption(m_encryptionOption));
+  if (m_encryptionOptionHasBeenSet) {
+    payload.WithString("EncryptionOption", EncryptionOptionMapper::GetNameForEncryptionOption(m_encryptionOption));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeGuruReviewer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeGuruReviewer
+}  // namespace Aws

@@ -3,70 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/LaunchTemplateInstanceMetadataTagsState.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/ec2/model/LaunchTemplateInstanceMetadataTagsState.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace EC2 {
+namespace Model {
+namespace LaunchTemplateInstanceMetadataTagsStateMapper {
 
-namespace Aws
-{
-  namespace EC2
-  {
-    namespace Model
-    {
-      namespace LaunchTemplateInstanceMetadataTagsStateMapper
-      {
+static const int disabled_HASH = HashingUtils::HashString("disabled");
+static const int enabled_HASH = HashingUtils::HashString("enabled");
 
-        static const int disabled_HASH = HashingUtils::HashString("disabled");
-        static const int enabled_HASH = HashingUtils::HashString("enabled");
+LaunchTemplateInstanceMetadataTagsState GetLaunchTemplateInstanceMetadataTagsStateForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == disabled_HASH) {
+    return LaunchTemplateInstanceMetadataTagsState::disabled;
+  } else if (hashCode == enabled_HASH) {
+    return LaunchTemplateInstanceMetadataTagsState::enabled;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<LaunchTemplateInstanceMetadataTagsState>(hashCode);
+  }
 
+  return LaunchTemplateInstanceMetadataTagsState::NOT_SET;
+}
 
-        LaunchTemplateInstanceMetadataTagsState GetLaunchTemplateInstanceMetadataTagsStateForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == disabled_HASH)
-          {
-            return LaunchTemplateInstanceMetadataTagsState::disabled;
-          }
-          else if (hashCode == enabled_HASH)
-          {
-            return LaunchTemplateInstanceMetadataTagsState::enabled;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<LaunchTemplateInstanceMetadataTagsState>(hashCode);
-          }
+Aws::String GetNameForLaunchTemplateInstanceMetadataTagsState(LaunchTemplateInstanceMetadataTagsState enumValue) {
+  switch (enumValue) {
+    case LaunchTemplateInstanceMetadataTagsState::NOT_SET:
+      return {};
+    case LaunchTemplateInstanceMetadataTagsState::disabled:
+      return "disabled";
+    case LaunchTemplateInstanceMetadataTagsState::enabled:
+      return "enabled";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return LaunchTemplateInstanceMetadataTagsState::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForLaunchTemplateInstanceMetadataTagsState(LaunchTemplateInstanceMetadataTagsState enumValue)
-        {
-          switch(enumValue)
-          {
-          case LaunchTemplateInstanceMetadataTagsState::NOT_SET:
-            return {};
-          case LaunchTemplateInstanceMetadataTagsState::disabled:
-            return "disabled";
-          case LaunchTemplateInstanceMetadataTagsState::enabled:
-            return "enabled";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace LaunchTemplateInstanceMetadataTagsStateMapper
-    } // namespace Model
-  } // namespace EC2
-} // namespace Aws
+}  // namespace LaunchTemplateInstanceMetadataTagsStateMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

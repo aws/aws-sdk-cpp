@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-FunctionSchema::FunctionSchema(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FunctionSchema::FunctionSchema(JsonView jsonValue) { *this = jsonValue; }
 
-FunctionSchema& FunctionSchema::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("functions"))
-  {
+FunctionSchema& FunctionSchema::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("functions")) {
     Aws::Utils::Array<JsonView> functionsJsonList = jsonValue.GetArray("functions");
-    for(unsigned functionsIndex = 0; functionsIndex < functionsJsonList.GetLength(); ++functionsIndex)
-    {
+    for (unsigned functionsIndex = 0; functionsIndex < functionsJsonList.GetLength(); ++functionsIndex) {
       m_functions.push_back(functionsJsonList[functionsIndex].AsObject());
     }
     m_functionsHasBeenSet = true;
@@ -37,24 +28,20 @@ FunctionSchema& FunctionSchema::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue FunctionSchema::Jsonize() const
-{
+JsonValue FunctionSchema::Jsonize() const {
   JsonValue payload;
 
-  if(m_functionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> functionsJsonList(m_functions.size());
-   for(unsigned functionsIndex = 0; functionsIndex < functionsJsonList.GetLength(); ++functionsIndex)
-   {
-     functionsJsonList[functionsIndex].AsObject(m_functions[functionsIndex].Jsonize());
-   }
-   payload.WithArray("functions", std::move(functionsJsonList));
-
+  if (m_functionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> functionsJsonList(m_functions.size());
+    for (unsigned functionsIndex = 0; functionsIndex < functionsJsonList.GetLength(); ++functionsIndex) {
+      functionsJsonList[functionsIndex].AsObject(m_functions[functionsIndex].Jsonize());
+    }
+    payload.WithArray("functions", std::move(functionsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

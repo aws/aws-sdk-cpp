@@ -4,34 +4,19 @@
  */
 
 #pragma once
-#include <aws/machinelearning/MachineLearning_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/machinelearning/MachineLearning_EXPORTS.h>
 
-namespace Aws
-{
-namespace MachineLearning
-{
-namespace Model
-{
-  enum class BatchPredictionFilterVariable
-  {
-    NOT_SET,
-    CreatedAt,
-    LastUpdatedAt,
-    Status,
-    Name,
-    IAMUser,
-    MLModelId,
-    DataSourceId,
-    DataURI
-  };
+namespace Aws {
+namespace MachineLearning {
+namespace Model {
+enum class BatchPredictionFilterVariable { NOT_SET, CreatedAt, LastUpdatedAt, Status, Name, IAMUser, MLModelId, DataSourceId, DataURI };
 
-namespace BatchPredictionFilterVariableMapper
-{
+namespace BatchPredictionFilterVariableMapper {
 AWS_MACHINELEARNING_API BatchPredictionFilterVariable GetBatchPredictionFilterVariableForName(const Aws::String& name);
 
 AWS_MACHINELEARNING_API Aws::String GetNameForBatchPredictionFilterVariable(BatchPredictionFilterVariable value);
-} // namespace BatchPredictionFilterVariableMapper
-} // namespace Model
-} // namespace MachineLearning
-} // namespace Aws
+}  // namespace BatchPredictionFilterVariableMapper
+}  // namespace Model
+}  // namespace MachineLearning
+}  // namespace Aws

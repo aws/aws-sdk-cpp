@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticache/ElastiCache_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElastiCache
-{
-namespace Model
-{
-  enum class AuthTokenUpdateStrategyType
-  {
-    NOT_SET,
-    SET,
-    ROTATE,
-    DELETE_
-  };
+namespace Aws {
+namespace ElastiCache {
+namespace Model {
+enum class AuthTokenUpdateStrategyType { NOT_SET, SET, ROTATE, DELETE_ };
 
-namespace AuthTokenUpdateStrategyTypeMapper
-{
+namespace AuthTokenUpdateStrategyTypeMapper {
 AWS_ELASTICACHE_API AuthTokenUpdateStrategyType GetAuthTokenUpdateStrategyTypeForName(const Aws::String& name);
 
 AWS_ELASTICACHE_API Aws::String GetNameForAuthTokenUpdateStrategyType(AuthTokenUpdateStrategyType value);
-} // namespace AuthTokenUpdateStrategyTypeMapper
-} // namespace Model
-} // namespace ElastiCache
-} // namespace Aws
+}  // namespace AuthTokenUpdateStrategyTypeMapper
+}  // namespace Model
+}  // namespace ElastiCache
+}  // namespace Aws

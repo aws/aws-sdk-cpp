@@ -13,18 +13,15 @@ using namespace Aws::Utils;
 using namespace Aws::IoTManagedIntegrations;
 using namespace Aws::IoTManagedIntegrations::Model;
 
-namespace Aws
-{
-namespace IoTManagedIntegrations
-{
-template<> AWS_IOTMANAGEDINTEGRATIONS_API ResourceNotFoundException IoTManagedIntegrationsError::GetModeledError()
-{
+namespace Aws {
+namespace IoTManagedIntegrations {
+template <>
+AWS_IOTMANAGEDINTEGRATIONS_API ResourceNotFoundException IoTManagedIntegrationsError::GetModeledError() {
   assert(this->GetErrorType() == IoTManagedIntegrationsErrors::RESOURCE_NOT_FOUND);
   return ResourceNotFoundException(this->GetJsonPayload().View());
 }
 
-namespace IoTManagedIntegrationsErrorMapper
-{
+namespace IoTManagedIntegrationsErrorMapper {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
@@ -33,38 +30,26 @@ static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedExcep
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == CONFLICT_HASH)
-  {
+  if (hashCode == CONFLICT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTManagedIntegrationsErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTManagedIntegrationsErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INTERNAL_SERVER_HASH)
-  {
+  } else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTManagedIntegrationsErrors::SERVICE_QUOTA_EXCEEDED),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INTERNAL_SERVER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTManagedIntegrationsErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == UNAUTHORIZED_HASH)
-  {
+  } else if (hashCode == UNAUTHORIZED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTManagedIntegrationsErrors::UNAUTHORIZED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTManagedIntegrationsErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == INVALID_REQUEST_HASH)
-  {
+  } else if (hashCode == INVALID_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTManagedIntegrationsErrors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace IoTManagedIntegrationsErrorMapper
-} // namespace IoTManagedIntegrations
-} // namespace Aws
+}  // namespace IoTManagedIntegrationsErrorMapper
+}  // namespace IoTManagedIntegrations
+}  // namespace Aws

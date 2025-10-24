@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/neptune-graph/NeptuneGraph_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/neptune-graph/NeptuneGraph_EXPORTS.h>
 
-namespace Aws
-{
-namespace NeptuneGraph
-{
-namespace Model
-{
-  enum class GraphSummaryMode
-  {
-    NOT_SET,
-    BASIC,
-    DETAILED
-  };
+namespace Aws {
+namespace NeptuneGraph {
+namespace Model {
+enum class GraphSummaryMode { NOT_SET, BASIC, DETAILED };
 
-namespace GraphSummaryModeMapper
-{
+namespace GraphSummaryModeMapper {
 AWS_NEPTUNEGRAPH_API GraphSummaryMode GetGraphSummaryModeForName(const Aws::String& name);
 
 AWS_NEPTUNEGRAPH_API Aws::String GetNameForGraphSummaryMode(GraphSummaryMode value);
-} // namespace GraphSummaryModeMapper
-} // namespace Model
-} // namespace NeptuneGraph
-} // namespace Aws
+}  // namespace GraphSummaryModeMapper
+}  // namespace Model
+}  // namespace NeptuneGraph
+}  // namespace Aws

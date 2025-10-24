@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ds/DirectoryService_EXPORTS.h>
 
-namespace Aws
-{
-namespace DirectoryService
-{
-namespace Model
-{
-  enum class RadiusStatus
-  {
-    NOT_SET,
-    Creating,
-    Completed,
-    Failed
-  };
+namespace Aws {
+namespace DirectoryService {
+namespace Model {
+enum class RadiusStatus { NOT_SET, Creating, Completed, Failed };
 
-namespace RadiusStatusMapper
-{
+namespace RadiusStatusMapper {
 AWS_DIRECTORYSERVICE_API RadiusStatus GetRadiusStatusForName(const Aws::String& name);
 
 AWS_DIRECTORYSERVICE_API Aws::String GetNameForRadiusStatus(RadiusStatus value);
-} // namespace RadiusStatusMapper
-} // namespace Model
-} // namespace DirectoryService
-} // namespace Aws
+}  // namespace RadiusStatusMapper
+}  // namespace Model
+}  // namespace DirectoryService
+}  // namespace Aws

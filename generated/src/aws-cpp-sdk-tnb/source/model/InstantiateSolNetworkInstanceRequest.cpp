@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/tnb/model/InstantiateSolNetworkInstanceRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/tnb/model/InstantiateSolNetworkInstanceRequest.h>
 
 #include <utility>
 
@@ -15,43 +15,31 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String InstantiateSolNetworkInstanceRequest::SerializePayload() const
-{
+Aws::String InstantiateSolNetworkInstanceRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_additionalParamsForNsHasBeenSet)
-  {
-    if(!m_additionalParamsForNs.View().IsNull())
-    {
-       payload.WithObject("additionalParamsForNs", JsonValue(m_additionalParamsForNs.View()));
+  if (m_additionalParamsForNsHasBeenSet) {
+    if (!m_additionalParamsForNs.View().IsNull()) {
+      payload.WithObject("additionalParamsForNs", JsonValue(m_additionalParamsForNs.View()));
     }
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
 
-void InstantiateSolNetworkInstanceRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_dryRunHasBeenSet)
-    {
-      ss << m_dryRun;
-      uri.AddQueryStringParameter("dry_run", ss.str());
-      ss.str("");
-    }
-
+void InstantiateSolNetworkInstanceRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_dryRunHasBeenSet) {
+    ss << m_dryRun;
+    uri.AddQueryStringParameter("dry_run", ss.str());
+    ss.str("");
+  }
 }
-
-
-

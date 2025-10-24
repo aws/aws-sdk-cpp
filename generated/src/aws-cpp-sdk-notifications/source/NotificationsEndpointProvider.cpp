@@ -5,12 +5,8 @@
 
 #include <aws/notifications/NotificationsEndpointProvider.h>
 
-namespace Aws
-{
-namespace Notifications
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Notifications
-} // namespace Aws
+namespace Aws {
+namespace Notifications {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Notifications
+}  // namespace Aws

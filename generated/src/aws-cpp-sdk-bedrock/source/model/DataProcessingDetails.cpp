@@ -11,60 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-DataProcessingDetails::DataProcessingDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DataProcessingDetails::DataProcessingDetails(JsonView jsonValue) { *this = jsonValue; }
 
-DataProcessingDetails& DataProcessingDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("status"))
-  {
+DataProcessingDetails& DataProcessingDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("status")) {
     m_status = JobStatusDetailsMapper::GetJobStatusDetailsForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("creationTime"))
-  {
+  if (jsonValue.ValueExists("creationTime")) {
     m_creationTime = jsonValue.GetString("creationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastModifiedTime"))
-  {
+  if (jsonValue.ValueExists("lastModifiedTime")) {
     m_lastModifiedTime = jsonValue.GetString("lastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DataProcessingDetails::Jsonize() const
-{
+JsonValue DataProcessingDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", JobStatusDetailsMapper::GetNameForJobStatusDetails(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", JobStatusDetailsMapper::GetNameForJobStatusDetails(m_status));
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithString("creationTime", m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_creationTimeHasBeenSet) {
+    payload.WithString("creationTime", m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_lastModifiedTimeHasBeenSet)
-  {
-   payload.WithString("lastModifiedTime", m_lastModifiedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_lastModifiedTimeHasBeenSet) {
+    payload.WithString("lastModifiedTime", m_lastModifiedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

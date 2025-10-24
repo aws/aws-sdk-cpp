@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ds/DirectoryService_EXPORTS.h>
 
-namespace Aws
-{
-namespace DirectoryService
-{
-namespace Model
-{
-  enum class RadiusAuthenticationProtocol
-  {
-    NOT_SET,
-    PAP,
-    CHAP,
-    MS_CHAPv1,
-    MS_CHAPv2
-  };
+namespace Aws {
+namespace DirectoryService {
+namespace Model {
+enum class RadiusAuthenticationProtocol { NOT_SET, PAP, CHAP, MS_CHAPv1, MS_CHAPv2 };
 
-namespace RadiusAuthenticationProtocolMapper
-{
+namespace RadiusAuthenticationProtocolMapper {
 AWS_DIRECTORYSERVICE_API RadiusAuthenticationProtocol GetRadiusAuthenticationProtocolForName(const Aws::String& name);
 
 AWS_DIRECTORYSERVICE_API Aws::String GetNameForRadiusAuthenticationProtocol(RadiusAuthenticationProtocol value);
-} // namespace RadiusAuthenticationProtocolMapper
-} // namespace Model
-} // namespace DirectoryService
-} // namespace Aws
+}  // namespace RadiusAuthenticationProtocolMapper
+}  // namespace Model
+}  // namespace DirectoryService
+}  // namespace Aws

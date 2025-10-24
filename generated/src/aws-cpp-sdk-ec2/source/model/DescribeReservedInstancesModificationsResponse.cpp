@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeReservedInstancesModificationsResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/DescribeReservedInstancesModificationsResponse.h>
 
 #include <utility>
 
@@ -17,36 +17,31 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeReservedInstancesModificationsResponse::DescribeReservedInstancesModificationsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeReservedInstancesModificationsResponse::DescribeReservedInstancesModificationsResponse(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-DescribeReservedInstancesModificationsResponse& DescribeReservedInstancesModificationsResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeReservedInstancesModificationsResponse& DescribeReservedInstancesModificationsResponse::operator=(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeReservedInstancesModificationsResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeReservedInstancesModificationsResponse")) {
     resultNode = rootNode.FirstChild("DescribeReservedInstancesModificationsResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
+    if (!nextTokenNode.IsNull()) {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
       m_nextTokenHasBeenSet = true;
     }
     XmlNode reservedInstancesModificationsNode = resultNode.FirstChild("reservedInstancesModificationsSet");
-    if(!reservedInstancesModificationsNode.IsNull())
-    {
+    if (!reservedInstancesModificationsNode.IsNull()) {
       XmlNode reservedInstancesModificationsMember = reservedInstancesModificationsNode.FirstChild("item");
       m_reservedInstancesModificationsHasBeenSet = !reservedInstancesModificationsMember.IsNull();
-      while(!reservedInstancesModificationsMember.IsNull())
-      {
+      while (!reservedInstancesModificationsMember.IsNull()) {
         m_reservedInstancesModifications.push_back(reservedInstancesModificationsMember);
         reservedInstancesModificationsMember = reservedInstancesModificationsMember.NextNode("item");
       }
@@ -57,12 +52,12 @@ DescribeReservedInstancesModificationsResponse& DescribeReservedInstancesModific
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeReservedInstancesModificationsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeReservedInstancesModificationsResponse",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

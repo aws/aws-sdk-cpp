@@ -3,81 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ivs/model/StreamEvent.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ivs/model/StreamEvent.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IVS
-{
-namespace Model
-{
+namespace Aws {
+namespace IVS {
+namespace Model {
 
-StreamEvent::StreamEvent(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StreamEvent::StreamEvent(JsonView jsonValue) { *this = jsonValue; }
 
-StreamEvent& StreamEvent::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("code"))
-  {
+StreamEvent& StreamEvent::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("code")) {
     m_code = jsonValue.GetString("code");
     m_codeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("eventTime"))
-  {
+  if (jsonValue.ValueExists("eventTime")) {
     m_eventTime = jsonValue.GetString("eventTime");
     m_eventTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = jsonValue.GetString("type");
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StreamEvent::Jsonize() const
-{
+JsonValue StreamEvent::Jsonize() const {
   JsonValue payload;
 
-  if(m_codeHasBeenSet)
-  {
-   payload.WithString("code", m_code);
-
+  if (m_codeHasBeenSet) {
+    payload.WithString("code", m_code);
   }
 
-  if(m_eventTimeHasBeenSet)
-  {
-   payload.WithString("eventTime", m_eventTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_eventTimeHasBeenSet) {
+    payload.WithString("eventTime", m_eventTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", m_type);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IVS
-} // namespace Aws
+}  // namespace Model
+}  // namespace IVS
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecs/ECS_EXPORTS.h>
 
-namespace Aws
-{
-namespace ECS
-{
-namespace Model
-{
-  enum class StabilityStatus
-  {
-    NOT_SET,
-    STEADY_STATE,
-    STABILIZING
-  };
+namespace Aws {
+namespace ECS {
+namespace Model {
+enum class StabilityStatus { NOT_SET, STEADY_STATE, STABILIZING };
 
-namespace StabilityStatusMapper
-{
+namespace StabilityStatusMapper {
 AWS_ECS_API StabilityStatus GetStabilityStatusForName(const Aws::String& name);
 
 AWS_ECS_API Aws::String GetNameForStabilityStatus(StabilityStatus value);
-} // namespace StabilityStatusMapper
-} // namespace Model
-} // namespace ECS
-} // namespace Aws
+}  // namespace StabilityStatusMapper
+}  // namespace Model
+}  // namespace ECS
+}  // namespace Aws

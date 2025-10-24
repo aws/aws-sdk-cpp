@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lexv2-models/model/CreateBotVersionResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/lexv2-models/model/CreateBotVersionResult.h>
 
 #include <utility>
 
@@ -17,57 +17,45 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateBotVersionResult::CreateBotVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+CreateBotVersionResult::CreateBotVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-CreateBotVersionResult& CreateBotVersionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+CreateBotVersionResult& CreateBotVersionResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("botId"))
-  {
+  if (jsonValue.ValueExists("botId")) {
     m_botId = jsonValue.GetString("botId");
     m_botIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("botVersion"))
-  {
+  if (jsonValue.ValueExists("botVersion")) {
     m_botVersion = jsonValue.GetString("botVersion");
     m_botVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("botVersionLocaleSpecification"))
-  {
-    Aws::Map<Aws::String, JsonView> botVersionLocaleSpecificationJsonMap = jsonValue.GetObject("botVersionLocaleSpecification").GetAllObjects();
-    for(auto& botVersionLocaleSpecificationItem : botVersionLocaleSpecificationJsonMap)
-    {
+  if (jsonValue.ValueExists("botVersionLocaleSpecification")) {
+    Aws::Map<Aws::String, JsonView> botVersionLocaleSpecificationJsonMap =
+        jsonValue.GetObject("botVersionLocaleSpecification").GetAllObjects();
+    for (auto& botVersionLocaleSpecificationItem : botVersionLocaleSpecificationJsonMap) {
       m_botVersionLocaleSpecification[botVersionLocaleSpecificationItem.first] = botVersionLocaleSpecificationItem.second.AsObject();
     }
     m_botVersionLocaleSpecificationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("botStatus"))
-  {
+  if (jsonValue.ValueExists("botStatus")) {
     m_botStatus = BotStatusMapper::GetBotStatusForName(jsonValue.GetString("botStatus"));
     m_botStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("creationDateTime"))
-  {
+  if (jsonValue.ValueExists("creationDateTime")) {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
     m_creationDateTimeHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

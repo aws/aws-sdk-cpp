@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKVoice
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKVoice {
+namespace Model {
 
-VoiceConnectorSettings::VoiceConnectorSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VoiceConnectorSettings::VoiceConnectorSettings(JsonView jsonValue) { *this = jsonValue; }
 
-VoiceConnectorSettings& VoiceConnectorSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CdrBucket"))
-  {
+VoiceConnectorSettings& VoiceConnectorSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CdrBucket")) {
     m_cdrBucket = jsonValue.GetString("CdrBucket");
     m_cdrBucketHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VoiceConnectorSettings::Jsonize() const
-{
+JsonValue VoiceConnectorSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_cdrBucketHasBeenSet)
-  {
-   payload.WithString("CdrBucket", m_cdrBucket);
-
+  if (m_cdrBucketHasBeenSet) {
+    payload.WithString("CdrBucket", m_cdrBucket);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKVoice
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKVoice
+}  // namespace Aws

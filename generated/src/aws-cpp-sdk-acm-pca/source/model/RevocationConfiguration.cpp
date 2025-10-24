@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ACMPCA
-{
-namespace Model
-{
+namespace Aws {
+namespace ACMPCA {
+namespace Model {
 
-RevocationConfiguration::RevocationConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RevocationConfiguration::RevocationConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-RevocationConfiguration& RevocationConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CrlConfiguration"))
-  {
+RevocationConfiguration& RevocationConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CrlConfiguration")) {
     m_crlConfiguration = jsonValue.GetObject("CrlConfiguration");
     m_crlConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OcspConfiguration"))
-  {
+  if (jsonValue.ValueExists("OcspConfiguration")) {
     m_ocspConfiguration = jsonValue.GetObject("OcspConfiguration");
     m_ocspConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RevocationConfiguration::Jsonize() const
-{
+JsonValue RevocationConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_crlConfigurationHasBeenSet)
-  {
-   payload.WithObject("CrlConfiguration", m_crlConfiguration.Jsonize());
-
+  if (m_crlConfigurationHasBeenSet) {
+    payload.WithObject("CrlConfiguration", m_crlConfiguration.Jsonize());
   }
 
-  if(m_ocspConfigurationHasBeenSet)
-  {
-   payload.WithObject("OcspConfiguration", m_ocspConfiguration.Jsonize());
-
+  if (m_ocspConfigurationHasBeenSet) {
+    payload.WithObject("OcspConfiguration", m_ocspConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ACMPCA
-} // namespace Aws
+}  // namespace Model
+}  // namespace ACMPCA
+}  // namespace Aws

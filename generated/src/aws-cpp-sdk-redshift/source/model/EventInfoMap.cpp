@@ -3,47 +3,36 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/EventInfoMap.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/redshift/model/EventInfoMap.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Redshift
-{
-namespace Model
-{
+namespace Aws {
+namespace Redshift {
+namespace Model {
 
-EventInfoMap::EventInfoMap(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+EventInfoMap::EventInfoMap(const XmlNode& xmlNode) { *this = xmlNode; }
 
-EventInfoMap& EventInfoMap::operator =(const XmlNode& xmlNode)
-{
+EventInfoMap& EventInfoMap::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode eventIdNode = resultNode.FirstChild("EventId");
-    if(!eventIdNode.IsNull())
-    {
+    if (!eventIdNode.IsNull()) {
       m_eventId = Aws::Utils::Xml::DecodeEscapedXmlText(eventIdNode.GetText());
       m_eventIdHasBeenSet = true;
     }
     XmlNode eventCategoriesNode = resultNode.FirstChild("EventCategories");
-    if(!eventCategoriesNode.IsNull())
-    {
+    if (!eventCategoriesNode.IsNull()) {
       XmlNode eventCategoriesMember = eventCategoriesNode.FirstChild("EventCategory");
       m_eventCategoriesHasBeenSet = !eventCategoriesMember.IsNull();
-      while(!eventCategoriesMember.IsNull())
-      {
+      while (!eventCategoriesMember.IsNull()) {
         m_eventCategories.push_back(eventCategoriesMember.GetText());
         eventCategoriesMember = eventCategoriesMember.NextNode("EventCategory");
       }
@@ -51,14 +40,12 @@ EventInfoMap& EventInfoMap::operator =(const XmlNode& xmlNode)
       m_eventCategoriesHasBeenSet = true;
     }
     XmlNode eventDescriptionNode = resultNode.FirstChild("EventDescription");
-    if(!eventDescriptionNode.IsNull())
-    {
+    if (!eventDescriptionNode.IsNull()) {
       m_eventDescription = Aws::Utils::Xml::DecodeEscapedXmlText(eventDescriptionNode.GetText());
       m_eventDescriptionHasBeenSet = true;
     }
     XmlNode severityNode = resultNode.FirstChild("Severity");
-    if(!severityNode.IsNull())
-    {
+    if (!severityNode.IsNull()) {
       m_severity = Aws::Utils::Xml::DecodeEscapedXmlText(severityNode.GetText());
       m_severityHasBeenSet = true;
     }
@@ -67,58 +54,47 @@ EventInfoMap& EventInfoMap::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void EventInfoMap::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_eventIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".EventId=" << StringUtils::URLEncode(m_eventId.c_str()) << "&";
+void EventInfoMap::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_eventIdHasBeenSet) {
+    oStream << location << index << locationValue << ".EventId=" << StringUtils::URLEncode(m_eventId.c_str()) << "&";
   }
 
-  if(m_eventCategoriesHasBeenSet)
-  {
-      unsigned eventCategoriesIdx = 1;
-      for(auto& item : m_eventCategories)
-      {
-        oStream << location << index << locationValue << ".EventCategories.EventCategory." << eventCategoriesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
+  if (m_eventCategoriesHasBeenSet) {
+    unsigned eventCategoriesIdx = 1;
+    for (auto& item : m_eventCategories) {
+      oStream << location << index << locationValue << ".EventCategories.EventCategory." << eventCategoriesIdx++ << "="
+              << StringUtils::URLEncode(item.c_str()) << "&";
+    }
   }
 
-  if(m_eventDescriptionHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".EventDescription=" << StringUtils::URLEncode(m_eventDescription.c_str()) << "&";
+  if (m_eventDescriptionHasBeenSet) {
+    oStream << location << index << locationValue << ".EventDescription=" << StringUtils::URLEncode(m_eventDescription.c_str()) << "&";
   }
 
-  if(m_severityHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Severity=" << StringUtils::URLEncode(m_severity.c_str()) << "&";
-  }
-
-}
-
-void EventInfoMap::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_eventIdHasBeenSet)
-  {
-      oStream << location << ".EventId=" << StringUtils::URLEncode(m_eventId.c_str()) << "&";
-  }
-  if(m_eventCategoriesHasBeenSet)
-  {
-      unsigned eventCategoriesIdx = 1;
-      for(auto& item : m_eventCategories)
-      {
-        oStream << location << ".EventCategories.EventCategory." << eventCategoriesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
-  }
-  if(m_eventDescriptionHasBeenSet)
-  {
-      oStream << location << ".EventDescription=" << StringUtils::URLEncode(m_eventDescription.c_str()) << "&";
-  }
-  if(m_severityHasBeenSet)
-  {
-      oStream << location << ".Severity=" << StringUtils::URLEncode(m_severity.c_str()) << "&";
+  if (m_severityHasBeenSet) {
+    oStream << location << index << locationValue << ".Severity=" << StringUtils::URLEncode(m_severity.c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace Redshift
-} // namespace Aws
+void EventInfoMap::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_eventIdHasBeenSet) {
+    oStream << location << ".EventId=" << StringUtils::URLEncode(m_eventId.c_str()) << "&";
+  }
+  if (m_eventCategoriesHasBeenSet) {
+    unsigned eventCategoriesIdx = 1;
+    for (auto& item : m_eventCategories) {
+      oStream << location << ".EventCategories.EventCategory." << eventCategoriesIdx++ << "=" << StringUtils::URLEncode(item.c_str())
+              << "&";
+    }
+  }
+  if (m_eventDescriptionHasBeenSet) {
+    oStream << location << ".EventDescription=" << StringUtils::URLEncode(m_eventDescription.c_str()) << "&";
+  }
+  if (m_severityHasBeenSet) {
+    oStream << location << ".Severity=" << StringUtils::URLEncode(m_severity.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace Redshift
+}  // namespace Aws

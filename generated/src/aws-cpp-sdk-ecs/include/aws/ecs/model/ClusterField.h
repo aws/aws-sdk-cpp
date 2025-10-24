@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecs/ECS_EXPORTS.h>
 
-namespace Aws
-{
-namespace ECS
-{
-namespace Model
-{
-  enum class ClusterField
-  {
-    NOT_SET,
-    ATTACHMENTS,
-    CONFIGURATIONS,
-    SETTINGS,
-    STATISTICS,
-    TAGS
-  };
+namespace Aws {
+namespace ECS {
+namespace Model {
+enum class ClusterField { NOT_SET, ATTACHMENTS, CONFIGURATIONS, SETTINGS, STATISTICS, TAGS };
 
-namespace ClusterFieldMapper
-{
+namespace ClusterFieldMapper {
 AWS_ECS_API ClusterField GetClusterFieldForName(const Aws::String& name);
 
 AWS_ECS_API Aws::String GetNameForClusterField(ClusterField value);
-} // namespace ClusterFieldMapper
-} // namespace Model
-} // namespace ECS
-} // namespace Aws
+}  // namespace ClusterFieldMapper
+}  // namespace Model
+}  // namespace ECS
+}  // namespace Aws

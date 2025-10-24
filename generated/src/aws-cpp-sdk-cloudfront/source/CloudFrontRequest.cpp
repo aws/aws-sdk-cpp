@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/cloudfront/CloudFrontRequest.h>
 
-namespace Aws
-{
-namespace CloudFront
-{
-} // namespace CloudFront
-} // namespace Aws
+namespace Aws {
+namespace CloudFront {}  // namespace CloudFront
+}  // namespace Aws

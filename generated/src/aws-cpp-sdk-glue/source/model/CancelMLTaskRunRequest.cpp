@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/CancelMLTaskRunRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/CancelMLTaskRunRequest.h>
 
 #include <utility>
 
@@ -12,33 +12,22 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CancelMLTaskRunRequest::SerializePayload() const
-{
+Aws::String CancelMLTaskRunRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_transformIdHasBeenSet)
-  {
-   payload.WithString("TransformId", m_transformId);
-
+  if (m_transformIdHasBeenSet) {
+    payload.WithString("TransformId", m_transformId);
   }
 
-  if(m_taskRunIdHasBeenSet)
-  {
-   payload.WithString("TaskRunId", m_taskRunId);
-
+  if (m_taskRunIdHasBeenSet) {
+    payload.WithString("TaskRunId", m_taskRunId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CancelMLTaskRunRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CancelMLTaskRunRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSGlue.CancelMLTaskRun"));
   return headers;
-
 }
-
-
-
-

@@ -12,24 +12,16 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UntagResourceRequest::SerializePayload() const
-{
+Aws::String UntagResourceRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_tagKeyListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagKeyListJsonList(m_tagKeyList.size());
-   for(unsigned tagKeyListIndex = 0; tagKeyListIndex < tagKeyListJsonList.GetLength(); ++tagKeyListIndex)
-   {
-     tagKeyListJsonList[tagKeyListIndex].AsString(m_tagKeyList[tagKeyListIndex]);
-   }
-   payload.WithArray("TagKeyList", std::move(tagKeyListJsonList));
-
+  if (m_tagKeyListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagKeyListJsonList(m_tagKeyList.size());
+    for (unsigned tagKeyListIndex = 0; tagKeyListIndex < tagKeyListJsonList.GetLength(); ++tagKeyListIndex) {
+      tagKeyListJsonList[tagKeyListIndex].AsString(m_tagKeyList[tagKeyListIndex]);
+    }
+    payload.WithArray("TagKeyList", std::move(tagKeyListJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

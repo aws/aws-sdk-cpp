@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-TagSet::TagSet(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TagSet::TagSet(JsonView jsonValue) { *this = jsonValue; }
 
-TagSet& TagSet::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("key"))
-  {
+TagSet& TagSet::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("key")) {
     m_key = jsonValue.GetString("key");
     m_keyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("value"))
-  {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetString("value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TagSet::Jsonize() const
-{
+JsonValue TagSet::Jsonize() const {
   JsonValue payload;
 
-  if(m_keyHasBeenSet)
-  {
-   payload.WithString("key", m_key);
-
+  if (m_keyHasBeenSet) {
+    payload.WithString("key", m_key);
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

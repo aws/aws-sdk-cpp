@@ -4,10 +4,10 @@
  */
 
 #include <aws/application-insights/model/DescribeWorkloadResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,38 +17,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeWorkloadResult::DescribeWorkloadResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+DescribeWorkloadResult::DescribeWorkloadResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-DescribeWorkloadResult& DescribeWorkloadResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeWorkloadResult& DescribeWorkloadResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("WorkloadId"))
-  {
+  if (jsonValue.ValueExists("WorkloadId")) {
     m_workloadId = jsonValue.GetString("WorkloadId");
     m_workloadIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WorkloadRemarks"))
-  {
+  if (jsonValue.ValueExists("WorkloadRemarks")) {
     m_workloadRemarks = jsonValue.GetString("WorkloadRemarks");
     m_workloadRemarksHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WorkloadConfiguration"))
-  {
+  if (jsonValue.ValueExists("WorkloadConfiguration")) {
     m_workloadConfiguration = jsonValue.GetObject("WorkloadConfiguration");
     m_workloadConfigurationHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

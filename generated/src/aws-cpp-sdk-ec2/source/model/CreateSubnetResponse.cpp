@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/CreateSubnetResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/CreateSubnetResponse.h>
 
 #include <utility>
 
@@ -17,26 +17,19 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateSubnetResponse::CreateSubnetResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+CreateSubnetResponse::CreateSubnetResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-CreateSubnetResponse& CreateSubnetResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+CreateSubnetResponse& CreateSubnetResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "CreateSubnetResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "CreateSubnetResponse")) {
     resultNode = rootNode.FirstChild("CreateSubnetResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode subnetNode = resultNode.FirstChild("subnet");
-    if(!subnetNode.IsNull())
-    {
+    if (!subnetNode.IsNull()) {
       m_subnet = subnetNode;
       m_subnetHasBeenSet = true;
     }
@@ -44,12 +37,11 @@ CreateSubnetResponse& CreateSubnetResponse::operator =(const Aws::AmazonWebServi
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateSubnetResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateSubnetResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

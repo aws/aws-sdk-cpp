@@ -7,24 +7,16 @@
 #include <aws/connectcampaigns/ConnectCampaigns_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ConnectCampaigns
-{
-namespace Model
-{
-  enum class InstanceIdFilterOperator
-  {
-    NOT_SET,
-    Eq
-  };
+namespace Aws {
+namespace ConnectCampaigns {
+namespace Model {
+enum class InstanceIdFilterOperator { NOT_SET, Eq };
 
-namespace InstanceIdFilterOperatorMapper
-{
+namespace InstanceIdFilterOperatorMapper {
 AWS_CONNECTCAMPAIGNS_API InstanceIdFilterOperator GetInstanceIdFilterOperatorForName(const Aws::String& name);
 
 AWS_CONNECTCAMPAIGNS_API Aws::String GetNameForInstanceIdFilterOperator(InstanceIdFilterOperator value);
-} // namespace InstanceIdFilterOperatorMapper
-} // namespace Model
-} // namespace ConnectCampaigns
-} // namespace Aws
+}  // namespace InstanceIdFilterOperatorMapper
+}  // namespace Model
+}  // namespace ConnectCampaigns
+}  // namespace Aws

@@ -12,35 +12,24 @@ using namespace Aws::CodeCatalyst::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartDevEnvironmentRequest::SerializePayload() const
-{
+Aws::String StartDevEnvironmentRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_idesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> idesJsonList(m_ides.size());
-   for(unsigned idesIndex = 0; idesIndex < idesJsonList.GetLength(); ++idesIndex)
-   {
-     idesJsonList[idesIndex].AsObject(m_ides[idesIndex].Jsonize());
-   }
-   payload.WithArray("ides", std::move(idesJsonList));
-
+  if (m_idesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> idesJsonList(m_ides.size());
+    for (unsigned idesIndex = 0; idesIndex < idesJsonList.GetLength(); ++idesIndex) {
+      idesJsonList[idesIndex].AsObject(m_ides[idesIndex].Jsonize());
+    }
+    payload.WithArray("ides", std::move(idesJsonList));
   }
 
-  if(m_instanceTypeHasBeenSet)
-  {
-   payload.WithString("instanceType", InstanceTypeMapper::GetNameForInstanceType(m_instanceType));
+  if (m_instanceTypeHasBeenSet) {
+    payload.WithString("instanceType", InstanceTypeMapper::GetNameForInstanceType(m_instanceType));
   }
 
-  if(m_inactivityTimeoutMinutesHasBeenSet)
-  {
-   payload.WithInteger("inactivityTimeoutMinutes", m_inactivityTimeoutMinutes);
-
+  if (m_inactivityTimeoutMinutesHasBeenSet) {
+    payload.WithInteger("inactivityTimeoutMinutes", m_inactivityTimeoutMinutes);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/IoT_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
-  enum class AuthDecision
-  {
-    NOT_SET,
-    ALLOWED,
-    EXPLICIT_DENY,
-    IMPLICIT_DENY
-  };
+namespace Aws {
+namespace IoT {
+namespace Model {
+enum class AuthDecision { NOT_SET, ALLOWED, EXPLICIT_DENY, IMPLICIT_DENY };
 
-namespace AuthDecisionMapper
-{
+namespace AuthDecisionMapper {
 AWS_IOT_API AuthDecision GetAuthDecisionForName(const Aws::String& name);
 
 AWS_IOT_API Aws::String GetNameForAuthDecision(AuthDecision value);
-} // namespace AuthDecisionMapper
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace AuthDecisionMapper
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

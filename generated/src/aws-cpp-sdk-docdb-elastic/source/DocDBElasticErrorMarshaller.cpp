@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::DocDBElastic;
 
-AWSError<CoreErrors> DocDBElasticErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> DocDBElasticErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = DocDBElasticErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

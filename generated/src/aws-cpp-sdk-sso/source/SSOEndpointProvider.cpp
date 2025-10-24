@@ -5,12 +5,8 @@
 
 #include <aws/sso/SSOEndpointProvider.h>
 
-namespace Aws
-{
-namespace SSO
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace SSO
-} // namespace Aws
+namespace Aws {
+namespace SSO {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace SSO
+}  // namespace Aws

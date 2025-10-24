@@ -12,19 +12,12 @@ using namespace Aws::ConnectCampaignsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateCampaignScheduleRequest::SerializePayload() const
-{
+Aws::String UpdateCampaignScheduleRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_scheduleHasBeenSet)
-  {
-   payload.WithObject("schedule", m_schedule.Jsonize());
-
+  if (m_scheduleHasBeenSet) {
+    payload.WithObject("schedule", m_schedule.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

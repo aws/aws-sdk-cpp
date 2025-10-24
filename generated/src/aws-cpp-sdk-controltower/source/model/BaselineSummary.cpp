@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ControlTower
-{
-namespace Model
-{
+namespace Aws {
+namespace ControlTower {
+namespace Model {
 
-BaselineSummary::BaselineSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BaselineSummary::BaselineSummary(JsonView jsonValue) { *this = jsonValue; }
 
-BaselineSummary& BaselineSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("arn"))
-  {
+BaselineSummary& BaselineSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BaselineSummary::Jsonize() const
-{
+JsonValue BaselineSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ControlTower
-} // namespace Aws
+}  // namespace Model
+}  // namespace ControlTower
+}  // namespace Aws

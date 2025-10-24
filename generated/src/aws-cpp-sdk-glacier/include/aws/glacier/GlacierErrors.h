@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/glacier/Glacier_EXPORTS.h>
 
-namespace Aws
-{
-namespace Glacier
-{
-enum class GlacierErrors
-{
-  //From Core//
+namespace Aws {
+namespace Glacier {
+enum class GlacierErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class GlacierErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,15 +44,14 @@ enum class GlacierErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INSUFFICIENT_CAPACITY= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INSUFFICIENT_CAPACITY = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   LIMIT_EXCEEDED,
   MISSING_PARAMETER_VALUE,
   POLICY_ENFORCED
 };
 
-class AWS_GLACIER_API GlacierError : public Aws::Client::AWSError<GlacierErrors>
-{
-public:
+class AWS_GLACIER_API GlacierError : public Aws::Client::AWSError<GlacierErrors> {
+ public:
   GlacierError() {}
   GlacierError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<GlacierErrors>(rhs) {}
   GlacierError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<GlacierErrors>(rhs) {}
@@ -66,10 +62,9 @@ public:
   T GetModeledError();
 };
 
-namespace GlacierErrorMapper
-{
-  AWS_GLACIER_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace GlacierErrorMapper {
+AWS_GLACIER_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace Glacier
-} // namespace Aws
+}  // namespace Glacier
+}  // namespace Aws

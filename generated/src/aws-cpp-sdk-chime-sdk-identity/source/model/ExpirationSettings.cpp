@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKIdentity
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKIdentity {
+namespace Model {
 
-ExpirationSettings::ExpirationSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExpirationSettings::ExpirationSettings(JsonView jsonValue) { *this = jsonValue; }
 
-ExpirationSettings& ExpirationSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ExpirationDays"))
-  {
+ExpirationSettings& ExpirationSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ExpirationDays")) {
     m_expirationDays = jsonValue.GetInteger("ExpirationDays");
     m_expirationDaysHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExpirationCriterion"))
-  {
+  if (jsonValue.ValueExists("ExpirationCriterion")) {
     m_expirationCriterion = ExpirationCriterionMapper::GetExpirationCriterionForName(jsonValue.GetString("ExpirationCriterion"));
     m_expirationCriterionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExpirationSettings::Jsonize() const
-{
+JsonValue ExpirationSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_expirationDaysHasBeenSet)
-  {
-   payload.WithInteger("ExpirationDays", m_expirationDays);
-
+  if (m_expirationDaysHasBeenSet) {
+    payload.WithInteger("ExpirationDays", m_expirationDays);
   }
 
-  if(m_expirationCriterionHasBeenSet)
-  {
-   payload.WithString("ExpirationCriterion", ExpirationCriterionMapper::GetNameForExpirationCriterion(m_expirationCriterion));
+  if (m_expirationCriterionHasBeenSet) {
+    payload.WithString("ExpirationCriterion", ExpirationCriterionMapper::GetNameForExpirationCriterion(m_expirationCriterion));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKIdentity
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKIdentity
+}  // namespace Aws

@@ -4,33 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class HyperParameterTuningJobStatus
-  {
-    NOT_SET,
-    Completed,
-    InProgress,
-    Failed,
-    Stopped,
-    Stopping,
-    Deleting,
-    DeleteFailed
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class HyperParameterTuningJobStatus { NOT_SET, Completed, InProgress, Failed, Stopped, Stopping, Deleting, DeleteFailed };
 
-namespace HyperParameterTuningJobStatusMapper
-{
+namespace HyperParameterTuningJobStatusMapper {
 AWS_SAGEMAKER_API HyperParameterTuningJobStatus GetHyperParameterTuningJobStatusForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForHyperParameterTuningJobStatus(HyperParameterTuningJobStatus value);
-} // namespace HyperParameterTuningJobStatusMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace HyperParameterTuningJobStatusMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

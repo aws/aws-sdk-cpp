@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/sso/SSO_EXPORTS.h>
 
-namespace Aws
-{
-namespace SSO
-{
-enum class SSOErrors
-{
-  //From Core//
+namespace Aws {
+namespace SSO {
+enum class SSOErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class SSOErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,14 +44,13 @@ enum class SSOErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INVALID_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INVALID_REQUEST = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   TOO_MANY_REQUESTS,
   UNAUTHORIZED
 };
 
-class AWS_SSO_API SSOError : public Aws::Client::AWSError<SSOErrors>
-{
-public:
+class AWS_SSO_API SSOError : public Aws::Client::AWSError<SSOErrors> {
+ public:
   SSOError() {}
   SSOError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<SSOErrors>(rhs) {}
   SSOError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<SSOErrors>(rhs) {}
@@ -65,10 +61,9 @@ public:
   T GetModeledError();
 };
 
-namespace SSOErrorMapper
-{
-  AWS_SSO_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace SSOErrorMapper {
+AWS_SSO_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace SSO
-} // namespace Aws
+}  // namespace SSO
+}  // namespace Aws

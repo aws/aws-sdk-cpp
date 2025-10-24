@@ -12,11 +12,4 @@ using namespace Aws::Batch::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListTagsForResourceRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String ListTagsForResourceRequest::SerializePayload() const { return {}; }

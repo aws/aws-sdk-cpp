@@ -11,94 +11,70 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Chime
-{
-namespace Model
-{
+namespace Aws {
+namespace Chime {
+namespace Model {
 
-Room::Room(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Room::Room(JsonView jsonValue) { *this = jsonValue; }
 
-Room& Room::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RoomId"))
-  {
+Room& Room::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RoomId")) {
     m_roomId = jsonValue.GetString("RoomId");
     m_roomIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AccountId"))
-  {
+  if (jsonValue.ValueExists("AccountId")) {
     m_accountId = jsonValue.GetString("AccountId");
     m_accountIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedBy"))
-  {
+  if (jsonValue.ValueExists("CreatedBy")) {
     m_createdBy = jsonValue.GetString("CreatedBy");
     m_createdByHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedTimestamp"))
-  {
+  if (jsonValue.ValueExists("CreatedTimestamp")) {
     m_createdTimestamp = jsonValue.GetString("CreatedTimestamp");
     m_createdTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UpdatedTimestamp"))
-  {
+  if (jsonValue.ValueExists("UpdatedTimestamp")) {
     m_updatedTimestamp = jsonValue.GetString("UpdatedTimestamp");
     m_updatedTimestampHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Room::Jsonize() const
-{
+JsonValue Room::Jsonize() const {
   JsonValue payload;
 
-  if(m_roomIdHasBeenSet)
-  {
-   payload.WithString("RoomId", m_roomId);
-
+  if (m_roomIdHasBeenSet) {
+    payload.WithString("RoomId", m_roomId);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("AccountId", m_accountId);
-
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("AccountId", m_accountId);
   }
 
-  if(m_createdByHasBeenSet)
-  {
-   payload.WithString("CreatedBy", m_createdBy);
-
+  if (m_createdByHasBeenSet) {
+    payload.WithString("CreatedBy", m_createdBy);
   }
 
-  if(m_createdTimestampHasBeenSet)
-  {
-   payload.WithString("CreatedTimestamp", m_createdTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_createdTimestampHasBeenSet) {
+    payload.WithString("CreatedTimestamp", m_createdTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_updatedTimestampHasBeenSet)
-  {
-   payload.WithString("UpdatedTimestamp", m_updatedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_updatedTimestampHasBeenSet) {
+    payload.WithString("UpdatedTimestamp", m_updatedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Chime
-} // namespace Aws
+}  // namespace Model
+}  // namespace Chime
+}  // namespace Aws

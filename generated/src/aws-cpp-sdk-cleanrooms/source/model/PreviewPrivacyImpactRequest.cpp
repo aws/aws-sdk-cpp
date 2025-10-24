@@ -12,19 +12,12 @@ using namespace Aws::CleanRooms::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PreviewPrivacyImpactRequest::SerializePayload() const
-{
+Aws::String PreviewPrivacyImpactRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_parametersHasBeenSet)
-  {
-   payload.WithObject("parameters", m_parameters.Jsonize());
-
+  if (m_parametersHasBeenSet) {
+    payload.WithObject("parameters", m_parameters.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

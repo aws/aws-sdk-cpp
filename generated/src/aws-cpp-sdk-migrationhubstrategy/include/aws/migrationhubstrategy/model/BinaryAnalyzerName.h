@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 
-namespace Aws
-{
-namespace MigrationHubStrategyRecommendations
-{
-namespace Model
-{
-  enum class BinaryAnalyzerName
-  {
-    NOT_SET,
-    DLL_ANALYZER,
-    BYTECODE_ANALYZER
-  };
+namespace Aws {
+namespace MigrationHubStrategyRecommendations {
+namespace Model {
+enum class BinaryAnalyzerName { NOT_SET, DLL_ANALYZER, BYTECODE_ANALYZER };
 
-namespace BinaryAnalyzerNameMapper
-{
+namespace BinaryAnalyzerNameMapper {
 AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API BinaryAnalyzerName GetBinaryAnalyzerNameForName(const Aws::String& name);
 
 AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::String GetNameForBinaryAnalyzerName(BinaryAnalyzerName value);
-} // namespace BinaryAnalyzerNameMapper
-} // namespace Model
-} // namespace MigrationHubStrategyRecommendations
-} // namespace Aws
+}  // namespace BinaryAnalyzerNameMapper
+}  // namespace Model
+}  // namespace MigrationHubStrategyRecommendations
+}  // namespace Aws

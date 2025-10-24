@@ -3,50 +3,39 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ivs-realtime/model/ResourceNotFoundException.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ivs-realtime/model/ResourceNotFoundException.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ivsrealtime
-{
-namespace Model
-{
+namespace Aws {
+namespace ivsrealtime {
+namespace Model {
 
-ResourceNotFoundException::ResourceNotFoundException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResourceNotFoundException::ResourceNotFoundException(JsonView jsonValue) { *this = jsonValue; }
 
-ResourceNotFoundException& ResourceNotFoundException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("exceptionMessage"))
-  {
+ResourceNotFoundException& ResourceNotFoundException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("exceptionMessage")) {
     m_exceptionMessage = jsonValue.GetString("exceptionMessage");
     m_exceptionMessageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResourceNotFoundException::Jsonize() const
-{
+JsonValue ResourceNotFoundException::Jsonize() const {
   JsonValue payload;
 
-  if(m_exceptionMessageHasBeenSet)
-  {
-   payload.WithString("exceptionMessage", m_exceptionMessage);
-
+  if (m_exceptionMessageHasBeenSet) {
+    payload.WithString("exceptionMessage", m_exceptionMessage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ivsrealtime
-} // namespace Aws
+}  // namespace Model
+}  // namespace ivsrealtime
+}  // namespace Aws

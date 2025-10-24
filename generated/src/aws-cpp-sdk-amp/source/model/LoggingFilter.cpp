@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace PrometheusService
-{
-namespace Model
-{
+namespace Aws {
+namespace PrometheusService {
+namespace Model {
 
-LoggingFilter::LoggingFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LoggingFilter::LoggingFilter(JsonView jsonValue) { *this = jsonValue; }
 
-LoggingFilter& LoggingFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("qspThreshold"))
-  {
+LoggingFilter& LoggingFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("qspThreshold")) {
     m_qspThreshold = jsonValue.GetInt64("qspThreshold");
     m_qspThresholdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LoggingFilter::Jsonize() const
-{
+JsonValue LoggingFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_qspThresholdHasBeenSet)
-  {
-   payload.WithInt64("qspThreshold", m_qspThreshold);
-
+  if (m_qspThresholdHasBeenSet) {
+    payload.WithInt64("qspThreshold", m_qspThreshold);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace PrometheusService
-} // namespace Aws
+}  // namespace Model
+}  // namespace PrometheusService
+}  // namespace Aws

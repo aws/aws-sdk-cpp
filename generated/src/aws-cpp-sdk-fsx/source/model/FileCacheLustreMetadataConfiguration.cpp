@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fsx/model/FileCacheLustreMetadataConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fsx/model/FileCacheLustreMetadataConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
+namespace Aws {
+namespace FSx {
+namespace Model {
 
-FileCacheLustreMetadataConfiguration::FileCacheLustreMetadataConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FileCacheLustreMetadataConfiguration::FileCacheLustreMetadataConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-FileCacheLustreMetadataConfiguration& FileCacheLustreMetadataConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("StorageCapacity"))
-  {
+FileCacheLustreMetadataConfiguration& FileCacheLustreMetadataConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("StorageCapacity")) {
     m_storageCapacity = jsonValue.GetInteger("StorageCapacity");
     m_storageCapacityHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FileCacheLustreMetadataConfiguration::Jsonize() const
-{
+JsonValue FileCacheLustreMetadataConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_storageCapacityHasBeenSet)
-  {
-   payload.WithInteger("StorageCapacity", m_storageCapacity);
-
+  if (m_storageCapacityHasBeenSet) {
+    payload.WithInteger("StorageCapacity", m_storageCapacity);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

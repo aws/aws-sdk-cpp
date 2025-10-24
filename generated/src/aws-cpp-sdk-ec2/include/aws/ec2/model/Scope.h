@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class Scope
-  {
-    NOT_SET,
-    Availability_Zone,
-    Region
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class Scope { NOT_SET, Availability_Zone, Region };
 
-namespace ScopeMapper
-{
+namespace ScopeMapper {
 AWS_EC2_API Scope GetScopeForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForScope(Scope value);
-} // namespace ScopeMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace ScopeMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

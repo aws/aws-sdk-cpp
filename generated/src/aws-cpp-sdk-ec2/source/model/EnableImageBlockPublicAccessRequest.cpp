@@ -3,24 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/EnableImageBlockPublicAccessRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/EnableImageBlockPublicAccessRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String EnableImageBlockPublicAccessRequest::SerializePayload() const
-{
+Aws::String EnableImageBlockPublicAccessRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=EnableImageBlockPublicAccess&";
-  if(m_imageBlockPublicAccessStateHasBeenSet)
-  {
-    ss << "ImageBlockPublicAccessState=" << StringUtils::URLEncode(ImageBlockPublicAccessEnabledStateMapper::GetNameForImageBlockPublicAccessEnabledState(m_imageBlockPublicAccessState)) << "&";
+  if (m_imageBlockPublicAccessStateHasBeenSet) {
+    ss << "ImageBlockPublicAccessState="
+       << StringUtils::URLEncode(
+              ImageBlockPublicAccessEnabledStateMapper::GetNameForImageBlockPublicAccessEnabledState(m_imageBlockPublicAccessState))
+       << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -28,8 +28,4 @@ Aws::String EnableImageBlockPublicAccessRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  EnableImageBlockPublicAccessRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void EnableImageBlockPublicAccessRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/importexport/ImportExport_EXPORTS.h>
 
-namespace Aws
-{
-namespace ImportExport
-{
-enum class ImportExportErrors
-{
-  //From Core//
+namespace Aws {
+namespace ImportExport {
+enum class ImportExportErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class ImportExportErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class ImportExportErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  BUCKET_PERMISSION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BUCKET_PERMISSION = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CANCELED_JOB_ID,
   CREATE_JOB_QUOTA_EXCEEDED,
   EXPIRED_JOB_ID,
@@ -67,9 +64,8 @@ enum class ImportExportErrors
   UNABLE_TO_UPDATE_JOB_ID
 };
 
-class AWS_IMPORTEXPORT_API ImportExportError : public Aws::Client::AWSError<ImportExportErrors>
-{
-public:
+class AWS_IMPORTEXPORT_API ImportExportError : public Aws::Client::AWSError<ImportExportErrors> {
+ public:
   ImportExportError() {}
   ImportExportError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ImportExportErrors>(rhs) {}
   ImportExportError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ImportExportErrors>(rhs) {}
@@ -80,10 +76,9 @@ public:
   T GetModeledError();
 };
 
-namespace ImportExportErrorMapper
-{
-  AWS_IMPORTEXPORT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace ImportExportErrorMapper {
+AWS_IMPORTEXPORT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace ImportExport
-} // namespace Aws
+}  // namespace ImportExport
+}  // namespace Aws

@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class SimpleAttributeAggregationFunction
-  {
-    NOT_SET,
-    UNIQUE_VALUE
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class SimpleAttributeAggregationFunction { NOT_SET, UNIQUE_VALUE };
 
-namespace SimpleAttributeAggregationFunctionMapper
-{
+namespace SimpleAttributeAggregationFunctionMapper {
 AWS_QUICKSIGHT_API SimpleAttributeAggregationFunction GetSimpleAttributeAggregationFunctionForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForSimpleAttributeAggregationFunction(SimpleAttributeAggregationFunction value);
-} // namespace SimpleAttributeAggregationFunctionMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace SimpleAttributeAggregationFunctionMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

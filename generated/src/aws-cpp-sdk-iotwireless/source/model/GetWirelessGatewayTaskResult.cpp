@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotwireless/model/GetWirelessGatewayTaskResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iotwireless/model/GetWirelessGatewayTaskResult.h>
 
 #include <utility>
 
@@ -17,48 +17,37 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetWirelessGatewayTaskResult::GetWirelessGatewayTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetWirelessGatewayTaskResult::GetWirelessGatewayTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetWirelessGatewayTaskResult& GetWirelessGatewayTaskResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetWirelessGatewayTaskResult& GetWirelessGatewayTaskResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("WirelessGatewayId"))
-  {
+  if (jsonValue.ValueExists("WirelessGatewayId")) {
     m_wirelessGatewayId = jsonValue.GetString("WirelessGatewayId");
     m_wirelessGatewayIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WirelessGatewayTaskDefinitionId"))
-  {
+  if (jsonValue.ValueExists("WirelessGatewayTaskDefinitionId")) {
     m_wirelessGatewayTaskDefinitionId = jsonValue.GetString("WirelessGatewayTaskDefinitionId");
     m_wirelessGatewayTaskDefinitionIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastUplinkReceivedAt"))
-  {
+  if (jsonValue.ValueExists("LastUplinkReceivedAt")) {
     m_lastUplinkReceivedAt = jsonValue.GetString("LastUplinkReceivedAt");
     m_lastUplinkReceivedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TaskCreatedAt"))
-  {
+  if (jsonValue.ValueExists("TaskCreatedAt")) {
     m_taskCreatedAt = jsonValue.GetString("TaskCreatedAt");
     m_taskCreatedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = WirelessGatewayTaskStatusMapper::GetWirelessGatewayTaskStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

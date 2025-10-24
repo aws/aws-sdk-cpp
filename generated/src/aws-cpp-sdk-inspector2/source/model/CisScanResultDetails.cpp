@@ -3,168 +3,126 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/inspector2/model/CisScanResultDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/inspector2/model/CisScanResultDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Inspector2
-{
-namespace Model
-{
+namespace Aws {
+namespace Inspector2 {
+namespace Model {
 
-CisScanResultDetails::CisScanResultDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CisScanResultDetails::CisScanResultDetails(JsonView jsonValue) { *this = jsonValue; }
 
-CisScanResultDetails& CisScanResultDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("scanArn"))
-  {
+CisScanResultDetails& CisScanResultDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("scanArn")) {
     m_scanArn = jsonValue.GetString("scanArn");
     m_scanArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("accountId"))
-  {
+  if (jsonValue.ValueExists("accountId")) {
     m_accountId = jsonValue.GetString("accountId");
     m_accountIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("targetResourceId"))
-  {
+  if (jsonValue.ValueExists("targetResourceId")) {
     m_targetResourceId = jsonValue.GetString("targetResourceId");
     m_targetResourceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("platform"))
-  {
+  if (jsonValue.ValueExists("platform")) {
     m_platform = jsonValue.GetString("platform");
     m_platformHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = CisFindingStatusMapper::GetCisFindingStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("statusReason"))
-  {
+  if (jsonValue.ValueExists("statusReason")) {
     m_statusReason = jsonValue.GetString("statusReason");
     m_statusReasonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("checkId"))
-  {
+  if (jsonValue.ValueExists("checkId")) {
     m_checkId = jsonValue.GetString("checkId");
     m_checkIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("title"))
-  {
+  if (jsonValue.ValueExists("title")) {
     m_title = jsonValue.GetString("title");
     m_titleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("checkDescription"))
-  {
+  if (jsonValue.ValueExists("checkDescription")) {
     m_checkDescription = jsonValue.GetString("checkDescription");
     m_checkDescriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("remediation"))
-  {
+  if (jsonValue.ValueExists("remediation")) {
     m_remediation = jsonValue.GetString("remediation");
     m_remediationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("level"))
-  {
+  if (jsonValue.ValueExists("level")) {
     m_level = CisSecurityLevelMapper::GetCisSecurityLevelForName(jsonValue.GetString("level"));
     m_levelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("findingArn"))
-  {
+  if (jsonValue.ValueExists("findingArn")) {
     m_findingArn = jsonValue.GetString("findingArn");
     m_findingArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CisScanResultDetails::Jsonize() const
-{
+JsonValue CisScanResultDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_scanArnHasBeenSet)
-  {
-   payload.WithString("scanArn", m_scanArn);
-
+  if (m_scanArnHasBeenSet) {
+    payload.WithString("scanArn", m_scanArn);
   }
 
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("accountId", m_accountId);
-
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("accountId", m_accountId);
   }
 
-  if(m_targetResourceIdHasBeenSet)
-  {
-   payload.WithString("targetResourceId", m_targetResourceId);
-
+  if (m_targetResourceIdHasBeenSet) {
+    payload.WithString("targetResourceId", m_targetResourceId);
   }
 
-  if(m_platformHasBeenSet)
-  {
-   payload.WithString("platform", m_platform);
-
+  if (m_platformHasBeenSet) {
+    payload.WithString("platform", m_platform);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", CisFindingStatusMapper::GetNameForCisFindingStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", CisFindingStatusMapper::GetNameForCisFindingStatus(m_status));
   }
 
-  if(m_statusReasonHasBeenSet)
-  {
-   payload.WithString("statusReason", m_statusReason);
-
+  if (m_statusReasonHasBeenSet) {
+    payload.WithString("statusReason", m_statusReason);
   }
 
-  if(m_checkIdHasBeenSet)
-  {
-   payload.WithString("checkId", m_checkId);
-
+  if (m_checkIdHasBeenSet) {
+    payload.WithString("checkId", m_checkId);
   }
 
-  if(m_titleHasBeenSet)
-  {
-   payload.WithString("title", m_title);
-
+  if (m_titleHasBeenSet) {
+    payload.WithString("title", m_title);
   }
 
-  if(m_checkDescriptionHasBeenSet)
-  {
-   payload.WithString("checkDescription", m_checkDescription);
-
+  if (m_checkDescriptionHasBeenSet) {
+    payload.WithString("checkDescription", m_checkDescription);
   }
 
-  if(m_remediationHasBeenSet)
-  {
-   payload.WithString("remediation", m_remediation);
-
+  if (m_remediationHasBeenSet) {
+    payload.WithString("remediation", m_remediation);
   }
 
-  if(m_levelHasBeenSet)
-  {
-   payload.WithString("level", CisSecurityLevelMapper::GetNameForCisSecurityLevel(m_level));
+  if (m_levelHasBeenSet) {
+    payload.WithString("level", CisSecurityLevelMapper::GetNameForCisSecurityLevel(m_level));
   }
 
-  if(m_findingArnHasBeenSet)
-  {
-   payload.WithString("findingArn", m_findingArn);
-
+  if (m_findingArnHasBeenSet) {
+    payload.WithString("findingArn", m_findingArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Inspector2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Inspector2
+}  // namespace Aws

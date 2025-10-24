@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTFleetWise
-{
-namespace Model
-{
-  enum class UpdateCampaignAction
-  {
-    NOT_SET,
-    APPROVE,
-    SUSPEND,
-    RESUME,
-    UPDATE
-  };
+namespace Aws {
+namespace IoTFleetWise {
+namespace Model {
+enum class UpdateCampaignAction { NOT_SET, APPROVE, SUSPEND, RESUME, UPDATE };
 
-namespace UpdateCampaignActionMapper
-{
+namespace UpdateCampaignActionMapper {
 AWS_IOTFLEETWISE_API UpdateCampaignAction GetUpdateCampaignActionForName(const Aws::String& name);
 
 AWS_IOTFLEETWISE_API Aws::String GetNameForUpdateCampaignAction(UpdateCampaignAction value);
-} // namespace UpdateCampaignActionMapper
-} // namespace Model
-} // namespace IoTFleetWise
-} // namespace Aws
+}  // namespace UpdateCampaignActionMapper
+}  // namespace Model
+}  // namespace IoTFleetWise
+}  // namespace Aws

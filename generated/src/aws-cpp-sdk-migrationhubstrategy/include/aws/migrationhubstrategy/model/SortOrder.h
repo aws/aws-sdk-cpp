@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 
-namespace Aws
-{
-namespace MigrationHubStrategyRecommendations
-{
-namespace Model
-{
-  enum class SortOrder
-  {
-    NOT_SET,
-    ASC,
-    DESC
-  };
+namespace Aws {
+namespace MigrationHubStrategyRecommendations {
+namespace Model {
+enum class SortOrder { NOT_SET, ASC, DESC };
 
-namespace SortOrderMapper
-{
+namespace SortOrderMapper {
 AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API SortOrder GetSortOrderForName(const Aws::String& name);
 
 AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::String GetNameForSortOrder(SortOrder value);
-} // namespace SortOrderMapper
-} // namespace Model
-} // namespace MigrationHubStrategyRecommendations
-} // namespace Aws
+}  // namespace SortOrderMapper
+}  // namespace Model
+}  // namespace MigrationHubStrategyRecommendations
+}  // namespace Aws

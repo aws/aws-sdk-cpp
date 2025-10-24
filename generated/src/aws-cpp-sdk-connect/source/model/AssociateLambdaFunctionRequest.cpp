@@ -12,25 +12,16 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AssociateLambdaFunctionRequest::SerializePayload() const
-{
+Aws::String AssociateLambdaFunctionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_functionArnHasBeenSet)
-  {
-   payload.WithString("FunctionArn", m_functionArn);
-
+  if (m_functionArnHasBeenSet) {
+    payload.WithString("FunctionArn", m_functionArn);
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("ClientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("ClientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

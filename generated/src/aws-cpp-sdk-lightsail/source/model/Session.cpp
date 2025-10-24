@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lightsail/model/Session.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lightsail/model/Session.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
+namespace Aws {
+namespace Lightsail {
+namespace Model {
 
-Session::Session(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Session::Session(JsonView jsonValue) { *this = jsonValue; }
 
-Session& Session::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+Session& Session::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("url"))
-  {
+  if (jsonValue.ValueExists("url")) {
     m_url = jsonValue.GetString("url");
     m_urlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("isPrimary"))
-  {
+  if (jsonValue.ValueExists("isPrimary")) {
     m_isPrimary = jsonValue.GetBool("isPrimary");
     m_isPrimaryHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Session::Jsonize() const
-{
+JsonValue Session::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_urlHasBeenSet)
-  {
-   payload.WithString("url", m_url);
-
+  if (m_urlHasBeenSet) {
+    payload.WithString("url", m_url);
   }
 
-  if(m_isPrimaryHasBeenSet)
-  {
-   payload.WithBool("isPrimary", m_isPrimary);
-
+  if (m_isPrimaryHasBeenSet) {
+    payload.WithBool("isPrimary", m_isPrimary);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

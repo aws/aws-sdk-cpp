@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeArtifact
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeArtifact {
+namespace Model {
 
-ResourcePolicy::ResourcePolicy(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResourcePolicy::ResourcePolicy(JsonView jsonValue) { *this = jsonValue; }
 
-ResourcePolicy& ResourcePolicy::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("resourceArn"))
-  {
+ResourcePolicy& ResourcePolicy::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("resourceArn")) {
     m_resourceArn = jsonValue.GetString("resourceArn");
     m_resourceArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("revision"))
-  {
+  if (jsonValue.ValueExists("revision")) {
     m_revision = jsonValue.GetString("revision");
     m_revisionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("document"))
-  {
+  if (jsonValue.ValueExists("document")) {
     m_document = jsonValue.GetString("document");
     m_documentHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResourcePolicy::Jsonize() const
-{
+JsonValue ResourcePolicy::Jsonize() const {
   JsonValue payload;
 
-  if(m_resourceArnHasBeenSet)
-  {
-   payload.WithString("resourceArn", m_resourceArn);
-
+  if (m_resourceArnHasBeenSet) {
+    payload.WithString("resourceArn", m_resourceArn);
   }
 
-  if(m_revisionHasBeenSet)
-  {
-   payload.WithString("revision", m_revision);
-
+  if (m_revisionHasBeenSet) {
+    payload.WithString("revision", m_revision);
   }
 
-  if(m_documentHasBeenSet)
-  {
-   payload.WithString("document", m_document);
-
+  if (m_documentHasBeenSet) {
+    payload.WithString("document", m_document);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeArtifact
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeArtifact
+}  // namespace Aws

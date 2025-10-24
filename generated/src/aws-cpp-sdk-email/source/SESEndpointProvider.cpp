@@ -5,12 +5,8 @@
 
 #include <aws/email/SESEndpointProvider.h>
 
-namespace Aws
-{
-namespace SES
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace SES
-} // namespace Aws
+namespace Aws {
+namespace SES {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace SES
+}  // namespace Aws

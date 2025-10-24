@@ -3,33 +3,26 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/TagSAMLProviderRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/TagSAMLProviderRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String TagSAMLProviderRequest::SerializePayload() const
-{
+Aws::String TagSAMLProviderRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=TagSAMLProvider&";
-  if(m_sAMLProviderArnHasBeenSet)
-  {
+  if (m_sAMLProviderArnHasBeenSet) {
     ss << "SAMLProviderArn=" << StringUtils::URLEncode(m_sAMLProviderArn.c_str()) << "&";
   }
 
-  if(m_tagsHasBeenSet)
-  {
-    if (m_tags.empty())
-    {
+  if (m_tagsHasBeenSet) {
+    if (m_tags.empty()) {
       ss << "Tags=&";
-    }
-    else
-    {
+    } else {
       unsigned tagsCount = 1;
-      for(auto& item : m_tags)
-      {
+      for (auto& item : m_tags) {
         item.OutputToStream(ss, "Tags.member.", tagsCount, "");
         tagsCount++;
       }
@@ -40,8 +33,4 @@ Aws::String TagSAMLProviderRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  TagSAMLProviderRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void TagSAMLProviderRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

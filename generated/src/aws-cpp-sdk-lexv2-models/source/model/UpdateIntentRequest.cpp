@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lexv2-models/model/UpdateIntentRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lexv2-models/model/UpdateIntentRequest.h>
 
 #include <utility>
 
@@ -12,123 +12,84 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateIntentRequest::SerializePayload() const
-{
+Aws::String UpdateIntentRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_intentNameHasBeenSet)
-  {
-   payload.WithString("intentName", m_intentName);
-
+  if (m_intentNameHasBeenSet) {
+    payload.WithString("intentName", m_intentName);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_parentIntentSignatureHasBeenSet)
-  {
-   payload.WithString("parentIntentSignature", m_parentIntentSignature);
-
+  if (m_parentIntentSignatureHasBeenSet) {
+    payload.WithString("parentIntentSignature", m_parentIntentSignature);
   }
 
-  if(m_sampleUtterancesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> sampleUtterancesJsonList(m_sampleUtterances.size());
-   for(unsigned sampleUtterancesIndex = 0; sampleUtterancesIndex < sampleUtterancesJsonList.GetLength(); ++sampleUtterancesIndex)
-   {
-     sampleUtterancesJsonList[sampleUtterancesIndex].AsObject(m_sampleUtterances[sampleUtterancesIndex].Jsonize());
-   }
-   payload.WithArray("sampleUtterances", std::move(sampleUtterancesJsonList));
-
+  if (m_sampleUtterancesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> sampleUtterancesJsonList(m_sampleUtterances.size());
+    for (unsigned sampleUtterancesIndex = 0; sampleUtterancesIndex < sampleUtterancesJsonList.GetLength(); ++sampleUtterancesIndex) {
+      sampleUtterancesJsonList[sampleUtterancesIndex].AsObject(m_sampleUtterances[sampleUtterancesIndex].Jsonize());
+    }
+    payload.WithArray("sampleUtterances", std::move(sampleUtterancesJsonList));
   }
 
-  if(m_dialogCodeHookHasBeenSet)
-  {
-   payload.WithObject("dialogCodeHook", m_dialogCodeHook.Jsonize());
-
+  if (m_dialogCodeHookHasBeenSet) {
+    payload.WithObject("dialogCodeHook", m_dialogCodeHook.Jsonize());
   }
 
-  if(m_fulfillmentCodeHookHasBeenSet)
-  {
-   payload.WithObject("fulfillmentCodeHook", m_fulfillmentCodeHook.Jsonize());
-
+  if (m_fulfillmentCodeHookHasBeenSet) {
+    payload.WithObject("fulfillmentCodeHook", m_fulfillmentCodeHook.Jsonize());
   }
 
-  if(m_slotPrioritiesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> slotPrioritiesJsonList(m_slotPriorities.size());
-   for(unsigned slotPrioritiesIndex = 0; slotPrioritiesIndex < slotPrioritiesJsonList.GetLength(); ++slotPrioritiesIndex)
-   {
-     slotPrioritiesJsonList[slotPrioritiesIndex].AsObject(m_slotPriorities[slotPrioritiesIndex].Jsonize());
-   }
-   payload.WithArray("slotPriorities", std::move(slotPrioritiesJsonList));
-
+  if (m_slotPrioritiesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> slotPrioritiesJsonList(m_slotPriorities.size());
+    for (unsigned slotPrioritiesIndex = 0; slotPrioritiesIndex < slotPrioritiesJsonList.GetLength(); ++slotPrioritiesIndex) {
+      slotPrioritiesJsonList[slotPrioritiesIndex].AsObject(m_slotPriorities[slotPrioritiesIndex].Jsonize());
+    }
+    payload.WithArray("slotPriorities", std::move(slotPrioritiesJsonList));
   }
 
-  if(m_intentConfirmationSettingHasBeenSet)
-  {
-   payload.WithObject("intentConfirmationSetting", m_intentConfirmationSetting.Jsonize());
-
+  if (m_intentConfirmationSettingHasBeenSet) {
+    payload.WithObject("intentConfirmationSetting", m_intentConfirmationSetting.Jsonize());
   }
 
-  if(m_intentClosingSettingHasBeenSet)
-  {
-   payload.WithObject("intentClosingSetting", m_intentClosingSetting.Jsonize());
-
+  if (m_intentClosingSettingHasBeenSet) {
+    payload.WithObject("intentClosingSetting", m_intentClosingSetting.Jsonize());
   }
 
-  if(m_inputContextsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> inputContextsJsonList(m_inputContexts.size());
-   for(unsigned inputContextsIndex = 0; inputContextsIndex < inputContextsJsonList.GetLength(); ++inputContextsIndex)
-   {
-     inputContextsJsonList[inputContextsIndex].AsObject(m_inputContexts[inputContextsIndex].Jsonize());
-   }
-   payload.WithArray("inputContexts", std::move(inputContextsJsonList));
-
+  if (m_inputContextsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> inputContextsJsonList(m_inputContexts.size());
+    for (unsigned inputContextsIndex = 0; inputContextsIndex < inputContextsJsonList.GetLength(); ++inputContextsIndex) {
+      inputContextsJsonList[inputContextsIndex].AsObject(m_inputContexts[inputContextsIndex].Jsonize());
+    }
+    payload.WithArray("inputContexts", std::move(inputContextsJsonList));
   }
 
-  if(m_outputContextsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> outputContextsJsonList(m_outputContexts.size());
-   for(unsigned outputContextsIndex = 0; outputContextsIndex < outputContextsJsonList.GetLength(); ++outputContextsIndex)
-   {
-     outputContextsJsonList[outputContextsIndex].AsObject(m_outputContexts[outputContextsIndex].Jsonize());
-   }
-   payload.WithArray("outputContexts", std::move(outputContextsJsonList));
-
+  if (m_outputContextsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> outputContextsJsonList(m_outputContexts.size());
+    for (unsigned outputContextsIndex = 0; outputContextsIndex < outputContextsJsonList.GetLength(); ++outputContextsIndex) {
+      outputContextsJsonList[outputContextsIndex].AsObject(m_outputContexts[outputContextsIndex].Jsonize());
+    }
+    payload.WithArray("outputContexts", std::move(outputContextsJsonList));
   }
 
-  if(m_kendraConfigurationHasBeenSet)
-  {
-   payload.WithObject("kendraConfiguration", m_kendraConfiguration.Jsonize());
-
+  if (m_kendraConfigurationHasBeenSet) {
+    payload.WithObject("kendraConfiguration", m_kendraConfiguration.Jsonize());
   }
 
-  if(m_initialResponseSettingHasBeenSet)
-  {
-   payload.WithObject("initialResponseSetting", m_initialResponseSetting.Jsonize());
-
+  if (m_initialResponseSettingHasBeenSet) {
+    payload.WithObject("initialResponseSetting", m_initialResponseSetting.Jsonize());
   }
 
-  if(m_qnAIntentConfigurationHasBeenSet)
-  {
-   payload.WithObject("qnAIntentConfiguration", m_qnAIntentConfiguration.Jsonize());
-
+  if (m_qnAIntentConfigurationHasBeenSet) {
+    payload.WithObject("qnAIntentConfiguration", m_qnAIntentConfiguration.Jsonize());
   }
 
-  if(m_qInConnectIntentConfigurationHasBeenSet)
-  {
-   payload.WithObject("qInConnectIntentConfiguration", m_qInConnectIntentConfiguration.Jsonize());
-
+  if (m_qInConnectIntentConfigurationHasBeenSet) {
+    payload.WithObject("qInConnectIntentConfiguration", m_qInConnectIntentConfiguration.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

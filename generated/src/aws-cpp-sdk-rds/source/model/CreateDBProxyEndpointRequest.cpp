@@ -3,96 +3,72 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/CreateDBProxyEndpointRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/CreateDBProxyEndpointRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateDBProxyEndpointRequest::SerializePayload() const
-{
+Aws::String CreateDBProxyEndpointRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateDBProxyEndpoint&";
-  if(m_dBProxyNameHasBeenSet)
-  {
+  if (m_dBProxyNameHasBeenSet) {
     ss << "DBProxyName=" << StringUtils::URLEncode(m_dBProxyName.c_str()) << "&";
   }
 
-  if(m_dBProxyEndpointNameHasBeenSet)
-  {
+  if (m_dBProxyEndpointNameHasBeenSet) {
     ss << "DBProxyEndpointName=" << StringUtils::URLEncode(m_dBProxyEndpointName.c_str()) << "&";
   }
 
-  if(m_vpcSubnetIdsHasBeenSet)
-  {
-    if (m_vpcSubnetIds.empty())
-    {
+  if (m_vpcSubnetIdsHasBeenSet) {
+    if (m_vpcSubnetIds.empty()) {
       ss << "VpcSubnetIds=&";
-    }
-    else
-    {
+    } else {
       unsigned vpcSubnetIdsCount = 1;
-      for(auto& item : m_vpcSubnetIds)
-      {
-        ss << "VpcSubnetIds.member." << vpcSubnetIdsCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_vpcSubnetIds) {
+        ss << "VpcSubnetIds.member." << vpcSubnetIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         vpcSubnetIdsCount++;
       }
     }
   }
 
-  if(m_vpcSecurityGroupIdsHasBeenSet)
-  {
-    if (m_vpcSecurityGroupIds.empty())
-    {
+  if (m_vpcSecurityGroupIdsHasBeenSet) {
+    if (m_vpcSecurityGroupIds.empty()) {
       ss << "VpcSecurityGroupIds=&";
-    }
-    else
-    {
+    } else {
       unsigned vpcSecurityGroupIdsCount = 1;
-      for(auto& item : m_vpcSecurityGroupIds)
-      {
-        ss << "VpcSecurityGroupIds.member." << vpcSecurityGroupIdsCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_vpcSecurityGroupIds) {
+        ss << "VpcSecurityGroupIds.member." << vpcSecurityGroupIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         vpcSecurityGroupIdsCount++;
       }
     }
   }
 
-  if(m_targetRoleHasBeenSet)
-  {
-    ss << "TargetRole=" << StringUtils::URLEncode(DBProxyEndpointTargetRoleMapper::GetNameForDBProxyEndpointTargetRole(m_targetRole)) << "&";
+  if (m_targetRoleHasBeenSet) {
+    ss << "TargetRole=" << StringUtils::URLEncode(DBProxyEndpointTargetRoleMapper::GetNameForDBProxyEndpointTargetRole(m_targetRole))
+       << "&";
   }
 
-  if(m_tagsHasBeenSet)
-  {
-    if (m_tags.empty())
-    {
+  if (m_tagsHasBeenSet) {
+    if (m_tags.empty()) {
       ss << "Tags=&";
-    }
-    else
-    {
+    } else {
       unsigned tagsCount = 1;
-      for(auto& item : m_tags)
-      {
+      for (auto& item : m_tags) {
         item.OutputToStream(ss, "Tags.Tag.", tagsCount, "");
         tagsCount++;
       }
     }
   }
 
-  if(m_endpointNetworkTypeHasBeenSet)
-  {
-    ss << "EndpointNetworkType=" << StringUtils::URLEncode(EndpointNetworkTypeMapper::GetNameForEndpointNetworkType(m_endpointNetworkType)) << "&";
+  if (m_endpointNetworkTypeHasBeenSet) {
+    ss << "EndpointNetworkType=" << StringUtils::URLEncode(EndpointNetworkTypeMapper::GetNameForEndpointNetworkType(m_endpointNetworkType))
+       << "&";
   }
 
   ss << "Version=2014-10-31";
   return ss.str();
 }
 
-
-void  CreateDBProxyEndpointRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateDBProxyEndpointRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

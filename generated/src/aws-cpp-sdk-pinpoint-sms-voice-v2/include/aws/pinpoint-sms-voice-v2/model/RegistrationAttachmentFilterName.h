@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace PinpointSMSVoiceV2
-{
-namespace Model
-{
-  enum class RegistrationAttachmentFilterName
-  {
-    NOT_SET,
-    attachment_status
-  };
+namespace Aws {
+namespace PinpointSMSVoiceV2 {
+namespace Model {
+enum class RegistrationAttachmentFilterName { NOT_SET, attachment_status };
 
-namespace RegistrationAttachmentFilterNameMapper
-{
+namespace RegistrationAttachmentFilterNameMapper {
 AWS_PINPOINTSMSVOICEV2_API RegistrationAttachmentFilterName GetRegistrationAttachmentFilterNameForName(const Aws::String& name);
 
 AWS_PINPOINTSMSVOICEV2_API Aws::String GetNameForRegistrationAttachmentFilterName(RegistrationAttachmentFilterName value);
-} // namespace RegistrationAttachmentFilterNameMapper
-} // namespace Model
-} // namespace PinpointSMSVoiceV2
-} // namespace Aws
+}  // namespace RegistrationAttachmentFilterNameMapper
+}  // namespace Model
+}  // namespace PinpointSMSVoiceV2
+}  // namespace Aws

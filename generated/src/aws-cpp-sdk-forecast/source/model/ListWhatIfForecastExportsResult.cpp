@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/forecast/model/ListWhatIfForecastExportsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/forecast/model/ListWhatIfForecastExportsResult.h>
 
 #include <utility>
 
@@ -17,37 +17,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListWhatIfForecastExportsResult::ListWhatIfForecastExportsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListWhatIfForecastExportsResult::ListWhatIfForecastExportsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListWhatIfForecastExportsResult& ListWhatIfForecastExportsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListWhatIfForecastExportsResult& ListWhatIfForecastExportsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("WhatIfForecastExports"))
-  {
+  if (jsonValue.ValueExists("WhatIfForecastExports")) {
     Aws::Utils::Array<JsonView> whatIfForecastExportsJsonList = jsonValue.GetArray("WhatIfForecastExports");
-    for(unsigned whatIfForecastExportsIndex = 0; whatIfForecastExportsIndex < whatIfForecastExportsJsonList.GetLength(); ++whatIfForecastExportsIndex)
-    {
+    for (unsigned whatIfForecastExportsIndex = 0; whatIfForecastExportsIndex < whatIfForecastExportsJsonList.GetLength();
+         ++whatIfForecastExportsIndex) {
       m_whatIfForecastExports.push_back(whatIfForecastExportsJsonList[whatIfForecastExportsIndex].AsObject());
     }
     m_whatIfForecastExportsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

@@ -3,81 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/healthlake/model/IdentityProviderConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/healthlake/model/IdentityProviderConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace HealthLake
-{
-namespace Model
-{
+namespace Aws {
+namespace HealthLake {
+namespace Model {
 
-IdentityProviderConfiguration::IdentityProviderConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IdentityProviderConfiguration::IdentityProviderConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-IdentityProviderConfiguration& IdentityProviderConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AuthorizationStrategy"))
-  {
+IdentityProviderConfiguration& IdentityProviderConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AuthorizationStrategy")) {
     m_authorizationStrategy = AuthorizationStrategyMapper::GetAuthorizationStrategyForName(jsonValue.GetString("AuthorizationStrategy"));
     m_authorizationStrategyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FineGrainedAuthorizationEnabled"))
-  {
+  if (jsonValue.ValueExists("FineGrainedAuthorizationEnabled")) {
     m_fineGrainedAuthorizationEnabled = jsonValue.GetBool("FineGrainedAuthorizationEnabled");
     m_fineGrainedAuthorizationEnabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Metadata"))
-  {
+  if (jsonValue.ValueExists("Metadata")) {
     m_metadata = jsonValue.GetString("Metadata");
     m_metadataHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IdpLambdaArn"))
-  {
+  if (jsonValue.ValueExists("IdpLambdaArn")) {
     m_idpLambdaArn = jsonValue.GetString("IdpLambdaArn");
     m_idpLambdaArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IdentityProviderConfiguration::Jsonize() const
-{
+JsonValue IdentityProviderConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_authorizationStrategyHasBeenSet)
-  {
-   payload.WithString("AuthorizationStrategy", AuthorizationStrategyMapper::GetNameForAuthorizationStrategy(m_authorizationStrategy));
+  if (m_authorizationStrategyHasBeenSet) {
+    payload.WithString("AuthorizationStrategy", AuthorizationStrategyMapper::GetNameForAuthorizationStrategy(m_authorizationStrategy));
   }
 
-  if(m_fineGrainedAuthorizationEnabledHasBeenSet)
-  {
-   payload.WithBool("FineGrainedAuthorizationEnabled", m_fineGrainedAuthorizationEnabled);
-
+  if (m_fineGrainedAuthorizationEnabledHasBeenSet) {
+    payload.WithBool("FineGrainedAuthorizationEnabled", m_fineGrainedAuthorizationEnabled);
   }
 
-  if(m_metadataHasBeenSet)
-  {
-   payload.WithString("Metadata", m_metadata);
-
+  if (m_metadataHasBeenSet) {
+    payload.WithString("Metadata", m_metadata);
   }
 
-  if(m_idpLambdaArnHasBeenSet)
-  {
-   payload.WithString("IdpLambdaArn", m_idpLambdaArn);
-
+  if (m_idpLambdaArnHasBeenSet) {
+    payload.WithString("IdpLambdaArn", m_idpLambdaArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace HealthLake
-} // namespace Aws
+}  // namespace Model
+}  // namespace HealthLake
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class ColumnTagName
-  {
-    NOT_SET,
-    COLUMN_GEOGRAPHIC_ROLE,
-    COLUMN_DESCRIPTION
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class ColumnTagName { NOT_SET, COLUMN_GEOGRAPHIC_ROLE, COLUMN_DESCRIPTION };
 
-namespace ColumnTagNameMapper
-{
+namespace ColumnTagNameMapper {
 AWS_QUICKSIGHT_API ColumnTagName GetColumnTagNameForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForColumnTagName(ColumnTagName value);
-} // namespace ColumnTagNameMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace ColumnTagNameMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

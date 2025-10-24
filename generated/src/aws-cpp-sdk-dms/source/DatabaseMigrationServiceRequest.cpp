@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/dms/DatabaseMigrationServiceRequest.h>
 
-namespace Aws
-{
-namespace DatabaseMigrationService
-{
-} // namespace DatabaseMigrationService
-} // namespace Aws
+namespace Aws {
+namespace DatabaseMigrationService {}  // namespace DatabaseMigrationService
+}  // namespace Aws

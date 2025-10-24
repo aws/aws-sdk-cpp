@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/marketplace-catalog/model/OfferBuyerAccountsFilter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/marketplace-catalog/model/OfferBuyerAccountsFilter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MarketplaceCatalog
-{
-namespace Model
-{
+namespace Aws {
+namespace MarketplaceCatalog {
+namespace Model {
 
-OfferBuyerAccountsFilter::OfferBuyerAccountsFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OfferBuyerAccountsFilter::OfferBuyerAccountsFilter(JsonView jsonValue) { *this = jsonValue; }
 
-OfferBuyerAccountsFilter& OfferBuyerAccountsFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("WildCardValue"))
-  {
+OfferBuyerAccountsFilter& OfferBuyerAccountsFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("WildCardValue")) {
     m_wildCardValue = jsonValue.GetString("WildCardValue");
     m_wildCardValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OfferBuyerAccountsFilter::Jsonize() const
-{
+JsonValue OfferBuyerAccountsFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_wildCardValueHasBeenSet)
-  {
-   payload.WithString("WildCardValue", m_wildCardValue);
-
+  if (m_wildCardValueHasBeenSet) {
+    payload.WithString("WildCardValue", m_wildCardValue);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MarketplaceCatalog
-} // namespace Aws
+}  // namespace Model
+}  // namespace MarketplaceCatalog
+}  // namespace Aws

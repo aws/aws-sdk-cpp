@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::MarketplaceReporting;
 
-AWSError<CoreErrors> MarketplaceReportingErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> MarketplaceReportingErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = MarketplaceReportingErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

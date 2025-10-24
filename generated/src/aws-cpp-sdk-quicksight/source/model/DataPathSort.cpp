@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/DataPathSort.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/DataPathSort.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-DataPathSort::DataPathSort(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DataPathSort::DataPathSort(JsonView jsonValue) { *this = jsonValue; }
 
-DataPathSort& DataPathSort::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Direction"))
-  {
+DataPathSort& DataPathSort::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Direction")) {
     m_direction = SortDirectionMapper::GetSortDirectionForName(jsonValue.GetString("Direction"));
     m_directionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SortPaths"))
-  {
+  if (jsonValue.ValueExists("SortPaths")) {
     Aws::Utils::Array<JsonView> sortPathsJsonList = jsonValue.GetArray("SortPaths");
-    for(unsigned sortPathsIndex = 0; sortPathsIndex < sortPathsJsonList.GetLength(); ++sortPathsIndex)
-    {
+    for (unsigned sortPathsIndex = 0; sortPathsIndex < sortPathsJsonList.GetLength(); ++sortPathsIndex) {
       m_sortPaths.push_back(sortPathsJsonList[sortPathsIndex].AsObject());
     }
     m_sortPathsHasBeenSet = true;
@@ -42,29 +32,24 @@ DataPathSort& DataPathSort::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue DataPathSort::Jsonize() const
-{
+JsonValue DataPathSort::Jsonize() const {
   JsonValue payload;
 
-  if(m_directionHasBeenSet)
-  {
-   payload.WithString("Direction", SortDirectionMapper::GetNameForSortDirection(m_direction));
+  if (m_directionHasBeenSet) {
+    payload.WithString("Direction", SortDirectionMapper::GetNameForSortDirection(m_direction));
   }
 
-  if(m_sortPathsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> sortPathsJsonList(m_sortPaths.size());
-   for(unsigned sortPathsIndex = 0; sortPathsIndex < sortPathsJsonList.GetLength(); ++sortPathsIndex)
-   {
-     sortPathsJsonList[sortPathsIndex].AsObject(m_sortPaths[sortPathsIndex].Jsonize());
-   }
-   payload.WithArray("SortPaths", std::move(sortPathsJsonList));
-
+  if (m_sortPathsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> sortPathsJsonList(m_sortPaths.size());
+    for (unsigned sortPathsIndex = 0; sortPathsIndex < sortPathsJsonList.GetLength(); ++sortPathsIndex) {
+      sortPathsJsonList[sortPathsIndex].AsObject(m_sortPaths[sortPathsIndex].Jsonize());
+    }
+    payload.WithArray("SortPaths", std::move(sortPathsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

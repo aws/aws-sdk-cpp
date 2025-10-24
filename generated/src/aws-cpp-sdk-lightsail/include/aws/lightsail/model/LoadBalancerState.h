@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lightsail/Lightsail_EXPORTS.h>
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
-  enum class LoadBalancerState
-  {
-    NOT_SET,
-    active,
-    provisioning,
-    active_impaired,
-    failed,
-    unknown
-  };
+namespace Aws {
+namespace Lightsail {
+namespace Model {
+enum class LoadBalancerState { NOT_SET, active, provisioning, active_impaired, failed, unknown };
 
-namespace LoadBalancerStateMapper
-{
+namespace LoadBalancerStateMapper {
 AWS_LIGHTSAIL_API LoadBalancerState GetLoadBalancerStateForName(const Aws::String& name);
 
 AWS_LIGHTSAIL_API Aws::String GetNameForLoadBalancerState(LoadBalancerState value);
-} // namespace LoadBalancerStateMapper
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace LoadBalancerStateMapper
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

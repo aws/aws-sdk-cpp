@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lambda/model/ListFunctionsRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/lambda/model/ListFunctionsRequest.h>
 
 #include <utility>
 
@@ -15,43 +15,31 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String ListFunctionsRequest::SerializePayload() const
-{
-  return {};
+Aws::String ListFunctionsRequest::SerializePayload() const { return {}; }
+
+void ListFunctionsRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_masterRegionHasBeenSet) {
+    ss << m_masterRegion;
+    uri.AddQueryStringParameter("MasterRegion", ss.str());
+    ss.str("");
+  }
+
+  if (m_functionVersionHasBeenSet) {
+    ss << FunctionVersionMapper::GetNameForFunctionVersion(m_functionVersion);
+    uri.AddQueryStringParameter("FunctionVersion", ss.str());
+    ss.str("");
+  }
+
+  if (m_markerHasBeenSet) {
+    ss << m_marker;
+    uri.AddQueryStringParameter("Marker", ss.str());
+    ss.str("");
+  }
+
+  if (m_maxItemsHasBeenSet) {
+    ss << m_maxItems;
+    uri.AddQueryStringParameter("MaxItems", ss.str());
+    ss.str("");
+  }
 }
-
-void ListFunctionsRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_masterRegionHasBeenSet)
-    {
-      ss << m_masterRegion;
-      uri.AddQueryStringParameter("MasterRegion", ss.str());
-      ss.str("");
-    }
-
-    if(m_functionVersionHasBeenSet)
-    {
-      ss << FunctionVersionMapper::GetNameForFunctionVersion(m_functionVersion);
-      uri.AddQueryStringParameter("FunctionVersion", ss.str());
-      ss.str("");
-    }
-
-    if(m_markerHasBeenSet)
-    {
-      ss << m_marker;
-      uri.AddQueryStringParameter("Marker", ss.str());
-      ss.str("");
-    }
-
-    if(m_maxItemsHasBeenSet)
-    {
-      ss << m_maxItems;
-      uri.AddQueryStringParameter("MaxItems", ss.str());
-      ss.str("");
-    }
-
-}
-
-
-

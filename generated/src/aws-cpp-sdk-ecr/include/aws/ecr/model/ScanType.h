@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ecr/ECR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecr/ECR_EXPORTS.h>
 
-namespace Aws
-{
-namespace ECR
-{
-namespace Model
-{
-  enum class ScanType
-  {
-    NOT_SET,
-    BASIC,
-    ENHANCED
-  };
+namespace Aws {
+namespace ECR {
+namespace Model {
+enum class ScanType { NOT_SET, BASIC, ENHANCED };
 
-namespace ScanTypeMapper
-{
+namespace ScanTypeMapper {
 AWS_ECR_API ScanType GetScanTypeForName(const Aws::String& name);
 
 AWS_ECR_API Aws::String GetNameForScanType(ScanType value);
-} // namespace ScanTypeMapper
-} // namespace Model
-} // namespace ECR
-} // namespace Aws
+}  // namespace ScanTypeMapper
+}  // namespace Model
+}  // namespace ECR
+}  // namespace Aws

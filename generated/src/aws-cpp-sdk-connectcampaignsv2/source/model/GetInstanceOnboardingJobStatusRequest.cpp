@@ -12,11 +12,4 @@ using namespace Aws::ConnectCampaignsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetInstanceOnboardingJobStatusRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetInstanceOnboardingJobStatusRequest::SerializePayload() const { return {}; }

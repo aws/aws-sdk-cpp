@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/StatelessCustomPublishMetricAction.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/StatelessCustomPublishMetricAction.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-StatelessCustomPublishMetricAction::StatelessCustomPublishMetricAction(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StatelessCustomPublishMetricAction::StatelessCustomPublishMetricAction(JsonView jsonValue) { *this = jsonValue; }
 
-StatelessCustomPublishMetricAction& StatelessCustomPublishMetricAction::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Dimensions"))
-  {
+StatelessCustomPublishMetricAction& StatelessCustomPublishMetricAction::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Dimensions")) {
     Aws::Utils::Array<JsonView> dimensionsJsonList = jsonValue.GetArray("Dimensions");
-    for(unsigned dimensionsIndex = 0; dimensionsIndex < dimensionsJsonList.GetLength(); ++dimensionsIndex)
-    {
+    for (unsigned dimensionsIndex = 0; dimensionsIndex < dimensionsJsonList.GetLength(); ++dimensionsIndex) {
       m_dimensions.push_back(dimensionsJsonList[dimensionsIndex].AsObject());
     }
     m_dimensionsHasBeenSet = true;
@@ -37,24 +28,20 @@ StatelessCustomPublishMetricAction& StatelessCustomPublishMetricAction::operator
   return *this;
 }
 
-JsonValue StatelessCustomPublishMetricAction::Jsonize() const
-{
+JsonValue StatelessCustomPublishMetricAction::Jsonize() const {
   JsonValue payload;
 
-  if(m_dimensionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> dimensionsJsonList(m_dimensions.size());
-   for(unsigned dimensionsIndex = 0; dimensionsIndex < dimensionsJsonList.GetLength(); ++dimensionsIndex)
-   {
-     dimensionsJsonList[dimensionsIndex].AsObject(m_dimensions[dimensionsIndex].Jsonize());
-   }
-   payload.WithArray("Dimensions", std::move(dimensionsJsonList));
-
+  if (m_dimensionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> dimensionsJsonList(m_dimensions.size());
+    for (unsigned dimensionsIndex = 0; dimensionsIndex < dimensionsJsonList.GetLength(); ++dimensionsIndex) {
+      dimensionsJsonList[dimensionsIndex].AsObject(m_dimensions[dimensionsIndex].Jsonize());
+    }
+    payload.WithArray("Dimensions", std::move(dimensionsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

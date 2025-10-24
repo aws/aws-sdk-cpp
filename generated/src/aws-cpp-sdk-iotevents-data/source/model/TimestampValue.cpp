@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotevents-data/model/TimestampValue.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotevents-data/model/TimestampValue.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTEventsData
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTEventsData {
+namespace Model {
 
-TimestampValue::TimestampValue(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TimestampValue::TimestampValue(JsonView jsonValue) { *this = jsonValue; }
 
-TimestampValue& TimestampValue::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("timeInMillis"))
-  {
+TimestampValue& TimestampValue::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("timeInMillis")) {
     m_timeInMillis = jsonValue.GetInt64("timeInMillis");
     m_timeInMillisHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TimestampValue::Jsonize() const
-{
+JsonValue TimestampValue::Jsonize() const {
   JsonValue payload;
 
-  if(m_timeInMillisHasBeenSet)
-  {
-   payload.WithInt64("timeInMillis", m_timeInMillis);
-
+  if (m_timeInMillisHasBeenSet) {
+    payload.WithInt64("timeInMillis", m_timeInMillis);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTEventsData
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTEventsData
+}  // namespace Aws

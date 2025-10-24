@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/keyspaces/model/AutoScalingSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/keyspaces/model/AutoScalingSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Keyspaces
-{
-namespace Model
-{
+namespace Aws {
+namespace Keyspaces {
+namespace Model {
 
-AutoScalingSettings::AutoScalingSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AutoScalingSettings::AutoScalingSettings(JsonView jsonValue) { *this = jsonValue; }
 
-AutoScalingSettings& AutoScalingSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("autoScalingDisabled"))
-  {
+AutoScalingSettings& AutoScalingSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("autoScalingDisabled")) {
     m_autoScalingDisabled = jsonValue.GetBool("autoScalingDisabled");
     m_autoScalingDisabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("minimumUnits"))
-  {
+  if (jsonValue.ValueExists("minimumUnits")) {
     m_minimumUnits = jsonValue.GetInt64("minimumUnits");
     m_minimumUnitsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("maximumUnits"))
-  {
+  if (jsonValue.ValueExists("maximumUnits")) {
     m_maximumUnits = jsonValue.GetInt64("maximumUnits");
     m_maximumUnitsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("scalingPolicy"))
-  {
+  if (jsonValue.ValueExists("scalingPolicy")) {
     m_scalingPolicy = jsonValue.GetObject("scalingPolicy");
     m_scalingPolicyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AutoScalingSettings::Jsonize() const
-{
+JsonValue AutoScalingSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_autoScalingDisabledHasBeenSet)
-  {
-   payload.WithBool("autoScalingDisabled", m_autoScalingDisabled);
-
+  if (m_autoScalingDisabledHasBeenSet) {
+    payload.WithBool("autoScalingDisabled", m_autoScalingDisabled);
   }
 
-  if(m_minimumUnitsHasBeenSet)
-  {
-   payload.WithInt64("minimumUnits", m_minimumUnits);
-
+  if (m_minimumUnitsHasBeenSet) {
+    payload.WithInt64("minimumUnits", m_minimumUnits);
   }
 
-  if(m_maximumUnitsHasBeenSet)
-  {
-   payload.WithInt64("maximumUnits", m_maximumUnits);
-
+  if (m_maximumUnitsHasBeenSet) {
+    payload.WithInt64("maximumUnits", m_maximumUnits);
   }
 
-  if(m_scalingPolicyHasBeenSet)
-  {
-   payload.WithObject("scalingPolicy", m_scalingPolicy.Jsonize());
-
+  if (m_scalingPolicyHasBeenSet) {
+    payload.WithObject("scalingPolicy", m_scalingPolicy.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Keyspaces
-} // namespace Aws
+}  // namespace Model
+}  // namespace Keyspaces
+}  // namespace Aws

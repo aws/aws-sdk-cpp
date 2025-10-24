@@ -12,33 +12,22 @@ using namespace Aws::BCMDataExports::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetExecutionRequest::SerializePayload() const
-{
+Aws::String GetExecutionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_executionIdHasBeenSet)
-  {
-   payload.WithString("ExecutionId", m_executionId);
-
+  if (m_executionIdHasBeenSet) {
+    payload.WithString("ExecutionId", m_executionId);
   }
 
-  if(m_exportArnHasBeenSet)
-  {
-   payload.WithString("ExportArn", m_exportArn);
-
+  if (m_exportArnHasBeenSet) {
+    payload.WithString("ExportArn", m_exportArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetExecutionRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetExecutionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSBillingAndCostManagementDataExports.GetExecution"));
   return headers;
-
 }
-
-
-
-

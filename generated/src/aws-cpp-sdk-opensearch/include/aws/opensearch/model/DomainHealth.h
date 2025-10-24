@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/opensearch/OpenSearchService_EXPORTS.h>
 
-namespace Aws
-{
-namespace OpenSearchService
-{
-namespace Model
-{
-  enum class DomainHealth
-  {
-    NOT_SET,
-    Red,
-    Yellow,
-    Green,
-    NotAvailable
-  };
+namespace Aws {
+namespace OpenSearchService {
+namespace Model {
+enum class DomainHealth { NOT_SET, Red, Yellow, Green, NotAvailable };
 
-namespace DomainHealthMapper
-{
+namespace DomainHealthMapper {
 AWS_OPENSEARCHSERVICE_API DomainHealth GetDomainHealthForName(const Aws::String& name);
 
 AWS_OPENSEARCHSERVICE_API Aws::String GetNameForDomainHealth(DomainHealth value);
-} // namespace DomainHealthMapper
-} // namespace Model
-} // namespace OpenSearchService
-} // namespace Aws
+}  // namespace DomainHealthMapper
+}  // namespace Model
+}  // namespace OpenSearchService
+}  // namespace Aws

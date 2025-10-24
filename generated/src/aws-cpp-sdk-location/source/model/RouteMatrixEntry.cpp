@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/location/model/RouteMatrixEntry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/location/model/RouteMatrixEntry.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LocationService
-{
-namespace Model
-{
+namespace Aws {
+namespace LocationService {
+namespace Model {
 
-RouteMatrixEntry::RouteMatrixEntry(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RouteMatrixEntry::RouteMatrixEntry(JsonView jsonValue) { *this = jsonValue; }
 
-RouteMatrixEntry& RouteMatrixEntry::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Distance"))
-  {
+RouteMatrixEntry& RouteMatrixEntry::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Distance")) {
     m_distance = jsonValue.GetDouble("Distance");
     m_distanceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DurationSeconds"))
-  {
+  if (jsonValue.ValueExists("DurationSeconds")) {
     m_durationSeconds = jsonValue.GetDouble("DurationSeconds");
     m_durationSecondsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Error"))
-  {
+  if (jsonValue.ValueExists("Error")) {
     m_error = jsonValue.GetObject("Error");
     m_errorHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RouteMatrixEntry::Jsonize() const
-{
+JsonValue RouteMatrixEntry::Jsonize() const {
   JsonValue payload;
 
-  if(m_distanceHasBeenSet)
-  {
-   payload.WithDouble("Distance", m_distance);
-
+  if (m_distanceHasBeenSet) {
+    payload.WithDouble("Distance", m_distance);
   }
 
-  if(m_durationSecondsHasBeenSet)
-  {
-   payload.WithDouble("DurationSeconds", m_durationSeconds);
-
+  if (m_durationSecondsHasBeenSet) {
+    payload.WithDouble("DurationSeconds", m_durationSeconds);
   }
 
-  if(m_errorHasBeenSet)
-  {
-   payload.WithObject("Error", m_error.Jsonize());
-
+  if (m_errorHasBeenSet) {
+    payload.WithObject("Error", m_error.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LocationService
-} // namespace Aws
+}  // namespace Model
+}  // namespace LocationService
+}  // namespace Aws

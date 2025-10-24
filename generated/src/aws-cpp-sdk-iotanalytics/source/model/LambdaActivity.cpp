@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotanalytics/model/LambdaActivity.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotanalytics/model/LambdaActivity.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTAnalytics
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTAnalytics {
+namespace Model {
 
-LambdaActivity::LambdaActivity(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LambdaActivity::LambdaActivity(JsonView jsonValue) { *this = jsonValue; }
 
-LambdaActivity& LambdaActivity::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+LambdaActivity& LambdaActivity::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lambdaName"))
-  {
+  if (jsonValue.ValueExists("lambdaName")) {
     m_lambdaName = jsonValue.GetString("lambdaName");
     m_lambdaNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("batchSize"))
-  {
+  if (jsonValue.ValueExists("batchSize")) {
     m_batchSize = jsonValue.GetInteger("batchSize");
     m_batchSizeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("next"))
-  {
+  if (jsonValue.ValueExists("next")) {
     m_next = jsonValue.GetString("next");
     m_nextHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LambdaActivity::Jsonize() const
-{
+JsonValue LambdaActivity::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_lambdaNameHasBeenSet)
-  {
-   payload.WithString("lambdaName", m_lambdaName);
-
+  if (m_lambdaNameHasBeenSet) {
+    payload.WithString("lambdaName", m_lambdaName);
   }
 
-  if(m_batchSizeHasBeenSet)
-  {
-   payload.WithInteger("batchSize", m_batchSize);
-
+  if (m_batchSizeHasBeenSet) {
+    payload.WithInteger("batchSize", m_batchSize);
   }
 
-  if(m_nextHasBeenSet)
-  {
-   payload.WithString("next", m_next);
-
+  if (m_nextHasBeenSet) {
+    payload.WithString("next", m_next);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTAnalytics
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTAnalytics
+}  // namespace Aws

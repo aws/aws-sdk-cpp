@@ -7,26 +7,16 @@
 #include <aws/appsync/AppSync_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace AppSync
-{
-namespace Model
-{
-  enum class ApiCachingBehavior
-  {
-    NOT_SET,
-    FULL_REQUEST_CACHING,
-    PER_RESOLVER_CACHING,
-    OPERATION_LEVEL_CACHING
-  };
+namespace Aws {
+namespace AppSync {
+namespace Model {
+enum class ApiCachingBehavior { NOT_SET, FULL_REQUEST_CACHING, PER_RESOLVER_CACHING, OPERATION_LEVEL_CACHING };
 
-namespace ApiCachingBehaviorMapper
-{
+namespace ApiCachingBehaviorMapper {
 AWS_APPSYNC_API ApiCachingBehavior GetApiCachingBehaviorForName(const Aws::String& name);
 
 AWS_APPSYNC_API Aws::String GetNameForApiCachingBehavior(ApiCachingBehavior value);
-} // namespace ApiCachingBehaviorMapper
-} // namespace Model
-} // namespace AppSync
-} // namespace Aws
+}  // namespace ApiCachingBehaviorMapper
+}  // namespace Model
+}  // namespace AppSync
+}  // namespace Aws

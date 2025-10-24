@@ -3,38 +3,30 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/EnaSrdUdpSpecification.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/EnaSrdUdpSpecification.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-EnaSrdUdpSpecification::EnaSrdUdpSpecification(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+EnaSrdUdpSpecification::EnaSrdUdpSpecification(const XmlNode& xmlNode) { *this = xmlNode; }
 
-EnaSrdUdpSpecification& EnaSrdUdpSpecification::operator =(const XmlNode& xmlNode)
-{
+EnaSrdUdpSpecification& EnaSrdUdpSpecification::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode enaSrdUdpEnabledNode = resultNode.FirstChild("EnaSrdUdpEnabled");
-    if(!enaSrdUdpEnabledNode.IsNull())
-    {
-      m_enaSrdUdpEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enaSrdUdpEnabledNode.GetText()).c_str()).c_str());
+    if (!enaSrdUdpEnabledNode.IsNull()) {
+      m_enaSrdUdpEnabled = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enaSrdUdpEnabledNode.GetText()).c_str()).c_str());
       m_enaSrdUdpEnabledHasBeenSet = true;
     }
   }
@@ -42,23 +34,18 @@ EnaSrdUdpSpecification& EnaSrdUdpSpecification::operator =(const XmlNode& xmlNod
   return *this;
 }
 
-void EnaSrdUdpSpecification::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_enaSrdUdpEnabledHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".EnaSrdUdpEnabled=" << std::boolalpha << m_enaSrdUdpEnabled << "&";
-  }
-
-}
-
-void EnaSrdUdpSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_enaSrdUdpEnabledHasBeenSet)
-  {
-      oStream << location << ".EnaSrdUdpEnabled=" << std::boolalpha << m_enaSrdUdpEnabled << "&";
+void EnaSrdUdpSpecification::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_enaSrdUdpEnabledHasBeenSet) {
+    oStream << location << index << locationValue << ".EnaSrdUdpEnabled=" << std::boolalpha << m_enaSrdUdpEnabled << "&";
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void EnaSrdUdpSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_enaSrdUdpEnabledHasBeenSet) {
+    oStream << location << ".EnaSrdUdpEnabled=" << std::boolalpha << m_enaSrdUdpEnabled << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

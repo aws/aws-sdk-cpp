@@ -3,47 +3,36 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/TrafficMirrorFilter.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/TrafficMirrorFilter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-TrafficMirrorFilter::TrafficMirrorFilter(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+TrafficMirrorFilter::TrafficMirrorFilter(const XmlNode& xmlNode) { *this = xmlNode; }
 
-TrafficMirrorFilter& TrafficMirrorFilter::operator =(const XmlNode& xmlNode)
-{
+TrafficMirrorFilter& TrafficMirrorFilter::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode trafficMirrorFilterIdNode = resultNode.FirstChild("trafficMirrorFilterId");
-    if(!trafficMirrorFilterIdNode.IsNull())
-    {
+    if (!trafficMirrorFilterIdNode.IsNull()) {
       m_trafficMirrorFilterId = Aws::Utils::Xml::DecodeEscapedXmlText(trafficMirrorFilterIdNode.GetText());
       m_trafficMirrorFilterIdHasBeenSet = true;
     }
     XmlNode ingressFilterRulesNode = resultNode.FirstChild("ingressFilterRuleSet");
-    if(!ingressFilterRulesNode.IsNull())
-    {
+    if (!ingressFilterRulesNode.IsNull()) {
       XmlNode ingressFilterRulesMember = ingressFilterRulesNode.FirstChild("item");
       m_ingressFilterRulesHasBeenSet = !ingressFilterRulesMember.IsNull();
-      while(!ingressFilterRulesMember.IsNull())
-      {
+      while (!ingressFilterRulesMember.IsNull()) {
         m_ingressFilterRules.push_back(ingressFilterRulesMember);
         ingressFilterRulesMember = ingressFilterRulesMember.NextNode("item");
       }
@@ -51,12 +40,10 @@ TrafficMirrorFilter& TrafficMirrorFilter::operator =(const XmlNode& xmlNode)
       m_ingressFilterRulesHasBeenSet = true;
     }
     XmlNode egressFilterRulesNode = resultNode.FirstChild("egressFilterRuleSet");
-    if(!egressFilterRulesNode.IsNull())
-    {
+    if (!egressFilterRulesNode.IsNull()) {
       XmlNode egressFilterRulesMember = egressFilterRulesNode.FirstChild("item");
       m_egressFilterRulesHasBeenSet = !egressFilterRulesMember.IsNull();
-      while(!egressFilterRulesMember.IsNull())
-      {
+      while (!egressFilterRulesMember.IsNull()) {
         m_egressFilterRules.push_back(egressFilterRulesMember);
         egressFilterRulesMember = egressFilterRulesMember.NextNode("item");
       }
@@ -64,31 +51,27 @@ TrafficMirrorFilter& TrafficMirrorFilter::operator =(const XmlNode& xmlNode)
       m_egressFilterRulesHasBeenSet = true;
     }
     XmlNode networkServicesNode = resultNode.FirstChild("networkServiceSet");
-    if(!networkServicesNode.IsNull())
-    {
+    if (!networkServicesNode.IsNull()) {
       XmlNode networkServicesMember = networkServicesNode.FirstChild("item");
       m_networkServicesHasBeenSet = !networkServicesMember.IsNull();
-      while(!networkServicesMember.IsNull())
-      {
-        m_networkServices.push_back(TrafficMirrorNetworkServiceMapper::GetTrafficMirrorNetworkServiceForName(StringUtils::Trim(networkServicesMember.GetText().c_str())));
+      while (!networkServicesMember.IsNull()) {
+        m_networkServices.push_back(TrafficMirrorNetworkServiceMapper::GetTrafficMirrorNetworkServiceForName(
+            StringUtils::Trim(networkServicesMember.GetText().c_str())));
         networkServicesMember = networkServicesMember.NextNode("item");
       }
 
       m_networkServicesHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
-    if(!descriptionNode.IsNull())
-    {
+    if (!descriptionNode.IsNull()) {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
-    if(!tagsNode.IsNull())
-    {
+    if (!tagsNode.IsNull()) {
       XmlNode tagsMember = tagsNode.FirstChild("item");
       m_tagsHasBeenSet = !tagsMember.IsNull();
-      while(!tagsMember.IsNull())
-      {
+      while (!tagsMember.IsNull()) {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
@@ -100,112 +83,92 @@ TrafficMirrorFilter& TrafficMirrorFilter::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void TrafficMirrorFilter::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_trafficMirrorFilterIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".TrafficMirrorFilterId=" << StringUtils::URLEncode(m_trafficMirrorFilterId.c_str()) << "&";
+void TrafficMirrorFilter::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_trafficMirrorFilterIdHasBeenSet) {
+    oStream << location << index << locationValue << ".TrafficMirrorFilterId=" << StringUtils::URLEncode(m_trafficMirrorFilterId.c_str())
+            << "&";
   }
 
-  if(m_ingressFilterRulesHasBeenSet)
-  {
-      unsigned ingressFilterRulesIdx = 1;
-      for(auto& item : m_ingressFilterRules)
-      {
-        Aws::StringStream ingressFilterRulesSs;
-        ingressFilterRulesSs << location << index << locationValue << ".IngressFilterRuleSet." << ingressFilterRulesIdx++;
-        item.OutputToStream(oStream, ingressFilterRulesSs.str().c_str());
-      }
+  if (m_ingressFilterRulesHasBeenSet) {
+    unsigned ingressFilterRulesIdx = 1;
+    for (auto& item : m_ingressFilterRules) {
+      Aws::StringStream ingressFilterRulesSs;
+      ingressFilterRulesSs << location << index << locationValue << ".IngressFilterRuleSet." << ingressFilterRulesIdx++;
+      item.OutputToStream(oStream, ingressFilterRulesSs.str().c_str());
+    }
   }
 
-  if(m_egressFilterRulesHasBeenSet)
-  {
-      unsigned egressFilterRulesIdx = 1;
-      for(auto& item : m_egressFilterRules)
-      {
-        Aws::StringStream egressFilterRulesSs;
-        egressFilterRulesSs << location << index << locationValue << ".EgressFilterRuleSet." << egressFilterRulesIdx++;
-        item.OutputToStream(oStream, egressFilterRulesSs.str().c_str());
-      }
+  if (m_egressFilterRulesHasBeenSet) {
+    unsigned egressFilterRulesIdx = 1;
+    for (auto& item : m_egressFilterRules) {
+      Aws::StringStream egressFilterRulesSs;
+      egressFilterRulesSs << location << index << locationValue << ".EgressFilterRuleSet." << egressFilterRulesIdx++;
+      item.OutputToStream(oStream, egressFilterRulesSs.str().c_str());
+    }
   }
 
-  if(m_networkServicesHasBeenSet)
-  {
-      unsigned networkServicesIdx = 1;
-      for(auto& item : m_networkServices)
-      {
-        oStream << location << index << locationValue << ".NetworkServiceSet." << networkServicesIdx++ << "=" << StringUtils::URLEncode(TrafficMirrorNetworkServiceMapper::GetNameForTrafficMirrorNetworkService(item)) << "&";
-      }
+  if (m_networkServicesHasBeenSet) {
+    unsigned networkServicesIdx = 1;
+    for (auto& item : m_networkServices) {
+      oStream << location << index << locationValue << ".NetworkServiceSet." << networkServicesIdx++ << "="
+              << StringUtils::URLEncode(TrafficMirrorNetworkServiceMapper::GetNameForTrafficMirrorNetworkService(item)) << "&";
+    }
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  if (m_descriptionHasBeenSet) {
+    oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
-  if(m_tagsHasBeenSet)
-  {
-      unsigned tagsIdx = 1;
-      for(auto& item : m_tags)
-      {
-        Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
-        item.OutputToStream(oStream, tagsSs.str().c_str());
-      }
-  }
-
-}
-
-void TrafficMirrorFilter::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_trafficMirrorFilterIdHasBeenSet)
-  {
-      oStream << location << ".TrafficMirrorFilterId=" << StringUtils::URLEncode(m_trafficMirrorFilterId.c_str()) << "&";
-  }
-  if(m_ingressFilterRulesHasBeenSet)
-  {
-      unsigned ingressFilterRulesIdx = 1;
-      for(auto& item : m_ingressFilterRules)
-      {
-        Aws::StringStream ingressFilterRulesSs;
-        ingressFilterRulesSs << location << ".IngressFilterRuleSet." << ingressFilterRulesIdx++;
-        item.OutputToStream(oStream, ingressFilterRulesSs.str().c_str());
-      }
-  }
-  if(m_egressFilterRulesHasBeenSet)
-  {
-      unsigned egressFilterRulesIdx = 1;
-      for(auto& item : m_egressFilterRules)
-      {
-        Aws::StringStream egressFilterRulesSs;
-        egressFilterRulesSs << location << ".EgressFilterRuleSet." << egressFilterRulesIdx++;
-        item.OutputToStream(oStream, egressFilterRulesSs.str().c_str());
-      }
-  }
-  if(m_networkServicesHasBeenSet)
-  {
-      unsigned networkServicesIdx = 1;
-      for(auto& item : m_networkServices)
-      {
-        oStream << location << ".NetworkServiceSet." << networkServicesIdx++ << "=" << StringUtils::URLEncode(TrafficMirrorNetworkServiceMapper::GetNameForTrafficMirrorNetworkService(item)) << "&";
-      }
-  }
-  if(m_descriptionHasBeenSet)
-  {
-      oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
-  }
-  if(m_tagsHasBeenSet)
-  {
-      unsigned tagsIdx = 1;
-      for(auto& item : m_tags)
-      {
-        Aws::StringStream tagsSs;
-        tagsSs << location << ".TagSet." << tagsIdx++;
-        item.OutputToStream(oStream, tagsSs.str().c_str());
-      }
+  if (m_tagsHasBeenSet) {
+    unsigned tagsIdx = 1;
+    for (auto& item : m_tags) {
+      Aws::StringStream tagsSs;
+      tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
+      item.OutputToStream(oStream, tagsSs.str().c_str());
+    }
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void TrafficMirrorFilter::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_trafficMirrorFilterIdHasBeenSet) {
+    oStream << location << ".TrafficMirrorFilterId=" << StringUtils::URLEncode(m_trafficMirrorFilterId.c_str()) << "&";
+  }
+  if (m_ingressFilterRulesHasBeenSet) {
+    unsigned ingressFilterRulesIdx = 1;
+    for (auto& item : m_ingressFilterRules) {
+      Aws::StringStream ingressFilterRulesSs;
+      ingressFilterRulesSs << location << ".IngressFilterRuleSet." << ingressFilterRulesIdx++;
+      item.OutputToStream(oStream, ingressFilterRulesSs.str().c_str());
+    }
+  }
+  if (m_egressFilterRulesHasBeenSet) {
+    unsigned egressFilterRulesIdx = 1;
+    for (auto& item : m_egressFilterRules) {
+      Aws::StringStream egressFilterRulesSs;
+      egressFilterRulesSs << location << ".EgressFilterRuleSet." << egressFilterRulesIdx++;
+      item.OutputToStream(oStream, egressFilterRulesSs.str().c_str());
+    }
+  }
+  if (m_networkServicesHasBeenSet) {
+    unsigned networkServicesIdx = 1;
+    for (auto& item : m_networkServices) {
+      oStream << location << ".NetworkServiceSet." << networkServicesIdx++ << "="
+              << StringUtils::URLEncode(TrafficMirrorNetworkServiceMapper::GetNameForTrafficMirrorNetworkService(item)) << "&";
+    }
+  }
+  if (m_descriptionHasBeenSet) {
+    oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+  if (m_tagsHasBeenSet) {
+    unsigned tagsIdx = 1;
+    for (auto& item : m_tags) {
+      Aws::StringStream tagsSs;
+      tagsSs << location << ".TagSet." << tagsIdx++;
+      item.OutputToStream(oStream, tagsSs.str().c_str());
+    }
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

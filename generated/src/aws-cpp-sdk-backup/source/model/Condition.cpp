@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Backup
-{
-namespace Model
-{
+namespace Aws {
+namespace Backup {
+namespace Model {
 
-Condition::Condition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Condition::Condition(JsonView jsonValue) { *this = jsonValue; }
 
-Condition& Condition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ConditionType"))
-  {
+Condition& Condition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ConditionType")) {
     m_conditionType = ConditionTypeMapper::GetConditionTypeForName(jsonValue.GetString("ConditionType"));
     m_conditionTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ConditionKey"))
-  {
+  if (jsonValue.ValueExists("ConditionKey")) {
     m_conditionKey = jsonValue.GetString("ConditionKey");
     m_conditionKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ConditionValue"))
-  {
+  if (jsonValue.ValueExists("ConditionValue")) {
     m_conditionValue = jsonValue.GetString("ConditionValue");
     m_conditionValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Condition::Jsonize() const
-{
+JsonValue Condition::Jsonize() const {
   JsonValue payload;
 
-  if(m_conditionTypeHasBeenSet)
-  {
-   payload.WithString("ConditionType", ConditionTypeMapper::GetNameForConditionType(m_conditionType));
+  if (m_conditionTypeHasBeenSet) {
+    payload.WithString("ConditionType", ConditionTypeMapper::GetNameForConditionType(m_conditionType));
   }
 
-  if(m_conditionKeyHasBeenSet)
-  {
-   payload.WithString("ConditionKey", m_conditionKey);
-
+  if (m_conditionKeyHasBeenSet) {
+    payload.WithString("ConditionKey", m_conditionKey);
   }
 
-  if(m_conditionValueHasBeenSet)
-  {
-   payload.WithString("ConditionValue", m_conditionValue);
-
+  if (m_conditionValueHasBeenSet) {
+    payload.WithString("ConditionValue", m_conditionValue);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Backup
-} // namespace Aws
+}  // namespace Model
+}  // namespace Backup
+}  // namespace Aws

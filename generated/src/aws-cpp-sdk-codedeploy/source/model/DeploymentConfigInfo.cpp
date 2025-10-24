@@ -11,105 +11,78 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeDeploy
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeDeploy {
+namespace Model {
 
-DeploymentConfigInfo::DeploymentConfigInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DeploymentConfigInfo::DeploymentConfigInfo(JsonView jsonValue) { *this = jsonValue; }
 
-DeploymentConfigInfo& DeploymentConfigInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("deploymentConfigId"))
-  {
+DeploymentConfigInfo& DeploymentConfigInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("deploymentConfigId")) {
     m_deploymentConfigId = jsonValue.GetString("deploymentConfigId");
     m_deploymentConfigIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("deploymentConfigName"))
-  {
+  if (jsonValue.ValueExists("deploymentConfigName")) {
     m_deploymentConfigName = jsonValue.GetString("deploymentConfigName");
     m_deploymentConfigNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("minimumHealthyHosts"))
-  {
+  if (jsonValue.ValueExists("minimumHealthyHosts")) {
     m_minimumHealthyHosts = jsonValue.GetObject("minimumHealthyHosts");
     m_minimumHealthyHostsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createTime"))
-  {
+  if (jsonValue.ValueExists("createTime")) {
     m_createTime = jsonValue.GetDouble("createTime");
     m_createTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("computePlatform"))
-  {
+  if (jsonValue.ValueExists("computePlatform")) {
     m_computePlatform = ComputePlatformMapper::GetComputePlatformForName(jsonValue.GetString("computePlatform"));
     m_computePlatformHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("trafficRoutingConfig"))
-  {
+  if (jsonValue.ValueExists("trafficRoutingConfig")) {
     m_trafficRoutingConfig = jsonValue.GetObject("trafficRoutingConfig");
     m_trafficRoutingConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("zonalConfig"))
-  {
+  if (jsonValue.ValueExists("zonalConfig")) {
     m_zonalConfig = jsonValue.GetObject("zonalConfig");
     m_zonalConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DeploymentConfigInfo::Jsonize() const
-{
+JsonValue DeploymentConfigInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_deploymentConfigIdHasBeenSet)
-  {
-   payload.WithString("deploymentConfigId", m_deploymentConfigId);
-
+  if (m_deploymentConfigIdHasBeenSet) {
+    payload.WithString("deploymentConfigId", m_deploymentConfigId);
   }
 
-  if(m_deploymentConfigNameHasBeenSet)
-  {
-   payload.WithString("deploymentConfigName", m_deploymentConfigName);
-
+  if (m_deploymentConfigNameHasBeenSet) {
+    payload.WithString("deploymentConfigName", m_deploymentConfigName);
   }
 
-  if(m_minimumHealthyHostsHasBeenSet)
-  {
-   payload.WithObject("minimumHealthyHosts", m_minimumHealthyHosts.Jsonize());
-
+  if (m_minimumHealthyHostsHasBeenSet) {
+    payload.WithObject("minimumHealthyHosts", m_minimumHealthyHosts.Jsonize());
   }
 
-  if(m_createTimeHasBeenSet)
-  {
-   payload.WithDouble("createTime", m_createTime.SecondsWithMSPrecision());
+  if (m_createTimeHasBeenSet) {
+    payload.WithDouble("createTime", m_createTime.SecondsWithMSPrecision());
   }
 
-  if(m_computePlatformHasBeenSet)
-  {
-   payload.WithString("computePlatform", ComputePlatformMapper::GetNameForComputePlatform(m_computePlatform));
+  if (m_computePlatformHasBeenSet) {
+    payload.WithString("computePlatform", ComputePlatformMapper::GetNameForComputePlatform(m_computePlatform));
   }
 
-  if(m_trafficRoutingConfigHasBeenSet)
-  {
-   payload.WithObject("trafficRoutingConfig", m_trafficRoutingConfig.Jsonize());
-
+  if (m_trafficRoutingConfigHasBeenSet) {
+    payload.WithObject("trafficRoutingConfig", m_trafficRoutingConfig.Jsonize());
   }
 
-  if(m_zonalConfigHasBeenSet)
-  {
-   payload.WithObject("zonalConfig", m_zonalConfig.Jsonize());
-
+  if (m_zonalConfigHasBeenSet) {
+    payload.WithObject("zonalConfig", m_zonalConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeDeploy
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeDeploy
+}  // namespace Aws

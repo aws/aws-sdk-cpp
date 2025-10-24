@@ -5,12 +5,8 @@
 
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2EndpointProvider.h>
 
-namespace Aws
-{
-namespace KinesisAnalyticsV2
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace KinesisAnalyticsV2
-} // namespace Aws
+namespace Aws {
+namespace KinesisAnalyticsV2 {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace KinesisAnalyticsV2
+}  // namespace Aws

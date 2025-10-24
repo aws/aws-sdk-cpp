@@ -4,48 +4,38 @@
  */
 
 #include <aws/cloudfront/model/ContinuousDeploymentPolicyConfig.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
-ContinuousDeploymentPolicyConfig::ContinuousDeploymentPolicyConfig(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+ContinuousDeploymentPolicyConfig::ContinuousDeploymentPolicyConfig(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ContinuousDeploymentPolicyConfig& ContinuousDeploymentPolicyConfig::operator =(const XmlNode& xmlNode)
-{
+ContinuousDeploymentPolicyConfig& ContinuousDeploymentPolicyConfig::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode stagingDistributionDnsNamesNode = resultNode.FirstChild("StagingDistributionDnsNames");
-    if(!stagingDistributionDnsNamesNode.IsNull())
-    {
+    if (!stagingDistributionDnsNamesNode.IsNull()) {
       m_stagingDistributionDnsNames = stagingDistributionDnsNamesNode;
       m_stagingDistributionDnsNamesHasBeenSet = true;
     }
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
-    if(!enabledNode.IsNull())
-    {
-      m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
+    if (!enabledNode.IsNull()) {
+      m_enabled =
+          StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
     }
     XmlNode trafficConfigNode = resultNode.FirstChild("TrafficConfig");
-    if(!trafficConfigNode.IsNull())
-    {
+    if (!trafficConfigNode.IsNull()) {
       m_trafficConfig = trafficConfigNode;
       m_trafficConfigHasBeenSet = true;
     }
@@ -54,31 +44,26 @@ ContinuousDeploymentPolicyConfig& ContinuousDeploymentPolicyConfig::operator =(c
   return *this;
 }
 
-void ContinuousDeploymentPolicyConfig::AddToNode(XmlNode& parentNode) const
-{
+void ContinuousDeploymentPolicyConfig::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_stagingDistributionDnsNamesHasBeenSet)
-  {
-   XmlNode stagingDistributionDnsNamesNode = parentNode.CreateChildElement("StagingDistributionDnsNames");
-   m_stagingDistributionDnsNames.AddToNode(stagingDistributionDnsNamesNode);
+  if (m_stagingDistributionDnsNamesHasBeenSet) {
+    XmlNode stagingDistributionDnsNamesNode = parentNode.CreateChildElement("StagingDistributionDnsNames");
+    m_stagingDistributionDnsNames.AddToNode(stagingDistributionDnsNamesNode);
   }
 
-  if(m_enabledHasBeenSet)
-  {
-   XmlNode enabledNode = parentNode.CreateChildElement("Enabled");
-   ss << std::boolalpha << m_enabled;
-   enabledNode.SetText(ss.str());
-   ss.str("");
+  if (m_enabledHasBeenSet) {
+    XmlNode enabledNode = parentNode.CreateChildElement("Enabled");
+    ss << std::boolalpha << m_enabled;
+    enabledNode.SetText(ss.str());
+    ss.str("");
   }
 
-  if(m_trafficConfigHasBeenSet)
-  {
-   XmlNode trafficConfigNode = parentNode.CreateChildElement("TrafficConfig");
-   m_trafficConfig.AddToNode(trafficConfigNode);
+  if (m_trafficConfigHasBeenSet) {
+    XmlNode trafficConfigNode = parentNode.CreateChildElement("TrafficConfig");
+    m_trafficConfig.AddToNode(trafficConfigNode);
   }
-
 }
 
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

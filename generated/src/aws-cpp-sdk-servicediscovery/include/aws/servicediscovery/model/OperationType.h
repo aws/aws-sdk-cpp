@@ -4,32 +4,27 @@
  */
 
 #pragma once
-#include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
 
-namespace Aws
-{
-namespace ServiceDiscovery
-{
-namespace Model
-{
-  enum class OperationType
-  {
-    NOT_SET,
-    CREATE_NAMESPACE,
-    DELETE_NAMESPACE,
-    UPDATE_NAMESPACE,
-    UPDATE_SERVICE,
-    REGISTER_INSTANCE,
-    DEREGISTER_INSTANCE
-  };
+namespace Aws {
+namespace ServiceDiscovery {
+namespace Model {
+enum class OperationType {
+  NOT_SET,
+  CREATE_NAMESPACE,
+  DELETE_NAMESPACE,
+  UPDATE_NAMESPACE,
+  UPDATE_SERVICE,
+  REGISTER_INSTANCE,
+  DEREGISTER_INSTANCE
+};
 
-namespace OperationTypeMapper
-{
+namespace OperationTypeMapper {
 AWS_SERVICEDISCOVERY_API OperationType GetOperationTypeForName(const Aws::String& name);
 
 AWS_SERVICEDISCOVERY_API Aws::String GetNameForOperationType(OperationType value);
-} // namespace OperationTypeMapper
-} // namespace Model
-} // namespace ServiceDiscovery
-} // namespace Aws
+}  // namespace OperationTypeMapper
+}  // namespace Model
+}  // namespace ServiceDiscovery
+}  // namespace Aws

@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::DSQL;
 
-AWSError<CoreErrors> DSQLErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> DSQLErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = DSQLErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

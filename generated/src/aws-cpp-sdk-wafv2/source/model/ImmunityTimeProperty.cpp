@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wafv2/model/ImmunityTimeProperty.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wafv2/model/ImmunityTimeProperty.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WAFV2
-{
-namespace Model
-{
+namespace Aws {
+namespace WAFV2 {
+namespace Model {
 
-ImmunityTimeProperty::ImmunityTimeProperty(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ImmunityTimeProperty::ImmunityTimeProperty(JsonView jsonValue) { *this = jsonValue; }
 
-ImmunityTimeProperty& ImmunityTimeProperty::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ImmunityTime"))
-  {
+ImmunityTimeProperty& ImmunityTimeProperty::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ImmunityTime")) {
     m_immunityTime = jsonValue.GetInt64("ImmunityTime");
     m_immunityTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ImmunityTimeProperty::Jsonize() const
-{
+JsonValue ImmunityTimeProperty::Jsonize() const {
   JsonValue payload;
 
-  if(m_immunityTimeHasBeenSet)
-  {
-   payload.WithInt64("ImmunityTime", m_immunityTime);
-
+  if (m_immunityTimeHasBeenSet) {
+    payload.WithInt64("ImmunityTime", m_immunityTime);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WAFV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace WAFV2
+}  // namespace Aws

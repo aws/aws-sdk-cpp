@@ -7,27 +7,16 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
-  enum class Channel
-  {
-    NOT_SET,
-    VOICE,
-    CHAT,
-    TASK,
-    EMAIL
-  };
+namespace Aws {
+namespace Connect {
+namespace Model {
+enum class Channel { NOT_SET, VOICE, CHAT, TASK, EMAIL };
 
-namespace ChannelMapper
-{
+namespace ChannelMapper {
 AWS_CONNECT_API Channel GetChannelForName(const Aws::String& name);
 
 AWS_CONNECT_API Aws::String GetNameForChannel(Channel value);
-} // namespace ChannelMapper
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace ChannelMapper
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

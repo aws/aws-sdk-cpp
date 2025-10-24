@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/sesv2/SESV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sesv2/SESV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace SESV2
-{
-namespace Model
-{
-  enum class ResourceType
-  {
-    NOT_SET,
-    EMAIL_IDENTITY,
-    CONFIGURATION_SET,
-    EMAIL_TEMPLATE
-  };
+namespace Aws {
+namespace SESV2 {
+namespace Model {
+enum class ResourceType { NOT_SET, EMAIL_IDENTITY, CONFIGURATION_SET, EMAIL_TEMPLATE };
 
-namespace ResourceTypeMapper
-{
+namespace ResourceTypeMapper {
 AWS_SESV2_API ResourceType GetResourceTypeForName(const Aws::String& name);
 
 AWS_SESV2_API Aws::String GetNameForResourceType(ResourceType value);
-} // namespace ResourceTypeMapper
-} // namespace Model
-} // namespace SESV2
-} // namespace Aws
+}  // namespace ResourceTypeMapper
+}  // namespace Model
+}  // namespace SESV2
+}  // namespace Aws

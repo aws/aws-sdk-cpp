@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/DescribeUserGroupsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticache/model/DescribeUserGroupsRequest.h>
 
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeUserGroupsRequest::SerializePayload() const
-{
+Aws::String DescribeUserGroupsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeUserGroups&";
-  if(m_userGroupIdHasBeenSet)
-  {
+  if (m_userGroupIdHasBeenSet) {
     ss << "UserGroupId=" << StringUtils::URLEncode(m_userGroupId.c_str()) << "&";
   }
 
-  if(m_maxRecordsHasBeenSet)
-  {
+  if (m_maxRecordsHasBeenSet) {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
 
-  if(m_markerHasBeenSet)
-  {
+  if (m_markerHasBeenSet) {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String DescribeUserGroupsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeUserGroupsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeUserGroupsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

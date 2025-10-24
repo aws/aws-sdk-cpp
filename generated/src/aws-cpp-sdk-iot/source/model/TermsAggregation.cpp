@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/TermsAggregation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot/model/TermsAggregation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
+namespace Aws {
+namespace IoT {
+namespace Model {
 
-TermsAggregation::TermsAggregation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TermsAggregation::TermsAggregation(JsonView jsonValue) { *this = jsonValue; }
 
-TermsAggregation& TermsAggregation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("maxBuckets"))
-  {
+TermsAggregation& TermsAggregation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("maxBuckets")) {
     m_maxBuckets = jsonValue.GetInteger("maxBuckets");
     m_maxBucketsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TermsAggregation::Jsonize() const
-{
+JsonValue TermsAggregation::Jsonize() const {
   JsonValue payload;
 
-  if(m_maxBucketsHasBeenSet)
-  {
-   payload.WithInteger("maxBuckets", m_maxBuckets);
-
+  if (m_maxBucketsHasBeenSet) {
+    payload.WithInteger("maxBuckets", m_maxBuckets);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

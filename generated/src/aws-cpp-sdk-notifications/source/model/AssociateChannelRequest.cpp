@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/notifications/model/AssociateChannelRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/notifications/model/AssociateChannelRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::Notifications::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AssociateChannelRequest::SerializePayload() const
-{
+Aws::String AssociateChannelRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_notificationConfigurationArnHasBeenSet)
-  {
-   payload.WithString("notificationConfigurationArn", m_notificationConfigurationArn);
-
+  if (m_notificationConfigurationArnHasBeenSet) {
+    payload.WithString("notificationConfigurationArn", m_notificationConfigurationArn);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

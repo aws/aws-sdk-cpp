@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fms/model/StatefulRuleGroup.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fms/model/StatefulRuleGroup.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FMS
-{
-namespace Model
-{
+namespace Aws {
+namespace FMS {
+namespace Model {
 
-StatefulRuleGroup::StatefulRuleGroup(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StatefulRuleGroup::StatefulRuleGroup(JsonView jsonValue) { *this = jsonValue; }
 
-StatefulRuleGroup& StatefulRuleGroup::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RuleGroupName"))
-  {
+StatefulRuleGroup& StatefulRuleGroup::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RuleGroupName")) {
     m_ruleGroupName = jsonValue.GetString("RuleGroupName");
     m_ruleGroupNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceId"))
-  {
+  if (jsonValue.ValueExists("ResourceId")) {
     m_resourceId = jsonValue.GetString("ResourceId");
     m_resourceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Priority"))
-  {
+  if (jsonValue.ValueExists("Priority")) {
     m_priority = jsonValue.GetInteger("Priority");
     m_priorityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Override"))
-  {
+  if (jsonValue.ValueExists("Override")) {
     m_override = jsonValue.GetObject("Override");
     m_overrideHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StatefulRuleGroup::Jsonize() const
-{
+JsonValue StatefulRuleGroup::Jsonize() const {
   JsonValue payload;
 
-  if(m_ruleGroupNameHasBeenSet)
-  {
-   payload.WithString("RuleGroupName", m_ruleGroupName);
-
+  if (m_ruleGroupNameHasBeenSet) {
+    payload.WithString("RuleGroupName", m_ruleGroupName);
   }
 
-  if(m_resourceIdHasBeenSet)
-  {
-   payload.WithString("ResourceId", m_resourceId);
-
+  if (m_resourceIdHasBeenSet) {
+    payload.WithString("ResourceId", m_resourceId);
   }
 
-  if(m_priorityHasBeenSet)
-  {
-   payload.WithInteger("Priority", m_priority);
-
+  if (m_priorityHasBeenSet) {
+    payload.WithInteger("Priority", m_priority);
   }
 
-  if(m_overrideHasBeenSet)
-  {
-   payload.WithObject("Override", m_override.Jsonize());
-
+  if (m_overrideHasBeenSet) {
+    payload.WithObject("Override", m_override.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FMS
-} // namespace Aws
+}  // namespace Model
+}  // namespace FMS
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/outposts/model/GetSiteRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/outposts/model/GetSiteRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::Outposts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetSiteRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetSiteRequest::SerializePayload() const { return {}; }

@@ -7,26 +7,16 @@
 #include <aws/amplifyuibuilder/AmplifyUIBuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace AmplifyUIBuilder
-{
-namespace Model
-{
-  enum class FormButtonsPosition
-  {
-    NOT_SET,
-    top,
-    bottom,
-    top_and_bottom
-  };
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Model {
+enum class FormButtonsPosition { NOT_SET, top, bottom, top_and_bottom };
 
-namespace FormButtonsPositionMapper
-{
+namespace FormButtonsPositionMapper {
 AWS_AMPLIFYUIBUILDER_API FormButtonsPosition GetFormButtonsPositionForName(const Aws::String& name);
 
 AWS_AMPLIFYUIBUILDER_API Aws::String GetNameForFormButtonsPosition(FormButtonsPosition value);
-} // namespace FormButtonsPositionMapper
-} // namespace Model
-} // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace FormButtonsPositionMapper
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

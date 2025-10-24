@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/mturk-requester/MTurkRequest.h>
 
-namespace Aws
-{
-namespace MTurk
-{
-} // namespace MTurk
-} // namespace Aws
+namespace Aws {
+namespace MTurk {}  // namespace MTurk
+}  // namespace Aws

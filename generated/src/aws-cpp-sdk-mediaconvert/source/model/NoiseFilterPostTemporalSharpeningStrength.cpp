@@ -3,77 +3,61 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/NoiseFilterPostTemporalSharpeningStrength.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/mediaconvert/model/NoiseFilterPostTemporalSharpeningStrength.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+namespace NoiseFilterPostTemporalSharpeningStrengthMapper {
 
-namespace Aws
-{
-  namespace MediaConvert
-  {
-    namespace Model
-    {
-      namespace NoiseFilterPostTemporalSharpeningStrengthMapper
-      {
+static const int LOW_HASH = HashingUtils::HashString("LOW");
+static const int MEDIUM_HASH = HashingUtils::HashString("MEDIUM");
+static const int HIGH_HASH = HashingUtils::HashString("HIGH");
 
-        static const int LOW_HASH = HashingUtils::HashString("LOW");
-        static const int MEDIUM_HASH = HashingUtils::HashString("MEDIUM");
-        static const int HIGH_HASH = HashingUtils::HashString("HIGH");
+NoiseFilterPostTemporalSharpeningStrength GetNoiseFilterPostTemporalSharpeningStrengthForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == LOW_HASH) {
+    return NoiseFilterPostTemporalSharpeningStrength::LOW;
+  } else if (hashCode == MEDIUM_HASH) {
+    return NoiseFilterPostTemporalSharpeningStrength::MEDIUM;
+  } else if (hashCode == HIGH_HASH) {
+    return NoiseFilterPostTemporalSharpeningStrength::HIGH;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<NoiseFilterPostTemporalSharpeningStrength>(hashCode);
+  }
 
+  return NoiseFilterPostTemporalSharpeningStrength::NOT_SET;
+}
 
-        NoiseFilterPostTemporalSharpeningStrength GetNoiseFilterPostTemporalSharpeningStrengthForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == LOW_HASH)
-          {
-            return NoiseFilterPostTemporalSharpeningStrength::LOW;
-          }
-          else if (hashCode == MEDIUM_HASH)
-          {
-            return NoiseFilterPostTemporalSharpeningStrength::MEDIUM;
-          }
-          else if (hashCode == HIGH_HASH)
-          {
-            return NoiseFilterPostTemporalSharpeningStrength::HIGH;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<NoiseFilterPostTemporalSharpeningStrength>(hashCode);
-          }
+Aws::String GetNameForNoiseFilterPostTemporalSharpeningStrength(NoiseFilterPostTemporalSharpeningStrength enumValue) {
+  switch (enumValue) {
+    case NoiseFilterPostTemporalSharpeningStrength::NOT_SET:
+      return {};
+    case NoiseFilterPostTemporalSharpeningStrength::LOW:
+      return "LOW";
+    case NoiseFilterPostTemporalSharpeningStrength::MEDIUM:
+      return "MEDIUM";
+    case NoiseFilterPostTemporalSharpeningStrength::HIGH:
+      return "HIGH";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return NoiseFilterPostTemporalSharpeningStrength::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForNoiseFilterPostTemporalSharpeningStrength(NoiseFilterPostTemporalSharpeningStrength enumValue)
-        {
-          switch(enumValue)
-          {
-          case NoiseFilterPostTemporalSharpeningStrength::NOT_SET:
-            return {};
-          case NoiseFilterPostTemporalSharpeningStrength::LOW:
-            return "LOW";
-          case NoiseFilterPostTemporalSharpeningStrength::MEDIUM:
-            return "MEDIUM";
-          case NoiseFilterPostTemporalSharpeningStrength::HIGH:
-            return "HIGH";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace NoiseFilterPostTemporalSharpeningStrengthMapper
-    } // namespace Model
-  } // namespace MediaConvert
-} // namespace Aws
+}  // namespace NoiseFilterPostTemporalSharpeningStrengthMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

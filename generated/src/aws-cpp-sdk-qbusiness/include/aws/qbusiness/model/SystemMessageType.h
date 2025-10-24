@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qbusiness/QBusiness_EXPORTS.h>
 
-namespace Aws
-{
-namespace QBusiness
-{
-namespace Model
-{
-  enum class SystemMessageType
-  {
-    NOT_SET,
-    RESPONSE,
-    GROUNDED_RESPONSE
-  };
+namespace Aws {
+namespace QBusiness {
+namespace Model {
+enum class SystemMessageType { NOT_SET, RESPONSE, GROUNDED_RESPONSE };
 
-namespace SystemMessageTypeMapper
-{
+namespace SystemMessageTypeMapper {
 AWS_QBUSINESS_API SystemMessageType GetSystemMessageTypeForName(const Aws::String& name);
 
 AWS_QBUSINESS_API Aws::String GetNameForSystemMessageType(SystemMessageType value);
-} // namespace SystemMessageTypeMapper
-} // namespace Model
-} // namespace QBusiness
-} // namespace Aws
+}  // namespace SystemMessageTypeMapper
+}  // namespace Model
+}  // namespace QBusiness
+}  // namespace Aws

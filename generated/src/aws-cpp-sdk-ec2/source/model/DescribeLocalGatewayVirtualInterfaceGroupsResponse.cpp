@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeLocalGatewayVirtualInterfaceGroupsResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/DescribeLocalGatewayVirtualInterfaceGroupsResponse.h>
 
 #include <utility>
 
@@ -17,30 +17,26 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeLocalGatewayVirtualInterfaceGroupsResponse::DescribeLocalGatewayVirtualInterfaceGroupsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeLocalGatewayVirtualInterfaceGroupsResponse::DescribeLocalGatewayVirtualInterfaceGroupsResponse(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-DescribeLocalGatewayVirtualInterfaceGroupsResponse& DescribeLocalGatewayVirtualInterfaceGroupsResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeLocalGatewayVirtualInterfaceGroupsResponse& DescribeLocalGatewayVirtualInterfaceGroupsResponse::operator=(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeLocalGatewayVirtualInterfaceGroupsResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeLocalGatewayVirtualInterfaceGroupsResponse")) {
     resultNode = rootNode.FirstChild("DescribeLocalGatewayVirtualInterfaceGroupsResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode localGatewayVirtualInterfaceGroupsNode = resultNode.FirstChild("localGatewayVirtualInterfaceGroupSet");
-    if(!localGatewayVirtualInterfaceGroupsNode.IsNull())
-    {
+    if (!localGatewayVirtualInterfaceGroupsNode.IsNull()) {
       XmlNode localGatewayVirtualInterfaceGroupsMember = localGatewayVirtualInterfaceGroupsNode.FirstChild("item");
       m_localGatewayVirtualInterfaceGroupsHasBeenSet = !localGatewayVirtualInterfaceGroupsMember.IsNull();
-      while(!localGatewayVirtualInterfaceGroupsMember.IsNull())
-      {
+      while (!localGatewayVirtualInterfaceGroupsMember.IsNull()) {
         m_localGatewayVirtualInterfaceGroups.push_back(localGatewayVirtualInterfaceGroupsMember);
         localGatewayVirtualInterfaceGroupsMember = localGatewayVirtualInterfaceGroupsMember.NextNode("item");
       }
@@ -48,8 +44,7 @@ DescribeLocalGatewayVirtualInterfaceGroupsResponse& DescribeLocalGatewayVirtualI
       m_localGatewayVirtualInterfaceGroupsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
+    if (!nextTokenNode.IsNull()) {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
       m_nextTokenHasBeenSet = true;
     }
@@ -57,12 +52,12 @@ DescribeLocalGatewayVirtualInterfaceGroupsResponse& DescribeLocalGatewayVirtualI
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeLocalGatewayVirtualInterfaceGroupsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeLocalGatewayVirtualInterfaceGroupsResponse",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

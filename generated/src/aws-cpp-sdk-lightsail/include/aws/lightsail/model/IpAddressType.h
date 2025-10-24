@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lightsail/Lightsail_EXPORTS.h>
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
-  enum class IpAddressType
-  {
-    NOT_SET,
-    dualstack,
-    ipv4,
-    ipv6
-  };
+namespace Aws {
+namespace Lightsail {
+namespace Model {
+enum class IpAddressType { NOT_SET, dualstack, ipv4, ipv6 };
 
-namespace IpAddressTypeMapper
-{
+namespace IpAddressTypeMapper {
 AWS_LIGHTSAIL_API IpAddressType GetIpAddressTypeForName(const Aws::String& name);
 
 AWS_LIGHTSAIL_API Aws::String GetNameForIpAddressType(IpAddressType value);
-} // namespace IpAddressTypeMapper
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace IpAddressTypeMapper
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

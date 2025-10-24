@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/networkmonitor/NetworkMonitor_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/networkmonitor/NetworkMonitor_EXPORTS.h>
 
-namespace Aws
-{
-namespace NetworkMonitor
-{
-namespace Model
-{
-  enum class Protocol
-  {
-    NOT_SET,
-    TCP,
-    ICMP
-  };
+namespace Aws {
+namespace NetworkMonitor {
+namespace Model {
+enum class Protocol { NOT_SET, TCP, ICMP };
 
-namespace ProtocolMapper
-{
+namespace ProtocolMapper {
 AWS_NETWORKMONITOR_API Protocol GetProtocolForName(const Aws::String& name);
 
 AWS_NETWORKMONITOR_API Aws::String GetNameForProtocol(Protocol value);
-} // namespace ProtocolMapper
-} // namespace Model
-} // namespace NetworkMonitor
-} // namespace Aws
+}  // namespace ProtocolMapper
+}  // namespace Model
+}  // namespace NetworkMonitor
+}  // namespace Aws

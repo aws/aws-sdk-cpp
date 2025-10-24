@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
 
-namespace Aws
-{
-namespace DevOpsGuru
-{
-namespace Model
-{
-  enum class OrganizationResourceCollectionType
-  {
-    NOT_SET,
-    AWS_CLOUD_FORMATION,
-    AWS_SERVICE,
-    AWS_ACCOUNT,
-    AWS_TAGS
-  };
+namespace Aws {
+namespace DevOpsGuru {
+namespace Model {
+enum class OrganizationResourceCollectionType { NOT_SET, AWS_CLOUD_FORMATION, AWS_SERVICE, AWS_ACCOUNT, AWS_TAGS };
 
-namespace OrganizationResourceCollectionTypeMapper
-{
+namespace OrganizationResourceCollectionTypeMapper {
 AWS_DEVOPSGURU_API OrganizationResourceCollectionType GetOrganizationResourceCollectionTypeForName(const Aws::String& name);
 
 AWS_DEVOPSGURU_API Aws::String GetNameForOrganizationResourceCollectionType(OrganizationResourceCollectionType value);
-} // namespace OrganizationResourceCollectionTypeMapper
-} // namespace Model
-} // namespace DevOpsGuru
-} // namespace Aws
+}  // namespace OrganizationResourceCollectionTypeMapper
+}  // namespace Model
+}  // namespace DevOpsGuru
+}  // namespace Aws

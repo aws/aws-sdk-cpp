@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::FraudDetector;
 
-AWSError<CoreErrors> FraudDetectorErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> FraudDetectorErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = FraudDetectorErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

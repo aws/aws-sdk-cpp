@@ -11,73 +11,55 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-PostCallAnalyticsSettings::PostCallAnalyticsSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PostCallAnalyticsSettings::PostCallAnalyticsSettings(JsonView jsonValue) { *this = jsonValue; }
 
-PostCallAnalyticsSettings& PostCallAnalyticsSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("OutputLocation"))
-  {
+PostCallAnalyticsSettings& PostCallAnalyticsSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("OutputLocation")) {
     m_outputLocation = jsonValue.GetString("OutputLocation");
     m_outputLocationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DataAccessRoleArn"))
-  {
+  if (jsonValue.ValueExists("DataAccessRoleArn")) {
     m_dataAccessRoleArn = jsonValue.GetString("DataAccessRoleArn");
     m_dataAccessRoleArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ContentRedactionOutput"))
-  {
-    m_contentRedactionOutput = ContentRedactionOutputMapper::GetContentRedactionOutputForName(jsonValue.GetString("ContentRedactionOutput"));
+  if (jsonValue.ValueExists("ContentRedactionOutput")) {
+    m_contentRedactionOutput =
+        ContentRedactionOutputMapper::GetContentRedactionOutputForName(jsonValue.GetString("ContentRedactionOutput"));
     m_contentRedactionOutputHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OutputEncryptionKMSKeyId"))
-  {
+  if (jsonValue.ValueExists("OutputEncryptionKMSKeyId")) {
     m_outputEncryptionKMSKeyId = jsonValue.GetString("OutputEncryptionKMSKeyId");
     m_outputEncryptionKMSKeyIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PostCallAnalyticsSettings::Jsonize() const
-{
+JsonValue PostCallAnalyticsSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_outputLocationHasBeenSet)
-  {
-   payload.WithString("OutputLocation", m_outputLocation);
-
+  if (m_outputLocationHasBeenSet) {
+    payload.WithString("OutputLocation", m_outputLocation);
   }
 
-  if(m_dataAccessRoleArnHasBeenSet)
-  {
-   payload.WithString("DataAccessRoleArn", m_dataAccessRoleArn);
-
+  if (m_dataAccessRoleArnHasBeenSet) {
+    payload.WithString("DataAccessRoleArn", m_dataAccessRoleArn);
   }
 
-  if(m_contentRedactionOutputHasBeenSet)
-  {
-   payload.WithString("ContentRedactionOutput", ContentRedactionOutputMapper::GetNameForContentRedactionOutput(m_contentRedactionOutput));
+  if (m_contentRedactionOutputHasBeenSet) {
+    payload.WithString("ContentRedactionOutput", ContentRedactionOutputMapper::GetNameForContentRedactionOutput(m_contentRedactionOutput));
   }
 
-  if(m_outputEncryptionKMSKeyIdHasBeenSet)
-  {
-   payload.WithString("OutputEncryptionKMSKeyId", m_outputEncryptionKMSKeyId);
-
+  if (m_outputEncryptionKMSKeyIdHasBeenSet) {
+    payload.WithString("OutputEncryptionKMSKeyId", m_outputEncryptionKMSKeyId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

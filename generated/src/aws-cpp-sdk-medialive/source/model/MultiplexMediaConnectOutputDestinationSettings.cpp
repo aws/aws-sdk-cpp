@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/MultiplexMediaConnectOutputDestinationSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/MultiplexMediaConnectOutputDestinationSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-MultiplexMediaConnectOutputDestinationSettings::MultiplexMediaConnectOutputDestinationSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MultiplexMediaConnectOutputDestinationSettings::MultiplexMediaConnectOutputDestinationSettings(JsonView jsonValue) { *this = jsonValue; }
 
-MultiplexMediaConnectOutputDestinationSettings& MultiplexMediaConnectOutputDestinationSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("entitlementArn"))
-  {
+MultiplexMediaConnectOutputDestinationSettings& MultiplexMediaConnectOutputDestinationSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("entitlementArn")) {
     m_entitlementArn = jsonValue.GetString("entitlementArn");
     m_entitlementArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MultiplexMediaConnectOutputDestinationSettings::Jsonize() const
-{
+JsonValue MultiplexMediaConnectOutputDestinationSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_entitlementArnHasBeenSet)
-  {
-   payload.WithString("entitlementArn", m_entitlementArn);
-
+  if (m_entitlementArnHasBeenSet) {
+    payload.WithString("entitlementArn", m_entitlementArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

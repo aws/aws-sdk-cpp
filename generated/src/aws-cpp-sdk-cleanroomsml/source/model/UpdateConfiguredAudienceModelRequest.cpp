@@ -12,54 +12,38 @@ using namespace Aws::CleanRoomsML::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateConfiguredAudienceModelRequest::SerializePayload() const
-{
+Aws::String UpdateConfiguredAudienceModelRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_outputConfigHasBeenSet)
-  {
-   payload.WithObject("outputConfig", m_outputConfig.Jsonize());
-
+  if (m_outputConfigHasBeenSet) {
+    payload.WithObject("outputConfig", m_outputConfig.Jsonize());
   }
 
-  if(m_audienceModelArnHasBeenSet)
-  {
-   payload.WithString("audienceModelArn", m_audienceModelArn);
-
+  if (m_audienceModelArnHasBeenSet) {
+    payload.WithString("audienceModelArn", m_audienceModelArn);
   }
 
-  if(m_sharedAudienceMetricsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> sharedAudienceMetricsJsonList(m_sharedAudienceMetrics.size());
-   for(unsigned sharedAudienceMetricsIndex = 0; sharedAudienceMetricsIndex < sharedAudienceMetricsJsonList.GetLength(); ++sharedAudienceMetricsIndex)
-   {
-     sharedAudienceMetricsJsonList[sharedAudienceMetricsIndex].AsString(SharedAudienceMetricsMapper::GetNameForSharedAudienceMetrics(m_sharedAudienceMetrics[sharedAudienceMetricsIndex]));
-   }
-   payload.WithArray("sharedAudienceMetrics", std::move(sharedAudienceMetricsJsonList));
-
+  if (m_sharedAudienceMetricsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> sharedAudienceMetricsJsonList(m_sharedAudienceMetrics.size());
+    for (unsigned sharedAudienceMetricsIndex = 0; sharedAudienceMetricsIndex < sharedAudienceMetricsJsonList.GetLength();
+         ++sharedAudienceMetricsIndex) {
+      sharedAudienceMetricsJsonList[sharedAudienceMetricsIndex].AsString(
+          SharedAudienceMetricsMapper::GetNameForSharedAudienceMetrics(m_sharedAudienceMetrics[sharedAudienceMetricsIndex]));
+    }
+    payload.WithArray("sharedAudienceMetrics", std::move(sharedAudienceMetricsJsonList));
   }
 
-  if(m_minMatchingSeedSizeHasBeenSet)
-  {
-   payload.WithInteger("minMatchingSeedSize", m_minMatchingSeedSize);
-
+  if (m_minMatchingSeedSizeHasBeenSet) {
+    payload.WithInteger("minMatchingSeedSize", m_minMatchingSeedSize);
   }
 
-  if(m_audienceSizeConfigHasBeenSet)
-  {
-   payload.WithObject("audienceSizeConfig", m_audienceSizeConfig.Jsonize());
-
+  if (m_audienceSizeConfigHasBeenSet) {
+    payload.WithObject("audienceSizeConfig", m_audienceSizeConfig.Jsonize());
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

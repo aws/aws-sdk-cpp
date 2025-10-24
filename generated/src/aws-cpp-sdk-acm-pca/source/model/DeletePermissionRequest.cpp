@@ -12,39 +12,26 @@ using namespace Aws::ACMPCA::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeletePermissionRequest::SerializePayload() const
-{
+Aws::String DeletePermissionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_certificateAuthorityArnHasBeenSet)
-  {
-   payload.WithString("CertificateAuthorityArn", m_certificateAuthorityArn);
-
+  if (m_certificateAuthorityArnHasBeenSet) {
+    payload.WithString("CertificateAuthorityArn", m_certificateAuthorityArn);
   }
 
-  if(m_principalHasBeenSet)
-  {
-   payload.WithString("Principal", m_principal);
-
+  if (m_principalHasBeenSet) {
+    payload.WithString("Principal", m_principal);
   }
 
-  if(m_sourceAccountHasBeenSet)
-  {
-   payload.WithString("SourceAccount", m_sourceAccount);
-
+  if (m_sourceAccountHasBeenSet) {
+    payload.WithString("SourceAccount", m_sourceAccount);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeletePermissionRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeletePermissionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ACMPrivateCA.DeletePermission"));
   return headers;
-
 }
-
-
-
-

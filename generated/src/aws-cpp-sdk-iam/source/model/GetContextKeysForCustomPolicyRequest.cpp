@@ -3,30 +3,23 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/GetContextKeysForCustomPolicyRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/GetContextKeysForCustomPolicyRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String GetContextKeysForCustomPolicyRequest::SerializePayload() const
-{
+Aws::String GetContextKeysForCustomPolicyRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetContextKeysForCustomPolicy&";
-  if(m_policyInputListHasBeenSet)
-  {
-    if (m_policyInputList.empty())
-    {
+  if (m_policyInputListHasBeenSet) {
+    if (m_policyInputList.empty()) {
       ss << "PolicyInputList=&";
-    }
-    else
-    {
+    } else {
       unsigned policyInputListCount = 1;
-      for(auto& item : m_policyInputList)
-      {
-        ss << "PolicyInputList.member." << policyInputListCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_policyInputList) {
+        ss << "PolicyInputList.member." << policyInputListCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         policyInputListCount++;
       }
     }
@@ -36,8 +29,4 @@ Aws::String GetContextKeysForCustomPolicyRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetContextKeysForCustomPolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetContextKeysForCustomPolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -4,69 +4,55 @@
  */
 
 #include <aws/chime-sdk-messaging/model/ChannelMode.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace ChimeSDKMessaging {
+namespace Model {
+namespace ChannelModeMapper {
 
-namespace Aws
-{
-  namespace ChimeSDKMessaging
-  {
-    namespace Model
-    {
-      namespace ChannelModeMapper
-      {
+static const int UNRESTRICTED_HASH = HashingUtils::HashString("UNRESTRICTED");
+static const int RESTRICTED_HASH = HashingUtils::HashString("RESTRICTED");
 
-        static const int UNRESTRICTED_HASH = HashingUtils::HashString("UNRESTRICTED");
-        static const int RESTRICTED_HASH = HashingUtils::HashString("RESTRICTED");
+ChannelMode GetChannelModeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == UNRESTRICTED_HASH) {
+    return ChannelMode::UNRESTRICTED;
+  } else if (hashCode == RESTRICTED_HASH) {
+    return ChannelMode::RESTRICTED;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<ChannelMode>(hashCode);
+  }
 
+  return ChannelMode::NOT_SET;
+}
 
-        ChannelMode GetChannelModeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == UNRESTRICTED_HASH)
-          {
-            return ChannelMode::UNRESTRICTED;
-          }
-          else if (hashCode == RESTRICTED_HASH)
-          {
-            return ChannelMode::RESTRICTED;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ChannelMode>(hashCode);
-          }
+Aws::String GetNameForChannelMode(ChannelMode enumValue) {
+  switch (enumValue) {
+    case ChannelMode::NOT_SET:
+      return {};
+    case ChannelMode::UNRESTRICTED:
+      return "UNRESTRICTED";
+    case ChannelMode::RESTRICTED:
+      return "RESTRICTED";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return ChannelMode::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForChannelMode(ChannelMode enumValue)
-        {
-          switch(enumValue)
-          {
-          case ChannelMode::NOT_SET:
-            return {};
-          case ChannelMode::UNRESTRICTED:
-            return "UNRESTRICTED";
-          case ChannelMode::RESTRICTED:
-            return "RESTRICTED";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace ChannelModeMapper
-    } // namespace Model
-  } // namespace ChimeSDKMessaging
-} // namespace Aws
+}  // namespace ChannelModeMapper
+}  // namespace Model
+}  // namespace ChimeSDKMessaging
+}  // namespace Aws

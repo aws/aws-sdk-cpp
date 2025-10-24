@@ -5,12 +5,8 @@
 
 #include <aws/globalaccelerator/GlobalAcceleratorEndpointProvider.h>
 
-namespace Aws
-{
-namespace GlobalAccelerator
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace GlobalAccelerator
-} // namespace Aws
+namespace Aws {
+namespace GlobalAccelerator {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace GlobalAccelerator
+}  // namespace Aws

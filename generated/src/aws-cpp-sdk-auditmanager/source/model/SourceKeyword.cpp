@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AuditManager
-{
-namespace Model
-{
+namespace Aws {
+namespace AuditManager {
+namespace Model {
 
-SourceKeyword::SourceKeyword(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SourceKeyword::SourceKeyword(JsonView jsonValue) { *this = jsonValue; }
 
-SourceKeyword& SourceKeyword::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("keywordInputType"))
-  {
+SourceKeyword& SourceKeyword::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("keywordInputType")) {
     m_keywordInputType = KeywordInputTypeMapper::GetKeywordInputTypeForName(jsonValue.GetString("keywordInputType"));
     m_keywordInputTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("keywordValue"))
-  {
+  if (jsonValue.ValueExists("keywordValue")) {
     m_keywordValue = jsonValue.GetString("keywordValue");
     m_keywordValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SourceKeyword::Jsonize() const
-{
+JsonValue SourceKeyword::Jsonize() const {
   JsonValue payload;
 
-  if(m_keywordInputTypeHasBeenSet)
-  {
-   payload.WithString("keywordInputType", KeywordInputTypeMapper::GetNameForKeywordInputType(m_keywordInputType));
+  if (m_keywordInputTypeHasBeenSet) {
+    payload.WithString("keywordInputType", KeywordInputTypeMapper::GetNameForKeywordInputType(m_keywordInputType));
   }
 
-  if(m_keywordValueHasBeenSet)
-  {
-   payload.WithString("keywordValue", m_keywordValue);
-
+  if (m_keywordValueHasBeenSet) {
+    payload.WithString("keywordValue", m_keywordValue);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AuditManager
-} // namespace Aws
+}  // namespace Model
+}  // namespace AuditManager
+}  // namespace Aws

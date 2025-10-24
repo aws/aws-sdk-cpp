@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticbeanstalk/model/RequestEnvironmentInfoRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticbeanstalk/model/RequestEnvironmentInfoRequest.h>
 
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-Aws::String RequestEnvironmentInfoRequest::SerializePayload() const
-{
+Aws::String RequestEnvironmentInfoRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=RequestEnvironmentInfo&";
-  if(m_environmentIdHasBeenSet)
-  {
+  if (m_environmentIdHasBeenSet) {
     ss << "EnvironmentId=" << StringUtils::URLEncode(m_environmentId.c_str()) << "&";
   }
 
-  if(m_environmentNameHasBeenSet)
-  {
+  if (m_environmentNameHasBeenSet) {
     ss << "EnvironmentName=" << StringUtils::URLEncode(m_environmentName.c_str()) << "&";
   }
 
-  if(m_infoTypeHasBeenSet)
-  {
+  if (m_infoTypeHasBeenSet) {
     ss << "InfoType=" << StringUtils::URLEncode(EnvironmentInfoTypeMapper::GetNameForEnvironmentInfoType(m_infoType)) << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String RequestEnvironmentInfoRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  RequestEnvironmentInfoRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void RequestEnvironmentInfoRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

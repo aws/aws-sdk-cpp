@@ -5,12 +5,8 @@
 
 #include <aws/autoscaling-plans/AutoScalingPlansEndpointProvider.h>
 
-namespace Aws
-{
-namespace AutoScalingPlans
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace AutoScalingPlans
-} // namespace Aws
+namespace Aws {
+namespace AutoScalingPlans {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace AutoScalingPlans
+}  // namespace Aws

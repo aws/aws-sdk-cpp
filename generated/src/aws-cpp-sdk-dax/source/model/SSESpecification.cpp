@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dax/model/SSESpecification.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dax/model/SSESpecification.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DAX
-{
-namespace Model
-{
+namespace Aws {
+namespace DAX {
+namespace Model {
 
-SSESpecification::SSESpecification(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SSESpecification::SSESpecification(JsonView jsonValue) { *this = jsonValue; }
 
-SSESpecification& SSESpecification::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Enabled"))
-  {
+SSESpecification& SSESpecification::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Enabled")) {
     m_enabled = jsonValue.GetBool("Enabled");
     m_enabledHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SSESpecification::Jsonize() const
-{
+JsonValue SSESpecification::Jsonize() const {
   JsonValue payload;
 
-  if(m_enabledHasBeenSet)
-  {
-   payload.WithBool("Enabled", m_enabled);
-
+  if (m_enabledHasBeenSet) {
+    payload.WithBool("Enabled", m_enabled);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DAX
-} // namespace Aws
+}  // namespace Model
+}  // namespace DAX
+}  // namespace Aws

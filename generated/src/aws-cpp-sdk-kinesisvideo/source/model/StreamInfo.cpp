@@ -3,135 +3,102 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kinesisvideo/model/StreamInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kinesisvideo/model/StreamInfo.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace KinesisVideo
-{
-namespace Model
-{
+namespace Aws {
+namespace KinesisVideo {
+namespace Model {
 
-StreamInfo::StreamInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StreamInfo::StreamInfo(JsonView jsonValue) { *this = jsonValue; }
 
-StreamInfo& StreamInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DeviceName"))
-  {
+StreamInfo& StreamInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DeviceName")) {
     m_deviceName = jsonValue.GetString("DeviceName");
     m_deviceNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StreamName"))
-  {
+  if (jsonValue.ValueExists("StreamName")) {
     m_streamName = jsonValue.GetString("StreamName");
     m_streamNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StreamARN"))
-  {
+  if (jsonValue.ValueExists("StreamARN")) {
     m_streamARN = jsonValue.GetString("StreamARN");
     m_streamARNHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MediaType"))
-  {
+  if (jsonValue.ValueExists("MediaType")) {
     m_mediaType = jsonValue.GetString("MediaType");
     m_mediaTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("KmsKeyId"))
-  {
+  if (jsonValue.ValueExists("KmsKeyId")) {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
     m_kmsKeyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Version"))
-  {
+  if (jsonValue.ValueExists("Version")) {
     m_version = jsonValue.GetString("Version");
     m_versionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DataRetentionInHours"))
-  {
+  if (jsonValue.ValueExists("DataRetentionInHours")) {
     m_dataRetentionInHours = jsonValue.GetInteger("DataRetentionInHours");
     m_dataRetentionInHoursHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StreamInfo::Jsonize() const
-{
+JsonValue StreamInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_deviceNameHasBeenSet)
-  {
-   payload.WithString("DeviceName", m_deviceName);
-
+  if (m_deviceNameHasBeenSet) {
+    payload.WithString("DeviceName", m_deviceName);
   }
 
-  if(m_streamNameHasBeenSet)
-  {
-   payload.WithString("StreamName", m_streamName);
-
+  if (m_streamNameHasBeenSet) {
+    payload.WithString("StreamName", m_streamName);
   }
 
-  if(m_streamARNHasBeenSet)
-  {
-   payload.WithString("StreamARN", m_streamARN);
-
+  if (m_streamARNHasBeenSet) {
+    payload.WithString("StreamARN", m_streamARN);
   }
 
-  if(m_mediaTypeHasBeenSet)
-  {
-   payload.WithString("MediaType", m_mediaType);
-
+  if (m_mediaTypeHasBeenSet) {
+    payload.WithString("MediaType", m_mediaType);
   }
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
-   payload.WithString("KmsKeyId", m_kmsKeyId);
-
+  if (m_kmsKeyIdHasBeenSet) {
+    payload.WithString("KmsKeyId", m_kmsKeyId);
   }
 
-  if(m_versionHasBeenSet)
-  {
-   payload.WithString("Version", m_version);
-
+  if (m_versionHasBeenSet) {
+    payload.WithString("Version", m_version);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", StatusMapper::GetNameForStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", StatusMapper::GetNameForStatus(m_status));
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_dataRetentionInHoursHasBeenSet)
-  {
-   payload.WithInteger("DataRetentionInHours", m_dataRetentionInHours);
-
+  if (m_dataRetentionInHoursHasBeenSet) {
+    payload.WithInteger("DataRetentionInHours", m_dataRetentionInHours);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace KinesisVideo
-} // namespace Aws
+}  // namespace Model
+}  // namespace KinesisVideo
+}  // namespace Aws

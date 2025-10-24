@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lakeformation/model/GetQueryStateRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lakeformation/model/GetQueryStateRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::LakeFormation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetQueryStateRequest::SerializePayload() const
-{
+Aws::String GetQueryStateRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_queryIdHasBeenSet)
-  {
-   payload.WithString("QueryId", m_queryId);
-
+  if (m_queryIdHasBeenSet) {
+    payload.WithString("QueryId", m_queryId);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

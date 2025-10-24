@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudDirectory
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudDirectory {
+namespace Model {
 
-BatchAttachPolicy::BatchAttachPolicy(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchAttachPolicy::BatchAttachPolicy(JsonView jsonValue) { *this = jsonValue; }
 
-BatchAttachPolicy& BatchAttachPolicy::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PolicyReference"))
-  {
+BatchAttachPolicy& BatchAttachPolicy::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PolicyReference")) {
     m_policyReference = jsonValue.GetObject("PolicyReference");
     m_policyReferenceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ObjectReference"))
-  {
+  if (jsonValue.ValueExists("ObjectReference")) {
     m_objectReference = jsonValue.GetObject("ObjectReference");
     m_objectReferenceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BatchAttachPolicy::Jsonize() const
-{
+JsonValue BatchAttachPolicy::Jsonize() const {
   JsonValue payload;
 
-  if(m_policyReferenceHasBeenSet)
-  {
-   payload.WithObject("PolicyReference", m_policyReference.Jsonize());
-
+  if (m_policyReferenceHasBeenSet) {
+    payload.WithObject("PolicyReference", m_policyReference.Jsonize());
   }
 
-  if(m_objectReferenceHasBeenSet)
-  {
-   payload.WithObject("ObjectReference", m_objectReference.Jsonize());
-
+  if (m_objectReferenceHasBeenSet) {
+    payload.WithObject("ObjectReference", m_objectReference.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudDirectory
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudDirectory
+}  // namespace Aws

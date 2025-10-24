@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/InputChannelLevel.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/InputChannelLevel.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-InputChannelLevel::InputChannelLevel(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InputChannelLevel::InputChannelLevel(JsonView jsonValue) { *this = jsonValue; }
 
-InputChannelLevel& InputChannelLevel::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("gain"))
-  {
+InputChannelLevel& InputChannelLevel::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("gain")) {
     m_gain = jsonValue.GetInteger("gain");
     m_gainHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("inputChannel"))
-  {
+  if (jsonValue.ValueExists("inputChannel")) {
     m_inputChannel = jsonValue.GetInteger("inputChannel");
     m_inputChannelHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InputChannelLevel::Jsonize() const
-{
+JsonValue InputChannelLevel::Jsonize() const {
   JsonValue payload;
 
-  if(m_gainHasBeenSet)
-  {
-   payload.WithInteger("gain", m_gain);
-
+  if (m_gainHasBeenSet) {
+    payload.WithInteger("gain", m_gain);
   }
 
-  if(m_inputChannelHasBeenSet)
-  {
-   payload.WithInteger("inputChannel", m_inputChannel);
-
+  if (m_inputChannelHasBeenSet) {
+    payload.WithInteger("inputChannel", m_inputChannel);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

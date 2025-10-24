@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dynamodb/DynamoDB_EXPORTS.h>
 
-namespace Aws
-{
-namespace DynamoDB
-{
-namespace Model
-{
-  enum class ReturnItemCollectionMetrics
-  {
-    NOT_SET,
-    SIZE,
-    NONE
-  };
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
+enum class ReturnItemCollectionMetrics { NOT_SET, SIZE, NONE };
 
-namespace ReturnItemCollectionMetricsMapper
-{
+namespace ReturnItemCollectionMetricsMapper {
 AWS_DYNAMODB_API ReturnItemCollectionMetrics GetReturnItemCollectionMetricsForName(const Aws::String& name);
 
 AWS_DYNAMODB_API Aws::String GetNameForReturnItemCollectionMetrics(ReturnItemCollectionMetrics value);
-} // namespace ReturnItemCollectionMetricsMapper
-} // namespace Model
-} // namespace DynamoDB
-} // namespace Aws
+}  // namespace ReturnItemCollectionMetricsMapper
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws

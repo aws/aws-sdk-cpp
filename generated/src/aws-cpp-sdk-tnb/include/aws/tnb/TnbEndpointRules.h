@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/tnb/Tnb_EXPORTS.h>
 
-namespace Aws
-{
-namespace tnb
-{
-class TnbEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace tnb {
+class TnbEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace tnb
-} // namespace Aws
+}  // namespace tnb
+}  // namespace Aws

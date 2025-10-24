@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class H264Syntax
-  {
-    NOT_SET,
-    DEFAULT,
-    RP2027
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class H264Syntax { NOT_SET, DEFAULT, RP2027 };
 
-namespace H264SyntaxMapper
-{
+namespace H264SyntaxMapper {
 AWS_MEDIACONVERT_API H264Syntax GetH264SyntaxForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForH264Syntax(H264Syntax value);
-} // namespace H264SyntaxMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace H264SyntaxMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BCMPricingCalculator
-{
-namespace Model
-{
+namespace Aws {
+namespace BCMPricingCalculator {
+namespace Model {
 
-CostAmount::CostAmount(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CostAmount::CostAmount(JsonView jsonValue) { *this = jsonValue; }
 
-CostAmount& CostAmount::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("amount"))
-  {
+CostAmount& CostAmount::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("amount")) {
     m_amount = jsonValue.GetDouble("amount");
     m_amountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("currency"))
-  {
+  if (jsonValue.ValueExists("currency")) {
     m_currency = CurrencyCodeMapper::GetCurrencyCodeForName(jsonValue.GetString("currency"));
     m_currencyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CostAmount::Jsonize() const
-{
+JsonValue CostAmount::Jsonize() const {
   JsonValue payload;
 
-  if(m_amountHasBeenSet)
-  {
-   payload.WithDouble("amount", m_amount);
-
+  if (m_amountHasBeenSet) {
+    payload.WithDouble("amount", m_amount);
   }
 
-  if(m_currencyHasBeenSet)
-  {
-   payload.WithString("currency", CurrencyCodeMapper::GetNameForCurrencyCode(m_currency));
+  if (m_currencyHasBeenSet) {
+    payload.WithString("currency", CurrencyCodeMapper::GetNameForCurrencyCode(m_currency));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BCMPricingCalculator
-} // namespace Aws
+}  // namespace Model
+}  // namespace BCMPricingCalculator
+}  // namespace Aws

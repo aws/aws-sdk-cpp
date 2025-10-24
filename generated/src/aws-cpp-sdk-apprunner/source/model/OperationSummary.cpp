@@ -11,102 +11,78 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppRunner
-{
-namespace Model
-{
+namespace Aws {
+namespace AppRunner {
+namespace Model {
 
-OperationSummary::OperationSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OperationSummary::OperationSummary(JsonView jsonValue) { *this = jsonValue; }
 
-OperationSummary& OperationSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Id"))
-  {
+OperationSummary& OperationSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = OperationTypeMapper::GetOperationTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = OperationStatusMapper::GetOperationStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TargetArn"))
-  {
+  if (jsonValue.ValueExists("TargetArn")) {
     m_targetArn = jsonValue.GetString("TargetArn");
     m_targetArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StartedAt"))
-  {
+  if (jsonValue.ValueExists("StartedAt")) {
     m_startedAt = jsonValue.GetDouble("StartedAt");
     m_startedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EndedAt"))
-  {
+  if (jsonValue.ValueExists("EndedAt")) {
     m_endedAt = jsonValue.GetDouble("EndedAt");
     m_endedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UpdatedAt"))
-  {
+  if (jsonValue.ValueExists("UpdatedAt")) {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
     m_updatedAtHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OperationSummary::Jsonize() const
-{
+JsonValue OperationSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", OperationTypeMapper::GetNameForOperationType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", OperationTypeMapper::GetNameForOperationType(m_type));
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", OperationStatusMapper::GetNameForOperationStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", OperationStatusMapper::GetNameForOperationStatus(m_status));
   }
 
-  if(m_targetArnHasBeenSet)
-  {
-   payload.WithString("TargetArn", m_targetArn);
-
+  if (m_targetArnHasBeenSet) {
+    payload.WithString("TargetArn", m_targetArn);
   }
 
-  if(m_startedAtHasBeenSet)
-  {
-   payload.WithDouble("StartedAt", m_startedAt.SecondsWithMSPrecision());
+  if (m_startedAtHasBeenSet) {
+    payload.WithDouble("StartedAt", m_startedAt.SecondsWithMSPrecision());
   }
 
-  if(m_endedAtHasBeenSet)
-  {
-   payload.WithDouble("EndedAt", m_endedAt.SecondsWithMSPrecision());
+  if (m_endedAtHasBeenSet) {
+    payload.WithDouble("EndedAt", m_endedAt.SecondsWithMSPrecision());
   }
 
-  if(m_updatedAtHasBeenSet)
-  {
-   payload.WithDouble("UpdatedAt", m_updatedAt.SecondsWithMSPrecision());
+  if (m_updatedAtHasBeenSet) {
+    payload.WithDouble("UpdatedAt", m_updatedAt.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppRunner
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppRunner
+}  // namespace Aws

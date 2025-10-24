@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/qconnect/model/StartContentUploadRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/qconnect/model/StartContentUploadRequest.h>
 
 #include <utility>
 
@@ -12,25 +12,16 @@ using namespace Aws::QConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartContentUploadRequest::SerializePayload() const
-{
+Aws::String StartContentUploadRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_contentTypeHasBeenSet)
-  {
-   payload.WithString("contentType", m_contentType);
-
+  if (m_contentTypeHasBeenSet) {
+    payload.WithString("contentType", m_contentType);
   }
 
-  if(m_presignedUrlTimeToLiveHasBeenSet)
-  {
-   payload.WithInteger("presignedUrlTimeToLive", m_presignedUrlTimeToLive);
-
+  if (m_presignedUrlTimeToLiveHasBeenSet) {
+    payload.WithInteger("presignedUrlTimeToLive", m_presignedUrlTimeToLive);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

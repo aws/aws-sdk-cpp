@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/customer-profiles/model/AppflowIntegration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/customer-profiles/model/AppflowIntegration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CustomerProfiles
-{
-namespace Model
-{
+namespace Aws {
+namespace CustomerProfiles {
+namespace Model {
 
-AppflowIntegration::AppflowIntegration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AppflowIntegration::AppflowIntegration(JsonView jsonValue) { *this = jsonValue; }
 
-AppflowIntegration& AppflowIntegration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FlowDefinition"))
-  {
+AppflowIntegration& AppflowIntegration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FlowDefinition")) {
     m_flowDefinition = jsonValue.GetObject("FlowDefinition");
     m_flowDefinitionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Batches"))
-  {
+  if (jsonValue.ValueExists("Batches")) {
     Aws::Utils::Array<JsonView> batchesJsonList = jsonValue.GetArray("Batches");
-    for(unsigned batchesIndex = 0; batchesIndex < batchesJsonList.GetLength(); ++batchesIndex)
-    {
+    for (unsigned batchesIndex = 0; batchesIndex < batchesJsonList.GetLength(); ++batchesIndex) {
       m_batches.push_back(batchesJsonList[batchesIndex].AsObject());
     }
     m_batchesHasBeenSet = true;
@@ -42,30 +32,24 @@ AppflowIntegration& AppflowIntegration::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue AppflowIntegration::Jsonize() const
-{
+JsonValue AppflowIntegration::Jsonize() const {
   JsonValue payload;
 
-  if(m_flowDefinitionHasBeenSet)
-  {
-   payload.WithObject("FlowDefinition", m_flowDefinition.Jsonize());
-
+  if (m_flowDefinitionHasBeenSet) {
+    payload.WithObject("FlowDefinition", m_flowDefinition.Jsonize());
   }
 
-  if(m_batchesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> batchesJsonList(m_batches.size());
-   for(unsigned batchesIndex = 0; batchesIndex < batchesJsonList.GetLength(); ++batchesIndex)
-   {
-     batchesJsonList[batchesIndex].AsObject(m_batches[batchesIndex].Jsonize());
-   }
-   payload.WithArray("Batches", std::move(batchesJsonList));
-
+  if (m_batchesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> batchesJsonList(m_batches.size());
+    for (unsigned batchesIndex = 0; batchesIndex < batchesJsonList.GetLength(); ++batchesIndex) {
+      batchesJsonList[batchesIndex].AsObject(m_batches[batchesIndex].Jsonize());
+    }
+    payload.WithArray("Batches", std::move(batchesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CustomerProfiles
-} // namespace Aws
+}  // namespace Model
+}  // namespace CustomerProfiles
+}  // namespace Aws

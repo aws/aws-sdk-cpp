@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/GetPasswordDataRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/GetPasswordDataRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String GetPasswordDataRequest::SerializePayload() const
-{
+Aws::String GetPasswordDataRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetPasswordData&";
-  if(m_instanceIdHasBeenSet)
-  {
+  if (m_instanceIdHasBeenSet) {
     ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String GetPasswordDataRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetPasswordDataRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetPasswordDataRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

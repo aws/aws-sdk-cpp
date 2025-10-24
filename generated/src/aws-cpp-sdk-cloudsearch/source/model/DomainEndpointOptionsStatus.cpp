@@ -4,42 +4,32 @@
  */
 
 #include <aws/cloudsearch/model/DomainEndpointOptionsStatus.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudSearch
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudSearch {
+namespace Model {
 
-DomainEndpointOptionsStatus::DomainEndpointOptionsStatus(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+DomainEndpointOptionsStatus::DomainEndpointOptionsStatus(const XmlNode& xmlNode) { *this = xmlNode; }
 
-DomainEndpointOptionsStatus& DomainEndpointOptionsStatus::operator =(const XmlNode& xmlNode)
-{
+DomainEndpointOptionsStatus& DomainEndpointOptionsStatus::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode optionsNode = resultNode.FirstChild("Options");
-    if(!optionsNode.IsNull())
-    {
+    if (!optionsNode.IsNull()) {
       m_options = optionsNode;
       m_optionsHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    if(!statusNode.IsNull())
-    {
+    if (!statusNode.IsNull()) {
       m_status = statusNode;
       m_statusHasBeenSet = true;
     }
@@ -48,40 +38,34 @@ DomainEndpointOptionsStatus& DomainEndpointOptionsStatus::operator =(const XmlNo
   return *this;
 }
 
-void DomainEndpointOptionsStatus::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_optionsHasBeenSet)
-  {
-      Aws::StringStream optionsLocationAndMemberSs;
-      optionsLocationAndMemberSs << location << index << locationValue << ".Options";
-      m_options.OutputToStream(oStream, optionsLocationAndMemberSs.str().c_str());
+void DomainEndpointOptionsStatus::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                 const char* locationValue) const {
+  if (m_optionsHasBeenSet) {
+    Aws::StringStream optionsLocationAndMemberSs;
+    optionsLocationAndMemberSs << location << index << locationValue << ".Options";
+    m_options.OutputToStream(oStream, optionsLocationAndMemberSs.str().c_str());
   }
 
-  if(m_statusHasBeenSet)
-  {
-      Aws::StringStream statusLocationAndMemberSs;
-      statusLocationAndMemberSs << location << index << locationValue << ".Status";
-      m_status.OutputToStream(oStream, statusLocationAndMemberSs.str().c_str());
-  }
-
-}
-
-void DomainEndpointOptionsStatus::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_optionsHasBeenSet)
-  {
-      Aws::String optionsLocationAndMember(location);
-      optionsLocationAndMember += ".Options";
-      m_options.OutputToStream(oStream, optionsLocationAndMember.c_str());
-  }
-  if(m_statusHasBeenSet)
-  {
-      Aws::String statusLocationAndMember(location);
-      statusLocationAndMember += ".Status";
-      m_status.OutputToStream(oStream, statusLocationAndMember.c_str());
+  if (m_statusHasBeenSet) {
+    Aws::StringStream statusLocationAndMemberSs;
+    statusLocationAndMemberSs << location << index << locationValue << ".Status";
+    m_status.OutputToStream(oStream, statusLocationAndMemberSs.str().c_str());
   }
 }
 
-} // namespace Model
-} // namespace CloudSearch
-} // namespace Aws
+void DomainEndpointOptionsStatus::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_optionsHasBeenSet) {
+    Aws::String optionsLocationAndMember(location);
+    optionsLocationAndMember += ".Options";
+    m_options.OutputToStream(oStream, optionsLocationAndMember.c_str());
+  }
+  if (m_statusHasBeenSet) {
+    Aws::String statusLocationAndMember(location);
+    statusLocationAndMember += ".Status";
+    m_status.OutputToStream(oStream, statusLocationAndMember.c_str());
+  }
+}
+
+}  // namespace Model
+}  // namespace CloudSearch
+}  // namespace Aws

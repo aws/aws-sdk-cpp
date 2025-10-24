@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-VirtualGatewayListener::VirtualGatewayListener(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VirtualGatewayListener::VirtualGatewayListener(JsonView jsonValue) { *this = jsonValue; }
 
-VirtualGatewayListener& VirtualGatewayListener::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("connectionPool"))
-  {
+VirtualGatewayListener& VirtualGatewayListener::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("connectionPool")) {
     m_connectionPool = jsonValue.GetObject("connectionPool");
     m_connectionPoolHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("healthCheck"))
-  {
+  if (jsonValue.ValueExists("healthCheck")) {
     m_healthCheck = jsonValue.GetObject("healthCheck");
     m_healthCheckHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("portMapping"))
-  {
+  if (jsonValue.ValueExists("portMapping")) {
     m_portMapping = jsonValue.GetObject("portMapping");
     m_portMappingHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tls"))
-  {
+  if (jsonValue.ValueExists("tls")) {
     m_tls = jsonValue.GetObject("tls");
     m_tlsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VirtualGatewayListener::Jsonize() const
-{
+JsonValue VirtualGatewayListener::Jsonize() const {
   JsonValue payload;
 
-  if(m_connectionPoolHasBeenSet)
-  {
-   payload.WithObject("connectionPool", m_connectionPool.Jsonize());
-
+  if (m_connectionPoolHasBeenSet) {
+    payload.WithObject("connectionPool", m_connectionPool.Jsonize());
   }
 
-  if(m_healthCheckHasBeenSet)
-  {
-   payload.WithObject("healthCheck", m_healthCheck.Jsonize());
-
+  if (m_healthCheckHasBeenSet) {
+    payload.WithObject("healthCheck", m_healthCheck.Jsonize());
   }
 
-  if(m_portMappingHasBeenSet)
-  {
-   payload.WithObject("portMapping", m_portMapping.Jsonize());
-
+  if (m_portMappingHasBeenSet) {
+    payload.WithObject("portMapping", m_portMapping.Jsonize());
   }
 
-  if(m_tlsHasBeenSet)
-  {
-   payload.WithObject("tls", m_tls.Jsonize());
-
+  if (m_tlsHasBeenSet) {
+    payload.WithObject("tls", m_tls.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

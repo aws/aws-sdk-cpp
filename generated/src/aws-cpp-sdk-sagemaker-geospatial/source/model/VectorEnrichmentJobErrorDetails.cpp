@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker-geospatial/model/VectorEnrichmentJobErrorDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker-geospatial/model/VectorEnrichmentJobErrorDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMakerGeospatial
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMakerGeospatial {
+namespace Model {
 
-VectorEnrichmentJobErrorDetails::VectorEnrichmentJobErrorDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VectorEnrichmentJobErrorDetails::VectorEnrichmentJobErrorDetails(JsonView jsonValue) { *this = jsonValue; }
 
-VectorEnrichmentJobErrorDetails& VectorEnrichmentJobErrorDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ErrorMessage"))
-  {
+VectorEnrichmentJobErrorDetails& VectorEnrichmentJobErrorDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ErrorMessage")) {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
     m_errorMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorType"))
-  {
+  if (jsonValue.ValueExists("ErrorType")) {
     m_errorType = VectorEnrichmentJobErrorTypeMapper::GetVectorEnrichmentJobErrorTypeForName(jsonValue.GetString("ErrorType"));
     m_errorTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VectorEnrichmentJobErrorDetails::Jsonize() const
-{
+JsonValue VectorEnrichmentJobErrorDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_errorMessageHasBeenSet)
-  {
-   payload.WithString("ErrorMessage", m_errorMessage);
-
+  if (m_errorMessageHasBeenSet) {
+    payload.WithString("ErrorMessage", m_errorMessage);
   }
 
-  if(m_errorTypeHasBeenSet)
-  {
-   payload.WithString("ErrorType", VectorEnrichmentJobErrorTypeMapper::GetNameForVectorEnrichmentJobErrorType(m_errorType));
+  if (m_errorTypeHasBeenSet) {
+    payload.WithString("ErrorType", VectorEnrichmentJobErrorTypeMapper::GetNameForVectorEnrichmentJobErrorType(m_errorType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMakerGeospatial
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMakerGeospatial
+}  // namespace Aws

@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentCoreControl
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentCoreControl {
+namespace Model {
 
-CustomOauth2ProviderConfigInput::CustomOauth2ProviderConfigInput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CustomOauth2ProviderConfigInput::CustomOauth2ProviderConfigInput(JsonView jsonValue) { *this = jsonValue; }
 
-CustomOauth2ProviderConfigInput& CustomOauth2ProviderConfigInput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("oauthDiscovery"))
-  {
+CustomOauth2ProviderConfigInput& CustomOauth2ProviderConfigInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("oauthDiscovery")) {
     m_oauthDiscovery = jsonValue.GetObject("oauthDiscovery");
     m_oauthDiscoveryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("clientId"))
-  {
+  if (jsonValue.ValueExists("clientId")) {
     m_clientId = jsonValue.GetString("clientId");
     m_clientIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("clientSecret"))
-  {
+  if (jsonValue.ValueExists("clientSecret")) {
     m_clientSecret = jsonValue.GetString("clientSecret");
     m_clientSecretHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CustomOauth2ProviderConfigInput::Jsonize() const
-{
+JsonValue CustomOauth2ProviderConfigInput::Jsonize() const {
   JsonValue payload;
 
-  if(m_oauthDiscoveryHasBeenSet)
-  {
-   payload.WithObject("oauthDiscovery", m_oauthDiscovery.Jsonize());
-
+  if (m_oauthDiscoveryHasBeenSet) {
+    payload.WithObject("oauthDiscovery", m_oauthDiscovery.Jsonize());
   }
 
-  if(m_clientIdHasBeenSet)
-  {
-   payload.WithString("clientId", m_clientId);
-
+  if (m_clientIdHasBeenSet) {
+    payload.WithString("clientId", m_clientId);
   }
 
-  if(m_clientSecretHasBeenSet)
-  {
-   payload.WithString("clientSecret", m_clientSecret);
-
+  if (m_clientSecretHasBeenSet) {
+    payload.WithString("clientSecret", m_clientSecret);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentCoreControl
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentCoreControl
+}  // namespace Aws

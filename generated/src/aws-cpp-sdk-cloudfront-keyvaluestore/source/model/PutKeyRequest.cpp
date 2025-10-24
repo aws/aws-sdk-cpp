@@ -13,44 +13,33 @@ using namespace Aws::CloudFrontKeyValueStore::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutKeyRequest::SerializePayload() const
-{
+Aws::String PutKeyRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("Value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("Value", m_value);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection PutKeyRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection PutKeyRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_ifMatchHasBeenSet)
-  {
+  if (m_ifMatchHasBeenSet) {
     ss << m_ifMatch;
-    headers.emplace("if-match",  ss.str());
+    headers.emplace("if-match", ss.str());
     ss.str("");
   }
 
   return headers;
-
 }
 
-
-
-PutKeyRequest::EndpointParameters PutKeyRequest::GetEndpointContextParams() const
-{
-    EndpointParameters parameters;
-    // Operation context parameters
-    if (KvsARNHasBeenSet()) {
-        parameters.emplace_back(Aws::String("KvsARN"), this->GetKvsARN(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
-    }
-    return parameters;
+PutKeyRequest::EndpointParameters PutKeyRequest::GetEndpointContextParams() const {
+  EndpointParameters parameters;
+  // Operation context parameters
+  if (KvsARNHasBeenSet()) {
+    parameters.emplace_back(Aws::String("KvsARN"), this->GetKvsARN(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+  }
+  return parameters;
 }
-
-

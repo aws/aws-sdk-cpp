@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::DAX;
 
-AWSError<CoreErrors> DAXErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> DAXErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = DAXErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

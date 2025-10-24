@@ -3,63 +3,51 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3-crt/model/ObjectLockEnabled.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/s3-crt/model/ObjectLockEnabled.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace S3Crt {
+namespace Model {
+namespace ObjectLockEnabledMapper {
 
-namespace Aws
-{
-  namespace S3Crt
-  {
-    namespace Model
-    {
-      namespace ObjectLockEnabledMapper
-      {
+static const int Enabled_HASH = HashingUtils::HashString("Enabled");
 
-        static const int Enabled_HASH = HashingUtils::HashString("Enabled");
+ObjectLockEnabled GetObjectLockEnabledForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == Enabled_HASH) {
+    return ObjectLockEnabled::Enabled;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<ObjectLockEnabled>(hashCode);
+  }
 
+  return ObjectLockEnabled::NOT_SET;
+}
 
-        ObjectLockEnabled GetObjectLockEnabledForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Enabled_HASH)
-          {
-            return ObjectLockEnabled::Enabled;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ObjectLockEnabled>(hashCode);
-          }
+Aws::String GetNameForObjectLockEnabled(ObjectLockEnabled enumValue) {
+  switch (enumValue) {
+    case ObjectLockEnabled::NOT_SET:
+      return {};
+    case ObjectLockEnabled::Enabled:
+      return "Enabled";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return ObjectLockEnabled::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForObjectLockEnabled(ObjectLockEnabled enumValue)
-        {
-          switch(enumValue)
-          {
-          case ObjectLockEnabled::NOT_SET:
-            return {};
-          case ObjectLockEnabled::Enabled:
-            return "Enabled";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace ObjectLockEnabledMapper
-    } // namespace Model
-  } // namespace S3Crt
-} // namespace Aws
+}  // namespace ObjectLockEnabledMapper
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

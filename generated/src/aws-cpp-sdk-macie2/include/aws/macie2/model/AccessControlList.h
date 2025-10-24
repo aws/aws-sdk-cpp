@@ -6,66 +6,70 @@
 #pragma once
 #include <aws/macie2/Macie2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace Macie2
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Macie2 {
+namespace Model {
 
+/**
+ * <p>Provides information about the permissions settings of the bucket-level
+ * access control list (ACL) for an S3 bucket.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/AccessControlList">AWS
+ * API Reference</a></p>
+ */
+class AccessControlList {
+ public:
+  AWS_MACIE2_API AccessControlList() = default;
+  AWS_MACIE2_API AccessControlList(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MACIE2_API AccessControlList& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Provides information about the permissions settings of the bucket-level
-   * access control list (ACL) for an S3 bucket.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/AccessControlList">AWS
-   * API Reference</a></p>
+   * <p>Specifies whether the ACL grants the general public with read access
+   * permissions for the bucket.</p>
    */
-  class AccessControlList
-  {
-  public:
-    AWS_MACIE2_API AccessControlList() = default;
-    AWS_MACIE2_API AccessControlList(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MACIE2_API AccessControlList& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline bool GetAllowsPublicReadAccess() const { return m_allowsPublicReadAccess; }
+  inline bool AllowsPublicReadAccessHasBeenSet() const { return m_allowsPublicReadAccessHasBeenSet; }
+  inline void SetAllowsPublicReadAccess(bool value) {
+    m_allowsPublicReadAccessHasBeenSet = true;
+    m_allowsPublicReadAccess = value;
+  }
+  inline AccessControlList& WithAllowsPublicReadAccess(bool value) {
+    SetAllowsPublicReadAccess(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>Specifies whether the ACL grants the general public with write access
+   * permissions for the bucket.</p>
+   */
+  inline bool GetAllowsPublicWriteAccess() const { return m_allowsPublicWriteAccess; }
+  inline bool AllowsPublicWriteAccessHasBeenSet() const { return m_allowsPublicWriteAccessHasBeenSet; }
+  inline void SetAllowsPublicWriteAccess(bool value) {
+    m_allowsPublicWriteAccessHasBeenSet = true;
+    m_allowsPublicWriteAccess = value;
+  }
+  inline AccessControlList& WithAllowsPublicWriteAccess(bool value) {
+    SetAllowsPublicWriteAccess(value);
+    return *this;
+  }
+  ///@}
+ private:
+  bool m_allowsPublicReadAccess{false};
+  bool m_allowsPublicReadAccessHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>Specifies whether the ACL grants the general public with read access
-     * permissions for the bucket.</p>
-     */
-    inline bool GetAllowsPublicReadAccess() const { return m_allowsPublicReadAccess; }
-    inline bool AllowsPublicReadAccessHasBeenSet() const { return m_allowsPublicReadAccessHasBeenSet; }
-    inline void SetAllowsPublicReadAccess(bool value) { m_allowsPublicReadAccessHasBeenSet = true; m_allowsPublicReadAccess = value; }
-    inline AccessControlList& WithAllowsPublicReadAccess(bool value) { SetAllowsPublicReadAccess(value); return *this;}
-    ///@}
+  bool m_allowsPublicWriteAccess{false};
+  bool m_allowsPublicWriteAccessHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>Specifies whether the ACL grants the general public with write access
-     * permissions for the bucket.</p>
-     */
-    inline bool GetAllowsPublicWriteAccess() const { return m_allowsPublicWriteAccess; }
-    inline bool AllowsPublicWriteAccessHasBeenSet() const { return m_allowsPublicWriteAccessHasBeenSet; }
-    inline void SetAllowsPublicWriteAccess(bool value) { m_allowsPublicWriteAccessHasBeenSet = true; m_allowsPublicWriteAccess = value; }
-    inline AccessControlList& WithAllowsPublicWriteAccess(bool value) { SetAllowsPublicWriteAccess(value); return *this;}
-    ///@}
-  private:
-
-    bool m_allowsPublicReadAccess{false};
-    bool m_allowsPublicReadAccessHasBeenSet = false;
-
-    bool m_allowsPublicWriteAccess{false};
-    bool m_allowsPublicWriteAccessHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

@@ -3,49 +3,41 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/AttachNetworkInterfaceRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/AttachNetworkInterfaceRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String AttachNetworkInterfaceRequest::SerializePayload() const
-{
+Aws::String AttachNetworkInterfaceRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=AttachNetworkInterface&";
-  if(m_networkCardIndexHasBeenSet)
-  {
+  if (m_networkCardIndexHasBeenSet) {
     ss << "NetworkCardIndex=" << m_networkCardIndex << "&";
   }
 
-  if(m_enaSrdSpecificationHasBeenSet)
-  {
+  if (m_enaSrdSpecificationHasBeenSet) {
     m_enaSrdSpecification.OutputToStream(ss, "EnaSrdSpecification");
   }
 
-  if(m_enaQueueCountHasBeenSet)
-  {
+  if (m_enaQueueCountHasBeenSet) {
     ss << "EnaQueueCount=" << m_enaQueueCount << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_networkInterfaceIdHasBeenSet)
-  {
+  if (m_networkInterfaceIdHasBeenSet) {
     ss << "NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
   }
 
-  if(m_instanceIdHasBeenSet)
-  {
+  if (m_instanceIdHasBeenSet) {
     ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
 
-  if(m_deviceIndexHasBeenSet)
-  {
+  if (m_deviceIndexHasBeenSet) {
     ss << "DeviceIndex=" << m_deviceIndex << "&";
   }
 
@@ -53,8 +45,4 @@ Aws::String AttachNetworkInterfaceRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  AttachNetworkInterfaceRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void AttachNetworkInterfaceRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

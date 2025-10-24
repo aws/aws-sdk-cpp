@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockDataAutomation
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockDataAutomation {
+namespace Model {
 
-ImageStandardExtraction::ImageStandardExtraction(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ImageStandardExtraction::ImageStandardExtraction(JsonView jsonValue) { *this = jsonValue; }
 
-ImageStandardExtraction& ImageStandardExtraction::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("category"))
-  {
+ImageStandardExtraction& ImageStandardExtraction::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("category")) {
     m_category = jsonValue.GetObject("category");
     m_categoryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("boundingBox"))
-  {
+  if (jsonValue.ValueExists("boundingBox")) {
     m_boundingBox = jsonValue.GetObject("boundingBox");
     m_boundingBoxHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ImageStandardExtraction::Jsonize() const
-{
+JsonValue ImageStandardExtraction::Jsonize() const {
   JsonValue payload;
 
-  if(m_categoryHasBeenSet)
-  {
-   payload.WithObject("category", m_category.Jsonize());
-
+  if (m_categoryHasBeenSet) {
+    payload.WithObject("category", m_category.Jsonize());
   }
 
-  if(m_boundingBoxHasBeenSet)
-  {
-   payload.WithObject("boundingBox", m_boundingBox.Jsonize());
-
+  if (m_boundingBoxHasBeenSet) {
+    payload.WithObject("boundingBox", m_boundingBox.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockDataAutomation
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockDataAutomation
+}  // namespace Aws

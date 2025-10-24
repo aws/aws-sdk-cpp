@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/panorama/Panorama_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/panorama/Panorama_EXPORTS.h>
 
-namespace Aws
-{
-namespace Panorama
-{
-namespace Model
-{
-  enum class SortOrder
-  {
-    NOT_SET,
-    ASCENDING,
-    DESCENDING
-  };
+namespace Aws {
+namespace Panorama {
+namespace Model {
+enum class SortOrder { NOT_SET, ASCENDING, DESCENDING };
 
-namespace SortOrderMapper
-{
+namespace SortOrderMapper {
 AWS_PANORAMA_API SortOrder GetSortOrderForName(const Aws::String& name);
 
 AWS_PANORAMA_API Aws::String GetNameForSortOrder(SortOrder value);
-} // namespace SortOrderMapper
-} // namespace Model
-} // namespace Panorama
-} // namespace Aws
+}  // namespace SortOrderMapper
+}  // namespace Model
+}  // namespace Panorama
+}  // namespace Aws

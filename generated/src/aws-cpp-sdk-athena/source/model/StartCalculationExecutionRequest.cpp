@@ -12,45 +12,30 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartCalculationExecutionRequest::SerializePayload() const
-{
+Aws::String StartCalculationExecutionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_sessionIdHasBeenSet)
-  {
-   payload.WithString("SessionId", m_sessionId);
-
+  if (m_sessionIdHasBeenSet) {
+    payload.WithString("SessionId", m_sessionId);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_codeBlockHasBeenSet)
-  {
-   payload.WithString("CodeBlock", m_codeBlock);
-
+  if (m_codeBlockHasBeenSet) {
+    payload.WithString("CodeBlock", m_codeBlock);
   }
 
-  if(m_clientRequestTokenHasBeenSet)
-  {
-   payload.WithString("ClientRequestToken", m_clientRequestToken);
-
+  if (m_clientRequestTokenHasBeenSet) {
+    payload.WithString("ClientRequestToken", m_clientRequestToken);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection StartCalculationExecutionRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection StartCalculationExecutionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonAthena.StartCalculationExecution"));
   return headers;
-
 }
-
-
-
-

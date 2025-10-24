@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/appconfig/AppConfigEndpointRules.h>
 #include <aws/appconfig/AppConfig_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -11,18 +12,12 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
-#include <aws/appconfig/AppConfigEndpointRules.h>
-
-
-namespace Aws
-{
-namespace AppConfig
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace AppConfig {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using AppConfigClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using AppConfigDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_APPCONFIG_API AppConfigEndpointProvider : public AppConfigDefaultEpProviderBase
-{
-public:
-    using AppConfigResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_APPCONFIG_API AppConfigEndpointProvider : public AppConfigDefaultEpProviderBase {
+ public:
+  using AppConfigResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    AppConfigEndpointProvider()
-      : AppConfigDefaultEpProviderBase(Aws::AppConfig::AppConfigEndpointRules::GetRulesBlob(), Aws::AppConfig::AppConfigEndpointRules::RulesBlobSize)
-    {}
+  AppConfigEndpointProvider()
+      : AppConfigDefaultEpProviderBase(Aws::AppConfig::AppConfigEndpointRules::GetRulesBlob(),
+                                       Aws::AppConfig::AppConfigEndpointRules::RulesBlobSize) {}
 
-    ~AppConfigEndpointProvider()
-    {
-    }
+  ~AppConfigEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace AppConfig
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace AppConfig
+}  // namespace Aws

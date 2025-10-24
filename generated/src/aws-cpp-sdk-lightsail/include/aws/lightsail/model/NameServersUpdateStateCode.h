@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lightsail/Lightsail_EXPORTS.h>
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
-  enum class NameServersUpdateStateCode
-  {
-    NOT_SET,
-    SUCCEEDED,
-    PENDING,
-    FAILED,
-    STARTED
-  };
+namespace Aws {
+namespace Lightsail {
+namespace Model {
+enum class NameServersUpdateStateCode { NOT_SET, SUCCEEDED, PENDING, FAILED, STARTED };
 
-namespace NameServersUpdateStateCodeMapper
-{
+namespace NameServersUpdateStateCodeMapper {
 AWS_LIGHTSAIL_API NameServersUpdateStateCode GetNameServersUpdateStateCodeForName(const Aws::String& name);
 
 AWS_LIGHTSAIL_API Aws::String GetNameForNameServersUpdateStateCode(NameServersUpdateStateCode value);
-} // namespace NameServersUpdateStateCodeMapper
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace NameServersUpdateStateCodeMapper
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/FecOutputSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/FecOutputSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-FecOutputSettings::FecOutputSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FecOutputSettings::FecOutputSettings(JsonView jsonValue) { *this = jsonValue; }
 
-FecOutputSettings& FecOutputSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("columnDepth"))
-  {
+FecOutputSettings& FecOutputSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("columnDepth")) {
     m_columnDepth = jsonValue.GetInteger("columnDepth");
     m_columnDepthHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("includeFec"))
-  {
+  if (jsonValue.ValueExists("includeFec")) {
     m_includeFec = FecOutputIncludeFecMapper::GetFecOutputIncludeFecForName(jsonValue.GetString("includeFec"));
     m_includeFecHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("rowLength"))
-  {
+  if (jsonValue.ValueExists("rowLength")) {
     m_rowLength = jsonValue.GetInteger("rowLength");
     m_rowLengthHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FecOutputSettings::Jsonize() const
-{
+JsonValue FecOutputSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_columnDepthHasBeenSet)
-  {
-   payload.WithInteger("columnDepth", m_columnDepth);
-
+  if (m_columnDepthHasBeenSet) {
+    payload.WithInteger("columnDepth", m_columnDepth);
   }
 
-  if(m_includeFecHasBeenSet)
-  {
-   payload.WithString("includeFec", FecOutputIncludeFecMapper::GetNameForFecOutputIncludeFec(m_includeFec));
+  if (m_includeFecHasBeenSet) {
+    payload.WithString("includeFec", FecOutputIncludeFecMapper::GetNameForFecOutputIncludeFec(m_includeFec));
   }
 
-  if(m_rowLengthHasBeenSet)
-  {
-   payload.WithInteger("rowLength", m_rowLength);
-
+  if (m_rowLengthHasBeenSet) {
+    payload.WithInteger("rowLength", m_rowLength);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

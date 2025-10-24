@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BillingConductor
-{
-namespace Model
-{
+namespace Aws {
+namespace BillingConductor {
+namespace Model {
 
-Attribute::Attribute(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Attribute::Attribute(JsonView jsonValue) { *this = jsonValue; }
 
-Attribute& Attribute::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Key"))
-  {
+Attribute& Attribute::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Key")) {
     m_key = jsonValue.GetString("Key");
     m_keyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Value"))
-  {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetString("Value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Attribute::Jsonize() const
-{
+JsonValue Attribute::Jsonize() const {
   JsonValue payload;
 
-  if(m_keyHasBeenSet)
-  {
-   payload.WithString("Key", m_key);
-
+  if (m_keyHasBeenSet) {
+    payload.WithString("Key", m_key);
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("Value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("Value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BillingConductor
-} // namespace Aws
+}  // namespace Model
+}  // namespace BillingConductor
+}  // namespace Aws

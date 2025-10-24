@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/datazone/model/SubscribedListingInput.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/datazone/model/SubscribedListingInput.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DataZone
-{
-namespace Model
-{
+namespace Aws {
+namespace DataZone {
+namespace Model {
 
-SubscribedListingInput::SubscribedListingInput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SubscribedListingInput::SubscribedListingInput(JsonView jsonValue) { *this = jsonValue; }
 
-SubscribedListingInput& SubscribedListingInput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("identifier"))
-  {
+SubscribedListingInput& SubscribedListingInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("identifier")) {
     m_identifier = jsonValue.GetString("identifier");
     m_identifierHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SubscribedListingInput::Jsonize() const
-{
+JsonValue SubscribedListingInput::Jsonize() const {
   JsonValue payload;
 
-  if(m_identifierHasBeenSet)
-  {
-   payload.WithString("identifier", m_identifier);
-
+  if (m_identifierHasBeenSet) {
+    payload.WithString("identifier", m_identifier);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DataZone
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

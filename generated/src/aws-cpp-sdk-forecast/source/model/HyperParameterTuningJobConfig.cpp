@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/forecast/model/HyperParameterTuningJobConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/forecast/model/HyperParameterTuningJobConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ForecastService
-{
-namespace Model
-{
+namespace Aws {
+namespace ForecastService {
+namespace Model {
 
-HyperParameterTuningJobConfig::HyperParameterTuningJobConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+HyperParameterTuningJobConfig::HyperParameterTuningJobConfig(JsonView jsonValue) { *this = jsonValue; }
 
-HyperParameterTuningJobConfig& HyperParameterTuningJobConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ParameterRanges"))
-  {
+HyperParameterTuningJobConfig& HyperParameterTuningJobConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ParameterRanges")) {
     m_parameterRanges = jsonValue.GetObject("ParameterRanges");
     m_parameterRangesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue HyperParameterTuningJobConfig::Jsonize() const
-{
+JsonValue HyperParameterTuningJobConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_parameterRangesHasBeenSet)
-  {
-   payload.WithObject("ParameterRanges", m_parameterRanges.Jsonize());
-
+  if (m_parameterRangesHasBeenSet) {
+    payload.WithObject("ParameterRanges", m_parameterRanges.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ForecastService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ForecastService
+}  // namespace Aws

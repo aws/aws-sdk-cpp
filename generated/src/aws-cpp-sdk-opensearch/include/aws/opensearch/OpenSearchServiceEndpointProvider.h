@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/opensearch/OpenSearchServiceEndpointRules.h>
+#include <aws/opensearch/OpenSearchService_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace OpenSearchService
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace OpenSearchService {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using OpenSearchServiceClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -34,28 +29,26 @@ using OpenSearchServiceBuiltInParameters = Aws::Endpoint::BuiltInParameters;
  * Inherit from this Base class / "Interface" should you want to provide a custom endpoint provider.
  * The SDK must use service-specific type for each service per specification.
  */
-using OpenSearchServiceEndpointProviderBase =
-    EndpointProviderBase<OpenSearchServiceClientConfiguration, OpenSearchServiceBuiltInParameters, OpenSearchServiceClientContextParameters>;
+using OpenSearchServiceEndpointProviderBase = EndpointProviderBase<OpenSearchServiceClientConfiguration, OpenSearchServiceBuiltInParameters,
+                                                                   OpenSearchServiceClientContextParameters>;
 
 using OpenSearchServiceDefaultEpProviderBase =
-    DefaultEndpointProvider<OpenSearchServiceClientConfiguration, OpenSearchServiceBuiltInParameters, OpenSearchServiceClientContextParameters>;
+    DefaultEndpointProvider<OpenSearchServiceClientConfiguration, OpenSearchServiceBuiltInParameters,
+                            OpenSearchServiceClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_OPENSEARCHSERVICE_API OpenSearchServiceEndpointProvider : public OpenSearchServiceDefaultEpProviderBase
-{
-public:
-    using OpenSearchServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_OPENSEARCHSERVICE_API OpenSearchServiceEndpointProvider : public OpenSearchServiceDefaultEpProviderBase {
+ public:
+  using OpenSearchServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    OpenSearchServiceEndpointProvider()
-      : OpenSearchServiceDefaultEpProviderBase(Aws::OpenSearchService::OpenSearchServiceEndpointRules::GetRulesBlob(), Aws::OpenSearchService::OpenSearchServiceEndpointRules::RulesBlobSize)
-    {}
+  OpenSearchServiceEndpointProvider()
+      : OpenSearchServiceDefaultEpProviderBase(Aws::OpenSearchService::OpenSearchServiceEndpointRules::GetRulesBlob(),
+                                               Aws::OpenSearchService::OpenSearchServiceEndpointRules::RulesBlobSize) {}
 
-    ~OpenSearchServiceEndpointProvider()
-    {
-    }
+  ~OpenSearchServiceEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace OpenSearchService
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace OpenSearchService
+}  // namespace Aws

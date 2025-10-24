@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ExportVerifiedAccessInstanceClientConfigurationRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ExportVerifiedAccessInstanceClientConfigurationRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ExportVerifiedAccessInstanceClientConfigurationRequest::SerializePayload() const
-{
+Aws::String ExportVerifiedAccessInstanceClientConfigurationRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ExportVerifiedAccessInstanceClientConfiguration&";
-  if(m_verifiedAccessInstanceIdHasBeenSet)
-  {
+  if (m_verifiedAccessInstanceIdHasBeenSet) {
     ss << "VerifiedAccessInstanceId=" << StringUtils::URLEncode(m_verifiedAccessInstanceId.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -28,8 +25,6 @@ Aws::String ExportVerifiedAccessInstanceClientConfigurationRequest::SerializePay
   return ss.str();
 }
 
-
-void  ExportVerifiedAccessInstanceClientConfigurationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
+void ExportVerifiedAccessInstanceClientConfigurationRequest::DumpBodyToUrl(Aws::Http::URI& uri) const {
   uri.SetQueryString(SerializePayload());
 }

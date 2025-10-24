@@ -3,69 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wellarchitected/model/ChoiceUpdate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wellarchitected/model/ChoiceUpdate.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WellArchitected
-{
-namespace Model
-{
+namespace Aws {
+namespace WellArchitected {
+namespace Model {
 
-ChoiceUpdate::ChoiceUpdate(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ChoiceUpdate::ChoiceUpdate(JsonView jsonValue) { *this = jsonValue; }
 
-ChoiceUpdate& ChoiceUpdate::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Status"))
-  {
+ChoiceUpdate& ChoiceUpdate::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Status")) {
     m_status = ChoiceStatusMapper::GetChoiceStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Reason"))
-  {
+  if (jsonValue.ValueExists("Reason")) {
     m_reason = ChoiceReasonMapper::GetChoiceReasonForName(jsonValue.GetString("Reason"));
     m_reasonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Notes"))
-  {
+  if (jsonValue.ValueExists("Notes")) {
     m_notes = jsonValue.GetString("Notes");
     m_notesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ChoiceUpdate::Jsonize() const
-{
+JsonValue ChoiceUpdate::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", ChoiceStatusMapper::GetNameForChoiceStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", ChoiceStatusMapper::GetNameForChoiceStatus(m_status));
   }
 
-  if(m_reasonHasBeenSet)
-  {
-   payload.WithString("Reason", ChoiceReasonMapper::GetNameForChoiceReason(m_reason));
+  if (m_reasonHasBeenSet) {
+    payload.WithString("Reason", ChoiceReasonMapper::GetNameForChoiceReason(m_reason));
   }
 
-  if(m_notesHasBeenSet)
-  {
-   payload.WithString("Notes", m_notes);
-
+  if (m_notesHasBeenSet) {
+    payload.WithString("Notes", m_notes);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WellArchitected
-} // namespace Aws
+}  // namespace Model
+}  // namespace WellArchitected
+}  // namespace Aws

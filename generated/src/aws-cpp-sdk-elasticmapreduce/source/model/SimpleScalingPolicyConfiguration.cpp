@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticmapreduce/model/SimpleScalingPolicyConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/elasticmapreduce/model/SimpleScalingPolicyConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EMR
-{
-namespace Model
-{
+namespace Aws {
+namespace EMR {
+namespace Model {
 
-SimpleScalingPolicyConfiguration::SimpleScalingPolicyConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SimpleScalingPolicyConfiguration::SimpleScalingPolicyConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-SimpleScalingPolicyConfiguration& SimpleScalingPolicyConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AdjustmentType"))
-  {
+SimpleScalingPolicyConfiguration& SimpleScalingPolicyConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AdjustmentType")) {
     m_adjustmentType = AdjustmentTypeMapper::GetAdjustmentTypeForName(jsonValue.GetString("AdjustmentType"));
     m_adjustmentTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ScalingAdjustment"))
-  {
+  if (jsonValue.ValueExists("ScalingAdjustment")) {
     m_scalingAdjustment = jsonValue.GetInteger("ScalingAdjustment");
     m_scalingAdjustmentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CoolDown"))
-  {
+  if (jsonValue.ValueExists("CoolDown")) {
     m_coolDown = jsonValue.GetInteger("CoolDown");
     m_coolDownHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SimpleScalingPolicyConfiguration::Jsonize() const
-{
+JsonValue SimpleScalingPolicyConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_adjustmentTypeHasBeenSet)
-  {
-   payload.WithString("AdjustmentType", AdjustmentTypeMapper::GetNameForAdjustmentType(m_adjustmentType));
+  if (m_adjustmentTypeHasBeenSet) {
+    payload.WithString("AdjustmentType", AdjustmentTypeMapper::GetNameForAdjustmentType(m_adjustmentType));
   }
 
-  if(m_scalingAdjustmentHasBeenSet)
-  {
-   payload.WithInteger("ScalingAdjustment", m_scalingAdjustment);
-
+  if (m_scalingAdjustmentHasBeenSet) {
+    payload.WithInteger("ScalingAdjustment", m_scalingAdjustment);
   }
 
-  if(m_coolDownHasBeenSet)
-  {
-   payload.WithInteger("CoolDown", m_coolDown);
-
+  if (m_coolDownHasBeenSet) {
+    payload.WithInteger("CoolDown", m_coolDown);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EMR
-} // namespace Aws
+}  // namespace Model
+}  // namespace EMR
+}  // namespace Aws

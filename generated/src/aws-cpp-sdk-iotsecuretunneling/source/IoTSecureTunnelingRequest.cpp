@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/iotsecuretunneling/IoTSecureTunnelingRequest.h>
 
-namespace Aws
-{
-namespace IoTSecureTunneling
-{
-} // namespace IoTSecureTunneling
-} // namespace Aws
+namespace Aws {
+namespace IoTSecureTunneling {}  // namespace IoTSecureTunneling
+}  // namespace Aws

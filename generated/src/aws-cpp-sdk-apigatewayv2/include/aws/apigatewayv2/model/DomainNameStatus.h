@@ -7,27 +7,16 @@
 #include <aws/apigatewayv2/ApiGatewayV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ApiGatewayV2
-{
-namespace Model
-{
-  enum class DomainNameStatus
-  {
-    NOT_SET,
-    AVAILABLE,
-    UPDATING,
-    PENDING_CERTIFICATE_REIMPORT,
-    PENDING_OWNERSHIP_VERIFICATION
-  };
+namespace Aws {
+namespace ApiGatewayV2 {
+namespace Model {
+enum class DomainNameStatus { NOT_SET, AVAILABLE, UPDATING, PENDING_CERTIFICATE_REIMPORT, PENDING_OWNERSHIP_VERIFICATION };
 
-namespace DomainNameStatusMapper
-{
+namespace DomainNameStatusMapper {
 AWS_APIGATEWAYV2_API DomainNameStatus GetDomainNameStatusForName(const Aws::String& name);
 
 AWS_APIGATEWAYV2_API Aws::String GetNameForDomainNameStatus(DomainNameStatus value);
-} // namespace DomainNameStatusMapper
-} // namespace Model
-} // namespace ApiGatewayV2
-} // namespace Aws
+}  // namespace DomainNameStatusMapper
+}  // namespace Model
+}  // namespace ApiGatewayV2
+}  // namespace Aws

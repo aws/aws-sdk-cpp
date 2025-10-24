@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-ConditionFlowNodeConfiguration::ConditionFlowNodeConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConditionFlowNodeConfiguration::ConditionFlowNodeConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ConditionFlowNodeConfiguration& ConditionFlowNodeConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("conditions"))
-  {
+ConditionFlowNodeConfiguration& ConditionFlowNodeConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("conditions")) {
     Aws::Utils::Array<JsonView> conditionsJsonList = jsonValue.GetArray("conditions");
-    for(unsigned conditionsIndex = 0; conditionsIndex < conditionsJsonList.GetLength(); ++conditionsIndex)
-    {
+    for (unsigned conditionsIndex = 0; conditionsIndex < conditionsJsonList.GetLength(); ++conditionsIndex) {
       m_conditions.push_back(conditionsJsonList[conditionsIndex].AsObject());
     }
     m_conditionsHasBeenSet = true;
@@ -37,24 +28,20 @@ ConditionFlowNodeConfiguration& ConditionFlowNodeConfiguration::operator =(JsonV
   return *this;
 }
 
-JsonValue ConditionFlowNodeConfiguration::Jsonize() const
-{
+JsonValue ConditionFlowNodeConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_conditionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> conditionsJsonList(m_conditions.size());
-   for(unsigned conditionsIndex = 0; conditionsIndex < conditionsJsonList.GetLength(); ++conditionsIndex)
-   {
-     conditionsJsonList[conditionsIndex].AsObject(m_conditions[conditionsIndex].Jsonize());
-   }
-   payload.WithArray("conditions", std::move(conditionsJsonList));
-
+  if (m_conditionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> conditionsJsonList(m_conditions.size());
+    for (unsigned conditionsIndex = 0; conditionsIndex < conditionsJsonList.GetLength(); ++conditionsIndex) {
+      conditionsJsonList[conditionsIndex].AsObject(m_conditions[conditionsIndex].Jsonize());
+    }
+    payload.WithArray("conditions", std::move(conditionsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

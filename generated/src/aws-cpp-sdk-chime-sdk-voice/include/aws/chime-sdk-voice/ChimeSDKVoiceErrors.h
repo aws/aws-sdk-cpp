@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/chime-sdk-voice/ChimeSDKVoice_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/chime-sdk-voice/ChimeSDKVoice_EXPORTS.h>
 
-namespace Aws
-{
-namespace ChimeSDKVoice
-{
-enum class ChimeSDKVoiceErrors
-{
-  //From Core//
+namespace Aws {
+namespace ChimeSDKVoice {
+enum class ChimeSDKVoiceErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class ChimeSDKVoiceErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class ChimeSDKVoiceErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BAD_REQUEST = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CONFLICT,
   FORBIDDEN,
   GONE,
@@ -59,9 +56,8 @@ enum class ChimeSDKVoiceErrors
   UNPROCESSABLE_ENTITY
 };
 
-class AWS_CHIMESDKVOICE_API ChimeSDKVoiceError : public Aws::Client::AWSError<ChimeSDKVoiceErrors>
-{
-public:
+class AWS_CHIMESDKVOICE_API ChimeSDKVoiceError : public Aws::Client::AWSError<ChimeSDKVoiceErrors> {
+ public:
   ChimeSDKVoiceError() {}
   ChimeSDKVoiceError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ChimeSDKVoiceErrors>(rhs) {}
   ChimeSDKVoiceError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ChimeSDKVoiceErrors>(rhs) {}
@@ -72,10 +68,9 @@ public:
   T GetModeledError();
 };
 
-namespace ChimeSDKVoiceErrorMapper
-{
-  AWS_CHIMESDKVOICE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace ChimeSDKVoiceErrorMapper {
+AWS_CHIMESDKVOICE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace ChimeSDKVoice
-} // namespace Aws
+}  // namespace ChimeSDKVoice
+}  // namespace Aws

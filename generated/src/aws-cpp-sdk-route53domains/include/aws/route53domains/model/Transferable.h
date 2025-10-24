@@ -4,32 +4,27 @@
  */
 
 #pragma once
-#include <aws/route53domains/Route53Domains_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/route53domains/Route53Domains_EXPORTS.h>
 
-namespace Aws
-{
-namespace Route53Domains
-{
-namespace Model
-{
-  enum class Transferable
-  {
-    NOT_SET,
-    TRANSFERABLE,
-    UNTRANSFERABLE,
-    DONT_KNOW,
-    DOMAIN_IN_OWN_ACCOUNT,
-    DOMAIN_IN_ANOTHER_ACCOUNT,
-    PREMIUM_DOMAIN
-  };
+namespace Aws {
+namespace Route53Domains {
+namespace Model {
+enum class Transferable {
+  NOT_SET,
+  TRANSFERABLE,
+  UNTRANSFERABLE,
+  DONT_KNOW,
+  DOMAIN_IN_OWN_ACCOUNT,
+  DOMAIN_IN_ANOTHER_ACCOUNT,
+  PREMIUM_DOMAIN
+};
 
-namespace TransferableMapper
-{
+namespace TransferableMapper {
 AWS_ROUTE53DOMAINS_API Transferable GetTransferableForName(const Aws::String& name);
 
 AWS_ROUTE53DOMAINS_API Aws::String GetNameForTransferable(Transferable value);
-} // namespace TransferableMapper
-} // namespace Model
-} // namespace Route53Domains
-} // namespace Aws
+}  // namespace TransferableMapper
+}  // namespace Model
+}  // namespace Route53Domains
+}  // namespace Aws

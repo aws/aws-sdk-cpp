@@ -4,10 +4,10 @@
  */
 
 #include <aws/config/model/PutRemediationConfigurationsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,19 +17,15 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutRemediationConfigurationsResult::PutRemediationConfigurationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+PutRemediationConfigurationsResult::PutRemediationConfigurationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-PutRemediationConfigurationsResult& PutRemediationConfigurationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+PutRemediationConfigurationsResult& PutRemediationConfigurationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("FailedBatches"))
-  {
+  if (jsonValue.ValueExists("FailedBatches")) {
     Aws::Utils::Array<JsonView> failedBatchesJsonList = jsonValue.GetArray("FailedBatches");
-    for(unsigned failedBatchesIndex = 0; failedBatchesIndex < failedBatchesJsonList.GetLength(); ++failedBatchesIndex)
-    {
+    for (unsigned failedBatchesIndex = 0; failedBatchesIndex < failedBatchesJsonList.GetLength(); ++failedBatchesIndex) {
       m_failedBatches.push_back(failedBatchesJsonList[failedBatchesIndex].AsObject());
     }
     m_failedBatchesHasBeenSet = true;
@@ -37,12 +33,10 @@ PutRemediationConfigurationsResult& PutRemediationConfigurationsResult::operator
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

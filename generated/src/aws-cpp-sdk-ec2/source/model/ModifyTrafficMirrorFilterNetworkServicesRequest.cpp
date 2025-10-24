@@ -3,46 +3,39 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ModifyTrafficMirrorFilterNetworkServicesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ModifyTrafficMirrorFilterNetworkServicesRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyTrafficMirrorFilterNetworkServicesRequest::SerializePayload() const
-{
+Aws::String ModifyTrafficMirrorFilterNetworkServicesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyTrafficMirrorFilterNetworkServices&";
-  if(m_trafficMirrorFilterIdHasBeenSet)
-  {
+  if (m_trafficMirrorFilterIdHasBeenSet) {
     ss << "TrafficMirrorFilterId=" << StringUtils::URLEncode(m_trafficMirrorFilterId.c_str()) << "&";
   }
 
-  if(m_addNetworkServicesHasBeenSet)
-  {
+  if (m_addNetworkServicesHasBeenSet) {
     unsigned addNetworkServicesCount = 1;
-    for(auto& item : m_addNetworkServices)
-    {
+    for (auto& item : m_addNetworkServices) {
       ss << "AddNetworkService." << addNetworkServicesCount << "="
-          << StringUtils::URLEncode(TrafficMirrorNetworkServiceMapper::GetNameForTrafficMirrorNetworkService(item)) << "&";
+         << StringUtils::URLEncode(TrafficMirrorNetworkServiceMapper::GetNameForTrafficMirrorNetworkService(item)) << "&";
       addNetworkServicesCount++;
     }
   }
 
-  if(m_removeNetworkServicesHasBeenSet)
-  {
+  if (m_removeNetworkServicesHasBeenSet) {
     unsigned removeNetworkServicesCount = 1;
-    for(auto& item : m_removeNetworkServices)
-    {
+    for (auto& item : m_removeNetworkServices) {
       ss << "RemoveNetworkService." << removeNetworkServicesCount << "="
-          << StringUtils::URLEncode(TrafficMirrorNetworkServiceMapper::GetNameForTrafficMirrorNetworkService(item)) << "&";
+         << StringUtils::URLEncode(TrafficMirrorNetworkServiceMapper::GetNameForTrafficMirrorNetworkService(item)) << "&";
       removeNetworkServicesCount++;
     }
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -50,8 +43,4 @@ Aws::String ModifyTrafficMirrorFilterNetworkServicesRequest::SerializePayload() 
   return ss.str();
 }
 
-
-void  ModifyTrafficMirrorFilterNetworkServicesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ModifyTrafficMirrorFilterNetworkServicesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/inspector/model/CreateExclusionsPreviewRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/inspector/model/CreateExclusionsPreviewRequest.h>
 
 #include <utility>
 
@@ -12,27 +12,18 @@ using namespace Aws::Inspector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateExclusionsPreviewRequest::SerializePayload() const
-{
+Aws::String CreateExclusionsPreviewRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_assessmentTemplateArnHasBeenSet)
-  {
-   payload.WithString("assessmentTemplateArn", m_assessmentTemplateArn);
-
+  if (m_assessmentTemplateArnHasBeenSet) {
+    payload.WithString("assessmentTemplateArn", m_assessmentTemplateArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateExclusionsPreviewRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateExclusionsPreviewRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "InspectorService.CreateExclusionsPreview"));
   return headers;
-
 }
-
-
-
-

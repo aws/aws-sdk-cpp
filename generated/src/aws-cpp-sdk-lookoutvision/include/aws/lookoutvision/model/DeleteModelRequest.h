@@ -4,95 +4,108 @@
  */
 
 #pragma once
-#include <aws/lookoutvision/LookoutforVision_EXPORTS.h>
-#include <aws/lookoutvision/LookoutforVisionRequest.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <utility>
 #include <aws/core/utils/UUID.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lookoutvision/LookoutforVisionRequest.h>
+#include <aws/lookoutvision/LookoutforVision_EXPORTS.h>
 
-namespace Aws
-{
-namespace LookoutforVision
-{
-namespace Model
-{
+#include <utility>
 
+namespace Aws {
+namespace LookoutforVision {
+namespace Model {
+
+/**
+ */
+class DeleteModelRequest : public LookoutforVisionRequest {
+ public:
+  AWS_LOOKOUTFORVISION_API DeleteModelRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeleteModel"; }
+
+  AWS_LOOKOUTFORVISION_API Aws::String SerializePayload() const override;
+
+  AWS_LOOKOUTFORVISION_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The name of the project that contains the model that you want to delete.</p>
    */
-  class DeleteModelRequest : public LookoutforVisionRequest
-  {
-  public:
-    AWS_LOOKOUTFORVISION_API DeleteModelRequest() = default;
+  inline const Aws::String& GetProjectName() const { return m_projectName; }
+  inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
+  template <typename ProjectNameT = Aws::String>
+  void SetProjectName(ProjectNameT&& value) {
+    m_projectNameHasBeenSet = true;
+    m_projectName = std::forward<ProjectNameT>(value);
+  }
+  template <typename ProjectNameT = Aws::String>
+  DeleteModelRequest& WithProjectName(ProjectNameT&& value) {
+    SetProjectName(std::forward<ProjectNameT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DeleteModel"; }
+  ///@{
+  /**
+   * <p>The version of the model that you want to delete.</p>
+   */
+  inline const Aws::String& GetModelVersion() const { return m_modelVersion; }
+  inline bool ModelVersionHasBeenSet() const { return m_modelVersionHasBeenSet; }
+  template <typename ModelVersionT = Aws::String>
+  void SetModelVersion(ModelVersionT&& value) {
+    m_modelVersionHasBeenSet = true;
+    m_modelVersion = std::forward<ModelVersionT>(value);
+  }
+  template <typename ModelVersionT = Aws::String>
+  DeleteModelRequest& WithModelVersion(ModelVersionT&& value) {
+    SetModelVersion(std::forward<ModelVersionT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_LOOKOUTFORVISION_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>ClientToken is an idempotency token that ensures a call to
+   * <code>DeleteModel</code> completes only once. You choose the value to pass. For
+   * example, an issue might prevent you from getting a response from
+   * <code>DeleteModel</code>. In this case, safely retry your call to
+   * <code>DeleteModel</code> by using the same <code>ClientToken</code> parameter
+   * value.</p> <p>If you don't supply a value for ClientToken, the AWS SDK you are
+   * using inserts a value for you. This prevents retries after a network error from
+   * making multiple model deletion requests. You'll need to provide your own value
+   * for other use cases. </p> <p>An error occurs if the other input parameters are
+   * not the same as in the first request. Using a different value for
+   * <code>ClientToken</code> is considered a new call to <code>DeleteModel</code>.
+   * An idempotency token is active for 8 hours.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  DeleteModelRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_projectName;
+  bool m_projectNameHasBeenSet = false;
 
-    AWS_LOOKOUTFORVISION_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+  Aws::String m_modelVersion;
+  bool m_modelVersionHasBeenSet = false;
 
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_clientTokenHasBeenSet = true;
+};
 
-    ///@{
-    /**
-     * <p>The name of the project that contains the model that you want to delete.</p>
-     */
-    inline const Aws::String& GetProjectName() const { return m_projectName; }
-    inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
-    template<typename ProjectNameT = Aws::String>
-    void SetProjectName(ProjectNameT&& value) { m_projectNameHasBeenSet = true; m_projectName = std::forward<ProjectNameT>(value); }
-    template<typename ProjectNameT = Aws::String>
-    DeleteModelRequest& WithProjectName(ProjectNameT&& value) { SetProjectName(std::forward<ProjectNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The version of the model that you want to delete.</p>
-     */
-    inline const Aws::String& GetModelVersion() const { return m_modelVersion; }
-    inline bool ModelVersionHasBeenSet() const { return m_modelVersionHasBeenSet; }
-    template<typename ModelVersionT = Aws::String>
-    void SetModelVersion(ModelVersionT&& value) { m_modelVersionHasBeenSet = true; m_modelVersion = std::forward<ModelVersionT>(value); }
-    template<typename ModelVersionT = Aws::String>
-    DeleteModelRequest& WithModelVersion(ModelVersionT&& value) { SetModelVersion(std::forward<ModelVersionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>ClientToken is an idempotency token that ensures a call to
-     * <code>DeleteModel</code> completes only once. You choose the value to pass. For
-     * example, an issue might prevent you from getting a response from
-     * <code>DeleteModel</code>. In this case, safely retry your call to
-     * <code>DeleteModel</code> by using the same <code>ClientToken</code> parameter
-     * value.</p> <p>If you don't supply a value for ClientToken, the AWS SDK you are
-     * using inserts a value for you. This prevents retries after a network error from
-     * making multiple model deletion requests. You'll need to provide your own value
-     * for other use cases. </p> <p>An error occurs if the other input parameters are
-     * not the same as in the first request. Using a different value for
-     * <code>ClientToken</code> is considered a new call to <code>DeleteModel</code>.
-     * An idempotency token is active for 8 hours.</p>
-     */
-    inline const Aws::String& GetClientToken() const { return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    template<typename ClientTokenT = Aws::String>
-    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
-    template<typename ClientTokenT = Aws::String>
-    DeleteModelRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_projectName;
-    bool m_projectNameHasBeenSet = false;
-
-    Aws::String m_modelVersion;
-    bool m_modelVersionHasBeenSet = false;
-
-    Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-    bool m_clientTokenHasBeenSet = true;
-  };
-
-} // namespace Model
-} // namespace LookoutforVision
-} // namespace Aws
+}  // namespace Model
+}  // namespace LookoutforVision
+}  // namespace Aws

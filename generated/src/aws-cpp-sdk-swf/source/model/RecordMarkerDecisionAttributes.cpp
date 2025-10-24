@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/swf/model/RecordMarkerDecisionAttributes.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/swf/model/RecordMarkerDecisionAttributes.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SWF
-{
-namespace Model
-{
+namespace Aws {
+namespace SWF {
+namespace Model {
 
-RecordMarkerDecisionAttributes::RecordMarkerDecisionAttributes(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RecordMarkerDecisionAttributes::RecordMarkerDecisionAttributes(JsonView jsonValue) { *this = jsonValue; }
 
-RecordMarkerDecisionAttributes& RecordMarkerDecisionAttributes::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("markerName"))
-  {
+RecordMarkerDecisionAttributes& RecordMarkerDecisionAttributes::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("markerName")) {
     m_markerName = jsonValue.GetString("markerName");
     m_markerNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("details"))
-  {
+  if (jsonValue.ValueExists("details")) {
     m_details = jsonValue.GetString("details");
     m_detailsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RecordMarkerDecisionAttributes::Jsonize() const
-{
+JsonValue RecordMarkerDecisionAttributes::Jsonize() const {
   JsonValue payload;
 
-  if(m_markerNameHasBeenSet)
-  {
-   payload.WithString("markerName", m_markerName);
-
+  if (m_markerNameHasBeenSet) {
+    payload.WithString("markerName", m_markerName);
   }
 
-  if(m_detailsHasBeenSet)
-  {
-   payload.WithString("details", m_details);
-
+  if (m_detailsHasBeenSet) {
+    payload.WithString("details", m_details);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SWF
-} // namespace Aws
+}  // namespace Model
+}  // namespace SWF
+}  // namespace Aws

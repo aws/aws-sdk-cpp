@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class DeleteFleetErrorCode
-  {
-    NOT_SET,
-    fleetIdDoesNotExist,
-    fleetIdMalformed,
-    fleetNotInDeletableState,
-    unexpectedError
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class DeleteFleetErrorCode { NOT_SET, fleetIdDoesNotExist, fleetIdMalformed, fleetNotInDeletableState, unexpectedError };
 
-namespace DeleteFleetErrorCodeMapper
-{
+namespace DeleteFleetErrorCodeMapper {
 AWS_EC2_API DeleteFleetErrorCode GetDeleteFleetErrorCodeForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForDeleteFleetErrorCode(DeleteFleetErrorCode value);
-} // namespace DeleteFleetErrorCodeMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace DeleteFleetErrorCodeMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

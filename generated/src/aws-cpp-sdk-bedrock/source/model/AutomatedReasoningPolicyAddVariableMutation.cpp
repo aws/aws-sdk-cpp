@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-AutomatedReasoningPolicyAddVariableMutation::AutomatedReasoningPolicyAddVariableMutation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AutomatedReasoningPolicyAddVariableMutation::AutomatedReasoningPolicyAddVariableMutation(JsonView jsonValue) { *this = jsonValue; }
 
-AutomatedReasoningPolicyAddVariableMutation& AutomatedReasoningPolicyAddVariableMutation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("variable"))
-  {
+AutomatedReasoningPolicyAddVariableMutation& AutomatedReasoningPolicyAddVariableMutation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("variable")) {
     m_variable = jsonValue.GetObject("variable");
     m_variableHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AutomatedReasoningPolicyAddVariableMutation::Jsonize() const
-{
+JsonValue AutomatedReasoningPolicyAddVariableMutation::Jsonize() const {
   JsonValue payload;
 
-  if(m_variableHasBeenSet)
-  {
-   payload.WithObject("variable", m_variable.Jsonize());
-
+  if (m_variableHasBeenSet) {
+    payload.WithObject("variable", m_variable.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

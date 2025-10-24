@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-FieldValueUnion::FieldValueUnion(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FieldValueUnion::FieldValueUnion(JsonView jsonValue) { *this = jsonValue; }
 
-FieldValueUnion& FieldValueUnion::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("BooleanValue"))
-  {
+FieldValueUnion& FieldValueUnion::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("BooleanValue")) {
     m_booleanValue = jsonValue.GetBool("BooleanValue");
     m_booleanValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DoubleValue"))
-  {
+  if (jsonValue.ValueExists("DoubleValue")) {
     m_doubleValue = jsonValue.GetDouble("DoubleValue");
     m_doubleValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EmptyValue"))
-  {
+  if (jsonValue.ValueExists("EmptyValue")) {
     m_emptyValue = jsonValue.GetObject("EmptyValue");
     m_emptyValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StringValue"))
-  {
+  if (jsonValue.ValueExists("StringValue")) {
     m_stringValue = jsonValue.GetString("StringValue");
     m_stringValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FieldValueUnion::Jsonize() const
-{
+JsonValue FieldValueUnion::Jsonize() const {
   JsonValue payload;
 
-  if(m_booleanValueHasBeenSet)
-  {
-   payload.WithBool("BooleanValue", m_booleanValue);
-
+  if (m_booleanValueHasBeenSet) {
+    payload.WithBool("BooleanValue", m_booleanValue);
   }
 
-  if(m_doubleValueHasBeenSet)
-  {
-   payload.WithDouble("DoubleValue", m_doubleValue);
-
+  if (m_doubleValueHasBeenSet) {
+    payload.WithDouble("DoubleValue", m_doubleValue);
   }
 
-  if(m_emptyValueHasBeenSet)
-  {
-   payload.WithObject("EmptyValue", m_emptyValue.Jsonize());
-
+  if (m_emptyValueHasBeenSet) {
+    payload.WithObject("EmptyValue", m_emptyValue.Jsonize());
   }
 
-  if(m_stringValueHasBeenSet)
-  {
-   payload.WithString("StringValue", m_stringValue);
-
+  if (m_stringValueHasBeenSet) {
+    payload.WithString("StringValue", m_stringValue);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

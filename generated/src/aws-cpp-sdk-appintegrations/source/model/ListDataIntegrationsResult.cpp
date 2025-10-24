@@ -4,10 +4,10 @@
  */
 
 #include <aws/appintegrations/model/ListDataIntegrationsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,37 +17,28 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListDataIntegrationsResult::ListDataIntegrationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListDataIntegrationsResult::ListDataIntegrationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListDataIntegrationsResult& ListDataIntegrationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListDataIntegrationsResult& ListDataIntegrationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("DataIntegrations"))
-  {
+  if (jsonValue.ValueExists("DataIntegrations")) {
     Aws::Utils::Array<JsonView> dataIntegrationsJsonList = jsonValue.GetArray("DataIntegrations");
-    for(unsigned dataIntegrationsIndex = 0; dataIntegrationsIndex < dataIntegrationsJsonList.GetLength(); ++dataIntegrationsIndex)
-    {
+    for (unsigned dataIntegrationsIndex = 0; dataIntegrationsIndex < dataIntegrationsJsonList.GetLength(); ++dataIntegrationsIndex) {
       m_dataIntegrations.push_back(dataIntegrationsJsonList[dataIntegrationsIndex].AsObject());
     }
     m_dataIntegrationsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppSync
-{
-namespace Model
-{
+namespace Aws {
+namespace AppSync {
+namespace Model {
 
-LambdaAuthorizerConfig::LambdaAuthorizerConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LambdaAuthorizerConfig::LambdaAuthorizerConfig(JsonView jsonValue) { *this = jsonValue; }
 
-LambdaAuthorizerConfig& LambdaAuthorizerConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("authorizerResultTtlInSeconds"))
-  {
+LambdaAuthorizerConfig& LambdaAuthorizerConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("authorizerResultTtlInSeconds")) {
     m_authorizerResultTtlInSeconds = jsonValue.GetInteger("authorizerResultTtlInSeconds");
     m_authorizerResultTtlInSecondsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("authorizerUri"))
-  {
+  if (jsonValue.ValueExists("authorizerUri")) {
     m_authorizerUri = jsonValue.GetString("authorizerUri");
     m_authorizerUriHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("identityValidationExpression"))
-  {
+  if (jsonValue.ValueExists("identityValidationExpression")) {
     m_identityValidationExpression = jsonValue.GetString("identityValidationExpression");
     m_identityValidationExpressionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LambdaAuthorizerConfig::Jsonize() const
-{
+JsonValue LambdaAuthorizerConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_authorizerResultTtlInSecondsHasBeenSet)
-  {
-   payload.WithInteger("authorizerResultTtlInSeconds", m_authorizerResultTtlInSeconds);
-
+  if (m_authorizerResultTtlInSecondsHasBeenSet) {
+    payload.WithInteger("authorizerResultTtlInSeconds", m_authorizerResultTtlInSeconds);
   }
 
-  if(m_authorizerUriHasBeenSet)
-  {
-   payload.WithString("authorizerUri", m_authorizerUri);
-
+  if (m_authorizerUriHasBeenSet) {
+    payload.WithString("authorizerUri", m_authorizerUri);
   }
 
-  if(m_identityValidationExpressionHasBeenSet)
-  {
-   payload.WithString("identityValidationExpression", m_identityValidationExpression);
-
+  if (m_identityValidationExpressionHasBeenSet) {
+    payload.WithString("identityValidationExpression", m_identityValidationExpression);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppSync
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppSync
+}  // namespace Aws

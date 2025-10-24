@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/quicksight/QuickSightEndpointRules.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace QuickSight {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using QuickSightClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using QuickSightDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_QUICKSIGHT_API QuickSightEndpointProvider : public QuickSightDefaultEpProviderBase
-{
-public:
-    using QuickSightResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_QUICKSIGHT_API QuickSightEndpointProvider : public QuickSightDefaultEpProviderBase {
+ public:
+  using QuickSightResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    QuickSightEndpointProvider()
-      : QuickSightDefaultEpProviderBase(Aws::QuickSight::QuickSightEndpointRules::GetRulesBlob(), Aws::QuickSight::QuickSightEndpointRules::RulesBlobSize)
-    {}
+  QuickSightEndpointProvider()
+      : QuickSightDefaultEpProviderBase(Aws::QuickSight::QuickSightEndpointRules::GetRulesBlob(),
+                                        Aws::QuickSight::QuickSightEndpointRules::RulesBlobSize) {}
 
-    ~QuickSightEndpointProvider()
-    {
-    }
+  ~QuickSightEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace QuickSight
+}  // namespace Aws

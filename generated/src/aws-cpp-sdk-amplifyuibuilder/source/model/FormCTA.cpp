@@ -11,73 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyUIBuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Model {
 
-FormCTA::FormCTA(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FormCTA::FormCTA(JsonView jsonValue) { *this = jsonValue; }
 
-FormCTA& FormCTA::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("position"))
-  {
+FormCTA& FormCTA::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("position")) {
     m_position = FormButtonsPositionMapper::GetFormButtonsPositionForName(jsonValue.GetString("position"));
     m_positionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("clear"))
-  {
+  if (jsonValue.ValueExists("clear")) {
     m_clear = jsonValue.GetObject("clear");
     m_clearHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("cancel"))
-  {
+  if (jsonValue.ValueExists("cancel")) {
     m_cancel = jsonValue.GetObject("cancel");
     m_cancelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("submit"))
-  {
+  if (jsonValue.ValueExists("submit")) {
     m_submit = jsonValue.GetObject("submit");
     m_submitHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FormCTA::Jsonize() const
-{
+JsonValue FormCTA::Jsonize() const {
   JsonValue payload;
 
-  if(m_positionHasBeenSet)
-  {
-   payload.WithString("position", FormButtonsPositionMapper::GetNameForFormButtonsPosition(m_position));
+  if (m_positionHasBeenSet) {
+    payload.WithString("position", FormButtonsPositionMapper::GetNameForFormButtonsPosition(m_position));
   }
 
-  if(m_clearHasBeenSet)
-  {
-   payload.WithObject("clear", m_clear.Jsonize());
-
+  if (m_clearHasBeenSet) {
+    payload.WithObject("clear", m_clear.Jsonize());
   }
 
-  if(m_cancelHasBeenSet)
-  {
-   payload.WithObject("cancel", m_cancel.Jsonize());
-
+  if (m_cancelHasBeenSet) {
+    payload.WithObject("cancel", m_cancel.Jsonize());
   }
 
-  if(m_submitHasBeenSet)
-  {
-   payload.WithObject("submit", m_submit.Jsonize());
-
+  if (m_submitHasBeenSet) {
+    payload.WithObject("submit", m_submit.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

@@ -10,23 +10,16 @@
 using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeDomainsRequest::SerializePayload() const
-{
+Aws::String DescribeDomainsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeDomains&";
-  if(m_domainNamesHasBeenSet)
-  {
-    if (m_domainNames.empty())
-    {
+  if (m_domainNamesHasBeenSet) {
+    if (m_domainNames.empty()) {
       ss << "DomainNames=&";
-    }
-    else
-    {
+    } else {
       unsigned domainNamesCount = 1;
-      for(auto& item : m_domainNames)
-      {
-        ss << "DomainNames.member." << domainNamesCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_domainNames) {
+        ss << "DomainNames.member." << domainNamesCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         domainNamesCount++;
       }
     }
@@ -36,8 +29,4 @@ Aws::String DescribeDomainsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeDomainsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeDomainsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lightsail/Lightsail_EXPORTS.h>
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
-  enum class CloudFormationStackRecordSourceType
-  {
-    NOT_SET,
-    ExportSnapshotRecord
-  };
+namespace Aws {
+namespace Lightsail {
+namespace Model {
+enum class CloudFormationStackRecordSourceType { NOT_SET, ExportSnapshotRecord };
 
-namespace CloudFormationStackRecordSourceTypeMapper
-{
+namespace CloudFormationStackRecordSourceTypeMapper {
 AWS_LIGHTSAIL_API CloudFormationStackRecordSourceType GetCloudFormationStackRecordSourceTypeForName(const Aws::String& name);
 
 AWS_LIGHTSAIL_API Aws::String GetNameForCloudFormationStackRecordSourceType(CloudFormationStackRecordSourceType value);
-} // namespace CloudFormationStackRecordSourceTypeMapper
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace CloudFormationStackRecordSourceTypeMapper
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

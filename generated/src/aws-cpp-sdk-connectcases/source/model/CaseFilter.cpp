@@ -11,44 +11,31 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCases
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCases {
+namespace Model {
 
-CaseFilter::CaseFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CaseFilter::CaseFilter(JsonView jsonValue) { *this = jsonValue; }
 
-CaseFilter& CaseFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("field"))
-  {
+CaseFilter& CaseFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("field")) {
     m_field = jsonValue.GetObject("field");
     m_fieldHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("not"))
-  {
+  if (jsonValue.ValueExists("not")) {
     m_not = Aws::MakeShared<CaseFilter>("CaseFilter", jsonValue.GetObject("not"));
     m_notHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("andAll"))
-  {
+  if (jsonValue.ValueExists("andAll")) {
     Aws::Utils::Array<JsonView> andAllJsonList = jsonValue.GetArray("andAll");
-    for(unsigned andAllIndex = 0; andAllIndex < andAllJsonList.GetLength(); ++andAllIndex)
-    {
+    for (unsigned andAllIndex = 0; andAllIndex < andAllJsonList.GetLength(); ++andAllIndex) {
       m_andAll.push_back(andAllJsonList[andAllIndex].AsObject());
     }
     m_andAllHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("orAll"))
-  {
+  if (jsonValue.ValueExists("orAll")) {
     Aws::Utils::Array<JsonView> orAllJsonList = jsonValue.GetArray("orAll");
-    for(unsigned orAllIndex = 0; orAllIndex < orAllJsonList.GetLength(); ++orAllIndex)
-    {
+    for (unsigned orAllIndex = 0; orAllIndex < orAllJsonList.GetLength(); ++orAllIndex) {
       m_orAll.push_back(orAllJsonList[orAllIndex].AsObject());
     }
     m_orAllHasBeenSet = true;
@@ -56,47 +43,36 @@ CaseFilter& CaseFilter::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue CaseFilter::Jsonize() const
-{
+JsonValue CaseFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_fieldHasBeenSet)
-  {
-   payload.WithObject("field", m_field.Jsonize());
-
+  if (m_fieldHasBeenSet) {
+    payload.WithObject("field", m_field.Jsonize());
   }
 
-  if(m_notHasBeenSet)
-  {
-   payload.WithObject("not", m_not->Jsonize());
-
+  if (m_notHasBeenSet) {
+    payload.WithObject("not", m_not->Jsonize());
   }
 
-  if(m_andAllHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> andAllJsonList(m_andAll.size());
-   for(unsigned andAllIndex = 0; andAllIndex < andAllJsonList.GetLength(); ++andAllIndex)
-   {
-     andAllJsonList[andAllIndex].AsObject(m_andAll[andAllIndex].Jsonize());
-   }
-   payload.WithArray("andAll", std::move(andAllJsonList));
-
+  if (m_andAllHasBeenSet) {
+    Aws::Utils::Array<JsonValue> andAllJsonList(m_andAll.size());
+    for (unsigned andAllIndex = 0; andAllIndex < andAllJsonList.GetLength(); ++andAllIndex) {
+      andAllJsonList[andAllIndex].AsObject(m_andAll[andAllIndex].Jsonize());
+    }
+    payload.WithArray("andAll", std::move(andAllJsonList));
   }
 
-  if(m_orAllHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> orAllJsonList(m_orAll.size());
-   for(unsigned orAllIndex = 0; orAllIndex < orAllJsonList.GetLength(); ++orAllIndex)
-   {
-     orAllJsonList[orAllIndex].AsObject(m_orAll[orAllIndex].Jsonize());
-   }
-   payload.WithArray("orAll", std::move(orAllJsonList));
-
+  if (m_orAllHasBeenSet) {
+    Aws::Utils::Array<JsonValue> orAllJsonList(m_orAll.size());
+    for (unsigned orAllIndex = 0; orAllIndex < orAllJsonList.GetLength(); ++orAllIndex) {
+      orAllJsonList[orAllIndex].AsObject(m_orAll[orAllIndex].Jsonize());
+    }
+    payload.WithArray("orAll", std::move(orAllJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCases
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCases
+}  // namespace Aws

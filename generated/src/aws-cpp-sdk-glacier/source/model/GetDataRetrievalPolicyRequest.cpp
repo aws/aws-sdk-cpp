@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glacier/model/GetDataRetrievalPolicyRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glacier/model/GetDataRetrievalPolicyRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::Glacier::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetDataRetrievalPolicyRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetDataRetrievalPolicyRequest::SerializePayload() const { return {}; }

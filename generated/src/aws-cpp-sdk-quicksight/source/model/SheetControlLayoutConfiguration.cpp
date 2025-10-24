@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/SheetControlLayoutConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/SheetControlLayoutConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-SheetControlLayoutConfiguration::SheetControlLayoutConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SheetControlLayoutConfiguration::SheetControlLayoutConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-SheetControlLayoutConfiguration& SheetControlLayoutConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("GridLayout"))
-  {
+SheetControlLayoutConfiguration& SheetControlLayoutConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("GridLayout")) {
     m_gridLayout = jsonValue.GetObject("GridLayout");
     m_gridLayoutHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SheetControlLayoutConfiguration::Jsonize() const
-{
+JsonValue SheetControlLayoutConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_gridLayoutHasBeenSet)
-  {
-   payload.WithObject("GridLayout", m_gridLayout.Jsonize());
-
+  if (m_gridLayoutHasBeenSet) {
+    payload.WithObject("GridLayout", m_gridLayout.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

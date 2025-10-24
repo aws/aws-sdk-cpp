@@ -12,36 +12,24 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String TagContactRequest::SerializePayload() const
-{
+Aws::String TagContactRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_contactIdHasBeenSet)
-  {
-   payload.WithString("ContactId", m_contactId);
-
+  if (m_contactIdHasBeenSet) {
+    payload.WithString("ContactId", m_contactId);
   }
 
-  if(m_instanceIdHasBeenSet)
-  {
-   payload.WithString("InstanceId", m_instanceId);
-
+  if (m_instanceIdHasBeenSet) {
+    payload.WithString("InstanceId", m_instanceId);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("Tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

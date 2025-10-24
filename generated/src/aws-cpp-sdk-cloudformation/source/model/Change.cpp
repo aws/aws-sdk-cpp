@@ -4,48 +4,38 @@
  */
 
 #include <aws/cloudformation/model/Change.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFormation
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFormation {
+namespace Model {
 
-Change::Change(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+Change::Change(const XmlNode& xmlNode) { *this = xmlNode; }
 
-Change& Change::operator =(const XmlNode& xmlNode)
-{
+Change& Change::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode typeNode = resultNode.FirstChild("Type");
-    if(!typeNode.IsNull())
-    {
+    if (!typeNode.IsNull()) {
       m_type = ChangeTypeMapper::GetChangeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
     }
     XmlNode hookInvocationCountNode = resultNode.FirstChild("HookInvocationCount");
-    if(!hookInvocationCountNode.IsNull())
-    {
-      m_hookInvocationCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hookInvocationCountNode.GetText()).c_str()).c_str());
+    if (!hookInvocationCountNode.IsNull()) {
+      m_hookInvocationCount = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hookInvocationCountNode.GetText()).c_str()).c_str());
       m_hookInvocationCountHasBeenSet = true;
     }
     XmlNode resourceChangeNode = resultNode.FirstChild("ResourceChange");
-    if(!resourceChangeNode.IsNull())
-    {
+    if (!resourceChangeNode.IsNull()) {
       m_resourceChange = resourceChangeNode;
       m_resourceChangeHasBeenSet = true;
     }
@@ -54,45 +44,37 @@ Change& Change::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void Change::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_typeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Type=" << StringUtils::URLEncode(ChangeTypeMapper::GetNameForChangeType(m_type)) << "&";
+void Change::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_typeHasBeenSet) {
+    oStream << location << index << locationValue << ".Type=" << StringUtils::URLEncode(ChangeTypeMapper::GetNameForChangeType(m_type))
+            << "&";
   }
 
-  if(m_hookInvocationCountHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".HookInvocationCount=" << m_hookInvocationCount << "&";
+  if (m_hookInvocationCountHasBeenSet) {
+    oStream << location << index << locationValue << ".HookInvocationCount=" << m_hookInvocationCount << "&";
   }
 
-  if(m_resourceChangeHasBeenSet)
-  {
-      Aws::StringStream resourceChangeLocationAndMemberSs;
-      resourceChangeLocationAndMemberSs << location << index << locationValue << ".ResourceChange";
-      m_resourceChange.OutputToStream(oStream, resourceChangeLocationAndMemberSs.str().c_str());
-  }
-
-}
-
-void Change::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_typeHasBeenSet)
-  {
-      oStream << location << ".Type=" << StringUtils::URLEncode(ChangeTypeMapper::GetNameForChangeType(m_type)) << "&";
-  }
-  if(m_hookInvocationCountHasBeenSet)
-  {
-      oStream << location << ".HookInvocationCount=" << m_hookInvocationCount << "&";
-  }
-  if(m_resourceChangeHasBeenSet)
-  {
-      Aws::String resourceChangeLocationAndMember(location);
-      resourceChangeLocationAndMember += ".ResourceChange";
-      m_resourceChange.OutputToStream(oStream, resourceChangeLocationAndMember.c_str());
+  if (m_resourceChangeHasBeenSet) {
+    Aws::StringStream resourceChangeLocationAndMemberSs;
+    resourceChangeLocationAndMemberSs << location << index << locationValue << ".ResourceChange";
+    m_resourceChange.OutputToStream(oStream, resourceChangeLocationAndMemberSs.str().c_str());
   }
 }
 
-} // namespace Model
-} // namespace CloudFormation
-} // namespace Aws
+void Change::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_typeHasBeenSet) {
+    oStream << location << ".Type=" << StringUtils::URLEncode(ChangeTypeMapper::GetNameForChangeType(m_type)) << "&";
+  }
+  if (m_hookInvocationCountHasBeenSet) {
+    oStream << location << ".HookInvocationCount=" << m_hookInvocationCount << "&";
+  }
+  if (m_resourceChangeHasBeenSet) {
+    Aws::String resourceChangeLocationAndMember(location);
+    resourceChangeLocationAndMember += ".ResourceChange";
+    m_resourceChange.OutputToStream(oStream, resourceChangeLocationAndMember.c_str());
+  }
+}
+
+}  // namespace Model
+}  // namespace CloudFormation
+}  // namespace Aws

@@ -12,37 +12,24 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateModelRequest::SerializePayload() const
-{
+Aws::String CreateModelRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_schemaHasBeenSet)
-  {
-   payload.WithString("schema", m_schema);
-
+  if (m_schemaHasBeenSet) {
+    payload.WithString("schema", m_schema);
   }
 
-  if(m_contentTypeHasBeenSet)
-  {
-   payload.WithString("contentType", m_contentType);
-
+  if (m_contentTypeHasBeenSet) {
+    payload.WithString("contentType", m_contentType);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

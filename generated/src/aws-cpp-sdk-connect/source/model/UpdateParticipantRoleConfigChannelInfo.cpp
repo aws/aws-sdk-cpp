@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-UpdateParticipantRoleConfigChannelInfo::UpdateParticipantRoleConfigChannelInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UpdateParticipantRoleConfigChannelInfo::UpdateParticipantRoleConfigChannelInfo(JsonView jsonValue) { *this = jsonValue; }
 
-UpdateParticipantRoleConfigChannelInfo& UpdateParticipantRoleConfigChannelInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Chat"))
-  {
+UpdateParticipantRoleConfigChannelInfo& UpdateParticipantRoleConfigChannelInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Chat")) {
     m_chat = jsonValue.GetObject("Chat");
     m_chatHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UpdateParticipantRoleConfigChannelInfo::Jsonize() const
-{
+JsonValue UpdateParticipantRoleConfigChannelInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_chatHasBeenSet)
-  {
-   payload.WithObject("Chat", m_chat.Jsonize());
-
+  if (m_chatHasBeenSet) {
+    payload.WithObject("Chat", m_chat.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/datazone/model/UpdateDomainUnitResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/datazone/model/UpdateDomainUnitResult.h>
 
 #include <utility>
 
@@ -17,77 +17,60 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateDomainUnitResult::UpdateDomainUnitResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+UpdateDomainUnitResult::UpdateDomainUnitResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-UpdateDomainUnitResult& UpdateDomainUnitResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+UpdateDomainUnitResult& UpdateDomainUnitResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("createdAt"))
-  {
+  if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetDouble("createdAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdBy"))
-  {
+  if (jsonValue.ValueExists("createdBy")) {
     m_createdBy = jsonValue.GetString("createdBy");
     m_createdByHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("domainId"))
-  {
+  if (jsonValue.ValueExists("domainId")) {
     m_domainId = jsonValue.GetString("domainId");
     m_domainIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("id"))
-  {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdatedAt"))
-  {
+  if (jsonValue.ValueExists("lastUpdatedAt")) {
     m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");
     m_lastUpdatedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdatedBy"))
-  {
+  if (jsonValue.ValueExists("lastUpdatedBy")) {
     m_lastUpdatedBy = jsonValue.GetString("lastUpdatedBy");
     m_lastUpdatedByHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("owners"))
-  {
+  if (jsonValue.ValueExists("owners")) {
     Aws::Utils::Array<JsonView> ownersJsonList = jsonValue.GetArray("owners");
-    for(unsigned ownersIndex = 0; ownersIndex < ownersJsonList.GetLength(); ++ownersIndex)
-    {
+    for (unsigned ownersIndex = 0; ownersIndex < ownersJsonList.GetLength(); ++ownersIndex) {
       m_owners.push_back(ownersJsonList[ownersIndex].AsObject());
     }
     m_ownersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("parentDomainUnitId"))
-  {
+  if (jsonValue.ValueExists("parentDomainUnitId")) {
     m_parentDomainUnitId = jsonValue.GetString("parentDomainUnitId");
     m_parentDomainUnitIdHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

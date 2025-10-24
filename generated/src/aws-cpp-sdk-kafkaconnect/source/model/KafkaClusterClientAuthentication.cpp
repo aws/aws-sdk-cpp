@@ -3,48 +3,40 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kafkaconnect/model/KafkaClusterClientAuthentication.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kafkaconnect/model/KafkaClusterClientAuthentication.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace KafkaConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace KafkaConnect {
+namespace Model {
 
-KafkaClusterClientAuthentication::KafkaClusterClientAuthentication(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+KafkaClusterClientAuthentication::KafkaClusterClientAuthentication(JsonView jsonValue) { *this = jsonValue; }
 
-KafkaClusterClientAuthentication& KafkaClusterClientAuthentication::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("authenticationType"))
-  {
-    m_authenticationType = KafkaClusterClientAuthenticationTypeMapper::GetKafkaClusterClientAuthenticationTypeForName(jsonValue.GetString("authenticationType"));
+KafkaClusterClientAuthentication& KafkaClusterClientAuthentication::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("authenticationType")) {
+    m_authenticationType = KafkaClusterClientAuthenticationTypeMapper::GetKafkaClusterClientAuthenticationTypeForName(
+        jsonValue.GetString("authenticationType"));
     m_authenticationTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue KafkaClusterClientAuthentication::Jsonize() const
-{
+JsonValue KafkaClusterClientAuthentication::Jsonize() const {
   JsonValue payload;
 
-  if(m_authenticationTypeHasBeenSet)
-  {
-   payload.WithString("authenticationType", KafkaClusterClientAuthenticationTypeMapper::GetNameForKafkaClusterClientAuthenticationType(m_authenticationType));
+  if (m_authenticationTypeHasBeenSet) {
+    payload.WithString("authenticationType",
+                       KafkaClusterClientAuthenticationTypeMapper::GetNameForKafkaClusterClientAuthenticationType(m_authenticationType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace KafkaConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace KafkaConnect
+}  // namespace Aws

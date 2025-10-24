@@ -7,25 +7,16 @@
 #include <aws/chime-sdk-messaging/ChimeSDKMessaging_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ChimeSDKMessaging
-{
-namespace Model
-{
-  enum class ChannelMode
-  {
-    NOT_SET,
-    UNRESTRICTED,
-    RESTRICTED
-  };
+namespace Aws {
+namespace ChimeSDKMessaging {
+namespace Model {
+enum class ChannelMode { NOT_SET, UNRESTRICTED, RESTRICTED };
 
-namespace ChannelModeMapper
-{
+namespace ChannelModeMapper {
 AWS_CHIMESDKMESSAGING_API ChannelMode GetChannelModeForName(const Aws::String& name);
 
 AWS_CHIMESDKMESSAGING_API Aws::String GetNameForChannelMode(ChannelMode value);
-} // namespace ChannelModeMapper
-} // namespace Model
-} // namespace ChimeSDKMessaging
-} // namespace Aws
+}  // namespace ChannelModeMapper
+}  // namespace Model
+}  // namespace ChimeSDKMessaging
+}  // namespace Aws

@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-EvaluationStatus::EvaluationStatus(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EvaluationStatus::EvaluationStatus(JsonView jsonValue) { *this = jsonValue; }
 
-EvaluationStatus& EvaluationStatus::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Status"))
-  {
+EvaluationStatus& EvaluationStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Status")) {
     m_status = ResourceEvaluationStatusMapper::GetResourceEvaluationStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FailureReason"))
-  {
+  if (jsonValue.ValueExists("FailureReason")) {
     m_failureReason = jsonValue.GetString("FailureReason");
     m_failureReasonHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EvaluationStatus::Jsonize() const
-{
+JsonValue EvaluationStatus::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", ResourceEvaluationStatusMapper::GetNameForResourceEvaluationStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", ResourceEvaluationStatusMapper::GetNameForResourceEvaluationStatus(m_status));
   }
 
-  if(m_failureReasonHasBeenSet)
-  {
-   payload.WithString("FailureReason", m_failureReason);
-
+  if (m_failureReasonHasBeenSet) {
+    payload.WithString("FailureReason", m_failureReason);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

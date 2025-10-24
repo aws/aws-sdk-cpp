@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-IncrementalPullConfig::IncrementalPullConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IncrementalPullConfig::IncrementalPullConfig(JsonView jsonValue) { *this = jsonValue; }
 
-IncrementalPullConfig& IncrementalPullConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("datetimeTypeFieldName"))
-  {
+IncrementalPullConfig& IncrementalPullConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("datetimeTypeFieldName")) {
     m_datetimeTypeFieldName = jsonValue.GetString("datetimeTypeFieldName");
     m_datetimeTypeFieldNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IncrementalPullConfig::Jsonize() const
-{
+JsonValue IncrementalPullConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_datetimeTypeFieldNameHasBeenSet)
-  {
-   payload.WithString("datetimeTypeFieldName", m_datetimeTypeFieldName);
-
+  if (m_datetimeTypeFieldNameHasBeenSet) {
+    payload.WithString("datetimeTypeFieldName", m_datetimeTypeFieldName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

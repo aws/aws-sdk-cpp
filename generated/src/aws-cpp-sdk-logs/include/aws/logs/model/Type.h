@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/logs/CloudWatchLogs_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudWatchLogs
-{
-namespace Model
-{
-  enum class Type
-  {
-    NOT_SET,
-    boolean,
-    integer,
-    double_,
-    string
-  };
+namespace Aws {
+namespace CloudWatchLogs {
+namespace Model {
+enum class Type { NOT_SET, boolean, integer, double_, string };
 
-namespace TypeMapper
-{
+namespace TypeMapper {
 AWS_CLOUDWATCHLOGS_API Type GetTypeForName(const Aws::String& name);
 
 AWS_CLOUDWATCHLOGS_API Aws::String GetNameForType(Type value);
-} // namespace TypeMapper
-} // namespace Model
-} // namespace CloudWatchLogs
-} // namespace Aws
+}  // namespace TypeMapper
+}  // namespace Model
+}  // namespace CloudWatchLogs
+}  // namespace Aws

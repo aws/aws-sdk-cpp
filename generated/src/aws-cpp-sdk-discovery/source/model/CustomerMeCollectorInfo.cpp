@@ -3,115 +3,86 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/discovery/model/CustomerMeCollectorInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/discovery/model/CustomerMeCollectorInfo.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApplicationDiscoveryService
-{
-namespace Model
-{
+namespace Aws {
+namespace ApplicationDiscoveryService {
+namespace Model {
 
-CustomerMeCollectorInfo::CustomerMeCollectorInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CustomerMeCollectorInfo::CustomerMeCollectorInfo(JsonView jsonValue) { *this = jsonValue; }
 
-CustomerMeCollectorInfo& CustomerMeCollectorInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("activeMeCollectors"))
-  {
+CustomerMeCollectorInfo& CustomerMeCollectorInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("activeMeCollectors")) {
     m_activeMeCollectors = jsonValue.GetInteger("activeMeCollectors");
     m_activeMeCollectorsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("healthyMeCollectors"))
-  {
+  if (jsonValue.ValueExists("healthyMeCollectors")) {
     m_healthyMeCollectors = jsonValue.GetInteger("healthyMeCollectors");
     m_healthyMeCollectorsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("denyListedMeCollectors"))
-  {
+  if (jsonValue.ValueExists("denyListedMeCollectors")) {
     m_denyListedMeCollectors = jsonValue.GetInteger("denyListedMeCollectors");
     m_denyListedMeCollectorsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("shutdownMeCollectors"))
-  {
+  if (jsonValue.ValueExists("shutdownMeCollectors")) {
     m_shutdownMeCollectors = jsonValue.GetInteger("shutdownMeCollectors");
     m_shutdownMeCollectorsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("unhealthyMeCollectors"))
-  {
+  if (jsonValue.ValueExists("unhealthyMeCollectors")) {
     m_unhealthyMeCollectors = jsonValue.GetInteger("unhealthyMeCollectors");
     m_unhealthyMeCollectorsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("totalMeCollectors"))
-  {
+  if (jsonValue.ValueExists("totalMeCollectors")) {
     m_totalMeCollectors = jsonValue.GetInteger("totalMeCollectors");
     m_totalMeCollectorsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("unknownMeCollectors"))
-  {
+  if (jsonValue.ValueExists("unknownMeCollectors")) {
     m_unknownMeCollectors = jsonValue.GetInteger("unknownMeCollectors");
     m_unknownMeCollectorsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CustomerMeCollectorInfo::Jsonize() const
-{
+JsonValue CustomerMeCollectorInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_activeMeCollectorsHasBeenSet)
-  {
-   payload.WithInteger("activeMeCollectors", m_activeMeCollectors);
-
+  if (m_activeMeCollectorsHasBeenSet) {
+    payload.WithInteger("activeMeCollectors", m_activeMeCollectors);
   }
 
-  if(m_healthyMeCollectorsHasBeenSet)
-  {
-   payload.WithInteger("healthyMeCollectors", m_healthyMeCollectors);
-
+  if (m_healthyMeCollectorsHasBeenSet) {
+    payload.WithInteger("healthyMeCollectors", m_healthyMeCollectors);
   }
 
-  if(m_denyListedMeCollectorsHasBeenSet)
-  {
-   payload.WithInteger("denyListedMeCollectors", m_denyListedMeCollectors);
-
+  if (m_denyListedMeCollectorsHasBeenSet) {
+    payload.WithInteger("denyListedMeCollectors", m_denyListedMeCollectors);
   }
 
-  if(m_shutdownMeCollectorsHasBeenSet)
-  {
-   payload.WithInteger("shutdownMeCollectors", m_shutdownMeCollectors);
-
+  if (m_shutdownMeCollectorsHasBeenSet) {
+    payload.WithInteger("shutdownMeCollectors", m_shutdownMeCollectors);
   }
 
-  if(m_unhealthyMeCollectorsHasBeenSet)
-  {
-   payload.WithInteger("unhealthyMeCollectors", m_unhealthyMeCollectors);
-
+  if (m_unhealthyMeCollectorsHasBeenSet) {
+    payload.WithInteger("unhealthyMeCollectors", m_unhealthyMeCollectors);
   }
 
-  if(m_totalMeCollectorsHasBeenSet)
-  {
-   payload.WithInteger("totalMeCollectors", m_totalMeCollectors);
-
+  if (m_totalMeCollectorsHasBeenSet) {
+    payload.WithInteger("totalMeCollectors", m_totalMeCollectors);
   }
 
-  if(m_unknownMeCollectorsHasBeenSet)
-  {
-   payload.WithInteger("unknownMeCollectors", m_unknownMeCollectors);
-
+  if (m_unknownMeCollectorsHasBeenSet) {
+    payload.WithInteger("unknownMeCollectors", m_unknownMeCollectors);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApplicationDiscoveryService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApplicationDiscoveryService
+}  // namespace Aws

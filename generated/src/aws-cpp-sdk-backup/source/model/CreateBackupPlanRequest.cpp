@@ -12,36 +12,24 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateBackupPlanRequest::SerializePayload() const
-{
+Aws::String CreateBackupPlanRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_backupPlanHasBeenSet)
-  {
-   payload.WithObject("BackupPlan", m_backupPlan.Jsonize());
-
+  if (m_backupPlanHasBeenSet) {
+    payload.WithObject("BackupPlan", m_backupPlan.Jsonize());
   }
 
-  if(m_backupPlanTagsHasBeenSet)
-  {
-   JsonValue backupPlanTagsJsonMap;
-   for(auto& backupPlanTagsItem : m_backupPlanTags)
-   {
-     backupPlanTagsJsonMap.WithString(backupPlanTagsItem.first, backupPlanTagsItem.second);
-   }
-   payload.WithObject("BackupPlanTags", std::move(backupPlanTagsJsonMap));
-
+  if (m_backupPlanTagsHasBeenSet) {
+    JsonValue backupPlanTagsJsonMap;
+    for (auto& backupPlanTagsItem : m_backupPlanTags) {
+      backupPlanTagsJsonMap.WithString(backupPlanTagsItem.first, backupPlanTagsItem.second);
+    }
+    payload.WithObject("BackupPlanTags", std::move(backupPlanTagsJsonMap));
   }
 
-  if(m_creatorRequestIdHasBeenSet)
-  {
-   payload.WithString("CreatorRequestId", m_creatorRequestId);
-
+  if (m_creatorRequestIdHasBeenSet) {
+    payload.WithString("CreatorRequestId", m_creatorRequestId);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

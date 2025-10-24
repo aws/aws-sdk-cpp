@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/frauddetector/model/ATIModelPerformance.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/frauddetector/model/ATIModelPerformance.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FraudDetector
-{
-namespace Model
-{
+namespace Aws {
+namespace FraudDetector {
+namespace Model {
 
-ATIModelPerformance::ATIModelPerformance(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ATIModelPerformance::ATIModelPerformance(JsonView jsonValue) { *this = jsonValue; }
 
-ATIModelPerformance& ATIModelPerformance::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("asi"))
-  {
+ATIModelPerformance& ATIModelPerformance::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("asi")) {
     m_asi = jsonValue.GetDouble("asi");
     m_asiHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ATIModelPerformance::Jsonize() const
-{
+JsonValue ATIModelPerformance::Jsonize() const {
   JsonValue payload;
 
-  if(m_asiHasBeenSet)
-  {
-   payload.WithDouble("asi", m_asi);
-
+  if (m_asiHasBeenSet) {
+    payload.WithDouble("asi", m_asi);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FraudDetector
-} // namespace Aws
+}  // namespace Model
+}  // namespace FraudDetector
+}  // namespace Aws

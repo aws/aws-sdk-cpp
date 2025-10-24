@@ -3,154 +3,119 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/gamelift/model/GameServer.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/gamelift/model/GameServer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GameLift
-{
-namespace Model
-{
+namespace Aws {
+namespace GameLift {
+namespace Model {
 
-GameServer::GameServer(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GameServer::GameServer(JsonView jsonValue) { *this = jsonValue; }
 
-GameServer& GameServer::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("GameServerGroupName"))
-  {
+GameServer& GameServer::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("GameServerGroupName")) {
     m_gameServerGroupName = jsonValue.GetString("GameServerGroupName");
     m_gameServerGroupNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("GameServerGroupArn"))
-  {
+  if (jsonValue.ValueExists("GameServerGroupArn")) {
     m_gameServerGroupArn = jsonValue.GetString("GameServerGroupArn");
     m_gameServerGroupArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("GameServerId"))
-  {
+  if (jsonValue.ValueExists("GameServerId")) {
     m_gameServerId = jsonValue.GetString("GameServerId");
     m_gameServerIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InstanceId"))
-  {
+  if (jsonValue.ValueExists("InstanceId")) {
     m_instanceId = jsonValue.GetString("InstanceId");
     m_instanceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ConnectionInfo"))
-  {
+  if (jsonValue.ValueExists("ConnectionInfo")) {
     m_connectionInfo = jsonValue.GetString("ConnectionInfo");
     m_connectionInfoHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("GameServerData"))
-  {
+  if (jsonValue.ValueExists("GameServerData")) {
     m_gameServerData = jsonValue.GetString("GameServerData");
     m_gameServerDataHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ClaimStatus"))
-  {
+  if (jsonValue.ValueExists("ClaimStatus")) {
     m_claimStatus = GameServerClaimStatusMapper::GetGameServerClaimStatusForName(jsonValue.GetString("ClaimStatus"));
     m_claimStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UtilizationStatus"))
-  {
-    m_utilizationStatus = GameServerUtilizationStatusMapper::GetGameServerUtilizationStatusForName(jsonValue.GetString("UtilizationStatus"));
+  if (jsonValue.ValueExists("UtilizationStatus")) {
+    m_utilizationStatus =
+        GameServerUtilizationStatusMapper::GetGameServerUtilizationStatusForName(jsonValue.GetString("UtilizationStatus"));
     m_utilizationStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RegistrationTime"))
-  {
+  if (jsonValue.ValueExists("RegistrationTime")) {
     m_registrationTime = jsonValue.GetDouble("RegistrationTime");
     m_registrationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastClaimTime"))
-  {
+  if (jsonValue.ValueExists("LastClaimTime")) {
     m_lastClaimTime = jsonValue.GetDouble("LastClaimTime");
     m_lastClaimTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastHealthCheckTime"))
-  {
+  if (jsonValue.ValueExists("LastHealthCheckTime")) {
     m_lastHealthCheckTime = jsonValue.GetDouble("LastHealthCheckTime");
     m_lastHealthCheckTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GameServer::Jsonize() const
-{
+JsonValue GameServer::Jsonize() const {
   JsonValue payload;
 
-  if(m_gameServerGroupNameHasBeenSet)
-  {
-   payload.WithString("GameServerGroupName", m_gameServerGroupName);
-
+  if (m_gameServerGroupNameHasBeenSet) {
+    payload.WithString("GameServerGroupName", m_gameServerGroupName);
   }
 
-  if(m_gameServerGroupArnHasBeenSet)
-  {
-   payload.WithString("GameServerGroupArn", m_gameServerGroupArn);
-
+  if (m_gameServerGroupArnHasBeenSet) {
+    payload.WithString("GameServerGroupArn", m_gameServerGroupArn);
   }
 
-  if(m_gameServerIdHasBeenSet)
-  {
-   payload.WithString("GameServerId", m_gameServerId);
-
+  if (m_gameServerIdHasBeenSet) {
+    payload.WithString("GameServerId", m_gameServerId);
   }
 
-  if(m_instanceIdHasBeenSet)
-  {
-   payload.WithString("InstanceId", m_instanceId);
-
+  if (m_instanceIdHasBeenSet) {
+    payload.WithString("InstanceId", m_instanceId);
   }
 
-  if(m_connectionInfoHasBeenSet)
-  {
-   payload.WithString("ConnectionInfo", m_connectionInfo);
-
+  if (m_connectionInfoHasBeenSet) {
+    payload.WithString("ConnectionInfo", m_connectionInfo);
   }
 
-  if(m_gameServerDataHasBeenSet)
-  {
-   payload.WithString("GameServerData", m_gameServerData);
-
+  if (m_gameServerDataHasBeenSet) {
+    payload.WithString("GameServerData", m_gameServerData);
   }
 
-  if(m_claimStatusHasBeenSet)
-  {
-   payload.WithString("ClaimStatus", GameServerClaimStatusMapper::GetNameForGameServerClaimStatus(m_claimStatus));
+  if (m_claimStatusHasBeenSet) {
+    payload.WithString("ClaimStatus", GameServerClaimStatusMapper::GetNameForGameServerClaimStatus(m_claimStatus));
   }
 
-  if(m_utilizationStatusHasBeenSet)
-  {
-   payload.WithString("UtilizationStatus", GameServerUtilizationStatusMapper::GetNameForGameServerUtilizationStatus(m_utilizationStatus));
+  if (m_utilizationStatusHasBeenSet) {
+    payload.WithString("UtilizationStatus", GameServerUtilizationStatusMapper::GetNameForGameServerUtilizationStatus(m_utilizationStatus));
   }
 
-  if(m_registrationTimeHasBeenSet)
-  {
-   payload.WithDouble("RegistrationTime", m_registrationTime.SecondsWithMSPrecision());
+  if (m_registrationTimeHasBeenSet) {
+    payload.WithDouble("RegistrationTime", m_registrationTime.SecondsWithMSPrecision());
   }
 
-  if(m_lastClaimTimeHasBeenSet)
-  {
-   payload.WithDouble("LastClaimTime", m_lastClaimTime.SecondsWithMSPrecision());
+  if (m_lastClaimTimeHasBeenSet) {
+    payload.WithDouble("LastClaimTime", m_lastClaimTime.SecondsWithMSPrecision());
   }
 
-  if(m_lastHealthCheckTimeHasBeenSet)
-  {
-   payload.WithDouble("LastHealthCheckTime", m_lastHealthCheckTime.SecondsWithMSPrecision());
+  if (m_lastHealthCheckTimeHasBeenSet) {
+    payload.WithDouble("LastHealthCheckTime", m_lastHealthCheckTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GameLift
-} // namespace Aws
+}  // namespace Model
+}  // namespace GameLift
+}  // namespace Aws

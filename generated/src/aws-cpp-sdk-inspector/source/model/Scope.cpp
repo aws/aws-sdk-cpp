@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/inspector/model/Scope.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/inspector/model/Scope.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Inspector
-{
-namespace Model
-{
+namespace Aws {
+namespace Inspector {
+namespace Model {
 
-Scope::Scope(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Scope::Scope(JsonView jsonValue) { *this = jsonValue; }
 
-Scope& Scope::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("key"))
-  {
+Scope& Scope::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("key")) {
     m_key = ScopeTypeMapper::GetScopeTypeForName(jsonValue.GetString("key"));
     m_keyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("value"))
-  {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetString("value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Scope::Jsonize() const
-{
+JsonValue Scope::Jsonize() const {
   JsonValue payload;
 
-  if(m_keyHasBeenSet)
-  {
-   payload.WithString("key", ScopeTypeMapper::GetNameForScopeType(m_key));
+  if (m_keyHasBeenSet) {
+    payload.WithString("key", ScopeTypeMapper::GetNameForScopeType(m_key));
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Inspector
-} // namespace Aws
+}  // namespace Model
+}  // namespace Inspector
+}  // namespace Aws

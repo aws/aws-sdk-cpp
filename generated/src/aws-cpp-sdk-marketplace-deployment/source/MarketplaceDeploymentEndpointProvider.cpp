@@ -5,12 +5,8 @@
 
 #include <aws/marketplace-deployment/MarketplaceDeploymentEndpointProvider.h>
 
-namespace Aws
-{
-namespace MarketplaceDeployment
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace MarketplaceDeployment
-} // namespace Aws
+namespace Aws {
+namespace MarketplaceDeployment {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace MarketplaceDeployment
+}  // namespace Aws

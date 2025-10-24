@@ -13,36 +13,25 @@ using namespace Aws::CloudFrontKeyValueStore::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteKeyRequest::SerializePayload() const
-{
-  return {};
-}
+Aws::String DeleteKeyRequest::SerializePayload() const { return {}; }
 
-Aws::Http::HeaderValueCollection DeleteKeyRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteKeyRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_ifMatchHasBeenSet)
-  {
+  if (m_ifMatchHasBeenSet) {
     ss << m_ifMatch;
-    headers.emplace("if-match",  ss.str());
+    headers.emplace("if-match", ss.str());
     ss.str("");
   }
 
   return headers;
-
 }
 
-
-
-DeleteKeyRequest::EndpointParameters DeleteKeyRequest::GetEndpointContextParams() const
-{
-    EndpointParameters parameters;
-    // Operation context parameters
-    if (KvsARNHasBeenSet()) {
-        parameters.emplace_back(Aws::String("KvsARN"), this->GetKvsARN(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
-    }
-    return parameters;
+DeleteKeyRequest::EndpointParameters DeleteKeyRequest::GetEndpointContextParams() const {
+  EndpointParameters parameters;
+  // Operation context parameters
+  if (KvsARNHasBeenSet()) {
+    parameters.emplace_back(Aws::String("KvsARN"), this->GetKvsARN(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+  }
+  return parameters;
 }
-
-

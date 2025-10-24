@@ -12,19 +12,12 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AssociateContactWithUserRequest::SerializePayload() const
-{
+Aws::String AssociateContactWithUserRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_userIdHasBeenSet)
-  {
-   payload.WithString("UserId", m_userId);
-
+  if (m_userIdHasBeenSet) {
+    payload.WithString("UserId", m_userId);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

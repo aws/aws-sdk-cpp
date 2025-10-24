@@ -12,33 +12,22 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListAssociatedFleetsRequest::SerializePayload() const
-{
+Aws::String ListAssociatedFleetsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_stackNameHasBeenSet)
-  {
-   payload.WithString("StackName", m_stackName);
-
+  if (m_stackNameHasBeenSet) {
+    payload.WithString("StackName", m_stackName);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ListAssociatedFleetsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListAssociatedFleetsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "PhotonAdminProxyService.ListAssociatedFleets"));
   return headers;
-
 }
-
-
-
-

@@ -7,24 +7,16 @@
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CleanRoomsML
-{
-namespace Model
-{
-  enum class DatasetType
-  {
-    NOT_SET,
-    INTERACTIONS
-  };
+namespace Aws {
+namespace CleanRoomsML {
+namespace Model {
+enum class DatasetType { NOT_SET, INTERACTIONS };
 
-namespace DatasetTypeMapper
-{
+namespace DatasetTypeMapper {
 AWS_CLEANROOMSML_API DatasetType GetDatasetTypeForName(const Aws::String& name);
 
 AWS_CLEANROOMSML_API Aws::String GetNameForDatasetType(DatasetType value);
-} // namespace DatasetTypeMapper
-} // namespace Model
-} // namespace CleanRoomsML
-} // namespace Aws
+}  // namespace DatasetTypeMapper
+}  // namespace Model
+}  // namespace CleanRoomsML
+}  // namespace Aws

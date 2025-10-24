@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/es/model/UpdateVpcEndpointRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/es/model/UpdateVpcEndpointRequest.h>
 
 #include <utility>
 
@@ -12,25 +12,16 @@ using namespace Aws::ElasticsearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateVpcEndpointRequest::SerializePayload() const
-{
+Aws::String UpdateVpcEndpointRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_vpcEndpointIdHasBeenSet)
-  {
-   payload.WithString("VpcEndpointId", m_vpcEndpointId);
-
+  if (m_vpcEndpointIdHasBeenSet) {
+    payload.WithString("VpcEndpointId", m_vpcEndpointId);
   }
 
-  if(m_vpcOptionsHasBeenSet)
-  {
-   payload.WithObject("VpcOptions", m_vpcOptions.Jsonize());
-
+  if (m_vpcOptionsHasBeenSet) {
+    payload.WithObject("VpcOptions", m_vpcOptions.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

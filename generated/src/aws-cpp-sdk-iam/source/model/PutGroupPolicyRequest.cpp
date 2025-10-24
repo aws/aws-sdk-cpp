@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/PutGroupPolicyRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/PutGroupPolicyRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String PutGroupPolicyRequest::SerializePayload() const
-{
+Aws::String PutGroupPolicyRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=PutGroupPolicy&";
-  if(m_groupNameHasBeenSet)
-  {
+  if (m_groupNameHasBeenSet) {
     ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
   }
 
-  if(m_policyNameHasBeenSet)
-  {
+  if (m_policyNameHasBeenSet) {
     ss << "PolicyName=" << StringUtils::URLEncode(m_policyName.c_str()) << "&";
   }
 
-  if(m_policyDocumentHasBeenSet)
-  {
+  if (m_policyDocumentHasBeenSet) {
     ss << "PolicyDocument=" << StringUtils::URLEncode(m_policyDocument.c_str()) << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String PutGroupPolicyRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  PutGroupPolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void PutGroupPolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

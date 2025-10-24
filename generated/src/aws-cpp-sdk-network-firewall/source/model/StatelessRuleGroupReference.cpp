@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/network-firewall/model/StatelessRuleGroupReference.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/network-firewall/model/StatelessRuleGroupReference.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace NetworkFirewall
-{
-namespace Model
-{
+namespace Aws {
+namespace NetworkFirewall {
+namespace Model {
 
-StatelessRuleGroupReference::StatelessRuleGroupReference(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StatelessRuleGroupReference::StatelessRuleGroupReference(JsonView jsonValue) { *this = jsonValue; }
 
-StatelessRuleGroupReference& StatelessRuleGroupReference::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ResourceArn"))
-  {
+StatelessRuleGroupReference& StatelessRuleGroupReference::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ResourceArn")) {
     m_resourceArn = jsonValue.GetString("ResourceArn");
     m_resourceArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Priority"))
-  {
+  if (jsonValue.ValueExists("Priority")) {
     m_priority = jsonValue.GetInteger("Priority");
     m_priorityHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StatelessRuleGroupReference::Jsonize() const
-{
+JsonValue StatelessRuleGroupReference::Jsonize() const {
   JsonValue payload;
 
-  if(m_resourceArnHasBeenSet)
-  {
-   payload.WithString("ResourceArn", m_resourceArn);
-
+  if (m_resourceArnHasBeenSet) {
+    payload.WithString("ResourceArn", m_resourceArn);
   }
 
-  if(m_priorityHasBeenSet)
-  {
-   payload.WithInteger("Priority", m_priority);
-
+  if (m_priorityHasBeenSet) {
+    payload.WithInteger("Priority", m_priority);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace NetworkFirewall
-} // namespace Aws
+}  // namespace Model
+}  // namespace NetworkFirewall
+}  // namespace Aws

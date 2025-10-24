@@ -3,43 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sts/model/ProvidedContext.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/sts/model/ProvidedContext.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace STS
-{
-namespace Model
-{
+namespace Aws {
+namespace STS {
+namespace Model {
 
-ProvidedContext::ProvidedContext(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+ProvidedContext::ProvidedContext(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ProvidedContext& ProvidedContext::operator =(const XmlNode& xmlNode)
-{
+ProvidedContext& ProvidedContext::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode providerArnNode = resultNode.FirstChild("ProviderArn");
-    if(!providerArnNode.IsNull())
-    {
+    if (!providerArnNode.IsNull()) {
       m_providerArn = Aws::Utils::Xml::DecodeEscapedXmlText(providerArnNode.GetText());
       m_providerArnHasBeenSet = true;
     }
     XmlNode contextAssertionNode = resultNode.FirstChild("ContextAssertion");
-    if(!contextAssertionNode.IsNull())
-    {
+    if (!contextAssertionNode.IsNull()) {
       m_contextAssertion = Aws::Utils::Xml::DecodeEscapedXmlText(contextAssertionNode.GetText());
       m_contextAssertionHasBeenSet = true;
     }
@@ -48,32 +38,25 @@ ProvidedContext& ProvidedContext::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void ProvidedContext::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_providerArnHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ProviderArn=" << StringUtils::URLEncode(m_providerArn.c_str()) << "&";
+void ProvidedContext::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_providerArnHasBeenSet) {
+    oStream << location << index << locationValue << ".ProviderArn=" << StringUtils::URLEncode(m_providerArn.c_str()) << "&";
   }
 
-  if(m_contextAssertionHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ContextAssertion=" << StringUtils::URLEncode(m_contextAssertion.c_str()) << "&";
-  }
-
-}
-
-void ProvidedContext::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_providerArnHasBeenSet)
-  {
-      oStream << location << ".ProviderArn=" << StringUtils::URLEncode(m_providerArn.c_str()) << "&";
-  }
-  if(m_contextAssertionHasBeenSet)
-  {
-      oStream << location << ".ContextAssertion=" << StringUtils::URLEncode(m_contextAssertion.c_str()) << "&";
+  if (m_contextAssertionHasBeenSet) {
+    oStream << location << index << locationValue << ".ContextAssertion=" << StringUtils::URLEncode(m_contextAssertion.c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace STS
-} // namespace Aws
+void ProvidedContext::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_providerArnHasBeenSet) {
+    oStream << location << ".ProviderArn=" << StringUtils::URLEncode(m_providerArn.c_str()) << "&";
+  }
+  if (m_contextAssertionHasBeenSet) {
+    oStream << location << ".ContextAssertion=" << StringUtils::URLEncode(m_contextAssertion.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace STS
+}  // namespace Aws

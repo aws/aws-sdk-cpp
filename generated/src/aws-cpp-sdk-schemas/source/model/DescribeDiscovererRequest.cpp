@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/schemas/model/DescribeDiscovererRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/schemas/model/DescribeDiscovererRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::Schemas::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeDiscovererRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DescribeDiscovererRequest::SerializePayload() const { return {}; }

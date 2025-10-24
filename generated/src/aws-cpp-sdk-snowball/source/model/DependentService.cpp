@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/snowball/model/DependentService.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/snowball/model/DependentService.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Snowball
-{
-namespace Model
-{
+namespace Aws {
+namespace Snowball {
+namespace Model {
 
-DependentService::DependentService(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DependentService::DependentService(JsonView jsonValue) { *this = jsonValue; }
 
-DependentService& DependentService::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ServiceName"))
-  {
+DependentService& DependentService::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ServiceName")) {
     m_serviceName = ServiceNameMapper::GetServiceNameForName(jsonValue.GetString("ServiceName"));
     m_serviceNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ServiceVersion"))
-  {
+  if (jsonValue.ValueExists("ServiceVersion")) {
     m_serviceVersion = jsonValue.GetObject("ServiceVersion");
     m_serviceVersionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DependentService::Jsonize() const
-{
+JsonValue DependentService::Jsonize() const {
   JsonValue payload;
 
-  if(m_serviceNameHasBeenSet)
-  {
-   payload.WithString("ServiceName", ServiceNameMapper::GetNameForServiceName(m_serviceName));
+  if (m_serviceNameHasBeenSet) {
+    payload.WithString("ServiceName", ServiceNameMapper::GetNameForServiceName(m_serviceName));
   }
 
-  if(m_serviceVersionHasBeenSet)
-  {
-   payload.WithObject("ServiceVersion", m_serviceVersion.Jsonize());
-
+  if (m_serviceVersionHasBeenSet) {
+    payload.WithObject("ServiceVersion", m_serviceVersion.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Snowball
-} // namespace Aws
+}  // namespace Model
+}  // namespace Snowball
+}  // namespace Aws

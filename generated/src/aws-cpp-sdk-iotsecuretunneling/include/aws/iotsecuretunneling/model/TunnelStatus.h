@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotsecuretunneling/IoTSecureTunneling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotsecuretunneling/IoTSecureTunneling_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTSecureTunneling
-{
-namespace Model
-{
-  enum class TunnelStatus
-  {
-    NOT_SET,
-    OPEN,
-    CLOSED
-  };
+namespace Aws {
+namespace IoTSecureTunneling {
+namespace Model {
+enum class TunnelStatus { NOT_SET, OPEN, CLOSED };
 
-namespace TunnelStatusMapper
-{
+namespace TunnelStatusMapper {
 AWS_IOTSECURETUNNELING_API TunnelStatus GetTunnelStatusForName(const Aws::String& name);
 
 AWS_IOTSECURETUNNELING_API Aws::String GetNameForTunnelStatus(TunnelStatus value);
-} // namespace TunnelStatusMapper
-} // namespace Model
-} // namespace IoTSecureTunneling
-} // namespace Aws
+}  // namespace TunnelStatusMapper
+}  // namespace Model
+}  // namespace IoTSecureTunneling
+}  // namespace Aws

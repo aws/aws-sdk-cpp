@@ -3,37 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/email/model/CustomVerificationEmailTemplateAlreadyExistsException.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/email/model/CustomVerificationEmailTemplateAlreadyExistsException.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SES
-{
-namespace Model
-{
+namespace Aws {
+namespace SES {
+namespace Model {
 
-CustomVerificationEmailTemplateAlreadyExistsException::CustomVerificationEmailTemplateAlreadyExistsException(const XmlNode& xmlNode)
-{
+CustomVerificationEmailTemplateAlreadyExistsException::CustomVerificationEmailTemplateAlreadyExistsException(const XmlNode& xmlNode) {
   *this = xmlNode;
 }
 
-CustomVerificationEmailTemplateAlreadyExistsException& CustomVerificationEmailTemplateAlreadyExistsException::operator =(const XmlNode& xmlNode)
-{
+CustomVerificationEmailTemplateAlreadyExistsException& CustomVerificationEmailTemplateAlreadyExistsException::operator=(
+    const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode customVerificationEmailTemplateNameNode = resultNode.FirstChild("CustomVerificationEmailTemplateName");
-    if(!customVerificationEmailTemplateNameNode.IsNull())
-    {
+    if (!customVerificationEmailTemplateNameNode.IsNull()) {
       m_customVerificationEmailTemplateName = Aws::Utils::Xml::DecodeEscapedXmlText(customVerificationEmailTemplateNameNode.GetText());
       m_customVerificationEmailTemplateNameHasBeenSet = true;
     }
@@ -42,23 +36,21 @@ CustomVerificationEmailTemplateAlreadyExistsException& CustomVerificationEmailTe
   return *this;
 }
 
-void CustomVerificationEmailTemplateAlreadyExistsException::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_customVerificationEmailTemplateNameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".CustomVerificationEmailTemplateName=" << StringUtils::URLEncode(m_customVerificationEmailTemplateName.c_str()) << "&";
-  }
-
-}
-
-void CustomVerificationEmailTemplateAlreadyExistsException::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_customVerificationEmailTemplateNameHasBeenSet)
-  {
-      oStream << location << ".CustomVerificationEmailTemplateName=" << StringUtils::URLEncode(m_customVerificationEmailTemplateName.c_str()) << "&";
+void CustomVerificationEmailTemplateAlreadyExistsException::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                                           const char* locationValue) const {
+  if (m_customVerificationEmailTemplateNameHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".CustomVerificationEmailTemplateName=" << StringUtils::URLEncode(m_customVerificationEmailTemplateName.c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace SES
-} // namespace Aws
+void CustomVerificationEmailTemplateAlreadyExistsException::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_customVerificationEmailTemplateNameHasBeenSet) {
+    oStream << location << ".CustomVerificationEmailTemplateName=" << StringUtils::URLEncode(m_customVerificationEmailTemplateName.c_str())
+            << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace SES
+}  // namespace Aws

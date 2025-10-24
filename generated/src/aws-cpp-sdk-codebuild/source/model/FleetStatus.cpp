@@ -11,61 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeBuild
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeBuild {
+namespace Model {
 
-FleetStatus::FleetStatus(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FleetStatus::FleetStatus(JsonView jsonValue) { *this = jsonValue; }
 
-FleetStatus& FleetStatus::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("statusCode"))
-  {
+FleetStatus& FleetStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("statusCode")) {
     m_statusCode = FleetStatusCodeMapper::GetFleetStatusCodeForName(jsonValue.GetString("statusCode"));
     m_statusCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("context"))
-  {
+  if (jsonValue.ValueExists("context")) {
     m_context = FleetContextCodeMapper::GetFleetContextCodeForName(jsonValue.GetString("context"));
     m_contextHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("message"))
-  {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FleetStatus::Jsonize() const
-{
+JsonValue FleetStatus::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusCodeHasBeenSet)
-  {
-   payload.WithString("statusCode", FleetStatusCodeMapper::GetNameForFleetStatusCode(m_statusCode));
+  if (m_statusCodeHasBeenSet) {
+    payload.WithString("statusCode", FleetStatusCodeMapper::GetNameForFleetStatusCode(m_statusCode));
   }
 
-  if(m_contextHasBeenSet)
-  {
-   payload.WithString("context", FleetContextCodeMapper::GetNameForFleetContextCode(m_context));
+  if (m_contextHasBeenSet) {
+    payload.WithString("context", FleetContextCodeMapper::GetNameForFleetContextCode(m_context));
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeBuild
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeBuild
+}  // namespace Aws

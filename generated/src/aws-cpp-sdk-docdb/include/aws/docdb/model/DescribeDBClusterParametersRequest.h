@@ -4,130 +4,159 @@
  */
 
 #pragma once
-#include <aws/docdb/DocDB_EXPORTS.h>
-#include <aws/docdb/DocDBRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/docdb/DocDBRequest.h>
+#include <aws/docdb/DocDB_EXPORTS.h>
 #include <aws/docdb/model/Filter.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace DocDB
-{
-namespace Model
-{
+namespace Aws {
+namespace DocDB {
+namespace Model {
 
+/**
+ * <p>Represents the input to <a>DescribeDBClusterParameters</a>.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBClusterParametersMessage">AWS
+ * API Reference</a></p>
+ */
+class DescribeDBClusterParametersRequest : public DocDBRequest {
+ public:
+  AWS_DOCDB_API DescribeDBClusterParametersRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DescribeDBClusterParameters"; }
+
+  AWS_DOCDB_API Aws::String SerializePayload() const override;
+
+ protected:
+  AWS_DOCDB_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
+
+ public:
+  ///@{
   /**
-   * <p>Represents the input to <a>DescribeDBClusterParameters</a>.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBClusterParametersMessage">AWS
-   * API Reference</a></p>
+   * <p>The name of a specific cluster parameter group to return parameter details
+   * for.</p> <p>Constraints:</p> <ul> <li> <p>If provided, must match the name of an
+   * existing <code>DBClusterParameterGroup</code>.</p> </li> </ul>
    */
-  class DescribeDBClusterParametersRequest : public DocDBRequest
-  {
-  public:
-    AWS_DOCDB_API DescribeDBClusterParametersRequest() = default;
+  inline const Aws::String& GetDBClusterParameterGroupName() const { return m_dBClusterParameterGroupName; }
+  inline bool DBClusterParameterGroupNameHasBeenSet() const { return m_dBClusterParameterGroupNameHasBeenSet; }
+  template <typename DBClusterParameterGroupNameT = Aws::String>
+  void SetDBClusterParameterGroupName(DBClusterParameterGroupNameT&& value) {
+    m_dBClusterParameterGroupNameHasBeenSet = true;
+    m_dBClusterParameterGroupName = std::forward<DBClusterParameterGroupNameT>(value);
+  }
+  template <typename DBClusterParameterGroupNameT = Aws::String>
+  DescribeDBClusterParametersRequest& WithDBClusterParameterGroupName(DBClusterParameterGroupNameT&& value) {
+    SetDBClusterParameterGroupName(std::forward<DBClusterParameterGroupNameT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DescribeDBClusterParameters"; }
+  ///@{
+  /**
+   * <p> A value that indicates to return only parameters for a specific source.
+   * Parameter sources can be <code>engine</code>, <code>service</code>, or
+   * <code>customer</code>. </p>
+   */
+  inline const Aws::String& GetSource() const { return m_source; }
+  inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+  template <typename SourceT = Aws::String>
+  void SetSource(SourceT&& value) {
+    m_sourceHasBeenSet = true;
+    m_source = std::forward<SourceT>(value);
+  }
+  template <typename SourceT = Aws::String>
+  DescribeDBClusterParametersRequest& WithSource(SourceT&& value) {
+    SetSource(std::forward<SourceT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_DOCDB_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>This parameter is not currently supported.</p>
+   */
+  inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
+  inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+  template <typename FiltersT = Aws::Vector<Filter>>
+  void SetFilters(FiltersT&& value) {
+    m_filtersHasBeenSet = true;
+    m_filters = std::forward<FiltersT>(value);
+  }
+  template <typename FiltersT = Aws::Vector<Filter>>
+  DescribeDBClusterParametersRequest& WithFilters(FiltersT&& value) {
+    SetFilters(std::forward<FiltersT>(value));
+    return *this;
+  }
+  template <typename FiltersT = Filter>
+  DescribeDBClusterParametersRequest& AddFilters(FiltersT&& value) {
+    m_filtersHasBeenSet = true;
+    m_filters.emplace_back(std::forward<FiltersT>(value));
+    return *this;
+  }
+  ///@}
 
-  protected:
-    AWS_DOCDB_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+  ///@{
+  /**
+   * <p> The maximum number of records to include in the response. If more records
+   * exist than the specified <code>MaxRecords</code> value, a pagination token
+   * (marker) is included in the response so that the remaining results can be
+   * retrieved.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+   */
+  inline int GetMaxRecords() const { return m_maxRecords; }
+  inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
+  inline void SetMaxRecords(int value) {
+    m_maxRecordsHasBeenSet = true;
+    m_maxRecords = value;
+  }
+  inline DescribeDBClusterParametersRequest& WithMaxRecords(int value) {
+    SetMaxRecords(value);
+    return *this;
+  }
+  ///@}
 
-  public:
+  ///@{
+  /**
+   * <p>An optional pagination token provided by a previous request. If this
+   * parameter is specified, the response includes only records beyond the marker, up
+   * to the value specified by <code>MaxRecords</code>.</p>
+   */
+  inline const Aws::String& GetMarker() const { return m_marker; }
+  inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
+  template <typename MarkerT = Aws::String>
+  void SetMarker(MarkerT&& value) {
+    m_markerHasBeenSet = true;
+    m_marker = std::forward<MarkerT>(value);
+  }
+  template <typename MarkerT = Aws::String>
+  DescribeDBClusterParametersRequest& WithMarker(MarkerT&& value) {
+    SetMarker(std::forward<MarkerT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_dBClusterParameterGroupName;
+  bool m_dBClusterParameterGroupNameHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The name of a specific cluster parameter group to return parameter details
-     * for.</p> <p>Constraints:</p> <ul> <li> <p>If provided, must match the name of an
-     * existing <code>DBClusterParameterGroup</code>.</p> </li> </ul>
-     */
-    inline const Aws::String& GetDBClusterParameterGroupName() const { return m_dBClusterParameterGroupName; }
-    inline bool DBClusterParameterGroupNameHasBeenSet() const { return m_dBClusterParameterGroupNameHasBeenSet; }
-    template<typename DBClusterParameterGroupNameT = Aws::String>
-    void SetDBClusterParameterGroupName(DBClusterParameterGroupNameT&& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = std::forward<DBClusterParameterGroupNameT>(value); }
-    template<typename DBClusterParameterGroupNameT = Aws::String>
-    DescribeDBClusterParametersRequest& WithDBClusterParameterGroupName(DBClusterParameterGroupNameT&& value) { SetDBClusterParameterGroupName(std::forward<DBClusterParameterGroupNameT>(value)); return *this;}
-    ///@}
+  Aws::String m_source;
+  bool m_sourceHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p> A value that indicates to return only parameters for a specific source.
-     * Parameter sources can be <code>engine</code>, <code>service</code>, or
-     * <code>customer</code>. </p>
-     */
-    inline const Aws::String& GetSource() const { return m_source; }
-    inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    template<typename SourceT = Aws::String>
-    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
-    template<typename SourceT = Aws::String>
-    DescribeDBClusterParametersRequest& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
-    ///@}
+  Aws::Vector<Filter> m_filters;
+  bool m_filtersHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>This parameter is not currently supported.</p>
-     */
-    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
-    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    template<typename FiltersT = Aws::Vector<Filter>>
-    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
-    template<typename FiltersT = Aws::Vector<Filter>>
-    DescribeDBClusterParametersRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
-    template<typename FiltersT = Filter>
-    DescribeDBClusterParametersRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
-    ///@}
+  int m_maxRecords{0};
+  bool m_maxRecordsHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p> The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a pagination token
-     * (marker) is included in the response so that the remaining results can be
-     * retrieved.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
-     */
-    inline int GetMaxRecords() const { return m_maxRecords; }
-    inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
-    inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
-    inline DescribeDBClusterParametersRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
-    ///@}
+  Aws::String m_marker;
+  bool m_markerHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>.</p>
-     */
-    inline const Aws::String& GetMarker() const { return m_marker; }
-    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    template<typename MarkerT = Aws::String>
-    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
-    template<typename MarkerT = Aws::String>
-    DescribeDBClusterParametersRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_dBClusterParameterGroupName;
-    bool m_dBClusterParameterGroupNameHasBeenSet = false;
-
-    Aws::String m_source;
-    bool m_sourceHasBeenSet = false;
-
-    Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet = false;
-
-    int m_maxRecords{0};
-    bool m_maxRecordsHasBeenSet = false;
-
-    Aws::String m_marker;
-    bool m_markerHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace DocDB
-} // namespace Aws
+}  // namespace Model
+}  // namespace DocDB
+}  // namespace Aws

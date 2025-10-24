@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/glacier/Glacier_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glacier/Glacier_EXPORTS.h>
 
-namespace Aws
-{
-namespace Glacier
-{
-namespace Model
-{
-  enum class FileHeaderInfo
-  {
-    NOT_SET,
-    USE,
-    IGNORE,
-    NONE
-  };
+namespace Aws {
+namespace Glacier {
+namespace Model {
+enum class FileHeaderInfo { NOT_SET, USE, IGNORE, NONE };
 
-namespace FileHeaderInfoMapper
-{
+namespace FileHeaderInfoMapper {
 AWS_GLACIER_API FileHeaderInfo GetFileHeaderInfoForName(const Aws::String& name);
 
 AWS_GLACIER_API Aws::String GetNameForFileHeaderInfo(FileHeaderInfo value);
-} // namespace FileHeaderInfoMapper
-} // namespace Model
-} // namespace Glacier
-} // namespace Aws
+}  // namespace FileHeaderInfoMapper
+}  // namespace Model
+}  // namespace Glacier
+}  // namespace Aws

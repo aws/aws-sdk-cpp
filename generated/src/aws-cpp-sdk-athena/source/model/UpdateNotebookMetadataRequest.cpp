@@ -12,39 +12,26 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateNotebookMetadataRequest::SerializePayload() const
-{
+Aws::String UpdateNotebookMetadataRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_notebookIdHasBeenSet)
-  {
-   payload.WithString("NotebookId", m_notebookId);
-
+  if (m_notebookIdHasBeenSet) {
+    payload.WithString("NotebookId", m_notebookId);
   }
 
-  if(m_clientRequestTokenHasBeenSet)
-  {
-   payload.WithString("ClientRequestToken", m_clientRequestToken);
-
+  if (m_clientRequestTokenHasBeenSet) {
+    payload.WithString("ClientRequestToken", m_clientRequestToken);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateNotebookMetadataRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateNotebookMetadataRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonAthena.UpdateNotebookMetadata"));
   return headers;
-
 }
-
-
-
-

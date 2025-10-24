@@ -3,60 +3,47 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/StartExportTaskRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/StartExportTaskRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String StartExportTaskRequest::SerializePayload() const
-{
+Aws::String StartExportTaskRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=StartExportTask&";
-  if(m_exportTaskIdentifierHasBeenSet)
-  {
+  if (m_exportTaskIdentifierHasBeenSet) {
     ss << "ExportTaskIdentifier=" << StringUtils::URLEncode(m_exportTaskIdentifier.c_str()) << "&";
   }
 
-  if(m_sourceArnHasBeenSet)
-  {
+  if (m_sourceArnHasBeenSet) {
     ss << "SourceArn=" << StringUtils::URLEncode(m_sourceArn.c_str()) << "&";
   }
 
-  if(m_s3BucketNameHasBeenSet)
-  {
+  if (m_s3BucketNameHasBeenSet) {
     ss << "S3BucketName=" << StringUtils::URLEncode(m_s3BucketName.c_str()) << "&";
   }
 
-  if(m_iamRoleArnHasBeenSet)
-  {
+  if (m_iamRoleArnHasBeenSet) {
     ss << "IamRoleArn=" << StringUtils::URLEncode(m_iamRoleArn.c_str()) << "&";
   }
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
+  if (m_kmsKeyIdHasBeenSet) {
     ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
 
-  if(m_s3PrefixHasBeenSet)
-  {
+  if (m_s3PrefixHasBeenSet) {
     ss << "S3Prefix=" << StringUtils::URLEncode(m_s3Prefix.c_str()) << "&";
   }
 
-  if(m_exportOnlyHasBeenSet)
-  {
-    if (m_exportOnly.empty())
-    {
+  if (m_exportOnlyHasBeenSet) {
+    if (m_exportOnly.empty()) {
       ss << "ExportOnly=&";
-    }
-    else
-    {
+    } else {
       unsigned exportOnlyCount = 1;
-      for(auto& item : m_exportOnly)
-      {
-        ss << "ExportOnly.member." << exportOnlyCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_exportOnly) {
+        ss << "ExportOnly.member." << exportOnlyCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         exportOnlyCount++;
       }
     }
@@ -66,8 +53,4 @@ Aws::String StartExportTaskRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  StartExportTaskRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void StartExportTaskRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

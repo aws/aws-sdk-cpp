@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::PaymentCryptographyData;
 
-AWSError<CoreErrors> PaymentCryptographyDataErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> PaymentCryptographyDataErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = PaymentCryptographyDataErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

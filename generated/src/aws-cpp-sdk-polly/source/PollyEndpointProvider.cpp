@@ -5,12 +5,8 @@
 
 #include <aws/polly/PollyEndpointProvider.h>
 
-namespace Aws
-{
-namespace Polly
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Polly
-} // namespace Aws
+namespace Aws {
+namespace Polly {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Polly
+}  // namespace Aws

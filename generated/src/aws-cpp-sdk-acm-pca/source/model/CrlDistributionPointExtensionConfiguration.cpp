@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ACMPCA
-{
-namespace Model
-{
+namespace Aws {
+namespace ACMPCA {
+namespace Model {
 
-CrlDistributionPointExtensionConfiguration::CrlDistributionPointExtensionConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CrlDistributionPointExtensionConfiguration::CrlDistributionPointExtensionConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-CrlDistributionPointExtensionConfiguration& CrlDistributionPointExtensionConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("OmitExtension"))
-  {
+CrlDistributionPointExtensionConfiguration& CrlDistributionPointExtensionConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("OmitExtension")) {
     m_omitExtension = jsonValue.GetBool("OmitExtension");
     m_omitExtensionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CrlDistributionPointExtensionConfiguration::Jsonize() const
-{
+JsonValue CrlDistributionPointExtensionConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_omitExtensionHasBeenSet)
-  {
-   payload.WithBool("OmitExtension", m_omitExtension);
-
+  if (m_omitExtensionHasBeenSet) {
+    payload.WithBool("OmitExtension", m_omitExtension);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ACMPCA
-} // namespace Aws
+}  // namespace Model
+}  // namespace ACMPCA
+}  // namespace Aws

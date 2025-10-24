@@ -4,89 +4,102 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2Request.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/NetworkInterfaceAttribute.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
+/**
+ * <p>Contains the parameters for DescribeNetworkInterfaceAttribute.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfaceAttributeRequest">AWS
+ * API Reference</a></p>
+ */
+class DescribeNetworkInterfaceAttributeRequest : public EC2Request {
+ public:
+  AWS_EC2_API DescribeNetworkInterfaceAttributeRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DescribeNetworkInterfaceAttribute"; }
+
+  AWS_EC2_API Aws::String SerializePayload() const override;
+
+ protected:
+  AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
+
+ public:
+  ///@{
   /**
-   * <p>Contains the parameters for DescribeNetworkInterfaceAttribute.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfaceAttributeRequest">AWS
-   * API Reference</a></p>
+   * <p>Checks whether you have the required permissions for the action, without
+   * actually making the request, and provides an error response. If you have the
+   * required permissions, the error response is <code>DryRunOperation</code>.
+   * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
    */
-  class DescribeNetworkInterfaceAttributeRequest : public EC2Request
-  {
-  public:
-    AWS_EC2_API DescribeNetworkInterfaceAttributeRequest() = default;
+  inline bool GetDryRun() const { return m_dryRun; }
+  inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+  inline void SetDryRun(bool value) {
+    m_dryRunHasBeenSet = true;
+    m_dryRun = value;
+  }
+  inline DescribeNetworkInterfaceAttributeRequest& WithDryRun(bool value) {
+    SetDryRun(value);
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DescribeNetworkInterfaceAttribute"; }
+  ///@{
+  /**
+   * <p>The ID of the network interface.</p>
+   */
+  inline const Aws::String& GetNetworkInterfaceId() const { return m_networkInterfaceId; }
+  inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
+  template <typename NetworkInterfaceIdT = Aws::String>
+  void SetNetworkInterfaceId(NetworkInterfaceIdT&& value) {
+    m_networkInterfaceIdHasBeenSet = true;
+    m_networkInterfaceId = std::forward<NetworkInterfaceIdT>(value);
+  }
+  template <typename NetworkInterfaceIdT = Aws::String>
+  DescribeNetworkInterfaceAttributeRequest& WithNetworkInterfaceId(NetworkInterfaceIdT&& value) {
+    SetNetworkInterfaceId(std::forward<NetworkInterfaceIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_EC2_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>The attribute of the network interface. This parameter is required.</p>
+   */
+  inline NetworkInterfaceAttribute GetAttribute() const { return m_attribute; }
+  inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
+  inline void SetAttribute(NetworkInterfaceAttribute value) {
+    m_attributeHasBeenSet = true;
+    m_attribute = value;
+  }
+  inline DescribeNetworkInterfaceAttributeRequest& WithAttribute(NetworkInterfaceAttribute value) {
+    SetAttribute(value);
+    return *this;
+  }
+  ///@}
+ private:
+  bool m_dryRun{false};
+  bool m_dryRunHasBeenSet = false;
 
-  protected:
-    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+  Aws::String m_networkInterfaceId;
+  bool m_networkInterfaceIdHasBeenSet = false;
 
-  public:
+  NetworkInterfaceAttribute m_attribute{NetworkInterfaceAttribute::NOT_SET};
+  bool m_attributeHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const { return m_dryRun; }
-    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-    inline DescribeNetworkInterfaceAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the network interface.</p>
-     */
-    inline const Aws::String& GetNetworkInterfaceId() const { return m_networkInterfaceId; }
-    inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
-    template<typename NetworkInterfaceIdT = Aws::String>
-    void SetNetworkInterfaceId(NetworkInterfaceIdT&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::forward<NetworkInterfaceIdT>(value); }
-    template<typename NetworkInterfaceIdT = Aws::String>
-    DescribeNetworkInterfaceAttributeRequest& WithNetworkInterfaceId(NetworkInterfaceIdT&& value) { SetNetworkInterfaceId(std::forward<NetworkInterfaceIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The attribute of the network interface. This parameter is required.</p>
-     */
-    inline NetworkInterfaceAttribute GetAttribute() const { return m_attribute; }
-    inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-    inline void SetAttribute(NetworkInterfaceAttribute value) { m_attributeHasBeenSet = true; m_attribute = value; }
-    inline DescribeNetworkInterfaceAttributeRequest& WithAttribute(NetworkInterfaceAttribute value) { SetAttribute(value); return *this;}
-    ///@}
-  private:
-
-    bool m_dryRun{false};
-    bool m_dryRunHasBeenSet = false;
-
-    Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet = false;
-
-    NetworkInterfaceAttribute m_attribute{NetworkInterfaceAttribute::NOT_SET};
-    bool m_attributeHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

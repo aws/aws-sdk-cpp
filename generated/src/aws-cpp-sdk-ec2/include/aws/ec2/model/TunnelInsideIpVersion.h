@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class TunnelInsideIpVersion
-  {
-    NOT_SET,
-    ipv4,
-    ipv6
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class TunnelInsideIpVersion { NOT_SET, ipv4, ipv6 };
 
-namespace TunnelInsideIpVersionMapper
-{
+namespace TunnelInsideIpVersionMapper {
 AWS_EC2_API TunnelInsideIpVersion GetTunnelInsideIpVersionForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForTunnelInsideIpVersion(TunnelInsideIpVersion value);
-} // namespace TunnelInsideIpVersionMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace TunnelInsideIpVersionMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

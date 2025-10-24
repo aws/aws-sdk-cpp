@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/kinesisanalytics/KinesisAnalytics_EXPORTS.h>
 
-namespace Aws
-{
-namespace KinesisAnalytics
-{
-class KinesisAnalyticsEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace KinesisAnalytics {
+class KinesisAnalyticsEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace KinesisAnalytics
-} // namespace Aws
+}  // namespace KinesisAnalytics
+}  // namespace Aws

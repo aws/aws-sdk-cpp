@@ -6,68 +6,72 @@
 #pragma once
 #include <aws/lex/LexRuntimeService_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace LexRuntimeService
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace LexRuntimeService {
+namespace Model {
 
+/**
+ * <p>The length of time or number of turns that a context remains
+ * active.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/ActiveContextTimeToLive">AWS
+ * API Reference</a></p>
+ */
+class ActiveContextTimeToLive {
+ public:
+  AWS_LEXRUNTIMESERVICE_API ActiveContextTimeToLive() = default;
+  AWS_LEXRUNTIMESERVICE_API ActiveContextTimeToLive(Aws::Utils::Json::JsonView jsonValue);
+  AWS_LEXRUNTIMESERVICE_API ActiveContextTimeToLive& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_LEXRUNTIMESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>The length of time or number of turns that a context remains
-   * active.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/ActiveContextTimeToLive">AWS
-   * API Reference</a></p>
+   * <p>The number of seconds that the context should be active after it is first
+   * sent in a <code>PostContent</code> or <code>PostText</code> response. You can
+   * set the value between 5 and 86,400 seconds (24 hours).</p>
    */
-  class ActiveContextTimeToLive
-  {
-  public:
-    AWS_LEXRUNTIMESERVICE_API ActiveContextTimeToLive() = default;
-    AWS_LEXRUNTIMESERVICE_API ActiveContextTimeToLive(Aws::Utils::Json::JsonView jsonValue);
-    AWS_LEXRUNTIMESERVICE_API ActiveContextTimeToLive& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_LEXRUNTIMESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetTimeToLiveInSeconds() const { return m_timeToLiveInSeconds; }
+  inline bool TimeToLiveInSecondsHasBeenSet() const { return m_timeToLiveInSecondsHasBeenSet; }
+  inline void SetTimeToLiveInSeconds(int value) {
+    m_timeToLiveInSecondsHasBeenSet = true;
+    m_timeToLiveInSeconds = value;
+  }
+  inline ActiveContextTimeToLive& WithTimeToLiveInSeconds(int value) {
+    SetTimeToLiveInSeconds(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The number of conversation turns that the context should be active. A
+   * conversation turn is one <code>PostContent</code> or <code>PostText</code>
+   * request and the corresponding response from Amazon Lex.</p>
+   */
+  inline int GetTurnsToLive() const { return m_turnsToLive; }
+  inline bool TurnsToLiveHasBeenSet() const { return m_turnsToLiveHasBeenSet; }
+  inline void SetTurnsToLive(int value) {
+    m_turnsToLiveHasBeenSet = true;
+    m_turnsToLive = value;
+  }
+  inline ActiveContextTimeToLive& WithTurnsToLive(int value) {
+    SetTurnsToLive(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_timeToLiveInSeconds{0};
+  bool m_timeToLiveInSecondsHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The number of seconds that the context should be active after it is first
-     * sent in a <code>PostContent</code> or <code>PostText</code> response. You can
-     * set the value between 5 and 86,400 seconds (24 hours).</p>
-     */
-    inline int GetTimeToLiveInSeconds() const { return m_timeToLiveInSeconds; }
-    inline bool TimeToLiveInSecondsHasBeenSet() const { return m_timeToLiveInSecondsHasBeenSet; }
-    inline void SetTimeToLiveInSeconds(int value) { m_timeToLiveInSecondsHasBeenSet = true; m_timeToLiveInSeconds = value; }
-    inline ActiveContextTimeToLive& WithTimeToLiveInSeconds(int value) { SetTimeToLiveInSeconds(value); return *this;}
-    ///@}
+  int m_turnsToLive{0};
+  bool m_turnsToLiveHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The number of conversation turns that the context should be active. A
-     * conversation turn is one <code>PostContent</code> or <code>PostText</code>
-     * request and the corresponding response from Amazon Lex.</p>
-     */
-    inline int GetTurnsToLive() const { return m_turnsToLive; }
-    inline bool TurnsToLiveHasBeenSet() const { return m_turnsToLiveHasBeenSet; }
-    inline void SetTurnsToLive(int value) { m_turnsToLiveHasBeenSet = true; m_turnsToLive = value; }
-    inline ActiveContextTimeToLive& WithTurnsToLive(int value) { SetTurnsToLive(value); return *this;}
-    ///@}
-  private:
-
-    int m_timeToLiveInSeconds{0};
-    bool m_timeToLiveInSecondsHasBeenSet = false;
-
-    int m_turnsToLive{0};
-    bool m_turnsToLiveHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace LexRuntimeService
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexRuntimeService
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lambda/model/UpdateAliasRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lambda/model/UpdateAliasRequest.h>
 
 #include <utility>
 
@@ -12,37 +12,24 @@ using namespace Aws::Lambda::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateAliasRequest::SerializePayload() const
-{
+Aws::String UpdateAliasRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_functionVersionHasBeenSet)
-  {
-   payload.WithString("FunctionVersion", m_functionVersion);
-
+  if (m_functionVersionHasBeenSet) {
+    payload.WithString("FunctionVersion", m_functionVersion);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_routingConfigHasBeenSet)
-  {
-   payload.WithObject("RoutingConfig", m_routingConfig.Jsonize());
-
+  if (m_routingConfigHasBeenSet) {
+    payload.WithObject("RoutingConfig", m_routingConfig.Jsonize());
   }
 
-  if(m_revisionIdHasBeenSet)
-  {
-   payload.WithString("RevisionId", m_revisionId);
-
+  if (m_revisionIdHasBeenSet) {
+    payload.WithString("RevisionId", m_revisionId);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

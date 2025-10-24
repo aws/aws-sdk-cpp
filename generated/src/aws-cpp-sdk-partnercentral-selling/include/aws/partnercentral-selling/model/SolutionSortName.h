@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 
-namespace Aws
-{
-namespace PartnerCentralSelling
-{
-namespace Model
-{
-  enum class SolutionSortName
-  {
-    NOT_SET,
-    Identifier,
-    Name,
-    Status,
-    Category,
-    CreatedDate
-  };
+namespace Aws {
+namespace PartnerCentralSelling {
+namespace Model {
+enum class SolutionSortName { NOT_SET, Identifier, Name, Status, Category, CreatedDate };
 
-namespace SolutionSortNameMapper
-{
+namespace SolutionSortNameMapper {
 AWS_PARTNERCENTRALSELLING_API SolutionSortName GetSolutionSortNameForName(const Aws::String& name);
 
 AWS_PARTNERCENTRALSELLING_API Aws::String GetNameForSolutionSortName(SolutionSortName value);
-} // namespace SolutionSortNameMapper
-} // namespace Model
-} // namespace PartnerCentralSelling
-} // namespace Aws
+}  // namespace SolutionSortNameMapper
+}  // namespace Model
+}  // namespace PartnerCentralSelling
+}  // namespace Aws

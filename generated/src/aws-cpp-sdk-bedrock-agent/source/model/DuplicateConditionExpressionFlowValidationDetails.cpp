@@ -11,52 +11,40 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-DuplicateConditionExpressionFlowValidationDetails::DuplicateConditionExpressionFlowValidationDetails(JsonView jsonValue)
-{
+DuplicateConditionExpressionFlowValidationDetails::DuplicateConditionExpressionFlowValidationDetails(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-DuplicateConditionExpressionFlowValidationDetails& DuplicateConditionExpressionFlowValidationDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("node"))
-  {
+DuplicateConditionExpressionFlowValidationDetails& DuplicateConditionExpressionFlowValidationDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("node")) {
     m_node = jsonValue.GetString("node");
     m_nodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("expression"))
-  {
+  if (jsonValue.ValueExists("expression")) {
     m_expression = jsonValue.GetString("expression");
     m_expressionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DuplicateConditionExpressionFlowValidationDetails::Jsonize() const
-{
+JsonValue DuplicateConditionExpressionFlowValidationDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_nodeHasBeenSet)
-  {
-   payload.WithString("node", m_node);
-
+  if (m_nodeHasBeenSet) {
+    payload.WithString("node", m_node);
   }
 
-  if(m_expressionHasBeenSet)
-  {
-   payload.WithString("expression", m_expression);
-
+  if (m_expressionHasBeenSet) {
+    payload.WithString("expression", m_expression);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

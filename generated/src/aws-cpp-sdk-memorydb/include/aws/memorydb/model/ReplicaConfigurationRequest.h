@@ -6,51 +6,49 @@
 #pragma once
 #include <aws/memorydb/MemoryDB_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace MemoryDB
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace MemoryDB {
+namespace Model {
 
+/**
+ * <p>A request to configure the number of replicas in a shard</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/ReplicaConfigurationRequest">AWS
+ * API Reference</a></p>
+ */
+class ReplicaConfigurationRequest {
+ public:
+  AWS_MEMORYDB_API ReplicaConfigurationRequest() = default;
+  AWS_MEMORYDB_API ReplicaConfigurationRequest(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MEMORYDB_API ReplicaConfigurationRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>A request to configure the number of replicas in a shard</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/ReplicaConfigurationRequest">AWS
-   * API Reference</a></p>
+   * <p>The number of replicas to scale up or down to</p>
    */
-  class ReplicaConfigurationRequest
-  {
-  public:
-    AWS_MEMORYDB_API ReplicaConfigurationRequest() = default;
-    AWS_MEMORYDB_API ReplicaConfigurationRequest(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MEMORYDB_API ReplicaConfigurationRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetReplicaCount() const { return m_replicaCount; }
+  inline bool ReplicaCountHasBeenSet() const { return m_replicaCountHasBeenSet; }
+  inline void SetReplicaCount(int value) {
+    m_replicaCountHasBeenSet = true;
+    m_replicaCount = value;
+  }
+  inline ReplicaConfigurationRequest& WithReplicaCount(int value) {
+    SetReplicaCount(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_replicaCount{0};
+  bool m_replicaCountHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>The number of replicas to scale up or down to</p>
-     */
-    inline int GetReplicaCount() const { return m_replicaCount; }
-    inline bool ReplicaCountHasBeenSet() const { return m_replicaCountHasBeenSet; }
-    inline void SetReplicaCount(int value) { m_replicaCountHasBeenSet = true; m_replicaCount = value; }
-    inline ReplicaConfigurationRequest& WithReplicaCount(int value) { SetReplicaCount(value); return *this;}
-    ///@}
-  private:
-
-    int m_replicaCount{0};
-    bool m_replicaCountHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace MemoryDB
-} // namespace Aws
+}  // namespace Model
+}  // namespace MemoryDB
+}  // namespace Aws

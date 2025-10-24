@@ -3,58 +3,47 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sesv2/model/SuppressionAttributes.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sesv2/model/SuppressionAttributes.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SESV2
-{
-namespace Model
-{
+namespace Aws {
+namespace SESV2 {
+namespace Model {
 
-SuppressionAttributes::SuppressionAttributes(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SuppressionAttributes::SuppressionAttributes(JsonView jsonValue) { *this = jsonValue; }
 
-SuppressionAttributes& SuppressionAttributes::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SuppressedReasons"))
-  {
+SuppressionAttributes& SuppressionAttributes::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SuppressedReasons")) {
     Aws::Utils::Array<JsonView> suppressedReasonsJsonList = jsonValue.GetArray("SuppressedReasons");
-    for(unsigned suppressedReasonsIndex = 0; suppressedReasonsIndex < suppressedReasonsJsonList.GetLength(); ++suppressedReasonsIndex)
-    {
-      m_suppressedReasons.push_back(SuppressionListReasonMapper::GetSuppressionListReasonForName(suppressedReasonsJsonList[suppressedReasonsIndex].AsString()));
+    for (unsigned suppressedReasonsIndex = 0; suppressedReasonsIndex < suppressedReasonsJsonList.GetLength(); ++suppressedReasonsIndex) {
+      m_suppressedReasons.push_back(
+          SuppressionListReasonMapper::GetSuppressionListReasonForName(suppressedReasonsJsonList[suppressedReasonsIndex].AsString()));
     }
     m_suppressedReasonsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SuppressionAttributes::Jsonize() const
-{
+JsonValue SuppressionAttributes::Jsonize() const {
   JsonValue payload;
 
-  if(m_suppressedReasonsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> suppressedReasonsJsonList(m_suppressedReasons.size());
-   for(unsigned suppressedReasonsIndex = 0; suppressedReasonsIndex < suppressedReasonsJsonList.GetLength(); ++suppressedReasonsIndex)
-   {
-     suppressedReasonsJsonList[suppressedReasonsIndex].AsString(SuppressionListReasonMapper::GetNameForSuppressionListReason(m_suppressedReasons[suppressedReasonsIndex]));
-   }
-   payload.WithArray("SuppressedReasons", std::move(suppressedReasonsJsonList));
-
+  if (m_suppressedReasonsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> suppressedReasonsJsonList(m_suppressedReasons.size());
+    for (unsigned suppressedReasonsIndex = 0; suppressedReasonsIndex < suppressedReasonsJsonList.GetLength(); ++suppressedReasonsIndex) {
+      suppressedReasonsJsonList[suppressedReasonsIndex].AsString(
+          SuppressionListReasonMapper::GetNameForSuppressionListReason(m_suppressedReasons[suppressedReasonsIndex]));
+    }
+    payload.WithArray("SuppressedReasons", std::move(suppressedReasonsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SESV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace SESV2
+}  // namespace Aws

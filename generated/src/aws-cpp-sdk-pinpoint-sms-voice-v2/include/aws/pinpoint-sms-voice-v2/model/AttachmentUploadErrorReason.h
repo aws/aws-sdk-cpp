@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace PinpointSMSVoiceV2
-{
-namespace Model
-{
-  enum class AttachmentUploadErrorReason
-  {
-    NOT_SET,
-    INTERNAL_ERROR
-  };
+namespace Aws {
+namespace PinpointSMSVoiceV2 {
+namespace Model {
+enum class AttachmentUploadErrorReason { NOT_SET, INTERNAL_ERROR };
 
-namespace AttachmentUploadErrorReasonMapper
-{
+namespace AttachmentUploadErrorReasonMapper {
 AWS_PINPOINTSMSVOICEV2_API AttachmentUploadErrorReason GetAttachmentUploadErrorReasonForName(const Aws::String& name);
 
 AWS_PINPOINTSMSVOICEV2_API Aws::String GetNameForAttachmentUploadErrorReason(AttachmentUploadErrorReason value);
-} // namespace AttachmentUploadErrorReasonMapper
-} // namespace Model
-} // namespace PinpointSMSVoiceV2
-} // namespace Aws
+}  // namespace AttachmentUploadErrorReasonMapper
+}  // namespace Model
+}  // namespace PinpointSMSVoiceV2
+}  // namespace Aws

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AutoScalingPlans
-{
-namespace Model
-{
+namespace Aws {
+namespace AutoScalingPlans {
+namespace Model {
 
-MetricDimension::MetricDimension(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MetricDimension::MetricDimension(JsonView jsonValue) { *this = jsonValue; }
 
-MetricDimension& MetricDimension::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+MetricDimension& MetricDimension::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Value"))
-  {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetString("Value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MetricDimension::Jsonize() const
-{
+JsonValue MetricDimension::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("Value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("Value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AutoScalingPlans
-} // namespace Aws
+}  // namespace Model
+}  // namespace AutoScalingPlans
+}  // namespace Aws

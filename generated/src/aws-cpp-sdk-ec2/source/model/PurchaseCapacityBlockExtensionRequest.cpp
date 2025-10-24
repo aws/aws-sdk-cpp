@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/PurchaseCapacityBlockExtensionRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/PurchaseCapacityBlockExtensionRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String PurchaseCapacityBlockExtensionRequest::SerializePayload() const
-{
+Aws::String PurchaseCapacityBlockExtensionRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=PurchaseCapacityBlockExtension&";
-  if(m_capacityBlockExtensionOfferingIdHasBeenSet)
-  {
+  if (m_capacityBlockExtensionOfferingIdHasBeenSet) {
     ss << "CapacityBlockExtensionOfferingId=" << StringUtils::URLEncode(m_capacityBlockExtensionOfferingId.c_str()) << "&";
   }
 
-  if(m_capacityReservationIdHasBeenSet)
-  {
+  if (m_capacityReservationIdHasBeenSet) {
     ss << "CapacityReservationId=" << StringUtils::URLEncode(m_capacityReservationId.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String PurchaseCapacityBlockExtensionRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  PurchaseCapacityBlockExtensionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void PurchaseCapacityBlockExtensionRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

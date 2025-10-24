@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockDataAutomationRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockDataAutomationRuntime {
+namespace Model {
 
-EventBridgeConfiguration::EventBridgeConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EventBridgeConfiguration::EventBridgeConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-EventBridgeConfiguration& EventBridgeConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("eventBridgeEnabled"))
-  {
+EventBridgeConfiguration& EventBridgeConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("eventBridgeEnabled")) {
     m_eventBridgeEnabled = jsonValue.GetBool("eventBridgeEnabled");
     m_eventBridgeEnabledHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EventBridgeConfiguration::Jsonize() const
-{
+JsonValue EventBridgeConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_eventBridgeEnabledHasBeenSet)
-  {
-   payload.WithBool("eventBridgeEnabled", m_eventBridgeEnabled);
-
+  if (m_eventBridgeEnabledHasBeenSet) {
+    payload.WithBool("eventBridgeEnabled", m_eventBridgeEnabled);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockDataAutomationRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockDataAutomationRuntime
+}  // namespace Aws

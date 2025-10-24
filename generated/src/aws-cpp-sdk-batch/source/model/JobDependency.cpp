@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Batch
-{
-namespace Model
-{
+namespace Aws {
+namespace Batch {
+namespace Model {
 
-JobDependency::JobDependency(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+JobDependency::JobDependency(JsonView jsonValue) { *this = jsonValue; }
 
-JobDependency& JobDependency::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("jobId"))
-  {
+JobDependency& JobDependency::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("jobId")) {
     m_jobId = jsonValue.GetString("jobId");
     m_jobIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = ArrayJobDependencyMapper::GetArrayJobDependencyForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue JobDependency::Jsonize() const
-{
+JsonValue JobDependency::Jsonize() const {
   JsonValue payload;
 
-  if(m_jobIdHasBeenSet)
-  {
-   payload.WithString("jobId", m_jobId);
-
+  if (m_jobIdHasBeenSet) {
+    payload.WithString("jobId", m_jobId);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", ArrayJobDependencyMapper::GetNameForArrayJobDependency(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", ArrayJobDependencyMapper::GetNameForArrayJobDependency(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Batch
-} // namespace Aws
+}  // namespace Model
+}  // namespace Batch
+}  // namespace Aws

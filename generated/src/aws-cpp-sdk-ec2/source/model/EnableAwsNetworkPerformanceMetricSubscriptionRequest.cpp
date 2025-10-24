@@ -3,39 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/EnableAwsNetworkPerformanceMetricSubscriptionRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/EnableAwsNetworkPerformanceMetricSubscriptionRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String EnableAwsNetworkPerformanceMetricSubscriptionRequest::SerializePayload() const
-{
+Aws::String EnableAwsNetworkPerformanceMetricSubscriptionRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=EnableAwsNetworkPerformanceMetricSubscription&";
-  if(m_sourceHasBeenSet)
-  {
+  if (m_sourceHasBeenSet) {
     ss << "Source=" << StringUtils::URLEncode(m_source.c_str()) << "&";
   }
 
-  if(m_destinationHasBeenSet)
-  {
+  if (m_destinationHasBeenSet) {
     ss << "Destination=" << StringUtils::URLEncode(m_destination.c_str()) << "&";
   }
 
-  if(m_metricHasBeenSet)
-  {
+  if (m_metricHasBeenSet) {
     ss << "Metric=" << StringUtils::URLEncode(MetricTypeMapper::GetNameForMetricType(m_metric)) << "&";
   }
 
-  if(m_statisticHasBeenSet)
-  {
+  if (m_statisticHasBeenSet) {
     ss << "Statistic=" << StringUtils::URLEncode(StatisticTypeMapper::GetNameForStatisticType(m_statistic)) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -43,8 +37,6 @@ Aws::String EnableAwsNetworkPerformanceMetricSubscriptionRequest::SerializePaylo
   return ss.str();
 }
 
-
-void  EnableAwsNetworkPerformanceMetricSubscriptionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
+void EnableAwsNetworkPerformanceMetricSubscriptionRequest::DumpBodyToUrl(Aws::Http::URI& uri) const {
   uri.SetQueryString(SerializePayload());
 }

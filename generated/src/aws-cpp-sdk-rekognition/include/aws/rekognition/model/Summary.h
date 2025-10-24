@@ -6,56 +6,55 @@
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/rekognition/model/S3Object.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace Rekognition
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Rekognition {
+namespace Model {
 
-  /**
-   * <p>The S3 bucket that contains the training summary. The training summary
-   * includes aggregated evaluation metrics for the entire testing dataset and
-   * metrics for each individual label. </p> <p>You get the training summary S3
-   * bucket location by calling <a>DescribeProjectVersions</a>. </p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/Summary">AWS
-   * API Reference</a></p>
-   */
-  class Summary
-  {
-  public:
-    AWS_REKOGNITION_API Summary() = default;
-    AWS_REKOGNITION_API Summary(Aws::Utils::Json::JsonView jsonValue);
-    AWS_REKOGNITION_API Summary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
+/**
+ * <p>The S3 bucket that contains the training summary. The training summary
+ * includes aggregated evaluation metrics for the entire testing dataset and
+ * metrics for each individual label. </p> <p>You get the training summary S3
+ * bucket location by calling <a>DescribeProjectVersions</a>. </p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/Summary">AWS
+ * API Reference</a></p>
+ */
+class Summary {
+ public:
+  AWS_REKOGNITION_API Summary() = default;
+  AWS_REKOGNITION_API Summary(Aws::Utils::Json::JsonView jsonValue);
+  AWS_REKOGNITION_API Summary& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
+  ///@{
 
-    ///@{
-    
-    inline const S3Object& GetS3Object() const { return m_s3Object; }
-    inline bool S3ObjectHasBeenSet() const { return m_s3ObjectHasBeenSet; }
-    template<typename S3ObjectT = S3Object>
-    void SetS3Object(S3ObjectT&& value) { m_s3ObjectHasBeenSet = true; m_s3Object = std::forward<S3ObjectT>(value); }
-    template<typename S3ObjectT = S3Object>
-    Summary& WithS3Object(S3ObjectT&& value) { SetS3Object(std::forward<S3ObjectT>(value)); return *this;}
-    ///@}
-  private:
+  inline const S3Object& GetS3Object() const { return m_s3Object; }
+  inline bool S3ObjectHasBeenSet() const { return m_s3ObjectHasBeenSet; }
+  template <typename S3ObjectT = S3Object>
+  void SetS3Object(S3ObjectT&& value) {
+    m_s3ObjectHasBeenSet = true;
+    m_s3Object = std::forward<S3ObjectT>(value);
+  }
+  template <typename S3ObjectT = S3Object>
+  Summary& WithS3Object(S3ObjectT&& value) {
+    SetS3Object(std::forward<S3ObjectT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  S3Object m_s3Object;
+  bool m_s3ObjectHasBeenSet = false;
+};
 
-    S3Object m_s3Object;
-    bool m_s3ObjectHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Rekognition
-} // namespace Aws
+}  // namespace Model
+}  // namespace Rekognition
+}  // namespace Aws

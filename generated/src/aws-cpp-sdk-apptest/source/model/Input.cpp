@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppTest
-{
-namespace Model
-{
+namespace Aws {
+namespace AppTest {
+namespace Model {
 
-Input::Input(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Input::Input(JsonView jsonValue) { *this = jsonValue; }
 
-Input& Input::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("file"))
-  {
+Input& Input::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("file")) {
     m_file = jsonValue.GetObject("file");
     m_fileHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Input::Jsonize() const
-{
+JsonValue Input::Jsonize() const {
   JsonValue payload;
 
-  if(m_fileHasBeenSet)
-  {
-   payload.WithObject("file", m_file.Jsonize());
-
+  if (m_fileHasBeenSet) {
+    payload.WithObject("file", m_file.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppTest
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppTest
+}  // namespace Aws

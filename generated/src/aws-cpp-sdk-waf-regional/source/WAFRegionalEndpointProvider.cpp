@@ -5,12 +5,8 @@
 
 #include <aws/waf-regional/WAFRegionalEndpointProvider.h>
 
-namespace Aws
-{
-namespace WAFRegional
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace WAFRegional
-} // namespace Aws
+namespace Aws {
+namespace WAFRegional {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace WAFRegional
+}  // namespace Aws

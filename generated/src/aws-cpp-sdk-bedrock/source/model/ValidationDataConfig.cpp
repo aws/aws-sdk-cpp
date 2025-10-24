@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-ValidationDataConfig::ValidationDataConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ValidationDataConfig::ValidationDataConfig(JsonView jsonValue) { *this = jsonValue; }
 
-ValidationDataConfig& ValidationDataConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("validators"))
-  {
+ValidationDataConfig& ValidationDataConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("validators")) {
     Aws::Utils::Array<JsonView> validatorsJsonList = jsonValue.GetArray("validators");
-    for(unsigned validatorsIndex = 0; validatorsIndex < validatorsJsonList.GetLength(); ++validatorsIndex)
-    {
+    for (unsigned validatorsIndex = 0; validatorsIndex < validatorsJsonList.GetLength(); ++validatorsIndex) {
       m_validators.push_back(validatorsJsonList[validatorsIndex].AsObject());
     }
     m_validatorsHasBeenSet = true;
@@ -37,24 +28,20 @@ ValidationDataConfig& ValidationDataConfig::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ValidationDataConfig::Jsonize() const
-{
+JsonValue ValidationDataConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_validatorsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> validatorsJsonList(m_validators.size());
-   for(unsigned validatorsIndex = 0; validatorsIndex < validatorsJsonList.GetLength(); ++validatorsIndex)
-   {
-     validatorsJsonList[validatorsIndex].AsObject(m_validators[validatorsIndex].Jsonize());
-   }
-   payload.WithArray("validators", std::move(validatorsJsonList));
-
+  if (m_validatorsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> validatorsJsonList(m_validators.size());
+    for (unsigned validatorsIndex = 0; validatorsIndex < validatorsJsonList.GetLength(); ++validatorsIndex) {
+      validatorsJsonList[validatorsIndex].AsObject(m_validators[validatorsIndex].Jsonize());
+    }
+    payload.WithArray("validators", std::move(validatorsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

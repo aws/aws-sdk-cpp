@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class TrainingPlanFilterName
-  {
-    NOT_SET,
-    Status
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class TrainingPlanFilterName { NOT_SET, Status };
 
-namespace TrainingPlanFilterNameMapper
-{
+namespace TrainingPlanFilterNameMapper {
 AWS_SAGEMAKER_API TrainingPlanFilterName GetTrainingPlanFilterNameForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForTrainingPlanFilterName(TrainingPlanFilterName value);
-} // namespace TrainingPlanFilterNameMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace TrainingPlanFilterNameMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

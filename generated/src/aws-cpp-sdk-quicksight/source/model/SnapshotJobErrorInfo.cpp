@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/SnapshotJobErrorInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/SnapshotJobErrorInfo.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-SnapshotJobErrorInfo::SnapshotJobErrorInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SnapshotJobErrorInfo::SnapshotJobErrorInfo(JsonView jsonValue) { *this = jsonValue; }
 
-SnapshotJobErrorInfo& SnapshotJobErrorInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ErrorMessage"))
-  {
+SnapshotJobErrorInfo& SnapshotJobErrorInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ErrorMessage")) {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
     m_errorMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorType"))
-  {
+  if (jsonValue.ValueExists("ErrorType")) {
     m_errorType = jsonValue.GetString("ErrorType");
     m_errorTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SnapshotJobErrorInfo::Jsonize() const
-{
+JsonValue SnapshotJobErrorInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_errorMessageHasBeenSet)
-  {
-   payload.WithString("ErrorMessage", m_errorMessage);
-
+  if (m_errorMessageHasBeenSet) {
+    payload.WithString("ErrorMessage", m_errorMessage);
   }
 
-  if(m_errorTypeHasBeenSet)
-  {
-   payload.WithString("ErrorType", m_errorType);
-
+  if (m_errorTypeHasBeenSet) {
+    payload.WithString("ErrorType", m_errorType);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

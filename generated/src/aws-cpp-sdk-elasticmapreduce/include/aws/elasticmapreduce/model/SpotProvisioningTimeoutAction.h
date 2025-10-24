@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticmapreduce/EMR_EXPORTS.h>
 
-namespace Aws
-{
-namespace EMR
-{
-namespace Model
-{
-  enum class SpotProvisioningTimeoutAction
-  {
-    NOT_SET,
-    SWITCH_TO_ON_DEMAND,
-    TERMINATE_CLUSTER
-  };
+namespace Aws {
+namespace EMR {
+namespace Model {
+enum class SpotProvisioningTimeoutAction { NOT_SET, SWITCH_TO_ON_DEMAND, TERMINATE_CLUSTER };
 
-namespace SpotProvisioningTimeoutActionMapper
-{
+namespace SpotProvisioningTimeoutActionMapper {
 AWS_EMR_API SpotProvisioningTimeoutAction GetSpotProvisioningTimeoutActionForName(const Aws::String& name);
 
 AWS_EMR_API Aws::String GetNameForSpotProvisioningTimeoutAction(SpotProvisioningTimeoutAction value);
-} // namespace SpotProvisioningTimeoutActionMapper
-} // namespace Model
-} // namespace EMR
-} // namespace Aws
+}  // namespace SpotProvisioningTimeoutActionMapper
+}  // namespace Model
+}  // namespace EMR
+}  // namespace Aws

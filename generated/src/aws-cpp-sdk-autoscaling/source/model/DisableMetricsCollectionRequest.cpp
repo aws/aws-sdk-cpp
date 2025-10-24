@@ -10,28 +10,20 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-Aws::String DisableMetricsCollectionRequest::SerializePayload() const
-{
+Aws::String DisableMetricsCollectionRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DisableMetricsCollection&";
-  if(m_autoScalingGroupNameHasBeenSet)
-  {
+  if (m_autoScalingGroupNameHasBeenSet) {
     ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
 
-  if(m_metricsHasBeenSet)
-  {
-    if (m_metrics.empty())
-    {
+  if (m_metricsHasBeenSet) {
+    if (m_metrics.empty()) {
       ss << "Metrics=&";
-    }
-    else
-    {
+    } else {
       unsigned metricsCount = 1;
-      for(auto& item : m_metrics)
-      {
-        ss << "Metrics.member." << metricsCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_metrics) {
+        ss << "Metrics.member." << metricsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         metricsCount++;
       }
     }
@@ -41,8 +33,4 @@ Aws::String DisableMetricsCollectionRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DisableMetricsCollectionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DisableMetricsCollectionRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

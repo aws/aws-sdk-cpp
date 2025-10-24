@@ -3,43 +3,32 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/internetmonitor/model/FilterParameter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/internetmonitor/model/FilterParameter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace InternetMonitor
-{
-namespace Model
-{
+namespace Aws {
+namespace InternetMonitor {
+namespace Model {
 
-FilterParameter::FilterParameter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FilterParameter::FilterParameter(JsonView jsonValue) { *this = jsonValue; }
 
-FilterParameter& FilterParameter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Field"))
-  {
+FilterParameter& FilterParameter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Field")) {
     m_field = jsonValue.GetString("Field");
     m_fieldHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Operator"))
-  {
+  if (jsonValue.ValueExists("Operator")) {
     m_operator = OperatorMapper::GetOperatorForName(jsonValue.GetString("Operator"));
     m_operatorHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Values"))
-  {
+  if (jsonValue.ValueExists("Values")) {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
-    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-    {
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());
     }
     m_valuesHasBeenSet = true;
@@ -47,35 +36,28 @@ FilterParameter& FilterParameter::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue FilterParameter::Jsonize() const
-{
+JsonValue FilterParameter::Jsonize() const {
   JsonValue payload;
 
-  if(m_fieldHasBeenSet)
-  {
-   payload.WithString("Field", m_field);
-
+  if (m_fieldHasBeenSet) {
+    payload.WithString("Field", m_field);
   }
 
-  if(m_operatorHasBeenSet)
-  {
-   payload.WithString("Operator", OperatorMapper::GetNameForOperator(m_operator));
+  if (m_operatorHasBeenSet) {
+    payload.WithString("Operator", OperatorMapper::GetNameForOperator(m_operator));
   }
 
-  if(m_valuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
-   for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-   {
-     valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
-   }
-   payload.WithArray("Values", std::move(valuesJsonList));
-
+  if (m_valuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
+    for (unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex) {
+      valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
+    }
+    payload.WithArray("Values", std::move(valuesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace InternetMonitor
-} // namespace Aws
+}  // namespace Model
+}  // namespace InternetMonitor
+}  // namespace Aws

@@ -7,25 +7,16 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
-  enum class StageRetryMode
-  {
-    NOT_SET,
-    FAILED_ACTIONS,
-    ALL_ACTIONS
-  };
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
+enum class StageRetryMode { NOT_SET, FAILED_ACTIONS, ALL_ACTIONS };
 
-namespace StageRetryModeMapper
-{
+namespace StageRetryModeMapper {
 AWS_CODEPIPELINE_API StageRetryMode GetStageRetryModeForName(const Aws::String& name);
 
 AWS_CODEPIPELINE_API Aws::String GetNameForStageRetryMode(StageRetryMode value);
-} // namespace StageRetryModeMapper
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace StageRetryModeMapper
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

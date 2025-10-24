@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/MinimumLabelType.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/MinimumLabelType.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-MinimumLabelType::MinimumLabelType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MinimumLabelType::MinimumLabelType(JsonView jsonValue) { *this = jsonValue; }
 
-MinimumLabelType& MinimumLabelType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Visibility"))
-  {
+MinimumLabelType& MinimumLabelType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Visibility")) {
     m_visibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("Visibility"));
     m_visibilityHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MinimumLabelType::Jsonize() const
-{
+JsonValue MinimumLabelType::Jsonize() const {
   JsonValue payload;
 
-  if(m_visibilityHasBeenSet)
-  {
-   payload.WithString("Visibility", VisibilityMapper::GetNameForVisibility(m_visibility));
+  if (m_visibilityHasBeenSet) {
+    payload.WithString("Visibility", VisibilityMapper::GetNameForVisibility(m_visibility));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

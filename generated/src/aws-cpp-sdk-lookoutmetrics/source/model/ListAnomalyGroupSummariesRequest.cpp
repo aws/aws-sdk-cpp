@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lookoutmetrics/model/ListAnomalyGroupSummariesRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lookoutmetrics/model/ListAnomalyGroupSummariesRequest.h>
 
 #include <utility>
 
@@ -12,37 +12,24 @@ using namespace Aws::LookoutMetrics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListAnomalyGroupSummariesRequest::SerializePayload() const
-{
+Aws::String ListAnomalyGroupSummariesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_anomalyDetectorArnHasBeenSet)
-  {
-   payload.WithString("AnomalyDetectorArn", m_anomalyDetectorArn);
-
+  if (m_anomalyDetectorArnHasBeenSet) {
+    payload.WithString("AnomalyDetectorArn", m_anomalyDetectorArn);
   }
 
-  if(m_sensitivityThresholdHasBeenSet)
-  {
-   payload.WithInteger("SensitivityThreshold", m_sensitivityThreshold);
-
+  if (m_sensitivityThresholdHasBeenSet) {
+    payload.WithInteger("SensitivityThreshold", m_sensitivityThreshold);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("MaxResults", m_maxResults);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

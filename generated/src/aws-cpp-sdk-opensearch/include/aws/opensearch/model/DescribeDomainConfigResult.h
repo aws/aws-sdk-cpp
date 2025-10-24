@@ -4,69 +4,74 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/opensearch/model/DomainConfig.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace OpenSearchService
-{
-namespace Model
-{
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace OpenSearchService {
+namespace Model {
+/**
+ * <p>Contains the configuration information of the requested domain.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainConfigResponse">AWS
+ * API Reference</a></p>
+ */
+class DescribeDomainConfigResult {
+ public:
+  AWS_OPENSEARCHSERVICE_API DescribeDomainConfigResult() = default;
+  AWS_OPENSEARCHSERVICE_API DescribeDomainConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_OPENSEARCHSERVICE_API DescribeDomainConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
   /**
-   * <p>Contains the configuration information of the requested domain.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainConfigResponse">AWS
-   * API Reference</a></p>
+   * <p>Container for the configuration of the OpenSearch Service domain.</p>
    */
-  class DescribeDomainConfigResult
-  {
-  public:
-    AWS_OPENSEARCHSERVICE_API DescribeDomainConfigResult() = default;
-    AWS_OPENSEARCHSERVICE_API DescribeDomainConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_OPENSEARCHSERVICE_API DescribeDomainConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  inline const DomainConfig& GetDomainConfig() const { return m_domainConfig; }
+  template <typename DomainConfigT = DomainConfig>
+  void SetDomainConfig(DomainConfigT&& value) {
+    m_domainConfigHasBeenSet = true;
+    m_domainConfig = std::forward<DomainConfigT>(value);
+  }
+  template <typename DomainConfigT = DomainConfig>
+  DescribeDomainConfigResult& WithDomainConfig(DomainConfigT&& value) {
+    SetDomainConfig(std::forward<DomainConfigT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
 
-    ///@{
-    /**
-     * <p>Container for the configuration of the OpenSearch Service domain.</p>
-     */
-    inline const DomainConfig& GetDomainConfig() const { return m_domainConfig; }
-    template<typename DomainConfigT = DomainConfig>
-    void SetDomainConfig(DomainConfigT&& value) { m_domainConfigHasBeenSet = true; m_domainConfig = std::forward<DomainConfigT>(value); }
-    template<typename DomainConfigT = DomainConfig>
-    DescribeDomainConfigResult& WithDomainConfig(DomainConfigT&& value) { SetDomainConfig(std::forward<DomainConfigT>(value)); return *this;}
-    ///@}
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  DescribeDomainConfigResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  DomainConfig m_domainConfig;
+  bool m_domainConfigHasBeenSet = false;
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    DescribeDomainConfigResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    DomainConfig m_domainConfig;
-    bool m_domainConfigHasBeenSet = false;
-
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace OpenSearchService
-} // namespace Aws
+}  // namespace Model
+}  // namespace OpenSearchService
+}  // namespace Aws

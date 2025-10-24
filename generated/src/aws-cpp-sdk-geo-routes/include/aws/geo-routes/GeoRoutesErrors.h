@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 
-namespace Aws
-{
-namespace GeoRoutes
-{
-enum class GeoRoutesErrors
-{
-  //From Core//
+namespace Aws {
+namespace GeoRoutes {
+enum class GeoRoutesErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class GeoRoutesErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,12 +44,11 @@ enum class GeoRoutesErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INTERNAL_SERVER= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1
+  INTERNAL_SERVER = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1
 };
 
-class AWS_GEOROUTES_API GeoRoutesError : public Aws::Client::AWSError<GeoRoutesErrors>
-{
-public:
+class AWS_GEOROUTES_API GeoRoutesError : public Aws::Client::AWSError<GeoRoutesErrors> {
+ public:
   GeoRoutesError() {}
   GeoRoutesError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<GeoRoutesErrors>(rhs) {}
   GeoRoutesError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<GeoRoutesErrors>(rhs) {}
@@ -63,10 +59,9 @@ public:
   T GetModeledError();
 };
 
-namespace GeoRoutesErrorMapper
-{
-  AWS_GEOROUTES_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace GeoRoutesErrorMapper {
+AWS_GEOROUTES_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace GeoRoutes
-} // namespace Aws
+}  // namespace GeoRoutes
+}  // namespace Aws

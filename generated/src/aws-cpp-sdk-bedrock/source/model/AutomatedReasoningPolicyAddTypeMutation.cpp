@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-AutomatedReasoningPolicyAddTypeMutation::AutomatedReasoningPolicyAddTypeMutation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AutomatedReasoningPolicyAddTypeMutation::AutomatedReasoningPolicyAddTypeMutation(JsonView jsonValue) { *this = jsonValue; }
 
-AutomatedReasoningPolicyAddTypeMutation& AutomatedReasoningPolicyAddTypeMutation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+AutomatedReasoningPolicyAddTypeMutation& AutomatedReasoningPolicyAddTypeMutation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = jsonValue.GetObject("type");
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AutomatedReasoningPolicyAddTypeMutation::Jsonize() const
-{
+JsonValue AutomatedReasoningPolicyAddTypeMutation::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithObject("type", m_type.Jsonize());
-
+  if (m_typeHasBeenSet) {
+    payload.WithObject("type", m_type.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

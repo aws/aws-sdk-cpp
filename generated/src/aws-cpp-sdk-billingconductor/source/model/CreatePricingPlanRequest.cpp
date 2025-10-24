@@ -13,62 +13,44 @@ using namespace Aws::BillingConductor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreatePricingPlanRequest::SerializePayload() const
-{
+Aws::String CreatePricingPlanRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_pricingRuleArnsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> pricingRuleArnsJsonList(m_pricingRuleArns.size());
-   for(unsigned pricingRuleArnsIndex = 0; pricingRuleArnsIndex < pricingRuleArnsJsonList.GetLength(); ++pricingRuleArnsIndex)
-   {
-     pricingRuleArnsJsonList[pricingRuleArnsIndex].AsString(m_pricingRuleArns[pricingRuleArnsIndex]);
-   }
-   payload.WithArray("PricingRuleArns", std::move(pricingRuleArnsJsonList));
-
+  if (m_pricingRuleArnsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> pricingRuleArnsJsonList(m_pricingRuleArns.size());
+    for (unsigned pricingRuleArnsIndex = 0; pricingRuleArnsIndex < pricingRuleArnsJsonList.GetLength(); ++pricingRuleArnsIndex) {
+      pricingRuleArnsJsonList[pricingRuleArnsIndex].AsString(m_pricingRuleArns[pricingRuleArnsIndex]);
+    }
+    payload.WithArray("PricingRuleArns", std::move(pricingRuleArnsJsonList));
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("Tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreatePricingPlanRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreatePricingPlanRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_clientTokenHasBeenSet)
-  {
+  if (m_clientTokenHasBeenSet) {
     ss << m_clientToken;
-    headers.emplace("x-amzn-client-token",  ss.str());
+    headers.emplace("x-amzn-client-token", ss.str());
     ss.str("");
   }
 
   return headers;
-
 }
-
-
-
-

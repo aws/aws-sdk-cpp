@@ -12,33 +12,22 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StopDeploymentRequest::SerializePayload() const
-{
+Aws::String StopDeploymentRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_deploymentIdHasBeenSet)
-  {
-   payload.WithString("deploymentId", m_deploymentId);
-
+  if (m_deploymentIdHasBeenSet) {
+    payload.WithString("deploymentId", m_deploymentId);
   }
 
-  if(m_autoRollbackEnabledHasBeenSet)
-  {
-   payload.WithBool("autoRollbackEnabled", m_autoRollbackEnabled);
-
+  if (m_autoRollbackEnabledHasBeenSet) {
+    payload.WithBool("autoRollbackEnabled", m_autoRollbackEnabled);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection StopDeploymentRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection StopDeploymentRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeDeploy_20141006.StopDeployment"));
   return headers;
-
 }
-
-
-
-

@@ -5,12 +5,8 @@
 
 #include <aws/quicksight/QuickSightEndpointProvider.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace QuickSight
-} // namespace Aws
+namespace Aws {
+namespace QuickSight {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace QuickSight
+}  // namespace Aws

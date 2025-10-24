@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wellarchitected/model/CreateMilestoneRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wellarchitected/model/CreateMilestoneRequest.h>
 
 #include <utility>
 
@@ -12,25 +12,16 @@ using namespace Aws::WellArchitected::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateMilestoneRequest::SerializePayload() const
-{
+Aws::String CreateMilestoneRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_milestoneNameHasBeenSet)
-  {
-   payload.WithString("MilestoneName", m_milestoneName);
-
+  if (m_milestoneNameHasBeenSet) {
+    payload.WithString("MilestoneName", m_milestoneName);
   }
 
-  if(m_clientRequestTokenHasBeenSet)
-  {
-   payload.WithString("ClientRequestToken", m_clientRequestToken);
-
+  if (m_clientRequestTokenHasBeenSet) {
+    payload.WithString("ClientRequestToken", m_clientRequestToken);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

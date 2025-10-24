@@ -4,10 +4,10 @@
  */
 
 #include <aws/bedrock-agent-runtime/model/RetrieveResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,42 +17,32 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RetrieveResult::RetrieveResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+RetrieveResult::RetrieveResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-RetrieveResult& RetrieveResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+RetrieveResult& RetrieveResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("retrievalResults"))
-  {
+  if (jsonValue.ValueExists("retrievalResults")) {
     Aws::Utils::Array<JsonView> retrievalResultsJsonList = jsonValue.GetArray("retrievalResults");
-    for(unsigned retrievalResultsIndex = 0; retrievalResultsIndex < retrievalResultsJsonList.GetLength(); ++retrievalResultsIndex)
-    {
+    for (unsigned retrievalResultsIndex = 0; retrievalResultsIndex < retrievalResultsJsonList.GetLength(); ++retrievalResultsIndex) {
       m_retrievalResults.push_back(retrievalResultsJsonList[retrievalResultsIndex].AsObject());
     }
     m_retrievalResultsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("guardrailAction"))
-  {
+  if (jsonValue.ValueExists("guardrailAction")) {
     m_guardrailAction = GuadrailActionMapper::GetGuadrailActionForName(jsonValue.GetString("guardrailAction"));
     m_guardrailActionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

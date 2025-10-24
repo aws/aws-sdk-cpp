@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/SeriesItem.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/SeriesItem.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-SeriesItem::SeriesItem(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SeriesItem::SeriesItem(JsonView jsonValue) { *this = jsonValue; }
 
-SeriesItem& SeriesItem::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FieldSeriesItem"))
-  {
+SeriesItem& SeriesItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FieldSeriesItem")) {
     m_fieldSeriesItem = jsonValue.GetObject("FieldSeriesItem");
     m_fieldSeriesItemHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DataFieldSeriesItem"))
-  {
+  if (jsonValue.ValueExists("DataFieldSeriesItem")) {
     m_dataFieldSeriesItem = jsonValue.GetObject("DataFieldSeriesItem");
     m_dataFieldSeriesItemHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SeriesItem::Jsonize() const
-{
+JsonValue SeriesItem::Jsonize() const {
   JsonValue payload;
 
-  if(m_fieldSeriesItemHasBeenSet)
-  {
-   payload.WithObject("FieldSeriesItem", m_fieldSeriesItem.Jsonize());
-
+  if (m_fieldSeriesItemHasBeenSet) {
+    payload.WithObject("FieldSeriesItem", m_fieldSeriesItem.Jsonize());
   }
 
-  if(m_dataFieldSeriesItemHasBeenSet)
-  {
-   payload.WithObject("DataFieldSeriesItem", m_dataFieldSeriesItem.Jsonize());
-
+  if (m_dataFieldSeriesItemHasBeenSet) {
+    payload.WithObject("DataFieldSeriesItem", m_dataFieldSeriesItem.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

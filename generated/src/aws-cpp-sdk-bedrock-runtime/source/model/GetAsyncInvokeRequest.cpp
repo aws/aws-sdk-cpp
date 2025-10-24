@@ -12,11 +12,4 @@ using namespace Aws::BedrockRuntime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetAsyncInvokeRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetAsyncInvokeRequest::SerializePayload() const { return {}; }

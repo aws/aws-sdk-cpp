@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/CdiInputSpecification.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/CdiInputSpecification.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-CdiInputSpecification::CdiInputSpecification(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CdiInputSpecification::CdiInputSpecification(JsonView jsonValue) { *this = jsonValue; }
 
-CdiInputSpecification& CdiInputSpecification::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("resolution"))
-  {
+CdiInputSpecification& CdiInputSpecification::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("resolution")) {
     m_resolution = CdiInputResolutionMapper::GetCdiInputResolutionForName(jsonValue.GetString("resolution"));
     m_resolutionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CdiInputSpecification::Jsonize() const
-{
+JsonValue CdiInputSpecification::Jsonize() const {
   JsonValue payload;
 
-  if(m_resolutionHasBeenSet)
-  {
-   payload.WithString("resolution", CdiInputResolutionMapper::GetNameForCdiInputResolution(m_resolution));
+  if (m_resolutionHasBeenSet) {
+    payload.WithString("resolution", CdiInputResolutionMapper::GetNameForCdiInputResolution(m_resolution));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

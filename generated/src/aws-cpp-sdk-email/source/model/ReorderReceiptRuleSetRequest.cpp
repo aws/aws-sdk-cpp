@@ -3,35 +3,27 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/email/model/ReorderReceiptRuleSetRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/email/model/ReorderReceiptRuleSetRequest.h>
 
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-Aws::String ReorderReceiptRuleSetRequest::SerializePayload() const
-{
+Aws::String ReorderReceiptRuleSetRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ReorderReceiptRuleSet&";
-  if(m_ruleSetNameHasBeenSet)
-  {
+  if (m_ruleSetNameHasBeenSet) {
     ss << "RuleSetName=" << StringUtils::URLEncode(m_ruleSetName.c_str()) << "&";
   }
 
-  if(m_ruleNamesHasBeenSet)
-  {
-    if (m_ruleNames.empty())
-    {
+  if (m_ruleNamesHasBeenSet) {
+    if (m_ruleNames.empty()) {
       ss << "RuleNames=&";
-    }
-    else
-    {
+    } else {
       unsigned ruleNamesCount = 1;
-      for(auto& item : m_ruleNames)
-      {
-        ss << "RuleNames.member." << ruleNamesCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_ruleNames) {
+        ss << "RuleNames.member." << ruleNamesCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         ruleNamesCount++;
       }
     }
@@ -41,8 +33,4 @@ Aws::String ReorderReceiptRuleSetRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ReorderReceiptRuleSetRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ReorderReceiptRuleSetRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

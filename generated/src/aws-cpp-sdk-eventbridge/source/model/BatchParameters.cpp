@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/eventbridge/model/BatchParameters.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/eventbridge/model/BatchParameters.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EventBridge
-{
-namespace Model
-{
+namespace Aws {
+namespace EventBridge {
+namespace Model {
 
-BatchParameters::BatchParameters(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchParameters::BatchParameters(JsonView jsonValue) { *this = jsonValue; }
 
-BatchParameters& BatchParameters::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("JobDefinition"))
-  {
+BatchParameters& BatchParameters::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("JobDefinition")) {
     m_jobDefinition = jsonValue.GetString("JobDefinition");
     m_jobDefinitionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("JobName"))
-  {
+  if (jsonValue.ValueExists("JobName")) {
     m_jobName = jsonValue.GetString("JobName");
     m_jobNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ArrayProperties"))
-  {
+  if (jsonValue.ValueExists("ArrayProperties")) {
     m_arrayProperties = jsonValue.GetObject("ArrayProperties");
     m_arrayPropertiesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RetryStrategy"))
-  {
+  if (jsonValue.ValueExists("RetryStrategy")) {
     m_retryStrategy = jsonValue.GetObject("RetryStrategy");
     m_retryStrategyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BatchParameters::Jsonize() const
-{
+JsonValue BatchParameters::Jsonize() const {
   JsonValue payload;
 
-  if(m_jobDefinitionHasBeenSet)
-  {
-   payload.WithString("JobDefinition", m_jobDefinition);
-
+  if (m_jobDefinitionHasBeenSet) {
+    payload.WithString("JobDefinition", m_jobDefinition);
   }
 
-  if(m_jobNameHasBeenSet)
-  {
-   payload.WithString("JobName", m_jobName);
-
+  if (m_jobNameHasBeenSet) {
+    payload.WithString("JobName", m_jobName);
   }
 
-  if(m_arrayPropertiesHasBeenSet)
-  {
-   payload.WithObject("ArrayProperties", m_arrayProperties.Jsonize());
-
+  if (m_arrayPropertiesHasBeenSet) {
+    payload.WithObject("ArrayProperties", m_arrayProperties.Jsonize());
   }
 
-  if(m_retryStrategyHasBeenSet)
-  {
-   payload.WithObject("RetryStrategy", m_retryStrategy.Jsonize());
-
+  if (m_retryStrategyHasBeenSet) {
+    payload.WithObject("RetryStrategy", m_retryStrategy.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EventBridge
-} // namespace Aws
+}  // namespace Model
+}  // namespace EventBridge
+}  // namespace Aws

@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-RealTimeContactAnalysisTranscriptItemRedaction::RealTimeContactAnalysisTranscriptItemRedaction(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RealTimeContactAnalysisTranscriptItemRedaction::RealTimeContactAnalysisTranscriptItemRedaction(JsonView jsonValue) { *this = jsonValue; }
 
-RealTimeContactAnalysisTranscriptItemRedaction& RealTimeContactAnalysisTranscriptItemRedaction::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CharacterOffsets"))
-  {
+RealTimeContactAnalysisTranscriptItemRedaction& RealTimeContactAnalysisTranscriptItemRedaction::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CharacterOffsets")) {
     Aws::Utils::Array<JsonView> characterOffsetsJsonList = jsonValue.GetArray("CharacterOffsets");
-    for(unsigned characterOffsetsIndex = 0; characterOffsetsIndex < characterOffsetsJsonList.GetLength(); ++characterOffsetsIndex)
-    {
+    for (unsigned characterOffsetsIndex = 0; characterOffsetsIndex < characterOffsetsJsonList.GetLength(); ++characterOffsetsIndex) {
       m_characterOffsets.push_back(characterOffsetsJsonList[characterOffsetsIndex].AsObject());
     }
     m_characterOffsetsHasBeenSet = true;
@@ -37,24 +28,20 @@ RealTimeContactAnalysisTranscriptItemRedaction& RealTimeContactAnalysisTranscrip
   return *this;
 }
 
-JsonValue RealTimeContactAnalysisTranscriptItemRedaction::Jsonize() const
-{
+JsonValue RealTimeContactAnalysisTranscriptItemRedaction::Jsonize() const {
   JsonValue payload;
 
-  if(m_characterOffsetsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> characterOffsetsJsonList(m_characterOffsets.size());
-   for(unsigned characterOffsetsIndex = 0; characterOffsetsIndex < characterOffsetsJsonList.GetLength(); ++characterOffsetsIndex)
-   {
-     characterOffsetsJsonList[characterOffsetsIndex].AsObject(m_characterOffsets[characterOffsetsIndex].Jsonize());
-   }
-   payload.WithArray("CharacterOffsets", std::move(characterOffsetsJsonList));
-
+  if (m_characterOffsetsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> characterOffsetsJsonList(m_characterOffsets.size());
+    for (unsigned characterOffsetsIndex = 0; characterOffsetsIndex < characterOffsetsJsonList.GetLength(); ++characterOffsetsIndex) {
+      characterOffsetsJsonList[characterOffsetsIndex].AsObject(m_characterOffsets[characterOffsetsIndex].Jsonize());
+    }
+    payload.WithArray("CharacterOffsets", std::move(characterOffsetsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

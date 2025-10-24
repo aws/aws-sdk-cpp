@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class NatGatewayState
-  {
-    NOT_SET,
-    pending,
-    failed,
-    available,
-    deleting,
-    deleted
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class NatGatewayState { NOT_SET, pending, failed, available, deleting, deleted };
 
-namespace NatGatewayStateMapper
-{
+namespace NatGatewayStateMapper {
 AWS_EC2_API NatGatewayState GetNatGatewayStateForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForNatGatewayState(NatGatewayState value);
-} // namespace NatGatewayStateMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace NatGatewayStateMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

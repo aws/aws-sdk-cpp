@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/ActionLocalIpDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/ActionLocalIpDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-ActionLocalIpDetails::ActionLocalIpDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ActionLocalIpDetails::ActionLocalIpDetails(JsonView jsonValue) { *this = jsonValue; }
 
-ActionLocalIpDetails& ActionLocalIpDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("IpAddressV4"))
-  {
+ActionLocalIpDetails& ActionLocalIpDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("IpAddressV4")) {
     m_ipAddressV4 = jsonValue.GetString("IpAddressV4");
     m_ipAddressV4HasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ActionLocalIpDetails::Jsonize() const
-{
+JsonValue ActionLocalIpDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_ipAddressV4HasBeenSet)
-  {
-   payload.WithString("IpAddressV4", m_ipAddressV4);
-
+  if (m_ipAddressV4HasBeenSet) {
+    payload.WithString("IpAddressV4", m_ipAddressV4);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

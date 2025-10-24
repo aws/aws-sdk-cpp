@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/panorama/Panorama_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/panorama/Panorama_EXPORTS.h>
 
-namespace Aws
-{
-namespace Panorama
-{
-namespace Model
-{
-  enum class DeviceStatus
-  {
-    NOT_SET,
-    AWAITING_PROVISIONING,
-    PENDING,
-    SUCCEEDED,
-    FAILED,
-    ERROR_,
-    DELETING
-  };
+namespace Aws {
+namespace Panorama {
+namespace Model {
+enum class DeviceStatus { NOT_SET, AWAITING_PROVISIONING, PENDING, SUCCEEDED, FAILED, ERROR_, DELETING };
 
-namespace DeviceStatusMapper
-{
+namespace DeviceStatusMapper {
 AWS_PANORAMA_API DeviceStatus GetDeviceStatusForName(const Aws::String& name);
 
 AWS_PANORAMA_API Aws::String GetNameForDeviceStatus(DeviceStatus value);
-} // namespace DeviceStatusMapper
-} // namespace Model
-} // namespace Panorama
-} // namespace Aws
+}  // namespace DeviceStatusMapper
+}  // namespace Model
+}  // namespace Panorama
+}  // namespace Aws

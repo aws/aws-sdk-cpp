@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 
-namespace Aws
-{
-namespace MigrationHubStrategyRecommendations
-{
-namespace Model
-{
-  enum class PipelineType
-  {
-    NOT_SET,
-    AZURE_DEVOPS
-  };
+namespace Aws {
+namespace MigrationHubStrategyRecommendations {
+namespace Model {
+enum class PipelineType { NOT_SET, AZURE_DEVOPS };
 
-namespace PipelineTypeMapper
-{
+namespace PipelineTypeMapper {
 AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API PipelineType GetPipelineTypeForName(const Aws::String& name);
 
 AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::String GetNameForPipelineType(PipelineType value);
-} // namespace PipelineTypeMapper
-} // namespace Model
-} // namespace MigrationHubStrategyRecommendations
-} // namespace Aws
+}  // namespace PipelineTypeMapper
+}  // namespace Model
+}  // namespace MigrationHubStrategyRecommendations
+}  // namespace Aws

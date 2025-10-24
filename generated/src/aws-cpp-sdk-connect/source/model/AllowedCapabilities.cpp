@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-AllowedCapabilities::AllowedCapabilities(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AllowedCapabilities::AllowedCapabilities(JsonView jsonValue) { *this = jsonValue; }
 
-AllowedCapabilities& AllowedCapabilities::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Customer"))
-  {
+AllowedCapabilities& AllowedCapabilities::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Customer")) {
     m_customer = jsonValue.GetObject("Customer");
     m_customerHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Agent"))
-  {
+  if (jsonValue.ValueExists("Agent")) {
     m_agent = jsonValue.GetObject("Agent");
     m_agentHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AllowedCapabilities::Jsonize() const
-{
+JsonValue AllowedCapabilities::Jsonize() const {
   JsonValue payload;
 
-  if(m_customerHasBeenSet)
-  {
-   payload.WithObject("Customer", m_customer.Jsonize());
-
+  if (m_customerHasBeenSet) {
+    payload.WithObject("Customer", m_customer.Jsonize());
   }
 
-  if(m_agentHasBeenSet)
-  {
-   payload.WithObject("Agent", m_agent.Jsonize());
-
+  if (m_agentHasBeenSet) {
+    payload.WithObject("Agent", m_agent.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

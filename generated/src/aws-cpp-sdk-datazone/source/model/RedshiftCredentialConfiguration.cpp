@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/datazone/model/RedshiftCredentialConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/datazone/model/RedshiftCredentialConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DataZone
-{
-namespace Model
-{
+namespace Aws {
+namespace DataZone {
+namespace Model {
 
-RedshiftCredentialConfiguration::RedshiftCredentialConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RedshiftCredentialConfiguration::RedshiftCredentialConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-RedshiftCredentialConfiguration& RedshiftCredentialConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("secretManagerArn"))
-  {
+RedshiftCredentialConfiguration& RedshiftCredentialConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("secretManagerArn")) {
     m_secretManagerArn = jsonValue.GetString("secretManagerArn");
     m_secretManagerArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RedshiftCredentialConfiguration::Jsonize() const
-{
+JsonValue RedshiftCredentialConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_secretManagerArnHasBeenSet)
-  {
-   payload.WithString("secretManagerArn", m_secretManagerArn);
-
+  if (m_secretManagerArnHasBeenSet) {
+    payload.WithString("secretManagerArn", m_secretManagerArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DataZone
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

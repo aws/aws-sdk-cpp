@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-ErrorHandlingConfig::ErrorHandlingConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ErrorHandlingConfig::ErrorHandlingConfig(JsonView jsonValue) { *this = jsonValue; }
 
-ErrorHandlingConfig& ErrorHandlingConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("failOnFirstDestinationError"))
-  {
+ErrorHandlingConfig& ErrorHandlingConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("failOnFirstDestinationError")) {
     m_failOnFirstDestinationError = jsonValue.GetBool("failOnFirstDestinationError");
     m_failOnFirstDestinationErrorHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("bucketPrefix"))
-  {
+  if (jsonValue.ValueExists("bucketPrefix")) {
     m_bucketPrefix = jsonValue.GetString("bucketPrefix");
     m_bucketPrefixHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("bucketName"))
-  {
+  if (jsonValue.ValueExists("bucketName")) {
     m_bucketName = jsonValue.GetString("bucketName");
     m_bucketNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ErrorHandlingConfig::Jsonize() const
-{
+JsonValue ErrorHandlingConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_failOnFirstDestinationErrorHasBeenSet)
-  {
-   payload.WithBool("failOnFirstDestinationError", m_failOnFirstDestinationError);
-
+  if (m_failOnFirstDestinationErrorHasBeenSet) {
+    payload.WithBool("failOnFirstDestinationError", m_failOnFirstDestinationError);
   }
 
-  if(m_bucketPrefixHasBeenSet)
-  {
-   payload.WithString("bucketPrefix", m_bucketPrefix);
-
+  if (m_bucketPrefixHasBeenSet) {
+    payload.WithString("bucketPrefix", m_bucketPrefix);
   }
 
-  if(m_bucketNameHasBeenSet)
-  {
-   payload.WithString("bucketName", m_bucketName);
-
+  if (m_bucketNameHasBeenSet) {
+    payload.WithString("bucketName", m_bucketName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

@@ -7,25 +7,16 @@
 #include <aws/appmesh/AppMesh_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
-  enum class DefaultGatewayRouteRewrite
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace AppMesh {
+namespace Model {
+enum class DefaultGatewayRouteRewrite { NOT_SET, ENABLED, DISABLED };
 
-namespace DefaultGatewayRouteRewriteMapper
-{
+namespace DefaultGatewayRouteRewriteMapper {
 AWS_APPMESH_API DefaultGatewayRouteRewrite GetDefaultGatewayRouteRewriteForName(const Aws::String& name);
 
 AWS_APPMESH_API Aws::String GetNameForDefaultGatewayRouteRewrite(DefaultGatewayRouteRewrite value);
-} // namespace DefaultGatewayRouteRewriteMapper
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace DefaultGatewayRouteRewriteMapper
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

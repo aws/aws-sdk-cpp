@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/outposts/model/GetCatalogItemRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/outposts/model/GetCatalogItemRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::Outposts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetCatalogItemRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetCatalogItemRequest::SerializePayload() const { return {}; }

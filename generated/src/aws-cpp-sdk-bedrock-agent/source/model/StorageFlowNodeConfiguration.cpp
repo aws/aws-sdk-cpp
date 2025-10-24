@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-StorageFlowNodeConfiguration::StorageFlowNodeConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StorageFlowNodeConfiguration::StorageFlowNodeConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-StorageFlowNodeConfiguration& StorageFlowNodeConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("serviceConfiguration"))
-  {
+StorageFlowNodeConfiguration& StorageFlowNodeConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("serviceConfiguration")) {
     m_serviceConfiguration = jsonValue.GetObject("serviceConfiguration");
     m_serviceConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StorageFlowNodeConfiguration::Jsonize() const
-{
+JsonValue StorageFlowNodeConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_serviceConfigurationHasBeenSet)
-  {
-   payload.WithObject("serviceConfiguration", m_serviceConfiguration.Jsonize());
-
+  if (m_serviceConfigurationHasBeenSet) {
+    payload.WithObject("serviceConfiguration", m_serviceConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

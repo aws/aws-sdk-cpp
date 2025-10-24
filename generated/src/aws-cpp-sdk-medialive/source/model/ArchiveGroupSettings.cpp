@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/ArchiveGroupSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/ArchiveGroupSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-ArchiveGroupSettings::ArchiveGroupSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ArchiveGroupSettings::ArchiveGroupSettings(JsonView jsonValue) { *this = jsonValue; }
 
-ArchiveGroupSettings& ArchiveGroupSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("archiveCdnSettings"))
-  {
+ArchiveGroupSettings& ArchiveGroupSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("archiveCdnSettings")) {
     m_archiveCdnSettings = jsonValue.GetObject("archiveCdnSettings");
     m_archiveCdnSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("destination"))
-  {
+  if (jsonValue.ValueExists("destination")) {
     m_destination = jsonValue.GetObject("destination");
     m_destinationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("rolloverInterval"))
-  {
+  if (jsonValue.ValueExists("rolloverInterval")) {
     m_rolloverInterval = jsonValue.GetInteger("rolloverInterval");
     m_rolloverIntervalHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ArchiveGroupSettings::Jsonize() const
-{
+JsonValue ArchiveGroupSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_archiveCdnSettingsHasBeenSet)
-  {
-   payload.WithObject("archiveCdnSettings", m_archiveCdnSettings.Jsonize());
-
+  if (m_archiveCdnSettingsHasBeenSet) {
+    payload.WithObject("archiveCdnSettings", m_archiveCdnSettings.Jsonize());
   }
 
-  if(m_destinationHasBeenSet)
-  {
-   payload.WithObject("destination", m_destination.Jsonize());
-
+  if (m_destinationHasBeenSet) {
+    payload.WithObject("destination", m_destination.Jsonize());
   }
 
-  if(m_rolloverIntervalHasBeenSet)
-  {
-   payload.WithInteger("rolloverInterval", m_rolloverInterval);
-
+  if (m_rolloverIntervalHasBeenSet) {
+    payload.WithInteger("rolloverInterval", m_rolloverInterval);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

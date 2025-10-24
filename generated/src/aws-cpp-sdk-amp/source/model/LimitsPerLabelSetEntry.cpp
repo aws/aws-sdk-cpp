@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace PrometheusService
-{
-namespace Model
-{
+namespace Aws {
+namespace PrometheusService {
+namespace Model {
 
-LimitsPerLabelSetEntry::LimitsPerLabelSetEntry(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LimitsPerLabelSetEntry::LimitsPerLabelSetEntry(JsonView jsonValue) { *this = jsonValue; }
 
-LimitsPerLabelSetEntry& LimitsPerLabelSetEntry::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("maxSeries"))
-  {
+LimitsPerLabelSetEntry& LimitsPerLabelSetEntry::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("maxSeries")) {
     m_maxSeries = jsonValue.GetInt64("maxSeries");
     m_maxSeriesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LimitsPerLabelSetEntry::Jsonize() const
-{
+JsonValue LimitsPerLabelSetEntry::Jsonize() const {
   JsonValue payload;
 
-  if(m_maxSeriesHasBeenSet)
-  {
-   payload.WithInt64("maxSeries", m_maxSeries);
-
+  if (m_maxSeriesHasBeenSet) {
+    payload.WithInt64("maxSeries", m_maxSeries);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace PrometheusService
-} // namespace Aws
+}  // namespace Model
+}  // namespace PrometheusService
+}  // namespace Aws

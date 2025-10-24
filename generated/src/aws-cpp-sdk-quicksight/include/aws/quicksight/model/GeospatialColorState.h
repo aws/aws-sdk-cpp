@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class GeospatialColorState
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class GeospatialColorState { NOT_SET, ENABLED, DISABLED };
 
-namespace GeospatialColorStateMapper
-{
+namespace GeospatialColorStateMapper {
 AWS_QUICKSIGHT_API GeospatialColorState GetGeospatialColorStateForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForGeospatialColorState(GeospatialColorState value);
-} // namespace GeospatialColorStateMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace GeospatialColorStateMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

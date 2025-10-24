@@ -7,25 +7,16 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CodeDeploy
-{
-namespace Model
-{
-  enum class TargetLabel
-  {
-    NOT_SET,
-    Blue,
-    Green
-  };
+namespace Aws {
+namespace CodeDeploy {
+namespace Model {
+enum class TargetLabel { NOT_SET, Blue, Green };
 
-namespace TargetLabelMapper
-{
+namespace TargetLabelMapper {
 AWS_CODEDEPLOY_API TargetLabel GetTargetLabelForName(const Aws::String& name);
 
 AWS_CODEDEPLOY_API Aws::String GetNameForTargetLabel(TargetLabel value);
-} // namespace TargetLabelMapper
-} // namespace Model
-} // namespace CodeDeploy
-} // namespace Aws
+}  // namespace TargetLabelMapper
+}  // namespace Model
+}  // namespace CodeDeploy
+}  // namespace Aws

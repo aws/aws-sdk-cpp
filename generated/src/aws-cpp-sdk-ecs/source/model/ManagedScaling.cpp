@@ -3,92 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ecs/model/ManagedScaling.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ecs/model/ManagedScaling.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ECS
-{
-namespace Model
-{
+namespace Aws {
+namespace ECS {
+namespace Model {
 
-ManagedScaling::ManagedScaling(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ManagedScaling::ManagedScaling(JsonView jsonValue) { *this = jsonValue; }
 
-ManagedScaling& ManagedScaling::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("status"))
-  {
+ManagedScaling& ManagedScaling::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("status")) {
     m_status = ManagedScalingStatusMapper::GetManagedScalingStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("targetCapacity"))
-  {
+  if (jsonValue.ValueExists("targetCapacity")) {
     m_targetCapacity = jsonValue.GetInteger("targetCapacity");
     m_targetCapacityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("minimumScalingStepSize"))
-  {
+  if (jsonValue.ValueExists("minimumScalingStepSize")) {
     m_minimumScalingStepSize = jsonValue.GetInteger("minimumScalingStepSize");
     m_minimumScalingStepSizeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("maximumScalingStepSize"))
-  {
+  if (jsonValue.ValueExists("maximumScalingStepSize")) {
     m_maximumScalingStepSize = jsonValue.GetInteger("maximumScalingStepSize");
     m_maximumScalingStepSizeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("instanceWarmupPeriod"))
-  {
+  if (jsonValue.ValueExists("instanceWarmupPeriod")) {
     m_instanceWarmupPeriod = jsonValue.GetInteger("instanceWarmupPeriod");
     m_instanceWarmupPeriodHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ManagedScaling::Jsonize() const
-{
+JsonValue ManagedScaling::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", ManagedScalingStatusMapper::GetNameForManagedScalingStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", ManagedScalingStatusMapper::GetNameForManagedScalingStatus(m_status));
   }
 
-  if(m_targetCapacityHasBeenSet)
-  {
-   payload.WithInteger("targetCapacity", m_targetCapacity);
-
+  if (m_targetCapacityHasBeenSet) {
+    payload.WithInteger("targetCapacity", m_targetCapacity);
   }
 
-  if(m_minimumScalingStepSizeHasBeenSet)
-  {
-   payload.WithInteger("minimumScalingStepSize", m_minimumScalingStepSize);
-
+  if (m_minimumScalingStepSizeHasBeenSet) {
+    payload.WithInteger("minimumScalingStepSize", m_minimumScalingStepSize);
   }
 
-  if(m_maximumScalingStepSizeHasBeenSet)
-  {
-   payload.WithInteger("maximumScalingStepSize", m_maximumScalingStepSize);
-
+  if (m_maximumScalingStepSizeHasBeenSet) {
+    payload.WithInteger("maximumScalingStepSize", m_maximumScalingStepSize);
   }
 
-  if(m_instanceWarmupPeriodHasBeenSet)
-  {
-   payload.WithInteger("instanceWarmupPeriod", m_instanceWarmupPeriod);
-
+  if (m_instanceWarmupPeriodHasBeenSet) {
+    payload.WithInteger("instanceWarmupPeriod", m_instanceWarmupPeriod);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ECS
-} // namespace Aws
+}  // namespace Model
+}  // namespace ECS
+}  // namespace Aws

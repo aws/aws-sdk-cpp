@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/StandardsStatusReason.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/StandardsStatusReason.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-StandardsStatusReason::StandardsStatusReason(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StandardsStatusReason::StandardsStatusReason(JsonView jsonValue) { *this = jsonValue; }
 
-StandardsStatusReason& StandardsStatusReason::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("StatusReasonCode"))
-  {
+StandardsStatusReason& StandardsStatusReason::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("StatusReasonCode")) {
     m_statusReasonCode = StatusReasonCodeMapper::GetStatusReasonCodeForName(jsonValue.GetString("StatusReasonCode"));
     m_statusReasonCodeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StandardsStatusReason::Jsonize() const
-{
+JsonValue StandardsStatusReason::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusReasonCodeHasBeenSet)
-  {
-   payload.WithString("StatusReasonCode", StatusReasonCodeMapper::GetNameForStatusReasonCode(m_statusReasonCode));
+  if (m_statusReasonCodeHasBeenSet) {
+    payload.WithString("StatusReasonCode", StatusReasonCodeMapper::GetNameForStatusReasonCode(m_statusReasonCode));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

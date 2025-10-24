@@ -12,27 +12,18 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StopBuildRequest::SerializePayload() const
-{
+Aws::String StopBuildRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection StopBuildRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection StopBuildRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeBuild_20161006.StopBuild"));
   return headers;
-
 }
-
-
-
-

@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotfleetwise/model/InvalidSignalsException.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotfleetwise/model/InvalidSignalsException.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTFleetWise
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTFleetWise {
+namespace Model {
 
-InvalidSignalsException::InvalidSignalsException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InvalidSignalsException::InvalidSignalsException(JsonView jsonValue) { *this = jsonValue; }
 
-InvalidSignalsException& InvalidSignalsException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("message"))
-  {
+InvalidSignalsException& InvalidSignalsException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("invalidSignals"))
-  {
+  if (jsonValue.ValueExists("invalidSignals")) {
     Aws::Utils::Array<JsonView> invalidSignalsJsonList = jsonValue.GetArray("invalidSignals");
-    for(unsigned invalidSignalsIndex = 0; invalidSignalsIndex < invalidSignalsJsonList.GetLength(); ++invalidSignalsIndex)
-    {
+    for (unsigned invalidSignalsIndex = 0; invalidSignalsIndex < invalidSignalsJsonList.GetLength(); ++invalidSignalsIndex) {
       m_invalidSignals.push_back(invalidSignalsJsonList[invalidSignalsIndex].AsObject());
     }
     m_invalidSignalsHasBeenSet = true;
@@ -42,30 +32,24 @@ InvalidSignalsException& InvalidSignalsException::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue InvalidSignalsException::Jsonize() const
-{
+JsonValue InvalidSignalsException::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
-  if(m_invalidSignalsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> invalidSignalsJsonList(m_invalidSignals.size());
-   for(unsigned invalidSignalsIndex = 0; invalidSignalsIndex < invalidSignalsJsonList.GetLength(); ++invalidSignalsIndex)
-   {
-     invalidSignalsJsonList[invalidSignalsIndex].AsObject(m_invalidSignals[invalidSignalsIndex].Jsonize());
-   }
-   payload.WithArray("invalidSignals", std::move(invalidSignalsJsonList));
-
+  if (m_invalidSignalsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> invalidSignalsJsonList(m_invalidSignals.size());
+    for (unsigned invalidSignalsIndex = 0; invalidSignalsIndex < invalidSignalsJsonList.GetLength(); ++invalidSignalsIndex) {
+      invalidSignalsJsonList[invalidSignalsIndex].AsObject(m_invalidSignals[invalidSignalsIndex].Jsonize());
+    }
+    payload.WithArray("invalidSignals", std::move(invalidSignalsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTFleetWise
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTFleetWise
+}  // namespace Aws

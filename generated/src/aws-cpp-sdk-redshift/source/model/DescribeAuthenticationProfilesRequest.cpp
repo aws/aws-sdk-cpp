@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/DescribeAuthenticationProfilesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/DescribeAuthenticationProfilesRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeAuthenticationProfilesRequest::SerializePayload() const
-{
+Aws::String DescribeAuthenticationProfilesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeAuthenticationProfiles&";
-  if(m_authenticationProfileNameHasBeenSet)
-  {
+  if (m_authenticationProfileNameHasBeenSet) {
     ss << "AuthenticationProfileName=" << StringUtils::URLEncode(m_authenticationProfileName.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DescribeAuthenticationProfilesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeAuthenticationProfilesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeAuthenticationProfilesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

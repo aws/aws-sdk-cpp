@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/secretsmanager/model/ValidateResourcePolicyResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/secretsmanager/model/ValidateResourcePolicyResult.h>
 
 #include <utility>
 
@@ -17,24 +17,17 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ValidateResourcePolicyResult::ValidateResourcePolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ValidateResourcePolicyResult::ValidateResourcePolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ValidateResourcePolicyResult& ValidateResourcePolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ValidateResourcePolicyResult& ValidateResourcePolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("PolicyValidationPassed"))
-  {
+  if (jsonValue.ValueExists("PolicyValidationPassed")) {
     m_policyValidationPassed = jsonValue.GetBool("PolicyValidationPassed");
     m_policyValidationPassedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ValidationErrors"))
-  {
+  if (jsonValue.ValueExists("ValidationErrors")) {
     Aws::Utils::Array<JsonView> validationErrorsJsonList = jsonValue.GetArray("ValidationErrors");
-    for(unsigned validationErrorsIndex = 0; validationErrorsIndex < validationErrorsJsonList.GetLength(); ++validationErrorsIndex)
-    {
+    for (unsigned validationErrorsIndex = 0; validationErrorsIndex < validationErrorsJsonList.GetLength(); ++validationErrorsIndex) {
       m_validationErrors.push_back(validationErrorsJsonList[validationErrorsIndex].AsObject());
     }
     m_validationErrorsHasBeenSet = true;
@@ -42,12 +35,10 @@ ValidateResourcePolicyResult& ValidateResourcePolicyResult::operator =(const Aws
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

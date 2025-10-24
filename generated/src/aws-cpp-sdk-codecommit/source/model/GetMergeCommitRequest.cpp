@@ -12,49 +12,36 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetMergeCommitRequest::SerializePayload() const
-{
+Aws::String GetMergeCommitRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_repositoryNameHasBeenSet)
-  {
-   payload.WithString("repositoryName", m_repositoryName);
-
+  if (m_repositoryNameHasBeenSet) {
+    payload.WithString("repositoryName", m_repositoryName);
   }
 
-  if(m_sourceCommitSpecifierHasBeenSet)
-  {
-   payload.WithString("sourceCommitSpecifier", m_sourceCommitSpecifier);
-
+  if (m_sourceCommitSpecifierHasBeenSet) {
+    payload.WithString("sourceCommitSpecifier", m_sourceCommitSpecifier);
   }
 
-  if(m_destinationCommitSpecifierHasBeenSet)
-  {
-   payload.WithString("destinationCommitSpecifier", m_destinationCommitSpecifier);
-
+  if (m_destinationCommitSpecifierHasBeenSet) {
+    payload.WithString("destinationCommitSpecifier", m_destinationCommitSpecifier);
   }
 
-  if(m_conflictDetailLevelHasBeenSet)
-  {
-   payload.WithString("conflictDetailLevel", ConflictDetailLevelTypeEnumMapper::GetNameForConflictDetailLevelTypeEnum(m_conflictDetailLevel));
+  if (m_conflictDetailLevelHasBeenSet) {
+    payload.WithString("conflictDetailLevel",
+                       ConflictDetailLevelTypeEnumMapper::GetNameForConflictDetailLevelTypeEnum(m_conflictDetailLevel));
   }
 
-  if(m_conflictResolutionStrategyHasBeenSet)
-  {
-   payload.WithString("conflictResolutionStrategy", ConflictResolutionStrategyTypeEnumMapper::GetNameForConflictResolutionStrategyTypeEnum(m_conflictResolutionStrategy));
+  if (m_conflictResolutionStrategyHasBeenSet) {
+    payload.WithString("conflictResolutionStrategy", ConflictResolutionStrategyTypeEnumMapper::GetNameForConflictResolutionStrategyTypeEnum(
+                                                         m_conflictResolutionStrategy));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetMergeCommitRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetMergeCommitRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeCommit_20150413.GetMergeCommit"));
   return headers;
-
 }
-
-
-
-

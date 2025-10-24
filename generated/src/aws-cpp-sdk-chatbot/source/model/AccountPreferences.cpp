@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace chatbot
-{
-namespace Model
-{
+namespace Aws {
+namespace chatbot {
+namespace Model {
 
-AccountPreferences::AccountPreferences(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AccountPreferences::AccountPreferences(JsonView jsonValue) { *this = jsonValue; }
 
-AccountPreferences& AccountPreferences::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("UserAuthorizationRequired"))
-  {
+AccountPreferences& AccountPreferences::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("UserAuthorizationRequired")) {
     m_userAuthorizationRequired = jsonValue.GetBool("UserAuthorizationRequired");
     m_userAuthorizationRequiredHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TrainingDataCollectionEnabled"))
-  {
+  if (jsonValue.ValueExists("TrainingDataCollectionEnabled")) {
     m_trainingDataCollectionEnabled = jsonValue.GetBool("TrainingDataCollectionEnabled");
     m_trainingDataCollectionEnabledHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AccountPreferences::Jsonize() const
-{
+JsonValue AccountPreferences::Jsonize() const {
   JsonValue payload;
 
-  if(m_userAuthorizationRequiredHasBeenSet)
-  {
-   payload.WithBool("UserAuthorizationRequired", m_userAuthorizationRequired);
-
+  if (m_userAuthorizationRequiredHasBeenSet) {
+    payload.WithBool("UserAuthorizationRequired", m_userAuthorizationRequired);
   }
 
-  if(m_trainingDataCollectionEnabledHasBeenSet)
-  {
-   payload.WithBool("TrainingDataCollectionEnabled", m_trainingDataCollectionEnabled);
-
+  if (m_trainingDataCollectionEnabledHasBeenSet) {
+    payload.WithBool("TrainingDataCollectionEnabled", m_trainingDataCollectionEnabled);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace chatbot
-} // namespace Aws
+}  // namespace Model
+}  // namespace chatbot
+}  // namespace Aws

@@ -11,40 +11,32 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
 
-CompromisedCredentialsActionsType::CompromisedCredentialsActionsType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CompromisedCredentialsActionsType::CompromisedCredentialsActionsType(JsonView jsonValue) { *this = jsonValue; }
 
-CompromisedCredentialsActionsType& CompromisedCredentialsActionsType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EventAction"))
-  {
-    m_eventAction = CompromisedCredentialsEventActionTypeMapper::GetCompromisedCredentialsEventActionTypeForName(jsonValue.GetString("EventAction"));
+CompromisedCredentialsActionsType& CompromisedCredentialsActionsType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EventAction")) {
+    m_eventAction =
+        CompromisedCredentialsEventActionTypeMapper::GetCompromisedCredentialsEventActionTypeForName(jsonValue.GetString("EventAction"));
     m_eventActionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CompromisedCredentialsActionsType::Jsonize() const
-{
+JsonValue CompromisedCredentialsActionsType::Jsonize() const {
   JsonValue payload;
 
-  if(m_eventActionHasBeenSet)
-  {
-   payload.WithString("EventAction", CompromisedCredentialsEventActionTypeMapper::GetNameForCompromisedCredentialsEventActionType(m_eventAction));
+  if (m_eventActionHasBeenSet) {
+    payload.WithString("EventAction",
+                       CompromisedCredentialsEventActionTypeMapper::GetNameForCompromisedCredentialsEventActionType(m_eventAction));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

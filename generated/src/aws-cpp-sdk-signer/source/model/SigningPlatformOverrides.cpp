@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/signer/model/SigningPlatformOverrides.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/signer/model/SigningPlatformOverrides.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace signer
-{
-namespace Model
-{
+namespace Aws {
+namespace signer {
+namespace Model {
 
-SigningPlatformOverrides::SigningPlatformOverrides(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SigningPlatformOverrides::SigningPlatformOverrides(JsonView jsonValue) { *this = jsonValue; }
 
-SigningPlatformOverrides& SigningPlatformOverrides::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("signingConfiguration"))
-  {
+SigningPlatformOverrides& SigningPlatformOverrides::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("signingConfiguration")) {
     m_signingConfiguration = jsonValue.GetObject("signingConfiguration");
     m_signingConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("signingImageFormat"))
-  {
+  if (jsonValue.ValueExists("signingImageFormat")) {
     m_signingImageFormat = ImageFormatMapper::GetImageFormatForName(jsonValue.GetString("signingImageFormat"));
     m_signingImageFormatHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SigningPlatformOverrides::Jsonize() const
-{
+JsonValue SigningPlatformOverrides::Jsonize() const {
   JsonValue payload;
 
-  if(m_signingConfigurationHasBeenSet)
-  {
-   payload.WithObject("signingConfiguration", m_signingConfiguration.Jsonize());
-
+  if (m_signingConfigurationHasBeenSet) {
+    payload.WithObject("signingConfiguration", m_signingConfiguration.Jsonize());
   }
 
-  if(m_signingImageFormatHasBeenSet)
-  {
-   payload.WithString("signingImageFormat", ImageFormatMapper::GetNameForImageFormat(m_signingImageFormat));
+  if (m_signingImageFormatHasBeenSet) {
+    payload.WithString("signingImageFormat", ImageFormatMapper::GetNameForImageFormat(m_signingImageFormat));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace signer
-} // namespace Aws
+}  // namespace Model
+}  // namespace signer
+}  // namespace Aws

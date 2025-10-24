@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-TextResponsePart::TextResponsePart(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TextResponsePart::TextResponsePart(JsonView jsonValue) { *this = jsonValue; }
 
-TextResponsePart& TextResponsePart::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("text"))
-  {
+TextResponsePart& TextResponsePart::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("text")) {
     m_text = jsonValue.GetString("text");
     m_textHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("span"))
-  {
+  if (jsonValue.ValueExists("span")) {
     m_span = jsonValue.GetObject("span");
     m_spanHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TextResponsePart::Jsonize() const
-{
+JsonValue TextResponsePart::Jsonize() const {
   JsonValue payload;
 
-  if(m_textHasBeenSet)
-  {
-   payload.WithString("text", m_text);
-
+  if (m_textHasBeenSet) {
+    payload.WithString("text", m_text);
   }
 
-  if(m_spanHasBeenSet)
-  {
-   payload.WithObject("span", m_span.Jsonize());
-
+  if (m_spanHasBeenSet) {
+    payload.WithObject("span", m_span.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

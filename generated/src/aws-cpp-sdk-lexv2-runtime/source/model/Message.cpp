@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lexv2-runtime/model/Message.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lexv2-runtime/model/Message.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LexRuntimeV2
-{
-namespace Model
-{
+namespace Aws {
+namespace LexRuntimeV2 {
+namespace Model {
 
-Message::Message(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Message::Message(JsonView jsonValue) { *this = jsonValue; }
 
-Message& Message::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("content"))
-  {
+Message& Message::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("content")) {
     m_content = jsonValue.GetString("content");
     m_contentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("contentType"))
-  {
+  if (jsonValue.ValueExists("contentType")) {
     m_contentType = MessageContentTypeMapper::GetMessageContentTypeForName(jsonValue.GetString("contentType"));
     m_contentTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("imageResponseCard"))
-  {
+  if (jsonValue.ValueExists("imageResponseCard")) {
     m_imageResponseCard = jsonValue.GetObject("imageResponseCard");
     m_imageResponseCardHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Message::Jsonize() const
-{
+JsonValue Message::Jsonize() const {
   JsonValue payload;
 
-  if(m_contentHasBeenSet)
-  {
-   payload.WithString("content", m_content);
-
+  if (m_contentHasBeenSet) {
+    payload.WithString("content", m_content);
   }
 
-  if(m_contentTypeHasBeenSet)
-  {
-   payload.WithString("contentType", MessageContentTypeMapper::GetNameForMessageContentType(m_contentType));
+  if (m_contentTypeHasBeenSet) {
+    payload.WithString("contentType", MessageContentTypeMapper::GetNameForMessageContentType(m_contentType));
   }
 
-  if(m_imageResponseCardHasBeenSet)
-  {
-   payload.WithObject("imageResponseCard", m_imageResponseCard.Jsonize());
-
+  if (m_imageResponseCardHasBeenSet) {
+    payload.WithObject("imageResponseCard", m_imageResponseCard.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LexRuntimeV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexRuntimeV2
+}  // namespace Aws

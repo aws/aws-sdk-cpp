@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotfleetwise/model/FormattedVss.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotfleetwise/model/FormattedVss.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTFleetWise
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTFleetWise {
+namespace Model {
 
-FormattedVss::FormattedVss(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FormattedVss::FormattedVss(JsonView jsonValue) { *this = jsonValue; }
 
-FormattedVss& FormattedVss::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("vssJson"))
-  {
+FormattedVss& FormattedVss::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("vssJson")) {
     m_vssJson = jsonValue.GetString("vssJson");
     m_vssJsonHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FormattedVss::Jsonize() const
-{
+JsonValue FormattedVss::Jsonize() const {
   JsonValue payload;
 
-  if(m_vssJsonHasBeenSet)
-  {
-   payload.WithString("vssJson", m_vssJson);
-
+  if (m_vssJsonHasBeenSet) {
+    payload.WithString("vssJson", m_vssJson);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTFleetWise
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTFleetWise
+}  // namespace Aws

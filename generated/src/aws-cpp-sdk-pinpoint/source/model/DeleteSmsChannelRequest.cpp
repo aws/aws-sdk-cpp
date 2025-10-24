@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint/model/DeleteSmsChannelRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint/model/DeleteSmsChannelRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteSmsChannelRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DeleteSmsChannelRequest::SerializePayload() const { return {}; }

@@ -7,25 +7,16 @@
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
-  enum class LambdaFunctionMetricStatistic
-  {
-    NOT_SET,
-    Maximum,
-    Average
-  };
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
+enum class LambdaFunctionMetricStatistic { NOT_SET, Maximum, Average };
 
-namespace LambdaFunctionMetricStatisticMapper
-{
+namespace LambdaFunctionMetricStatisticMapper {
 AWS_COMPUTEOPTIMIZER_API LambdaFunctionMetricStatistic GetLambdaFunctionMetricStatisticForName(const Aws::String& name);
 
 AWS_COMPUTEOPTIMIZER_API Aws::String GetNameForLambdaFunctionMetricStatistic(LambdaFunctionMetricStatistic value);
-} // namespace LambdaFunctionMetricStatisticMapper
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace LambdaFunctionMetricStatisticMapper
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

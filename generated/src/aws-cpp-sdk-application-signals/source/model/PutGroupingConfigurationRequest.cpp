@@ -12,24 +12,18 @@ using namespace Aws::ApplicationSignals::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutGroupingConfigurationRequest::SerializePayload() const
-{
+Aws::String PutGroupingConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_groupingAttributeDefinitionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> groupingAttributeDefinitionsJsonList(m_groupingAttributeDefinitions.size());
-   for(unsigned groupingAttributeDefinitionsIndex = 0; groupingAttributeDefinitionsIndex < groupingAttributeDefinitionsJsonList.GetLength(); ++groupingAttributeDefinitionsIndex)
-   {
-     groupingAttributeDefinitionsJsonList[groupingAttributeDefinitionsIndex].AsObject(m_groupingAttributeDefinitions[groupingAttributeDefinitionsIndex].Jsonize());
-   }
-   payload.WithArray("GroupingAttributeDefinitions", std::move(groupingAttributeDefinitionsJsonList));
-
+  if (m_groupingAttributeDefinitionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> groupingAttributeDefinitionsJsonList(m_groupingAttributeDefinitions.size());
+    for (unsigned groupingAttributeDefinitionsIndex = 0;
+         groupingAttributeDefinitionsIndex < groupingAttributeDefinitionsJsonList.GetLength(); ++groupingAttributeDefinitionsIndex) {
+      groupingAttributeDefinitionsJsonList[groupingAttributeDefinitionsIndex].AsObject(
+          m_groupingAttributeDefinitions[groupingAttributeDefinitionsIndex].Jsonize());
+    }
+    payload.WithArray("GroupingAttributeDefinitions", std::move(groupingAttributeDefinitionsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

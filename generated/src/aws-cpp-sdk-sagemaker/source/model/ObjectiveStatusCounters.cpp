@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/ObjectiveStatusCounters.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/ObjectiveStatusCounters.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-ObjectiveStatusCounters::ObjectiveStatusCounters(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ObjectiveStatusCounters::ObjectiveStatusCounters(JsonView jsonValue) { *this = jsonValue; }
 
-ObjectiveStatusCounters& ObjectiveStatusCounters::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Succeeded"))
-  {
+ObjectiveStatusCounters& ObjectiveStatusCounters::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Succeeded")) {
     m_succeeded = jsonValue.GetInteger("Succeeded");
     m_succeededHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Pending"))
-  {
+  if (jsonValue.ValueExists("Pending")) {
     m_pending = jsonValue.GetInteger("Pending");
     m_pendingHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Failed"))
-  {
+  if (jsonValue.ValueExists("Failed")) {
     m_failed = jsonValue.GetInteger("Failed");
     m_failedHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ObjectiveStatusCounters::Jsonize() const
-{
+JsonValue ObjectiveStatusCounters::Jsonize() const {
   JsonValue payload;
 
-  if(m_succeededHasBeenSet)
-  {
-   payload.WithInteger("Succeeded", m_succeeded);
-
+  if (m_succeededHasBeenSet) {
+    payload.WithInteger("Succeeded", m_succeeded);
   }
 
-  if(m_pendingHasBeenSet)
-  {
-   payload.WithInteger("Pending", m_pending);
-
+  if (m_pendingHasBeenSet) {
+    payload.WithInteger("Pending", m_pending);
   }
 
-  if(m_failedHasBeenSet)
-  {
-   payload.WithInteger("Failed", m_failed);
-
+  if (m_failedHasBeenSet) {
+    payload.WithInteger("Failed", m_failed);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

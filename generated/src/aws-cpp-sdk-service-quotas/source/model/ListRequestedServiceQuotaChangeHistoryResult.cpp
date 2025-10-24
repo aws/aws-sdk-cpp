@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/service-quotas/model/ListRequestedServiceQuotaChangeHistoryResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/service-quotas/model/ListRequestedServiceQuotaChangeHistoryResult.h>
 
 #include <utility>
 
@@ -17,24 +17,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListRequestedServiceQuotaChangeHistoryResult::ListRequestedServiceQuotaChangeHistoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListRequestedServiceQuotaChangeHistoryResult::ListRequestedServiceQuotaChangeHistoryResult(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-ListRequestedServiceQuotaChangeHistoryResult& ListRequestedServiceQuotaChangeHistoryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListRequestedServiceQuotaChangeHistoryResult& ListRequestedServiceQuotaChangeHistoryResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RequestedQuotas"))
-  {
+  if (jsonValue.ValueExists("RequestedQuotas")) {
     Aws::Utils::Array<JsonView> requestedQuotasJsonList = jsonValue.GetArray("RequestedQuotas");
-    for(unsigned requestedQuotasIndex = 0; requestedQuotasIndex < requestedQuotasJsonList.GetLength(); ++requestedQuotasIndex)
-    {
+    for (unsigned requestedQuotasIndex = 0; requestedQuotasIndex < requestedQuotasJsonList.GetLength(); ++requestedQuotasIndex) {
       m_requestedQuotas.push_back(requestedQuotasJsonList[requestedQuotasIndex].AsObject());
     }
     m_requestedQuotasHasBeenSet = true;
@@ -42,12 +39,10 @@ ListRequestedServiceQuotaChangeHistoryResult& ListRequestedServiceQuotaChangeHis
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

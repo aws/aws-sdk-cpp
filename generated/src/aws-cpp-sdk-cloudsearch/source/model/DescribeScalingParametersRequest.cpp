@@ -10,12 +10,10 @@
 using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeScalingParametersRequest::SerializePayload() const
-{
+Aws::String DescribeScalingParametersRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeScalingParameters&";
-  if(m_domainNameHasBeenSet)
-  {
+  if (m_domainNameHasBeenSet) {
     ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DescribeScalingParametersRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeScalingParametersRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeScalingParametersRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

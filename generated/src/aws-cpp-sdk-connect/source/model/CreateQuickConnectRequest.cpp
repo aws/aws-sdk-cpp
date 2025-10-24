@@ -12,42 +12,28 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateQuickConnectRequest::SerializePayload() const
-{
+Aws::String CreateQuickConnectRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_quickConnectConfigHasBeenSet)
-  {
-   payload.WithObject("QuickConnectConfig", m_quickConnectConfig.Jsonize());
-
+  if (m_quickConnectConfigHasBeenSet) {
+    payload.WithObject("QuickConnectConfig", m_quickConnectConfig.Jsonize());
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("Tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

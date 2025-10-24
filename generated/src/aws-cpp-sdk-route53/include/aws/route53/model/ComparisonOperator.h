@@ -4,30 +4,25 @@
  */
 
 #pragma once
-#include <aws/route53/Route53_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/route53/Route53_EXPORTS.h>
 
-namespace Aws
-{
-namespace Route53
-{
-namespace Model
-{
-  enum class ComparisonOperator
-  {
-    NOT_SET,
-    GreaterThanOrEqualToThreshold,
-    GreaterThanThreshold,
-    LessThanThreshold,
-    LessThanOrEqualToThreshold
-  };
+namespace Aws {
+namespace Route53 {
+namespace Model {
+enum class ComparisonOperator {
+  NOT_SET,
+  GreaterThanOrEqualToThreshold,
+  GreaterThanThreshold,
+  LessThanThreshold,
+  LessThanOrEqualToThreshold
+};
 
-namespace ComparisonOperatorMapper
-{
+namespace ComparisonOperatorMapper {
 AWS_ROUTE53_API ComparisonOperator GetComparisonOperatorForName(const Aws::String& name);
 
 AWS_ROUTE53_API Aws::String GetNameForComparisonOperator(ComparisonOperator value);
-} // namespace ComparisonOperatorMapper
-} // namespace Model
-} // namespace Route53
-} // namespace Aws
+}  // namespace ComparisonOperatorMapper
+}  // namespace Model
+}  // namespace Route53
+}  // namespace Aws

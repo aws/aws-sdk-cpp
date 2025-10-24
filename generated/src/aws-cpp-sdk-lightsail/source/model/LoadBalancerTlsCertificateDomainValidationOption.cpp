@@ -3,59 +3,50 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lightsail/model/LoadBalancerTlsCertificateDomainValidationOption.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lightsail/model/LoadBalancerTlsCertificateDomainValidationOption.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
+namespace Aws {
+namespace Lightsail {
+namespace Model {
 
-LoadBalancerTlsCertificateDomainValidationOption::LoadBalancerTlsCertificateDomainValidationOption(JsonView jsonValue)
-{
+LoadBalancerTlsCertificateDomainValidationOption::LoadBalancerTlsCertificateDomainValidationOption(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-LoadBalancerTlsCertificateDomainValidationOption& LoadBalancerTlsCertificateDomainValidationOption::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("domainName"))
-  {
+LoadBalancerTlsCertificateDomainValidationOption& LoadBalancerTlsCertificateDomainValidationOption::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("domainName")) {
     m_domainName = jsonValue.GetString("domainName");
     m_domainNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("validationStatus"))
-  {
-    m_validationStatus = LoadBalancerTlsCertificateDomainStatusMapper::GetLoadBalancerTlsCertificateDomainStatusForName(jsonValue.GetString("validationStatus"));
+  if (jsonValue.ValueExists("validationStatus")) {
+    m_validationStatus = LoadBalancerTlsCertificateDomainStatusMapper::GetLoadBalancerTlsCertificateDomainStatusForName(
+        jsonValue.GetString("validationStatus"));
     m_validationStatusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LoadBalancerTlsCertificateDomainValidationOption::Jsonize() const
-{
+JsonValue LoadBalancerTlsCertificateDomainValidationOption::Jsonize() const {
   JsonValue payload;
 
-  if(m_domainNameHasBeenSet)
-  {
-   payload.WithString("domainName", m_domainName);
-
+  if (m_domainNameHasBeenSet) {
+    payload.WithString("domainName", m_domainName);
   }
 
-  if(m_validationStatusHasBeenSet)
-  {
-   payload.WithString("validationStatus", LoadBalancerTlsCertificateDomainStatusMapper::GetNameForLoadBalancerTlsCertificateDomainStatus(m_validationStatus));
+  if (m_validationStatusHasBeenSet) {
+    payload.WithString("validationStatus",
+                       LoadBalancerTlsCertificateDomainStatusMapper::GetNameForLoadBalancerTlsCertificateDomainStatus(m_validationStatus));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

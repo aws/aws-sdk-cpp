@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kendra/model/SuggestableConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kendra/model/SuggestableConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace kendra
-{
-namespace Model
-{
+namespace Aws {
+namespace kendra {
+namespace Model {
 
-SuggestableConfig::SuggestableConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SuggestableConfig::SuggestableConfig(JsonView jsonValue) { *this = jsonValue; }
 
-SuggestableConfig& SuggestableConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AttributeName"))
-  {
+SuggestableConfig& SuggestableConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AttributeName")) {
     m_attributeName = jsonValue.GetString("AttributeName");
     m_attributeNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Suggestable"))
-  {
+  if (jsonValue.ValueExists("Suggestable")) {
     m_suggestable = jsonValue.GetBool("Suggestable");
     m_suggestableHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SuggestableConfig::Jsonize() const
-{
+JsonValue SuggestableConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_attributeNameHasBeenSet)
-  {
-   payload.WithString("AttributeName", m_attributeName);
-
+  if (m_attributeNameHasBeenSet) {
+    payload.WithString("AttributeName", m_attributeName);
   }
 
-  if(m_suggestableHasBeenSet)
-  {
-   payload.WithBool("Suggestable", m_suggestable);
-
+  if (m_suggestableHasBeenSet) {
+    payload.WithBool("Suggestable", m_suggestable);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace kendra
-} // namespace Aws
+}  // namespace Model
+}  // namespace kendra
+}  // namespace Aws

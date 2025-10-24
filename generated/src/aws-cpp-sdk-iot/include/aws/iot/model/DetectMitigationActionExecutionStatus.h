@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/IoT_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
-  enum class DetectMitigationActionExecutionStatus
-  {
-    NOT_SET,
-    IN_PROGRESS,
-    SUCCESSFUL,
-    FAILED,
-    SKIPPED
-  };
+namespace Aws {
+namespace IoT {
+namespace Model {
+enum class DetectMitigationActionExecutionStatus { NOT_SET, IN_PROGRESS, SUCCESSFUL, FAILED, SKIPPED };
 
-namespace DetectMitigationActionExecutionStatusMapper
-{
+namespace DetectMitigationActionExecutionStatusMapper {
 AWS_IOT_API DetectMitigationActionExecutionStatus GetDetectMitigationActionExecutionStatusForName(const Aws::String& name);
 
 AWS_IOT_API Aws::String GetNameForDetectMitigationActionExecutionStatus(DetectMitigationActionExecutionStatus value);
-} // namespace DetectMitigationActionExecutionStatusMapper
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace DetectMitigationActionExecutionStatusMapper
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

@@ -11,85 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectParticipant
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectParticipant {
+namespace Model {
 
-View::View(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+View::View(JsonView jsonValue) { *this = jsonValue; }
 
-View& View::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Id"))
-  {
+View& View::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Arn"))
-  {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Version"))
-  {
+  if (jsonValue.ValueExists("Version")) {
     m_version = jsonValue.GetInteger("Version");
     m_versionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Content"))
-  {
+  if (jsonValue.ValueExists("Content")) {
     m_content = jsonValue.GetObject("Content");
     m_contentHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue View::Jsonize() const
-{
+JsonValue View::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_versionHasBeenSet)
-  {
-   payload.WithInteger("Version", m_version);
-
+  if (m_versionHasBeenSet) {
+    payload.WithInteger("Version", m_version);
   }
 
-  if(m_contentHasBeenSet)
-  {
-   payload.WithObject("Content", m_content.Jsonize());
-
+  if (m_contentHasBeenSet) {
+    payload.WithObject("Content", m_content.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectParticipant
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectParticipant
+}  // namespace Aws

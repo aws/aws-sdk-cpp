@@ -4,33 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class DvbSubtitleOutlineColor
-  {
-    NOT_SET,
-    BLACK,
-    WHITE,
-    YELLOW,
-    RED,
-    GREEN,
-    BLUE,
-    AUTO
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class DvbSubtitleOutlineColor { NOT_SET, BLACK, WHITE, YELLOW, RED, GREEN, BLUE, AUTO };
 
-namespace DvbSubtitleOutlineColorMapper
-{
+namespace DvbSubtitleOutlineColorMapper {
 AWS_MEDIACONVERT_API DvbSubtitleOutlineColor GetDvbSubtitleOutlineColorForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForDvbSubtitleOutlineColor(DvbSubtitleOutlineColor value);
-} // namespace DvbSubtitleOutlineColorMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace DvbSubtitleOutlineColorMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

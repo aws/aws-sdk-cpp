@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/macie2/model/FindingActor.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/macie2/model/FindingActor.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
+namespace Aws {
+namespace Macie2 {
+namespace Model {
 
-FindingActor::FindingActor(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FindingActor::FindingActor(JsonView jsonValue) { *this = jsonValue; }
 
-FindingActor& FindingActor::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("domainDetails"))
-  {
+FindingActor& FindingActor::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("domainDetails")) {
     m_domainDetails = jsonValue.GetObject("domainDetails");
     m_domainDetailsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ipAddressDetails"))
-  {
+  if (jsonValue.ValueExists("ipAddressDetails")) {
     m_ipAddressDetails = jsonValue.GetObject("ipAddressDetails");
     m_ipAddressDetailsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("userIdentity"))
-  {
+  if (jsonValue.ValueExists("userIdentity")) {
     m_userIdentity = jsonValue.GetObject("userIdentity");
     m_userIdentityHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FindingActor::Jsonize() const
-{
+JsonValue FindingActor::Jsonize() const {
   JsonValue payload;
 
-  if(m_domainDetailsHasBeenSet)
-  {
-   payload.WithObject("domainDetails", m_domainDetails.Jsonize());
-
+  if (m_domainDetailsHasBeenSet) {
+    payload.WithObject("domainDetails", m_domainDetails.Jsonize());
   }
 
-  if(m_ipAddressDetailsHasBeenSet)
-  {
-   payload.WithObject("ipAddressDetails", m_ipAddressDetails.Jsonize());
-
+  if (m_ipAddressDetailsHasBeenSet) {
+    payload.WithObject("ipAddressDetails", m_ipAddressDetails.Jsonize());
   }
 
-  if(m_userIdentityHasBeenSet)
-  {
-   payload.WithObject("userIdentity", m_userIdentity.Jsonize());
-
+  if (m_userIdentityHasBeenSet) {
+    payload.WithObject("userIdentity", m_userIdentity.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

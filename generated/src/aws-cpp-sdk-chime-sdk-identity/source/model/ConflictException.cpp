@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKIdentity
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKIdentity {
+namespace Model {
 
-ConflictException::ConflictException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConflictException::ConflictException(JsonView jsonValue) { *this = jsonValue; }
 
-ConflictException& ConflictException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Code"))
-  {
+ConflictException& ConflictException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Code")) {
     m_code = ErrorCodeMapper::GetErrorCodeForName(jsonValue.GetString("Code"));
     m_codeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Message"))
-  {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ConflictException::Jsonize() const
-{
+JsonValue ConflictException::Jsonize() const {
   JsonValue payload;
 
-  if(m_codeHasBeenSet)
-  {
-   payload.WithString("Code", ErrorCodeMapper::GetNameForErrorCode(m_code));
+  if (m_codeHasBeenSet) {
+    payload.WithString("Code", ErrorCodeMapper::GetNameForErrorCode(m_code));
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKIdentity
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKIdentity
+}  // namespace Aws

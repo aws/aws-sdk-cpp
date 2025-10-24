@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/cloudsearch/CloudSearch_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudSearch
-{
-class CloudSearchEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace CloudSearch {
+class CloudSearchEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace CloudSearch
-} // namespace Aws
+}  // namespace CloudSearch
+}  // namespace Aws

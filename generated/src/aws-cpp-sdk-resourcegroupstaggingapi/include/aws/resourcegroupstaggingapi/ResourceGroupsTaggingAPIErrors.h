@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPI_EXPORTS.h>
 
-namespace Aws
-{
-namespace ResourceGroupsTaggingAPI
-{
-enum class ResourceGroupsTaggingAPIErrors
-{
-  //From Core//
+namespace Aws {
+namespace ResourceGroupsTaggingAPI {
+enum class ResourceGroupsTaggingAPIErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class ResourceGroupsTaggingAPIErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,30 +44,32 @@ enum class ResourceGroupsTaggingAPIErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONCURRENT_MODIFICATION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONCURRENT_MODIFICATION = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CONSTRAINT_VIOLATION,
   INTERNAL_SERVICE,
   INVALID_PARAMETER,
   PAGINATION_TOKEN_EXPIRED
 };
 
-class AWS_RESOURCEGROUPSTAGGINGAPI_API ResourceGroupsTaggingAPIError : public Aws::Client::AWSError<ResourceGroupsTaggingAPIErrors>
-{
-public:
+class AWS_RESOURCEGROUPSTAGGINGAPI_API ResourceGroupsTaggingAPIError : public Aws::Client::AWSError<ResourceGroupsTaggingAPIErrors> {
+ public:
   ResourceGroupsTaggingAPIError() {}
-  ResourceGroupsTaggingAPIError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ResourceGroupsTaggingAPIErrors>(rhs) {}
-  ResourceGroupsTaggingAPIError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ResourceGroupsTaggingAPIErrors>(rhs) {}
-  ResourceGroupsTaggingAPIError(const Aws::Client::AWSError<ResourceGroupsTaggingAPIErrors>& rhs) : Aws::Client::AWSError<ResourceGroupsTaggingAPIErrors>(rhs) {}
-  ResourceGroupsTaggingAPIError(Aws::Client::AWSError<ResourceGroupsTaggingAPIErrors>&& rhs) : Aws::Client::AWSError<ResourceGroupsTaggingAPIErrors>(rhs) {}
+  ResourceGroupsTaggingAPIError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs)
+      : Aws::Client::AWSError<ResourceGroupsTaggingAPIErrors>(rhs) {}
+  ResourceGroupsTaggingAPIError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs)
+      : Aws::Client::AWSError<ResourceGroupsTaggingAPIErrors>(rhs) {}
+  ResourceGroupsTaggingAPIError(const Aws::Client::AWSError<ResourceGroupsTaggingAPIErrors>& rhs)
+      : Aws::Client::AWSError<ResourceGroupsTaggingAPIErrors>(rhs) {}
+  ResourceGroupsTaggingAPIError(Aws::Client::AWSError<ResourceGroupsTaggingAPIErrors>&& rhs)
+      : Aws::Client::AWSError<ResourceGroupsTaggingAPIErrors>(rhs) {}
 
   template <typename T>
   T GetModeledError();
 };
 
-namespace ResourceGroupsTaggingAPIErrorMapper
-{
-  AWS_RESOURCEGROUPSTAGGINGAPI_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace ResourceGroupsTaggingAPIErrorMapper {
+AWS_RESOURCEGROUPSTAGGINGAPI_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace ResourceGroupsTaggingAPI
-} // namespace Aws
+}  // namespace ResourceGroupsTaggingAPI
+}  // namespace Aws

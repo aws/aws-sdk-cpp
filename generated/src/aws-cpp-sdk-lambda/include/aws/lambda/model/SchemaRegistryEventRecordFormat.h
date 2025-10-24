@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lambda/Lambda_EXPORTS.h>
 
-namespace Aws
-{
-namespace Lambda
-{
-namespace Model
-{
-  enum class SchemaRegistryEventRecordFormat
-  {
-    NOT_SET,
-    JSON,
-    SOURCE
-  };
+namespace Aws {
+namespace Lambda {
+namespace Model {
+enum class SchemaRegistryEventRecordFormat { NOT_SET, JSON, SOURCE };
 
-namespace SchemaRegistryEventRecordFormatMapper
-{
+namespace SchemaRegistryEventRecordFormatMapper {
 AWS_LAMBDA_API SchemaRegistryEventRecordFormat GetSchemaRegistryEventRecordFormatForName(const Aws::String& name);
 
 AWS_LAMBDA_API Aws::String GetNameForSchemaRegistryEventRecordFormat(SchemaRegistryEventRecordFormat value);
-} // namespace SchemaRegistryEventRecordFormatMapper
-} // namespace Model
-} // namespace Lambda
-} // namespace Aws
+}  // namespace SchemaRegistryEventRecordFormatMapper
+}  // namespace Model
+}  // namespace Lambda
+}  // namespace Aws

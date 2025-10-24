@@ -12,39 +12,27 @@ using namespace Aws::CodeStarconnections::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateRepositoryLinkRequest::SerializePayload() const
-{
+Aws::String UpdateRepositoryLinkRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_connectionArnHasBeenSet)
-  {
-   payload.WithString("ConnectionArn", m_connectionArn);
-
+  if (m_connectionArnHasBeenSet) {
+    payload.WithString("ConnectionArn", m_connectionArn);
   }
 
-  if(m_encryptionKeyArnHasBeenSet)
-  {
-   payload.WithString("EncryptionKeyArn", m_encryptionKeyArn);
-
+  if (m_encryptionKeyArnHasBeenSet) {
+    payload.WithString("EncryptionKeyArn", m_encryptionKeyArn);
   }
 
-  if(m_repositoryLinkIdHasBeenSet)
-  {
-   payload.WithString("RepositoryLinkId", m_repositoryLinkId);
-
+  if (m_repositoryLinkIdHasBeenSet) {
+    payload.WithString("RepositoryLinkId", m_repositoryLinkId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateRepositoryLinkRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateRepositoryLinkRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.codestar.connections.CodeStar_connections_20191201.UpdateRepositoryLink"));
+  headers.insert(
+      Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.codestar.connections.CodeStar_connections_20191201.UpdateRepositoryLink"));
   return headers;
-
 }
-
-
-
-

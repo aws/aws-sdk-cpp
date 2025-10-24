@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/opensearch/OpenSearchService_EXPORTS.h>
 
-namespace Aws
-{
-namespace OpenSearchService
-{
-namespace Model
-{
-  enum class NodeStatus
-  {
-    NOT_SET,
-    Active,
-    StandBy,
-    NotAvailable
-  };
+namespace Aws {
+namespace OpenSearchService {
+namespace Model {
+enum class NodeStatus { NOT_SET, Active, StandBy, NotAvailable };
 
-namespace NodeStatusMapper
-{
+namespace NodeStatusMapper {
 AWS_OPENSEARCHSERVICE_API NodeStatus GetNodeStatusForName(const Aws::String& name);
 
 AWS_OPENSEARCHSERVICE_API Aws::String GetNameForNodeStatus(NodeStatus value);
-} // namespace NodeStatusMapper
-} // namespace Model
-} // namespace OpenSearchService
-} // namespace Aws
+}  // namespace NodeStatusMapper
+}  // namespace Model
+}  // namespace OpenSearchService
+}  // namespace Aws

@@ -4,843 +4,1142 @@
  */
 
 #pragma once
-#include <aws/securityhub/SecurityHub_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/securityhub/model/Severity.h>
-#include <aws/securityhub/model/Remediation.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/securityhub/model/Network.h>
-#include <aws/securityhub/model/ProcessDetails.h>
-#include <aws/securityhub/model/Compliance.h>
-#include <aws/securityhub/model/VerificationState.h>
-#include <aws/securityhub/model/WorkflowState.h>
-#include <aws/securityhub/model/Workflow.h>
-#include <aws/securityhub/model/RecordState.h>
-#include <aws/securityhub/model/Note.h>
-#include <aws/securityhub/model/PatchSummary.h>
+#include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/securityhub/model/Action.h>
+#include <aws/securityhub/model/Compliance.h>
+#include <aws/securityhub/model/Detection.h>
 #include <aws/securityhub/model/FindingProviderFields.h>
 #include <aws/securityhub/model/GeneratorDetails.h>
-#include <aws/securityhub/model/Detection.h>
 #include <aws/securityhub/model/Malware.h>
+#include <aws/securityhub/model/Network.h>
 #include <aws/securityhub/model/NetworkPathComponent.h>
+#include <aws/securityhub/model/Note.h>
+#include <aws/securityhub/model/PatchSummary.h>
+#include <aws/securityhub/model/ProcessDetails.h>
+#include <aws/securityhub/model/RecordState.h>
+#include <aws/securityhub/model/RelatedFinding.h>
+#include <aws/securityhub/model/Remediation.h>
+#include <aws/securityhub/model/Resource.h>
+#include <aws/securityhub/model/Severity.h>
 #include <aws/securityhub/model/Threat.h>
 #include <aws/securityhub/model/ThreatIntelIndicator.h>
-#include <aws/securityhub/model/Resource.h>
-#include <aws/securityhub/model/RelatedFinding.h>
+#include <aws/securityhub/model/VerificationState.h>
 #include <aws/securityhub/model/Vulnerability.h>
+#include <aws/securityhub/model/Workflow.h>
+#include <aws/securityhub/model/WorkflowState.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace SecurityHub {
+namespace Model {
 
+/**
+ * <p>Provides a consistent format for Security Hub findings.
+ * <code>AwsSecurityFinding</code> format allows you to share findings between
+ * Amazon Web Services security services and third-party solutions.</p>  <p>A
+ * finding is a potential security issue generated either by Amazon Web Services
+ * services or by the integrated third-party solutions and standards checks.</p>
+ * <p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsSecurityFinding">AWS
+ * API Reference</a></p>
+ */
+class AwsSecurityFinding {
+ public:
+  AWS_SECURITYHUB_API AwsSecurityFinding() = default;
+  AWS_SECURITYHUB_API AwsSecurityFinding(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SECURITYHUB_API AwsSecurityFinding& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Provides a consistent format for Security Hub findings.
-   * <code>AwsSecurityFinding</code> format allows you to share findings between
-   * Amazon Web Services security services and third-party solutions.</p>  <p>A
-   * finding is a potential security issue generated either by Amazon Web Services
-   * services or by the integrated third-party solutions and standards checks.</p>
-   * <p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsSecurityFinding">AWS
-   * API Reference</a></p>
+   * <p>The schema version that a finding is formatted for. The value is
+   * <code>2018-10-08</code>.</p>
    */
-  class AwsSecurityFinding
-  {
-  public:
-    AWS_SECURITYHUB_API AwsSecurityFinding() = default;
-    AWS_SECURITYHUB_API AwsSecurityFinding(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SECURITYHUB_API AwsSecurityFinding& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    ///@{
-    /**
-     * <p>The schema version that a finding is formatted for. The value is
-     * <code>2018-10-08</code>.</p>
-     */
-    inline const Aws::String& GetSchemaVersion() const { return m_schemaVersion; }
-    inline bool SchemaVersionHasBeenSet() const { return m_schemaVersionHasBeenSet; }
-    template<typename SchemaVersionT = Aws::String>
-    void SetSchemaVersion(SchemaVersionT&& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = std::forward<SchemaVersionT>(value); }
-    template<typename SchemaVersionT = Aws::String>
-    AwsSecurityFinding& WithSchemaVersion(SchemaVersionT&& value) { SetSchemaVersion(std::forward<SchemaVersionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The security findings provider-specific identifier for a finding.</p>
-     * <p>Length Constraints: Minimum length of 1. Maximum length of 512.</p>
-     */
-    inline const Aws::String& GetId() const { return m_id; }
-    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    template<typename IdT = Aws::String>
-    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
-    template<typename IdT = Aws::String>
-    AwsSecurityFinding& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ARN generated by Security Hub that uniquely identifies a product that
-     * generates findings. This can be the ARN for a third-party product that is
-     * integrated with Security Hub, or the ARN for a custom integration.</p> <p>Length
-     * Constraints: Minimum length of 12. Maximum length of 2048.</p>
-     */
-    inline const Aws::String& GetProductArn() const { return m_productArn; }
-    inline bool ProductArnHasBeenSet() const { return m_productArnHasBeenSet; }
-    template<typename ProductArnT = Aws::String>
-    void SetProductArn(ProductArnT&& value) { m_productArnHasBeenSet = true; m_productArn = std::forward<ProductArnT>(value); }
-    template<typename ProductArnT = Aws::String>
-    AwsSecurityFinding& WithProductArn(ProductArnT&& value) { SetProductArn(std::forward<ProductArnT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The name of the product that generated the finding.</p> <p>Security Hub
-     * populates this attribute automatically for each finding. You cannot update this
-     * attribute with <code>BatchImportFindings</code> or
-     * <code>BatchUpdateFindings</code>. The exception to this is a custom
-     * integration.</p> <p>When you use the Security Hub console or API to filter
-     * findings by product name, you use this attribute.</p> <p>Length Constraints:
-     * Minimum length of 1. Maximum length of 128.</p>
-     */
-    inline const Aws::String& GetProductName() const { return m_productName; }
-    inline bool ProductNameHasBeenSet() const { return m_productNameHasBeenSet; }
-    template<typename ProductNameT = Aws::String>
-    void SetProductName(ProductNameT&& value) { m_productNameHasBeenSet = true; m_productName = std::forward<ProductNameT>(value); }
-    template<typename ProductNameT = Aws::String>
-    AwsSecurityFinding& WithProductName(ProductNameT&& value) { SetProductName(std::forward<ProductNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The name of the company for the product that generated the finding.</p>
-     * <p>Security Hub populates this attribute automatically for each finding. You
-     * cannot update this attribute with <code>BatchImportFindings</code> or
-     * <code>BatchUpdateFindings</code>. The exception to this is a custom
-     * integration.</p> <p>When you use the Security Hub console or API to filter
-     * findings by company name, you use this attribute.</p> <p>Length Constraints:
-     * Minimum length of 1. Maximum length of 128. </p>
-     */
-    inline const Aws::String& GetCompanyName() const { return m_companyName; }
-    inline bool CompanyNameHasBeenSet() const { return m_companyNameHasBeenSet; }
-    template<typename CompanyNameT = Aws::String>
-    void SetCompanyName(CompanyNameT&& value) { m_companyNameHasBeenSet = true; m_companyName = std::forward<CompanyNameT>(value); }
-    template<typename CompanyNameT = Aws::String>
-    AwsSecurityFinding& WithCompanyName(CompanyNameT&& value) { SetCompanyName(std::forward<CompanyNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Region from which the finding was generated.</p> <p>Security Hub
-     * populates this attribute automatically for each finding. You cannot update it
-     * using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>.</p>
-     * <p>Length Constraints: Minimum length of 1. Maximum length of 16. </p>
-     */
-    inline const Aws::String& GetRegion() const { return m_region; }
-    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    template<typename RegionT = Aws::String>
-    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
-    template<typename RegionT = Aws::String>
-    AwsSecurityFinding& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The identifier for the solution-specific component (a discrete unit of logic)
-     * that generated a finding. In various security findings providers' solutions,
-     * this generator can be called a rule, a check, a detector, a plugin, or something
-     * else.</p> <p>Length Constraints: Minimum length of 1. Maximum length of 512.</p>
-     */
-    inline const Aws::String& GetGeneratorId() const { return m_generatorId; }
-    inline bool GeneratorIdHasBeenSet() const { return m_generatorIdHasBeenSet; }
-    template<typename GeneratorIdT = Aws::String>
-    void SetGeneratorId(GeneratorIdT&& value) { m_generatorIdHasBeenSet = true; m_generatorId = std::forward<GeneratorIdT>(value); }
-    template<typename GeneratorIdT = Aws::String>
-    AwsSecurityFinding& WithGeneratorId(GeneratorIdT&& value) { SetGeneratorId(std::forward<GeneratorIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
-     * <p>Length Constraints: 12.</p>
-     */
-    inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
-    inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-    template<typename AwsAccountIdT = Aws::String>
-    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
-    template<typename AwsAccountIdT = Aws::String>
-    AwsSecurityFinding& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>One or more finding types in the format of
-     * <code>namespace/category/classifier</code> that classify a finding.</p> <p>Valid
-     * namespace values are: Software and Configuration Checks | TTPs | Effects |
-     * Unusual Behaviors | Sensitive Data Identifications</p> <p>Array Members: Maximum
-     * number of 50 items.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetTypes() const { return m_types; }
-    inline bool TypesHasBeenSet() const { return m_typesHasBeenSet; }
-    template<typename TypesT = Aws::Vector<Aws::String>>
-    void SetTypes(TypesT&& value) { m_typesHasBeenSet = true; m_types = std::forward<TypesT>(value); }
-    template<typename TypesT = Aws::Vector<Aws::String>>
-    AwsSecurityFinding& WithTypes(TypesT&& value) { SetTypes(std::forward<TypesT>(value)); return *this;}
-    template<typename TypesT = Aws::String>
-    AwsSecurityFinding& AddTypes(TypesT&& value) { m_typesHasBeenSet = true; m_types.emplace_back(std::forward<TypesT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>Indicates when the security findings provider first observed the potential
-     * security issue that a finding captured.</p> <p>For more information about the
-     * validation and formatting of timestamp fields in Security Hub, see <a
-     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
-     */
-    inline const Aws::String& GetFirstObservedAt() const { return m_firstObservedAt; }
-    inline bool FirstObservedAtHasBeenSet() const { return m_firstObservedAtHasBeenSet; }
-    template<typename FirstObservedAtT = Aws::String>
-    void SetFirstObservedAt(FirstObservedAtT&& value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt = std::forward<FirstObservedAtT>(value); }
-    template<typename FirstObservedAtT = Aws::String>
-    AwsSecurityFinding& WithFirstObservedAt(FirstObservedAtT&& value) { SetFirstObservedAt(std::forward<FirstObservedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Indicates when the security findings provider most recently observed a change
-     * in the resource that is involved in the finding.</p> <p>For more information
-     * about the validation and formatting of timestamp fields in Security Hub, see <a
-     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
-     */
-    inline const Aws::String& GetLastObservedAt() const { return m_lastObservedAt; }
-    inline bool LastObservedAtHasBeenSet() const { return m_lastObservedAtHasBeenSet; }
-    template<typename LastObservedAtT = Aws::String>
-    void SetLastObservedAt(LastObservedAtT&& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt = std::forward<LastObservedAtT>(value); }
-    template<typename LastObservedAtT = Aws::String>
-    AwsSecurityFinding& WithLastObservedAt(LastObservedAtT&& value) { SetLastObservedAt(std::forward<LastObservedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Indicates when the security findings provider created the potential security
-     * issue that a finding captured.</p> <p>For more information about the validation
-     * and formatting of timestamp fields in Security Hub, see <a
-     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
-     */
-    inline const Aws::String& GetCreatedAt() const { return m_createdAt; }
-    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    template<typename CreatedAtT = Aws::String>
-    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
-    template<typename CreatedAtT = Aws::String>
-    AwsSecurityFinding& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Indicates when the security findings provider last updated the finding
-     * record.</p> <p>For more information about the validation and formatting of
-     * timestamp fields in Security Hub, see <a
-     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
-     */
-    inline const Aws::String& GetUpdatedAt() const { return m_updatedAt; }
-    inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    template<typename UpdatedAtT = Aws::String>
-    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
-    template<typename UpdatedAtT = Aws::String>
-    AwsSecurityFinding& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A finding's severity.</p>
-     */
-    inline const Severity& GetSeverity() const { return m_severity; }
-    inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
-    template<typename SeverityT = Severity>
-    void SetSeverity(SeverityT&& value) { m_severityHasBeenSet = true; m_severity = std::forward<SeverityT>(value); }
-    template<typename SeverityT = Severity>
-    AwsSecurityFinding& WithSeverity(SeverityT&& value) { SetSeverity(std::forward<SeverityT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A finding's confidence. Confidence is defined as the likelihood that a
-     * finding accurately identifies the behavior or issue that it was intended to
-     * identify.</p> <p>Confidence is scored on a 0-100 basis using a ratio scale,
-     * where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
-     */
-    inline int GetConfidence() const { return m_confidence; }
-    inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
-    inline void SetConfidence(int value) { m_confidenceHasBeenSet = true; m_confidence = value; }
-    inline AwsSecurityFinding& WithConfidence(int value) { SetConfidence(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The level of importance assigned to the resources associated with the
-     * finding.</p> <p>A score of 0 means that the underlying resources have no
-     * criticality, and a score of 100 is reserved for the most critical resources.</p>
-     */
-    inline int GetCriticality() const { return m_criticality; }
-    inline bool CriticalityHasBeenSet() const { return m_criticalityHasBeenSet; }
-    inline void SetCriticality(int value) { m_criticalityHasBeenSet = true; m_criticality = value; }
-    inline AwsSecurityFinding& WithCriticality(int value) { SetCriticality(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A finding's title. <code>Title</code> is a required property.</p> <p>Length
-     * Constraints: Minimum length of 1. Maximum length of 256.</p>
-     */
-    inline const Aws::String& GetTitle() const { return m_title; }
-    inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    template<typename TitleT = Aws::String>
-    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
-    template<typename TitleT = Aws::String>
-    AwsSecurityFinding& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A finding's description. <code>Description</code> is a required property.</p>
-     * <p>Length Constraints: Minimum length of 1. Maximum length of 1024.</p>
-     */
-    inline const Aws::String& GetDescription() const { return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    template<typename DescriptionT = Aws::String>
-    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
-    template<typename DescriptionT = Aws::String>
-    AwsSecurityFinding& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A data type that describes the remediation options for a finding.</p>
-     */
-    inline const Remediation& GetRemediation() const { return m_remediation; }
-    inline bool RemediationHasBeenSet() const { return m_remediationHasBeenSet; }
-    template<typename RemediationT = Remediation>
-    void SetRemediation(RemediationT&& value) { m_remediationHasBeenSet = true; m_remediation = std::forward<RemediationT>(value); }
-    template<typename RemediationT = Remediation>
-    AwsSecurityFinding& WithRemediation(RemediationT&& value) { SetRemediation(std::forward<RemediationT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A URL that links to a page about the current finding in the security findings
-     * provider's solution.</p>
-     */
-    inline const Aws::String& GetSourceUrl() const { return m_sourceUrl; }
-    inline bool SourceUrlHasBeenSet() const { return m_sourceUrlHasBeenSet; }
-    template<typename SourceUrlT = Aws::String>
-    void SetSourceUrl(SourceUrlT&& value) { m_sourceUrlHasBeenSet = true; m_sourceUrl = std::forward<SourceUrlT>(value); }
-    template<typename SourceUrlT = Aws::String>
-    AwsSecurityFinding& WithSourceUrl(SourceUrlT&& value) { SetSourceUrl(std::forward<SourceUrlT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A data type where security findings providers can include additional
-     * solution-specific details that aren't part of the defined
-     * <code>AwsSecurityFinding</code> format.</p> <p>Can contain up to 50 key-value
-     * pairs. For each key-value pair, the key can contain up to 128 characters, and
-     * the value can contain up to 2048 characters.</p>
-     */
-    inline const Aws::Map<Aws::String, Aws::String>& GetProductFields() const { return m_productFields; }
-    inline bool ProductFieldsHasBeenSet() const { return m_productFieldsHasBeenSet; }
-    template<typename ProductFieldsT = Aws::Map<Aws::String, Aws::String>>
-    void SetProductFields(ProductFieldsT&& value) { m_productFieldsHasBeenSet = true; m_productFields = std::forward<ProductFieldsT>(value); }
-    template<typename ProductFieldsT = Aws::Map<Aws::String, Aws::String>>
-    AwsSecurityFinding& WithProductFields(ProductFieldsT&& value) { SetProductFields(std::forward<ProductFieldsT>(value)); return *this;}
-    template<typename ProductFieldsKeyT = Aws::String, typename ProductFieldsValueT = Aws::String>
-    AwsSecurityFinding& AddProductFields(ProductFieldsKeyT&& key, ProductFieldsValueT&& value) {
-      m_productFieldsHasBeenSet = true; m_productFields.emplace(std::forward<ProductFieldsKeyT>(key), std::forward<ProductFieldsValueT>(value)); return *this;
-    }
-    ///@}
-
-    ///@{
-    /**
-     * <p>A list of name/value string pairs associated with the finding. These are
-     * custom, user-defined fields added to a finding.</p> <p>Can contain up to 50
-     * key-value pairs. For each key-value pair, the key can contain up to 128
-     * characters, and the value can contain up to 1024 characters.</p>
-     */
-    inline const Aws::Map<Aws::String, Aws::String>& GetUserDefinedFields() const { return m_userDefinedFields; }
-    inline bool UserDefinedFieldsHasBeenSet() const { return m_userDefinedFieldsHasBeenSet; }
-    template<typename UserDefinedFieldsT = Aws::Map<Aws::String, Aws::String>>
-    void SetUserDefinedFields(UserDefinedFieldsT&& value) { m_userDefinedFieldsHasBeenSet = true; m_userDefinedFields = std::forward<UserDefinedFieldsT>(value); }
-    template<typename UserDefinedFieldsT = Aws::Map<Aws::String, Aws::String>>
-    AwsSecurityFinding& WithUserDefinedFields(UserDefinedFieldsT&& value) { SetUserDefinedFields(std::forward<UserDefinedFieldsT>(value)); return *this;}
-    template<typename UserDefinedFieldsKeyT = Aws::String, typename UserDefinedFieldsValueT = Aws::String>
-    AwsSecurityFinding& AddUserDefinedFields(UserDefinedFieldsKeyT&& key, UserDefinedFieldsValueT&& value) {
-      m_userDefinedFieldsHasBeenSet = true; m_userDefinedFields.emplace(std::forward<UserDefinedFieldsKeyT>(key), std::forward<UserDefinedFieldsValueT>(value)); return *this;
-    }
-    ///@}
-
-    ///@{
-    /**
-     * <p>A list of malware related to a finding.</p> <p>Array Members: Maximum number
-     * of 5 items.</p>
-     */
-    inline const Aws::Vector<Malware>& GetMalware() const { return m_malware; }
-    inline bool MalwareHasBeenSet() const { return m_malwareHasBeenSet; }
-    template<typename MalwareT = Aws::Vector<Malware>>
-    void SetMalware(MalwareT&& value) { m_malwareHasBeenSet = true; m_malware = std::forward<MalwareT>(value); }
-    template<typename MalwareT = Aws::Vector<Malware>>
-    AwsSecurityFinding& WithMalware(MalwareT&& value) { SetMalware(std::forward<MalwareT>(value)); return *this;}
-    template<typename MalwareT = Malware>
-    AwsSecurityFinding& AddMalware(MalwareT&& value) { m_malwareHasBeenSet = true; m_malware.emplace_back(std::forward<MalwareT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The details of network-related information about a finding.</p>
-     */
-    inline const Network& GetNetwork() const { return m_network; }
-    inline bool NetworkHasBeenSet() const { return m_networkHasBeenSet; }
-    template<typename NetworkT = Network>
-    void SetNetwork(NetworkT&& value) { m_networkHasBeenSet = true; m_network = std::forward<NetworkT>(value); }
-    template<typename NetworkT = Network>
-    AwsSecurityFinding& WithNetwork(NetworkT&& value) { SetNetwork(std::forward<NetworkT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Provides information about a network path that is relevant to a finding. Each
-     * entry under <code>NetworkPath</code> represents a component of that path.</p>
-     */
-    inline const Aws::Vector<NetworkPathComponent>& GetNetworkPath() const { return m_networkPath; }
-    inline bool NetworkPathHasBeenSet() const { return m_networkPathHasBeenSet; }
-    template<typename NetworkPathT = Aws::Vector<NetworkPathComponent>>
-    void SetNetworkPath(NetworkPathT&& value) { m_networkPathHasBeenSet = true; m_networkPath = std::forward<NetworkPathT>(value); }
-    template<typename NetworkPathT = Aws::Vector<NetworkPathComponent>>
-    AwsSecurityFinding& WithNetworkPath(NetworkPathT&& value) { SetNetworkPath(std::forward<NetworkPathT>(value)); return *this;}
-    template<typename NetworkPathT = NetworkPathComponent>
-    AwsSecurityFinding& AddNetworkPath(NetworkPathT&& value) { m_networkPathHasBeenSet = true; m_networkPath.emplace_back(std::forward<NetworkPathT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The details of process-related information about a finding.</p>
-     */
-    inline const ProcessDetails& GetProcess() const { return m_process; }
-    inline bool ProcessHasBeenSet() const { return m_processHasBeenSet; }
-    template<typename ProcessT = ProcessDetails>
-    void SetProcess(ProcessT&& value) { m_processHasBeenSet = true; m_process = std::forward<ProcessT>(value); }
-    template<typename ProcessT = ProcessDetails>
-    AwsSecurityFinding& WithProcess(ProcessT&& value) { SetProcess(std::forward<ProcessT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Details about the threat detected in a security finding and the file paths
-     * that were affected by the threat. </p> <p>Array Members: Minimum number of 1
-     * item. Maximum number of 32 items.</p>
-     */
-    inline const Aws::Vector<Threat>& GetThreats() const { return m_threats; }
-    inline bool ThreatsHasBeenSet() const { return m_threatsHasBeenSet; }
-    template<typename ThreatsT = Aws::Vector<Threat>>
-    void SetThreats(ThreatsT&& value) { m_threatsHasBeenSet = true; m_threats = std::forward<ThreatsT>(value); }
-    template<typename ThreatsT = Aws::Vector<Threat>>
-    AwsSecurityFinding& WithThreats(ThreatsT&& value) { SetThreats(std::forward<ThreatsT>(value)); return *this;}
-    template<typename ThreatsT = Threat>
-    AwsSecurityFinding& AddThreats(ThreatsT&& value) { m_threatsHasBeenSet = true; m_threats.emplace_back(std::forward<ThreatsT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>Threat intelligence details related to a finding.</p> <p>Array Members:
-     * Minimum number of 1 item. Maximum number of 5 items.</p>
-     */
-    inline const Aws::Vector<ThreatIntelIndicator>& GetThreatIntelIndicators() const { return m_threatIntelIndicators; }
-    inline bool ThreatIntelIndicatorsHasBeenSet() const { return m_threatIntelIndicatorsHasBeenSet; }
-    template<typename ThreatIntelIndicatorsT = Aws::Vector<ThreatIntelIndicator>>
-    void SetThreatIntelIndicators(ThreatIntelIndicatorsT&& value) { m_threatIntelIndicatorsHasBeenSet = true; m_threatIntelIndicators = std::forward<ThreatIntelIndicatorsT>(value); }
-    template<typename ThreatIntelIndicatorsT = Aws::Vector<ThreatIntelIndicator>>
-    AwsSecurityFinding& WithThreatIntelIndicators(ThreatIntelIndicatorsT&& value) { SetThreatIntelIndicators(std::forward<ThreatIntelIndicatorsT>(value)); return *this;}
-    template<typename ThreatIntelIndicatorsT = ThreatIntelIndicator>
-    AwsSecurityFinding& AddThreatIntelIndicators(ThreatIntelIndicatorsT&& value) { m_threatIntelIndicatorsHasBeenSet = true; m_threatIntelIndicators.emplace_back(std::forward<ThreatIntelIndicatorsT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>A set of resource data types that describe the resources that the finding
-     * refers to.</p> <p>Array Members: Minimum number of 1 item. Maximum number of 32
-     * items.</p>
-     */
-    inline const Aws::Vector<Resource>& GetResources() const { return m_resources; }
-    inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
-    template<typename ResourcesT = Aws::Vector<Resource>>
-    void SetResources(ResourcesT&& value) { m_resourcesHasBeenSet = true; m_resources = std::forward<ResourcesT>(value); }
-    template<typename ResourcesT = Aws::Vector<Resource>>
-    AwsSecurityFinding& WithResources(ResourcesT&& value) { SetResources(std::forward<ResourcesT>(value)); return *this;}
-    template<typename ResourcesT = Resource>
-    AwsSecurityFinding& AddResources(ResourcesT&& value) { m_resourcesHasBeenSet = true; m_resources.emplace_back(std::forward<ResourcesT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>This data type is exclusive to findings that are generated as the result of a
-     * check run against a specific rule in a supported security standard, such as CIS
-     * Amazon Web Services Foundations. Contains security standard-related finding
-     * details.</p>
-     */
-    inline const Compliance& GetCompliance() const { return m_compliance; }
-    inline bool ComplianceHasBeenSet() const { return m_complianceHasBeenSet; }
-    template<typename ComplianceT = Compliance>
-    void SetCompliance(ComplianceT&& value) { m_complianceHasBeenSet = true; m_compliance = std::forward<ComplianceT>(value); }
-    template<typename ComplianceT = Compliance>
-    AwsSecurityFinding& WithCompliance(ComplianceT&& value) { SetCompliance(std::forward<ComplianceT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Indicates the veracity of a finding. </p>
-     */
-    inline VerificationState GetVerificationState() const { return m_verificationState; }
-    inline bool VerificationStateHasBeenSet() const { return m_verificationStateHasBeenSet; }
-    inline void SetVerificationState(VerificationState value) { m_verificationStateHasBeenSet = true; m_verificationState = value; }
-    inline AwsSecurityFinding& WithVerificationState(VerificationState value) { SetVerificationState(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The workflow state of a finding. </p>
-     */
-    inline WorkflowState GetWorkflowState() const { return m_workflowState; }
-    inline bool WorkflowStateHasBeenSet() const { return m_workflowStateHasBeenSet; }
-    inline void SetWorkflowState(WorkflowState value) { m_workflowStateHasBeenSet = true; m_workflowState = value; }
-    inline AwsSecurityFinding& WithWorkflowState(WorkflowState value) { SetWorkflowState(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Provides information about the status of the investigation into a
-     * finding.</p>
-     */
-    inline const Workflow& GetWorkflow() const { return m_workflow; }
-    inline bool WorkflowHasBeenSet() const { return m_workflowHasBeenSet; }
-    template<typename WorkflowT = Workflow>
-    void SetWorkflow(WorkflowT&& value) { m_workflowHasBeenSet = true; m_workflow = std::forward<WorkflowT>(value); }
-    template<typename WorkflowT = Workflow>
-    AwsSecurityFinding& WithWorkflow(WorkflowT&& value) { SetWorkflow(std::forward<WorkflowT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The record state of a finding.</p>
-     */
-    inline RecordState GetRecordState() const { return m_recordState; }
-    inline bool RecordStateHasBeenSet() const { return m_recordStateHasBeenSet; }
-    inline void SetRecordState(RecordState value) { m_recordStateHasBeenSet = true; m_recordState = value; }
-    inline AwsSecurityFinding& WithRecordState(RecordState value) { SetRecordState(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A list of related findings.</p> <p>Array Members: Minimum number of 1 item.
-     * Maximum number of 10 items.</p>
-     */
-    inline const Aws::Vector<RelatedFinding>& GetRelatedFindings() const { return m_relatedFindings; }
-    inline bool RelatedFindingsHasBeenSet() const { return m_relatedFindingsHasBeenSet; }
-    template<typename RelatedFindingsT = Aws::Vector<RelatedFinding>>
-    void SetRelatedFindings(RelatedFindingsT&& value) { m_relatedFindingsHasBeenSet = true; m_relatedFindings = std::forward<RelatedFindingsT>(value); }
-    template<typename RelatedFindingsT = Aws::Vector<RelatedFinding>>
-    AwsSecurityFinding& WithRelatedFindings(RelatedFindingsT&& value) { SetRelatedFindings(std::forward<RelatedFindingsT>(value)); return *this;}
-    template<typename RelatedFindingsT = RelatedFinding>
-    AwsSecurityFinding& AddRelatedFindings(RelatedFindingsT&& value) { m_relatedFindingsHasBeenSet = true; m_relatedFindings.emplace_back(std::forward<RelatedFindingsT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>A user-defined note added to a finding.</p>
-     */
-    inline const Note& GetNote() const { return m_note; }
-    inline bool NoteHasBeenSet() const { return m_noteHasBeenSet; }
-    template<typename NoteT = Note>
-    void SetNote(NoteT&& value) { m_noteHasBeenSet = true; m_note = std::forward<NoteT>(value); }
-    template<typename NoteT = Note>
-    AwsSecurityFinding& WithNote(NoteT&& value) { SetNote(std::forward<NoteT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Provides a list of vulnerabilities associated with the findings.</p>
-     */
-    inline const Aws::Vector<Vulnerability>& GetVulnerabilities() const { return m_vulnerabilities; }
-    inline bool VulnerabilitiesHasBeenSet() const { return m_vulnerabilitiesHasBeenSet; }
-    template<typename VulnerabilitiesT = Aws::Vector<Vulnerability>>
-    void SetVulnerabilities(VulnerabilitiesT&& value) { m_vulnerabilitiesHasBeenSet = true; m_vulnerabilities = std::forward<VulnerabilitiesT>(value); }
-    template<typename VulnerabilitiesT = Aws::Vector<Vulnerability>>
-    AwsSecurityFinding& WithVulnerabilities(VulnerabilitiesT&& value) { SetVulnerabilities(std::forward<VulnerabilitiesT>(value)); return *this;}
-    template<typename VulnerabilitiesT = Vulnerability>
-    AwsSecurityFinding& AddVulnerabilities(VulnerabilitiesT&& value) { m_vulnerabilitiesHasBeenSet = true; m_vulnerabilities.emplace_back(std::forward<VulnerabilitiesT>(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>Provides an overview of the patch compliance status for an instance against a
-     * selected compliance standard.</p>
-     */
-    inline const PatchSummary& GetPatchSummary() const { return m_patchSummary; }
-    inline bool PatchSummaryHasBeenSet() const { return m_patchSummaryHasBeenSet; }
-    template<typename PatchSummaryT = PatchSummary>
-    void SetPatchSummary(PatchSummaryT&& value) { m_patchSummaryHasBeenSet = true; m_patchSummary = std::forward<PatchSummaryT>(value); }
-    template<typename PatchSummaryT = PatchSummary>
-    AwsSecurityFinding& WithPatchSummary(PatchSummaryT&& value) { SetPatchSummary(std::forward<PatchSummaryT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Provides details about an action that affects or that was taken on a
-     * resource.</p>
-     */
-    inline const Action& GetAction() const { return m_action; }
-    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    template<typename ActionT = Action>
-    void SetAction(ActionT&& value) { m_actionHasBeenSet = true; m_action = std::forward<ActionT>(value); }
-    template<typename ActionT = Action>
-    AwsSecurityFinding& WithAction(ActionT&& value) { SetAction(std::forward<ActionT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>In a <code>BatchImportFindings</code> request, finding providers use
-     * <code>FindingProviderFields</code> to provide and update their own values for
-     * confidence, criticality, related findings, severity, and types.</p>
-     */
-    inline const FindingProviderFields& GetFindingProviderFields() const { return m_findingProviderFields; }
-    inline bool FindingProviderFieldsHasBeenSet() const { return m_findingProviderFieldsHasBeenSet; }
-    template<typename FindingProviderFieldsT = FindingProviderFields>
-    void SetFindingProviderFields(FindingProviderFieldsT&& value) { m_findingProviderFieldsHasBeenSet = true; m_findingProviderFields = std::forward<FindingProviderFieldsT>(value); }
-    template<typename FindingProviderFieldsT = FindingProviderFields>
-    AwsSecurityFinding& WithFindingProviderFields(FindingProviderFieldsT&& value) { SetFindingProviderFields(std::forward<FindingProviderFieldsT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Indicates whether the finding is a sample finding.</p>
-     */
-    inline bool GetSample() const { return m_sample; }
-    inline bool SampleHasBeenSet() const { return m_sampleHasBeenSet; }
-    inline void SetSample(bool value) { m_sampleHasBeenSet = true; m_sample = value; }
-    inline AwsSecurityFinding& WithSample(bool value) { SetSample(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Provides metadata for the Amazon CodeGuru detector associated with a finding.
-     * This field pertains to findings that relate to Lambda functions. Amazon
-     * Inspector identifies policy violations and vulnerabilities in Lambda function
-     * code based on internal detectors developed in collaboration with Amazon
-     * CodeGuru. Security Hub receives those findings. </p>
-     */
-    inline const GeneratorDetails& GetGeneratorDetails() const { return m_generatorDetails; }
-    inline bool GeneratorDetailsHasBeenSet() const { return m_generatorDetailsHasBeenSet; }
-    template<typename GeneratorDetailsT = GeneratorDetails>
-    void SetGeneratorDetails(GeneratorDetailsT&& value) { m_generatorDetailsHasBeenSet = true; m_generatorDetails = std::forward<GeneratorDetailsT>(value); }
-    template<typename GeneratorDetailsT = GeneratorDetails>
-    AwsSecurityFinding& WithGeneratorDetails(GeneratorDetailsT&& value) { SetGeneratorDetails(std::forward<GeneratorDetailsT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A timestamp that indicates when Security Hub received a finding and begins to
-     * process it.</p> <p>For more information about the validation and formatting of
-     * timestamp fields in Security Hub, see <a
-     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
-     */
-    inline const Aws::String& GetProcessedAt() const { return m_processedAt; }
-    inline bool ProcessedAtHasBeenSet() const { return m_processedAtHasBeenSet; }
-    template<typename ProcessedAtT = Aws::String>
-    void SetProcessedAt(ProcessedAtT&& value) { m_processedAtHasBeenSet = true; m_processedAt = std::forward<ProcessedAtT>(value); }
-    template<typename ProcessedAtT = Aws::String>
-    AwsSecurityFinding& WithProcessedAt(ProcessedAtT&& value) { SetProcessedAt(std::forward<ProcessedAtT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The name of the Amazon Web Services account from which a finding was
-     * generated. </p> <p>Length Constraints: Minimum length of 1. Maximum length of
-     * 50. </p>
-     */
-    inline const Aws::String& GetAwsAccountName() const { return m_awsAccountName; }
-    inline bool AwsAccountNameHasBeenSet() const { return m_awsAccountNameHasBeenSet; }
-    template<typename AwsAccountNameT = Aws::String>
-    void SetAwsAccountName(AwsAccountNameT&& value) { m_awsAccountNameHasBeenSet = true; m_awsAccountName = std::forward<AwsAccountNameT>(value); }
-    template<typename AwsAccountNameT = Aws::String>
-    AwsSecurityFinding& WithAwsAccountName(AwsAccountNameT&& value) { SetAwsAccountName(std::forward<AwsAccountNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p> Provides details about an Amazon GuardDuty Extended Threat Detection attack
-     * sequence. GuardDuty generates an attack sequence finding when multiple events
-     * align to a potentially suspicious activity. To receive GuardDuty attack sequence
-     * findings in Security Hub, you must have GuardDuty enabled. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-extended-threat-detection.html">GuardDuty
-     * Extended Threat Detection </a> in the <i>Amazon GuardDuty User Guide</i>. </p>
-     */
-    inline const Detection& GetDetection() const { return m_detection; }
-    inline bool DetectionHasBeenSet() const { return m_detectionHasBeenSet; }
-    template<typename DetectionT = Detection>
-    void SetDetection(DetectionT&& value) { m_detectionHasBeenSet = true; m_detection = std::forward<DetectionT>(value); }
-    template<typename DetectionT = Detection>
-    AwsSecurityFinding& WithDetection(DetectionT&& value) { SetDetection(std::forward<DetectionT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_schemaVersion;
-    bool m_schemaVersionHasBeenSet = false;
-
-    Aws::String m_id;
-    bool m_idHasBeenSet = false;
-
-    Aws::String m_productArn;
-    bool m_productArnHasBeenSet = false;
-
-    Aws::String m_productName;
-    bool m_productNameHasBeenSet = false;
-
-    Aws::String m_companyName;
-    bool m_companyNameHasBeenSet = false;
-
-    Aws::String m_region;
-    bool m_regionHasBeenSet = false;
-
-    Aws::String m_generatorId;
-    bool m_generatorIdHasBeenSet = false;
-
-    Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_types;
-    bool m_typesHasBeenSet = false;
-
-    Aws::String m_firstObservedAt;
-    bool m_firstObservedAtHasBeenSet = false;
-
-    Aws::String m_lastObservedAt;
-    bool m_lastObservedAtHasBeenSet = false;
-
-    Aws::String m_createdAt;
-    bool m_createdAtHasBeenSet = false;
-
-    Aws::String m_updatedAt;
-    bool m_updatedAtHasBeenSet = false;
-
-    Severity m_severity;
-    bool m_severityHasBeenSet = false;
-
-    int m_confidence{0};
-    bool m_confidenceHasBeenSet = false;
-
-    int m_criticality{0};
-    bool m_criticalityHasBeenSet = false;
-
-    Aws::String m_title;
-    bool m_titleHasBeenSet = false;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
-    Remediation m_remediation;
-    bool m_remediationHasBeenSet = false;
-
-    Aws::String m_sourceUrl;
-    bool m_sourceUrlHasBeenSet = false;
-
-    Aws::Map<Aws::String, Aws::String> m_productFields;
-    bool m_productFieldsHasBeenSet = false;
-
-    Aws::Map<Aws::String, Aws::String> m_userDefinedFields;
-    bool m_userDefinedFieldsHasBeenSet = false;
-
-    Aws::Vector<Malware> m_malware;
-    bool m_malwareHasBeenSet = false;
-
-    Network m_network;
-    bool m_networkHasBeenSet = false;
-
-    Aws::Vector<NetworkPathComponent> m_networkPath;
-    bool m_networkPathHasBeenSet = false;
-
-    ProcessDetails m_process;
-    bool m_processHasBeenSet = false;
-
-    Aws::Vector<Threat> m_threats;
-    bool m_threatsHasBeenSet = false;
-
-    Aws::Vector<ThreatIntelIndicator> m_threatIntelIndicators;
-    bool m_threatIntelIndicatorsHasBeenSet = false;
-
-    Aws::Vector<Resource> m_resources;
-    bool m_resourcesHasBeenSet = false;
-
-    Compliance m_compliance;
-    bool m_complianceHasBeenSet = false;
-
-    VerificationState m_verificationState{VerificationState::NOT_SET};
-    bool m_verificationStateHasBeenSet = false;
-
-    WorkflowState m_workflowState{WorkflowState::NOT_SET};
-    bool m_workflowStateHasBeenSet = false;
-
-    Workflow m_workflow;
-    bool m_workflowHasBeenSet = false;
-
-    RecordState m_recordState{RecordState::NOT_SET};
-    bool m_recordStateHasBeenSet = false;
-
-    Aws::Vector<RelatedFinding> m_relatedFindings;
-    bool m_relatedFindingsHasBeenSet = false;
-
-    Note m_note;
-    bool m_noteHasBeenSet = false;
-
-    Aws::Vector<Vulnerability> m_vulnerabilities;
-    bool m_vulnerabilitiesHasBeenSet = false;
-
-    PatchSummary m_patchSummary;
-    bool m_patchSummaryHasBeenSet = false;
-
-    Action m_action;
-    bool m_actionHasBeenSet = false;
-
-    FindingProviderFields m_findingProviderFields;
-    bool m_findingProviderFieldsHasBeenSet = false;
-
-    bool m_sample{false};
-    bool m_sampleHasBeenSet = false;
-
-    GeneratorDetails m_generatorDetails;
-    bool m_generatorDetailsHasBeenSet = false;
-
-    Aws::String m_processedAt;
-    bool m_processedAtHasBeenSet = false;
-
-    Aws::String m_awsAccountName;
-    bool m_awsAccountNameHasBeenSet = false;
-
-    Detection m_detection;
-    bool m_detectionHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+  inline const Aws::String& GetSchemaVersion() const { return m_schemaVersion; }
+  inline bool SchemaVersionHasBeenSet() const { return m_schemaVersionHasBeenSet; }
+  template <typename SchemaVersionT = Aws::String>
+  void SetSchemaVersion(SchemaVersionT&& value) {
+    m_schemaVersionHasBeenSet = true;
+    m_schemaVersion = std::forward<SchemaVersionT>(value);
+  }
+  template <typename SchemaVersionT = Aws::String>
+  AwsSecurityFinding& WithSchemaVersion(SchemaVersionT&& value) {
+    SetSchemaVersion(std::forward<SchemaVersionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The security findings provider-specific identifier for a finding.</p>
+   * <p>Length Constraints: Minimum length of 1. Maximum length of 512.</p>
+   */
+  inline const Aws::String& GetId() const { return m_id; }
+  inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
+  }
+  template <typename IdT = Aws::String>
+  AwsSecurityFinding& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ARN generated by Security Hub that uniquely identifies a product that
+   * generates findings. This can be the ARN for a third-party product that is
+   * integrated with Security Hub, or the ARN for a custom integration.</p> <p>Length
+   * Constraints: Minimum length of 12. Maximum length of 2048.</p>
+   */
+  inline const Aws::String& GetProductArn() const { return m_productArn; }
+  inline bool ProductArnHasBeenSet() const { return m_productArnHasBeenSet; }
+  template <typename ProductArnT = Aws::String>
+  void SetProductArn(ProductArnT&& value) {
+    m_productArnHasBeenSet = true;
+    m_productArn = std::forward<ProductArnT>(value);
+  }
+  template <typename ProductArnT = Aws::String>
+  AwsSecurityFinding& WithProductArn(ProductArnT&& value) {
+    SetProductArn(std::forward<ProductArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the product that generated the finding.</p> <p>Security Hub
+   * populates this attribute automatically for each finding. You cannot update this
+   * attribute with <code>BatchImportFindings</code> or
+   * <code>BatchUpdateFindings</code>. The exception to this is a custom
+   * integration.</p> <p>When you use the Security Hub console or API to filter
+   * findings by product name, you use this attribute.</p> <p>Length Constraints:
+   * Minimum length of 1. Maximum length of 128.</p>
+   */
+  inline const Aws::String& GetProductName() const { return m_productName; }
+  inline bool ProductNameHasBeenSet() const { return m_productNameHasBeenSet; }
+  template <typename ProductNameT = Aws::String>
+  void SetProductName(ProductNameT&& value) {
+    m_productNameHasBeenSet = true;
+    m_productName = std::forward<ProductNameT>(value);
+  }
+  template <typename ProductNameT = Aws::String>
+  AwsSecurityFinding& WithProductName(ProductNameT&& value) {
+    SetProductName(std::forward<ProductNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the company for the product that generated the finding.</p>
+   * <p>Security Hub populates this attribute automatically for each finding. You
+   * cannot update this attribute with <code>BatchImportFindings</code> or
+   * <code>BatchUpdateFindings</code>. The exception to this is a custom
+   * integration.</p> <p>When you use the Security Hub console or API to filter
+   * findings by company name, you use this attribute.</p> <p>Length Constraints:
+   * Minimum length of 1. Maximum length of 128. </p>
+   */
+  inline const Aws::String& GetCompanyName() const { return m_companyName; }
+  inline bool CompanyNameHasBeenSet() const { return m_companyNameHasBeenSet; }
+  template <typename CompanyNameT = Aws::String>
+  void SetCompanyName(CompanyNameT&& value) {
+    m_companyNameHasBeenSet = true;
+    m_companyName = std::forward<CompanyNameT>(value);
+  }
+  template <typename CompanyNameT = Aws::String>
+  AwsSecurityFinding& WithCompanyName(CompanyNameT&& value) {
+    SetCompanyName(std::forward<CompanyNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Region from which the finding was generated.</p> <p>Security Hub
+   * populates this attribute automatically for each finding. You cannot update it
+   * using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>.</p>
+   * <p>Length Constraints: Minimum length of 1. Maximum length of 16. </p>
+   */
+  inline const Aws::String& GetRegion() const { return m_region; }
+  inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
+  template <typename RegionT = Aws::String>
+  void SetRegion(RegionT&& value) {
+    m_regionHasBeenSet = true;
+    m_region = std::forward<RegionT>(value);
+  }
+  template <typename RegionT = Aws::String>
+  AwsSecurityFinding& WithRegion(RegionT&& value) {
+    SetRegion(std::forward<RegionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The identifier for the solution-specific component (a discrete unit of logic)
+   * that generated a finding. In various security findings providers' solutions,
+   * this generator can be called a rule, a check, a detector, a plugin, or something
+   * else.</p> <p>Length Constraints: Minimum length of 1. Maximum length of 512.</p>
+   */
+  inline const Aws::String& GetGeneratorId() const { return m_generatorId; }
+  inline bool GeneratorIdHasBeenSet() const { return m_generatorIdHasBeenSet; }
+  template <typename GeneratorIdT = Aws::String>
+  void SetGeneratorId(GeneratorIdT&& value) {
+    m_generatorIdHasBeenSet = true;
+    m_generatorId = std::forward<GeneratorIdT>(value);
+  }
+  template <typename GeneratorIdT = Aws::String>
+  AwsSecurityFinding& WithGeneratorId(GeneratorIdT&& value) {
+    SetGeneratorId(std::forward<GeneratorIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services account ID that a finding is generated in.</p>
+   * <p>Length Constraints: 12.</p>
+   */
+  inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
+  inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
+  template <typename AwsAccountIdT = Aws::String>
+  void SetAwsAccountId(AwsAccountIdT&& value) {
+    m_awsAccountIdHasBeenSet = true;
+    m_awsAccountId = std::forward<AwsAccountIdT>(value);
+  }
+  template <typename AwsAccountIdT = Aws::String>
+  AwsSecurityFinding& WithAwsAccountId(AwsAccountIdT&& value) {
+    SetAwsAccountId(std::forward<AwsAccountIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>One or more finding types in the format of
+   * <code>namespace/category/classifier</code> that classify a finding.</p> <p>Valid
+   * namespace values are: Software and Configuration Checks | TTPs | Effects |
+   * Unusual Behaviors | Sensitive Data Identifications</p> <p>Array Members: Maximum
+   * number of 50 items.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetTypes() const { return m_types; }
+  inline bool TypesHasBeenSet() const { return m_typesHasBeenSet; }
+  template <typename TypesT = Aws::Vector<Aws::String>>
+  void SetTypes(TypesT&& value) {
+    m_typesHasBeenSet = true;
+    m_types = std::forward<TypesT>(value);
+  }
+  template <typename TypesT = Aws::Vector<Aws::String>>
+  AwsSecurityFinding& WithTypes(TypesT&& value) {
+    SetTypes(std::forward<TypesT>(value));
+    return *this;
+  }
+  template <typename TypesT = Aws::String>
+  AwsSecurityFinding& AddTypes(TypesT&& value) {
+    m_typesHasBeenSet = true;
+    m_types.emplace_back(std::forward<TypesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Indicates when the security findings provider first observed the potential
+   * security issue that a finding captured.</p> <p>For more information about the
+   * validation and formatting of timestamp fields in Security Hub, see <a
+   * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+   */
+  inline const Aws::String& GetFirstObservedAt() const { return m_firstObservedAt; }
+  inline bool FirstObservedAtHasBeenSet() const { return m_firstObservedAtHasBeenSet; }
+  template <typename FirstObservedAtT = Aws::String>
+  void SetFirstObservedAt(FirstObservedAtT&& value) {
+    m_firstObservedAtHasBeenSet = true;
+    m_firstObservedAt = std::forward<FirstObservedAtT>(value);
+  }
+  template <typename FirstObservedAtT = Aws::String>
+  AwsSecurityFinding& WithFirstObservedAt(FirstObservedAtT&& value) {
+    SetFirstObservedAt(std::forward<FirstObservedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Indicates when the security findings provider most recently observed a change
+   * in the resource that is involved in the finding.</p> <p>For more information
+   * about the validation and formatting of timestamp fields in Security Hub, see <a
+   * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+   */
+  inline const Aws::String& GetLastObservedAt() const { return m_lastObservedAt; }
+  inline bool LastObservedAtHasBeenSet() const { return m_lastObservedAtHasBeenSet; }
+  template <typename LastObservedAtT = Aws::String>
+  void SetLastObservedAt(LastObservedAtT&& value) {
+    m_lastObservedAtHasBeenSet = true;
+    m_lastObservedAt = std::forward<LastObservedAtT>(value);
+  }
+  template <typename LastObservedAtT = Aws::String>
+  AwsSecurityFinding& WithLastObservedAt(LastObservedAtT&& value) {
+    SetLastObservedAt(std::forward<LastObservedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Indicates when the security findings provider created the potential security
+   * issue that a finding captured.</p> <p>For more information about the validation
+   * and formatting of timestamp fields in Security Hub, see <a
+   * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+   */
+  inline const Aws::String& GetCreatedAt() const { return m_createdAt; }
+  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+  template <typename CreatedAtT = Aws::String>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::String>
+  AwsSecurityFinding& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Indicates when the security findings provider last updated the finding
+   * record.</p> <p>For more information about the validation and formatting of
+   * timestamp fields in Security Hub, see <a
+   * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+   */
+  inline const Aws::String& GetUpdatedAt() const { return m_updatedAt; }
+  inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
+  template <typename UpdatedAtT = Aws::String>
+  void SetUpdatedAt(UpdatedAtT&& value) {
+    m_updatedAtHasBeenSet = true;
+    m_updatedAt = std::forward<UpdatedAtT>(value);
+  }
+  template <typename UpdatedAtT = Aws::String>
+  AwsSecurityFinding& WithUpdatedAt(UpdatedAtT&& value) {
+    SetUpdatedAt(std::forward<UpdatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A finding's severity.</p>
+   */
+  inline const Severity& GetSeverity() const { return m_severity; }
+  inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
+  template <typename SeverityT = Severity>
+  void SetSeverity(SeverityT&& value) {
+    m_severityHasBeenSet = true;
+    m_severity = std::forward<SeverityT>(value);
+  }
+  template <typename SeverityT = Severity>
+  AwsSecurityFinding& WithSeverity(SeverityT&& value) {
+    SetSeverity(std::forward<SeverityT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A finding's confidence. Confidence is defined as the likelihood that a
+   * finding accurately identifies the behavior or issue that it was intended to
+   * identify.</p> <p>Confidence is scored on a 0-100 basis using a ratio scale,
+   * where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
+   */
+  inline int GetConfidence() const { return m_confidence; }
+  inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
+  inline void SetConfidence(int value) {
+    m_confidenceHasBeenSet = true;
+    m_confidence = value;
+  }
+  inline AwsSecurityFinding& WithConfidence(int value) {
+    SetConfidence(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The level of importance assigned to the resources associated with the
+   * finding.</p> <p>A score of 0 means that the underlying resources have no
+   * criticality, and a score of 100 is reserved for the most critical resources.</p>
+   */
+  inline int GetCriticality() const { return m_criticality; }
+  inline bool CriticalityHasBeenSet() const { return m_criticalityHasBeenSet; }
+  inline void SetCriticality(int value) {
+    m_criticalityHasBeenSet = true;
+    m_criticality = value;
+  }
+  inline AwsSecurityFinding& WithCriticality(int value) {
+    SetCriticality(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A finding's title. <code>Title</code> is a required property.</p> <p>Length
+   * Constraints: Minimum length of 1. Maximum length of 256.</p>
+   */
+  inline const Aws::String& GetTitle() const { return m_title; }
+  inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
+  template <typename TitleT = Aws::String>
+  void SetTitle(TitleT&& value) {
+    m_titleHasBeenSet = true;
+    m_title = std::forward<TitleT>(value);
+  }
+  template <typename TitleT = Aws::String>
+  AwsSecurityFinding& WithTitle(TitleT&& value) {
+    SetTitle(std::forward<TitleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A finding's description. <code>Description</code> is a required property.</p>
+   * <p>Length Constraints: Minimum length of 1. Maximum length of 1024.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  AwsSecurityFinding& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A data type that describes the remediation options for a finding.</p>
+   */
+  inline const Remediation& GetRemediation() const { return m_remediation; }
+  inline bool RemediationHasBeenSet() const { return m_remediationHasBeenSet; }
+  template <typename RemediationT = Remediation>
+  void SetRemediation(RemediationT&& value) {
+    m_remediationHasBeenSet = true;
+    m_remediation = std::forward<RemediationT>(value);
+  }
+  template <typename RemediationT = Remediation>
+  AwsSecurityFinding& WithRemediation(RemediationT&& value) {
+    SetRemediation(std::forward<RemediationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A URL that links to a page about the current finding in the security findings
+   * provider's solution.</p>
+   */
+  inline const Aws::String& GetSourceUrl() const { return m_sourceUrl; }
+  inline bool SourceUrlHasBeenSet() const { return m_sourceUrlHasBeenSet; }
+  template <typename SourceUrlT = Aws::String>
+  void SetSourceUrl(SourceUrlT&& value) {
+    m_sourceUrlHasBeenSet = true;
+    m_sourceUrl = std::forward<SourceUrlT>(value);
+  }
+  template <typename SourceUrlT = Aws::String>
+  AwsSecurityFinding& WithSourceUrl(SourceUrlT&& value) {
+    SetSourceUrl(std::forward<SourceUrlT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A data type where security findings providers can include additional
+   * solution-specific details that aren't part of the defined
+   * <code>AwsSecurityFinding</code> format.</p> <p>Can contain up to 50 key-value
+   * pairs. For each key-value pair, the key can contain up to 128 characters, and
+   * the value can contain up to 2048 characters.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetProductFields() const { return m_productFields; }
+  inline bool ProductFieldsHasBeenSet() const { return m_productFieldsHasBeenSet; }
+  template <typename ProductFieldsT = Aws::Map<Aws::String, Aws::String>>
+  void SetProductFields(ProductFieldsT&& value) {
+    m_productFieldsHasBeenSet = true;
+    m_productFields = std::forward<ProductFieldsT>(value);
+  }
+  template <typename ProductFieldsT = Aws::Map<Aws::String, Aws::String>>
+  AwsSecurityFinding& WithProductFields(ProductFieldsT&& value) {
+    SetProductFields(std::forward<ProductFieldsT>(value));
+    return *this;
+  }
+  template <typename ProductFieldsKeyT = Aws::String, typename ProductFieldsValueT = Aws::String>
+  AwsSecurityFinding& AddProductFields(ProductFieldsKeyT&& key, ProductFieldsValueT&& value) {
+    m_productFieldsHasBeenSet = true;
+    m_productFields.emplace(std::forward<ProductFieldsKeyT>(key), std::forward<ProductFieldsValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A list of name/value string pairs associated with the finding. These are
+   * custom, user-defined fields added to a finding.</p> <p>Can contain up to 50
+   * key-value pairs. For each key-value pair, the key can contain up to 128
+   * characters, and the value can contain up to 1024 characters.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetUserDefinedFields() const { return m_userDefinedFields; }
+  inline bool UserDefinedFieldsHasBeenSet() const { return m_userDefinedFieldsHasBeenSet; }
+  template <typename UserDefinedFieldsT = Aws::Map<Aws::String, Aws::String>>
+  void SetUserDefinedFields(UserDefinedFieldsT&& value) {
+    m_userDefinedFieldsHasBeenSet = true;
+    m_userDefinedFields = std::forward<UserDefinedFieldsT>(value);
+  }
+  template <typename UserDefinedFieldsT = Aws::Map<Aws::String, Aws::String>>
+  AwsSecurityFinding& WithUserDefinedFields(UserDefinedFieldsT&& value) {
+    SetUserDefinedFields(std::forward<UserDefinedFieldsT>(value));
+    return *this;
+  }
+  template <typename UserDefinedFieldsKeyT = Aws::String, typename UserDefinedFieldsValueT = Aws::String>
+  AwsSecurityFinding& AddUserDefinedFields(UserDefinedFieldsKeyT&& key, UserDefinedFieldsValueT&& value) {
+    m_userDefinedFieldsHasBeenSet = true;
+    m_userDefinedFields.emplace(std::forward<UserDefinedFieldsKeyT>(key), std::forward<UserDefinedFieldsValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A list of malware related to a finding.</p> <p>Array Members: Maximum number
+   * of 5 items.</p>
+   */
+  inline const Aws::Vector<Malware>& GetMalware() const { return m_malware; }
+  inline bool MalwareHasBeenSet() const { return m_malwareHasBeenSet; }
+  template <typename MalwareT = Aws::Vector<Malware>>
+  void SetMalware(MalwareT&& value) {
+    m_malwareHasBeenSet = true;
+    m_malware = std::forward<MalwareT>(value);
+  }
+  template <typename MalwareT = Aws::Vector<Malware>>
+  AwsSecurityFinding& WithMalware(MalwareT&& value) {
+    SetMalware(std::forward<MalwareT>(value));
+    return *this;
+  }
+  template <typename MalwareT = Malware>
+  AwsSecurityFinding& AddMalware(MalwareT&& value) {
+    m_malwareHasBeenSet = true;
+    m_malware.emplace_back(std::forward<MalwareT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The details of network-related information about a finding.</p>
+   */
+  inline const Network& GetNetwork() const { return m_network; }
+  inline bool NetworkHasBeenSet() const { return m_networkHasBeenSet; }
+  template <typename NetworkT = Network>
+  void SetNetwork(NetworkT&& value) {
+    m_networkHasBeenSet = true;
+    m_network = std::forward<NetworkT>(value);
+  }
+  template <typename NetworkT = Network>
+  AwsSecurityFinding& WithNetwork(NetworkT&& value) {
+    SetNetwork(std::forward<NetworkT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Provides information about a network path that is relevant to a finding. Each
+   * entry under <code>NetworkPath</code> represents a component of that path.</p>
+   */
+  inline const Aws::Vector<NetworkPathComponent>& GetNetworkPath() const { return m_networkPath; }
+  inline bool NetworkPathHasBeenSet() const { return m_networkPathHasBeenSet; }
+  template <typename NetworkPathT = Aws::Vector<NetworkPathComponent>>
+  void SetNetworkPath(NetworkPathT&& value) {
+    m_networkPathHasBeenSet = true;
+    m_networkPath = std::forward<NetworkPathT>(value);
+  }
+  template <typename NetworkPathT = Aws::Vector<NetworkPathComponent>>
+  AwsSecurityFinding& WithNetworkPath(NetworkPathT&& value) {
+    SetNetworkPath(std::forward<NetworkPathT>(value));
+    return *this;
+  }
+  template <typename NetworkPathT = NetworkPathComponent>
+  AwsSecurityFinding& AddNetworkPath(NetworkPathT&& value) {
+    m_networkPathHasBeenSet = true;
+    m_networkPath.emplace_back(std::forward<NetworkPathT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The details of process-related information about a finding.</p>
+   */
+  inline const ProcessDetails& GetProcess() const { return m_process; }
+  inline bool ProcessHasBeenSet() const { return m_processHasBeenSet; }
+  template <typename ProcessT = ProcessDetails>
+  void SetProcess(ProcessT&& value) {
+    m_processHasBeenSet = true;
+    m_process = std::forward<ProcessT>(value);
+  }
+  template <typename ProcessT = ProcessDetails>
+  AwsSecurityFinding& WithProcess(ProcessT&& value) {
+    SetProcess(std::forward<ProcessT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Details about the threat detected in a security finding and the file paths
+   * that were affected by the threat. </p> <p>Array Members: Minimum number of 1
+   * item. Maximum number of 32 items.</p>
+   */
+  inline const Aws::Vector<Threat>& GetThreats() const { return m_threats; }
+  inline bool ThreatsHasBeenSet() const { return m_threatsHasBeenSet; }
+  template <typename ThreatsT = Aws::Vector<Threat>>
+  void SetThreats(ThreatsT&& value) {
+    m_threatsHasBeenSet = true;
+    m_threats = std::forward<ThreatsT>(value);
+  }
+  template <typename ThreatsT = Aws::Vector<Threat>>
+  AwsSecurityFinding& WithThreats(ThreatsT&& value) {
+    SetThreats(std::forward<ThreatsT>(value));
+    return *this;
+  }
+  template <typename ThreatsT = Threat>
+  AwsSecurityFinding& AddThreats(ThreatsT&& value) {
+    m_threatsHasBeenSet = true;
+    m_threats.emplace_back(std::forward<ThreatsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Threat intelligence details related to a finding.</p> <p>Array Members:
+   * Minimum number of 1 item. Maximum number of 5 items.</p>
+   */
+  inline const Aws::Vector<ThreatIntelIndicator>& GetThreatIntelIndicators() const { return m_threatIntelIndicators; }
+  inline bool ThreatIntelIndicatorsHasBeenSet() const { return m_threatIntelIndicatorsHasBeenSet; }
+  template <typename ThreatIntelIndicatorsT = Aws::Vector<ThreatIntelIndicator>>
+  void SetThreatIntelIndicators(ThreatIntelIndicatorsT&& value) {
+    m_threatIntelIndicatorsHasBeenSet = true;
+    m_threatIntelIndicators = std::forward<ThreatIntelIndicatorsT>(value);
+  }
+  template <typename ThreatIntelIndicatorsT = Aws::Vector<ThreatIntelIndicator>>
+  AwsSecurityFinding& WithThreatIntelIndicators(ThreatIntelIndicatorsT&& value) {
+    SetThreatIntelIndicators(std::forward<ThreatIntelIndicatorsT>(value));
+    return *this;
+  }
+  template <typename ThreatIntelIndicatorsT = ThreatIntelIndicator>
+  AwsSecurityFinding& AddThreatIntelIndicators(ThreatIntelIndicatorsT&& value) {
+    m_threatIntelIndicatorsHasBeenSet = true;
+    m_threatIntelIndicators.emplace_back(std::forward<ThreatIntelIndicatorsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A set of resource data types that describe the resources that the finding
+   * refers to.</p> <p>Array Members: Minimum number of 1 item. Maximum number of 32
+   * items.</p>
+   */
+  inline const Aws::Vector<Resource>& GetResources() const { return m_resources; }
+  inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
+  template <typename ResourcesT = Aws::Vector<Resource>>
+  void SetResources(ResourcesT&& value) {
+    m_resourcesHasBeenSet = true;
+    m_resources = std::forward<ResourcesT>(value);
+  }
+  template <typename ResourcesT = Aws::Vector<Resource>>
+  AwsSecurityFinding& WithResources(ResourcesT&& value) {
+    SetResources(std::forward<ResourcesT>(value));
+    return *this;
+  }
+  template <typename ResourcesT = Resource>
+  AwsSecurityFinding& AddResources(ResourcesT&& value) {
+    m_resourcesHasBeenSet = true;
+    m_resources.emplace_back(std::forward<ResourcesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>This data type is exclusive to findings that are generated as the result of a
+   * check run against a specific rule in a supported security standard, such as CIS
+   * Amazon Web Services Foundations. Contains security standard-related finding
+   * details.</p>
+   */
+  inline const Compliance& GetCompliance() const { return m_compliance; }
+  inline bool ComplianceHasBeenSet() const { return m_complianceHasBeenSet; }
+  template <typename ComplianceT = Compliance>
+  void SetCompliance(ComplianceT&& value) {
+    m_complianceHasBeenSet = true;
+    m_compliance = std::forward<ComplianceT>(value);
+  }
+  template <typename ComplianceT = Compliance>
+  AwsSecurityFinding& WithCompliance(ComplianceT&& value) {
+    SetCompliance(std::forward<ComplianceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Indicates the veracity of a finding. </p>
+   */
+  inline VerificationState GetVerificationState() const { return m_verificationState; }
+  inline bool VerificationStateHasBeenSet() const { return m_verificationStateHasBeenSet; }
+  inline void SetVerificationState(VerificationState value) {
+    m_verificationStateHasBeenSet = true;
+    m_verificationState = value;
+  }
+  inline AwsSecurityFinding& WithVerificationState(VerificationState value) {
+    SetVerificationState(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The workflow state of a finding. </p>
+   */
+  inline WorkflowState GetWorkflowState() const { return m_workflowState; }
+  inline bool WorkflowStateHasBeenSet() const { return m_workflowStateHasBeenSet; }
+  inline void SetWorkflowState(WorkflowState value) {
+    m_workflowStateHasBeenSet = true;
+    m_workflowState = value;
+  }
+  inline AwsSecurityFinding& WithWorkflowState(WorkflowState value) {
+    SetWorkflowState(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Provides information about the status of the investigation into a
+   * finding.</p>
+   */
+  inline const Workflow& GetWorkflow() const { return m_workflow; }
+  inline bool WorkflowHasBeenSet() const { return m_workflowHasBeenSet; }
+  template <typename WorkflowT = Workflow>
+  void SetWorkflow(WorkflowT&& value) {
+    m_workflowHasBeenSet = true;
+    m_workflow = std::forward<WorkflowT>(value);
+  }
+  template <typename WorkflowT = Workflow>
+  AwsSecurityFinding& WithWorkflow(WorkflowT&& value) {
+    SetWorkflow(std::forward<WorkflowT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The record state of a finding.</p>
+   */
+  inline RecordState GetRecordState() const { return m_recordState; }
+  inline bool RecordStateHasBeenSet() const { return m_recordStateHasBeenSet; }
+  inline void SetRecordState(RecordState value) {
+    m_recordStateHasBeenSet = true;
+    m_recordState = value;
+  }
+  inline AwsSecurityFinding& WithRecordState(RecordState value) {
+    SetRecordState(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A list of related findings.</p> <p>Array Members: Minimum number of 1 item.
+   * Maximum number of 10 items.</p>
+   */
+  inline const Aws::Vector<RelatedFinding>& GetRelatedFindings() const { return m_relatedFindings; }
+  inline bool RelatedFindingsHasBeenSet() const { return m_relatedFindingsHasBeenSet; }
+  template <typename RelatedFindingsT = Aws::Vector<RelatedFinding>>
+  void SetRelatedFindings(RelatedFindingsT&& value) {
+    m_relatedFindingsHasBeenSet = true;
+    m_relatedFindings = std::forward<RelatedFindingsT>(value);
+  }
+  template <typename RelatedFindingsT = Aws::Vector<RelatedFinding>>
+  AwsSecurityFinding& WithRelatedFindings(RelatedFindingsT&& value) {
+    SetRelatedFindings(std::forward<RelatedFindingsT>(value));
+    return *this;
+  }
+  template <typename RelatedFindingsT = RelatedFinding>
+  AwsSecurityFinding& AddRelatedFindings(RelatedFindingsT&& value) {
+    m_relatedFindingsHasBeenSet = true;
+    m_relatedFindings.emplace_back(std::forward<RelatedFindingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A user-defined note added to a finding.</p>
+   */
+  inline const Note& GetNote() const { return m_note; }
+  inline bool NoteHasBeenSet() const { return m_noteHasBeenSet; }
+  template <typename NoteT = Note>
+  void SetNote(NoteT&& value) {
+    m_noteHasBeenSet = true;
+    m_note = std::forward<NoteT>(value);
+  }
+  template <typename NoteT = Note>
+  AwsSecurityFinding& WithNote(NoteT&& value) {
+    SetNote(std::forward<NoteT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Provides a list of vulnerabilities associated with the findings.</p>
+   */
+  inline const Aws::Vector<Vulnerability>& GetVulnerabilities() const { return m_vulnerabilities; }
+  inline bool VulnerabilitiesHasBeenSet() const { return m_vulnerabilitiesHasBeenSet; }
+  template <typename VulnerabilitiesT = Aws::Vector<Vulnerability>>
+  void SetVulnerabilities(VulnerabilitiesT&& value) {
+    m_vulnerabilitiesHasBeenSet = true;
+    m_vulnerabilities = std::forward<VulnerabilitiesT>(value);
+  }
+  template <typename VulnerabilitiesT = Aws::Vector<Vulnerability>>
+  AwsSecurityFinding& WithVulnerabilities(VulnerabilitiesT&& value) {
+    SetVulnerabilities(std::forward<VulnerabilitiesT>(value));
+    return *this;
+  }
+  template <typename VulnerabilitiesT = Vulnerability>
+  AwsSecurityFinding& AddVulnerabilities(VulnerabilitiesT&& value) {
+    m_vulnerabilitiesHasBeenSet = true;
+    m_vulnerabilities.emplace_back(std::forward<VulnerabilitiesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Provides an overview of the patch compliance status for an instance against a
+   * selected compliance standard.</p>
+   */
+  inline const PatchSummary& GetPatchSummary() const { return m_patchSummary; }
+  inline bool PatchSummaryHasBeenSet() const { return m_patchSummaryHasBeenSet; }
+  template <typename PatchSummaryT = PatchSummary>
+  void SetPatchSummary(PatchSummaryT&& value) {
+    m_patchSummaryHasBeenSet = true;
+    m_patchSummary = std::forward<PatchSummaryT>(value);
+  }
+  template <typename PatchSummaryT = PatchSummary>
+  AwsSecurityFinding& WithPatchSummary(PatchSummaryT&& value) {
+    SetPatchSummary(std::forward<PatchSummaryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Provides details about an action that affects or that was taken on a
+   * resource.</p>
+   */
+  inline const Action& GetAction() const { return m_action; }
+  inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+  template <typename ActionT = Action>
+  void SetAction(ActionT&& value) {
+    m_actionHasBeenSet = true;
+    m_action = std::forward<ActionT>(value);
+  }
+  template <typename ActionT = Action>
+  AwsSecurityFinding& WithAction(ActionT&& value) {
+    SetAction(std::forward<ActionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>In a <code>BatchImportFindings</code> request, finding providers use
+   * <code>FindingProviderFields</code> to provide and update their own values for
+   * confidence, criticality, related findings, severity, and types.</p>
+   */
+  inline const FindingProviderFields& GetFindingProviderFields() const { return m_findingProviderFields; }
+  inline bool FindingProviderFieldsHasBeenSet() const { return m_findingProviderFieldsHasBeenSet; }
+  template <typename FindingProviderFieldsT = FindingProviderFields>
+  void SetFindingProviderFields(FindingProviderFieldsT&& value) {
+    m_findingProviderFieldsHasBeenSet = true;
+    m_findingProviderFields = std::forward<FindingProviderFieldsT>(value);
+  }
+  template <typename FindingProviderFieldsT = FindingProviderFields>
+  AwsSecurityFinding& WithFindingProviderFields(FindingProviderFieldsT&& value) {
+    SetFindingProviderFields(std::forward<FindingProviderFieldsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether the finding is a sample finding.</p>
+   */
+  inline bool GetSample() const { return m_sample; }
+  inline bool SampleHasBeenSet() const { return m_sampleHasBeenSet; }
+  inline void SetSample(bool value) {
+    m_sampleHasBeenSet = true;
+    m_sample = value;
+  }
+  inline AwsSecurityFinding& WithSample(bool value) {
+    SetSample(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Provides metadata for the Amazon CodeGuru detector associated with a finding.
+   * This field pertains to findings that relate to Lambda functions. Amazon
+   * Inspector identifies policy violations and vulnerabilities in Lambda function
+   * code based on internal detectors developed in collaboration with Amazon
+   * CodeGuru. Security Hub receives those findings. </p>
+   */
+  inline const GeneratorDetails& GetGeneratorDetails() const { return m_generatorDetails; }
+  inline bool GeneratorDetailsHasBeenSet() const { return m_generatorDetailsHasBeenSet; }
+  template <typename GeneratorDetailsT = GeneratorDetails>
+  void SetGeneratorDetails(GeneratorDetailsT&& value) {
+    m_generatorDetailsHasBeenSet = true;
+    m_generatorDetails = std::forward<GeneratorDetailsT>(value);
+  }
+  template <typename GeneratorDetailsT = GeneratorDetails>
+  AwsSecurityFinding& WithGeneratorDetails(GeneratorDetailsT&& value) {
+    SetGeneratorDetails(std::forward<GeneratorDetailsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A timestamp that indicates when Security Hub received a finding and begins to
+   * process it.</p> <p>For more information about the validation and formatting of
+   * timestamp fields in Security Hub, see <a
+   * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+   */
+  inline const Aws::String& GetProcessedAt() const { return m_processedAt; }
+  inline bool ProcessedAtHasBeenSet() const { return m_processedAtHasBeenSet; }
+  template <typename ProcessedAtT = Aws::String>
+  void SetProcessedAt(ProcessedAtT&& value) {
+    m_processedAtHasBeenSet = true;
+    m_processedAt = std::forward<ProcessedAtT>(value);
+  }
+  template <typename ProcessedAtT = Aws::String>
+  AwsSecurityFinding& WithProcessedAt(ProcessedAtT&& value) {
+    SetProcessedAt(std::forward<ProcessedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the Amazon Web Services account from which a finding was
+   * generated. </p> <p>Length Constraints: Minimum length of 1. Maximum length of
+   * 50. </p>
+   */
+  inline const Aws::String& GetAwsAccountName() const { return m_awsAccountName; }
+  inline bool AwsAccountNameHasBeenSet() const { return m_awsAccountNameHasBeenSet; }
+  template <typename AwsAccountNameT = Aws::String>
+  void SetAwsAccountName(AwsAccountNameT&& value) {
+    m_awsAccountNameHasBeenSet = true;
+    m_awsAccountName = std::forward<AwsAccountNameT>(value);
+  }
+  template <typename AwsAccountNameT = Aws::String>
+  AwsSecurityFinding& WithAwsAccountName(AwsAccountNameT&& value) {
+    SetAwsAccountName(std::forward<AwsAccountNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> Provides details about an Amazon GuardDuty Extended Threat Detection attack
+   * sequence. GuardDuty generates an attack sequence finding when multiple events
+   * align to a potentially suspicious activity. To receive GuardDuty attack sequence
+   * findings in Security Hub, you must have GuardDuty enabled. For more information,
+   * see <a
+   * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-extended-threat-detection.html">GuardDuty
+   * Extended Threat Detection </a> in the <i>Amazon GuardDuty User Guide</i>. </p>
+   */
+  inline const Detection& GetDetection() const { return m_detection; }
+  inline bool DetectionHasBeenSet() const { return m_detectionHasBeenSet; }
+  template <typename DetectionT = Detection>
+  void SetDetection(DetectionT&& value) {
+    m_detectionHasBeenSet = true;
+    m_detection = std::forward<DetectionT>(value);
+  }
+  template <typename DetectionT = Detection>
+  AwsSecurityFinding& WithDetection(DetectionT&& value) {
+    SetDetection(std::forward<DetectionT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_schemaVersion;
+  bool m_schemaVersionHasBeenSet = false;
+
+  Aws::String m_id;
+  bool m_idHasBeenSet = false;
+
+  Aws::String m_productArn;
+  bool m_productArnHasBeenSet = false;
+
+  Aws::String m_productName;
+  bool m_productNameHasBeenSet = false;
+
+  Aws::String m_companyName;
+  bool m_companyNameHasBeenSet = false;
+
+  Aws::String m_region;
+  bool m_regionHasBeenSet = false;
+
+  Aws::String m_generatorId;
+  bool m_generatorIdHasBeenSet = false;
+
+  Aws::String m_awsAccountId;
+  bool m_awsAccountIdHasBeenSet = false;
+
+  Aws::Vector<Aws::String> m_types;
+  bool m_typesHasBeenSet = false;
+
+  Aws::String m_firstObservedAt;
+  bool m_firstObservedAtHasBeenSet = false;
+
+  Aws::String m_lastObservedAt;
+  bool m_lastObservedAtHasBeenSet = false;
+
+  Aws::String m_createdAt;
+  bool m_createdAtHasBeenSet = false;
+
+  Aws::String m_updatedAt;
+  bool m_updatedAtHasBeenSet = false;
+
+  Severity m_severity;
+  bool m_severityHasBeenSet = false;
+
+  int m_confidence{0};
+  bool m_confidenceHasBeenSet = false;
+
+  int m_criticality{0};
+  bool m_criticalityHasBeenSet = false;
+
+  Aws::String m_title;
+  bool m_titleHasBeenSet = false;
+
+  Aws::String m_description;
+  bool m_descriptionHasBeenSet = false;
+
+  Remediation m_remediation;
+  bool m_remediationHasBeenSet = false;
+
+  Aws::String m_sourceUrl;
+  bool m_sourceUrlHasBeenSet = false;
+
+  Aws::Map<Aws::String, Aws::String> m_productFields;
+  bool m_productFieldsHasBeenSet = false;
+
+  Aws::Map<Aws::String, Aws::String> m_userDefinedFields;
+  bool m_userDefinedFieldsHasBeenSet = false;
+
+  Aws::Vector<Malware> m_malware;
+  bool m_malwareHasBeenSet = false;
+
+  Network m_network;
+  bool m_networkHasBeenSet = false;
+
+  Aws::Vector<NetworkPathComponent> m_networkPath;
+  bool m_networkPathHasBeenSet = false;
+
+  ProcessDetails m_process;
+  bool m_processHasBeenSet = false;
+
+  Aws::Vector<Threat> m_threats;
+  bool m_threatsHasBeenSet = false;
+
+  Aws::Vector<ThreatIntelIndicator> m_threatIntelIndicators;
+  bool m_threatIntelIndicatorsHasBeenSet = false;
+
+  Aws::Vector<Resource> m_resources;
+  bool m_resourcesHasBeenSet = false;
+
+  Compliance m_compliance;
+  bool m_complianceHasBeenSet = false;
+
+  VerificationState m_verificationState{VerificationState::NOT_SET};
+  bool m_verificationStateHasBeenSet = false;
+
+  WorkflowState m_workflowState{WorkflowState::NOT_SET};
+  bool m_workflowStateHasBeenSet = false;
+
+  Workflow m_workflow;
+  bool m_workflowHasBeenSet = false;
+
+  RecordState m_recordState{RecordState::NOT_SET};
+  bool m_recordStateHasBeenSet = false;
+
+  Aws::Vector<RelatedFinding> m_relatedFindings;
+  bool m_relatedFindingsHasBeenSet = false;
+
+  Note m_note;
+  bool m_noteHasBeenSet = false;
+
+  Aws::Vector<Vulnerability> m_vulnerabilities;
+  bool m_vulnerabilitiesHasBeenSet = false;
+
+  PatchSummary m_patchSummary;
+  bool m_patchSummaryHasBeenSet = false;
+
+  Action m_action;
+  bool m_actionHasBeenSet = false;
+
+  FindingProviderFields m_findingProviderFields;
+  bool m_findingProviderFieldsHasBeenSet = false;
+
+  bool m_sample{false};
+  bool m_sampleHasBeenSet = false;
+
+  GeneratorDetails m_generatorDetails;
+  bool m_generatorDetailsHasBeenSet = false;
+
+  Aws::String m_processedAt;
+  bool m_processedAtHasBeenSet = false;
+
+  Aws::String m_awsAccountName;
+  bool m_awsAccountNameHasBeenSet = false;
+
+  Detection m_detection;
+  bool m_detectionHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

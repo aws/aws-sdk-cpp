@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/marketplace-agreement/model/Selector.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/marketplace-agreement/model/Selector.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AgreementService
-{
-namespace Model
-{
+namespace Aws {
+namespace AgreementService {
+namespace Model {
 
-Selector::Selector(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Selector::Selector(JsonView jsonValue) { *this = jsonValue; }
 
-Selector& Selector::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+Selector& Selector::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = jsonValue.GetString("type");
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("value"))
-  {
+  if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetString("value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Selector::Jsonize() const
-{
+JsonValue Selector::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", m_type);
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AgreementService
-} // namespace Aws
+}  // namespace Model
+}  // namespace AgreementService
+}  // namespace Aws

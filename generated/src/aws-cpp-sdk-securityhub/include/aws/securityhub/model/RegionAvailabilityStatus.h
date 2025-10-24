@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/securityhub/SecurityHub_EXPORTS.h>
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
-  enum class RegionAvailabilityStatus
-  {
-    NOT_SET,
-    AVAILABLE,
-    UNAVAILABLE
-  };
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
+enum class RegionAvailabilityStatus { NOT_SET, AVAILABLE, UNAVAILABLE };
 
-namespace RegionAvailabilityStatusMapper
-{
+namespace RegionAvailabilityStatusMapper {
 AWS_SECURITYHUB_API RegionAvailabilityStatus GetRegionAvailabilityStatusForName(const Aws::String& name);
 
 AWS_SECURITYHUB_API Aws::String GetNameForRegionAvailabilityStatus(RegionAvailabilityStatus value);
-} // namespace RegionAvailabilityStatusMapper
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace RegionAvailabilityStatusMapper
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

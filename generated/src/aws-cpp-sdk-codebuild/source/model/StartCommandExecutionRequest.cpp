@@ -12,38 +12,26 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartCommandExecutionRequest::SerializePayload() const
-{
+Aws::String StartCommandExecutionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_sandboxIdHasBeenSet)
-  {
-   payload.WithString("sandboxId", m_sandboxId);
-
+  if (m_sandboxIdHasBeenSet) {
+    payload.WithString("sandboxId", m_sandboxId);
   }
 
-  if(m_commandHasBeenSet)
-  {
-   payload.WithString("command", m_command);
-
+  if (m_commandHasBeenSet) {
+    payload.WithString("command", m_command);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", CommandTypeMapper::GetNameForCommandType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", CommandTypeMapper::GetNameForCommandType(m_type));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection StartCommandExecutionRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection StartCommandExecutionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeBuild_20161006.StartCommandExecution"));
   return headers;
-
 }
-
-
-
-

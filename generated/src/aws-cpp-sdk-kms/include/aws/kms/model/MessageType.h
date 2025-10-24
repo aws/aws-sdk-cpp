@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/kms/KMS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kms/KMS_EXPORTS.h>
 
-namespace Aws
-{
-namespace KMS
-{
-namespace Model
-{
-  enum class MessageType
-  {
-    NOT_SET,
-    RAW,
-    DIGEST,
-    EXTERNAL_MU
-  };
+namespace Aws {
+namespace KMS {
+namespace Model {
+enum class MessageType { NOT_SET, RAW, DIGEST, EXTERNAL_MU };
 
-namespace MessageTypeMapper
-{
+namespace MessageTypeMapper {
 AWS_KMS_API MessageType GetMessageTypeForName(const Aws::String& name);
 
 AWS_KMS_API Aws::String GetNameForMessageType(MessageType value);
-} // namespace MessageTypeMapper
-} // namespace Model
-} // namespace KMS
-} // namespace Aws
+}  // namespace MessageTypeMapper
+}  // namespace Model
+}  // namespace KMS
+}  // namespace Aws

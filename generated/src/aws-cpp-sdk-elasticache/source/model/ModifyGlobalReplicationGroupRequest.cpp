@@ -3,54 +3,45 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/ModifyGlobalReplicationGroupRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticache/model/ModifyGlobalReplicationGroupRequest.h>
 
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyGlobalReplicationGroupRequest::SerializePayload() const
-{
+Aws::String ModifyGlobalReplicationGroupRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyGlobalReplicationGroup&";
-  if(m_globalReplicationGroupIdHasBeenSet)
-  {
+  if (m_globalReplicationGroupIdHasBeenSet) {
     ss << "GlobalReplicationGroupId=" << StringUtils::URLEncode(m_globalReplicationGroupId.c_str()) << "&";
   }
 
-  if(m_applyImmediatelyHasBeenSet)
-  {
+  if (m_applyImmediatelyHasBeenSet) {
     ss << "ApplyImmediately=" << std::boolalpha << m_applyImmediately << "&";
   }
 
-  if(m_cacheNodeTypeHasBeenSet)
-  {
+  if (m_cacheNodeTypeHasBeenSet) {
     ss << "CacheNodeType=" << StringUtils::URLEncode(m_cacheNodeType.c_str()) << "&";
   }
 
-  if(m_engineHasBeenSet)
-  {
+  if (m_engineHasBeenSet) {
     ss << "Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
   }
 
-  if(m_engineVersionHasBeenSet)
-  {
+  if (m_engineVersionHasBeenSet) {
     ss << "EngineVersion=" << StringUtils::URLEncode(m_engineVersion.c_str()) << "&";
   }
 
-  if(m_cacheParameterGroupNameHasBeenSet)
-  {
+  if (m_cacheParameterGroupNameHasBeenSet) {
     ss << "CacheParameterGroupName=" << StringUtils::URLEncode(m_cacheParameterGroupName.c_str()) << "&";
   }
 
-  if(m_globalReplicationGroupDescriptionHasBeenSet)
-  {
+  if (m_globalReplicationGroupDescriptionHasBeenSet) {
     ss << "GlobalReplicationGroupDescription=" << StringUtils::URLEncode(m_globalReplicationGroupDescription.c_str()) << "&";
   }
 
-  if(m_automaticFailoverEnabledHasBeenSet)
-  {
+  if (m_automaticFailoverEnabledHasBeenSet) {
     ss << "AutomaticFailoverEnabled=" << std::boolalpha << m_automaticFailoverEnabled << "&";
   }
 
@@ -58,8 +49,4 @@ Aws::String ModifyGlobalReplicationGroupRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ModifyGlobalReplicationGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ModifyGlobalReplicationGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

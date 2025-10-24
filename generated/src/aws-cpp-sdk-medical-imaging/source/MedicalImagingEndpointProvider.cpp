@@ -5,12 +5,8 @@
 
 #include <aws/medical-imaging/MedicalImagingEndpointProvider.h>
 
-namespace Aws
-{
-namespace MedicalImaging
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace MedicalImaging
-} // namespace Aws
+namespace Aws {
+namespace MedicalImaging {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace MedicalImaging
+}  // namespace Aws

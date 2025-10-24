@@ -11,85 +11,69 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-AmazonTranscribeCallAnalyticsProcessorConfiguration::AmazonTranscribeCallAnalyticsProcessorConfiguration(JsonView jsonValue)
-{
+AmazonTranscribeCallAnalyticsProcessorConfiguration::AmazonTranscribeCallAnalyticsProcessorConfiguration(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-AmazonTranscribeCallAnalyticsProcessorConfiguration& AmazonTranscribeCallAnalyticsProcessorConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("LanguageCode"))
-  {
+AmazonTranscribeCallAnalyticsProcessorConfiguration& AmazonTranscribeCallAnalyticsProcessorConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("LanguageCode")) {
     m_languageCode = CallAnalyticsLanguageCodeMapper::GetCallAnalyticsLanguageCodeForName(jsonValue.GetString("LanguageCode"));
     m_languageCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VocabularyName"))
-  {
+  if (jsonValue.ValueExists("VocabularyName")) {
     m_vocabularyName = jsonValue.GetString("VocabularyName");
     m_vocabularyNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VocabularyFilterName"))
-  {
+  if (jsonValue.ValueExists("VocabularyFilterName")) {
     m_vocabularyFilterName = jsonValue.GetString("VocabularyFilterName");
     m_vocabularyFilterNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VocabularyFilterMethod"))
-  {
-    m_vocabularyFilterMethod = VocabularyFilterMethodMapper::GetVocabularyFilterMethodForName(jsonValue.GetString("VocabularyFilterMethod"));
+  if (jsonValue.ValueExists("VocabularyFilterMethod")) {
+    m_vocabularyFilterMethod =
+        VocabularyFilterMethodMapper::GetVocabularyFilterMethodForName(jsonValue.GetString("VocabularyFilterMethod"));
     m_vocabularyFilterMethodHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LanguageModelName"))
-  {
+  if (jsonValue.ValueExists("LanguageModelName")) {
     m_languageModelName = jsonValue.GetString("LanguageModelName");
     m_languageModelNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EnablePartialResultsStabilization"))
-  {
+  if (jsonValue.ValueExists("EnablePartialResultsStabilization")) {
     m_enablePartialResultsStabilization = jsonValue.GetBool("EnablePartialResultsStabilization");
     m_enablePartialResultsStabilizationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PartialResultsStability"))
-  {
-    m_partialResultsStability = PartialResultsStabilityMapper::GetPartialResultsStabilityForName(jsonValue.GetString("PartialResultsStability"));
+  if (jsonValue.ValueExists("PartialResultsStability")) {
+    m_partialResultsStability =
+        PartialResultsStabilityMapper::GetPartialResultsStabilityForName(jsonValue.GetString("PartialResultsStability"));
     m_partialResultsStabilityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ContentIdentificationType"))
-  {
+  if (jsonValue.ValueExists("ContentIdentificationType")) {
     m_contentIdentificationType = ContentTypeMapper::GetContentTypeForName(jsonValue.GetString("ContentIdentificationType"));
     m_contentIdentificationTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ContentRedactionType"))
-  {
+  if (jsonValue.ValueExists("ContentRedactionType")) {
     m_contentRedactionType = ContentTypeMapper::GetContentTypeForName(jsonValue.GetString("ContentRedactionType"));
     m_contentRedactionTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PiiEntityTypes"))
-  {
+  if (jsonValue.ValueExists("PiiEntityTypes")) {
     m_piiEntityTypes = jsonValue.GetString("PiiEntityTypes");
     m_piiEntityTypesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FilterPartialResults"))
-  {
+  if (jsonValue.ValueExists("FilterPartialResults")) {
     m_filterPartialResults = jsonValue.GetBool("FilterPartialResults");
     m_filterPartialResultsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PostCallAnalyticsSettings"))
-  {
+  if (jsonValue.ValueExists("PostCallAnalyticsSettings")) {
     m_postCallAnalyticsSettings = jsonValue.GetObject("PostCallAnalyticsSettings");
     m_postCallAnalyticsSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CallAnalyticsStreamCategories"))
-  {
+  if (jsonValue.ValueExists("CallAnalyticsStreamCategories")) {
     Aws::Utils::Array<JsonView> callAnalyticsStreamCategoriesJsonList = jsonValue.GetArray("CallAnalyticsStreamCategories");
-    for(unsigned callAnalyticsStreamCategoriesIndex = 0; callAnalyticsStreamCategoriesIndex < callAnalyticsStreamCategoriesJsonList.GetLength(); ++callAnalyticsStreamCategoriesIndex)
-    {
+    for (unsigned callAnalyticsStreamCategoriesIndex = 0;
+         callAnalyticsStreamCategoriesIndex < callAnalyticsStreamCategoriesJsonList.GetLength(); ++callAnalyticsStreamCategoriesIndex) {
       m_callAnalyticsStreamCategories.push_back(callAnalyticsStreamCategoriesJsonList[callAnalyticsStreamCategoriesIndex].AsString());
     }
     m_callAnalyticsStreamCategoriesHasBeenSet = true;
@@ -97,91 +81,71 @@ AmazonTranscribeCallAnalyticsProcessorConfiguration& AmazonTranscribeCallAnalyti
   return *this;
 }
 
-JsonValue AmazonTranscribeCallAnalyticsProcessorConfiguration::Jsonize() const
-{
+JsonValue AmazonTranscribeCallAnalyticsProcessorConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_languageCodeHasBeenSet)
-  {
-   payload.WithString("LanguageCode", CallAnalyticsLanguageCodeMapper::GetNameForCallAnalyticsLanguageCode(m_languageCode));
+  if (m_languageCodeHasBeenSet) {
+    payload.WithString("LanguageCode", CallAnalyticsLanguageCodeMapper::GetNameForCallAnalyticsLanguageCode(m_languageCode));
   }
 
-  if(m_vocabularyNameHasBeenSet)
-  {
-   payload.WithString("VocabularyName", m_vocabularyName);
-
+  if (m_vocabularyNameHasBeenSet) {
+    payload.WithString("VocabularyName", m_vocabularyName);
   }
 
-  if(m_vocabularyFilterNameHasBeenSet)
-  {
-   payload.WithString("VocabularyFilterName", m_vocabularyFilterName);
-
+  if (m_vocabularyFilterNameHasBeenSet) {
+    payload.WithString("VocabularyFilterName", m_vocabularyFilterName);
   }
 
-  if(m_vocabularyFilterMethodHasBeenSet)
-  {
-   payload.WithString("VocabularyFilterMethod", VocabularyFilterMethodMapper::GetNameForVocabularyFilterMethod(m_vocabularyFilterMethod));
+  if (m_vocabularyFilterMethodHasBeenSet) {
+    payload.WithString("VocabularyFilterMethod", VocabularyFilterMethodMapper::GetNameForVocabularyFilterMethod(m_vocabularyFilterMethod));
   }
 
-  if(m_languageModelNameHasBeenSet)
-  {
-   payload.WithString("LanguageModelName", m_languageModelName);
-
+  if (m_languageModelNameHasBeenSet) {
+    payload.WithString("LanguageModelName", m_languageModelName);
   }
 
-  if(m_enablePartialResultsStabilizationHasBeenSet)
-  {
-   payload.WithBool("EnablePartialResultsStabilization", m_enablePartialResultsStabilization);
-
+  if (m_enablePartialResultsStabilizationHasBeenSet) {
+    payload.WithBool("EnablePartialResultsStabilization", m_enablePartialResultsStabilization);
   }
 
-  if(m_partialResultsStabilityHasBeenSet)
-  {
-   payload.WithString("PartialResultsStability", PartialResultsStabilityMapper::GetNameForPartialResultsStability(m_partialResultsStability));
+  if (m_partialResultsStabilityHasBeenSet) {
+    payload.WithString("PartialResultsStability",
+                       PartialResultsStabilityMapper::GetNameForPartialResultsStability(m_partialResultsStability));
   }
 
-  if(m_contentIdentificationTypeHasBeenSet)
-  {
-   payload.WithString("ContentIdentificationType", ContentTypeMapper::GetNameForContentType(m_contentIdentificationType));
+  if (m_contentIdentificationTypeHasBeenSet) {
+    payload.WithString("ContentIdentificationType", ContentTypeMapper::GetNameForContentType(m_contentIdentificationType));
   }
 
-  if(m_contentRedactionTypeHasBeenSet)
-  {
-   payload.WithString("ContentRedactionType", ContentTypeMapper::GetNameForContentType(m_contentRedactionType));
+  if (m_contentRedactionTypeHasBeenSet) {
+    payload.WithString("ContentRedactionType", ContentTypeMapper::GetNameForContentType(m_contentRedactionType));
   }
 
-  if(m_piiEntityTypesHasBeenSet)
-  {
-   payload.WithString("PiiEntityTypes", m_piiEntityTypes);
-
+  if (m_piiEntityTypesHasBeenSet) {
+    payload.WithString("PiiEntityTypes", m_piiEntityTypes);
   }
 
-  if(m_filterPartialResultsHasBeenSet)
-  {
-   payload.WithBool("FilterPartialResults", m_filterPartialResults);
-
+  if (m_filterPartialResultsHasBeenSet) {
+    payload.WithBool("FilterPartialResults", m_filterPartialResults);
   }
 
-  if(m_postCallAnalyticsSettingsHasBeenSet)
-  {
-   payload.WithObject("PostCallAnalyticsSettings", m_postCallAnalyticsSettings.Jsonize());
-
+  if (m_postCallAnalyticsSettingsHasBeenSet) {
+    payload.WithObject("PostCallAnalyticsSettings", m_postCallAnalyticsSettings.Jsonize());
   }
 
-  if(m_callAnalyticsStreamCategoriesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> callAnalyticsStreamCategoriesJsonList(m_callAnalyticsStreamCategories.size());
-   for(unsigned callAnalyticsStreamCategoriesIndex = 0; callAnalyticsStreamCategoriesIndex < callAnalyticsStreamCategoriesJsonList.GetLength(); ++callAnalyticsStreamCategoriesIndex)
-   {
-     callAnalyticsStreamCategoriesJsonList[callAnalyticsStreamCategoriesIndex].AsString(m_callAnalyticsStreamCategories[callAnalyticsStreamCategoriesIndex]);
-   }
-   payload.WithArray("CallAnalyticsStreamCategories", std::move(callAnalyticsStreamCategoriesJsonList));
-
+  if (m_callAnalyticsStreamCategoriesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> callAnalyticsStreamCategoriesJsonList(m_callAnalyticsStreamCategories.size());
+    for (unsigned callAnalyticsStreamCategoriesIndex = 0;
+         callAnalyticsStreamCategoriesIndex < callAnalyticsStreamCategoriesJsonList.GetLength(); ++callAnalyticsStreamCategoriesIndex) {
+      callAnalyticsStreamCategoriesJsonList[callAnalyticsStreamCategoriesIndex].AsString(
+          m_callAnalyticsStreamCategories[callAnalyticsStreamCategoriesIndex]);
+    }
+    payload.WithArray("CallAnalyticsStreamCategories", std::move(callAnalyticsStreamCategoriesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/GenerateOrganizationsAccessReportRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/GenerateOrganizationsAccessReportRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String GenerateOrganizationsAccessReportRequest::SerializePayload() const
-{
+Aws::String GenerateOrganizationsAccessReportRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GenerateOrganizationsAccessReport&";
-  if(m_entityPathHasBeenSet)
-  {
+  if (m_entityPathHasBeenSet) {
     ss << "EntityPath=" << StringUtils::URLEncode(m_entityPath.c_str()) << "&";
   }
 
-  if(m_organizationsPolicyIdHasBeenSet)
-  {
+  if (m_organizationsPolicyIdHasBeenSet) {
     ss << "OrganizationsPolicyId=" << StringUtils::URLEncode(m_organizationsPolicyId.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String GenerateOrganizationsAccessReportRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GenerateOrganizationsAccessReportRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GenerateOrganizationsAccessReportRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

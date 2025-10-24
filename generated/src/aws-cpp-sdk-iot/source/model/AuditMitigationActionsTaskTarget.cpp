@@ -3,52 +3,41 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/AuditMitigationActionsTaskTarget.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot/model/AuditMitigationActionsTaskTarget.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
+namespace Aws {
+namespace IoT {
+namespace Model {
 
-AuditMitigationActionsTaskTarget::AuditMitigationActionsTaskTarget(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AuditMitigationActionsTaskTarget::AuditMitigationActionsTaskTarget(JsonView jsonValue) { *this = jsonValue; }
 
-AuditMitigationActionsTaskTarget& AuditMitigationActionsTaskTarget::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("auditTaskId"))
-  {
+AuditMitigationActionsTaskTarget& AuditMitigationActionsTaskTarget::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("auditTaskId")) {
     m_auditTaskId = jsonValue.GetString("auditTaskId");
     m_auditTaskIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("findingIds"))
-  {
+  if (jsonValue.ValueExists("findingIds")) {
     Aws::Utils::Array<JsonView> findingIdsJsonList = jsonValue.GetArray("findingIds");
-    for(unsigned findingIdsIndex = 0; findingIdsIndex < findingIdsJsonList.GetLength(); ++findingIdsIndex)
-    {
+    for (unsigned findingIdsIndex = 0; findingIdsIndex < findingIdsJsonList.GetLength(); ++findingIdsIndex) {
       m_findingIds.push_back(findingIdsJsonList[findingIdsIndex].AsString());
     }
     m_findingIdsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("auditCheckToReasonCodeFilter"))
-  {
-    Aws::Map<Aws::String, JsonView> auditCheckToReasonCodeFilterJsonMap = jsonValue.GetObject("auditCheckToReasonCodeFilter").GetAllObjects();
-    for(auto& auditCheckToReasonCodeFilterItem : auditCheckToReasonCodeFilterJsonMap)
-    {
+  if (jsonValue.ValueExists("auditCheckToReasonCodeFilter")) {
+    Aws::Map<Aws::String, JsonView> auditCheckToReasonCodeFilterJsonMap =
+        jsonValue.GetObject("auditCheckToReasonCodeFilter").GetAllObjects();
+    for (auto& auditCheckToReasonCodeFilterItem : auditCheckToReasonCodeFilterJsonMap) {
       Aws::Utils::Array<JsonView> reasonForNonComplianceCodesJsonList = auditCheckToReasonCodeFilterItem.second.AsArray();
       Aws::Vector<Aws::String> reasonForNonComplianceCodesList;
       reasonForNonComplianceCodesList.reserve((size_t)reasonForNonComplianceCodesJsonList.GetLength());
-      for(unsigned reasonForNonComplianceCodesIndex = 0; reasonForNonComplianceCodesIndex < reasonForNonComplianceCodesJsonList.GetLength(); ++reasonForNonComplianceCodesIndex)
-      {
+      for (unsigned reasonForNonComplianceCodesIndex = 0;
+           reasonForNonComplianceCodesIndex < reasonForNonComplianceCodesJsonList.GetLength(); ++reasonForNonComplianceCodesIndex) {
         reasonForNonComplianceCodesList.push_back(reasonForNonComplianceCodesJsonList[reasonForNonComplianceCodesIndex].AsString());
       }
       m_auditCheckToReasonCodeFilter[auditCheckToReasonCodeFilterItem.first] = std::move(reasonForNonComplianceCodesList);
@@ -58,46 +47,38 @@ AuditMitigationActionsTaskTarget& AuditMitigationActionsTaskTarget::operator =(J
   return *this;
 }
 
-JsonValue AuditMitigationActionsTaskTarget::Jsonize() const
-{
+JsonValue AuditMitigationActionsTaskTarget::Jsonize() const {
   JsonValue payload;
 
-  if(m_auditTaskIdHasBeenSet)
-  {
-   payload.WithString("auditTaskId", m_auditTaskId);
-
+  if (m_auditTaskIdHasBeenSet) {
+    payload.WithString("auditTaskId", m_auditTaskId);
   }
 
-  if(m_findingIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> findingIdsJsonList(m_findingIds.size());
-   for(unsigned findingIdsIndex = 0; findingIdsIndex < findingIdsJsonList.GetLength(); ++findingIdsIndex)
-   {
-     findingIdsJsonList[findingIdsIndex].AsString(m_findingIds[findingIdsIndex]);
-   }
-   payload.WithArray("findingIds", std::move(findingIdsJsonList));
-
+  if (m_findingIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> findingIdsJsonList(m_findingIds.size());
+    for (unsigned findingIdsIndex = 0; findingIdsIndex < findingIdsJsonList.GetLength(); ++findingIdsIndex) {
+      findingIdsJsonList[findingIdsIndex].AsString(m_findingIds[findingIdsIndex]);
+    }
+    payload.WithArray("findingIds", std::move(findingIdsJsonList));
   }
 
-  if(m_auditCheckToReasonCodeFilterHasBeenSet)
-  {
-   JsonValue auditCheckToReasonCodeFilterJsonMap;
-   for(auto& auditCheckToReasonCodeFilterItem : m_auditCheckToReasonCodeFilter)
-   {
-     Aws::Utils::Array<JsonValue> reasonForNonComplianceCodesJsonList(auditCheckToReasonCodeFilterItem.second.size());
-     for(unsigned reasonForNonComplianceCodesIndex = 0; reasonForNonComplianceCodesIndex < reasonForNonComplianceCodesJsonList.GetLength(); ++reasonForNonComplianceCodesIndex)
-     {
-       reasonForNonComplianceCodesJsonList[reasonForNonComplianceCodesIndex].AsString(auditCheckToReasonCodeFilterItem.second[reasonForNonComplianceCodesIndex]);
-     }
-     auditCheckToReasonCodeFilterJsonMap.WithArray(auditCheckToReasonCodeFilterItem.first, std::move(reasonForNonComplianceCodesJsonList));
-   }
-   payload.WithObject("auditCheckToReasonCodeFilter", std::move(auditCheckToReasonCodeFilterJsonMap));
-
+  if (m_auditCheckToReasonCodeFilterHasBeenSet) {
+    JsonValue auditCheckToReasonCodeFilterJsonMap;
+    for (auto& auditCheckToReasonCodeFilterItem : m_auditCheckToReasonCodeFilter) {
+      Aws::Utils::Array<JsonValue> reasonForNonComplianceCodesJsonList(auditCheckToReasonCodeFilterItem.second.size());
+      for (unsigned reasonForNonComplianceCodesIndex = 0;
+           reasonForNonComplianceCodesIndex < reasonForNonComplianceCodesJsonList.GetLength(); ++reasonForNonComplianceCodesIndex) {
+        reasonForNonComplianceCodesJsonList[reasonForNonComplianceCodesIndex].AsString(
+            auditCheckToReasonCodeFilterItem.second[reasonForNonComplianceCodesIndex]);
+      }
+      auditCheckToReasonCodeFilterJsonMap.WithArray(auditCheckToReasonCodeFilterItem.first, std::move(reasonForNonComplianceCodesJsonList));
+    }
+    payload.WithObject("auditCheckToReasonCodeFilter", std::move(auditCheckToReasonCodeFilterJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

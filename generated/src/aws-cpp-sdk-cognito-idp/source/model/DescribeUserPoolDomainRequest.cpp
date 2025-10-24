@@ -12,27 +12,18 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeUserPoolDomainRequest::SerializePayload() const
-{
+Aws::String DescribeUserPoolDomainRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_domainHasBeenSet)
-  {
-   payload.WithString("Domain", m_domain);
-
+  if (m_domainHasBeenSet) {
+    payload.WithString("Domain", m_domain);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeUserPoolDomainRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeUserPoolDomainRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityProviderService.DescribeUserPoolDomain"));
   return headers;
-
 }
-
-
-
-

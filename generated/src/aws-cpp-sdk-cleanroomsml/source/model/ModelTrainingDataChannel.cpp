@@ -11,62 +11,47 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRoomsML
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRoomsML {
+namespace Model {
 
-ModelTrainingDataChannel::ModelTrainingDataChannel(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ModelTrainingDataChannel::ModelTrainingDataChannel(JsonView jsonValue) { *this = jsonValue; }
 
-ModelTrainingDataChannel& ModelTrainingDataChannel::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("mlInputChannelArn"))
-  {
+ModelTrainingDataChannel& ModelTrainingDataChannel::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("mlInputChannelArn")) {
     m_mlInputChannelArn = jsonValue.GetString("mlInputChannelArn");
     m_mlInputChannelArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("channelName"))
-  {
+  if (jsonValue.ValueExists("channelName")) {
     m_channelName = jsonValue.GetString("channelName");
     m_channelNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("s3DataDistributionType"))
-  {
-    m_s3DataDistributionType = S3DataDistributionTypeMapper::GetS3DataDistributionTypeForName(jsonValue.GetString("s3DataDistributionType"));
+  if (jsonValue.ValueExists("s3DataDistributionType")) {
+    m_s3DataDistributionType =
+        S3DataDistributionTypeMapper::GetS3DataDistributionTypeForName(jsonValue.GetString("s3DataDistributionType"));
     m_s3DataDistributionTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ModelTrainingDataChannel::Jsonize() const
-{
+JsonValue ModelTrainingDataChannel::Jsonize() const {
   JsonValue payload;
 
-  if(m_mlInputChannelArnHasBeenSet)
-  {
-   payload.WithString("mlInputChannelArn", m_mlInputChannelArn);
-
+  if (m_mlInputChannelArnHasBeenSet) {
+    payload.WithString("mlInputChannelArn", m_mlInputChannelArn);
   }
 
-  if(m_channelNameHasBeenSet)
-  {
-   payload.WithString("channelName", m_channelName);
-
+  if (m_channelNameHasBeenSet) {
+    payload.WithString("channelName", m_channelName);
   }
 
-  if(m_s3DataDistributionTypeHasBeenSet)
-  {
-   payload.WithString("s3DataDistributionType", S3DataDistributionTypeMapper::GetNameForS3DataDistributionType(m_s3DataDistributionType));
+  if (m_s3DataDistributionTypeHasBeenSet) {
+    payload.WithString("s3DataDistributionType", S3DataDistributionTypeMapper::GetNameForS3DataDistributionType(m_s3DataDistributionType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRoomsML
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRoomsML
+}  // namespace Aws

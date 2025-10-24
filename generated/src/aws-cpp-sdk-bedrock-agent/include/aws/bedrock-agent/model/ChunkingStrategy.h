@@ -7,27 +7,16 @@
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
-  enum class ChunkingStrategy
-  {
-    NOT_SET,
-    FIXED_SIZE,
-    NONE,
-    HIERARCHICAL,
-    SEMANTIC
-  };
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
+enum class ChunkingStrategy { NOT_SET, FIXED_SIZE, NONE, HIERARCHICAL, SEMANTIC };
 
-namespace ChunkingStrategyMapper
-{
+namespace ChunkingStrategyMapper {
 AWS_BEDROCKAGENT_API ChunkingStrategy GetChunkingStrategyForName(const Aws::String& name);
 
 AWS_BEDROCKAGENT_API Aws::String GetNameForChunkingStrategy(ChunkingStrategy value);
-} // namespace ChunkingStrategyMapper
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace ChunkingStrategyMapper
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mgn/model/ArchiveWaveResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/mgn/model/ArchiveWaveResult.h>
 
 #include <utility>
 
@@ -17,72 +17,56 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ArchiveWaveResult::ArchiveWaveResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ArchiveWaveResult::ArchiveWaveResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ArchiveWaveResult& ArchiveWaveResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ArchiveWaveResult& ArchiveWaveResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("arn"))
-  {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("creationDateTime"))
-  {
+  if (jsonValue.ValueExists("creationDateTime")) {
     m_creationDateTime = jsonValue.GetString("creationDateTime");
     m_creationDateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("isArchived"))
-  {
+  if (jsonValue.ValueExists("isArchived")) {
     m_isArchived = jsonValue.GetBool("isArchived");
     m_isArchivedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastModifiedDateTime"))
-  {
+  if (jsonValue.ValueExists("lastModifiedDateTime")) {
     m_lastModifiedDateTime = jsonValue.GetString("lastModifiedDateTime");
     m_lastModifiedDateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tags"))
-  {
+  if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
+    for (auto& tagsItem : tagsJsonMap) {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("waveAggregatedStatus"))
-  {
+  if (jsonValue.ValueExists("waveAggregatedStatus")) {
     m_waveAggregatedStatus = jsonValue.GetObject("waveAggregatedStatus");
     m_waveAggregatedStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("waveID"))
-  {
+  if (jsonValue.ValueExists("waveID")) {
     m_waveID = jsonValue.GetString("waveID");
     m_waveIDHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

@@ -5,19 +5,16 @@
 
 #pragma once
 
-#include <aws/pricing/Pricing_EXPORTS.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
+#include <aws/pricing/Pricing_EXPORTS.h>
 
-namespace Aws
-{
-namespace Client
-{
+namespace Aws {
+namespace Client {
 
-class AWS_PRICING_API PricingErrorMarshaller : public Aws::Client::JsonErrorMarshaller
-{
-public:
+class AWS_PRICING_API PricingErrorMarshaller : public Aws::Client::JsonErrorMarshaller {
+ public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Client
-} // namespace Aws
+}  // namespace Client
+}  // namespace Aws

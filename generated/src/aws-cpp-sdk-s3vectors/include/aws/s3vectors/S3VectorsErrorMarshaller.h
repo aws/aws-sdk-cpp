@@ -5,19 +5,16 @@
 
 #pragma once
 
-#include <aws/s3vectors/S3Vectors_EXPORTS.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
+#include <aws/s3vectors/S3Vectors_EXPORTS.h>
 
-namespace Aws
-{
-namespace Client
-{
+namespace Aws {
+namespace Client {
 
-class AWS_S3VECTORS_API S3VectorsErrorMarshaller : public Aws::Client::JsonErrorMarshaller
-{
-public:
+class AWS_S3VECTORS_API S3VectorsErrorMarshaller : public Aws::Client::JsonErrorMarshaller {
+ public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Client
-} // namespace Aws
+}  // namespace Client
+}  // namespace Aws

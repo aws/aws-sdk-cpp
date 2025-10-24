@@ -3,72 +3,60 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sns/model/PhoneNumberInformation.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/sns/model/PhoneNumberInformation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SNS
-{
-namespace Model
-{
+namespace Aws {
+namespace SNS {
+namespace Model {
 
-PhoneNumberInformation::PhoneNumberInformation(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+PhoneNumberInformation::PhoneNumberInformation(const XmlNode& xmlNode) { *this = xmlNode; }
 
-PhoneNumberInformation& PhoneNumberInformation::operator =(const XmlNode& xmlNode)
-{
+PhoneNumberInformation& PhoneNumberInformation::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode createdAtNode = resultNode.FirstChild("CreatedAt");
-    if(!createdAtNode.IsNull())
-    {
-      m_createdAt = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdAtNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+    if (!createdAtNode.IsNull()) {
+      m_createdAt = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdAtNode.GetText()).c_str()).c_str(),
+                             Aws::Utils::DateFormat::ISO_8601);
       m_createdAtHasBeenSet = true;
     }
     XmlNode phoneNumberNode = resultNode.FirstChild("PhoneNumber");
-    if(!phoneNumberNode.IsNull())
-    {
+    if (!phoneNumberNode.IsNull()) {
       m_phoneNumber = Aws::Utils::Xml::DecodeEscapedXmlText(phoneNumberNode.GetText());
       m_phoneNumberHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    if(!statusNode.IsNull())
-    {
+    if (!statusNode.IsNull()) {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
     }
     XmlNode iso2CountryCodeNode = resultNode.FirstChild("Iso2CountryCode");
-    if(!iso2CountryCodeNode.IsNull())
-    {
+    if (!iso2CountryCodeNode.IsNull()) {
       m_iso2CountryCode = Aws::Utils::Xml::DecodeEscapedXmlText(iso2CountryCodeNode.GetText());
       m_iso2CountryCodeHasBeenSet = true;
     }
     XmlNode routeTypeNode = resultNode.FirstChild("RouteType");
-    if(!routeTypeNode.IsNull())
-    {
-      m_routeType = RouteTypeMapper::GetRouteTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(routeTypeNode.GetText()).c_str()));
+    if (!routeTypeNode.IsNull()) {
+      m_routeType =
+          RouteTypeMapper::GetRouteTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(routeTypeNode.GetText()).c_str()));
       m_routeTypeHasBeenSet = true;
     }
     XmlNode numberCapabilitiesNode = resultNode.FirstChild("NumberCapabilities");
-    if(!numberCapabilitiesNode.IsNull())
-    {
+    if (!numberCapabilitiesNode.IsNull()) {
       XmlNode numberCapabilitiesMember = numberCapabilitiesNode.FirstChild("member");
       m_numberCapabilitiesHasBeenSet = !numberCapabilitiesMember.IsNull();
-      while(!numberCapabilitiesMember.IsNull())
-      {
-        m_numberCapabilities.push_back(NumberCapabilityMapper::GetNumberCapabilityForName(StringUtils::Trim(numberCapabilitiesMember.GetText().c_str())));
+      while (!numberCapabilitiesMember.IsNull()) {
+        m_numberCapabilities.push_back(
+            NumberCapabilityMapper::GetNumberCapabilityForName(StringUtils::Trim(numberCapabilitiesMember.GetText().c_str())));
         numberCapabilitiesMember = numberCapabilitiesMember.NextNode("member");
       }
 
@@ -79,76 +67,64 @@ PhoneNumberInformation& PhoneNumberInformation::operator =(const XmlNode& xmlNod
   return *this;
 }
 
-void PhoneNumberInformation::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_createdAtHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".CreatedAt=" << StringUtils::URLEncode(m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+void PhoneNumberInformation::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_createdAtHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".CreatedAt=" << StringUtils::URLEncode(m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_phoneNumberHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".PhoneNumber=" << StringUtils::URLEncode(m_phoneNumber.c_str()) << "&";
+  if (m_phoneNumberHasBeenSet) {
+    oStream << location << index << locationValue << ".PhoneNumber=" << StringUtils::URLEncode(m_phoneNumber.c_str()) << "&";
   }
 
-  if(m_statusHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
+  if (m_statusHasBeenSet) {
+    oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
 
-  if(m_iso2CountryCodeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Iso2CountryCode=" << StringUtils::URLEncode(m_iso2CountryCode.c_str()) << "&";
+  if (m_iso2CountryCodeHasBeenSet) {
+    oStream << location << index << locationValue << ".Iso2CountryCode=" << StringUtils::URLEncode(m_iso2CountryCode.c_str()) << "&";
   }
 
-  if(m_routeTypeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".RouteType=" << StringUtils::URLEncode(RouteTypeMapper::GetNameForRouteType(m_routeType)) << "&";
+  if (m_routeTypeHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".RouteType=" << StringUtils::URLEncode(RouteTypeMapper::GetNameForRouteType(m_routeType)) << "&";
   }
 
-  if(m_numberCapabilitiesHasBeenSet)
-  {
-      unsigned numberCapabilitiesIdx = 1;
-      for(auto& item : m_numberCapabilities)
-      {
-        oStream << location << index << locationValue << ".NumberCapabilities.member." << numberCapabilitiesIdx++ << "=" << StringUtils::URLEncode(NumberCapabilityMapper::GetNameForNumberCapability(item)) << "&";
-      }
-  }
-
-}
-
-void PhoneNumberInformation::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_createdAtHasBeenSet)
-  {
-      oStream << location << ".CreatedAt=" << StringUtils::URLEncode(m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
-  }
-  if(m_phoneNumberHasBeenSet)
-  {
-      oStream << location << ".PhoneNumber=" << StringUtils::URLEncode(m_phoneNumber.c_str()) << "&";
-  }
-  if(m_statusHasBeenSet)
-  {
-      oStream << location << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
-  }
-  if(m_iso2CountryCodeHasBeenSet)
-  {
-      oStream << location << ".Iso2CountryCode=" << StringUtils::URLEncode(m_iso2CountryCode.c_str()) << "&";
-  }
-  if(m_routeTypeHasBeenSet)
-  {
-      oStream << location << ".RouteType=" << StringUtils::URLEncode(RouteTypeMapper::GetNameForRouteType(m_routeType)) << "&";
-  }
-  if(m_numberCapabilitiesHasBeenSet)
-  {
-      unsigned numberCapabilitiesIdx = 1;
-      for(auto& item : m_numberCapabilities)
-      {
-        oStream << location << ".NumberCapabilities.member." << numberCapabilitiesIdx++ << "=" << StringUtils::URLEncode(NumberCapabilityMapper::GetNameForNumberCapability(item)) << "&";
-      }
+  if (m_numberCapabilitiesHasBeenSet) {
+    unsigned numberCapabilitiesIdx = 1;
+    for (auto& item : m_numberCapabilities) {
+      oStream << location << index << locationValue << ".NumberCapabilities.member." << numberCapabilitiesIdx++ << "="
+              << StringUtils::URLEncode(NumberCapabilityMapper::GetNameForNumberCapability(item)) << "&";
+    }
   }
 }
 
-} // namespace Model
-} // namespace SNS
-} // namespace Aws
+void PhoneNumberInformation::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_createdAtHasBeenSet) {
+    oStream << location << ".CreatedAt=" << StringUtils::URLEncode(m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str())
+            << "&";
+  }
+  if (m_phoneNumberHasBeenSet) {
+    oStream << location << ".PhoneNumber=" << StringUtils::URLEncode(m_phoneNumber.c_str()) << "&";
+  }
+  if (m_statusHasBeenSet) {
+    oStream << location << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
+  }
+  if (m_iso2CountryCodeHasBeenSet) {
+    oStream << location << ".Iso2CountryCode=" << StringUtils::URLEncode(m_iso2CountryCode.c_str()) << "&";
+  }
+  if (m_routeTypeHasBeenSet) {
+    oStream << location << ".RouteType=" << StringUtils::URLEncode(RouteTypeMapper::GetNameForRouteType(m_routeType)) << "&";
+  }
+  if (m_numberCapabilitiesHasBeenSet) {
+    unsigned numberCapabilitiesIdx = 1;
+    for (auto& item : m_numberCapabilities) {
+      oStream << location << ".NumberCapabilities.member." << numberCapabilitiesIdx++ << "="
+              << StringUtils::URLEncode(NumberCapabilityMapper::GetNameForNumberCapability(item)) << "&";
+    }
+  }
+}
+
+}  // namespace Model
+}  // namespace SNS
+}  // namespace Aws

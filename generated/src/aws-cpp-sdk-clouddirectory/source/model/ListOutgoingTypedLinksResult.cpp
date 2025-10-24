@@ -4,10 +4,10 @@
  */
 
 #include <aws/clouddirectory/model/ListOutgoingTypedLinksResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,37 +17,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListOutgoingTypedLinksResult::ListOutgoingTypedLinksResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListOutgoingTypedLinksResult::ListOutgoingTypedLinksResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListOutgoingTypedLinksResult& ListOutgoingTypedLinksResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListOutgoingTypedLinksResult& ListOutgoingTypedLinksResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("TypedLinkSpecifiers"))
-  {
+  if (jsonValue.ValueExists("TypedLinkSpecifiers")) {
     Aws::Utils::Array<JsonView> typedLinkSpecifiersJsonList = jsonValue.GetArray("TypedLinkSpecifiers");
-    for(unsigned typedLinkSpecifiersIndex = 0; typedLinkSpecifiersIndex < typedLinkSpecifiersJsonList.GetLength(); ++typedLinkSpecifiersIndex)
-    {
+    for (unsigned typedLinkSpecifiersIndex = 0; typedLinkSpecifiersIndex < typedLinkSpecifiersJsonList.GetLength();
+         ++typedLinkSpecifiersIndex) {
       m_typedLinkSpecifiers.push_back(typedLinkSpecifiersJsonList[typedLinkSpecifiersIndex].AsObject());
     }
     m_typedLinkSpecifiersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NextToken"))
-  {
+  if (jsonValue.ValueExists("NextToken")) {
     m_nextToken = jsonValue.GetString("NextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

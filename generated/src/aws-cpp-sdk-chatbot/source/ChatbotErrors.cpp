@@ -3,20 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/chatbot/ChatbotErrors.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
-#include <aws/chatbot/ChatbotErrors.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::chatbot;
 
-namespace Aws
-{
-namespace chatbot
-{
-namespace ChatbotErrorMapper
-{
+namespace Aws {
+namespace chatbot {
+namespace ChatbotErrorMapper {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int UPDATE_SLACK_CHANNEL_CONFIGURATION_HASH = HashingUtils::HashString("UpdateSlackChannelConfigurationException");
@@ -49,134 +46,74 @@ static const int DELETE_CHIME_WEBHOOK_CONFIGURATION_HASH = HashingUtils::HashStr
 static const int DELETE_SLACK_WORKSPACE_AUTHORIZATION_FAULT_HASH = HashingUtils::HashString("DeleteSlackWorkspaceAuthorizationFault");
 static const int DELETE_TEAMS_CHANNEL_CONFIGURATION_HASH = HashingUtils::HashString("DeleteTeamsChannelConfigurationException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == CONFLICT_HASH)
-  {
+  if (hashCode == CONFLICT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == UPDATE_SLACK_CHANNEL_CONFIGURATION_HASH)
-  {
+  } else if (hashCode == UPDATE_SLACK_CHANNEL_CONFIGURATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::UPDATE_SLACK_CHANNEL_CONFIGURATION), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == LIST_TEAMS_CHANNEL_CONFIGURATIONS_HASH)
-  {
+  } else if (hashCode == LIST_TEAMS_CHANNEL_CONFIGURATIONS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::LIST_TEAMS_CHANNEL_CONFIGURATIONS), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == LIST_MICROSOFT_TEAMS_CONFIGURED_TEAMS_HASH)
-  {
+  } else if (hashCode == LIST_MICROSOFT_TEAMS_CONFIGURED_TEAMS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::LIST_MICROSOFT_TEAMS_CONFIGURED_TEAMS), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == CREATE_CHIME_WEBHOOK_CONFIGURATION_HASH)
-  {
+  } else if (hashCode == CREATE_CHIME_WEBHOOK_CONFIGURATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::CREATE_CHIME_WEBHOOK_CONFIGURATION), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == CREATE_SLACK_CHANNEL_CONFIGURATION_HASH)
-  {
+  } else if (hashCode == CREATE_SLACK_CHANNEL_CONFIGURATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::CREATE_SLACK_CHANNEL_CONFIGURATION), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == UPDATE_ACCOUNT_PREFERENCES_HASH)
-  {
+  } else if (hashCode == UPDATE_ACCOUNT_PREFERENCES_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::UPDATE_ACCOUNT_PREFERENCES), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == UPDATE_CHIME_WEBHOOK_CONFIGURATION_HASH)
-  {
+  } else if (hashCode == UPDATE_CHIME_WEBHOOK_CONFIGURATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::UPDATE_CHIME_WEBHOOK_CONFIGURATION), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == DELETE_SLACK_CHANNEL_CONFIGURATION_HASH)
-  {
+  } else if (hashCode == DELETE_SLACK_CHANNEL_CONFIGURATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::DELETE_SLACK_CHANNEL_CONFIGURATION), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == DESCRIBE_SLACK_WORKSPACES_HASH)
-  {
+  } else if (hashCode == DESCRIBE_SLACK_WORKSPACES_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::DESCRIBE_SLACK_WORKSPACES), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == DESCRIBE_SLACK_CHANNEL_CONFIGURATIONS_HASH)
-  {
+  } else if (hashCode == DESCRIBE_SLACK_CHANNEL_CONFIGURATIONS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::DESCRIBE_SLACK_CHANNEL_CONFIGURATIONS), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == INTERNAL_SERVICE_HASH)
-  {
+  } else if (hashCode == INTERNAL_SERVICE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::INTERNAL_SERVICE), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == DESCRIBE_SLACK_USER_IDENTITIES_HASH)
-  {
+  } else if (hashCode == DESCRIBE_SLACK_USER_IDENTITIES_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::DESCRIBE_SLACK_USER_IDENTITIES), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == DESCRIBE_CHIME_WEBHOOK_CONFIGURATIONS_HASH)
-  {
+  } else if (hashCode == DESCRIBE_CHIME_WEBHOOK_CONFIGURATIONS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::DESCRIBE_CHIME_WEBHOOK_CONFIGURATIONS), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == INVALID_PARAMETER_HASH)
-  {
+  } else if (hashCode == INVALID_PARAMETER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == UNAUTHORIZED_HASH)
-  {
+  } else if (hashCode == UNAUTHORIZED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::UNAUTHORIZED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DELETE_TEAMS_CONFIGURED_TEAM_HASH)
-  {
+  } else if (hashCode == DELETE_TEAMS_CONFIGURED_TEAM_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::DELETE_TEAMS_CONFIGURED_TEAM), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == DELETE_MICROSOFT_TEAMS_USER_IDENTITY_HASH)
-  {
+  } else if (hashCode == DELETE_MICROSOFT_TEAMS_USER_IDENTITY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::DELETE_MICROSOFT_TEAMS_USER_IDENTITY), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == CREATE_TEAMS_CHANNEL_CONFIGURATION_HASH)
-  {
+  } else if (hashCode == CREATE_TEAMS_CHANNEL_CONFIGURATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::CREATE_TEAMS_CHANNEL_CONFIGURATION), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == GET_ACCOUNT_PREFERENCES_HASH)
-  {
+  } else if (hashCode == GET_ACCOUNT_PREFERENCES_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::GET_ACCOUNT_PREFERENCES), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == INVALID_REQUEST_HASH)
-  {
+  } else if (hashCode == INVALID_REQUEST_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DELETE_SLACK_USER_IDENTITY_HASH)
-  {
+  } else if (hashCode == DELETE_SLACK_USER_IDENTITY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::DELETE_SLACK_USER_IDENTITY), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == LIST_MICROSOFT_TEAMS_USER_IDENTITIES_HASH)
-  {
+  } else if (hashCode == LIST_MICROSOFT_TEAMS_USER_IDENTITIES_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::LIST_MICROSOFT_TEAMS_USER_IDENTITIES), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == UPDATE_TEAMS_CHANNEL_CONFIGURATION_HASH)
-  {
+  } else if (hashCode == UPDATE_TEAMS_CHANNEL_CONFIGURATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::UPDATE_TEAMS_CHANNEL_CONFIGURATION), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == GET_TEAMS_CHANNEL_CONFIGURATION_HASH)
-  {
+  } else if (hashCode == GET_TEAMS_CHANNEL_CONFIGURATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::GET_TEAMS_CHANNEL_CONFIGURATION), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == TOO_MANY_TAGS_HASH)
-  {
+  } else if (hashCode == TOO_MANY_TAGS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::TOO_MANY_TAGS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == DELETE_CHIME_WEBHOOK_CONFIGURATION_HASH)
-  {
+  } else if (hashCode == DELETE_CHIME_WEBHOOK_CONFIGURATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::DELETE_CHIME_WEBHOOK_CONFIGURATION), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == DELETE_SLACK_WORKSPACE_AUTHORIZATION_FAULT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::DELETE_SLACK_WORKSPACE_AUTHORIZATION_FAULT), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == DELETE_TEAMS_CHANNEL_CONFIGURATION_HASH)
-  {
+  } else if (hashCode == DELETE_SLACK_WORKSPACE_AUTHORIZATION_FAULT_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::DELETE_SLACK_WORKSPACE_AUTHORIZATION_FAULT),
+                                RetryableType::RETRYABLE);
+  } else if (hashCode == DELETE_TEAMS_CHANNEL_CONFIGURATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::DELETE_TEAMS_CHANNEL_CONFIGURATION), RetryableType::RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace ChatbotErrorMapper
-} // namespace chatbot
-} // namespace Aws
+}  // namespace ChatbotErrorMapper
+}  // namespace chatbot
+}  // namespace Aws

@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/glacier/Glacier_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glacier/Glacier_EXPORTS.h>
 
-namespace Aws
-{
-namespace Glacier
-{
-namespace Model
-{
-  enum class ActionCode
-  {
-    NOT_SET,
-    ArchiveRetrieval,
-    InventoryRetrieval,
-    Select
-  };
+namespace Aws {
+namespace Glacier {
+namespace Model {
+enum class ActionCode { NOT_SET, ArchiveRetrieval, InventoryRetrieval, Select };
 
-namespace ActionCodeMapper
-{
+namespace ActionCodeMapper {
 AWS_GLACIER_API ActionCode GetActionCodeForName(const Aws::String& name);
 
 AWS_GLACIER_API Aws::String GetNameForActionCode(ActionCode value);
-} // namespace ActionCodeMapper
-} // namespace Model
-} // namespace Glacier
-} // namespace Aws
+}  // namespace ActionCodeMapper
+}  // namespace Model
+}  // namespace Glacier
+}  // namespace Aws

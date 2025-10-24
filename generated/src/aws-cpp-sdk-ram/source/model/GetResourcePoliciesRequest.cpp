@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ram/model/GetResourcePoliciesRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ram/model/GetResourcePoliciesRequest.h>
 
 #include <utility>
 
@@ -12,42 +12,28 @@ using namespace Aws::RAM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetResourcePoliciesRequest::SerializePayload() const
-{
+Aws::String GetResourcePoliciesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceArnsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> resourceArnsJsonList(m_resourceArns.size());
-   for(unsigned resourceArnsIndex = 0; resourceArnsIndex < resourceArnsJsonList.GetLength(); ++resourceArnsIndex)
-   {
-     resourceArnsJsonList[resourceArnsIndex].AsString(m_resourceArns[resourceArnsIndex]);
-   }
-   payload.WithArray("resourceArns", std::move(resourceArnsJsonList));
-
+  if (m_resourceArnsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> resourceArnsJsonList(m_resourceArns.size());
+    for (unsigned resourceArnsIndex = 0; resourceArnsIndex < resourceArnsJsonList.GetLength(); ++resourceArnsIndex) {
+      resourceArnsJsonList[resourceArnsIndex].AsString(m_resourceArns[resourceArnsIndex]);
+    }
+    payload.WithArray("resourceArns", std::move(resourceArnsJsonList));
   }
 
-  if(m_principalHasBeenSet)
-  {
-   payload.WithString("principal", m_principal);
-
+  if (m_principalHasBeenSet) {
+    payload.WithString("principal", m_principal);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("nextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("nextToken", m_nextToken);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("maxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("maxResults", m_maxResults);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sns/model/ConfirmSubscriptionRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sns/model/ConfirmSubscriptionRequest.h>
 
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-Aws::String ConfirmSubscriptionRequest::SerializePayload() const
-{
+Aws::String ConfirmSubscriptionRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ConfirmSubscription&";
-  if(m_topicArnHasBeenSet)
-  {
+  if (m_topicArnHasBeenSet) {
     ss << "TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
   }
 
-  if(m_tokenHasBeenSet)
-  {
+  if (m_tokenHasBeenSet) {
     ss << "Token=" << StringUtils::URLEncode(m_token.c_str()) << "&";
   }
 
-  if(m_authenticateOnUnsubscribeHasBeenSet)
-  {
+  if (m_authenticateOnUnsubscribeHasBeenSet) {
     ss << "AuthenticateOnUnsubscribe=" << StringUtils::URLEncode(m_authenticateOnUnsubscribe.c_str()) << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String ConfirmSubscriptionRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ConfirmSubscriptionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ConfirmSubscriptionRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

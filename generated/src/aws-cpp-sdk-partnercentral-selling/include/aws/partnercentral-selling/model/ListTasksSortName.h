@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 
-namespace Aws
-{
-namespace PartnerCentralSelling
-{
-namespace Model
-{
-  enum class ListTasksSortName
-  {
-    NOT_SET,
-    StartTime
-  };
+namespace Aws {
+namespace PartnerCentralSelling {
+namespace Model {
+enum class ListTasksSortName { NOT_SET, StartTime };
 
-namespace ListTasksSortNameMapper
-{
+namespace ListTasksSortNameMapper {
 AWS_PARTNERCENTRALSELLING_API ListTasksSortName GetListTasksSortNameForName(const Aws::String& name);
 
 AWS_PARTNERCENTRALSELLING_API Aws::String GetNameForListTasksSortName(ListTasksSortName value);
-} // namespace ListTasksSortNameMapper
-} // namespace Model
-} // namespace PartnerCentralSelling
-} // namespace Aws
+}  // namespace ListTasksSortNameMapper
+}  // namespace Model
+}  // namespace PartnerCentralSelling
+}  // namespace Aws

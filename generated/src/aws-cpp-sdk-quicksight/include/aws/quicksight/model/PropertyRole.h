@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class PropertyRole
-  {
-    NOT_SET,
-    PRIMARY,
-    ID
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class PropertyRole { NOT_SET, PRIMARY, ID };
 
-namespace PropertyRoleMapper
-{
+namespace PropertyRoleMapper {
 AWS_QUICKSIGHT_API PropertyRole GetPropertyRoleForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForPropertyRole(PropertyRole value);
-} // namespace PropertyRoleMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace PropertyRoleMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dms/model/BatchStartRecommendationsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/dms/model/BatchStartRecommendationsResult.h>
 
 #include <utility>
 
@@ -17,19 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchStartRecommendationsResult::BatchStartRecommendationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+BatchStartRecommendationsResult::BatchStartRecommendationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-BatchStartRecommendationsResult& BatchStartRecommendationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+BatchStartRecommendationsResult& BatchStartRecommendationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("ErrorEntries"))
-  {
+  if (jsonValue.ValueExists("ErrorEntries")) {
     Aws::Utils::Array<JsonView> errorEntriesJsonList = jsonValue.GetArray("ErrorEntries");
-    for(unsigned errorEntriesIndex = 0; errorEntriesIndex < errorEntriesJsonList.GetLength(); ++errorEntriesIndex)
-    {
+    for (unsigned errorEntriesIndex = 0; errorEntriesIndex < errorEntriesJsonList.GetLength(); ++errorEntriesIndex) {
       m_errorEntries.push_back(errorEntriesJsonList[errorEntriesIndex].AsObject());
     }
     m_errorEntriesHasBeenSet = true;
@@ -37,12 +31,10 @@ BatchStartRecommendationsResult& BatchStartRecommendationsResult::operator =(con
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

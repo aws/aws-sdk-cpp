@@ -12,39 +12,26 @@ using namespace Aws::ComprehendMedical::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListEntitiesDetectionV2JobsRequest::SerializePayload() const
-{
+Aws::String ListEntitiesDetectionV2JobsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_filterHasBeenSet)
-  {
-   payload.WithObject("Filter", m_filter.Jsonize());
-
+  if (m_filterHasBeenSet) {
+    payload.WithObject("Filter", m_filter.Jsonize());
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("MaxResults", m_maxResults);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ListEntitiesDetectionV2JobsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListEntitiesDetectionV2JobsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ComprehendMedical_20181030.ListEntitiesDetectionV2Jobs"));
   return headers;
-
 }
-
-
-
-

@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Athena
-{
-namespace Model
-{
+namespace Aws {
+namespace Athena {
+namespace Model {
 
-ResultReuseInformation::ResultReuseInformation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResultReuseInformation::ResultReuseInformation(JsonView jsonValue) { *this = jsonValue; }
 
-ResultReuseInformation& ResultReuseInformation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ReusedPreviousResult"))
-  {
+ResultReuseInformation& ResultReuseInformation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ReusedPreviousResult")) {
     m_reusedPreviousResult = jsonValue.GetBool("ReusedPreviousResult");
     m_reusedPreviousResultHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResultReuseInformation::Jsonize() const
-{
+JsonValue ResultReuseInformation::Jsonize() const {
   JsonValue payload;
 
-  if(m_reusedPreviousResultHasBeenSet)
-  {
-   payload.WithBool("ReusedPreviousResult", m_reusedPreviousResult);
-
+  if (m_reusedPreviousResultHasBeenSet) {
+    payload.WithBool("ReusedPreviousResult", m_reusedPreviousResult);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Athena
-} // namespace Aws
+}  // namespace Model
+}  // namespace Athena
+}  // namespace Aws

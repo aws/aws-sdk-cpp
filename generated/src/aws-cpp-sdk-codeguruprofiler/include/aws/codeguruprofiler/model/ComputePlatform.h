@@ -7,25 +7,16 @@
 #include <aws/codeguruprofiler/CodeGuruProfiler_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CodeGuruProfiler
-{
-namespace Model
-{
-  enum class ComputePlatform
-  {
-    NOT_SET,
-    Default,
-    AWSLambda
-  };
+namespace Aws {
+namespace CodeGuruProfiler {
+namespace Model {
+enum class ComputePlatform { NOT_SET, Default, AWSLambda };
 
-namespace ComputePlatformMapper
-{
+namespace ComputePlatformMapper {
 AWS_CODEGURUPROFILER_API ComputePlatform GetComputePlatformForName(const Aws::String& name);
 
 AWS_CODEGURUPROFILER_API Aws::String GetNameForComputePlatform(ComputePlatform value);
-} // namespace ComputePlatformMapper
-} // namespace Model
-} // namespace CodeGuruProfiler
-} // namespace Aws
+}  // namespace ComputePlatformMapper
+}  // namespace Model
+}  // namespace CodeGuruProfiler
+}  // namespace Aws

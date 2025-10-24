@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-InvalidRequestException::InvalidRequestException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InvalidRequestException::InvalidRequestException(JsonView jsonValue) { *this = jsonValue; }
 
-InvalidRequestException& InvalidRequestException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Message"))
-  {
+InvalidRequestException& InvalidRequestException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Reason"))
-  {
+  if (jsonValue.ValueExists("Reason")) {
     m_reason = jsonValue.GetObject("Reason");
     m_reasonHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InvalidRequestException::Jsonize() const
-{
+JsonValue InvalidRequestException::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
-  if(m_reasonHasBeenSet)
-  {
-   payload.WithObject("Reason", m_reason.Jsonize());
-
+  if (m_reasonHasBeenSet) {
+    payload.WithObject("Reason", m_reason.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

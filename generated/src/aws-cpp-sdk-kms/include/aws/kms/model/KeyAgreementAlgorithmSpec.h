@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/kms/KMS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kms/KMS_EXPORTS.h>
 
-namespace Aws
-{
-namespace KMS
-{
-namespace Model
-{
-  enum class KeyAgreementAlgorithmSpec
-  {
-    NOT_SET,
-    ECDH
-  };
+namespace Aws {
+namespace KMS {
+namespace Model {
+enum class KeyAgreementAlgorithmSpec { NOT_SET, ECDH };
 
-namespace KeyAgreementAlgorithmSpecMapper
-{
+namespace KeyAgreementAlgorithmSpecMapper {
 AWS_KMS_API KeyAgreementAlgorithmSpec GetKeyAgreementAlgorithmSpecForName(const Aws::String& name);
 
 AWS_KMS_API Aws::String GetNameForKeyAgreementAlgorithmSpec(KeyAgreementAlgorithmSpec value);
-} // namespace KeyAgreementAlgorithmSpecMapper
-} // namespace Model
-} // namespace KMS
-} // namespace Aws
+}  // namespace KeyAgreementAlgorithmSpecMapper
+}  // namespace Model
+}  // namespace KMS
+}  // namespace Aws

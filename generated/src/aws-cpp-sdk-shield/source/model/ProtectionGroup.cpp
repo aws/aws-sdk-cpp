@@ -3,110 +3,85 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/shield/model/ProtectionGroup.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/shield/model/ProtectionGroup.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Shield
-{
-namespace Model
-{
+namespace Aws {
+namespace Shield {
+namespace Model {
 
-ProtectionGroup::ProtectionGroup(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProtectionGroup::ProtectionGroup(JsonView jsonValue) { *this = jsonValue; }
 
-ProtectionGroup& ProtectionGroup::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ProtectionGroupId"))
-  {
+ProtectionGroup& ProtectionGroup::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ProtectionGroupId")) {
     m_protectionGroupId = jsonValue.GetString("ProtectionGroupId");
     m_protectionGroupIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Aggregation"))
-  {
+  if (jsonValue.ValueExists("Aggregation")) {
     m_aggregation = ProtectionGroupAggregationMapper::GetProtectionGroupAggregationForName(jsonValue.GetString("Aggregation"));
     m_aggregationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Pattern"))
-  {
+  if (jsonValue.ValueExists("Pattern")) {
     m_pattern = ProtectionGroupPatternMapper::GetProtectionGroupPatternForName(jsonValue.GetString("Pattern"));
     m_patternHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceType"))
-  {
+  if (jsonValue.ValueExists("ResourceType")) {
     m_resourceType = ProtectedResourceTypeMapper::GetProtectedResourceTypeForName(jsonValue.GetString("ResourceType"));
     m_resourceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Members"))
-  {
+  if (jsonValue.ValueExists("Members")) {
     Aws::Utils::Array<JsonView> membersJsonList = jsonValue.GetArray("Members");
-    for(unsigned membersIndex = 0; membersIndex < membersJsonList.GetLength(); ++membersIndex)
-    {
+    for (unsigned membersIndex = 0; membersIndex < membersJsonList.GetLength(); ++membersIndex) {
       m_members.push_back(membersJsonList[membersIndex].AsString());
     }
     m_membersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProtectionGroupArn"))
-  {
+  if (jsonValue.ValueExists("ProtectionGroupArn")) {
     m_protectionGroupArn = jsonValue.GetString("ProtectionGroupArn");
     m_protectionGroupArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ProtectionGroup::Jsonize() const
-{
+JsonValue ProtectionGroup::Jsonize() const {
   JsonValue payload;
 
-  if(m_protectionGroupIdHasBeenSet)
-  {
-   payload.WithString("ProtectionGroupId", m_protectionGroupId);
-
+  if (m_protectionGroupIdHasBeenSet) {
+    payload.WithString("ProtectionGroupId", m_protectionGroupId);
   }
 
-  if(m_aggregationHasBeenSet)
-  {
-   payload.WithString("Aggregation", ProtectionGroupAggregationMapper::GetNameForProtectionGroupAggregation(m_aggregation));
+  if (m_aggregationHasBeenSet) {
+    payload.WithString("Aggregation", ProtectionGroupAggregationMapper::GetNameForProtectionGroupAggregation(m_aggregation));
   }
 
-  if(m_patternHasBeenSet)
-  {
-   payload.WithString("Pattern", ProtectionGroupPatternMapper::GetNameForProtectionGroupPattern(m_pattern));
+  if (m_patternHasBeenSet) {
+    payload.WithString("Pattern", ProtectionGroupPatternMapper::GetNameForProtectionGroupPattern(m_pattern));
   }
 
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("ResourceType", ProtectedResourceTypeMapper::GetNameForProtectedResourceType(m_resourceType));
+  if (m_resourceTypeHasBeenSet) {
+    payload.WithString("ResourceType", ProtectedResourceTypeMapper::GetNameForProtectedResourceType(m_resourceType));
   }
 
-  if(m_membersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> membersJsonList(m_members.size());
-   for(unsigned membersIndex = 0; membersIndex < membersJsonList.GetLength(); ++membersIndex)
-   {
-     membersJsonList[membersIndex].AsString(m_members[membersIndex]);
-   }
-   payload.WithArray("Members", std::move(membersJsonList));
-
+  if (m_membersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> membersJsonList(m_members.size());
+    for (unsigned membersIndex = 0; membersIndex < membersJsonList.GetLength(); ++membersIndex) {
+      membersJsonList[membersIndex].AsString(m_members[membersIndex]);
+    }
+    payload.WithArray("Members", std::move(membersJsonList));
   }
 
-  if(m_protectionGroupArnHasBeenSet)
-  {
-   payload.WithString("ProtectionGroupArn", m_protectionGroupArn);
-
+  if (m_protectionGroupArnHasBeenSet) {
+    payload.WithString("ProtectionGroupArn", m_protectionGroupArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Shield
-} // namespace Aws
+}  // namespace Model
+}  // namespace Shield
+}  // namespace Aws

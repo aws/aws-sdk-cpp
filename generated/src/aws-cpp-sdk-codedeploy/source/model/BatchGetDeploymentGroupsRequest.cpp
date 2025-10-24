@@ -12,38 +12,27 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String BatchGetDeploymentGroupsRequest::SerializePayload() const
-{
+Aws::String BatchGetDeploymentGroupsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_applicationNameHasBeenSet)
-  {
-   payload.WithString("applicationName", m_applicationName);
-
+  if (m_applicationNameHasBeenSet) {
+    payload.WithString("applicationName", m_applicationName);
   }
 
-  if(m_deploymentGroupNamesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> deploymentGroupNamesJsonList(m_deploymentGroupNames.size());
-   for(unsigned deploymentGroupNamesIndex = 0; deploymentGroupNamesIndex < deploymentGroupNamesJsonList.GetLength(); ++deploymentGroupNamesIndex)
-   {
-     deploymentGroupNamesJsonList[deploymentGroupNamesIndex].AsString(m_deploymentGroupNames[deploymentGroupNamesIndex]);
-   }
-   payload.WithArray("deploymentGroupNames", std::move(deploymentGroupNamesJsonList));
-
+  if (m_deploymentGroupNamesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> deploymentGroupNamesJsonList(m_deploymentGroupNames.size());
+    for (unsigned deploymentGroupNamesIndex = 0; deploymentGroupNamesIndex < deploymentGroupNamesJsonList.GetLength();
+         ++deploymentGroupNamesIndex) {
+      deploymentGroupNamesJsonList[deploymentGroupNamesIndex].AsString(m_deploymentGroupNames[deploymentGroupNamesIndex]);
+    }
+    payload.WithArray("deploymentGroupNames", std::move(deploymentGroupNamesJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection BatchGetDeploymentGroupsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection BatchGetDeploymentGroupsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeDeploy_20141006.BatchGetDeploymentGroups"));
   return headers;
-
 }
-
-
-
-

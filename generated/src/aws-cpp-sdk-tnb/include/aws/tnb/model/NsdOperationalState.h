@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/tnb/Tnb_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/tnb/Tnb_EXPORTS.h>
 
-namespace Aws
-{
-namespace tnb
-{
-namespace Model
-{
-  enum class NsdOperationalState
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace tnb {
+namespace Model {
+enum class NsdOperationalState { NOT_SET, ENABLED, DISABLED };
 
-namespace NsdOperationalStateMapper
-{
+namespace NsdOperationalStateMapper {
 AWS_TNB_API NsdOperationalState GetNsdOperationalStateForName(const Aws::String& name);
 
 AWS_TNB_API Aws::String GetNameForNsdOperationalState(NsdOperationalState value);
-} // namespace NsdOperationalStateMapper
-} // namespace Model
-} // namespace tnb
-} // namespace Aws
+}  // namespace NsdOperationalStateMapper
+}  // namespace Model
+}  // namespace tnb
+}  // namespace Aws

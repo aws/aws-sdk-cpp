@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudDirectory
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudDirectory {
+namespace Model {
 
-BatchUpdateObjectAttributesResponse::BatchUpdateObjectAttributesResponse(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchUpdateObjectAttributesResponse::BatchUpdateObjectAttributesResponse(JsonView jsonValue) { *this = jsonValue; }
 
-BatchUpdateObjectAttributesResponse& BatchUpdateObjectAttributesResponse::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ObjectIdentifier"))
-  {
+BatchUpdateObjectAttributesResponse& BatchUpdateObjectAttributesResponse::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ObjectIdentifier")) {
     m_objectIdentifier = jsonValue.GetString("ObjectIdentifier");
     m_objectIdentifierHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BatchUpdateObjectAttributesResponse::Jsonize() const
-{
+JsonValue BatchUpdateObjectAttributesResponse::Jsonize() const {
   JsonValue payload;
 
-  if(m_objectIdentifierHasBeenSet)
-  {
-   payload.WithString("ObjectIdentifier", m_objectIdentifier);
-
+  if (m_objectIdentifierHasBeenSet) {
+    payload.WithString("ObjectIdentifier", m_objectIdentifier);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudDirectory
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudDirectory
+}  // namespace Aws

@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/docdb/model/DescribeDBClustersResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/docdb/model/DescribeDBClustersResult.h>
 
 #include <utility>
 
@@ -17,36 +17,27 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDBClustersResult::DescribeDBClustersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+DescribeDBClustersResult::DescribeDBClustersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-DescribeDBClustersResult& DescribeDBClustersResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeDBClustersResult& DescribeDBClustersResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeDBClustersResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeDBClustersResult")) {
     resultNode = rootNode.FirstChild("DescribeDBClustersResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode markerNode = resultNode.FirstChild("Marker");
-    if(!markerNode.IsNull())
-    {
+    if (!markerNode.IsNull()) {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
       m_markerHasBeenSet = true;
     }
     XmlNode dBClustersNode = resultNode.FirstChild("DBClusters");
-    if(!dBClustersNode.IsNull())
-    {
+    if (!dBClustersNode.IsNull()) {
       XmlNode dBClustersMember = dBClustersNode.FirstChild("DBCluster");
       m_dBClustersHasBeenSet = !dBClustersMember.IsNull();
-      while(!dBClustersMember.IsNull())
-      {
+      while (!dBClustersMember.IsNull()) {
         m_dBClusters.push_back(dBClustersMember);
         dBClustersMember = dBClustersMember.NextNode("DBCluster");
       }
@@ -59,7 +50,7 @@ DescribeDBClustersResult& DescribeDBClustersResult::operator =(const Aws::Amazon
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::DocDB::Model::DescribeDBClustersResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::DocDB::Model::DescribeDBClustersResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

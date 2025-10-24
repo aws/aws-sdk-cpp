@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Comprehend {
+namespace Model {
 
-DocumentTypeListItem::DocumentTypeListItem(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DocumentTypeListItem::DocumentTypeListItem(JsonView jsonValue) { *this = jsonValue; }
 
-DocumentTypeListItem& DocumentTypeListItem::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Page"))
-  {
+DocumentTypeListItem& DocumentTypeListItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Page")) {
     m_page = jsonValue.GetInteger("Page");
     m_pageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = DocumentTypeMapper::GetDocumentTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DocumentTypeListItem::Jsonize() const
-{
+JsonValue DocumentTypeListItem::Jsonize() const {
   JsonValue payload;
 
-  if(m_pageHasBeenSet)
-  {
-   payload.WithInteger("Page", m_page);
-
+  if (m_pageHasBeenSet) {
+    payload.WithInteger("Page", m_page);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", DocumentTypeMapper::GetNameForDocumentType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", DocumentTypeMapper::GetNameForDocumentType(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

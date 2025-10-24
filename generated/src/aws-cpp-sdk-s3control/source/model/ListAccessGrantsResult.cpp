@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3control/model/ListAccessGrantsResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3control/model/ListAccessGrantsResult.h>
 
 #include <utility>
 
@@ -16,31 +16,23 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAccessGrantsResult::ListAccessGrantsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+ListAccessGrantsResult::ListAccessGrantsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-ListAccessGrantsResult& ListAccessGrantsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+ListAccessGrantsResult& ListAccessGrantsResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    if(!nextTokenNode.IsNull())
-    {
+    if (!nextTokenNode.IsNull()) {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
       m_nextTokenHasBeenSet = true;
     }
     XmlNode accessGrantsListNode = resultNode.FirstChild("AccessGrantsList");
-    if(!accessGrantsListNode.IsNull())
-    {
+    if (!accessGrantsListNode.IsNull()) {
       XmlNode accessGrantsListMember = accessGrantsListNode.FirstChild("AccessGrant");
       m_accessGrantsListHasBeenSet = !accessGrantsListMember.IsNull();
-      while(!accessGrantsListMember.IsNull())
-      {
+      while (!accessGrantsListMember.IsNull()) {
         m_accessGrantsList.push_back(accessGrantsListMember);
         accessGrantsListMember = accessGrantsListMember.NextNode("AccessGrant");
       }
@@ -51,15 +43,13 @@ ListAccessGrantsResult& ListAccessGrantsResult::operator =(const Aws::AmazonWebS
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amz-request-id");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
 
   const auto& hostIdIter = headers.find("x-amz-id-2");
-  if(hostIdIter != headers.end())
-  {
+  if (hostIdIter != headers.end()) {
     m_hostId = hostIdIter->second;
     m_hostIdHasBeenSet = true;
   }

@@ -12,24 +12,16 @@ using namespace Aws::Batch::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeSchedulingPoliciesRequest::SerializePayload() const
-{
+Aws::String DescribeSchedulingPoliciesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_arnsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> arnsJsonList(m_arns.size());
-   for(unsigned arnsIndex = 0; arnsIndex < arnsJsonList.GetLength(); ++arnsIndex)
-   {
-     arnsJsonList[arnsIndex].AsString(m_arns[arnsIndex]);
-   }
-   payload.WithArray("arns", std::move(arnsJsonList));
-
+  if (m_arnsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> arnsJsonList(m_arns.size());
+    for (unsigned arnsIndex = 0; arnsIndex < arnsJsonList.GetLength(); ++arnsIndex) {
+      arnsJsonList[arnsIndex].AsString(m_arns[arnsIndex]);
+    }
+    payload.WithArray("arns", std::move(arnsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

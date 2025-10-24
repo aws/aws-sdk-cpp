@@ -3,101 +3,80 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wellarchitected/model/AccountJiraConfigurationOutput.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wellarchitected/model/AccountJiraConfigurationOutput.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WellArchitected
-{
-namespace Model
-{
+namespace Aws {
+namespace WellArchitected {
+namespace Model {
 
-AccountJiraConfigurationOutput::AccountJiraConfigurationOutput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AccountJiraConfigurationOutput::AccountJiraConfigurationOutput(JsonView jsonValue) { *this = jsonValue; }
 
-AccountJiraConfigurationOutput& AccountJiraConfigurationOutput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("IntegrationStatus"))
-  {
+AccountJiraConfigurationOutput& AccountJiraConfigurationOutput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("IntegrationStatus")) {
     m_integrationStatus = IntegrationStatusMapper::GetIntegrationStatusForName(jsonValue.GetString("IntegrationStatus"));
     m_integrationStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IssueManagementStatus"))
-  {
-    m_issueManagementStatus = AccountJiraIssueManagementStatusMapper::GetAccountJiraIssueManagementStatusForName(jsonValue.GetString("IssueManagementStatus"));
+  if (jsonValue.ValueExists("IssueManagementStatus")) {
+    m_issueManagementStatus =
+        AccountJiraIssueManagementStatusMapper::GetAccountJiraIssueManagementStatusForName(jsonValue.GetString("IssueManagementStatus"));
     m_issueManagementStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IssueManagementType"))
-  {
+  if (jsonValue.ValueExists("IssueManagementType")) {
     m_issueManagementType = IssueManagementTypeMapper::GetIssueManagementTypeForName(jsonValue.GetString("IssueManagementType"));
     m_issueManagementTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Subdomain"))
-  {
+  if (jsonValue.ValueExists("Subdomain")) {
     m_subdomain = jsonValue.GetString("Subdomain");
     m_subdomainHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("JiraProjectKey"))
-  {
+  if (jsonValue.ValueExists("JiraProjectKey")) {
     m_jiraProjectKey = jsonValue.GetString("JiraProjectKey");
     m_jiraProjectKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StatusMessage"))
-  {
+  if (jsonValue.ValueExists("StatusMessage")) {
     m_statusMessage = jsonValue.GetString("StatusMessage");
     m_statusMessageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AccountJiraConfigurationOutput::Jsonize() const
-{
+JsonValue AccountJiraConfigurationOutput::Jsonize() const {
   JsonValue payload;
 
-  if(m_integrationStatusHasBeenSet)
-  {
-   payload.WithString("IntegrationStatus", IntegrationStatusMapper::GetNameForIntegrationStatus(m_integrationStatus));
+  if (m_integrationStatusHasBeenSet) {
+    payload.WithString("IntegrationStatus", IntegrationStatusMapper::GetNameForIntegrationStatus(m_integrationStatus));
   }
 
-  if(m_issueManagementStatusHasBeenSet)
-  {
-   payload.WithString("IssueManagementStatus", AccountJiraIssueManagementStatusMapper::GetNameForAccountJiraIssueManagementStatus(m_issueManagementStatus));
+  if (m_issueManagementStatusHasBeenSet) {
+    payload.WithString("IssueManagementStatus",
+                       AccountJiraIssueManagementStatusMapper::GetNameForAccountJiraIssueManagementStatus(m_issueManagementStatus));
   }
 
-  if(m_issueManagementTypeHasBeenSet)
-  {
-   payload.WithString("IssueManagementType", IssueManagementTypeMapper::GetNameForIssueManagementType(m_issueManagementType));
+  if (m_issueManagementTypeHasBeenSet) {
+    payload.WithString("IssueManagementType", IssueManagementTypeMapper::GetNameForIssueManagementType(m_issueManagementType));
   }
 
-  if(m_subdomainHasBeenSet)
-  {
-   payload.WithString("Subdomain", m_subdomain);
-
+  if (m_subdomainHasBeenSet) {
+    payload.WithString("Subdomain", m_subdomain);
   }
 
-  if(m_jiraProjectKeyHasBeenSet)
-  {
-   payload.WithString("JiraProjectKey", m_jiraProjectKey);
-
+  if (m_jiraProjectKeyHasBeenSet) {
+    payload.WithString("JiraProjectKey", m_jiraProjectKey);
   }
 
-  if(m_statusMessageHasBeenSet)
-  {
-   payload.WithString("StatusMessage", m_statusMessage);
-
+  if (m_statusMessageHasBeenSet) {
+    payload.WithString("StatusMessage", m_statusMessage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WellArchitected
-} // namespace Aws
+}  // namespace Model
+}  // namespace WellArchitected
+}  // namespace Aws

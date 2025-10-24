@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class JobPhase
-  {
-    NOT_SET,
-    PROBING,
-    TRANSCODING,
-    UPLOADING
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class JobPhase { NOT_SET, PROBING, TRANSCODING, UPLOADING };
 
-namespace JobPhaseMapper
-{
+namespace JobPhaseMapper {
 AWS_MEDIACONVERT_API JobPhase GetJobPhaseForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForJobPhase(JobPhase value);
-} // namespace JobPhaseMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace JobPhaseMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

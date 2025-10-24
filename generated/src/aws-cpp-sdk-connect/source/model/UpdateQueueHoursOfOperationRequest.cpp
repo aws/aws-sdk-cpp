@@ -12,19 +12,12 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateQueueHoursOfOperationRequest::SerializePayload() const
-{
+Aws::String UpdateQueueHoursOfOperationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_hoursOfOperationIdHasBeenSet)
-  {
-   payload.WithString("HoursOfOperationId", m_hoursOfOperationId);
-
+  if (m_hoursOfOperationIdHasBeenSet) {
+    payload.WithString("HoursOfOperationId", m_hoursOfOperationId);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

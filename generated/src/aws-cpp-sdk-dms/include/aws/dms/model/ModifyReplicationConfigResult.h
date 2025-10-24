@@ -4,63 +4,69 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/dms/model/ReplicationConfig.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace DatabaseMigrationService
-{
-namespace Model
-{
-  class ModifyReplicationConfigResult
-  {
-  public:
-    AWS_DATABASEMIGRATIONSERVICE_API ModifyReplicationConfigResult() = default;
-    AWS_DATABASEMIGRATIONSERVICE_API ModifyReplicationConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_DATABASEMIGRATIONSERVICE_API ModifyReplicationConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace DatabaseMigrationService {
+namespace Model {
+class ModifyReplicationConfigResult {
+ public:
+  AWS_DATABASEMIGRATIONSERVICE_API ModifyReplicationConfigResult() = default;
+  AWS_DATABASEMIGRATIONSERVICE_API ModifyReplicationConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_DATABASEMIGRATIONSERVICE_API ModifyReplicationConfigResult& operator=(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>Information about the serverless replication config that was modified.</p>
+   */
+  inline const ReplicationConfig& GetReplicationConfig() const { return m_replicationConfig; }
+  template <typename ReplicationConfigT = ReplicationConfig>
+  void SetReplicationConfig(ReplicationConfigT&& value) {
+    m_replicationConfigHasBeenSet = true;
+    m_replicationConfig = std::forward<ReplicationConfigT>(value);
+  }
+  template <typename ReplicationConfigT = ReplicationConfig>
+  ModifyReplicationConfigResult& WithReplicationConfig(ReplicationConfigT&& value) {
+    SetReplicationConfig(std::forward<ReplicationConfigT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Information about the serverless replication config that was modified.</p>
-     */
-    inline const ReplicationConfig& GetReplicationConfig() const { return m_replicationConfig; }
-    template<typename ReplicationConfigT = ReplicationConfig>
-    void SetReplicationConfig(ReplicationConfigT&& value) { m_replicationConfigHasBeenSet = true; m_replicationConfig = std::forward<ReplicationConfigT>(value); }
-    template<typename ReplicationConfigT = ReplicationConfig>
-    ModifyReplicationConfigResult& WithReplicationConfig(ReplicationConfigT&& value) { SetReplicationConfig(std::forward<ReplicationConfigT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    ModifyReplicationConfigResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  ModifyReplicationConfigResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  ReplicationConfig m_replicationConfig;
+  bool m_replicationConfigHasBeenSet = false;
 
-    ReplicationConfig m_replicationConfig;
-    bool m_replicationConfigHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace DatabaseMigrationService
-} // namespace Aws
+}  // namespace Model
+}  // namespace DatabaseMigrationService
+}  // namespace Aws

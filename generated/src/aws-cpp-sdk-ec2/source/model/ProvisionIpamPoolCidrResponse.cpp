@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ProvisionIpamPoolCidrResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/ProvisionIpamPoolCidrResponse.h>
 
 #include <utility>
 
@@ -17,26 +17,19 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ProvisionIpamPoolCidrResponse::ProvisionIpamPoolCidrResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+ProvisionIpamPoolCidrResponse::ProvisionIpamPoolCidrResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-ProvisionIpamPoolCidrResponse& ProvisionIpamPoolCidrResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+ProvisionIpamPoolCidrResponse& ProvisionIpamPoolCidrResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "ProvisionIpamPoolCidrResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "ProvisionIpamPoolCidrResponse")) {
     resultNode = rootNode.FirstChild("ProvisionIpamPoolCidrResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode ipamPoolCidrNode = resultNode.FirstChild("ipamPoolCidr");
-    if(!ipamPoolCidrNode.IsNull())
-    {
+    if (!ipamPoolCidrNode.IsNull()) {
       m_ipamPoolCidr = ipamPoolCidrNode;
       m_ipamPoolCidrHasBeenSet = true;
     }
@@ -44,12 +37,11 @@ ProvisionIpamPoolCidrResponse& ProvisionIpamPoolCidrResponse::operator =(const A
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::ProvisionIpamPoolCidrResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::ProvisionIpamPoolCidrResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

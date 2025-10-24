@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-Compliance::Compliance(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Compliance::Compliance(JsonView jsonValue) { *this = jsonValue; }
 
-Compliance& Compliance::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ComplianceType"))
-  {
+Compliance& Compliance::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ComplianceType")) {
     m_complianceType = ComplianceTypeMapper::GetComplianceTypeForName(jsonValue.GetString("ComplianceType"));
     m_complianceTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ComplianceContributorCount"))
-  {
+  if (jsonValue.ValueExists("ComplianceContributorCount")) {
     m_complianceContributorCount = jsonValue.GetObject("ComplianceContributorCount");
     m_complianceContributorCountHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Compliance::Jsonize() const
-{
+JsonValue Compliance::Jsonize() const {
   JsonValue payload;
 
-  if(m_complianceTypeHasBeenSet)
-  {
-   payload.WithString("ComplianceType", ComplianceTypeMapper::GetNameForComplianceType(m_complianceType));
+  if (m_complianceTypeHasBeenSet) {
+    payload.WithString("ComplianceType", ComplianceTypeMapper::GetNameForComplianceType(m_complianceType));
   }
 
-  if(m_complianceContributorCountHasBeenSet)
-  {
-   payload.WithObject("ComplianceContributorCount", m_complianceContributorCount.Jsonize());
-
+  if (m_complianceContributorCountHasBeenSet) {
+    payload.WithObject("ComplianceContributorCount", m_complianceContributorCount.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/notifications/model/GetManagedNotificationConfigurationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/notifications/model/GetManagedNotificationConfigurationRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::Notifications::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetManagedNotificationConfigurationRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetManagedNotificationConfigurationRequest::SerializePayload() const { return {}; }

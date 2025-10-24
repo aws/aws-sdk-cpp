@@ -12,27 +12,18 @@ using namespace Aws::ACMPCA::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String RestoreCertificateAuthorityRequest::SerializePayload() const
-{
+Aws::String RestoreCertificateAuthorityRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_certificateAuthorityArnHasBeenSet)
-  {
-   payload.WithString("CertificateAuthorityArn", m_certificateAuthorityArn);
-
+  if (m_certificateAuthorityArnHasBeenSet) {
+    payload.WithString("CertificateAuthorityArn", m_certificateAuthorityArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection RestoreCertificateAuthorityRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection RestoreCertificateAuthorityRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ACMPrivateCA.RestoreCertificateAuthority"));
   return headers;
-
 }
-
-
-
-

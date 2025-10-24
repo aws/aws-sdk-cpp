@@ -3,34 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/CreatePublicIpv4PoolRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/CreatePublicIpv4PoolRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String CreatePublicIpv4PoolRequest::SerializePayload() const
-{
+Aws::String CreatePublicIpv4PoolRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreatePublicIpv4Pool&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_tagSpecificationsHasBeenSet)
-  {
+  if (m_tagSpecificationsHasBeenSet) {
     unsigned tagSpecificationsCount = 1;
-    for(auto& item : m_tagSpecifications)
-    {
+    for (auto& item : m_tagSpecifications) {
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
   }
 
-  if(m_networkBorderGroupHasBeenSet)
-  {
+  if (m_networkBorderGroupHasBeenSet) {
     ss << "NetworkBorderGroup=" << StringUtils::URLEncode(m_networkBorderGroup.c_str()) << "&";
   }
 
@@ -38,8 +33,4 @@ Aws::String CreatePublicIpv4PoolRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CreatePublicIpv4PoolRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreatePublicIpv4PoolRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

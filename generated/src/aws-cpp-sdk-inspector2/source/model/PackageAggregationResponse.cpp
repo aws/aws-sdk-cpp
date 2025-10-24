@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/inspector2/model/PackageAggregationResponse.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/inspector2/model/PackageAggregationResponse.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Inspector2
-{
-namespace Model
-{
+namespace Aws {
+namespace Inspector2 {
+namespace Model {
 
-PackageAggregationResponse::PackageAggregationResponse(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PackageAggregationResponse::PackageAggregationResponse(JsonView jsonValue) { *this = jsonValue; }
 
-PackageAggregationResponse& PackageAggregationResponse::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("packageName"))
-  {
+PackageAggregationResponse& PackageAggregationResponse::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("packageName")) {
     m_packageName = jsonValue.GetString("packageName");
     m_packageNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("accountId"))
-  {
+  if (jsonValue.ValueExists("accountId")) {
     m_accountId = jsonValue.GetString("accountId");
     m_accountIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("severityCounts"))
-  {
+  if (jsonValue.ValueExists("severityCounts")) {
     m_severityCounts = jsonValue.GetObject("severityCounts");
     m_severityCountsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PackageAggregationResponse::Jsonize() const
-{
+JsonValue PackageAggregationResponse::Jsonize() const {
   JsonValue payload;
 
-  if(m_packageNameHasBeenSet)
-  {
-   payload.WithString("packageName", m_packageName);
-
+  if (m_packageNameHasBeenSet) {
+    payload.WithString("packageName", m_packageName);
   }
 
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("accountId", m_accountId);
-
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("accountId", m_accountId);
   }
 
-  if(m_severityCountsHasBeenSet)
-  {
-   payload.WithObject("severityCounts", m_severityCounts.Jsonize());
-
+  if (m_severityCountsHasBeenSet) {
+    payload.WithObject("severityCounts", m_severityCounts.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Inspector2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Inspector2
+}  // namespace Aws

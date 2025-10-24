@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/IoT_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
-  enum class CACertificateStatus
-  {
-    NOT_SET,
-    ACTIVE,
-    INACTIVE
-  };
+namespace Aws {
+namespace IoT {
+namespace Model {
+enum class CACertificateStatus { NOT_SET, ACTIVE, INACTIVE };
 
-namespace CACertificateStatusMapper
-{
+namespace CACertificateStatusMapper {
 AWS_IOT_API CACertificateStatus GetCACertificateStatusForName(const Aws::String& name);
 
 AWS_IOT_API Aws::String GetNameForCACertificateStatus(CACertificateStatus value);
-} // namespace CACertificateStatusMapper
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace CACertificateStatusMapper
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

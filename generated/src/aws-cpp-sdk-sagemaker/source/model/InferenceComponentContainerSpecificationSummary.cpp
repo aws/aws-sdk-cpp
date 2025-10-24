@@ -3,43 +3,32 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/InferenceComponentContainerSpecificationSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/InferenceComponentContainerSpecificationSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-InferenceComponentContainerSpecificationSummary::InferenceComponentContainerSpecificationSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InferenceComponentContainerSpecificationSummary::InferenceComponentContainerSpecificationSummary(JsonView jsonValue) { *this = jsonValue; }
 
-InferenceComponentContainerSpecificationSummary& InferenceComponentContainerSpecificationSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DeployedImage"))
-  {
+InferenceComponentContainerSpecificationSummary& InferenceComponentContainerSpecificationSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DeployedImage")) {
     m_deployedImage = jsonValue.GetObject("DeployedImage");
     m_deployedImageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ArtifactUrl"))
-  {
+  if (jsonValue.ValueExists("ArtifactUrl")) {
     m_artifactUrl = jsonValue.GetString("ArtifactUrl");
     m_artifactUrlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Environment"))
-  {
+  if (jsonValue.ValueExists("Environment")) {
     Aws::Map<Aws::String, JsonView> environmentJsonMap = jsonValue.GetObject("Environment").GetAllObjects();
-    for(auto& environmentItem : environmentJsonMap)
-    {
+    for (auto& environmentItem : environmentJsonMap) {
       m_environment[environmentItem.first] = environmentItem.second.AsString();
     }
     m_environmentHasBeenSet = true;
@@ -47,36 +36,28 @@ InferenceComponentContainerSpecificationSummary& InferenceComponentContainerSpec
   return *this;
 }
 
-JsonValue InferenceComponentContainerSpecificationSummary::Jsonize() const
-{
+JsonValue InferenceComponentContainerSpecificationSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_deployedImageHasBeenSet)
-  {
-   payload.WithObject("DeployedImage", m_deployedImage.Jsonize());
-
+  if (m_deployedImageHasBeenSet) {
+    payload.WithObject("DeployedImage", m_deployedImage.Jsonize());
   }
 
-  if(m_artifactUrlHasBeenSet)
-  {
-   payload.WithString("ArtifactUrl", m_artifactUrl);
-
+  if (m_artifactUrlHasBeenSet) {
+    payload.WithString("ArtifactUrl", m_artifactUrl);
   }
 
-  if(m_environmentHasBeenSet)
-  {
-   JsonValue environmentJsonMap;
-   for(auto& environmentItem : m_environment)
-   {
-     environmentJsonMap.WithString(environmentItem.first, environmentItem.second);
-   }
-   payload.WithObject("Environment", std::move(environmentJsonMap));
-
+  if (m_environmentHasBeenSet) {
+    JsonValue environmentJsonMap;
+    for (auto& environmentItem : m_environment) {
+      environmentJsonMap.WithString(environmentItem.first, environmentItem.second);
+    }
+    payload.WithObject("Environment", std::move(environmentJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

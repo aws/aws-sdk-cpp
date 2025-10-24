@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 
-namespace Aws
-{
-namespace ServiceCatalog
-{
-namespace Model
-{
-  enum class ProvisioningArtifactGuidance
-  {
-    NOT_SET,
-    DEFAULT,
-    DEPRECATED
-  };
+namespace Aws {
+namespace ServiceCatalog {
+namespace Model {
+enum class ProvisioningArtifactGuidance { NOT_SET, DEFAULT, DEPRECATED };
 
-namespace ProvisioningArtifactGuidanceMapper
-{
+namespace ProvisioningArtifactGuidanceMapper {
 AWS_SERVICECATALOG_API ProvisioningArtifactGuidance GetProvisioningArtifactGuidanceForName(const Aws::String& name);
 
 AWS_SERVICECATALOG_API Aws::String GetNameForProvisioningArtifactGuidance(ProvisioningArtifactGuidance value);
-} // namespace ProvisioningArtifactGuidanceMapper
-} // namespace Model
-} // namespace ServiceCatalog
-} // namespace Aws
+}  // namespace ProvisioningArtifactGuidanceMapper
+}  // namespace Model
+}  // namespace ServiceCatalog
+}  // namespace Aws

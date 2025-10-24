@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/docdb-elastic/DocDBElastic_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/docdb-elastic/DocDBElasticEndpointRules.h>
+#include <aws/docdb-elastic/DocDBElastic_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace DocDBElastic
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace DocDBElastic {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using DocDBElasticClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using DocDBElasticDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_DOCDBELASTIC_API DocDBElasticEndpointProvider : public DocDBElasticDefaultEpProviderBase
-{
-public:
-    using DocDBElasticResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_DOCDBELASTIC_API DocDBElasticEndpointProvider : public DocDBElasticDefaultEpProviderBase {
+ public:
+  using DocDBElasticResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    DocDBElasticEndpointProvider()
-      : DocDBElasticDefaultEpProviderBase(Aws::DocDBElastic::DocDBElasticEndpointRules::GetRulesBlob(), Aws::DocDBElastic::DocDBElasticEndpointRules::RulesBlobSize)
-    {}
+  DocDBElasticEndpointProvider()
+      : DocDBElasticDefaultEpProviderBase(Aws::DocDBElastic::DocDBElasticEndpointRules::GetRulesBlob(),
+                                          Aws::DocDBElastic::DocDBElasticEndpointRules::RulesBlobSize) {}
 
-    ~DocDBElasticEndpointProvider()
-    {
-    }
+  ~DocDBElasticEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace DocDBElastic
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace DocDBElastic
+}  // namespace Aws

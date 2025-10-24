@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/datazone/model/CreateProjectPolicyGrantDetail.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/datazone/model/CreateProjectPolicyGrantDetail.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DataZone
-{
-namespace Model
-{
+namespace Aws {
+namespace DataZone {
+namespace Model {
 
-CreateProjectPolicyGrantDetail::CreateProjectPolicyGrantDetail(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CreateProjectPolicyGrantDetail::CreateProjectPolicyGrantDetail(JsonView jsonValue) { *this = jsonValue; }
 
-CreateProjectPolicyGrantDetail& CreateProjectPolicyGrantDetail::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("includeChildDomainUnits"))
-  {
+CreateProjectPolicyGrantDetail& CreateProjectPolicyGrantDetail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("includeChildDomainUnits")) {
     m_includeChildDomainUnits = jsonValue.GetBool("includeChildDomainUnits");
     m_includeChildDomainUnitsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CreateProjectPolicyGrantDetail::Jsonize() const
-{
+JsonValue CreateProjectPolicyGrantDetail::Jsonize() const {
   JsonValue payload;
 
-  if(m_includeChildDomainUnitsHasBeenSet)
-  {
-   payload.WithBool("includeChildDomainUnits", m_includeChildDomainUnits);
-
+  if (m_includeChildDomainUnitsHasBeenSet) {
+    payload.WithBool("includeChildDomainUnits", m_includeChildDomainUnits);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DataZone
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

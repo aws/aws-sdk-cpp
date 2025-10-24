@@ -11,40 +11,32 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
 
-AdvancedSecurityAdditionalFlowsType::AdvancedSecurityAdditionalFlowsType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AdvancedSecurityAdditionalFlowsType::AdvancedSecurityAdditionalFlowsType(JsonView jsonValue) { *this = jsonValue; }
 
-AdvancedSecurityAdditionalFlowsType& AdvancedSecurityAdditionalFlowsType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CustomAuthMode"))
-  {
-    m_customAuthMode = AdvancedSecurityEnabledModeTypeMapper::GetAdvancedSecurityEnabledModeTypeForName(jsonValue.GetString("CustomAuthMode"));
+AdvancedSecurityAdditionalFlowsType& AdvancedSecurityAdditionalFlowsType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CustomAuthMode")) {
+    m_customAuthMode =
+        AdvancedSecurityEnabledModeTypeMapper::GetAdvancedSecurityEnabledModeTypeForName(jsonValue.GetString("CustomAuthMode"));
     m_customAuthModeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AdvancedSecurityAdditionalFlowsType::Jsonize() const
-{
+JsonValue AdvancedSecurityAdditionalFlowsType::Jsonize() const {
   JsonValue payload;
 
-  if(m_customAuthModeHasBeenSet)
-  {
-   payload.WithString("CustomAuthMode", AdvancedSecurityEnabledModeTypeMapper::GetNameForAdvancedSecurityEnabledModeType(m_customAuthMode));
+  if (m_customAuthModeHasBeenSet) {
+    payload.WithString("CustomAuthMode",
+                       AdvancedSecurityEnabledModeTypeMapper::GetNameForAdvancedSecurityEnabledModeType(m_customAuthMode));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

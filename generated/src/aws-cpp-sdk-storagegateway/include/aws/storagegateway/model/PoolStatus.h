@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/storagegateway/StorageGateway_EXPORTS.h>
 
-namespace Aws
-{
-namespace StorageGateway
-{
-namespace Model
-{
-  enum class PoolStatus
-  {
-    NOT_SET,
-    ACTIVE,
-    DELETED
-  };
+namespace Aws {
+namespace StorageGateway {
+namespace Model {
+enum class PoolStatus { NOT_SET, ACTIVE, DELETED };
 
-namespace PoolStatusMapper
-{
+namespace PoolStatusMapper {
 AWS_STORAGEGATEWAY_API PoolStatus GetPoolStatusForName(const Aws::String& name);
 
 AWS_STORAGEGATEWAY_API Aws::String GetNameForPoolStatus(PoolStatus value);
-} // namespace PoolStatusMapper
-} // namespace Model
-} // namespace StorageGateway
-} // namespace Aws
+}  // namespace PoolStatusMapper
+}  // namespace Model
+}  // namespace StorageGateway
+}  // namespace Aws

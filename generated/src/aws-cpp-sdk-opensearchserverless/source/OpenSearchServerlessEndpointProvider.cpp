@@ -5,12 +5,8 @@
 
 #include <aws/opensearchserverless/OpenSearchServerlessEndpointProvider.h>
 
-namespace Aws
-{
-namespace OpenSearchServerless
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace OpenSearchServerless
-} // namespace Aws
+namespace Aws {
+namespace OpenSearchServerless {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace OpenSearchServerless
+}  // namespace Aws

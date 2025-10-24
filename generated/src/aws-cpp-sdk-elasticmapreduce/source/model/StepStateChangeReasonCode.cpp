@@ -3,63 +3,51 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticmapreduce/model/StepStateChangeReasonCode.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/elasticmapreduce/model/StepStateChangeReasonCode.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace EMR {
+namespace Model {
+namespace StepStateChangeReasonCodeMapper {
 
-namespace Aws
-{
-  namespace EMR
-  {
-    namespace Model
-    {
-      namespace StepStateChangeReasonCodeMapper
-      {
+static const int NONE_HASH = HashingUtils::HashString("NONE");
 
-        static const int NONE_HASH = HashingUtils::HashString("NONE");
+StepStateChangeReasonCode GetStepStateChangeReasonCodeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == NONE_HASH) {
+    return StepStateChangeReasonCode::NONE;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<StepStateChangeReasonCode>(hashCode);
+  }
 
+  return StepStateChangeReasonCode::NOT_SET;
+}
 
-        StepStateChangeReasonCode GetStepStateChangeReasonCodeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == NONE_HASH)
-          {
-            return StepStateChangeReasonCode::NONE;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<StepStateChangeReasonCode>(hashCode);
-          }
+Aws::String GetNameForStepStateChangeReasonCode(StepStateChangeReasonCode enumValue) {
+  switch (enumValue) {
+    case StepStateChangeReasonCode::NOT_SET:
+      return {};
+    case StepStateChangeReasonCode::NONE:
+      return "NONE";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return StepStateChangeReasonCode::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForStepStateChangeReasonCode(StepStateChangeReasonCode enumValue)
-        {
-          switch(enumValue)
-          {
-          case StepStateChangeReasonCode::NOT_SET:
-            return {};
-          case StepStateChangeReasonCode::NONE:
-            return "NONE";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace StepStateChangeReasonCodeMapper
-    } // namespace Model
-  } // namespace EMR
-} // namespace Aws
+}  // namespace StepStateChangeReasonCodeMapper
+}  // namespace Model
+}  // namespace EMR
+}  // namespace Aws

@@ -3,43 +3,34 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/route53/model/ReusableDelegationSetLimit.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/route53/model/ReusableDelegationSetLimit.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Route53
-{
-namespace Model
-{
+namespace Aws {
+namespace Route53 {
+namespace Model {
 
-ReusableDelegationSetLimit::ReusableDelegationSetLimit(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+ReusableDelegationSetLimit::ReusableDelegationSetLimit(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ReusableDelegationSetLimit& ReusableDelegationSetLimit::operator =(const XmlNode& xmlNode)
-{
+ReusableDelegationSetLimit& ReusableDelegationSetLimit::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode typeNode = resultNode.FirstChild("Type");
-    if(!typeNode.IsNull())
-    {
-      m_type = ReusableDelegationSetLimitTypeMapper::GetReusableDelegationSetLimitTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
+    if (!typeNode.IsNull()) {
+      m_type = ReusableDelegationSetLimitTypeMapper::GetReusableDelegationSetLimitTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");
-    if(!valueNode.IsNull())
-    {
+    if (!valueNode.IsNull()) {
       m_value = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText()).c_str()).c_str());
       m_valueHasBeenSet = true;
     }
@@ -48,25 +39,21 @@ ReusableDelegationSetLimit& ReusableDelegationSetLimit::operator =(const XmlNode
   return *this;
 }
 
-void ReusableDelegationSetLimit::AddToNode(XmlNode& parentNode) const
-{
+void ReusableDelegationSetLimit::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_typeHasBeenSet)
-  {
-   XmlNode typeNode = parentNode.CreateChildElement("Type");
-   typeNode.SetText(ReusableDelegationSetLimitTypeMapper::GetNameForReusableDelegationSetLimitType(m_type));
+  if (m_typeHasBeenSet) {
+    XmlNode typeNode = parentNode.CreateChildElement("Type");
+    typeNode.SetText(ReusableDelegationSetLimitTypeMapper::GetNameForReusableDelegationSetLimitType(m_type));
   }
 
-  if(m_valueHasBeenSet)
-  {
-   XmlNode valueNode = parentNode.CreateChildElement("Value");
-   ss << m_value;
-   valueNode.SetText(ss.str());
-   ss.str("");
+  if (m_valueHasBeenSet) {
+    XmlNode valueNode = parentNode.CreateChildElement("Value");
+    ss << m_value;
+    valueNode.SetText(ss.str());
+    ss.str("");
   }
-
 }
 
-} // namespace Model
-} // namespace Route53
-} // namespace Aws
+}  // namespace Model
+}  // namespace Route53
+}  // namespace Aws

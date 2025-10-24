@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/geo-places/model/SubRegion.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/geo-places/model/SubRegion.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GeoPlaces
-{
-namespace Model
-{
+namespace Aws {
+namespace GeoPlaces {
+namespace Model {
 
-SubRegion::SubRegion(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SubRegion::SubRegion(JsonView jsonValue) { *this = jsonValue; }
 
-SubRegion& SubRegion::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Code"))
-  {
+SubRegion& SubRegion::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Code")) {
     m_code = jsonValue.GetString("Code");
     m_codeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SubRegion::Jsonize() const
-{
+JsonValue SubRegion::Jsonize() const {
   JsonValue payload;
 
-  if(m_codeHasBeenSet)
-  {
-   payload.WithString("Code", m_code);
-
+  if (m_codeHasBeenSet) {
+    payload.WithString("Code", m_code);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GeoPlaces
-} // namespace Aws
+}  // namespace Model
+}  // namespace GeoPlaces
+}  // namespace Aws

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker-geospatial/model/AreaOfInterestGeometry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker-geospatial/model/AreaOfInterestGeometry.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMakerGeospatial
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMakerGeospatial {
+namespace Model {
 
-AreaOfInterestGeometry::AreaOfInterestGeometry(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AreaOfInterestGeometry::AreaOfInterestGeometry(JsonView jsonValue) { *this = jsonValue; }
 
-AreaOfInterestGeometry& AreaOfInterestGeometry::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MultiPolygonGeometry"))
-  {
+AreaOfInterestGeometry& AreaOfInterestGeometry::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MultiPolygonGeometry")) {
     m_multiPolygonGeometry = jsonValue.GetObject("MultiPolygonGeometry");
     m_multiPolygonGeometryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PolygonGeometry"))
-  {
+  if (jsonValue.ValueExists("PolygonGeometry")) {
     m_polygonGeometry = jsonValue.GetObject("PolygonGeometry");
     m_polygonGeometryHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AreaOfInterestGeometry::Jsonize() const
-{
+JsonValue AreaOfInterestGeometry::Jsonize() const {
   JsonValue payload;
 
-  if(m_multiPolygonGeometryHasBeenSet)
-  {
-   payload.WithObject("MultiPolygonGeometry", m_multiPolygonGeometry.Jsonize());
-
+  if (m_multiPolygonGeometryHasBeenSet) {
+    payload.WithObject("MultiPolygonGeometry", m_multiPolygonGeometry.Jsonize());
   }
 
-  if(m_polygonGeometryHasBeenSet)
-  {
-   payload.WithObject("PolygonGeometry", m_polygonGeometry.Jsonize());
-
+  if (m_polygonGeometryHasBeenSet) {
+    payload.WithObject("PolygonGeometry", m_polygonGeometry.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMakerGeospatial
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMakerGeospatial
+}  // namespace Aws

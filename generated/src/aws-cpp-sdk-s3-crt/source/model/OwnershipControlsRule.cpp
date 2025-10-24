@@ -3,38 +3,30 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3-crt/model/OwnershipControlsRule.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3-crt/model/OwnershipControlsRule.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Crt
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Crt {
+namespace Model {
 
-OwnershipControlsRule::OwnershipControlsRule(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+OwnershipControlsRule::OwnershipControlsRule(const XmlNode& xmlNode) { *this = xmlNode; }
 
-OwnershipControlsRule& OwnershipControlsRule::operator =(const XmlNode& xmlNode)
-{
+OwnershipControlsRule& OwnershipControlsRule::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode objectOwnershipNode = resultNode.FirstChild("ObjectOwnership");
-    if(!objectOwnershipNode.IsNull())
-    {
-      m_objectOwnership = ObjectOwnershipMapper::GetObjectOwnershipForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(objectOwnershipNode.GetText()).c_str()));
+    if (!objectOwnershipNode.IsNull()) {
+      m_objectOwnership = ObjectOwnershipMapper::GetObjectOwnershipForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(objectOwnershipNode.GetText()).c_str()));
       m_objectOwnershipHasBeenSet = true;
     }
   }
@@ -42,17 +34,14 @@ OwnershipControlsRule& OwnershipControlsRule::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void OwnershipControlsRule::AddToNode(XmlNode& parentNode) const
-{
+void OwnershipControlsRule::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_objectOwnershipHasBeenSet)
-  {
-   XmlNode objectOwnershipNode = parentNode.CreateChildElement("ObjectOwnership");
-   objectOwnershipNode.SetText(ObjectOwnershipMapper::GetNameForObjectOwnership(m_objectOwnership));
+  if (m_objectOwnershipHasBeenSet) {
+    XmlNode objectOwnershipNode = parentNode.CreateChildElement("ObjectOwnership");
+    objectOwnershipNode.SetText(ObjectOwnershipMapper::GetNameForObjectOwnership(m_objectOwnership));
   }
-
 }
 
-} // namespace Model
-} // namespace S3Crt
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

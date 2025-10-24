@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTManagedIntegrations
-{
-namespace Model
-{
-  enum class DiscoveryAuthMaterialType
-  {
-    NOT_SET,
-    ZWAVE_INSTALL_CODE
-  };
+namespace Aws {
+namespace IoTManagedIntegrations {
+namespace Model {
+enum class DiscoveryAuthMaterialType { NOT_SET, ZWAVE_INSTALL_CODE };
 
-namespace DiscoveryAuthMaterialTypeMapper
-{
+namespace DiscoveryAuthMaterialTypeMapper {
 AWS_IOTMANAGEDINTEGRATIONS_API DiscoveryAuthMaterialType GetDiscoveryAuthMaterialTypeForName(const Aws::String& name);
 
 AWS_IOTMANAGEDINTEGRATIONS_API Aws::String GetNameForDiscoveryAuthMaterialType(DiscoveryAuthMaterialType value);
-} // namespace DiscoveryAuthMaterialTypeMapper
-} // namespace Model
-} // namespace IoTManagedIntegrations
-} // namespace Aws
+}  // namespace DiscoveryAuthMaterialTypeMapper
+}  // namespace Model
+}  // namespace IoTManagedIntegrations
+}  // namespace Aws

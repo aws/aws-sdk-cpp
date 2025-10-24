@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lightsail/model/ContainerServiceECRImagePullerRoleRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lightsail/model/ContainerServiceECRImagePullerRoleRequest.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Lightsail
-{
-namespace Model
-{
+namespace Aws {
+namespace Lightsail {
+namespace Model {
 
-ContainerServiceECRImagePullerRoleRequest::ContainerServiceECRImagePullerRoleRequest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ContainerServiceECRImagePullerRoleRequest::ContainerServiceECRImagePullerRoleRequest(JsonView jsonValue) { *this = jsonValue; }
 
-ContainerServiceECRImagePullerRoleRequest& ContainerServiceECRImagePullerRoleRequest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("isActive"))
-  {
+ContainerServiceECRImagePullerRoleRequest& ContainerServiceECRImagePullerRoleRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("isActive")) {
     m_isActive = jsonValue.GetBool("isActive");
     m_isActiveHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ContainerServiceECRImagePullerRoleRequest::Jsonize() const
-{
+JsonValue ContainerServiceECRImagePullerRoleRequest::Jsonize() const {
   JsonValue payload;
 
-  if(m_isActiveHasBeenSet)
-  {
-   payload.WithBool("isActive", m_isActive);
-
+  if (m_isActiveHasBeenSet) {
+    payload.WithBool("isActive", m_isActive);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Lightsail
-} // namespace Aws
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

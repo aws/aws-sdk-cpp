@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datazone/DataZone_EXPORTS.h>
 
-namespace Aws
-{
-namespace DataZone
-{
-namespace Model
-{
-  enum class DataSourceRunStatus
-  {
-    NOT_SET,
-    REQUESTED,
-    RUNNING,
-    FAILED,
-    PARTIALLY_SUCCEEDED,
-    SUCCESS
-  };
+namespace Aws {
+namespace DataZone {
+namespace Model {
+enum class DataSourceRunStatus { NOT_SET, REQUESTED, RUNNING, FAILED, PARTIALLY_SUCCEEDED, SUCCESS };
 
-namespace DataSourceRunStatusMapper
-{
+namespace DataSourceRunStatusMapper {
 AWS_DATAZONE_API DataSourceRunStatus GetDataSourceRunStatusForName(const Aws::String& name);
 
 AWS_DATAZONE_API Aws::String GetNameForDataSourceRunStatus(DataSourceRunStatus value);
-} // namespace DataSourceRunStatusMapper
-} // namespace Model
-} // namespace DataZone
-} // namespace Aws
+}  // namespace DataSourceRunStatusMapper
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

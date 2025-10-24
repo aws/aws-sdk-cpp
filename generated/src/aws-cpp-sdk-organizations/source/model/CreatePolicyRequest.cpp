@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/organizations/model/CreatePolicyRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/organizations/model/CreatePolicyRequest.h>
 
 #include <utility>
 
@@ -12,55 +12,38 @@ using namespace Aws::Organizations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreatePolicyRequest::SerializePayload() const
-{
+Aws::String CreatePolicyRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_contentHasBeenSet)
-  {
-   payload.WithString("Content", m_content);
-
+  if (m_contentHasBeenSet) {
+    payload.WithString("Content", m_content);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", PolicyTypeMapper::GetNameForPolicyType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", PolicyTypeMapper::GetNameForPolicyType(m_type));
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("Tags", std::move(tagsJsonList));
-
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreatePolicyRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreatePolicyRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSOrganizationsV20161128.CreatePolicy"));
   return headers;
-
 }
-
-
-
-

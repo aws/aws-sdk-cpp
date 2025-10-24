@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint/model/SegmentBehaviors.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint/model/SegmentBehaviors.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Pinpoint
-{
-namespace Model
-{
+namespace Aws {
+namespace Pinpoint {
+namespace Model {
 
-SegmentBehaviors::SegmentBehaviors(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SegmentBehaviors::SegmentBehaviors(JsonView jsonValue) { *this = jsonValue; }
 
-SegmentBehaviors& SegmentBehaviors::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Recency"))
-  {
+SegmentBehaviors& SegmentBehaviors::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Recency")) {
     m_recency = jsonValue.GetObject("Recency");
     m_recencyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SegmentBehaviors::Jsonize() const
-{
+JsonValue SegmentBehaviors::Jsonize() const {
   JsonValue payload;
 
-  if(m_recencyHasBeenSet)
-  {
-   payload.WithObject("Recency", m_recency.Jsonize());
-
+  if (m_recencyHasBeenSet) {
+    payload.WithObject("Recency", m_recency.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

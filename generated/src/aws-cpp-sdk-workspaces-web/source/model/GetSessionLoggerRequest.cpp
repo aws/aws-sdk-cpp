@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workspaces-web/model/GetSessionLoggerRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workspaces-web/model/GetSessionLoggerRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::WorkSpacesWeb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetSessionLoggerRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetSessionLoggerRequest::SerializePayload() const { return {}; }

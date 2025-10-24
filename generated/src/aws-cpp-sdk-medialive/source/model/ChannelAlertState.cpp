@@ -3,70 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/ChannelAlertState.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/medialive/model/ChannelAlertState.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+namespace ChannelAlertStateMapper {
 
-namespace Aws
-{
-  namespace MediaLive
-  {
-    namespace Model
-    {
-      namespace ChannelAlertStateMapper
-      {
+static const int SET_HASH = HashingUtils::HashString("SET");
+static const int CLEARED_HASH = HashingUtils::HashString("CLEARED");
 
-        static const int SET_HASH = HashingUtils::HashString("SET");
-        static const int CLEARED_HASH = HashingUtils::HashString("CLEARED");
+ChannelAlertState GetChannelAlertStateForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == SET_HASH) {
+    return ChannelAlertState::SET;
+  } else if (hashCode == CLEARED_HASH) {
+    return ChannelAlertState::CLEARED;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<ChannelAlertState>(hashCode);
+  }
 
+  return ChannelAlertState::NOT_SET;
+}
 
-        ChannelAlertState GetChannelAlertStateForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == SET_HASH)
-          {
-            return ChannelAlertState::SET;
-          }
-          else if (hashCode == CLEARED_HASH)
-          {
-            return ChannelAlertState::CLEARED;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ChannelAlertState>(hashCode);
-          }
+Aws::String GetNameForChannelAlertState(ChannelAlertState enumValue) {
+  switch (enumValue) {
+    case ChannelAlertState::NOT_SET:
+      return {};
+    case ChannelAlertState::SET:
+      return "SET";
+    case ChannelAlertState::CLEARED:
+      return "CLEARED";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return ChannelAlertState::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForChannelAlertState(ChannelAlertState enumValue)
-        {
-          switch(enumValue)
-          {
-          case ChannelAlertState::NOT_SET:
-            return {};
-          case ChannelAlertState::SET:
-            return "SET";
-          case ChannelAlertState::CLEARED:
-            return "CLEARED";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace ChannelAlertStateMapper
-    } // namespace Model
-  } // namespace MediaLive
-} // namespace Aws
+}  // namespace ChannelAlertStateMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

@@ -10,42 +10,34 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String ListTypeVersionsRequest::SerializePayload() const
-{
+Aws::String ListTypeVersionsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ListTypeVersions&";
-  if(m_typeHasBeenSet)
-  {
+  if (m_typeHasBeenSet) {
     ss << "Type=" << StringUtils::URLEncode(RegistryTypeMapper::GetNameForRegistryType(m_type)) << "&";
   }
 
-  if(m_typeNameHasBeenSet)
-  {
+  if (m_typeNameHasBeenSet) {
     ss << "TypeName=" << StringUtils::URLEncode(m_typeName.c_str()) << "&";
   }
 
-  if(m_arnHasBeenSet)
-  {
+  if (m_arnHasBeenSet) {
     ss << "Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
+  if (m_maxResultsHasBeenSet) {
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  if(m_deprecatedStatusHasBeenSet)
-  {
+  if (m_deprecatedStatusHasBeenSet) {
     ss << "DeprecatedStatus=" << StringUtils::URLEncode(DeprecatedStatusMapper::GetNameForDeprecatedStatus(m_deprecatedStatus)) << "&";
   }
 
-  if(m_publisherIdHasBeenSet)
-  {
+  if (m_publisherIdHasBeenSet) {
     ss << "PublisherId=" << StringUtils::URLEncode(m_publisherId.c_str()) << "&";
   }
 
@@ -53,8 +45,4 @@ Aws::String ListTypeVersionsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ListTypeVersionsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ListTypeVersionsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

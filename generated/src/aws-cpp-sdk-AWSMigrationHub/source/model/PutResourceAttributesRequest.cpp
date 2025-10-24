@@ -12,50 +12,35 @@ using namespace Aws::MigrationHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutResourceAttributesRequest::SerializePayload() const
-{
+Aws::String PutResourceAttributesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_progressUpdateStreamHasBeenSet)
-  {
-   payload.WithString("ProgressUpdateStream", m_progressUpdateStream);
-
+  if (m_progressUpdateStreamHasBeenSet) {
+    payload.WithString("ProgressUpdateStream", m_progressUpdateStream);
   }
 
-  if(m_migrationTaskNameHasBeenSet)
-  {
-   payload.WithString("MigrationTaskName", m_migrationTaskName);
-
+  if (m_migrationTaskNameHasBeenSet) {
+    payload.WithString("MigrationTaskName", m_migrationTaskName);
   }
 
-  if(m_resourceAttributeListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> resourceAttributeListJsonList(m_resourceAttributeList.size());
-   for(unsigned resourceAttributeListIndex = 0; resourceAttributeListIndex < resourceAttributeListJsonList.GetLength(); ++resourceAttributeListIndex)
-   {
-     resourceAttributeListJsonList[resourceAttributeListIndex].AsObject(m_resourceAttributeList[resourceAttributeListIndex].Jsonize());
-   }
-   payload.WithArray("ResourceAttributeList", std::move(resourceAttributeListJsonList));
-
+  if (m_resourceAttributeListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> resourceAttributeListJsonList(m_resourceAttributeList.size());
+    for (unsigned resourceAttributeListIndex = 0; resourceAttributeListIndex < resourceAttributeListJsonList.GetLength();
+         ++resourceAttributeListIndex) {
+      resourceAttributeListJsonList[resourceAttributeListIndex].AsObject(m_resourceAttributeList[resourceAttributeListIndex].Jsonize());
+    }
+    payload.WithArray("ResourceAttributeList", std::move(resourceAttributeListJsonList));
   }
 
-  if(m_dryRunHasBeenSet)
-  {
-   payload.WithBool("DryRun", m_dryRun);
-
+  if (m_dryRunHasBeenSet) {
+    payload.WithBool("DryRun", m_dryRun);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection PutResourceAttributesRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection PutResourceAttributesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSMigrationHub.PutResourceAttributes"));
   return headers;
-
 }
-
-
-
-

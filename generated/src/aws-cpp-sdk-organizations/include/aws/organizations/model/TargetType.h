@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/organizations/Organizations_EXPORTS.h>
 
-namespace Aws
-{
-namespace Organizations
-{
-namespace Model
-{
-  enum class TargetType
-  {
-    NOT_SET,
-    ACCOUNT,
-    ORGANIZATIONAL_UNIT,
-    ROOT
-  };
+namespace Aws {
+namespace Organizations {
+namespace Model {
+enum class TargetType { NOT_SET, ACCOUNT, ORGANIZATIONAL_UNIT, ROOT };
 
-namespace TargetTypeMapper
-{
+namespace TargetTypeMapper {
 AWS_ORGANIZATIONS_API TargetType GetTargetTypeForName(const Aws::String& name);
 
 AWS_ORGANIZATIONS_API Aws::String GetNameForTargetType(TargetType value);
-} // namespace TargetTypeMapper
-} // namespace Model
-} // namespace Organizations
-} // namespace Aws
+}  // namespace TargetTypeMapper
+}  // namespace Model
+}  // namespace Organizations
+}  // namespace Aws

@@ -5,12 +5,8 @@
 
 #include <aws/sqs/SQSEndpointProvider.h>
 
-namespace Aws
-{
-namespace SQS
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace SQS
-} // namespace Aws
+namespace Aws {
+namespace SQS {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace SQS
+}  // namespace Aws

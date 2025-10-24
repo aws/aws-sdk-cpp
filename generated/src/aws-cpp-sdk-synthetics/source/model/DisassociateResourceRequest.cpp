@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/synthetics/model/DisassociateResourceRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/synthetics/model/DisassociateResourceRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::Synthetics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DisassociateResourceRequest::SerializePayload() const
-{
+Aws::String DisassociateResourceRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceArnHasBeenSet)
-  {
-   payload.WithString("ResourceArn", m_resourceArn);
-
+  if (m_resourceArnHasBeenSet) {
+    payload.WithString("ResourceArn", m_resourceArn);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

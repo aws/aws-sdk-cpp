@@ -3,38 +3,30 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/LaunchTemplateInstanceMaintenanceOptions.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/LaunchTemplateInstanceMaintenanceOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-LaunchTemplateInstanceMaintenanceOptions::LaunchTemplateInstanceMaintenanceOptions(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+LaunchTemplateInstanceMaintenanceOptions::LaunchTemplateInstanceMaintenanceOptions(const XmlNode& xmlNode) { *this = xmlNode; }
 
-LaunchTemplateInstanceMaintenanceOptions& LaunchTemplateInstanceMaintenanceOptions::operator =(const XmlNode& xmlNode)
-{
+LaunchTemplateInstanceMaintenanceOptions& LaunchTemplateInstanceMaintenanceOptions::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode autoRecoveryNode = resultNode.FirstChild("autoRecovery");
-    if(!autoRecoveryNode.IsNull())
-    {
-      m_autoRecovery = LaunchTemplateAutoRecoveryStateMapper::GetLaunchTemplateAutoRecoveryStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoRecoveryNode.GetText()).c_str()));
+    if (!autoRecoveryNode.IsNull()) {
+      m_autoRecovery = LaunchTemplateAutoRecoveryStateMapper::GetLaunchTemplateAutoRecoveryStateForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoRecoveryNode.GetText()).c_str()));
       m_autoRecoveryHasBeenSet = true;
     }
   }
@@ -42,23 +34,23 @@ LaunchTemplateInstanceMaintenanceOptions& LaunchTemplateInstanceMaintenanceOptio
   return *this;
 }
 
-void LaunchTemplateInstanceMaintenanceOptions::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_autoRecoveryHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".AutoRecovery=" << StringUtils::URLEncode(LaunchTemplateAutoRecoveryStateMapper::GetNameForLaunchTemplateAutoRecoveryState(m_autoRecovery)) << "&";
-  }
-
-}
-
-void LaunchTemplateInstanceMaintenanceOptions::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_autoRecoveryHasBeenSet)
-  {
-      oStream << location << ".AutoRecovery=" << StringUtils::URLEncode(LaunchTemplateAutoRecoveryStateMapper::GetNameForLaunchTemplateAutoRecoveryState(m_autoRecovery)) << "&";
+void LaunchTemplateInstanceMaintenanceOptions::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                              const char* locationValue) const {
+  if (m_autoRecoveryHasBeenSet) {
+    oStream << location << index << locationValue << ".AutoRecovery="
+            << StringUtils::URLEncode(LaunchTemplateAutoRecoveryStateMapper::GetNameForLaunchTemplateAutoRecoveryState(m_autoRecovery))
+            << "&";
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void LaunchTemplateInstanceMaintenanceOptions::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_autoRecoveryHasBeenSet) {
+    oStream << location << ".AutoRecovery="
+            << StringUtils::URLEncode(LaunchTemplateAutoRecoveryStateMapper::GetNameForLaunchTemplateAutoRecoveryState(m_autoRecovery))
+            << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

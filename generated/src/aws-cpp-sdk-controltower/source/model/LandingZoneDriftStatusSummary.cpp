@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ControlTower
-{
-namespace Model
-{
+namespace Aws {
+namespace ControlTower {
+namespace Model {
 
-LandingZoneDriftStatusSummary::LandingZoneDriftStatusSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LandingZoneDriftStatusSummary::LandingZoneDriftStatusSummary(JsonView jsonValue) { *this = jsonValue; }
 
-LandingZoneDriftStatusSummary& LandingZoneDriftStatusSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("status"))
-  {
+LandingZoneDriftStatusSummary& LandingZoneDriftStatusSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("status")) {
     m_status = LandingZoneDriftStatusMapper::GetLandingZoneDriftStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LandingZoneDriftStatusSummary::Jsonize() const
-{
+JsonValue LandingZoneDriftStatusSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", LandingZoneDriftStatusMapper::GetNameForLandingZoneDriftStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", LandingZoneDriftStatusMapper::GetNameForLandingZoneDriftStatus(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ControlTower
-} // namespace Aws
+}  // namespace Model
+}  // namespace ControlTower
+}  // namespace Aws

@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/email/model/UpdateConfigurationSetReputationMetricsEnabledRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/email/model/UpdateConfigurationSetReputationMetricsEnabledRequest.h>
 
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-Aws::String UpdateConfigurationSetReputationMetricsEnabledRequest::SerializePayload() const
-{
+Aws::String UpdateConfigurationSetReputationMetricsEnabledRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=UpdateConfigurationSetReputationMetricsEnabled&";
-  if(m_configurationSetNameHasBeenSet)
-  {
+  if (m_configurationSetNameHasBeenSet) {
     ss << "ConfigurationSetName=" << StringUtils::URLEncode(m_configurationSetName.c_str()) << "&";
   }
 
-  if(m_enabledHasBeenSet)
-  {
+  if (m_enabledHasBeenSet) {
     ss << "Enabled=" << std::boolalpha << m_enabled << "&";
   }
 
@@ -28,8 +25,6 @@ Aws::String UpdateConfigurationSetReputationMetricsEnabledRequest::SerializePayl
   return ss.str();
 }
 
-
-void  UpdateConfigurationSetReputationMetricsEnabledRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
+void UpdateConfigurationSetReputationMetricsEnabledRequest::DumpBodyToUrl(Aws::Http::URI& uri) const {
   uri.SetQueryString(SerializePayload());
 }

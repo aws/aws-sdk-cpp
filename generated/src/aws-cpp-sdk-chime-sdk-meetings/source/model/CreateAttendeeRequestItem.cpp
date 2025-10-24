@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMeetings
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMeetings {
+namespace Model {
 
-CreateAttendeeRequestItem::CreateAttendeeRequestItem(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CreateAttendeeRequestItem::CreateAttendeeRequestItem(JsonView jsonValue) { *this = jsonValue; }
 
-CreateAttendeeRequestItem& CreateAttendeeRequestItem::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ExternalUserId"))
-  {
+CreateAttendeeRequestItem& CreateAttendeeRequestItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ExternalUserId")) {
     m_externalUserId = jsonValue.GetString("ExternalUserId");
     m_externalUserIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Capabilities"))
-  {
+  if (jsonValue.ValueExists("Capabilities")) {
     m_capabilities = jsonValue.GetObject("Capabilities");
     m_capabilitiesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CreateAttendeeRequestItem::Jsonize() const
-{
+JsonValue CreateAttendeeRequestItem::Jsonize() const {
   JsonValue payload;
 
-  if(m_externalUserIdHasBeenSet)
-  {
-   payload.WithString("ExternalUserId", m_externalUserId);
-
+  if (m_externalUserIdHasBeenSet) {
+    payload.WithString("ExternalUserId", m_externalUserId);
   }
 
-  if(m_capabilitiesHasBeenSet)
-  {
-   payload.WithObject("Capabilities", m_capabilities.Jsonize());
-
+  if (m_capabilitiesHasBeenSet) {
+    payload.WithObject("Capabilities", m_capabilities.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMeetings
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMeetings
+}  // namespace Aws

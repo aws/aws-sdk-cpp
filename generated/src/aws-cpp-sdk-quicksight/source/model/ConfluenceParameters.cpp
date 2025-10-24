@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/ConfluenceParameters.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/ConfluenceParameters.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-ConfluenceParameters::ConfluenceParameters(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConfluenceParameters::ConfluenceParameters(JsonView jsonValue) { *this = jsonValue; }
 
-ConfluenceParameters& ConfluenceParameters::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ConfluenceUrl"))
-  {
+ConfluenceParameters& ConfluenceParameters::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ConfluenceUrl")) {
     m_confluenceUrl = jsonValue.GetString("ConfluenceUrl");
     m_confluenceUrlHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ConfluenceParameters::Jsonize() const
-{
+JsonValue ConfluenceParameters::Jsonize() const {
   JsonValue payload;
 
-  if(m_confluenceUrlHasBeenSet)
-  {
-   payload.WithString("ConfluenceUrl", m_confluenceUrl);
-
+  if (m_confluenceUrlHasBeenSet) {
+    payload.WithString("ConfluenceUrl", m_confluenceUrl);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

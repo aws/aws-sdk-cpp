@@ -5,19 +5,16 @@
 
 #pragma once
 
-#include <aws/kafka/Kafka_EXPORTS.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
+#include <aws/kafka/Kafka_EXPORTS.h>
 
-namespace Aws
-{
-namespace Client
-{
+namespace Aws {
+namespace Client {
 
-class AWS_KAFKA_API KafkaErrorMarshaller : public Aws::Client::JsonErrorMarshaller
-{
-public:
+class AWS_KAFKA_API KafkaErrorMarshaller : public Aws::Client::JsonErrorMarshaller {
+ public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Client
-} // namespace Aws
+}  // namespace Client
+}  // namespace Aws

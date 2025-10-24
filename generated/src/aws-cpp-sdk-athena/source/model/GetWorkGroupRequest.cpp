@@ -12,27 +12,18 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetWorkGroupRequest::SerializePayload() const
-{
+Aws::String GetWorkGroupRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_workGroupHasBeenSet)
-  {
-   payload.WithString("WorkGroup", m_workGroup);
-
+  if (m_workGroupHasBeenSet) {
+    payload.WithString("WorkGroup", m_workGroup);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetWorkGroupRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetWorkGroupRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonAthena.GetWorkGroup"));
   return headers;
-
 }
-
-
-
-

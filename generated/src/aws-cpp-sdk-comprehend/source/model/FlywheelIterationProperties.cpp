@@ -11,148 +11,110 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Comprehend {
+namespace Model {
 
-FlywheelIterationProperties::FlywheelIterationProperties(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FlywheelIterationProperties::FlywheelIterationProperties(JsonView jsonValue) { *this = jsonValue; }
 
-FlywheelIterationProperties& FlywheelIterationProperties::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FlywheelArn"))
-  {
+FlywheelIterationProperties& FlywheelIterationProperties::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FlywheelArn")) {
     m_flywheelArn = jsonValue.GetString("FlywheelArn");
     m_flywheelArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FlywheelIterationId"))
-  {
+  if (jsonValue.ValueExists("FlywheelIterationId")) {
     m_flywheelIterationId = jsonValue.GetString("FlywheelIterationId");
     m_flywheelIterationIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EndTime"))
-  {
+  if (jsonValue.ValueExists("EndTime")) {
     m_endTime = jsonValue.GetDouble("EndTime");
     m_endTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = FlywheelIterationStatusMapper::GetFlywheelIterationStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Message"))
-  {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EvaluatedModelArn"))
-  {
+  if (jsonValue.ValueExists("EvaluatedModelArn")) {
     m_evaluatedModelArn = jsonValue.GetString("EvaluatedModelArn");
     m_evaluatedModelArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EvaluatedModelMetrics"))
-  {
+  if (jsonValue.ValueExists("EvaluatedModelMetrics")) {
     m_evaluatedModelMetrics = jsonValue.GetObject("EvaluatedModelMetrics");
     m_evaluatedModelMetricsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TrainedModelArn"))
-  {
+  if (jsonValue.ValueExists("TrainedModelArn")) {
     m_trainedModelArn = jsonValue.GetString("TrainedModelArn");
     m_trainedModelArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TrainedModelMetrics"))
-  {
+  if (jsonValue.ValueExists("TrainedModelMetrics")) {
     m_trainedModelMetrics = jsonValue.GetObject("TrainedModelMetrics");
     m_trainedModelMetricsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EvaluationManifestS3Prefix"))
-  {
+  if (jsonValue.ValueExists("EvaluationManifestS3Prefix")) {
     m_evaluationManifestS3Prefix = jsonValue.GetString("EvaluationManifestS3Prefix");
     m_evaluationManifestS3PrefixHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FlywheelIterationProperties::Jsonize() const
-{
+JsonValue FlywheelIterationProperties::Jsonize() const {
   JsonValue payload;
 
-  if(m_flywheelArnHasBeenSet)
-  {
-   payload.WithString("FlywheelArn", m_flywheelArn);
-
+  if (m_flywheelArnHasBeenSet) {
+    payload.WithString("FlywheelArn", m_flywheelArn);
   }
 
-  if(m_flywheelIterationIdHasBeenSet)
-  {
-   payload.WithString("FlywheelIterationId", m_flywheelIterationId);
-
+  if (m_flywheelIterationIdHasBeenSet) {
+    payload.WithString("FlywheelIterationId", m_flywheelIterationId);
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_endTimeHasBeenSet)
-  {
-   payload.WithDouble("EndTime", m_endTime.SecondsWithMSPrecision());
+  if (m_endTimeHasBeenSet) {
+    payload.WithDouble("EndTime", m_endTime.SecondsWithMSPrecision());
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", FlywheelIterationStatusMapper::GetNameForFlywheelIterationStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", FlywheelIterationStatusMapper::GetNameForFlywheelIterationStatus(m_status));
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
-  if(m_evaluatedModelArnHasBeenSet)
-  {
-   payload.WithString("EvaluatedModelArn", m_evaluatedModelArn);
-
+  if (m_evaluatedModelArnHasBeenSet) {
+    payload.WithString("EvaluatedModelArn", m_evaluatedModelArn);
   }
 
-  if(m_evaluatedModelMetricsHasBeenSet)
-  {
-   payload.WithObject("EvaluatedModelMetrics", m_evaluatedModelMetrics.Jsonize());
-
+  if (m_evaluatedModelMetricsHasBeenSet) {
+    payload.WithObject("EvaluatedModelMetrics", m_evaluatedModelMetrics.Jsonize());
   }
 
-  if(m_trainedModelArnHasBeenSet)
-  {
-   payload.WithString("TrainedModelArn", m_trainedModelArn);
-
+  if (m_trainedModelArnHasBeenSet) {
+    payload.WithString("TrainedModelArn", m_trainedModelArn);
   }
 
-  if(m_trainedModelMetricsHasBeenSet)
-  {
-   payload.WithObject("TrainedModelMetrics", m_trainedModelMetrics.Jsonize());
-
+  if (m_trainedModelMetricsHasBeenSet) {
+    payload.WithObject("TrainedModelMetrics", m_trainedModelMetrics.Jsonize());
   }
 
-  if(m_evaluationManifestS3PrefixHasBeenSet)
-  {
-   payload.WithString("EvaluationManifestS3Prefix", m_evaluationManifestS3Prefix);
-
+  if (m_evaluationManifestS3PrefixHasBeenSet) {
+    payload.WithString("EvaluationManifestS3Prefix", m_evaluationManifestS3Prefix);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

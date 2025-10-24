@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workmailmessageflow/model/RawMessageContent.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workmailmessageflow/model/RawMessageContent.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WorkMailMessageFlow
-{
-namespace Model
-{
+namespace Aws {
+namespace WorkMailMessageFlow {
+namespace Model {
 
-RawMessageContent::RawMessageContent(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RawMessageContent::RawMessageContent(JsonView jsonValue) { *this = jsonValue; }
 
-RawMessageContent& RawMessageContent::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("s3Reference"))
-  {
+RawMessageContent& RawMessageContent::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("s3Reference")) {
     m_s3Reference = jsonValue.GetObject("s3Reference");
     m_s3ReferenceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RawMessageContent::Jsonize() const
-{
+JsonValue RawMessageContent::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3ReferenceHasBeenSet)
-  {
-   payload.WithObject("s3Reference", m_s3Reference.Jsonize());
-
+  if (m_s3ReferenceHasBeenSet) {
+    payload.WithObject("s3Reference", m_s3Reference.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WorkMailMessageFlow
-} // namespace Aws
+}  // namespace Model
+}  // namespace WorkMailMessageFlow
+}  // namespace Aws

@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/macie2/Macie2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/macie2/Macie2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
-  enum class ListJobsFilterKey
-  {
-    NOT_SET,
-    jobType,
-    jobStatus,
-    createdAt,
-    name
-  };
+namespace Aws {
+namespace Macie2 {
+namespace Model {
+enum class ListJobsFilterKey { NOT_SET, jobType, jobStatus, createdAt, name };
 
-namespace ListJobsFilterKeyMapper
-{
+namespace ListJobsFilterKeyMapper {
 AWS_MACIE2_API ListJobsFilterKey GetListJobsFilterKeyForName(const Aws::String& name);
 
 AWS_MACIE2_API Aws::String GetNameForListJobsFilterKey(ListJobsFilterKey value);
-} // namespace ListJobsFilterKeyMapper
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace ListJobsFilterKeyMapper
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

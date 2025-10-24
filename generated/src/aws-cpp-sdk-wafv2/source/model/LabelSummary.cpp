@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wafv2/model/LabelSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wafv2/model/LabelSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WAFV2
-{
-namespace Model
-{
+namespace Aws {
+namespace WAFV2 {
+namespace Model {
 
-LabelSummary::LabelSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LabelSummary::LabelSummary(JsonView jsonValue) { *this = jsonValue; }
 
-LabelSummary& LabelSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+LabelSummary& LabelSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LabelSummary::Jsonize() const
-{
+JsonValue LabelSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WAFV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace WAFV2
+}  // namespace Aws

@@ -11,30 +11,20 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
 
-OutputArtifact::OutputArtifact(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OutputArtifact::OutputArtifact(JsonView jsonValue) { *this = jsonValue; }
 
-OutputArtifact& OutputArtifact::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+OutputArtifact& OutputArtifact::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("files"))
-  {
+  if (jsonValue.ValueExists("files")) {
     Aws::Utils::Array<JsonView> filesJsonList = jsonValue.GetArray("files");
-    for(unsigned filesIndex = 0; filesIndex < filesJsonList.GetLength(); ++filesIndex)
-    {
+    for (unsigned filesIndex = 0; filesIndex < filesJsonList.GetLength(); ++filesIndex) {
       m_files.push_back(filesJsonList[filesIndex].AsString());
     }
     m_filesHasBeenSet = true;
@@ -42,30 +32,24 @@ OutputArtifact& OutputArtifact::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue OutputArtifact::Jsonize() const
-{
+JsonValue OutputArtifact::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_filesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> filesJsonList(m_files.size());
-   for(unsigned filesIndex = 0; filesIndex < filesJsonList.GetLength(); ++filesIndex)
-   {
-     filesJsonList[filesIndex].AsString(m_files[filesIndex]);
-   }
-   payload.WithArray("files", std::move(filesJsonList));
-
+  if (m_filesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> filesJsonList(m_files.size());
+    for (unsigned filesIndex = 0; filesIndex < filesJsonList.GetLength(); ++filesIndex) {
+      filesJsonList[filesIndex].AsString(m_files[filesIndex]);
+    }
+    payload.WithArray("files", std::move(filesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

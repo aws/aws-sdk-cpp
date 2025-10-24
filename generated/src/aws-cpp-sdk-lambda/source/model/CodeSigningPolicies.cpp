@@ -3,48 +3,40 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lambda/model/CodeSigningPolicies.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lambda/model/CodeSigningPolicies.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Lambda
-{
-namespace Model
-{
+namespace Aws {
+namespace Lambda {
+namespace Model {
 
-CodeSigningPolicies::CodeSigningPolicies(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CodeSigningPolicies::CodeSigningPolicies(JsonView jsonValue) { *this = jsonValue; }
 
-CodeSigningPolicies& CodeSigningPolicies::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("UntrustedArtifactOnDeployment"))
-  {
-    m_untrustedArtifactOnDeployment = CodeSigningPolicyMapper::GetCodeSigningPolicyForName(jsonValue.GetString("UntrustedArtifactOnDeployment"));
+CodeSigningPolicies& CodeSigningPolicies::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("UntrustedArtifactOnDeployment")) {
+    m_untrustedArtifactOnDeployment =
+        CodeSigningPolicyMapper::GetCodeSigningPolicyForName(jsonValue.GetString("UntrustedArtifactOnDeployment"));
     m_untrustedArtifactOnDeploymentHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CodeSigningPolicies::Jsonize() const
-{
+JsonValue CodeSigningPolicies::Jsonize() const {
   JsonValue payload;
 
-  if(m_untrustedArtifactOnDeploymentHasBeenSet)
-  {
-   payload.WithString("UntrustedArtifactOnDeployment", CodeSigningPolicyMapper::GetNameForCodeSigningPolicy(m_untrustedArtifactOnDeployment));
+  if (m_untrustedArtifactOnDeploymentHasBeenSet) {
+    payload.WithString("UntrustedArtifactOnDeployment",
+                       CodeSigningPolicyMapper::GetNameForCodeSigningPolicy(m_untrustedArtifactOnDeployment));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Lambda
-} // namespace Aws
+}  // namespace Model
+}  // namespace Lambda
+}  // namespace Aws

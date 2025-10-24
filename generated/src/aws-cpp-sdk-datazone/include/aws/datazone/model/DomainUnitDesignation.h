@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datazone/DataZone_EXPORTS.h>
 
-namespace Aws
-{
-namespace DataZone
-{
-namespace Model
-{
-  enum class DomainUnitDesignation
-  {
-    NOT_SET,
-    OWNER
-  };
+namespace Aws {
+namespace DataZone {
+namespace Model {
+enum class DomainUnitDesignation { NOT_SET, OWNER };
 
-namespace DomainUnitDesignationMapper
-{
+namespace DomainUnitDesignationMapper {
 AWS_DATAZONE_API DomainUnitDesignation GetDomainUnitDesignationForName(const Aws::String& name);
 
 AWS_DATAZONE_API Aws::String GetNameForDomainUnitDesignation(DomainUnitDesignation value);
-} // namespace DomainUnitDesignationMapper
-} // namespace Model
-} // namespace DataZone
-} // namespace Aws
+}  // namespace DomainUnitDesignationMapper
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

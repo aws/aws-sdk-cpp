@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Transfer
-{
-namespace Model
-{
+namespace Aws {
+namespace Transfer {
+namespace Model {
 
-ExecutionStepResult::ExecutionStepResult(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExecutionStepResult::ExecutionStepResult(JsonView jsonValue) { *this = jsonValue; }
 
-ExecutionStepResult& ExecutionStepResult::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("StepType"))
-  {
+ExecutionStepResult& ExecutionStepResult::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("StepType")) {
     m_stepType = WorkflowStepTypeMapper::GetWorkflowStepTypeForName(jsonValue.GetString("StepType"));
     m_stepTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Outputs"))
-  {
+  if (jsonValue.ValueExists("Outputs")) {
     m_outputs = jsonValue.GetString("Outputs");
     m_outputsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Error"))
-  {
+  if (jsonValue.ValueExists("Error")) {
     m_error = jsonValue.GetObject("Error");
     m_errorHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExecutionStepResult::Jsonize() const
-{
+JsonValue ExecutionStepResult::Jsonize() const {
   JsonValue payload;
 
-  if(m_stepTypeHasBeenSet)
-  {
-   payload.WithString("StepType", WorkflowStepTypeMapper::GetNameForWorkflowStepType(m_stepType));
+  if (m_stepTypeHasBeenSet) {
+    payload.WithString("StepType", WorkflowStepTypeMapper::GetNameForWorkflowStepType(m_stepType));
   }
 
-  if(m_outputsHasBeenSet)
-  {
-   payload.WithString("Outputs", m_outputs);
-
+  if (m_outputsHasBeenSet) {
+    payload.WithString("Outputs", m_outputs);
   }
 
-  if(m_errorHasBeenSet)
-  {
-   payload.WithObject("Error", m_error.Jsonize());
-
+  if (m_errorHasBeenSet) {
+    payload.WithObject("Error", m_error.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Transfer
-} // namespace Aws
+}  // namespace Model
+}  // namespace Transfer
+}  // namespace Aws

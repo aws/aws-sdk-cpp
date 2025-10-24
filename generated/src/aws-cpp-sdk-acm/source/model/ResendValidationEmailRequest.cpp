@@ -12,39 +12,26 @@ using namespace Aws::ACM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ResendValidationEmailRequest::SerializePayload() const
-{
+Aws::String ResendValidationEmailRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_certificateArnHasBeenSet)
-  {
-   payload.WithString("CertificateArn", m_certificateArn);
-
+  if (m_certificateArnHasBeenSet) {
+    payload.WithString("CertificateArn", m_certificateArn);
   }
 
-  if(m_domainHasBeenSet)
-  {
-   payload.WithString("Domain", m_domain);
-
+  if (m_domainHasBeenSet) {
+    payload.WithString("Domain", m_domain);
   }
 
-  if(m_validationDomainHasBeenSet)
-  {
-   payload.WithString("ValidationDomain", m_validationDomain);
-
+  if (m_validationDomainHasBeenSet) {
+    payload.WithString("ValidationDomain", m_validationDomain);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ResendValidationEmailRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ResendValidationEmailRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CertificateManager.ResendValidationEmail"));
   return headers;
-
 }
-
-
-
-

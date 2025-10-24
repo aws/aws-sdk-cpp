@@ -7,24 +7,16 @@
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CodeBuild
-{
-namespace Model
-{
-  enum class FleetScalingType
-  {
-    NOT_SET,
-    TARGET_TRACKING_SCALING
-  };
+namespace Aws {
+namespace CodeBuild {
+namespace Model {
+enum class FleetScalingType { NOT_SET, TARGET_TRACKING_SCALING };
 
-namespace FleetScalingTypeMapper
-{
+namespace FleetScalingTypeMapper {
 AWS_CODEBUILD_API FleetScalingType GetFleetScalingTypeForName(const Aws::String& name);
 
 AWS_CODEBUILD_API Aws::String GetNameForFleetScalingType(FleetScalingType value);
-} // namespace FleetScalingTypeMapper
-} // namespace Model
-} // namespace CodeBuild
-} // namespace Aws
+}  // namespace FleetScalingTypeMapper
+}  // namespace Model
+}  // namespace CodeBuild
+}  // namespace Aws

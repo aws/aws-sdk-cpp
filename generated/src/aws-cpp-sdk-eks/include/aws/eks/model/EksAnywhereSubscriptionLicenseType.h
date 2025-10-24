@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/eks/EKS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/eks/EKS_EXPORTS.h>
 
-namespace Aws
-{
-namespace EKS
-{
-namespace Model
-{
-  enum class EksAnywhereSubscriptionLicenseType
-  {
-    NOT_SET,
-    Cluster
-  };
+namespace Aws {
+namespace EKS {
+namespace Model {
+enum class EksAnywhereSubscriptionLicenseType { NOT_SET, Cluster };
 
-namespace EksAnywhereSubscriptionLicenseTypeMapper
-{
+namespace EksAnywhereSubscriptionLicenseTypeMapper {
 AWS_EKS_API EksAnywhereSubscriptionLicenseType GetEksAnywhereSubscriptionLicenseTypeForName(const Aws::String& name);
 
 AWS_EKS_API Aws::String GetNameForEksAnywhereSubscriptionLicenseType(EksAnywhereSubscriptionLicenseType value);
-} // namespace EksAnywhereSubscriptionLicenseTypeMapper
-} // namespace Model
-} // namespace EKS
-} // namespace Aws
+}  // namespace EksAnywhereSubscriptionLicenseTypeMapper
+}  // namespace Model
+}  // namespace EKS
+}  // namespace Aws

@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/dlm/DLM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dlm/DLM_EXPORTS.h>
 
-namespace Aws
-{
-namespace DLM
-{
-namespace Model
-{
-  enum class DefaultPoliciesTypeValues
-  {
-    NOT_SET,
-    VOLUME,
-    INSTANCE,
-    ALL
-  };
+namespace Aws {
+namespace DLM {
+namespace Model {
+enum class DefaultPoliciesTypeValues { NOT_SET, VOLUME, INSTANCE, ALL };
 
-namespace DefaultPoliciesTypeValuesMapper
-{
+namespace DefaultPoliciesTypeValuesMapper {
 AWS_DLM_API DefaultPoliciesTypeValues GetDefaultPoliciesTypeValuesForName(const Aws::String& name);
 
 AWS_DLM_API Aws::String GetNameForDefaultPoliciesTypeValues(DefaultPoliciesTypeValues value);
-} // namespace DefaultPoliciesTypeValuesMapper
-} // namespace Model
-} // namespace DLM
-} // namespace Aws
+}  // namespace DefaultPoliciesTypeValuesMapper
+}  // namespace Model
+}  // namespace DLM
+}  // namespace Aws

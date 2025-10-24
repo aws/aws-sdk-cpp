@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/resiliencehub/model/ListAppComponentRecommendationsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/resiliencehub/model/ListAppComponentRecommendationsResult.h>
 
 #include <utility>
 
@@ -17,37 +17,32 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAppComponentRecommendationsResult::ListAppComponentRecommendationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListAppComponentRecommendationsResult::ListAppComponentRecommendationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-ListAppComponentRecommendationsResult& ListAppComponentRecommendationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListAppComponentRecommendationsResult& ListAppComponentRecommendationsResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("componentRecommendations"))
-  {
+  if (jsonValue.ValueExists("componentRecommendations")) {
     Aws::Utils::Array<JsonView> componentRecommendationsJsonList = jsonValue.GetArray("componentRecommendations");
-    for(unsigned componentRecommendationsIndex = 0; componentRecommendationsIndex < componentRecommendationsJsonList.GetLength(); ++componentRecommendationsIndex)
-    {
+    for (unsigned componentRecommendationsIndex = 0; componentRecommendationsIndex < componentRecommendationsJsonList.GetLength();
+         ++componentRecommendationsIndex) {
       m_componentRecommendations.push_back(componentRecommendationsJsonList[componentRecommendationsIndex].AsObject());
     }
     m_componentRecommendationsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

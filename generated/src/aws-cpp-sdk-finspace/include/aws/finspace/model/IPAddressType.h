@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/finspace/Finspace_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/finspace/Finspace_EXPORTS.h>
 
-namespace Aws
-{
-namespace finspace
-{
-namespace Model
-{
-  enum class IPAddressType
-  {
-    NOT_SET,
-    IP_V4
-  };
+namespace Aws {
+namespace finspace {
+namespace Model {
+enum class IPAddressType { NOT_SET, IP_V4 };
 
-namespace IPAddressTypeMapper
-{
+namespace IPAddressTypeMapper {
 AWS_FINSPACE_API IPAddressType GetIPAddressTypeForName(const Aws::String& name);
 
 AWS_FINSPACE_API Aws::String GetNameForIPAddressType(IPAddressType value);
-} // namespace IPAddressTypeMapper
-} // namespace Model
-} // namespace finspace
-} // namespace Aws
+}  // namespace IPAddressTypeMapper
+}  // namespace Model
+}  // namespace finspace
+}  // namespace Aws

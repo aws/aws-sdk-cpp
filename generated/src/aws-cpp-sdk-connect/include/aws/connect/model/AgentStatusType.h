@@ -7,26 +7,16 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
-  enum class AgentStatusType
-  {
-    NOT_SET,
-    ROUTABLE,
-    CUSTOM,
-    OFFLINE
-  };
+namespace Aws {
+namespace Connect {
+namespace Model {
+enum class AgentStatusType { NOT_SET, ROUTABLE, CUSTOM, OFFLINE };
 
-namespace AgentStatusTypeMapper
-{
+namespace AgentStatusTypeMapper {
 AWS_CONNECT_API AgentStatusType GetAgentStatusTypeForName(const Aws::String& name);
 
 AWS_CONNECT_API Aws::String GetNameForAgentStatusType(AgentStatusType value);
-} // namespace AgentStatusTypeMapper
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace AgentStatusTypeMapper
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

@@ -3,58 +3,48 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/greengrass/model/TelemetryConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/greengrass/model/TelemetryConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Greengrass
-{
-namespace Model
-{
+namespace Aws {
+namespace Greengrass {
+namespace Model {
 
-TelemetryConfiguration::TelemetryConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TelemetryConfiguration::TelemetryConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-TelemetryConfiguration& TelemetryConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ConfigurationSyncStatus"))
-  {
-    m_configurationSyncStatus = ConfigurationSyncStatusMapper::GetConfigurationSyncStatusForName(jsonValue.GetString("ConfigurationSyncStatus"));
+TelemetryConfiguration& TelemetryConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ConfigurationSyncStatus")) {
+    m_configurationSyncStatus =
+        ConfigurationSyncStatusMapper::GetConfigurationSyncStatusForName(jsonValue.GetString("ConfigurationSyncStatus"));
     m_configurationSyncStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Telemetry"))
-  {
+  if (jsonValue.ValueExists("Telemetry")) {
     m_telemetry = TelemetryMapper::GetTelemetryForName(jsonValue.GetString("Telemetry"));
     m_telemetryHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TelemetryConfiguration::Jsonize() const
-{
+JsonValue TelemetryConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_configurationSyncStatusHasBeenSet)
-  {
-   payload.WithString("ConfigurationSyncStatus", ConfigurationSyncStatusMapper::GetNameForConfigurationSyncStatus(m_configurationSyncStatus));
+  if (m_configurationSyncStatusHasBeenSet) {
+    payload.WithString("ConfigurationSyncStatus",
+                       ConfigurationSyncStatusMapper::GetNameForConfigurationSyncStatus(m_configurationSyncStatus));
   }
 
-  if(m_telemetryHasBeenSet)
-  {
-   payload.WithString("Telemetry", TelemetryMapper::GetNameForTelemetry(m_telemetry));
+  if (m_telemetryHasBeenSet) {
+    payload.WithString("Telemetry", TelemetryMapper::GetNameForTelemetry(m_telemetry));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Greengrass
-} // namespace Aws
+}  // namespace Model
+}  // namespace Greengrass
+}  // namespace Aws

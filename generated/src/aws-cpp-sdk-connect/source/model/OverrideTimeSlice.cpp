@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-OverrideTimeSlice::OverrideTimeSlice(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OverrideTimeSlice::OverrideTimeSlice(JsonView jsonValue) { *this = jsonValue; }
 
-OverrideTimeSlice& OverrideTimeSlice::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Hours"))
-  {
+OverrideTimeSlice& OverrideTimeSlice::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Hours")) {
     m_hours = jsonValue.GetInteger("Hours");
     m_hoursHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Minutes"))
-  {
+  if (jsonValue.ValueExists("Minutes")) {
     m_minutes = jsonValue.GetInteger("Minutes");
     m_minutesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OverrideTimeSlice::Jsonize() const
-{
+JsonValue OverrideTimeSlice::Jsonize() const {
   JsonValue payload;
 
-  if(m_hoursHasBeenSet)
-  {
-   payload.WithInteger("Hours", m_hours);
-
+  if (m_hoursHasBeenSet) {
+    payload.WithInteger("Hours", m_hours);
   }
 
-  if(m_minutesHasBeenSet)
-  {
-   payload.WithInteger("Minutes", m_minutes);
-
+  if (m_minutesHasBeenSet) {
+    payload.WithInteger("Minutes", m_minutes);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

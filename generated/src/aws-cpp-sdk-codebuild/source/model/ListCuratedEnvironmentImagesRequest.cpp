@@ -12,19 +12,10 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListCuratedEnvironmentImagesRequest::SerializePayload() const
-{
-  return "{}";
-}
+Aws::String ListCuratedEnvironmentImagesRequest::SerializePayload() const { return "{}"; }
 
-Aws::Http::HeaderValueCollection ListCuratedEnvironmentImagesRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListCuratedEnvironmentImagesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeBuild_20161006.ListCuratedEnvironmentImages"));
   return headers;
-
 }
-
-
-
-

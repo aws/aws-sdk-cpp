@@ -4,33 +4,28 @@
  */
 
 #pragma once
-#include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElasticBeanstalk
-{
-namespace Model
-{
-  enum class FailureType
-  {
-    NOT_SET,
-    UpdateCancelled,
-    CancellationFailed,
-    RollbackFailed,
-    RollbackSuccessful,
-    InternalFailure,
-    InvalidEnvironmentState,
-    PermissionsError
-  };
+namespace Aws {
+namespace ElasticBeanstalk {
+namespace Model {
+enum class FailureType {
+  NOT_SET,
+  UpdateCancelled,
+  CancellationFailed,
+  RollbackFailed,
+  RollbackSuccessful,
+  InternalFailure,
+  InvalidEnvironmentState,
+  PermissionsError
+};
 
-namespace FailureTypeMapper
-{
+namespace FailureTypeMapper {
 AWS_ELASTICBEANSTALK_API FailureType GetFailureTypeForName(const Aws::String& name);
 
 AWS_ELASTICBEANSTALK_API Aws::String GetNameForFailureType(FailureType value);
-} // namespace FailureTypeMapper
-} // namespace Model
-} // namespace ElasticBeanstalk
-} // namespace Aws
+}  // namespace FailureTypeMapper
+}  // namespace Model
+}  // namespace ElasticBeanstalk
+}  // namespace Aws

@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/ModifyClusterMaintenanceResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/redshift/model/ModifyClusterMaintenanceResult.h>
 
 #include <utility>
 
@@ -17,26 +17,19 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ModifyClusterMaintenanceResult::ModifyClusterMaintenanceResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+ModifyClusterMaintenanceResult::ModifyClusterMaintenanceResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-ModifyClusterMaintenanceResult& ModifyClusterMaintenanceResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+ModifyClusterMaintenanceResult& ModifyClusterMaintenanceResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "ModifyClusterMaintenanceResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "ModifyClusterMaintenanceResult")) {
     resultNode = rootNode.FirstChild("ModifyClusterMaintenanceResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode clusterNode = resultNode.FirstChild("Cluster");
-    if(!clusterNode.IsNull())
-    {
+    if (!clusterNode.IsNull()) {
       m_cluster = clusterNode;
       m_clusterHasBeenSet = true;
     }
@@ -46,7 +39,7 @@ ModifyClusterMaintenanceResult& ModifyClusterMaintenanceResult::operator =(const
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::ModifyClusterMaintenanceResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::ModifyClusterMaintenanceResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

@@ -6,51 +6,49 @@
 #pragma once
 #include <aws/lookoutequipment/LookoutEquipment_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace LookoutEquipment
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace LookoutEquipment {
+namespace Model {
 
+/**
+ * <p> Entity that comprises information abount duplicate timestamps in the
+ * dataset. </p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DuplicateTimestamps">AWS
+ * API Reference</a></p>
+ */
+class DuplicateTimestamps {
+ public:
+  AWS_LOOKOUTEQUIPMENT_API DuplicateTimestamps() = default;
+  AWS_LOOKOUTEQUIPMENT_API DuplicateTimestamps(Aws::Utils::Json::JsonView jsonValue);
+  AWS_LOOKOUTEQUIPMENT_API DuplicateTimestamps& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p> Entity that comprises information abount duplicate timestamps in the
-   * dataset. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DuplicateTimestamps">AWS
-   * API Reference</a></p>
+   * <p> Indicates the total number of duplicate timestamps. </p>
    */
-  class DuplicateTimestamps
-  {
-  public:
-    AWS_LOOKOUTEQUIPMENT_API DuplicateTimestamps() = default;
-    AWS_LOOKOUTEQUIPMENT_API DuplicateTimestamps(Aws::Utils::Json::JsonView jsonValue);
-    AWS_LOOKOUTEQUIPMENT_API DuplicateTimestamps& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetTotalNumberOfDuplicateTimestamps() const { return m_totalNumberOfDuplicateTimestamps; }
+  inline bool TotalNumberOfDuplicateTimestampsHasBeenSet() const { return m_totalNumberOfDuplicateTimestampsHasBeenSet; }
+  inline void SetTotalNumberOfDuplicateTimestamps(int value) {
+    m_totalNumberOfDuplicateTimestampsHasBeenSet = true;
+    m_totalNumberOfDuplicateTimestamps = value;
+  }
+  inline DuplicateTimestamps& WithTotalNumberOfDuplicateTimestamps(int value) {
+    SetTotalNumberOfDuplicateTimestamps(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_totalNumberOfDuplicateTimestamps{0};
+  bool m_totalNumberOfDuplicateTimestampsHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p> Indicates the total number of duplicate timestamps. </p>
-     */
-    inline int GetTotalNumberOfDuplicateTimestamps() const { return m_totalNumberOfDuplicateTimestamps; }
-    inline bool TotalNumberOfDuplicateTimestampsHasBeenSet() const { return m_totalNumberOfDuplicateTimestampsHasBeenSet; }
-    inline void SetTotalNumberOfDuplicateTimestamps(int value) { m_totalNumberOfDuplicateTimestampsHasBeenSet = true; m_totalNumberOfDuplicateTimestamps = value; }
-    inline DuplicateTimestamps& WithTotalNumberOfDuplicateTimestamps(int value) { SetTotalNumberOfDuplicateTimestamps(value); return *this;}
-    ///@}
-  private:
-
-    int m_totalNumberOfDuplicateTimestamps{0};
-    bool m_totalNumberOfDuplicateTimestampsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace LookoutEquipment
-} // namespace Aws
+}  // namespace Model
+}  // namespace LookoutEquipment
+}  // namespace Aws

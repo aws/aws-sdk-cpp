@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/ModelPackageValidationProfile.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/ModelPackageValidationProfile.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-ModelPackageValidationProfile::ModelPackageValidationProfile(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ModelPackageValidationProfile::ModelPackageValidationProfile(JsonView jsonValue) { *this = jsonValue; }
 
-ModelPackageValidationProfile& ModelPackageValidationProfile::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ProfileName"))
-  {
+ModelPackageValidationProfile& ModelPackageValidationProfile::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ProfileName")) {
     m_profileName = jsonValue.GetString("ProfileName");
     m_profileNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TransformJobDefinition"))
-  {
+  if (jsonValue.ValueExists("TransformJobDefinition")) {
     m_transformJobDefinition = jsonValue.GetObject("TransformJobDefinition");
     m_transformJobDefinitionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ModelPackageValidationProfile::Jsonize() const
-{
+JsonValue ModelPackageValidationProfile::Jsonize() const {
   JsonValue payload;
 
-  if(m_profileNameHasBeenSet)
-  {
-   payload.WithString("ProfileName", m_profileName);
-
+  if (m_profileNameHasBeenSet) {
+    payload.WithString("ProfileName", m_profileName);
   }
 
-  if(m_transformJobDefinitionHasBeenSet)
-  {
-   payload.WithObject("TransformJobDefinition", m_transformJobDefinition.Jsonize());
-
+  if (m_transformJobDefinitionHasBeenSet) {
+    payload.WithObject("TransformJobDefinition", m_transformJobDefinition.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

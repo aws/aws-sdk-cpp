@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/personalize/Personalize_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/personalize/Personalize_EXPORTS.h>
 
-namespace Aws
-{
-namespace Personalize
-{
-namespace Model
-{
-  enum class ImportMode
-  {
-    NOT_SET,
-    FULL,
-    INCREMENTAL
-  };
+namespace Aws {
+namespace Personalize {
+namespace Model {
+enum class ImportMode { NOT_SET, FULL, INCREMENTAL };
 
-namespace ImportModeMapper
-{
+namespace ImportModeMapper {
 AWS_PERSONALIZE_API ImportMode GetImportModeForName(const Aws::String& name);
 
 AWS_PERSONALIZE_API Aws::String GetNameForImportMode(ImportMode value);
-} // namespace ImportModeMapper
-} // namespace Model
-} // namespace Personalize
-} // namespace Aws
+}  // namespace ImportModeMapper
+}  // namespace Model
+}  // namespace Personalize
+}  // namespace Aws

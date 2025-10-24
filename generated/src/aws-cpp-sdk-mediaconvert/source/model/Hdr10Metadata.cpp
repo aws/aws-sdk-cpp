@@ -3,170 +3,126 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/Hdr10Metadata.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconvert/model/Hdr10Metadata.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
 
-Hdr10Metadata::Hdr10Metadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Hdr10Metadata::Hdr10Metadata(JsonView jsonValue) { *this = jsonValue; }
 
-Hdr10Metadata& Hdr10Metadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("bluePrimaryX"))
-  {
+Hdr10Metadata& Hdr10Metadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("bluePrimaryX")) {
     m_bluePrimaryX = jsonValue.GetInteger("bluePrimaryX");
     m_bluePrimaryXHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("bluePrimaryY"))
-  {
+  if (jsonValue.ValueExists("bluePrimaryY")) {
     m_bluePrimaryY = jsonValue.GetInteger("bluePrimaryY");
     m_bluePrimaryYHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("greenPrimaryX"))
-  {
+  if (jsonValue.ValueExists("greenPrimaryX")) {
     m_greenPrimaryX = jsonValue.GetInteger("greenPrimaryX");
     m_greenPrimaryXHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("greenPrimaryY"))
-  {
+  if (jsonValue.ValueExists("greenPrimaryY")) {
     m_greenPrimaryY = jsonValue.GetInteger("greenPrimaryY");
     m_greenPrimaryYHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("maxContentLightLevel"))
-  {
+  if (jsonValue.ValueExists("maxContentLightLevel")) {
     m_maxContentLightLevel = jsonValue.GetInteger("maxContentLightLevel");
     m_maxContentLightLevelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("maxFrameAverageLightLevel"))
-  {
+  if (jsonValue.ValueExists("maxFrameAverageLightLevel")) {
     m_maxFrameAverageLightLevel = jsonValue.GetInteger("maxFrameAverageLightLevel");
     m_maxFrameAverageLightLevelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("maxLuminance"))
-  {
+  if (jsonValue.ValueExists("maxLuminance")) {
     m_maxLuminance = jsonValue.GetInteger("maxLuminance");
     m_maxLuminanceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("minLuminance"))
-  {
+  if (jsonValue.ValueExists("minLuminance")) {
     m_minLuminance = jsonValue.GetInteger("minLuminance");
     m_minLuminanceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("redPrimaryX"))
-  {
+  if (jsonValue.ValueExists("redPrimaryX")) {
     m_redPrimaryX = jsonValue.GetInteger("redPrimaryX");
     m_redPrimaryXHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("redPrimaryY"))
-  {
+  if (jsonValue.ValueExists("redPrimaryY")) {
     m_redPrimaryY = jsonValue.GetInteger("redPrimaryY");
     m_redPrimaryYHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("whitePointX"))
-  {
+  if (jsonValue.ValueExists("whitePointX")) {
     m_whitePointX = jsonValue.GetInteger("whitePointX");
     m_whitePointXHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("whitePointY"))
-  {
+  if (jsonValue.ValueExists("whitePointY")) {
     m_whitePointY = jsonValue.GetInteger("whitePointY");
     m_whitePointYHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Hdr10Metadata::Jsonize() const
-{
+JsonValue Hdr10Metadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_bluePrimaryXHasBeenSet)
-  {
-   payload.WithInteger("bluePrimaryX", m_bluePrimaryX);
-
+  if (m_bluePrimaryXHasBeenSet) {
+    payload.WithInteger("bluePrimaryX", m_bluePrimaryX);
   }
 
-  if(m_bluePrimaryYHasBeenSet)
-  {
-   payload.WithInteger("bluePrimaryY", m_bluePrimaryY);
-
+  if (m_bluePrimaryYHasBeenSet) {
+    payload.WithInteger("bluePrimaryY", m_bluePrimaryY);
   }
 
-  if(m_greenPrimaryXHasBeenSet)
-  {
-   payload.WithInteger("greenPrimaryX", m_greenPrimaryX);
-
+  if (m_greenPrimaryXHasBeenSet) {
+    payload.WithInteger("greenPrimaryX", m_greenPrimaryX);
   }
 
-  if(m_greenPrimaryYHasBeenSet)
-  {
-   payload.WithInteger("greenPrimaryY", m_greenPrimaryY);
-
+  if (m_greenPrimaryYHasBeenSet) {
+    payload.WithInteger("greenPrimaryY", m_greenPrimaryY);
   }
 
-  if(m_maxContentLightLevelHasBeenSet)
-  {
-   payload.WithInteger("maxContentLightLevel", m_maxContentLightLevel);
-
+  if (m_maxContentLightLevelHasBeenSet) {
+    payload.WithInteger("maxContentLightLevel", m_maxContentLightLevel);
   }
 
-  if(m_maxFrameAverageLightLevelHasBeenSet)
-  {
-   payload.WithInteger("maxFrameAverageLightLevel", m_maxFrameAverageLightLevel);
-
+  if (m_maxFrameAverageLightLevelHasBeenSet) {
+    payload.WithInteger("maxFrameAverageLightLevel", m_maxFrameAverageLightLevel);
   }
 
-  if(m_maxLuminanceHasBeenSet)
-  {
-   payload.WithInteger("maxLuminance", m_maxLuminance);
-
+  if (m_maxLuminanceHasBeenSet) {
+    payload.WithInteger("maxLuminance", m_maxLuminance);
   }
 
-  if(m_minLuminanceHasBeenSet)
-  {
-   payload.WithInteger("minLuminance", m_minLuminance);
-
+  if (m_minLuminanceHasBeenSet) {
+    payload.WithInteger("minLuminance", m_minLuminance);
   }
 
-  if(m_redPrimaryXHasBeenSet)
-  {
-   payload.WithInteger("redPrimaryX", m_redPrimaryX);
-
+  if (m_redPrimaryXHasBeenSet) {
+    payload.WithInteger("redPrimaryX", m_redPrimaryX);
   }
 
-  if(m_redPrimaryYHasBeenSet)
-  {
-   payload.WithInteger("redPrimaryY", m_redPrimaryY);
-
+  if (m_redPrimaryYHasBeenSet) {
+    payload.WithInteger("redPrimaryY", m_redPrimaryY);
   }
 
-  if(m_whitePointXHasBeenSet)
-  {
-   payload.WithInteger("whitePointX", m_whitePointX);
-
+  if (m_whitePointXHasBeenSet) {
+    payload.WithInteger("whitePointX", m_whitePointX);
   }
 
-  if(m_whitePointYHasBeenSet)
-  {
-   payload.WithInteger("whitePointY", m_whitePointY);
-
+  if (m_whitePointYHasBeenSet) {
+    payload.WithInteger("whitePointY", m_whitePointY);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

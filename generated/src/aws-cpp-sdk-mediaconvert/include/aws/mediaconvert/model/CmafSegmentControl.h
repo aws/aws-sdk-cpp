@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class CmafSegmentControl
-  {
-    NOT_SET,
-    SINGLE_FILE,
-    SEGMENTED_FILES
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class CmafSegmentControl { NOT_SET, SINGLE_FILE, SEGMENTED_FILES };
 
-namespace CmafSegmentControlMapper
-{
+namespace CmafSegmentControlMapper {
 AWS_MEDIACONVERT_API CmafSegmentControl GetCmafSegmentControlForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForCmafSegmentControl(CmafSegmentControl value);
-} // namespace CmafSegmentControlMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace CmafSegmentControlMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

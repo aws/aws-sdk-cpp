@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/PivotTableSortBy.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/PivotTableSortBy.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-PivotTableSortBy::PivotTableSortBy(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PivotTableSortBy::PivotTableSortBy(JsonView jsonValue) { *this = jsonValue; }
 
-PivotTableSortBy& PivotTableSortBy::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Field"))
-  {
+PivotTableSortBy& PivotTableSortBy::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Field")) {
     m_field = jsonValue.GetObject("Field");
     m_fieldHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Column"))
-  {
+  if (jsonValue.ValueExists("Column")) {
     m_column = jsonValue.GetObject("Column");
     m_columnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DataPath"))
-  {
+  if (jsonValue.ValueExists("DataPath")) {
     m_dataPath = jsonValue.GetObject("DataPath");
     m_dataPathHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PivotTableSortBy::Jsonize() const
-{
+JsonValue PivotTableSortBy::Jsonize() const {
   JsonValue payload;
 
-  if(m_fieldHasBeenSet)
-  {
-   payload.WithObject("Field", m_field.Jsonize());
-
+  if (m_fieldHasBeenSet) {
+    payload.WithObject("Field", m_field.Jsonize());
   }
 
-  if(m_columnHasBeenSet)
-  {
-   payload.WithObject("Column", m_column.Jsonize());
-
+  if (m_columnHasBeenSet) {
+    payload.WithObject("Column", m_column.Jsonize());
   }
 
-  if(m_dataPathHasBeenSet)
-  {
-   payload.WithObject("DataPath", m_dataPath.Jsonize());
-
+  if (m_dataPathHasBeenSet) {
+    payload.WithObject("DataPath", m_dataPath.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

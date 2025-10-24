@@ -5,12 +5,8 @@
 
 #include <aws/sso-admin/SSOAdminEndpointProvider.h>
 
-namespace Aws
-{
-namespace SSOAdmin
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace SSOAdmin
-} // namespace Aws
+namespace Aws {
+namespace SSOAdmin {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace SSOAdmin
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/gamelift/GameLift_EXPORTS.h>
 
-namespace Aws
-{
-namespace GameLift
-{
-namespace Model
-{
-  enum class PlayerSessionCreationPolicy
-  {
-    NOT_SET,
-    ACCEPT_ALL,
-    DENY_ALL
-  };
+namespace Aws {
+namespace GameLift {
+namespace Model {
+enum class PlayerSessionCreationPolicy { NOT_SET, ACCEPT_ALL, DENY_ALL };
 
-namespace PlayerSessionCreationPolicyMapper
-{
+namespace PlayerSessionCreationPolicyMapper {
 AWS_GAMELIFT_API PlayerSessionCreationPolicy GetPlayerSessionCreationPolicyForName(const Aws::String& name);
 
 AWS_GAMELIFT_API Aws::String GetNameForPlayerSessionCreationPolicy(PlayerSessionCreationPolicy value);
-} // namespace PlayerSessionCreationPolicyMapper
-} // namespace Model
-} // namespace GameLift
-} // namespace Aws
+}  // namespace PlayerSessionCreationPolicyMapper
+}  // namespace Model
+}  // namespace GameLift
+}  // namespace Aws

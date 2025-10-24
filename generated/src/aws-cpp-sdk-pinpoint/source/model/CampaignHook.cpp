@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint/model/CampaignHook.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint/model/CampaignHook.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Pinpoint
-{
-namespace Model
-{
+namespace Aws {
+namespace Pinpoint {
+namespace Model {
 
-CampaignHook::CampaignHook(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CampaignHook::CampaignHook(JsonView jsonValue) { *this = jsonValue; }
 
-CampaignHook& CampaignHook::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("LambdaFunctionName"))
-  {
+CampaignHook& CampaignHook::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("LambdaFunctionName")) {
     m_lambdaFunctionName = jsonValue.GetString("LambdaFunctionName");
     m_lambdaFunctionNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Mode"))
-  {
+  if (jsonValue.ValueExists("Mode")) {
     m_mode = ModeMapper::GetModeForName(jsonValue.GetString("Mode"));
     m_modeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WebUrl"))
-  {
+  if (jsonValue.ValueExists("WebUrl")) {
     m_webUrl = jsonValue.GetString("WebUrl");
     m_webUrlHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CampaignHook::Jsonize() const
-{
+JsonValue CampaignHook::Jsonize() const {
   JsonValue payload;
 
-  if(m_lambdaFunctionNameHasBeenSet)
-  {
-   payload.WithString("LambdaFunctionName", m_lambdaFunctionName);
-
+  if (m_lambdaFunctionNameHasBeenSet) {
+    payload.WithString("LambdaFunctionName", m_lambdaFunctionName);
   }
 
-  if(m_modeHasBeenSet)
-  {
-   payload.WithString("Mode", ModeMapper::GetNameForMode(m_mode));
+  if (m_modeHasBeenSet) {
+    payload.WithString("Mode", ModeMapper::GetNameForMode(m_mode));
   }
 
-  if(m_webUrlHasBeenSet)
-  {
-   payload.WithString("WebUrl", m_webUrl);
-
+  if (m_webUrlHasBeenSet) {
+    payload.WithString("WebUrl", m_webUrl);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

@@ -5,12 +5,8 @@
 
 #include <aws/mediapackage-vod/MediaPackageVodEndpointProvider.h>
 
-namespace Aws
-{
-namespace MediaPackageVod
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace MediaPackageVod
-} // namespace Aws
+namespace Aws {
+namespace MediaPackageVod {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace MediaPackageVod
+}  // namespace Aws

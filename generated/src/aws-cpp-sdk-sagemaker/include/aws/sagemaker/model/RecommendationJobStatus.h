@@ -4,34 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class RecommendationJobStatus
-  {
-    NOT_SET,
-    PENDING,
-    IN_PROGRESS,
-    COMPLETED,
-    FAILED,
-    STOPPING,
-    STOPPED,
-    DELETING,
-    DELETED
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class RecommendationJobStatus { NOT_SET, PENDING, IN_PROGRESS, COMPLETED, FAILED, STOPPING, STOPPED, DELETING, DELETED };
 
-namespace RecommendationJobStatusMapper
-{
+namespace RecommendationJobStatusMapper {
 AWS_SAGEMAKER_API RecommendationJobStatus GetRecommendationJobStatusForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForRecommendationJobStatus(RecommendationJobStatus value);
-} // namespace RecommendationJobStatusMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace RecommendationJobStatusMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

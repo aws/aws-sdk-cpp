@@ -7,26 +7,16 @@
 #include <aws/application-insights/ApplicationInsights_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ApplicationInsights
-{
-namespace Model
-{
-  enum class ConfigurationEventStatus
-  {
-    NOT_SET,
-    INFO,
-    WARN,
-    ERROR_
-  };
+namespace Aws {
+namespace ApplicationInsights {
+namespace Model {
+enum class ConfigurationEventStatus { NOT_SET, INFO, WARN, ERROR_ };
 
-namespace ConfigurationEventStatusMapper
-{
+namespace ConfigurationEventStatusMapper {
 AWS_APPLICATIONINSIGHTS_API ConfigurationEventStatus GetConfigurationEventStatusForName(const Aws::String& name);
 
 AWS_APPLICATIONINSIGHTS_API Aws::String GetNameForConfigurationEventStatus(ConfigurationEventStatus value);
-} // namespace ConfigurationEventStatusMapper
-} // namespace Model
-} // namespace ApplicationInsights
-} // namespace Aws
+}  // namespace ConfigurationEventStatusMapper
+}  // namespace Model
+}  // namespace ApplicationInsights
+}  // namespace Aws

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/GenerativeAiSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/GenerativeAiSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-GenerativeAiSettings::GenerativeAiSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GenerativeAiSettings::GenerativeAiSettings(JsonView jsonValue) { *this = jsonValue; }
 
-GenerativeAiSettings& GenerativeAiSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AmazonBedrockRoleArn"))
-  {
+GenerativeAiSettings& GenerativeAiSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AmazonBedrockRoleArn")) {
     m_amazonBedrockRoleArn = jsonValue.GetString("AmazonBedrockRoleArn");
     m_amazonBedrockRoleArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GenerativeAiSettings::Jsonize() const
-{
+JsonValue GenerativeAiSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_amazonBedrockRoleArnHasBeenSet)
-  {
-   payload.WithString("AmazonBedrockRoleArn", m_amazonBedrockRoleArn);
-
+  if (m_amazonBedrockRoleArnHasBeenSet) {
+    payload.WithString("AmazonBedrockRoleArn", m_amazonBedrockRoleArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ivs/IVS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ivs/IVS_EXPORTS.h>
 
-namespace Aws
-{
-namespace IVS
-{
-namespace Model
-{
-  enum class ContainerFormat
-  {
-    NOT_SET,
-    TS,
-    FRAGMENTED_MP4
-  };
+namespace Aws {
+namespace IVS {
+namespace Model {
+enum class ContainerFormat { NOT_SET, TS, FRAGMENTED_MP4 };
 
-namespace ContainerFormatMapper
-{
+namespace ContainerFormatMapper {
 AWS_IVS_API ContainerFormat GetContainerFormatForName(const Aws::String& name);
 
 AWS_IVS_API Aws::String GetNameForContainerFormat(ContainerFormat value);
-} // namespace ContainerFormatMapper
-} // namespace Model
-} // namespace IVS
-} // namespace Aws
+}  // namespace ContainerFormatMapper
+}  // namespace Model
+}  // namespace IVS
+}  // namespace Aws

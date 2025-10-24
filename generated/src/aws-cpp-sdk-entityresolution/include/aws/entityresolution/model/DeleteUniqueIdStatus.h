@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/entityresolution/EntityResolution_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/entityresolution/EntityResolution_EXPORTS.h>
 
-namespace Aws
-{
-namespace EntityResolution
-{
-namespace Model
-{
-  enum class DeleteUniqueIdStatus
-  {
-    NOT_SET,
-    COMPLETED,
-    ACCEPTED
-  };
+namespace Aws {
+namespace EntityResolution {
+namespace Model {
+enum class DeleteUniqueIdStatus { NOT_SET, COMPLETED, ACCEPTED };
 
-namespace DeleteUniqueIdStatusMapper
-{
+namespace DeleteUniqueIdStatusMapper {
 AWS_ENTITYRESOLUTION_API DeleteUniqueIdStatus GetDeleteUniqueIdStatusForName(const Aws::String& name);
 
 AWS_ENTITYRESOLUTION_API Aws::String GetNameForDeleteUniqueIdStatus(DeleteUniqueIdStatus value);
-} // namespace DeleteUniqueIdStatusMapper
-} // namespace Model
-} // namespace EntityResolution
-} // namespace Aws
+}  // namespace DeleteUniqueIdStatusMapper
+}  // namespace Model
+}  // namespace EntityResolution
+}  // namespace Aws

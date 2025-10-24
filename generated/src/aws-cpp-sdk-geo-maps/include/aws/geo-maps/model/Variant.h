@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/geo-maps/GeoMaps_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/geo-maps/GeoMaps_EXPORTS.h>
 
-namespace Aws
-{
-namespace GeoMaps
-{
-namespace Model
-{
-  enum class Variant
-  {
-    NOT_SET,
-    Default
-  };
+namespace Aws {
+namespace GeoMaps {
+namespace Model {
+enum class Variant { NOT_SET, Default };
 
-namespace VariantMapper
-{
+namespace VariantMapper {
 AWS_GEOMAPS_API Variant GetVariantForName(const Aws::String& name);
 
 AWS_GEOMAPS_API Aws::String GetNameForVariant(Variant value);
-} // namespace VariantMapper
-} // namespace Model
-} // namespace GeoMaps
-} // namespace Aws
+}  // namespace VariantMapper
+}  // namespace Model
+}  // namespace GeoMaps
+}  // namespace Aws

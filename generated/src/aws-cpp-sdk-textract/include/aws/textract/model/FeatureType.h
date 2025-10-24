@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/textract/Textract_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/textract/Textract_EXPORTS.h>
 
-namespace Aws
-{
-namespace Textract
-{
-namespace Model
-{
-  enum class FeatureType
-  {
-    NOT_SET,
-    TABLES,
-    FORMS,
-    QUERIES,
-    SIGNATURES,
-    LAYOUT
-  };
+namespace Aws {
+namespace Textract {
+namespace Model {
+enum class FeatureType { NOT_SET, TABLES, FORMS, QUERIES, SIGNATURES, LAYOUT };
 
-namespace FeatureTypeMapper
-{
+namespace FeatureTypeMapper {
 AWS_TEXTRACT_API FeatureType GetFeatureTypeForName(const Aws::String& name);
 
 AWS_TEXTRACT_API Aws::String GetNameForFeatureType(FeatureType value);
-} // namespace FeatureTypeMapper
-} // namespace Model
-} // namespace Textract
-} // namespace Aws
+}  // namespace FeatureTypeMapper
+}  // namespace Model
+}  // namespace Textract
+}  // namespace Aws

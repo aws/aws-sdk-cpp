@@ -11,83 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
 
-LicenseRecommendationOption::LicenseRecommendationOption(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LicenseRecommendationOption::LicenseRecommendationOption(JsonView jsonValue) { *this = jsonValue; }
 
-LicenseRecommendationOption& LicenseRecommendationOption::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("rank"))
-  {
+LicenseRecommendationOption& LicenseRecommendationOption::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("rank")) {
     m_rank = jsonValue.GetInteger("rank");
     m_rankHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("operatingSystem"))
-  {
+  if (jsonValue.ValueExists("operatingSystem")) {
     m_operatingSystem = jsonValue.GetString("operatingSystem");
     m_operatingSystemHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("licenseEdition"))
-  {
+  if (jsonValue.ValueExists("licenseEdition")) {
     m_licenseEdition = LicenseEditionMapper::GetLicenseEditionForName(jsonValue.GetString("licenseEdition"));
     m_licenseEditionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("licenseModel"))
-  {
+  if (jsonValue.ValueExists("licenseModel")) {
     m_licenseModel = LicenseModelMapper::GetLicenseModelForName(jsonValue.GetString("licenseModel"));
     m_licenseModelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("savingsOpportunity"))
-  {
+  if (jsonValue.ValueExists("savingsOpportunity")) {
     m_savingsOpportunity = jsonValue.GetObject("savingsOpportunity");
     m_savingsOpportunityHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LicenseRecommendationOption::Jsonize() const
-{
+JsonValue LicenseRecommendationOption::Jsonize() const {
   JsonValue payload;
 
-  if(m_rankHasBeenSet)
-  {
-   payload.WithInteger("rank", m_rank);
-
+  if (m_rankHasBeenSet) {
+    payload.WithInteger("rank", m_rank);
   }
 
-  if(m_operatingSystemHasBeenSet)
-  {
-   payload.WithString("operatingSystem", m_operatingSystem);
-
+  if (m_operatingSystemHasBeenSet) {
+    payload.WithString("operatingSystem", m_operatingSystem);
   }
 
-  if(m_licenseEditionHasBeenSet)
-  {
-   payload.WithString("licenseEdition", LicenseEditionMapper::GetNameForLicenseEdition(m_licenseEdition));
+  if (m_licenseEditionHasBeenSet) {
+    payload.WithString("licenseEdition", LicenseEditionMapper::GetNameForLicenseEdition(m_licenseEdition));
   }
 
-  if(m_licenseModelHasBeenSet)
-  {
-   payload.WithString("licenseModel", LicenseModelMapper::GetNameForLicenseModel(m_licenseModel));
+  if (m_licenseModelHasBeenSet) {
+    payload.WithString("licenseModel", LicenseModelMapper::GetNameForLicenseModel(m_licenseModel));
   }
 
-  if(m_savingsOpportunityHasBeenSet)
-  {
-   payload.WithObject("savingsOpportunity", m_savingsOpportunity.Jsonize());
-
+  if (m_savingsOpportunityHasBeenSet) {
+    payload.WithObject("savingsOpportunity", m_savingsOpportunity.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

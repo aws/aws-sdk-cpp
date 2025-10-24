@@ -12,25 +12,16 @@ using namespace Aws::chatbot::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteMicrosoftTeamsUserIdentityRequest::SerializePayload() const
-{
+Aws::String DeleteMicrosoftTeamsUserIdentityRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_chatConfigurationArnHasBeenSet)
-  {
-   payload.WithString("ChatConfigurationArn", m_chatConfigurationArn);
-
+  if (m_chatConfigurationArnHasBeenSet) {
+    payload.WithString("ChatConfigurationArn", m_chatConfigurationArn);
   }
 
-  if(m_userIdHasBeenSet)
-  {
-   payload.WithString("UserId", m_userId);
-
+  if (m_userIdHasBeenSet) {
+    payload.WithString("UserId", m_userId);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -3,42 +3,35 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/StartDeclarativePoliciesReportRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/StartDeclarativePoliciesReportRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String StartDeclarativePoliciesReportRequest::SerializePayload() const
-{
+Aws::String StartDeclarativePoliciesReportRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=StartDeclarativePoliciesReport&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_s3BucketHasBeenSet)
-  {
+  if (m_s3BucketHasBeenSet) {
     ss << "S3Bucket=" << StringUtils::URLEncode(m_s3Bucket.c_str()) << "&";
   }
 
-  if(m_s3PrefixHasBeenSet)
-  {
+  if (m_s3PrefixHasBeenSet) {
     ss << "S3Prefix=" << StringUtils::URLEncode(m_s3Prefix.c_str()) << "&";
   }
 
-  if(m_targetIdHasBeenSet)
-  {
+  if (m_targetIdHasBeenSet) {
     ss << "TargetId=" << StringUtils::URLEncode(m_targetId.c_str()) << "&";
   }
 
-  if(m_tagSpecificationsHasBeenSet)
-  {
+  if (m_tagSpecificationsHasBeenSet) {
     unsigned tagSpecificationsCount = 1;
-    for(auto& item : m_tagSpecifications)
-    {
+    for (auto& item : m_tagSpecifications) {
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
@@ -48,8 +41,4 @@ Aws::String StartDeclarativePoliciesReportRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  StartDeclarativePoliciesReportRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void StartDeclarativePoliciesReportRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

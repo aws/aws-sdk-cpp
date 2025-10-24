@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/route53-recovery-readiness/model/Message.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/route53-recovery-readiness/model/Message.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Route53RecoveryReadiness
-{
-namespace Model
-{
+namespace Aws {
+namespace Route53RecoveryReadiness {
+namespace Model {
 
-Message::Message(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Message::Message(JsonView jsonValue) { *this = jsonValue; }
 
-Message& Message::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("messageText"))
-  {
+Message& Message::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("messageText")) {
     m_messageText = jsonValue.GetString("messageText");
     m_messageTextHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Message::Jsonize() const
-{
+JsonValue Message::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageTextHasBeenSet)
-  {
-   payload.WithString("messageText", m_messageText);
-
+  if (m_messageTextHasBeenSet) {
+    payload.WithString("messageText", m_messageText);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Route53RecoveryReadiness
-} // namespace Aws
+}  // namespace Model
+}  // namespace Route53RecoveryReadiness
+}  // namespace Aws

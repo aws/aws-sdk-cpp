@@ -5,12 +5,8 @@
 
 #include <aws/billing/BillingEndpointProvider.h>
 
-namespace Aws
-{
-namespace Billing
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Billing
-} // namespace Aws
+namespace Aws {
+namespace Billing {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Billing
+}  // namespace Aws

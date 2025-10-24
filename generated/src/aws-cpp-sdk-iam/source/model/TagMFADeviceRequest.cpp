@@ -3,33 +3,26 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/TagMFADeviceRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/TagMFADeviceRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String TagMFADeviceRequest::SerializePayload() const
-{
+Aws::String TagMFADeviceRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=TagMFADevice&";
-  if(m_serialNumberHasBeenSet)
-  {
+  if (m_serialNumberHasBeenSet) {
     ss << "SerialNumber=" << StringUtils::URLEncode(m_serialNumber.c_str()) << "&";
   }
 
-  if(m_tagsHasBeenSet)
-  {
-    if (m_tags.empty())
-    {
+  if (m_tagsHasBeenSet) {
+    if (m_tags.empty()) {
       ss << "Tags=&";
-    }
-    else
-    {
+    } else {
       unsigned tagsCount = 1;
-      for(auto& item : m_tags)
-      {
+      for (auto& item : m_tags) {
         item.OutputToStream(ss, "Tags.member.", tagsCount, "");
         tagsCount++;
       }
@@ -40,8 +33,4 @@ Aws::String TagMFADeviceRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  TagMFADeviceRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void TagMFADeviceRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

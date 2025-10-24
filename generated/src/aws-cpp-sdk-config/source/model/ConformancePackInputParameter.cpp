@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-ConformancePackInputParameter::ConformancePackInputParameter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConformancePackInputParameter::ConformancePackInputParameter(JsonView jsonValue) { *this = jsonValue; }
 
-ConformancePackInputParameter& ConformancePackInputParameter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ParameterName"))
-  {
+ConformancePackInputParameter& ConformancePackInputParameter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ParameterName")) {
     m_parameterName = jsonValue.GetString("ParameterName");
     m_parameterNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ParameterValue"))
-  {
+  if (jsonValue.ValueExists("ParameterValue")) {
     m_parameterValue = jsonValue.GetString("ParameterValue");
     m_parameterValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ConformancePackInputParameter::Jsonize() const
-{
+JsonValue ConformancePackInputParameter::Jsonize() const {
   JsonValue payload;
 
-  if(m_parameterNameHasBeenSet)
-  {
-   payload.WithString("ParameterName", m_parameterName);
-
+  if (m_parameterNameHasBeenSet) {
+    payload.WithString("ParameterName", m_parameterName);
   }
 
-  if(m_parameterValueHasBeenSet)
-  {
-   payload.WithString("ParameterValue", m_parameterValue);
-
+  if (m_parameterValueHasBeenSet) {
+    payload.WithString("ParameterValue", m_parameterValue);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

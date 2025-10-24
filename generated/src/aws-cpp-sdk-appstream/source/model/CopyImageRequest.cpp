@@ -12,45 +12,30 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CopyImageRequest::SerializePayload() const
-{
+Aws::String CopyImageRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_sourceImageNameHasBeenSet)
-  {
-   payload.WithString("SourceImageName", m_sourceImageName);
-
+  if (m_sourceImageNameHasBeenSet) {
+    payload.WithString("SourceImageName", m_sourceImageName);
   }
 
-  if(m_destinationImageNameHasBeenSet)
-  {
-   payload.WithString("DestinationImageName", m_destinationImageName);
-
+  if (m_destinationImageNameHasBeenSet) {
+    payload.WithString("DestinationImageName", m_destinationImageName);
   }
 
-  if(m_destinationRegionHasBeenSet)
-  {
-   payload.WithString("DestinationRegion", m_destinationRegion);
-
+  if (m_destinationRegionHasBeenSet) {
+    payload.WithString("DestinationRegion", m_destinationRegion);
   }
 
-  if(m_destinationImageDescriptionHasBeenSet)
-  {
-   payload.WithString("DestinationImageDescription", m_destinationImageDescription);
-
+  if (m_destinationImageDescriptionHasBeenSet) {
+    payload.WithString("DestinationImageDescription", m_destinationImageDescription);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CopyImageRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CopyImageRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "PhotonAdminProxyService.CopyImage"));
   return headers;
-
 }
-
-
-
-

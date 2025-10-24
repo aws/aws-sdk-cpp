@@ -3,98 +3,76 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/guardduty/model/ThreatEntitySetFormat.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/guardduty/model/ThreatEntitySetFormat.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace GuardDuty {
+namespace Model {
+namespace ThreatEntitySetFormatMapper {
 
-namespace Aws
-{
-  namespace GuardDuty
-  {
-    namespace Model
-    {
-      namespace ThreatEntitySetFormatMapper
-      {
+static const int TXT_HASH = HashingUtils::HashString("TXT");
+static const int STIX_HASH = HashingUtils::HashString("STIX");
+static const int OTX_CSV_HASH = HashingUtils::HashString("OTX_CSV");
+static const int ALIEN_VAULT_HASH = HashingUtils::HashString("ALIEN_VAULT");
+static const int PROOF_POINT_HASH = HashingUtils::HashString("PROOF_POINT");
+static const int FIRE_EYE_HASH = HashingUtils::HashString("FIRE_EYE");
 
-        static const int TXT_HASH = HashingUtils::HashString("TXT");
-        static const int STIX_HASH = HashingUtils::HashString("STIX");
-        static const int OTX_CSV_HASH = HashingUtils::HashString("OTX_CSV");
-        static const int ALIEN_VAULT_HASH = HashingUtils::HashString("ALIEN_VAULT");
-        static const int PROOF_POINT_HASH = HashingUtils::HashString("PROOF_POINT");
-        static const int FIRE_EYE_HASH = HashingUtils::HashString("FIRE_EYE");
+ThreatEntitySetFormat GetThreatEntitySetFormatForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == TXT_HASH) {
+    return ThreatEntitySetFormat::TXT;
+  } else if (hashCode == STIX_HASH) {
+    return ThreatEntitySetFormat::STIX;
+  } else if (hashCode == OTX_CSV_HASH) {
+    return ThreatEntitySetFormat::OTX_CSV;
+  } else if (hashCode == ALIEN_VAULT_HASH) {
+    return ThreatEntitySetFormat::ALIEN_VAULT;
+  } else if (hashCode == PROOF_POINT_HASH) {
+    return ThreatEntitySetFormat::PROOF_POINT;
+  } else if (hashCode == FIRE_EYE_HASH) {
+    return ThreatEntitySetFormat::FIRE_EYE;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<ThreatEntitySetFormat>(hashCode);
+  }
 
+  return ThreatEntitySetFormat::NOT_SET;
+}
 
-        ThreatEntitySetFormat GetThreatEntitySetFormatForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == TXT_HASH)
-          {
-            return ThreatEntitySetFormat::TXT;
-          }
-          else if (hashCode == STIX_HASH)
-          {
-            return ThreatEntitySetFormat::STIX;
-          }
-          else if (hashCode == OTX_CSV_HASH)
-          {
-            return ThreatEntitySetFormat::OTX_CSV;
-          }
-          else if (hashCode == ALIEN_VAULT_HASH)
-          {
-            return ThreatEntitySetFormat::ALIEN_VAULT;
-          }
-          else if (hashCode == PROOF_POINT_HASH)
-          {
-            return ThreatEntitySetFormat::PROOF_POINT;
-          }
-          else if (hashCode == FIRE_EYE_HASH)
-          {
-            return ThreatEntitySetFormat::FIRE_EYE;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ThreatEntitySetFormat>(hashCode);
-          }
+Aws::String GetNameForThreatEntitySetFormat(ThreatEntitySetFormat enumValue) {
+  switch (enumValue) {
+    case ThreatEntitySetFormat::NOT_SET:
+      return {};
+    case ThreatEntitySetFormat::TXT:
+      return "TXT";
+    case ThreatEntitySetFormat::STIX:
+      return "STIX";
+    case ThreatEntitySetFormat::OTX_CSV:
+      return "OTX_CSV";
+    case ThreatEntitySetFormat::ALIEN_VAULT:
+      return "ALIEN_VAULT";
+    case ThreatEntitySetFormat::PROOF_POINT:
+      return "PROOF_POINT";
+    case ThreatEntitySetFormat::FIRE_EYE:
+      return "FIRE_EYE";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return ThreatEntitySetFormat::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForThreatEntitySetFormat(ThreatEntitySetFormat enumValue)
-        {
-          switch(enumValue)
-          {
-          case ThreatEntitySetFormat::NOT_SET:
-            return {};
-          case ThreatEntitySetFormat::TXT:
-            return "TXT";
-          case ThreatEntitySetFormat::STIX:
-            return "STIX";
-          case ThreatEntitySetFormat::OTX_CSV:
-            return "OTX_CSV";
-          case ThreatEntitySetFormat::ALIEN_VAULT:
-            return "ALIEN_VAULT";
-          case ThreatEntitySetFormat::PROOF_POINT:
-            return "PROOF_POINT";
-          case ThreatEntitySetFormat::FIRE_EYE:
-            return "FIRE_EYE";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace ThreatEntitySetFormatMapper
-    } // namespace Model
-  } // namespace GuardDuty
-} // namespace Aws
+}  // namespace ThreatEntitySetFormatMapper
+}  // namespace Model
+}  // namespace GuardDuty
+}  // namespace Aws

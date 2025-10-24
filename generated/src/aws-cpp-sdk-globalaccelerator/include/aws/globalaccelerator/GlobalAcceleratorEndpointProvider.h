@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/globalaccelerator/GlobalAccelerator_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/globalaccelerator/GlobalAcceleratorEndpointRules.h>
+#include <aws/globalaccelerator/GlobalAccelerator_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace GlobalAccelerator
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace GlobalAccelerator {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using GlobalAcceleratorClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -34,28 +29,26 @@ using GlobalAcceleratorBuiltInParameters = Aws::Endpoint::BuiltInParameters;
  * Inherit from this Base class / "Interface" should you want to provide a custom endpoint provider.
  * The SDK must use service-specific type for each service per specification.
  */
-using GlobalAcceleratorEndpointProviderBase =
-    EndpointProviderBase<GlobalAcceleratorClientConfiguration, GlobalAcceleratorBuiltInParameters, GlobalAcceleratorClientContextParameters>;
+using GlobalAcceleratorEndpointProviderBase = EndpointProviderBase<GlobalAcceleratorClientConfiguration, GlobalAcceleratorBuiltInParameters,
+                                                                   GlobalAcceleratorClientContextParameters>;
 
 using GlobalAcceleratorDefaultEpProviderBase =
-    DefaultEndpointProvider<GlobalAcceleratorClientConfiguration, GlobalAcceleratorBuiltInParameters, GlobalAcceleratorClientContextParameters>;
+    DefaultEndpointProvider<GlobalAcceleratorClientConfiguration, GlobalAcceleratorBuiltInParameters,
+                            GlobalAcceleratorClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_GLOBALACCELERATOR_API GlobalAcceleratorEndpointProvider : public GlobalAcceleratorDefaultEpProviderBase
-{
-public:
-    using GlobalAcceleratorResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_GLOBALACCELERATOR_API GlobalAcceleratorEndpointProvider : public GlobalAcceleratorDefaultEpProviderBase {
+ public:
+  using GlobalAcceleratorResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    GlobalAcceleratorEndpointProvider()
-      : GlobalAcceleratorDefaultEpProviderBase(Aws::GlobalAccelerator::GlobalAcceleratorEndpointRules::GetRulesBlob(), Aws::GlobalAccelerator::GlobalAcceleratorEndpointRules::RulesBlobSize)
-    {}
+  GlobalAcceleratorEndpointProvider()
+      : GlobalAcceleratorDefaultEpProviderBase(Aws::GlobalAccelerator::GlobalAcceleratorEndpointRules::GetRulesBlob(),
+                                               Aws::GlobalAccelerator::GlobalAcceleratorEndpointRules::RulesBlobSize) {}
 
-    ~GlobalAcceleratorEndpointProvider()
-    {
-    }
+  ~GlobalAcceleratorEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace GlobalAccelerator
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace GlobalAccelerator
+}  // namespace Aws

@@ -13,18 +13,15 @@ using namespace Aws::Utils;
 using namespace Aws::KinesisAnalytics;
 using namespace Aws::KinesisAnalytics::Model;
 
-namespace Aws
-{
-namespace KinesisAnalytics
-{
-template<> AWS_KINESISANALYTICS_API UnableToDetectSchemaException KinesisAnalyticsError::GetModeledError()
-{
+namespace Aws {
+namespace KinesisAnalytics {
+template <>
+AWS_KINESISANALYTICS_API UnableToDetectSchemaException KinesisAnalyticsError::GetModeledError() {
   assert(this->GetErrorType() == KinesisAnalyticsErrors::UNABLE_TO_DETECT_SCHEMA);
   return UnableToDetectSchemaException(this->GetJsonPayload().View());
 }
 
-namespace KinesisAnalyticsErrorMapper
-{
+namespace KinesisAnalyticsErrorMapper {
 
 static const int RESOURCE_PROVISIONED_THROUGHPUT_EXCEEDED_HASH = HashingUtils::HashString("ResourceProvisionedThroughputExceededException");
 static const int CODE_VALIDATION_HASH = HashingUtils::HashString("CodeValidationException");
@@ -37,54 +34,35 @@ static const int INVALID_APPLICATION_CONFIGURATION_HASH = HashingUtils::HashStri
 static const int INVALID_ARGUMENT_HASH = HashingUtils::HashString("InvalidArgumentException");
 static const int UNABLE_TO_DETECT_SCHEMA_HASH = HashingUtils::HashString("UnableToDetectSchemaException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == RESOURCE_PROVISIONED_THROUGHPUT_EXCEEDED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisAnalyticsErrors::RESOURCE_PROVISIONED_THROUGHPUT_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == CODE_VALIDATION_HASH)
-  {
+  if (hashCode == RESOURCE_PROVISIONED_THROUGHPUT_EXCEEDED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisAnalyticsErrors::RESOURCE_PROVISIONED_THROUGHPUT_EXCEEDED),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == CODE_VALIDATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisAnalyticsErrors::CODE_VALIDATION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisAnalyticsErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == TOO_MANY_TAGS_HASH)
-  {
+  } else if (hashCode == TOO_MANY_TAGS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisAnalyticsErrors::TOO_MANY_TAGS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == CONCURRENT_MODIFICATION_HASH)
-  {
+  } else if (hashCode == CONCURRENT_MODIFICATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisAnalyticsErrors::CONCURRENT_MODIFICATION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == RESOURCE_IN_USE_HASH)
-  {
+  } else if (hashCode == RESOURCE_IN_USE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisAnalyticsErrors::RESOURCE_IN_USE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == UNSUPPORTED_OPERATION_HASH)
-  {
+  } else if (hashCode == UNSUPPORTED_OPERATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisAnalyticsErrors::UNSUPPORTED_OPERATION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_APPLICATION_CONFIGURATION_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisAnalyticsErrors::INVALID_APPLICATION_CONFIGURATION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_ARGUMENT_HASH)
-  {
+  } else if (hashCode == INVALID_APPLICATION_CONFIGURATION_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisAnalyticsErrors::INVALID_APPLICATION_CONFIGURATION),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_ARGUMENT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisAnalyticsErrors::INVALID_ARGUMENT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == UNABLE_TO_DETECT_SCHEMA_HASH)
-  {
+  } else if (hashCode == UNABLE_TO_DETECT_SCHEMA_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisAnalyticsErrors::UNABLE_TO_DETECT_SCHEMA), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace KinesisAnalyticsErrorMapper
-} // namespace KinesisAnalytics
-} // namespace Aws
+}  // namespace KinesisAnalyticsErrorMapper
+}  // namespace KinesisAnalytics
+}  // namespace Aws

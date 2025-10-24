@@ -4,8 +4,8 @@
  */
 
 #include <aws/appmesh/model/UpdateVirtualGatewayRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -15,36 +15,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String UpdateVirtualGatewayRequest::SerializePayload() const
-{
+Aws::String UpdateVirtualGatewayRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
   }
 
-  if(m_specHasBeenSet)
-  {
-   payload.WithObject("spec", m_spec.Jsonize());
-
+  if (m_specHasBeenSet) {
+    payload.WithObject("spec", m_spec.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-void UpdateVirtualGatewayRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_meshOwnerHasBeenSet)
-    {
-      ss << m_meshOwner;
-      uri.AddQueryStringParameter("meshOwner", ss.str());
-      ss.str("");
-    }
-
+void UpdateVirtualGatewayRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_meshOwnerHasBeenSet) {
+    ss << m_meshOwner;
+    uri.AddQueryStringParameter("meshOwner", ss.str());
+    ss.str("");
+  }
 }
-
-
-

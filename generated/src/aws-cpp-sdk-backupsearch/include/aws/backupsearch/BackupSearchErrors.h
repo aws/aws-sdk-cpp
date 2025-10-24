@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/backupsearch/BackupSearch_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/backupsearch/BackupSearch_EXPORTS.h>
 
-namespace Aws
-{
-namespace BackupSearch
-{
-enum class BackupSearchErrors
-{
-  //From Core//
+namespace Aws {
+namespace BackupSearch {
+enum class BackupSearchErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class BackupSearchErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,14 +44,13 @@ enum class BackupSearchErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER,
   SERVICE_QUOTA_EXCEEDED
 };
 
-class AWS_BACKUPSEARCH_API BackupSearchError : public Aws::Client::AWSError<BackupSearchErrors>
-{
-public:
+class AWS_BACKUPSEARCH_API BackupSearchError : public Aws::Client::AWSError<BackupSearchErrors> {
+ public:
   BackupSearchError() {}
   BackupSearchError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<BackupSearchErrors>(rhs) {}
   BackupSearchError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<BackupSearchErrors>(rhs) {}
@@ -65,10 +61,9 @@ public:
   T GetModeledError();
 };
 
-namespace BackupSearchErrorMapper
-{
-  AWS_BACKUPSEARCH_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace BackupSearchErrorMapper {
+AWS_BACKUPSEARCH_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace BackupSearch
-} // namespace Aws
+}  // namespace BackupSearch
+}  // namespace Aws

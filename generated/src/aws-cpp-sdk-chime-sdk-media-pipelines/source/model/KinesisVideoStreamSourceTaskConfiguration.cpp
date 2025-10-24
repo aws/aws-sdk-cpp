@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-KinesisVideoStreamSourceTaskConfiguration::KinesisVideoStreamSourceTaskConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+KinesisVideoStreamSourceTaskConfiguration::KinesisVideoStreamSourceTaskConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-KinesisVideoStreamSourceTaskConfiguration& KinesisVideoStreamSourceTaskConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("StreamArn"))
-  {
+KinesisVideoStreamSourceTaskConfiguration& KinesisVideoStreamSourceTaskConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("StreamArn")) {
     m_streamArn = jsonValue.GetString("StreamArn");
     m_streamArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ChannelId"))
-  {
+  if (jsonValue.ValueExists("ChannelId")) {
     m_channelId = jsonValue.GetInteger("ChannelId");
     m_channelIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FragmentNumber"))
-  {
+  if (jsonValue.ValueExists("FragmentNumber")) {
     m_fragmentNumber = jsonValue.GetString("FragmentNumber");
     m_fragmentNumberHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue KinesisVideoStreamSourceTaskConfiguration::Jsonize() const
-{
+JsonValue KinesisVideoStreamSourceTaskConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_streamArnHasBeenSet)
-  {
-   payload.WithString("StreamArn", m_streamArn);
-
+  if (m_streamArnHasBeenSet) {
+    payload.WithString("StreamArn", m_streamArn);
   }
 
-  if(m_channelIdHasBeenSet)
-  {
-   payload.WithInteger("ChannelId", m_channelId);
-
+  if (m_channelIdHasBeenSet) {
+    payload.WithInteger("ChannelId", m_channelId);
   }
 
-  if(m_fragmentNumberHasBeenSet)
-  {
-   payload.WithString("FragmentNumber", m_fragmentNumber);
-
+  if (m_fragmentNumberHasBeenSet) {
+    payload.WithString("FragmentNumber", m_fragmentNumber);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

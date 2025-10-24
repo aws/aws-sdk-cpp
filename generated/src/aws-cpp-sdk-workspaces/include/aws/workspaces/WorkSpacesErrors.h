@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 
-namespace Aws
-{
-namespace WorkSpaces
-{
-enum class WorkSpacesErrors
-{
-  //From Core//
+namespace Aws {
+namespace WorkSpaces {
+enum class WorkSpacesErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class WorkSpacesErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class WorkSpacesErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  APPLICATION_NOT_SUPPORTED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  APPLICATION_NOT_SUPPORTED = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   COMPUTE_NOT_COMPATIBLE,
   CONFLICT,
   INCOMPATIBLE_APPLICATIONS,
@@ -68,9 +65,8 @@ enum class WorkSpacesErrors
   WORKSPACES_DEFAULT_ROLE_NOT_FOUND
 };
 
-class AWS_WORKSPACES_API WorkSpacesError : public Aws::Client::AWSError<WorkSpacesErrors>
-{
-public:
+class AWS_WORKSPACES_API WorkSpacesError : public Aws::Client::AWSError<WorkSpacesErrors> {
+ public:
   WorkSpacesError() {}
   WorkSpacesError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<WorkSpacesErrors>(rhs) {}
   WorkSpacesError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<WorkSpacesErrors>(rhs) {}
@@ -81,10 +77,9 @@ public:
   T GetModeledError();
 };
 
-namespace WorkSpacesErrorMapper
-{
-  AWS_WORKSPACES_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace WorkSpacesErrorMapper {
+AWS_WORKSPACES_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace WorkSpaces
-} // namespace Aws
+}  // namespace WorkSpaces
+}  // namespace Aws

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/SheetImageStaticFileSource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/SheetImageStaticFileSource.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-SheetImageStaticFileSource::SheetImageStaticFileSource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SheetImageStaticFileSource::SheetImageStaticFileSource(JsonView jsonValue) { *this = jsonValue; }
 
-SheetImageStaticFileSource& SheetImageStaticFileSource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("StaticFileId"))
-  {
+SheetImageStaticFileSource& SheetImageStaticFileSource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("StaticFileId")) {
     m_staticFileId = jsonValue.GetString("StaticFileId");
     m_staticFileIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SheetImageStaticFileSource::Jsonize() const
-{
+JsonValue SheetImageStaticFileSource::Jsonize() const {
   JsonValue payload;
 
-  if(m_staticFileIdHasBeenSet)
-  {
-   payload.WithString("StaticFileId", m_staticFileId);
-
+  if (m_staticFileIdHasBeenSet) {
+    payload.WithString("StaticFileId", m_staticFileId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

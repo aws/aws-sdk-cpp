@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/opensearch/model/CrossClusterSearchConnectionProperties.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/opensearch/model/CrossClusterSearchConnectionProperties.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace OpenSearchService
-{
-namespace Model
-{
+namespace Aws {
+namespace OpenSearchService {
+namespace Model {
 
-CrossClusterSearchConnectionProperties::CrossClusterSearchConnectionProperties(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CrossClusterSearchConnectionProperties::CrossClusterSearchConnectionProperties(JsonView jsonValue) { *this = jsonValue; }
 
-CrossClusterSearchConnectionProperties& CrossClusterSearchConnectionProperties::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SkipUnavailable"))
-  {
+CrossClusterSearchConnectionProperties& CrossClusterSearchConnectionProperties::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SkipUnavailable")) {
     m_skipUnavailable = SkipUnavailableStatusMapper::GetSkipUnavailableStatusForName(jsonValue.GetString("SkipUnavailable"));
     m_skipUnavailableHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CrossClusterSearchConnectionProperties::Jsonize() const
-{
+JsonValue CrossClusterSearchConnectionProperties::Jsonize() const {
   JsonValue payload;
 
-  if(m_skipUnavailableHasBeenSet)
-  {
-   payload.WithString("SkipUnavailable", SkipUnavailableStatusMapper::GetNameForSkipUnavailableStatus(m_skipUnavailable));
+  if (m_skipUnavailableHasBeenSet) {
+    payload.WithString("SkipUnavailable", SkipUnavailableStatusMapper::GetNameForSkipUnavailableStatus(m_skipUnavailable));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace OpenSearchService
-} // namespace Aws
+}  // namespace Model
+}  // namespace OpenSearchService
+}  // namespace Aws

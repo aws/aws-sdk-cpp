@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudFront
-{
-class CloudFrontEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace CloudFront {
+class CloudFrontEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace CloudFront
+}  // namespace Aws

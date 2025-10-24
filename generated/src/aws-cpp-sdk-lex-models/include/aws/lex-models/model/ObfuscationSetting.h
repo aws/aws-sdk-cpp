@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
 
-namespace Aws
-{
-namespace LexModelBuildingService
-{
-namespace Model
-{
-  enum class ObfuscationSetting
-  {
-    NOT_SET,
-    NONE,
-    DEFAULT_OBFUSCATION
-  };
+namespace Aws {
+namespace LexModelBuildingService {
+namespace Model {
+enum class ObfuscationSetting { NOT_SET, NONE, DEFAULT_OBFUSCATION };
 
-namespace ObfuscationSettingMapper
-{
+namespace ObfuscationSettingMapper {
 AWS_LEXMODELBUILDINGSERVICE_API ObfuscationSetting GetObfuscationSettingForName(const Aws::String& name);
 
 AWS_LEXMODELBUILDINGSERVICE_API Aws::String GetNameForObfuscationSetting(ObfuscationSetting value);
-} // namespace ObfuscationSettingMapper
-} // namespace Model
-} // namespace LexModelBuildingService
-} // namespace Aws
+}  // namespace ObfuscationSettingMapper
+}  // namespace Model
+}  // namespace LexModelBuildingService
+}  // namespace Aws

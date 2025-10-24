@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/textract/Textract_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/textract/Textract_EXPORTS.h>
 
-namespace Aws
-{
-namespace Textract
-{
-namespace Model
-{
-  enum class ContentClassifier
-  {
-    NOT_SET,
-    FreeOfPersonallyIdentifiableInformation,
-    FreeOfAdultContent
-  };
+namespace Aws {
+namespace Textract {
+namespace Model {
+enum class ContentClassifier { NOT_SET, FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent };
 
-namespace ContentClassifierMapper
-{
+namespace ContentClassifierMapper {
 AWS_TEXTRACT_API ContentClassifier GetContentClassifierForName(const Aws::String& name);
 
 AWS_TEXTRACT_API Aws::String GetNameForContentClassifier(ContentClassifier value);
-} // namespace ContentClassifierMapper
-} // namespace Model
-} // namespace Textract
-} // namespace Aws
+}  // namespace ContentClassifierMapper
+}  // namespace Model
+}  // namespace Textract
+}  // namespace Aws

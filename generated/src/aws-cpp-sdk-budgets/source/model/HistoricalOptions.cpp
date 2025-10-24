@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Budgets
-{
-namespace Model
-{
+namespace Aws {
+namespace Budgets {
+namespace Model {
 
-HistoricalOptions::HistoricalOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+HistoricalOptions::HistoricalOptions(JsonView jsonValue) { *this = jsonValue; }
 
-HistoricalOptions& HistoricalOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("BudgetAdjustmentPeriod"))
-  {
+HistoricalOptions& HistoricalOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("BudgetAdjustmentPeriod")) {
     m_budgetAdjustmentPeriod = jsonValue.GetInteger("BudgetAdjustmentPeriod");
     m_budgetAdjustmentPeriodHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LookBackAvailablePeriods"))
-  {
+  if (jsonValue.ValueExists("LookBackAvailablePeriods")) {
     m_lookBackAvailablePeriods = jsonValue.GetInteger("LookBackAvailablePeriods");
     m_lookBackAvailablePeriodsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue HistoricalOptions::Jsonize() const
-{
+JsonValue HistoricalOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_budgetAdjustmentPeriodHasBeenSet)
-  {
-   payload.WithInteger("BudgetAdjustmentPeriod", m_budgetAdjustmentPeriod);
-
+  if (m_budgetAdjustmentPeriodHasBeenSet) {
+    payload.WithInteger("BudgetAdjustmentPeriod", m_budgetAdjustmentPeriod);
   }
 
-  if(m_lookBackAvailablePeriodsHasBeenSet)
-  {
-   payload.WithInteger("LookBackAvailablePeriods", m_lookBackAvailablePeriods);
-
+  if (m_lookBackAvailablePeriodsHasBeenSet) {
+    payload.WithInteger("LookBackAvailablePeriods", m_lookBackAvailablePeriods);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Budgets
-} // namespace Aws
+}  // namespace Model
+}  // namespace Budgets
+}  // namespace Aws

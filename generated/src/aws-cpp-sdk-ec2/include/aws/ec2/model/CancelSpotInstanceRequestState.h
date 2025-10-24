@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class CancelSpotInstanceRequestState
-  {
-    NOT_SET,
-    active,
-    open,
-    closed,
-    cancelled,
-    completed
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class CancelSpotInstanceRequestState { NOT_SET, active, open, closed, cancelled, completed };
 
-namespace CancelSpotInstanceRequestStateMapper
-{
+namespace CancelSpotInstanceRequestStateMapper {
 AWS_EC2_API CancelSpotInstanceRequestState GetCancelSpotInstanceRequestStateForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForCancelSpotInstanceRequestState(CancelSpotInstanceRequestState value);
-} // namespace CancelSpotInstanceRequestStateMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace CancelSpotInstanceRequestStateMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

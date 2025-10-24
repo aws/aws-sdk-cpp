@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ssm-incidents/model/GetResourcePoliciesRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ssm-incidents/model/GetResourcePoliciesRequest.h>
 
 #include <utility>
 
@@ -15,36 +15,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String GetResourcePoliciesRequest::SerializePayload() const
-{
+Aws::String GetResourcePoliciesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("maxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("maxResults", m_maxResults);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("nextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("nextToken", m_nextToken);
   }
 
   return payload.View().WriteReadable();
 }
 
-void GetResourcePoliciesRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_resourceArnHasBeenSet)
-    {
-      ss << m_resourceArn;
-      uri.AddQueryStringParameter("resourceArn", ss.str());
-      ss.str("");
-    }
-
+void GetResourcePoliciesRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_resourceArnHasBeenSet) {
+    ss << m_resourceArn;
+    uri.AddQueryStringParameter("resourceArn", ss.str());
+    ss.str("");
+  }
 }
-
-
-

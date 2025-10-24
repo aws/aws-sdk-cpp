@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/CreateClusterParameterGroupResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/redshift/model/CreateClusterParameterGroupResult.h>
 
 #include <utility>
 
@@ -17,26 +17,21 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateClusterParameterGroupResult::CreateClusterParameterGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+CreateClusterParameterGroupResult::CreateClusterParameterGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-CreateClusterParameterGroupResult& CreateClusterParameterGroupResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+CreateClusterParameterGroupResult& CreateClusterParameterGroupResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "CreateClusterParameterGroupResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "CreateClusterParameterGroupResult")) {
     resultNode = rootNode.FirstChild("CreateClusterParameterGroupResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode clusterParameterGroupNode = resultNode.FirstChild("ClusterParameterGroup");
-    if(!clusterParameterGroupNode.IsNull())
-    {
+    if (!clusterParameterGroupNode.IsNull()) {
       m_clusterParameterGroup = clusterParameterGroupNode;
       m_clusterParameterGroupHasBeenSet = true;
     }
@@ -46,7 +41,8 @@ CreateClusterParameterGroupResult& CreateClusterParameterGroupResult::operator =
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::CreateClusterParameterGroupResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::CreateClusterParameterGroupResult",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

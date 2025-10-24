@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/DataColor.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/DataColor.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-DataColor::DataColor(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DataColor::DataColor(JsonView jsonValue) { *this = jsonValue; }
 
-DataColor& DataColor::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Color"))
-  {
+DataColor& DataColor::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Color")) {
     m_color = jsonValue.GetString("Color");
     m_colorHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DataValue"))
-  {
+  if (jsonValue.ValueExists("DataValue")) {
     m_dataValue = jsonValue.GetDouble("DataValue");
     m_dataValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DataColor::Jsonize() const
-{
+JsonValue DataColor::Jsonize() const {
   JsonValue payload;
 
-  if(m_colorHasBeenSet)
-  {
-   payload.WithString("Color", m_color);
-
+  if (m_colorHasBeenSet) {
+    payload.WithString("Color", m_color);
   }
 
-  if(m_dataValueHasBeenSet)
-  {
-   payload.WithDouble("DataValue", m_dataValue);
-
+  if (m_dataValueHasBeenSet) {
+    payload.WithDouble("DataValue", m_dataValue);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

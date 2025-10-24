@@ -3,39 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/EnableSnapshotCopyRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/EnableSnapshotCopyRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String EnableSnapshotCopyRequest::SerializePayload() const
-{
+Aws::String EnableSnapshotCopyRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=EnableSnapshotCopy&";
-  if(m_clusterIdentifierHasBeenSet)
-  {
+  if (m_clusterIdentifierHasBeenSet) {
     ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
   }
 
-  if(m_destinationRegionHasBeenSet)
-  {
+  if (m_destinationRegionHasBeenSet) {
     ss << "DestinationRegion=" << StringUtils::URLEncode(m_destinationRegion.c_str()) << "&";
   }
 
-  if(m_retentionPeriodHasBeenSet)
-  {
+  if (m_retentionPeriodHasBeenSet) {
     ss << "RetentionPeriod=" << m_retentionPeriod << "&";
   }
 
-  if(m_snapshotCopyGrantNameHasBeenSet)
-  {
+  if (m_snapshotCopyGrantNameHasBeenSet) {
     ss << "SnapshotCopyGrantName=" << StringUtils::URLEncode(m_snapshotCopyGrantName.c_str()) << "&";
   }
 
-  if(m_manualSnapshotRetentionPeriodHasBeenSet)
-  {
+  if (m_manualSnapshotRetentionPeriodHasBeenSet) {
     ss << "ManualSnapshotRetentionPeriod=" << m_manualSnapshotRetentionPeriod << "&";
   }
 
@@ -43,8 +37,4 @@ Aws::String EnableSnapshotCopyRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  EnableSnapshotCopyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void EnableSnapshotCopyRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

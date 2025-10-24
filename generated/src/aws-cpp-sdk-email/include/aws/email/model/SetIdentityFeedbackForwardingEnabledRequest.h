@@ -4,82 +4,89 @@
  */
 
 #pragma once
-#include <aws/email/SES_EXPORTS.h>
-#include <aws/email/SESRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/email/SESRequest.h>
+#include <aws/email/SES_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace SES
-{
-namespace Model
-{
+namespace Aws {
+namespace SES {
+namespace Model {
 
+/**
+ * <p>Represents a request to enable or disable whether Amazon SES forwards you
+ * bounce and complaint notifications through email. For information about email
+ * feedback forwarding, see the <a
+ * href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity-using-notifications-email.html">Amazon
+ * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityFeedbackForwardingEnabledRequest">AWS
+ * API Reference</a></p>
+ */
+class SetIdentityFeedbackForwardingEnabledRequest : public SESRequest {
+ public:
+  AWS_SES_API SetIdentityFeedbackForwardingEnabledRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "SetIdentityFeedbackForwardingEnabled"; }
+
+  AWS_SES_API Aws::String SerializePayload() const override;
+
+ protected:
+  AWS_SES_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
+
+ public:
+  ///@{
   /**
-   * <p>Represents a request to enable or disable whether Amazon SES forwards you
-   * bounce and complaint notifications through email. For information about email
-   * feedback forwarding, see the <a
-   * href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity-using-notifications-email.html">Amazon
-   * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityFeedbackForwardingEnabledRequest">AWS
-   * API Reference</a></p>
+   * <p>The identity for which to set bounce and complaint notification forwarding.
+   * Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
    */
-  class SetIdentityFeedbackForwardingEnabledRequest : public SESRequest
-  {
-  public:
-    AWS_SES_API SetIdentityFeedbackForwardingEnabledRequest() = default;
+  inline const Aws::String& GetIdentity() const { return m_identity; }
+  inline bool IdentityHasBeenSet() const { return m_identityHasBeenSet; }
+  template <typename IdentityT = Aws::String>
+  void SetIdentity(IdentityT&& value) {
+    m_identityHasBeenSet = true;
+    m_identity = std::forward<IdentityT>(value);
+  }
+  template <typename IdentityT = Aws::String>
+  SetIdentityFeedbackForwardingEnabledRequest& WithIdentity(IdentityT&& value) {
+    SetIdentity(std::forward<IdentityT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "SetIdentityFeedbackForwardingEnabled"; }
+  ///@{
+  /**
+   * <p>Sets whether Amazon SES forwards bounce and complaint notifications as email.
+   * <code>true</code> specifies that Amazon SES forwards bounce and complaint
+   * notifications as email, in addition to any Amazon SNS topic publishing otherwise
+   * specified. <code>false</code> specifies that Amazon SES publishes bounce and
+   * complaint notifications only through Amazon SNS. This value can only be set to
+   * <code>false</code> when Amazon SNS topics are set for both <code>Bounce</code>
+   * and <code>Complaint</code> notification types.</p>
+   */
+  inline bool GetForwardingEnabled() const { return m_forwardingEnabled; }
+  inline bool ForwardingEnabledHasBeenSet() const { return m_forwardingEnabledHasBeenSet; }
+  inline void SetForwardingEnabled(bool value) {
+    m_forwardingEnabledHasBeenSet = true;
+    m_forwardingEnabled = value;
+  }
+  inline SetIdentityFeedbackForwardingEnabledRequest& WithForwardingEnabled(bool value) {
+    SetForwardingEnabled(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_identity;
+  bool m_identityHasBeenSet = false;
 
-    AWS_SES_API Aws::String SerializePayload() const override;
+  bool m_forwardingEnabled{false};
+  bool m_forwardingEnabledHasBeenSet = false;
+};
 
-  protected:
-    AWS_SES_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
-
-  public:
-
-    ///@{
-    /**
-     * <p>The identity for which to set bounce and complaint notification forwarding.
-     * Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
-     */
-    inline const Aws::String& GetIdentity() const { return m_identity; }
-    inline bool IdentityHasBeenSet() const { return m_identityHasBeenSet; }
-    template<typename IdentityT = Aws::String>
-    void SetIdentity(IdentityT&& value) { m_identityHasBeenSet = true; m_identity = std::forward<IdentityT>(value); }
-    template<typename IdentityT = Aws::String>
-    SetIdentityFeedbackForwardingEnabledRequest& WithIdentity(IdentityT&& value) { SetIdentity(std::forward<IdentityT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Sets whether Amazon SES forwards bounce and complaint notifications as email.
-     * <code>true</code> specifies that Amazon SES forwards bounce and complaint
-     * notifications as email, in addition to any Amazon SNS topic publishing otherwise
-     * specified. <code>false</code> specifies that Amazon SES publishes bounce and
-     * complaint notifications only through Amazon SNS. This value can only be set to
-     * <code>false</code> when Amazon SNS topics are set for both <code>Bounce</code>
-     * and <code>Complaint</code> notification types.</p>
-     */
-    inline bool GetForwardingEnabled() const { return m_forwardingEnabled; }
-    inline bool ForwardingEnabledHasBeenSet() const { return m_forwardingEnabledHasBeenSet; }
-    inline void SetForwardingEnabled(bool value) { m_forwardingEnabledHasBeenSet = true; m_forwardingEnabled = value; }
-    inline SetIdentityFeedbackForwardingEnabledRequest& WithForwardingEnabled(bool value) { SetForwardingEnabled(value); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_identity;
-    bool m_identityHasBeenSet = false;
-
-    bool m_forwardingEnabled{false};
-    bool m_forwardingEnabledHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SES
-} // namespace Aws
+}  // namespace Model
+}  // namespace SES
+}  // namespace Aws

@@ -13,96 +13,68 @@ using namespace Aws::ChimeSDKMessaging::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String SendChannelMessageRequest::SerializePayload() const
-{
+Aws::String SendChannelMessageRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_contentHasBeenSet)
-  {
-   payload.WithString("Content", m_content);
-
+  if (m_contentHasBeenSet) {
+    payload.WithString("Content", m_content);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", ChannelMessageTypeMapper::GetNameForChannelMessageType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", ChannelMessageTypeMapper::GetNameForChannelMessageType(m_type));
   }
 
-  if(m_persistenceHasBeenSet)
-  {
-   payload.WithString("Persistence", ChannelMessagePersistenceTypeMapper::GetNameForChannelMessagePersistenceType(m_persistence));
+  if (m_persistenceHasBeenSet) {
+    payload.WithString("Persistence", ChannelMessagePersistenceTypeMapper::GetNameForChannelMessagePersistenceType(m_persistence));
   }
 
-  if(m_metadataHasBeenSet)
-  {
-   payload.WithString("Metadata", m_metadata);
-
+  if (m_metadataHasBeenSet) {
+    payload.WithString("Metadata", m_metadata);
   }
 
-  if(m_clientRequestTokenHasBeenSet)
-  {
-   payload.WithString("ClientRequestToken", m_clientRequestToken);
-
+  if (m_clientRequestTokenHasBeenSet) {
+    payload.WithString("ClientRequestToken", m_clientRequestToken);
   }
 
-  if(m_pushNotificationHasBeenSet)
-  {
-   payload.WithObject("PushNotification", m_pushNotification.Jsonize());
-
+  if (m_pushNotificationHasBeenSet) {
+    payload.WithObject("PushNotification", m_pushNotification.Jsonize());
   }
 
-  if(m_messageAttributesHasBeenSet)
-  {
-   JsonValue messageAttributesJsonMap;
-   for(auto& messageAttributesItem : m_messageAttributes)
-   {
-     messageAttributesJsonMap.WithObject(messageAttributesItem.first, messageAttributesItem.second.Jsonize());
-   }
-   payload.WithObject("MessageAttributes", std::move(messageAttributesJsonMap));
-
+  if (m_messageAttributesHasBeenSet) {
+    JsonValue messageAttributesJsonMap;
+    for (auto& messageAttributesItem : m_messageAttributes) {
+      messageAttributesJsonMap.WithObject(messageAttributesItem.first, messageAttributesItem.second.Jsonize());
+    }
+    payload.WithObject("MessageAttributes", std::move(messageAttributesJsonMap));
   }
 
-  if(m_subChannelIdHasBeenSet)
-  {
-   payload.WithString("SubChannelId", m_subChannelId);
-
+  if (m_subChannelIdHasBeenSet) {
+    payload.WithString("SubChannelId", m_subChannelId);
   }
 
-  if(m_contentTypeHasBeenSet)
-  {
-   payload.WithString("ContentType", m_contentType);
-
+  if (m_contentTypeHasBeenSet) {
+    payload.WithString("ContentType", m_contentType);
   }
 
-  if(m_targetHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> targetJsonList(m_target.size());
-   for(unsigned targetIndex = 0; targetIndex < targetJsonList.GetLength(); ++targetIndex)
-   {
-     targetJsonList[targetIndex].AsObject(m_target[targetIndex].Jsonize());
-   }
-   payload.WithArray("Target", std::move(targetJsonList));
-
+  if (m_targetHasBeenSet) {
+    Aws::Utils::Array<JsonValue> targetJsonList(m_target.size());
+    for (unsigned targetIndex = 0; targetIndex < targetJsonList.GetLength(); ++targetIndex) {
+      targetJsonList[targetIndex].AsObject(m_target[targetIndex].Jsonize());
+    }
+    payload.WithArray("Target", std::move(targetJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection SendChannelMessageRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection SendChannelMessageRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_chimeBearerHasBeenSet)
-  {
+  if (m_chimeBearerHasBeenSet) {
     ss << m_chimeBearer;
-    headers.emplace("x-amz-chime-bearer",  ss.str());
+    headers.emplace("x-amz-chime-bearer", ss.str());
     ss.str("");
   }
 
   return headers;
-
 }
-
-
-
-

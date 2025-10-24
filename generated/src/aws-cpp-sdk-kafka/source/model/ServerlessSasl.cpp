@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kafka/model/ServerlessSasl.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kafka/model/ServerlessSasl.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Kafka
-{
-namespace Model
-{
+namespace Aws {
+namespace Kafka {
+namespace Model {
 
-ServerlessSasl::ServerlessSasl(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ServerlessSasl::ServerlessSasl(JsonView jsonValue) { *this = jsonValue; }
 
-ServerlessSasl& ServerlessSasl::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("iam"))
-  {
+ServerlessSasl& ServerlessSasl::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("iam")) {
     m_iam = jsonValue.GetObject("iam");
     m_iamHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ServerlessSasl::Jsonize() const
-{
+JsonValue ServerlessSasl::Jsonize() const {
   JsonValue payload;
 
-  if(m_iamHasBeenSet)
-  {
-   payload.WithObject("iam", m_iam.Jsonize());
-
+  if (m_iamHasBeenSet) {
+    payload.WithObject("iam", m_iam.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Kafka
-} // namespace Aws
+}  // namespace Model
+}  // namespace Kafka
+}  // namespace Aws

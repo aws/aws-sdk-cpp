@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/transcribe/TranscribeService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/transcribe/TranscribeService_EXPORTS.h>
 
-namespace Aws
-{
-namespace TranscribeService
-{
-namespace Model
-{
-  enum class OutputLocationType
-  {
-    NOT_SET,
-    CUSTOMER_BUCKET,
-    SERVICE_BUCKET
-  };
+namespace Aws {
+namespace TranscribeService {
+namespace Model {
+enum class OutputLocationType { NOT_SET, CUSTOMER_BUCKET, SERVICE_BUCKET };
 
-namespace OutputLocationTypeMapper
-{
+namespace OutputLocationTypeMapper {
 AWS_TRANSCRIBESERVICE_API OutputLocationType GetOutputLocationTypeForName(const Aws::String& name);
 
 AWS_TRANSCRIBESERVICE_API Aws::String GetNameForOutputLocationType(OutputLocationType value);
-} // namespace OutputLocationTypeMapper
-} // namespace Model
-} // namespace TranscribeService
-} // namespace Aws
+}  // namespace OutputLocationTypeMapper
+}  // namespace Model
+}  // namespace TranscribeService
+}  // namespace Aws

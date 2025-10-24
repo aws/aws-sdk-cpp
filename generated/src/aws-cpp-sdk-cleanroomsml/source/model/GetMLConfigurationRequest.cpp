@@ -12,11 +12,4 @@ using namespace Aws::CleanRoomsML::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetMLConfigurationRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetMLConfigurationRequest::SerializePayload() const { return {}; }

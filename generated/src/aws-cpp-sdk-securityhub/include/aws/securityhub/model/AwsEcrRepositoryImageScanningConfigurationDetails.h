@@ -6,51 +6,49 @@
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace SecurityHub {
+namespace Model {
 
+/**
+ * <p>The image scanning configuration for a repository.</p><p><h3>See Also:</h3>
+ * <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcrRepositoryImageScanningConfigurationDetails">AWS
+ * API Reference</a></p>
+ */
+class AwsEcrRepositoryImageScanningConfigurationDetails {
+ public:
+  AWS_SECURITYHUB_API AwsEcrRepositoryImageScanningConfigurationDetails() = default;
+  AWS_SECURITYHUB_API AwsEcrRepositoryImageScanningConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SECURITYHUB_API AwsEcrRepositoryImageScanningConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>The image scanning configuration for a repository.</p><p><h3>See Also:</h3>  
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcrRepositoryImageScanningConfigurationDetails">AWS
-   * API Reference</a></p>
+   * <p>Whether to scan images after they are pushed to a repository.</p>
    */
-  class AwsEcrRepositoryImageScanningConfigurationDetails
-  {
-  public:
-    AWS_SECURITYHUB_API AwsEcrRepositoryImageScanningConfigurationDetails() = default;
-    AWS_SECURITYHUB_API AwsEcrRepositoryImageScanningConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SECURITYHUB_API AwsEcrRepositoryImageScanningConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline bool GetScanOnPush() const { return m_scanOnPush; }
+  inline bool ScanOnPushHasBeenSet() const { return m_scanOnPushHasBeenSet; }
+  inline void SetScanOnPush(bool value) {
+    m_scanOnPushHasBeenSet = true;
+    m_scanOnPush = value;
+  }
+  inline AwsEcrRepositoryImageScanningConfigurationDetails& WithScanOnPush(bool value) {
+    SetScanOnPush(value);
+    return *this;
+  }
+  ///@}
+ private:
+  bool m_scanOnPush{false};
+  bool m_scanOnPushHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>Whether to scan images after they are pushed to a repository.</p>
-     */
-    inline bool GetScanOnPush() const { return m_scanOnPush; }
-    inline bool ScanOnPushHasBeenSet() const { return m_scanOnPushHasBeenSet; }
-    inline void SetScanOnPush(bool value) { m_scanOnPushHasBeenSet = true; m_scanOnPush = value; }
-    inline AwsEcrRepositoryImageScanningConfigurationDetails& WithScanOnPush(bool value) { SetScanOnPush(value); return *this;}
-    ///@}
-  private:
-
-    bool m_scanOnPush{false};
-    bool m_scanOnPushHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

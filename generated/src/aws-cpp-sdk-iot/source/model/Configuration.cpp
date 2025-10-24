@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/Configuration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot/model/Configuration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
+namespace Aws {
+namespace IoT {
+namespace Model {
 
-Configuration::Configuration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Configuration::Configuration(JsonView jsonValue) { *this = jsonValue; }
 
-Configuration& Configuration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Enabled"))
-  {
+Configuration& Configuration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Enabled")) {
     m_enabled = jsonValue.GetBool("Enabled");
     m_enabledHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Configuration::Jsonize() const
-{
+JsonValue Configuration::Jsonize() const {
   JsonValue payload;
 
-  if(m_enabledHasBeenSet)
-  {
-   payload.WithBool("Enabled", m_enabled);
-
+  if (m_enabledHasBeenSet) {
+    payload.WithBool("Enabled", m_enabled);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

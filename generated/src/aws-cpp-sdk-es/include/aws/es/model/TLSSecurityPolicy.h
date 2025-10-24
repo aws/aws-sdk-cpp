@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/es/ElasticsearchService_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElasticsearchService
-{
-namespace Model
-{
-  enum class TLSSecurityPolicy
-  {
-    NOT_SET,
-    Policy_Min_TLS_1_0_2019_07,
-    Policy_Min_TLS_1_2_2019_07,
-    Policy_Min_TLS_1_2_PFS_2023_10
-  };
+namespace Aws {
+namespace ElasticsearchService {
+namespace Model {
+enum class TLSSecurityPolicy { NOT_SET, Policy_Min_TLS_1_0_2019_07, Policy_Min_TLS_1_2_2019_07, Policy_Min_TLS_1_2_PFS_2023_10 };
 
-namespace TLSSecurityPolicyMapper
-{
+namespace TLSSecurityPolicyMapper {
 AWS_ELASTICSEARCHSERVICE_API TLSSecurityPolicy GetTLSSecurityPolicyForName(const Aws::String& name);
 
 AWS_ELASTICSEARCHSERVICE_API Aws::String GetNameForTLSSecurityPolicy(TLSSecurityPolicy value);
-} // namespace TLSSecurityPolicyMapper
-} // namespace Model
-} // namespace ElasticsearchService
-} // namespace Aws
+}  // namespace TLSSecurityPolicyMapper
+}  // namespace Model
+}  // namespace ElasticsearchService
+}  // namespace Aws

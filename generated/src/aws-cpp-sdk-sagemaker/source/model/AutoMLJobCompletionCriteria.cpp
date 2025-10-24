@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/AutoMLJobCompletionCriteria.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/AutoMLJobCompletionCriteria.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-AutoMLJobCompletionCriteria::AutoMLJobCompletionCriteria(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AutoMLJobCompletionCriteria::AutoMLJobCompletionCriteria(JsonView jsonValue) { *this = jsonValue; }
 
-AutoMLJobCompletionCriteria& AutoMLJobCompletionCriteria::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MaxCandidates"))
-  {
+AutoMLJobCompletionCriteria& AutoMLJobCompletionCriteria::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MaxCandidates")) {
     m_maxCandidates = jsonValue.GetInteger("MaxCandidates");
     m_maxCandidatesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MaxRuntimePerTrainingJobInSeconds"))
-  {
+  if (jsonValue.ValueExists("MaxRuntimePerTrainingJobInSeconds")) {
     m_maxRuntimePerTrainingJobInSeconds = jsonValue.GetInteger("MaxRuntimePerTrainingJobInSeconds");
     m_maxRuntimePerTrainingJobInSecondsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MaxAutoMLJobRuntimeInSeconds"))
-  {
+  if (jsonValue.ValueExists("MaxAutoMLJobRuntimeInSeconds")) {
     m_maxAutoMLJobRuntimeInSeconds = jsonValue.GetInteger("MaxAutoMLJobRuntimeInSeconds");
     m_maxAutoMLJobRuntimeInSecondsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AutoMLJobCompletionCriteria::Jsonize() const
-{
+JsonValue AutoMLJobCompletionCriteria::Jsonize() const {
   JsonValue payload;
 
-  if(m_maxCandidatesHasBeenSet)
-  {
-   payload.WithInteger("MaxCandidates", m_maxCandidates);
-
+  if (m_maxCandidatesHasBeenSet) {
+    payload.WithInteger("MaxCandidates", m_maxCandidates);
   }
 
-  if(m_maxRuntimePerTrainingJobInSecondsHasBeenSet)
-  {
-   payload.WithInteger("MaxRuntimePerTrainingJobInSeconds", m_maxRuntimePerTrainingJobInSeconds);
-
+  if (m_maxRuntimePerTrainingJobInSecondsHasBeenSet) {
+    payload.WithInteger("MaxRuntimePerTrainingJobInSeconds", m_maxRuntimePerTrainingJobInSeconds);
   }
 
-  if(m_maxAutoMLJobRuntimeInSecondsHasBeenSet)
-  {
-   payload.WithInteger("MaxAutoMLJobRuntimeInSeconds", m_maxAutoMLJobRuntimeInSeconds);
-
+  if (m_maxAutoMLJobRuntimeInSecondsHasBeenSet) {
+    payload.WithInteger("MaxAutoMLJobRuntimeInSeconds", m_maxAutoMLJobRuntimeInSeconds);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

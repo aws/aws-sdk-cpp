@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 
-namespace Aws
-{
-namespace PartnerCentralSelling
-{
-namespace Model
-{
-  enum class ReviewStatus
-  {
-    NOT_SET,
-    Pending_Submission,
-    Submitted,
-    In_review,
-    Approved,
-    Rejected,
-    Action_Required
-  };
+namespace Aws {
+namespace PartnerCentralSelling {
+namespace Model {
+enum class ReviewStatus { NOT_SET, Pending_Submission, Submitted, In_review, Approved, Rejected, Action_Required };
 
-namespace ReviewStatusMapper
-{
+namespace ReviewStatusMapper {
 AWS_PARTNERCENTRALSELLING_API ReviewStatus GetReviewStatusForName(const Aws::String& name);
 
 AWS_PARTNERCENTRALSELLING_API Aws::String GetNameForReviewStatus(ReviewStatus value);
-} // namespace ReviewStatusMapper
-} // namespace Model
-} // namespace PartnerCentralSelling
-} // namespace Aws
+}  // namespace ReviewStatusMapper
+}  // namespace Model
+}  // namespace PartnerCentralSelling
+}  // namespace Aws

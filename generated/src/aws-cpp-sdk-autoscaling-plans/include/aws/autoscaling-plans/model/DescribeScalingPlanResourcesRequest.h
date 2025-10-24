@@ -4,96 +4,115 @@
  */
 
 #pragma once
-#include <aws/autoscaling-plans/AutoScalingPlans_EXPORTS.h>
 #include <aws/autoscaling-plans/AutoScalingPlansRequest.h>
+#include <aws/autoscaling-plans/AutoScalingPlans_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace AutoScalingPlans
-{
-namespace Model
-{
+namespace Aws {
+namespace AutoScalingPlans {
+namespace Model {
 
+/**
+ */
+class DescribeScalingPlanResourcesRequest : public AutoScalingPlansRequest {
+ public:
+  AWS_AUTOSCALINGPLANS_API DescribeScalingPlanResourcesRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DescribeScalingPlanResources"; }
+
+  AWS_AUTOSCALINGPLANS_API Aws::String SerializePayload() const override;
+
+  AWS_AUTOSCALINGPLANS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The name of the scaling plan.</p>
    */
-  class DescribeScalingPlanResourcesRequest : public AutoScalingPlansRequest
-  {
-  public:
-    AWS_AUTOSCALINGPLANS_API DescribeScalingPlanResourcesRequest() = default;
+  inline const Aws::String& GetScalingPlanName() const { return m_scalingPlanName; }
+  inline bool ScalingPlanNameHasBeenSet() const { return m_scalingPlanNameHasBeenSet; }
+  template <typename ScalingPlanNameT = Aws::String>
+  void SetScalingPlanName(ScalingPlanNameT&& value) {
+    m_scalingPlanNameHasBeenSet = true;
+    m_scalingPlanName = std::forward<ScalingPlanNameT>(value);
+  }
+  template <typename ScalingPlanNameT = Aws::String>
+  DescribeScalingPlanResourcesRequest& WithScalingPlanName(ScalingPlanNameT&& value) {
+    SetScalingPlanName(std::forward<ScalingPlanNameT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DescribeScalingPlanResources"; }
+  ///@{
+  /**
+   * <p>The version number of the scaling plan. Currently, the only valid value is
+   * <code>1</code>.</p>
+   */
+  inline long long GetScalingPlanVersion() const { return m_scalingPlanVersion; }
+  inline bool ScalingPlanVersionHasBeenSet() const { return m_scalingPlanVersionHasBeenSet; }
+  inline void SetScalingPlanVersion(long long value) {
+    m_scalingPlanVersionHasBeenSet = true;
+    m_scalingPlanVersion = value;
+  }
+  inline DescribeScalingPlanResourcesRequest& WithScalingPlanVersion(long long value) {
+    SetScalingPlanVersion(value);
+    return *this;
+  }
+  ///@}
 
-    AWS_AUTOSCALINGPLANS_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>The maximum number of scalable resources to return. The value must be between
+   * 1 and 50. The default value is 50.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline DescribeScalingPlanResourcesRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
 
-    AWS_AUTOSCALINGPLANS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+  ///@{
+  /**
+   * <p>The token for the next set of results.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  DescribeScalingPlanResourcesRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_scalingPlanName;
+  bool m_scalingPlanNameHasBeenSet = false;
 
+  long long m_scalingPlanVersion{0};
+  bool m_scalingPlanVersionHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The name of the scaling plan.</p>
-     */
-    inline const Aws::String& GetScalingPlanName() const { return m_scalingPlanName; }
-    inline bool ScalingPlanNameHasBeenSet() const { return m_scalingPlanNameHasBeenSet; }
-    template<typename ScalingPlanNameT = Aws::String>
-    void SetScalingPlanName(ScalingPlanNameT&& value) { m_scalingPlanNameHasBeenSet = true; m_scalingPlanName = std::forward<ScalingPlanNameT>(value); }
-    template<typename ScalingPlanNameT = Aws::String>
-    DescribeScalingPlanResourcesRequest& WithScalingPlanName(ScalingPlanNameT&& value) { SetScalingPlanName(std::forward<ScalingPlanNameT>(value)); return *this;}
-    ///@}
+  int m_maxResults{0};
+  bool m_maxResultsHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The version number of the scaling plan. Currently, the only valid value is
-     * <code>1</code>.</p>
-     */
-    inline long long GetScalingPlanVersion() const { return m_scalingPlanVersion; }
-    inline bool ScalingPlanVersionHasBeenSet() const { return m_scalingPlanVersionHasBeenSet; }
-    inline void SetScalingPlanVersion(long long value) { m_scalingPlanVersionHasBeenSet = true; m_scalingPlanVersion = value; }
-    inline DescribeScalingPlanResourcesRequest& WithScalingPlanVersion(long long value) { SetScalingPlanVersion(value); return *this;}
-    ///@}
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The maximum number of scalable resources to return. The value must be between
-     * 1 and 50. The default value is 50.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline DescribeScalingPlanResourcesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The token for the next set of results.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    DescribeScalingPlanResourcesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_scalingPlanName;
-    bool m_scalingPlanNameHasBeenSet = false;
-
-    long long m_scalingPlanVersion{0};
-    bool m_scalingPlanVersionHasBeenSet = false;
-
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace AutoScalingPlans
-} // namespace Aws
+}  // namespace Model
+}  // namespace AutoScalingPlans
+}  // namespace Aws

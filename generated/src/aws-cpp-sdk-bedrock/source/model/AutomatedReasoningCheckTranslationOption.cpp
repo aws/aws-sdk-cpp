@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-AutomatedReasoningCheckTranslationOption::AutomatedReasoningCheckTranslationOption(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AutomatedReasoningCheckTranslationOption::AutomatedReasoningCheckTranslationOption(JsonView jsonValue) { *this = jsonValue; }
 
-AutomatedReasoningCheckTranslationOption& AutomatedReasoningCheckTranslationOption::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("translations"))
-  {
+AutomatedReasoningCheckTranslationOption& AutomatedReasoningCheckTranslationOption::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("translations")) {
     Aws::Utils::Array<JsonView> translationsJsonList = jsonValue.GetArray("translations");
-    for(unsigned translationsIndex = 0; translationsIndex < translationsJsonList.GetLength(); ++translationsIndex)
-    {
+    for (unsigned translationsIndex = 0; translationsIndex < translationsJsonList.GetLength(); ++translationsIndex) {
       m_translations.push_back(translationsJsonList[translationsIndex].AsObject());
     }
     m_translationsHasBeenSet = true;
@@ -37,24 +28,20 @@ AutomatedReasoningCheckTranslationOption& AutomatedReasoningCheckTranslationOpti
   return *this;
 }
 
-JsonValue AutomatedReasoningCheckTranslationOption::Jsonize() const
-{
+JsonValue AutomatedReasoningCheckTranslationOption::Jsonize() const {
   JsonValue payload;
 
-  if(m_translationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> translationsJsonList(m_translations.size());
-   for(unsigned translationsIndex = 0; translationsIndex < translationsJsonList.GetLength(); ++translationsIndex)
-   {
-     translationsJsonList[translationsIndex].AsObject(m_translations[translationsIndex].Jsonize());
-   }
-   payload.WithArray("translations", std::move(translationsJsonList));
-
+  if (m_translationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> translationsJsonList(m_translations.size());
+    for (unsigned translationsIndex = 0; translationsIndex < translationsJsonList.GetLength(); ++translationsIndex) {
+      translationsJsonList[translationsIndex].AsObject(m_translations[translationsIndex].Jsonize());
+    }
+    payload.WithArray("translations", std::move(translationsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

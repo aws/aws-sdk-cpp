@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/timestream-query/model/ParameterMapping.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/timestream-query/model/ParameterMapping.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace TimestreamQuery
-{
-namespace Model
-{
+namespace Aws {
+namespace TimestreamQuery {
+namespace Model {
 
-ParameterMapping::ParameterMapping(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ParameterMapping::ParameterMapping(JsonView jsonValue) { *this = jsonValue; }
 
-ParameterMapping& ParameterMapping::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+ParameterMapping& ParameterMapping::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = jsonValue.GetObject("Type");
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ParameterMapping::Jsonize() const
-{
+JsonValue ParameterMapping::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithObject("Type", m_type.Jsonize());
-
+  if (m_typeHasBeenSet) {
+    payload.WithObject("Type", m_type.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace TimestreamQuery
-} // namespace Aws
+}  // namespace Model
+}  // namespace TimestreamQuery
+}  // namespace Aws

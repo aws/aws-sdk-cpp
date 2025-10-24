@@ -3,93 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediatailor/model/ResponseOutputItem.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediatailor/model/ResponseOutputItem.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaTailor
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaTailor {
+namespace Model {
 
-ResponseOutputItem::ResponseOutputItem(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResponseOutputItem::ResponseOutputItem(JsonView jsonValue) { *this = jsonValue; }
 
-ResponseOutputItem& ResponseOutputItem::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DashPlaylistSettings"))
-  {
+ResponseOutputItem& ResponseOutputItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DashPlaylistSettings")) {
     m_dashPlaylistSettings = jsonValue.GetObject("DashPlaylistSettings");
     m_dashPlaylistSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HlsPlaylistSettings"))
-  {
+  if (jsonValue.ValueExists("HlsPlaylistSettings")) {
     m_hlsPlaylistSettings = jsonValue.GetObject("HlsPlaylistSettings");
     m_hlsPlaylistSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ManifestName"))
-  {
+  if (jsonValue.ValueExists("ManifestName")) {
     m_manifestName = jsonValue.GetString("ManifestName");
     m_manifestNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PlaybackUrl"))
-  {
+  if (jsonValue.ValueExists("PlaybackUrl")) {
     m_playbackUrl = jsonValue.GetString("PlaybackUrl");
     m_playbackUrlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourceGroup"))
-  {
+  if (jsonValue.ValueExists("SourceGroup")) {
     m_sourceGroup = jsonValue.GetString("SourceGroup");
     m_sourceGroupHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResponseOutputItem::Jsonize() const
-{
+JsonValue ResponseOutputItem::Jsonize() const {
   JsonValue payload;
 
-  if(m_dashPlaylistSettingsHasBeenSet)
-  {
-   payload.WithObject("DashPlaylistSettings", m_dashPlaylistSettings.Jsonize());
-
+  if (m_dashPlaylistSettingsHasBeenSet) {
+    payload.WithObject("DashPlaylistSettings", m_dashPlaylistSettings.Jsonize());
   }
 
-  if(m_hlsPlaylistSettingsHasBeenSet)
-  {
-   payload.WithObject("HlsPlaylistSettings", m_hlsPlaylistSettings.Jsonize());
-
+  if (m_hlsPlaylistSettingsHasBeenSet) {
+    payload.WithObject("HlsPlaylistSettings", m_hlsPlaylistSettings.Jsonize());
   }
 
-  if(m_manifestNameHasBeenSet)
-  {
-   payload.WithString("ManifestName", m_manifestName);
-
+  if (m_manifestNameHasBeenSet) {
+    payload.WithString("ManifestName", m_manifestName);
   }
 
-  if(m_playbackUrlHasBeenSet)
-  {
-   payload.WithString("PlaybackUrl", m_playbackUrl);
-
+  if (m_playbackUrlHasBeenSet) {
+    payload.WithString("PlaybackUrl", m_playbackUrl);
   }
 
-  if(m_sourceGroupHasBeenSet)
-  {
-   payload.WithString("SourceGroup", m_sourceGroup);
-
+  if (m_sourceGroupHasBeenSet) {
+    payload.WithString("SourceGroup", m_sourceGroup);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaTailor
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaTailor
+}  // namespace Aws

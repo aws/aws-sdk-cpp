@@ -4,100 +4,119 @@
  */
 
 #pragma once
-#include <aws/lookoutequipment/LookoutEquipment_EXPORTS.h>
-#include <aws/lookoutequipment/LookoutEquipmentRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lookoutequipment/LookoutEquipmentRequest.h>
+#include <aws/lookoutequipment/LookoutEquipment_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace LookoutEquipment
-{
-namespace Model
-{
+namespace Aws {
+namespace LookoutEquipment {
+namespace Model {
 
+/**
+ */
+class ListSensorStatisticsRequest : public LookoutEquipmentRequest {
+ public:
+  AWS_LOOKOUTEQUIPMENT_API ListSensorStatisticsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "ListSensorStatistics"; }
+
+  AWS_LOOKOUTEQUIPMENT_API Aws::String SerializePayload() const override;
+
+  AWS_LOOKOUTEQUIPMENT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p> The name of the dataset associated with the list of Sensor Statistics. </p>
    */
-  class ListSensorStatisticsRequest : public LookoutEquipmentRequest
-  {
-  public:
-    AWS_LOOKOUTEQUIPMENT_API ListSensorStatisticsRequest() = default;
+  inline const Aws::String& GetDatasetName() const { return m_datasetName; }
+  inline bool DatasetNameHasBeenSet() const { return m_datasetNameHasBeenSet; }
+  template <typename DatasetNameT = Aws::String>
+  void SetDatasetName(DatasetNameT&& value) {
+    m_datasetNameHasBeenSet = true;
+    m_datasetName = std::forward<DatasetNameT>(value);
+  }
+  template <typename DatasetNameT = Aws::String>
+  ListSensorStatisticsRequest& WithDatasetName(DatasetNameT&& value) {
+    SetDatasetName(std::forward<DatasetNameT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "ListSensorStatistics"; }
+  ///@{
+  /**
+   * <p> The ingestion job id associated with the list of Sensor Statistics. To get
+   * sensor statistics for a particular ingestion job id, both dataset name and
+   * ingestion job id must be submitted as inputs. </p>
+   */
+  inline const Aws::String& GetIngestionJobId() const { return m_ingestionJobId; }
+  inline bool IngestionJobIdHasBeenSet() const { return m_ingestionJobIdHasBeenSet; }
+  template <typename IngestionJobIdT = Aws::String>
+  void SetIngestionJobId(IngestionJobIdT&& value) {
+    m_ingestionJobIdHasBeenSet = true;
+    m_ingestionJobId = std::forward<IngestionJobIdT>(value);
+  }
+  template <typename IngestionJobIdT = Aws::String>
+  ListSensorStatisticsRequest& WithIngestionJobId(IngestionJobIdT&& value) {
+    SetIngestionJobId(std::forward<IngestionJobIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_LOOKOUTEQUIPMENT_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>Specifies the maximum number of sensors for which to retrieve statistics.
+   * </p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline ListSensorStatisticsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
 
-    AWS_LOOKOUTEQUIPMENT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+  ///@{
+  /**
+   * <p>An opaque pagination token indicating where to continue the listing of sensor
+   * statistics. </p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListSensorStatisticsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_datasetName;
+  bool m_datasetNameHasBeenSet = false;
 
+  Aws::String m_ingestionJobId;
+  bool m_ingestionJobIdHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p> The name of the dataset associated with the list of Sensor Statistics. </p>
-     */
-    inline const Aws::String& GetDatasetName() const { return m_datasetName; }
-    inline bool DatasetNameHasBeenSet() const { return m_datasetNameHasBeenSet; }
-    template<typename DatasetNameT = Aws::String>
-    void SetDatasetName(DatasetNameT&& value) { m_datasetNameHasBeenSet = true; m_datasetName = std::forward<DatasetNameT>(value); }
-    template<typename DatasetNameT = Aws::String>
-    ListSensorStatisticsRequest& WithDatasetName(DatasetNameT&& value) { SetDatasetName(std::forward<DatasetNameT>(value)); return *this;}
-    ///@}
+  int m_maxResults{0};
+  bool m_maxResultsHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p> The ingestion job id associated with the list of Sensor Statistics. To get
-     * sensor statistics for a particular ingestion job id, both dataset name and
-     * ingestion job id must be submitted as inputs. </p>
-     */
-    inline const Aws::String& GetIngestionJobId() const { return m_ingestionJobId; }
-    inline bool IngestionJobIdHasBeenSet() const { return m_ingestionJobIdHasBeenSet; }
-    template<typename IngestionJobIdT = Aws::String>
-    void SetIngestionJobId(IngestionJobIdT&& value) { m_ingestionJobIdHasBeenSet = true; m_ingestionJobId = std::forward<IngestionJobIdT>(value); }
-    template<typename IngestionJobIdT = Aws::String>
-    ListSensorStatisticsRequest& WithIngestionJobId(IngestionJobIdT&& value) { SetIngestionJobId(std::forward<IngestionJobIdT>(value)); return *this;}
-    ///@}
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>Specifies the maximum number of sensors for which to retrieve statistics.
-     * </p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListSensorStatisticsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>An opaque pagination token indicating where to continue the listing of sensor
-     * statistics. </p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListSensorStatisticsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_datasetName;
-    bool m_datasetNameHasBeenSet = false;
-
-    Aws::String m_ingestionJobId;
-    bool m_ingestionJobIdHasBeenSet = false;
-
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace LookoutEquipment
-} // namespace Aws
+}  // namespace Model
+}  // namespace LookoutEquipment
+}  // namespace Aws

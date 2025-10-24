@@ -12,11 +12,4 @@ using namespace Aws::AmplifyBackend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetBackendJobRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetBackendJobRequest::SerializePayload() const { return {}; }

@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 
-namespace Aws
-{
-namespace ServiceCatalog
-{
-class ServiceCatalogEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace ServiceCatalog {
+class ServiceCatalogEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace ServiceCatalog
-} // namespace Aws
+}  // namespace ServiceCatalog
+}  // namespace Aws

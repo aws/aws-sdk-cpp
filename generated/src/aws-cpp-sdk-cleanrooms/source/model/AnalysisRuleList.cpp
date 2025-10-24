@@ -11,100 +11,79 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
 
-AnalysisRuleList::AnalysisRuleList(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AnalysisRuleList::AnalysisRuleList(JsonView jsonValue) { *this = jsonValue; }
 
-AnalysisRuleList& AnalysisRuleList::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("joinColumns"))
-  {
+AnalysisRuleList& AnalysisRuleList::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("joinColumns")) {
     Aws::Utils::Array<JsonView> joinColumnsJsonList = jsonValue.GetArray("joinColumns");
-    for(unsigned joinColumnsIndex = 0; joinColumnsIndex < joinColumnsJsonList.GetLength(); ++joinColumnsIndex)
-    {
+    for (unsigned joinColumnsIndex = 0; joinColumnsIndex < joinColumnsJsonList.GetLength(); ++joinColumnsIndex) {
       m_joinColumns.push_back(joinColumnsJsonList[joinColumnsIndex].AsString());
     }
     m_joinColumnsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("allowedJoinOperators"))
-  {
+  if (jsonValue.ValueExists("allowedJoinOperators")) {
     Aws::Utils::Array<JsonView> allowedJoinOperatorsJsonList = jsonValue.GetArray("allowedJoinOperators");
-    for(unsigned allowedJoinOperatorsIndex = 0; allowedJoinOperatorsIndex < allowedJoinOperatorsJsonList.GetLength(); ++allowedJoinOperatorsIndex)
-    {
-      m_allowedJoinOperators.push_back(JoinOperatorMapper::GetJoinOperatorForName(allowedJoinOperatorsJsonList[allowedJoinOperatorsIndex].AsString()));
+    for (unsigned allowedJoinOperatorsIndex = 0; allowedJoinOperatorsIndex < allowedJoinOperatorsJsonList.GetLength();
+         ++allowedJoinOperatorsIndex) {
+      m_allowedJoinOperators.push_back(
+          JoinOperatorMapper::GetJoinOperatorForName(allowedJoinOperatorsJsonList[allowedJoinOperatorsIndex].AsString()));
     }
     m_allowedJoinOperatorsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("listColumns"))
-  {
+  if (jsonValue.ValueExists("listColumns")) {
     Aws::Utils::Array<JsonView> listColumnsJsonList = jsonValue.GetArray("listColumns");
-    for(unsigned listColumnsIndex = 0; listColumnsIndex < listColumnsJsonList.GetLength(); ++listColumnsIndex)
-    {
+    for (unsigned listColumnsIndex = 0; listColumnsIndex < listColumnsJsonList.GetLength(); ++listColumnsIndex) {
       m_listColumns.push_back(listColumnsJsonList[listColumnsIndex].AsString());
     }
     m_listColumnsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("additionalAnalyses"))
-  {
+  if (jsonValue.ValueExists("additionalAnalyses")) {
     m_additionalAnalyses = AdditionalAnalysesMapper::GetAdditionalAnalysesForName(jsonValue.GetString("additionalAnalyses"));
     m_additionalAnalysesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AnalysisRuleList::Jsonize() const
-{
+JsonValue AnalysisRuleList::Jsonize() const {
   JsonValue payload;
 
-  if(m_joinColumnsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> joinColumnsJsonList(m_joinColumns.size());
-   for(unsigned joinColumnsIndex = 0; joinColumnsIndex < joinColumnsJsonList.GetLength(); ++joinColumnsIndex)
-   {
-     joinColumnsJsonList[joinColumnsIndex].AsString(m_joinColumns[joinColumnsIndex]);
-   }
-   payload.WithArray("joinColumns", std::move(joinColumnsJsonList));
-
+  if (m_joinColumnsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> joinColumnsJsonList(m_joinColumns.size());
+    for (unsigned joinColumnsIndex = 0; joinColumnsIndex < joinColumnsJsonList.GetLength(); ++joinColumnsIndex) {
+      joinColumnsJsonList[joinColumnsIndex].AsString(m_joinColumns[joinColumnsIndex]);
+    }
+    payload.WithArray("joinColumns", std::move(joinColumnsJsonList));
   }
 
-  if(m_allowedJoinOperatorsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> allowedJoinOperatorsJsonList(m_allowedJoinOperators.size());
-   for(unsigned allowedJoinOperatorsIndex = 0; allowedJoinOperatorsIndex < allowedJoinOperatorsJsonList.GetLength(); ++allowedJoinOperatorsIndex)
-   {
-     allowedJoinOperatorsJsonList[allowedJoinOperatorsIndex].AsString(JoinOperatorMapper::GetNameForJoinOperator(m_allowedJoinOperators[allowedJoinOperatorsIndex]));
-   }
-   payload.WithArray("allowedJoinOperators", std::move(allowedJoinOperatorsJsonList));
-
+  if (m_allowedJoinOperatorsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> allowedJoinOperatorsJsonList(m_allowedJoinOperators.size());
+    for (unsigned allowedJoinOperatorsIndex = 0; allowedJoinOperatorsIndex < allowedJoinOperatorsJsonList.GetLength();
+         ++allowedJoinOperatorsIndex) {
+      allowedJoinOperatorsJsonList[allowedJoinOperatorsIndex].AsString(
+          JoinOperatorMapper::GetNameForJoinOperator(m_allowedJoinOperators[allowedJoinOperatorsIndex]));
+    }
+    payload.WithArray("allowedJoinOperators", std::move(allowedJoinOperatorsJsonList));
   }
 
-  if(m_listColumnsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> listColumnsJsonList(m_listColumns.size());
-   for(unsigned listColumnsIndex = 0; listColumnsIndex < listColumnsJsonList.GetLength(); ++listColumnsIndex)
-   {
-     listColumnsJsonList[listColumnsIndex].AsString(m_listColumns[listColumnsIndex]);
-   }
-   payload.WithArray("listColumns", std::move(listColumnsJsonList));
-
+  if (m_listColumnsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> listColumnsJsonList(m_listColumns.size());
+    for (unsigned listColumnsIndex = 0; listColumnsIndex < listColumnsJsonList.GetLength(); ++listColumnsIndex) {
+      listColumnsJsonList[listColumnsIndex].AsString(m_listColumns[listColumnsIndex]);
+    }
+    payload.WithArray("listColumns", std::move(listColumnsJsonList));
   }
 
-  if(m_additionalAnalysesHasBeenSet)
-  {
-   payload.WithString("additionalAnalyses", AdditionalAnalysesMapper::GetNameForAdditionalAnalyses(m_additionalAnalyses));
+  if (m_additionalAnalysesHasBeenSet) {
+    payload.WithString("additionalAnalyses", AdditionalAnalysesMapper::GetNameForAdditionalAnalyses(m_additionalAnalyses));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

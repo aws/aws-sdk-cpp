@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3/S3_EXPORTS.h>
 
-namespace Aws
-{
-namespace S3
-{
-namespace Model
-{
-  enum class ReplicaModificationsStatus
-  {
-    NOT_SET,
-    Enabled,
-    Disabled
-  };
+namespace Aws {
+namespace S3 {
+namespace Model {
+enum class ReplicaModificationsStatus { NOT_SET, Enabled, Disabled };
 
-namespace ReplicaModificationsStatusMapper
-{
+namespace ReplicaModificationsStatusMapper {
 AWS_S3_API ReplicaModificationsStatus GetReplicaModificationsStatusForName(const Aws::String& name);
 
 AWS_S3_API Aws::String GetNameForReplicaModificationsStatus(ReplicaModificationsStatus value);
-} // namespace ReplicaModificationsStatusMapper
-} // namespace Model
-} // namespace S3
-} // namespace Aws
+}  // namespace ReplicaModificationsStatusMapper
+}  // namespace Model
+}  // namespace S3
+}  // namespace Aws

@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Model
-{
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
 
-SavingsPlansUtilization::SavingsPlansUtilization(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SavingsPlansUtilization::SavingsPlansUtilization(JsonView jsonValue) { *this = jsonValue; }
 
-SavingsPlansUtilization& SavingsPlansUtilization::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TotalCommitment"))
-  {
+SavingsPlansUtilization& SavingsPlansUtilization::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TotalCommitment")) {
     m_totalCommitment = jsonValue.GetString("TotalCommitment");
     m_totalCommitmentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UsedCommitment"))
-  {
+  if (jsonValue.ValueExists("UsedCommitment")) {
     m_usedCommitment = jsonValue.GetString("UsedCommitment");
     m_usedCommitmentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UnusedCommitment"))
-  {
+  if (jsonValue.ValueExists("UnusedCommitment")) {
     m_unusedCommitment = jsonValue.GetString("UnusedCommitment");
     m_unusedCommitmentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UtilizationPercentage"))
-  {
+  if (jsonValue.ValueExists("UtilizationPercentage")) {
     m_utilizationPercentage = jsonValue.GetString("UtilizationPercentage");
     m_utilizationPercentageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SavingsPlansUtilization::Jsonize() const
-{
+JsonValue SavingsPlansUtilization::Jsonize() const {
   JsonValue payload;
 
-  if(m_totalCommitmentHasBeenSet)
-  {
-   payload.WithString("TotalCommitment", m_totalCommitment);
-
+  if (m_totalCommitmentHasBeenSet) {
+    payload.WithString("TotalCommitment", m_totalCommitment);
   }
 
-  if(m_usedCommitmentHasBeenSet)
-  {
-   payload.WithString("UsedCommitment", m_usedCommitment);
-
+  if (m_usedCommitmentHasBeenSet) {
+    payload.WithString("UsedCommitment", m_usedCommitment);
   }
 
-  if(m_unusedCommitmentHasBeenSet)
-  {
-   payload.WithString("UnusedCommitment", m_unusedCommitment);
-
+  if (m_unusedCommitmentHasBeenSet) {
+    payload.WithString("UnusedCommitment", m_unusedCommitment);
   }
 
-  if(m_utilizationPercentageHasBeenSet)
-  {
-   payload.WithString("UtilizationPercentage", m_utilizationPercentage);
-
+  if (m_utilizationPercentageHasBeenSet) {
+    payload.WithString("UtilizationPercentage", m_utilizationPercentage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

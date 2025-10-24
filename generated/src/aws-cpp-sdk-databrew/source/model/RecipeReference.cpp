@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/databrew/model/RecipeReference.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/databrew/model/RecipeReference.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GlueDataBrew
-{
-namespace Model
-{
+namespace Aws {
+namespace GlueDataBrew {
+namespace Model {
 
-RecipeReference::RecipeReference(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RecipeReference::RecipeReference(JsonView jsonValue) { *this = jsonValue; }
 
-RecipeReference& RecipeReference::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+RecipeReference& RecipeReference::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RecipeVersion"))
-  {
+  if (jsonValue.ValueExists("RecipeVersion")) {
     m_recipeVersion = jsonValue.GetString("RecipeVersion");
     m_recipeVersionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RecipeReference::Jsonize() const
-{
+JsonValue RecipeReference::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_recipeVersionHasBeenSet)
-  {
-   payload.WithString("RecipeVersion", m_recipeVersion);
-
+  if (m_recipeVersionHasBeenSet) {
+    payload.WithString("RecipeVersion", m_recipeVersion);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GlueDataBrew
-} // namespace Aws
+}  // namespace Model
+}  // namespace GlueDataBrew
+}  // namespace Aws

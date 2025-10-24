@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sso-admin/model/GetPermissionsBoundaryForPermissionSetRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sso-admin/model/GetPermissionsBoundaryForPermissionSetRequest.h>
 
 #include <utility>
 
@@ -12,33 +12,22 @@ using namespace Aws::SSOAdmin::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetPermissionsBoundaryForPermissionSetRequest::SerializePayload() const
-{
+Aws::String GetPermissionsBoundaryForPermissionSetRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_instanceArnHasBeenSet)
-  {
-   payload.WithString("InstanceArn", m_instanceArn);
-
+  if (m_instanceArnHasBeenSet) {
+    payload.WithString("InstanceArn", m_instanceArn);
   }
 
-  if(m_permissionSetArnHasBeenSet)
-  {
-   payload.WithString("PermissionSetArn", m_permissionSetArn);
-
+  if (m_permissionSetArnHasBeenSet) {
+    payload.WithString("PermissionSetArn", m_permissionSetArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetPermissionsBoundaryForPermissionSetRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetPermissionsBoundaryForPermissionSetRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "SWBExternalService.GetPermissionsBoundaryForPermissionSet"));
   return headers;
-
 }
-
-
-
-

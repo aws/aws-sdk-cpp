@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ssm/model/InstanceAssociationOutputLocation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ssm/model/InstanceAssociationOutputLocation.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SSM
-{
-namespace Model
-{
+namespace Aws {
+namespace SSM {
+namespace Model {
 
-InstanceAssociationOutputLocation::InstanceAssociationOutputLocation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InstanceAssociationOutputLocation::InstanceAssociationOutputLocation(JsonView jsonValue) { *this = jsonValue; }
 
-InstanceAssociationOutputLocation& InstanceAssociationOutputLocation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("S3Location"))
-  {
+InstanceAssociationOutputLocation& InstanceAssociationOutputLocation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("S3Location")) {
     m_s3Location = jsonValue.GetObject("S3Location");
     m_s3LocationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InstanceAssociationOutputLocation::Jsonize() const
-{
+JsonValue InstanceAssociationOutputLocation::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3LocationHasBeenSet)
-  {
-   payload.WithObject("S3Location", m_s3Location.Jsonize());
-
+  if (m_s3LocationHasBeenSet) {
+    payload.WithObject("S3Location", m_s3Location.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SSM
-} // namespace Aws
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

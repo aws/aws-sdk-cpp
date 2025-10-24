@@ -4,83 +4,89 @@
  */
 
 #pragma once
-#include <aws/securityhub/SecurityHub_EXPORTS.h>
-#include <aws/securityhub/SecurityHubRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/securityhub/SecurityHubRequest.h>
+#include <aws/securityhub/SecurityHub_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Http
-{
-    class URI;
-} //namespace Http
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
+namespace SecurityHub {
+namespace Model {
 
+/**
+ */
+class ListConfigurationPoliciesRequest : public SecurityHubRequest {
+ public:
+  AWS_SECURITYHUB_API ListConfigurationPoliciesRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "ListConfigurationPolicies"; }
+
+  AWS_SECURITYHUB_API Aws::String SerializePayload() const override;
+
+  AWS_SECURITYHUB_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+  ///@{
   /**
+   * <p> The NextToken value that's returned from a previous paginated
+   * <code>ListConfigurationPolicies</code> request where <code>MaxResults</code> was
+   * used but the results exceeded the value of that parameter. Pagination continues
+   * from the <code>MaxResults</code> was used but the results exceeded the value of
+   * that parameter. Pagination continues from the end of the previous response that
+   * returned the <code>NextToken</code> value. This value is <code>null</code> when
+   * there are no more results to return. </p>
    */
-  class ListConfigurationPoliciesRequest : public SecurityHubRequest
-  {
-  public:
-    AWS_SECURITYHUB_API ListConfigurationPoliciesRequest() = default;
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListConfigurationPoliciesRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "ListConfigurationPolicies"; }
+  ///@{
+  /**
+   * <p> The maximum number of results that's returned by
+   * <code>ListConfigurationPolicies</code> in each page of the response. When this
+   * parameter is used, <code>ListConfigurationPolicies</code> returns the specified
+   * number of results in a single page and a <code>NextToken</code> response
+   * element. You can see the remaining results of the initial request by sending
+   * another <code>ListConfigurationPolicies</code> request with the returned
+   * <code>NextToken</code> value. A valid range for <code>MaxResults</code> is
+   * between 1 and 100. </p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline ListConfigurationPoliciesRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
-    AWS_SECURITYHUB_API Aws::String SerializePayload() const override;
+  int m_maxResults{0};
+  bool m_maxResultsHasBeenSet = false;
+};
 
-    AWS_SECURITYHUB_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
-
-    ///@{
-    /**
-     * <p> The NextToken value that's returned from a previous paginated
-     * <code>ListConfigurationPolicies</code> request where <code>MaxResults</code> was
-     * used but the results exceeded the value of that parameter. Pagination continues
-     * from the <code>MaxResults</code> was used but the results exceeded the value of
-     * that parameter. Pagination continues from the end of the previous response that
-     * returned the <code>NextToken</code> value. This value is <code>null</code> when
-     * there are no more results to return. </p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListConfigurationPoliciesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p> The maximum number of results that's returned by
-     * <code>ListConfigurationPolicies</code> in each page of the response. When this
-     * parameter is used, <code>ListConfigurationPolicies</code> returns the specified
-     * number of results in a single page and a <code>NextToken</code> response
-     * element. You can see the remaining results of the initial request by sending
-     * another <code>ListConfigurationPolicies</code> request with the returned
-     * <code>NextToken</code> value. A valid range for <code>MaxResults</code> is
-     * between 1 and 100. </p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListConfigurationPoliciesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

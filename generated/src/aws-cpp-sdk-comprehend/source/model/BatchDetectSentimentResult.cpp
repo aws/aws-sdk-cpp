@@ -4,10 +4,10 @@
  */
 
 #include <aws/comprehend/model/BatchDetectSentimentResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,28 +17,20 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchDetectSentimentResult::BatchDetectSentimentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+BatchDetectSentimentResult::BatchDetectSentimentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-BatchDetectSentimentResult& BatchDetectSentimentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+BatchDetectSentimentResult& BatchDetectSentimentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("ResultList"))
-  {
+  if (jsonValue.ValueExists("ResultList")) {
     Aws::Utils::Array<JsonView> resultListJsonList = jsonValue.GetArray("ResultList");
-    for(unsigned resultListIndex = 0; resultListIndex < resultListJsonList.GetLength(); ++resultListIndex)
-    {
+    for (unsigned resultListIndex = 0; resultListIndex < resultListJsonList.GetLength(); ++resultListIndex) {
       m_resultList.push_back(resultListJsonList[resultListIndex].AsObject());
     }
     m_resultListHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorList"))
-  {
+  if (jsonValue.ValueExists("ErrorList")) {
     Aws::Utils::Array<JsonView> errorListJsonList = jsonValue.GetArray("ErrorList");
-    for(unsigned errorListIndex = 0; errorListIndex < errorListJsonList.GetLength(); ++errorListIndex)
-    {
+    for (unsigned errorListIndex = 0; errorListIndex < errorListJsonList.GetLength(); ++errorListIndex) {
       m_errorList.push_back(errorListJsonList[errorListIndex].AsObject());
     }
     m_errorListHasBeenSet = true;
@@ -46,12 +38,10 @@ BatchDetectSentimentResult& BatchDetectSentimentResult::operator =(const Aws::Am
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

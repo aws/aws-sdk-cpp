@@ -3,43 +3,32 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/SnowflakeTarget.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/SnowflakeTarget.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
+namespace Aws {
+namespace Glue {
+namespace Model {
 
-SnowflakeTarget::SnowflakeTarget(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SnowflakeTarget::SnowflakeTarget(JsonView jsonValue) { *this = jsonValue; }
 
-SnowflakeTarget& SnowflakeTarget::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+SnowflakeTarget& SnowflakeTarget::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Data"))
-  {
+  if (jsonValue.ValueExists("Data")) {
     m_data = jsonValue.GetObject("Data");
     m_dataHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Inputs"))
-  {
+  if (jsonValue.ValueExists("Inputs")) {
     Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
-    for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
-    {
+    for (unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex) {
       m_inputs.push_back(inputsJsonList[inputsIndex].AsString());
     }
     m_inputsHasBeenSet = true;
@@ -47,36 +36,28 @@ SnowflakeTarget& SnowflakeTarget::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue SnowflakeTarget::Jsonize() const
-{
+JsonValue SnowflakeTarget::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_dataHasBeenSet)
-  {
-   payload.WithObject("Data", m_data.Jsonize());
-
+  if (m_dataHasBeenSet) {
+    payload.WithObject("Data", m_data.Jsonize());
   }
 
-  if(m_inputsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> inputsJsonList(m_inputs.size());
-   for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
-   {
-     inputsJsonList[inputsIndex].AsString(m_inputs[inputsIndex]);
-   }
-   payload.WithArray("Inputs", std::move(inputsJsonList));
-
+  if (m_inputsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> inputsJsonList(m_inputs.size());
+    for (unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex) {
+      inputsJsonList[inputsIndex].AsString(m_inputs[inputsIndex]);
+    }
+    payload.WithArray("Inputs", std::move(inputsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

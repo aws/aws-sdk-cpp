@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-S3Identifier::S3Identifier(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+S3Identifier::S3Identifier(JsonView jsonValue) { *this = jsonValue; }
 
-S3Identifier& S3Identifier::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("s3BucketName"))
-  {
+S3Identifier& S3Identifier::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("s3BucketName")) {
     m_s3BucketName = jsonValue.GetString("s3BucketName");
     m_s3BucketNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("s3ObjectKey"))
-  {
+  if (jsonValue.ValueExists("s3ObjectKey")) {
     m_s3ObjectKey = jsonValue.GetString("s3ObjectKey");
     m_s3ObjectKeyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue S3Identifier::Jsonize() const
-{
+JsonValue S3Identifier::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3BucketNameHasBeenSet)
-  {
-   payload.WithString("s3BucketName", m_s3BucketName);
-
+  if (m_s3BucketNameHasBeenSet) {
+    payload.WithString("s3BucketName", m_s3BucketName);
   }
 
-  if(m_s3ObjectKeyHasBeenSet)
-  {
-   payload.WithString("s3ObjectKey", m_s3ObjectKey);
-
+  if (m_s3ObjectKeyHasBeenSet) {
+    payload.WithString("s3ObjectKey", m_s3ObjectKey);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

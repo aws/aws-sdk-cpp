@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-TriggerConfig::TriggerConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TriggerConfig::TriggerConfig(JsonView jsonValue) { *this = jsonValue; }
 
-TriggerConfig& TriggerConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("triggerType"))
-  {
+TriggerConfig& TriggerConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("triggerType")) {
     m_triggerType = TriggerTypeMapper::GetTriggerTypeForName(jsonValue.GetString("triggerType"));
     m_triggerTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("triggerProperties"))
-  {
+  if (jsonValue.ValueExists("triggerProperties")) {
     m_triggerProperties = jsonValue.GetObject("triggerProperties");
     m_triggerPropertiesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TriggerConfig::Jsonize() const
-{
+JsonValue TriggerConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_triggerTypeHasBeenSet)
-  {
-   payload.WithString("triggerType", TriggerTypeMapper::GetNameForTriggerType(m_triggerType));
+  if (m_triggerTypeHasBeenSet) {
+    payload.WithString("triggerType", TriggerTypeMapper::GetNameForTriggerType(m_triggerType));
   }
 
-  if(m_triggerPropertiesHasBeenSet)
-  {
-   payload.WithObject("triggerProperties", m_triggerProperties.Jsonize());
-
+  if (m_triggerPropertiesHasBeenSet) {
+    payload.WithObject("triggerProperties", m_triggerProperties.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

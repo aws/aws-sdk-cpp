@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/detective/Detective_EXPORTS.h>
 
-namespace Aws
-{
-namespace Detective
-{
-class DetectiveEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace Detective {
+class DetectiveEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace Detective
-} // namespace Aws
+}  // namespace Detective
+}  // namespace Aws

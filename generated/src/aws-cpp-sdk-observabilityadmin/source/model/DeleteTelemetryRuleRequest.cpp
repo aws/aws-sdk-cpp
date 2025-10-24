@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/observabilityadmin/model/DeleteTelemetryRuleRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/observabilityadmin/model/DeleteTelemetryRuleRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::ObservabilityAdmin::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteTelemetryRuleRequest::SerializePayload() const
-{
+Aws::String DeleteTelemetryRuleRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_ruleIdentifierHasBeenSet)
-  {
-   payload.WithString("RuleIdentifier", m_ruleIdentifier);
-
+  if (m_ruleIdentifierHasBeenSet) {
+    payload.WithString("RuleIdentifier", m_ruleIdentifier);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

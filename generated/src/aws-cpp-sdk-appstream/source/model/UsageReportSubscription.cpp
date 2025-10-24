@@ -11,40 +11,29 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppStream
-{
-namespace Model
-{
+namespace Aws {
+namespace AppStream {
+namespace Model {
 
-UsageReportSubscription::UsageReportSubscription(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UsageReportSubscription::UsageReportSubscription(JsonView jsonValue) { *this = jsonValue; }
 
-UsageReportSubscription& UsageReportSubscription::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("S3BucketName"))
-  {
+UsageReportSubscription& UsageReportSubscription::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("S3BucketName")) {
     m_s3BucketName = jsonValue.GetString("S3BucketName");
     m_s3BucketNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Schedule"))
-  {
+  if (jsonValue.ValueExists("Schedule")) {
     m_schedule = UsageReportScheduleMapper::GetUsageReportScheduleForName(jsonValue.GetString("Schedule"));
     m_scheduleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastGeneratedReportDate"))
-  {
+  if (jsonValue.ValueExists("LastGeneratedReportDate")) {
     m_lastGeneratedReportDate = jsonValue.GetDouble("LastGeneratedReportDate");
     m_lastGeneratedReportDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SubscriptionErrors"))
-  {
+  if (jsonValue.ValueExists("SubscriptionErrors")) {
     Aws::Utils::Array<JsonView> subscriptionErrorsJsonList = jsonValue.GetArray("SubscriptionErrors");
-    for(unsigned subscriptionErrorsIndex = 0; subscriptionErrorsIndex < subscriptionErrorsJsonList.GetLength(); ++subscriptionErrorsIndex)
-    {
+    for (unsigned subscriptionErrorsIndex = 0; subscriptionErrorsIndex < subscriptionErrorsJsonList.GetLength();
+         ++subscriptionErrorsIndex) {
       m_subscriptionErrors.push_back(subscriptionErrorsJsonList[subscriptionErrorsIndex].AsObject());
     }
     m_subscriptionErrorsHasBeenSet = true;
@@ -52,40 +41,33 @@ UsageReportSubscription& UsageReportSubscription::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue UsageReportSubscription::Jsonize() const
-{
+JsonValue UsageReportSubscription::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3BucketNameHasBeenSet)
-  {
-   payload.WithString("S3BucketName", m_s3BucketName);
-
+  if (m_s3BucketNameHasBeenSet) {
+    payload.WithString("S3BucketName", m_s3BucketName);
   }
 
-  if(m_scheduleHasBeenSet)
-  {
-   payload.WithString("Schedule", UsageReportScheduleMapper::GetNameForUsageReportSchedule(m_schedule));
+  if (m_scheduleHasBeenSet) {
+    payload.WithString("Schedule", UsageReportScheduleMapper::GetNameForUsageReportSchedule(m_schedule));
   }
 
-  if(m_lastGeneratedReportDateHasBeenSet)
-  {
-   payload.WithDouble("LastGeneratedReportDate", m_lastGeneratedReportDate.SecondsWithMSPrecision());
+  if (m_lastGeneratedReportDateHasBeenSet) {
+    payload.WithDouble("LastGeneratedReportDate", m_lastGeneratedReportDate.SecondsWithMSPrecision());
   }
 
-  if(m_subscriptionErrorsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> subscriptionErrorsJsonList(m_subscriptionErrors.size());
-   for(unsigned subscriptionErrorsIndex = 0; subscriptionErrorsIndex < subscriptionErrorsJsonList.GetLength(); ++subscriptionErrorsIndex)
-   {
-     subscriptionErrorsJsonList[subscriptionErrorsIndex].AsObject(m_subscriptionErrors[subscriptionErrorsIndex].Jsonize());
-   }
-   payload.WithArray("SubscriptionErrors", std::move(subscriptionErrorsJsonList));
-
+  if (m_subscriptionErrorsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> subscriptionErrorsJsonList(m_subscriptionErrors.size());
+    for (unsigned subscriptionErrorsIndex = 0; subscriptionErrorsIndex < subscriptionErrorsJsonList.GetLength();
+         ++subscriptionErrorsIndex) {
+      subscriptionErrorsJsonList[subscriptionErrorsIndex].AsObject(m_subscriptionErrors[subscriptionErrorsIndex].Jsonize());
+    }
+    payload.WithArray("SubscriptionErrors", std::move(subscriptionErrorsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppStream
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppStream
+}  // namespace Aws

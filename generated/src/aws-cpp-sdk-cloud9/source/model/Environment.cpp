@@ -11,126 +11,96 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Cloud9
-{
-namespace Model
-{
+namespace Aws {
+namespace Cloud9 {
+namespace Model {
 
-Environment::Environment(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Environment::Environment(JsonView jsonValue) { *this = jsonValue; }
 
-Environment& Environment::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("id"))
-  {
+Environment& Environment::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = EnvironmentTypeMapper::GetEnvironmentTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("connectionType"))
-  {
+  if (jsonValue.ValueExists("connectionType")) {
     m_connectionType = ConnectionTypeMapper::GetConnectionTypeForName(jsonValue.GetString("connectionType"));
     m_connectionTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("arn"))
-  {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ownerArn"))
-  {
+  if (jsonValue.ValueExists("ownerArn")) {
     m_ownerArn = jsonValue.GetString("ownerArn");
     m_ownerArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lifecycle"))
-  {
+  if (jsonValue.ValueExists("lifecycle")) {
     m_lifecycle = jsonValue.GetObject("lifecycle");
     m_lifecycleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("managedCredentialsStatus"))
-  {
-    m_managedCredentialsStatus = ManagedCredentialsStatusMapper::GetManagedCredentialsStatusForName(jsonValue.GetString("managedCredentialsStatus"));
+  if (jsonValue.ValueExists("managedCredentialsStatus")) {
+    m_managedCredentialsStatus =
+        ManagedCredentialsStatusMapper::GetManagedCredentialsStatusForName(jsonValue.GetString("managedCredentialsStatus"));
     m_managedCredentialsStatusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Environment::Jsonize() const
-{
+JsonValue Environment::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", EnvironmentTypeMapper::GetNameForEnvironmentType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", EnvironmentTypeMapper::GetNameForEnvironmentType(m_type));
   }
 
-  if(m_connectionTypeHasBeenSet)
-  {
-   payload.WithString("connectionType", ConnectionTypeMapper::GetNameForConnectionType(m_connectionType));
+  if (m_connectionTypeHasBeenSet) {
+    payload.WithString("connectionType", ConnectionTypeMapper::GetNameForConnectionType(m_connectionType));
   }
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_ownerArnHasBeenSet)
-  {
-   payload.WithString("ownerArn", m_ownerArn);
-
+  if (m_ownerArnHasBeenSet) {
+    payload.WithString("ownerArn", m_ownerArn);
   }
 
-  if(m_lifecycleHasBeenSet)
-  {
-   payload.WithObject("lifecycle", m_lifecycle.Jsonize());
-
+  if (m_lifecycleHasBeenSet) {
+    payload.WithObject("lifecycle", m_lifecycle.Jsonize());
   }
 
-  if(m_managedCredentialsStatusHasBeenSet)
-  {
-   payload.WithString("managedCredentialsStatus", ManagedCredentialsStatusMapper::GetNameForManagedCredentialsStatus(m_managedCredentialsStatus));
+  if (m_managedCredentialsStatusHasBeenSet) {
+    payload.WithString("managedCredentialsStatus",
+                       ManagedCredentialsStatusMapper::GetNameForManagedCredentialsStatus(m_managedCredentialsStatus));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Cloud9
-} // namespace Aws
+}  // namespace Model
+}  // namespace Cloud9
+}  // namespace Aws

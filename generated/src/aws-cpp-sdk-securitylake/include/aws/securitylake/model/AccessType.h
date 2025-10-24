@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/securitylake/SecurityLake_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/securitylake/SecurityLake_EXPORTS.h>
 
-namespace Aws
-{
-namespace SecurityLake
-{
-namespace Model
-{
-  enum class AccessType
-  {
-    NOT_SET,
-    LAKEFORMATION,
-    S3
-  };
+namespace Aws {
+namespace SecurityLake {
+namespace Model {
+enum class AccessType { NOT_SET, LAKEFORMATION, S3 };
 
-namespace AccessTypeMapper
-{
+namespace AccessTypeMapper {
 AWS_SECURITYLAKE_API AccessType GetAccessTypeForName(const Aws::String& name);
 
 AWS_SECURITYLAKE_API Aws::String GetNameForAccessType(AccessType value);
-} // namespace AccessTypeMapper
-} // namespace Model
-} // namespace SecurityLake
-} // namespace Aws
+}  // namespace AccessTypeMapper
+}  // namespace Model
+}  // namespace SecurityLake
+}  // namespace Aws

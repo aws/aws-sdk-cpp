@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::LookoutMetrics;
 
-AWSError<CoreErrors> LookoutMetricsErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> LookoutMetricsErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = LookoutMetricsErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

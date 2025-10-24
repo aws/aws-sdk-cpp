@@ -11,197 +11,151 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-SecurityProfile::SecurityProfile(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SecurityProfile::SecurityProfile(JsonView jsonValue) { *this = jsonValue; }
 
-SecurityProfile& SecurityProfile::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Id"))
-  {
+SecurityProfile& SecurityProfile::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OrganizationResourceId"))
-  {
+  if (jsonValue.ValueExists("OrganizationResourceId")) {
     m_organizationResourceId = jsonValue.GetString("OrganizationResourceId");
     m_organizationResourceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Arn"))
-  {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SecurityProfileName"))
-  {
+  if (jsonValue.ValueExists("SecurityProfileName")) {
     m_securityProfileName = jsonValue.GetString("SecurityProfileName");
     m_securityProfileNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Tags"))
-  {
+  if (jsonValue.ValueExists("Tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
+    for (auto& tagsItem : tagsJsonMap) {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AllowedAccessControlTags"))
-  {
+  if (jsonValue.ValueExists("AllowedAccessControlTags")) {
     Aws::Map<Aws::String, JsonView> allowedAccessControlTagsJsonMap = jsonValue.GetObject("AllowedAccessControlTags").GetAllObjects();
-    for(auto& allowedAccessControlTagsItem : allowedAccessControlTagsJsonMap)
-    {
+    for (auto& allowedAccessControlTagsItem : allowedAccessControlTagsJsonMap) {
       m_allowedAccessControlTags[allowedAccessControlTagsItem.first] = allowedAccessControlTagsItem.second.AsString();
     }
     m_allowedAccessControlTagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TagRestrictedResources"))
-  {
+  if (jsonValue.ValueExists("TagRestrictedResources")) {
     Aws::Utils::Array<JsonView> tagRestrictedResourcesJsonList = jsonValue.GetArray("TagRestrictedResources");
-    for(unsigned tagRestrictedResourcesIndex = 0; tagRestrictedResourcesIndex < tagRestrictedResourcesJsonList.GetLength(); ++tagRestrictedResourcesIndex)
-    {
+    for (unsigned tagRestrictedResourcesIndex = 0; tagRestrictedResourcesIndex < tagRestrictedResourcesJsonList.GetLength();
+         ++tagRestrictedResourcesIndex) {
       m_tagRestrictedResources.push_back(tagRestrictedResourcesJsonList[tagRestrictedResourcesIndex].AsString());
     }
     m_tagRestrictedResourcesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModifiedTime"))
-  {
+  if (jsonValue.ValueExists("LastModifiedTime")) {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModifiedRegion"))
-  {
+  if (jsonValue.ValueExists("LastModifiedRegion")) {
     m_lastModifiedRegion = jsonValue.GetString("LastModifiedRegion");
     m_lastModifiedRegionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HierarchyRestrictedResources"))
-  {
+  if (jsonValue.ValueExists("HierarchyRestrictedResources")) {
     Aws::Utils::Array<JsonView> hierarchyRestrictedResourcesJsonList = jsonValue.GetArray("HierarchyRestrictedResources");
-    for(unsigned hierarchyRestrictedResourcesIndex = 0; hierarchyRestrictedResourcesIndex < hierarchyRestrictedResourcesJsonList.GetLength(); ++hierarchyRestrictedResourcesIndex)
-    {
+    for (unsigned hierarchyRestrictedResourcesIndex = 0;
+         hierarchyRestrictedResourcesIndex < hierarchyRestrictedResourcesJsonList.GetLength(); ++hierarchyRestrictedResourcesIndex) {
       m_hierarchyRestrictedResources.push_back(hierarchyRestrictedResourcesJsonList[hierarchyRestrictedResourcesIndex].AsString());
     }
     m_hierarchyRestrictedResourcesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AllowedAccessControlHierarchyGroupId"))
-  {
+  if (jsonValue.ValueExists("AllowedAccessControlHierarchyGroupId")) {
     m_allowedAccessControlHierarchyGroupId = jsonValue.GetString("AllowedAccessControlHierarchyGroupId");
     m_allowedAccessControlHierarchyGroupIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SecurityProfile::Jsonize() const
-{
+JsonValue SecurityProfile::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
-  if(m_organizationResourceIdHasBeenSet)
-  {
-   payload.WithString("OrganizationResourceId", m_organizationResourceId);
-
+  if (m_organizationResourceIdHasBeenSet) {
+    payload.WithString("OrganizationResourceId", m_organizationResourceId);
   }
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_securityProfileNameHasBeenSet)
-  {
-   payload.WithString("SecurityProfileName", m_securityProfileName);
-
+  if (m_securityProfileNameHasBeenSet) {
+    payload.WithString("SecurityProfileName", m_securityProfileName);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("Tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
-  if(m_allowedAccessControlTagsHasBeenSet)
-  {
-   JsonValue allowedAccessControlTagsJsonMap;
-   for(auto& allowedAccessControlTagsItem : m_allowedAccessControlTags)
-   {
-     allowedAccessControlTagsJsonMap.WithString(allowedAccessControlTagsItem.first, allowedAccessControlTagsItem.second);
-   }
-   payload.WithObject("AllowedAccessControlTags", std::move(allowedAccessControlTagsJsonMap));
-
+  if (m_allowedAccessControlTagsHasBeenSet) {
+    JsonValue allowedAccessControlTagsJsonMap;
+    for (auto& allowedAccessControlTagsItem : m_allowedAccessControlTags) {
+      allowedAccessControlTagsJsonMap.WithString(allowedAccessControlTagsItem.first, allowedAccessControlTagsItem.second);
+    }
+    payload.WithObject("AllowedAccessControlTags", std::move(allowedAccessControlTagsJsonMap));
   }
 
-  if(m_tagRestrictedResourcesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagRestrictedResourcesJsonList(m_tagRestrictedResources.size());
-   for(unsigned tagRestrictedResourcesIndex = 0; tagRestrictedResourcesIndex < tagRestrictedResourcesJsonList.GetLength(); ++tagRestrictedResourcesIndex)
-   {
-     tagRestrictedResourcesJsonList[tagRestrictedResourcesIndex].AsString(m_tagRestrictedResources[tagRestrictedResourcesIndex]);
-   }
-   payload.WithArray("TagRestrictedResources", std::move(tagRestrictedResourcesJsonList));
-
+  if (m_tagRestrictedResourcesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagRestrictedResourcesJsonList(m_tagRestrictedResources.size());
+    for (unsigned tagRestrictedResourcesIndex = 0; tagRestrictedResourcesIndex < tagRestrictedResourcesJsonList.GetLength();
+         ++tagRestrictedResourcesIndex) {
+      tagRestrictedResourcesJsonList[tagRestrictedResourcesIndex].AsString(m_tagRestrictedResources[tagRestrictedResourcesIndex]);
+    }
+    payload.WithArray("TagRestrictedResources", std::move(tagRestrictedResourcesJsonList));
   }
 
-  if(m_lastModifiedTimeHasBeenSet)
-  {
-   payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  if (m_lastModifiedTimeHasBeenSet) {
+    payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
   }
 
-  if(m_lastModifiedRegionHasBeenSet)
-  {
-   payload.WithString("LastModifiedRegion", m_lastModifiedRegion);
-
+  if (m_lastModifiedRegionHasBeenSet) {
+    payload.WithString("LastModifiedRegion", m_lastModifiedRegion);
   }
 
-  if(m_hierarchyRestrictedResourcesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> hierarchyRestrictedResourcesJsonList(m_hierarchyRestrictedResources.size());
-   for(unsigned hierarchyRestrictedResourcesIndex = 0; hierarchyRestrictedResourcesIndex < hierarchyRestrictedResourcesJsonList.GetLength(); ++hierarchyRestrictedResourcesIndex)
-   {
-     hierarchyRestrictedResourcesJsonList[hierarchyRestrictedResourcesIndex].AsString(m_hierarchyRestrictedResources[hierarchyRestrictedResourcesIndex]);
-   }
-   payload.WithArray("HierarchyRestrictedResources", std::move(hierarchyRestrictedResourcesJsonList));
-
+  if (m_hierarchyRestrictedResourcesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> hierarchyRestrictedResourcesJsonList(m_hierarchyRestrictedResources.size());
+    for (unsigned hierarchyRestrictedResourcesIndex = 0;
+         hierarchyRestrictedResourcesIndex < hierarchyRestrictedResourcesJsonList.GetLength(); ++hierarchyRestrictedResourcesIndex) {
+      hierarchyRestrictedResourcesJsonList[hierarchyRestrictedResourcesIndex].AsString(
+          m_hierarchyRestrictedResources[hierarchyRestrictedResourcesIndex]);
+    }
+    payload.WithArray("HierarchyRestrictedResources", std::move(hierarchyRestrictedResourcesJsonList));
   }
 
-  if(m_allowedAccessControlHierarchyGroupIdHasBeenSet)
-  {
-   payload.WithString("AllowedAccessControlHierarchyGroupId", m_allowedAccessControlHierarchyGroupId);
-
+  if (m_allowedAccessControlHierarchyGroupIdHasBeenSet) {
+    payload.WithString("AllowedAccessControlHierarchyGroupId", m_allowedAccessControlHierarchyGroupId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

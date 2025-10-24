@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class MpdCaptionContainerType
-  {
-    NOT_SET,
-    RAW,
-    FRAGMENTED_MP4
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class MpdCaptionContainerType { NOT_SET, RAW, FRAGMENTED_MP4 };
 
-namespace MpdCaptionContainerTypeMapper
-{
+namespace MpdCaptionContainerTypeMapper {
 AWS_MEDIACONVERT_API MpdCaptionContainerType GetMpdCaptionContainerTypeForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForMpdCaptionContainerType(MpdCaptionContainerType value);
-} // namespace MpdCaptionContainerTypeMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace MpdCaptionContainerTypeMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

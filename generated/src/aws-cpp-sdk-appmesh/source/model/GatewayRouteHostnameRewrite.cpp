@@ -11,40 +11,32 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-GatewayRouteHostnameRewrite::GatewayRouteHostnameRewrite(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GatewayRouteHostnameRewrite::GatewayRouteHostnameRewrite(JsonView jsonValue) { *this = jsonValue; }
 
-GatewayRouteHostnameRewrite& GatewayRouteHostnameRewrite::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("defaultTargetHostname"))
-  {
-    m_defaultTargetHostname = DefaultGatewayRouteRewriteMapper::GetDefaultGatewayRouteRewriteForName(jsonValue.GetString("defaultTargetHostname"));
+GatewayRouteHostnameRewrite& GatewayRouteHostnameRewrite::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("defaultTargetHostname")) {
+    m_defaultTargetHostname =
+        DefaultGatewayRouteRewriteMapper::GetDefaultGatewayRouteRewriteForName(jsonValue.GetString("defaultTargetHostname"));
     m_defaultTargetHostnameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GatewayRouteHostnameRewrite::Jsonize() const
-{
+JsonValue GatewayRouteHostnameRewrite::Jsonize() const {
   JsonValue payload;
 
-  if(m_defaultTargetHostnameHasBeenSet)
-  {
-   payload.WithString("defaultTargetHostname", DefaultGatewayRouteRewriteMapper::GetNameForDefaultGatewayRouteRewrite(m_defaultTargetHostname));
+  if (m_defaultTargetHostnameHasBeenSet) {
+    payload.WithString("defaultTargetHostname",
+                       DefaultGatewayRouteRewriteMapper::GetNameForDefaultGatewayRouteRewrite(m_defaultTargetHostname));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

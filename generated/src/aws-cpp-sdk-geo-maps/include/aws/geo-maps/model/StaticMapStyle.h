@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/geo-maps/GeoMaps_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/geo-maps/GeoMaps_EXPORTS.h>
 
-namespace Aws
-{
-namespace GeoMaps
-{
-namespace Model
-{
-  enum class StaticMapStyle
-  {
-    NOT_SET,
-    Satellite,
-    Standard
-  };
+namespace Aws {
+namespace GeoMaps {
+namespace Model {
+enum class StaticMapStyle { NOT_SET, Satellite, Standard };
 
-namespace StaticMapStyleMapper
-{
+namespace StaticMapStyleMapper {
 AWS_GEOMAPS_API StaticMapStyle GetStaticMapStyleForName(const Aws::String& name);
 
 AWS_GEOMAPS_API Aws::String GetNameForStaticMapStyle(StaticMapStyle value);
-} // namespace StaticMapStyleMapper
-} // namespace Model
-} // namespace GeoMaps
-} // namespace Aws
+}  // namespace StaticMapStyleMapper
+}  // namespace Model
+}  // namespace GeoMaps
+}  // namespace Aws

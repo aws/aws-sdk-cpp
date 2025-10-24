@@ -3,70 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/location/model/DimensionUnit.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/location/model/DimensionUnit.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace LocationService {
+namespace Model {
+namespace DimensionUnitMapper {
 
-namespace Aws
-{
-  namespace LocationService
-  {
-    namespace Model
-    {
-      namespace DimensionUnitMapper
-      {
+static const int Meters_HASH = HashingUtils::HashString("Meters");
+static const int Feet_HASH = HashingUtils::HashString("Feet");
 
-        static const int Meters_HASH = HashingUtils::HashString("Meters");
-        static const int Feet_HASH = HashingUtils::HashString("Feet");
+DimensionUnit GetDimensionUnitForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == Meters_HASH) {
+    return DimensionUnit::Meters;
+  } else if (hashCode == Feet_HASH) {
+    return DimensionUnit::Feet;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<DimensionUnit>(hashCode);
+  }
 
+  return DimensionUnit::NOT_SET;
+}
 
-        DimensionUnit GetDimensionUnitForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Meters_HASH)
-          {
-            return DimensionUnit::Meters;
-          }
-          else if (hashCode == Feet_HASH)
-          {
-            return DimensionUnit::Feet;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<DimensionUnit>(hashCode);
-          }
+Aws::String GetNameForDimensionUnit(DimensionUnit enumValue) {
+  switch (enumValue) {
+    case DimensionUnit::NOT_SET:
+      return {};
+    case DimensionUnit::Meters:
+      return "Meters";
+    case DimensionUnit::Feet:
+      return "Feet";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return DimensionUnit::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForDimensionUnit(DimensionUnit enumValue)
-        {
-          switch(enumValue)
-          {
-          case DimensionUnit::NOT_SET:
-            return {};
-          case DimensionUnit::Meters:
-            return "Meters";
-          case DimensionUnit::Feet:
-            return "Feet";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace DimensionUnitMapper
-    } // namespace Model
-  } // namespace LocationService
-} // namespace Aws
+}  // namespace DimensionUnitMapper
+}  // namespace Model
+}  // namespace LocationService
+}  // namespace Aws

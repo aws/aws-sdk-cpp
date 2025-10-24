@@ -3,148 +3,110 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotevents/model/DynamoDBAction.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotevents/model/DynamoDBAction.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTEvents
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTEvents {
+namespace Model {
 
-DynamoDBAction::DynamoDBAction(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DynamoDBAction::DynamoDBAction(JsonView jsonValue) { *this = jsonValue; }
 
-DynamoDBAction& DynamoDBAction::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("hashKeyType"))
-  {
+DynamoDBAction& DynamoDBAction::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("hashKeyType")) {
     m_hashKeyType = jsonValue.GetString("hashKeyType");
     m_hashKeyTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("hashKeyField"))
-  {
+  if (jsonValue.ValueExists("hashKeyField")) {
     m_hashKeyField = jsonValue.GetString("hashKeyField");
     m_hashKeyFieldHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("hashKeyValue"))
-  {
+  if (jsonValue.ValueExists("hashKeyValue")) {
     m_hashKeyValue = jsonValue.GetString("hashKeyValue");
     m_hashKeyValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("rangeKeyType"))
-  {
+  if (jsonValue.ValueExists("rangeKeyType")) {
     m_rangeKeyType = jsonValue.GetString("rangeKeyType");
     m_rangeKeyTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("rangeKeyField"))
-  {
+  if (jsonValue.ValueExists("rangeKeyField")) {
     m_rangeKeyField = jsonValue.GetString("rangeKeyField");
     m_rangeKeyFieldHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("rangeKeyValue"))
-  {
+  if (jsonValue.ValueExists("rangeKeyValue")) {
     m_rangeKeyValue = jsonValue.GetString("rangeKeyValue");
     m_rangeKeyValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("operation"))
-  {
+  if (jsonValue.ValueExists("operation")) {
     m_operation = jsonValue.GetString("operation");
     m_operationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("payloadField"))
-  {
+  if (jsonValue.ValueExists("payloadField")) {
     m_payloadField = jsonValue.GetString("payloadField");
     m_payloadFieldHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tableName"))
-  {
+  if (jsonValue.ValueExists("tableName")) {
     m_tableName = jsonValue.GetString("tableName");
     m_tableNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("payload"))
-  {
+  if (jsonValue.ValueExists("payload")) {
     m_payload = jsonValue.GetObject("payload");
     m_payloadHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DynamoDBAction::Jsonize() const
-{
+JsonValue DynamoDBAction::Jsonize() const {
   JsonValue payload;
 
-  if(m_hashKeyTypeHasBeenSet)
-  {
-   payload.WithString("hashKeyType", m_hashKeyType);
-
+  if (m_hashKeyTypeHasBeenSet) {
+    payload.WithString("hashKeyType", m_hashKeyType);
   }
 
-  if(m_hashKeyFieldHasBeenSet)
-  {
-   payload.WithString("hashKeyField", m_hashKeyField);
-
+  if (m_hashKeyFieldHasBeenSet) {
+    payload.WithString("hashKeyField", m_hashKeyField);
   }
 
-  if(m_hashKeyValueHasBeenSet)
-  {
-   payload.WithString("hashKeyValue", m_hashKeyValue);
-
+  if (m_hashKeyValueHasBeenSet) {
+    payload.WithString("hashKeyValue", m_hashKeyValue);
   }
 
-  if(m_rangeKeyTypeHasBeenSet)
-  {
-   payload.WithString("rangeKeyType", m_rangeKeyType);
-
+  if (m_rangeKeyTypeHasBeenSet) {
+    payload.WithString("rangeKeyType", m_rangeKeyType);
   }
 
-  if(m_rangeKeyFieldHasBeenSet)
-  {
-   payload.WithString("rangeKeyField", m_rangeKeyField);
-
+  if (m_rangeKeyFieldHasBeenSet) {
+    payload.WithString("rangeKeyField", m_rangeKeyField);
   }
 
-  if(m_rangeKeyValueHasBeenSet)
-  {
-   payload.WithString("rangeKeyValue", m_rangeKeyValue);
-
+  if (m_rangeKeyValueHasBeenSet) {
+    payload.WithString("rangeKeyValue", m_rangeKeyValue);
   }
 
-  if(m_operationHasBeenSet)
-  {
-   payload.WithString("operation", m_operation);
-
+  if (m_operationHasBeenSet) {
+    payload.WithString("operation", m_operation);
   }
 
-  if(m_payloadFieldHasBeenSet)
-  {
-   payload.WithString("payloadField", m_payloadField);
-
+  if (m_payloadFieldHasBeenSet) {
+    payload.WithString("payloadField", m_payloadField);
   }
 
-  if(m_tableNameHasBeenSet)
-  {
-   payload.WithString("tableName", m_tableName);
-
+  if (m_tableNameHasBeenSet) {
+    payload.WithString("tableName", m_tableName);
   }
 
-  if(m_payloadHasBeenSet)
-  {
-   payload.WithObject("payload", m_payload.Jsonize());
-
+  if (m_payloadHasBeenSet) {
+    payload.WithObject("payload", m_payload.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTEvents
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTEvents
+}  // namespace Aws

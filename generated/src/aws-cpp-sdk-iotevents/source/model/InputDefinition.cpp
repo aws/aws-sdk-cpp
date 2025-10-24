@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotevents/model/InputDefinition.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotevents/model/InputDefinition.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTEvents
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTEvents {
+namespace Model {
 
-InputDefinition::InputDefinition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InputDefinition::InputDefinition(JsonView jsonValue) { *this = jsonValue; }
 
-InputDefinition& InputDefinition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("attributes"))
-  {
+InputDefinition& InputDefinition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("attributes")) {
     Aws::Utils::Array<JsonView> attributesJsonList = jsonValue.GetArray("attributes");
-    for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
-    {
+    for (unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex) {
       m_attributes.push_back(attributesJsonList[attributesIndex].AsObject());
     }
     m_attributesHasBeenSet = true;
@@ -37,24 +28,20 @@ InputDefinition& InputDefinition::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue InputDefinition::Jsonize() const
-{
+JsonValue InputDefinition::Jsonize() const {
   JsonValue payload;
 
-  if(m_attributesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> attributesJsonList(m_attributes.size());
-   for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
-   {
-     attributesJsonList[attributesIndex].AsObject(m_attributes[attributesIndex].Jsonize());
-   }
-   payload.WithArray("attributes", std::move(attributesJsonList));
-
+  if (m_attributesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> attributesJsonList(m_attributes.size());
+    for (unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex) {
+      attributesJsonList[attributesIndex].AsObject(m_attributes[attributesIndex].Jsonize());
+    }
+    payload.WithArray("attributes", std::move(attributesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTEvents
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTEvents
+}  // namespace Aws

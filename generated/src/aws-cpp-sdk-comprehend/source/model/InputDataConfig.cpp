@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Comprehend {
+namespace Model {
 
-InputDataConfig::InputDataConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InputDataConfig::InputDataConfig(JsonView jsonValue) { *this = jsonValue; }
 
-InputDataConfig& InputDataConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("S3Uri"))
-  {
+InputDataConfig& InputDataConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("S3Uri")) {
     m_s3Uri = jsonValue.GetString("S3Uri");
     m_s3UriHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InputFormat"))
-  {
+  if (jsonValue.ValueExists("InputFormat")) {
     m_inputFormat = InputFormatMapper::GetInputFormatForName(jsonValue.GetString("InputFormat"));
     m_inputFormatHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DocumentReaderConfig"))
-  {
+  if (jsonValue.ValueExists("DocumentReaderConfig")) {
     m_documentReaderConfig = jsonValue.GetObject("DocumentReaderConfig");
     m_documentReaderConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InputDataConfig::Jsonize() const
-{
+JsonValue InputDataConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3UriHasBeenSet)
-  {
-   payload.WithString("S3Uri", m_s3Uri);
-
+  if (m_s3UriHasBeenSet) {
+    payload.WithString("S3Uri", m_s3Uri);
   }
 
-  if(m_inputFormatHasBeenSet)
-  {
-   payload.WithString("InputFormat", InputFormatMapper::GetNameForInputFormat(m_inputFormat));
+  if (m_inputFormatHasBeenSet) {
+    payload.WithString("InputFormat", InputFormatMapper::GetNameForInputFormat(m_inputFormat));
   }
 
-  if(m_documentReaderConfigHasBeenSet)
-  {
-   payload.WithObject("DocumentReaderConfig", m_documentReaderConfig.Jsonize());
-
+  if (m_documentReaderConfigHasBeenSet) {
+    payload.WithObject("DocumentReaderConfig", m_documentReaderConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

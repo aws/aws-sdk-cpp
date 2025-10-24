@@ -11,118 +11,86 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Comprehend {
+namespace Model {
 
-ClassifierEvaluationMetrics::ClassifierEvaluationMetrics(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ClassifierEvaluationMetrics::ClassifierEvaluationMetrics(JsonView jsonValue) { *this = jsonValue; }
 
-ClassifierEvaluationMetrics& ClassifierEvaluationMetrics::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Accuracy"))
-  {
+ClassifierEvaluationMetrics& ClassifierEvaluationMetrics::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Accuracy")) {
     m_accuracy = jsonValue.GetDouble("Accuracy");
     m_accuracyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Precision"))
-  {
+  if (jsonValue.ValueExists("Precision")) {
     m_precision = jsonValue.GetDouble("Precision");
     m_precisionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Recall"))
-  {
+  if (jsonValue.ValueExists("Recall")) {
     m_recall = jsonValue.GetDouble("Recall");
     m_recallHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("F1Score"))
-  {
+  if (jsonValue.ValueExists("F1Score")) {
     m_f1Score = jsonValue.GetDouble("F1Score");
     m_f1ScoreHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MicroPrecision"))
-  {
+  if (jsonValue.ValueExists("MicroPrecision")) {
     m_microPrecision = jsonValue.GetDouble("MicroPrecision");
     m_microPrecisionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MicroRecall"))
-  {
+  if (jsonValue.ValueExists("MicroRecall")) {
     m_microRecall = jsonValue.GetDouble("MicroRecall");
     m_microRecallHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MicroF1Score"))
-  {
+  if (jsonValue.ValueExists("MicroF1Score")) {
     m_microF1Score = jsonValue.GetDouble("MicroF1Score");
     m_microF1ScoreHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HammingLoss"))
-  {
+  if (jsonValue.ValueExists("HammingLoss")) {
     m_hammingLoss = jsonValue.GetDouble("HammingLoss");
     m_hammingLossHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ClassifierEvaluationMetrics::Jsonize() const
-{
+JsonValue ClassifierEvaluationMetrics::Jsonize() const {
   JsonValue payload;
 
-  if(m_accuracyHasBeenSet)
-  {
-   payload.WithDouble("Accuracy", m_accuracy);
-
+  if (m_accuracyHasBeenSet) {
+    payload.WithDouble("Accuracy", m_accuracy);
   }
 
-  if(m_precisionHasBeenSet)
-  {
-   payload.WithDouble("Precision", m_precision);
-
+  if (m_precisionHasBeenSet) {
+    payload.WithDouble("Precision", m_precision);
   }
 
-  if(m_recallHasBeenSet)
-  {
-   payload.WithDouble("Recall", m_recall);
-
+  if (m_recallHasBeenSet) {
+    payload.WithDouble("Recall", m_recall);
   }
 
-  if(m_f1ScoreHasBeenSet)
-  {
-   payload.WithDouble("F1Score", m_f1Score);
-
+  if (m_f1ScoreHasBeenSet) {
+    payload.WithDouble("F1Score", m_f1Score);
   }
 
-  if(m_microPrecisionHasBeenSet)
-  {
-   payload.WithDouble("MicroPrecision", m_microPrecision);
-
+  if (m_microPrecisionHasBeenSet) {
+    payload.WithDouble("MicroPrecision", m_microPrecision);
   }
 
-  if(m_microRecallHasBeenSet)
-  {
-   payload.WithDouble("MicroRecall", m_microRecall);
-
+  if (m_microRecallHasBeenSet) {
+    payload.WithDouble("MicroRecall", m_microRecall);
   }
 
-  if(m_microF1ScoreHasBeenSet)
-  {
-   payload.WithDouble("MicroF1Score", m_microF1Score);
-
+  if (m_microF1ScoreHasBeenSet) {
+    payload.WithDouble("MicroF1Score", m_microF1Score);
   }
 
-  if(m_hammingLossHasBeenSet)
-  {
-   payload.WithDouble("HammingLoss", m_hammingLoss);
-
+  if (m_hammingLossHasBeenSet) {
+    payload.WithDouble("HammingLoss", m_hammingLoss);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

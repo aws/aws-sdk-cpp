@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qconnect/QConnect_EXPORTS.h>
 
-namespace Aws
-{
-namespace QConnect
-{
-namespace Model
-{
-  enum class GuardrailManagedWordsType
-  {
-    NOT_SET,
-    PROFANITY
-  };
+namespace Aws {
+namespace QConnect {
+namespace Model {
+enum class GuardrailManagedWordsType { NOT_SET, PROFANITY };
 
-namespace GuardrailManagedWordsTypeMapper
-{
+namespace GuardrailManagedWordsTypeMapper {
 AWS_QCONNECT_API GuardrailManagedWordsType GetGuardrailManagedWordsTypeForName(const Aws::String& name);
 
 AWS_QCONNECT_API Aws::String GetNameForGuardrailManagedWordsType(GuardrailManagedWordsType value);
-} // namespace GuardrailManagedWordsTypeMapper
-} // namespace Model
-} // namespace QConnect
-} // namespace Aws
+}  // namespace GuardrailManagedWordsTypeMapper
+}  // namespace Model
+}  // namespace QConnect
+}  // namespace Aws

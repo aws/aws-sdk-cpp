@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ecs/model/Failure.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ecs/model/Failure.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ECS
-{
-namespace Model
-{
+namespace Aws {
+namespace ECS {
+namespace Model {
 
-Failure::Failure(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Failure::Failure(JsonView jsonValue) { *this = jsonValue; }
 
-Failure& Failure::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("arn"))
-  {
+Failure& Failure::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("reason"))
-  {
+  if (jsonValue.ValueExists("reason")) {
     m_reason = jsonValue.GetString("reason");
     m_reasonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("detail"))
-  {
+  if (jsonValue.ValueExists("detail")) {
     m_detail = jsonValue.GetString("detail");
     m_detailHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Failure::Jsonize() const
-{
+JsonValue Failure::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_reasonHasBeenSet)
-  {
-   payload.WithString("reason", m_reason);
-
+  if (m_reasonHasBeenSet) {
+    payload.WithString("reason", m_reason);
   }
 
-  if(m_detailHasBeenSet)
-  {
-   payload.WithString("detail", m_detail);
-
+  if (m_detailHasBeenSet) {
+    payload.WithString("detail", m_detail);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ECS
-} // namespace Aws
+}  // namespace Model
+}  // namespace ECS
+}  // namespace Aws

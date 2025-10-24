@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::InternetMonitor;
 
-AWSError<CoreErrors> InternetMonitorErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> InternetMonitorErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = InternetMonitorErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

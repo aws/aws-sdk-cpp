@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeClientVpnRoutesResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/DescribeClientVpnRoutesResponse.h>
 
 #include <utility>
 
@@ -17,30 +17,22 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeClientVpnRoutesResponse::DescribeClientVpnRoutesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+DescribeClientVpnRoutesResponse::DescribeClientVpnRoutesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-DescribeClientVpnRoutesResponse& DescribeClientVpnRoutesResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeClientVpnRoutesResponse& DescribeClientVpnRoutesResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeClientVpnRoutesResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeClientVpnRoutesResponse")) {
     resultNode = rootNode.FirstChild("DescribeClientVpnRoutesResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode routesNode = resultNode.FirstChild("routes");
-    if(!routesNode.IsNull())
-    {
+    if (!routesNode.IsNull()) {
       XmlNode routesMember = routesNode.FirstChild("item");
       m_routesHasBeenSet = !routesMember.IsNull();
-      while(!routesMember.IsNull())
-      {
+      while (!routesMember.IsNull()) {
         m_routes.push_back(routesMember);
         routesMember = routesMember.NextNode("item");
       }
@@ -48,8 +40,7 @@ DescribeClientVpnRoutesResponse& DescribeClientVpnRoutesResponse::operator =(con
       m_routesHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
+    if (!nextTokenNode.IsNull()) {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
       m_nextTokenHasBeenSet = true;
     }
@@ -57,12 +48,11 @@ DescribeClientVpnRoutesResponse& DescribeClientVpnRoutesResponse::operator =(con
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeClientVpnRoutesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeClientVpnRoutesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DeleteTrafficMirrorSessionResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/DeleteTrafficMirrorSessionResponse.h>
 
 #include <utility>
 
@@ -17,26 +17,21 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteTrafficMirrorSessionResponse::DeleteTrafficMirrorSessionResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DeleteTrafficMirrorSessionResponse::DeleteTrafficMirrorSessionResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-DeleteTrafficMirrorSessionResponse& DeleteTrafficMirrorSessionResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DeleteTrafficMirrorSessionResponse& DeleteTrafficMirrorSessionResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DeleteTrafficMirrorSessionResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DeleteTrafficMirrorSessionResponse")) {
     resultNode = rootNode.FirstChild("DeleteTrafficMirrorSessionResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode trafficMirrorSessionIdNode = resultNode.FirstChild("trafficMirrorSessionId");
-    if(!trafficMirrorSessionIdNode.IsNull())
-    {
+    if (!trafficMirrorSessionIdNode.IsNull()) {
       m_trafficMirrorSessionId = Aws::Utils::Xml::DecodeEscapedXmlText(trafficMirrorSessionIdNode.GetText());
       m_trafficMirrorSessionIdHasBeenSet = true;
     }
@@ -44,12 +39,11 @@ DeleteTrafficMirrorSessionResponse& DeleteTrafficMirrorSessionResponse::operator
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeleteTrafficMirrorSessionResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeleteTrafficMirrorSessionResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

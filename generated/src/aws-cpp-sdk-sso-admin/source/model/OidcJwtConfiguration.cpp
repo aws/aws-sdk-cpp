@@ -3,81 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sso-admin/model/OidcJwtConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sso-admin/model/OidcJwtConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SSOAdmin
-{
-namespace Model
-{
+namespace Aws {
+namespace SSOAdmin {
+namespace Model {
 
-OidcJwtConfiguration::OidcJwtConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OidcJwtConfiguration::OidcJwtConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-OidcJwtConfiguration& OidcJwtConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("IssuerUrl"))
-  {
+OidcJwtConfiguration& OidcJwtConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("IssuerUrl")) {
     m_issuerUrl = jsonValue.GetString("IssuerUrl");
     m_issuerUrlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ClaimAttributePath"))
-  {
+  if (jsonValue.ValueExists("ClaimAttributePath")) {
     m_claimAttributePath = jsonValue.GetString("ClaimAttributePath");
     m_claimAttributePathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IdentityStoreAttributePath"))
-  {
+  if (jsonValue.ValueExists("IdentityStoreAttributePath")) {
     m_identityStoreAttributePath = jsonValue.GetString("IdentityStoreAttributePath");
     m_identityStoreAttributePathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("JwksRetrievalOption"))
-  {
+  if (jsonValue.ValueExists("JwksRetrievalOption")) {
     m_jwksRetrievalOption = JwksRetrievalOptionMapper::GetJwksRetrievalOptionForName(jsonValue.GetString("JwksRetrievalOption"));
     m_jwksRetrievalOptionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OidcJwtConfiguration::Jsonize() const
-{
+JsonValue OidcJwtConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_issuerUrlHasBeenSet)
-  {
-   payload.WithString("IssuerUrl", m_issuerUrl);
-
+  if (m_issuerUrlHasBeenSet) {
+    payload.WithString("IssuerUrl", m_issuerUrl);
   }
 
-  if(m_claimAttributePathHasBeenSet)
-  {
-   payload.WithString("ClaimAttributePath", m_claimAttributePath);
-
+  if (m_claimAttributePathHasBeenSet) {
+    payload.WithString("ClaimAttributePath", m_claimAttributePath);
   }
 
-  if(m_identityStoreAttributePathHasBeenSet)
-  {
-   payload.WithString("IdentityStoreAttributePath", m_identityStoreAttributePath);
-
+  if (m_identityStoreAttributePathHasBeenSet) {
+    payload.WithString("IdentityStoreAttributePath", m_identityStoreAttributePath);
   }
 
-  if(m_jwksRetrievalOptionHasBeenSet)
-  {
-   payload.WithString("JwksRetrievalOption", JwksRetrievalOptionMapper::GetNameForJwksRetrievalOption(m_jwksRetrievalOption));
+  if (m_jwksRetrievalOptionHasBeenSet) {
+    payload.WithString("JwksRetrievalOption", JwksRetrievalOptionMapper::GetNameForJwksRetrievalOption(m_jwksRetrievalOption));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SSOAdmin
-} // namespace Aws
+}  // namespace Model
+}  // namespace SSOAdmin
+}  // namespace Aws

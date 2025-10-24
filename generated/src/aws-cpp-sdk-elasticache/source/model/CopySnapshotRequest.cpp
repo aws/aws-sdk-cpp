@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/CopySnapshotRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticache/model/CopySnapshotRequest.h>
 
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-Aws::String CopySnapshotRequest::SerializePayload() const
-{
+Aws::String CopySnapshotRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CopySnapshot&";
-  if(m_sourceSnapshotNameHasBeenSet)
-  {
+  if (m_sourceSnapshotNameHasBeenSet) {
     ss << "SourceSnapshotName=" << StringUtils::URLEncode(m_sourceSnapshotName.c_str()) << "&";
   }
 
-  if(m_targetSnapshotNameHasBeenSet)
-  {
+  if (m_targetSnapshotNameHasBeenSet) {
     ss << "TargetSnapshotName=" << StringUtils::URLEncode(m_targetSnapshotName.c_str()) << "&";
   }
 
-  if(m_targetBucketHasBeenSet)
-  {
+  if (m_targetBucketHasBeenSet) {
     ss << "TargetBucket=" << StringUtils::URLEncode(m_targetBucket.c_str()) << "&";
   }
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
+  if (m_kmsKeyIdHasBeenSet) {
     ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
 
-  if(m_tagsHasBeenSet)
-  {
-    if (m_tags.empty())
-    {
+  if (m_tagsHasBeenSet) {
+    if (m_tags.empty()) {
       ss << "Tags=&";
-    }
-    else
-    {
+    } else {
       unsigned tagsCount = 1;
-      for(auto& item : m_tags)
-      {
+      for (auto& item : m_tags) {
         item.OutputToStream(ss, "Tags.Tag.", tagsCount, "");
         tagsCount++;
       }
@@ -55,8 +45,4 @@ Aws::String CopySnapshotRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CopySnapshotRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CopySnapshotRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

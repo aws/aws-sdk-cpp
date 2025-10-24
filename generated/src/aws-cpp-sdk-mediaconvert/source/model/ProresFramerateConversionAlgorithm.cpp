@@ -3,84 +3,66 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/ProresFramerateConversionAlgorithm.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/mediaconvert/model/ProresFramerateConversionAlgorithm.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+namespace ProresFramerateConversionAlgorithmMapper {
 
-namespace Aws
-{
-  namespace MediaConvert
-  {
-    namespace Model
-    {
-      namespace ProresFramerateConversionAlgorithmMapper
-      {
+static const int DUPLICATE_DROP_HASH = HashingUtils::HashString("DUPLICATE_DROP");
+static const int INTERPOLATE_HASH = HashingUtils::HashString("INTERPOLATE");
+static const int FRAMEFORMER_HASH = HashingUtils::HashString("FRAMEFORMER");
+static const int MAINTAIN_FRAME_COUNT_HASH = HashingUtils::HashString("MAINTAIN_FRAME_COUNT");
 
-        static const int DUPLICATE_DROP_HASH = HashingUtils::HashString("DUPLICATE_DROP");
-        static const int INTERPOLATE_HASH = HashingUtils::HashString("INTERPOLATE");
-        static const int FRAMEFORMER_HASH = HashingUtils::HashString("FRAMEFORMER");
-        static const int MAINTAIN_FRAME_COUNT_HASH = HashingUtils::HashString("MAINTAIN_FRAME_COUNT");
+ProresFramerateConversionAlgorithm GetProresFramerateConversionAlgorithmForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == DUPLICATE_DROP_HASH) {
+    return ProresFramerateConversionAlgorithm::DUPLICATE_DROP;
+  } else if (hashCode == INTERPOLATE_HASH) {
+    return ProresFramerateConversionAlgorithm::INTERPOLATE;
+  } else if (hashCode == FRAMEFORMER_HASH) {
+    return ProresFramerateConversionAlgorithm::FRAMEFORMER;
+  } else if (hashCode == MAINTAIN_FRAME_COUNT_HASH) {
+    return ProresFramerateConversionAlgorithm::MAINTAIN_FRAME_COUNT;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<ProresFramerateConversionAlgorithm>(hashCode);
+  }
 
+  return ProresFramerateConversionAlgorithm::NOT_SET;
+}
 
-        ProresFramerateConversionAlgorithm GetProresFramerateConversionAlgorithmForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == DUPLICATE_DROP_HASH)
-          {
-            return ProresFramerateConversionAlgorithm::DUPLICATE_DROP;
-          }
-          else if (hashCode == INTERPOLATE_HASH)
-          {
-            return ProresFramerateConversionAlgorithm::INTERPOLATE;
-          }
-          else if (hashCode == FRAMEFORMER_HASH)
-          {
-            return ProresFramerateConversionAlgorithm::FRAMEFORMER;
-          }
-          else if (hashCode == MAINTAIN_FRAME_COUNT_HASH)
-          {
-            return ProresFramerateConversionAlgorithm::MAINTAIN_FRAME_COUNT;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ProresFramerateConversionAlgorithm>(hashCode);
-          }
+Aws::String GetNameForProresFramerateConversionAlgorithm(ProresFramerateConversionAlgorithm enumValue) {
+  switch (enumValue) {
+    case ProresFramerateConversionAlgorithm::NOT_SET:
+      return {};
+    case ProresFramerateConversionAlgorithm::DUPLICATE_DROP:
+      return "DUPLICATE_DROP";
+    case ProresFramerateConversionAlgorithm::INTERPOLATE:
+      return "INTERPOLATE";
+    case ProresFramerateConversionAlgorithm::FRAMEFORMER:
+      return "FRAMEFORMER";
+    case ProresFramerateConversionAlgorithm::MAINTAIN_FRAME_COUNT:
+      return "MAINTAIN_FRAME_COUNT";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return ProresFramerateConversionAlgorithm::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForProresFramerateConversionAlgorithm(ProresFramerateConversionAlgorithm enumValue)
-        {
-          switch(enumValue)
-          {
-          case ProresFramerateConversionAlgorithm::NOT_SET:
-            return {};
-          case ProresFramerateConversionAlgorithm::DUPLICATE_DROP:
-            return "DUPLICATE_DROP";
-          case ProresFramerateConversionAlgorithm::INTERPOLATE:
-            return "INTERPOLATE";
-          case ProresFramerateConversionAlgorithm::FRAMEFORMER:
-            return "FRAMEFORMER";
-          case ProresFramerateConversionAlgorithm::MAINTAIN_FRAME_COUNT:
-            return "MAINTAIN_FRAME_COUNT";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace ProresFramerateConversionAlgorithmMapper
-    } // namespace Model
-  } // namespace MediaConvert
-} // namespace Aws
+}  // namespace ProresFramerateConversionAlgorithmMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

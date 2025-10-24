@@ -7,26 +7,16 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
-  enum class IpAddressType
-  {
-    NOT_SET,
-    ipv4,
-    ipv6,
-    dualstack
-  };
+namespace Aws {
+namespace CloudFront {
+namespace Model {
+enum class IpAddressType { NOT_SET, ipv4, ipv6, dualstack };
 
-namespace IpAddressTypeMapper
-{
+namespace IpAddressTypeMapper {
 AWS_CLOUDFRONT_API IpAddressType GetIpAddressTypeForName(const Aws::String& name);
 
 AWS_CLOUDFRONT_API Aws::String GetNameForIpAddressType(IpAddressType value);
-} // namespace IpAddressTypeMapper
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace IpAddressTypeMapper
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

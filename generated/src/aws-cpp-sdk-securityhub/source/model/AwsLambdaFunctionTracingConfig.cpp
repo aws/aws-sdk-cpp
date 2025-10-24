@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsLambdaFunctionTracingConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsLambdaFunctionTracingConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsLambdaFunctionTracingConfig::AwsLambdaFunctionTracingConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsLambdaFunctionTracingConfig::AwsLambdaFunctionTracingConfig(JsonView jsonValue) { *this = jsonValue; }
 
-AwsLambdaFunctionTracingConfig& AwsLambdaFunctionTracingConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Mode"))
-  {
+AwsLambdaFunctionTracingConfig& AwsLambdaFunctionTracingConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Mode")) {
     m_mode = jsonValue.GetString("Mode");
     m_modeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsLambdaFunctionTracingConfig::Jsonize() const
-{
+JsonValue AwsLambdaFunctionTracingConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_modeHasBeenSet)
-  {
-   payload.WithString("Mode", m_mode);
-
+  if (m_modeHasBeenSet) {
+    payload.WithString("Mode", m_mode);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

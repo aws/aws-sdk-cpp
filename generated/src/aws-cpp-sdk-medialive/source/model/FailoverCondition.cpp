@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/FailoverCondition.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/FailoverCondition.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-FailoverCondition::FailoverCondition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FailoverCondition::FailoverCondition(JsonView jsonValue) { *this = jsonValue; }
 
-FailoverCondition& FailoverCondition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("failoverConditionSettings"))
-  {
+FailoverCondition& FailoverCondition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("failoverConditionSettings")) {
     m_failoverConditionSettings = jsonValue.GetObject("failoverConditionSettings");
     m_failoverConditionSettingsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FailoverCondition::Jsonize() const
-{
+JsonValue FailoverCondition::Jsonize() const {
   JsonValue payload;
 
-  if(m_failoverConditionSettingsHasBeenSet)
-  {
-   payload.WithObject("failoverConditionSettings", m_failoverConditionSettings.Jsonize());
-
+  if (m_failoverConditionSettingsHasBeenSet) {
+    payload.WithObject("failoverConditionSettings", m_failoverConditionSettings.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

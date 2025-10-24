@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 
-namespace Aws
-{
-namespace DeviceFarm
-{
-namespace Model
-{
-  enum class DevicePlatform
-  {
-    NOT_SET,
-    ANDROID_,
-    IOS
-  };
+namespace Aws {
+namespace DeviceFarm {
+namespace Model {
+enum class DevicePlatform { NOT_SET, ANDROID_, IOS };
 
-namespace DevicePlatformMapper
-{
+namespace DevicePlatformMapper {
 AWS_DEVICEFARM_API DevicePlatform GetDevicePlatformForName(const Aws::String& name);
 
 AWS_DEVICEFARM_API Aws::String GetNameForDevicePlatform(DevicePlatform value);
-} // namespace DevicePlatformMapper
-} // namespace Model
-} // namespace DeviceFarm
-} // namespace Aws
+}  // namespace DevicePlatformMapper
+}  // namespace Model
+}  // namespace DeviceFarm
+}  // namespace Aws

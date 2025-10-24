@@ -11,31 +11,23 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyUIBuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Model {
 
-DataStoreRenderConfig::DataStoreRenderConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DataStoreRenderConfig::DataStoreRenderConfig(JsonView jsonValue) { *this = jsonValue; }
 
-DataStoreRenderConfig& DataStoreRenderConfig::operator =(JsonView jsonValue)
-{
+DataStoreRenderConfig& DataStoreRenderConfig::operator=(JsonView jsonValue) {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
 }
 
-JsonValue DataStoreRenderConfig::Jsonize() const
-{
+JsonValue DataStoreRenderConfig::Jsonize() const {
   JsonValue payload;
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

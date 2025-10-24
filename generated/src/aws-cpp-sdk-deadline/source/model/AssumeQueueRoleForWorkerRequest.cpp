@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/deadline/model/AssumeQueueRoleForWorkerRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/deadline/model/AssumeQueueRoleForWorkerRequest.h>
 
 #include <utility>
 
@@ -15,22 +15,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String AssumeQueueRoleForWorkerRequest::SerializePayload() const
-{
-  return {};
+Aws::String AssumeQueueRoleForWorkerRequest::SerializePayload() const { return {}; }
+
+void AssumeQueueRoleForWorkerRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_queueIdHasBeenSet) {
+    ss << m_queueId;
+    uri.AddQueryStringParameter("queueId", ss.str());
+    ss.str("");
+  }
 }
-
-void AssumeQueueRoleForWorkerRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_queueIdHasBeenSet)
-    {
-      ss << m_queueId;
-      uri.AddQueryStringParameter("queueId", ss.str());
-      ss.str("");
-    }
-
-}
-
-
-

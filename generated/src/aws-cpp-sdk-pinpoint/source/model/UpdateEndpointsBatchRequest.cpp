@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint/model/UpdateEndpointsBatchRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint/model/UpdateEndpointsBatchRequest.h>
 
 #include <utility>
 
@@ -12,18 +12,12 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateEndpointsBatchRequest::SerializePayload() const
-{
+Aws::String UpdateEndpointsBatchRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_endpointBatchRequestHasBeenSet)
-  {
-   payload = m_endpointBatchRequest.Jsonize();
+  if (m_endpointBatchRequestHasBeenSet) {
+    payload = m_endpointBatchRequest.Jsonize();
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

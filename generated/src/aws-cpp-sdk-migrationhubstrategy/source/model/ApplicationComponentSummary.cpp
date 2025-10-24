@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/migrationhubstrategy/model/ApplicationComponentSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/migrationhubstrategy/model/ApplicationComponentSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MigrationHubStrategyRecommendations
-{
-namespace Model
-{
+namespace Aws {
+namespace MigrationHubStrategyRecommendations {
+namespace Model {
 
-ApplicationComponentSummary::ApplicationComponentSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ApplicationComponentSummary::ApplicationComponentSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ApplicationComponentSummary& ApplicationComponentSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("appType"))
-  {
+ApplicationComponentSummary& ApplicationComponentSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("appType")) {
     m_appType = AppTypeMapper::GetAppTypeForName(jsonValue.GetString("appType"));
     m_appTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("count"))
-  {
+  if (jsonValue.ValueExists("count")) {
     m_count = jsonValue.GetInteger("count");
     m_countHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ApplicationComponentSummary::Jsonize() const
-{
+JsonValue ApplicationComponentSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_appTypeHasBeenSet)
-  {
-   payload.WithString("appType", AppTypeMapper::GetNameForAppType(m_appType));
+  if (m_appTypeHasBeenSet) {
+    payload.WithString("appType", AppTypeMapper::GetNameForAppType(m_appType));
   }
 
-  if(m_countHasBeenSet)
-  {
-   payload.WithInteger("count", m_count);
-
+  if (m_countHasBeenSet) {
+    payload.WithInteger("count", m_count);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MigrationHubStrategyRecommendations
-} // namespace Aws
+}  // namespace Model
+}  // namespace MigrationHubStrategyRecommendations
+}  // namespace Aws

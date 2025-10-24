@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-LexBotConfig::LexBotConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LexBotConfig::LexBotConfig(JsonView jsonValue) { *this = jsonValue; }
 
-LexBotConfig& LexBotConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("LexBot"))
-  {
+LexBotConfig& LexBotConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("LexBot")) {
     m_lexBot = jsonValue.GetObject("LexBot");
     m_lexBotHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LexV2Bot"))
-  {
+  if (jsonValue.ValueExists("LexV2Bot")) {
     m_lexV2Bot = jsonValue.GetObject("LexV2Bot");
     m_lexV2BotHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LexBotConfig::Jsonize() const
-{
+JsonValue LexBotConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_lexBotHasBeenSet)
-  {
-   payload.WithObject("LexBot", m_lexBot.Jsonize());
-
+  if (m_lexBotHasBeenSet) {
+    payload.WithObject("LexBot", m_lexBot.Jsonize());
   }
 
-  if(m_lexV2BotHasBeenSet)
-  {
-   payload.WithObject("LexV2Bot", m_lexV2Bot.Jsonize());
-
+  if (m_lexV2BotHasBeenSet) {
+    payload.WithObject("LexV2Bot", m_lexV2Bot.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

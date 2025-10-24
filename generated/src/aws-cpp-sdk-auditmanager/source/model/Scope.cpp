@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AuditManager
-{
-namespace Model
-{
+namespace Aws {
+namespace AuditManager {
+namespace Model {
 
-Scope::Scope(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Scope::Scope(JsonView jsonValue) { *this = jsonValue; }
 
-Scope& Scope::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("awsAccounts"))
-  {
+Scope& Scope::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("awsAccounts")) {
     Aws::Utils::Array<JsonView> awsAccountsJsonList = jsonValue.GetArray("awsAccounts");
-    for(unsigned awsAccountsIndex = 0; awsAccountsIndex < awsAccountsJsonList.GetLength(); ++awsAccountsIndex)
-    {
+    for (unsigned awsAccountsIndex = 0; awsAccountsIndex < awsAccountsJsonList.GetLength(); ++awsAccountsIndex) {
       m_awsAccounts.push_back(awsAccountsJsonList[awsAccountsIndex].AsObject());
     }
     m_awsAccountsHasBeenSet = true;
@@ -37,24 +28,20 @@ Scope& Scope::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue Scope::Jsonize() const
-{
+JsonValue Scope::Jsonize() const {
   JsonValue payload;
 
-  if(m_awsAccountsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> awsAccountsJsonList(m_awsAccounts.size());
-   for(unsigned awsAccountsIndex = 0; awsAccountsIndex < awsAccountsJsonList.GetLength(); ++awsAccountsIndex)
-   {
-     awsAccountsJsonList[awsAccountsIndex].AsObject(m_awsAccounts[awsAccountsIndex].Jsonize());
-   }
-   payload.WithArray("awsAccounts", std::move(awsAccountsJsonList));
-
+  if (m_awsAccountsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> awsAccountsJsonList(m_awsAccounts.size());
+    for (unsigned awsAccountsIndex = 0; awsAccountsIndex < awsAccountsJsonList.GetLength(); ++awsAccountsIndex) {
+      awsAccountsJsonList[awsAccountsIndex].AsObject(m_awsAccounts[awsAccountsIndex].Jsonize());
+    }
+    payload.WithArray("awsAccounts", std::move(awsAccountsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AuditManager
-} // namespace Aws
+}  // namespace Model
+}  // namespace AuditManager
+}  // namespace Aws

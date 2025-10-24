@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BillingConductor
-{
-namespace Model
-{
+namespace Aws {
+namespace BillingConductor {
+namespace Model {
 
-DisassociateResourceResponseElement::DisassociateResourceResponseElement(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DisassociateResourceResponseElement::DisassociateResourceResponseElement(JsonView jsonValue) { *this = jsonValue; }
 
-DisassociateResourceResponseElement& DisassociateResourceResponseElement::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Arn"))
-  {
+DisassociateResourceResponseElement& DisassociateResourceResponseElement::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Error"))
-  {
+  if (jsonValue.ValueExists("Error")) {
     m_error = jsonValue.GetObject("Error");
     m_errorHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DisassociateResourceResponseElement::Jsonize() const
-{
+JsonValue DisassociateResourceResponseElement::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_errorHasBeenSet)
-  {
-   payload.WithObject("Error", m_error.Jsonize());
-
+  if (m_errorHasBeenSet) {
+    payload.WithObject("Error", m_error.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BillingConductor
-} // namespace Aws
+}  // namespace Model
+}  // namespace BillingConductor
+}  // namespace Aws

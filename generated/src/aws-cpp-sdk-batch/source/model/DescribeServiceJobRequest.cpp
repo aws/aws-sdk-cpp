@@ -12,19 +12,12 @@ using namespace Aws::Batch::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeServiceJobRequest::SerializePayload() const
-{
+Aws::String DescribeServiceJobRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_jobIdHasBeenSet)
-  {
-   payload.WithString("jobId", m_jobId);
-
+  if (m_jobIdHasBeenSet) {
+    payload.WithString("jobId", m_jobId);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

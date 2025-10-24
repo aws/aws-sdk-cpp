@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/taxsettings/TaxSettings_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/taxsettings/TaxSettings_EXPORTS.h>
 
-namespace Aws
-{
-namespace TaxSettings
-{
-namespace Model
-{
-  enum class UkraineTrnType
-  {
-    NOT_SET,
-    Business,
-    Individual
-  };
+namespace Aws {
+namespace TaxSettings {
+namespace Model {
+enum class UkraineTrnType { NOT_SET, Business, Individual };
 
-namespace UkraineTrnTypeMapper
-{
+namespace UkraineTrnTypeMapper {
 AWS_TAXSETTINGS_API UkraineTrnType GetUkraineTrnTypeForName(const Aws::String& name);
 
 AWS_TAXSETTINGS_API Aws::String GetNameForUkraineTrnType(UkraineTrnType value);
-} // namespace UkraineTrnTypeMapper
-} // namespace Model
-} // namespace TaxSettings
-} // namespace Aws
+}  // namespace UkraineTrnTypeMapper
+}  // namespace Model
+}  // namespace TaxSettings
+}  // namespace Aws

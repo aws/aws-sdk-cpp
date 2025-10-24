@@ -12,31 +12,20 @@ using namespace Aws::ConnectCases::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateCaseRuleRequest::SerializePayload() const
-{
+Aws::String CreateCaseRuleRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_ruleHasBeenSet)
-  {
-   payload.WithObject("rule", m_rule.Jsonize());
-
+  if (m_ruleHasBeenSet) {
+    payload.WithObject("rule", m_rule.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

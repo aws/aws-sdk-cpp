@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/ColumnDescription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/ColumnDescription.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-ColumnDescription::ColumnDescription(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ColumnDescription::ColumnDescription(JsonView jsonValue) { *this = jsonValue; }
 
-ColumnDescription& ColumnDescription::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Text"))
-  {
+ColumnDescription& ColumnDescription::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Text")) {
     m_text = jsonValue.GetString("Text");
     m_textHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ColumnDescription::Jsonize() const
-{
+JsonValue ColumnDescription::Jsonize() const {
   JsonValue payload;
 
-  if(m_textHasBeenSet)
-  {
-   payload.WithString("Text", m_text);
-
+  if (m_textHasBeenSet) {
+    payload.WithString("Text", m_text);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

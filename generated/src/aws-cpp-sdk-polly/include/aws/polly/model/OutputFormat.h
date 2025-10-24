@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/polly/Polly_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/polly/Polly_EXPORTS.h>
 
-namespace Aws
-{
-namespace Polly
-{
-namespace Model
-{
-  enum class OutputFormat
-  {
-    NOT_SET,
-    json,
-    mp3,
-    ogg_opus,
-    ogg_vorbis,
-    pcm
-  };
+namespace Aws {
+namespace Polly {
+namespace Model {
+enum class OutputFormat { NOT_SET, json, mp3, ogg_opus, ogg_vorbis, pcm };
 
-namespace OutputFormatMapper
-{
+namespace OutputFormatMapper {
 AWS_POLLY_API OutputFormat GetOutputFormatForName(const Aws::String& name);
 
 AWS_POLLY_API Aws::String GetNameForOutputFormat(OutputFormat value);
-} // namespace OutputFormatMapper
-} // namespace Model
-} // namespace Polly
-} // namespace Aws
+}  // namespace OutputFormatMapper
+}  // namespace Model
+}  // namespace Polly
+}  // namespace Aws

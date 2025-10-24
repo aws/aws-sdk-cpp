@@ -10,12 +10,10 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteGeneratedTemplateRequest::SerializePayload() const
-{
+Aws::String DeleteGeneratedTemplateRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteGeneratedTemplate&";
-  if(m_generatedTemplateNameHasBeenSet)
-  {
+  if (m_generatedTemplateNameHasBeenSet) {
     ss << "GeneratedTemplateName=" << StringUtils::URLEncode(m_generatedTemplateName.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteGeneratedTemplateRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteGeneratedTemplateRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteGeneratedTemplateRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

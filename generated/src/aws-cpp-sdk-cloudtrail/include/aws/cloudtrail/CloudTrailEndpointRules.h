@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudTrail
-{
-class CloudTrailEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace CloudTrail {
+class CloudTrailEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace CloudTrail
-} // namespace Aws
+}  // namespace CloudTrail
+}  // namespace Aws

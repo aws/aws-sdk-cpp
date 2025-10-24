@@ -12,24 +12,17 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String BatchCreateRoomMembershipRequest::SerializePayload() const
-{
+Aws::String BatchCreateRoomMembershipRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_membershipItemListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> membershipItemListJsonList(m_membershipItemList.size());
-   for(unsigned membershipItemListIndex = 0; membershipItemListIndex < membershipItemListJsonList.GetLength(); ++membershipItemListIndex)
-   {
-     membershipItemListJsonList[membershipItemListIndex].AsObject(m_membershipItemList[membershipItemListIndex].Jsonize());
-   }
-   payload.WithArray("MembershipItemList", std::move(membershipItemListJsonList));
-
+  if (m_membershipItemListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> membershipItemListJsonList(m_membershipItemList.size());
+    for (unsigned membershipItemListIndex = 0; membershipItemListIndex < membershipItemListJsonList.GetLength();
+         ++membershipItemListIndex) {
+      membershipItemListJsonList[membershipItemListIndex].AsObject(m_membershipItemList[membershipItemListIndex].Jsonize());
+    }
+    payload.WithArray("MembershipItemList", std::move(membershipItemListJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

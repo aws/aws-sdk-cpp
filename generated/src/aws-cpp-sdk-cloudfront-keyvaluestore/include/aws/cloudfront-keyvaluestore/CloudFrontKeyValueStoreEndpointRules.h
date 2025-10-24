@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/cloudfront-keyvaluestore/CloudFrontKeyValueStore_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudFrontKeyValueStore
-{
-class CloudFrontKeyValueStoreEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace CloudFrontKeyValueStore {
+class CloudFrontKeyValueStoreEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace CloudFrontKeyValueStore
-} // namespace Aws
+}  // namespace CloudFrontKeyValueStore
+}  // namespace Aws

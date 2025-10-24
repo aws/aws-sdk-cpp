@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/opensearch/OpenSearchService_EXPORTS.h>
 
-namespace Aws
-{
-namespace OpenSearchService
-{
-namespace Model
-{
-  enum class OverallChangeStatus
-  {
-    NOT_SET,
-    PENDING,
-    PROCESSING,
-    COMPLETED,
-    FAILED
-  };
+namespace Aws {
+namespace OpenSearchService {
+namespace Model {
+enum class OverallChangeStatus { NOT_SET, PENDING, PROCESSING, COMPLETED, FAILED };
 
-namespace OverallChangeStatusMapper
-{
+namespace OverallChangeStatusMapper {
 AWS_OPENSEARCHSERVICE_API OverallChangeStatus GetOverallChangeStatusForName(const Aws::String& name);
 
 AWS_OPENSEARCHSERVICE_API Aws::String GetNameForOverallChangeStatus(OverallChangeStatus value);
-} // namespace OverallChangeStatusMapper
-} // namespace Model
-} // namespace OpenSearchService
-} // namespace Aws
+}  // namespace OverallChangeStatusMapper
+}  // namespace Model
+}  // namespace OpenSearchService
+}  // namespace Aws

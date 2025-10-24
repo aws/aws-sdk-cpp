@@ -8,16 +8,13 @@
 #include <aws/amplifyuibuilder/AmplifyUIBuilder_EXPORTS.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
 
-namespace Aws
-{
-namespace Client
-{
+namespace Aws {
+namespace Client {
 
-class AWS_AMPLIFYUIBUILDER_API AmplifyUIBuilderErrorMarshaller : public Aws::Client::JsonErrorMarshaller
-{
-public:
+class AWS_AMPLIFYUIBUILDER_API AmplifyUIBuilderErrorMarshaller : public Aws::Client::JsonErrorMarshaller {
+ public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Client
-} // namespace Aws
+}  // namespace Client
+}  // namespace Aws

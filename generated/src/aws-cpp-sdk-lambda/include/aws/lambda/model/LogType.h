@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lambda/Lambda_EXPORTS.h>
 
-namespace Aws
-{
-namespace Lambda
-{
-namespace Model
-{
-  enum class LogType
-  {
-    NOT_SET,
-    None,
-    Tail
-  };
+namespace Aws {
+namespace Lambda {
+namespace Model {
+enum class LogType { NOT_SET, None, Tail };
 
-namespace LogTypeMapper
-{
+namespace LogTypeMapper {
 AWS_LAMBDA_API LogType GetLogTypeForName(const Aws::String& name);
 
 AWS_LAMBDA_API Aws::String GetNameForLogType(LogType value);
-} // namespace LogTypeMapper
-} // namespace Model
-} // namespace Lambda
-} // namespace Aws
+}  // namespace LogTypeMapper
+}  // namespace Model
+}  // namespace Lambda
+}  // namespace Aws

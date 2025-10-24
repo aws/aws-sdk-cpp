@@ -11,31 +11,23 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-TrendmicroMetadata::TrendmicroMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TrendmicroMetadata::TrendmicroMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-TrendmicroMetadata& TrendmicroMetadata::operator =(JsonView jsonValue)
-{
+TrendmicroMetadata& TrendmicroMetadata::operator=(JsonView jsonValue) {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
 }
 
-JsonValue TrendmicroMetadata::Jsonize() const
-{
+JsonValue TrendmicroMetadata::Jsonize() const {
   JsonValue payload;
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

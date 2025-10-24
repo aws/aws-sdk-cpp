@@ -3,45 +3,37 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/StopInstancesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/StopInstancesRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String StopInstancesRequest::SerializePayload() const
-{
+Aws::String StopInstancesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=StopInstances&";
-  if(m_instanceIdsHasBeenSet)
-  {
+  if (m_instanceIdsHasBeenSet) {
     unsigned instanceIdsCount = 1;
-    for(auto& item : m_instanceIds)
-    {
-      ss << "InstanceId." << instanceIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_instanceIds) {
+      ss << "InstanceId." << instanceIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       instanceIdsCount++;
     }
   }
 
-  if(m_hibernateHasBeenSet)
-  {
+  if (m_hibernateHasBeenSet) {
     ss << "Hibernate=" << std::boolalpha << m_hibernate << "&";
   }
 
-  if(m_skipOsShutdownHasBeenSet)
-  {
+  if (m_skipOsShutdownHasBeenSet) {
     ss << "SkipOsShutdown=" << std::boolalpha << m_skipOsShutdown << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_forceHasBeenSet)
-  {
+  if (m_forceHasBeenSet) {
     ss << "Force=" << std::boolalpha << m_force << "&";
   }
 
@@ -49,8 +41,4 @@ Aws::String StopInstancesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  StopInstancesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void StopInstancesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

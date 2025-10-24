@@ -11,104 +11,78 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BackupSearch
-{
-namespace Model
-{
+namespace Aws {
+namespace BackupSearch {
+namespace Model {
 
-ExportJobSummary::ExportJobSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExportJobSummary::ExportJobSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ExportJobSummary& ExportJobSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ExportJobIdentifier"))
-  {
+ExportJobSummary& ExportJobSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ExportJobIdentifier")) {
     m_exportJobIdentifier = jsonValue.GetString("ExportJobIdentifier");
     m_exportJobIdentifierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExportJobArn"))
-  {
+  if (jsonValue.ValueExists("ExportJobArn")) {
     m_exportJobArn = jsonValue.GetString("ExportJobArn");
     m_exportJobArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = ExportJobStatusMapper::GetExportJobStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CompletionTime"))
-  {
+  if (jsonValue.ValueExists("CompletionTime")) {
     m_completionTime = jsonValue.GetDouble("CompletionTime");
     m_completionTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StatusMessage"))
-  {
+  if (jsonValue.ValueExists("StatusMessage")) {
     m_statusMessage = jsonValue.GetString("StatusMessage");
     m_statusMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SearchJobArn"))
-  {
+  if (jsonValue.ValueExists("SearchJobArn")) {
     m_searchJobArn = jsonValue.GetString("SearchJobArn");
     m_searchJobArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExportJobSummary::Jsonize() const
-{
+JsonValue ExportJobSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_exportJobIdentifierHasBeenSet)
-  {
-   payload.WithString("ExportJobIdentifier", m_exportJobIdentifier);
-
+  if (m_exportJobIdentifierHasBeenSet) {
+    payload.WithString("ExportJobIdentifier", m_exportJobIdentifier);
   }
 
-  if(m_exportJobArnHasBeenSet)
-  {
-   payload.WithString("ExportJobArn", m_exportJobArn);
-
+  if (m_exportJobArnHasBeenSet) {
+    payload.WithString("ExportJobArn", m_exportJobArn);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", ExportJobStatusMapper::GetNameForExportJobStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", ExportJobStatusMapper::GetNameForExportJobStatus(m_status));
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_completionTimeHasBeenSet)
-  {
-   payload.WithDouble("CompletionTime", m_completionTime.SecondsWithMSPrecision());
+  if (m_completionTimeHasBeenSet) {
+    payload.WithDouble("CompletionTime", m_completionTime.SecondsWithMSPrecision());
   }
 
-  if(m_statusMessageHasBeenSet)
-  {
-   payload.WithString("StatusMessage", m_statusMessage);
-
+  if (m_statusMessageHasBeenSet) {
+    payload.WithString("StatusMessage", m_statusMessage);
   }
 
-  if(m_searchJobArnHasBeenSet)
-  {
-   payload.WithString("SearchJobArn", m_searchJobArn);
-
+  if (m_searchJobArnHasBeenSet) {
+    payload.WithString("SearchJobArn", m_searchJobArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BackupSearch
-} // namespace Aws
+}  // namespace Model
+}  // namespace BackupSearch
+}  // namespace Aws

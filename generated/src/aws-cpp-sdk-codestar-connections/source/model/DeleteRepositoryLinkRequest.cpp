@@ -12,27 +12,19 @@ using namespace Aws::CodeStarconnections::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteRepositoryLinkRequest::SerializePayload() const
-{
+Aws::String DeleteRepositoryLinkRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_repositoryLinkIdHasBeenSet)
-  {
-   payload.WithString("RepositoryLinkId", m_repositoryLinkId);
-
+  if (m_repositoryLinkIdHasBeenSet) {
+    payload.WithString("RepositoryLinkId", m_repositoryLinkId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteRepositoryLinkRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteRepositoryLinkRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.codestar.connections.CodeStar_connections_20191201.DeleteRepositoryLink"));
+  headers.insert(
+      Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.codestar.connections.CodeStar_connections_20191201.DeleteRepositoryLink"));
   return headers;
-
 }
-
-
-
-

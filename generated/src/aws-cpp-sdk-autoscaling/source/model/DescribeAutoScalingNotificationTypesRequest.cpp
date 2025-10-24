@@ -10,16 +10,11 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeAutoScalingNotificationTypesRequest::SerializePayload() const
-{
+Aws::String DescribeAutoScalingNotificationTypesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeAutoScalingNotificationTypes&";
   ss << "Version=2011-01-01";
   return ss.str();
 }
 
-
-void  DescribeAutoScalingNotificationTypesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeAutoScalingNotificationTypesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

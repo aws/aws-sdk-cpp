@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-LambdaConnectorProvisioningConfig::LambdaConnectorProvisioningConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LambdaConnectorProvisioningConfig::LambdaConnectorProvisioningConfig(JsonView jsonValue) { *this = jsonValue; }
 
-LambdaConnectorProvisioningConfig& LambdaConnectorProvisioningConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("lambdaArn"))
-  {
+LambdaConnectorProvisioningConfig& LambdaConnectorProvisioningConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("lambdaArn")) {
     m_lambdaArn = jsonValue.GetString("lambdaArn");
     m_lambdaArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LambdaConnectorProvisioningConfig::Jsonize() const
-{
+JsonValue LambdaConnectorProvisioningConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_lambdaArnHasBeenSet)
-  {
-   payload.WithString("lambdaArn", m_lambdaArn);
-
+  if (m_lambdaArnHasBeenSet) {
+    payload.WithString("lambdaArn", m_lambdaArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AvailabilityZone.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AvailabilityZone.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AvailabilityZone::AvailabilityZone(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AvailabilityZone::AvailabilityZone(JsonView jsonValue) { *this = jsonValue; }
 
-AvailabilityZone& AvailabilityZone::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ZoneName"))
-  {
+AvailabilityZone& AvailabilityZone::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ZoneName")) {
     m_zoneName = jsonValue.GetString("ZoneName");
     m_zoneNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SubnetId"))
-  {
+  if (jsonValue.ValueExists("SubnetId")) {
     m_subnetId = jsonValue.GetString("SubnetId");
     m_subnetIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AvailabilityZone::Jsonize() const
-{
+JsonValue AvailabilityZone::Jsonize() const {
   JsonValue payload;
 
-  if(m_zoneNameHasBeenSet)
-  {
-   payload.WithString("ZoneName", m_zoneName);
-
+  if (m_zoneNameHasBeenSet) {
+    payload.WithString("ZoneName", m_zoneName);
   }
 
-  if(m_subnetIdHasBeenSet)
-  {
-   payload.WithString("SubnetId", m_subnetId);
-
+  if (m_subnetIdHasBeenSet) {
+    payload.WithString("SubnetId", m_subnetId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sqs/model/BatchResultErrorEntry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sqs/model/BatchResultErrorEntry.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SQS
-{
-namespace Model
-{
+namespace Aws {
+namespace SQS {
+namespace Model {
 
-BatchResultErrorEntry::BatchResultErrorEntry(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchResultErrorEntry::BatchResultErrorEntry(JsonView jsonValue) { *this = jsonValue; }
 
-BatchResultErrorEntry& BatchResultErrorEntry::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Id"))
-  {
+BatchResultErrorEntry& BatchResultErrorEntry::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SenderFault"))
-  {
+  if (jsonValue.ValueExists("SenderFault")) {
     m_senderFault = jsonValue.GetBool("SenderFault");
     m_senderFaultHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Code"))
-  {
+  if (jsonValue.ValueExists("Code")) {
     m_code = jsonValue.GetString("Code");
     m_codeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Message"))
-  {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BatchResultErrorEntry::Jsonize() const
-{
+JsonValue BatchResultErrorEntry::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
-  if(m_senderFaultHasBeenSet)
-  {
-   payload.WithBool("SenderFault", m_senderFault);
-
+  if (m_senderFaultHasBeenSet) {
+    payload.WithBool("SenderFault", m_senderFault);
   }
 
-  if(m_codeHasBeenSet)
-  {
-   payload.WithString("Code", m_code);
-
+  if (m_codeHasBeenSet) {
+    payload.WithString("Code", m_code);
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SQS
-} // namespace Aws
+}  // namespace Model
+}  // namespace SQS
+}  // namespace Aws

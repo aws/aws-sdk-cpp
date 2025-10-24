@@ -4,34 +4,19 @@
  */
 
 #pragma once
-#include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mailmanager/MailManager_EXPORTS.h>
 
-namespace Aws
-{
-namespace MailManager
-{
-namespace Model
-{
-  enum class RuleStringEmailAttribute
-  {
-    NOT_SET,
-    MAIL_FROM,
-    HELO,
-    RECIPIENT,
-    SENDER,
-    FROM,
-    SUBJECT,
-    TO,
-    CC
-  };
+namespace Aws {
+namespace MailManager {
+namespace Model {
+enum class RuleStringEmailAttribute { NOT_SET, MAIL_FROM, HELO, RECIPIENT, SENDER, FROM, SUBJECT, TO, CC };
 
-namespace RuleStringEmailAttributeMapper
-{
+namespace RuleStringEmailAttributeMapper {
 AWS_MAILMANAGER_API RuleStringEmailAttribute GetRuleStringEmailAttributeForName(const Aws::String& name);
 
 AWS_MAILMANAGER_API Aws::String GetNameForRuleStringEmailAttribute(RuleStringEmailAttribute value);
-} // namespace RuleStringEmailAttributeMapper
-} // namespace Model
-} // namespace MailManager
-} // namespace Aws
+}  // namespace RuleStringEmailAttributeMapper
+}  // namespace Model
+}  // namespace MailManager
+}  // namespace Aws

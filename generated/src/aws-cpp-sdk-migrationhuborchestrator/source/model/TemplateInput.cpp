@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/migrationhuborchestrator/model/TemplateInput.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/migrationhuborchestrator/model/TemplateInput.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MigrationHubOrchestrator
-{
-namespace Model
-{
+namespace Aws {
+namespace MigrationHubOrchestrator {
+namespace Model {
 
-TemplateInput::TemplateInput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TemplateInput::TemplateInput(JsonView jsonValue) { *this = jsonValue; }
 
-TemplateInput& TemplateInput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("inputName"))
-  {
+TemplateInput& TemplateInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("inputName")) {
     m_inputName = jsonValue.GetString("inputName");
     m_inputNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("dataType"))
-  {
+  if (jsonValue.ValueExists("dataType")) {
     m_dataType = DataTypeMapper::GetDataTypeForName(jsonValue.GetString("dataType"));
     m_dataTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("required"))
-  {
+  if (jsonValue.ValueExists("required")) {
     m_required = jsonValue.GetBool("required");
     m_requiredHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TemplateInput::Jsonize() const
-{
+JsonValue TemplateInput::Jsonize() const {
   JsonValue payload;
 
-  if(m_inputNameHasBeenSet)
-  {
-   payload.WithString("inputName", m_inputName);
-
+  if (m_inputNameHasBeenSet) {
+    payload.WithString("inputName", m_inputName);
   }
 
-  if(m_dataTypeHasBeenSet)
-  {
-   payload.WithString("dataType", DataTypeMapper::GetNameForDataType(m_dataType));
+  if (m_dataTypeHasBeenSet) {
+    payload.WithString("dataType", DataTypeMapper::GetNameForDataType(m_dataType));
   }
 
-  if(m_requiredHasBeenSet)
-  {
-   payload.WithBool("required", m_required);
-
+  if (m_requiredHasBeenSet) {
+    payload.WithBool("required", m_required);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MigrationHubOrchestrator
-} // namespace Aws
+}  // namespace Model
+}  // namespace MigrationHubOrchestrator
+}  // namespace Aws

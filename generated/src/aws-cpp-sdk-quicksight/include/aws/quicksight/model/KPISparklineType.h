@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class KPISparklineType
-  {
-    NOT_SET,
-    LINE,
-    AREA
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class KPISparklineType { NOT_SET, LINE, AREA };
 
-namespace KPISparklineTypeMapper
-{
+namespace KPISparklineTypeMapper {
 AWS_QUICKSIGHT_API KPISparklineType GetKPISparklineTypeForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForKPISparklineType(KPISparklineType value);
-} // namespace KPISparklineTypeMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace KPISparklineTypeMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

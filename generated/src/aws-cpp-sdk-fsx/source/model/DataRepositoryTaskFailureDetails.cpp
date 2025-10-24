@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fsx/model/DataRepositoryTaskFailureDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fsx/model/DataRepositoryTaskFailureDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
+namespace Aws {
+namespace FSx {
+namespace Model {
 
-DataRepositoryTaskFailureDetails::DataRepositoryTaskFailureDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DataRepositoryTaskFailureDetails::DataRepositoryTaskFailureDetails(JsonView jsonValue) { *this = jsonValue; }
 
-DataRepositoryTaskFailureDetails& DataRepositoryTaskFailureDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Message"))
-  {
+DataRepositoryTaskFailureDetails& DataRepositoryTaskFailureDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DataRepositoryTaskFailureDetails::Jsonize() const
-{
+JsonValue DataRepositoryTaskFailureDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

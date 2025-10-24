@@ -12,33 +12,22 @@ using namespace Aws::CognitoIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetPrincipalTagAttributeMapRequest::SerializePayload() const
-{
+Aws::String GetPrincipalTagAttributeMapRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_identityPoolIdHasBeenSet)
-  {
-   payload.WithString("IdentityPoolId", m_identityPoolId);
-
+  if (m_identityPoolIdHasBeenSet) {
+    payload.WithString("IdentityPoolId", m_identityPoolId);
   }
 
-  if(m_identityProviderNameHasBeenSet)
-  {
-   payload.WithString("IdentityProviderName", m_identityProviderName);
-
+  if (m_identityProviderNameHasBeenSet) {
+    payload.WithString("IdentityProviderName", m_identityProviderName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetPrincipalTagAttributeMapRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetPrincipalTagAttributeMapRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityService.GetPrincipalTagAttributeMap"));
   return headers;
-
 }
-
-
-
-

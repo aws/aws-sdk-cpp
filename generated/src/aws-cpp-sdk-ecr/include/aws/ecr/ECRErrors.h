@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/ecr/ECR_EXPORTS.h>
 
-namespace Aws
-{
-namespace ECR
-{
-enum class ECRErrors
-{
-  //From Core//
+namespace Aws {
+namespace ECR {
+enum class ECRErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class ECRErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class ECRErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  EMPTY_UPLOAD= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  EMPTY_UPLOAD = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   IMAGE_ALREADY_EXISTS,
   IMAGE_DIGEST_DOES_NOT_MATCH,
   IMAGE_NOT_FOUND,
@@ -88,9 +85,8 @@ enum class ECRErrors
   UPLOAD_NOT_FOUND
 };
 
-class AWS_ECR_API ECRError : public Aws::Client::AWSError<ECRErrors>
-{
-public:
+class AWS_ECR_API ECRError : public Aws::Client::AWSError<ECRErrors> {
+ public:
   ECRError() {}
   ECRError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ECRErrors>(rhs) {}
   ECRError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ECRErrors>(rhs) {}
@@ -101,10 +97,9 @@ public:
   T GetModeledError();
 };
 
-namespace ECRErrorMapper
-{
-  AWS_ECR_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace ECRErrorMapper {
+AWS_ECR_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace ECR
-} // namespace Aws
+}  // namespace ECR
+}  // namespace Aws

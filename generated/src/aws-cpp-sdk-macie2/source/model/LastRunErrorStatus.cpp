@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/macie2/model/LastRunErrorStatus.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/macie2/model/LastRunErrorStatus.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
+namespace Aws {
+namespace Macie2 {
+namespace Model {
 
-LastRunErrorStatus::LastRunErrorStatus(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LastRunErrorStatus::LastRunErrorStatus(JsonView jsonValue) { *this = jsonValue; }
 
-LastRunErrorStatus& LastRunErrorStatus::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("code"))
-  {
+LastRunErrorStatus& LastRunErrorStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("code")) {
     m_code = LastRunErrorStatusCodeMapper::GetLastRunErrorStatusCodeForName(jsonValue.GetString("code"));
     m_codeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LastRunErrorStatus::Jsonize() const
-{
+JsonValue LastRunErrorStatus::Jsonize() const {
   JsonValue payload;
 
-  if(m_codeHasBeenSet)
-  {
-   payload.WithString("code", LastRunErrorStatusCodeMapper::GetNameForLastRunErrorStatusCode(m_code));
+  if (m_codeHasBeenSet) {
+    payload.WithString("code", LastRunErrorStatusCodeMapper::GetNameForLastRunErrorStatusCode(m_code));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

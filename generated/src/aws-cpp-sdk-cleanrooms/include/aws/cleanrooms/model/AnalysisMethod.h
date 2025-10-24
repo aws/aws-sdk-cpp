@@ -7,26 +7,16 @@
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
-  enum class AnalysisMethod
-  {
-    NOT_SET,
-    DIRECT_QUERY,
-    DIRECT_JOB,
-    MULTIPLE
-  };
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
+enum class AnalysisMethod { NOT_SET, DIRECT_QUERY, DIRECT_JOB, MULTIPLE };
 
-namespace AnalysisMethodMapper
-{
+namespace AnalysisMethodMapper {
 AWS_CLEANROOMS_API AnalysisMethod GetAnalysisMethodForName(const Aws::String& name);
 
 AWS_CLEANROOMS_API Aws::String GetNameForAnalysisMethod(AnalysisMethod value);
-} // namespace AnalysisMethodMapper
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace AnalysisMethodMapper
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

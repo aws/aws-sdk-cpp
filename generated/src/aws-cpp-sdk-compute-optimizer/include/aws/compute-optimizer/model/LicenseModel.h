@@ -7,25 +7,16 @@
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ComputeOptimizer
-{
-namespace Model
-{
-  enum class LicenseModel
-  {
-    NOT_SET,
-    LicenseIncluded,
-    BringYourOwnLicense
-  };
+namespace Aws {
+namespace ComputeOptimizer {
+namespace Model {
+enum class LicenseModel { NOT_SET, LicenseIncluded, BringYourOwnLicense };
 
-namespace LicenseModelMapper
-{
+namespace LicenseModelMapper {
 AWS_COMPUTEOPTIMIZER_API LicenseModel GetLicenseModelForName(const Aws::String& name);
 
 AWS_COMPUTEOPTIMIZER_API Aws::String GetNameForLicenseModel(LicenseModel value);
-} // namespace LicenseModelMapper
-} // namespace Model
-} // namespace ComputeOptimizer
-} // namespace Aws
+}  // namespace LicenseModelMapper
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

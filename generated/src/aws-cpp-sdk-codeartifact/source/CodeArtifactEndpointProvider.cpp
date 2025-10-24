@@ -5,12 +5,8 @@
 
 #include <aws/codeartifact/CodeArtifactEndpointProvider.h>
 
-namespace Aws
-{
-namespace CodeArtifact
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace CodeArtifact
-} // namespace Aws
+namespace Aws {
+namespace CodeArtifact {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace CodeArtifact
+}  // namespace Aws

@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class EbsNvmeSupport
-  {
-    NOT_SET,
-    unsupported,
-    supported,
-    required
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class EbsNvmeSupport { NOT_SET, unsupported, supported, required };
 
-namespace EbsNvmeSupportMapper
-{
+namespace EbsNvmeSupportMapper {
 AWS_EC2_API EbsNvmeSupport GetEbsNvmeSupportForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForEbsNvmeSupport(EbsNvmeSupport value);
-} // namespace EbsNvmeSupportMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace EbsNvmeSupportMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

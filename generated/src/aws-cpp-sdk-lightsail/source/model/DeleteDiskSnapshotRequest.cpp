@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lightsail/model/DeleteDiskSnapshotRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lightsail/model/DeleteDiskSnapshotRequest.h>
 
 #include <utility>
 
@@ -12,27 +12,18 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteDiskSnapshotRequest::SerializePayload() const
-{
+Aws::String DeleteDiskSnapshotRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_diskSnapshotNameHasBeenSet)
-  {
-   payload.WithString("diskSnapshotName", m_diskSnapshotName);
-
+  if (m_diskSnapshotNameHasBeenSet) {
+    payload.WithString("diskSnapshotName", m_diskSnapshotName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteDiskSnapshotRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteDiskSnapshotRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Lightsail_20161128.DeleteDiskSnapshot"));
   return headers;
-
 }
-
-
-
-

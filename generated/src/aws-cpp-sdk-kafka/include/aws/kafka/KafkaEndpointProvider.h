@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/kafka/Kafka_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/kafka/KafkaEndpointRules.h>
+#include <aws/kafka/Kafka_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace Kafka
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace Kafka {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using KafkaClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -34,28 +29,22 @@ using KafkaBuiltInParameters = Aws::Endpoint::BuiltInParameters;
  * Inherit from this Base class / "Interface" should you want to provide a custom endpoint provider.
  * The SDK must use service-specific type for each service per specification.
  */
-using KafkaEndpointProviderBase =
-    EndpointProviderBase<KafkaClientConfiguration, KafkaBuiltInParameters, KafkaClientContextParameters>;
+using KafkaEndpointProviderBase = EndpointProviderBase<KafkaClientConfiguration, KafkaBuiltInParameters, KafkaClientContextParameters>;
 
-using KafkaDefaultEpProviderBase =
-    DefaultEndpointProvider<KafkaClientConfiguration, KafkaBuiltInParameters, KafkaClientContextParameters>;
+using KafkaDefaultEpProviderBase = DefaultEndpointProvider<KafkaClientConfiguration, KafkaBuiltInParameters, KafkaClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_KAFKA_API KafkaEndpointProvider : public KafkaDefaultEpProviderBase
-{
-public:
-    using KafkaResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_KAFKA_API KafkaEndpointProvider : public KafkaDefaultEpProviderBase {
+ public:
+  using KafkaResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    KafkaEndpointProvider()
-      : KafkaDefaultEpProviderBase(Aws::Kafka::KafkaEndpointRules::GetRulesBlob(), Aws::Kafka::KafkaEndpointRules::RulesBlobSize)
-    {}
+  KafkaEndpointProvider()
+      : KafkaDefaultEpProviderBase(Aws::Kafka::KafkaEndpointRules::GetRulesBlob(), Aws::Kafka::KafkaEndpointRules::RulesBlobSize) {}
 
-    ~KafkaEndpointProvider()
-    {
-    }
+  ~KafkaEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace Kafka
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace Kafka
+}  // namespace Aws

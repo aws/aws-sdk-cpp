@@ -4,114 +4,123 @@
  */
 
 #pragma once
-#include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/devicefarm/model/DeviceFilter.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace DeviceFarm
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace DeviceFarm {
+namespace Model {
 
+/**
+ * <p>Represents the device filters used in a test run and the maximum number of
+ * devices to be included in the run. It is passed in as the
+ * <code>deviceSelectionConfiguration</code> request parameter in
+ * <a>ScheduleRun</a>.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeviceSelectionConfiguration">AWS
+ * API Reference</a></p>
+ */
+class DeviceSelectionConfiguration {
+ public:
+  AWS_DEVICEFARM_API DeviceSelectionConfiguration() = default;
+  AWS_DEVICEFARM_API DeviceSelectionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+  AWS_DEVICEFARM_API DeviceSelectionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Represents the device filters used in a test run and the maximum number of
-   * devices to be included in the run. It is passed in as the
-   * <code>deviceSelectionConfiguration</code> request parameter in
-   * <a>ScheduleRun</a>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeviceSelectionConfiguration">AWS
-   * API Reference</a></p>
+   * <p>Used to dynamically select a set of devices for a test run. A filter is made
+   * up of an attribute, an operator, and one or more values.</p> <ul> <li> <p>
+   * <b>Attribute</b> </p> <p>The aspect of a device such as platform or model used
+   * as the selection criteria in a device filter.</p> <p>Allowed values include:</p>
+   * <ul> <li> <p>ARN: The Amazon Resource Name (ARN) of the device (for example,
+   * <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p> </li> <li>
+   * <p>PLATFORM: The device platform. Valid values are ANDROID or IOS.</p> </li>
+   * <li> <p>OS_VERSION: The operating system version (for example, 10.3.2).</p>
+   * </li> <li> <p>MODEL: The device model (for example, iPad 5th Gen).</p> </li>
+   * <li> <p>AVAILABILITY: The current availability of the device. Valid values are
+   * AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li> <li>
+   * <p>FORM_FACTOR: The device form factor. Valid values are PHONE or TABLET.</p>
+   * </li> <li> <p>MANUFACTURER: The device manufacturer (for example, Apple).</p>
+   * </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote
+   * access. Valid values are TRUE or FALSE.</p> </li> <li> <p>REMOTE_DEBUG_ENABLED:
+   * Whether the device is enabled for remote debugging. Valid values are TRUE or
+   * FALSE. Because remote debugging is <a
+   * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+   * longer supported</a>, this filter is ignored.</p> </li> <li> <p>INSTANCE_ARN:
+   * The Amazon Resource Name (ARN) of the device instance.</p> </li> <li>
+   * <p>INSTANCE_LABELS: The label of the device instance.</p> </li> <li>
+   * <p>FLEET_TYPE: The fleet type. Valid values are PUBLIC or PRIVATE.</p> </li>
+   * </ul> </li> <li> <p> <b>Operator</b> </p> <p>The filter operator.</p> <ul> <li>
+   * <p>The EQUALS operator is available for every attribute except
+   * INSTANCE_LABELS.</p> </li> <li> <p>The CONTAINS operator is available for the
+   * INSTANCE_LABELS and MODEL attributes.</p> </li> <li> <p>The IN and NOT_IN
+   * operators are available for the ARN, OS_VERSION, MODEL, MANUFACTURER, and
+   * INSTANCE_ARN attributes.</p> </li> <li> <p>The LESS_THAN, GREATER_THAN,
+   * LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS operators are also available for
+   * the OS_VERSION attribute.</p> </li> </ul> </li> <li> <p> <b>Values</b> </p>
+   * <p>An array of one or more filter values.</p> <p class="title"> <b>Operator
+   * Values</b> </p> <ul> <li> <p>The IN and NOT_IN operators can take a values array
+   * that has more than one element.</p> </li> <li> <p>The other operators require an
+   * array with a single element.</p> </li> </ul> <p class="title"> <b>Attribute
+   * Values</b> </p> <ul> <li> <p>The PLATFORM attribute can be set to ANDROID or
+   * IOS.</p> </li> <li> <p>The AVAILABILITY attribute can be set to AVAILABLE,
+   * HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li> <li> <p>The
+   * FORM_FACTOR attribute can be set to PHONE or TABLET.</p> </li> <li> <p>The
+   * FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p> </li> </ul> </li>
+   * </ul>
    */
-  class DeviceSelectionConfiguration
-  {
-  public:
-    AWS_DEVICEFARM_API DeviceSelectionConfiguration() = default;
-    AWS_DEVICEFARM_API DeviceSelectionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AWS_DEVICEFARM_API DeviceSelectionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::Vector<DeviceFilter>& GetFilters() const { return m_filters; }
+  inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+  template <typename FiltersT = Aws::Vector<DeviceFilter>>
+  void SetFilters(FiltersT&& value) {
+    m_filtersHasBeenSet = true;
+    m_filters = std::forward<FiltersT>(value);
+  }
+  template <typename FiltersT = Aws::Vector<DeviceFilter>>
+  DeviceSelectionConfiguration& WithFilters(FiltersT&& value) {
+    SetFilters(std::forward<FiltersT>(value));
+    return *this;
+  }
+  template <typename FiltersT = DeviceFilter>
+  DeviceSelectionConfiguration& AddFilters(FiltersT&& value) {
+    m_filtersHasBeenSet = true;
+    m_filters.emplace_back(std::forward<FiltersT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The maximum number of devices to be included in a test run.</p>
+   */
+  inline int GetMaxDevices() const { return m_maxDevices; }
+  inline bool MaxDevicesHasBeenSet() const { return m_maxDevicesHasBeenSet; }
+  inline void SetMaxDevices(int value) {
+    m_maxDevicesHasBeenSet = true;
+    m_maxDevices = value;
+  }
+  inline DeviceSelectionConfiguration& WithMaxDevices(int value) {
+    SetMaxDevices(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<DeviceFilter> m_filters;
+  bool m_filtersHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>Used to dynamically select a set of devices for a test run. A filter is made
-     * up of an attribute, an operator, and one or more values.</p> <ul> <li> <p>
-     * <b>Attribute</b> </p> <p>The aspect of a device such as platform or model used
-     * as the selection criteria in a device filter.</p> <p>Allowed values include:</p>
-     * <ul> <li> <p>ARN: The Amazon Resource Name (ARN) of the device (for example,
-     * <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p> </li> <li>
-     * <p>PLATFORM: The device platform. Valid values are ANDROID or IOS.</p> </li>
-     * <li> <p>OS_VERSION: The operating system version (for example, 10.3.2).</p>
-     * </li> <li> <p>MODEL: The device model (for example, iPad 5th Gen).</p> </li>
-     * <li> <p>AVAILABILITY: The current availability of the device. Valid values are
-     * AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li> <li>
-     * <p>FORM_FACTOR: The device form factor. Valid values are PHONE or TABLET.</p>
-     * </li> <li> <p>MANUFACTURER: The device manufacturer (for example, Apple).</p>
-     * </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote
-     * access. Valid values are TRUE or FALSE.</p> </li> <li> <p>REMOTE_DEBUG_ENABLED:
-     * Whether the device is enabled for remote debugging. Valid values are TRUE or
-     * FALSE. Because remote debugging is <a
-     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-     * longer supported</a>, this filter is ignored.</p> </li> <li> <p>INSTANCE_ARN:
-     * The Amazon Resource Name (ARN) of the device instance.</p> </li> <li>
-     * <p>INSTANCE_LABELS: The label of the device instance.</p> </li> <li>
-     * <p>FLEET_TYPE: The fleet type. Valid values are PUBLIC or PRIVATE.</p> </li>
-     * </ul> </li> <li> <p> <b>Operator</b> </p> <p>The filter operator.</p> <ul> <li>
-     * <p>The EQUALS operator is available for every attribute except
-     * INSTANCE_LABELS.</p> </li> <li> <p>The CONTAINS operator is available for the
-     * INSTANCE_LABELS and MODEL attributes.</p> </li> <li> <p>The IN and NOT_IN
-     * operators are available for the ARN, OS_VERSION, MODEL, MANUFACTURER, and
-     * INSTANCE_ARN attributes.</p> </li> <li> <p>The LESS_THAN, GREATER_THAN,
-     * LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS operators are also available for
-     * the OS_VERSION attribute.</p> </li> </ul> </li> <li> <p> <b>Values</b> </p>
-     * <p>An array of one or more filter values.</p> <p class="title"> <b>Operator
-     * Values</b> </p> <ul> <li> <p>The IN and NOT_IN operators can take a values array
-     * that has more than one element.</p> </li> <li> <p>The other operators require an
-     * array with a single element.</p> </li> </ul> <p class="title"> <b>Attribute
-     * Values</b> </p> <ul> <li> <p>The PLATFORM attribute can be set to ANDROID or
-     * IOS.</p> </li> <li> <p>The AVAILABILITY attribute can be set to AVAILABLE,
-     * HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li> <li> <p>The
-     * FORM_FACTOR attribute can be set to PHONE or TABLET.</p> </li> <li> <p>The
-     * FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p> </li> </ul> </li>
-     * </ul>
-     */
-    inline const Aws::Vector<DeviceFilter>& GetFilters() const { return m_filters; }
-    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    template<typename FiltersT = Aws::Vector<DeviceFilter>>
-    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
-    template<typename FiltersT = Aws::Vector<DeviceFilter>>
-    DeviceSelectionConfiguration& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
-    template<typename FiltersT = DeviceFilter>
-    DeviceSelectionConfiguration& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
-    ///@}
+  int m_maxDevices{0};
+  bool m_maxDevicesHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The maximum number of devices to be included in a test run.</p>
-     */
-    inline int GetMaxDevices() const { return m_maxDevices; }
-    inline bool MaxDevicesHasBeenSet() const { return m_maxDevicesHasBeenSet; }
-    inline void SetMaxDevices(int value) { m_maxDevicesHasBeenSet = true; m_maxDevices = value; }
-    inline DeviceSelectionConfiguration& WithMaxDevices(int value) { SetMaxDevices(value); return *this;}
-    ///@}
-  private:
-
-    Aws::Vector<DeviceFilter> m_filters;
-    bool m_filtersHasBeenSet = false;
-
-    int m_maxDevices{0};
-    bool m_maxDevicesHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace DeviceFarm
-} // namespace Aws
+}  // namespace Model
+}  // namespace DeviceFarm
+}  // namespace Aws

@@ -4,74 +4,79 @@
  */
 
 #pragma once
-#include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rekognition/Rekognition_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace Rekognition
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Rekognition {
+namespace Model {
 
+/**
+ * <p>Output configuration provided in the job creation request.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/MediaAnalysisOutputConfig">AWS
+ * API Reference</a></p>
+ */
+class MediaAnalysisOutputConfig {
+ public:
+  AWS_REKOGNITION_API MediaAnalysisOutputConfig() = default;
+  AWS_REKOGNITION_API MediaAnalysisOutputConfig(Aws::Utils::Json::JsonView jsonValue);
+  AWS_REKOGNITION_API MediaAnalysisOutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Output configuration provided in the job creation request.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/MediaAnalysisOutputConfig">AWS
-   * API Reference</a></p>
+   * <p>Specifies the Amazon S3 bucket to contain the output of the media analysis
+   * job.</p>
    */
-  class MediaAnalysisOutputConfig
-  {
-  public:
-    AWS_REKOGNITION_API MediaAnalysisOutputConfig() = default;
-    AWS_REKOGNITION_API MediaAnalysisOutputConfig(Aws::Utils::Json::JsonView jsonValue);
-    AWS_REKOGNITION_API MediaAnalysisOutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetS3Bucket() const { return m_s3Bucket; }
+  inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
+  template <typename S3BucketT = Aws::String>
+  void SetS3Bucket(S3BucketT&& value) {
+    m_s3BucketHasBeenSet = true;
+    m_s3Bucket = std::forward<S3BucketT>(value);
+  }
+  template <typename S3BucketT = Aws::String>
+  MediaAnalysisOutputConfig& WithS3Bucket(S3BucketT&& value) {
+    SetS3Bucket(std::forward<S3BucketT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket
+   * you have designated for storage.</p>
+   */
+  inline const Aws::String& GetS3KeyPrefix() const { return m_s3KeyPrefix; }
+  inline bool S3KeyPrefixHasBeenSet() const { return m_s3KeyPrefixHasBeenSet; }
+  template <typename S3KeyPrefixT = Aws::String>
+  void SetS3KeyPrefix(S3KeyPrefixT&& value) {
+    m_s3KeyPrefixHasBeenSet = true;
+    m_s3KeyPrefix = std::forward<S3KeyPrefixT>(value);
+  }
+  template <typename S3KeyPrefixT = Aws::String>
+  MediaAnalysisOutputConfig& WithS3KeyPrefix(S3KeyPrefixT&& value) {
+    SetS3KeyPrefix(std::forward<S3KeyPrefixT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_s3Bucket;
+  bool m_s3BucketHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>Specifies the Amazon S3 bucket to contain the output of the media analysis
-     * job.</p>
-     */
-    inline const Aws::String& GetS3Bucket() const { return m_s3Bucket; }
-    inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
-    template<typename S3BucketT = Aws::String>
-    void SetS3Bucket(S3BucketT&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::forward<S3BucketT>(value); }
-    template<typename S3BucketT = Aws::String>
-    MediaAnalysisOutputConfig& WithS3Bucket(S3BucketT&& value) { SetS3Bucket(std::forward<S3BucketT>(value)); return *this;}
-    ///@}
+  Aws::String m_s3KeyPrefix;
+  bool m_s3KeyPrefixHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket
-     * you have designated for storage.</p>
-     */
-    inline const Aws::String& GetS3KeyPrefix() const { return m_s3KeyPrefix; }
-    inline bool S3KeyPrefixHasBeenSet() const { return m_s3KeyPrefixHasBeenSet; }
-    template<typename S3KeyPrefixT = Aws::String>
-    void SetS3KeyPrefix(S3KeyPrefixT&& value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix = std::forward<S3KeyPrefixT>(value); }
-    template<typename S3KeyPrefixT = Aws::String>
-    MediaAnalysisOutputConfig& WithS3KeyPrefix(S3KeyPrefixT&& value) { SetS3KeyPrefix(std::forward<S3KeyPrefixT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_s3Bucket;
-    bool m_s3BucketHasBeenSet = false;
-
-    Aws::String m_s3KeyPrefix;
-    bool m_s3KeyPrefixHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Rekognition
-} // namespace Aws
+}  // namespace Model
+}  // namespace Rekognition
+}  // namespace Aws

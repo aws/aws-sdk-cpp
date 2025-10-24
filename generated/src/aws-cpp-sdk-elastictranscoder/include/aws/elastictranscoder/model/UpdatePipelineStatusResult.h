@@ -4,70 +4,75 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elastictranscoder/ElasticTranscoder_EXPORTS.h>
 #include <aws/elastictranscoder/model/Pipeline.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace ElasticTranscoder
-{
-namespace Model
-{
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace ElasticTranscoder {
+namespace Model {
+/**
+ * <p>When you update status for a pipeline, Elastic Transcoder returns the values
+ * that you specified in the request.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipelineStatusResponse">AWS
+ * API Reference</a></p>
+ */
+class UpdatePipelineStatusResult {
+ public:
+  AWS_ELASTICTRANSCODER_API UpdatePipelineStatusResult() = default;
+  AWS_ELASTICTRANSCODER_API UpdatePipelineStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_ELASTICTRANSCODER_API UpdatePipelineStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
   /**
-   * <p>When you update status for a pipeline, Elastic Transcoder returns the values
-   * that you specified in the request.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipelineStatusResponse">AWS
-   * API Reference</a></p>
+   * <p>A section of the response body that provides information about the
+   * pipeline.</p>
    */
-  class UpdatePipelineStatusResult
-  {
-  public:
-    AWS_ELASTICTRANSCODER_API UpdatePipelineStatusResult() = default;
-    AWS_ELASTICTRANSCODER_API UpdatePipelineStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_ELASTICTRANSCODER_API UpdatePipelineStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  inline const Pipeline& GetPipeline() const { return m_pipeline; }
+  template <typename PipelineT = Pipeline>
+  void SetPipeline(PipelineT&& value) {
+    m_pipelineHasBeenSet = true;
+    m_pipeline = std::forward<PipelineT>(value);
+  }
+  template <typename PipelineT = Pipeline>
+  UpdatePipelineStatusResult& WithPipeline(PipelineT&& value) {
+    SetPipeline(std::forward<PipelineT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
 
-    ///@{
-    /**
-     * <p>A section of the response body that provides information about the
-     * pipeline.</p>
-     */
-    inline const Pipeline& GetPipeline() const { return m_pipeline; }
-    template<typename PipelineT = Pipeline>
-    void SetPipeline(PipelineT&& value) { m_pipelineHasBeenSet = true; m_pipeline = std::forward<PipelineT>(value); }
-    template<typename PipelineT = Pipeline>
-    UpdatePipelineStatusResult& WithPipeline(PipelineT&& value) { SetPipeline(std::forward<PipelineT>(value)); return *this;}
-    ///@}
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  UpdatePipelineStatusResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Pipeline m_pipeline;
+  bool m_pipelineHasBeenSet = false;
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    UpdatePipelineStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Pipeline m_pipeline;
-    bool m_pipelineHasBeenSet = false;
-
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace ElasticTranscoder
-} // namespace Aws
+}  // namespace Model
+}  // namespace ElasticTranscoder
+}  // namespace Aws

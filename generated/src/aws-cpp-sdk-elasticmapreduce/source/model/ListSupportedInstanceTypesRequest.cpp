@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticmapreduce/model/ListSupportedInstanceTypesRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/elasticmapreduce/model/ListSupportedInstanceTypesRequest.h>
 
 #include <utility>
 
@@ -12,33 +12,22 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListSupportedInstanceTypesRequest::SerializePayload() const
-{
+Aws::String ListSupportedInstanceTypesRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_releaseLabelHasBeenSet)
-  {
-   payload.WithString("ReleaseLabel", m_releaseLabel);
-
+  if (m_releaseLabelHasBeenSet) {
+    payload.WithString("ReleaseLabel", m_releaseLabel);
   }
 
-  if(m_markerHasBeenSet)
-  {
-   payload.WithString("Marker", m_marker);
-
+  if (m_markerHasBeenSet) {
+    payload.WithString("Marker", m_marker);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ListSupportedInstanceTypesRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListSupportedInstanceTypesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ElasticMapReduce.ListSupportedInstanceTypes"));
   return headers;
-
 }
-
-
-
-

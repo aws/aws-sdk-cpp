@@ -11,96 +11,70 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
 
-AuthenticationResultType::AuthenticationResultType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AuthenticationResultType::AuthenticationResultType(JsonView jsonValue) { *this = jsonValue; }
 
-AuthenticationResultType& AuthenticationResultType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AccessToken"))
-  {
+AuthenticationResultType& AuthenticationResultType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AccessToken")) {
     m_accessToken = jsonValue.GetString("AccessToken");
     m_accessTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExpiresIn"))
-  {
+  if (jsonValue.ValueExists("ExpiresIn")) {
     m_expiresIn = jsonValue.GetInteger("ExpiresIn");
     m_expiresInHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TokenType"))
-  {
+  if (jsonValue.ValueExists("TokenType")) {
     m_tokenType = jsonValue.GetString("TokenType");
     m_tokenTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RefreshToken"))
-  {
+  if (jsonValue.ValueExists("RefreshToken")) {
     m_refreshToken = jsonValue.GetString("RefreshToken");
     m_refreshTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IdToken"))
-  {
+  if (jsonValue.ValueExists("IdToken")) {
     m_idToken = jsonValue.GetString("IdToken");
     m_idTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NewDeviceMetadata"))
-  {
+  if (jsonValue.ValueExists("NewDeviceMetadata")) {
     m_newDeviceMetadata = jsonValue.GetObject("NewDeviceMetadata");
     m_newDeviceMetadataHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AuthenticationResultType::Jsonize() const
-{
+JsonValue AuthenticationResultType::Jsonize() const {
   JsonValue payload;
 
-  if(m_accessTokenHasBeenSet)
-  {
-   payload.WithString("AccessToken", m_accessToken);
-
+  if (m_accessTokenHasBeenSet) {
+    payload.WithString("AccessToken", m_accessToken);
   }
 
-  if(m_expiresInHasBeenSet)
-  {
-   payload.WithInteger("ExpiresIn", m_expiresIn);
-
+  if (m_expiresInHasBeenSet) {
+    payload.WithInteger("ExpiresIn", m_expiresIn);
   }
 
-  if(m_tokenTypeHasBeenSet)
-  {
-   payload.WithString("TokenType", m_tokenType);
-
+  if (m_tokenTypeHasBeenSet) {
+    payload.WithString("TokenType", m_tokenType);
   }
 
-  if(m_refreshTokenHasBeenSet)
-  {
-   payload.WithString("RefreshToken", m_refreshToken);
-
+  if (m_refreshTokenHasBeenSet) {
+    payload.WithString("RefreshToken", m_refreshToken);
   }
 
-  if(m_idTokenHasBeenSet)
-  {
-   payload.WithString("IdToken", m_idToken);
-
+  if (m_idTokenHasBeenSet) {
+    payload.WithString("IdToken", m_idToken);
   }
 
-  if(m_newDeviceMetadataHasBeenSet)
-  {
-   payload.WithObject("NewDeviceMetadata", m_newDeviceMetadata.Jsonize());
-
+  if (m_newDeviceMetadataHasBeenSet) {
+    payload.WithObject("NewDeviceMetadata", m_newDeviceMetadata.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

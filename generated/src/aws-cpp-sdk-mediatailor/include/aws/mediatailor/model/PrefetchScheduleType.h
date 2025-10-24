@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediatailor/MediaTailor_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediatailor/MediaTailor_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaTailor
-{
-namespace Model
-{
-  enum class PrefetchScheduleType
-  {
-    NOT_SET,
-    SINGLE,
-    RECURRING
-  };
+namespace Aws {
+namespace MediaTailor {
+namespace Model {
+enum class PrefetchScheduleType { NOT_SET, SINGLE, RECURRING };
 
-namespace PrefetchScheduleTypeMapper
-{
+namespace PrefetchScheduleTypeMapper {
 AWS_MEDIATAILOR_API PrefetchScheduleType GetPrefetchScheduleTypeForName(const Aws::String& name);
 
 AWS_MEDIATAILOR_API Aws::String GetNameForPrefetchScheduleType(PrefetchScheduleType value);
-} // namespace PrefetchScheduleTypeMapper
-} // namespace Model
-} // namespace MediaTailor
-} // namespace Aws
+}  // namespace PrefetchScheduleTypeMapper
+}  // namespace Model
+}  // namespace MediaTailor
+}  // namespace Aws

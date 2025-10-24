@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/verifiedpermissions/VerifiedPermissions_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/verifiedpermissions/VerifiedPermissionsEndpointRules.h>
+#include <aws/verifiedpermissions/VerifiedPermissions_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace VerifiedPermissions
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace VerifiedPermissions {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using VerifiedPermissionsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -35,27 +30,26 @@ using VerifiedPermissionsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
  * The SDK must use service-specific type for each service per specification.
  */
 using VerifiedPermissionsEndpointProviderBase =
-    EndpointProviderBase<VerifiedPermissionsClientConfiguration, VerifiedPermissionsBuiltInParameters, VerifiedPermissionsClientContextParameters>;
+    EndpointProviderBase<VerifiedPermissionsClientConfiguration, VerifiedPermissionsBuiltInParameters,
+                         VerifiedPermissionsClientContextParameters>;
 
 using VerifiedPermissionsDefaultEpProviderBase =
-    DefaultEndpointProvider<VerifiedPermissionsClientConfiguration, VerifiedPermissionsBuiltInParameters, VerifiedPermissionsClientContextParameters>;
+    DefaultEndpointProvider<VerifiedPermissionsClientConfiguration, VerifiedPermissionsBuiltInParameters,
+                            VerifiedPermissionsClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_VERIFIEDPERMISSIONS_API VerifiedPermissionsEndpointProvider : public VerifiedPermissionsDefaultEpProviderBase
-{
-public:
-    using VerifiedPermissionsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_VERIFIEDPERMISSIONS_API VerifiedPermissionsEndpointProvider : public VerifiedPermissionsDefaultEpProviderBase {
+ public:
+  using VerifiedPermissionsResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    VerifiedPermissionsEndpointProvider()
-      : VerifiedPermissionsDefaultEpProviderBase(Aws::VerifiedPermissions::VerifiedPermissionsEndpointRules::GetRulesBlob(), Aws::VerifiedPermissions::VerifiedPermissionsEndpointRules::RulesBlobSize)
-    {}
+  VerifiedPermissionsEndpointProvider()
+      : VerifiedPermissionsDefaultEpProviderBase(Aws::VerifiedPermissions::VerifiedPermissionsEndpointRules::GetRulesBlob(),
+                                                 Aws::VerifiedPermissions::VerifiedPermissionsEndpointRules::RulesBlobSize) {}
 
-    ~VerifiedPermissionsEndpointProvider()
-    {
-    }
+  ~VerifiedPermissionsEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace VerifiedPermissions
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace VerifiedPermissions
+}  // namespace Aws

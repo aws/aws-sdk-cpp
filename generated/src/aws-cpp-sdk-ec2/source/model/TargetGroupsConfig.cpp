@@ -3,41 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/TargetGroupsConfig.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/TargetGroupsConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-TargetGroupsConfig::TargetGroupsConfig(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+TargetGroupsConfig::TargetGroupsConfig(const XmlNode& xmlNode) { *this = xmlNode; }
 
-TargetGroupsConfig& TargetGroupsConfig::operator =(const XmlNode& xmlNode)
-{
+TargetGroupsConfig& TargetGroupsConfig::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode targetGroupsNode = resultNode.FirstChild("targetGroups");
-    if(!targetGroupsNode.IsNull())
-    {
+    if (!targetGroupsNode.IsNull()) {
       XmlNode targetGroupsMember = targetGroupsNode.FirstChild("item");
       m_targetGroupsHasBeenSet = !targetGroupsMember.IsNull();
-      while(!targetGroupsMember.IsNull())
-      {
+      while (!targetGroupsMember.IsNull()) {
         m_targetGroups.push_back(targetGroupsMember);
         targetGroupsMember = targetGroupsMember.NextNode("item");
       }
@@ -49,35 +39,28 @@ TargetGroupsConfig& TargetGroupsConfig::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void TargetGroupsConfig::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_targetGroupsHasBeenSet)
-  {
-      unsigned targetGroupsIdx = 1;
-      for(auto& item : m_targetGroups)
-      {
-        Aws::StringStream targetGroupsSs;
-        targetGroupsSs << location << index << locationValue << ".TargetGroups." << targetGroupsIdx++;
-        item.OutputToStream(oStream, targetGroupsSs.str().c_str());
-      }
-  }
-
-}
-
-void TargetGroupsConfig::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_targetGroupsHasBeenSet)
-  {
-      unsigned targetGroupsIdx = 1;
-      for(auto& item : m_targetGroups)
-      {
-        Aws::StringStream targetGroupsSs;
-        targetGroupsSs << location << ".TargetGroups." << targetGroupsIdx++;
-        item.OutputToStream(oStream, targetGroupsSs.str().c_str());
-      }
+void TargetGroupsConfig::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_targetGroupsHasBeenSet) {
+    unsigned targetGroupsIdx = 1;
+    for (auto& item : m_targetGroups) {
+      Aws::StringStream targetGroupsSs;
+      targetGroupsSs << location << index << locationValue << ".TargetGroups." << targetGroupsIdx++;
+      item.OutputToStream(oStream, targetGroupsSs.str().c_str());
+    }
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void TargetGroupsConfig::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_targetGroupsHasBeenSet) {
+    unsigned targetGroupsIdx = 1;
+    for (auto& item : m_targetGroups) {
+      Aws::StringStream targetGroupsSs;
+      targetGroupsSs << location << ".TargetGroups." << targetGroupsIdx++;
+      item.OutputToStream(oStream, targetGroupsSs.str().c_str());
+    }
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

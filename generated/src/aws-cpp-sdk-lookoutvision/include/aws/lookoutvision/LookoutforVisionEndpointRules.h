@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/lookoutvision/LookoutforVision_EXPORTS.h>
 
-namespace Aws
-{
-namespace LookoutforVision
-{
-class LookoutforVisionEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace LookoutforVision {
+class LookoutforVisionEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace LookoutforVision
-} // namespace Aws
+}  // namespace LookoutforVision
+}  // namespace Aws

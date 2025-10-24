@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/DeleteDBClusterAutomatedBackupRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/DeleteDBClusterAutomatedBackupRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteDBClusterAutomatedBackupRequest::SerializePayload() const
-{
+Aws::String DeleteDBClusterAutomatedBackupRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteDBClusterAutomatedBackup&";
-  if(m_dbClusterResourceIdHasBeenSet)
-  {
+  if (m_dbClusterResourceIdHasBeenSet) {
     ss << "DbClusterResourceId=" << StringUtils::URLEncode(m_dbClusterResourceId.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteDBClusterAutomatedBackupRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteDBClusterAutomatedBackupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteDBClusterAutomatedBackupRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

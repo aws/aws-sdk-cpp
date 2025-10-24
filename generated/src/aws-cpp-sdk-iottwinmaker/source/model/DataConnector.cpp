@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iottwinmaker/model/DataConnector.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iottwinmaker/model/DataConnector.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTTwinMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTTwinMaker {
+namespace Model {
 
-DataConnector::DataConnector(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DataConnector::DataConnector(JsonView jsonValue) { *this = jsonValue; }
 
-DataConnector& DataConnector::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("lambda"))
-  {
+DataConnector& DataConnector::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("lambda")) {
     m_lambda = jsonValue.GetObject("lambda");
     m_lambdaHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("isNative"))
-  {
+  if (jsonValue.ValueExists("isNative")) {
     m_isNative = jsonValue.GetBool("isNative");
     m_isNativeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DataConnector::Jsonize() const
-{
+JsonValue DataConnector::Jsonize() const {
   JsonValue payload;
 
-  if(m_lambdaHasBeenSet)
-  {
-   payload.WithObject("lambda", m_lambda.Jsonize());
-
+  if (m_lambdaHasBeenSet) {
+    payload.WithObject("lambda", m_lambda.Jsonize());
   }
 
-  if(m_isNativeHasBeenSet)
-  {
-   payload.WithBool("isNative", m_isNative);
-
+  if (m_isNativeHasBeenSet) {
+    payload.WithBool("isNative", m_isNative);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTTwinMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTTwinMaker
+}  // namespace Aws

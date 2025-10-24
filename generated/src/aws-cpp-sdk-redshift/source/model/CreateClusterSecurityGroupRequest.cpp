@@ -3,38 +3,30 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/CreateClusterSecurityGroupRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/CreateClusterSecurityGroupRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateClusterSecurityGroupRequest::SerializePayload() const
-{
+Aws::String CreateClusterSecurityGroupRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateClusterSecurityGroup&";
-  if(m_clusterSecurityGroupNameHasBeenSet)
-  {
+  if (m_clusterSecurityGroupNameHasBeenSet) {
     ss << "ClusterSecurityGroupName=" << StringUtils::URLEncode(m_clusterSecurityGroupName.c_str()) << "&";
   }
 
-  if(m_descriptionHasBeenSet)
-  {
+  if (m_descriptionHasBeenSet) {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
-  if(m_tagsHasBeenSet)
-  {
-    if (m_tags.empty())
-    {
+  if (m_tagsHasBeenSet) {
+    if (m_tags.empty()) {
       ss << "Tags=&";
-    }
-    else
-    {
+    } else {
       unsigned tagsCount = 1;
-      for(auto& item : m_tags)
-      {
+      for (auto& item : m_tags) {
         item.OutputToStream(ss, "Tags.Tag.", tagsCount, "");
         tagsCount++;
       }
@@ -45,8 +37,4 @@ Aws::String CreateClusterSecurityGroupRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CreateClusterSecurityGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateClusterSecurityGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

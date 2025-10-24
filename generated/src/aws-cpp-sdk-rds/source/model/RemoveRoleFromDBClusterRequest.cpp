@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/RemoveRoleFromDBClusterRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/RemoveRoleFromDBClusterRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String RemoveRoleFromDBClusterRequest::SerializePayload() const
-{
+Aws::String RemoveRoleFromDBClusterRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=RemoveRoleFromDBCluster&";
-  if(m_dBClusterIdentifierHasBeenSet)
-  {
+  if (m_dBClusterIdentifierHasBeenSet) {
     ss << "DBClusterIdentifier=" << StringUtils::URLEncode(m_dBClusterIdentifier.c_str()) << "&";
   }
 
-  if(m_roleArnHasBeenSet)
-  {
+  if (m_roleArnHasBeenSet) {
     ss << "RoleArn=" << StringUtils::URLEncode(m_roleArn.c_str()) << "&";
   }
 
-  if(m_featureNameHasBeenSet)
-  {
+  if (m_featureNameHasBeenSet) {
     ss << "FeatureName=" << StringUtils::URLEncode(m_featureName.c_str()) << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String RemoveRoleFromDBClusterRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  RemoveRoleFromDBClusterRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void RemoveRoleFromDBClusterRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

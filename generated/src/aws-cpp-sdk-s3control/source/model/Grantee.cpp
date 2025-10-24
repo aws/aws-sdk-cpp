@@ -3,43 +3,34 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3control/model/Grantee.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3control/model/Grantee.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Control
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Control {
+namespace Model {
 
-Grantee::Grantee(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+Grantee::Grantee(const XmlNode& xmlNode) { *this = xmlNode; }
 
-Grantee& Grantee::operator =(const XmlNode& xmlNode)
-{
+Grantee& Grantee::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode granteeTypeNode = resultNode.FirstChild("GranteeType");
-    if(!granteeTypeNode.IsNull())
-    {
-      m_granteeType = GranteeTypeMapper::GetGranteeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(granteeTypeNode.GetText()).c_str()));
+    if (!granteeTypeNode.IsNull()) {
+      m_granteeType = GranteeTypeMapper::GetGranteeTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(granteeTypeNode.GetText()).c_str()));
       m_granteeTypeHasBeenSet = true;
     }
     XmlNode granteeIdentifierNode = resultNode.FirstChild("GranteeIdentifier");
-    if(!granteeIdentifierNode.IsNull())
-    {
+    if (!granteeIdentifierNode.IsNull()) {
       m_granteeIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(granteeIdentifierNode.GetText());
       m_granteeIdentifierHasBeenSet = true;
     }
@@ -48,23 +39,19 @@ Grantee& Grantee::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void Grantee::AddToNode(XmlNode& parentNode) const
-{
+void Grantee::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_granteeTypeHasBeenSet)
-  {
-   XmlNode granteeTypeNode = parentNode.CreateChildElement("GranteeType");
-   granteeTypeNode.SetText(GranteeTypeMapper::GetNameForGranteeType(m_granteeType));
+  if (m_granteeTypeHasBeenSet) {
+    XmlNode granteeTypeNode = parentNode.CreateChildElement("GranteeType");
+    granteeTypeNode.SetText(GranteeTypeMapper::GetNameForGranteeType(m_granteeType));
   }
 
-  if(m_granteeIdentifierHasBeenSet)
-  {
-   XmlNode granteeIdentifierNode = parentNode.CreateChildElement("GranteeIdentifier");
-   granteeIdentifierNode.SetText(m_granteeIdentifier);
+  if (m_granteeIdentifierHasBeenSet) {
+    XmlNode granteeIdentifierNode = parentNode.CreateChildElement("GranteeIdentifier");
+    granteeIdentifierNode.SetText(m_granteeIdentifier);
   }
-
 }
 
-} // namespace Model
-} // namespace S3Control
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Control
+}  // namespace Aws

@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/email/model/CreateConfigurationSetTrackingOptionsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/email/model/CreateConfigurationSetTrackingOptionsRequest.h>
 
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateConfigurationSetTrackingOptionsRequest::SerializePayload() const
-{
+Aws::String CreateConfigurationSetTrackingOptionsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateConfigurationSetTrackingOptions&";
-  if(m_configurationSetNameHasBeenSet)
-  {
+  if (m_configurationSetNameHasBeenSet) {
     ss << "ConfigurationSetName=" << StringUtils::URLEncode(m_configurationSetName.c_str()) << "&";
   }
 
-  if(m_trackingOptionsHasBeenSet)
-  {
+  if (m_trackingOptionsHasBeenSet) {
     m_trackingOptions.OutputToStream(ss, "TrackingOptions");
   }
 
@@ -28,8 +25,4 @@ Aws::String CreateConfigurationSetTrackingOptionsRequest::SerializePayload() con
   return ss.str();
 }
 
-
-void  CreateConfigurationSetTrackingOptionsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateConfigurationSetTrackingOptionsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

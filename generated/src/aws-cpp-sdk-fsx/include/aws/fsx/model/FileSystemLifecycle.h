@@ -4,33 +4,19 @@
  */
 
 #pragma once
-#include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fsx/FSx_EXPORTS.h>
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
-  enum class FileSystemLifecycle
-  {
-    NOT_SET,
-    AVAILABLE,
-    CREATING,
-    FAILED,
-    DELETING,
-    MISCONFIGURED,
-    UPDATING,
-    MISCONFIGURED_UNAVAILABLE
-  };
+namespace Aws {
+namespace FSx {
+namespace Model {
+enum class FileSystemLifecycle { NOT_SET, AVAILABLE, CREATING, FAILED, DELETING, MISCONFIGURED, UPDATING, MISCONFIGURED_UNAVAILABLE };
 
-namespace FileSystemLifecycleMapper
-{
+namespace FileSystemLifecycleMapper {
 AWS_FSX_API FileSystemLifecycle GetFileSystemLifecycleForName(const Aws::String& name);
 
 AWS_FSX_API Aws::String GetNameForFileSystemLifecycle(FileSystemLifecycle value);
-} // namespace FileSystemLifecycleMapper
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace FileSystemLifecycleMapper
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

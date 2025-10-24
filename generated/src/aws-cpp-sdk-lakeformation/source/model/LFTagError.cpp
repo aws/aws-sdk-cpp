@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lakeformation/model/LFTagError.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lakeformation/model/LFTagError.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LakeFormation
-{
-namespace Model
-{
+namespace Aws {
+namespace LakeFormation {
+namespace Model {
 
-LFTagError::LFTagError(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LFTagError::LFTagError(JsonView jsonValue) { *this = jsonValue; }
 
-LFTagError& LFTagError::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("LFTag"))
-  {
+LFTagError& LFTagError::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("LFTag")) {
     m_lFTag = jsonValue.GetObject("LFTag");
     m_lFTagHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Error"))
-  {
+  if (jsonValue.ValueExists("Error")) {
     m_error = jsonValue.GetObject("Error");
     m_errorHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LFTagError::Jsonize() const
-{
+JsonValue LFTagError::Jsonize() const {
   JsonValue payload;
 
-  if(m_lFTagHasBeenSet)
-  {
-   payload.WithObject("LFTag", m_lFTag.Jsonize());
-
+  if (m_lFTagHasBeenSet) {
+    payload.WithObject("LFTag", m_lFTag.Jsonize());
   }
 
-  if(m_errorHasBeenSet)
-  {
-   payload.WithObject("Error", m_error.Jsonize());
-
+  if (m_errorHasBeenSet) {
+    payload.WithObject("Error", m_error.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LakeFormation
-} // namespace Aws
+}  // namespace Model
+}  // namespace LakeFormation
+}  // namespace Aws

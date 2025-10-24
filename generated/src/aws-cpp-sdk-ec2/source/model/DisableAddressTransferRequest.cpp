@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DisableAddressTransferRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DisableAddressTransferRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DisableAddressTransferRequest::SerializePayload() const
-{
+Aws::String DisableAddressTransferRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DisableAddressTransfer&";
-  if(m_allocationIdHasBeenSet)
-  {
+  if (m_allocationIdHasBeenSet) {
     ss << "AllocationId=" << StringUtils::URLEncode(m_allocationId.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DisableAddressTransferRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DisableAddressTransferRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DisableAddressTransferRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

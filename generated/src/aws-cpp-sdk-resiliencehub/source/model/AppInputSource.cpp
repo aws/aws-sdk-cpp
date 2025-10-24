@@ -3,103 +3,78 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/resiliencehub/model/AppInputSource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/resiliencehub/model/AppInputSource.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ResilienceHub
-{
-namespace Model
-{
+namespace Aws {
+namespace ResilienceHub {
+namespace Model {
 
-AppInputSource::AppInputSource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AppInputSource::AppInputSource(JsonView jsonValue) { *this = jsonValue; }
 
-AppInputSource& AppInputSource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("eksSourceClusterNamespace"))
-  {
+AppInputSource& AppInputSource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("eksSourceClusterNamespace")) {
     m_eksSourceClusterNamespace = jsonValue.GetObject("eksSourceClusterNamespace");
     m_eksSourceClusterNamespaceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("importType"))
-  {
+  if (jsonValue.ValueExists("importType")) {
     m_importType = ResourceMappingTypeMapper::GetResourceMappingTypeForName(jsonValue.GetString("importType"));
     m_importTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceCount"))
-  {
+  if (jsonValue.ValueExists("resourceCount")) {
     m_resourceCount = jsonValue.GetInteger("resourceCount");
     m_resourceCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sourceArn"))
-  {
+  if (jsonValue.ValueExists("sourceArn")) {
     m_sourceArn = jsonValue.GetString("sourceArn");
     m_sourceArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sourceName"))
-  {
+  if (jsonValue.ValueExists("sourceName")) {
     m_sourceName = jsonValue.GetString("sourceName");
     m_sourceNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("terraformSource"))
-  {
+  if (jsonValue.ValueExists("terraformSource")) {
     m_terraformSource = jsonValue.GetObject("terraformSource");
     m_terraformSourceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AppInputSource::Jsonize() const
-{
+JsonValue AppInputSource::Jsonize() const {
   JsonValue payload;
 
-  if(m_eksSourceClusterNamespaceHasBeenSet)
-  {
-   payload.WithObject("eksSourceClusterNamespace", m_eksSourceClusterNamespace.Jsonize());
-
+  if (m_eksSourceClusterNamespaceHasBeenSet) {
+    payload.WithObject("eksSourceClusterNamespace", m_eksSourceClusterNamespace.Jsonize());
   }
 
-  if(m_importTypeHasBeenSet)
-  {
-   payload.WithString("importType", ResourceMappingTypeMapper::GetNameForResourceMappingType(m_importType));
+  if (m_importTypeHasBeenSet) {
+    payload.WithString("importType", ResourceMappingTypeMapper::GetNameForResourceMappingType(m_importType));
   }
 
-  if(m_resourceCountHasBeenSet)
-  {
-   payload.WithInteger("resourceCount", m_resourceCount);
-
+  if (m_resourceCountHasBeenSet) {
+    payload.WithInteger("resourceCount", m_resourceCount);
   }
 
-  if(m_sourceArnHasBeenSet)
-  {
-   payload.WithString("sourceArn", m_sourceArn);
-
+  if (m_sourceArnHasBeenSet) {
+    payload.WithString("sourceArn", m_sourceArn);
   }
 
-  if(m_sourceNameHasBeenSet)
-  {
-   payload.WithString("sourceName", m_sourceName);
-
+  if (m_sourceNameHasBeenSet) {
+    payload.WithString("sourceName", m_sourceName);
   }
 
-  if(m_terraformSourceHasBeenSet)
-  {
-   payload.WithObject("terraformSource", m_terraformSource.Jsonize());
-
+  if (m_terraformSourceHasBeenSet) {
+    payload.WithObject("terraformSource", m_terraformSource.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ResilienceHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace ResilienceHub
+}  // namespace Aws

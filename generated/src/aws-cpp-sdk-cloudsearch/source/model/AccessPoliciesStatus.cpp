@@ -4,42 +4,32 @@
  */
 
 #include <aws/cloudsearch/model/AccessPoliciesStatus.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudSearch
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudSearch {
+namespace Model {
 
-AccessPoliciesStatus::AccessPoliciesStatus(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+AccessPoliciesStatus::AccessPoliciesStatus(const XmlNode& xmlNode) { *this = xmlNode; }
 
-AccessPoliciesStatus& AccessPoliciesStatus::operator =(const XmlNode& xmlNode)
-{
+AccessPoliciesStatus& AccessPoliciesStatus::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode optionsNode = resultNode.FirstChild("Options");
-    if(!optionsNode.IsNull())
-    {
+    if (!optionsNode.IsNull()) {
       m_options = Aws::Utils::Xml::DecodeEscapedXmlText(optionsNode.GetText());
       m_optionsHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    if(!statusNode.IsNull())
-    {
+    if (!statusNode.IsNull()) {
       m_status = statusNode;
       m_statusHasBeenSet = true;
     }
@@ -48,36 +38,29 @@ AccessPoliciesStatus& AccessPoliciesStatus::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void AccessPoliciesStatus::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_optionsHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Options=" << StringUtils::URLEncode(m_options.c_str()) << "&";
+void AccessPoliciesStatus::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_optionsHasBeenSet) {
+    oStream << location << index << locationValue << ".Options=" << StringUtils::URLEncode(m_options.c_str()) << "&";
   }
 
-  if(m_statusHasBeenSet)
-  {
-      Aws::StringStream statusLocationAndMemberSs;
-      statusLocationAndMemberSs << location << index << locationValue << ".Status";
-      m_status.OutputToStream(oStream, statusLocationAndMemberSs.str().c_str());
-  }
-
-}
-
-void AccessPoliciesStatus::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_optionsHasBeenSet)
-  {
-      oStream << location << ".Options=" << StringUtils::URLEncode(m_options.c_str()) << "&";
-  }
-  if(m_statusHasBeenSet)
-  {
-      Aws::String statusLocationAndMember(location);
-      statusLocationAndMember += ".Status";
-      m_status.OutputToStream(oStream, statusLocationAndMember.c_str());
+  if (m_statusHasBeenSet) {
+    Aws::StringStream statusLocationAndMemberSs;
+    statusLocationAndMemberSs << location << index << locationValue << ".Status";
+    m_status.OutputToStream(oStream, statusLocationAndMemberSs.str().c_str());
   }
 }
 
-} // namespace Model
-} // namespace CloudSearch
-} // namespace Aws
+void AccessPoliciesStatus::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_optionsHasBeenSet) {
+    oStream << location << ".Options=" << StringUtils::URLEncode(m_options.c_str()) << "&";
+  }
+  if (m_statusHasBeenSet) {
+    Aws::String statusLocationAndMember(location);
+    statusLocationAndMember += ".Status";
+    m_status.OutputToStream(oStream, statusLocationAndMember.c_str());
+  }
+}
+
+}  // namespace Model
+}  // namespace CloudSearch
+}  // namespace Aws

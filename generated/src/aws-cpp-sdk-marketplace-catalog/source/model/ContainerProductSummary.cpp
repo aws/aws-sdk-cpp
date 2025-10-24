@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/marketplace-catalog/model/ContainerProductSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/marketplace-catalog/model/ContainerProductSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MarketplaceCatalog
-{
-namespace Model
-{
+namespace Aws {
+namespace MarketplaceCatalog {
+namespace Model {
 
-ContainerProductSummary::ContainerProductSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ContainerProductSummary::ContainerProductSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ContainerProductSummary& ContainerProductSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ProductTitle"))
-  {
+ContainerProductSummary& ContainerProductSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ProductTitle")) {
     m_productTitle = jsonValue.GetString("ProductTitle");
     m_productTitleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Visibility"))
-  {
+  if (jsonValue.ValueExists("Visibility")) {
     m_visibility = ContainerProductVisibilityStringMapper::GetContainerProductVisibilityStringForName(jsonValue.GetString("Visibility"));
     m_visibilityHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ContainerProductSummary::Jsonize() const
-{
+JsonValue ContainerProductSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_productTitleHasBeenSet)
-  {
-   payload.WithString("ProductTitle", m_productTitle);
-
+  if (m_productTitleHasBeenSet) {
+    payload.WithString("ProductTitle", m_productTitle);
   }
 
-  if(m_visibilityHasBeenSet)
-  {
-   payload.WithString("Visibility", ContainerProductVisibilityStringMapper::GetNameForContainerProductVisibilityString(m_visibility));
+  if (m_visibilityHasBeenSet) {
+    payload.WithString("Visibility", ContainerProductVisibilityStringMapper::GetNameForContainerProductVisibilityString(m_visibility));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MarketplaceCatalog
-} // namespace Aws
+}  // namespace Model
+}  // namespace MarketplaceCatalog
+}  // namespace Aws

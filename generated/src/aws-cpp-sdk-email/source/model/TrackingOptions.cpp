@@ -3,37 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/email/model/TrackingOptions.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/email/model/TrackingOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SES
-{
-namespace Model
-{
+namespace Aws {
+namespace SES {
+namespace Model {
 
-TrackingOptions::TrackingOptions(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+TrackingOptions::TrackingOptions(const XmlNode& xmlNode) { *this = xmlNode; }
 
-TrackingOptions& TrackingOptions::operator =(const XmlNode& xmlNode)
-{
+TrackingOptions& TrackingOptions::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode customRedirectDomainNode = resultNode.FirstChild("CustomRedirectDomain");
-    if(!customRedirectDomainNode.IsNull())
-    {
+    if (!customRedirectDomainNode.IsNull()) {
       m_customRedirectDomain = Aws::Utils::Xml::DecodeEscapedXmlText(customRedirectDomainNode.GetText());
       m_customRedirectDomainHasBeenSet = true;
     }
@@ -42,23 +33,19 @@ TrackingOptions& TrackingOptions::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void TrackingOptions::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_customRedirectDomainHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".CustomRedirectDomain=" << StringUtils::URLEncode(m_customRedirectDomain.c_str()) << "&";
-  }
-
-}
-
-void TrackingOptions::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_customRedirectDomainHasBeenSet)
-  {
-      oStream << location << ".CustomRedirectDomain=" << StringUtils::URLEncode(m_customRedirectDomain.c_str()) << "&";
+void TrackingOptions::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_customRedirectDomainHasBeenSet) {
+    oStream << location << index << locationValue << ".CustomRedirectDomain=" << StringUtils::URLEncode(m_customRedirectDomain.c_str())
+            << "&";
   }
 }
 
-} // namespace Model
-} // namespace SES
-} // namespace Aws
+void TrackingOptions::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_customRedirectDomainHasBeenSet) {
+    oStream << location << ".CustomRedirectDomain=" << StringUtils::URLEncode(m_customRedirectDomain.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace SES
+}  // namespace Aws

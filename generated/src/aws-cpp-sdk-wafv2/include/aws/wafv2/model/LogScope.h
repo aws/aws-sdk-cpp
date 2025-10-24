@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/wafv2/WAFV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/wafv2/WAFV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace WAFV2
-{
-namespace Model
-{
-  enum class LogScope
-  {
-    NOT_SET,
-    CUSTOMER,
-    SECURITY_LAKE
-  };
+namespace Aws {
+namespace WAFV2 {
+namespace Model {
+enum class LogScope { NOT_SET, CUSTOMER, SECURITY_LAKE };
 
-namespace LogScopeMapper
-{
+namespace LogScopeMapper {
 AWS_WAFV2_API LogScope GetLogScopeForName(const Aws::String& name);
 
 AWS_WAFV2_API Aws::String GetNameForLogScope(LogScope value);
-} // namespace LogScopeMapper
-} // namespace Model
-} // namespace WAFV2
-} // namespace Aws
+}  // namespace LogScopeMapper
+}  // namespace Model
+}  // namespace WAFV2
+}  // namespace Aws

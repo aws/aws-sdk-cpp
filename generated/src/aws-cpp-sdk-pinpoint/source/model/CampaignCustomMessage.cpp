@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint/model/CampaignCustomMessage.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint/model/CampaignCustomMessage.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Pinpoint
-{
-namespace Model
-{
+namespace Aws {
+namespace Pinpoint {
+namespace Model {
 
-CampaignCustomMessage::CampaignCustomMessage(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CampaignCustomMessage::CampaignCustomMessage(JsonView jsonValue) { *this = jsonValue; }
 
-CampaignCustomMessage& CampaignCustomMessage::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Data"))
-  {
+CampaignCustomMessage& CampaignCustomMessage::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Data")) {
     m_data = jsonValue.GetString("Data");
     m_dataHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CampaignCustomMessage::Jsonize() const
-{
+JsonValue CampaignCustomMessage::Jsonize() const {
   JsonValue payload;
 
-  if(m_dataHasBeenSet)
-  {
-   payload.WithString("Data", m_data);
-
+  if (m_dataHasBeenSet) {
+    payload.WithString("Data", m_data);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Pinpoint
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pinpoint
+}  // namespace Aws

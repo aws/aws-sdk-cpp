@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/CreateSpotDatafeedSubscriptionRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/CreateSpotDatafeedSubscriptionRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateSpotDatafeedSubscriptionRequest::SerializePayload() const
-{
+Aws::String CreateSpotDatafeedSubscriptionRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateSpotDatafeedSubscription&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_bucketHasBeenSet)
-  {
+  if (m_bucketHasBeenSet) {
     ss << "Bucket=" << StringUtils::URLEncode(m_bucket.c_str()) << "&";
   }
 
-  if(m_prefixHasBeenSet)
-  {
+  if (m_prefixHasBeenSet) {
     ss << "Prefix=" << StringUtils::URLEncode(m_prefix.c_str()) << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String CreateSpotDatafeedSubscriptionRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CreateSpotDatafeedSubscriptionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateSpotDatafeedSubscriptionRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

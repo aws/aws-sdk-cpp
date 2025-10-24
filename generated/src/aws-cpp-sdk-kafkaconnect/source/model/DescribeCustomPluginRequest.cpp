@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kafkaconnect/model/DescribeCustomPluginRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kafkaconnect/model/DescribeCustomPluginRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::KafkaConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeCustomPluginRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DescribeCustomPluginRequest::SerializePayload() const { return {}; }

@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyBackend
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyBackend {
+namespace Model {
 
-CreateBackendStorageResourceConfig::CreateBackendStorageResourceConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CreateBackendStorageResourceConfig::CreateBackendStorageResourceConfig(JsonView jsonValue) { *this = jsonValue; }
 
-CreateBackendStorageResourceConfig& CreateBackendStorageResourceConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("bucketName"))
-  {
+CreateBackendStorageResourceConfig& CreateBackendStorageResourceConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("bucketName")) {
     m_bucketName = jsonValue.GetString("bucketName");
     m_bucketNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("permissions"))
-  {
+  if (jsonValue.ValueExists("permissions")) {
     m_permissions = jsonValue.GetObject("permissions");
     m_permissionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("serviceName"))
-  {
+  if (jsonValue.ValueExists("serviceName")) {
     m_serviceName = ServiceNameMapper::GetServiceNameForName(jsonValue.GetString("serviceName"));
     m_serviceNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CreateBackendStorageResourceConfig::Jsonize() const
-{
+JsonValue CreateBackendStorageResourceConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_bucketNameHasBeenSet)
-  {
-   payload.WithString("bucketName", m_bucketName);
-
+  if (m_bucketNameHasBeenSet) {
+    payload.WithString("bucketName", m_bucketName);
   }
 
-  if(m_permissionsHasBeenSet)
-  {
-   payload.WithObject("permissions", m_permissions.Jsonize());
-
+  if (m_permissionsHasBeenSet) {
+    payload.WithObject("permissions", m_permissions.Jsonize());
   }
 
-  if(m_serviceNameHasBeenSet)
-  {
-   payload.WithString("serviceName", ServiceNameMapper::GetNameForServiceName(m_serviceName));
+  if (m_serviceNameHasBeenSet) {
+    payload.WithString("serviceName", ServiceNameMapper::GetNameForServiceName(m_serviceName));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyBackend
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyBackend
+}  // namespace Aws

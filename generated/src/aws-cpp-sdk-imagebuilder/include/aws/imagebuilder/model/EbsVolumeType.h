@@ -4,33 +4,19 @@
  */
 
 #pragma once
-#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 
-namespace Aws
-{
-namespace imagebuilder
-{
-namespace Model
-{
-  enum class EbsVolumeType
-  {
-    NOT_SET,
-    standard,
-    io1,
-    io2,
-    gp2,
-    gp3,
-    sc1,
-    st1
-  };
+namespace Aws {
+namespace imagebuilder {
+namespace Model {
+enum class EbsVolumeType { NOT_SET, standard, io1, io2, gp2, gp3, sc1, st1 };
 
-namespace EbsVolumeTypeMapper
-{
+namespace EbsVolumeTypeMapper {
 AWS_IMAGEBUILDER_API EbsVolumeType GetEbsVolumeTypeForName(const Aws::String& name);
 
 AWS_IMAGEBUILDER_API Aws::String GetNameForEbsVolumeType(EbsVolumeType value);
-} // namespace EbsVolumeTypeMapper
-} // namespace Model
-} // namespace imagebuilder
-} // namespace Aws
+}  // namespace EbsVolumeTypeMapper
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

@@ -3,156 +3,118 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/AudioDescription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconvert/model/AudioDescription.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
 
-AudioDescription::AudioDescription(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AudioDescription::AudioDescription(JsonView jsonValue) { *this = jsonValue; }
 
-AudioDescription& AudioDescription::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("audioChannelTaggingSettings"))
-  {
+AudioDescription& AudioDescription::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("audioChannelTaggingSettings")) {
     m_audioChannelTaggingSettings = jsonValue.GetObject("audioChannelTaggingSettings");
     m_audioChannelTaggingSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("audioNormalizationSettings"))
-  {
+  if (jsonValue.ValueExists("audioNormalizationSettings")) {
     m_audioNormalizationSettings = jsonValue.GetObject("audioNormalizationSettings");
     m_audioNormalizationSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("audioSourceName"))
-  {
+  if (jsonValue.ValueExists("audioSourceName")) {
     m_audioSourceName = jsonValue.GetString("audioSourceName");
     m_audioSourceNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("audioType"))
-  {
+  if (jsonValue.ValueExists("audioType")) {
     m_audioType = jsonValue.GetInteger("audioType");
     m_audioTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("audioTypeControl"))
-  {
+  if (jsonValue.ValueExists("audioTypeControl")) {
     m_audioTypeControl = AudioTypeControlMapper::GetAudioTypeControlForName(jsonValue.GetString("audioTypeControl"));
     m_audioTypeControlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("codecSettings"))
-  {
+  if (jsonValue.ValueExists("codecSettings")) {
     m_codecSettings = jsonValue.GetObject("codecSettings");
     m_codecSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("customLanguageCode"))
-  {
+  if (jsonValue.ValueExists("customLanguageCode")) {
     m_customLanguageCode = jsonValue.GetString("customLanguageCode");
     m_customLanguageCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("languageCode"))
-  {
+  if (jsonValue.ValueExists("languageCode")) {
     m_languageCode = LanguageCodeMapper::GetLanguageCodeForName(jsonValue.GetString("languageCode"));
     m_languageCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("languageCodeControl"))
-  {
+  if (jsonValue.ValueExists("languageCodeControl")) {
     m_languageCodeControl = AudioLanguageCodeControlMapper::GetAudioLanguageCodeControlForName(jsonValue.GetString("languageCodeControl"));
     m_languageCodeControlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("remixSettings"))
-  {
+  if (jsonValue.ValueExists("remixSettings")) {
     m_remixSettings = jsonValue.GetObject("remixSettings");
     m_remixSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("streamName"))
-  {
+  if (jsonValue.ValueExists("streamName")) {
     m_streamName = jsonValue.GetString("streamName");
     m_streamNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AudioDescription::Jsonize() const
-{
+JsonValue AudioDescription::Jsonize() const {
   JsonValue payload;
 
-  if(m_audioChannelTaggingSettingsHasBeenSet)
-  {
-   payload.WithObject("audioChannelTaggingSettings", m_audioChannelTaggingSettings.Jsonize());
-
+  if (m_audioChannelTaggingSettingsHasBeenSet) {
+    payload.WithObject("audioChannelTaggingSettings", m_audioChannelTaggingSettings.Jsonize());
   }
 
-  if(m_audioNormalizationSettingsHasBeenSet)
-  {
-   payload.WithObject("audioNormalizationSettings", m_audioNormalizationSettings.Jsonize());
-
+  if (m_audioNormalizationSettingsHasBeenSet) {
+    payload.WithObject("audioNormalizationSettings", m_audioNormalizationSettings.Jsonize());
   }
 
-  if(m_audioSourceNameHasBeenSet)
-  {
-   payload.WithString("audioSourceName", m_audioSourceName);
-
+  if (m_audioSourceNameHasBeenSet) {
+    payload.WithString("audioSourceName", m_audioSourceName);
   }
 
-  if(m_audioTypeHasBeenSet)
-  {
-   payload.WithInteger("audioType", m_audioType);
-
+  if (m_audioTypeHasBeenSet) {
+    payload.WithInteger("audioType", m_audioType);
   }
 
-  if(m_audioTypeControlHasBeenSet)
-  {
-   payload.WithString("audioTypeControl", AudioTypeControlMapper::GetNameForAudioTypeControl(m_audioTypeControl));
+  if (m_audioTypeControlHasBeenSet) {
+    payload.WithString("audioTypeControl", AudioTypeControlMapper::GetNameForAudioTypeControl(m_audioTypeControl));
   }
 
-  if(m_codecSettingsHasBeenSet)
-  {
-   payload.WithObject("codecSettings", m_codecSettings.Jsonize());
-
+  if (m_codecSettingsHasBeenSet) {
+    payload.WithObject("codecSettings", m_codecSettings.Jsonize());
   }
 
-  if(m_customLanguageCodeHasBeenSet)
-  {
-   payload.WithString("customLanguageCode", m_customLanguageCode);
-
+  if (m_customLanguageCodeHasBeenSet) {
+    payload.WithString("customLanguageCode", m_customLanguageCode);
   }
 
-  if(m_languageCodeHasBeenSet)
-  {
-   payload.WithString("languageCode", LanguageCodeMapper::GetNameForLanguageCode(m_languageCode));
+  if (m_languageCodeHasBeenSet) {
+    payload.WithString("languageCode", LanguageCodeMapper::GetNameForLanguageCode(m_languageCode));
   }
 
-  if(m_languageCodeControlHasBeenSet)
-  {
-   payload.WithString("languageCodeControl", AudioLanguageCodeControlMapper::GetNameForAudioLanguageCodeControl(m_languageCodeControl));
+  if (m_languageCodeControlHasBeenSet) {
+    payload.WithString("languageCodeControl", AudioLanguageCodeControlMapper::GetNameForAudioLanguageCodeControl(m_languageCodeControl));
   }
 
-  if(m_remixSettingsHasBeenSet)
-  {
-   payload.WithObject("remixSettings", m_remixSettings.Jsonize());
-
+  if (m_remixSettingsHasBeenSet) {
+    payload.WithObject("remixSettings", m_remixSettings.Jsonize());
   }
 
-  if(m_streamNameHasBeenSet)
-  {
-   payload.WithString("streamName", m_streamName);
-
+  if (m_streamNameHasBeenSet) {
+    payload.WithString("streamName", m_streamName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

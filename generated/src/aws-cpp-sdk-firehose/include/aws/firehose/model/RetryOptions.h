@@ -6,52 +6,50 @@
 #pragma once
 #include <aws/firehose/Firehose_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace Firehose
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Firehose {
+namespace Model {
 
+/**
+ * <p> The retry behavior in case Firehose is unable to deliver data to a
+ * destination.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/RetryOptions">AWS
+ * API Reference</a></p>
+ */
+class RetryOptions {
+ public:
+  AWS_FIREHOSE_API RetryOptions() = default;
+  AWS_FIREHOSE_API RetryOptions(Aws::Utils::Json::JsonView jsonValue);
+  AWS_FIREHOSE_API RetryOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p> The retry behavior in case Firehose is unable to deliver data to a
-   * destination.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/RetryOptions">AWS
-   * API Reference</a></p>
+   * <p>The period of time during which Firehose retries to deliver data to the
+   * specified destination.</p>
    */
-  class RetryOptions
-  {
-  public:
-    AWS_FIREHOSE_API RetryOptions() = default;
-    AWS_FIREHOSE_API RetryOptions(Aws::Utils::Json::JsonView jsonValue);
-    AWS_FIREHOSE_API RetryOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetDurationInSeconds() const { return m_durationInSeconds; }
+  inline bool DurationInSecondsHasBeenSet() const { return m_durationInSecondsHasBeenSet; }
+  inline void SetDurationInSeconds(int value) {
+    m_durationInSecondsHasBeenSet = true;
+    m_durationInSeconds = value;
+  }
+  inline RetryOptions& WithDurationInSeconds(int value) {
+    SetDurationInSeconds(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_durationInSeconds{0};
+  bool m_durationInSecondsHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>The period of time during which Firehose retries to deliver data to the
-     * specified destination.</p>
-     */
-    inline int GetDurationInSeconds() const { return m_durationInSeconds; }
-    inline bool DurationInSecondsHasBeenSet() const { return m_durationInSecondsHasBeenSet; }
-    inline void SetDurationInSeconds(int value) { m_durationInSecondsHasBeenSet = true; m_durationInSeconds = value; }
-    inline RetryOptions& WithDurationInSeconds(int value) { SetDurationInSeconds(value); return *this;}
-    ///@}
-  private:
-
-    int m_durationInSeconds{0};
-    bool m_durationInSecondsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Firehose
-} // namespace Aws
+}  // namespace Model
+}  // namespace Firehose
+}  // namespace Aws

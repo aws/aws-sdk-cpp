@@ -12,38 +12,26 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeFleetsRequest::SerializePayload() const
-{
+Aws::String DescribeFleetsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_namesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> namesJsonList(m_names.size());
-   for(unsigned namesIndex = 0; namesIndex < namesJsonList.GetLength(); ++namesIndex)
-   {
-     namesJsonList[namesIndex].AsString(m_names[namesIndex]);
-   }
-   payload.WithArray("Names", std::move(namesJsonList));
-
+  if (m_namesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> namesJsonList(m_names.size());
+    for (unsigned namesIndex = 0; namesIndex < namesJsonList.GetLength(); ++namesIndex) {
+      namesJsonList[namesIndex].AsString(m_names[namesIndex]);
+    }
+    payload.WithArray("Names", std::move(namesJsonList));
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeFleetsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeFleetsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "PhotonAdminProxyService.DescribeFleets"));
   return headers;
-
 }
-
-
-
-

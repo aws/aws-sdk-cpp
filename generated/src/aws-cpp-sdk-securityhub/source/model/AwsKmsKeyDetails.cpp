@@ -3,126 +3,94 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsKmsKeyDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsKmsKeyDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsKmsKeyDetails::AwsKmsKeyDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsKmsKeyDetails::AwsKmsKeyDetails(JsonView jsonValue) { *this = jsonValue; }
 
-AwsKmsKeyDetails& AwsKmsKeyDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AWSAccountId"))
-  {
+AwsKmsKeyDetails& AwsKmsKeyDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AWSAccountId")) {
     m_aWSAccountId = jsonValue.GetString("AWSAccountId");
     m_aWSAccountIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationDate"))
-  {
+  if (jsonValue.ValueExists("CreationDate")) {
     m_creationDate = jsonValue.GetDouble("CreationDate");
     m_creationDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("KeyId"))
-  {
+  if (jsonValue.ValueExists("KeyId")) {
     m_keyId = jsonValue.GetString("KeyId");
     m_keyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("KeyManager"))
-  {
+  if (jsonValue.ValueExists("KeyManager")) {
     m_keyManager = jsonValue.GetString("KeyManager");
     m_keyManagerHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("KeyState"))
-  {
+  if (jsonValue.ValueExists("KeyState")) {
     m_keyState = jsonValue.GetString("KeyState");
     m_keyStateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Origin"))
-  {
+  if (jsonValue.ValueExists("Origin")) {
     m_origin = jsonValue.GetString("Origin");
     m_originHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("KeyRotationStatus"))
-  {
+  if (jsonValue.ValueExists("KeyRotationStatus")) {
     m_keyRotationStatus = jsonValue.GetBool("KeyRotationStatus");
     m_keyRotationStatusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsKmsKeyDetails::Jsonize() const
-{
+JsonValue AwsKmsKeyDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_aWSAccountIdHasBeenSet)
-  {
-   payload.WithString("AWSAccountId", m_aWSAccountId);
-
+  if (m_aWSAccountIdHasBeenSet) {
+    payload.WithString("AWSAccountId", m_aWSAccountId);
   }
 
-  if(m_creationDateHasBeenSet)
-  {
-   payload.WithDouble("CreationDate", m_creationDate);
-
+  if (m_creationDateHasBeenSet) {
+    payload.WithDouble("CreationDate", m_creationDate);
   }
 
-  if(m_keyIdHasBeenSet)
-  {
-   payload.WithString("KeyId", m_keyId);
-
+  if (m_keyIdHasBeenSet) {
+    payload.WithString("KeyId", m_keyId);
   }
 
-  if(m_keyManagerHasBeenSet)
-  {
-   payload.WithString("KeyManager", m_keyManager);
-
+  if (m_keyManagerHasBeenSet) {
+    payload.WithString("KeyManager", m_keyManager);
   }
 
-  if(m_keyStateHasBeenSet)
-  {
-   payload.WithString("KeyState", m_keyState);
-
+  if (m_keyStateHasBeenSet) {
+    payload.WithString("KeyState", m_keyState);
   }
 
-  if(m_originHasBeenSet)
-  {
-   payload.WithString("Origin", m_origin);
-
+  if (m_originHasBeenSet) {
+    payload.WithString("Origin", m_origin);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_keyRotationStatusHasBeenSet)
-  {
-   payload.WithBool("KeyRotationStatus", m_keyRotationStatus);
-
+  if (m_keyRotationStatusHasBeenSet) {
+    payload.WithBool("KeyRotationStatus", m_keyRotationStatus);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

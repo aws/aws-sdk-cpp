@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lexv2-models/model/BotLocaleHistoryEvent.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lexv2-models/model/BotLocaleHistoryEvent.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
 
-BotLocaleHistoryEvent::BotLocaleHistoryEvent(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BotLocaleHistoryEvent::BotLocaleHistoryEvent(JsonView jsonValue) { *this = jsonValue; }
 
-BotLocaleHistoryEvent& BotLocaleHistoryEvent::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("event"))
-  {
+BotLocaleHistoryEvent& BotLocaleHistoryEvent::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("event")) {
     m_event = jsonValue.GetString("event");
     m_eventHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("eventDate"))
-  {
+  if (jsonValue.ValueExists("eventDate")) {
     m_eventDate = jsonValue.GetDouble("eventDate");
     m_eventDateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BotLocaleHistoryEvent::Jsonize() const
-{
+JsonValue BotLocaleHistoryEvent::Jsonize() const {
   JsonValue payload;
 
-  if(m_eventHasBeenSet)
-  {
-   payload.WithString("event", m_event);
-
+  if (m_eventHasBeenSet) {
+    payload.WithString("event", m_event);
   }
 
-  if(m_eventDateHasBeenSet)
-  {
-   payload.WithDouble("eventDate", m_eventDate.SecondsWithMSPrecision());
+  if (m_eventDateHasBeenSet) {
+    payload.WithDouble("eventDate", m_eventDate.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

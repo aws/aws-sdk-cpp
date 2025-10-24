@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-TooManyTagsException::TooManyTagsException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TooManyTagsException::TooManyTagsException(JsonView jsonValue) { *this = jsonValue; }
 
-TooManyTagsException& TooManyTagsException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("message"))
-  {
+TooManyTagsException& TooManyTagsException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("resourceName"))
-  {
+  if (jsonValue.ValueExists("resourceName")) {
     m_resourceName = jsonValue.GetString("resourceName");
     m_resourceNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TooManyTagsException::Jsonize() const
-{
+JsonValue TooManyTagsException::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
-  if(m_resourceNameHasBeenSet)
-  {
-   payload.WithString("resourceName", m_resourceName);
-
+  if (m_resourceNameHasBeenSet) {
+    payload.WithString("resourceName", m_resourceName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

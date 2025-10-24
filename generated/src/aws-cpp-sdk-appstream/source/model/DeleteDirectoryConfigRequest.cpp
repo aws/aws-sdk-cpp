@@ -12,27 +12,18 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteDirectoryConfigRequest::SerializePayload() const
-{
+Aws::String DeleteDirectoryConfigRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_directoryNameHasBeenSet)
-  {
-   payload.WithString("DirectoryName", m_directoryName);
-
+  if (m_directoryNameHasBeenSet) {
+    payload.WithString("DirectoryName", m_directoryName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteDirectoryConfigRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteDirectoryConfigRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "PhotonAdminProxyService.DeleteDirectoryConfig"));
   return headers;
-
 }
-
-
-
-

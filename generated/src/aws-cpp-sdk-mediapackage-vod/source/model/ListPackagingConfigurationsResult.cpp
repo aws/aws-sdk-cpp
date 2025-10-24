@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediapackage-vod/model/ListPackagingConfigurationsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/mediapackage-vod/model/ListPackagingConfigurationsResult.h>
 
 #include <utility>
 
@@ -17,24 +17,20 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListPackagingConfigurationsResult::ListPackagingConfigurationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListPackagingConfigurationsResult::ListPackagingConfigurationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-ListPackagingConfigurationsResult& ListPackagingConfigurationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListPackagingConfigurationsResult& ListPackagingConfigurationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("packagingConfigurations"))
-  {
+  if (jsonValue.ValueExists("packagingConfigurations")) {
     Aws::Utils::Array<JsonView> packagingConfigurationsJsonList = jsonValue.GetArray("packagingConfigurations");
-    for(unsigned packagingConfigurationsIndex = 0; packagingConfigurationsIndex < packagingConfigurationsJsonList.GetLength(); ++packagingConfigurationsIndex)
-    {
+    for (unsigned packagingConfigurationsIndex = 0; packagingConfigurationsIndex < packagingConfigurationsJsonList.GetLength();
+         ++packagingConfigurationsIndex) {
       m_packagingConfigurations.push_back(packagingConfigurationsJsonList[packagingConfigurationsIndex].AsObject());
     }
     m_packagingConfigurationsHasBeenSet = true;
@@ -42,12 +38,10 @@ ListPackagingConfigurationsResult& ListPackagingConfigurationsResult::operator =
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

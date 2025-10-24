@@ -3,34 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ModifyVerifiedAccessInstanceLoggingConfigurationRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ModifyVerifiedAccessInstanceLoggingConfigurationRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyVerifiedAccessInstanceLoggingConfigurationRequest::SerializePayload() const
-{
+Aws::String ModifyVerifiedAccessInstanceLoggingConfigurationRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyVerifiedAccessInstanceLoggingConfiguration&";
-  if(m_verifiedAccessInstanceIdHasBeenSet)
-  {
+  if (m_verifiedAccessInstanceIdHasBeenSet) {
     ss << "VerifiedAccessInstanceId=" << StringUtils::URLEncode(m_verifiedAccessInstanceId.c_str()) << "&";
   }
 
-  if(m_accessLogsHasBeenSet)
-  {
+  if (m_accessLogsHasBeenSet) {
     m_accessLogs.OutputToStream(ss, "AccessLogs");
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
+  if (m_clientTokenHasBeenSet) {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
@@ -38,8 +33,6 @@ Aws::String ModifyVerifiedAccessInstanceLoggingConfigurationRequest::SerializePa
   return ss.str();
 }
 
-
-void  ModifyVerifiedAccessInstanceLoggingConfigurationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
+void ModifyVerifiedAccessInstanceLoggingConfigurationRequest::DumpBodyToUrl(Aws::Http::URI& uri) const {
   uri.SetQueryString(SerializePayload());
 }

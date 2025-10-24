@@ -3,42 +3,39 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/client/AWSError.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeErrors.h>
 #include <aws/bedrock-agent-runtime/model/BadGatewayException.h>
-#include <aws/bedrock-agent-runtime/model/InternalServerException.h>
 #include <aws/bedrock-agent-runtime/model/DependencyFailedException.h>
+#include <aws/bedrock-agent-runtime/model/InternalServerException.h>
+#include <aws/core/client/AWSError.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::BedrockAgentRuntime;
 using namespace Aws::BedrockAgentRuntime::Model;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-template<> AWS_BEDROCKAGENTRUNTIME_API BadGatewayException BedrockAgentRuntimeError::GetModeledError()
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+template <>
+AWS_BEDROCKAGENTRUNTIME_API BadGatewayException BedrockAgentRuntimeError::GetModeledError() {
   assert(this->GetErrorType() == BedrockAgentRuntimeErrors::BAD_GATEWAY);
   return BadGatewayException(this->GetJsonPayload().View());
 }
 
-template<> AWS_BEDROCKAGENTRUNTIME_API InternalServerException BedrockAgentRuntimeError::GetModeledError()
-{
+template <>
+AWS_BEDROCKAGENTRUNTIME_API InternalServerException BedrockAgentRuntimeError::GetModeledError() {
   assert(this->GetErrorType() == BedrockAgentRuntimeErrors::INTERNAL_SERVER);
   return InternalServerException(this->GetJsonPayload().View());
 }
 
-template<> AWS_BEDROCKAGENTRUNTIME_API DependencyFailedException BedrockAgentRuntimeError::GetModeledError()
-{
+template <>
+AWS_BEDROCKAGENTRUNTIME_API DependencyFailedException BedrockAgentRuntimeError::GetModeledError() {
   assert(this->GetErrorType() == BedrockAgentRuntimeErrors::DEPENDENCY_FAILED);
   return DependencyFailedException(this->GetJsonPayload().View());
 }
 
-namespace BedrockAgentRuntimeErrorMapper
-{
+namespace BedrockAgentRuntimeErrorMapper {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int BAD_GATEWAY_HASH = HashingUtils::HashString("BadGatewayException");
@@ -47,38 +44,25 @@ static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServer
 static const int DEPENDENCY_FAILED_HASH = HashingUtils::HashString("DependencyFailedException");
 static const int MODEL_NOT_READY_HASH = HashingUtils::HashString("ModelNotReadyException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == CONFLICT_HASH)
-  {
+  if (hashCode == CONFLICT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockAgentRuntimeErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == BAD_GATEWAY_HASH)
-  {
+  } else if (hashCode == BAD_GATEWAY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockAgentRuntimeErrors::BAD_GATEWAY), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
-  {
+  } else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockAgentRuntimeErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INTERNAL_SERVER_HASH)
-  {
+  } else if (hashCode == INTERNAL_SERVER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockAgentRuntimeErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == DEPENDENCY_FAILED_HASH)
-  {
+  } else if (hashCode == DEPENDENCY_FAILED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockAgentRuntimeErrors::DEPENDENCY_FAILED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == MODEL_NOT_READY_HASH)
-  {
+  } else if (hashCode == MODEL_NOT_READY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(BedrockAgentRuntimeErrors::MODEL_NOT_READY), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace BedrockAgentRuntimeErrorMapper
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace BedrockAgentRuntimeErrorMapper
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

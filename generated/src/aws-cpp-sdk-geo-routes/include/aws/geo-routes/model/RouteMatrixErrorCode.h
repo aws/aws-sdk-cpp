@@ -4,35 +4,30 @@
  */
 
 #pragma once
-#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
 
-namespace Aws
-{
-namespace GeoRoutes
-{
-namespace Model
-{
-  enum class RouteMatrixErrorCode
-  {
-    NOT_SET,
-    NoMatch,
-    NoMatchDestination,
-    NoMatchOrigin,
-    NoRoute,
-    OutOfBounds,
-    OutOfBoundsDestination,
-    OutOfBoundsOrigin,
-    Other,
-    Violation
-  };
+namespace Aws {
+namespace GeoRoutes {
+namespace Model {
+enum class RouteMatrixErrorCode {
+  NOT_SET,
+  NoMatch,
+  NoMatchDestination,
+  NoMatchOrigin,
+  NoRoute,
+  OutOfBounds,
+  OutOfBoundsDestination,
+  OutOfBoundsOrigin,
+  Other,
+  Violation
+};
 
-namespace RouteMatrixErrorCodeMapper
-{
+namespace RouteMatrixErrorCodeMapper {
 AWS_GEOROUTES_API RouteMatrixErrorCode GetRouteMatrixErrorCodeForName(const Aws::String& name);
 
 AWS_GEOROUTES_API Aws::String GetNameForRouteMatrixErrorCode(RouteMatrixErrorCode value);
-} // namespace RouteMatrixErrorCodeMapper
-} // namespace Model
-} // namespace GeoRoutes
-} // namespace Aws
+}  // namespace RouteMatrixErrorCodeMapper
+}  // namespace Model
+}  // namespace GeoRoutes
+}  // namespace Aws

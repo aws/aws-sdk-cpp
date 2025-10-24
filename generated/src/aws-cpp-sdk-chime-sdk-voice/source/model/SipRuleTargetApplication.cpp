@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKVoice
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKVoice {
+namespace Model {
 
-SipRuleTargetApplication::SipRuleTargetApplication(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SipRuleTargetApplication::SipRuleTargetApplication(JsonView jsonValue) { *this = jsonValue; }
 
-SipRuleTargetApplication& SipRuleTargetApplication::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SipMediaApplicationId"))
-  {
+SipRuleTargetApplication& SipRuleTargetApplication::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SipMediaApplicationId")) {
     m_sipMediaApplicationId = jsonValue.GetString("SipMediaApplicationId");
     m_sipMediaApplicationIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Priority"))
-  {
+  if (jsonValue.ValueExists("Priority")) {
     m_priority = jsonValue.GetInteger("Priority");
     m_priorityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AwsRegion"))
-  {
+  if (jsonValue.ValueExists("AwsRegion")) {
     m_awsRegion = jsonValue.GetString("AwsRegion");
     m_awsRegionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SipRuleTargetApplication::Jsonize() const
-{
+JsonValue SipRuleTargetApplication::Jsonize() const {
   JsonValue payload;
 
-  if(m_sipMediaApplicationIdHasBeenSet)
-  {
-   payload.WithString("SipMediaApplicationId", m_sipMediaApplicationId);
-
+  if (m_sipMediaApplicationIdHasBeenSet) {
+    payload.WithString("SipMediaApplicationId", m_sipMediaApplicationId);
   }
 
-  if(m_priorityHasBeenSet)
-  {
-   payload.WithInteger("Priority", m_priority);
-
+  if (m_priorityHasBeenSet) {
+    payload.WithInteger("Priority", m_priority);
   }
 
-  if(m_awsRegionHasBeenSet)
-  {
-   payload.WithString("AwsRegion", m_awsRegion);
-
+  if (m_awsRegionHasBeenSet) {
+    payload.WithString("AwsRegion", m_awsRegion);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKVoice
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKVoice
+}  // namespace Aws

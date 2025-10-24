@@ -6,50 +6,48 @@
 #pragma once
 #include <aws/license-manager/LicenseManager_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace LicenseManager
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace LicenseManager {
+namespace Model {
 
+/**
+ * <p>Configuration information for Organizations.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/OrganizationConfiguration">AWS
+ * API Reference</a></p>
+ */
+class OrganizationConfiguration {
+ public:
+  AWS_LICENSEMANAGER_API OrganizationConfiguration() = default;
+  AWS_LICENSEMANAGER_API OrganizationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+  AWS_LICENSEMANAGER_API OrganizationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Configuration information for Organizations.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/OrganizationConfiguration">AWS
-   * API Reference</a></p>
+   * <p>Enables Organizations integration.</p>
    */
-  class OrganizationConfiguration
-  {
-  public:
-    AWS_LICENSEMANAGER_API OrganizationConfiguration() = default;
-    AWS_LICENSEMANAGER_API OrganizationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AWS_LICENSEMANAGER_API OrganizationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline bool GetEnableIntegration() const { return m_enableIntegration; }
+  inline bool EnableIntegrationHasBeenSet() const { return m_enableIntegrationHasBeenSet; }
+  inline void SetEnableIntegration(bool value) {
+    m_enableIntegrationHasBeenSet = true;
+    m_enableIntegration = value;
+  }
+  inline OrganizationConfiguration& WithEnableIntegration(bool value) {
+    SetEnableIntegration(value);
+    return *this;
+  }
+  ///@}
+ private:
+  bool m_enableIntegration{false};
+  bool m_enableIntegrationHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>Enables Organizations integration.</p>
-     */
-    inline bool GetEnableIntegration() const { return m_enableIntegration; }
-    inline bool EnableIntegrationHasBeenSet() const { return m_enableIntegrationHasBeenSet; }
-    inline void SetEnableIntegration(bool value) { m_enableIntegrationHasBeenSet = true; m_enableIntegration = value; }
-    inline OrganizationConfiguration& WithEnableIntegration(bool value) { SetEnableIntegration(value); return *this;}
-    ///@}
-  private:
-
-    bool m_enableIntegration{false};
-    bool m_enableIntegrationHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace LicenseManager
-} // namespace Aws
+}  // namespace Model
+}  // namespace LicenseManager
+}  // namespace Aws

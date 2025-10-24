@@ -3,42 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/servicecatalog/model/ShareDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/servicecatalog/model/ShareDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ServiceCatalog
-{
-namespace Model
-{
+namespace Aws {
+namespace ServiceCatalog {
+namespace Model {
 
-ShareDetails::ShareDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ShareDetails::ShareDetails(JsonView jsonValue) { *this = jsonValue; }
 
-ShareDetails& ShareDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SuccessfulShares"))
-  {
+ShareDetails& ShareDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SuccessfulShares")) {
     Aws::Utils::Array<JsonView> successfulSharesJsonList = jsonValue.GetArray("SuccessfulShares");
-    for(unsigned successfulSharesIndex = 0; successfulSharesIndex < successfulSharesJsonList.GetLength(); ++successfulSharesIndex)
-    {
+    for (unsigned successfulSharesIndex = 0; successfulSharesIndex < successfulSharesJsonList.GetLength(); ++successfulSharesIndex) {
       m_successfulShares.push_back(successfulSharesJsonList[successfulSharesIndex].AsString());
     }
     m_successfulSharesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ShareErrors"))
-  {
+  if (jsonValue.ValueExists("ShareErrors")) {
     Aws::Utils::Array<JsonView> shareErrorsJsonList = jsonValue.GetArray("ShareErrors");
-    for(unsigned shareErrorsIndex = 0; shareErrorsIndex < shareErrorsJsonList.GetLength(); ++shareErrorsIndex)
-    {
+    for (unsigned shareErrorsIndex = 0; shareErrorsIndex < shareErrorsJsonList.GetLength(); ++shareErrorsIndex) {
       m_shareErrors.push_back(shareErrorsJsonList[shareErrorsIndex].AsObject());
     }
     m_shareErrorsHasBeenSet = true;
@@ -46,35 +35,28 @@ ShareDetails& ShareDetails::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ShareDetails::Jsonize() const
-{
+JsonValue ShareDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_successfulSharesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> successfulSharesJsonList(m_successfulShares.size());
-   for(unsigned successfulSharesIndex = 0; successfulSharesIndex < successfulSharesJsonList.GetLength(); ++successfulSharesIndex)
-   {
-     successfulSharesJsonList[successfulSharesIndex].AsString(m_successfulShares[successfulSharesIndex]);
-   }
-   payload.WithArray("SuccessfulShares", std::move(successfulSharesJsonList));
-
+  if (m_successfulSharesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> successfulSharesJsonList(m_successfulShares.size());
+    for (unsigned successfulSharesIndex = 0; successfulSharesIndex < successfulSharesJsonList.GetLength(); ++successfulSharesIndex) {
+      successfulSharesJsonList[successfulSharesIndex].AsString(m_successfulShares[successfulSharesIndex]);
+    }
+    payload.WithArray("SuccessfulShares", std::move(successfulSharesJsonList));
   }
 
-  if(m_shareErrorsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> shareErrorsJsonList(m_shareErrors.size());
-   for(unsigned shareErrorsIndex = 0; shareErrorsIndex < shareErrorsJsonList.GetLength(); ++shareErrorsIndex)
-   {
-     shareErrorsJsonList[shareErrorsIndex].AsObject(m_shareErrors[shareErrorsIndex].Jsonize());
-   }
-   payload.WithArray("ShareErrors", std::move(shareErrorsJsonList));
-
+  if (m_shareErrorsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> shareErrorsJsonList(m_shareErrors.size());
+    for (unsigned shareErrorsIndex = 0; shareErrorsIndex < shareErrorsJsonList.GetLength(); ++shareErrorsIndex) {
+      shareErrorsJsonList[shareErrorsIndex].AsObject(m_shareErrors[shareErrorsIndex].Jsonize());
+    }
+    payload.WithArray("ShareErrors", std::move(shareErrorsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ServiceCatalog
-} // namespace Aws
+}  // namespace Model
+}  // namespace ServiceCatalog
+}  // namespace Aws

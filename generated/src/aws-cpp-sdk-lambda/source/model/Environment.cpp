@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lambda/model/Environment.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lambda/model/Environment.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Lambda
-{
-namespace Model
-{
+namespace Aws {
+namespace Lambda {
+namespace Model {
 
-Environment::Environment(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Environment::Environment(JsonView jsonValue) { *this = jsonValue; }
 
-Environment& Environment::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Variables"))
-  {
+Environment& Environment::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Variables")) {
     Aws::Map<Aws::String, JsonView> variablesJsonMap = jsonValue.GetObject("Variables").GetAllObjects();
-    for(auto& variablesItem : variablesJsonMap)
-    {
+    for (auto& variablesItem : variablesJsonMap) {
       m_variables[variablesItem.first] = variablesItem.second.AsString();
     }
     m_variablesHasBeenSet = true;
@@ -37,24 +28,20 @@ Environment& Environment::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue Environment::Jsonize() const
-{
+JsonValue Environment::Jsonize() const {
   JsonValue payload;
 
-  if(m_variablesHasBeenSet)
-  {
-   JsonValue variablesJsonMap;
-   for(auto& variablesItem : m_variables)
-   {
-     variablesJsonMap.WithString(variablesItem.first, variablesItem.second);
-   }
-   payload.WithObject("Variables", std::move(variablesJsonMap));
-
+  if (m_variablesHasBeenSet) {
+    JsonValue variablesJsonMap;
+    for (auto& variablesItem : m_variables) {
+      variablesJsonMap.WithString(variablesItem.first, variablesItem.second);
+    }
+    payload.WithObject("Variables", std::move(variablesJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Lambda
-} // namespace Aws
+}  // namespace Model
+}  // namespace Lambda
+}  // namespace Aws

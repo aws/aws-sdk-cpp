@@ -3,43 +3,32 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/deadline/model/AssignedTaskRunSessionActionDefinition.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/deadline/model/AssignedTaskRunSessionActionDefinition.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace deadline
-{
-namespace Model
-{
+namespace Aws {
+namespace deadline {
+namespace Model {
 
-AssignedTaskRunSessionActionDefinition::AssignedTaskRunSessionActionDefinition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AssignedTaskRunSessionActionDefinition::AssignedTaskRunSessionActionDefinition(JsonView jsonValue) { *this = jsonValue; }
 
-AssignedTaskRunSessionActionDefinition& AssignedTaskRunSessionActionDefinition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("taskId"))
-  {
+AssignedTaskRunSessionActionDefinition& AssignedTaskRunSessionActionDefinition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("taskId")) {
     m_taskId = jsonValue.GetString("taskId");
     m_taskIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("stepId"))
-  {
+  if (jsonValue.ValueExists("stepId")) {
     m_stepId = jsonValue.GetString("stepId");
     m_stepIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("parameters"))
-  {
+  if (jsonValue.ValueExists("parameters")) {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
-    for(auto& parametersItem : parametersJsonMap)
-    {
+    for (auto& parametersItem : parametersJsonMap) {
       m_parameters[parametersItem.first] = parametersItem.second.AsObject();
     }
     m_parametersHasBeenSet = true;
@@ -47,36 +36,28 @@ AssignedTaskRunSessionActionDefinition& AssignedTaskRunSessionActionDefinition::
   return *this;
 }
 
-JsonValue AssignedTaskRunSessionActionDefinition::Jsonize() const
-{
+JsonValue AssignedTaskRunSessionActionDefinition::Jsonize() const {
   JsonValue payload;
 
-  if(m_taskIdHasBeenSet)
-  {
-   payload.WithString("taskId", m_taskId);
-
+  if (m_taskIdHasBeenSet) {
+    payload.WithString("taskId", m_taskId);
   }
 
-  if(m_stepIdHasBeenSet)
-  {
-   payload.WithString("stepId", m_stepId);
-
+  if (m_stepIdHasBeenSet) {
+    payload.WithString("stepId", m_stepId);
   }
 
-  if(m_parametersHasBeenSet)
-  {
-   JsonValue parametersJsonMap;
-   for(auto& parametersItem : m_parameters)
-   {
-     parametersJsonMap.WithObject(parametersItem.first, parametersItem.second.Jsonize());
-   }
-   payload.WithObject("parameters", std::move(parametersJsonMap));
-
+  if (m_parametersHasBeenSet) {
+    JsonValue parametersJsonMap;
+    for (auto& parametersItem : m_parameters) {
+      parametersJsonMap.WithObject(parametersItem.first, parametersItem.second.Jsonize());
+    }
+    payload.WithObject("parameters", std::move(parametersJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace deadline
-} // namespace Aws
+}  // namespace Model
+}  // namespace deadline
+}  // namespace Aws

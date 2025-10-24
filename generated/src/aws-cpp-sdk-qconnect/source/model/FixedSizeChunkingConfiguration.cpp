@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/qconnect/model/FixedSizeChunkingConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/qconnect/model/FixedSizeChunkingConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace QConnect {
+namespace Model {
 
-FixedSizeChunkingConfiguration::FixedSizeChunkingConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FixedSizeChunkingConfiguration::FixedSizeChunkingConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-FixedSizeChunkingConfiguration& FixedSizeChunkingConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("maxTokens"))
-  {
+FixedSizeChunkingConfiguration& FixedSizeChunkingConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("maxTokens")) {
     m_maxTokens = jsonValue.GetInteger("maxTokens");
     m_maxTokensHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("overlapPercentage"))
-  {
+  if (jsonValue.ValueExists("overlapPercentage")) {
     m_overlapPercentage = jsonValue.GetInteger("overlapPercentage");
     m_overlapPercentageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FixedSizeChunkingConfiguration::Jsonize() const
-{
+JsonValue FixedSizeChunkingConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_maxTokensHasBeenSet)
-  {
-   payload.WithInteger("maxTokens", m_maxTokens);
-
+  if (m_maxTokensHasBeenSet) {
+    payload.WithInteger("maxTokens", m_maxTokens);
   }
 
-  if(m_overlapPercentageHasBeenSet)
-  {
-   payload.WithInteger("overlapPercentage", m_overlapPercentage);
-
+  if (m_overlapPercentageHasBeenSet) {
+    payload.WithInteger("overlapPercentage", m_overlapPercentage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace QConnect
+}  // namespace Aws

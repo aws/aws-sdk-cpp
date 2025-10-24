@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sesv2/model/GetMessageInsightsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sesv2/model/GetMessageInsightsResult.h>
 
 #include <utility>
 
@@ -17,43 +17,32 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetMessageInsightsResult::GetMessageInsightsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetMessageInsightsResult::GetMessageInsightsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetMessageInsightsResult& GetMessageInsightsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetMessageInsightsResult& GetMessageInsightsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("MessageId"))
-  {
+  if (jsonValue.ValueExists("MessageId")) {
     m_messageId = jsonValue.GetString("MessageId");
     m_messageIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FromEmailAddress"))
-  {
+  if (jsonValue.ValueExists("FromEmailAddress")) {
     m_fromEmailAddress = jsonValue.GetString("FromEmailAddress");
     m_fromEmailAddressHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Subject"))
-  {
+  if (jsonValue.ValueExists("Subject")) {
     m_subject = jsonValue.GetString("Subject");
     m_subjectHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EmailTags"))
-  {
+  if (jsonValue.ValueExists("EmailTags")) {
     Aws::Utils::Array<JsonView> emailTagsJsonList = jsonValue.GetArray("EmailTags");
-    for(unsigned emailTagsIndex = 0; emailTagsIndex < emailTagsJsonList.GetLength(); ++emailTagsIndex)
-    {
+    for (unsigned emailTagsIndex = 0; emailTagsIndex < emailTagsJsonList.GetLength(); ++emailTagsIndex) {
       m_emailTags.push_back(emailTagsJsonList[emailTagsIndex].AsObject());
     }
     m_emailTagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Insights"))
-  {
+  if (jsonValue.ValueExists("Insights")) {
     Aws::Utils::Array<JsonView> insightsJsonList = jsonValue.GetArray("Insights");
-    for(unsigned insightsIndex = 0; insightsIndex < insightsJsonList.GetLength(); ++insightsIndex)
-    {
+    for (unsigned insightsIndex = 0; insightsIndex < insightsJsonList.GetLength(); ++insightsIndex) {
       m_insights.push_back(insightsJsonList[insightsIndex].AsObject());
     }
     m_insightsHasBeenSet = true;
@@ -61,12 +50,10 @@ GetMessageInsightsResult& GetMessageInsightsResult::operator =(const Aws::Amazon
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

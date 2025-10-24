@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Comprehend {
+namespace Model {
 
-EntityTypesListItem::EntityTypesListItem(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EntityTypesListItem::EntityTypesListItem(JsonView jsonValue) { *this = jsonValue; }
 
-EntityTypesListItem& EntityTypesListItem::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Type"))
-  {
+EntityTypesListItem& EntityTypesListItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Type")) {
     m_type = jsonValue.GetString("Type");
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EntityTypesListItem::Jsonize() const
-{
+JsonValue EntityTypesListItem::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", m_type);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

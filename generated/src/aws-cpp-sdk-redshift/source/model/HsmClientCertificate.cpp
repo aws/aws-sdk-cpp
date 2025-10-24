@@ -3,53 +3,41 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/HsmClientCertificate.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/redshift/model/HsmClientCertificate.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Redshift
-{
-namespace Model
-{
+namespace Aws {
+namespace Redshift {
+namespace Model {
 
-HsmClientCertificate::HsmClientCertificate(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+HsmClientCertificate::HsmClientCertificate(const XmlNode& xmlNode) { *this = xmlNode; }
 
-HsmClientCertificate& HsmClientCertificate::operator =(const XmlNode& xmlNode)
-{
+HsmClientCertificate& HsmClientCertificate::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode hsmClientCertificateIdentifierNode = resultNode.FirstChild("HsmClientCertificateIdentifier");
-    if(!hsmClientCertificateIdentifierNode.IsNull())
-    {
+    if (!hsmClientCertificateIdentifierNode.IsNull()) {
       m_hsmClientCertificateIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(hsmClientCertificateIdentifierNode.GetText());
       m_hsmClientCertificateIdentifierHasBeenSet = true;
     }
     XmlNode hsmClientCertificatePublicKeyNode = resultNode.FirstChild("HsmClientCertificatePublicKey");
-    if(!hsmClientCertificatePublicKeyNode.IsNull())
-    {
+    if (!hsmClientCertificatePublicKeyNode.IsNull()) {
       m_hsmClientCertificatePublicKey = Aws::Utils::Xml::DecodeEscapedXmlText(hsmClientCertificatePublicKeyNode.GetText());
       m_hsmClientCertificatePublicKeyHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
-    if(!tagsNode.IsNull())
-    {
+    if (!tagsNode.IsNull()) {
       XmlNode tagsMember = tagsNode.FirstChild("Tag");
       m_tagsHasBeenSet = !tagsMember.IsNull();
-      while(!tagsMember.IsNull())
-      {
+      while (!tagsMember.IsNull()) {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("Tag");
       }
@@ -61,53 +49,44 @@ HsmClientCertificate& HsmClientCertificate::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void HsmClientCertificate::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_hsmClientCertificateIdentifierHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".HsmClientCertificateIdentifier=" << StringUtils::URLEncode(m_hsmClientCertificateIdentifier.c_str()) << "&";
+void HsmClientCertificate::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_hsmClientCertificateIdentifierHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".HsmClientCertificateIdentifier=" << StringUtils::URLEncode(m_hsmClientCertificateIdentifier.c_str()) << "&";
   }
 
-  if(m_hsmClientCertificatePublicKeyHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".HsmClientCertificatePublicKey=" << StringUtils::URLEncode(m_hsmClientCertificatePublicKey.c_str()) << "&";
+  if (m_hsmClientCertificatePublicKeyHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".HsmClientCertificatePublicKey=" << StringUtils::URLEncode(m_hsmClientCertificatePublicKey.c_str()) << "&";
   }
 
-  if(m_tagsHasBeenSet)
-  {
-      unsigned tagsIdx = 1;
-      for(auto& item : m_tags)
-      {
-        Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".Tags.Tag." << tagsIdx++;
-        item.OutputToStream(oStream, tagsSs.str().c_str());
-      }
-  }
-
-}
-
-void HsmClientCertificate::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_hsmClientCertificateIdentifierHasBeenSet)
-  {
-      oStream << location << ".HsmClientCertificateIdentifier=" << StringUtils::URLEncode(m_hsmClientCertificateIdentifier.c_str()) << "&";
-  }
-  if(m_hsmClientCertificatePublicKeyHasBeenSet)
-  {
-      oStream << location << ".HsmClientCertificatePublicKey=" << StringUtils::URLEncode(m_hsmClientCertificatePublicKey.c_str()) << "&";
-  }
-  if(m_tagsHasBeenSet)
-  {
-      unsigned tagsIdx = 1;
-      for(auto& item : m_tags)
-      {
-        Aws::StringStream tagsSs;
-        tagsSs << location << ".Tags.Tag." << tagsIdx++;
-        item.OutputToStream(oStream, tagsSs.str().c_str());
-      }
+  if (m_tagsHasBeenSet) {
+    unsigned tagsIdx = 1;
+    for (auto& item : m_tags) {
+      Aws::StringStream tagsSs;
+      tagsSs << location << index << locationValue << ".Tags.Tag." << tagsIdx++;
+      item.OutputToStream(oStream, tagsSs.str().c_str());
+    }
   }
 }
 
-} // namespace Model
-} // namespace Redshift
-} // namespace Aws
+void HsmClientCertificate::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_hsmClientCertificateIdentifierHasBeenSet) {
+    oStream << location << ".HsmClientCertificateIdentifier=" << StringUtils::URLEncode(m_hsmClientCertificateIdentifier.c_str()) << "&";
+  }
+  if (m_hsmClientCertificatePublicKeyHasBeenSet) {
+    oStream << location << ".HsmClientCertificatePublicKey=" << StringUtils::URLEncode(m_hsmClientCertificatePublicKey.c_str()) << "&";
+  }
+  if (m_tagsHasBeenSet) {
+    unsigned tagsIdx = 1;
+    for (auto& item : m_tags) {
+      Aws::StringStream tagsSs;
+      tagsSs << location << ".Tags.Tag." << tagsIdx++;
+      item.OutputToStream(oStream, tagsSs.str().c_str());
+    }
+  }
+}
+
+}  // namespace Model
+}  // namespace Redshift
+}  // namespace Aws

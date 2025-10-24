@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-ChatStreamingConfiguration::ChatStreamingConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ChatStreamingConfiguration::ChatStreamingConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ChatStreamingConfiguration& ChatStreamingConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("StreamingEndpointArn"))
-  {
+ChatStreamingConfiguration& ChatStreamingConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("StreamingEndpointArn")) {
     m_streamingEndpointArn = jsonValue.GetString("StreamingEndpointArn");
     m_streamingEndpointArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ChatStreamingConfiguration::Jsonize() const
-{
+JsonValue ChatStreamingConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_streamingEndpointArnHasBeenSet)
-  {
-   payload.WithString("StreamingEndpointArn", m_streamingEndpointArn);
-
+  if (m_streamingEndpointArnHasBeenSet) {
+    payload.WithString("StreamingEndpointArn", m_streamingEndpointArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

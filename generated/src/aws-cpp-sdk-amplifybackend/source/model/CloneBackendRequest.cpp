@@ -12,19 +12,12 @@ using namespace Aws::AmplifyBackend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CloneBackendRequest::SerializePayload() const
-{
+Aws::String CloneBackendRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_targetEnvironmentNameHasBeenSet)
-  {
-   payload.WithString("targetEnvironmentName", m_targetEnvironmentName);
-
+  if (m_targetEnvironmentNameHasBeenSet) {
+    payload.WithString("targetEnvironmentName", m_targetEnvironmentName);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

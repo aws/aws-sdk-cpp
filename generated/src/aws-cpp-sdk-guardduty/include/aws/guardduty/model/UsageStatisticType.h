@@ -4,32 +4,27 @@
  */
 
 #pragma once
-#include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/guardduty/GuardDuty_EXPORTS.h>
 
-namespace Aws
-{
-namespace GuardDuty
-{
-namespace Model
-{
-  enum class UsageStatisticType
-  {
-    NOT_SET,
-    SUM_BY_ACCOUNT,
-    SUM_BY_DATA_SOURCE,
-    SUM_BY_RESOURCE,
-    TOP_RESOURCES,
-    SUM_BY_FEATURES,
-    TOP_ACCOUNTS_BY_FEATURE
-  };
+namespace Aws {
+namespace GuardDuty {
+namespace Model {
+enum class UsageStatisticType {
+  NOT_SET,
+  SUM_BY_ACCOUNT,
+  SUM_BY_DATA_SOURCE,
+  SUM_BY_RESOURCE,
+  TOP_RESOURCES,
+  SUM_BY_FEATURES,
+  TOP_ACCOUNTS_BY_FEATURE
+};
 
-namespace UsageStatisticTypeMapper
-{
+namespace UsageStatisticTypeMapper {
 AWS_GUARDDUTY_API UsageStatisticType GetUsageStatisticTypeForName(const Aws::String& name);
 
 AWS_GUARDDUTY_API Aws::String GetNameForUsageStatisticType(UsageStatisticType value);
-} // namespace UsageStatisticTypeMapper
-} // namespace Model
-} // namespace GuardDuty
-} // namespace Aws
+}  // namespace UsageStatisticTypeMapper
+}  // namespace Model
+}  // namespace GuardDuty
+}  // namespace Aws

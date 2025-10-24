@@ -3,39 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ReplaceTransitGatewayRouteRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ReplaceTransitGatewayRouteRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ReplaceTransitGatewayRouteRequest::SerializePayload() const
-{
+Aws::String ReplaceTransitGatewayRouteRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ReplaceTransitGatewayRoute&";
-  if(m_destinationCidrBlockHasBeenSet)
-  {
+  if (m_destinationCidrBlockHasBeenSet) {
     ss << "DestinationCidrBlock=" << StringUtils::URLEncode(m_destinationCidrBlock.c_str()) << "&";
   }
 
-  if(m_transitGatewayRouteTableIdHasBeenSet)
-  {
+  if (m_transitGatewayRouteTableIdHasBeenSet) {
     ss << "TransitGatewayRouteTableId=" << StringUtils::URLEncode(m_transitGatewayRouteTableId.c_str()) << "&";
   }
 
-  if(m_transitGatewayAttachmentIdHasBeenSet)
-  {
+  if (m_transitGatewayAttachmentIdHasBeenSet) {
     ss << "TransitGatewayAttachmentId=" << StringUtils::URLEncode(m_transitGatewayAttachmentId.c_str()) << "&";
   }
 
-  if(m_blackholeHasBeenSet)
-  {
+  if (m_blackholeHasBeenSet) {
     ss << "Blackhole=" << std::boolalpha << m_blackhole << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -43,8 +37,4 @@ Aws::String ReplaceTransitGatewayRouteRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ReplaceTransitGatewayRouteRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ReplaceTransitGatewayRouteRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

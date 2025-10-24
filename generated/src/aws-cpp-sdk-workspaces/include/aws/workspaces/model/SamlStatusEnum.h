@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workspaces/WorkSpaces_EXPORTS.h>
 
-namespace Aws
-{
-namespace WorkSpaces
-{
-namespace Model
-{
-  enum class SamlStatusEnum
-  {
-    NOT_SET,
-    DISABLED,
-    ENABLED,
-    ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK
-  };
+namespace Aws {
+namespace WorkSpaces {
+namespace Model {
+enum class SamlStatusEnum { NOT_SET, DISABLED, ENABLED, ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK };
 
-namespace SamlStatusEnumMapper
-{
+namespace SamlStatusEnumMapper {
 AWS_WORKSPACES_API SamlStatusEnum GetSamlStatusEnumForName(const Aws::String& name);
 
 AWS_WORKSPACES_API Aws::String GetNameForSamlStatusEnum(SamlStatusEnum value);
-} // namespace SamlStatusEnumMapper
-} // namespace Model
-} // namespace WorkSpaces
-} // namespace Aws
+}  // namespace SamlStatusEnumMapper
+}  // namespace Model
+}  // namespace WorkSpaces
+}  // namespace Aws

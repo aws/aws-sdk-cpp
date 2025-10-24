@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-PromptInferenceConfiguration::PromptInferenceConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PromptInferenceConfiguration::PromptInferenceConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-PromptInferenceConfiguration& PromptInferenceConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("text"))
-  {
+PromptInferenceConfiguration& PromptInferenceConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("text")) {
     m_text = jsonValue.GetObject("text");
     m_textHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PromptInferenceConfiguration::Jsonize() const
-{
+JsonValue PromptInferenceConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_textHasBeenSet)
-  {
-   payload.WithObject("text", m_text.Jsonize());
-
+  if (m_textHasBeenSet) {
+    payload.WithObject("text", m_text.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

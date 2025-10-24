@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/waf/model/RegexMatchTuple.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/waf/model/RegexMatchTuple.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WAF
-{
-namespace Model
-{
+namespace Aws {
+namespace WAF {
+namespace Model {
 
-RegexMatchTuple::RegexMatchTuple(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RegexMatchTuple::RegexMatchTuple(JsonView jsonValue) { *this = jsonValue; }
 
-RegexMatchTuple& RegexMatchTuple::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FieldToMatch"))
-  {
+RegexMatchTuple& RegexMatchTuple::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FieldToMatch")) {
     m_fieldToMatch = jsonValue.GetObject("FieldToMatch");
     m_fieldToMatchHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TextTransformation"))
-  {
+  if (jsonValue.ValueExists("TextTransformation")) {
     m_textTransformation = TextTransformationMapper::GetTextTransformationForName(jsonValue.GetString("TextTransformation"));
     m_textTransformationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RegexPatternSetId"))
-  {
+  if (jsonValue.ValueExists("RegexPatternSetId")) {
     m_regexPatternSetId = jsonValue.GetString("RegexPatternSetId");
     m_regexPatternSetIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RegexMatchTuple::Jsonize() const
-{
+JsonValue RegexMatchTuple::Jsonize() const {
   JsonValue payload;
 
-  if(m_fieldToMatchHasBeenSet)
-  {
-   payload.WithObject("FieldToMatch", m_fieldToMatch.Jsonize());
-
+  if (m_fieldToMatchHasBeenSet) {
+    payload.WithObject("FieldToMatch", m_fieldToMatch.Jsonize());
   }
 
-  if(m_textTransformationHasBeenSet)
-  {
-   payload.WithString("TextTransformation", TextTransformationMapper::GetNameForTextTransformation(m_textTransformation));
+  if (m_textTransformationHasBeenSet) {
+    payload.WithString("TextTransformation", TextTransformationMapper::GetNameForTextTransformation(m_textTransformation));
   }
 
-  if(m_regexPatternSetIdHasBeenSet)
-  {
-   payload.WithString("RegexPatternSetId", m_regexPatternSetId);
-
+  if (m_regexPatternSetIdHasBeenSet) {
+    payload.WithString("RegexPatternSetId", m_regexPatternSetId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WAF
-} // namespace Aws
+}  // namespace Model
+}  // namespace WAF
+}  // namespace Aws

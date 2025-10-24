@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeVerifiedAccessEndpointsResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/DescribeVerifiedAccessEndpointsResponse.h>
 
 #include <utility>
 
@@ -17,30 +17,25 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeVerifiedAccessEndpointsResponse::DescribeVerifiedAccessEndpointsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeVerifiedAccessEndpointsResponse::DescribeVerifiedAccessEndpointsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-DescribeVerifiedAccessEndpointsResponse& DescribeVerifiedAccessEndpointsResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeVerifiedAccessEndpointsResponse& DescribeVerifiedAccessEndpointsResponse::operator=(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeVerifiedAccessEndpointsResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeVerifiedAccessEndpointsResponse")) {
     resultNode = rootNode.FirstChild("DescribeVerifiedAccessEndpointsResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode verifiedAccessEndpointsNode = resultNode.FirstChild("verifiedAccessEndpointSet");
-    if(!verifiedAccessEndpointsNode.IsNull())
-    {
+    if (!verifiedAccessEndpointsNode.IsNull()) {
       XmlNode verifiedAccessEndpointsMember = verifiedAccessEndpointsNode.FirstChild("item");
       m_verifiedAccessEndpointsHasBeenSet = !verifiedAccessEndpointsMember.IsNull();
-      while(!verifiedAccessEndpointsMember.IsNull())
-      {
+      while (!verifiedAccessEndpointsMember.IsNull()) {
         m_verifiedAccessEndpoints.push_back(verifiedAccessEndpointsMember);
         verifiedAccessEndpointsMember = verifiedAccessEndpointsMember.NextNode("item");
       }
@@ -48,8 +43,7 @@ DescribeVerifiedAccessEndpointsResponse& DescribeVerifiedAccessEndpointsResponse
       m_verifiedAccessEndpointsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
+    if (!nextTokenNode.IsNull()) {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
       m_nextTokenHasBeenSet = true;
     }
@@ -57,12 +51,12 @@ DescribeVerifiedAccessEndpointsResponse& DescribeVerifiedAccessEndpointsResponse
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeVerifiedAccessEndpointsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeVerifiedAccessEndpointsResponse",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

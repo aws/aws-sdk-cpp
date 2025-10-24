@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeCommit
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeCommit {
+namespace Model {
 
-IsBinaryFile::IsBinaryFile(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IsBinaryFile::IsBinaryFile(JsonView jsonValue) { *this = jsonValue; }
 
-IsBinaryFile& IsBinaryFile::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("source"))
-  {
+IsBinaryFile& IsBinaryFile::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("source")) {
     m_source = jsonValue.GetBool("source");
     m_sourceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("destination"))
-  {
+  if (jsonValue.ValueExists("destination")) {
     m_destination = jsonValue.GetBool("destination");
     m_destinationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("base"))
-  {
+  if (jsonValue.ValueExists("base")) {
     m_base = jsonValue.GetBool("base");
     m_baseHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IsBinaryFile::Jsonize() const
-{
+JsonValue IsBinaryFile::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceHasBeenSet)
-  {
-   payload.WithBool("source", m_source);
-
+  if (m_sourceHasBeenSet) {
+    payload.WithBool("source", m_source);
   }
 
-  if(m_destinationHasBeenSet)
-  {
-   payload.WithBool("destination", m_destination);
-
+  if (m_destinationHasBeenSet) {
+    payload.WithBool("destination", m_destination);
   }
 
-  if(m_baseHasBeenSet)
-  {
-   payload.WithBool("base", m_base);
-
+  if (m_baseHasBeenSet) {
+    payload.WithBool("base", m_base);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeCommit
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeCommit
+}  // namespace Aws

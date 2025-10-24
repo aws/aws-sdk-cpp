@@ -4,69 +4,55 @@
  */
 
 #include <aws/cleanrooms/model/AnalysisType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
+namespace AnalysisTypeMapper {
 
-namespace Aws
-{
-  namespace CleanRooms
-  {
-    namespace Model
-    {
-      namespace AnalysisTypeMapper
-      {
+static const int DIRECT_ANALYSIS_HASH = HashingUtils::HashString("DIRECT_ANALYSIS");
+static const int ADDITIONAL_ANALYSIS_HASH = HashingUtils::HashString("ADDITIONAL_ANALYSIS");
 
-        static const int DIRECT_ANALYSIS_HASH = HashingUtils::HashString("DIRECT_ANALYSIS");
-        static const int ADDITIONAL_ANALYSIS_HASH = HashingUtils::HashString("ADDITIONAL_ANALYSIS");
+AnalysisType GetAnalysisTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == DIRECT_ANALYSIS_HASH) {
+    return AnalysisType::DIRECT_ANALYSIS;
+  } else if (hashCode == ADDITIONAL_ANALYSIS_HASH) {
+    return AnalysisType::ADDITIONAL_ANALYSIS;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<AnalysisType>(hashCode);
+  }
 
+  return AnalysisType::NOT_SET;
+}
 
-        AnalysisType GetAnalysisTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == DIRECT_ANALYSIS_HASH)
-          {
-            return AnalysisType::DIRECT_ANALYSIS;
-          }
-          else if (hashCode == ADDITIONAL_ANALYSIS_HASH)
-          {
-            return AnalysisType::ADDITIONAL_ANALYSIS;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<AnalysisType>(hashCode);
-          }
+Aws::String GetNameForAnalysisType(AnalysisType enumValue) {
+  switch (enumValue) {
+    case AnalysisType::NOT_SET:
+      return {};
+    case AnalysisType::DIRECT_ANALYSIS:
+      return "DIRECT_ANALYSIS";
+    case AnalysisType::ADDITIONAL_ANALYSIS:
+      return "ADDITIONAL_ANALYSIS";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return AnalysisType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForAnalysisType(AnalysisType enumValue)
-        {
-          switch(enumValue)
-          {
-          case AnalysisType::NOT_SET:
-            return {};
-          case AnalysisType::DIRECT_ANALYSIS:
-            return "DIRECT_ANALYSIS";
-          case AnalysisType::ADDITIONAL_ANALYSIS:
-            return "ADDITIONAL_ANALYSIS";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace AnalysisTypeMapper
-    } // namespace Model
-  } // namespace CleanRooms
-} // namespace Aws
+}  // namespace AnalysisTypeMapper
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

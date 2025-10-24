@@ -11,73 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppFabric
-{
-namespace Model
-{
+namespace Aws {
+namespace AppFabric {
+namespace Model {
 
-IngestionSummary::IngestionSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IngestionSummary::IngestionSummary(JsonView jsonValue) { *this = jsonValue; }
 
-IngestionSummary& IngestionSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("arn"))
-  {
+IngestionSummary& IngestionSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("app"))
-  {
+  if (jsonValue.ValueExists("app")) {
     m_app = jsonValue.GetString("app");
     m_appHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tenantId"))
-  {
+  if (jsonValue.ValueExists("tenantId")) {
     m_tenantId = jsonValue.GetString("tenantId");
     m_tenantIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("state"))
-  {
+  if (jsonValue.ValueExists("state")) {
     m_state = IngestionStateMapper::GetIngestionStateForName(jsonValue.GetString("state"));
     m_stateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IngestionSummary::Jsonize() const
-{
+JsonValue IngestionSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_appHasBeenSet)
-  {
-   payload.WithString("app", m_app);
-
+  if (m_appHasBeenSet) {
+    payload.WithString("app", m_app);
   }
 
-  if(m_tenantIdHasBeenSet)
-  {
-   payload.WithString("tenantId", m_tenantId);
-
+  if (m_tenantIdHasBeenSet) {
+    payload.WithString("tenantId", m_tenantId);
   }
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("state", IngestionStateMapper::GetNameForIngestionState(m_state));
+  if (m_stateHasBeenSet) {
+    payload.WithString("state", IngestionStateMapper::GetNameForIngestionState(m_state));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppFabric
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppFabric
+}  // namespace Aws

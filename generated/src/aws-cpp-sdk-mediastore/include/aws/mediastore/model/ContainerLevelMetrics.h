@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediastore/MediaStore_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediastore/MediaStore_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaStore
-{
-namespace Model
-{
-  enum class ContainerLevelMetrics
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace MediaStore {
+namespace Model {
+enum class ContainerLevelMetrics { NOT_SET, ENABLED, DISABLED };
 
-namespace ContainerLevelMetricsMapper
-{
+namespace ContainerLevelMetricsMapper {
 AWS_MEDIASTORE_API ContainerLevelMetrics GetContainerLevelMetricsForName(const Aws::String& name);
 
 AWS_MEDIASTORE_API Aws::String GetNameForContainerLevelMetrics(ContainerLevelMetrics value);
-} // namespace ContainerLevelMetricsMapper
-} // namespace Model
-} // namespace MediaStore
-} // namespace Aws
+}  // namespace ContainerLevelMetricsMapper
+}  // namespace Model
+}  // namespace MediaStore
+}  // namespace Aws

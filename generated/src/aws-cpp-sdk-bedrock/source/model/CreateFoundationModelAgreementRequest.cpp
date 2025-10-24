@@ -12,25 +12,16 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateFoundationModelAgreementRequest::SerializePayload() const
-{
+Aws::String CreateFoundationModelAgreementRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_offerTokenHasBeenSet)
-  {
-   payload.WithString("offerToken", m_offerToken);
-
+  if (m_offerTokenHasBeenSet) {
+    payload.WithString("offerToken", m_offerToken);
   }
 
-  if(m_modelIdHasBeenSet)
-  {
-   payload.WithString("modelId", m_modelId);
-
+  if (m_modelIdHasBeenSet) {
+    payload.WithString("modelId", m_modelId);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

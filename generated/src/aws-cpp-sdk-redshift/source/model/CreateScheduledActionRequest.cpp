@@ -3,54 +3,45 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/CreateScheduledActionRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/CreateScheduledActionRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateScheduledActionRequest::SerializePayload() const
-{
+Aws::String CreateScheduledActionRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateScheduledAction&";
-  if(m_scheduledActionNameHasBeenSet)
-  {
+  if (m_scheduledActionNameHasBeenSet) {
     ss << "ScheduledActionName=" << StringUtils::URLEncode(m_scheduledActionName.c_str()) << "&";
   }
 
-  if(m_targetActionHasBeenSet)
-  {
+  if (m_targetActionHasBeenSet) {
     m_targetAction.OutputToStream(ss, "TargetAction");
   }
 
-  if(m_scheduleHasBeenSet)
-  {
+  if (m_scheduleHasBeenSet) {
     ss << "Schedule=" << StringUtils::URLEncode(m_schedule.c_str()) << "&";
   }
 
-  if(m_iamRoleHasBeenSet)
-  {
+  if (m_iamRoleHasBeenSet) {
     ss << "IamRole=" << StringUtils::URLEncode(m_iamRole.c_str()) << "&";
   }
 
-  if(m_scheduledActionDescriptionHasBeenSet)
-  {
+  if (m_scheduledActionDescriptionHasBeenSet) {
     ss << "ScheduledActionDescription=" << StringUtils::URLEncode(m_scheduledActionDescription.c_str()) << "&";
   }
 
-  if(m_startTimeHasBeenSet)
-  {
+  if (m_startTimeHasBeenSet) {
     ss << "StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_endTimeHasBeenSet)
-  {
+  if (m_endTimeHasBeenSet) {
     ss << "EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_enableHasBeenSet)
-  {
+  if (m_enableHasBeenSet) {
     ss << "Enable=" << std::boolalpha << m_enable << "&";
   }
 
@@ -58,8 +49,4 @@ Aws::String CreateScheduledActionRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CreateScheduledActionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateScheduledActionRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

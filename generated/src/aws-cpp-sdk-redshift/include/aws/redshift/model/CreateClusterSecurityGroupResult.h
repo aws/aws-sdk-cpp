@@ -7,58 +7,63 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/redshift/model/ClusterSecurityGroup.h>
 #include <aws/redshift/model/ResponseMetadata.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Xml
-{
-  class XmlDocument;
-} // namespace Xml
-} // namespace Utils
-namespace Redshift
-{
-namespace Model
-{
-  class CreateClusterSecurityGroupResult
-  {
-  public:
-    AWS_REDSHIFT_API CreateClusterSecurityGroupResult() = default;
-    AWS_REDSHIFT_API CreateClusterSecurityGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AWS_REDSHIFT_API CreateClusterSecurityGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+namespace Utils {
+namespace Xml {
+class XmlDocument;
+}  // namespace Xml
+}  // namespace Utils
+namespace Redshift {
+namespace Model {
+class CreateClusterSecurityGroupResult {
+ public:
+  AWS_REDSHIFT_API CreateClusterSecurityGroupResult() = default;
+  AWS_REDSHIFT_API CreateClusterSecurityGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_REDSHIFT_API CreateClusterSecurityGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
+  ///@{
 
-    ///@{
-    
-    inline const ClusterSecurityGroup& GetClusterSecurityGroup() const { return m_clusterSecurityGroup; }
-    template<typename ClusterSecurityGroupT = ClusterSecurityGroup>
-    void SetClusterSecurityGroup(ClusterSecurityGroupT&& value) { m_clusterSecurityGroupHasBeenSet = true; m_clusterSecurityGroup = std::forward<ClusterSecurityGroupT>(value); }
-    template<typename ClusterSecurityGroupT = ClusterSecurityGroup>
-    CreateClusterSecurityGroupResult& WithClusterSecurityGroup(ClusterSecurityGroupT&& value) { SetClusterSecurityGroup(std::forward<ClusterSecurityGroupT>(value)); return *this;}
-    ///@}
+  inline const ClusterSecurityGroup& GetClusterSecurityGroup() const { return m_clusterSecurityGroup; }
+  template <typename ClusterSecurityGroupT = ClusterSecurityGroup>
+  void SetClusterSecurityGroup(ClusterSecurityGroupT&& value) {
+    m_clusterSecurityGroupHasBeenSet = true;
+    m_clusterSecurityGroup = std::forward<ClusterSecurityGroupT>(value);
+  }
+  template <typename ClusterSecurityGroupT = ClusterSecurityGroup>
+  CreateClusterSecurityGroupResult& WithClusterSecurityGroup(ClusterSecurityGroupT&& value) {
+    SetClusterSecurityGroup(std::forward<ClusterSecurityGroupT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    
-    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
-    template<typename ResponseMetadataT = ResponseMetadata>
-    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
-    template<typename ResponseMetadataT = ResponseMetadata>
-    CreateClusterSecurityGroupResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
-    ///@}
-  private:
+  ///@{
 
-    ClusterSecurityGroup m_clusterSecurityGroup;
-    bool m_clusterSecurityGroupHasBeenSet = false;
+  inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  void SetResponseMetadata(ResponseMetadataT&& value) {
+    m_responseMetadataHasBeenSet = true;
+    m_responseMetadata = std::forward<ResponseMetadataT>(value);
+  }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  CreateClusterSecurityGroupResult& WithResponseMetadata(ResponseMetadataT&& value) {
+    SetResponseMetadata(std::forward<ResponseMetadataT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  ClusterSecurityGroup m_clusterSecurityGroup;
+  bool m_clusterSecurityGroupHasBeenSet = false;
 
-    ResponseMetadata m_responseMetadata;
-    bool m_responseMetadataHasBeenSet = false;
-  };
+  ResponseMetadata m_responseMetadata;
+  bool m_responseMetadataHasBeenSet = false;
+};
 
-} // namespace Model
-} // namespace Redshift
-} // namespace Aws
+}  // namespace Model
+}  // namespace Redshift
+}  // namespace Aws

@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/finspace-data/model/AwsCredentials.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/finspace-data/model/AwsCredentials.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FinSpaceData
-{
-namespace Model
-{
+namespace Aws {
+namespace FinSpaceData {
+namespace Model {
 
-AwsCredentials::AwsCredentials(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsCredentials::AwsCredentials(JsonView jsonValue) { *this = jsonValue; }
 
-AwsCredentials& AwsCredentials::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("accessKeyId"))
-  {
+AwsCredentials& AwsCredentials::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("accessKeyId")) {
     m_accessKeyId = jsonValue.GetString("accessKeyId");
     m_accessKeyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("secretAccessKey"))
-  {
+  if (jsonValue.ValueExists("secretAccessKey")) {
     m_secretAccessKey = jsonValue.GetString("secretAccessKey");
     m_secretAccessKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sessionToken"))
-  {
+  if (jsonValue.ValueExists("sessionToken")) {
     m_sessionToken = jsonValue.GetString("sessionToken");
     m_sessionTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("expiration"))
-  {
+  if (jsonValue.ValueExists("expiration")) {
     m_expiration = jsonValue.GetInt64("expiration");
     m_expirationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsCredentials::Jsonize() const
-{
+JsonValue AwsCredentials::Jsonize() const {
   JsonValue payload;
 
-  if(m_accessKeyIdHasBeenSet)
-  {
-   payload.WithString("accessKeyId", m_accessKeyId);
-
+  if (m_accessKeyIdHasBeenSet) {
+    payload.WithString("accessKeyId", m_accessKeyId);
   }
 
-  if(m_secretAccessKeyHasBeenSet)
-  {
-   payload.WithString("secretAccessKey", m_secretAccessKey);
-
+  if (m_secretAccessKeyHasBeenSet) {
+    payload.WithString("secretAccessKey", m_secretAccessKey);
   }
 
-  if(m_sessionTokenHasBeenSet)
-  {
-   payload.WithString("sessionToken", m_sessionToken);
-
+  if (m_sessionTokenHasBeenSet) {
+    payload.WithString("sessionToken", m_sessionToken);
   }
 
-  if(m_expirationHasBeenSet)
-  {
-   payload.WithInt64("expiration", m_expiration);
-
+  if (m_expirationHasBeenSet) {
+    payload.WithInt64("expiration", m_expiration);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FinSpaceData
-} // namespace Aws
+}  // namespace Model
+}  // namespace FinSpaceData
+}  // namespace Aws

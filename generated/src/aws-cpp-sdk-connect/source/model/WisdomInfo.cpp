@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-WisdomInfo::WisdomInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+WisdomInfo::WisdomInfo(JsonView jsonValue) { *this = jsonValue; }
 
-WisdomInfo& WisdomInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SessionArn"))
-  {
+WisdomInfo& WisdomInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SessionArn")) {
     m_sessionArn = jsonValue.GetString("SessionArn");
     m_sessionArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue WisdomInfo::Jsonize() const
-{
+JsonValue WisdomInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_sessionArnHasBeenSet)
-  {
-   payload.WithString("SessionArn", m_sessionArn);
-
+  if (m_sessionArnHasBeenSet) {
+    payload.WithString("SessionArn", m_sessionArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

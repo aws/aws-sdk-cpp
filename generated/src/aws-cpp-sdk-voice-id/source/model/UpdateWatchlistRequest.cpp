@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/voice-id/model/UpdateWatchlistRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/voice-id/model/UpdateWatchlistRequest.h>
 
 #include <utility>
 
@@ -12,45 +12,30 @@ using namespace Aws::VoiceID::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateWatchlistRequest::SerializePayload() const
-{
+Aws::String UpdateWatchlistRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_domainIdHasBeenSet)
-  {
-   payload.WithString("DomainId", m_domainId);
-
+  if (m_domainIdHasBeenSet) {
+    payload.WithString("DomainId", m_domainId);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_watchlistIdHasBeenSet)
-  {
-   payload.WithString("WatchlistId", m_watchlistId);
-
+  if (m_watchlistIdHasBeenSet) {
+    payload.WithString("WatchlistId", m_watchlistId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateWatchlistRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateWatchlistRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "VoiceID.UpdateWatchlist"));
   return headers;
-
 }
-
-
-
-

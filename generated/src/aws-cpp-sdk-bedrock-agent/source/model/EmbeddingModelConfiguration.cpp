@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-EmbeddingModelConfiguration::EmbeddingModelConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EmbeddingModelConfiguration::EmbeddingModelConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-EmbeddingModelConfiguration& EmbeddingModelConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("bedrockEmbeddingModelConfiguration"))
-  {
+EmbeddingModelConfiguration& EmbeddingModelConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("bedrockEmbeddingModelConfiguration")) {
     m_bedrockEmbeddingModelConfiguration = jsonValue.GetObject("bedrockEmbeddingModelConfiguration");
     m_bedrockEmbeddingModelConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EmbeddingModelConfiguration::Jsonize() const
-{
+JsonValue EmbeddingModelConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_bedrockEmbeddingModelConfigurationHasBeenSet)
-  {
-   payload.WithObject("bedrockEmbeddingModelConfiguration", m_bedrockEmbeddingModelConfiguration.Jsonize());
-
+  if (m_bedrockEmbeddingModelConfigurationHasBeenSet) {
+    payload.WithObject("bedrockEmbeddingModelConfiguration", m_bedrockEmbeddingModelConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

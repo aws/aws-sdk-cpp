@@ -3,71 +3,59 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/VpcEndpointConnection.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/VpcEndpointConnection.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-VpcEndpointConnection::VpcEndpointConnection(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+VpcEndpointConnection::VpcEndpointConnection(const XmlNode& xmlNode) { *this = xmlNode; }
 
-VpcEndpointConnection& VpcEndpointConnection::operator =(const XmlNode& xmlNode)
-{
+VpcEndpointConnection& VpcEndpointConnection::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode serviceIdNode = resultNode.FirstChild("serviceId");
-    if(!serviceIdNode.IsNull())
-    {
+    if (!serviceIdNode.IsNull()) {
       m_serviceId = Aws::Utils::Xml::DecodeEscapedXmlText(serviceIdNode.GetText());
       m_serviceIdHasBeenSet = true;
     }
     XmlNode vpcEndpointIdNode = resultNode.FirstChild("vpcEndpointId");
-    if(!vpcEndpointIdNode.IsNull())
-    {
+    if (!vpcEndpointIdNode.IsNull()) {
       m_vpcEndpointId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcEndpointIdNode.GetText());
       m_vpcEndpointIdHasBeenSet = true;
     }
     XmlNode vpcEndpointOwnerNode = resultNode.FirstChild("vpcEndpointOwner");
-    if(!vpcEndpointOwnerNode.IsNull())
-    {
+    if (!vpcEndpointOwnerNode.IsNull()) {
       m_vpcEndpointOwner = Aws::Utils::Xml::DecodeEscapedXmlText(vpcEndpointOwnerNode.GetText());
       m_vpcEndpointOwnerHasBeenSet = true;
     }
     XmlNode vpcEndpointStateNode = resultNode.FirstChild("vpcEndpointState");
-    if(!vpcEndpointStateNode.IsNull())
-    {
-      m_vpcEndpointState = StateMapper::GetStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(vpcEndpointStateNode.GetText()).c_str()));
+    if (!vpcEndpointStateNode.IsNull()) {
+      m_vpcEndpointState =
+          StateMapper::GetStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(vpcEndpointStateNode.GetText()).c_str()));
       m_vpcEndpointStateHasBeenSet = true;
     }
     XmlNode creationTimestampNode = resultNode.FirstChild("creationTimestamp");
-    if(!creationTimestampNode.IsNull())
-    {
-      m_creationTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+    if (!creationTimestampNode.IsNull()) {
+      m_creationTimestamp =
+          DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimestampNode.GetText()).c_str()).c_str(),
+                   Aws::Utils::DateFormat::ISO_8601);
       m_creationTimestampHasBeenSet = true;
     }
     XmlNode dnsEntriesNode = resultNode.FirstChild("dnsEntrySet");
-    if(!dnsEntriesNode.IsNull())
-    {
+    if (!dnsEntriesNode.IsNull()) {
       XmlNode dnsEntriesMember = dnsEntriesNode.FirstChild("item");
       m_dnsEntriesHasBeenSet = !dnsEntriesMember.IsNull();
-      while(!dnsEntriesMember.IsNull())
-      {
+      while (!dnsEntriesMember.IsNull()) {
         m_dnsEntries.push_back(dnsEntriesMember);
         dnsEntriesMember = dnsEntriesMember.NextNode("item");
       }
@@ -75,12 +63,10 @@ VpcEndpointConnection& VpcEndpointConnection::operator =(const XmlNode& xmlNode)
       m_dnsEntriesHasBeenSet = true;
     }
     XmlNode networkLoadBalancerArnsNode = resultNode.FirstChild("networkLoadBalancerArnSet");
-    if(!networkLoadBalancerArnsNode.IsNull())
-    {
+    if (!networkLoadBalancerArnsNode.IsNull()) {
       XmlNode networkLoadBalancerArnsMember = networkLoadBalancerArnsNode.FirstChild("item");
       m_networkLoadBalancerArnsHasBeenSet = !networkLoadBalancerArnsMember.IsNull();
-      while(!networkLoadBalancerArnsMember.IsNull())
-      {
+      while (!networkLoadBalancerArnsMember.IsNull()) {
         m_networkLoadBalancerArns.push_back(networkLoadBalancerArnsMember.GetText());
         networkLoadBalancerArnsMember = networkLoadBalancerArnsMember.NextNode("item");
       }
@@ -88,12 +74,10 @@ VpcEndpointConnection& VpcEndpointConnection::operator =(const XmlNode& xmlNode)
       m_networkLoadBalancerArnsHasBeenSet = true;
     }
     XmlNode gatewayLoadBalancerArnsNode = resultNode.FirstChild("gatewayLoadBalancerArnSet");
-    if(!gatewayLoadBalancerArnsNode.IsNull())
-    {
+    if (!gatewayLoadBalancerArnsNode.IsNull()) {
       XmlNode gatewayLoadBalancerArnsMember = gatewayLoadBalancerArnsNode.FirstChild("item");
       m_gatewayLoadBalancerArnsHasBeenSet = !gatewayLoadBalancerArnsMember.IsNull();
-      while(!gatewayLoadBalancerArnsMember.IsNull())
-      {
+      while (!gatewayLoadBalancerArnsMember.IsNull()) {
         m_gatewayLoadBalancerArns.push_back(gatewayLoadBalancerArnsMember.GetText());
         gatewayLoadBalancerArnsMember = gatewayLoadBalancerArnsMember.NextNode("item");
       }
@@ -101,24 +85,21 @@ VpcEndpointConnection& VpcEndpointConnection::operator =(const XmlNode& xmlNode)
       m_gatewayLoadBalancerArnsHasBeenSet = true;
     }
     XmlNode ipAddressTypeNode = resultNode.FirstChild("ipAddressType");
-    if(!ipAddressTypeNode.IsNull())
-    {
-      m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()));
+    if (!ipAddressTypeNode.IsNull()) {
+      m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()));
       m_ipAddressTypeHasBeenSet = true;
     }
     XmlNode vpcEndpointConnectionIdNode = resultNode.FirstChild("vpcEndpointConnectionId");
-    if(!vpcEndpointConnectionIdNode.IsNull())
-    {
+    if (!vpcEndpointConnectionIdNode.IsNull()) {
       m_vpcEndpointConnectionId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcEndpointConnectionIdNode.GetText());
       m_vpcEndpointConnectionIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
-    if(!tagsNode.IsNull())
-    {
+    if (!tagsNode.IsNull()) {
       XmlNode tagsMember = tagsNode.FirstChild("item");
       m_tagsHasBeenSet = !tagsMember.IsNull();
-      while(!tagsMember.IsNull())
-      {
+      while (!tagsMember.IsNull()) {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
@@ -126,8 +107,7 @@ VpcEndpointConnection& VpcEndpointConnection::operator =(const XmlNode& xmlNode)
       m_tagsHasBeenSet = true;
     }
     XmlNode vpcEndpointRegionNode = resultNode.FirstChild("vpcEndpointRegion");
-    if(!vpcEndpointRegionNode.IsNull())
-    {
+    if (!vpcEndpointRegionNode.IsNull()) {
       m_vpcEndpointRegion = Aws::Utils::Xml::DecodeEscapedXmlText(vpcEndpointRegionNode.GetText());
       m_vpcEndpointRegionHasBeenSet = true;
     }
@@ -136,162 +116,139 @@ VpcEndpointConnection& VpcEndpointConnection::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void VpcEndpointConnection::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_serviceIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ServiceId=" << StringUtils::URLEncode(m_serviceId.c_str()) << "&";
+void VpcEndpointConnection::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_serviceIdHasBeenSet) {
+    oStream << location << index << locationValue << ".ServiceId=" << StringUtils::URLEncode(m_serviceId.c_str()) << "&";
   }
 
-  if(m_vpcEndpointIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".VpcEndpointId=" << StringUtils::URLEncode(m_vpcEndpointId.c_str()) << "&";
+  if (m_vpcEndpointIdHasBeenSet) {
+    oStream << location << index << locationValue << ".VpcEndpointId=" << StringUtils::URLEncode(m_vpcEndpointId.c_str()) << "&";
   }
 
-  if(m_vpcEndpointOwnerHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".VpcEndpointOwner=" << StringUtils::URLEncode(m_vpcEndpointOwner.c_str()) << "&";
+  if (m_vpcEndpointOwnerHasBeenSet) {
+    oStream << location << index << locationValue << ".VpcEndpointOwner=" << StringUtils::URLEncode(m_vpcEndpointOwner.c_str()) << "&";
   }
 
-  if(m_vpcEndpointStateHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".VpcEndpointState=" << StringUtils::URLEncode(StateMapper::GetNameForState(m_vpcEndpointState)) << "&";
+  if (m_vpcEndpointStateHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".VpcEndpointState=" << StringUtils::URLEncode(StateMapper::GetNameForState(m_vpcEndpointState)) << "&";
   }
 
-  if(m_creationTimestampHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".CreationTimestamp=" << StringUtils::URLEncode(m_creationTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  if (m_creationTimestampHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".CreationTimestamp=" << StringUtils::URLEncode(m_creationTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str())
+            << "&";
   }
 
-  if(m_dnsEntriesHasBeenSet)
-  {
-      unsigned dnsEntriesIdx = 1;
-      for(auto& item : m_dnsEntries)
-      {
-        Aws::StringStream dnsEntriesSs;
-        dnsEntriesSs << location << index << locationValue << ".DnsEntrySet." << dnsEntriesIdx++;
-        item.OutputToStream(oStream, dnsEntriesSs.str().c_str());
-      }
+  if (m_dnsEntriesHasBeenSet) {
+    unsigned dnsEntriesIdx = 1;
+    for (auto& item : m_dnsEntries) {
+      Aws::StringStream dnsEntriesSs;
+      dnsEntriesSs << location << index << locationValue << ".DnsEntrySet." << dnsEntriesIdx++;
+      item.OutputToStream(oStream, dnsEntriesSs.str().c_str());
+    }
   }
 
-  if(m_networkLoadBalancerArnsHasBeenSet)
-  {
-      unsigned networkLoadBalancerArnsIdx = 1;
-      for(auto& item : m_networkLoadBalancerArns)
-      {
-        oStream << location << index << locationValue << ".NetworkLoadBalancerArnSet." << networkLoadBalancerArnsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
+  if (m_networkLoadBalancerArnsHasBeenSet) {
+    unsigned networkLoadBalancerArnsIdx = 1;
+    for (auto& item : m_networkLoadBalancerArns) {
+      oStream << location << index << locationValue << ".NetworkLoadBalancerArnSet." << networkLoadBalancerArnsIdx++ << "="
+              << StringUtils::URLEncode(item.c_str()) << "&";
+    }
   }
 
-  if(m_gatewayLoadBalancerArnsHasBeenSet)
-  {
-      unsigned gatewayLoadBalancerArnsIdx = 1;
-      for(auto& item : m_gatewayLoadBalancerArns)
-      {
-        oStream << location << index << locationValue << ".GatewayLoadBalancerArnSet." << gatewayLoadBalancerArnsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
+  if (m_gatewayLoadBalancerArnsHasBeenSet) {
+    unsigned gatewayLoadBalancerArnsIdx = 1;
+    for (auto& item : m_gatewayLoadBalancerArns) {
+      oStream << location << index << locationValue << ".GatewayLoadBalancerArnSet." << gatewayLoadBalancerArnsIdx++ << "="
+              << StringUtils::URLEncode(item.c_str()) << "&";
+    }
   }
 
-  if(m_ipAddressTypeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".IpAddressType=" << StringUtils::URLEncode(IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType)) << "&";
+  if (m_ipAddressTypeHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".IpAddressType=" << StringUtils::URLEncode(IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType)) << "&";
   }
 
-  if(m_vpcEndpointConnectionIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".VpcEndpointConnectionId=" << StringUtils::URLEncode(m_vpcEndpointConnectionId.c_str()) << "&";
+  if (m_vpcEndpointConnectionIdHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".VpcEndpointConnectionId=" << StringUtils::URLEncode(m_vpcEndpointConnectionId.c_str()) << "&";
   }
 
-  if(m_tagsHasBeenSet)
-  {
-      unsigned tagsIdx = 1;
-      for(auto& item : m_tags)
-      {
-        Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
-        item.OutputToStream(oStream, tagsSs.str().c_str());
-      }
+  if (m_tagsHasBeenSet) {
+    unsigned tagsIdx = 1;
+    for (auto& item : m_tags) {
+      Aws::StringStream tagsSs;
+      tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
+      item.OutputToStream(oStream, tagsSs.str().c_str());
+    }
   }
 
-  if(m_vpcEndpointRegionHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".VpcEndpointRegion=" << StringUtils::URLEncode(m_vpcEndpointRegion.c_str()) << "&";
-  }
-
-}
-
-void VpcEndpointConnection::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_serviceIdHasBeenSet)
-  {
-      oStream << location << ".ServiceId=" << StringUtils::URLEncode(m_serviceId.c_str()) << "&";
-  }
-  if(m_vpcEndpointIdHasBeenSet)
-  {
-      oStream << location << ".VpcEndpointId=" << StringUtils::URLEncode(m_vpcEndpointId.c_str()) << "&";
-  }
-  if(m_vpcEndpointOwnerHasBeenSet)
-  {
-      oStream << location << ".VpcEndpointOwner=" << StringUtils::URLEncode(m_vpcEndpointOwner.c_str()) << "&";
-  }
-  if(m_vpcEndpointStateHasBeenSet)
-  {
-      oStream << location << ".VpcEndpointState=" << StringUtils::URLEncode(StateMapper::GetNameForState(m_vpcEndpointState)) << "&";
-  }
-  if(m_creationTimestampHasBeenSet)
-  {
-      oStream << location << ".CreationTimestamp=" << StringUtils::URLEncode(m_creationTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
-  }
-  if(m_dnsEntriesHasBeenSet)
-  {
-      unsigned dnsEntriesIdx = 1;
-      for(auto& item : m_dnsEntries)
-      {
-        Aws::StringStream dnsEntriesSs;
-        dnsEntriesSs << location << ".DnsEntrySet." << dnsEntriesIdx++;
-        item.OutputToStream(oStream, dnsEntriesSs.str().c_str());
-      }
-  }
-  if(m_networkLoadBalancerArnsHasBeenSet)
-  {
-      unsigned networkLoadBalancerArnsIdx = 1;
-      for(auto& item : m_networkLoadBalancerArns)
-      {
-        oStream << location << ".NetworkLoadBalancerArnSet." << networkLoadBalancerArnsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
-  }
-  if(m_gatewayLoadBalancerArnsHasBeenSet)
-  {
-      unsigned gatewayLoadBalancerArnsIdx = 1;
-      for(auto& item : m_gatewayLoadBalancerArns)
-      {
-        oStream << location << ".GatewayLoadBalancerArnSet." << gatewayLoadBalancerArnsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
-  }
-  if(m_ipAddressTypeHasBeenSet)
-  {
-      oStream << location << ".IpAddressType=" << StringUtils::URLEncode(IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType)) << "&";
-  }
-  if(m_vpcEndpointConnectionIdHasBeenSet)
-  {
-      oStream << location << ".VpcEndpointConnectionId=" << StringUtils::URLEncode(m_vpcEndpointConnectionId.c_str()) << "&";
-  }
-  if(m_tagsHasBeenSet)
-  {
-      unsigned tagsIdx = 1;
-      for(auto& item : m_tags)
-      {
-        Aws::StringStream tagsSs;
-        tagsSs << location << ".TagSet." << tagsIdx++;
-        item.OutputToStream(oStream, tagsSs.str().c_str());
-      }
-  }
-  if(m_vpcEndpointRegionHasBeenSet)
-  {
-      oStream << location << ".VpcEndpointRegion=" << StringUtils::URLEncode(m_vpcEndpointRegion.c_str()) << "&";
+  if (m_vpcEndpointRegionHasBeenSet) {
+    oStream << location << index << locationValue << ".VpcEndpointRegion=" << StringUtils::URLEncode(m_vpcEndpointRegion.c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void VpcEndpointConnection::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_serviceIdHasBeenSet) {
+    oStream << location << ".ServiceId=" << StringUtils::URLEncode(m_serviceId.c_str()) << "&";
+  }
+  if (m_vpcEndpointIdHasBeenSet) {
+    oStream << location << ".VpcEndpointId=" << StringUtils::URLEncode(m_vpcEndpointId.c_str()) << "&";
+  }
+  if (m_vpcEndpointOwnerHasBeenSet) {
+    oStream << location << ".VpcEndpointOwner=" << StringUtils::URLEncode(m_vpcEndpointOwner.c_str()) << "&";
+  }
+  if (m_vpcEndpointStateHasBeenSet) {
+    oStream << location << ".VpcEndpointState=" << StringUtils::URLEncode(StateMapper::GetNameForState(m_vpcEndpointState)) << "&";
+  }
+  if (m_creationTimestampHasBeenSet) {
+    oStream << location
+            << ".CreationTimestamp=" << StringUtils::URLEncode(m_creationTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str())
+            << "&";
+  }
+  if (m_dnsEntriesHasBeenSet) {
+    unsigned dnsEntriesIdx = 1;
+    for (auto& item : m_dnsEntries) {
+      Aws::StringStream dnsEntriesSs;
+      dnsEntriesSs << location << ".DnsEntrySet." << dnsEntriesIdx++;
+      item.OutputToStream(oStream, dnsEntriesSs.str().c_str());
+    }
+  }
+  if (m_networkLoadBalancerArnsHasBeenSet) {
+    unsigned networkLoadBalancerArnsIdx = 1;
+    for (auto& item : m_networkLoadBalancerArns) {
+      oStream << location << ".NetworkLoadBalancerArnSet." << networkLoadBalancerArnsIdx++ << "=" << StringUtils::URLEncode(item.c_str())
+              << "&";
+    }
+  }
+  if (m_gatewayLoadBalancerArnsHasBeenSet) {
+    unsigned gatewayLoadBalancerArnsIdx = 1;
+    for (auto& item : m_gatewayLoadBalancerArns) {
+      oStream << location << ".GatewayLoadBalancerArnSet." << gatewayLoadBalancerArnsIdx++ << "=" << StringUtils::URLEncode(item.c_str())
+              << "&";
+    }
+  }
+  if (m_ipAddressTypeHasBeenSet) {
+    oStream << location << ".IpAddressType=" << StringUtils::URLEncode(IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType))
+            << "&";
+  }
+  if (m_vpcEndpointConnectionIdHasBeenSet) {
+    oStream << location << ".VpcEndpointConnectionId=" << StringUtils::URLEncode(m_vpcEndpointConnectionId.c_str()) << "&";
+  }
+  if (m_tagsHasBeenSet) {
+    unsigned tagsIdx = 1;
+    for (auto& item : m_tags) {
+      Aws::StringStream tagsSs;
+      tagsSs << location << ".TagSet." << tagsIdx++;
+      item.OutputToStream(oStream, tagsSs.str().c_str());
+    }
+  }
+  if (m_vpcEndpointRegionHasBeenSet) {
+    oStream << location << ".VpcEndpointRegion=" << StringUtils::URLEncode(m_vpcEndpointRegion.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

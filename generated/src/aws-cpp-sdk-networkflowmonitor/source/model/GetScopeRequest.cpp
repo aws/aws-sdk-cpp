@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/networkflowmonitor/model/GetScopeRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/networkflowmonitor/model/GetScopeRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::NetworkFlowMonitor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetScopeRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetScopeRequest::SerializePayload() const { return {}; }

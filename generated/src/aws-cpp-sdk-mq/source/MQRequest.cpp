@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/mq/MQRequest.h>
 
-namespace Aws
-{
-namespace MQ
-{
-} // namespace MQ
-} // namespace Aws
+namespace Aws {
+namespace MQ {}  // namespace MQ
+}  // namespace Aws

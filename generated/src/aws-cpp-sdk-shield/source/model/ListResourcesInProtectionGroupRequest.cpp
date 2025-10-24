@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/shield/model/ListResourcesInProtectionGroupRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/shield/model/ListResourcesInProtectionGroupRequest.h>
 
 #include <utility>
 
@@ -12,39 +12,26 @@ using namespace Aws::Shield::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListResourcesInProtectionGroupRequest::SerializePayload() const
-{
+Aws::String ListResourcesInProtectionGroupRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_protectionGroupIdHasBeenSet)
-  {
-   payload.WithString("ProtectionGroupId", m_protectionGroupId);
-
+  if (m_protectionGroupIdHasBeenSet) {
+    payload.WithString("ProtectionGroupId", m_protectionGroupId);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("MaxResults", m_maxResults);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ListResourcesInProtectionGroupRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ListResourcesInProtectionGroupRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSShield_20160616.ListResourcesInProtectionGroup"));
   return headers;
-
 }
-
-
-
-

@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsWafRegionalRuleGroupRulesDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsWafRegionalRuleGroupRulesDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsWafRegionalRuleGroupRulesDetails::AwsWafRegionalRuleGroupRulesDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsWafRegionalRuleGroupRulesDetails::AwsWafRegionalRuleGroupRulesDetails(JsonView jsonValue) { *this = jsonValue; }
 
-AwsWafRegionalRuleGroupRulesDetails& AwsWafRegionalRuleGroupRulesDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Action"))
-  {
+AwsWafRegionalRuleGroupRulesDetails& AwsWafRegionalRuleGroupRulesDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Action")) {
     m_action = jsonValue.GetObject("Action");
     m_actionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Priority"))
-  {
+  if (jsonValue.ValueExists("Priority")) {
     m_priority = jsonValue.GetInteger("Priority");
     m_priorityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RuleId"))
-  {
+  if (jsonValue.ValueExists("RuleId")) {
     m_ruleId = jsonValue.GetString("RuleId");
     m_ruleIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = jsonValue.GetString("Type");
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsWafRegionalRuleGroupRulesDetails::Jsonize() const
-{
+JsonValue AwsWafRegionalRuleGroupRulesDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_actionHasBeenSet)
-  {
-   payload.WithObject("Action", m_action.Jsonize());
-
+  if (m_actionHasBeenSet) {
+    payload.WithObject("Action", m_action.Jsonize());
   }
 
-  if(m_priorityHasBeenSet)
-  {
-   payload.WithInteger("Priority", m_priority);
-
+  if (m_priorityHasBeenSet) {
+    payload.WithInteger("Priority", m_priority);
   }
 
-  if(m_ruleIdHasBeenSet)
-  {
-   payload.WithString("RuleId", m_ruleId);
-
+  if (m_ruleIdHasBeenSet) {
+    payload.WithString("RuleId", m_ruleId);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", m_type);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

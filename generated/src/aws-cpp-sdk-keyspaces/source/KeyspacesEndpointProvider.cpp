@@ -5,12 +5,8 @@
 
 #include <aws/keyspaces/KeyspacesEndpointProvider.h>
 
-namespace Aws
-{
-namespace Keyspaces
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Keyspaces
-} // namespace Aws
+namespace Aws {
+namespace Keyspaces {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Keyspaces
+}  // namespace Aws

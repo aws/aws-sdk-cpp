@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class PivotTableMetricPlacement
-  {
-    NOT_SET,
-    ROW,
-    COLUMN
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class PivotTableMetricPlacement { NOT_SET, ROW, COLUMN };
 
-namespace PivotTableMetricPlacementMapper
-{
+namespace PivotTableMetricPlacementMapper {
 AWS_QUICKSIGHT_API PivotTableMetricPlacement GetPivotTableMetricPlacementForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForPivotTableMetricPlacement(PivotTableMetricPlacement value);
-} // namespace PivotTableMetricPlacementMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace PivotTableMetricPlacementMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

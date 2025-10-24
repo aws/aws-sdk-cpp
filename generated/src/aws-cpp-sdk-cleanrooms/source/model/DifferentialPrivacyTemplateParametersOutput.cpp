@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
 
-DifferentialPrivacyTemplateParametersOutput::DifferentialPrivacyTemplateParametersOutput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DifferentialPrivacyTemplateParametersOutput::DifferentialPrivacyTemplateParametersOutput(JsonView jsonValue) { *this = jsonValue; }
 
-DifferentialPrivacyTemplateParametersOutput& DifferentialPrivacyTemplateParametersOutput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("epsilon"))
-  {
+DifferentialPrivacyTemplateParametersOutput& DifferentialPrivacyTemplateParametersOutput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("epsilon")) {
     m_epsilon = jsonValue.GetInteger("epsilon");
     m_epsilonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("usersNoisePerQuery"))
-  {
+  if (jsonValue.ValueExists("usersNoisePerQuery")) {
     m_usersNoisePerQuery = jsonValue.GetInteger("usersNoisePerQuery");
     m_usersNoisePerQueryHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DifferentialPrivacyTemplateParametersOutput::Jsonize() const
-{
+JsonValue DifferentialPrivacyTemplateParametersOutput::Jsonize() const {
   JsonValue payload;
 
-  if(m_epsilonHasBeenSet)
-  {
-   payload.WithInteger("epsilon", m_epsilon);
-
+  if (m_epsilonHasBeenSet) {
+    payload.WithInteger("epsilon", m_epsilon);
   }
 
-  if(m_usersNoisePerQueryHasBeenSet)
-  {
-   payload.WithInteger("usersNoisePerQuery", m_usersNoisePerQuery);
-
+  if (m_usersNoisePerQueryHasBeenSet) {
+    payload.WithInteger("usersNoisePerQuery", m_usersNoisePerQuery);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

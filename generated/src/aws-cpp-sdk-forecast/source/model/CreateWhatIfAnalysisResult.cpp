@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/forecast/model/CreateWhatIfAnalysisResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/forecast/model/CreateWhatIfAnalysisResult.h>
 
 #include <utility>
 
@@ -17,28 +17,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateWhatIfAnalysisResult::CreateWhatIfAnalysisResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+CreateWhatIfAnalysisResult::CreateWhatIfAnalysisResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-CreateWhatIfAnalysisResult& CreateWhatIfAnalysisResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+CreateWhatIfAnalysisResult& CreateWhatIfAnalysisResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("WhatIfAnalysisArn"))
-  {
+  if (jsonValue.ValueExists("WhatIfAnalysisArn")) {
     m_whatIfAnalysisArn = jsonValue.GetString("WhatIfAnalysisArn");
     m_whatIfAnalysisArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

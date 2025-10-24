@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/m2/model/AlternateKey.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/m2/model/AlternateKey.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MainframeModernization
-{
-namespace Model
-{
+namespace Aws {
+namespace MainframeModernization {
+namespace Model {
 
-AlternateKey::AlternateKey(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AlternateKey::AlternateKey(JsonView jsonValue) { *this = jsonValue; }
 
-AlternateKey& AlternateKey::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("allowDuplicates"))
-  {
+AlternateKey& AlternateKey::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("allowDuplicates")) {
     m_allowDuplicates = jsonValue.GetBool("allowDuplicates");
     m_allowDuplicatesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("length"))
-  {
+  if (jsonValue.ValueExists("length")) {
     m_length = jsonValue.GetInteger("length");
     m_lengthHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("offset"))
-  {
+  if (jsonValue.ValueExists("offset")) {
     m_offset = jsonValue.GetInteger("offset");
     m_offsetHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AlternateKey::Jsonize() const
-{
+JsonValue AlternateKey::Jsonize() const {
   JsonValue payload;
 
-  if(m_allowDuplicatesHasBeenSet)
-  {
-   payload.WithBool("allowDuplicates", m_allowDuplicates);
-
+  if (m_allowDuplicatesHasBeenSet) {
+    payload.WithBool("allowDuplicates", m_allowDuplicates);
   }
 
-  if(m_lengthHasBeenSet)
-  {
-   payload.WithInteger("length", m_length);
-
+  if (m_lengthHasBeenSet) {
+    payload.WithInteger("length", m_length);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_offsetHasBeenSet)
-  {
-   payload.WithInteger("offset", m_offset);
-
+  if (m_offsetHasBeenSet) {
+    payload.WithInteger("offset", m_offset);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MainframeModernization
-} // namespace Aws
+}  // namespace Model
+}  // namespace MainframeModernization
+}  // namespace Aws

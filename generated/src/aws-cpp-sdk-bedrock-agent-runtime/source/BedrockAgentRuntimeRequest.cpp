@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeRequest.h>
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+namespace Aws {
+namespace BedrockAgentRuntime {}  // namespace BedrockAgentRuntime
+}  // namespace Aws

@@ -5,12 +5,8 @@
 
 #include <aws/cloudfront-keyvaluestore/CloudFrontKeyValueStoreEndpointProvider.h>
 
-namespace Aws
-{
-namespace CloudFrontKeyValueStore
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace CloudFrontKeyValueStore
-} // namespace Aws
+namespace Aws {
+namespace CloudFrontKeyValueStore {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace CloudFrontKeyValueStore
+}  // namespace Aws

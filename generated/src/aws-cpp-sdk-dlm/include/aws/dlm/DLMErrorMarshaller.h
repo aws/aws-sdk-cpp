@@ -5,19 +5,16 @@
 
 #pragma once
 
-#include <aws/dlm/DLM_EXPORTS.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
+#include <aws/dlm/DLM_EXPORTS.h>
 
-namespace Aws
-{
-namespace Client
-{
+namespace Aws {
+namespace Client {
 
-class AWS_DLM_API DLMErrorMarshaller : public Aws::Client::JsonErrorMarshaller
-{
-public:
+class AWS_DLM_API DLMErrorMarshaller : public Aws::Client::JsonErrorMarshaller {
+ public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Client
-} // namespace Aws
+}  // namespace Client
+}  // namespace Aws

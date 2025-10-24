@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lex-models/model/Message.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lex-models/model/Message.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LexModelBuildingService
-{
-namespace Model
-{
+namespace Aws {
+namespace LexModelBuildingService {
+namespace Model {
 
-Message::Message(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Message::Message(JsonView jsonValue) { *this = jsonValue; }
 
-Message& Message::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("contentType"))
-  {
+Message& Message::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("contentType")) {
     m_contentType = ContentTypeMapper::GetContentTypeForName(jsonValue.GetString("contentType"));
     m_contentTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("content"))
-  {
+  if (jsonValue.ValueExists("content")) {
     m_content = jsonValue.GetString("content");
     m_contentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("groupNumber"))
-  {
+  if (jsonValue.ValueExists("groupNumber")) {
     m_groupNumber = jsonValue.GetInteger("groupNumber");
     m_groupNumberHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Message::Jsonize() const
-{
+JsonValue Message::Jsonize() const {
   JsonValue payload;
 
-  if(m_contentTypeHasBeenSet)
-  {
-   payload.WithString("contentType", ContentTypeMapper::GetNameForContentType(m_contentType));
+  if (m_contentTypeHasBeenSet) {
+    payload.WithString("contentType", ContentTypeMapper::GetNameForContentType(m_contentType));
   }
 
-  if(m_contentHasBeenSet)
-  {
-   payload.WithString("content", m_content);
-
+  if (m_contentHasBeenSet) {
+    payload.WithString("content", m_content);
   }
 
-  if(m_groupNumberHasBeenSet)
-  {
-   payload.WithInteger("groupNumber", m_groupNumber);
-
+  if (m_groupNumberHasBeenSet) {
+    payload.WithInteger("groupNumber", m_groupNumber);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LexModelBuildingService
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexModelBuildingService
+}  // namespace Aws

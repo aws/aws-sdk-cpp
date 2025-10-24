@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rekognition/model/StartSegmentDetectionFilters.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rekognition/model/StartSegmentDetectionFilters.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Rekognition
-{
-namespace Model
-{
+namespace Aws {
+namespace Rekognition {
+namespace Model {
 
-StartSegmentDetectionFilters::StartSegmentDetectionFilters(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StartSegmentDetectionFilters::StartSegmentDetectionFilters(JsonView jsonValue) { *this = jsonValue; }
 
-StartSegmentDetectionFilters& StartSegmentDetectionFilters::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TechnicalCueFilter"))
-  {
+StartSegmentDetectionFilters& StartSegmentDetectionFilters::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TechnicalCueFilter")) {
     m_technicalCueFilter = jsonValue.GetObject("TechnicalCueFilter");
     m_technicalCueFilterHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ShotFilter"))
-  {
+  if (jsonValue.ValueExists("ShotFilter")) {
     m_shotFilter = jsonValue.GetObject("ShotFilter");
     m_shotFilterHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StartSegmentDetectionFilters::Jsonize() const
-{
+JsonValue StartSegmentDetectionFilters::Jsonize() const {
   JsonValue payload;
 
-  if(m_technicalCueFilterHasBeenSet)
-  {
-   payload.WithObject("TechnicalCueFilter", m_technicalCueFilter.Jsonize());
-
+  if (m_technicalCueFilterHasBeenSet) {
+    payload.WithObject("TechnicalCueFilter", m_technicalCueFilter.Jsonize());
   }
 
-  if(m_shotFilterHasBeenSet)
-  {
-   payload.WithObject("ShotFilter", m_shotFilter.Jsonize());
-
+  if (m_shotFilterHasBeenSet) {
+    payload.WithObject("ShotFilter", m_shotFilter.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Rekognition
-} // namespace Aws
+}  // namespace Model
+}  // namespace Rekognition
+}  // namespace Aws

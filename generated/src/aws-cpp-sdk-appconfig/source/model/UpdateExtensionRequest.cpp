@@ -12,52 +12,36 @@ using namespace Aws::AppConfig::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateExtensionRequest::SerializePayload() const
-{
+Aws::String UpdateExtensionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_actionsHasBeenSet)
-  {
-   JsonValue actionsJsonMap;
-   for(auto& actionsItem : m_actions)
-   {
-     Aws::Utils::Array<JsonValue> actionListJsonList(actionsItem.second.size());
-     for(unsigned actionListIndex = 0; actionListIndex < actionListJsonList.GetLength(); ++actionListIndex)
-     {
-       actionListJsonList[actionListIndex].AsObject(actionsItem.second[actionListIndex].Jsonize());
-     }
-     actionsJsonMap.WithArray(ActionPointMapper::GetNameForActionPoint(actionsItem.first), std::move(actionListJsonList));
-   }
-   payload.WithObject("Actions", std::move(actionsJsonMap));
-
+  if (m_actionsHasBeenSet) {
+    JsonValue actionsJsonMap;
+    for (auto& actionsItem : m_actions) {
+      Aws::Utils::Array<JsonValue> actionListJsonList(actionsItem.second.size());
+      for (unsigned actionListIndex = 0; actionListIndex < actionListJsonList.GetLength(); ++actionListIndex) {
+        actionListJsonList[actionListIndex].AsObject(actionsItem.second[actionListIndex].Jsonize());
+      }
+      actionsJsonMap.WithArray(ActionPointMapper::GetNameForActionPoint(actionsItem.first), std::move(actionListJsonList));
+    }
+    payload.WithObject("Actions", std::move(actionsJsonMap));
   }
 
-  if(m_parametersHasBeenSet)
-  {
-   JsonValue parametersJsonMap;
-   for(auto& parametersItem : m_parameters)
-   {
-     parametersJsonMap.WithObject(parametersItem.first, parametersItem.second.Jsonize());
-   }
-   payload.WithObject("Parameters", std::move(parametersJsonMap));
-
+  if (m_parametersHasBeenSet) {
+    JsonValue parametersJsonMap;
+    for (auto& parametersItem : m_parameters) {
+      parametersJsonMap.WithObject(parametersItem.first, parametersItem.second.Jsonize());
+    }
+    payload.WithObject("Parameters", std::move(parametersJsonMap));
   }
 
-  if(m_versionNumberHasBeenSet)
-  {
-   payload.WithInteger("VersionNumber", m_versionNumber);
-
+  if (m_versionNumberHasBeenSet) {
+    payload.WithInteger("VersionNumber", m_versionNumber);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

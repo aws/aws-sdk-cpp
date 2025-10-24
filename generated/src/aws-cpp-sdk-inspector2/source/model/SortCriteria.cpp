@@ -3,58 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/inspector2/model/SortCriteria.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/inspector2/model/SortCriteria.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Inspector2
-{
-namespace Model
-{
+namespace Aws {
+namespace Inspector2 {
+namespace Model {
 
-SortCriteria::SortCriteria(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SortCriteria::SortCriteria(JsonView jsonValue) { *this = jsonValue; }
 
-SortCriteria& SortCriteria::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("field"))
-  {
+SortCriteria& SortCriteria::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("field")) {
     m_field = SortFieldMapper::GetSortFieldForName(jsonValue.GetString("field"));
     m_fieldHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sortOrder"))
-  {
+  if (jsonValue.ValueExists("sortOrder")) {
     m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("sortOrder"));
     m_sortOrderHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SortCriteria::Jsonize() const
-{
+JsonValue SortCriteria::Jsonize() const {
   JsonValue payload;
 
-  if(m_fieldHasBeenSet)
-  {
-   payload.WithString("field", SortFieldMapper::GetNameForSortField(m_field));
+  if (m_fieldHasBeenSet) {
+    payload.WithString("field", SortFieldMapper::GetNameForSortField(m_field));
   }
 
-  if(m_sortOrderHasBeenSet)
-  {
-   payload.WithString("sortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
+  if (m_sortOrderHasBeenSet) {
+    payload.WithString("sortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Inspector2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Inspector2
+}  // namespace Aws

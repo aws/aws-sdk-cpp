@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/lex/LexRuntimeServiceRequest.h>
 
-namespace Aws
-{
-namespace LexRuntimeService
-{
-} // namespace LexRuntimeService
-} // namespace Aws
+namespace Aws {
+namespace LexRuntimeService {}  // namespace LexRuntimeService
+}  // namespace Aws

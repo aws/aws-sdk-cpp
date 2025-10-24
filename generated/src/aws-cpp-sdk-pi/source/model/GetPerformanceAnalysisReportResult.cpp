@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pi/model/GetPerformanceAnalysisReportResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/pi/model/GetPerformanceAnalysisReportResult.h>
 
 #include <utility>
 
@@ -17,28 +17,23 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPerformanceAnalysisReportResult::GetPerformanceAnalysisReportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetPerformanceAnalysisReportResult::GetPerformanceAnalysisReportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-GetPerformanceAnalysisReportResult& GetPerformanceAnalysisReportResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetPerformanceAnalysisReportResult& GetPerformanceAnalysisReportResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("AnalysisReport"))
-  {
+  if (jsonValue.ValueExists("AnalysisReport")) {
     m_analysisReport = jsonValue.GetObject("AnalysisReport");
     m_analysisReportHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

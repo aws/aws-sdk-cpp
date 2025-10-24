@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/application-insights/ApplicationInsights_EXPORTS.h>
 
-namespace Aws
-{
-namespace ApplicationInsights
-{
-class ApplicationInsightsEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace ApplicationInsights {
+class ApplicationInsightsEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace ApplicationInsights
-} // namespace Aws
+}  // namespace ApplicationInsights
+}  // namespace Aws

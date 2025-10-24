@@ -3,71 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsMskClusterClusterInfoClientAuthenticationDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsMskClusterClusterInfoClientAuthenticationDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsMskClusterClusterInfoClientAuthenticationDetails::AwsMskClusterClusterInfoClientAuthenticationDetails(JsonView jsonValue)
-{
+AwsMskClusterClusterInfoClientAuthenticationDetails::AwsMskClusterClusterInfoClientAuthenticationDetails(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-AwsMskClusterClusterInfoClientAuthenticationDetails& AwsMskClusterClusterInfoClientAuthenticationDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Sasl"))
-  {
+AwsMskClusterClusterInfoClientAuthenticationDetails& AwsMskClusterClusterInfoClientAuthenticationDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Sasl")) {
     m_sasl = jsonValue.GetObject("Sasl");
     m_saslHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Unauthenticated"))
-  {
+  if (jsonValue.ValueExists("Unauthenticated")) {
     m_unauthenticated = jsonValue.GetObject("Unauthenticated");
     m_unauthenticatedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Tls"))
-  {
+  if (jsonValue.ValueExists("Tls")) {
     m_tls = jsonValue.GetObject("Tls");
     m_tlsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsMskClusterClusterInfoClientAuthenticationDetails::Jsonize() const
-{
+JsonValue AwsMskClusterClusterInfoClientAuthenticationDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_saslHasBeenSet)
-  {
-   payload.WithObject("Sasl", m_sasl.Jsonize());
-
+  if (m_saslHasBeenSet) {
+    payload.WithObject("Sasl", m_sasl.Jsonize());
   }
 
-  if(m_unauthenticatedHasBeenSet)
-  {
-   payload.WithObject("Unauthenticated", m_unauthenticated.Jsonize());
-
+  if (m_unauthenticatedHasBeenSet) {
+    payload.WithObject("Unauthenticated", m_unauthenticated.Jsonize());
   }
 
-  if(m_tlsHasBeenSet)
-  {
-   payload.WithObject("Tls", m_tls.Jsonize());
-
+  if (m_tlsHasBeenSet) {
+    payload.WithObject("Tls", m_tls.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

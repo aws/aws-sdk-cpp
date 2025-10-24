@@ -12,11 +12,4 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteFunctionRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DeleteFunctionRequest::SerializePayload() const { return {}; }

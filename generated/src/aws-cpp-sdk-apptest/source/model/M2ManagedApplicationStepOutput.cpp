@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppTest
-{
-namespace Model
-{
+namespace Aws {
+namespace AppTest {
+namespace Model {
 
-M2ManagedApplicationStepOutput::M2ManagedApplicationStepOutput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+M2ManagedApplicationStepOutput::M2ManagedApplicationStepOutput(JsonView jsonValue) { *this = jsonValue; }
 
-M2ManagedApplicationStepOutput& M2ManagedApplicationStepOutput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("importDataSetSummary"))
-  {
+M2ManagedApplicationStepOutput& M2ManagedApplicationStepOutput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("importDataSetSummary")) {
     Aws::Map<Aws::String, JsonView> importDataSetSummaryJsonMap = jsonValue.GetObject("importDataSetSummary").GetAllObjects();
-    for(auto& importDataSetSummaryItem : importDataSetSummaryJsonMap)
-    {
+    for (auto& importDataSetSummaryItem : importDataSetSummaryJsonMap) {
       m_importDataSetSummary[importDataSetSummaryItem.first] = importDataSetSummaryItem.second.AsString();
     }
     m_importDataSetSummaryHasBeenSet = true;
@@ -37,24 +28,20 @@ M2ManagedApplicationStepOutput& M2ManagedApplicationStepOutput::operator =(JsonV
   return *this;
 }
 
-JsonValue M2ManagedApplicationStepOutput::Jsonize() const
-{
+JsonValue M2ManagedApplicationStepOutput::Jsonize() const {
   JsonValue payload;
 
-  if(m_importDataSetSummaryHasBeenSet)
-  {
-   JsonValue importDataSetSummaryJsonMap;
-   for(auto& importDataSetSummaryItem : m_importDataSetSummary)
-   {
-     importDataSetSummaryJsonMap.WithString(importDataSetSummaryItem.first, importDataSetSummaryItem.second);
-   }
-   payload.WithObject("importDataSetSummary", std::move(importDataSetSummaryJsonMap));
-
+  if (m_importDataSetSummaryHasBeenSet) {
+    JsonValue importDataSetSummaryJsonMap;
+    for (auto& importDataSetSummaryItem : m_importDataSetSummary) {
+      importDataSetSummaryJsonMap.WithString(importDataSetSummaryItem.first, importDataSetSummaryItem.second);
+    }
+    payload.WithObject("importDataSetSummary", std::move(importDataSetSummaryJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppTest
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppTest
+}  // namespace Aws

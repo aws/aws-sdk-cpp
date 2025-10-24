@@ -3,93 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lexv2-models/model/BotMember.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lexv2-models/model/BotMember.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
 
-BotMember::BotMember(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BotMember::BotMember(JsonView jsonValue) { *this = jsonValue; }
 
-BotMember& BotMember::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("botMemberId"))
-  {
+BotMember& BotMember::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("botMemberId")) {
     m_botMemberId = jsonValue.GetString("botMemberId");
     m_botMemberIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("botMemberName"))
-  {
+  if (jsonValue.ValueExists("botMemberName")) {
     m_botMemberName = jsonValue.GetString("botMemberName");
     m_botMemberNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("botMemberAliasId"))
-  {
+  if (jsonValue.ValueExists("botMemberAliasId")) {
     m_botMemberAliasId = jsonValue.GetString("botMemberAliasId");
     m_botMemberAliasIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("botMemberAliasName"))
-  {
+  if (jsonValue.ValueExists("botMemberAliasName")) {
     m_botMemberAliasName = jsonValue.GetString("botMemberAliasName");
     m_botMemberAliasNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("botMemberVersion"))
-  {
+  if (jsonValue.ValueExists("botMemberVersion")) {
     m_botMemberVersion = jsonValue.GetString("botMemberVersion");
     m_botMemberVersionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BotMember::Jsonize() const
-{
+JsonValue BotMember::Jsonize() const {
   JsonValue payload;
 
-  if(m_botMemberIdHasBeenSet)
-  {
-   payload.WithString("botMemberId", m_botMemberId);
-
+  if (m_botMemberIdHasBeenSet) {
+    payload.WithString("botMemberId", m_botMemberId);
   }
 
-  if(m_botMemberNameHasBeenSet)
-  {
-   payload.WithString("botMemberName", m_botMemberName);
-
+  if (m_botMemberNameHasBeenSet) {
+    payload.WithString("botMemberName", m_botMemberName);
   }
 
-  if(m_botMemberAliasIdHasBeenSet)
-  {
-   payload.WithString("botMemberAliasId", m_botMemberAliasId);
-
+  if (m_botMemberAliasIdHasBeenSet) {
+    payload.WithString("botMemberAliasId", m_botMemberAliasId);
   }
 
-  if(m_botMemberAliasNameHasBeenSet)
-  {
-   payload.WithString("botMemberAliasName", m_botMemberAliasName);
-
+  if (m_botMemberAliasNameHasBeenSet) {
+    payload.WithString("botMemberAliasName", m_botMemberAliasName);
   }
 
-  if(m_botMemberVersionHasBeenSet)
-  {
-   payload.WithString("botMemberVersion", m_botMemberVersion);
-
+  if (m_botMemberVersionHasBeenSet) {
+    payload.WithString("botMemberVersion", m_botMemberVersion);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

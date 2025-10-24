@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ComprehendMedical
-{
-namespace Model
-{
+namespace Aws {
+namespace ComprehendMedical {
+namespace Model {
 
-OutputDataConfig::OutputDataConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OutputDataConfig::OutputDataConfig(JsonView jsonValue) { *this = jsonValue; }
 
-OutputDataConfig& OutputDataConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("S3Bucket"))
-  {
+OutputDataConfig& OutputDataConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("S3Bucket")) {
     m_s3Bucket = jsonValue.GetString("S3Bucket");
     m_s3BucketHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("S3Key"))
-  {
+  if (jsonValue.ValueExists("S3Key")) {
     m_s3Key = jsonValue.GetString("S3Key");
     m_s3KeyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OutputDataConfig::Jsonize() const
-{
+JsonValue OutputDataConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3BucketHasBeenSet)
-  {
-   payload.WithString("S3Bucket", m_s3Bucket);
-
+  if (m_s3BucketHasBeenSet) {
+    payload.WithString("S3Bucket", m_s3Bucket);
   }
 
-  if(m_s3KeyHasBeenSet)
-  {
-   payload.WithString("S3Key", m_s3Key);
-
+  if (m_s3KeyHasBeenSet) {
+    payload.WithString("S3Key", m_s3Key);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ComprehendMedical
-} // namespace Aws
+}  // namespace Model
+}  // namespace ComprehendMedical
+}  // namespace Aws

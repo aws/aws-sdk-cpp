@@ -12,19 +12,10 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateUsageReportSubscriptionRequest::SerializePayload() const
-{
-  return "{}";
-}
+Aws::String CreateUsageReportSubscriptionRequest::SerializePayload() const { return "{}"; }
 
-Aws::Http::HeaderValueCollection CreateUsageReportSubscriptionRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateUsageReportSubscriptionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "PhotonAdminProxyService.CreateUsageReportSubscription"));
   return headers;
-
 }
-
-
-
-

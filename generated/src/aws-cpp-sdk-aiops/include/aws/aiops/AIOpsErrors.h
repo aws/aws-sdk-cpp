@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/aiops/AIOps_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/aiops/AIOps_EXPORTS.h>
 
-namespace Aws
-{
-namespace AIOps
-{
-enum class AIOpsErrors
-{
-  //From Core//
+namespace Aws {
+namespace AIOps {
+enum class AIOpsErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class AIOpsErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,15 +44,14 @@ enum class AIOpsErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   FORBIDDEN,
   INTERNAL_SERVER,
   SERVICE_QUOTA_EXCEEDED
 };
 
-class AWS_AIOPS_API AIOpsError : public Aws::Client::AWSError<AIOpsErrors>
-{
-public:
+class AWS_AIOPS_API AIOpsError : public Aws::Client::AWSError<AIOpsErrors> {
+ public:
   AIOpsError() {}
   AIOpsError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<AIOpsErrors>(rhs) {}
   AIOpsError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<AIOpsErrors>(rhs) {}
@@ -66,10 +62,9 @@ public:
   T GetModeledError();
 };
 
-namespace AIOpsErrorMapper
-{
-  AWS_AIOPS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace AIOpsErrorMapper {
+AWS_AIOPS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace AIOps
-} // namespace Aws
+}  // namespace AIOps
+}  // namespace Aws

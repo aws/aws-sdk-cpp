@@ -3,39 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/CreateReservedInstancesListingRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/CreateReservedInstancesListingRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateReservedInstancesListingRequest::SerializePayload() const
-{
+Aws::String CreateReservedInstancesListingRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateReservedInstancesListing&";
-  if(m_reservedInstancesIdHasBeenSet)
-  {
+  if (m_reservedInstancesIdHasBeenSet) {
     ss << "ReservedInstancesId=" << StringUtils::URLEncode(m_reservedInstancesId.c_str()) << "&";
   }
 
-  if(m_instanceCountHasBeenSet)
-  {
+  if (m_instanceCountHasBeenSet) {
     ss << "InstanceCount=" << m_instanceCount << "&";
   }
 
-  if(m_priceSchedulesHasBeenSet)
-  {
+  if (m_priceSchedulesHasBeenSet) {
     unsigned priceSchedulesCount = 1;
-    for(auto& item : m_priceSchedules)
-    {
+    for (auto& item : m_priceSchedules) {
       item.OutputToStream(ss, "PriceSchedules.", priceSchedulesCount, "");
       priceSchedulesCount++;
     }
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
+  if (m_clientTokenHasBeenSet) {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
@@ -43,8 +37,4 @@ Aws::String CreateReservedInstancesListingRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CreateReservedInstancesListingRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateReservedInstancesListingRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

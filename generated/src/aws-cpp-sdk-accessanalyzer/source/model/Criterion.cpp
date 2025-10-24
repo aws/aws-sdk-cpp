@@ -11,101 +11,75 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
 
-Criterion::Criterion(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Criterion::Criterion(JsonView jsonValue) { *this = jsonValue; }
 
-Criterion& Criterion::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("eq"))
-  {
+Criterion& Criterion::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("eq")) {
     Aws::Utils::Array<JsonView> eqJsonList = jsonValue.GetArray("eq");
-    for(unsigned eqIndex = 0; eqIndex < eqJsonList.GetLength(); ++eqIndex)
-    {
+    for (unsigned eqIndex = 0; eqIndex < eqJsonList.GetLength(); ++eqIndex) {
       m_eq.push_back(eqJsonList[eqIndex].AsString());
     }
     m_eqHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("neq"))
-  {
+  if (jsonValue.ValueExists("neq")) {
     Aws::Utils::Array<JsonView> neqJsonList = jsonValue.GetArray("neq");
-    for(unsigned neqIndex = 0; neqIndex < neqJsonList.GetLength(); ++neqIndex)
-    {
+    for (unsigned neqIndex = 0; neqIndex < neqJsonList.GetLength(); ++neqIndex) {
       m_neq.push_back(neqJsonList[neqIndex].AsString());
     }
     m_neqHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("contains"))
-  {
+  if (jsonValue.ValueExists("contains")) {
     Aws::Utils::Array<JsonView> containsJsonList = jsonValue.GetArray("contains");
-    for(unsigned containsIndex = 0; containsIndex < containsJsonList.GetLength(); ++containsIndex)
-    {
+    for (unsigned containsIndex = 0; containsIndex < containsJsonList.GetLength(); ++containsIndex) {
       m_contains.push_back(containsJsonList[containsIndex].AsString());
     }
     m_containsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("exists"))
-  {
+  if (jsonValue.ValueExists("exists")) {
     m_exists = jsonValue.GetBool("exists");
     m_existsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Criterion::Jsonize() const
-{
+JsonValue Criterion::Jsonize() const {
   JsonValue payload;
 
-  if(m_eqHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> eqJsonList(m_eq.size());
-   for(unsigned eqIndex = 0; eqIndex < eqJsonList.GetLength(); ++eqIndex)
-   {
-     eqJsonList[eqIndex].AsString(m_eq[eqIndex]);
-   }
-   payload.WithArray("eq", std::move(eqJsonList));
-
+  if (m_eqHasBeenSet) {
+    Aws::Utils::Array<JsonValue> eqJsonList(m_eq.size());
+    for (unsigned eqIndex = 0; eqIndex < eqJsonList.GetLength(); ++eqIndex) {
+      eqJsonList[eqIndex].AsString(m_eq[eqIndex]);
+    }
+    payload.WithArray("eq", std::move(eqJsonList));
   }
 
-  if(m_neqHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> neqJsonList(m_neq.size());
-   for(unsigned neqIndex = 0; neqIndex < neqJsonList.GetLength(); ++neqIndex)
-   {
-     neqJsonList[neqIndex].AsString(m_neq[neqIndex]);
-   }
-   payload.WithArray("neq", std::move(neqJsonList));
-
+  if (m_neqHasBeenSet) {
+    Aws::Utils::Array<JsonValue> neqJsonList(m_neq.size());
+    for (unsigned neqIndex = 0; neqIndex < neqJsonList.GetLength(); ++neqIndex) {
+      neqJsonList[neqIndex].AsString(m_neq[neqIndex]);
+    }
+    payload.WithArray("neq", std::move(neqJsonList));
   }
 
-  if(m_containsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> containsJsonList(m_contains.size());
-   for(unsigned containsIndex = 0; containsIndex < containsJsonList.GetLength(); ++containsIndex)
-   {
-     containsJsonList[containsIndex].AsString(m_contains[containsIndex]);
-   }
-   payload.WithArray("contains", std::move(containsJsonList));
-
+  if (m_containsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> containsJsonList(m_contains.size());
+    for (unsigned containsIndex = 0; containsIndex < containsJsonList.GetLength(); ++containsIndex) {
+      containsJsonList[containsIndex].AsString(m_contains[containsIndex]);
+    }
+    payload.WithArray("contains", std::move(containsJsonList));
   }
 
-  if(m_existsHasBeenSet)
-  {
-   payload.WithBool("exists", m_exists);
-
+  if (m_existsHasBeenSet) {
+    payload.WithBool("exists", m_exists);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

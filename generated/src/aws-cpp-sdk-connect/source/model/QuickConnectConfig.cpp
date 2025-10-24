@@ -11,73 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-QuickConnectConfig::QuickConnectConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+QuickConnectConfig::QuickConnectConfig(JsonView jsonValue) { *this = jsonValue; }
 
-QuickConnectConfig& QuickConnectConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("QuickConnectType"))
-  {
+QuickConnectConfig& QuickConnectConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("QuickConnectType")) {
     m_quickConnectType = QuickConnectTypeMapper::GetQuickConnectTypeForName(jsonValue.GetString("QuickConnectType"));
     m_quickConnectTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UserConfig"))
-  {
+  if (jsonValue.ValueExists("UserConfig")) {
     m_userConfig = jsonValue.GetObject("UserConfig");
     m_userConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("QueueConfig"))
-  {
+  if (jsonValue.ValueExists("QueueConfig")) {
     m_queueConfig = jsonValue.GetObject("QueueConfig");
     m_queueConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PhoneConfig"))
-  {
+  if (jsonValue.ValueExists("PhoneConfig")) {
     m_phoneConfig = jsonValue.GetObject("PhoneConfig");
     m_phoneConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue QuickConnectConfig::Jsonize() const
-{
+JsonValue QuickConnectConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_quickConnectTypeHasBeenSet)
-  {
-   payload.WithString("QuickConnectType", QuickConnectTypeMapper::GetNameForQuickConnectType(m_quickConnectType));
+  if (m_quickConnectTypeHasBeenSet) {
+    payload.WithString("QuickConnectType", QuickConnectTypeMapper::GetNameForQuickConnectType(m_quickConnectType));
   }
 
-  if(m_userConfigHasBeenSet)
-  {
-   payload.WithObject("UserConfig", m_userConfig.Jsonize());
-
+  if (m_userConfigHasBeenSet) {
+    payload.WithObject("UserConfig", m_userConfig.Jsonize());
   }
 
-  if(m_queueConfigHasBeenSet)
-  {
-   payload.WithObject("QueueConfig", m_queueConfig.Jsonize());
-
+  if (m_queueConfigHasBeenSet) {
+    payload.WithObject("QueueConfig", m_queueConfig.Jsonize());
   }
 
-  if(m_phoneConfigHasBeenSet)
-  {
-   payload.WithObject("PhoneConfig", m_phoneConfig.Jsonize());
-
+  if (m_phoneConfigHasBeenSet) {
+    payload.WithObject("PhoneConfig", m_phoneConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

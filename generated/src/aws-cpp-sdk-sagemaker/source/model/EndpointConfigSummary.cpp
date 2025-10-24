@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/EndpointConfigSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/EndpointConfigSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-EndpointConfigSummary::EndpointConfigSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EndpointConfigSummary::EndpointConfigSummary(JsonView jsonValue) { *this = jsonValue; }
 
-EndpointConfigSummary& EndpointConfigSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EndpointConfigName"))
-  {
+EndpointConfigSummary& EndpointConfigSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EndpointConfigName")) {
     m_endpointConfigName = jsonValue.GetString("EndpointConfigName");
     m_endpointConfigNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EndpointConfigArn"))
-  {
+  if (jsonValue.ValueExists("EndpointConfigArn")) {
     m_endpointConfigArn = jsonValue.GetString("EndpointConfigArn");
     m_endpointConfigArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationTime"))
-  {
+  if (jsonValue.ValueExists("CreationTime")) {
     m_creationTime = jsonValue.GetDouble("CreationTime");
     m_creationTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EndpointConfigSummary::Jsonize() const
-{
+JsonValue EndpointConfigSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_endpointConfigNameHasBeenSet)
-  {
-   payload.WithString("EndpointConfigName", m_endpointConfigName);
-
+  if (m_endpointConfigNameHasBeenSet) {
+    payload.WithString("EndpointConfigName", m_endpointConfigName);
   }
 
-  if(m_endpointConfigArnHasBeenSet)
-  {
-   payload.WithString("EndpointConfigArn", m_endpointConfigArn);
-
+  if (m_endpointConfigArnHasBeenSet) {
+    payload.WithString("EndpointConfigArn", m_endpointConfigArn);
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

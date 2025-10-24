@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/opensearchserverless/model/GetAccountSettingsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/opensearchserverless/model/GetAccountSettingsRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,10 @@ using namespace Aws::OpenSearchServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetAccountSettingsRequest::SerializePayload() const
-{
-  return "{}";
-}
+Aws::String GetAccountSettingsRequest::SerializePayload() const { return "{}"; }
 
-Aws::Http::HeaderValueCollection GetAccountSettingsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetAccountSettingsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "OpenSearchServerless.GetAccountSettings"));
   return headers;
-
 }
-
-
-
-

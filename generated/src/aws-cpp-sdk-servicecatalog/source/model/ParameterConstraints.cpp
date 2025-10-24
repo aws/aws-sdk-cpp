@@ -3,124 +3,93 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/servicecatalog/model/ParameterConstraints.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/servicecatalog/model/ParameterConstraints.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ServiceCatalog
-{
-namespace Model
-{
+namespace Aws {
+namespace ServiceCatalog {
+namespace Model {
 
-ParameterConstraints::ParameterConstraints(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ParameterConstraints::ParameterConstraints(JsonView jsonValue) { *this = jsonValue; }
 
-ParameterConstraints& ParameterConstraints::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AllowedValues"))
-  {
+ParameterConstraints& ParameterConstraints::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AllowedValues")) {
     Aws::Utils::Array<JsonView> allowedValuesJsonList = jsonValue.GetArray("AllowedValues");
-    for(unsigned allowedValuesIndex = 0; allowedValuesIndex < allowedValuesJsonList.GetLength(); ++allowedValuesIndex)
-    {
+    for (unsigned allowedValuesIndex = 0; allowedValuesIndex < allowedValuesJsonList.GetLength(); ++allowedValuesIndex) {
       m_allowedValues.push_back(allowedValuesJsonList[allowedValuesIndex].AsString());
     }
     m_allowedValuesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AllowedPattern"))
-  {
+  if (jsonValue.ValueExists("AllowedPattern")) {
     m_allowedPattern = jsonValue.GetString("AllowedPattern");
     m_allowedPatternHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ConstraintDescription"))
-  {
+  if (jsonValue.ValueExists("ConstraintDescription")) {
     m_constraintDescription = jsonValue.GetString("ConstraintDescription");
     m_constraintDescriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MaxLength"))
-  {
+  if (jsonValue.ValueExists("MaxLength")) {
     m_maxLength = jsonValue.GetString("MaxLength");
     m_maxLengthHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MinLength"))
-  {
+  if (jsonValue.ValueExists("MinLength")) {
     m_minLength = jsonValue.GetString("MinLength");
     m_minLengthHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MaxValue"))
-  {
+  if (jsonValue.ValueExists("MaxValue")) {
     m_maxValue = jsonValue.GetString("MaxValue");
     m_maxValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MinValue"))
-  {
+  if (jsonValue.ValueExists("MinValue")) {
     m_minValue = jsonValue.GetString("MinValue");
     m_minValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ParameterConstraints::Jsonize() const
-{
+JsonValue ParameterConstraints::Jsonize() const {
   JsonValue payload;
 
-  if(m_allowedValuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> allowedValuesJsonList(m_allowedValues.size());
-   for(unsigned allowedValuesIndex = 0; allowedValuesIndex < allowedValuesJsonList.GetLength(); ++allowedValuesIndex)
-   {
-     allowedValuesJsonList[allowedValuesIndex].AsString(m_allowedValues[allowedValuesIndex]);
-   }
-   payload.WithArray("AllowedValues", std::move(allowedValuesJsonList));
-
+  if (m_allowedValuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> allowedValuesJsonList(m_allowedValues.size());
+    for (unsigned allowedValuesIndex = 0; allowedValuesIndex < allowedValuesJsonList.GetLength(); ++allowedValuesIndex) {
+      allowedValuesJsonList[allowedValuesIndex].AsString(m_allowedValues[allowedValuesIndex]);
+    }
+    payload.WithArray("AllowedValues", std::move(allowedValuesJsonList));
   }
 
-  if(m_allowedPatternHasBeenSet)
-  {
-   payload.WithString("AllowedPattern", m_allowedPattern);
-
+  if (m_allowedPatternHasBeenSet) {
+    payload.WithString("AllowedPattern", m_allowedPattern);
   }
 
-  if(m_constraintDescriptionHasBeenSet)
-  {
-   payload.WithString("ConstraintDescription", m_constraintDescription);
-
+  if (m_constraintDescriptionHasBeenSet) {
+    payload.WithString("ConstraintDescription", m_constraintDescription);
   }
 
-  if(m_maxLengthHasBeenSet)
-  {
-   payload.WithString("MaxLength", m_maxLength);
-
+  if (m_maxLengthHasBeenSet) {
+    payload.WithString("MaxLength", m_maxLength);
   }
 
-  if(m_minLengthHasBeenSet)
-  {
-   payload.WithString("MinLength", m_minLength);
-
+  if (m_minLengthHasBeenSet) {
+    payload.WithString("MinLength", m_minLength);
   }
 
-  if(m_maxValueHasBeenSet)
-  {
-   payload.WithString("MaxValue", m_maxValue);
-
+  if (m_maxValueHasBeenSet) {
+    payload.WithString("MaxValue", m_maxValue);
   }
 
-  if(m_minValueHasBeenSet)
-  {
-   payload.WithString("MinValue", m_minValue);
-
+  if (m_minValueHasBeenSet) {
+    payload.WithString("MinValue", m_minValue);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ServiceCatalog
-} // namespace Aws
+}  // namespace Model
+}  // namespace ServiceCatalog
+}  // namespace Aws

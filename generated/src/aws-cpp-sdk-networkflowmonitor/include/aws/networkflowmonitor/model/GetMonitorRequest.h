@@ -4,51 +4,52 @@
  */
 
 #pragma once
-#include <aws/networkflowmonitor/NetworkFlowMonitor_EXPORTS.h>
-#include <aws/networkflowmonitor/NetworkFlowMonitorRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/networkflowmonitor/NetworkFlowMonitorRequest.h>
+#include <aws/networkflowmonitor/NetworkFlowMonitor_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace NetworkFlowMonitor
-{
-namespace Model
-{
+namespace Aws {
+namespace NetworkFlowMonitor {
+namespace Model {
 
+/**
+ */
+class GetMonitorRequest : public NetworkFlowMonitorRequest {
+ public:
+  AWS_NETWORKFLOWMONITOR_API GetMonitorRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "GetMonitor"; }
+
+  AWS_NETWORKFLOWMONITOR_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
+   * <p>The name of the monitor.</p>
    */
-  class GetMonitorRequest : public NetworkFlowMonitorRequest
-  {
-  public:
-    AWS_NETWORKFLOWMONITOR_API GetMonitorRequest() = default;
+  inline const Aws::String& GetMonitorName() const { return m_monitorName; }
+  inline bool MonitorNameHasBeenSet() const { return m_monitorNameHasBeenSet; }
+  template <typename MonitorNameT = Aws::String>
+  void SetMonitorName(MonitorNameT&& value) {
+    m_monitorNameHasBeenSet = true;
+    m_monitorName = std::forward<MonitorNameT>(value);
+  }
+  template <typename MonitorNameT = Aws::String>
+  GetMonitorRequest& WithMonitorName(MonitorNameT&& value) {
+    SetMonitorName(std::forward<MonitorNameT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_monitorName;
+  bool m_monitorNameHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "GetMonitor"; }
-
-    AWS_NETWORKFLOWMONITOR_API Aws::String SerializePayload() const override;
-
-
-    ///@{
-    /**
-     * <p>The name of the monitor.</p>
-     */
-    inline const Aws::String& GetMonitorName() const { return m_monitorName; }
-    inline bool MonitorNameHasBeenSet() const { return m_monitorNameHasBeenSet; }
-    template<typename MonitorNameT = Aws::String>
-    void SetMonitorName(MonitorNameT&& value) { m_monitorNameHasBeenSet = true; m_monitorName = std::forward<MonitorNameT>(value); }
-    template<typename MonitorNameT = Aws::String>
-    GetMonitorRequest& WithMonitorName(MonitorNameT&& value) { SetMonitorName(std::forward<MonitorNameT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_monitorName;
-    bool m_monitorNameHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace NetworkFlowMonitor
-} // namespace Aws
+}  // namespace Model
+}  // namespace NetworkFlowMonitor
+}  // namespace Aws

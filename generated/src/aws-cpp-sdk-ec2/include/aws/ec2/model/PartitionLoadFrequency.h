@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class PartitionLoadFrequency
-  {
-    NOT_SET,
-    none,
-    daily,
-    weekly,
-    monthly
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class PartitionLoadFrequency { NOT_SET, none, daily, weekly, monthly };
 
-namespace PartitionLoadFrequencyMapper
-{
+namespace PartitionLoadFrequencyMapper {
 AWS_EC2_API PartitionLoadFrequency GetPartitionLoadFrequencyForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForPartitionLoadFrequency(PartitionLoadFrequency value);
-} // namespace PartitionLoadFrequencyMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace PartitionLoadFrequencyMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

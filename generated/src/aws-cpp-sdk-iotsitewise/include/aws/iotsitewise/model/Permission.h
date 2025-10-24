@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTSiteWise
-{
-namespace Model
-{
-  enum class Permission
-  {
-    NOT_SET,
-    ADMINISTRATOR,
-    VIEWER
-  };
+namespace Aws {
+namespace IoTSiteWise {
+namespace Model {
+enum class Permission { NOT_SET, ADMINISTRATOR, VIEWER };
 
-namespace PermissionMapper
-{
+namespace PermissionMapper {
 AWS_IOTSITEWISE_API Permission GetPermissionForName(const Aws::String& name);
 
 AWS_IOTSITEWISE_API Aws::String GetNameForPermission(Permission value);
-} // namespace PermissionMapper
-} // namespace Model
-} // namespace IoTSiteWise
-} // namespace Aws
+}  // namespace PermissionMapper
+}  // namespace Model
+}  // namespace IoTSiteWise
+}  // namespace Aws

@@ -4,69 +4,74 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/devicefarm/model/Project.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace DeviceFarm
-{
-namespace Model
-{
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace DeviceFarm {
+namespace Model {
+/**
+ * <p>Represents the result of a create project request.</p><p><h3>See Also:</h3>
+ * <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateProjectResult">AWS
+ * API Reference</a></p>
+ */
+class CreateProjectResult {
+ public:
+  AWS_DEVICEFARM_API CreateProjectResult() = default;
+  AWS_DEVICEFARM_API CreateProjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_DEVICEFARM_API CreateProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
   /**
-   * <p>Represents the result of a create project request.</p><p><h3>See Also:</h3>  
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateProjectResult">AWS
-   * API Reference</a></p>
+   * <p>The newly created project.</p>
    */
-  class CreateProjectResult
-  {
-  public:
-    AWS_DEVICEFARM_API CreateProjectResult() = default;
-    AWS_DEVICEFARM_API CreateProjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_DEVICEFARM_API CreateProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  inline const Project& GetProject() const { return m_project; }
+  template <typename ProjectT = Project>
+  void SetProject(ProjectT&& value) {
+    m_projectHasBeenSet = true;
+    m_project = std::forward<ProjectT>(value);
+  }
+  template <typename ProjectT = Project>
+  CreateProjectResult& WithProject(ProjectT&& value) {
+    SetProject(std::forward<ProjectT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
 
-    ///@{
-    /**
-     * <p>The newly created project.</p>
-     */
-    inline const Project& GetProject() const { return m_project; }
-    template<typename ProjectT = Project>
-    void SetProject(ProjectT&& value) { m_projectHasBeenSet = true; m_project = std::forward<ProjectT>(value); }
-    template<typename ProjectT = Project>
-    CreateProjectResult& WithProject(ProjectT&& value) { SetProject(std::forward<ProjectT>(value)); return *this;}
-    ///@}
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  CreateProjectResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Project m_project;
+  bool m_projectHasBeenSet = false;
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    CreateProjectResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Project m_project;
-    bool m_projectHasBeenSet = false;
-
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace DeviceFarm
-} // namespace Aws
+}  // namespace Model
+}  // namespace DeviceFarm
+}  // namespace Aws

@@ -7,25 +7,16 @@
 #include <aws/connectparticipant/ConnectParticipant_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ConnectParticipant
-{
-namespace Model
-{
-  enum class SortKey
-  {
-    NOT_SET,
-    DESCENDING,
-    ASCENDING
-  };
+namespace Aws {
+namespace ConnectParticipant {
+namespace Model {
+enum class SortKey { NOT_SET, DESCENDING, ASCENDING };
 
-namespace SortKeyMapper
-{
+namespace SortKeyMapper {
 AWS_CONNECTPARTICIPANT_API SortKey GetSortKeyForName(const Aws::String& name);
 
 AWS_CONNECTPARTICIPANT_API Aws::String GetNameForSortKey(SortKey value);
-} // namespace SortKeyMapper
-} // namespace Model
-} // namespace ConnectParticipant
-} // namespace Aws
+}  // namespace SortKeyMapper
+}  // namespace Model
+}  // namespace ConnectParticipant
+}  // namespace Aws

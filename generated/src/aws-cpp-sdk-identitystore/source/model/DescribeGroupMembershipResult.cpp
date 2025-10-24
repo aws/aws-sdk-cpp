@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/identitystore/model/DescribeGroupMembershipResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/identitystore/model/DescribeGroupMembershipResult.h>
 
 #include <utility>
 
@@ -17,43 +17,33 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeGroupMembershipResult::DescribeGroupMembershipResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+DescribeGroupMembershipResult::DescribeGroupMembershipResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-DescribeGroupMembershipResult& DescribeGroupMembershipResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+DescribeGroupMembershipResult& DescribeGroupMembershipResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("IdentityStoreId"))
-  {
+  if (jsonValue.ValueExists("IdentityStoreId")) {
     m_identityStoreId = jsonValue.GetString("IdentityStoreId");
     m_identityStoreIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MembershipId"))
-  {
+  if (jsonValue.ValueExists("MembershipId")) {
     m_membershipId = jsonValue.GetString("MembershipId");
     m_membershipIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("GroupId"))
-  {
+  if (jsonValue.ValueExists("GroupId")) {
     m_groupId = jsonValue.GetString("GroupId");
     m_groupIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MemberId"))
-  {
+  if (jsonValue.ValueExists("MemberId")) {
     m_memberId = jsonValue.GetObject("MemberId");
     m_memberIdHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

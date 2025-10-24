@@ -12,49 +12,34 @@ using namespace Aws::CognitoIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UnlinkIdentityRequest::SerializePayload() const
-{
+Aws::String UnlinkIdentityRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_identityIdHasBeenSet)
-  {
-   payload.WithString("IdentityId", m_identityId);
-
+  if (m_identityIdHasBeenSet) {
+    payload.WithString("IdentityId", m_identityId);
   }
 
-  if(m_loginsHasBeenSet)
-  {
-   JsonValue loginsJsonMap;
-   for(auto& loginsItem : m_logins)
-   {
-     loginsJsonMap.WithString(loginsItem.first, loginsItem.second);
-   }
-   payload.WithObject("Logins", std::move(loginsJsonMap));
-
+  if (m_loginsHasBeenSet) {
+    JsonValue loginsJsonMap;
+    for (auto& loginsItem : m_logins) {
+      loginsJsonMap.WithString(loginsItem.first, loginsItem.second);
+    }
+    payload.WithObject("Logins", std::move(loginsJsonMap));
   }
 
-  if(m_loginsToRemoveHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> loginsToRemoveJsonList(m_loginsToRemove.size());
-   for(unsigned loginsToRemoveIndex = 0; loginsToRemoveIndex < loginsToRemoveJsonList.GetLength(); ++loginsToRemoveIndex)
-   {
-     loginsToRemoveJsonList[loginsToRemoveIndex].AsString(m_loginsToRemove[loginsToRemoveIndex]);
-   }
-   payload.WithArray("LoginsToRemove", std::move(loginsToRemoveJsonList));
-
+  if (m_loginsToRemoveHasBeenSet) {
+    Aws::Utils::Array<JsonValue> loginsToRemoveJsonList(m_loginsToRemove.size());
+    for (unsigned loginsToRemoveIndex = 0; loginsToRemoveIndex < loginsToRemoveJsonList.GetLength(); ++loginsToRemoveIndex) {
+      loginsToRemoveJsonList[loginsToRemoveIndex].AsString(m_loginsToRemove[loginsToRemoveIndex]);
+    }
+    payload.WithArray("LoginsToRemove", std::move(loginsToRemoveJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UnlinkIdentityRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UnlinkIdentityRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityService.UnlinkIdentity"));
   return headers;
-
 }
-
-
-
-

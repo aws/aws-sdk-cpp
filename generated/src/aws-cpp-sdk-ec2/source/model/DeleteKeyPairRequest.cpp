@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DeleteKeyPairRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DeleteKeyPairRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteKeyPairRequest::SerializePayload() const
-{
+Aws::String DeleteKeyPairRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteKeyPair&";
-  if(m_keyNameHasBeenSet)
-  {
+  if (m_keyNameHasBeenSet) {
     ss << "KeyName=" << StringUtils::URLEncode(m_keyName.c_str()) << "&";
   }
 
-  if(m_keyPairIdHasBeenSet)
-  {
+  if (m_keyPairIdHasBeenSet) {
     ss << "KeyPairId=" << StringUtils::URLEncode(m_keyPairId.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String DeleteKeyPairRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteKeyPairRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteKeyPairRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class NumericEqualityMatchOperator
-  {
-    NOT_SET,
-    EQUALS,
-    DOES_NOT_EQUAL
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class NumericEqualityMatchOperator { NOT_SET, EQUALS, DOES_NOT_EQUAL };
 
-namespace NumericEqualityMatchOperatorMapper
-{
+namespace NumericEqualityMatchOperatorMapper {
 AWS_QUICKSIGHT_API NumericEqualityMatchOperator GetNumericEqualityMatchOperatorForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForNumericEqualityMatchOperator(NumericEqualityMatchOperator value);
-} // namespace NumericEqualityMatchOperatorMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace NumericEqualityMatchOperatorMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

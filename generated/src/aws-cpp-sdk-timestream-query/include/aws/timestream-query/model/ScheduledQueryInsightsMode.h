@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/timestream-query/TimestreamQuery_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/timestream-query/TimestreamQuery_EXPORTS.h>
 
-namespace Aws
-{
-namespace TimestreamQuery
-{
-namespace Model
-{
-  enum class ScheduledQueryInsightsMode
-  {
-    NOT_SET,
-    ENABLED_WITH_RATE_CONTROL,
-    DISABLED
-  };
+namespace Aws {
+namespace TimestreamQuery {
+namespace Model {
+enum class ScheduledQueryInsightsMode { NOT_SET, ENABLED_WITH_RATE_CONTROL, DISABLED };
 
-namespace ScheduledQueryInsightsModeMapper
-{
+namespace ScheduledQueryInsightsModeMapper {
 AWS_TIMESTREAMQUERY_API ScheduledQueryInsightsMode GetScheduledQueryInsightsModeForName(const Aws::String& name);
 
 AWS_TIMESTREAMQUERY_API Aws::String GetNameForScheduledQueryInsightsMode(ScheduledQueryInsightsMode value);
-} // namespace ScheduledQueryInsightsModeMapper
-} // namespace Model
-} // namespace TimestreamQuery
-} // namespace Aws
+}  // namespace ScheduledQueryInsightsModeMapper
+}  // namespace Model
+}  // namespace TimestreamQuery
+}  // namespace Aws

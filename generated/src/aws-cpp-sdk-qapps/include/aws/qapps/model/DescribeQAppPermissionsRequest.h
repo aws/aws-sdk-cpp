@@ -4,76 +4,82 @@
  */
 
 #pragma once
-#include <aws/qapps/QApps_EXPORTS.h>
-#include <aws/qapps/QAppsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qapps/QAppsRequest.h>
+#include <aws/qapps/QApps_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Http
-{
-    class URI;
-} //namespace Http
-namespace QApps
-{
-namespace Model
-{
+namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
+namespace QApps {
+namespace Model {
 
+/**
+ */
+class DescribeQAppPermissionsRequest : public QAppsRequest {
+ public:
+  AWS_QAPPS_API DescribeQAppPermissionsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DescribeQAppPermissions"; }
+
+  AWS_QAPPS_API Aws::String SerializePayload() const override;
+
+  AWS_QAPPS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+  AWS_QAPPS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The unique identifier of the Amazon Q Business application environment
+   * instance.</p>
    */
-  class DescribeQAppPermissionsRequest : public QAppsRequest
-  {
-  public:
-    AWS_QAPPS_API DescribeQAppPermissionsRequest() = default;
+  inline const Aws::String& GetInstanceId() const { return m_instanceId; }
+  inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+  template <typename InstanceIdT = Aws::String>
+  void SetInstanceId(InstanceIdT&& value) {
+    m_instanceIdHasBeenSet = true;
+    m_instanceId = std::forward<InstanceIdT>(value);
+  }
+  template <typename InstanceIdT = Aws::String>
+  DescribeQAppPermissionsRequest& WithInstanceId(InstanceIdT&& value) {
+    SetInstanceId(std::forward<InstanceIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DescribeQAppPermissions"; }
+  ///@{
+  /**
+   * <p>The unique identifier of the Amazon Q App for which to retrieve
+   * permissions.</p>
+   */
+  inline const Aws::String& GetAppId() const { return m_appId; }
+  inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
+  template <typename AppIdT = Aws::String>
+  void SetAppId(AppIdT&& value) {
+    m_appIdHasBeenSet = true;
+    m_appId = std::forward<AppIdT>(value);
+  }
+  template <typename AppIdT = Aws::String>
+  DescribeQAppPermissionsRequest& WithAppId(AppIdT&& value) {
+    SetAppId(std::forward<AppIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_instanceId;
+  bool m_instanceIdHasBeenSet = false;
 
-    AWS_QAPPS_API Aws::String SerializePayload() const override;
+  Aws::String m_appId;
+  bool m_appIdHasBeenSet = false;
+};
 
-    AWS_QAPPS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
-    AWS_QAPPS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    ///@{
-    /**
-     * <p>The unique identifier of the Amazon Q Business application environment
-     * instance.</p>
-     */
-    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
-    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    template<typename InstanceIdT = Aws::String>
-    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
-    template<typename InstanceIdT = Aws::String>
-    DescribeQAppPermissionsRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The unique identifier of the Amazon Q App for which to retrieve
-     * permissions.</p>
-     */
-    inline const Aws::String& GetAppId() const { return m_appId; }
-    inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
-    template<typename AppIdT = Aws::String>
-    void SetAppId(AppIdT&& value) { m_appIdHasBeenSet = true; m_appId = std::forward<AppIdT>(value); }
-    template<typename AppIdT = Aws::String>
-    DescribeQAppPermissionsRequest& WithAppId(AppIdT&& value) { SetAppId(std::forward<AppIdT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet = false;
-
-    Aws::String m_appId;
-    bool m_appIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace QApps
-} // namespace Aws
+}  // namespace Model
+}  // namespace QApps
+}  // namespace Aws

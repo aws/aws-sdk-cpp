@@ -7,25 +7,16 @@
 #include <aws/backupsearch/BackupSearch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace BackupSearch
-{
-namespace Model
-{
-  enum class ResourceType
-  {
-    NOT_SET,
-    S3,
-    EBS
-  };
+namespace Aws {
+namespace BackupSearch {
+namespace Model {
+enum class ResourceType { NOT_SET, S3, EBS };
 
-namespace ResourceTypeMapper
-{
+namespace ResourceTypeMapper {
 AWS_BACKUPSEARCH_API ResourceType GetResourceTypeForName(const Aws::String& name);
 
 AWS_BACKUPSEARCH_API Aws::String GetNameForResourceType(ResourceType value);
-} // namespace ResourceTypeMapper
-} // namespace Model
-} // namespace BackupSearch
-} // namespace Aws
+}  // namespace ResourceTypeMapper
+}  // namespace Model
+}  // namespace BackupSearch
+}  // namespace Aws

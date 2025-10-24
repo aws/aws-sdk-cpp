@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyBackend
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyBackend {
+namespace Model {
 
-UpdateBackendAuthIdentityPoolConfig::UpdateBackendAuthIdentityPoolConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UpdateBackendAuthIdentityPoolConfig::UpdateBackendAuthIdentityPoolConfig(JsonView jsonValue) { *this = jsonValue; }
 
-UpdateBackendAuthIdentityPoolConfig& UpdateBackendAuthIdentityPoolConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("unauthenticatedLogin"))
-  {
+UpdateBackendAuthIdentityPoolConfig& UpdateBackendAuthIdentityPoolConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("unauthenticatedLogin")) {
     m_unauthenticatedLogin = jsonValue.GetBool("unauthenticatedLogin");
     m_unauthenticatedLoginHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UpdateBackendAuthIdentityPoolConfig::Jsonize() const
-{
+JsonValue UpdateBackendAuthIdentityPoolConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_unauthenticatedLoginHasBeenSet)
-  {
-   payload.WithBool("unauthenticatedLogin", m_unauthenticatedLogin);
-
+  if (m_unauthenticatedLoginHasBeenSet) {
+    payload.WithBool("unauthenticatedLogin", m_unauthenticatedLogin);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyBackend
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyBackend
+}  // namespace Aws

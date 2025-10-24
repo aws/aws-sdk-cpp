@@ -4,91 +4,106 @@
  */
 
 #pragma once
-#include <aws/sesv2/SESV2_EXPORTS.h>
-#include <aws/sesv2/model/OverallVolume.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sesv2/SESV2_EXPORTS.h>
 #include <aws/sesv2/model/DailyVolume.h>
+#include <aws/sesv2/model/OverallVolume.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace SESV2
-{
-namespace Model
-{
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace SESV2 {
+namespace Model {
+/**
+ * <p>An object that includes statistics that are related to the domain that you
+ * specified.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetDomainStatisticsReportResponse">AWS
+ * API Reference</a></p>
+ */
+class GetDomainStatisticsReportResult {
+ public:
+  AWS_SESV2_API GetDomainStatisticsReportResult() = default;
+  AWS_SESV2_API GetDomainStatisticsReportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_SESV2_API GetDomainStatisticsReportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
   /**
-   * <p>An object that includes statistics that are related to the domain that you
-   * specified.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetDomainStatisticsReportResponse">AWS
-   * API Reference</a></p>
+   * <p>An object that contains deliverability metrics for the domain that you
+   * specified. The data in this object is a summary of all of the data that was
+   * collected from the <code>StartDate</code> to the <code>EndDate</code>.</p>
    */
-  class GetDomainStatisticsReportResult
-  {
-  public:
-    AWS_SESV2_API GetDomainStatisticsReportResult() = default;
-    AWS_SESV2_API GetDomainStatisticsReportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_SESV2_API GetDomainStatisticsReportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  inline const OverallVolume& GetOverallVolume() const { return m_overallVolume; }
+  template <typename OverallVolumeT = OverallVolume>
+  void SetOverallVolume(OverallVolumeT&& value) {
+    m_overallVolumeHasBeenSet = true;
+    m_overallVolume = std::forward<OverallVolumeT>(value);
+  }
+  template <typename OverallVolumeT = OverallVolume>
+  GetDomainStatisticsReportResult& WithOverallVolume(OverallVolumeT&& value) {
+    SetOverallVolume(std::forward<OverallVolumeT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>An object that contains deliverability metrics for the domain that you
+   * specified. This object contains data for each day, starting on the
+   * <code>StartDate</code> and ending on the <code>EndDate</code>.</p>
+   */
+  inline const Aws::Vector<DailyVolume>& GetDailyVolumes() const { return m_dailyVolumes; }
+  template <typename DailyVolumesT = Aws::Vector<DailyVolume>>
+  void SetDailyVolumes(DailyVolumesT&& value) {
+    m_dailyVolumesHasBeenSet = true;
+    m_dailyVolumes = std::forward<DailyVolumesT>(value);
+  }
+  template <typename DailyVolumesT = Aws::Vector<DailyVolume>>
+  GetDomainStatisticsReportResult& WithDailyVolumes(DailyVolumesT&& value) {
+    SetDailyVolumes(std::forward<DailyVolumesT>(value));
+    return *this;
+  }
+  template <typename DailyVolumesT = DailyVolume>
+  GetDomainStatisticsReportResult& AddDailyVolumes(DailyVolumesT&& value) {
+    m_dailyVolumesHasBeenSet = true;
+    m_dailyVolumes.emplace_back(std::forward<DailyVolumesT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>An object that contains deliverability metrics for the domain that you
-     * specified. The data in this object is a summary of all of the data that was
-     * collected from the <code>StartDate</code> to the <code>EndDate</code>.</p>
-     */
-    inline const OverallVolume& GetOverallVolume() const { return m_overallVolume; }
-    template<typename OverallVolumeT = OverallVolume>
-    void SetOverallVolume(OverallVolumeT&& value) { m_overallVolumeHasBeenSet = true; m_overallVolume = std::forward<OverallVolumeT>(value); }
-    template<typename OverallVolumeT = OverallVolume>
-    GetDomainStatisticsReportResult& WithOverallVolume(OverallVolumeT&& value) { SetOverallVolume(std::forward<OverallVolumeT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    /**
-     * <p>An object that contains deliverability metrics for the domain that you
-     * specified. This object contains data for each day, starting on the
-     * <code>StartDate</code> and ending on the <code>EndDate</code>.</p>
-     */
-    inline const Aws::Vector<DailyVolume>& GetDailyVolumes() const { return m_dailyVolumes; }
-    template<typename DailyVolumesT = Aws::Vector<DailyVolume>>
-    void SetDailyVolumes(DailyVolumesT&& value) { m_dailyVolumesHasBeenSet = true; m_dailyVolumes = std::forward<DailyVolumesT>(value); }
-    template<typename DailyVolumesT = Aws::Vector<DailyVolume>>
-    GetDomainStatisticsReportResult& WithDailyVolumes(DailyVolumesT&& value) { SetDailyVolumes(std::forward<DailyVolumesT>(value)); return *this;}
-    template<typename DailyVolumesT = DailyVolume>
-    GetDomainStatisticsReportResult& AddDailyVolumes(DailyVolumesT&& value) { m_dailyVolumesHasBeenSet = true; m_dailyVolumes.emplace_back(std::forward<DailyVolumesT>(value)); return *this; }
-    ///@}
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  GetDomainStatisticsReportResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  OverallVolume m_overallVolume;
+  bool m_overallVolumeHasBeenSet = false;
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    GetDomainStatisticsReportResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  Aws::Vector<DailyVolume> m_dailyVolumes;
+  bool m_dailyVolumesHasBeenSet = false;
 
-    OverallVolume m_overallVolume;
-    bool m_overallVolumeHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::Vector<DailyVolume> m_dailyVolumes;
-    bool m_dailyVolumesHasBeenSet = false;
-
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SESV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace SESV2
+}  // namespace Aws

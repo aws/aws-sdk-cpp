@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppFabric
-{
-namespace Model
-{
+namespace Aws {
+namespace AppFabric {
+namespace Model {
 
-Credential::Credential(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Credential::Credential(JsonView jsonValue) { *this = jsonValue; }
 
-Credential& Credential::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("oauth2Credential"))
-  {
+Credential& Credential::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("oauth2Credential")) {
     m_oauth2Credential = jsonValue.GetObject("oauth2Credential");
     m_oauth2CredentialHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("apiKeyCredential"))
-  {
+  if (jsonValue.ValueExists("apiKeyCredential")) {
     m_apiKeyCredential = jsonValue.GetObject("apiKeyCredential");
     m_apiKeyCredentialHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Credential::Jsonize() const
-{
+JsonValue Credential::Jsonize() const {
   JsonValue payload;
 
-  if(m_oauth2CredentialHasBeenSet)
-  {
-   payload.WithObject("oauth2Credential", m_oauth2Credential.Jsonize());
-
+  if (m_oauth2CredentialHasBeenSet) {
+    payload.WithObject("oauth2Credential", m_oauth2Credential.Jsonize());
   }
 
-  if(m_apiKeyCredentialHasBeenSet)
-  {
-   payload.WithObject("apiKeyCredential", m_apiKeyCredential.Jsonize());
-
+  if (m_apiKeyCredentialHasBeenSet) {
+    payload.WithObject("apiKeyCredential", m_apiKeyCredential.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppFabric
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppFabric
+}  // namespace Aws

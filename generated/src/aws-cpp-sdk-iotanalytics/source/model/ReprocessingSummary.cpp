@@ -3,69 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotanalytics/model/ReprocessingSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotanalytics/model/ReprocessingSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTAnalytics
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTAnalytics {
+namespace Model {
 
-ReprocessingSummary::ReprocessingSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReprocessingSummary::ReprocessingSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ReprocessingSummary& ReprocessingSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("id"))
-  {
+ReprocessingSummary& ReprocessingSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = ReprocessingStatusMapper::GetReprocessingStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("creationTime"))
-  {
+  if (jsonValue.ValueExists("creationTime")) {
     m_creationTime = jsonValue.GetDouble("creationTime");
     m_creationTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ReprocessingSummary::Jsonize() const
-{
+JsonValue ReprocessingSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", ReprocessingStatusMapper::GetNameForReprocessingStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", ReprocessingStatusMapper::GetNameForReprocessingStatus(m_status));
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithDouble("creationTime", m_creationTime.SecondsWithMSPrecision());
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("creationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTAnalytics
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTAnalytics
+}  // namespace Aws

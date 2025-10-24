@@ -12,11 +12,4 @@ using namespace Aws::ApplicationSignals::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteGroupingConfigurationRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DeleteGroupingConfigurationRequest::SerializePayload() const { return {}; }

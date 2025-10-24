@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/migrationhubstrategy/model/ServerError.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/migrationhubstrategy/model/ServerError.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MigrationHubStrategyRecommendations
-{
-namespace Model
-{
+namespace Aws {
+namespace MigrationHubStrategyRecommendations {
+namespace Model {
 
-ServerError::ServerError(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ServerError::ServerError(JsonView jsonValue) { *this = jsonValue; }
 
-ServerError& ServerError::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("serverErrorCategory"))
-  {
+ServerError& ServerError::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("serverErrorCategory")) {
     m_serverErrorCategory = ServerErrorCategoryMapper::GetServerErrorCategoryForName(jsonValue.GetString("serverErrorCategory"));
     m_serverErrorCategoryHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ServerError::Jsonize() const
-{
+JsonValue ServerError::Jsonize() const {
   JsonValue payload;
 
-  if(m_serverErrorCategoryHasBeenSet)
-  {
-   payload.WithString("serverErrorCategory", ServerErrorCategoryMapper::GetNameForServerErrorCategory(m_serverErrorCategory));
+  if (m_serverErrorCategoryHasBeenSet) {
+    payload.WithString("serverErrorCategory", ServerErrorCategoryMapper::GetNameForServerErrorCategory(m_serverErrorCategory));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MigrationHubStrategyRecommendations
-} // namespace Aws
+}  // namespace Model
+}  // namespace MigrationHubStrategyRecommendations
+}  // namespace Aws

@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/socialmessaging/SocialMessaging_EXPORTS.h>
 
-namespace Aws
-{
-namespace SocialMessaging
-{
-class SocialMessagingEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace SocialMessaging {
+class SocialMessagingEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace SocialMessaging
-} // namespace Aws
+}  // namespace SocialMessaging
+}  // namespace Aws

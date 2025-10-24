@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/email/model/DeleteIdentityPolicyRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/email/model/DeleteIdentityPolicyRequest.h>
 
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteIdentityPolicyRequest::SerializePayload() const
-{
+Aws::String DeleteIdentityPolicyRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteIdentityPolicy&";
-  if(m_identityHasBeenSet)
-  {
+  if (m_identityHasBeenSet) {
     ss << "Identity=" << StringUtils::URLEncode(m_identity.c_str()) << "&";
   }
 
-  if(m_policyNameHasBeenSet)
-  {
+  if (m_policyNameHasBeenSet) {
     ss << "PolicyName=" << StringUtils::URLEncode(m_policyName.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DeleteIdentityPolicyRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteIdentityPolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteIdentityPolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

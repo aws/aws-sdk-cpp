@@ -11,106 +11,78 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeConnections
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeConnections {
+namespace Model {
 
-Host::Host(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Host::Host(JsonView jsonValue) { *this = jsonValue; }
 
-Host& Host::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+Host& Host::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HostArn"))
-  {
+  if (jsonValue.ValueExists("HostArn")) {
     m_hostArn = jsonValue.GetString("HostArn");
     m_hostArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProviderType"))
-  {
+  if (jsonValue.ValueExists("ProviderType")) {
     m_providerType = ProviderTypeMapper::GetProviderTypeForName(jsonValue.GetString("ProviderType"));
     m_providerTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProviderEndpoint"))
-  {
+  if (jsonValue.ValueExists("ProviderEndpoint")) {
     m_providerEndpoint = jsonValue.GetString("ProviderEndpoint");
     m_providerEndpointHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VpcConfiguration"))
-  {
+  if (jsonValue.ValueExists("VpcConfiguration")) {
     m_vpcConfiguration = jsonValue.GetObject("VpcConfiguration");
     m_vpcConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = jsonValue.GetString("Status");
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StatusMessage"))
-  {
+  if (jsonValue.ValueExists("StatusMessage")) {
     m_statusMessage = jsonValue.GetString("StatusMessage");
     m_statusMessageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Host::Jsonize() const
-{
+JsonValue Host::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_hostArnHasBeenSet)
-  {
-   payload.WithString("HostArn", m_hostArn);
-
+  if (m_hostArnHasBeenSet) {
+    payload.WithString("HostArn", m_hostArn);
   }
 
-  if(m_providerTypeHasBeenSet)
-  {
-   payload.WithString("ProviderType", ProviderTypeMapper::GetNameForProviderType(m_providerType));
+  if (m_providerTypeHasBeenSet) {
+    payload.WithString("ProviderType", ProviderTypeMapper::GetNameForProviderType(m_providerType));
   }
 
-  if(m_providerEndpointHasBeenSet)
-  {
-   payload.WithString("ProviderEndpoint", m_providerEndpoint);
-
+  if (m_providerEndpointHasBeenSet) {
+    payload.WithString("ProviderEndpoint", m_providerEndpoint);
   }
 
-  if(m_vpcConfigurationHasBeenSet)
-  {
-   payload.WithObject("VpcConfiguration", m_vpcConfiguration.Jsonize());
-
+  if (m_vpcConfigurationHasBeenSet) {
+    payload.WithObject("VpcConfiguration", m_vpcConfiguration.Jsonize());
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", m_status);
-
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", m_status);
   }
 
-  if(m_statusMessageHasBeenSet)
-  {
-   payload.WithString("StatusMessage", m_statusMessage);
-
+  if (m_statusMessageHasBeenSet) {
+    payload.WithString("StatusMessage", m_statusMessage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeConnections
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeConnections
+}  // namespace Aws

@@ -12,32 +12,22 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String BatchGetResourceConfigRequest::SerializePayload() const
-{
+Aws::String BatchGetResourceConfigRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceKeysHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> resourceKeysJsonList(m_resourceKeys.size());
-   for(unsigned resourceKeysIndex = 0; resourceKeysIndex < resourceKeysJsonList.GetLength(); ++resourceKeysIndex)
-   {
-     resourceKeysJsonList[resourceKeysIndex].AsObject(m_resourceKeys[resourceKeysIndex].Jsonize());
-   }
-   payload.WithArray("resourceKeys", std::move(resourceKeysJsonList));
-
+  if (m_resourceKeysHasBeenSet) {
+    Aws::Utils::Array<JsonValue> resourceKeysJsonList(m_resourceKeys.size());
+    for (unsigned resourceKeysIndex = 0; resourceKeysIndex < resourceKeysJsonList.GetLength(); ++resourceKeysIndex) {
+      resourceKeysJsonList[resourceKeysIndex].AsObject(m_resourceKeys[resourceKeysIndex].Jsonize());
+    }
+    payload.WithArray("resourceKeys", std::move(resourceKeysJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection BatchGetResourceConfigRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection BatchGetResourceConfigRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "StarlingDoveService.BatchGetResourceConfig"));
   return headers;
-
 }
-
-
-
-

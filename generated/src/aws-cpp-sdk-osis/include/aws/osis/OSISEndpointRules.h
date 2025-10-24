@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/osis/OSIS_EXPORTS.h>
 
-namespace Aws
-{
-namespace OSIS
-{
-class OSISEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace OSIS {
+class OSISEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace OSIS
-} // namespace Aws
+}  // namespace OSIS
+}  // namespace Aws

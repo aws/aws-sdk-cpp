@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/neptunedata/model/ExecuteGremlinQueryRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/neptunedata/model/ExecuteGremlinQueryRequest.h>
 
 #include <utility>
 
@@ -13,34 +13,24 @@ using namespace Aws::neptunedata::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ExecuteGremlinQueryRequest::SerializePayload() const
-{
+Aws::String ExecuteGremlinQueryRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_gremlinQueryHasBeenSet)
-  {
-   payload.WithString("gremlin", m_gremlinQuery);
-
+  if (m_gremlinQueryHasBeenSet) {
+    payload.WithString("gremlin", m_gremlinQuery);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection ExecuteGremlinQueryRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection ExecuteGremlinQueryRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_serializerHasBeenSet)
-  {
+  if (m_serializerHasBeenSet) {
     ss << m_serializer;
-    headers.emplace("accept",  ss.str());
+    headers.emplace("accept", ss.str());
     ss.str("");
   }
 
   return headers;
-
 }
-
-
-
-

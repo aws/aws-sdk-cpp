@@ -12,25 +12,16 @@ using namespace Aws::CodeStarNotifications::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UnsubscribeRequest::SerializePayload() const
-{
+Aws::String UnsubscribeRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_targetAddressHasBeenSet)
-  {
-   payload.WithString("TargetAddress", m_targetAddress);
-
+  if (m_targetAddressHasBeenSet) {
+    payload.WithString("TargetAddress", m_targetAddress);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

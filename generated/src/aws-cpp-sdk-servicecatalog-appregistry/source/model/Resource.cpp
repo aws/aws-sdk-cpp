@@ -3,81 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/servicecatalog-appregistry/model/Resource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/servicecatalog-appregistry/model/Resource.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppRegistry
-{
-namespace Model
-{
+namespace Aws {
+namespace AppRegistry {
+namespace Model {
 
-Resource::Resource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Resource::Resource(JsonView jsonValue) { *this = jsonValue; }
 
-Resource& Resource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+Resource& Resource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("arn"))
-  {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("associationTime"))
-  {
+  if (jsonValue.ValueExists("associationTime")) {
     m_associationTime = jsonValue.GetString("associationTime");
     m_associationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("integrations"))
-  {
+  if (jsonValue.ValueExists("integrations")) {
     m_integrations = jsonValue.GetObject("integrations");
     m_integrationsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Resource::Jsonize() const
-{
+JsonValue Resource::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_associationTimeHasBeenSet)
-  {
-   payload.WithString("associationTime", m_associationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_associationTimeHasBeenSet) {
+    payload.WithString("associationTime", m_associationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_integrationsHasBeenSet)
-  {
-   payload.WithObject("integrations", m_integrations.Jsonize());
-
+  if (m_integrationsHasBeenSet) {
+    payload.WithObject("integrations", m_integrations.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppRegistry
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppRegistry
+}  // namespace Aws

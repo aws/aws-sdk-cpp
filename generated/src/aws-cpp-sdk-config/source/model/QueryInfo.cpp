@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-QueryInfo::QueryInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+QueryInfo::QueryInfo(JsonView jsonValue) { *this = jsonValue; }
 
-QueryInfo& QueryInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SelectFields"))
-  {
+QueryInfo& QueryInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SelectFields")) {
     Aws::Utils::Array<JsonView> selectFieldsJsonList = jsonValue.GetArray("SelectFields");
-    for(unsigned selectFieldsIndex = 0; selectFieldsIndex < selectFieldsJsonList.GetLength(); ++selectFieldsIndex)
-    {
+    for (unsigned selectFieldsIndex = 0; selectFieldsIndex < selectFieldsJsonList.GetLength(); ++selectFieldsIndex) {
       m_selectFields.push_back(selectFieldsJsonList[selectFieldsIndex].AsObject());
     }
     m_selectFieldsHasBeenSet = true;
@@ -37,24 +28,20 @@ QueryInfo& QueryInfo::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue QueryInfo::Jsonize() const
-{
+JsonValue QueryInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_selectFieldsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> selectFieldsJsonList(m_selectFields.size());
-   for(unsigned selectFieldsIndex = 0; selectFieldsIndex < selectFieldsJsonList.GetLength(); ++selectFieldsIndex)
-   {
-     selectFieldsJsonList[selectFieldsIndex].AsObject(m_selectFields[selectFieldsIndex].Jsonize());
-   }
-   payload.WithArray("SelectFields", std::move(selectFieldsJsonList));
-
+  if (m_selectFieldsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> selectFieldsJsonList(m_selectFields.size());
+    for (unsigned selectFieldsIndex = 0; selectFieldsIndex < selectFieldsJsonList.GetLength(); ++selectFieldsIndex) {
+      selectFieldsJsonList[selectFieldsIndex].AsObject(m_selectFields[selectFieldsIndex].Jsonize());
+    }
+    payload.WithArray("SelectFields", std::move(selectFieldsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

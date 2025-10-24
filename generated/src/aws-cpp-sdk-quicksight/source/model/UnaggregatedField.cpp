@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/UnaggregatedField.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/UnaggregatedField.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-UnaggregatedField::UnaggregatedField(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UnaggregatedField::UnaggregatedField(JsonView jsonValue) { *this = jsonValue; }
 
-UnaggregatedField& UnaggregatedField::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FieldId"))
-  {
+UnaggregatedField& UnaggregatedField::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FieldId")) {
     m_fieldId = jsonValue.GetString("FieldId");
     m_fieldIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Column"))
-  {
+  if (jsonValue.ValueExists("Column")) {
     m_column = jsonValue.GetObject("Column");
     m_columnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FormatConfiguration"))
-  {
+  if (jsonValue.ValueExists("FormatConfiguration")) {
     m_formatConfiguration = jsonValue.GetObject("FormatConfiguration");
     m_formatConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UnaggregatedField::Jsonize() const
-{
+JsonValue UnaggregatedField::Jsonize() const {
   JsonValue payload;
 
-  if(m_fieldIdHasBeenSet)
-  {
-   payload.WithString("FieldId", m_fieldId);
-
+  if (m_fieldIdHasBeenSet) {
+    payload.WithString("FieldId", m_fieldId);
   }
 
-  if(m_columnHasBeenSet)
-  {
-   payload.WithObject("Column", m_column.Jsonize());
-
+  if (m_columnHasBeenSet) {
+    payload.WithObject("Column", m_column.Jsonize());
   }
 
-  if(m_formatConfigurationHasBeenSet)
-  {
-   payload.WithObject("FormatConfiguration", m_formatConfiguration.Jsonize());
-
+  if (m_formatConfigurationHasBeenSet) {
+    payload.WithObject("FormatConfiguration", m_formatConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

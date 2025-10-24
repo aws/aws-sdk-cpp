@@ -3,105 +3,81 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/ParquetCompressionType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/glue/model/ParquetCompressionType.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace Glue {
+namespace Model {
+namespace ParquetCompressionTypeMapper {
 
-namespace Aws
-{
-  namespace Glue
-  {
-    namespace Model
-    {
-      namespace ParquetCompressionTypeMapper
-      {
+static const int snappy_HASH = HashingUtils::HashString("snappy");
+static const int lzo_HASH = HashingUtils::HashString("lzo");
+static const int gzip_HASH = HashingUtils::HashString("gzip");
+static const int brotli_HASH = HashingUtils::HashString("brotli");
+static const int lz4_HASH = HashingUtils::HashString("lz4");
+static const int uncompressed_HASH = HashingUtils::HashString("uncompressed");
+static const int none_HASH = HashingUtils::HashString("none");
 
-        static const int snappy_HASH = HashingUtils::HashString("snappy");
-        static const int lzo_HASH = HashingUtils::HashString("lzo");
-        static const int gzip_HASH = HashingUtils::HashString("gzip");
-        static const int brotli_HASH = HashingUtils::HashString("brotli");
-        static const int lz4_HASH = HashingUtils::HashString("lz4");
-        static const int uncompressed_HASH = HashingUtils::HashString("uncompressed");
-        static const int none_HASH = HashingUtils::HashString("none");
+ParquetCompressionType GetParquetCompressionTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == snappy_HASH) {
+    return ParquetCompressionType::snappy;
+  } else if (hashCode == lzo_HASH) {
+    return ParquetCompressionType::lzo;
+  } else if (hashCode == gzip_HASH) {
+    return ParquetCompressionType::gzip;
+  } else if (hashCode == brotli_HASH) {
+    return ParquetCompressionType::brotli;
+  } else if (hashCode == lz4_HASH) {
+    return ParquetCompressionType::lz4;
+  } else if (hashCode == uncompressed_HASH) {
+    return ParquetCompressionType::uncompressed;
+  } else if (hashCode == none_HASH) {
+    return ParquetCompressionType::none;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<ParquetCompressionType>(hashCode);
+  }
 
+  return ParquetCompressionType::NOT_SET;
+}
 
-        ParquetCompressionType GetParquetCompressionTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == snappy_HASH)
-          {
-            return ParquetCompressionType::snappy;
-          }
-          else if (hashCode == lzo_HASH)
-          {
-            return ParquetCompressionType::lzo;
-          }
-          else if (hashCode == gzip_HASH)
-          {
-            return ParquetCompressionType::gzip;
-          }
-          else if (hashCode == brotli_HASH)
-          {
-            return ParquetCompressionType::brotli;
-          }
-          else if (hashCode == lz4_HASH)
-          {
-            return ParquetCompressionType::lz4;
-          }
-          else if (hashCode == uncompressed_HASH)
-          {
-            return ParquetCompressionType::uncompressed;
-          }
-          else if (hashCode == none_HASH)
-          {
-            return ParquetCompressionType::none;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ParquetCompressionType>(hashCode);
-          }
+Aws::String GetNameForParquetCompressionType(ParquetCompressionType enumValue) {
+  switch (enumValue) {
+    case ParquetCompressionType::NOT_SET:
+      return {};
+    case ParquetCompressionType::snappy:
+      return "snappy";
+    case ParquetCompressionType::lzo:
+      return "lzo";
+    case ParquetCompressionType::gzip:
+      return "gzip";
+    case ParquetCompressionType::brotli:
+      return "brotli";
+    case ParquetCompressionType::lz4:
+      return "lz4";
+    case ParquetCompressionType::uncompressed:
+      return "uncompressed";
+    case ParquetCompressionType::none:
+      return "none";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return ParquetCompressionType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForParquetCompressionType(ParquetCompressionType enumValue)
-        {
-          switch(enumValue)
-          {
-          case ParquetCompressionType::NOT_SET:
-            return {};
-          case ParquetCompressionType::snappy:
-            return "snappy";
-          case ParquetCompressionType::lzo:
-            return "lzo";
-          case ParquetCompressionType::gzip:
-            return "gzip";
-          case ParquetCompressionType::brotli:
-            return "brotli";
-          case ParquetCompressionType::lz4:
-            return "lz4";
-          case ParquetCompressionType::uncompressed:
-            return "uncompressed";
-          case ParquetCompressionType::none:
-            return "none";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace ParquetCompressionTypeMapper
-    } // namespace Model
-  } // namespace Glue
-} // namespace Aws
+}  // namespace ParquetCompressionTypeMapper
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

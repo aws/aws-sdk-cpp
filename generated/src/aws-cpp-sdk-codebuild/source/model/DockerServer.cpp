@@ -11,71 +11,53 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeBuild
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeBuild {
+namespace Model {
 
-DockerServer::DockerServer(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DockerServer::DockerServer(JsonView jsonValue) { *this = jsonValue; }
 
-DockerServer& DockerServer::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("computeType"))
-  {
+DockerServer& DockerServer::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("computeType")) {
     m_computeType = ComputeTypeMapper::GetComputeTypeForName(jsonValue.GetString("computeType"));
     m_computeTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("securityGroupIds"))
-  {
+  if (jsonValue.ValueExists("securityGroupIds")) {
     Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
-    for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
-    {
+    for (unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex) {
       m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
     }
     m_securityGroupIdsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = jsonValue.GetObject("status");
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DockerServer::Jsonize() const
-{
+JsonValue DockerServer::Jsonize() const {
   JsonValue payload;
 
-  if(m_computeTypeHasBeenSet)
-  {
-   payload.WithString("computeType", ComputeTypeMapper::GetNameForComputeType(m_computeType));
+  if (m_computeTypeHasBeenSet) {
+    payload.WithString("computeType", ComputeTypeMapper::GetNameForComputeType(m_computeType));
   }
 
-  if(m_securityGroupIdsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
-   for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
-   {
-     securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
-   }
-   payload.WithArray("securityGroupIds", std::move(securityGroupIdsJsonList));
-
+  if (m_securityGroupIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
+    for (unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex) {
+      securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
+    }
+    payload.WithArray("securityGroupIds", std::move(securityGroupIdsJsonList));
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithObject("status", m_status.Jsonize());
-
+  if (m_statusHasBeenSet) {
+    payload.WithObject("status", m_status.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeBuild
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeBuild
+}  // namespace Aws

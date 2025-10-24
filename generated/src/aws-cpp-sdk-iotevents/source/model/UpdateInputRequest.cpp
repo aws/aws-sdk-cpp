@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotevents/model/UpdateInputRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotevents/model/UpdateInputRequest.h>
 
 #include <utility>
 
@@ -12,25 +12,16 @@ using namespace Aws::IoTEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateInputRequest::SerializePayload() const
-{
+Aws::String UpdateInputRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_inputDescriptionHasBeenSet)
-  {
-   payload.WithString("inputDescription", m_inputDescription);
-
+  if (m_inputDescriptionHasBeenSet) {
+    payload.WithString("inputDescription", m_inputDescription);
   }
 
-  if(m_inputDefinitionHasBeenSet)
-  {
-   payload.WithObject("inputDefinition", m_inputDefinition.Jsonize());
-
+  if (m_inputDefinitionHasBeenSet) {
+    payload.WithObject("inputDefinition", m_inputDefinition.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

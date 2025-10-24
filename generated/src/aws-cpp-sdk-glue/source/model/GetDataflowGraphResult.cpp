@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/GetDataflowGraphResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/glue/model/GetDataflowGraphResult.h>
 
 #include <utility>
 
@@ -17,28 +17,20 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDataflowGraphResult::GetDataflowGraphResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetDataflowGraphResult::GetDataflowGraphResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetDataflowGraphResult& GetDataflowGraphResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetDataflowGraphResult& GetDataflowGraphResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("DagNodes"))
-  {
+  if (jsonValue.ValueExists("DagNodes")) {
     Aws::Utils::Array<JsonView> dagNodesJsonList = jsonValue.GetArray("DagNodes");
-    for(unsigned dagNodesIndex = 0; dagNodesIndex < dagNodesJsonList.GetLength(); ++dagNodesIndex)
-    {
+    for (unsigned dagNodesIndex = 0; dagNodesIndex < dagNodesJsonList.GetLength(); ++dagNodesIndex) {
       m_dagNodes.push_back(dagNodesJsonList[dagNodesIndex].AsObject());
     }
     m_dagNodesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DagEdges"))
-  {
+  if (jsonValue.ValueExists("DagEdges")) {
     Aws::Utils::Array<JsonView> dagEdgesJsonList = jsonValue.GetArray("DagEdges");
-    for(unsigned dagEdgesIndex = 0; dagEdgesIndex < dagEdgesJsonList.GetLength(); ++dagEdgesIndex)
-    {
+    for (unsigned dagEdgesIndex = 0; dagEdgesIndex < dagEdgesJsonList.GetLength(); ++dagEdgesIndex) {
       m_dagEdges.push_back(dagEdgesJsonList[dagEdgesIndex].AsObject());
     }
     m_dagEdgesHasBeenSet = true;
@@ -46,12 +38,10 @@ GetDataflowGraphResult& GetDataflowGraphResult::operator =(const Aws::AmazonWebS
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

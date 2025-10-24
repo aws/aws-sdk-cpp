@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pipes/model/BatchJobDependency.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pipes/model/BatchJobDependency.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Pipes
-{
-namespace Model
-{
+namespace Aws {
+namespace Pipes {
+namespace Model {
 
-BatchJobDependency::BatchJobDependency(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchJobDependency::BatchJobDependency(JsonView jsonValue) { *this = jsonValue; }
 
-BatchJobDependency& BatchJobDependency::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("JobId"))
-  {
+BatchJobDependency& BatchJobDependency::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("JobId")) {
     m_jobId = jsonValue.GetString("JobId");
     m_jobIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = BatchJobDependencyTypeMapper::GetBatchJobDependencyTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BatchJobDependency::Jsonize() const
-{
+JsonValue BatchJobDependency::Jsonize() const {
   JsonValue payload;
 
-  if(m_jobIdHasBeenSet)
-  {
-   payload.WithString("JobId", m_jobId);
-
+  if (m_jobIdHasBeenSet) {
+    payload.WithString("JobId", m_jobId);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", BatchJobDependencyTypeMapper::GetNameForBatchJobDependencyType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", BatchJobDependencyTypeMapper::GetNameForBatchJobDependencyType(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Pipes
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pipes
+}  // namespace Aws

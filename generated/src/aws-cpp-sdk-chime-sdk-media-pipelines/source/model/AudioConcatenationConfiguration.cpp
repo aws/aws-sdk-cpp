@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-AudioConcatenationConfiguration::AudioConcatenationConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AudioConcatenationConfiguration::AudioConcatenationConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-AudioConcatenationConfiguration& AudioConcatenationConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("State"))
-  {
+AudioConcatenationConfiguration& AudioConcatenationConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("State")) {
     m_state = AudioArtifactsConcatenationStateMapper::GetAudioArtifactsConcatenationStateForName(jsonValue.GetString("State"));
     m_stateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AudioConcatenationConfiguration::Jsonize() const
-{
+JsonValue AudioConcatenationConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("State", AudioArtifactsConcatenationStateMapper::GetNameForAudioArtifactsConcatenationState(m_state));
+  if (m_stateHasBeenSet) {
+    payload.WithString("State", AudioArtifactsConcatenationStateMapper::GetNameForAudioArtifactsConcatenationState(m_state));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

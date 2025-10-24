@@ -3,33 +3,24 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/greengrassv2/model/IoTJobAbortConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/greengrassv2/model/IoTJobAbortConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GreengrassV2
-{
-namespace Model
-{
+namespace Aws {
+namespace GreengrassV2 {
+namespace Model {
 
-IoTJobAbortConfig::IoTJobAbortConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IoTJobAbortConfig::IoTJobAbortConfig(JsonView jsonValue) { *this = jsonValue; }
 
-IoTJobAbortConfig& IoTJobAbortConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("criteriaList"))
-  {
+IoTJobAbortConfig& IoTJobAbortConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("criteriaList")) {
     Aws::Utils::Array<JsonView> criteriaListJsonList = jsonValue.GetArray("criteriaList");
-    for(unsigned criteriaListIndex = 0; criteriaListIndex < criteriaListJsonList.GetLength(); ++criteriaListIndex)
-    {
+    for (unsigned criteriaListIndex = 0; criteriaListIndex < criteriaListJsonList.GetLength(); ++criteriaListIndex) {
       m_criteriaList.push_back(criteriaListJsonList[criteriaListIndex].AsObject());
     }
     m_criteriaListHasBeenSet = true;
@@ -37,24 +28,20 @@ IoTJobAbortConfig& IoTJobAbortConfig::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue IoTJobAbortConfig::Jsonize() const
-{
+JsonValue IoTJobAbortConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_criteriaListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> criteriaListJsonList(m_criteriaList.size());
-   for(unsigned criteriaListIndex = 0; criteriaListIndex < criteriaListJsonList.GetLength(); ++criteriaListIndex)
-   {
-     criteriaListJsonList[criteriaListIndex].AsObject(m_criteriaList[criteriaListIndex].Jsonize());
-   }
-   payload.WithArray("criteriaList", std::move(criteriaListJsonList));
-
+  if (m_criteriaListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> criteriaListJsonList(m_criteriaList.size());
+    for (unsigned criteriaListIndex = 0; criteriaListIndex < criteriaListJsonList.GetLength(); ++criteriaListIndex) {
+      criteriaListJsonList[criteriaListIndex].AsObject(m_criteriaList[criteriaListIndex].Jsonize());
+    }
+    payload.WithArray("criteriaList", std::move(criteriaListJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GreengrassV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace GreengrassV2
+}  // namespace Aws

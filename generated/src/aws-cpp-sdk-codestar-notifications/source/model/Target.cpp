@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeStarNotifications
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeStarNotifications {
+namespace Model {
 
-Target::Target(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Target::Target(JsonView jsonValue) { *this = jsonValue; }
 
-Target& Target::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TargetType"))
-  {
+Target& Target::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TargetType")) {
     m_targetType = jsonValue.GetString("TargetType");
     m_targetTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TargetAddress"))
-  {
+  if (jsonValue.ValueExists("TargetAddress")) {
     m_targetAddress = jsonValue.GetString("TargetAddress");
     m_targetAddressHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Target::Jsonize() const
-{
+JsonValue Target::Jsonize() const {
   JsonValue payload;
 
-  if(m_targetTypeHasBeenSet)
-  {
-   payload.WithString("TargetType", m_targetType);
-
+  if (m_targetTypeHasBeenSet) {
+    payload.WithString("TargetType", m_targetType);
   }
 
-  if(m_targetAddressHasBeenSet)
-  {
-   payload.WithString("TargetAddress", m_targetAddress);
-
+  if (m_targetAddressHasBeenSet) {
+    payload.WithString("TargetAddress", m_targetAddress);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeStarNotifications
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeStarNotifications
+}  // namespace Aws

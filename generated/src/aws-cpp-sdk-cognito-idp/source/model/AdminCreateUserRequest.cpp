@@ -12,94 +12,68 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AdminCreateUserRequest::SerializePayload() const
-{
+Aws::String AdminCreateUserRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_userPoolIdHasBeenSet)
-  {
-   payload.WithString("UserPoolId", m_userPoolId);
-
+  if (m_userPoolIdHasBeenSet) {
+    payload.WithString("UserPoolId", m_userPoolId);
   }
 
-  if(m_usernameHasBeenSet)
-  {
-   payload.WithString("Username", m_username);
-
+  if (m_usernameHasBeenSet) {
+    payload.WithString("Username", m_username);
   }
 
-  if(m_userAttributesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> userAttributesJsonList(m_userAttributes.size());
-   for(unsigned userAttributesIndex = 0; userAttributesIndex < userAttributesJsonList.GetLength(); ++userAttributesIndex)
-   {
-     userAttributesJsonList[userAttributesIndex].AsObject(m_userAttributes[userAttributesIndex].Jsonize());
-   }
-   payload.WithArray("UserAttributes", std::move(userAttributesJsonList));
-
+  if (m_userAttributesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> userAttributesJsonList(m_userAttributes.size());
+    for (unsigned userAttributesIndex = 0; userAttributesIndex < userAttributesJsonList.GetLength(); ++userAttributesIndex) {
+      userAttributesJsonList[userAttributesIndex].AsObject(m_userAttributes[userAttributesIndex].Jsonize());
+    }
+    payload.WithArray("UserAttributes", std::move(userAttributesJsonList));
   }
 
-  if(m_validationDataHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> validationDataJsonList(m_validationData.size());
-   for(unsigned validationDataIndex = 0; validationDataIndex < validationDataJsonList.GetLength(); ++validationDataIndex)
-   {
-     validationDataJsonList[validationDataIndex].AsObject(m_validationData[validationDataIndex].Jsonize());
-   }
-   payload.WithArray("ValidationData", std::move(validationDataJsonList));
-
+  if (m_validationDataHasBeenSet) {
+    Aws::Utils::Array<JsonValue> validationDataJsonList(m_validationData.size());
+    for (unsigned validationDataIndex = 0; validationDataIndex < validationDataJsonList.GetLength(); ++validationDataIndex) {
+      validationDataJsonList[validationDataIndex].AsObject(m_validationData[validationDataIndex].Jsonize());
+    }
+    payload.WithArray("ValidationData", std::move(validationDataJsonList));
   }
 
-  if(m_temporaryPasswordHasBeenSet)
-  {
-   payload.WithString("TemporaryPassword", m_temporaryPassword);
-
+  if (m_temporaryPasswordHasBeenSet) {
+    payload.WithString("TemporaryPassword", m_temporaryPassword);
   }
 
-  if(m_forceAliasCreationHasBeenSet)
-  {
-   payload.WithBool("ForceAliasCreation", m_forceAliasCreation);
-
+  if (m_forceAliasCreationHasBeenSet) {
+    payload.WithBool("ForceAliasCreation", m_forceAliasCreation);
   }
 
-  if(m_messageActionHasBeenSet)
-  {
-   payload.WithString("MessageAction", MessageActionTypeMapper::GetNameForMessageActionType(m_messageAction));
+  if (m_messageActionHasBeenSet) {
+    payload.WithString("MessageAction", MessageActionTypeMapper::GetNameForMessageActionType(m_messageAction));
   }
 
-  if(m_desiredDeliveryMediumsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> desiredDeliveryMediumsJsonList(m_desiredDeliveryMediums.size());
-   for(unsigned desiredDeliveryMediumsIndex = 0; desiredDeliveryMediumsIndex < desiredDeliveryMediumsJsonList.GetLength(); ++desiredDeliveryMediumsIndex)
-   {
-     desiredDeliveryMediumsJsonList[desiredDeliveryMediumsIndex].AsString(DeliveryMediumTypeMapper::GetNameForDeliveryMediumType(m_desiredDeliveryMediums[desiredDeliveryMediumsIndex]));
-   }
-   payload.WithArray("DesiredDeliveryMediums", std::move(desiredDeliveryMediumsJsonList));
-
+  if (m_desiredDeliveryMediumsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> desiredDeliveryMediumsJsonList(m_desiredDeliveryMediums.size());
+    for (unsigned desiredDeliveryMediumsIndex = 0; desiredDeliveryMediumsIndex < desiredDeliveryMediumsJsonList.GetLength();
+         ++desiredDeliveryMediumsIndex) {
+      desiredDeliveryMediumsJsonList[desiredDeliveryMediumsIndex].AsString(
+          DeliveryMediumTypeMapper::GetNameForDeliveryMediumType(m_desiredDeliveryMediums[desiredDeliveryMediumsIndex]));
+    }
+    payload.WithArray("DesiredDeliveryMediums", std::move(desiredDeliveryMediumsJsonList));
   }
 
-  if(m_clientMetadataHasBeenSet)
-  {
-   JsonValue clientMetadataJsonMap;
-   for(auto& clientMetadataItem : m_clientMetadata)
-   {
-     clientMetadataJsonMap.WithString(clientMetadataItem.first, clientMetadataItem.second);
-   }
-   payload.WithObject("ClientMetadata", std::move(clientMetadataJsonMap));
-
+  if (m_clientMetadataHasBeenSet) {
+    JsonValue clientMetadataJsonMap;
+    for (auto& clientMetadataItem : m_clientMetadata) {
+      clientMetadataJsonMap.WithString(clientMetadataItem.first, clientMetadataItem.second);
+    }
+    payload.WithObject("ClientMetadata", std::move(clientMetadataJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection AdminCreateUserRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection AdminCreateUserRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityProviderService.AdminCreateUser"));
   return headers;
-
 }
-
-
-
-

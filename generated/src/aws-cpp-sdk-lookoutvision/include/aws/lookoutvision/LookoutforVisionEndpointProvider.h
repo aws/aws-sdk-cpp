@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/lookoutvision/LookoutforVision_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/lookoutvision/LookoutforVisionEndpointRules.h>
+#include <aws/lookoutvision/LookoutforVision_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace LookoutforVision
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace LookoutforVision {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using LookoutforVisionClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -38,24 +33,22 @@ using LookoutforVisionEndpointProviderBase =
     EndpointProviderBase<LookoutforVisionClientConfiguration, LookoutforVisionBuiltInParameters, LookoutforVisionClientContextParameters>;
 
 using LookoutforVisionDefaultEpProviderBase =
-    DefaultEndpointProvider<LookoutforVisionClientConfiguration, LookoutforVisionBuiltInParameters, LookoutforVisionClientContextParameters>;
+    DefaultEndpointProvider<LookoutforVisionClientConfiguration, LookoutforVisionBuiltInParameters,
+                            LookoutforVisionClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_LOOKOUTFORVISION_API LookoutforVisionEndpointProvider : public LookoutforVisionDefaultEpProviderBase
-{
-public:
-    using LookoutforVisionResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_LOOKOUTFORVISION_API LookoutforVisionEndpointProvider : public LookoutforVisionDefaultEpProviderBase {
+ public:
+  using LookoutforVisionResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    LookoutforVisionEndpointProvider()
-      : LookoutforVisionDefaultEpProviderBase(Aws::LookoutforVision::LookoutforVisionEndpointRules::GetRulesBlob(), Aws::LookoutforVision::LookoutforVisionEndpointRules::RulesBlobSize)
-    {}
+  LookoutforVisionEndpointProvider()
+      : LookoutforVisionDefaultEpProviderBase(Aws::LookoutforVision::LookoutforVisionEndpointRules::GetRulesBlob(),
+                                              Aws::LookoutforVision::LookoutforVisionEndpointRules::RulesBlobSize) {}
 
-    ~LookoutforVisionEndpointProvider()
-    {
-    }
+  ~LookoutforVisionEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace LookoutforVision
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace LookoutforVision
+}  // namespace Aws

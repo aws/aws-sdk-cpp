@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
+namespace Aws {
+namespace ConfigService {
+namespace Model {
 
-GroupedResourceCount::GroupedResourceCount(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GroupedResourceCount::GroupedResourceCount(JsonView jsonValue) { *this = jsonValue; }
 
-GroupedResourceCount& GroupedResourceCount::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("GroupName"))
-  {
+GroupedResourceCount& GroupedResourceCount::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("GroupName")) {
     m_groupName = jsonValue.GetString("GroupName");
     m_groupNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ResourceCount"))
-  {
+  if (jsonValue.ValueExists("ResourceCount")) {
     m_resourceCount = jsonValue.GetInt64("ResourceCount");
     m_resourceCountHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GroupedResourceCount::Jsonize() const
-{
+JsonValue GroupedResourceCount::Jsonize() const {
   JsonValue payload;
 
-  if(m_groupNameHasBeenSet)
-  {
-   payload.WithString("GroupName", m_groupName);
-
+  if (m_groupNameHasBeenSet) {
+    payload.WithString("GroupName", m_groupName);
   }
 
-  if(m_resourceCountHasBeenSet)
-  {
-   payload.WithInt64("ResourceCount", m_resourceCount);
-
+  if (m_resourceCountHasBeenSet) {
+    payload.WithInt64("ResourceCount", m_resourceCount);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

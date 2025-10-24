@@ -4,69 +4,55 @@
  */
 
 #include <aws/codecommit/model/PullRequestStatusEnum.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace CodeCommit {
+namespace Model {
+namespace PullRequestStatusEnumMapper {
 
-namespace Aws
-{
-  namespace CodeCommit
-  {
-    namespace Model
-    {
-      namespace PullRequestStatusEnumMapper
-      {
+static const int OPEN_HASH = HashingUtils::HashString("OPEN");
+static const int CLOSED_HASH = HashingUtils::HashString("CLOSED");
 
-        static const int OPEN_HASH = HashingUtils::HashString("OPEN");
-        static const int CLOSED_HASH = HashingUtils::HashString("CLOSED");
+PullRequestStatusEnum GetPullRequestStatusEnumForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == OPEN_HASH) {
+    return PullRequestStatusEnum::OPEN;
+  } else if (hashCode == CLOSED_HASH) {
+    return PullRequestStatusEnum::CLOSED;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<PullRequestStatusEnum>(hashCode);
+  }
 
+  return PullRequestStatusEnum::NOT_SET;
+}
 
-        PullRequestStatusEnum GetPullRequestStatusEnumForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == OPEN_HASH)
-          {
-            return PullRequestStatusEnum::OPEN;
-          }
-          else if (hashCode == CLOSED_HASH)
-          {
-            return PullRequestStatusEnum::CLOSED;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<PullRequestStatusEnum>(hashCode);
-          }
+Aws::String GetNameForPullRequestStatusEnum(PullRequestStatusEnum enumValue) {
+  switch (enumValue) {
+    case PullRequestStatusEnum::NOT_SET:
+      return {};
+    case PullRequestStatusEnum::OPEN:
+      return "OPEN";
+    case PullRequestStatusEnum::CLOSED:
+      return "CLOSED";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return PullRequestStatusEnum::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForPullRequestStatusEnum(PullRequestStatusEnum enumValue)
-        {
-          switch(enumValue)
-          {
-          case PullRequestStatusEnum::NOT_SET:
-            return {};
-          case PullRequestStatusEnum::OPEN:
-            return "OPEN";
-          case PullRequestStatusEnum::CLOSED:
-            return "CLOSED";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace PullRequestStatusEnumMapper
-    } // namespace Model
-  } // namespace CodeCommit
-} // namespace Aws
+}  // namespace PullRequestStatusEnumMapper
+}  // namespace Model
+}  // namespace CodeCommit
+}  // namespace Aws

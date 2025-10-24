@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lambda/Lambda_EXPORTS.h>
 
-namespace Aws
-{
-namespace Lambda
-{
-namespace Model
-{
-  enum class UpdateRuntimeOn
-  {
-    NOT_SET,
-    Auto,
-    Manual,
-    FunctionUpdate
-  };
+namespace Aws {
+namespace Lambda {
+namespace Model {
+enum class UpdateRuntimeOn { NOT_SET, Auto, Manual, FunctionUpdate };
 
-namespace UpdateRuntimeOnMapper
-{
+namespace UpdateRuntimeOnMapper {
 AWS_LAMBDA_API UpdateRuntimeOn GetUpdateRuntimeOnForName(const Aws::String& name);
 
 AWS_LAMBDA_API Aws::String GetNameForUpdateRuntimeOn(UpdateRuntimeOn value);
-} // namespace UpdateRuntimeOnMapper
-} // namespace Model
-} // namespace Lambda
-} // namespace Aws
+}  // namespace UpdateRuntimeOnMapper
+}  // namespace Model
+}  // namespace Lambda
+}  // namespace Aws

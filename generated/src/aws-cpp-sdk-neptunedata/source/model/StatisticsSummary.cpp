@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/neptunedata/model/StatisticsSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/neptunedata/model/StatisticsSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace neptunedata
-{
-namespace Model
-{
+namespace Aws {
+namespace neptunedata {
+namespace Model {
 
-StatisticsSummary::StatisticsSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StatisticsSummary::StatisticsSummary(JsonView jsonValue) { *this = jsonValue; }
 
-StatisticsSummary& StatisticsSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("signatureCount"))
-  {
+StatisticsSummary& StatisticsSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("signatureCount")) {
     m_signatureCount = jsonValue.GetInteger("signatureCount");
     m_signatureCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("instanceCount"))
-  {
+  if (jsonValue.ValueExists("instanceCount")) {
     m_instanceCount = jsonValue.GetInteger("instanceCount");
     m_instanceCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("predicateCount"))
-  {
+  if (jsonValue.ValueExists("predicateCount")) {
     m_predicateCount = jsonValue.GetInteger("predicateCount");
     m_predicateCountHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StatisticsSummary::Jsonize() const
-{
+JsonValue StatisticsSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_signatureCountHasBeenSet)
-  {
-   payload.WithInteger("signatureCount", m_signatureCount);
-
+  if (m_signatureCountHasBeenSet) {
+    payload.WithInteger("signatureCount", m_signatureCount);
   }
 
-  if(m_instanceCountHasBeenSet)
-  {
-   payload.WithInteger("instanceCount", m_instanceCount);
-
+  if (m_instanceCountHasBeenSet) {
+    payload.WithInteger("instanceCount", m_instanceCount);
   }
 
-  if(m_predicateCountHasBeenSet)
-  {
-   payload.WithInteger("predicateCount", m_predicateCount);
-
+  if (m_predicateCountHasBeenSet) {
+    payload.WithInteger("predicateCount", m_predicateCount);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace neptunedata
-} // namespace Aws
+}  // namespace Model
+}  // namespace neptunedata
+}  // namespace Aws

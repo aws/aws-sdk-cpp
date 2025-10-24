@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/iotfleethub/IoTFleetHubRequest.h>
 
-namespace Aws
-{
-namespace IoTFleetHub
-{
-} // namespace IoTFleetHub
-} // namespace Aws
+namespace Aws {
+namespace IoTFleetHub {}  // namespace IoTFleetHub
+}  // namespace Aws

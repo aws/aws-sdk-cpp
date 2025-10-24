@@ -10,17 +10,14 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String GetGeneratedTemplateRequest::SerializePayload() const
-{
+Aws::String GetGeneratedTemplateRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetGeneratedTemplate&";
-  if(m_formatHasBeenSet)
-  {
+  if (m_formatHasBeenSet) {
     ss << "Format=" << StringUtils::URLEncode(TemplateFormatMapper::GetNameForTemplateFormat(m_format)) << "&";
   }
 
-  if(m_generatedTemplateNameHasBeenSet)
-  {
+  if (m_generatedTemplateNameHasBeenSet) {
     ss << "GeneratedTemplateName=" << StringUtils::URLEncode(m_generatedTemplateName.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String GetGeneratedTemplateRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetGeneratedTemplateRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetGeneratedTemplateRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

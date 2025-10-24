@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wafv2/model/RuleSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wafv2/model/RuleSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WAFV2
-{
-namespace Model
-{
+namespace Aws {
+namespace WAFV2 {
+namespace Model {
 
-RuleSummary::RuleSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RuleSummary::RuleSummary(JsonView jsonValue) { *this = jsonValue; }
 
-RuleSummary& RuleSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+RuleSummary& RuleSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Action"))
-  {
+  if (jsonValue.ValueExists("Action")) {
     m_action = jsonValue.GetObject("Action");
     m_actionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RuleSummary::Jsonize() const
-{
+JsonValue RuleSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_actionHasBeenSet)
-  {
-   payload.WithObject("Action", m_action.Jsonize());
-
+  if (m_actionHasBeenSet) {
+    payload.WithObject("Action", m_action.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WAFV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace WAFV2
+}  // namespace Aws

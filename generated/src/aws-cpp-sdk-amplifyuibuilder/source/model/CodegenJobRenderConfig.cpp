@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyUIBuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Model {
 
-CodegenJobRenderConfig::CodegenJobRenderConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CodegenJobRenderConfig::CodegenJobRenderConfig(JsonView jsonValue) { *this = jsonValue; }
 
-CodegenJobRenderConfig& CodegenJobRenderConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("react"))
-  {
+CodegenJobRenderConfig& CodegenJobRenderConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("react")) {
     m_react = jsonValue.GetObject("react");
     m_reactHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CodegenJobRenderConfig::Jsonize() const
-{
+JsonValue CodegenJobRenderConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_reactHasBeenSet)
-  {
-   payload.WithObject("react", m_react.Jsonize());
-
+  if (m_reactHasBeenSet) {
+    payload.WithObject("react", m_react.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

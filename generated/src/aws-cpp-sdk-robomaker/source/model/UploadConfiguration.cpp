@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/robomaker/model/UploadConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/robomaker/model/UploadConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace RoboMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace RoboMaker {
+namespace Model {
 
-UploadConfiguration::UploadConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UploadConfiguration::UploadConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-UploadConfiguration& UploadConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+UploadConfiguration& UploadConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("path"))
-  {
+  if (jsonValue.ValueExists("path")) {
     m_path = jsonValue.GetString("path");
     m_pathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("uploadBehavior"))
-  {
+  if (jsonValue.ValueExists("uploadBehavior")) {
     m_uploadBehavior = UploadBehaviorMapper::GetUploadBehaviorForName(jsonValue.GetString("uploadBehavior"));
     m_uploadBehaviorHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UploadConfiguration::Jsonize() const
-{
+JsonValue UploadConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_pathHasBeenSet)
-  {
-   payload.WithString("path", m_path);
-
+  if (m_pathHasBeenSet) {
+    payload.WithString("path", m_path);
   }
 
-  if(m_uploadBehaviorHasBeenSet)
-  {
-   payload.WithString("uploadBehavior", UploadBehaviorMapper::GetNameForUploadBehavior(m_uploadBehavior));
+  if (m_uploadBehaviorHasBeenSet) {
+    payload.WithString("uploadBehavior", UploadBehaviorMapper::GetNameForUploadBehavior(m_uploadBehavior));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace RoboMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace RoboMaker
+}  // namespace Aws

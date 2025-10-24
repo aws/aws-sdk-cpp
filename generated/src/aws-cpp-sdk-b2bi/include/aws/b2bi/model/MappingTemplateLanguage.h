@@ -7,25 +7,16 @@
 #include <aws/b2bi/B2BI_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace B2BI
-{
-namespace Model
-{
-  enum class MappingTemplateLanguage
-  {
-    NOT_SET,
-    XSLT,
-    JSONATA
-  };
+namespace Aws {
+namespace B2BI {
+namespace Model {
+enum class MappingTemplateLanguage { NOT_SET, XSLT, JSONATA };
 
-namespace MappingTemplateLanguageMapper
-{
+namespace MappingTemplateLanguageMapper {
 AWS_B2BI_API MappingTemplateLanguage GetMappingTemplateLanguageForName(const Aws::String& name);
 
 AWS_B2BI_API Aws::String GetNameForMappingTemplateLanguage(MappingTemplateLanguage value);
-} // namespace MappingTemplateLanguageMapper
-} // namespace Model
-} // namespace B2BI
-} // namespace Aws
+}  // namespace MappingTemplateLanguageMapper
+}  // namespace Model
+}  // namespace B2BI
+}  // namespace Aws

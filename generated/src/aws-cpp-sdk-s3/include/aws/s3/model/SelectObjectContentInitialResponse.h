@@ -4,34 +4,27 @@
  */
 
 #pragma once
-#include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/s3/S3_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Xml
-{
-  class XmlNode;
-} // namespace Xml
-} // namespace Utils
-namespace S3
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Xml {
+class XmlNode;
+}  // namespace Xml
+}  // namespace Utils
+namespace S3 {
+namespace Model {
 
-  class SelectObjectContentInitialResponse
-  {
-  public:
-    AWS_S3_API SelectObjectContentInitialResponse() = default;
-    AWS_S3_API SelectObjectContentInitialResponse(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AWS_S3_API SelectObjectContentInitialResponse& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+class SelectObjectContentInitialResponse {
+ public:
+  AWS_S3_API SelectObjectContentInitialResponse() = default;
+  AWS_S3_API SelectObjectContentInitialResponse(const Aws::Utils::Xml::XmlNode& xmlNode);
+  AWS_S3_API SelectObjectContentInitialResponse& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+  AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+};
 
-  };
-
-} // namespace Model
-} // namespace S3
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3
+}  // namespace Aws

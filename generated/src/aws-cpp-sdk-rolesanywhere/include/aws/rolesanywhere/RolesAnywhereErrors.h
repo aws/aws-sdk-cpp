@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/rolesanywhere/RolesAnywhere_EXPORTS.h>
 
-namespace Aws
-{
-namespace RolesAnywhere
-{
-enum class RolesAnywhereErrors
-{
-  //From Core//
+namespace Aws {
+namespace RolesAnywhere {
+enum class RolesAnywhereErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class RolesAnywhereErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,12 +44,11 @@ enum class RolesAnywhereErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  TOO_MANY_TAGS= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1
+  TOO_MANY_TAGS = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1
 };
 
-class AWS_ROLESANYWHERE_API RolesAnywhereError : public Aws::Client::AWSError<RolesAnywhereErrors>
-{
-public:
+class AWS_ROLESANYWHERE_API RolesAnywhereError : public Aws::Client::AWSError<RolesAnywhereErrors> {
+ public:
   RolesAnywhereError() {}
   RolesAnywhereError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<RolesAnywhereErrors>(rhs) {}
   RolesAnywhereError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<RolesAnywhereErrors>(rhs) {}
@@ -63,10 +59,9 @@ public:
   T GetModeledError();
 };
 
-namespace RolesAnywhereErrorMapper
-{
-  AWS_ROLESANYWHERE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace RolesAnywhereErrorMapper {
+AWS_ROLESANYWHERE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace RolesAnywhere
-} // namespace Aws
+}  // namespace RolesAnywhere
+}  // namespace Aws

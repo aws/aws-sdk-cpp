@@ -4,32 +4,27 @@
  */
 
 #pragma once
-#include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
 
-namespace Aws
-{
-namespace ResilienceHub
-{
-namespace Model
-{
-  enum class ConfigRecommendationOptimizationType
-  {
-    NOT_SET,
-    LeastCost,
-    LeastChange,
-    BestAZRecovery,
-    LeastErrors,
-    BestAttainable,
-    BestRegionRecovery
-  };
+namespace Aws {
+namespace ResilienceHub {
+namespace Model {
+enum class ConfigRecommendationOptimizationType {
+  NOT_SET,
+  LeastCost,
+  LeastChange,
+  BestAZRecovery,
+  LeastErrors,
+  BestAttainable,
+  BestRegionRecovery
+};
 
-namespace ConfigRecommendationOptimizationTypeMapper
-{
+namespace ConfigRecommendationOptimizationTypeMapper {
 AWS_RESILIENCEHUB_API ConfigRecommendationOptimizationType GetConfigRecommendationOptimizationTypeForName(const Aws::String& name);
 
 AWS_RESILIENCEHUB_API Aws::String GetNameForConfigRecommendationOptimizationType(ConfigRecommendationOptimizationType value);
-} // namespace ConfigRecommendationOptimizationTypeMapper
-} // namespace Model
-} // namespace ResilienceHub
-} // namespace Aws
+}  // namespace ConfigRecommendationOptimizationTypeMapper
+}  // namespace Model
+}  // namespace ResilienceHub
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/sesv2/SESV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sesv2/SESV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace SESV2
-{
-namespace Model
-{
-  enum class SuppressionListReason
-  {
-    NOT_SET,
-    BOUNCE,
-    COMPLAINT
-  };
+namespace Aws {
+namespace SESV2 {
+namespace Model {
+enum class SuppressionListReason { NOT_SET, BOUNCE, COMPLAINT };
 
-namespace SuppressionListReasonMapper
-{
+namespace SuppressionListReasonMapper {
 AWS_SESV2_API SuppressionListReason GetSuppressionListReasonForName(const Aws::String& name);
 
 AWS_SESV2_API Aws::String GetNameForSuppressionListReason(SuppressionListReason value);
-} // namespace SuppressionListReasonMapper
-} // namespace Model
-} // namespace SESV2
-} // namespace Aws
+}  // namespace SuppressionListReasonMapper
+}  // namespace Model
+}  // namespace SESV2
+}  // namespace Aws

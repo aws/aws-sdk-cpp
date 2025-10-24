@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConnect
-{
-namespace Model
-{
-  enum class NdiState
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace MediaConnect {
+namespace Model {
+enum class NdiState { NOT_SET, ENABLED, DISABLED };
 
-namespace NdiStateMapper
-{
+namespace NdiStateMapper {
 AWS_MEDIACONNECT_API NdiState GetNdiStateForName(const Aws::String& name);
 
 AWS_MEDIACONNECT_API Aws::String GetNameForNdiState(NdiState value);
-} // namespace NdiStateMapper
-} // namespace Model
-} // namespace MediaConnect
-} // namespace Aws
+}  // namespace NdiStateMapper
+}  // namespace Model
+}  // namespace MediaConnect
+}  // namespace Aws

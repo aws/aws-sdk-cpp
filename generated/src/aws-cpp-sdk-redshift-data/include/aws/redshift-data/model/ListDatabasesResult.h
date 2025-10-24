@@ -4,83 +4,98 @@
  */
 
 #pragma once
-#include <aws/redshift-data/RedshiftDataAPIService_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/redshift-data/RedshiftDataAPIService_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace RedshiftDataAPIService
-{
-namespace Model
-{
-  class ListDatabasesResult
-  {
-  public:
-    AWS_REDSHIFTDATAAPISERVICE_API ListDatabasesResult() = default;
-    AWS_REDSHIFTDATAAPISERVICE_API ListDatabasesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_REDSHIFTDATAAPISERVICE_API ListDatabasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace RedshiftDataAPIService {
+namespace Model {
+class ListDatabasesResult {
+ public:
+  AWS_REDSHIFTDATAAPISERVICE_API ListDatabasesResult() = default;
+  AWS_REDSHIFTDATAAPISERVICE_API ListDatabasesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_REDSHIFTDATAAPISERVICE_API ListDatabasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>The names of databases. </p>
+   */
+  inline const Aws::Vector<Aws::String>& GetDatabases() const { return m_databases; }
+  template <typename DatabasesT = Aws::Vector<Aws::String>>
+  void SetDatabases(DatabasesT&& value) {
+    m_databasesHasBeenSet = true;
+    m_databases = std::forward<DatabasesT>(value);
+  }
+  template <typename DatabasesT = Aws::Vector<Aws::String>>
+  ListDatabasesResult& WithDatabases(DatabasesT&& value) {
+    SetDatabases(std::forward<DatabasesT>(value));
+    return *this;
+  }
+  template <typename DatabasesT = Aws::String>
+  ListDatabasesResult& AddDatabases(DatabasesT&& value) {
+    m_databasesHasBeenSet = true;
+    m_databases.emplace_back(std::forward<DatabasesT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The names of databases. </p>
-     */
-    inline const Aws::Vector<Aws::String>& GetDatabases() const { return m_databases; }
-    template<typename DatabasesT = Aws::Vector<Aws::String>>
-    void SetDatabases(DatabasesT&& value) { m_databasesHasBeenSet = true; m_databases = std::forward<DatabasesT>(value); }
-    template<typename DatabasesT = Aws::Vector<Aws::String>>
-    ListDatabasesResult& WithDatabases(DatabasesT&& value) { SetDatabases(std::forward<DatabasesT>(value)); return *this;}
-    template<typename DatabasesT = Aws::String>
-    ListDatabasesResult& AddDatabases(DatabasesT&& value) { m_databasesHasBeenSet = true; m_databases.emplace_back(std::forward<DatabasesT>(value)); return *this; }
-    ///@}
+  ///@{
+  /**
+   * <p>A value that indicates the starting point for the next set of response
+   * records in a subsequent request. If a value is returned in a response, you can
+   * retrieve the next set of records by providing this returned NextToken value in
+   * the next NextToken parameter and retrying the command. If the NextToken field is
+   * empty, all response records have been retrieved for the request. </p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListDatabasesResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>A value that indicates the starting point for the next set of response
-     * records in a subsequent request. If a value is returned in a response, you can
-     * retrieve the next set of records by providing this returned NextToken value in
-     * the next NextToken parameter and retrying the command. If the NextToken field is
-     * empty, all response records have been retrieved for the request. </p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListDatabasesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    ListDatabasesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  ListDatabasesResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<Aws::String> m_databases;
+  bool m_databasesHasBeenSet = false;
 
-    Aws::Vector<Aws::String> m_databases;
-    bool m_databasesHasBeenSet = false;
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace RedshiftDataAPIService
-} // namespace Aws
+}  // namespace Model
+}  // namespace RedshiftDataAPIService
+}  // namespace Aws

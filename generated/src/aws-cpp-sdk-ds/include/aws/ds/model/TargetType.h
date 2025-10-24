@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ds/DirectoryService_EXPORTS.h>
 
-namespace Aws
-{
-namespace DirectoryService
-{
-namespace Model
-{
-  enum class TargetType
-  {
-    NOT_SET,
-    ACCOUNT
-  };
+namespace Aws {
+namespace DirectoryService {
+namespace Model {
+enum class TargetType { NOT_SET, ACCOUNT };
 
-namespace TargetTypeMapper
-{
+namespace TargetTypeMapper {
 AWS_DIRECTORYSERVICE_API TargetType GetTargetTypeForName(const Aws::String& name);
 
 AWS_DIRECTORYSERVICE_API Aws::String GetNameForTargetType(TargetType value);
-} // namespace TargetTypeMapper
-} // namespace Model
-} // namespace DirectoryService
-} // namespace Aws
+}  // namespace TargetTypeMapper
+}  // namespace Model
+}  // namespace DirectoryService
+}  // namespace Aws

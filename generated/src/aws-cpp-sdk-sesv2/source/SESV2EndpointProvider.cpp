@@ -5,12 +5,8 @@
 
 #include <aws/sesv2/SESV2EndpointProvider.h>
 
-namespace Aws
-{
-namespace SESV2
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace SESV2
-} // namespace Aws
+namespace Aws {
+namespace SESV2 {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace SESV2
+}  // namespace Aws

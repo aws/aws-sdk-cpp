@@ -10,17 +10,14 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String UpdateTerminationProtectionRequest::SerializePayload() const
-{
+Aws::String UpdateTerminationProtectionRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=UpdateTerminationProtection&";
-  if(m_enableTerminationProtectionHasBeenSet)
-  {
+  if (m_enableTerminationProtectionHasBeenSet) {
     ss << "EnableTerminationProtection=" << std::boolalpha << m_enableTerminationProtection << "&";
   }
 
-  if(m_stackNameHasBeenSet)
-  {
+  if (m_stackNameHasBeenSet) {
     ss << "StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String UpdateTerminationProtectionRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  UpdateTerminationProtectionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void UpdateTerminationProtectionRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

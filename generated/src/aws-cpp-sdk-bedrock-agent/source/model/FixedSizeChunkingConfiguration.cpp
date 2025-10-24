@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-FixedSizeChunkingConfiguration::FixedSizeChunkingConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FixedSizeChunkingConfiguration::FixedSizeChunkingConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-FixedSizeChunkingConfiguration& FixedSizeChunkingConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("maxTokens"))
-  {
+FixedSizeChunkingConfiguration& FixedSizeChunkingConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("maxTokens")) {
     m_maxTokens = jsonValue.GetInteger("maxTokens");
     m_maxTokensHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("overlapPercentage"))
-  {
+  if (jsonValue.ValueExists("overlapPercentage")) {
     m_overlapPercentage = jsonValue.GetInteger("overlapPercentage");
     m_overlapPercentageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FixedSizeChunkingConfiguration::Jsonize() const
-{
+JsonValue FixedSizeChunkingConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_maxTokensHasBeenSet)
-  {
-   payload.WithInteger("maxTokens", m_maxTokens);
-
+  if (m_maxTokensHasBeenSet) {
+    payload.WithInteger("maxTokens", m_maxTokens);
   }
 
-  if(m_overlapPercentageHasBeenSet)
-  {
-   payload.WithInteger("overlapPercentage", m_overlapPercentage);
-
+  if (m_overlapPercentageHasBeenSet) {
+    payload.WithInteger("overlapPercentage", m_overlapPercentage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

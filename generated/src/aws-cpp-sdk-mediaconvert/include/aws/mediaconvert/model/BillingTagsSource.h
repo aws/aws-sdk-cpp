@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class BillingTagsSource
-  {
-    NOT_SET,
-    QUEUE,
-    PRESET,
-    JOB_TEMPLATE,
-    JOB
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class BillingTagsSource { NOT_SET, QUEUE, PRESET, JOB_TEMPLATE, JOB };
 
-namespace BillingTagsSourceMapper
-{
+namespace BillingTagsSourceMapper {
 AWS_MEDIACONVERT_API BillingTagsSource GetBillingTagsSourceForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForBillingTagsSource(BillingTagsSource value);
-} // namespace BillingTagsSourceMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace BillingTagsSourceMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

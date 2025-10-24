@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediapackage/MediaPackage_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediapackage/MediaPackage_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaPackage
-{
-namespace Model
-{
-  enum class PlaylistType
-  {
-    NOT_SET,
-    NONE,
-    EVENT,
-    VOD
-  };
+namespace Aws {
+namespace MediaPackage {
+namespace Model {
+enum class PlaylistType { NOT_SET, NONE, EVENT, VOD };
 
-namespace PlaylistTypeMapper
-{
+namespace PlaylistTypeMapper {
 AWS_MEDIAPACKAGE_API PlaylistType GetPlaylistTypeForName(const Aws::String& name);
 
 AWS_MEDIAPACKAGE_API Aws::String GetNameForPlaylistType(PlaylistType value);
-} // namespace PlaylistTypeMapper
-} // namespace Model
-} // namespace MediaPackage
-} // namespace Aws
+}  // namespace PlaylistTypeMapper
+}  // namespace Model
+}  // namespace MediaPackage
+}  // namespace Aws

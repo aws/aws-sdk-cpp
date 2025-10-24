@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKIdentity
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKIdentity {
+namespace Model {
 
-Configuration::Configuration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Configuration::Configuration(JsonView jsonValue) { *this = jsonValue; }
 
-Configuration& Configuration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Lex"))
-  {
+Configuration& Configuration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Lex")) {
     m_lex = jsonValue.GetObject("Lex");
     m_lexHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Configuration::Jsonize() const
-{
+JsonValue Configuration::Jsonize() const {
   JsonValue payload;
 
-  if(m_lexHasBeenSet)
-  {
-   payload.WithObject("Lex", m_lex.Jsonize());
-
+  if (m_lexHasBeenSet) {
+    payload.WithObject("Lex", m_lex.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKIdentity
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKIdentity
+}  // namespace Aws

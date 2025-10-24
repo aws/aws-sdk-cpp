@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/dlm/DLM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dlm/DLM_EXPORTS.h>
 
-namespace Aws
-{
-namespace DLM
-{
-namespace Model
-{
-  enum class StageValues
-  {
-    NOT_SET,
-    PRE,
-    POST
-  };
+namespace Aws {
+namespace DLM {
+namespace Model {
+enum class StageValues { NOT_SET, PRE, POST };
 
-namespace StageValuesMapper
-{
+namespace StageValuesMapper {
 AWS_DLM_API StageValues GetStageValuesForName(const Aws::String& name);
 
 AWS_DLM_API Aws::String GetNameForStageValues(StageValues value);
-} // namespace StageValuesMapper
-} // namespace Model
-} // namespace DLM
-} // namespace Aws
+}  // namespace StageValuesMapper
+}  // namespace Model
+}  // namespace DLM
+}  // namespace Aws

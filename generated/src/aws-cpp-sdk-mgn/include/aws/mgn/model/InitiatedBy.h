@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/mgn/Mgn_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mgn/Mgn_EXPORTS.h>
 
-namespace Aws
-{
-namespace mgn
-{
-namespace Model
-{
-  enum class InitiatedBy
-  {
-    NOT_SET,
-    START_TEST,
-    START_CUTOVER,
-    DIAGNOSTIC,
-    TERMINATE
-  };
+namespace Aws {
+namespace mgn {
+namespace Model {
+enum class InitiatedBy { NOT_SET, START_TEST, START_CUTOVER, DIAGNOSTIC, TERMINATE };
 
-namespace InitiatedByMapper
-{
+namespace InitiatedByMapper {
 AWS_MGN_API InitiatedBy GetInitiatedByForName(const Aws::String& name);
 
 AWS_MGN_API Aws::String GetNameForInitiatedBy(InitiatedBy value);
-} // namespace InitiatedByMapper
-} // namespace Model
-} // namespace mgn
-} // namespace Aws
+}  // namespace InitiatedByMapper
+}  // namespace Model
+}  // namespace mgn
+}  // namespace Aws

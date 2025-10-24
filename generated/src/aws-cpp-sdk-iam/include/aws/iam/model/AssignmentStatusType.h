@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/iam/IAM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iam/IAM_EXPORTS.h>
 
-namespace Aws
-{
-namespace IAM
-{
-namespace Model
-{
-  enum class AssignmentStatusType
-  {
-    NOT_SET,
-    Assigned,
-    Unassigned,
-    Any
-  };
+namespace Aws {
+namespace IAM {
+namespace Model {
+enum class AssignmentStatusType { NOT_SET, Assigned, Unassigned, Any };
 
-namespace AssignmentStatusTypeMapper
-{
+namespace AssignmentStatusTypeMapper {
 AWS_IAM_API AssignmentStatusType GetAssignmentStatusTypeForName(const Aws::String& name);
 
 AWS_IAM_API Aws::String GetNameForAssignmentStatusType(AssignmentStatusType value);
-} // namespace AssignmentStatusTypeMapper
-} // namespace Model
-} // namespace IAM
-} // namespace Aws
+}  // namespace AssignmentStatusTypeMapper
+}  // namespace Model
+}  // namespace IAM
+}  // namespace Aws

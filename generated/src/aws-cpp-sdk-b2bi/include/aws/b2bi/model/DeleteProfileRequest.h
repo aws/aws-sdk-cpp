@@ -4,53 +4,54 @@
  */
 
 #pragma once
-#include <aws/b2bi/B2BI_EXPORTS.h>
 #include <aws/b2bi/B2BIRequest.h>
+#include <aws/b2bi/B2BI_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace B2BI
-{
-namespace Model
-{
+namespace Aws {
+namespace B2BI {
+namespace Model {
 
+/**
+ */
+class DeleteProfileRequest : public B2BIRequest {
+ public:
+  AWS_B2BI_API DeleteProfileRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeleteProfile"; }
+
+  AWS_B2BI_API Aws::String SerializePayload() const override;
+
+  AWS_B2BI_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>Specifies the unique, system-generated identifier for the profile.</p>
    */
-  class DeleteProfileRequest : public B2BIRequest
-  {
-  public:
-    AWS_B2BI_API DeleteProfileRequest() = default;
+  inline const Aws::String& GetProfileId() const { return m_profileId; }
+  inline bool ProfileIdHasBeenSet() const { return m_profileIdHasBeenSet; }
+  template <typename ProfileIdT = Aws::String>
+  void SetProfileId(ProfileIdT&& value) {
+    m_profileIdHasBeenSet = true;
+    m_profileId = std::forward<ProfileIdT>(value);
+  }
+  template <typename ProfileIdT = Aws::String>
+  DeleteProfileRequest& WithProfileId(ProfileIdT&& value) {
+    SetProfileId(std::forward<ProfileIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_profileId;
+  bool m_profileIdHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DeleteProfile"; }
-
-    AWS_B2BI_API Aws::String SerializePayload() const override;
-
-    AWS_B2BI_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    ///@{
-    /**
-     * <p>Specifies the unique, system-generated identifier for the profile.</p>
-     */
-    inline const Aws::String& GetProfileId() const { return m_profileId; }
-    inline bool ProfileIdHasBeenSet() const { return m_profileIdHasBeenSet; }
-    template<typename ProfileIdT = Aws::String>
-    void SetProfileId(ProfileIdT&& value) { m_profileIdHasBeenSet = true; m_profileId = std::forward<ProfileIdT>(value); }
-    template<typename ProfileIdT = Aws::String>
-    DeleteProfileRequest& WithProfileId(ProfileIdT&& value) { SetProfileId(std::forward<ProfileIdT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_profileId;
-    bool m_profileIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace B2BI
-} // namespace Aws
+}  // namespace Model
+}  // namespace B2BI
+}  // namespace Aws

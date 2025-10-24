@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-RedshiftServerlessConfiguration::RedshiftServerlessConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RedshiftServerlessConfiguration::RedshiftServerlessConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-RedshiftServerlessConfiguration& RedshiftServerlessConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("workgroupArn"))
-  {
+RedshiftServerlessConfiguration& RedshiftServerlessConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("workgroupArn")) {
     m_workgroupArn = jsonValue.GetString("workgroupArn");
     m_workgroupArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("authConfiguration"))
-  {
+  if (jsonValue.ValueExists("authConfiguration")) {
     m_authConfiguration = jsonValue.GetObject("authConfiguration");
     m_authConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RedshiftServerlessConfiguration::Jsonize() const
-{
+JsonValue RedshiftServerlessConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_workgroupArnHasBeenSet)
-  {
-   payload.WithString("workgroupArn", m_workgroupArn);
-
+  if (m_workgroupArnHasBeenSet) {
+    payload.WithString("workgroupArn", m_workgroupArn);
   }
 
-  if(m_authConfigurationHasBeenSet)
-  {
-   payload.WithObject("authConfiguration", m_authConfiguration.Jsonize());
-
+  if (m_authConfigurationHasBeenSet) {
+    payload.WithObject("authConfiguration", m_authConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

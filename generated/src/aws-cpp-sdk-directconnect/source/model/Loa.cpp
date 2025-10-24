@@ -3,60 +3,48 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/directconnect/model/Loa.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/directconnect/model/Loa.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DirectConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace DirectConnect {
+namespace Model {
 
-Loa::Loa(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Loa::Loa(JsonView jsonValue) { *this = jsonValue; }
 
-Loa& Loa::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("loaContent"))
-  {
+Loa& Loa::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("loaContent")) {
     m_loaContent = HashingUtils::Base64Decode(jsonValue.GetString("loaContent"));
     m_loaContentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("loaContentType"))
-  {
+  if (jsonValue.ValueExists("loaContentType")) {
     m_loaContentType = LoaContentTypeMapper::GetLoaContentTypeForName(jsonValue.GetString("loaContentType"));
     m_loaContentTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Loa::Jsonize() const
-{
+JsonValue Loa::Jsonize() const {
   JsonValue payload;
 
-  if(m_loaContentHasBeenSet)
-  {
-   payload.WithString("loaContent", HashingUtils::Base64Encode(m_loaContent));
+  if (m_loaContentHasBeenSet) {
+    payload.WithString("loaContent", HashingUtils::Base64Encode(m_loaContent));
   }
 
-  if(m_loaContentTypeHasBeenSet)
-  {
-   payload.WithString("loaContentType", LoaContentTypeMapper::GetNameForLoaContentType(m_loaContentType));
+  if (m_loaContentTypeHasBeenSet) {
+    payload.WithString("loaContentType", LoaContentTypeMapper::GetNameForLoaContentType(m_loaContentType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DirectConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace DirectConnect
+}  // namespace Aws

@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sns/model/GetDataProtectionPolicyRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sns/model/GetDataProtectionPolicyRequest.h>
 
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-Aws::String GetDataProtectionPolicyRequest::SerializePayload() const
-{
+Aws::String GetDataProtectionPolicyRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetDataProtectionPolicy&";
-  if(m_resourceArnHasBeenSet)
-  {
+  if (m_resourceArnHasBeenSet) {
     ss << "ResourceArn=" << StringUtils::URLEncode(m_resourceArn.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String GetDataProtectionPolicyRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetDataProtectionPolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetDataProtectionPolicyRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

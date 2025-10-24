@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
 
-namespace Aws
-{
-namespace ResilienceHub
-{
-namespace Model
-{
-  enum class TestType
-  {
-    NOT_SET,
-    Software,
-    Hardware,
-    AZ,
-    Region
-  };
+namespace Aws {
+namespace ResilienceHub {
+namespace Model {
+enum class TestType { NOT_SET, Software, Hardware, AZ, Region };
 
-namespace TestTypeMapper
-{
+namespace TestTypeMapper {
 AWS_RESILIENCEHUB_API TestType GetTestTypeForName(const Aws::String& name);
 
 AWS_RESILIENCEHUB_API Aws::String GetNameForTestType(TestType value);
-} // namespace TestTypeMapper
-} // namespace Model
-} // namespace ResilienceHub
-} // namespace Aws
+}  // namespace TestTypeMapper
+}  // namespace Model
+}  // namespace ResilienceHub
+}  // namespace Aws

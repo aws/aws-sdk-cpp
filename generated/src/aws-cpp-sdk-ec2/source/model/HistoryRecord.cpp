@@ -3,50 +3,41 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/HistoryRecord.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/HistoryRecord.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-HistoryRecord::HistoryRecord(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+HistoryRecord::HistoryRecord(const XmlNode& xmlNode) { *this = xmlNode; }
 
-HistoryRecord& HistoryRecord::operator =(const XmlNode& xmlNode)
-{
+HistoryRecord& HistoryRecord::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode eventInformationNode = resultNode.FirstChild("eventInformation");
-    if(!eventInformationNode.IsNull())
-    {
+    if (!eventInformationNode.IsNull()) {
       m_eventInformation = eventInformationNode;
       m_eventInformationHasBeenSet = true;
     }
     XmlNode eventTypeNode = resultNode.FirstChild("eventType");
-    if(!eventTypeNode.IsNull())
-    {
-      m_eventType = EventTypeMapper::GetEventTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(eventTypeNode.GetText()).c_str()));
+    if (!eventTypeNode.IsNull()) {
+      m_eventType =
+          EventTypeMapper::GetEventTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(eventTypeNode.GetText()).c_str()));
       m_eventTypeHasBeenSet = true;
     }
     XmlNode timestampNode = resultNode.FirstChild("timestamp");
-    if(!timestampNode.IsNull())
-    {
-      m_timestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+    if (!timestampNode.IsNull()) {
+      m_timestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timestampNode.GetText()).c_str()).c_str(),
+                             Aws::Utils::DateFormat::ISO_8601);
       m_timestampHasBeenSet = true;
     }
   }
@@ -54,45 +45,39 @@ HistoryRecord& HistoryRecord::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void HistoryRecord::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_eventInformationHasBeenSet)
-  {
-      Aws::StringStream eventInformationLocationAndMemberSs;
-      eventInformationLocationAndMemberSs << location << index << locationValue << ".EventInformation";
-      m_eventInformation.OutputToStream(oStream, eventInformationLocationAndMemberSs.str().c_str());
+void HistoryRecord::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_eventInformationHasBeenSet) {
+    Aws::StringStream eventInformationLocationAndMemberSs;
+    eventInformationLocationAndMemberSs << location << index << locationValue << ".EventInformation";
+    m_eventInformation.OutputToStream(oStream, eventInformationLocationAndMemberSs.str().c_str());
   }
 
-  if(m_eventTypeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".EventType=" << StringUtils::URLEncode(EventTypeMapper::GetNameForEventType(m_eventType)) << "&";
+  if (m_eventTypeHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".EventType=" << StringUtils::URLEncode(EventTypeMapper::GetNameForEventType(m_eventType)) << "&";
   }
 
-  if(m_timestampHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
-  }
-
-}
-
-void HistoryRecord::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_eventInformationHasBeenSet)
-  {
-      Aws::String eventInformationLocationAndMember(location);
-      eventInformationLocationAndMember += ".EventInformation";
-      m_eventInformation.OutputToStream(oStream, eventInformationLocationAndMember.c_str());
-  }
-  if(m_eventTypeHasBeenSet)
-  {
-      oStream << location << ".EventType=" << StringUtils::URLEncode(EventTypeMapper::GetNameForEventType(m_eventType)) << "&";
-  }
-  if(m_timestampHasBeenSet)
-  {
-      oStream << location << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  if (m_timestampHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void HistoryRecord::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_eventInformationHasBeenSet) {
+    Aws::String eventInformationLocationAndMember(location);
+    eventInformationLocationAndMember += ".EventInformation";
+    m_eventInformation.OutputToStream(oStream, eventInformationLocationAndMember.c_str());
+  }
+  if (m_eventTypeHasBeenSet) {
+    oStream << location << ".EventType=" << StringUtils::URLEncode(EventTypeMapper::GetNameForEventType(m_eventType)) << "&";
+  }
+  if (m_timestampHasBeenSet) {
+    oStream << location << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str())
+            << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

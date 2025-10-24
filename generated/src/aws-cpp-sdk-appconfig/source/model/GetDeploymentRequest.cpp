@@ -12,11 +12,4 @@ using namespace Aws::AppConfig::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetDeploymentRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetDeploymentRequest::SerializePayload() const { return {}; }

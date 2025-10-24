@@ -4,56 +4,54 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Xml
-{
-  class XmlNode;
-} // namespace Xml
-} // namespace Utils
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Xml {
+class XmlNode;
+}  // namespace Xml
+}  // namespace Utils
+namespace EC2 {
+namespace Model {
 
+/**
+ * <p>Describes a value for a resource attribute that is a Boolean
+ * value.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttributeBooleanValue">AWS
+ * API Reference</a></p>
+ */
+class AttributeBooleanValue {
+ public:
+  AWS_EC2_API AttributeBooleanValue() = default;
+  AWS_EC2_API AttributeBooleanValue(const Aws::Utils::Xml::XmlNode& xmlNode);
+  AWS_EC2_API AttributeBooleanValue& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+  AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+  AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+  ///@{
   /**
-   * <p>Describes a value for a resource attribute that is a Boolean
-   * value.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttributeBooleanValue">AWS
-   * API Reference</a></p>
+   * <p>The attribute value. The valid values are <code>true</code> or
+   * <code>false</code>.</p>
    */
-  class AttributeBooleanValue
-  {
-  public:
-    AWS_EC2_API AttributeBooleanValue() = default;
-    AWS_EC2_API AttributeBooleanValue(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AWS_EC2_API AttributeBooleanValue& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+  inline bool GetValue() const { return m_value; }
+  inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+  inline void SetValue(bool value) {
+    m_valueHasBeenSet = true;
+    m_value = value;
+  }
+  inline AttributeBooleanValue& WithValue(bool value) {
+    SetValue(value);
+    return *this;
+  }
+  ///@}
+ private:
+  bool m_value{false};
+  bool m_valueHasBeenSet = false;
+};
 
-    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
-
-
-    ///@{
-    /**
-     * <p>The attribute value. The valid values are <code>true</code> or
-     * <code>false</code>.</p>
-     */
-    inline bool GetValue() const { return m_value; }
-    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(bool value) { m_valueHasBeenSet = true; m_value = value; }
-    inline AttributeBooleanValue& WithValue(bool value) { SetValue(value); return *this;}
-    ///@}
-  private:
-
-    bool m_value{false};
-    bool m_valueHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

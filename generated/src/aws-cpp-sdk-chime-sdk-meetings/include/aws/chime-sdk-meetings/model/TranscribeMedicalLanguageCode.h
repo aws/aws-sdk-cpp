@@ -7,24 +7,16 @@
 #include <aws/chime-sdk-meetings/ChimeSDKMeetings_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ChimeSDKMeetings
-{
-namespace Model
-{
-  enum class TranscribeMedicalLanguageCode
-  {
-    NOT_SET,
-    en_US
-  };
+namespace Aws {
+namespace ChimeSDKMeetings {
+namespace Model {
+enum class TranscribeMedicalLanguageCode { NOT_SET, en_US };
 
-namespace TranscribeMedicalLanguageCodeMapper
-{
+namespace TranscribeMedicalLanguageCodeMapper {
 AWS_CHIMESDKMEETINGS_API TranscribeMedicalLanguageCode GetTranscribeMedicalLanguageCodeForName(const Aws::String& name);
 
 AWS_CHIMESDKMEETINGS_API Aws::String GetNameForTranscribeMedicalLanguageCode(TranscribeMedicalLanguageCode value);
-} // namespace TranscribeMedicalLanguageCodeMapper
-} // namespace Model
-} // namespace ChimeSDKMeetings
-} // namespace Aws
+}  // namespace TranscribeMedicalLanguageCodeMapper
+}  // namespace Model
+}  // namespace ChimeSDKMeetings
+}  // namespace Aws

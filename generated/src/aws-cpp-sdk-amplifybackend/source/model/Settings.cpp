@@ -11,61 +11,45 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AmplifyBackend
-{
-namespace Model
-{
+namespace Aws {
+namespace AmplifyBackend {
+namespace Model {
 
-Settings::Settings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Settings::Settings(JsonView jsonValue) { *this = jsonValue; }
 
-Settings& Settings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("mfaTypes"))
-  {
+Settings& Settings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("mfaTypes")) {
     Aws::Utils::Array<JsonView> mfaTypesJsonList = jsonValue.GetArray("mfaTypes");
-    for(unsigned mfaTypesIndex = 0; mfaTypesIndex < mfaTypesJsonList.GetLength(); ++mfaTypesIndex)
-    {
+    for (unsigned mfaTypesIndex = 0; mfaTypesIndex < mfaTypesJsonList.GetLength(); ++mfaTypesIndex) {
       m_mfaTypes.push_back(MfaTypesElementMapper::GetMfaTypesElementForName(mfaTypesJsonList[mfaTypesIndex].AsString()));
     }
     m_mfaTypesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("smsMessage"))
-  {
+  if (jsonValue.ValueExists("smsMessage")) {
     m_smsMessage = jsonValue.GetString("smsMessage");
     m_smsMessageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Settings::Jsonize() const
-{
+JsonValue Settings::Jsonize() const {
   JsonValue payload;
 
-  if(m_mfaTypesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> mfaTypesJsonList(m_mfaTypes.size());
-   for(unsigned mfaTypesIndex = 0; mfaTypesIndex < mfaTypesJsonList.GetLength(); ++mfaTypesIndex)
-   {
-     mfaTypesJsonList[mfaTypesIndex].AsString(MfaTypesElementMapper::GetNameForMfaTypesElement(m_mfaTypes[mfaTypesIndex]));
-   }
-   payload.WithArray("mfaTypes", std::move(mfaTypesJsonList));
-
+  if (m_mfaTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> mfaTypesJsonList(m_mfaTypes.size());
+    for (unsigned mfaTypesIndex = 0; mfaTypesIndex < mfaTypesJsonList.GetLength(); ++mfaTypesIndex) {
+      mfaTypesJsonList[mfaTypesIndex].AsString(MfaTypesElementMapper::GetNameForMfaTypesElement(m_mfaTypes[mfaTypesIndex]));
+    }
+    payload.WithArray("mfaTypes", std::move(mfaTypesJsonList));
   }
 
-  if(m_smsMessageHasBeenSet)
-  {
-   payload.WithString("smsMessage", m_smsMessage);
-
+  if (m_smsMessageHasBeenSet) {
+    payload.WithString("smsMessage", m_smsMessage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AmplifyBackend
-} // namespace Aws
+}  // namespace Model
+}  // namespace AmplifyBackend
+}  // namespace Aws

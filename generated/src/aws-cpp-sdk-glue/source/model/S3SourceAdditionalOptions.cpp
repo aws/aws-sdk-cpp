@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/S3SourceAdditionalOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/S3SourceAdditionalOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
+namespace Aws {
+namespace Glue {
+namespace Model {
 
-S3SourceAdditionalOptions::S3SourceAdditionalOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+S3SourceAdditionalOptions::S3SourceAdditionalOptions(JsonView jsonValue) { *this = jsonValue; }
 
-S3SourceAdditionalOptions& S3SourceAdditionalOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("BoundedSize"))
-  {
+S3SourceAdditionalOptions& S3SourceAdditionalOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("BoundedSize")) {
     m_boundedSize = jsonValue.GetInt64("BoundedSize");
     m_boundedSizeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BoundedFiles"))
-  {
+  if (jsonValue.ValueExists("BoundedFiles")) {
     m_boundedFiles = jsonValue.GetInt64("BoundedFiles");
     m_boundedFilesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue S3SourceAdditionalOptions::Jsonize() const
-{
+JsonValue S3SourceAdditionalOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_boundedSizeHasBeenSet)
-  {
-   payload.WithInt64("BoundedSize", m_boundedSize);
-
+  if (m_boundedSizeHasBeenSet) {
+    payload.WithInt64("BoundedSize", m_boundedSize);
   }
 
-  if(m_boundedFilesHasBeenSet)
-  {
-   payload.WithInt64("BoundedFiles", m_boundedFiles);
-
+  if (m_boundedFilesHasBeenSet) {
+    payload.WithInt64("BoundedFiles", m_boundedFiles);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dataexchange/model/DeleteDataSetRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dataexchange/model/DeleteDataSetRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::DataExchange::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteDataSetRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DeleteDataSetRequest::SerializePayload() const { return {}; }

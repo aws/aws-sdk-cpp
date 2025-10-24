@@ -3,76 +3,58 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/DynamicTransform.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/DynamicTransform.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
+namespace Aws {
+namespace Glue {
+namespace Model {
 
-DynamicTransform::DynamicTransform(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DynamicTransform::DynamicTransform(JsonView jsonValue) { *this = jsonValue; }
 
-DynamicTransform& DynamicTransform::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+DynamicTransform& DynamicTransform::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TransformName"))
-  {
+  if (jsonValue.ValueExists("TransformName")) {
     m_transformName = jsonValue.GetString("TransformName");
     m_transformNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Inputs"))
-  {
+  if (jsonValue.ValueExists("Inputs")) {
     Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
-    for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
-    {
+    for (unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex) {
       m_inputs.push_back(inputsJsonList[inputsIndex].AsString());
     }
     m_inputsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Parameters"))
-  {
+  if (jsonValue.ValueExists("Parameters")) {
     Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("Parameters");
-    for(unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex)
-    {
+    for (unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex) {
       m_parameters.push_back(parametersJsonList[parametersIndex].AsObject());
     }
     m_parametersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FunctionName"))
-  {
+  if (jsonValue.ValueExists("FunctionName")) {
     m_functionName = jsonValue.GetString("FunctionName");
     m_functionNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Path"))
-  {
+  if (jsonValue.ValueExists("Path")) {
     m_path = jsonValue.GetString("Path");
     m_pathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Version"))
-  {
+  if (jsonValue.ValueExists("Version")) {
     m_version = jsonValue.GetString("Version");
     m_versionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OutputSchemas"))
-  {
+  if (jsonValue.ValueExists("OutputSchemas")) {
     Aws::Utils::Array<JsonView> outputSchemasJsonList = jsonValue.GetArray("OutputSchemas");
-    for(unsigned outputSchemasIndex = 0; outputSchemasIndex < outputSchemasJsonList.GetLength(); ++outputSchemasIndex)
-    {
+    for (unsigned outputSchemasIndex = 0; outputSchemasIndex < outputSchemasJsonList.GetLength(); ++outputSchemasIndex) {
       m_outputSchemas.push_back(outputSchemasJsonList[outputSchemasIndex].AsObject());
     }
     m_outputSchemasHasBeenSet = true;
@@ -80,76 +62,56 @@ DynamicTransform& DynamicTransform::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue DynamicTransform::Jsonize() const
-{
+JsonValue DynamicTransform::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_transformNameHasBeenSet)
-  {
-   payload.WithString("TransformName", m_transformName);
-
+  if (m_transformNameHasBeenSet) {
+    payload.WithString("TransformName", m_transformName);
   }
 
-  if(m_inputsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> inputsJsonList(m_inputs.size());
-   for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
-   {
-     inputsJsonList[inputsIndex].AsString(m_inputs[inputsIndex]);
-   }
-   payload.WithArray("Inputs", std::move(inputsJsonList));
-
+  if (m_inputsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> inputsJsonList(m_inputs.size());
+    for (unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex) {
+      inputsJsonList[inputsIndex].AsString(m_inputs[inputsIndex]);
+    }
+    payload.WithArray("Inputs", std::move(inputsJsonList));
   }
 
-  if(m_parametersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> parametersJsonList(m_parameters.size());
-   for(unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex)
-   {
-     parametersJsonList[parametersIndex].AsObject(m_parameters[parametersIndex].Jsonize());
-   }
-   payload.WithArray("Parameters", std::move(parametersJsonList));
-
+  if (m_parametersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> parametersJsonList(m_parameters.size());
+    for (unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex) {
+      parametersJsonList[parametersIndex].AsObject(m_parameters[parametersIndex].Jsonize());
+    }
+    payload.WithArray("Parameters", std::move(parametersJsonList));
   }
 
-  if(m_functionNameHasBeenSet)
-  {
-   payload.WithString("FunctionName", m_functionName);
-
+  if (m_functionNameHasBeenSet) {
+    payload.WithString("FunctionName", m_functionName);
   }
 
-  if(m_pathHasBeenSet)
-  {
-   payload.WithString("Path", m_path);
-
+  if (m_pathHasBeenSet) {
+    payload.WithString("Path", m_path);
   }
 
-  if(m_versionHasBeenSet)
-  {
-   payload.WithString("Version", m_version);
-
+  if (m_versionHasBeenSet) {
+    payload.WithString("Version", m_version);
   }
 
-  if(m_outputSchemasHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> outputSchemasJsonList(m_outputSchemas.size());
-   for(unsigned outputSchemasIndex = 0; outputSchemasIndex < outputSchemasJsonList.GetLength(); ++outputSchemasIndex)
-   {
-     outputSchemasJsonList[outputSchemasIndex].AsObject(m_outputSchemas[outputSchemasIndex].Jsonize());
-   }
-   payload.WithArray("OutputSchemas", std::move(outputSchemasJsonList));
-
+  if (m_outputSchemasHasBeenSet) {
+    Aws::Utils::Array<JsonValue> outputSchemasJsonList(m_outputSchemas.size());
+    for (unsigned outputSchemasIndex = 0; outputSchemasIndex < outputSchemasJsonList.GetLength(); ++outputSchemasIndex) {
+      outputSchemasJsonList[outputSchemasIndex].AsObject(m_outputSchemas[outputSchemasIndex].Jsonize());
+    }
+    payload.WithArray("OutputSchemas", std::move(outputSchemasJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

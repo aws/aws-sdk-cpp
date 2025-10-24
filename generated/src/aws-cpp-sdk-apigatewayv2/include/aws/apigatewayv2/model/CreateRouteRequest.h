@@ -4,239 +4,314 @@
  */
 
 #pragma once
-#include <aws/apigatewayv2/ApiGatewayV2_EXPORTS.h>
 #include <aws/apigatewayv2/ApiGatewayV2Request.h>
+#include <aws/apigatewayv2/ApiGatewayV2_EXPORTS.h>
+#include <aws/apigatewayv2/model/AuthorizationType.h>
+#include <aws/apigatewayv2/model/ParameterConstraints.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/apigatewayv2/model/AuthorizationType.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/apigatewayv2/model/ParameterConstraints.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace ApiGatewayV2
-{
-namespace Model
-{
+namespace Aws {
+namespace ApiGatewayV2 {
+namespace Model {
 
+/**
+ * <p>Creates a new Route resource to represent a route.</p><p><h3>See Also:</h3>
+ * <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateRouteRequest">AWS
+ * API Reference</a></p>
+ */
+class CreateRouteRequest : public ApiGatewayV2Request {
+ public:
+  AWS_APIGATEWAYV2_API CreateRouteRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "CreateRoute"; }
+
+  AWS_APIGATEWAYV2_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
-   * <p>Creates a new Route resource to represent a route.</p><p><h3>See Also:</h3>  
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateRouteRequest">AWS
-   * API Reference</a></p>
+   * <p>The API identifier.</p>
    */
-  class CreateRouteRequest : public ApiGatewayV2Request
-  {
-  public:
-    AWS_APIGATEWAYV2_API CreateRouteRequest() = default;
+  inline const Aws::String& GetApiId() const { return m_apiId; }
+  inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
+  template <typename ApiIdT = Aws::String>
+  void SetApiId(ApiIdT&& value) {
+    m_apiIdHasBeenSet = true;
+    m_apiId = std::forward<ApiIdT>(value);
+  }
+  template <typename ApiIdT = Aws::String>
+  CreateRouteRequest& WithApiId(ApiIdT&& value) {
+    SetApiId(std::forward<ApiIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "CreateRoute"; }
+  ///@{
+  /**
+   * <p>Specifies whether an API key is required for the route. Supported only for
+   * WebSocket APIs.</p>
+   */
+  inline bool GetApiKeyRequired() const { return m_apiKeyRequired; }
+  inline bool ApiKeyRequiredHasBeenSet() const { return m_apiKeyRequiredHasBeenSet; }
+  inline void SetApiKeyRequired(bool value) {
+    m_apiKeyRequiredHasBeenSet = true;
+    m_apiKeyRequired = value;
+  }
+  inline CreateRouteRequest& WithApiKeyRequired(bool value) {
+    SetApiKeyRequired(value);
+    return *this;
+  }
+  ///@}
 
-    AWS_APIGATEWAYV2_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>The authorization scopes supported by this route.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetAuthorizationScopes() const { return m_authorizationScopes; }
+  inline bool AuthorizationScopesHasBeenSet() const { return m_authorizationScopesHasBeenSet; }
+  template <typename AuthorizationScopesT = Aws::Vector<Aws::String>>
+  void SetAuthorizationScopes(AuthorizationScopesT&& value) {
+    m_authorizationScopesHasBeenSet = true;
+    m_authorizationScopes = std::forward<AuthorizationScopesT>(value);
+  }
+  template <typename AuthorizationScopesT = Aws::Vector<Aws::String>>
+  CreateRouteRequest& WithAuthorizationScopes(AuthorizationScopesT&& value) {
+    SetAuthorizationScopes(std::forward<AuthorizationScopesT>(value));
+    return *this;
+  }
+  template <typename AuthorizationScopesT = Aws::String>
+  CreateRouteRequest& AddAuthorizationScopes(AuthorizationScopesT&& value) {
+    m_authorizationScopesHasBeenSet = true;
+    m_authorizationScopes.emplace_back(std::forward<AuthorizationScopesT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The authorization type for the route. For WebSocket APIs, valid values are
+   * NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for
+   * using a Lambda authorizer For HTTP APIs, valid values are NONE for open access,
+   * JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM
+   * for using a Lambda authorizer.</p>
+   */
+  inline AuthorizationType GetAuthorizationType() const { return m_authorizationType; }
+  inline bool AuthorizationTypeHasBeenSet() const { return m_authorizationTypeHasBeenSet; }
+  inline void SetAuthorizationType(AuthorizationType value) {
+    m_authorizationTypeHasBeenSet = true;
+    m_authorizationType = value;
+  }
+  inline CreateRouteRequest& WithAuthorizationType(AuthorizationType value) {
+    SetAuthorizationType(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The API identifier.</p>
-     */
-    inline const Aws::String& GetApiId() const { return m_apiId; }
-    inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
-    template<typename ApiIdT = Aws::String>
-    void SetApiId(ApiIdT&& value) { m_apiIdHasBeenSet = true; m_apiId = std::forward<ApiIdT>(value); }
-    template<typename ApiIdT = Aws::String>
-    CreateRouteRequest& WithApiId(ApiIdT&& value) { SetApiId(std::forward<ApiIdT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The identifier of the Authorizer resource to be associated with this route.
+   * The authorizer identifier is generated by API Gateway when you created the
+   * authorizer.</p>
+   */
+  inline const Aws::String& GetAuthorizerId() const { return m_authorizerId; }
+  inline bool AuthorizerIdHasBeenSet() const { return m_authorizerIdHasBeenSet; }
+  template <typename AuthorizerIdT = Aws::String>
+  void SetAuthorizerId(AuthorizerIdT&& value) {
+    m_authorizerIdHasBeenSet = true;
+    m_authorizerId = std::forward<AuthorizerIdT>(value);
+  }
+  template <typename AuthorizerIdT = Aws::String>
+  CreateRouteRequest& WithAuthorizerId(AuthorizerIdT&& value) {
+    SetAuthorizerId(std::forward<AuthorizerIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Specifies whether an API key is required for the route. Supported only for
-     * WebSocket APIs.</p>
-     */
-    inline bool GetApiKeyRequired() const { return m_apiKeyRequired; }
-    inline bool ApiKeyRequiredHasBeenSet() const { return m_apiKeyRequiredHasBeenSet; }
-    inline void SetApiKeyRequired(bool value) { m_apiKeyRequiredHasBeenSet = true; m_apiKeyRequired = value; }
-    inline CreateRouteRequest& WithApiKeyRequired(bool value) { SetApiKeyRequired(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The model selection expression for the route. Supported only for WebSocket
+   * APIs.</p>
+   */
+  inline const Aws::String& GetModelSelectionExpression() const { return m_modelSelectionExpression; }
+  inline bool ModelSelectionExpressionHasBeenSet() const { return m_modelSelectionExpressionHasBeenSet; }
+  template <typename ModelSelectionExpressionT = Aws::String>
+  void SetModelSelectionExpression(ModelSelectionExpressionT&& value) {
+    m_modelSelectionExpressionHasBeenSet = true;
+    m_modelSelectionExpression = std::forward<ModelSelectionExpressionT>(value);
+  }
+  template <typename ModelSelectionExpressionT = Aws::String>
+  CreateRouteRequest& WithModelSelectionExpression(ModelSelectionExpressionT&& value) {
+    SetModelSelectionExpression(std::forward<ModelSelectionExpressionT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The authorization scopes supported by this route.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetAuthorizationScopes() const { return m_authorizationScopes; }
-    inline bool AuthorizationScopesHasBeenSet() const { return m_authorizationScopesHasBeenSet; }
-    template<typename AuthorizationScopesT = Aws::Vector<Aws::String>>
-    void SetAuthorizationScopes(AuthorizationScopesT&& value) { m_authorizationScopesHasBeenSet = true; m_authorizationScopes = std::forward<AuthorizationScopesT>(value); }
-    template<typename AuthorizationScopesT = Aws::Vector<Aws::String>>
-    CreateRouteRequest& WithAuthorizationScopes(AuthorizationScopesT&& value) { SetAuthorizationScopes(std::forward<AuthorizationScopesT>(value)); return *this;}
-    template<typename AuthorizationScopesT = Aws::String>
-    CreateRouteRequest& AddAuthorizationScopes(AuthorizationScopesT&& value) { m_authorizationScopesHasBeenSet = true; m_authorizationScopes.emplace_back(std::forward<AuthorizationScopesT>(value)); return *this; }
-    ///@}
+  ///@{
+  /**
+   * <p>The operation name for the route.</p>
+   */
+  inline const Aws::String& GetOperationName() const { return m_operationName; }
+  inline bool OperationNameHasBeenSet() const { return m_operationNameHasBeenSet; }
+  template <typename OperationNameT = Aws::String>
+  void SetOperationName(OperationNameT&& value) {
+    m_operationNameHasBeenSet = true;
+    m_operationName = std::forward<OperationNameT>(value);
+  }
+  template <typename OperationNameT = Aws::String>
+  CreateRouteRequest& WithOperationName(OperationNameT&& value) {
+    SetOperationName(std::forward<OperationNameT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The authorization type for the route. For WebSocket APIs, valid values are
-     * NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for
-     * using a Lambda authorizer For HTTP APIs, valid values are NONE for open access,
-     * JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM
-     * for using a Lambda authorizer.</p>
-     */
-    inline AuthorizationType GetAuthorizationType() const { return m_authorizationType; }
-    inline bool AuthorizationTypeHasBeenSet() const { return m_authorizationTypeHasBeenSet; }
-    inline void SetAuthorizationType(AuthorizationType value) { m_authorizationTypeHasBeenSet = true; m_authorizationType = value; }
-    inline CreateRouteRequest& WithAuthorizationType(AuthorizationType value) { SetAuthorizationType(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The request models for the route. Supported only for WebSocket APIs.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetRequestModels() const { return m_requestModels; }
+  inline bool RequestModelsHasBeenSet() const { return m_requestModelsHasBeenSet; }
+  template <typename RequestModelsT = Aws::Map<Aws::String, Aws::String>>
+  void SetRequestModels(RequestModelsT&& value) {
+    m_requestModelsHasBeenSet = true;
+    m_requestModels = std::forward<RequestModelsT>(value);
+  }
+  template <typename RequestModelsT = Aws::Map<Aws::String, Aws::String>>
+  CreateRouteRequest& WithRequestModels(RequestModelsT&& value) {
+    SetRequestModels(std::forward<RequestModelsT>(value));
+    return *this;
+  }
+  template <typename RequestModelsKeyT = Aws::String, typename RequestModelsValueT = Aws::String>
+  CreateRouteRequest& AddRequestModels(RequestModelsKeyT&& key, RequestModelsValueT&& value) {
+    m_requestModelsHasBeenSet = true;
+    m_requestModels.emplace(std::forward<RequestModelsKeyT>(key), std::forward<RequestModelsValueT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The identifier of the Authorizer resource to be associated with this route.
-     * The authorizer identifier is generated by API Gateway when you created the
-     * authorizer.</p>
-     */
-    inline const Aws::String& GetAuthorizerId() const { return m_authorizerId; }
-    inline bool AuthorizerIdHasBeenSet() const { return m_authorizerIdHasBeenSet; }
-    template<typename AuthorizerIdT = Aws::String>
-    void SetAuthorizerId(AuthorizerIdT&& value) { m_authorizerIdHasBeenSet = true; m_authorizerId = std::forward<AuthorizerIdT>(value); }
-    template<typename AuthorizerIdT = Aws::String>
-    CreateRouteRequest& WithAuthorizerId(AuthorizerIdT&& value) { SetAuthorizerId(std::forward<AuthorizerIdT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
+   */
+  inline const Aws::Map<Aws::String, ParameterConstraints>& GetRequestParameters() const { return m_requestParameters; }
+  inline bool RequestParametersHasBeenSet() const { return m_requestParametersHasBeenSet; }
+  template <typename RequestParametersT = Aws::Map<Aws::String, ParameterConstraints>>
+  void SetRequestParameters(RequestParametersT&& value) {
+    m_requestParametersHasBeenSet = true;
+    m_requestParameters = std::forward<RequestParametersT>(value);
+  }
+  template <typename RequestParametersT = Aws::Map<Aws::String, ParameterConstraints>>
+  CreateRouteRequest& WithRequestParameters(RequestParametersT&& value) {
+    SetRequestParameters(std::forward<RequestParametersT>(value));
+    return *this;
+  }
+  template <typename RequestParametersKeyT = Aws::String, typename RequestParametersValueT = ParameterConstraints>
+  CreateRouteRequest& AddRequestParameters(RequestParametersKeyT&& key, RequestParametersValueT&& value) {
+    m_requestParametersHasBeenSet = true;
+    m_requestParameters.emplace(std::forward<RequestParametersKeyT>(key), std::forward<RequestParametersValueT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The model selection expression for the route. Supported only for WebSocket
-     * APIs.</p>
-     */
-    inline const Aws::String& GetModelSelectionExpression() const { return m_modelSelectionExpression; }
-    inline bool ModelSelectionExpressionHasBeenSet() const { return m_modelSelectionExpressionHasBeenSet; }
-    template<typename ModelSelectionExpressionT = Aws::String>
-    void SetModelSelectionExpression(ModelSelectionExpressionT&& value) { m_modelSelectionExpressionHasBeenSet = true; m_modelSelectionExpression = std::forward<ModelSelectionExpressionT>(value); }
-    template<typename ModelSelectionExpressionT = Aws::String>
-    CreateRouteRequest& WithModelSelectionExpression(ModelSelectionExpressionT&& value) { SetModelSelectionExpression(std::forward<ModelSelectionExpressionT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The route key for the route.</p>
+   */
+  inline const Aws::String& GetRouteKey() const { return m_routeKey; }
+  inline bool RouteKeyHasBeenSet() const { return m_routeKeyHasBeenSet; }
+  template <typename RouteKeyT = Aws::String>
+  void SetRouteKey(RouteKeyT&& value) {
+    m_routeKeyHasBeenSet = true;
+    m_routeKey = std::forward<RouteKeyT>(value);
+  }
+  template <typename RouteKeyT = Aws::String>
+  CreateRouteRequest& WithRouteKey(RouteKeyT&& value) {
+    SetRouteKey(std::forward<RouteKeyT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The operation name for the route.</p>
-     */
-    inline const Aws::String& GetOperationName() const { return m_operationName; }
-    inline bool OperationNameHasBeenSet() const { return m_operationNameHasBeenSet; }
-    template<typename OperationNameT = Aws::String>
-    void SetOperationName(OperationNameT&& value) { m_operationNameHasBeenSet = true; m_operationName = std::forward<OperationNameT>(value); }
-    template<typename OperationNameT = Aws::String>
-    CreateRouteRequest& WithOperationName(OperationNameT&& value) { SetOperationName(std::forward<OperationNameT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The route response selection expression for the route. Supported only for
+   * WebSocket APIs.</p>
+   */
+  inline const Aws::String& GetRouteResponseSelectionExpression() const { return m_routeResponseSelectionExpression; }
+  inline bool RouteResponseSelectionExpressionHasBeenSet() const { return m_routeResponseSelectionExpressionHasBeenSet; }
+  template <typename RouteResponseSelectionExpressionT = Aws::String>
+  void SetRouteResponseSelectionExpression(RouteResponseSelectionExpressionT&& value) {
+    m_routeResponseSelectionExpressionHasBeenSet = true;
+    m_routeResponseSelectionExpression = std::forward<RouteResponseSelectionExpressionT>(value);
+  }
+  template <typename RouteResponseSelectionExpressionT = Aws::String>
+  CreateRouteRequest& WithRouteResponseSelectionExpression(RouteResponseSelectionExpressionT&& value) {
+    SetRouteResponseSelectionExpression(std::forward<RouteResponseSelectionExpressionT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The request models for the route. Supported only for WebSocket APIs.</p>
-     */
-    inline const Aws::Map<Aws::String, Aws::String>& GetRequestModels() const { return m_requestModels; }
-    inline bool RequestModelsHasBeenSet() const { return m_requestModelsHasBeenSet; }
-    template<typename RequestModelsT = Aws::Map<Aws::String, Aws::String>>
-    void SetRequestModels(RequestModelsT&& value) { m_requestModelsHasBeenSet = true; m_requestModels = std::forward<RequestModelsT>(value); }
-    template<typename RequestModelsT = Aws::Map<Aws::String, Aws::String>>
-    CreateRouteRequest& WithRequestModels(RequestModelsT&& value) { SetRequestModels(std::forward<RequestModelsT>(value)); return *this;}
-    template<typename RequestModelsKeyT = Aws::String, typename RequestModelsValueT = Aws::String>
-    CreateRouteRequest& AddRequestModels(RequestModelsKeyT&& key, RequestModelsValueT&& value) {
-      m_requestModelsHasBeenSet = true; m_requestModels.emplace(std::forward<RequestModelsKeyT>(key), std::forward<RequestModelsValueT>(value)); return *this;
-    }
-    ///@}
+  ///@{
+  /**
+   * <p>The target for the route.</p>
+   */
+  inline const Aws::String& GetTarget() const { return m_target; }
+  inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
+  template <typename TargetT = Aws::String>
+  void SetTarget(TargetT&& value) {
+    m_targetHasBeenSet = true;
+    m_target = std::forward<TargetT>(value);
+  }
+  template <typename TargetT = Aws::String>
+  CreateRouteRequest& WithTarget(TargetT&& value) {
+    SetTarget(std::forward<TargetT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_apiId;
+  bool m_apiIdHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
-     */
-    inline const Aws::Map<Aws::String, ParameterConstraints>& GetRequestParameters() const { return m_requestParameters; }
-    inline bool RequestParametersHasBeenSet() const { return m_requestParametersHasBeenSet; }
-    template<typename RequestParametersT = Aws::Map<Aws::String, ParameterConstraints>>
-    void SetRequestParameters(RequestParametersT&& value) { m_requestParametersHasBeenSet = true; m_requestParameters = std::forward<RequestParametersT>(value); }
-    template<typename RequestParametersT = Aws::Map<Aws::String, ParameterConstraints>>
-    CreateRouteRequest& WithRequestParameters(RequestParametersT&& value) { SetRequestParameters(std::forward<RequestParametersT>(value)); return *this;}
-    template<typename RequestParametersKeyT = Aws::String, typename RequestParametersValueT = ParameterConstraints>
-    CreateRouteRequest& AddRequestParameters(RequestParametersKeyT&& key, RequestParametersValueT&& value) {
-      m_requestParametersHasBeenSet = true; m_requestParameters.emplace(std::forward<RequestParametersKeyT>(key), std::forward<RequestParametersValueT>(value)); return *this;
-    }
-    ///@}
+  bool m_apiKeyRequired{false};
+  bool m_apiKeyRequiredHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The route key for the route.</p>
-     */
-    inline const Aws::String& GetRouteKey() const { return m_routeKey; }
-    inline bool RouteKeyHasBeenSet() const { return m_routeKeyHasBeenSet; }
-    template<typename RouteKeyT = Aws::String>
-    void SetRouteKey(RouteKeyT&& value) { m_routeKeyHasBeenSet = true; m_routeKey = std::forward<RouteKeyT>(value); }
-    template<typename RouteKeyT = Aws::String>
-    CreateRouteRequest& WithRouteKey(RouteKeyT&& value) { SetRouteKey(std::forward<RouteKeyT>(value)); return *this;}
-    ///@}
+  Aws::Vector<Aws::String> m_authorizationScopes;
+  bool m_authorizationScopesHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The route response selection expression for the route. Supported only for
-     * WebSocket APIs.</p>
-     */
-    inline const Aws::String& GetRouteResponseSelectionExpression() const { return m_routeResponseSelectionExpression; }
-    inline bool RouteResponseSelectionExpressionHasBeenSet() const { return m_routeResponseSelectionExpressionHasBeenSet; }
-    template<typename RouteResponseSelectionExpressionT = Aws::String>
-    void SetRouteResponseSelectionExpression(RouteResponseSelectionExpressionT&& value) { m_routeResponseSelectionExpressionHasBeenSet = true; m_routeResponseSelectionExpression = std::forward<RouteResponseSelectionExpressionT>(value); }
-    template<typename RouteResponseSelectionExpressionT = Aws::String>
-    CreateRouteRequest& WithRouteResponseSelectionExpression(RouteResponseSelectionExpressionT&& value) { SetRouteResponseSelectionExpression(std::forward<RouteResponseSelectionExpressionT>(value)); return *this;}
-    ///@}
+  AuthorizationType m_authorizationType{AuthorizationType::NOT_SET};
+  bool m_authorizationTypeHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The target for the route.</p>
-     */
-    inline const Aws::String& GetTarget() const { return m_target; }
-    inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-    template<typename TargetT = Aws::String>
-    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
-    template<typename TargetT = Aws::String>
-    CreateRouteRequest& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
-    ///@}
-  private:
+  Aws::String m_authorizerId;
+  bool m_authorizerIdHasBeenSet = false;
 
-    Aws::String m_apiId;
-    bool m_apiIdHasBeenSet = false;
+  Aws::String m_modelSelectionExpression;
+  bool m_modelSelectionExpressionHasBeenSet = false;
 
-    bool m_apiKeyRequired{false};
-    bool m_apiKeyRequiredHasBeenSet = false;
+  Aws::String m_operationName;
+  bool m_operationNameHasBeenSet = false;
 
-    Aws::Vector<Aws::String> m_authorizationScopes;
-    bool m_authorizationScopesHasBeenSet = false;
+  Aws::Map<Aws::String, Aws::String> m_requestModels;
+  bool m_requestModelsHasBeenSet = false;
 
-    AuthorizationType m_authorizationType{AuthorizationType::NOT_SET};
-    bool m_authorizationTypeHasBeenSet = false;
+  Aws::Map<Aws::String, ParameterConstraints> m_requestParameters;
+  bool m_requestParametersHasBeenSet = false;
 
-    Aws::String m_authorizerId;
-    bool m_authorizerIdHasBeenSet = false;
+  Aws::String m_routeKey;
+  bool m_routeKeyHasBeenSet = false;
 
-    Aws::String m_modelSelectionExpression;
-    bool m_modelSelectionExpressionHasBeenSet = false;
+  Aws::String m_routeResponseSelectionExpression;
+  bool m_routeResponseSelectionExpressionHasBeenSet = false;
 
-    Aws::String m_operationName;
-    bool m_operationNameHasBeenSet = false;
+  Aws::String m_target;
+  bool m_targetHasBeenSet = false;
+};
 
-    Aws::Map<Aws::String, Aws::String> m_requestModels;
-    bool m_requestModelsHasBeenSet = false;
-
-    Aws::Map<Aws::String, ParameterConstraints> m_requestParameters;
-    bool m_requestParametersHasBeenSet = false;
-
-    Aws::String m_routeKey;
-    bool m_routeKeyHasBeenSet = false;
-
-    Aws::String m_routeResponseSelectionExpression;
-    bool m_routeResponseSelectionExpressionHasBeenSet = false;
-
-    Aws::String m_target;
-    bool m_targetHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace ApiGatewayV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApiGatewayV2
+}  // namespace Aws

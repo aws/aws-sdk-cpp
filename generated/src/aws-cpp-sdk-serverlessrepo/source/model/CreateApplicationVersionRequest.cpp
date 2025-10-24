@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/serverlessrepo/model/CreateApplicationVersionRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/serverlessrepo/model/CreateApplicationVersionRequest.h>
 
 #include <utility>
 
@@ -12,37 +12,24 @@ using namespace Aws::ServerlessApplicationRepository::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateApplicationVersionRequest::SerializePayload() const
-{
+Aws::String CreateApplicationVersionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_sourceCodeArchiveUrlHasBeenSet)
-  {
-   payload.WithString("sourceCodeArchiveUrl", m_sourceCodeArchiveUrl);
-
+  if (m_sourceCodeArchiveUrlHasBeenSet) {
+    payload.WithString("sourceCodeArchiveUrl", m_sourceCodeArchiveUrl);
   }
 
-  if(m_sourceCodeUrlHasBeenSet)
-  {
-   payload.WithString("sourceCodeUrl", m_sourceCodeUrl);
-
+  if (m_sourceCodeUrlHasBeenSet) {
+    payload.WithString("sourceCodeUrl", m_sourceCodeUrl);
   }
 
-  if(m_templateBodyHasBeenSet)
-  {
-   payload.WithString("templateBody", m_templateBody);
-
+  if (m_templateBodyHasBeenSet) {
+    payload.WithString("templateBody", m_templateBody);
   }
 
-  if(m_templateUrlHasBeenSet)
-  {
-   payload.WithString("templateUrl", m_templateUrl);
-
+  if (m_templateUrlHasBeenSet) {
+    payload.WithString("templateUrl", m_templateUrl);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

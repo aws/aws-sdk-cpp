@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workspaces/model/DescribeImageAssociationsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workspaces/model/DescribeImageAssociationsRequest.h>
 
 #include <utility>
 
@@ -12,38 +12,29 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeImageAssociationsRequest::SerializePayload() const
-{
+Aws::String DescribeImageAssociationsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_imageIdHasBeenSet)
-  {
-   payload.WithString("ImageId", m_imageId);
-
+  if (m_imageIdHasBeenSet) {
+    payload.WithString("ImageId", m_imageId);
   }
 
-  if(m_associatedResourceTypesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> associatedResourceTypesJsonList(m_associatedResourceTypes.size());
-   for(unsigned associatedResourceTypesIndex = 0; associatedResourceTypesIndex < associatedResourceTypesJsonList.GetLength(); ++associatedResourceTypesIndex)
-   {
-     associatedResourceTypesJsonList[associatedResourceTypesIndex].AsString(ImageAssociatedResourceTypeMapper::GetNameForImageAssociatedResourceType(m_associatedResourceTypes[associatedResourceTypesIndex]));
-   }
-   payload.WithArray("AssociatedResourceTypes", std::move(associatedResourceTypesJsonList));
-
+  if (m_associatedResourceTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> associatedResourceTypesJsonList(m_associatedResourceTypes.size());
+    for (unsigned associatedResourceTypesIndex = 0; associatedResourceTypesIndex < associatedResourceTypesJsonList.GetLength();
+         ++associatedResourceTypesIndex) {
+      associatedResourceTypesJsonList[associatedResourceTypesIndex].AsString(
+          ImageAssociatedResourceTypeMapper::GetNameForImageAssociatedResourceType(
+              m_associatedResourceTypes[associatedResourceTypesIndex]));
+    }
+    payload.WithArray("AssociatedResourceTypes", std::move(associatedResourceTypesJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeImageAssociationsRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeImageAssociationsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "WorkspacesService.DescribeImageAssociations"));
   return headers;
-
 }
-
-
-
-

@@ -4,165 +4,206 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/quicksight/model/NumericSeparatorConfiguration.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/DecimalPlacesConfiguration.h>
-#include <aws/quicksight/model/NumberScale.h>
 #include <aws/quicksight/model/NegativeValueConfiguration.h>
 #include <aws/quicksight/model/NullValueFormatConfiguration.h>
+#include <aws/quicksight/model/NumberScale.h>
+#include <aws/quicksight/model/NumericSeparatorConfiguration.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace QuickSight {
+namespace Model {
 
+/**
+ * <p>The options that determine the currency display format
+ * configuration.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CurrencyDisplayFormatConfiguration">AWS
+ * API Reference</a></p>
+ */
+class CurrencyDisplayFormatConfiguration {
+ public:
+  AWS_QUICKSIGHT_API CurrencyDisplayFormatConfiguration() = default;
+  AWS_QUICKSIGHT_API CurrencyDisplayFormatConfiguration(Aws::Utils::Json::JsonView jsonValue);
+  AWS_QUICKSIGHT_API CurrencyDisplayFormatConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>The options that determine the currency display format
-   * configuration.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CurrencyDisplayFormatConfiguration">AWS
-   * API Reference</a></p>
+   * <p>Determines the prefix value of the currency format.</p>
    */
-  class CurrencyDisplayFormatConfiguration
-  {
-  public:
-    AWS_QUICKSIGHT_API CurrencyDisplayFormatConfiguration() = default;
-    AWS_QUICKSIGHT_API CurrencyDisplayFormatConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AWS_QUICKSIGHT_API CurrencyDisplayFormatConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetPrefix() const { return m_prefix; }
+  inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
+  template <typename PrefixT = Aws::String>
+  void SetPrefix(PrefixT&& value) {
+    m_prefixHasBeenSet = true;
+    m_prefix = std::forward<PrefixT>(value);
+  }
+  template <typename PrefixT = Aws::String>
+  CurrencyDisplayFormatConfiguration& WithPrefix(PrefixT&& value) {
+    SetPrefix(std::forward<PrefixT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>Determines the suffix value of the currency format.</p>
+   */
+  inline const Aws::String& GetSuffix() const { return m_suffix; }
+  inline bool SuffixHasBeenSet() const { return m_suffixHasBeenSet; }
+  template <typename SuffixT = Aws::String>
+  void SetSuffix(SuffixT&& value) {
+    m_suffixHasBeenSet = true;
+    m_suffix = std::forward<SuffixT>(value);
+  }
+  template <typename SuffixT = Aws::String>
+  CurrencyDisplayFormatConfiguration& WithSuffix(SuffixT&& value) {
+    SetSuffix(std::forward<SuffixT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Determines the prefix value of the currency format.</p>
-     */
-    inline const Aws::String& GetPrefix() const { return m_prefix; }
-    inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-    template<typename PrefixT = Aws::String>
-    void SetPrefix(PrefixT&& value) { m_prefixHasBeenSet = true; m_prefix = std::forward<PrefixT>(value); }
-    template<typename PrefixT = Aws::String>
-    CurrencyDisplayFormatConfiguration& WithPrefix(PrefixT&& value) { SetPrefix(std::forward<PrefixT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The options that determine the numeric separator configuration.</p>
+   */
+  inline const NumericSeparatorConfiguration& GetSeparatorConfiguration() const { return m_separatorConfiguration; }
+  inline bool SeparatorConfigurationHasBeenSet() const { return m_separatorConfigurationHasBeenSet; }
+  template <typename SeparatorConfigurationT = NumericSeparatorConfiguration>
+  void SetSeparatorConfiguration(SeparatorConfigurationT&& value) {
+    m_separatorConfigurationHasBeenSet = true;
+    m_separatorConfiguration = std::forward<SeparatorConfigurationT>(value);
+  }
+  template <typename SeparatorConfigurationT = NumericSeparatorConfiguration>
+  CurrencyDisplayFormatConfiguration& WithSeparatorConfiguration(SeparatorConfigurationT&& value) {
+    SetSeparatorConfiguration(std::forward<SeparatorConfigurationT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Determines the suffix value of the currency format.</p>
-     */
-    inline const Aws::String& GetSuffix() const { return m_suffix; }
-    inline bool SuffixHasBeenSet() const { return m_suffixHasBeenSet; }
-    template<typename SuffixT = Aws::String>
-    void SetSuffix(SuffixT&& value) { m_suffixHasBeenSet = true; m_suffix = std::forward<SuffixT>(value); }
-    template<typename SuffixT = Aws::String>
-    CurrencyDisplayFormatConfiguration& WithSuffix(SuffixT&& value) { SetSuffix(std::forward<SuffixT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>Determines the symbol for the currency format.</p>
+   */
+  inline const Aws::String& GetSymbol() const { return m_symbol; }
+  inline bool SymbolHasBeenSet() const { return m_symbolHasBeenSet; }
+  template <typename SymbolT = Aws::String>
+  void SetSymbol(SymbolT&& value) {
+    m_symbolHasBeenSet = true;
+    m_symbol = std::forward<SymbolT>(value);
+  }
+  template <typename SymbolT = Aws::String>
+  CurrencyDisplayFormatConfiguration& WithSymbol(SymbolT&& value) {
+    SetSymbol(std::forward<SymbolT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The options that determine the numeric separator configuration.</p>
-     */
-    inline const NumericSeparatorConfiguration& GetSeparatorConfiguration() const { return m_separatorConfiguration; }
-    inline bool SeparatorConfigurationHasBeenSet() const { return m_separatorConfigurationHasBeenSet; }
-    template<typename SeparatorConfigurationT = NumericSeparatorConfiguration>
-    void SetSeparatorConfiguration(SeparatorConfigurationT&& value) { m_separatorConfigurationHasBeenSet = true; m_separatorConfiguration = std::forward<SeparatorConfigurationT>(value); }
-    template<typename SeparatorConfigurationT = NumericSeparatorConfiguration>
-    CurrencyDisplayFormatConfiguration& WithSeparatorConfiguration(SeparatorConfigurationT&& value) { SetSeparatorConfiguration(std::forward<SeparatorConfigurationT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The option that determines the decimal places configuration.</p>
+   */
+  inline const DecimalPlacesConfiguration& GetDecimalPlacesConfiguration() const { return m_decimalPlacesConfiguration; }
+  inline bool DecimalPlacesConfigurationHasBeenSet() const { return m_decimalPlacesConfigurationHasBeenSet; }
+  template <typename DecimalPlacesConfigurationT = DecimalPlacesConfiguration>
+  void SetDecimalPlacesConfiguration(DecimalPlacesConfigurationT&& value) {
+    m_decimalPlacesConfigurationHasBeenSet = true;
+    m_decimalPlacesConfiguration = std::forward<DecimalPlacesConfigurationT>(value);
+  }
+  template <typename DecimalPlacesConfigurationT = DecimalPlacesConfiguration>
+  CurrencyDisplayFormatConfiguration& WithDecimalPlacesConfiguration(DecimalPlacesConfigurationT&& value) {
+    SetDecimalPlacesConfiguration(std::forward<DecimalPlacesConfigurationT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Determines the symbol for the currency format.</p>
-     */
-    inline const Aws::String& GetSymbol() const { return m_symbol; }
-    inline bool SymbolHasBeenSet() const { return m_symbolHasBeenSet; }
-    template<typename SymbolT = Aws::String>
-    void SetSymbol(SymbolT&& value) { m_symbolHasBeenSet = true; m_symbol = std::forward<SymbolT>(value); }
-    template<typename SymbolT = Aws::String>
-    CurrencyDisplayFormatConfiguration& WithSymbol(SymbolT&& value) { SetSymbol(std::forward<SymbolT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>Determines the number scale value for the currency format.</p>
+   */
+  inline NumberScale GetNumberScale() const { return m_numberScale; }
+  inline bool NumberScaleHasBeenSet() const { return m_numberScaleHasBeenSet; }
+  inline void SetNumberScale(NumberScale value) {
+    m_numberScaleHasBeenSet = true;
+    m_numberScale = value;
+  }
+  inline CurrencyDisplayFormatConfiguration& WithNumberScale(NumberScale value) {
+    SetNumberScale(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The option that determines the decimal places configuration.</p>
-     */
-    inline const DecimalPlacesConfiguration& GetDecimalPlacesConfiguration() const { return m_decimalPlacesConfiguration; }
-    inline bool DecimalPlacesConfigurationHasBeenSet() const { return m_decimalPlacesConfigurationHasBeenSet; }
-    template<typename DecimalPlacesConfigurationT = DecimalPlacesConfiguration>
-    void SetDecimalPlacesConfiguration(DecimalPlacesConfigurationT&& value) { m_decimalPlacesConfigurationHasBeenSet = true; m_decimalPlacesConfiguration = std::forward<DecimalPlacesConfigurationT>(value); }
-    template<typename DecimalPlacesConfigurationT = DecimalPlacesConfiguration>
-    CurrencyDisplayFormatConfiguration& WithDecimalPlacesConfiguration(DecimalPlacesConfigurationT&& value) { SetDecimalPlacesConfiguration(std::forward<DecimalPlacesConfigurationT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The options that determine the negative value configuration.</p>
+   */
+  inline const NegativeValueConfiguration& GetNegativeValueConfiguration() const { return m_negativeValueConfiguration; }
+  inline bool NegativeValueConfigurationHasBeenSet() const { return m_negativeValueConfigurationHasBeenSet; }
+  template <typename NegativeValueConfigurationT = NegativeValueConfiguration>
+  void SetNegativeValueConfiguration(NegativeValueConfigurationT&& value) {
+    m_negativeValueConfigurationHasBeenSet = true;
+    m_negativeValueConfiguration = std::forward<NegativeValueConfigurationT>(value);
+  }
+  template <typename NegativeValueConfigurationT = NegativeValueConfiguration>
+  CurrencyDisplayFormatConfiguration& WithNegativeValueConfiguration(NegativeValueConfigurationT&& value) {
+    SetNegativeValueConfiguration(std::forward<NegativeValueConfigurationT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Determines the number scale value for the currency format.</p>
-     */
-    inline NumberScale GetNumberScale() const { return m_numberScale; }
-    inline bool NumberScaleHasBeenSet() const { return m_numberScaleHasBeenSet; }
-    inline void SetNumberScale(NumberScale value) { m_numberScaleHasBeenSet = true; m_numberScale = value; }
-    inline CurrencyDisplayFormatConfiguration& WithNumberScale(NumberScale value) { SetNumberScale(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The options that determine the null value format configuration.</p>
+   */
+  inline const NullValueFormatConfiguration& GetNullValueFormatConfiguration() const { return m_nullValueFormatConfiguration; }
+  inline bool NullValueFormatConfigurationHasBeenSet() const { return m_nullValueFormatConfigurationHasBeenSet; }
+  template <typename NullValueFormatConfigurationT = NullValueFormatConfiguration>
+  void SetNullValueFormatConfiguration(NullValueFormatConfigurationT&& value) {
+    m_nullValueFormatConfigurationHasBeenSet = true;
+    m_nullValueFormatConfiguration = std::forward<NullValueFormatConfigurationT>(value);
+  }
+  template <typename NullValueFormatConfigurationT = NullValueFormatConfiguration>
+  CurrencyDisplayFormatConfiguration& WithNullValueFormatConfiguration(NullValueFormatConfigurationT&& value) {
+    SetNullValueFormatConfiguration(std::forward<NullValueFormatConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_prefix;
+  bool m_prefixHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The options that determine the negative value configuration.</p>
-     */
-    inline const NegativeValueConfiguration& GetNegativeValueConfiguration() const { return m_negativeValueConfiguration; }
-    inline bool NegativeValueConfigurationHasBeenSet() const { return m_negativeValueConfigurationHasBeenSet; }
-    template<typename NegativeValueConfigurationT = NegativeValueConfiguration>
-    void SetNegativeValueConfiguration(NegativeValueConfigurationT&& value) { m_negativeValueConfigurationHasBeenSet = true; m_negativeValueConfiguration = std::forward<NegativeValueConfigurationT>(value); }
-    template<typename NegativeValueConfigurationT = NegativeValueConfiguration>
-    CurrencyDisplayFormatConfiguration& WithNegativeValueConfiguration(NegativeValueConfigurationT&& value) { SetNegativeValueConfiguration(std::forward<NegativeValueConfigurationT>(value)); return *this;}
-    ///@}
+  Aws::String m_suffix;
+  bool m_suffixHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The options that determine the null value format configuration.</p>
-     */
-    inline const NullValueFormatConfiguration& GetNullValueFormatConfiguration() const { return m_nullValueFormatConfiguration; }
-    inline bool NullValueFormatConfigurationHasBeenSet() const { return m_nullValueFormatConfigurationHasBeenSet; }
-    template<typename NullValueFormatConfigurationT = NullValueFormatConfiguration>
-    void SetNullValueFormatConfiguration(NullValueFormatConfigurationT&& value) { m_nullValueFormatConfigurationHasBeenSet = true; m_nullValueFormatConfiguration = std::forward<NullValueFormatConfigurationT>(value); }
-    template<typename NullValueFormatConfigurationT = NullValueFormatConfiguration>
-    CurrencyDisplayFormatConfiguration& WithNullValueFormatConfiguration(NullValueFormatConfigurationT&& value) { SetNullValueFormatConfiguration(std::forward<NullValueFormatConfigurationT>(value)); return *this;}
-    ///@}
-  private:
+  NumericSeparatorConfiguration m_separatorConfiguration;
+  bool m_separatorConfigurationHasBeenSet = false;
 
-    Aws::String m_prefix;
-    bool m_prefixHasBeenSet = false;
+  Aws::String m_symbol;
+  bool m_symbolHasBeenSet = false;
 
-    Aws::String m_suffix;
-    bool m_suffixHasBeenSet = false;
+  DecimalPlacesConfiguration m_decimalPlacesConfiguration;
+  bool m_decimalPlacesConfigurationHasBeenSet = false;
 
-    NumericSeparatorConfiguration m_separatorConfiguration;
-    bool m_separatorConfigurationHasBeenSet = false;
+  NumberScale m_numberScale{NumberScale::NOT_SET};
+  bool m_numberScaleHasBeenSet = false;
 
-    Aws::String m_symbol;
-    bool m_symbolHasBeenSet = false;
+  NegativeValueConfiguration m_negativeValueConfiguration;
+  bool m_negativeValueConfigurationHasBeenSet = false;
 
-    DecimalPlacesConfiguration m_decimalPlacesConfiguration;
-    bool m_decimalPlacesConfigurationHasBeenSet = false;
+  NullValueFormatConfiguration m_nullValueFormatConfiguration;
+  bool m_nullValueFormatConfigurationHasBeenSet = false;
+};
 
-    NumberScale m_numberScale{NumberScale::NOT_SET};
-    bool m_numberScaleHasBeenSet = false;
-
-    NegativeValueConfiguration m_negativeValueConfiguration;
-    bool m_negativeValueConfigurationHasBeenSet = false;
-
-    NullValueFormatConfiguration m_nullValueFormatConfiguration;
-    bool m_nullValueFormatConfigurationHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

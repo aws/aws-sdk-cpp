@@ -4,29 +4,21 @@
  */
 
 #pragma once
-#include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/es/ElasticsearchService_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElasticsearchService
-{
-namespace Model
-{
-  enum class ReservedElasticsearchInstancePaymentOption
-  {
-    NOT_SET,
-    ALL_UPFRONT,
-    PARTIAL_UPFRONT,
-    NO_UPFRONT
-  };
+namespace Aws {
+namespace ElasticsearchService {
+namespace Model {
+enum class ReservedElasticsearchInstancePaymentOption { NOT_SET, ALL_UPFRONT, PARTIAL_UPFRONT, NO_UPFRONT };
 
-namespace ReservedElasticsearchInstancePaymentOptionMapper
-{
-AWS_ELASTICSEARCHSERVICE_API ReservedElasticsearchInstancePaymentOption GetReservedElasticsearchInstancePaymentOptionForName(const Aws::String& name);
+namespace ReservedElasticsearchInstancePaymentOptionMapper {
+AWS_ELASTICSEARCHSERVICE_API ReservedElasticsearchInstancePaymentOption
+GetReservedElasticsearchInstancePaymentOptionForName(const Aws::String& name);
 
-AWS_ELASTICSEARCHSERVICE_API Aws::String GetNameForReservedElasticsearchInstancePaymentOption(ReservedElasticsearchInstancePaymentOption value);
-} // namespace ReservedElasticsearchInstancePaymentOptionMapper
-} // namespace Model
-} // namespace ElasticsearchService
-} // namespace Aws
+AWS_ELASTICSEARCHSERVICE_API Aws::String GetNameForReservedElasticsearchInstancePaymentOption(
+    ReservedElasticsearchInstancePaymentOption value);
+}  // namespace ReservedElasticsearchInstancePaymentOptionMapper
+}  // namespace Model
+}  // namespace ElasticsearchService
+}  // namespace Aws

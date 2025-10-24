@@ -12,24 +12,17 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String BatchUpdateUserRequest::SerializePayload() const
-{
+Aws::String BatchUpdateUserRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_updateUserRequestItemsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> updateUserRequestItemsJsonList(m_updateUserRequestItems.size());
-   for(unsigned updateUserRequestItemsIndex = 0; updateUserRequestItemsIndex < updateUserRequestItemsJsonList.GetLength(); ++updateUserRequestItemsIndex)
-   {
-     updateUserRequestItemsJsonList[updateUserRequestItemsIndex].AsObject(m_updateUserRequestItems[updateUserRequestItemsIndex].Jsonize());
-   }
-   payload.WithArray("UpdateUserRequestItems", std::move(updateUserRequestItemsJsonList));
-
+  if (m_updateUserRequestItemsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> updateUserRequestItemsJsonList(m_updateUserRequestItems.size());
+    for (unsigned updateUserRequestItemsIndex = 0; updateUserRequestItemsIndex < updateUserRequestItemsJsonList.GetLength();
+         ++updateUserRequestItemsIndex) {
+      updateUserRequestItemsJsonList[updateUserRequestItemsIndex].AsObject(m_updateUserRequestItems[updateUserRequestItemsIndex].Jsonize());
+    }
+    payload.WithArray("UpdateUserRequestItems", std::move(updateUserRequestItemsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

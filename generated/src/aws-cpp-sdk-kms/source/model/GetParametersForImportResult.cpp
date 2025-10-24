@@ -3,13 +3,13 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kms/model/GetParametersForImportResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
-#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/kms/model/GetParametersForImportResult.h>
 
 #include <utility>
 
@@ -18,43 +18,33 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetParametersForImportResult::GetParametersForImportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+GetParametersForImportResult::GetParametersForImportResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-GetParametersForImportResult& GetParametersForImportResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+GetParametersForImportResult& GetParametersForImportResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("KeyId"))
-  {
+  if (jsonValue.ValueExists("KeyId")) {
     m_keyId = jsonValue.GetString("KeyId");
     m_keyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ImportToken"))
-  {
+  if (jsonValue.ValueExists("ImportToken")) {
     m_importToken = HashingUtils::Base64Decode(jsonValue.GetString("ImportToken"));
     m_importTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PublicKey"))
-  {
+  if (jsonValue.ValueExists("PublicKey")) {
     m_publicKey = HashingUtils::Base64Decode(jsonValue.GetString("PublicKey"));
     m_publicKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ParametersValidTo"))
-  {
+  if (jsonValue.ValueExists("ParametersValidTo")) {
     m_parametersValidTo = jsonValue.GetDouble("ParametersValidTo");
     m_parametersValidToHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

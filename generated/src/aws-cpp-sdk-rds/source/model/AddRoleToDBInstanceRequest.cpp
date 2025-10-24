@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/AddRoleToDBInstanceRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/AddRoleToDBInstanceRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String AddRoleToDBInstanceRequest::SerializePayload() const
-{
+Aws::String AddRoleToDBInstanceRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=AddRoleToDBInstance&";
-  if(m_dBInstanceIdentifierHasBeenSet)
-  {
+  if (m_dBInstanceIdentifierHasBeenSet) {
     ss << "DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
   }
 
-  if(m_roleArnHasBeenSet)
-  {
+  if (m_roleArnHasBeenSet) {
     ss << "RoleArn=" << StringUtils::URLEncode(m_roleArn.c_str()) << "&";
   }
 
-  if(m_featureNameHasBeenSet)
-  {
+  if (m_featureNameHasBeenSet) {
     ss << "FeatureName=" << StringUtils::URLEncode(m_featureName.c_str()) << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String AddRoleToDBInstanceRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  AddRoleToDBInstanceRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void AddRoleToDBInstanceRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class GeospatialSelectedPointStyle
-  {
-    NOT_SET,
-    POINT,
-    CLUSTER,
-    HEATMAP
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class GeospatialSelectedPointStyle { NOT_SET, POINT, CLUSTER, HEATMAP };
 
-namespace GeospatialSelectedPointStyleMapper
-{
+namespace GeospatialSelectedPointStyleMapper {
 AWS_QUICKSIGHT_API GeospatialSelectedPointStyle GetGeospatialSelectedPointStyleForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForGeospatialSelectedPointStyle(GeospatialSelectedPointStyle value);
-} // namespace GeospatialSelectedPointStyleMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace GeospatialSelectedPointStyleMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

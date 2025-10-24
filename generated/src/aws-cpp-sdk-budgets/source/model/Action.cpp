@@ -11,70 +11,52 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Budgets
-{
-namespace Model
-{
+namespace Aws {
+namespace Budgets {
+namespace Model {
 
-Action::Action(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Action::Action(JsonView jsonValue) { *this = jsonValue; }
 
-Action& Action::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ActionId"))
-  {
+Action& Action::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ActionId")) {
     m_actionId = jsonValue.GetString("ActionId");
     m_actionIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BudgetName"))
-  {
+  if (jsonValue.ValueExists("BudgetName")) {
     m_budgetName = jsonValue.GetString("BudgetName");
     m_budgetNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NotificationType"))
-  {
+  if (jsonValue.ValueExists("NotificationType")) {
     m_notificationType = NotificationTypeMapper::GetNotificationTypeForName(jsonValue.GetString("NotificationType"));
     m_notificationTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ActionType"))
-  {
+  if (jsonValue.ValueExists("ActionType")) {
     m_actionType = ActionTypeMapper::GetActionTypeForName(jsonValue.GetString("ActionType"));
     m_actionTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ActionThreshold"))
-  {
+  if (jsonValue.ValueExists("ActionThreshold")) {
     m_actionThreshold = jsonValue.GetObject("ActionThreshold");
     m_actionThresholdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Definition"))
-  {
+  if (jsonValue.ValueExists("Definition")) {
     m_definition = jsonValue.GetObject("Definition");
     m_definitionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ExecutionRoleArn"))
-  {
+  if (jsonValue.ValueExists("ExecutionRoleArn")) {
     m_executionRoleArn = jsonValue.GetString("ExecutionRoleArn");
     m_executionRoleArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ApprovalModel"))
-  {
+  if (jsonValue.ValueExists("ApprovalModel")) {
     m_approvalModel = ApprovalModelMapper::GetApprovalModelForName(jsonValue.GetString("ApprovalModel"));
     m_approvalModelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = ActionStatusMapper::GetActionStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Subscribers"))
-  {
+  if (jsonValue.ValueExists("Subscribers")) {
     Aws::Utils::Array<JsonView> subscribersJsonList = jsonValue.GetArray("Subscribers");
-    for(unsigned subscribersIndex = 0; subscribersIndex < subscribersJsonList.GetLength(); ++subscribersIndex)
-    {
+    for (unsigned subscribersIndex = 0; subscribersIndex < subscribersJsonList.GetLength(); ++subscribersIndex) {
       m_subscribers.push_back(subscribersJsonList[subscribersIndex].AsObject());
     }
     m_subscribersHasBeenSet = true;
@@ -82,74 +64,56 @@ Action& Action::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue Action::Jsonize() const
-{
+JsonValue Action::Jsonize() const {
   JsonValue payload;
 
-  if(m_actionIdHasBeenSet)
-  {
-   payload.WithString("ActionId", m_actionId);
-
+  if (m_actionIdHasBeenSet) {
+    payload.WithString("ActionId", m_actionId);
   }
 
-  if(m_budgetNameHasBeenSet)
-  {
-   payload.WithString("BudgetName", m_budgetName);
-
+  if (m_budgetNameHasBeenSet) {
+    payload.WithString("BudgetName", m_budgetName);
   }
 
-  if(m_notificationTypeHasBeenSet)
-  {
-   payload.WithString("NotificationType", NotificationTypeMapper::GetNameForNotificationType(m_notificationType));
+  if (m_notificationTypeHasBeenSet) {
+    payload.WithString("NotificationType", NotificationTypeMapper::GetNameForNotificationType(m_notificationType));
   }
 
-  if(m_actionTypeHasBeenSet)
-  {
-   payload.WithString("ActionType", ActionTypeMapper::GetNameForActionType(m_actionType));
+  if (m_actionTypeHasBeenSet) {
+    payload.WithString("ActionType", ActionTypeMapper::GetNameForActionType(m_actionType));
   }
 
-  if(m_actionThresholdHasBeenSet)
-  {
-   payload.WithObject("ActionThreshold", m_actionThreshold.Jsonize());
-
+  if (m_actionThresholdHasBeenSet) {
+    payload.WithObject("ActionThreshold", m_actionThreshold.Jsonize());
   }
 
-  if(m_definitionHasBeenSet)
-  {
-   payload.WithObject("Definition", m_definition.Jsonize());
-
+  if (m_definitionHasBeenSet) {
+    payload.WithObject("Definition", m_definition.Jsonize());
   }
 
-  if(m_executionRoleArnHasBeenSet)
-  {
-   payload.WithString("ExecutionRoleArn", m_executionRoleArn);
-
+  if (m_executionRoleArnHasBeenSet) {
+    payload.WithString("ExecutionRoleArn", m_executionRoleArn);
   }
 
-  if(m_approvalModelHasBeenSet)
-  {
-   payload.WithString("ApprovalModel", ApprovalModelMapper::GetNameForApprovalModel(m_approvalModel));
+  if (m_approvalModelHasBeenSet) {
+    payload.WithString("ApprovalModel", ApprovalModelMapper::GetNameForApprovalModel(m_approvalModel));
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", ActionStatusMapper::GetNameForActionStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", ActionStatusMapper::GetNameForActionStatus(m_status));
   }
 
-  if(m_subscribersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> subscribersJsonList(m_subscribers.size());
-   for(unsigned subscribersIndex = 0; subscribersIndex < subscribersJsonList.GetLength(); ++subscribersIndex)
-   {
-     subscribersJsonList[subscribersIndex].AsObject(m_subscribers[subscribersIndex].Jsonize());
-   }
-   payload.WithArray("Subscribers", std::move(subscribersJsonList));
-
+  if (m_subscribersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> subscribersJsonList(m_subscribers.size());
+    for (unsigned subscribersIndex = 0; subscribersIndex < subscribersJsonList.GetLength(); ++subscribersIndex) {
+      subscribersJsonList[subscribersIndex].AsObject(m_subscribers[subscribersIndex].Jsonize());
+    }
+    payload.WithArray("Subscribers", std::move(subscribersJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Budgets
-} // namespace Aws
+}  // namespace Model
+}  // namespace Budgets
+}  // namespace Aws

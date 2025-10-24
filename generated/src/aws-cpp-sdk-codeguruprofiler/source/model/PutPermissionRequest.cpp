@@ -12,30 +12,20 @@ using namespace Aws::CodeGuruProfiler::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutPermissionRequest::SerializePayload() const
-{
+Aws::String PutPermissionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_principalsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> principalsJsonList(m_principals.size());
-   for(unsigned principalsIndex = 0; principalsIndex < principalsJsonList.GetLength(); ++principalsIndex)
-   {
-     principalsJsonList[principalsIndex].AsString(m_principals[principalsIndex]);
-   }
-   payload.WithArray("principals", std::move(principalsJsonList));
-
+  if (m_principalsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> principalsJsonList(m_principals.size());
+    for (unsigned principalsIndex = 0; principalsIndex < principalsJsonList.GetLength(); ++principalsIndex) {
+      principalsJsonList[principalsIndex].AsString(m_principals[principalsIndex]);
+    }
+    payload.WithArray("principals", std::move(principalsJsonList));
   }
 
-  if(m_revisionIdHasBeenSet)
-  {
-   payload.WithString("revisionId", m_revisionId);
-
+  if (m_revisionIdHasBeenSet) {
+    payload.WithString("revisionId", m_revisionId);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

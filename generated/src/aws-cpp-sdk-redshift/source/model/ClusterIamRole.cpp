@@ -3,43 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/ClusterIamRole.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/redshift/model/ClusterIamRole.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Redshift
-{
-namespace Model
-{
+namespace Aws {
+namespace Redshift {
+namespace Model {
 
-ClusterIamRole::ClusterIamRole(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+ClusterIamRole::ClusterIamRole(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ClusterIamRole& ClusterIamRole::operator =(const XmlNode& xmlNode)
-{
+ClusterIamRole& ClusterIamRole::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode iamRoleArnNode = resultNode.FirstChild("IamRoleArn");
-    if(!iamRoleArnNode.IsNull())
-    {
+    if (!iamRoleArnNode.IsNull()) {
       m_iamRoleArn = Aws::Utils::Xml::DecodeEscapedXmlText(iamRoleArnNode.GetText());
       m_iamRoleArnHasBeenSet = true;
     }
     XmlNode applyStatusNode = resultNode.FirstChild("ApplyStatus");
-    if(!applyStatusNode.IsNull())
-    {
+    if (!applyStatusNode.IsNull()) {
       m_applyStatus = Aws::Utils::Xml::DecodeEscapedXmlText(applyStatusNode.GetText());
       m_applyStatusHasBeenSet = true;
     }
@@ -48,32 +38,25 @@ ClusterIamRole& ClusterIamRole::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void ClusterIamRole::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_iamRoleArnHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".IamRoleArn=" << StringUtils::URLEncode(m_iamRoleArn.c_str()) << "&";
+void ClusterIamRole::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_iamRoleArnHasBeenSet) {
+    oStream << location << index << locationValue << ".IamRoleArn=" << StringUtils::URLEncode(m_iamRoleArn.c_str()) << "&";
   }
 
-  if(m_applyStatusHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ApplyStatus=" << StringUtils::URLEncode(m_applyStatus.c_str()) << "&";
-  }
-
-}
-
-void ClusterIamRole::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_iamRoleArnHasBeenSet)
-  {
-      oStream << location << ".IamRoleArn=" << StringUtils::URLEncode(m_iamRoleArn.c_str()) << "&";
-  }
-  if(m_applyStatusHasBeenSet)
-  {
-      oStream << location << ".ApplyStatus=" << StringUtils::URLEncode(m_applyStatus.c_str()) << "&";
+  if (m_applyStatusHasBeenSet) {
+    oStream << location << index << locationValue << ".ApplyStatus=" << StringUtils::URLEncode(m_applyStatus.c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace Redshift
-} // namespace Aws
+void ClusterIamRole::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_iamRoleArnHasBeenSet) {
+    oStream << location << ".IamRoleArn=" << StringUtils::URLEncode(m_iamRoleArn.c_str()) << "&";
+  }
+  if (m_applyStatusHasBeenSet) {
+    oStream << location << ".ApplyStatus=" << StringUtils::URLEncode(m_applyStatus.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace Redshift
+}  // namespace Aws

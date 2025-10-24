@@ -11,25 +11,16 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApplicationAutoScaling
-{
-namespace Model
-{
+namespace Aws {
+namespace ApplicationAutoScaling {
+namespace Model {
 
-PredictiveScalingCustomizedMetricSpecification::PredictiveScalingCustomizedMetricSpecification(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PredictiveScalingCustomizedMetricSpecification::PredictiveScalingCustomizedMetricSpecification(JsonView jsonValue) { *this = jsonValue; }
 
-PredictiveScalingCustomizedMetricSpecification& PredictiveScalingCustomizedMetricSpecification::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MetricDataQueries"))
-  {
+PredictiveScalingCustomizedMetricSpecification& PredictiveScalingCustomizedMetricSpecification::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MetricDataQueries")) {
     Aws::Utils::Array<JsonView> metricDataQueriesJsonList = jsonValue.GetArray("MetricDataQueries");
-    for(unsigned metricDataQueriesIndex = 0; metricDataQueriesIndex < metricDataQueriesJsonList.GetLength(); ++metricDataQueriesIndex)
-    {
+    for (unsigned metricDataQueriesIndex = 0; metricDataQueriesIndex < metricDataQueriesJsonList.GetLength(); ++metricDataQueriesIndex) {
       m_metricDataQueries.push_back(metricDataQueriesJsonList[metricDataQueriesIndex].AsObject());
     }
     m_metricDataQueriesHasBeenSet = true;
@@ -37,24 +28,20 @@ PredictiveScalingCustomizedMetricSpecification& PredictiveScalingCustomizedMetri
   return *this;
 }
 
-JsonValue PredictiveScalingCustomizedMetricSpecification::Jsonize() const
-{
+JsonValue PredictiveScalingCustomizedMetricSpecification::Jsonize() const {
   JsonValue payload;
 
-  if(m_metricDataQueriesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> metricDataQueriesJsonList(m_metricDataQueries.size());
-   for(unsigned metricDataQueriesIndex = 0; metricDataQueriesIndex < metricDataQueriesJsonList.GetLength(); ++metricDataQueriesIndex)
-   {
-     metricDataQueriesJsonList[metricDataQueriesIndex].AsObject(m_metricDataQueries[metricDataQueriesIndex].Jsonize());
-   }
-   payload.WithArray("MetricDataQueries", std::move(metricDataQueriesJsonList));
-
+  if (m_metricDataQueriesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> metricDataQueriesJsonList(m_metricDataQueries.size());
+    for (unsigned metricDataQueriesIndex = 0; metricDataQueriesIndex < metricDataQueriesJsonList.GetLength(); ++metricDataQueriesIndex) {
+      metricDataQueriesJsonList[metricDataQueriesIndex].AsObject(m_metricDataQueries[metricDataQueriesIndex].Jsonize());
+    }
+    payload.WithArray("MetricDataQueries", std::move(metricDataQueriesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApplicationAutoScaling
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApplicationAutoScaling
+}  // namespace Aws

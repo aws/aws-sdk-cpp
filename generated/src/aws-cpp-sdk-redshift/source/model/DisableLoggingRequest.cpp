@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/DisableLoggingRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/DisableLoggingRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String DisableLoggingRequest::SerializePayload() const
-{
+Aws::String DisableLoggingRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DisableLogging&";
-  if(m_clusterIdentifierHasBeenSet)
-  {
+  if (m_clusterIdentifierHasBeenSet) {
     ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DisableLoggingRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DisableLoggingRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DisableLoggingRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

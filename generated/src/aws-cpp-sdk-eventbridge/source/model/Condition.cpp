@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/eventbridge/model/Condition.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/eventbridge/model/Condition.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EventBridge
-{
-namespace Model
-{
+namespace Aws {
+namespace EventBridge {
+namespace Model {
 
-Condition::Condition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Condition::Condition(JsonView jsonValue) { *this = jsonValue; }
 
-Condition& Condition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Type"))
-  {
+Condition& Condition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Type")) {
     m_type = jsonValue.GetString("Type");
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Key"))
-  {
+  if (jsonValue.ValueExists("Key")) {
     m_key = jsonValue.GetString("Key");
     m_keyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Value"))
-  {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetString("Value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Condition::Jsonize() const
-{
+JsonValue Condition::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", m_type);
-
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", m_type);
   }
 
-  if(m_keyHasBeenSet)
-  {
-   payload.WithString("Key", m_key);
-
+  if (m_keyHasBeenSet) {
+    payload.WithString("Key", m_key);
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("Value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("Value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace EventBridge
-} // namespace Aws
+}  // namespace Model
+}  // namespace EventBridge
+}  // namespace Aws

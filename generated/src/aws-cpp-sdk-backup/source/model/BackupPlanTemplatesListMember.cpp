@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Backup
-{
-namespace Model
-{
+namespace Aws {
+namespace Backup {
+namespace Model {
 
-BackupPlanTemplatesListMember::BackupPlanTemplatesListMember(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BackupPlanTemplatesListMember::BackupPlanTemplatesListMember(JsonView jsonValue) { *this = jsonValue; }
 
-BackupPlanTemplatesListMember& BackupPlanTemplatesListMember::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("BackupPlanTemplateId"))
-  {
+BackupPlanTemplatesListMember& BackupPlanTemplatesListMember::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("BackupPlanTemplateId")) {
     m_backupPlanTemplateId = jsonValue.GetString("BackupPlanTemplateId");
     m_backupPlanTemplateIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BackupPlanTemplateName"))
-  {
+  if (jsonValue.ValueExists("BackupPlanTemplateName")) {
     m_backupPlanTemplateName = jsonValue.GetString("BackupPlanTemplateName");
     m_backupPlanTemplateNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BackupPlanTemplatesListMember::Jsonize() const
-{
+JsonValue BackupPlanTemplatesListMember::Jsonize() const {
   JsonValue payload;
 
-  if(m_backupPlanTemplateIdHasBeenSet)
-  {
-   payload.WithString("BackupPlanTemplateId", m_backupPlanTemplateId);
-
+  if (m_backupPlanTemplateIdHasBeenSet) {
+    payload.WithString("BackupPlanTemplateId", m_backupPlanTemplateId);
   }
 
-  if(m_backupPlanTemplateNameHasBeenSet)
-  {
-   payload.WithString("BackupPlanTemplateName", m_backupPlanTemplateName);
-
+  if (m_backupPlanTemplateNameHasBeenSet) {
+    payload.WithString("BackupPlanTemplateName", m_backupPlanTemplateName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Backup
-} // namespace Aws
+}  // namespace Model
+}  // namespace Backup
+}  // namespace Aws

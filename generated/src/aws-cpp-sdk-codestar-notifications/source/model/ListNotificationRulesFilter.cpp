@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeStarNotifications
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeStarNotifications {
+namespace Model {
 
-ListNotificationRulesFilter::ListNotificationRulesFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ListNotificationRulesFilter::ListNotificationRulesFilter(JsonView jsonValue) { *this = jsonValue; }
 
-ListNotificationRulesFilter& ListNotificationRulesFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+ListNotificationRulesFilter& ListNotificationRulesFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = ListNotificationRulesFilterNameMapper::GetListNotificationRulesFilterNameForName(jsonValue.GetString("Name"));
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Value"))
-  {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetString("Value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ListNotificationRulesFilter::Jsonize() const
-{
+JsonValue ListNotificationRulesFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", ListNotificationRulesFilterNameMapper::GetNameForListNotificationRulesFilterName(m_name));
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", ListNotificationRulesFilterNameMapper::GetNameForListNotificationRulesFilterName(m_name));
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("Value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("Value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeStarNotifications
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeStarNotifications
+}  // namespace Aws

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Budgets
-{
-namespace Model
-{
+namespace Aws {
+namespace Budgets {
+namespace Model {
 
-CalculatedSpend::CalculatedSpend(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CalculatedSpend::CalculatedSpend(JsonView jsonValue) { *this = jsonValue; }
 
-CalculatedSpend& CalculatedSpend::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ActualSpend"))
-  {
+CalculatedSpend& CalculatedSpend::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ActualSpend")) {
     m_actualSpend = jsonValue.GetObject("ActualSpend");
     m_actualSpendHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ForecastedSpend"))
-  {
+  if (jsonValue.ValueExists("ForecastedSpend")) {
     m_forecastedSpend = jsonValue.GetObject("ForecastedSpend");
     m_forecastedSpendHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CalculatedSpend::Jsonize() const
-{
+JsonValue CalculatedSpend::Jsonize() const {
   JsonValue payload;
 
-  if(m_actualSpendHasBeenSet)
-  {
-   payload.WithObject("ActualSpend", m_actualSpend.Jsonize());
-
+  if (m_actualSpendHasBeenSet) {
+    payload.WithObject("ActualSpend", m_actualSpend.Jsonize());
   }
 
-  if(m_forecastedSpendHasBeenSet)
-  {
-   payload.WithObject("ForecastedSpend", m_forecastedSpend.Jsonize());
-
+  if (m_forecastedSpendHasBeenSet) {
+    payload.WithObject("ForecastedSpend", m_forecastedSpend.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Budgets
-} // namespace Aws
+}  // namespace Model
+}  // namespace Budgets
+}  // namespace Aws

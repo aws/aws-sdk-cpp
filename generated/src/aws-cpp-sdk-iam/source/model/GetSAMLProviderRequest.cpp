@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/GetSAMLProviderRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/GetSAMLProviderRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String GetSAMLProviderRequest::SerializePayload() const
-{
+Aws::String GetSAMLProviderRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=GetSAMLProvider&";
-  if(m_sAMLProviderArnHasBeenSet)
-  {
+  if (m_sAMLProviderArnHasBeenSet) {
     ss << "SAMLProviderArn=" << StringUtils::URLEncode(m_sAMLProviderArn.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String GetSAMLProviderRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  GetSAMLProviderRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void GetSAMLProviderRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

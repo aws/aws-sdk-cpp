@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/DeleteRolePermissionsBoundaryRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/DeleteRolePermissionsBoundaryRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteRolePermissionsBoundaryRequest::SerializePayload() const
-{
+Aws::String DeleteRolePermissionsBoundaryRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteRolePermissionsBoundary&";
-  if(m_roleNameHasBeenSet)
-  {
+  if (m_roleNameHasBeenSet) {
     ss << "RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteRolePermissionsBoundaryRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteRolePermissionsBoundaryRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteRolePermissionsBoundaryRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

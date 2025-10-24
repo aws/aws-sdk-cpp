@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/route53-recovery-readiness/model/NLBResource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/route53-recovery-readiness/model/NLBResource.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Route53RecoveryReadiness
-{
-namespace Model
-{
+namespace Aws {
+namespace Route53RecoveryReadiness {
+namespace Model {
 
-NLBResource::NLBResource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NLBResource::NLBResource(JsonView jsonValue) { *this = jsonValue; }
 
-NLBResource& NLBResource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("arn"))
-  {
+NLBResource& NLBResource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NLBResource::Jsonize() const
-{
+JsonValue NLBResource::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Route53RecoveryReadiness
-} // namespace Aws
+}  // namespace Model
+}  // namespace Route53RecoveryReadiness
+}  // namespace Aws

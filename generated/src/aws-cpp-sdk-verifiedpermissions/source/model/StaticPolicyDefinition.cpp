@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/verifiedpermissions/model/StaticPolicyDefinition.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/verifiedpermissions/model/StaticPolicyDefinition.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace VerifiedPermissions
-{
-namespace Model
-{
+namespace Aws {
+namespace VerifiedPermissions {
+namespace Model {
 
-StaticPolicyDefinition::StaticPolicyDefinition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StaticPolicyDefinition::StaticPolicyDefinition(JsonView jsonValue) { *this = jsonValue; }
 
-StaticPolicyDefinition& StaticPolicyDefinition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("description"))
-  {
+StaticPolicyDefinition& StaticPolicyDefinition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("statement"))
-  {
+  if (jsonValue.ValueExists("statement")) {
     m_statement = jsonValue.GetString("statement");
     m_statementHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StaticPolicyDefinition::Jsonize() const
-{
+JsonValue StaticPolicyDefinition::Jsonize() const {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_statementHasBeenSet)
-  {
-   payload.WithString("statement", m_statement);
-
+  if (m_statementHasBeenSet) {
+    payload.WithString("statement", m_statement);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace VerifiedPermissions
-} // namespace Aws
+}  // namespace Model
+}  // namespace VerifiedPermissions
+}  // namespace Aws

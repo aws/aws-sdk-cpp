@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/timestream-query/model/NotificationConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/timestream-query/model/NotificationConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace TimestreamQuery
-{
-namespace Model
-{
+namespace Aws {
+namespace TimestreamQuery {
+namespace Model {
 
-NotificationConfiguration::NotificationConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NotificationConfiguration::NotificationConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-NotificationConfiguration& NotificationConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SnsConfiguration"))
-  {
+NotificationConfiguration& NotificationConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SnsConfiguration")) {
     m_snsConfiguration = jsonValue.GetObject("SnsConfiguration");
     m_snsConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NotificationConfiguration::Jsonize() const
-{
+JsonValue NotificationConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_snsConfigurationHasBeenSet)
-  {
-   payload.WithObject("SnsConfiguration", m_snsConfiguration.Jsonize());
-
+  if (m_snsConfigurationHasBeenSet) {
+    payload.WithObject("SnsConfiguration", m_snsConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace TimestreamQuery
-} // namespace Aws
+}  // namespace Model
+}  // namespace TimestreamQuery
+}  // namespace Aws

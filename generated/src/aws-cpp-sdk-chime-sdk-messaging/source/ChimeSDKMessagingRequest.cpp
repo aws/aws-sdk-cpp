@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/chime-sdk-messaging/ChimeSDKMessagingRequest.h>
 
-namespace Aws
-{
-namespace ChimeSDKMessaging
-{
-} // namespace ChimeSDKMessaging
-} // namespace Aws
+namespace Aws {
+namespace ChimeSDKMessaging {}  // namespace ChimeSDKMessaging
+}  // namespace Aws

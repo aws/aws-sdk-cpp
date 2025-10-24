@@ -3,45 +3,36 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3-crt/model/SelectObjectContentInitialResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3-crt/model/SelectObjectContentInitialResponse.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Crt
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Crt {
+namespace Model {
 
-SelectObjectContentInitialResponse::SelectObjectContentInitialResponse(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+SelectObjectContentInitialResponse::SelectObjectContentInitialResponse(const XmlNode& xmlNode) { *this = xmlNode; }
 
-SelectObjectContentInitialResponse& SelectObjectContentInitialResponse::operator =(const XmlNode& xmlNode)
-{
+SelectObjectContentInitialResponse& SelectObjectContentInitialResponse::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
   }
 
   return *this;
 }
 
-void SelectObjectContentInitialResponse::AddToNode(XmlNode& parentNode) const
-{
+void SelectObjectContentInitialResponse::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
   AWS_UNREFERENCED_PARAM(parentNode);
 }
 
-} // namespace Model
-} // namespace S3Crt
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

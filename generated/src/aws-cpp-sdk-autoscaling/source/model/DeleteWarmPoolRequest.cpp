@@ -10,17 +10,14 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteWarmPoolRequest::SerializePayload() const
-{
+Aws::String DeleteWarmPoolRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteWarmPool&";
-  if(m_autoScalingGroupNameHasBeenSet)
-  {
+  if (m_autoScalingGroupNameHasBeenSet) {
     ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
 
-  if(m_forceDeleteHasBeenSet)
-  {
+  if (m_forceDeleteHasBeenSet) {
     ss << "ForceDelete=" << std::boolalpha << m_forceDelete << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DeleteWarmPoolRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteWarmPoolRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteWarmPoolRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ConnectCampaignsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCampaignsV2 {
+namespace Model {
 
-QConnectIntegrationConfig::QConnectIntegrationConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+QConnectIntegrationConfig::QConnectIntegrationConfig(JsonView jsonValue) { *this = jsonValue; }
 
-QConnectIntegrationConfig& QConnectIntegrationConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("knowledgeBaseArn"))
-  {
+QConnectIntegrationConfig& QConnectIntegrationConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("knowledgeBaseArn")) {
     m_knowledgeBaseArn = jsonValue.GetString("knowledgeBaseArn");
     m_knowledgeBaseArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue QConnectIntegrationConfig::Jsonize() const
-{
+JsonValue QConnectIntegrationConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_knowledgeBaseArnHasBeenSet)
-  {
-   payload.WithString("knowledgeBaseArn", m_knowledgeBaseArn);
-
+  if (m_knowledgeBaseArnHasBeenSet) {
+    payload.WithString("knowledgeBaseArn", m_knowledgeBaseArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ConnectCampaignsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCampaignsV2
+}  // namespace Aws

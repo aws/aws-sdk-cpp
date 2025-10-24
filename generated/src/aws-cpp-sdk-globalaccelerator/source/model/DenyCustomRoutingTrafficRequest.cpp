@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/globalaccelerator/model/DenyCustomRoutingTrafficRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/globalaccelerator/model/DenyCustomRoutingTrafficRequest.h>
 
 #include <utility>
 
@@ -12,61 +12,43 @@ using namespace Aws::GlobalAccelerator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DenyCustomRoutingTrafficRequest::SerializePayload() const
-{
+Aws::String DenyCustomRoutingTrafficRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_endpointGroupArnHasBeenSet)
-  {
-   payload.WithString("EndpointGroupArn", m_endpointGroupArn);
-
+  if (m_endpointGroupArnHasBeenSet) {
+    payload.WithString("EndpointGroupArn", m_endpointGroupArn);
   }
 
-  if(m_endpointIdHasBeenSet)
-  {
-   payload.WithString("EndpointId", m_endpointId);
-
+  if (m_endpointIdHasBeenSet) {
+    payload.WithString("EndpointId", m_endpointId);
   }
 
-  if(m_destinationAddressesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> destinationAddressesJsonList(m_destinationAddresses.size());
-   for(unsigned destinationAddressesIndex = 0; destinationAddressesIndex < destinationAddressesJsonList.GetLength(); ++destinationAddressesIndex)
-   {
-     destinationAddressesJsonList[destinationAddressesIndex].AsString(m_destinationAddresses[destinationAddressesIndex]);
-   }
-   payload.WithArray("DestinationAddresses", std::move(destinationAddressesJsonList));
-
+  if (m_destinationAddressesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> destinationAddressesJsonList(m_destinationAddresses.size());
+    for (unsigned destinationAddressesIndex = 0; destinationAddressesIndex < destinationAddressesJsonList.GetLength();
+         ++destinationAddressesIndex) {
+      destinationAddressesJsonList[destinationAddressesIndex].AsString(m_destinationAddresses[destinationAddressesIndex]);
+    }
+    payload.WithArray("DestinationAddresses", std::move(destinationAddressesJsonList));
   }
 
-  if(m_destinationPortsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> destinationPortsJsonList(m_destinationPorts.size());
-   for(unsigned destinationPortsIndex = 0; destinationPortsIndex < destinationPortsJsonList.GetLength(); ++destinationPortsIndex)
-   {
-     destinationPortsJsonList[destinationPortsIndex].AsInteger(m_destinationPorts[destinationPortsIndex]);
-   }
-   payload.WithArray("DestinationPorts", std::move(destinationPortsJsonList));
-
+  if (m_destinationPortsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> destinationPortsJsonList(m_destinationPorts.size());
+    for (unsigned destinationPortsIndex = 0; destinationPortsIndex < destinationPortsJsonList.GetLength(); ++destinationPortsIndex) {
+      destinationPortsJsonList[destinationPortsIndex].AsInteger(m_destinationPorts[destinationPortsIndex]);
+    }
+    payload.WithArray("DestinationPorts", std::move(destinationPortsJsonList));
   }
 
-  if(m_denyAllTrafficToEndpointHasBeenSet)
-  {
-   payload.WithBool("DenyAllTrafficToEndpoint", m_denyAllTrafficToEndpoint);
-
+  if (m_denyAllTrafficToEndpointHasBeenSet) {
+    payload.WithBool("DenyAllTrafficToEndpoint", m_denyAllTrafficToEndpoint);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DenyCustomRoutingTrafficRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DenyCustomRoutingTrafficRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "GlobalAccelerator_V20180706.DenyCustomRoutingTraffic"));
   return headers;
-
 }
-
-
-
-

@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-DynatraceConnectorProfileProperties::DynatraceConnectorProfileProperties(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DynatraceConnectorProfileProperties::DynatraceConnectorProfileProperties(JsonView jsonValue) { *this = jsonValue; }
 
-DynatraceConnectorProfileProperties& DynatraceConnectorProfileProperties::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("instanceUrl"))
-  {
+DynatraceConnectorProfileProperties& DynatraceConnectorProfileProperties::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("instanceUrl")) {
     m_instanceUrl = jsonValue.GetString("instanceUrl");
     m_instanceUrlHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DynatraceConnectorProfileProperties::Jsonize() const
-{
+JsonValue DynatraceConnectorProfileProperties::Jsonize() const {
   JsonValue payload;
 
-  if(m_instanceUrlHasBeenSet)
-  {
-   payload.WithString("instanceUrl", m_instanceUrl);
-
+  if (m_instanceUrlHasBeenSet) {
+    payload.WithString("instanceUrl", m_instanceUrl);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

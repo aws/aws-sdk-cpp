@@ -4,122 +4,155 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/ec2/EC2Request.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/EC2Request.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/Filter.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
+/**
+ */
+class DescribeIpamResourceDiscoveryAssociationsRequest : public EC2Request {
+ public:
+  AWS_EC2_API DescribeIpamResourceDiscoveryAssociationsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DescribeIpamResourceDiscoveryAssociations"; }
+
+  AWS_EC2_API Aws::String SerializePayload() const override;
+
+ protected:
+  AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
+
+ public:
+  ///@{
   /**
+   * <p>A check for whether you have the required permissions for the action without
+   * actually making the request and provides an error response. If you have the
+   * required permissions, the error response is <code>DryRunOperation</code>.
+   * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
    */
-  class DescribeIpamResourceDiscoveryAssociationsRequest : public EC2Request
-  {
-  public:
-    AWS_EC2_API DescribeIpamResourceDiscoveryAssociationsRequest() = default;
+  inline bool GetDryRun() const { return m_dryRun; }
+  inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+  inline void SetDryRun(bool value) {
+    m_dryRunHasBeenSet = true;
+    m_dryRun = value;
+  }
+  inline DescribeIpamResourceDiscoveryAssociationsRequest& WithDryRun(bool value) {
+    SetDryRun(value);
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DescribeIpamResourceDiscoveryAssociations"; }
+  ///@{
+  /**
+   * <p>The resource discovery association IDs.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetIpamResourceDiscoveryAssociationIds() const { return m_ipamResourceDiscoveryAssociationIds; }
+  inline bool IpamResourceDiscoveryAssociationIdsHasBeenSet() const { return m_ipamResourceDiscoveryAssociationIdsHasBeenSet; }
+  template <typename IpamResourceDiscoveryAssociationIdsT = Aws::Vector<Aws::String>>
+  void SetIpamResourceDiscoveryAssociationIds(IpamResourceDiscoveryAssociationIdsT&& value) {
+    m_ipamResourceDiscoveryAssociationIdsHasBeenSet = true;
+    m_ipamResourceDiscoveryAssociationIds = std::forward<IpamResourceDiscoveryAssociationIdsT>(value);
+  }
+  template <typename IpamResourceDiscoveryAssociationIdsT = Aws::Vector<Aws::String>>
+  DescribeIpamResourceDiscoveryAssociationsRequest& WithIpamResourceDiscoveryAssociationIds(IpamResourceDiscoveryAssociationIdsT&& value) {
+    SetIpamResourceDiscoveryAssociationIds(std::forward<IpamResourceDiscoveryAssociationIdsT>(value));
+    return *this;
+  }
+  template <typename IpamResourceDiscoveryAssociationIdsT = Aws::String>
+  DescribeIpamResourceDiscoveryAssociationsRequest& AddIpamResourceDiscoveryAssociationIds(IpamResourceDiscoveryAssociationIdsT&& value) {
+    m_ipamResourceDiscoveryAssociationIdsHasBeenSet = true;
+    m_ipamResourceDiscoveryAssociationIds.emplace_back(std::forward<IpamResourceDiscoveryAssociationIdsT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_EC2_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>Specify the pagination token from a previous request to retrieve the next
+   * page of results.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  DescribeIpamResourceDiscoveryAssociationsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
 
-  protected:
-    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+  ///@{
+  /**
+   * <p>The maximum number of resource discovery associations to return in one page
+   * of results.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline DescribeIpamResourceDiscoveryAssociationsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
 
-  public:
+  ///@{
+  /**
+   * <p>The resource discovery association filters.</p>
+   */
+  inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
+  inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+  template <typename FiltersT = Aws::Vector<Filter>>
+  void SetFilters(FiltersT&& value) {
+    m_filtersHasBeenSet = true;
+    m_filters = std::forward<FiltersT>(value);
+  }
+  template <typename FiltersT = Aws::Vector<Filter>>
+  DescribeIpamResourceDiscoveryAssociationsRequest& WithFilters(FiltersT&& value) {
+    SetFilters(std::forward<FiltersT>(value));
+    return *this;
+  }
+  template <typename FiltersT = Filter>
+  DescribeIpamResourceDiscoveryAssociationsRequest& AddFilters(FiltersT&& value) {
+    m_filtersHasBeenSet = true;
+    m_filters.emplace_back(std::forward<FiltersT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  bool m_dryRun{false};
+  bool m_dryRunHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>A check for whether you have the required permissions for the action without
-     * actually making the request and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const { return m_dryRun; }
-    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-    inline DescribeIpamResourceDiscoveryAssociationsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-    ///@}
+  Aws::Vector<Aws::String> m_ipamResourceDiscoveryAssociationIds;
+  bool m_ipamResourceDiscoveryAssociationIdsHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The resource discovery association IDs.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetIpamResourceDiscoveryAssociationIds() const { return m_ipamResourceDiscoveryAssociationIds; }
-    inline bool IpamResourceDiscoveryAssociationIdsHasBeenSet() const { return m_ipamResourceDiscoveryAssociationIdsHasBeenSet; }
-    template<typename IpamResourceDiscoveryAssociationIdsT = Aws::Vector<Aws::String>>
-    void SetIpamResourceDiscoveryAssociationIds(IpamResourceDiscoveryAssociationIdsT&& value) { m_ipamResourceDiscoveryAssociationIdsHasBeenSet = true; m_ipamResourceDiscoveryAssociationIds = std::forward<IpamResourceDiscoveryAssociationIdsT>(value); }
-    template<typename IpamResourceDiscoveryAssociationIdsT = Aws::Vector<Aws::String>>
-    DescribeIpamResourceDiscoveryAssociationsRequest& WithIpamResourceDiscoveryAssociationIds(IpamResourceDiscoveryAssociationIdsT&& value) { SetIpamResourceDiscoveryAssociationIds(std::forward<IpamResourceDiscoveryAssociationIdsT>(value)); return *this;}
-    template<typename IpamResourceDiscoveryAssociationIdsT = Aws::String>
-    DescribeIpamResourceDiscoveryAssociationsRequest& AddIpamResourceDiscoveryAssociationIds(IpamResourceDiscoveryAssociationIdsT&& value) { m_ipamResourceDiscoveryAssociationIdsHasBeenSet = true; m_ipamResourceDiscoveryAssociationIds.emplace_back(std::forward<IpamResourceDiscoveryAssociationIdsT>(value)); return *this; }
-    ///@}
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>Specify the pagination token from a previous request to retrieve the next
-     * page of results.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    DescribeIpamResourceDiscoveryAssociationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
+  int m_maxResults{0};
+  bool m_maxResultsHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The maximum number of resource discovery associations to return in one page
-     * of results.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline DescribeIpamResourceDiscoveryAssociationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
+  Aws::Vector<Filter> m_filters;
+  bool m_filtersHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The resource discovery association filters.</p>
-     */
-    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
-    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    template<typename FiltersT = Aws::Vector<Filter>>
-    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
-    template<typename FiltersT = Aws::Vector<Filter>>
-    DescribeIpamResourceDiscoveryAssociationsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
-    template<typename FiltersT = Filter>
-    DescribeIpamResourceDiscoveryAssociationsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
-    ///@}
-  private:
-
-    bool m_dryRun{false};
-    bool m_dryRunHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_ipamResourceDiscoveryAssociationIds;
-    bool m_ipamResourceDiscoveryAssociationIdsHasBeenSet = false;
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
-
-    Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

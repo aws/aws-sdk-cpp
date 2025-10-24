@@ -3,70 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3-crt/model/InventoryFrequency.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/s3-crt/model/InventoryFrequency.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace S3Crt {
+namespace Model {
+namespace InventoryFrequencyMapper {
 
-namespace Aws
-{
-  namespace S3Crt
-  {
-    namespace Model
-    {
-      namespace InventoryFrequencyMapper
-      {
+static const int Daily_HASH = HashingUtils::HashString("Daily");
+static const int Weekly_HASH = HashingUtils::HashString("Weekly");
 
-        static const int Daily_HASH = HashingUtils::HashString("Daily");
-        static const int Weekly_HASH = HashingUtils::HashString("Weekly");
+InventoryFrequency GetInventoryFrequencyForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == Daily_HASH) {
+    return InventoryFrequency::Daily;
+  } else if (hashCode == Weekly_HASH) {
+    return InventoryFrequency::Weekly;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<InventoryFrequency>(hashCode);
+  }
 
+  return InventoryFrequency::NOT_SET;
+}
 
-        InventoryFrequency GetInventoryFrequencyForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Daily_HASH)
-          {
-            return InventoryFrequency::Daily;
-          }
-          else if (hashCode == Weekly_HASH)
-          {
-            return InventoryFrequency::Weekly;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<InventoryFrequency>(hashCode);
-          }
+Aws::String GetNameForInventoryFrequency(InventoryFrequency enumValue) {
+  switch (enumValue) {
+    case InventoryFrequency::NOT_SET:
+      return {};
+    case InventoryFrequency::Daily:
+      return "Daily";
+    case InventoryFrequency::Weekly:
+      return "Weekly";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return InventoryFrequency::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForInventoryFrequency(InventoryFrequency enumValue)
-        {
-          switch(enumValue)
-          {
-          case InventoryFrequency::NOT_SET:
-            return {};
-          case InventoryFrequency::Daily:
-            return "Daily";
-          case InventoryFrequency::Weekly:
-            return "Weekly";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace InventoryFrequencyMapper
-    } // namespace Model
-  } // namespace S3Crt
-} // namespace Aws
+}  // namespace InventoryFrequencyMapper
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

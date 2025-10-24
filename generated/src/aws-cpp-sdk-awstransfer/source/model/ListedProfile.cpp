@@ -11,73 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Transfer
-{
-namespace Model
-{
+namespace Aws {
+namespace Transfer {
+namespace Model {
 
-ListedProfile::ListedProfile(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ListedProfile::ListedProfile(JsonView jsonValue) { *this = jsonValue; }
 
-ListedProfile& ListedProfile::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Arn"))
-  {
+ListedProfile& ListedProfile::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProfileId"))
-  {
+  if (jsonValue.ValueExists("ProfileId")) {
     m_profileId = jsonValue.GetString("ProfileId");
     m_profileIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("As2Id"))
-  {
+  if (jsonValue.ValueExists("As2Id")) {
     m_as2Id = jsonValue.GetString("As2Id");
     m_as2IdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProfileType"))
-  {
+  if (jsonValue.ValueExists("ProfileType")) {
     m_profileType = ProfileTypeMapper::GetProfileTypeForName(jsonValue.GetString("ProfileType"));
     m_profileTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ListedProfile::Jsonize() const
-{
+JsonValue ListedProfile::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_profileIdHasBeenSet)
-  {
-   payload.WithString("ProfileId", m_profileId);
-
+  if (m_profileIdHasBeenSet) {
+    payload.WithString("ProfileId", m_profileId);
   }
 
-  if(m_as2IdHasBeenSet)
-  {
-   payload.WithString("As2Id", m_as2Id);
-
+  if (m_as2IdHasBeenSet) {
+    payload.WithString("As2Id", m_as2Id);
   }
 
-  if(m_profileTypeHasBeenSet)
-  {
-   payload.WithString("ProfileType", ProfileTypeMapper::GetNameForProfileType(m_profileType));
+  if (m_profileTypeHasBeenSet) {
+    payload.WithString("ProfileType", ProfileTypeMapper::GetNameForProfileType(m_profileType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Transfer
-} // namespace Aws
+}  // namespace Model
+}  // namespace Transfer
+}  // namespace Aws

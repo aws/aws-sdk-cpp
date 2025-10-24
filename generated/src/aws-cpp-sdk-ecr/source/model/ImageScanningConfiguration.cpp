@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ecr/model/ImageScanningConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ecr/model/ImageScanningConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ECR
-{
-namespace Model
-{
+namespace Aws {
+namespace ECR {
+namespace Model {
 
-ImageScanningConfiguration::ImageScanningConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ImageScanningConfiguration::ImageScanningConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ImageScanningConfiguration& ImageScanningConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("scanOnPush"))
-  {
+ImageScanningConfiguration& ImageScanningConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("scanOnPush")) {
     m_scanOnPush = jsonValue.GetBool("scanOnPush");
     m_scanOnPushHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ImageScanningConfiguration::Jsonize() const
-{
+JsonValue ImageScanningConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_scanOnPushHasBeenSet)
-  {
-   payload.WithBool("scanOnPush", m_scanOnPush);
-
+  if (m_scanOnPushHasBeenSet) {
+    payload.WithBool("scanOnPush", m_scanOnPush);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ECR
-} // namespace Aws
+}  // namespace Model
+}  // namespace ECR
+}  // namespace Aws

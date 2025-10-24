@@ -4,84 +4,97 @@
  */
 
 #pragma once
-#include <aws/kinesisanalyticsv2/KinesisAnalyticsV2_EXPORTS.h>
-#include <aws/kinesisanalyticsv2/KinesisAnalyticsV2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kinesisanalyticsv2/KinesisAnalyticsV2Request.h>
+#include <aws/kinesisanalyticsv2/KinesisAnalyticsV2_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace KinesisAnalyticsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace KinesisAnalyticsV2 {
+namespace Model {
 
+/**
+ */
+class ListApplicationSnapshotsRequest : public KinesisAnalyticsV2Request {
+ public:
+  AWS_KINESISANALYTICSV2_API ListApplicationSnapshotsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "ListApplicationSnapshots"; }
+
+  AWS_KINESISANALYTICSV2_API Aws::String SerializePayload() const override;
+
+  AWS_KINESISANALYTICSV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The name of an existing application.</p>
    */
-  class ListApplicationSnapshotsRequest : public KinesisAnalyticsV2Request
-  {
-  public:
-    AWS_KINESISANALYTICSV2_API ListApplicationSnapshotsRequest() = default;
+  inline const Aws::String& GetApplicationName() const { return m_applicationName; }
+  inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+  template <typename ApplicationNameT = Aws::String>
+  void SetApplicationName(ApplicationNameT&& value) {
+    m_applicationNameHasBeenSet = true;
+    m_applicationName = std::forward<ApplicationNameT>(value);
+  }
+  template <typename ApplicationNameT = Aws::String>
+  ListApplicationSnapshotsRequest& WithApplicationName(ApplicationNameT&& value) {
+    SetApplicationName(std::forward<ApplicationNameT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "ListApplicationSnapshots"; }
+  ///@{
+  /**
+   * <p>The maximum number of application snapshots to list.</p>
+   */
+  inline int GetLimit() const { return m_limit; }
+  inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+  inline void SetLimit(int value) {
+    m_limitHasBeenSet = true;
+    m_limit = value;
+  }
+  inline ListApplicationSnapshotsRequest& WithLimit(int value) {
+    SetLimit(value);
+    return *this;
+  }
+  ///@}
 
-    AWS_KINESISANALYTICSV2_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>Use this parameter if you receive a <code>NextToken</code> response in a
+   * previous request that indicates that there is more output available. Set it to
+   * the value of the previous call's <code>NextToken</code> response to indicate
+   * where the output should continue from. </p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListApplicationSnapshotsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_applicationName;
+  bool m_applicationNameHasBeenSet = false;
 
-    AWS_KINESISANALYTICSV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+  int m_limit{0};
+  bool m_limitHasBeenSet = false;
 
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The name of an existing application.</p>
-     */
-    inline const Aws::String& GetApplicationName() const { return m_applicationName; }
-    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-    template<typename ApplicationNameT = Aws::String>
-    void SetApplicationName(ApplicationNameT&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::forward<ApplicationNameT>(value); }
-    template<typename ApplicationNameT = Aws::String>
-    ListApplicationSnapshotsRequest& WithApplicationName(ApplicationNameT&& value) { SetApplicationName(std::forward<ApplicationNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The maximum number of application snapshots to list.</p>
-     */
-    inline int GetLimit() const { return m_limit; }
-    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
-    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
-    inline ListApplicationSnapshotsRequest& WithLimit(int value) { SetLimit(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Use this parameter if you receive a <code>NextToken</code> response in a
-     * previous request that indicates that there is more output available. Set it to
-     * the value of the previous call's <code>NextToken</code> response to indicate
-     * where the output should continue from. </p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListApplicationSnapshotsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet = false;
-
-    int m_limit{0};
-    bool m_limitHasBeenSet = false;
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace KinesisAnalyticsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace KinesisAnalyticsV2
+}  // namespace Aws

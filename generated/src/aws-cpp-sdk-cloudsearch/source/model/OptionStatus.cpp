@@ -4,61 +4,53 @@
  */
 
 #include <aws/cloudsearch/model/OptionStatus.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudSearch
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudSearch {
+namespace Model {
 
-OptionStatus::OptionStatus(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+OptionStatus::OptionStatus(const XmlNode& xmlNode) { *this = xmlNode; }
 
-OptionStatus& OptionStatus::operator =(const XmlNode& xmlNode)
-{
+OptionStatus& OptionStatus::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode creationDateNode = resultNode.FirstChild("CreationDate");
-    if(!creationDateNode.IsNull())
-    {
-      m_creationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+    if (!creationDateNode.IsNull()) {
+      m_creationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationDateNode.GetText()).c_str()).c_str(),
+                                Aws::Utils::DateFormat::ISO_8601);
       m_creationDateHasBeenSet = true;
     }
     XmlNode updateDateNode = resultNode.FirstChild("UpdateDate");
-    if(!updateDateNode.IsNull())
-    {
-      m_updateDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+    if (!updateDateNode.IsNull()) {
+      m_updateDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateDateNode.GetText()).c_str()).c_str(),
+                              Aws::Utils::DateFormat::ISO_8601);
       m_updateDateHasBeenSet = true;
     }
     XmlNode updateVersionNode = resultNode.FirstChild("UpdateVersion");
-    if(!updateVersionNode.IsNull())
-    {
-      m_updateVersion = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateVersionNode.GetText()).c_str()).c_str());
+    if (!updateVersionNode.IsNull()) {
+      m_updateVersion = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateVersionNode.GetText()).c_str()).c_str());
       m_updateVersionHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("State");
-    if(!stateNode.IsNull())
-    {
-      m_state = OptionStateMapper::GetOptionStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
+    if (!stateNode.IsNull()) {
+      m_state =
+          OptionStateMapper::GetOptionStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode pendingDeletionNode = resultNode.FirstChild("PendingDeletion");
-    if(!pendingDeletionNode.IsNull())
-    {
-      m_pendingDeletion = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(pendingDeletionNode.GetText()).c_str()).c_str());
+    if (!pendingDeletionNode.IsNull()) {
+      m_pendingDeletion = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(pendingDeletionNode.GetText()).c_str()).c_str());
       m_pendingDeletionHasBeenSet = true;
     }
   }
@@ -66,59 +58,51 @@ OptionStatus& OptionStatus::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void OptionStatus::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_creationDateHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".CreationDate=" << StringUtils::URLEncode(m_creationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+void OptionStatus::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_creationDateHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".CreationDate=" << StringUtils::URLEncode(m_creationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_updateDateHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  if (m_updateDateHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_updateVersionHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".UpdateVersion=" << m_updateVersion << "&";
+  if (m_updateVersionHasBeenSet) {
+    oStream << location << index << locationValue << ".UpdateVersion=" << m_updateVersion << "&";
   }
 
-  if(m_stateHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(OptionStateMapper::GetNameForOptionState(m_state)) << "&";
+  if (m_stateHasBeenSet) {
+    oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(OptionStateMapper::GetNameForOptionState(m_state))
+            << "&";
   }
 
-  if(m_pendingDeletionHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".PendingDeletion=" << std::boolalpha << m_pendingDeletion << "&";
-  }
-
-}
-
-void OptionStatus::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_creationDateHasBeenSet)
-  {
-      oStream << location << ".CreationDate=" << StringUtils::URLEncode(m_creationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
-  }
-  if(m_updateDateHasBeenSet)
-  {
-      oStream << location << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
-  }
-  if(m_updateVersionHasBeenSet)
-  {
-      oStream << location << ".UpdateVersion=" << m_updateVersion << "&";
-  }
-  if(m_stateHasBeenSet)
-  {
-      oStream << location << ".State=" << StringUtils::URLEncode(OptionStateMapper::GetNameForOptionState(m_state)) << "&";
-  }
-  if(m_pendingDeletionHasBeenSet)
-  {
-      oStream << location << ".PendingDeletion=" << std::boolalpha << m_pendingDeletion << "&";
+  if (m_pendingDeletionHasBeenSet) {
+    oStream << location << index << locationValue << ".PendingDeletion=" << std::boolalpha << m_pendingDeletion << "&";
   }
 }
 
-} // namespace Model
-} // namespace CloudSearch
-} // namespace Aws
+void OptionStatus::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_creationDateHasBeenSet) {
+    oStream << location << ".CreationDate=" << StringUtils::URLEncode(m_creationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str())
+            << "&";
+  }
+  if (m_updateDateHasBeenSet) {
+    oStream << location << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str())
+            << "&";
+  }
+  if (m_updateVersionHasBeenSet) {
+    oStream << location << ".UpdateVersion=" << m_updateVersion << "&";
+  }
+  if (m_stateHasBeenSet) {
+    oStream << location << ".State=" << StringUtils::URLEncode(OptionStateMapper::GetNameForOptionState(m_state)) << "&";
+  }
+  if (m_pendingDeletionHasBeenSet) {
+    oStream << location << ".PendingDeletion=" << std::boolalpha << m_pendingDeletion << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace CloudSearch
+}  // namespace Aws

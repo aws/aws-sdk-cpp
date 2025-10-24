@@ -4,63 +4,68 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/qconnect/model/AIGuardrailData.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace QConnect
-{
-namespace Model
-{
-  class UpdateAIGuardrailResult
-  {
-  public:
-    AWS_QCONNECT_API UpdateAIGuardrailResult() = default;
-    AWS_QCONNECT_API UpdateAIGuardrailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_QCONNECT_API UpdateAIGuardrailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace QConnect {
+namespace Model {
+class UpdateAIGuardrailResult {
+ public:
+  AWS_QCONNECT_API UpdateAIGuardrailResult() = default;
+  AWS_QCONNECT_API UpdateAIGuardrailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_QCONNECT_API UpdateAIGuardrailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>The data of the updated Amazon Q in Connect AI Guardrail.</p>
+   */
+  inline const AIGuardrailData& GetAiGuardrail() const { return m_aiGuardrail; }
+  template <typename AiGuardrailT = AIGuardrailData>
+  void SetAiGuardrail(AiGuardrailT&& value) {
+    m_aiGuardrailHasBeenSet = true;
+    m_aiGuardrail = std::forward<AiGuardrailT>(value);
+  }
+  template <typename AiGuardrailT = AIGuardrailData>
+  UpdateAIGuardrailResult& WithAiGuardrail(AiGuardrailT&& value) {
+    SetAiGuardrail(std::forward<AiGuardrailT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The data of the updated Amazon Q in Connect AI Guardrail.</p>
-     */
-    inline const AIGuardrailData& GetAiGuardrail() const { return m_aiGuardrail; }
-    template<typename AiGuardrailT = AIGuardrailData>
-    void SetAiGuardrail(AiGuardrailT&& value) { m_aiGuardrailHasBeenSet = true; m_aiGuardrail = std::forward<AiGuardrailT>(value); }
-    template<typename AiGuardrailT = AIGuardrailData>
-    UpdateAIGuardrailResult& WithAiGuardrail(AiGuardrailT&& value) { SetAiGuardrail(std::forward<AiGuardrailT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    UpdateAIGuardrailResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  UpdateAIGuardrailResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  AIGuardrailData m_aiGuardrail;
+  bool m_aiGuardrailHasBeenSet = false;
 
-    AIGuardrailData m_aiGuardrail;
-    bool m_aiGuardrailHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace QConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace QConnect
+}  // namespace Aws

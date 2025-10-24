@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppRunner
-{
-namespace Model
-{
+namespace Aws {
+namespace AppRunner {
+namespace Model {
 
-IngressVpcConfiguration::IngressVpcConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IngressVpcConfiguration::IngressVpcConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-IngressVpcConfiguration& IngressVpcConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("VpcId"))
-  {
+IngressVpcConfiguration& IngressVpcConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("VpcId")) {
     m_vpcId = jsonValue.GetString("VpcId");
     m_vpcIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VpcEndpointId"))
-  {
+  if (jsonValue.ValueExists("VpcEndpointId")) {
     m_vpcEndpointId = jsonValue.GetString("VpcEndpointId");
     m_vpcEndpointIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IngressVpcConfiguration::Jsonize() const
-{
+JsonValue IngressVpcConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_vpcIdHasBeenSet)
-  {
-   payload.WithString("VpcId", m_vpcId);
-
+  if (m_vpcIdHasBeenSet) {
+    payload.WithString("VpcId", m_vpcId);
   }
 
-  if(m_vpcEndpointIdHasBeenSet)
-  {
-   payload.WithString("VpcEndpointId", m_vpcEndpointId);
-
+  if (m_vpcEndpointIdHasBeenSet) {
+    payload.WithString("VpcEndpointId", m_vpcEndpointId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppRunner
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppRunner
+}  // namespace Aws

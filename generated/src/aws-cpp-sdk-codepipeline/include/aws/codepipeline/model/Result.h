@@ -7,27 +7,16 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
-  enum class Result
-  {
-    NOT_SET,
-    ROLLBACK,
-    FAIL,
-    RETRY,
-    SKIP
-  };
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
+enum class Result { NOT_SET, ROLLBACK, FAIL, RETRY, SKIP };
 
-namespace ResultMapper
-{
+namespace ResultMapper {
 AWS_CODEPIPELINE_API Result GetResultForName(const Aws::String& name);
 
 AWS_CODEPIPELINE_API Aws::String GetNameForResult(Result value);
-} // namespace ResultMapper
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace ResultMapper
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

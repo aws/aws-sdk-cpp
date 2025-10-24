@@ -3,67 +3,51 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pipes/model/PipeTargetBatchJobParameters.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pipes/model/PipeTargetBatchJobParameters.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Pipes
-{
-namespace Model
-{
+namespace Aws {
+namespace Pipes {
+namespace Model {
 
-PipeTargetBatchJobParameters::PipeTargetBatchJobParameters(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PipeTargetBatchJobParameters::PipeTargetBatchJobParameters(JsonView jsonValue) { *this = jsonValue; }
 
-PipeTargetBatchJobParameters& PipeTargetBatchJobParameters::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("JobDefinition"))
-  {
+PipeTargetBatchJobParameters& PipeTargetBatchJobParameters::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("JobDefinition")) {
     m_jobDefinition = jsonValue.GetString("JobDefinition");
     m_jobDefinitionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("JobName"))
-  {
+  if (jsonValue.ValueExists("JobName")) {
     m_jobName = jsonValue.GetString("JobName");
     m_jobNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ArrayProperties"))
-  {
+  if (jsonValue.ValueExists("ArrayProperties")) {
     m_arrayProperties = jsonValue.GetObject("ArrayProperties");
     m_arrayPropertiesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RetryStrategy"))
-  {
+  if (jsonValue.ValueExists("RetryStrategy")) {
     m_retryStrategy = jsonValue.GetObject("RetryStrategy");
     m_retryStrategyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ContainerOverrides"))
-  {
+  if (jsonValue.ValueExists("ContainerOverrides")) {
     m_containerOverrides = jsonValue.GetObject("ContainerOverrides");
     m_containerOverridesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DependsOn"))
-  {
+  if (jsonValue.ValueExists("DependsOn")) {
     Aws::Utils::Array<JsonView> dependsOnJsonList = jsonValue.GetArray("DependsOn");
-    for(unsigned dependsOnIndex = 0; dependsOnIndex < dependsOnJsonList.GetLength(); ++dependsOnIndex)
-    {
+    for (unsigned dependsOnIndex = 0; dependsOnIndex < dependsOnJsonList.GetLength(); ++dependsOnIndex) {
       m_dependsOn.push_back(dependsOnJsonList[dependsOnIndex].AsObject());
     }
     m_dependsOnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Parameters"))
-  {
+  if (jsonValue.ValueExists("Parameters")) {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
-    for(auto& parametersItem : parametersJsonMap)
-    {
+    for (auto& parametersItem : parametersJsonMap) {
       m_parameters[parametersItem.first] = parametersItem.second.AsString();
     }
     m_parametersHasBeenSet = true;
@@ -71,65 +55,48 @@ PipeTargetBatchJobParameters& PipeTargetBatchJobParameters::operator =(JsonView 
   return *this;
 }
 
-JsonValue PipeTargetBatchJobParameters::Jsonize() const
-{
+JsonValue PipeTargetBatchJobParameters::Jsonize() const {
   JsonValue payload;
 
-  if(m_jobDefinitionHasBeenSet)
-  {
-   payload.WithString("JobDefinition", m_jobDefinition);
-
+  if (m_jobDefinitionHasBeenSet) {
+    payload.WithString("JobDefinition", m_jobDefinition);
   }
 
-  if(m_jobNameHasBeenSet)
-  {
-   payload.WithString("JobName", m_jobName);
-
+  if (m_jobNameHasBeenSet) {
+    payload.WithString("JobName", m_jobName);
   }
 
-  if(m_arrayPropertiesHasBeenSet)
-  {
-   payload.WithObject("ArrayProperties", m_arrayProperties.Jsonize());
-
+  if (m_arrayPropertiesHasBeenSet) {
+    payload.WithObject("ArrayProperties", m_arrayProperties.Jsonize());
   }
 
-  if(m_retryStrategyHasBeenSet)
-  {
-   payload.WithObject("RetryStrategy", m_retryStrategy.Jsonize());
-
+  if (m_retryStrategyHasBeenSet) {
+    payload.WithObject("RetryStrategy", m_retryStrategy.Jsonize());
   }
 
-  if(m_containerOverridesHasBeenSet)
-  {
-   payload.WithObject("ContainerOverrides", m_containerOverrides.Jsonize());
-
+  if (m_containerOverridesHasBeenSet) {
+    payload.WithObject("ContainerOverrides", m_containerOverrides.Jsonize());
   }
 
-  if(m_dependsOnHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> dependsOnJsonList(m_dependsOn.size());
-   for(unsigned dependsOnIndex = 0; dependsOnIndex < dependsOnJsonList.GetLength(); ++dependsOnIndex)
-   {
-     dependsOnJsonList[dependsOnIndex].AsObject(m_dependsOn[dependsOnIndex].Jsonize());
-   }
-   payload.WithArray("DependsOn", std::move(dependsOnJsonList));
-
+  if (m_dependsOnHasBeenSet) {
+    Aws::Utils::Array<JsonValue> dependsOnJsonList(m_dependsOn.size());
+    for (unsigned dependsOnIndex = 0; dependsOnIndex < dependsOnJsonList.GetLength(); ++dependsOnIndex) {
+      dependsOnJsonList[dependsOnIndex].AsObject(m_dependsOn[dependsOnIndex].Jsonize());
+    }
+    payload.WithArray("DependsOn", std::move(dependsOnJsonList));
   }
 
-  if(m_parametersHasBeenSet)
-  {
-   JsonValue parametersJsonMap;
-   for(auto& parametersItem : m_parameters)
-   {
-     parametersJsonMap.WithString(parametersItem.first, parametersItem.second);
-   }
-   payload.WithObject("Parameters", std::move(parametersJsonMap));
-
+  if (m_parametersHasBeenSet) {
+    JsonValue parametersJsonMap;
+    for (auto& parametersItem : m_parameters) {
+      parametersJsonMap.WithString(parametersItem.first, parametersItem.second);
+    }
+    payload.WithObject("Parameters", std::move(parametersJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Pipes
-} // namespace Aws
+}  // namespace Model
+}  // namespace Pipes
+}  // namespace Aws

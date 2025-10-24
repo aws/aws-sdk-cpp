@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/AcceptTransitGatewayVpcAttachmentRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/AcceptTransitGatewayVpcAttachmentRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String AcceptTransitGatewayVpcAttachmentRequest::SerializePayload() const
-{
+Aws::String AcceptTransitGatewayVpcAttachmentRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=AcceptTransitGatewayVpcAttachment&";
-  if(m_transitGatewayAttachmentIdHasBeenSet)
-  {
+  if (m_transitGatewayAttachmentIdHasBeenSet) {
     ss << "TransitGatewayAttachmentId=" << StringUtils::URLEncode(m_transitGatewayAttachmentId.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String AcceptTransitGatewayVpcAttachmentRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  AcceptTransitGatewayVpcAttachmentRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void AcceptTransitGatewayVpcAttachmentRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

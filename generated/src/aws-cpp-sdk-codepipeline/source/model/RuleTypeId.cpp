@@ -11,72 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
 
-RuleTypeId::RuleTypeId(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RuleTypeId::RuleTypeId(JsonView jsonValue) { *this = jsonValue; }
 
-RuleTypeId& RuleTypeId::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("category"))
-  {
+RuleTypeId& RuleTypeId::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("category")) {
     m_category = RuleCategoryMapper::GetRuleCategoryForName(jsonValue.GetString("category"));
     m_categoryHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("owner"))
-  {
+  if (jsonValue.ValueExists("owner")) {
     m_owner = RuleOwnerMapper::GetRuleOwnerForName(jsonValue.GetString("owner"));
     m_ownerHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("provider"))
-  {
+  if (jsonValue.ValueExists("provider")) {
     m_provider = jsonValue.GetString("provider");
     m_providerHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("version"))
-  {
+  if (jsonValue.ValueExists("version")) {
     m_version = jsonValue.GetString("version");
     m_versionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RuleTypeId::Jsonize() const
-{
+JsonValue RuleTypeId::Jsonize() const {
   JsonValue payload;
 
-  if(m_categoryHasBeenSet)
-  {
-   payload.WithString("category", RuleCategoryMapper::GetNameForRuleCategory(m_category));
+  if (m_categoryHasBeenSet) {
+    payload.WithString("category", RuleCategoryMapper::GetNameForRuleCategory(m_category));
   }
 
-  if(m_ownerHasBeenSet)
-  {
-   payload.WithString("owner", RuleOwnerMapper::GetNameForRuleOwner(m_owner));
+  if (m_ownerHasBeenSet) {
+    payload.WithString("owner", RuleOwnerMapper::GetNameForRuleOwner(m_owner));
   }
 
-  if(m_providerHasBeenSet)
-  {
-   payload.WithString("provider", m_provider);
-
+  if (m_providerHasBeenSet) {
+    payload.WithString("provider", m_provider);
   }
 
-  if(m_versionHasBeenSet)
-  {
-   payload.WithString("version", m_version);
-
+  if (m_versionHasBeenSet) {
+    payload.WithString("version", m_version);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

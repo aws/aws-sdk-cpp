@@ -4,87 +4,98 @@
  */
 
 #pragma once
-#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace LexModelsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace LexModelsV2 {
+namespace Model {
 
+/**
+ * <p>Provides the parameters required for exporting a custom
+ * vocabulary.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CustomVocabularyExportSpecification">AWS
+ * API Reference</a></p>
+ */
+class CustomVocabularyExportSpecification {
+ public:
+  AWS_LEXMODELSV2_API CustomVocabularyExportSpecification() = default;
+  AWS_LEXMODELSV2_API CustomVocabularyExportSpecification(Aws::Utils::Json::JsonView jsonValue);
+  AWS_LEXMODELSV2_API CustomVocabularyExportSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Provides the parameters required for exporting a custom
-   * vocabulary.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CustomVocabularyExportSpecification">AWS
-   * API Reference</a></p>
+   * <p>The identifier of the bot that contains the custom vocabulary to export.</p>
    */
-  class CustomVocabularyExportSpecification
-  {
-  public:
-    AWS_LEXMODELSV2_API CustomVocabularyExportSpecification() = default;
-    AWS_LEXMODELSV2_API CustomVocabularyExportSpecification(Aws::Utils::Json::JsonView jsonValue);
-    AWS_LEXMODELSV2_API CustomVocabularyExportSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetBotId() const { return m_botId; }
+  inline bool BotIdHasBeenSet() const { return m_botIdHasBeenSet; }
+  template <typename BotIdT = Aws::String>
+  void SetBotId(BotIdT&& value) {
+    m_botIdHasBeenSet = true;
+    m_botId = std::forward<BotIdT>(value);
+  }
+  template <typename BotIdT = Aws::String>
+  CustomVocabularyExportSpecification& WithBotId(BotIdT&& value) {
+    SetBotId(std::forward<BotIdT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The version of the bot that contains the custom vocabulary to export.</p>
+   */
+  inline const Aws::String& GetBotVersion() const { return m_botVersion; }
+  inline bool BotVersionHasBeenSet() const { return m_botVersionHasBeenSet; }
+  template <typename BotVersionT = Aws::String>
+  void SetBotVersion(BotVersionT&& value) {
+    m_botVersionHasBeenSet = true;
+    m_botVersion = std::forward<BotVersionT>(value);
+  }
+  template <typename BotVersionT = Aws::String>
+  CustomVocabularyExportSpecification& WithBotVersion(BotVersionT&& value) {
+    SetBotVersion(std::forward<BotVersionT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The identifier of the bot that contains the custom vocabulary to export.</p>
-     */
-    inline const Aws::String& GetBotId() const { return m_botId; }
-    inline bool BotIdHasBeenSet() const { return m_botIdHasBeenSet; }
-    template<typename BotIdT = Aws::String>
-    void SetBotId(BotIdT&& value) { m_botIdHasBeenSet = true; m_botId = std::forward<BotIdT>(value); }
-    template<typename BotIdT = Aws::String>
-    CustomVocabularyExportSpecification& WithBotId(BotIdT&& value) { SetBotId(std::forward<BotIdT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The locale of the bot that contains the custom vocabulary to export.</p>
+   */
+  inline const Aws::String& GetLocaleId() const { return m_localeId; }
+  inline bool LocaleIdHasBeenSet() const { return m_localeIdHasBeenSet; }
+  template <typename LocaleIdT = Aws::String>
+  void SetLocaleId(LocaleIdT&& value) {
+    m_localeIdHasBeenSet = true;
+    m_localeId = std::forward<LocaleIdT>(value);
+  }
+  template <typename LocaleIdT = Aws::String>
+  CustomVocabularyExportSpecification& WithLocaleId(LocaleIdT&& value) {
+    SetLocaleId(std::forward<LocaleIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_botId;
+  bool m_botIdHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The version of the bot that contains the custom vocabulary to export.</p>
-     */
-    inline const Aws::String& GetBotVersion() const { return m_botVersion; }
-    inline bool BotVersionHasBeenSet() const { return m_botVersionHasBeenSet; }
-    template<typename BotVersionT = Aws::String>
-    void SetBotVersion(BotVersionT&& value) { m_botVersionHasBeenSet = true; m_botVersion = std::forward<BotVersionT>(value); }
-    template<typename BotVersionT = Aws::String>
-    CustomVocabularyExportSpecification& WithBotVersion(BotVersionT&& value) { SetBotVersion(std::forward<BotVersionT>(value)); return *this;}
-    ///@}
+  Aws::String m_botVersion;
+  bool m_botVersionHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The locale of the bot that contains the custom vocabulary to export.</p>
-     */
-    inline const Aws::String& GetLocaleId() const { return m_localeId; }
-    inline bool LocaleIdHasBeenSet() const { return m_localeIdHasBeenSet; }
-    template<typename LocaleIdT = Aws::String>
-    void SetLocaleId(LocaleIdT&& value) { m_localeIdHasBeenSet = true; m_localeId = std::forward<LocaleIdT>(value); }
-    template<typename LocaleIdT = Aws::String>
-    CustomVocabularyExportSpecification& WithLocaleId(LocaleIdT&& value) { SetLocaleId(std::forward<LocaleIdT>(value)); return *this;}
-    ///@}
-  private:
+  Aws::String m_localeId;
+  bool m_localeIdHasBeenSet = false;
+};
 
-    Aws::String m_botId;
-    bool m_botIdHasBeenSet = false;
-
-    Aws::String m_botVersion;
-    bool m_botVersionHasBeenSet = false;
-
-    Aws::String m_localeId;
-    bool m_localeIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

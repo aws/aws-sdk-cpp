@@ -4,69 +4,55 @@
  */
 
 #include <aws/cleanroomsml/model/ResultFormat.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace CleanRoomsML {
+namespace Model {
+namespace ResultFormatMapper {
 
-namespace Aws
-{
-  namespace CleanRoomsML
-  {
-    namespace Model
-    {
-      namespace ResultFormatMapper
-      {
+static const int CSV_HASH = HashingUtils::HashString("CSV");
+static const int PARQUET_HASH = HashingUtils::HashString("PARQUET");
 
-        static const int CSV_HASH = HashingUtils::HashString("CSV");
-        static const int PARQUET_HASH = HashingUtils::HashString("PARQUET");
+ResultFormat GetResultFormatForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == CSV_HASH) {
+    return ResultFormat::CSV;
+  } else if (hashCode == PARQUET_HASH) {
+    return ResultFormat::PARQUET;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<ResultFormat>(hashCode);
+  }
 
+  return ResultFormat::NOT_SET;
+}
 
-        ResultFormat GetResultFormatForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == CSV_HASH)
-          {
-            return ResultFormat::CSV;
-          }
-          else if (hashCode == PARQUET_HASH)
-          {
-            return ResultFormat::PARQUET;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ResultFormat>(hashCode);
-          }
+Aws::String GetNameForResultFormat(ResultFormat enumValue) {
+  switch (enumValue) {
+    case ResultFormat::NOT_SET:
+      return {};
+    case ResultFormat::CSV:
+      return "CSV";
+    case ResultFormat::PARQUET:
+      return "PARQUET";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return ResultFormat::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForResultFormat(ResultFormat enumValue)
-        {
-          switch(enumValue)
-          {
-          case ResultFormat::NOT_SET:
-            return {};
-          case ResultFormat::CSV:
-            return "CSV";
-          case ResultFormat::PARQUET:
-            return "PARQUET";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace ResultFormatMapper
-    } // namespace Model
-  } // namespace CleanRoomsML
-} // namespace Aws
+}  // namespace ResultFormatMapper
+}  // namespace Model
+}  // namespace CleanRoomsML
+}  // namespace Aws

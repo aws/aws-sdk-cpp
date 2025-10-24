@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/VisibleRangeOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/VisibleRangeOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-VisibleRangeOptions::VisibleRangeOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+VisibleRangeOptions::VisibleRangeOptions(JsonView jsonValue) { *this = jsonValue; }
 
-VisibleRangeOptions& VisibleRangeOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("PercentRange"))
-  {
+VisibleRangeOptions& VisibleRangeOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PercentRange")) {
     m_percentRange = jsonValue.GetObject("PercentRange");
     m_percentRangeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue VisibleRangeOptions::Jsonize() const
-{
+JsonValue VisibleRangeOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_percentRangeHasBeenSet)
-  {
-   payload.WithObject("PercentRange", m_percentRange.Jsonize());
-
+  if (m_percentRangeHasBeenSet) {
+    payload.WithObject("PercentRange", m_percentRange.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

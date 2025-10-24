@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-LiveConnectorRTMPConfiguration::LiveConnectorRTMPConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LiveConnectorRTMPConfiguration::LiveConnectorRTMPConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-LiveConnectorRTMPConfiguration& LiveConnectorRTMPConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Url"))
-  {
+LiveConnectorRTMPConfiguration& LiveConnectorRTMPConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Url")) {
     m_url = jsonValue.GetString("Url");
     m_urlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AudioChannels"))
-  {
+  if (jsonValue.ValueExists("AudioChannels")) {
     m_audioChannels = AudioChannelsOptionMapper::GetAudioChannelsOptionForName(jsonValue.GetString("AudioChannels"));
     m_audioChannelsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AudioSampleRate"))
-  {
+  if (jsonValue.ValueExists("AudioSampleRate")) {
     m_audioSampleRate = jsonValue.GetString("AudioSampleRate");
     m_audioSampleRateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LiveConnectorRTMPConfiguration::Jsonize() const
-{
+JsonValue LiveConnectorRTMPConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_urlHasBeenSet)
-  {
-   payload.WithString("Url", m_url);
-
+  if (m_urlHasBeenSet) {
+    payload.WithString("Url", m_url);
   }
 
-  if(m_audioChannelsHasBeenSet)
-  {
-   payload.WithString("AudioChannels", AudioChannelsOptionMapper::GetNameForAudioChannelsOption(m_audioChannels));
+  if (m_audioChannelsHasBeenSet) {
+    payload.WithString("AudioChannels", AudioChannelsOptionMapper::GetNameForAudioChannelsOption(m_audioChannels));
   }
 
-  if(m_audioSampleRateHasBeenSet)
-  {
-   payload.WithString("AudioSampleRate", m_audioSampleRate);
-
+  if (m_audioSampleRateHasBeenSet) {
+    payload.WithString("AudioSampleRate", m_audioSampleRate);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

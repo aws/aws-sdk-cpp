@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/kinesisvideo/KinesisVideo_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kinesisvideo/KinesisVideo_EXPORTS.h>
 
-namespace Aws
-{
-namespace KinesisVideo
-{
-namespace Model
-{
-  enum class StrategyOnFullSize
-  {
-    NOT_SET,
-    DELETE_OLDEST_MEDIA,
-    DENY_NEW_MEDIA
-  };
+namespace Aws {
+namespace KinesisVideo {
+namespace Model {
+enum class StrategyOnFullSize { NOT_SET, DELETE_OLDEST_MEDIA, DENY_NEW_MEDIA };
 
-namespace StrategyOnFullSizeMapper
-{
+namespace StrategyOnFullSizeMapper {
 AWS_KINESISVIDEO_API StrategyOnFullSize GetStrategyOnFullSizeForName(const Aws::String& name);
 
 AWS_KINESISVIDEO_API Aws::String GetNameForStrategyOnFullSize(StrategyOnFullSize value);
-} // namespace StrategyOnFullSizeMapper
-} // namespace Model
-} // namespace KinesisVideo
-} // namespace Aws
+}  // namespace StrategyOnFullSizeMapper
+}  // namespace Model
+}  // namespace KinesisVideo
+}  // namespace Aws

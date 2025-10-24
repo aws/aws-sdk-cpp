@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/datasync/DataSync_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datasync/DataSync_EXPORTS.h>
 
-namespace Aws
-{
-namespace DataSync
-{
-namespace Model
-{
-  enum class LocationFilterName
-  {
-    NOT_SET,
-    LocationUri,
-    LocationType,
-    CreationTime
-  };
+namespace Aws {
+namespace DataSync {
+namespace Model {
+enum class LocationFilterName { NOT_SET, LocationUri, LocationType, CreationTime };
 
-namespace LocationFilterNameMapper
-{
+namespace LocationFilterNameMapper {
 AWS_DATASYNC_API LocationFilterName GetLocationFilterNameForName(const Aws::String& name);
 
 AWS_DATASYNC_API Aws::String GetNameForLocationFilterName(LocationFilterName value);
-} // namespace LocationFilterNameMapper
-} // namespace Model
-} // namespace DataSync
-} // namespace Aws
+}  // namespace LocationFilterNameMapper
+}  // namespace Model
+}  // namespace DataSync
+}  // namespace Aws

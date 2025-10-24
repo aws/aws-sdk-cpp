@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 
-namespace Aws
-{
-namespace imagebuilder
-{
-namespace Model
-{
-  enum class LifecycleExecutionStatus
-  {
-    NOT_SET,
-    IN_PROGRESS,
-    CANCELLED,
-    CANCELLING,
-    FAILED,
-    SUCCESS,
-    PENDING
-  };
+namespace Aws {
+namespace imagebuilder {
+namespace Model {
+enum class LifecycleExecutionStatus { NOT_SET, IN_PROGRESS, CANCELLED, CANCELLING, FAILED, SUCCESS, PENDING };
 
-namespace LifecycleExecutionStatusMapper
-{
+namespace LifecycleExecutionStatusMapper {
 AWS_IMAGEBUILDER_API LifecycleExecutionStatus GetLifecycleExecutionStatusForName(const Aws::String& name);
 
 AWS_IMAGEBUILDER_API Aws::String GetNameForLifecycleExecutionStatus(LifecycleExecutionStatus value);
-} // namespace LifecycleExecutionStatusMapper
-} // namespace Model
-} // namespace imagebuilder
-} // namespace Aws
+}  // namespace LifecycleExecutionStatusMapper
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

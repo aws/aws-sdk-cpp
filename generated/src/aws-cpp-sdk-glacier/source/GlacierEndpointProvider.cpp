@@ -5,12 +5,8 @@
 
 #include <aws/glacier/GlacierEndpointProvider.h>
 
-namespace Aws
-{
-namespace Glacier
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Glacier
-} // namespace Aws
+namespace Aws {
+namespace Glacier {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Glacier
+}  // namespace Aws

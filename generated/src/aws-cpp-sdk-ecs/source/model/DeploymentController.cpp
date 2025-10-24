@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ecs/model/DeploymentController.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ecs/model/DeploymentController.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ECS
-{
-namespace Model
-{
+namespace Aws {
+namespace ECS {
+namespace Model {
 
-DeploymentController::DeploymentController(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DeploymentController::DeploymentController(JsonView jsonValue) { *this = jsonValue; }
 
-DeploymentController& DeploymentController::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+DeploymentController& DeploymentController::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = DeploymentControllerTypeMapper::GetDeploymentControllerTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DeploymentController::Jsonize() const
-{
+JsonValue DeploymentController::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", DeploymentControllerTypeMapper::GetNameForDeploymentControllerType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", DeploymentControllerTypeMapper::GetNameForDeploymentControllerType(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ECS
-} // namespace Aws
+}  // namespace Model
+}  // namespace ECS
+}  // namespace Aws

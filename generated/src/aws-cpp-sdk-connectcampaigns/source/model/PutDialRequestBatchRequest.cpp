@@ -12,24 +12,16 @@ using namespace Aws::ConnectCampaigns::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutDialRequestBatchRequest::SerializePayload() const
-{
+Aws::String PutDialRequestBatchRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_dialRequestsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> dialRequestsJsonList(m_dialRequests.size());
-   for(unsigned dialRequestsIndex = 0; dialRequestsIndex < dialRequestsJsonList.GetLength(); ++dialRequestsIndex)
-   {
-     dialRequestsJsonList[dialRequestsIndex].AsObject(m_dialRequests[dialRequestsIndex].Jsonize());
-   }
-   payload.WithArray("dialRequests", std::move(dialRequestsJsonList));
-
+  if (m_dialRequestsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> dialRequestsJsonList(m_dialRequests.size());
+    for (unsigned dialRequestsIndex = 0; dialRequestsIndex < dialRequestsJsonList.GetLength(); ++dialRequestsIndex) {
+      dialRequestsJsonList[dialRequestsIndex].AsObject(m_dialRequests[dialRequestsIndex].Jsonize());
+    }
+    payload.WithArray("dialRequests", std::move(dialRequestsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

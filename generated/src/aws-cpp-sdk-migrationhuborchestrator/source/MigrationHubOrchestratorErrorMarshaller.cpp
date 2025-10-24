@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::MigrationHubOrchestrator;
 
-AWSError<CoreErrors> MigrationHubOrchestratorErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> MigrationHubOrchestratorErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = MigrationHubOrchestratorErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

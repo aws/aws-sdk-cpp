@@ -12,50 +12,36 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppConfig
-{
-namespace Model
-{
+namespace Aws {
+namespace AppConfig {
+namespace Model {
 
-Environment::Environment(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Environment::Environment(JsonView jsonValue) { *this = jsonValue; }
 
-Environment& Environment::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ApplicationId"))
-  {
+Environment& Environment::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ApplicationId")) {
     m_applicationId = jsonValue.GetString("ApplicationId");
     m_applicationIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Id"))
-  {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("State"))
-  {
+  if (jsonValue.ValueExists("State")) {
     m_state = EnvironmentStateMapper::GetEnvironmentStateForName(jsonValue.GetString("State"));
     m_stateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Monitors"))
-  {
+  if (jsonValue.ValueExists("Monitors")) {
     Aws::Utils::Array<JsonView> monitorsJsonList = jsonValue.GetArray("Monitors");
-    for(unsigned monitorsIndex = 0; monitorsIndex < monitorsJsonList.GetLength(); ++monitorsIndex)
-    {
+    for (unsigned monitorsIndex = 0; monitorsIndex < monitorsJsonList.GetLength(); ++monitorsIndex) {
       m_monitors.push_back(monitorsJsonList[monitorsIndex].AsObject());
     }
     m_monitorsHasBeenSet = true;
@@ -63,53 +49,40 @@ Environment& Environment::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue Environment::Jsonize() const
-{
+JsonValue Environment::Jsonize() const {
   JsonValue payload;
 
-  if(m_applicationIdHasBeenSet)
-  {
-   payload.WithString("ApplicationId", m_applicationId);
-
+  if (m_applicationIdHasBeenSet) {
+    payload.WithString("ApplicationId", m_applicationId);
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("State", EnvironmentStateMapper::GetNameForEnvironmentState(m_state));
+  if (m_stateHasBeenSet) {
+    payload.WithString("State", EnvironmentStateMapper::GetNameForEnvironmentState(m_state));
   }
 
-  if(m_monitorsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> monitorsJsonList(m_monitors.size());
-   for(unsigned monitorsIndex = 0; monitorsIndex < monitorsJsonList.GetLength(); ++monitorsIndex)
-   {
-     monitorsJsonList[monitorsIndex].AsObject(m_monitors[monitorsIndex].Jsonize());
-   }
-   payload.WithArray("Monitors", std::move(monitorsJsonList));
-
+  if (m_monitorsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> monitorsJsonList(m_monitors.size());
+    for (unsigned monitorsIndex = 0; monitorsIndex < monitorsJsonList.GetLength(); ++monitorsIndex) {
+      monitorsJsonList[monitorsIndex].AsObject(m_monitors[monitorsIndex].Jsonize());
+    }
+    payload.WithArray("Monitors", std::move(monitorsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppConfig
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppConfig
+}  // namespace Aws

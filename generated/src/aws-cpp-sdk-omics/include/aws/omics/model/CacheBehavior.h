@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/omics/Omics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/omics/Omics_EXPORTS.h>
 
-namespace Aws
-{
-namespace Omics
-{
-namespace Model
-{
-  enum class CacheBehavior
-  {
-    NOT_SET,
-    CACHE_ON_FAILURE,
-    CACHE_ALWAYS
-  };
+namespace Aws {
+namespace Omics {
+namespace Model {
+enum class CacheBehavior { NOT_SET, CACHE_ON_FAILURE, CACHE_ALWAYS };
 
-namespace CacheBehaviorMapper
-{
+namespace CacheBehaviorMapper {
 AWS_OMICS_API CacheBehavior GetCacheBehaviorForName(const Aws::String& name);
 
 AWS_OMICS_API Aws::String GetNameForCacheBehavior(CacheBehavior value);
-} // namespace CacheBehaviorMapper
-} // namespace Model
-} // namespace Omics
-} // namespace Aws
+}  // namespace CacheBehaviorMapper
+}  // namespace Model
+}  // namespace Omics
+}  // namespace Aws

@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/LabelOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/LabelOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-LabelOptions::LabelOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LabelOptions::LabelOptions(JsonView jsonValue) { *this = jsonValue; }
 
-LabelOptions& LabelOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Visibility"))
-  {
+LabelOptions& LabelOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Visibility")) {
     m_visibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("Visibility"));
     m_visibilityHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FontConfiguration"))
-  {
+  if (jsonValue.ValueExists("FontConfiguration")) {
     m_fontConfiguration = jsonValue.GetObject("FontConfiguration");
     m_fontConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CustomLabel"))
-  {
+  if (jsonValue.ValueExists("CustomLabel")) {
     m_customLabel = jsonValue.GetString("CustomLabel");
     m_customLabelHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LabelOptions::Jsonize() const
-{
+JsonValue LabelOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_visibilityHasBeenSet)
-  {
-   payload.WithString("Visibility", VisibilityMapper::GetNameForVisibility(m_visibility));
+  if (m_visibilityHasBeenSet) {
+    payload.WithString("Visibility", VisibilityMapper::GetNameForVisibility(m_visibility));
   }
 
-  if(m_fontConfigurationHasBeenSet)
-  {
-   payload.WithObject("FontConfiguration", m_fontConfiguration.Jsonize());
-
+  if (m_fontConfigurationHasBeenSet) {
+    payload.WithObject("FontConfiguration", m_fontConfiguration.Jsonize());
   }
 
-  if(m_customLabelHasBeenSet)
-  {
-   payload.WithString("CustomLabel", m_customLabel);
-
+  if (m_customLabelHasBeenSet) {
+    payload.WithString("CustomLabel", m_customLabel);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

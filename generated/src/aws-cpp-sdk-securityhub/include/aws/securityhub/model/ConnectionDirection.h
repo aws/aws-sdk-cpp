@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/securityhub/SecurityHub_EXPORTS.h>
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
-  enum class ConnectionDirection
-  {
-    NOT_SET,
-    INBOUND,
-    OUTBOUND
-  };
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
+enum class ConnectionDirection { NOT_SET, INBOUND, OUTBOUND };
 
-namespace ConnectionDirectionMapper
-{
+namespace ConnectionDirectionMapper {
 AWS_SECURITYHUB_API ConnectionDirection GetConnectionDirectionForName(const Aws::String& name);
 
 AWS_SECURITYHUB_API Aws::String GetNameForConnectionDirection(ConnectionDirection value);
-} // namespace ConnectionDirectionMapper
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace ConnectionDirectionMapper
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace APIGateway
-{
-namespace Model
-{
+namespace Aws {
+namespace APIGateway {
+namespace Model {
 
-MethodSnapshot::MethodSnapshot(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MethodSnapshot::MethodSnapshot(JsonView jsonValue) { *this = jsonValue; }
 
-MethodSnapshot& MethodSnapshot::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("authorizationType"))
-  {
+MethodSnapshot& MethodSnapshot::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("authorizationType")) {
     m_authorizationType = jsonValue.GetString("authorizationType");
     m_authorizationTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("apiKeyRequired"))
-  {
+  if (jsonValue.ValueExists("apiKeyRequired")) {
     m_apiKeyRequired = jsonValue.GetBool("apiKeyRequired");
     m_apiKeyRequiredHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MethodSnapshot::Jsonize() const
-{
+JsonValue MethodSnapshot::Jsonize() const {
   JsonValue payload;
 
-  if(m_authorizationTypeHasBeenSet)
-  {
-   payload.WithString("authorizationType", m_authorizationType);
-
+  if (m_authorizationTypeHasBeenSet) {
+    payload.WithString("authorizationType", m_authorizationType);
   }
 
-  if(m_apiKeyRequiredHasBeenSet)
-  {
-   payload.WithBool("apiKeyRequired", m_apiKeyRequired);
-
+  if (m_apiKeyRequiredHasBeenSet) {
+    payload.WithBool("apiKeyRequired", m_apiKeyRequired);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace APIGateway
-} // namespace Aws
+}  // namespace Model
+}  // namespace APIGateway
+}  // namespace Aws

@@ -3,35 +3,27 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancing/model/DeleteLoadBalancerListenersRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticloadbalancing/model/DeleteLoadBalancerListenersRequest.h>
 
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteLoadBalancerListenersRequest::SerializePayload() const
-{
+Aws::String DeleteLoadBalancerListenersRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteLoadBalancerListeners&";
-  if(m_loadBalancerNameHasBeenSet)
-  {
+  if (m_loadBalancerNameHasBeenSet) {
     ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
   }
 
-  if(m_loadBalancerPortsHasBeenSet)
-  {
-    if (m_loadBalancerPorts.empty())
-    {
+  if (m_loadBalancerPortsHasBeenSet) {
+    if (m_loadBalancerPorts.empty()) {
       ss << "LoadBalancerPorts=&";
-    }
-    else
-    {
+    } else {
       unsigned loadBalancerPortsCount = 1;
-      for(auto& item : m_loadBalancerPorts)
-      {
-        ss << "LoadBalancerPorts.member." << loadBalancerPortsCount << "="
-            << item << "&";
+      for (auto& item : m_loadBalancerPorts) {
+        ss << "LoadBalancerPorts.member." << loadBalancerPortsCount << "=" << item << "&";
         loadBalancerPortsCount++;
       }
     }
@@ -41,8 +33,4 @@ Aws::String DeleteLoadBalancerListenersRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteLoadBalancerListenersRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteLoadBalancerListenersRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

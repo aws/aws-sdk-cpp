@@ -3,58 +3,48 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/migrationhubstrategy/model/AnalysisStatusUnion.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/migrationhubstrategy/model/AnalysisStatusUnion.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MigrationHubStrategyRecommendations
-{
-namespace Model
-{
+namespace Aws {
+namespace MigrationHubStrategyRecommendations {
+namespace Model {
 
-AnalysisStatusUnion::AnalysisStatusUnion(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AnalysisStatusUnion::AnalysisStatusUnion(JsonView jsonValue) { *this = jsonValue; }
 
-AnalysisStatusUnion& AnalysisStatusUnion::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("runtimeAnalysisStatus"))
-  {
+AnalysisStatusUnion& AnalysisStatusUnion::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("runtimeAnalysisStatus")) {
     m_runtimeAnalysisStatus = RuntimeAnalysisStatusMapper::GetRuntimeAnalysisStatusForName(jsonValue.GetString("runtimeAnalysisStatus"));
     m_runtimeAnalysisStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("srcCodeOrDbAnalysisStatus"))
-  {
-    m_srcCodeOrDbAnalysisStatus = SrcCodeOrDbAnalysisStatusMapper::GetSrcCodeOrDbAnalysisStatusForName(jsonValue.GetString("srcCodeOrDbAnalysisStatus"));
+  if (jsonValue.ValueExists("srcCodeOrDbAnalysisStatus")) {
+    m_srcCodeOrDbAnalysisStatus =
+        SrcCodeOrDbAnalysisStatusMapper::GetSrcCodeOrDbAnalysisStatusForName(jsonValue.GetString("srcCodeOrDbAnalysisStatus"));
     m_srcCodeOrDbAnalysisStatusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AnalysisStatusUnion::Jsonize() const
-{
+JsonValue AnalysisStatusUnion::Jsonize() const {
   JsonValue payload;
 
-  if(m_runtimeAnalysisStatusHasBeenSet)
-  {
-   payload.WithString("runtimeAnalysisStatus", RuntimeAnalysisStatusMapper::GetNameForRuntimeAnalysisStatus(m_runtimeAnalysisStatus));
+  if (m_runtimeAnalysisStatusHasBeenSet) {
+    payload.WithString("runtimeAnalysisStatus", RuntimeAnalysisStatusMapper::GetNameForRuntimeAnalysisStatus(m_runtimeAnalysisStatus));
   }
 
-  if(m_srcCodeOrDbAnalysisStatusHasBeenSet)
-  {
-   payload.WithString("srcCodeOrDbAnalysisStatus", SrcCodeOrDbAnalysisStatusMapper::GetNameForSrcCodeOrDbAnalysisStatus(m_srcCodeOrDbAnalysisStatus));
+  if (m_srcCodeOrDbAnalysisStatusHasBeenSet) {
+    payload.WithString("srcCodeOrDbAnalysisStatus",
+                       SrcCodeOrDbAnalysisStatusMapper::GetNameForSrcCodeOrDbAnalysisStatus(m_srcCodeOrDbAnalysisStatus));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MigrationHubStrategyRecommendations
-} // namespace Aws
+}  // namespace Model
+}  // namespace MigrationHubStrategyRecommendations
+}  // namespace Aws

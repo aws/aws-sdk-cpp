@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/DefaultGridLayoutConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/DefaultGridLayoutConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-DefaultGridLayoutConfiguration::DefaultGridLayoutConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DefaultGridLayoutConfiguration::DefaultGridLayoutConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-DefaultGridLayoutConfiguration& DefaultGridLayoutConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CanvasSizeOptions"))
-  {
+DefaultGridLayoutConfiguration& DefaultGridLayoutConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CanvasSizeOptions")) {
     m_canvasSizeOptions = jsonValue.GetObject("CanvasSizeOptions");
     m_canvasSizeOptionsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DefaultGridLayoutConfiguration::Jsonize() const
-{
+JsonValue DefaultGridLayoutConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_canvasSizeOptionsHasBeenSet)
-  {
-   payload.WithObject("CanvasSizeOptions", m_canvasSizeOptions.Jsonize());
-
+  if (m_canvasSizeOptionsHasBeenSet) {
+    payload.WithObject("CanvasSizeOptions", m_canvasSizeOptions.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

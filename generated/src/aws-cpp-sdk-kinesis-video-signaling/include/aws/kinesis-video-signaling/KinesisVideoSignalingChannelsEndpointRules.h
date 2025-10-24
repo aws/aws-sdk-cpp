@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/kinesis-video-signaling/KinesisVideoSignalingChannels_EXPORTS.h>
 
-namespace Aws
-{
-namespace KinesisVideoSignalingChannels
-{
-class KinesisVideoSignalingChannelsEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace KinesisVideoSignalingChannels {
+class KinesisVideoSignalingChannelsEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace KinesisVideoSignalingChannels
-} // namespace Aws
+}  // namespace KinesisVideoSignalingChannels
+}  // namespace Aws

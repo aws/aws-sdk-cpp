@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/DeleteClusterSubnetGroupRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/DeleteClusterSubnetGroupRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteClusterSubnetGroupRequest::SerializePayload() const
-{
+Aws::String DeleteClusterSubnetGroupRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteClusterSubnetGroup&";
-  if(m_clusterSubnetGroupNameHasBeenSet)
-  {
+  if (m_clusterSubnetGroupNameHasBeenSet) {
     ss << "ClusterSubnetGroupName=" << StringUtils::URLEncode(m_clusterSubnetGroupName.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteClusterSubnetGroupRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteClusterSubnetGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteClusterSubnetGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/license-manager-user-subscriptions/model/AssociateUserResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/license-manager-user-subscriptions/model/AssociateUserResult.h>
 
 #include <utility>
 
@@ -17,28 +17,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AssociateUserResult::AssociateUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+AssociateUserResult::AssociateUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-AssociateUserResult& AssociateUserResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+AssociateUserResult& AssociateUserResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("InstanceUserSummary"))
-  {
+  if (jsonValue.ValueExists("InstanceUserSummary")) {
     m_instanceUserSummary = jsonValue.GetObject("InstanceUserSummary");
     m_instanceUserSummaryHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

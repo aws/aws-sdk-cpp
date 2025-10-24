@@ -12,73 +12,51 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateUserRequest::SerializePayload() const
-{
+Aws::String UpdateUserRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_homeDirectoryHasBeenSet)
-  {
-   payload.WithString("HomeDirectory", m_homeDirectory);
-
+  if (m_homeDirectoryHasBeenSet) {
+    payload.WithString("HomeDirectory", m_homeDirectory);
   }
 
-  if(m_homeDirectoryTypeHasBeenSet)
-  {
-   payload.WithString("HomeDirectoryType", HomeDirectoryTypeMapper::GetNameForHomeDirectoryType(m_homeDirectoryType));
+  if (m_homeDirectoryTypeHasBeenSet) {
+    payload.WithString("HomeDirectoryType", HomeDirectoryTypeMapper::GetNameForHomeDirectoryType(m_homeDirectoryType));
   }
 
-  if(m_homeDirectoryMappingsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> homeDirectoryMappingsJsonList(m_homeDirectoryMappings.size());
-   for(unsigned homeDirectoryMappingsIndex = 0; homeDirectoryMappingsIndex < homeDirectoryMappingsJsonList.GetLength(); ++homeDirectoryMappingsIndex)
-   {
-     homeDirectoryMappingsJsonList[homeDirectoryMappingsIndex].AsObject(m_homeDirectoryMappings[homeDirectoryMappingsIndex].Jsonize());
-   }
-   payload.WithArray("HomeDirectoryMappings", std::move(homeDirectoryMappingsJsonList));
-
+  if (m_homeDirectoryMappingsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> homeDirectoryMappingsJsonList(m_homeDirectoryMappings.size());
+    for (unsigned homeDirectoryMappingsIndex = 0; homeDirectoryMappingsIndex < homeDirectoryMappingsJsonList.GetLength();
+         ++homeDirectoryMappingsIndex) {
+      homeDirectoryMappingsJsonList[homeDirectoryMappingsIndex].AsObject(m_homeDirectoryMappings[homeDirectoryMappingsIndex].Jsonize());
+    }
+    payload.WithArray("HomeDirectoryMappings", std::move(homeDirectoryMappingsJsonList));
   }
 
-  if(m_policyHasBeenSet)
-  {
-   payload.WithString("Policy", m_policy);
-
+  if (m_policyHasBeenSet) {
+    payload.WithString("Policy", m_policy);
   }
 
-  if(m_posixProfileHasBeenSet)
-  {
-   payload.WithObject("PosixProfile", m_posixProfile.Jsonize());
-
+  if (m_posixProfileHasBeenSet) {
+    payload.WithObject("PosixProfile", m_posixProfile.Jsonize());
   }
 
-  if(m_roleHasBeenSet)
-  {
-   payload.WithString("Role", m_role);
-
+  if (m_roleHasBeenSet) {
+    payload.WithString("Role", m_role);
   }
 
-  if(m_serverIdHasBeenSet)
-  {
-   payload.WithString("ServerId", m_serverId);
-
+  if (m_serverIdHasBeenSet) {
+    payload.WithString("ServerId", m_serverId);
   }
 
-  if(m_userNameHasBeenSet)
-  {
-   payload.WithString("UserName", m_userName);
-
+  if (m_userNameHasBeenSet) {
+    payload.WithString("UserName", m_userName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateUserRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateUserRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TransferService.UpdateUser"));
   return headers;
-
 }
-
-
-
-

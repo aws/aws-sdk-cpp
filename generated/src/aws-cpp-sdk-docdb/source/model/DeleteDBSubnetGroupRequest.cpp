@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/docdb/model/DeleteDBSubnetGroupRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/docdb/model/DeleteDBSubnetGroupRequest.h>
 
 using namespace Aws::DocDB::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteDBSubnetGroupRequest::SerializePayload() const
-{
+Aws::String DeleteDBSubnetGroupRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteDBSubnetGroup&";
-  if(m_dBSubnetGroupNameHasBeenSet)
-  {
+  if (m_dBSubnetGroupNameHasBeenSet) {
     ss << "DBSubnetGroupName=" << StringUtils::URLEncode(m_dBSubnetGroupName.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DeleteDBSubnetGroupRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteDBSubnetGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteDBSubnetGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

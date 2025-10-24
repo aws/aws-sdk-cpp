@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/RemoveSourceIdentifierFromSubscriptionRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/RemoveSourceIdentifierFromSubscriptionRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String RemoveSourceIdentifierFromSubscriptionRequest::SerializePayload() const
-{
+Aws::String RemoveSourceIdentifierFromSubscriptionRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=RemoveSourceIdentifierFromSubscription&";
-  if(m_subscriptionNameHasBeenSet)
-  {
+  if (m_subscriptionNameHasBeenSet) {
     ss << "SubscriptionName=" << StringUtils::URLEncode(m_subscriptionName.c_str()) << "&";
   }
 
-  if(m_sourceIdentifierHasBeenSet)
-  {
+  if (m_sourceIdentifierHasBeenSet) {
     ss << "SourceIdentifier=" << StringUtils::URLEncode(m_sourceIdentifier.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String RemoveSourceIdentifierFromSubscriptionRequest::SerializePayload() co
   return ss.str();
 }
 
-
-void  RemoveSourceIdentifierFromSubscriptionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void RemoveSourceIdentifierFromSubscriptionRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

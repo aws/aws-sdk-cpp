@@ -11,61 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeArtifact
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeArtifact {
+namespace Model {
 
-RepositoryExternalConnectionInfo::RepositoryExternalConnectionInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RepositoryExternalConnectionInfo::RepositoryExternalConnectionInfo(JsonView jsonValue) { *this = jsonValue; }
 
-RepositoryExternalConnectionInfo& RepositoryExternalConnectionInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("externalConnectionName"))
-  {
+RepositoryExternalConnectionInfo& RepositoryExternalConnectionInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("externalConnectionName")) {
     m_externalConnectionName = jsonValue.GetString("externalConnectionName");
     m_externalConnectionNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("packageFormat"))
-  {
+  if (jsonValue.ValueExists("packageFormat")) {
     m_packageFormat = PackageFormatMapper::GetPackageFormatForName(jsonValue.GetString("packageFormat"));
     m_packageFormatHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = ExternalConnectionStatusMapper::GetExternalConnectionStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RepositoryExternalConnectionInfo::Jsonize() const
-{
+JsonValue RepositoryExternalConnectionInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_externalConnectionNameHasBeenSet)
-  {
-   payload.WithString("externalConnectionName", m_externalConnectionName);
-
+  if (m_externalConnectionNameHasBeenSet) {
+    payload.WithString("externalConnectionName", m_externalConnectionName);
   }
 
-  if(m_packageFormatHasBeenSet)
-  {
-   payload.WithString("packageFormat", PackageFormatMapper::GetNameForPackageFormat(m_packageFormat));
+  if (m_packageFormatHasBeenSet) {
+    payload.WithString("packageFormat", PackageFormatMapper::GetNameForPackageFormat(m_packageFormat));
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", ExternalConnectionStatusMapper::GetNameForExternalConnectionStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", ExternalConnectionStatusMapper::GetNameForExternalConnectionStatus(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeArtifact
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeArtifact
+}  // namespace Aws

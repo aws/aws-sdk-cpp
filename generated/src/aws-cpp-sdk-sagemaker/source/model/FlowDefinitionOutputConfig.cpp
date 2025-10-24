@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/FlowDefinitionOutputConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/FlowDefinitionOutputConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-FlowDefinitionOutputConfig::FlowDefinitionOutputConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FlowDefinitionOutputConfig::FlowDefinitionOutputConfig(JsonView jsonValue) { *this = jsonValue; }
 
-FlowDefinitionOutputConfig& FlowDefinitionOutputConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("S3OutputPath"))
-  {
+FlowDefinitionOutputConfig& FlowDefinitionOutputConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("S3OutputPath")) {
     m_s3OutputPath = jsonValue.GetString("S3OutputPath");
     m_s3OutputPathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("KmsKeyId"))
-  {
+  if (jsonValue.ValueExists("KmsKeyId")) {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
     m_kmsKeyIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FlowDefinitionOutputConfig::Jsonize() const
-{
+JsonValue FlowDefinitionOutputConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3OutputPathHasBeenSet)
-  {
-   payload.WithString("S3OutputPath", m_s3OutputPath);
-
+  if (m_s3OutputPathHasBeenSet) {
+    payload.WithString("S3OutputPath", m_s3OutputPath);
   }
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
-   payload.WithString("KmsKeyId", m_kmsKeyId);
-
+  if (m_kmsKeyIdHasBeenSet) {
+    payload.WithString("KmsKeyId", m_kmsKeyId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

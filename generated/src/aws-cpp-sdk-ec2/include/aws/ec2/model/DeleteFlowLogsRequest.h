@@ -4,75 +4,86 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/ec2/EC2Request.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/EC2Request.h>
+#include <aws/ec2/EC2_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
+/**
+ */
+class DeleteFlowLogsRequest : public EC2Request {
+ public:
+  AWS_EC2_API DeleteFlowLogsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DeleteFlowLogs"; }
+
+  AWS_EC2_API Aws::String SerializePayload() const override;
+
+ protected:
+  AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
+
+ public:
+  ///@{
   /**
+   * <p>Checks whether you have the required permissions for the action, without
+   * actually making the request, and provides an error response. If you have the
+   * required permissions, the error response is <code>DryRunOperation</code>.
+   * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
    */
-  class DeleteFlowLogsRequest : public EC2Request
-  {
-  public:
-    AWS_EC2_API DeleteFlowLogsRequest() = default;
+  inline bool GetDryRun() const { return m_dryRun; }
+  inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+  inline void SetDryRun(bool value) {
+    m_dryRunHasBeenSet = true;
+    m_dryRun = value;
+  }
+  inline DeleteFlowLogsRequest& WithDryRun(bool value) {
+    SetDryRun(value);
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DeleteFlowLogs"; }
+  ///@{
+  /**
+   * <p>One or more flow log IDs.</p> <p>Constraint: Maximum of 1000 flow log
+   * IDs.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetFlowLogIds() const { return m_flowLogIds; }
+  inline bool FlowLogIdsHasBeenSet() const { return m_flowLogIdsHasBeenSet; }
+  template <typename FlowLogIdsT = Aws::Vector<Aws::String>>
+  void SetFlowLogIds(FlowLogIdsT&& value) {
+    m_flowLogIdsHasBeenSet = true;
+    m_flowLogIds = std::forward<FlowLogIdsT>(value);
+  }
+  template <typename FlowLogIdsT = Aws::Vector<Aws::String>>
+  DeleteFlowLogsRequest& WithFlowLogIds(FlowLogIdsT&& value) {
+    SetFlowLogIds(std::forward<FlowLogIdsT>(value));
+    return *this;
+  }
+  template <typename FlowLogIdsT = Aws::String>
+  DeleteFlowLogsRequest& AddFlowLogIds(FlowLogIdsT&& value) {
+    m_flowLogIdsHasBeenSet = true;
+    m_flowLogIds.emplace_back(std::forward<FlowLogIdsT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  bool m_dryRun{false};
+  bool m_dryRunHasBeenSet = false;
 
-    AWS_EC2_API Aws::String SerializePayload() const override;
+  Aws::Vector<Aws::String> m_flowLogIds;
+  bool m_flowLogIdsHasBeenSet = false;
+};
 
-  protected:
-    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
-
-  public:
-
-    ///@{
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const { return m_dryRun; }
-    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-    inline DeleteFlowLogsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>One or more flow log IDs.</p> <p>Constraint: Maximum of 1000 flow log
-     * IDs.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetFlowLogIds() const { return m_flowLogIds; }
-    inline bool FlowLogIdsHasBeenSet() const { return m_flowLogIdsHasBeenSet; }
-    template<typename FlowLogIdsT = Aws::Vector<Aws::String>>
-    void SetFlowLogIds(FlowLogIdsT&& value) { m_flowLogIdsHasBeenSet = true; m_flowLogIds = std::forward<FlowLogIdsT>(value); }
-    template<typename FlowLogIdsT = Aws::Vector<Aws::String>>
-    DeleteFlowLogsRequest& WithFlowLogIds(FlowLogIdsT&& value) { SetFlowLogIds(std::forward<FlowLogIdsT>(value)); return *this;}
-    template<typename FlowLogIdsT = Aws::String>
-    DeleteFlowLogsRequest& AddFlowLogIds(FlowLogIdsT&& value) { m_flowLogIdsHasBeenSet = true; m_flowLogIds.emplace_back(std::forward<FlowLogIdsT>(value)); return *this; }
-    ///@}
-  private:
-
-    bool m_dryRun{false};
-    bool m_dryRunHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_flowLogIds;
-    bool m_flowLogIdsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

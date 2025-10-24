@@ -12,39 +12,26 @@ using namespace Aws::CloudHSMV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateHsmRequest::SerializePayload() const
-{
+Aws::String CreateHsmRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_clusterIdHasBeenSet)
-  {
-   payload.WithString("ClusterId", m_clusterId);
-
+  if (m_clusterIdHasBeenSet) {
+    payload.WithString("ClusterId", m_clusterId);
   }
 
-  if(m_availabilityZoneHasBeenSet)
-  {
-   payload.WithString("AvailabilityZone", m_availabilityZone);
-
+  if (m_availabilityZoneHasBeenSet) {
+    payload.WithString("AvailabilityZone", m_availabilityZone);
   }
 
-  if(m_ipAddressHasBeenSet)
-  {
-   payload.WithString("IpAddress", m_ipAddress);
-
+  if (m_ipAddressHasBeenSet) {
+    payload.WithString("IpAddress", m_ipAddress);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateHsmRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateHsmRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "BaldrApiService.CreateHsm"));
   return headers;
-
 }
-
-
-
-

@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/finspace/Finspace_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/finspace/Finspace_EXPORTS.h>
 
-namespace Aws
-{
-namespace finspace
-{
-namespace Model
-{
-  enum class DnsStatus
-  {
-    NOT_SET,
-    NONE,
-    UPDATE_REQUESTED,
-    UPDATING,
-    FAILED_UPDATE,
-    SUCCESSFULLY_UPDATED
-  };
+namespace Aws {
+namespace finspace {
+namespace Model {
+enum class DnsStatus { NOT_SET, NONE, UPDATE_REQUESTED, UPDATING, FAILED_UPDATE, SUCCESSFULLY_UPDATED };
 
-namespace DnsStatusMapper
-{
+namespace DnsStatusMapper {
 AWS_FINSPACE_API DnsStatus GetDnsStatusForName(const Aws::String& name);
 
 AWS_FINSPACE_API Aws::String GetNameForDnsStatus(DnsStatus value);
-} // namespace DnsStatusMapper
-} // namespace Model
-} // namespace finspace
-} // namespace Aws
+}  // namespace DnsStatusMapper
+}  // namespace Model
+}  // namespace finspace
+}  // namespace Aws

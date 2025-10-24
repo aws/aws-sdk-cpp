@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/iam/IAM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iam/IAM_EXPORTS.h>
 
-namespace Aws
-{
-namespace IAM
-{
-namespace Model
-{
-  enum class AccessAdvisorUsageGranularityType
-  {
-    NOT_SET,
-    SERVICE_LEVEL,
-    ACTION_LEVEL
-  };
+namespace Aws {
+namespace IAM {
+namespace Model {
+enum class AccessAdvisorUsageGranularityType { NOT_SET, SERVICE_LEVEL, ACTION_LEVEL };
 
-namespace AccessAdvisorUsageGranularityTypeMapper
-{
+namespace AccessAdvisorUsageGranularityTypeMapper {
 AWS_IAM_API AccessAdvisorUsageGranularityType GetAccessAdvisorUsageGranularityTypeForName(const Aws::String& name);
 
 AWS_IAM_API Aws::String GetNameForAccessAdvisorUsageGranularityType(AccessAdvisorUsageGranularityType value);
-} // namespace AccessAdvisorUsageGranularityTypeMapper
-} // namespace Model
-} // namespace IAM
-} // namespace Aws
+}  // namespace AccessAdvisorUsageGranularityTypeMapper
+}  // namespace Model
+}  // namespace IAM
+}  // namespace Aws

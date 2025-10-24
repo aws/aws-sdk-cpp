@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/Explainability.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/Explainability.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-Explainability::Explainability(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Explainability::Explainability(JsonView jsonValue) { *this = jsonValue; }
 
-Explainability& Explainability::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Report"))
-  {
+Explainability& Explainability::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Report")) {
     m_report = jsonValue.GetObject("Report");
     m_reportHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Explainability::Jsonize() const
-{
+JsonValue Explainability::Jsonize() const {
   JsonValue payload;
 
-  if(m_reportHasBeenSet)
-  {
-   payload.WithObject("Report", m_report.Jsonize());
-
+  if (m_reportHasBeenSet) {
+    payload.WithObject("Report", m_report.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

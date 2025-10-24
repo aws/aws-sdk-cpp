@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/taxsettings/TaxSettings_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/taxsettings/TaxSettings_EXPORTS.h>
 
-namespace Aws
-{
-namespace TaxSettings
-{
-namespace Model
-{
-  enum class SupplementalTaxRegistrationType
-  {
-    NOT_SET,
-    VAT
-  };
+namespace Aws {
+namespace TaxSettings {
+namespace Model {
+enum class SupplementalTaxRegistrationType { NOT_SET, VAT };
 
-namespace SupplementalTaxRegistrationTypeMapper
-{
+namespace SupplementalTaxRegistrationTypeMapper {
 AWS_TAXSETTINGS_API SupplementalTaxRegistrationType GetSupplementalTaxRegistrationTypeForName(const Aws::String& name);
 
 AWS_TAXSETTINGS_API Aws::String GetNameForSupplementalTaxRegistrationType(SupplementalTaxRegistrationType value);
-} // namespace SupplementalTaxRegistrationTypeMapper
-} // namespace Model
-} // namespace TaxSettings
-} // namespace Aws
+}  // namespace SupplementalTaxRegistrationTypeMapper
+}  // namespace Model
+}  // namespace TaxSettings
+}  // namespace Aws

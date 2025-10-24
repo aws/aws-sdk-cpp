@@ -3,47 +3,40 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/CreateSubnetCidrReservationRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/CreateSubnetCidrReservationRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateSubnetCidrReservationRequest::SerializePayload() const
-{
+Aws::String CreateSubnetCidrReservationRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateSubnetCidrReservation&";
-  if(m_subnetIdHasBeenSet)
-  {
+  if (m_subnetIdHasBeenSet) {
     ss << "SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
   }
 
-  if(m_cidrHasBeenSet)
-  {
+  if (m_cidrHasBeenSet) {
     ss << "Cidr=" << StringUtils::URLEncode(m_cidr.c_str()) << "&";
   }
 
-  if(m_reservationTypeHasBeenSet)
-  {
-    ss << "ReservationType=" << StringUtils::URLEncode(SubnetCidrReservationTypeMapper::GetNameForSubnetCidrReservationType(m_reservationType)) << "&";
+  if (m_reservationTypeHasBeenSet) {
+    ss << "ReservationType="
+       << StringUtils::URLEncode(SubnetCidrReservationTypeMapper::GetNameForSubnetCidrReservationType(m_reservationType)) << "&";
   }
 
-  if(m_descriptionHasBeenSet)
-  {
+  if (m_descriptionHasBeenSet) {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_tagSpecificationsHasBeenSet)
-  {
+  if (m_tagSpecificationsHasBeenSet) {
     unsigned tagSpecificationsCount = 1;
-    for(auto& item : m_tagSpecifications)
-    {
+    for (auto& item : m_tagSpecifications) {
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
@@ -53,8 +46,4 @@ Aws::String CreateSubnetCidrReservationRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CreateSubnetCidrReservationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateSubnetCidrReservationRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

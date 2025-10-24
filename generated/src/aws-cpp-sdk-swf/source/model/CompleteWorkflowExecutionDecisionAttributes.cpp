@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/swf/model/CompleteWorkflowExecutionDecisionAttributes.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/swf/model/CompleteWorkflowExecutionDecisionAttributes.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SWF
-{
-namespace Model
-{
+namespace Aws {
+namespace SWF {
+namespace Model {
 
-CompleteWorkflowExecutionDecisionAttributes::CompleteWorkflowExecutionDecisionAttributes(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CompleteWorkflowExecutionDecisionAttributes::CompleteWorkflowExecutionDecisionAttributes(JsonView jsonValue) { *this = jsonValue; }
 
-CompleteWorkflowExecutionDecisionAttributes& CompleteWorkflowExecutionDecisionAttributes::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("result"))
-  {
+CompleteWorkflowExecutionDecisionAttributes& CompleteWorkflowExecutionDecisionAttributes::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("result")) {
     m_result = jsonValue.GetString("result");
     m_resultHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CompleteWorkflowExecutionDecisionAttributes::Jsonize() const
-{
+JsonValue CompleteWorkflowExecutionDecisionAttributes::Jsonize() const {
   JsonValue payload;
 
-  if(m_resultHasBeenSet)
-  {
-   payload.WithString("result", m_result);
-
+  if (m_resultHasBeenSet) {
+    payload.WithString("result", m_result);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SWF
-} // namespace Aws
+}  // namespace Model
+}  // namespace SWF
+}  // namespace Aws

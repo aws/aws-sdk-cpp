@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-SalesforceConnectorProfileProperties::SalesforceConnectorProfileProperties(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SalesforceConnectorProfileProperties::SalesforceConnectorProfileProperties(JsonView jsonValue) { *this = jsonValue; }
 
-SalesforceConnectorProfileProperties& SalesforceConnectorProfileProperties::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("instanceUrl"))
-  {
+SalesforceConnectorProfileProperties& SalesforceConnectorProfileProperties::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("instanceUrl")) {
     m_instanceUrl = jsonValue.GetString("instanceUrl");
     m_instanceUrlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("isSandboxEnvironment"))
-  {
+  if (jsonValue.ValueExists("isSandboxEnvironment")) {
     m_isSandboxEnvironment = jsonValue.GetBool("isSandboxEnvironment");
     m_isSandboxEnvironmentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("usePrivateLinkForMetadataAndAuthorization"))
-  {
+  if (jsonValue.ValueExists("usePrivateLinkForMetadataAndAuthorization")) {
     m_usePrivateLinkForMetadataAndAuthorization = jsonValue.GetBool("usePrivateLinkForMetadataAndAuthorization");
     m_usePrivateLinkForMetadataAndAuthorizationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SalesforceConnectorProfileProperties::Jsonize() const
-{
+JsonValue SalesforceConnectorProfileProperties::Jsonize() const {
   JsonValue payload;
 
-  if(m_instanceUrlHasBeenSet)
-  {
-   payload.WithString("instanceUrl", m_instanceUrl);
-
+  if (m_instanceUrlHasBeenSet) {
+    payload.WithString("instanceUrl", m_instanceUrl);
   }
 
-  if(m_isSandboxEnvironmentHasBeenSet)
-  {
-   payload.WithBool("isSandboxEnvironment", m_isSandboxEnvironment);
-
+  if (m_isSandboxEnvironmentHasBeenSet) {
+    payload.WithBool("isSandboxEnvironment", m_isSandboxEnvironment);
   }
 
-  if(m_usePrivateLinkForMetadataAndAuthorizationHasBeenSet)
-  {
-   payload.WithBool("usePrivateLinkForMetadataAndAuthorization", m_usePrivateLinkForMetadataAndAuthorization);
-
+  if (m_usePrivateLinkForMetadataAndAuthorizationHasBeenSet) {
+    payload.WithBool("usePrivateLinkForMetadataAndAuthorization", m_usePrivateLinkForMetadataAndAuthorization);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

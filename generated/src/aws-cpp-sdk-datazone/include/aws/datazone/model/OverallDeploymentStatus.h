@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datazone/DataZone_EXPORTS.h>
 
-namespace Aws
-{
-namespace DataZone
-{
-namespace Model
-{
-  enum class OverallDeploymentStatus
-  {
-    NOT_SET,
-    PENDING_DEPLOYMENT,
-    IN_PROGRESS,
-    SUCCESSFUL,
-    FAILED_VALIDATION,
-    FAILED_DEPLOYMENT
-  };
+namespace Aws {
+namespace DataZone {
+namespace Model {
+enum class OverallDeploymentStatus { NOT_SET, PENDING_DEPLOYMENT, IN_PROGRESS, SUCCESSFUL, FAILED_VALIDATION, FAILED_DEPLOYMENT };
 
-namespace OverallDeploymentStatusMapper
-{
+namespace OverallDeploymentStatusMapper {
 AWS_DATAZONE_API OverallDeploymentStatus GetOverallDeploymentStatusForName(const Aws::String& name);
 
 AWS_DATAZONE_API Aws::String GetNameForOverallDeploymentStatus(OverallDeploymentStatus value);
-} // namespace OverallDeploymentStatusMapper
-} // namespace Model
-} // namespace DataZone
-} // namespace Aws
+}  // namespace OverallDeploymentStatusMapper
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

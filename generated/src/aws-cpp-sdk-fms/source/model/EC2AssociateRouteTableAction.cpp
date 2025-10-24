@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fms/model/EC2AssociateRouteTableAction.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fms/model/EC2AssociateRouteTableAction.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FMS
-{
-namespace Model
-{
+namespace Aws {
+namespace FMS {
+namespace Model {
 
-EC2AssociateRouteTableAction::EC2AssociateRouteTableAction(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EC2AssociateRouteTableAction::EC2AssociateRouteTableAction(JsonView jsonValue) { *this = jsonValue; }
 
-EC2AssociateRouteTableAction& EC2AssociateRouteTableAction::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Description"))
-  {
+EC2AssociateRouteTableAction& EC2AssociateRouteTableAction::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RouteTableId"))
-  {
+  if (jsonValue.ValueExists("RouteTableId")) {
     m_routeTableId = jsonValue.GetObject("RouteTableId");
     m_routeTableIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SubnetId"))
-  {
+  if (jsonValue.ValueExists("SubnetId")) {
     m_subnetId = jsonValue.GetObject("SubnetId");
     m_subnetIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("GatewayId"))
-  {
+  if (jsonValue.ValueExists("GatewayId")) {
     m_gatewayId = jsonValue.GetObject("GatewayId");
     m_gatewayIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EC2AssociateRouteTableAction::Jsonize() const
-{
+JsonValue EC2AssociateRouteTableAction::Jsonize() const {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_routeTableIdHasBeenSet)
-  {
-   payload.WithObject("RouteTableId", m_routeTableId.Jsonize());
-
+  if (m_routeTableIdHasBeenSet) {
+    payload.WithObject("RouteTableId", m_routeTableId.Jsonize());
   }
 
-  if(m_subnetIdHasBeenSet)
-  {
-   payload.WithObject("SubnetId", m_subnetId.Jsonize());
-
+  if (m_subnetIdHasBeenSet) {
+    payload.WithObject("SubnetId", m_subnetId.Jsonize());
   }
 
-  if(m_gatewayIdHasBeenSet)
-  {
-   payload.WithObject("GatewayId", m_gatewayId.Jsonize());
-
+  if (m_gatewayIdHasBeenSet) {
+    payload.WithObject("GatewayId", m_gatewayId.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FMS
-} // namespace Aws
+}  // namespace Model
+}  // namespace FMS
+}  // namespace Aws

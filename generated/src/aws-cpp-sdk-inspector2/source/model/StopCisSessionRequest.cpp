@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/inspector2/model/StopCisSessionRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/inspector2/model/StopCisSessionRequest.h>
 
 #include <utility>
 
@@ -12,31 +12,20 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StopCisSessionRequest::SerializePayload() const
-{
+Aws::String StopCisSessionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_scanJobIdHasBeenSet)
-  {
-   payload.WithString("scanJobId", m_scanJobId);
-
+  if (m_scanJobIdHasBeenSet) {
+    payload.WithString("scanJobId", m_scanJobId);
   }
 
-  if(m_sessionTokenHasBeenSet)
-  {
-   payload.WithString("sessionToken", m_sessionToken);
-
+  if (m_sessionTokenHasBeenSet) {
+    payload.WithString("sessionToken", m_sessionToken);
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithObject("message", m_message.Jsonize());
-
+  if (m_messageHasBeenSet) {
+    payload.WithObject("message", m_message.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

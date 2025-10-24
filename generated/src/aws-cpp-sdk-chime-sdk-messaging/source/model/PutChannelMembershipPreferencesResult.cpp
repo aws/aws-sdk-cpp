@@ -4,10 +4,10 @@
  */
 
 #include <aws/chime-sdk-messaging/model/PutChannelMembershipPreferencesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -17,38 +17,32 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutChannelMembershipPreferencesResult::PutChannelMembershipPreferencesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+PutChannelMembershipPreferencesResult::PutChannelMembershipPreferencesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-PutChannelMembershipPreferencesResult& PutChannelMembershipPreferencesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+PutChannelMembershipPreferencesResult& PutChannelMembershipPreferencesResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("ChannelArn"))
-  {
+  if (jsonValue.ValueExists("ChannelArn")) {
     m_channelArn = jsonValue.GetString("ChannelArn");
     m_channelArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Member"))
-  {
+  if (jsonValue.ValueExists("Member")) {
     m_member = jsonValue.GetObject("Member");
     m_memberHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Preferences"))
-  {
+  if (jsonValue.ValueExists("Preferences")) {
     m_preferences = jsonValue.GetObject("Preferences");
     m_preferencesHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

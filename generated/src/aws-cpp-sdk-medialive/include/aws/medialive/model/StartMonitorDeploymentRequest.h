@@ -4,66 +4,73 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
-#include <aws/medialive/MediaLiveRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLiveRequest.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
+/**
+ * Placeholder documentation for StartMonitorDeploymentRequest<p><h3>See Also:</h3>
+ * <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartMonitorDeploymentRequest">AWS
+ * API Reference</a></p>
+ */
+class StartMonitorDeploymentRequest : public MediaLiveRequest {
+ public:
+  AWS_MEDIALIVE_API StartMonitorDeploymentRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "StartMonitorDeployment"; }
+
+  AWS_MEDIALIVE_API Aws::String SerializePayload() const override;
+
+  ///@{
+
+  inline bool GetDryRun() const { return m_dryRun; }
+  inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+  inline void SetDryRun(bool value) {
+    m_dryRunHasBeenSet = true;
+    m_dryRun = value;
+  }
+  inline StartMonitorDeploymentRequest& WithDryRun(bool value) {
+    SetDryRun(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
-   * Placeholder documentation for StartMonitorDeploymentRequest<p><h3>See Also:</h3>
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartMonitorDeploymentRequest">AWS
-   * API Reference</a></p>
+   * A signal map's identifier. Can be either be its id or current name.
    */
-  class StartMonitorDeploymentRequest : public MediaLiveRequest
-  {
-  public:
-    AWS_MEDIALIVE_API StartMonitorDeploymentRequest() = default;
+  inline const Aws::String& GetIdentifier() const { return m_identifier; }
+  inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
+  template <typename IdentifierT = Aws::String>
+  void SetIdentifier(IdentifierT&& value) {
+    m_identifierHasBeenSet = true;
+    m_identifier = std::forward<IdentifierT>(value);
+  }
+  template <typename IdentifierT = Aws::String>
+  StartMonitorDeploymentRequest& WithIdentifier(IdentifierT&& value) {
+    SetIdentifier(std::forward<IdentifierT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  bool m_dryRun{false};
+  bool m_dryRunHasBeenSet = false;
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "StartMonitorDeployment"; }
+  Aws::String m_identifier;
+  bool m_identifierHasBeenSet = false;
+};
 
-    AWS_MEDIALIVE_API Aws::String SerializePayload() const override;
-
-
-    ///@{
-    
-    inline bool GetDryRun() const { return m_dryRun; }
-    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-    inline StartMonitorDeploymentRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * A signal map's identifier. Can be either be its id or current name.
-     */
-    inline const Aws::String& GetIdentifier() const { return m_identifier; }
-    inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    template<typename IdentifierT = Aws::String>
-    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
-    template<typename IdentifierT = Aws::String>
-    StartMonitorDeploymentRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
-    ///@}
-  private:
-
-    bool m_dryRun{false};
-    bool m_dryRunHasBeenSet = false;
-
-    Aws::String m_identifier;
-    bool m_identifierHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

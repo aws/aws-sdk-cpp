@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/qconnect/QConnect_EXPORTS.h>
 
-namespace Aws
-{
-namespace QConnect
-{
-enum class QConnectErrors
-{
-  //From Core//
+namespace Aws {
+namespace QConnect {
+enum class QConnectErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class QConnectErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class QConnectErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   DEPENDENCY_FAILED,
   PRECONDITION_FAILED,
   SERVICE_QUOTA_EXCEEDED,
@@ -55,9 +52,8 @@ enum class QConnectErrors
   UNAUTHORIZED
 };
 
-class AWS_QCONNECT_API QConnectError : public Aws::Client::AWSError<QConnectErrors>
-{
-public:
+class AWS_QCONNECT_API QConnectError : public Aws::Client::AWSError<QConnectErrors> {
+ public:
   QConnectError() {}
   QConnectError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<QConnectErrors>(rhs) {}
   QConnectError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<QConnectErrors>(rhs) {}
@@ -68,10 +64,9 @@ public:
   T GetModeledError();
 };
 
-namespace QConnectErrorMapper
-{
-  AWS_QCONNECT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace QConnectErrorMapper {
+AWS_QCONNECT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace QConnect
-} // namespace Aws
+}  // namespace QConnect
+}  // namespace Aws

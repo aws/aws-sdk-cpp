@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kms/model/MultiRegionKey.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kms/model/MultiRegionKey.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace KMS
-{
-namespace Model
-{
+namespace Aws {
+namespace KMS {
+namespace Model {
 
-MultiRegionKey::MultiRegionKey(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MultiRegionKey::MultiRegionKey(JsonView jsonValue) { *this = jsonValue; }
 
-MultiRegionKey& MultiRegionKey::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Arn"))
-  {
+MultiRegionKey& MultiRegionKey::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Region"))
-  {
+  if (jsonValue.ValueExists("Region")) {
     m_region = jsonValue.GetString("Region");
     m_regionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MultiRegionKey::Jsonize() const
-{
+JsonValue MultiRegionKey::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_regionHasBeenSet)
-  {
-   payload.WithString("Region", m_region);
-
+  if (m_regionHasBeenSet) {
+    payload.WithString("Region", m_region);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace KMS
-} // namespace Aws
+}  // namespace Model
+}  // namespace KMS
+}  // namespace Aws

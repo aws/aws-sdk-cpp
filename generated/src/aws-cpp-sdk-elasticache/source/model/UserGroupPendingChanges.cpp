@@ -3,41 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/UserGroupPendingChanges.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticache/model/UserGroupPendingChanges.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ElastiCache
-{
-namespace Model
-{
+namespace Aws {
+namespace ElastiCache {
+namespace Model {
 
-UserGroupPendingChanges::UserGroupPendingChanges(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+UserGroupPendingChanges::UserGroupPendingChanges(const XmlNode& xmlNode) { *this = xmlNode; }
 
-UserGroupPendingChanges& UserGroupPendingChanges::operator =(const XmlNode& xmlNode)
-{
+UserGroupPendingChanges& UserGroupPendingChanges::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode userIdsToRemoveNode = resultNode.FirstChild("UserIdsToRemove");
-    if(!userIdsToRemoveNode.IsNull())
-    {
+    if (!userIdsToRemoveNode.IsNull()) {
       XmlNode userIdsToRemoveMember = userIdsToRemoveNode.FirstChild("member");
       m_userIdsToRemoveHasBeenSet = !userIdsToRemoveMember.IsNull();
-      while(!userIdsToRemoveMember.IsNull())
-      {
+      while (!userIdsToRemoveMember.IsNull()) {
         m_userIdsToRemove.push_back(userIdsToRemoveMember.GetText());
         userIdsToRemoveMember = userIdsToRemoveMember.NextNode("member");
       }
@@ -45,12 +35,10 @@ UserGroupPendingChanges& UserGroupPendingChanges::operator =(const XmlNode& xmlN
       m_userIdsToRemoveHasBeenSet = true;
     }
     XmlNode userIdsToAddNode = resultNode.FirstChild("UserIdsToAdd");
-    if(!userIdsToAddNode.IsNull())
-    {
+    if (!userIdsToAddNode.IsNull()) {
       XmlNode userIdsToAddMember = userIdsToAddNode.FirstChild("member");
       m_userIdsToAddHasBeenSet = !userIdsToAddMember.IsNull();
-      while(!userIdsToAddMember.IsNull())
-      {
+      while (!userIdsToAddMember.IsNull()) {
         m_userIdsToAdd.push_back(userIdsToAddMember.GetText());
         userIdsToAddMember = userIdsToAddMember.NextNode("member");
       }
@@ -62,48 +50,39 @@ UserGroupPendingChanges& UserGroupPendingChanges::operator =(const XmlNode& xmlN
   return *this;
 }
 
-void UserGroupPendingChanges::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_userIdsToRemoveHasBeenSet)
-  {
-      unsigned userIdsToRemoveIdx = 1;
-      for(auto& item : m_userIdsToRemove)
-      {
-        oStream << location << index << locationValue << ".UserIdsToRemove.member." << userIdsToRemoveIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
+void UserGroupPendingChanges::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_userIdsToRemoveHasBeenSet) {
+    unsigned userIdsToRemoveIdx = 1;
+    for (auto& item : m_userIdsToRemove) {
+      oStream << location << index << locationValue << ".UserIdsToRemove.member." << userIdsToRemoveIdx++ << "="
+              << StringUtils::URLEncode(item.c_str()) << "&";
+    }
   }
 
-  if(m_userIdsToAddHasBeenSet)
-  {
-      unsigned userIdsToAddIdx = 1;
-      for(auto& item : m_userIdsToAdd)
-      {
-        oStream << location << index << locationValue << ".UserIdsToAdd.member." << userIdsToAddIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
-  }
-
-}
-
-void UserGroupPendingChanges::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_userIdsToRemoveHasBeenSet)
-  {
-      unsigned userIdsToRemoveIdx = 1;
-      for(auto& item : m_userIdsToRemove)
-      {
-        oStream << location << ".UserIdsToRemove.member." << userIdsToRemoveIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
-  }
-  if(m_userIdsToAddHasBeenSet)
-  {
-      unsigned userIdsToAddIdx = 1;
-      for(auto& item : m_userIdsToAdd)
-      {
-        oStream << location << ".UserIdsToAdd.member." << userIdsToAddIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-      }
+  if (m_userIdsToAddHasBeenSet) {
+    unsigned userIdsToAddIdx = 1;
+    for (auto& item : m_userIdsToAdd) {
+      oStream << location << index << locationValue << ".UserIdsToAdd.member." << userIdsToAddIdx++ << "="
+              << StringUtils::URLEncode(item.c_str()) << "&";
+    }
   }
 }
 
-} // namespace Model
-} // namespace ElastiCache
-} // namespace Aws
+void UserGroupPendingChanges::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_userIdsToRemoveHasBeenSet) {
+    unsigned userIdsToRemoveIdx = 1;
+    for (auto& item : m_userIdsToRemove) {
+      oStream << location << ".UserIdsToRemove.member." << userIdsToRemoveIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+    }
+  }
+  if (m_userIdsToAddHasBeenSet) {
+    unsigned userIdsToAddIdx = 1;
+    for (auto& item : m_userIdsToAdd) {
+      oStream << location << ".UserIdsToAdd.member." << userIdsToAddIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+    }
+  }
+}
+
+}  // namespace Model
+}  // namespace ElastiCache
+}  // namespace Aws

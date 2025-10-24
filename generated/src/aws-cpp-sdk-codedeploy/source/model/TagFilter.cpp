@@ -11,62 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeDeploy
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeDeploy {
+namespace Model {
 
-TagFilter::TagFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TagFilter::TagFilter(JsonView jsonValue) { *this = jsonValue; }
 
-TagFilter& TagFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Key"))
-  {
+TagFilter& TagFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Key")) {
     m_key = jsonValue.GetString("Key");
     m_keyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Value"))
-  {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetString("Value");
     m_valueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = TagFilterTypeMapper::GetTagFilterTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TagFilter::Jsonize() const
-{
+JsonValue TagFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_keyHasBeenSet)
-  {
-   payload.WithString("Key", m_key);
-
+  if (m_keyHasBeenSet) {
+    payload.WithString("Key", m_key);
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("Value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("Value", m_value);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", TagFilterTypeMapper::GetNameForTagFilterType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", TagFilterTypeMapper::GetNameForTagFilterType(m_type));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeDeploy
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeDeploy
+}  // namespace Aws

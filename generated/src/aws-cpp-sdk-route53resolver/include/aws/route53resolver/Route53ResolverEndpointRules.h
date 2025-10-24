@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/route53resolver/Route53Resolver_EXPORTS.h>
 
-namespace Aws
-{
-namespace Route53Resolver
-{
-class Route53ResolverEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace Route53Resolver {
+class Route53ResolverEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace Route53Resolver
-} // namespace Aws
+}  // namespace Route53Resolver
+}  // namespace Aws

@@ -3,29 +3,25 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/DeleteReplicationGroupRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticache/model/DeleteReplicationGroupRequest.h>
 
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteReplicationGroupRequest::SerializePayload() const
-{
+Aws::String DeleteReplicationGroupRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteReplicationGroup&";
-  if(m_replicationGroupIdHasBeenSet)
-  {
+  if (m_replicationGroupIdHasBeenSet) {
     ss << "ReplicationGroupId=" << StringUtils::URLEncode(m_replicationGroupId.c_str()) << "&";
   }
 
-  if(m_retainPrimaryClusterHasBeenSet)
-  {
+  if (m_retainPrimaryClusterHasBeenSet) {
     ss << "RetainPrimaryCluster=" << std::boolalpha << m_retainPrimaryCluster << "&";
   }
 
-  if(m_finalSnapshotIdentifierHasBeenSet)
-  {
+  if (m_finalSnapshotIdentifierHasBeenSet) {
     ss << "FinalSnapshotIdentifier=" << StringUtils::URLEncode(m_finalSnapshotIdentifier.c_str()) << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String DeleteReplicationGroupRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteReplicationGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteReplicationGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

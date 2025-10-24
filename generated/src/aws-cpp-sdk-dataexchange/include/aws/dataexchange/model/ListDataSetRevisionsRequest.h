@@ -4,86 +4,98 @@
  */
 
 #pragma once
-#include <aws/dataexchange/DataExchange_EXPORTS.h>
-#include <aws/dataexchange/DataExchangeRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dataexchange/DataExchangeRequest.h>
+#include <aws/dataexchange/DataExchange_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Http
-{
-    class URI;
-} //namespace Http
-namespace DataExchange
-{
-namespace Model
-{
+namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
+namespace DataExchange {
+namespace Model {
 
+/**
+ */
+class ListDataSetRevisionsRequest : public DataExchangeRequest {
+ public:
+  AWS_DATAEXCHANGE_API ListDataSetRevisionsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "ListDataSetRevisions"; }
+
+  AWS_DATAEXCHANGE_API Aws::String SerializePayload() const override;
+
+  AWS_DATAEXCHANGE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+  ///@{
   /**
+   * <p>The unique identifier for a data set.</p>
    */
-  class ListDataSetRevisionsRequest : public DataExchangeRequest
-  {
-  public:
-    AWS_DATAEXCHANGE_API ListDataSetRevisionsRequest() = default;
+  inline const Aws::String& GetDataSetId() const { return m_dataSetId; }
+  inline bool DataSetIdHasBeenSet() const { return m_dataSetIdHasBeenSet; }
+  template <typename DataSetIdT = Aws::String>
+  void SetDataSetId(DataSetIdT&& value) {
+    m_dataSetIdHasBeenSet = true;
+    m_dataSetId = std::forward<DataSetIdT>(value);
+  }
+  template <typename DataSetIdT = Aws::String>
+  ListDataSetRevisionsRequest& WithDataSetId(DataSetIdT&& value) {
+    SetDataSetId(std::forward<DataSetIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "ListDataSetRevisions"; }
+  ///@{
+  /**
+   * <p>The maximum number of results returned by a single call.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline ListDataSetRevisionsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
 
-    AWS_DATAEXCHANGE_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>The token value retrieved from a previous call to access the next page of
+   * results.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListDataSetRevisionsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_dataSetId;
+  bool m_dataSetIdHasBeenSet = false;
 
-    AWS_DATAEXCHANGE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+  int m_maxResults{0};
+  bool m_maxResultsHasBeenSet = false;
 
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The unique identifier for a data set.</p>
-     */
-    inline const Aws::String& GetDataSetId() const { return m_dataSetId; }
-    inline bool DataSetIdHasBeenSet() const { return m_dataSetIdHasBeenSet; }
-    template<typename DataSetIdT = Aws::String>
-    void SetDataSetId(DataSetIdT&& value) { m_dataSetIdHasBeenSet = true; m_dataSetId = std::forward<DataSetIdT>(value); }
-    template<typename DataSetIdT = Aws::String>
-    ListDataSetRevisionsRequest& WithDataSetId(DataSetIdT&& value) { SetDataSetId(std::forward<DataSetIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The maximum number of results returned by a single call.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListDataSetRevisionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The token value retrieved from a previous call to access the next page of
-     * results.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListDataSetRevisionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_dataSetId;
-    bool m_dataSetIdHasBeenSet = false;
-
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace DataExchange
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataExchange
+}  // namespace Aws

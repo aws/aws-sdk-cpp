@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/imagebuilder/model/Logging.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/imagebuilder/model/Logging.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace imagebuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace imagebuilder {
+namespace Model {
 
-Logging::Logging(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Logging::Logging(JsonView jsonValue) { *this = jsonValue; }
 
-Logging& Logging::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("s3Logs"))
-  {
+Logging& Logging::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("s3Logs")) {
     m_s3Logs = jsonValue.GetObject("s3Logs");
     m_s3LogsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Logging::Jsonize() const
-{
+JsonValue Logging::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3LogsHasBeenSet)
-  {
-   payload.WithObject("s3Logs", m_s3Logs.Jsonize());
-
+  if (m_s3LogsHasBeenSet) {
+    payload.WithObject("s3Logs", m_s3Logs.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace imagebuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

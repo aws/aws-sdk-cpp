@@ -3,48 +3,40 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kendra/model/SqlConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kendra/model/SqlConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace kendra
-{
-namespace Model
-{
+namespace Aws {
+namespace kendra {
+namespace Model {
 
-SqlConfiguration::SqlConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SqlConfiguration::SqlConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-SqlConfiguration& SqlConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("QueryIdentifiersEnclosingOption"))
-  {
-    m_queryIdentifiersEnclosingOption = QueryIdentifiersEnclosingOptionMapper::GetQueryIdentifiersEnclosingOptionForName(jsonValue.GetString("QueryIdentifiersEnclosingOption"));
+SqlConfiguration& SqlConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("QueryIdentifiersEnclosingOption")) {
+    m_queryIdentifiersEnclosingOption = QueryIdentifiersEnclosingOptionMapper::GetQueryIdentifiersEnclosingOptionForName(
+        jsonValue.GetString("QueryIdentifiersEnclosingOption"));
     m_queryIdentifiersEnclosingOptionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SqlConfiguration::Jsonize() const
-{
+JsonValue SqlConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_queryIdentifiersEnclosingOptionHasBeenSet)
-  {
-   payload.WithString("QueryIdentifiersEnclosingOption", QueryIdentifiersEnclosingOptionMapper::GetNameForQueryIdentifiersEnclosingOption(m_queryIdentifiersEnclosingOption));
+  if (m_queryIdentifiersEnclosingOptionHasBeenSet) {
+    payload.WithString("QueryIdentifiersEnclosingOption",
+                       QueryIdentifiersEnclosingOptionMapper::GetNameForQueryIdentifiersEnclosingOption(m_queryIdentifiersEnclosingOption));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace kendra
-} // namespace Aws
+}  // namespace Model
+}  // namespace kendra
+}  // namespace Aws

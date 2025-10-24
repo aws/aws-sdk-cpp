@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/logs/CloudWatchLogs_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudWatchLogs
-{
-namespace Model
-{
-  enum class IntegrationType
-  {
-    NOT_SET,
-    OPENSEARCH
-  };
+namespace Aws {
+namespace CloudWatchLogs {
+namespace Model {
+enum class IntegrationType { NOT_SET, OPENSEARCH };
 
-namespace IntegrationTypeMapper
-{
+namespace IntegrationTypeMapper {
 AWS_CLOUDWATCHLOGS_API IntegrationType GetIntegrationTypeForName(const Aws::String& name);
 
 AWS_CLOUDWATCHLOGS_API Aws::String GetNameForIntegrationType(IntegrationType value);
-} // namespace IntegrationTypeMapper
-} // namespace Model
-} // namespace CloudWatchLogs
-} // namespace Aws
+}  // namespace IntegrationTypeMapper
+}  // namespace Model
+}  // namespace CloudWatchLogs
+}  // namespace Aws

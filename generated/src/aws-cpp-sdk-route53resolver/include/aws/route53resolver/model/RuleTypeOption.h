@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/route53resolver/Route53Resolver_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/route53resolver/Route53Resolver_EXPORTS.h>
 
-namespace Aws
-{
-namespace Route53Resolver
-{
-namespace Model
-{
-  enum class RuleTypeOption
-  {
-    NOT_SET,
-    FORWARD,
-    SYSTEM,
-    RECURSIVE,
-    DELEGATE
-  };
+namespace Aws {
+namespace Route53Resolver {
+namespace Model {
+enum class RuleTypeOption { NOT_SET, FORWARD, SYSTEM, RECURSIVE, DELEGATE };
 
-namespace RuleTypeOptionMapper
-{
+namespace RuleTypeOptionMapper {
 AWS_ROUTE53RESOLVER_API RuleTypeOption GetRuleTypeOptionForName(const Aws::String& name);
 
 AWS_ROUTE53RESOLVER_API Aws::String GetNameForRuleTypeOption(RuleTypeOption value);
-} // namespace RuleTypeOptionMapper
-} // namespace Model
-} // namespace Route53Resolver
-} // namespace Aws
+}  // namespace RuleTypeOptionMapper
+}  // namespace Model
+}  // namespace Route53Resolver
+}  // namespace Aws

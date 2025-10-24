@@ -4,229 +4,294 @@
  */
 
 #pragma once
-#include <aws/personalize/Personalize_EXPORTS.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/personalize/Personalize_EXPORTS.h>
 #include <aws/personalize/model/BatchSegmentJobInput.h>
 #include <aws/personalize/model/BatchSegmentJobOutput.h>
-#include <aws/core/utils/DateTime.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace Personalize
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Personalize {
+namespace Model {
 
+/**
+ * <p>Contains information on a batch segment job.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/BatchSegmentJob">AWS
+ * API Reference</a></p>
+ */
+class BatchSegmentJob {
+ public:
+  AWS_PERSONALIZE_API BatchSegmentJob() = default;
+  AWS_PERSONALIZE_API BatchSegmentJob(Aws::Utils::Json::JsonView jsonValue);
+  AWS_PERSONALIZE_API BatchSegmentJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Contains information on a batch segment job.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/BatchSegmentJob">AWS
-   * API Reference</a></p>
+   * <p>The name of the batch segment job.</p>
    */
-  class BatchSegmentJob
-  {
-  public:
-    AWS_PERSONALIZE_API BatchSegmentJob() = default;
-    AWS_PERSONALIZE_API BatchSegmentJob(Aws::Utils::Json::JsonView jsonValue);
-    AWS_PERSONALIZE_API BatchSegmentJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetJobName() const { return m_jobName; }
+  inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
+  template <typename JobNameT = Aws::String>
+  void SetJobName(JobNameT&& value) {
+    m_jobNameHasBeenSet = true;
+    m_jobName = std::forward<JobNameT>(value);
+  }
+  template <typename JobNameT = Aws::String>
+  BatchSegmentJob& WithJobName(JobNameT&& value) {
+    SetJobName(std::forward<JobNameT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the batch segment job.</p>
+   */
+  inline const Aws::String& GetBatchSegmentJobArn() const { return m_batchSegmentJobArn; }
+  inline bool BatchSegmentJobArnHasBeenSet() const { return m_batchSegmentJobArnHasBeenSet; }
+  template <typename BatchSegmentJobArnT = Aws::String>
+  void SetBatchSegmentJobArn(BatchSegmentJobArnT&& value) {
+    m_batchSegmentJobArnHasBeenSet = true;
+    m_batchSegmentJobArn = std::forward<BatchSegmentJobArnT>(value);
+  }
+  template <typename BatchSegmentJobArnT = Aws::String>
+  BatchSegmentJob& WithBatchSegmentJobArn(BatchSegmentJobArnT&& value) {
+    SetBatchSegmentJobArn(std::forward<BatchSegmentJobArnT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The name of the batch segment job.</p>
-     */
-    inline const Aws::String& GetJobName() const { return m_jobName; }
-    inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
-    template<typename JobNameT = Aws::String>
-    void SetJobName(JobNameT&& value) { m_jobNameHasBeenSet = true; m_jobName = std::forward<JobNameT>(value); }
-    template<typename JobNameT = Aws::String>
-    BatchSegmentJob& WithJobName(JobNameT&& value) { SetJobName(std::forward<JobNameT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The ARN of the filter used on the batch segment job.</p>
+   */
+  inline const Aws::String& GetFilterArn() const { return m_filterArn; }
+  inline bool FilterArnHasBeenSet() const { return m_filterArnHasBeenSet; }
+  template <typename FilterArnT = Aws::String>
+  void SetFilterArn(FilterArnT&& value) {
+    m_filterArnHasBeenSet = true;
+    m_filterArn = std::forward<FilterArnT>(value);
+  }
+  template <typename FilterArnT = Aws::String>
+  BatchSegmentJob& WithFilterArn(FilterArnT&& value) {
+    SetFilterArn(std::forward<FilterArnT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the batch segment job.</p>
-     */
-    inline const Aws::String& GetBatchSegmentJobArn() const { return m_batchSegmentJobArn; }
-    inline bool BatchSegmentJobArnHasBeenSet() const { return m_batchSegmentJobArnHasBeenSet; }
-    template<typename BatchSegmentJobArnT = Aws::String>
-    void SetBatchSegmentJobArn(BatchSegmentJobArnT&& value) { m_batchSegmentJobArnHasBeenSet = true; m_batchSegmentJobArn = std::forward<BatchSegmentJobArnT>(value); }
-    template<typename BatchSegmentJobArnT = Aws::String>
-    BatchSegmentJob& WithBatchSegmentJobArn(BatchSegmentJobArnT&& value) { SetBatchSegmentJobArn(std::forward<BatchSegmentJobArnT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>If the batch segment job failed, the reason for the failure.</p>
+   */
+  inline const Aws::String& GetFailureReason() const { return m_failureReason; }
+  inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
+  template <typename FailureReasonT = Aws::String>
+  void SetFailureReason(FailureReasonT&& value) {
+    m_failureReasonHasBeenSet = true;
+    m_failureReason = std::forward<FailureReasonT>(value);
+  }
+  template <typename FailureReasonT = Aws::String>
+  BatchSegmentJob& WithFailureReason(FailureReasonT&& value) {
+    SetFailureReason(std::forward<FailureReasonT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The ARN of the filter used on the batch segment job.</p>
-     */
-    inline const Aws::String& GetFilterArn() const { return m_filterArn; }
-    inline bool FilterArnHasBeenSet() const { return m_filterArnHasBeenSet; }
-    template<typename FilterArnT = Aws::String>
-    void SetFilterArn(FilterArnT&& value) { m_filterArnHasBeenSet = true; m_filterArn = std::forward<FilterArnT>(value); }
-    template<typename FilterArnT = Aws::String>
-    BatchSegmentJob& WithFilterArn(FilterArnT&& value) { SetFilterArn(std::forward<FilterArnT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the solution version used by the batch
+   * segment job to generate batch segments.</p>
+   */
+  inline const Aws::String& GetSolutionVersionArn() const { return m_solutionVersionArn; }
+  inline bool SolutionVersionArnHasBeenSet() const { return m_solutionVersionArnHasBeenSet; }
+  template <typename SolutionVersionArnT = Aws::String>
+  void SetSolutionVersionArn(SolutionVersionArnT&& value) {
+    m_solutionVersionArnHasBeenSet = true;
+    m_solutionVersionArn = std::forward<SolutionVersionArnT>(value);
+  }
+  template <typename SolutionVersionArnT = Aws::String>
+  BatchSegmentJob& WithSolutionVersionArn(SolutionVersionArnT&& value) {
+    SetSolutionVersionArn(std::forward<SolutionVersionArnT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>If the batch segment job failed, the reason for the failure.</p>
-     */
-    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
-    inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
-    template<typename FailureReasonT = Aws::String>
-    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
-    template<typename FailureReasonT = Aws::String>
-    BatchSegmentJob& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The number of predicted users generated by the batch segment job for each
+   * line of input data. The maximum number of users per segment is 5 million.</p>
+   */
+  inline int GetNumResults() const { return m_numResults; }
+  inline bool NumResultsHasBeenSet() const { return m_numResultsHasBeenSet; }
+  inline void SetNumResults(int value) {
+    m_numResultsHasBeenSet = true;
+    m_numResults = value;
+  }
+  inline BatchSegmentJob& WithNumResults(int value) {
+    SetNumResults(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the solution version used by the batch
-     * segment job to generate batch segments.</p>
-     */
-    inline const Aws::String& GetSolutionVersionArn() const { return m_solutionVersionArn; }
-    inline bool SolutionVersionArnHasBeenSet() const { return m_solutionVersionArnHasBeenSet; }
-    template<typename SolutionVersionArnT = Aws::String>
-    void SetSolutionVersionArn(SolutionVersionArnT&& value) { m_solutionVersionArnHasBeenSet = true; m_solutionVersionArn = std::forward<SolutionVersionArnT>(value); }
-    template<typename SolutionVersionArnT = Aws::String>
-    BatchSegmentJob& WithSolutionVersionArn(SolutionVersionArnT&& value) { SetSolutionVersionArn(std::forward<SolutionVersionArnT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The Amazon S3 path that leads to the input data used to generate the batch
+   * segment job.</p>
+   */
+  inline const BatchSegmentJobInput& GetJobInput() const { return m_jobInput; }
+  inline bool JobInputHasBeenSet() const { return m_jobInputHasBeenSet; }
+  template <typename JobInputT = BatchSegmentJobInput>
+  void SetJobInput(JobInputT&& value) {
+    m_jobInputHasBeenSet = true;
+    m_jobInput = std::forward<JobInputT>(value);
+  }
+  template <typename JobInputT = BatchSegmentJobInput>
+  BatchSegmentJob& WithJobInput(JobInputT&& value) {
+    SetJobInput(std::forward<JobInputT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The number of predicted users generated by the batch segment job for each
-     * line of input data. The maximum number of users per segment is 5 million.</p>
-     */
-    inline int GetNumResults() const { return m_numResults; }
-    inline bool NumResultsHasBeenSet() const { return m_numResultsHasBeenSet; }
-    inline void SetNumResults(int value) { m_numResultsHasBeenSet = true; m_numResults = value; }
-    inline BatchSegmentJob& WithNumResults(int value) { SetNumResults(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The Amazon S3 bucket that contains the output data generated by the batch
+   * segment job.</p>
+   */
+  inline const BatchSegmentJobOutput& GetJobOutput() const { return m_jobOutput; }
+  inline bool JobOutputHasBeenSet() const { return m_jobOutputHasBeenSet; }
+  template <typename JobOutputT = BatchSegmentJobOutput>
+  void SetJobOutput(JobOutputT&& value) {
+    m_jobOutputHasBeenSet = true;
+    m_jobOutput = std::forward<JobOutputT>(value);
+  }
+  template <typename JobOutputT = BatchSegmentJobOutput>
+  BatchSegmentJob& WithJobOutput(JobOutputT&& value) {
+    SetJobOutput(std::forward<JobOutputT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The Amazon S3 path that leads to the input data used to generate the batch
-     * segment job.</p>
-     */
-    inline const BatchSegmentJobInput& GetJobInput() const { return m_jobInput; }
-    inline bool JobInputHasBeenSet() const { return m_jobInputHasBeenSet; }
-    template<typename JobInputT = BatchSegmentJobInput>
-    void SetJobInput(JobInputT&& value) { m_jobInputHasBeenSet = true; m_jobInput = std::forward<JobInputT>(value); }
-    template<typename JobInputT = BatchSegmentJobInput>
-    BatchSegmentJob& WithJobInput(JobInputT&& value) { SetJobInput(std::forward<JobInputT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The ARN of the Amazon Identity and Access Management (IAM) role that
+   * requested the batch segment job.</p>
+   */
+  inline const Aws::String& GetRoleArn() const { return m_roleArn; }
+  inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+  template <typename RoleArnT = Aws::String>
+  void SetRoleArn(RoleArnT&& value) {
+    m_roleArnHasBeenSet = true;
+    m_roleArn = std::forward<RoleArnT>(value);
+  }
+  template <typename RoleArnT = Aws::String>
+  BatchSegmentJob& WithRoleArn(RoleArnT&& value) {
+    SetRoleArn(std::forward<RoleArnT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The Amazon S3 bucket that contains the output data generated by the batch
-     * segment job.</p>
-     */
-    inline const BatchSegmentJobOutput& GetJobOutput() const { return m_jobOutput; }
-    inline bool JobOutputHasBeenSet() const { return m_jobOutputHasBeenSet; }
-    template<typename JobOutputT = BatchSegmentJobOutput>
-    void SetJobOutput(JobOutputT&& value) { m_jobOutputHasBeenSet = true; m_jobOutput = std::forward<JobOutputT>(value); }
-    template<typename JobOutputT = BatchSegmentJobOutput>
-    BatchSegmentJob& WithJobOutput(JobOutputT&& value) { SetJobOutput(std::forward<JobOutputT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The status of the batch segment job. The status is one of the following
+   * values:</p> <ul> <li> <p>PENDING</p> </li> <li> <p>IN PROGRESS</p> </li> <li>
+   * <p>ACTIVE</p> </li> <li> <p>CREATE FAILED</p> </li> </ul>
+   */
+  inline const Aws::String& GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  template <typename StatusT = Aws::String>
+  void SetStatus(StatusT&& value) {
+    m_statusHasBeenSet = true;
+    m_status = std::forward<StatusT>(value);
+  }
+  template <typename StatusT = Aws::String>
+  BatchSegmentJob& WithStatus(StatusT&& value) {
+    SetStatus(std::forward<StatusT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The ARN of the Amazon Identity and Access Management (IAM) role that
-     * requested the batch segment job.</p>
-     */
-    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
-    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    template<typename RoleArnT = Aws::String>
-    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
-    template<typename RoleArnT = Aws::String>
-    BatchSegmentJob& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The time at which the batch segment job was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreationDateTime() const { return m_creationDateTime; }
+  inline bool CreationDateTimeHasBeenSet() const { return m_creationDateTimeHasBeenSet; }
+  template <typename CreationDateTimeT = Aws::Utils::DateTime>
+  void SetCreationDateTime(CreationDateTimeT&& value) {
+    m_creationDateTimeHasBeenSet = true;
+    m_creationDateTime = std::forward<CreationDateTimeT>(value);
+  }
+  template <typename CreationDateTimeT = Aws::Utils::DateTime>
+  BatchSegmentJob& WithCreationDateTime(CreationDateTimeT&& value) {
+    SetCreationDateTime(std::forward<CreationDateTimeT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The status of the batch segment job. The status is one of the following
-     * values:</p> <ul> <li> <p>PENDING</p> </li> <li> <p>IN PROGRESS</p> </li> <li>
-     * <p>ACTIVE</p> </li> <li> <p>CREATE FAILED</p> </li> </ul>
-     */
-    inline const Aws::String& GetStatus() const { return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    template<typename StatusT = Aws::String>
-    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
-    template<typename StatusT = Aws::String>
-    BatchSegmentJob& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The time at which the batch segment job last updated.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const { return m_lastUpdatedDateTime; }
+  inline bool LastUpdatedDateTimeHasBeenSet() const { return m_lastUpdatedDateTimeHasBeenSet; }
+  template <typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
+  void SetLastUpdatedDateTime(LastUpdatedDateTimeT&& value) {
+    m_lastUpdatedDateTimeHasBeenSet = true;
+    m_lastUpdatedDateTime = std::forward<LastUpdatedDateTimeT>(value);
+  }
+  template <typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
+  BatchSegmentJob& WithLastUpdatedDateTime(LastUpdatedDateTimeT&& value) {
+    SetLastUpdatedDateTime(std::forward<LastUpdatedDateTimeT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_jobName;
+  bool m_jobNameHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The time at which the batch segment job was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreationDateTime() const { return m_creationDateTime; }
-    inline bool CreationDateTimeHasBeenSet() const { return m_creationDateTimeHasBeenSet; }
-    template<typename CreationDateTimeT = Aws::Utils::DateTime>
-    void SetCreationDateTime(CreationDateTimeT&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::forward<CreationDateTimeT>(value); }
-    template<typename CreationDateTimeT = Aws::Utils::DateTime>
-    BatchSegmentJob& WithCreationDateTime(CreationDateTimeT&& value) { SetCreationDateTime(std::forward<CreationDateTimeT>(value)); return *this;}
-    ///@}
+  Aws::String m_batchSegmentJobArn;
+  bool m_batchSegmentJobArnHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The time at which the batch segment job last updated.</p>
-     */
-    inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const { return m_lastUpdatedDateTime; }
-    inline bool LastUpdatedDateTimeHasBeenSet() const { return m_lastUpdatedDateTimeHasBeenSet; }
-    template<typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
-    void SetLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = std::forward<LastUpdatedDateTimeT>(value); }
-    template<typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
-    BatchSegmentJob& WithLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { SetLastUpdatedDateTime(std::forward<LastUpdatedDateTimeT>(value)); return *this;}
-    ///@}
-  private:
+  Aws::String m_filterArn;
+  bool m_filterArnHasBeenSet = false;
 
-    Aws::String m_jobName;
-    bool m_jobNameHasBeenSet = false;
+  Aws::String m_failureReason;
+  bool m_failureReasonHasBeenSet = false;
 
-    Aws::String m_batchSegmentJobArn;
-    bool m_batchSegmentJobArnHasBeenSet = false;
+  Aws::String m_solutionVersionArn;
+  bool m_solutionVersionArnHasBeenSet = false;
 
-    Aws::String m_filterArn;
-    bool m_filterArnHasBeenSet = false;
+  int m_numResults{0};
+  bool m_numResultsHasBeenSet = false;
 
-    Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet = false;
+  BatchSegmentJobInput m_jobInput;
+  bool m_jobInputHasBeenSet = false;
 
-    Aws::String m_solutionVersionArn;
-    bool m_solutionVersionArnHasBeenSet = false;
+  BatchSegmentJobOutput m_jobOutput;
+  bool m_jobOutputHasBeenSet = false;
 
-    int m_numResults{0};
-    bool m_numResultsHasBeenSet = false;
+  Aws::String m_roleArn;
+  bool m_roleArnHasBeenSet = false;
 
-    BatchSegmentJobInput m_jobInput;
-    bool m_jobInputHasBeenSet = false;
+  Aws::String m_status;
+  bool m_statusHasBeenSet = false;
 
-    BatchSegmentJobOutput m_jobOutput;
-    bool m_jobOutputHasBeenSet = false;
+  Aws::Utils::DateTime m_creationDateTime{};
+  bool m_creationDateTimeHasBeenSet = false;
 
-    Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet = false;
+  Aws::Utils::DateTime m_lastUpdatedDateTime{};
+  bool m_lastUpdatedDateTimeHasBeenSet = false;
+};
 
-    Aws::String m_status;
-    bool m_statusHasBeenSet = false;
-
-    Aws::Utils::DateTime m_creationDateTime{};
-    bool m_creationDateTimeHasBeenSet = false;
-
-    Aws::Utils::DateTime m_lastUpdatedDateTime{};
-    bool m_lastUpdatedDateTimeHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Personalize
-} // namespace Aws
+}  // namespace Model
+}  // namespace Personalize
+}  // namespace Aws

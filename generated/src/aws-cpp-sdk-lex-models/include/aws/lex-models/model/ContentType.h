@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
 
-namespace Aws
-{
-namespace LexModelBuildingService
-{
-namespace Model
-{
-  enum class ContentType
-  {
-    NOT_SET,
-    PlainText,
-    SSML,
-    CustomPayload
-  };
+namespace Aws {
+namespace LexModelBuildingService {
+namespace Model {
+enum class ContentType { NOT_SET, PlainText, SSML, CustomPayload };
 
-namespace ContentTypeMapper
-{
+namespace ContentTypeMapper {
 AWS_LEXMODELBUILDINGSERVICE_API ContentType GetContentTypeForName(const Aws::String& name);
 
 AWS_LEXMODELBUILDINGSERVICE_API Aws::String GetNameForContentType(ContentType value);
-} // namespace ContentTypeMapper
-} // namespace Model
-} // namespace LexModelBuildingService
-} // namespace Aws
+}  // namespace ContentTypeMapper
+}  // namespace Model
+}  // namespace LexModelBuildingService
+}  // namespace Aws

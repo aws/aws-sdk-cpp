@@ -12,49 +12,34 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateReportGroupRequest::SerializePayload() const
-{
+Aws::String CreateReportGroupRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", ReportTypeMapper::GetNameForReportType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", ReportTypeMapper::GetNameForReportType(m_type));
   }
 
-  if(m_exportConfigHasBeenSet)
-  {
-   payload.WithObject("exportConfig", m_exportConfig.Jsonize());
-
+  if (m_exportConfigHasBeenSet) {
+    payload.WithObject("exportConfig", m_exportConfig.Jsonize());
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("tags", std::move(tagsJsonList));
-
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("tags", std::move(tagsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateReportGroupRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateReportGroupRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeBuild_20161006.CreateReportGroup"));
   return headers;
-
 }
-
-
-
-

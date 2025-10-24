@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-AgentCollaboratorInvocationInput::AgentCollaboratorInvocationInput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AgentCollaboratorInvocationInput::AgentCollaboratorInvocationInput(JsonView jsonValue) { *this = jsonValue; }
 
-AgentCollaboratorInvocationInput& AgentCollaboratorInvocationInput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("agentCollaboratorName"))
-  {
+AgentCollaboratorInvocationInput& AgentCollaboratorInvocationInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("agentCollaboratorName")) {
     m_agentCollaboratorName = jsonValue.GetString("agentCollaboratorName");
     m_agentCollaboratorNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("agentCollaboratorAliasArn"))
-  {
+  if (jsonValue.ValueExists("agentCollaboratorAliasArn")) {
     m_agentCollaboratorAliasArn = jsonValue.GetString("agentCollaboratorAliasArn");
     m_agentCollaboratorAliasArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("input"))
-  {
+  if (jsonValue.ValueExists("input")) {
     m_input = jsonValue.GetObject("input");
     m_inputHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AgentCollaboratorInvocationInput::Jsonize() const
-{
+JsonValue AgentCollaboratorInvocationInput::Jsonize() const {
   JsonValue payload;
 
-  if(m_agentCollaboratorNameHasBeenSet)
-  {
-   payload.WithString("agentCollaboratorName", m_agentCollaboratorName);
-
+  if (m_agentCollaboratorNameHasBeenSet) {
+    payload.WithString("agentCollaboratorName", m_agentCollaboratorName);
   }
 
-  if(m_agentCollaboratorAliasArnHasBeenSet)
-  {
-   payload.WithString("agentCollaboratorAliasArn", m_agentCollaboratorAliasArn);
-
+  if (m_agentCollaboratorAliasArnHasBeenSet) {
+    payload.WithString("agentCollaboratorAliasArn", m_agentCollaboratorAliasArn);
   }
 
-  if(m_inputHasBeenSet)
-  {
-   payload.WithObject("input", m_input.Jsonize());
-
+  if (m_inputHasBeenSet) {
+    payload.WithObject("input", m_input.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

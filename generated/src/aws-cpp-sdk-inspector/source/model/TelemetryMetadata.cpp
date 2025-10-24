@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/inspector/model/TelemetryMetadata.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/inspector/model/TelemetryMetadata.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Inspector
-{
-namespace Model
-{
+namespace Aws {
+namespace Inspector {
+namespace Model {
 
-TelemetryMetadata::TelemetryMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TelemetryMetadata::TelemetryMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-TelemetryMetadata& TelemetryMetadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("messageType"))
-  {
+TelemetryMetadata& TelemetryMetadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("messageType")) {
     m_messageType = jsonValue.GetString("messageType");
     m_messageTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("count"))
-  {
+  if (jsonValue.ValueExists("count")) {
     m_count = jsonValue.GetInt64("count");
     m_countHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("dataSize"))
-  {
+  if (jsonValue.ValueExists("dataSize")) {
     m_dataSize = jsonValue.GetInt64("dataSize");
     m_dataSizeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TelemetryMetadata::Jsonize() const
-{
+JsonValue TelemetryMetadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_messageTypeHasBeenSet)
-  {
-   payload.WithString("messageType", m_messageType);
-
+  if (m_messageTypeHasBeenSet) {
+    payload.WithString("messageType", m_messageType);
   }
 
-  if(m_countHasBeenSet)
-  {
-   payload.WithInt64("count", m_count);
-
+  if (m_countHasBeenSet) {
+    payload.WithInt64("count", m_count);
   }
 
-  if(m_dataSizeHasBeenSet)
-  {
-   payload.WithInt64("dataSize", m_dataSize);
-
+  if (m_dataSizeHasBeenSet) {
+    payload.WithInt64("dataSize", m_dataSize);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Inspector
-} // namespace Aws
+}  // namespace Model
+}  // namespace Inspector
+}  // namespace Aws

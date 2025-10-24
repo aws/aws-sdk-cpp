@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/m2/model/DatasetOrgAttributes.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/m2/model/DatasetOrgAttributes.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MainframeModernization
-{
-namespace Model
-{
+namespace Aws {
+namespace MainframeModernization {
+namespace Model {
 
-DatasetOrgAttributes::DatasetOrgAttributes(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DatasetOrgAttributes::DatasetOrgAttributes(JsonView jsonValue) { *this = jsonValue; }
 
-DatasetOrgAttributes& DatasetOrgAttributes::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("gdg"))
-  {
+DatasetOrgAttributes& DatasetOrgAttributes::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("gdg")) {
     m_gdg = jsonValue.GetObject("gdg");
     m_gdgHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("po"))
-  {
+  if (jsonValue.ValueExists("po")) {
     m_po = jsonValue.GetObject("po");
     m_poHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ps"))
-  {
+  if (jsonValue.ValueExists("ps")) {
     m_ps = jsonValue.GetObject("ps");
     m_psHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("vsam"))
-  {
+  if (jsonValue.ValueExists("vsam")) {
     m_vsam = jsonValue.GetObject("vsam");
     m_vsamHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DatasetOrgAttributes::Jsonize() const
-{
+JsonValue DatasetOrgAttributes::Jsonize() const {
   JsonValue payload;
 
-  if(m_gdgHasBeenSet)
-  {
-   payload.WithObject("gdg", m_gdg.Jsonize());
-
+  if (m_gdgHasBeenSet) {
+    payload.WithObject("gdg", m_gdg.Jsonize());
   }
 
-  if(m_poHasBeenSet)
-  {
-   payload.WithObject("po", m_po.Jsonize());
-
+  if (m_poHasBeenSet) {
+    payload.WithObject("po", m_po.Jsonize());
   }
 
-  if(m_psHasBeenSet)
-  {
-   payload.WithObject("ps", m_ps.Jsonize());
-
+  if (m_psHasBeenSet) {
+    payload.WithObject("ps", m_ps.Jsonize());
   }
 
-  if(m_vsamHasBeenSet)
-  {
-   payload.WithObject("vsam", m_vsam.Jsonize());
-
+  if (m_vsamHasBeenSet) {
+    payload.WithObject("vsam", m_vsam.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MainframeModernization
-} // namespace Aws
+}  // namespace Model
+}  // namespace MainframeModernization
+}  // namespace Aws

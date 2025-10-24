@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/DeauthorizeDataShareRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/DeauthorizeDataShareRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String DeauthorizeDataShareRequest::SerializePayload() const
-{
+Aws::String DeauthorizeDataShareRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeauthorizeDataShare&";
-  if(m_dataShareArnHasBeenSet)
-  {
+  if (m_dataShareArnHasBeenSet) {
     ss << "DataShareArn=" << StringUtils::URLEncode(m_dataShareArn.c_str()) << "&";
   }
 
-  if(m_consumerIdentifierHasBeenSet)
-  {
+  if (m_consumerIdentifierHasBeenSet) {
     ss << "ConsumerIdentifier=" << StringUtils::URLEncode(m_consumerIdentifier.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DeauthorizeDataShareRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeauthorizeDataShareRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeauthorizeDataShareRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

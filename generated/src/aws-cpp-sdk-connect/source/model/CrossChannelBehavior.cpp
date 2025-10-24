@@ -11,40 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-CrossChannelBehavior::CrossChannelBehavior(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CrossChannelBehavior::CrossChannelBehavior(JsonView jsonValue) { *this = jsonValue; }
 
-CrossChannelBehavior& CrossChannelBehavior::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("BehaviorType"))
-  {
+CrossChannelBehavior& CrossChannelBehavior::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("BehaviorType")) {
     m_behaviorType = BehaviorTypeMapper::GetBehaviorTypeForName(jsonValue.GetString("BehaviorType"));
     m_behaviorTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CrossChannelBehavior::Jsonize() const
-{
+JsonValue CrossChannelBehavior::Jsonize() const {
   JsonValue payload;
 
-  if(m_behaviorTypeHasBeenSet)
-  {
-   payload.WithString("BehaviorType", BehaviorTypeMapper::GetNameForBehaviorType(m_behaviorType));
+  if (m_behaviorTypeHasBeenSet) {
+    payload.WithString("BehaviorType", BehaviorTypeMapper::GetNameForBehaviorType(m_behaviorType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

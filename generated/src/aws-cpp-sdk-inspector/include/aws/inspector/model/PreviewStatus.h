@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector/Inspector_EXPORTS.h>
 
-namespace Aws
-{
-namespace Inspector
-{
-namespace Model
-{
-  enum class PreviewStatus
-  {
-    NOT_SET,
-    WORK_IN_PROGRESS,
-    COMPLETED
-  };
+namespace Aws {
+namespace Inspector {
+namespace Model {
+enum class PreviewStatus { NOT_SET, WORK_IN_PROGRESS, COMPLETED };
 
-namespace PreviewStatusMapper
-{
+namespace PreviewStatusMapper {
 AWS_INSPECTOR_API PreviewStatus GetPreviewStatusForName(const Aws::String& name);
 
 AWS_INSPECTOR_API Aws::String GetNameForPreviewStatus(PreviewStatus value);
-} // namespace PreviewStatusMapper
-} // namespace Model
-} // namespace Inspector
-} // namespace Aws
+}  // namespace PreviewStatusMapper
+}  // namespace Model
+}  // namespace Inspector
+}  // namespace Aws

@@ -4,185 +4,218 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/ec2/EC2Request.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/EC2Request.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/Filter.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
+/**
+ */
+class DescribeSubnetsRequest : public EC2Request {
+ public:
+  AWS_EC2_API DescribeSubnetsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DescribeSubnets"; }
+
+  AWS_EC2_API Aws::String SerializePayload() const override;
+
+ protected:
+  AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
+
+ public:
+  ///@{
   /**
+   * <p>The filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+   * Availability Zone for the subnet. You can also use <code>availabilityZone</code>
+   * as the filter name.</p> </li> <li> <p> <code>availability-zone-id</code> - The
+   * ID of the Availability Zone for the subnet. You can also use
+   * <code>availabilityZoneId</code> as the filter name.</p> </li> <li> <p>
+   * <code>available-ip-address-count</code> - The number of IPv4 addresses in the
+   * subnet that are available.</p> </li> <li> <p> <code>cidr-block</code> - The IPv4
+   * CIDR block of the subnet. The CIDR block you specify must exactly match the
+   * subnet's CIDR block for information to be returned for the subnet. You can also
+   * use <code>cidr</code> or <code>cidrBlock</code> as the filter names.</p> </li>
+   * <li> <p> <code>customer-owned-ipv4-pool</code> - The customer-owned IPv4 address
+   * pool associated with the subnet.</p> </li> <li> <p> <code>default-for-az</code>
+   * - Indicates whether this is the default subnet for the Availability Zone
+   * (<code>true</code> | <code>false</code>). You can also use
+   * <code>defaultForAz</code> as the filter name.</p> </li> <li> <p>
+   * <code>enable-dns64</code> - Indicates whether DNS queries made to the
+   * Amazon-provided DNS Resolver in this subnet should return synthetic IPv6
+   * addresses for IPv4-only destinations.</p> </li> <li> <p>
+   * <code>enable-lni-at-device-index</code> - Indicates the device position for
+   * local network interfaces in this subnet. For example, <code>1</code> indicates
+   * local network interfaces in this subnet are the secondary network interface
+   * (eth1). </p> </li> <li> <p>
+   * <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block
+   * associated with the subnet.</p> </li> <li> <p>
+   * <code>ipv6-cidr-block-association.association-id</code> - An association ID for
+   * an IPv6 CIDR block associated with the subnet.</p> </li> <li> <p>
+   * <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block
+   * associated with the subnet.</p> </li> <li> <p> <code>ipv6-native</code> -
+   * Indicates whether this is an IPv6 only subnet (<code>true</code> |
+   * <code>false</code>).</p> </li> <li> <p>
+   * <code>map-customer-owned-ip-on-launch</code> - Indicates whether a network
+   * interface created in this subnet (including a network interface created by
+   * <a>RunInstances</a>) receives a customer-owned IPv4 address.</p> </li> <li> <p>
+   * <code>map-public-ip-on-launch</code> - Indicates whether instances launched in
+   * this subnet receive a public IPv4 address.</p> </li> <li> <p>
+   * <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.</p>
+   * </li> <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account
+   * that owns the subnet.</p> </li> <li> <p>
+   * <code>private-dns-name-options-on-launch.hostname-type</code> - The type of
+   * hostname to assign to instances in the subnet at launch. For IPv4-only and
+   * dual-stack (IPv4 and IPv6) subnets, an instance DNS name can be based on the
+   * instance IPv4 address (ip-name) or the instance ID (resource-name). For IPv6
+   * only subnets, an instance DNS name must be based on the instance ID
+   * (resource-name).</p> </li> <li> <p>
+   * <code>private-dns-name-options-on-launch.enable-resource-name-dns-a-record</code>
+   * - Indicates whether to respond to DNS queries for instance hostnames with DNS A
+   * records.</p> </li> <li> <p>
+   * <code>private-dns-name-options-on-launch.enable-resource-name-dns-aaaa-record</code>
+   * - Indicates whether to respond to DNS queries for instance hostnames with DNS
+   * AAAA records.</p> </li> <li> <p> <code>state</code> - The state of the subnet
+   * (<code>pending</code> | <code>available</code>).</p> </li> <li> <p>
+   * <code>subnet-arn</code> - The Amazon Resource Name (ARN) of the subnet.</p>
+   * </li> <li> <p> <code>subnet-id</code> - The ID of the subnet.</p> </li> <li> <p>
+   * <code>tag</code> - The key/value combination of a tag assigned to the resource.
+   * Use the tag key in the filter name and the tag value as the filter value. For
+   * example, to find all resources that have a tag with the key <code>Owner</code>
+   * and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter
+   * name and <code>TeamA</code> for the filter value.</p> </li> <li> <p>
+   * <code>tag-key</code> - The key of a tag assigned to the resource. Use this
+   * filter to find all resources assigned a tag with a specific key, regardless of
+   * the tag value.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC for
+   * the subnet.</p> </li> </ul>
    */
-  class DescribeSubnetsRequest : public EC2Request
-  {
-  public:
-    AWS_EC2_API DescribeSubnetsRequest() = default;
+  inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
+  inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+  template <typename FiltersT = Aws::Vector<Filter>>
+  void SetFilters(FiltersT&& value) {
+    m_filtersHasBeenSet = true;
+    m_filters = std::forward<FiltersT>(value);
+  }
+  template <typename FiltersT = Aws::Vector<Filter>>
+  DescribeSubnetsRequest& WithFilters(FiltersT&& value) {
+    SetFilters(std::forward<FiltersT>(value));
+    return *this;
+  }
+  template <typename FiltersT = Filter>
+  DescribeSubnetsRequest& AddFilters(FiltersT&& value) {
+    m_filtersHasBeenSet = true;
+    m_filters.emplace_back(std::forward<FiltersT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DescribeSubnets"; }
+  ///@{
+  /**
+   * <p>The IDs of the subnets.</p> <p>Default: Describes all your subnets.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetSubnetIds() const { return m_subnetIds; }
+  inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
+  template <typename SubnetIdsT = Aws::Vector<Aws::String>>
+  void SetSubnetIds(SubnetIdsT&& value) {
+    m_subnetIdsHasBeenSet = true;
+    m_subnetIds = std::forward<SubnetIdsT>(value);
+  }
+  template <typename SubnetIdsT = Aws::Vector<Aws::String>>
+  DescribeSubnetsRequest& WithSubnetIds(SubnetIdsT&& value) {
+    SetSubnetIds(std::forward<SubnetIdsT>(value));
+    return *this;
+  }
+  template <typename SubnetIdsT = Aws::String>
+  DescribeSubnetsRequest& AddSubnetIds(SubnetIdsT&& value) {
+    m_subnetIdsHasBeenSet = true;
+    m_subnetIds.emplace_back(std::forward<SubnetIdsT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_EC2_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>The token returned from a previous paginated request. Pagination continues
+   * from the end of the items returned by the previous request.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  DescribeSubnetsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
 
-  protected:
-    AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+  ///@{
+  /**
+   * <p>The maximum number of items to return for this request. To get the next page
+   * of items, make another request with the token returned in the output. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline DescribeSubnetsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
 
-  public:
+  ///@{
+  /**
+   * <p>Checks whether you have the required permissions for the action, without
+   * actually making the request, and provides an error response. If you have the
+   * required permissions, the error response is <code>DryRunOperation</code>.
+   * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+   */
+  inline bool GetDryRun() const { return m_dryRun; }
+  inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+  inline void SetDryRun(bool value) {
+    m_dryRunHasBeenSet = true;
+    m_dryRun = value;
+  }
+  inline DescribeSubnetsRequest& WithDryRun(bool value) {
+    SetDryRun(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<Filter> m_filters;
+  bool m_filtersHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
-     * Availability Zone for the subnet. You can also use <code>availabilityZone</code>
-     * as the filter name.</p> </li> <li> <p> <code>availability-zone-id</code> - The
-     * ID of the Availability Zone for the subnet. You can also use
-     * <code>availabilityZoneId</code> as the filter name.</p> </li> <li> <p>
-     * <code>available-ip-address-count</code> - The number of IPv4 addresses in the
-     * subnet that are available.</p> </li> <li> <p> <code>cidr-block</code> - The IPv4
-     * CIDR block of the subnet. The CIDR block you specify must exactly match the
-     * subnet's CIDR block for information to be returned for the subnet. You can also
-     * use <code>cidr</code> or <code>cidrBlock</code> as the filter names.</p> </li>
-     * <li> <p> <code>customer-owned-ipv4-pool</code> - The customer-owned IPv4 address
-     * pool associated with the subnet.</p> </li> <li> <p> <code>default-for-az</code>
-     * - Indicates whether this is the default subnet for the Availability Zone
-     * (<code>true</code> | <code>false</code>). You can also use
-     * <code>defaultForAz</code> as the filter name.</p> </li> <li> <p>
-     * <code>enable-dns64</code> - Indicates whether DNS queries made to the
-     * Amazon-provided DNS Resolver in this subnet should return synthetic IPv6
-     * addresses for IPv4-only destinations.</p> </li> <li> <p>
-     * <code>enable-lni-at-device-index</code> - Indicates the device position for
-     * local network interfaces in this subnet. For example, <code>1</code> indicates
-     * local network interfaces in this subnet are the secondary network interface
-     * (eth1). </p> </li> <li> <p>
-     * <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block
-     * associated with the subnet.</p> </li> <li> <p>
-     * <code>ipv6-cidr-block-association.association-id</code> - An association ID for
-     * an IPv6 CIDR block associated with the subnet.</p> </li> <li> <p>
-     * <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block
-     * associated with the subnet.</p> </li> <li> <p> <code>ipv6-native</code> -
-     * Indicates whether this is an IPv6 only subnet (<code>true</code> |
-     * <code>false</code>).</p> </li> <li> <p>
-     * <code>map-customer-owned-ip-on-launch</code> - Indicates whether a network
-     * interface created in this subnet (including a network interface created by
-     * <a>RunInstances</a>) receives a customer-owned IPv4 address.</p> </li> <li> <p>
-     * <code>map-public-ip-on-launch</code> - Indicates whether instances launched in
-     * this subnet receive a public IPv4 address.</p> </li> <li> <p>
-     * <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.</p>
-     * </li> <li> <p> <code>owner-id</code> - The ID of the Amazon Web Services account
-     * that owns the subnet.</p> </li> <li> <p>
-     * <code>private-dns-name-options-on-launch.hostname-type</code> - The type of
-     * hostname to assign to instances in the subnet at launch. For IPv4-only and
-     * dual-stack (IPv4 and IPv6) subnets, an instance DNS name can be based on the
-     * instance IPv4 address (ip-name) or the instance ID (resource-name). For IPv6
-     * only subnets, an instance DNS name must be based on the instance ID
-     * (resource-name).</p> </li> <li> <p>
-     * <code>private-dns-name-options-on-launch.enable-resource-name-dns-a-record</code>
-     * - Indicates whether to respond to DNS queries for instance hostnames with DNS A
-     * records.</p> </li> <li> <p>
-     * <code>private-dns-name-options-on-launch.enable-resource-name-dns-aaaa-record</code>
-     * - Indicates whether to respond to DNS queries for instance hostnames with DNS
-     * AAAA records.</p> </li> <li> <p> <code>state</code> - The state of the subnet
-     * (<code>pending</code> | <code>available</code>).</p> </li> <li> <p>
-     * <code>subnet-arn</code> - The Amazon Resource Name (ARN) of the subnet.</p>
-     * </li> <li> <p> <code>subnet-id</code> - The ID of the subnet.</p> </li> <li> <p>
-     * <code>tag</code> - The key/value combination of a tag assigned to the resource.
-     * Use the tag key in the filter name and the tag value as the filter value. For
-     * example, to find all resources that have a tag with the key <code>Owner</code>
-     * and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter
-     * name and <code>TeamA</code> for the filter value.</p> </li> <li> <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this
-     * filter to find all resources assigned a tag with a specific key, regardless of
-     * the tag value.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC for
-     * the subnet.</p> </li> </ul>
-     */
-    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
-    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    template<typename FiltersT = Aws::Vector<Filter>>
-    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
-    template<typename FiltersT = Aws::Vector<Filter>>
-    DescribeSubnetsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
-    template<typename FiltersT = Filter>
-    DescribeSubnetsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
-    ///@}
+  Aws::Vector<Aws::String> m_subnetIds;
+  bool m_subnetIdsHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The IDs of the subnets.</p> <p>Default: Describes all your subnets.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetSubnetIds() const { return m_subnetIds; }
-    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
-    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
-    void SetSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::forward<SubnetIdsT>(value); }
-    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
-    DescribeSubnetsRequest& WithSubnetIds(SubnetIdsT&& value) { SetSubnetIds(std::forward<SubnetIdsT>(value)); return *this;}
-    template<typename SubnetIdsT = Aws::String>
-    DescribeSubnetsRequest& AddSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.emplace_back(std::forward<SubnetIdsT>(value)); return *this; }
-    ///@}
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The token returned from a previous paginated request. Pagination continues
-     * from the end of the items returned by the previous request.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    DescribeSubnetsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
+  int m_maxResults{0};
+  bool m_maxResultsHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The maximum number of items to return for this request. To get the next page
-     * of items, make another request with the token returned in the output. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline DescribeSubnetsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
+  bool m_dryRun{false};
+  bool m_dryRunHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const { return m_dryRun; }
-    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-    inline DescribeSubnetsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-    ///@}
-  private:
-
-    Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet = false;
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
-
-    bool m_dryRun{false};
-    bool m_dryRunHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

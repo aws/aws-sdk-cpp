@@ -4,104 +4,80 @@
  */
 
 #include <aws/connectcases/model/FieldType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace ConnectCases {
+namespace Model {
+namespace FieldTypeMapper {
 
-namespace Aws
-{
-  namespace ConnectCases
-  {
-    namespace Model
-    {
-      namespace FieldTypeMapper
-      {
+static const int Text_HASH = HashingUtils::HashString("Text");
+static const int Number_HASH = HashingUtils::HashString("Number");
+static const int Boolean_HASH = HashingUtils::HashString("Boolean");
+static const int DateTime_HASH = HashingUtils::HashString("DateTime");
+static const int SingleSelect_HASH = HashingUtils::HashString("SingleSelect");
+static const int Url_HASH = HashingUtils::HashString("Url");
+static const int User_HASH = HashingUtils::HashString("User");
 
-        static const int Text_HASH = HashingUtils::HashString("Text");
-        static const int Number_HASH = HashingUtils::HashString("Number");
-        static const int Boolean_HASH = HashingUtils::HashString("Boolean");
-        static const int DateTime_HASH = HashingUtils::HashString("DateTime");
-        static const int SingleSelect_HASH = HashingUtils::HashString("SingleSelect");
-        static const int Url_HASH = HashingUtils::HashString("Url");
-        static const int User_HASH = HashingUtils::HashString("User");
+FieldType GetFieldTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == Text_HASH) {
+    return FieldType::Text;
+  } else if (hashCode == Number_HASH) {
+    return FieldType::Number;
+  } else if (hashCode == Boolean_HASH) {
+    return FieldType::Boolean;
+  } else if (hashCode == DateTime_HASH) {
+    return FieldType::DateTime;
+  } else if (hashCode == SingleSelect_HASH) {
+    return FieldType::SingleSelect;
+  } else if (hashCode == Url_HASH) {
+    return FieldType::Url;
+  } else if (hashCode == User_HASH) {
+    return FieldType::User;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<FieldType>(hashCode);
+  }
 
+  return FieldType::NOT_SET;
+}
 
-        FieldType GetFieldTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Text_HASH)
-          {
-            return FieldType::Text;
-          }
-          else if (hashCode == Number_HASH)
-          {
-            return FieldType::Number;
-          }
-          else if (hashCode == Boolean_HASH)
-          {
-            return FieldType::Boolean;
-          }
-          else if (hashCode == DateTime_HASH)
-          {
-            return FieldType::DateTime;
-          }
-          else if (hashCode == SingleSelect_HASH)
-          {
-            return FieldType::SingleSelect;
-          }
-          else if (hashCode == Url_HASH)
-          {
-            return FieldType::Url;
-          }
-          else if (hashCode == User_HASH)
-          {
-            return FieldType::User;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<FieldType>(hashCode);
-          }
+Aws::String GetNameForFieldType(FieldType enumValue) {
+  switch (enumValue) {
+    case FieldType::NOT_SET:
+      return {};
+    case FieldType::Text:
+      return "Text";
+    case FieldType::Number:
+      return "Number";
+    case FieldType::Boolean:
+      return "Boolean";
+    case FieldType::DateTime:
+      return "DateTime";
+    case FieldType::SingleSelect:
+      return "SingleSelect";
+    case FieldType::Url:
+      return "Url";
+    case FieldType::User:
+      return "User";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return FieldType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForFieldType(FieldType enumValue)
-        {
-          switch(enumValue)
-          {
-          case FieldType::NOT_SET:
-            return {};
-          case FieldType::Text:
-            return "Text";
-          case FieldType::Number:
-            return "Number";
-          case FieldType::Boolean:
-            return "Boolean";
-          case FieldType::DateTime:
-            return "DateTime";
-          case FieldType::SingleSelect:
-            return "SingleSelect";
-          case FieldType::Url:
-            return "Url";
-          case FieldType::User:
-            return "User";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace FieldTypeMapper
-    } // namespace Model
-  } // namespace ConnectCases
-} // namespace Aws
+}  // namespace FieldTypeMapper
+}  // namespace Model
+}  // namespace ConnectCases
+}  // namespace Aws

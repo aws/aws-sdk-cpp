@@ -3,18 +3,16 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/client/AWSError.h>
 #include <aws/controlcatalog/ControlCatalogErrorMarshaller.h>
 #include <aws/controlcatalog/ControlCatalogErrors.h>
+#include <aws/core/client/AWSError.h>
 
 using namespace Aws::Client;
 using namespace Aws::ControlCatalog;
 
-AWSError<CoreErrors> ControlCatalogErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> ControlCatalogErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = ControlCatalogErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

@@ -12,24 +12,17 @@ using namespace Aws::CleanRooms::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateConfiguredTableAnalysisRuleRequest::SerializePayload() const
-{
+Aws::String CreateConfiguredTableAnalysisRuleRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_analysisRuleTypeHasBeenSet)
-  {
-   payload.WithString("analysisRuleType", ConfiguredTableAnalysisRuleTypeMapper::GetNameForConfiguredTableAnalysisRuleType(m_analysisRuleType));
+  if (m_analysisRuleTypeHasBeenSet) {
+    payload.WithString("analysisRuleType",
+                       ConfiguredTableAnalysisRuleTypeMapper::GetNameForConfiguredTableAnalysisRuleType(m_analysisRuleType));
   }
 
-  if(m_analysisRulePolicyHasBeenSet)
-  {
-   payload.WithObject("analysisRulePolicy", m_analysisRulePolicy.Jsonize());
-
+  if (m_analysisRulePolicyHasBeenSet) {
+    payload.WithObject("analysisRulePolicy", m_analysisRulePolicy.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class TopicSortDirection
-  {
-    NOT_SET,
-    ASCENDING,
-    DESCENDING
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class TopicSortDirection { NOT_SET, ASCENDING, DESCENDING };
 
-namespace TopicSortDirectionMapper
-{
+namespace TopicSortDirectionMapper {
 AWS_QUICKSIGHT_API TopicSortDirection GetTopicSortDirectionForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForTopicSortDirection(TopicSortDirection value);
-} // namespace TopicSortDirectionMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace TopicSortDirectionMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

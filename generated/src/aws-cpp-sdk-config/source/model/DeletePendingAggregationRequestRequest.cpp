@@ -12,33 +12,22 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeletePendingAggregationRequestRequest::SerializePayload() const
-{
+Aws::String DeletePendingAggregationRequestRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_requesterAccountIdHasBeenSet)
-  {
-   payload.WithString("RequesterAccountId", m_requesterAccountId);
-
+  if (m_requesterAccountIdHasBeenSet) {
+    payload.WithString("RequesterAccountId", m_requesterAccountId);
   }
 
-  if(m_requesterAwsRegionHasBeenSet)
-  {
-   payload.WithString("RequesterAwsRegion", m_requesterAwsRegion);
-
+  if (m_requesterAwsRegionHasBeenSet) {
+    payload.WithString("RequesterAwsRegion", m_requesterAwsRegion);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeletePendingAggregationRequestRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeletePendingAggregationRequestRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "StarlingDoveService.DeletePendingAggregationRequest"));
   return headers;
-
 }
-
-
-
-

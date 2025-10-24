@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Athena
-{
-namespace Model
-{
+namespace Aws {
+namespace Athena {
+namespace Model {
 
-QueryRuntimeStatisticsRows::QueryRuntimeStatisticsRows(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+QueryRuntimeStatisticsRows::QueryRuntimeStatisticsRows(JsonView jsonValue) { *this = jsonValue; }
 
-QueryRuntimeStatisticsRows& QueryRuntimeStatisticsRows::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("InputRows"))
-  {
+QueryRuntimeStatisticsRows& QueryRuntimeStatisticsRows::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("InputRows")) {
     m_inputRows = jsonValue.GetInt64("InputRows");
     m_inputRowsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InputBytes"))
-  {
+  if (jsonValue.ValueExists("InputBytes")) {
     m_inputBytes = jsonValue.GetInt64("InputBytes");
     m_inputBytesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OutputBytes"))
-  {
+  if (jsonValue.ValueExists("OutputBytes")) {
     m_outputBytes = jsonValue.GetInt64("OutputBytes");
     m_outputBytesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OutputRows"))
-  {
+  if (jsonValue.ValueExists("OutputRows")) {
     m_outputRows = jsonValue.GetInt64("OutputRows");
     m_outputRowsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue QueryRuntimeStatisticsRows::Jsonize() const
-{
+JsonValue QueryRuntimeStatisticsRows::Jsonize() const {
   JsonValue payload;
 
-  if(m_inputRowsHasBeenSet)
-  {
-   payload.WithInt64("InputRows", m_inputRows);
-
+  if (m_inputRowsHasBeenSet) {
+    payload.WithInt64("InputRows", m_inputRows);
   }
 
-  if(m_inputBytesHasBeenSet)
-  {
-   payload.WithInt64("InputBytes", m_inputBytes);
-
+  if (m_inputBytesHasBeenSet) {
+    payload.WithInt64("InputBytes", m_inputBytes);
   }
 
-  if(m_outputBytesHasBeenSet)
-  {
-   payload.WithInt64("OutputBytes", m_outputBytes);
-
+  if (m_outputBytesHasBeenSet) {
+    payload.WithInt64("OutputBytes", m_outputBytes);
   }
 
-  if(m_outputRowsHasBeenSet)
-  {
-   payload.WithInt64("OutputRows", m_outputRows);
-
+  if (m_outputRowsHasBeenSet) {
+    payload.WithInt64("OutputRows", m_outputRows);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Athena
-} // namespace Aws
+}  // namespace Model
+}  // namespace Athena
+}  // namespace Aws

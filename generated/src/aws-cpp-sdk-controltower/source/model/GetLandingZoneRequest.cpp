@@ -12,19 +12,12 @@ using namespace Aws::ControlTower::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetLandingZoneRequest::SerializePayload() const
-{
+Aws::String GetLandingZoneRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_landingZoneIdentifierHasBeenSet)
-  {
-   payload.WithString("landingZoneIdentifier", m_landingZoneIdentifier);
-
+  if (m_landingZoneIdentifierHasBeenSet) {
+    payload.WithString("landingZoneIdentifier", m_landingZoneIdentifier);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

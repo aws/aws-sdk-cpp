@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class ColorMetadata
-  {
-    NOT_SET,
-    IGNORE,
-    INSERT
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class ColorMetadata { NOT_SET, IGNORE, INSERT };
 
-namespace ColorMetadataMapper
-{
+namespace ColorMetadataMapper {
 AWS_MEDIACONVERT_API ColorMetadata GetColorMetadataForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForColorMetadata(ColorMetadata value);
-} // namespace ColorMetadataMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace ColorMetadataMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

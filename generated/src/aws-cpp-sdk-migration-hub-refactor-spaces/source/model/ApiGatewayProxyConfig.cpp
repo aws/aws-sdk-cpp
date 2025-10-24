@@ -3,114 +3,86 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/migration-hub-refactor-spaces/model/ApiGatewayProxyConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/migration-hub-refactor-spaces/model/ApiGatewayProxyConfig.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MigrationHubRefactorSpaces
-{
-namespace Model
-{
+namespace Aws {
+namespace MigrationHubRefactorSpaces {
+namespace Model {
 
-ApiGatewayProxyConfig::ApiGatewayProxyConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ApiGatewayProxyConfig::ApiGatewayProxyConfig(JsonView jsonValue) { *this = jsonValue; }
 
-ApiGatewayProxyConfig& ApiGatewayProxyConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ApiGatewayId"))
-  {
+ApiGatewayProxyConfig& ApiGatewayProxyConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ApiGatewayId")) {
     m_apiGatewayId = jsonValue.GetString("ApiGatewayId");
     m_apiGatewayIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EndpointType"))
-  {
+  if (jsonValue.ValueExists("EndpointType")) {
     m_endpointType = ApiGatewayEndpointTypeMapper::GetApiGatewayEndpointTypeForName(jsonValue.GetString("EndpointType"));
     m_endpointTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NlbArn"))
-  {
+  if (jsonValue.ValueExists("NlbArn")) {
     m_nlbArn = jsonValue.GetString("NlbArn");
     m_nlbArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NlbName"))
-  {
+  if (jsonValue.ValueExists("NlbName")) {
     m_nlbName = jsonValue.GetString("NlbName");
     m_nlbNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ProxyUrl"))
-  {
+  if (jsonValue.ValueExists("ProxyUrl")) {
     m_proxyUrl = jsonValue.GetString("ProxyUrl");
     m_proxyUrlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StageName"))
-  {
+  if (jsonValue.ValueExists("StageName")) {
     m_stageName = jsonValue.GetString("StageName");
     m_stageNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VpcLinkId"))
-  {
+  if (jsonValue.ValueExists("VpcLinkId")) {
     m_vpcLinkId = jsonValue.GetString("VpcLinkId");
     m_vpcLinkIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ApiGatewayProxyConfig::Jsonize() const
-{
+JsonValue ApiGatewayProxyConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_apiGatewayIdHasBeenSet)
-  {
-   payload.WithString("ApiGatewayId", m_apiGatewayId);
-
+  if (m_apiGatewayIdHasBeenSet) {
+    payload.WithString("ApiGatewayId", m_apiGatewayId);
   }
 
-  if(m_endpointTypeHasBeenSet)
-  {
-   payload.WithString("EndpointType", ApiGatewayEndpointTypeMapper::GetNameForApiGatewayEndpointType(m_endpointType));
+  if (m_endpointTypeHasBeenSet) {
+    payload.WithString("EndpointType", ApiGatewayEndpointTypeMapper::GetNameForApiGatewayEndpointType(m_endpointType));
   }
 
-  if(m_nlbArnHasBeenSet)
-  {
-   payload.WithString("NlbArn", m_nlbArn);
-
+  if (m_nlbArnHasBeenSet) {
+    payload.WithString("NlbArn", m_nlbArn);
   }
 
-  if(m_nlbNameHasBeenSet)
-  {
-   payload.WithString("NlbName", m_nlbName);
-
+  if (m_nlbNameHasBeenSet) {
+    payload.WithString("NlbName", m_nlbName);
   }
 
-  if(m_proxyUrlHasBeenSet)
-  {
-   payload.WithString("ProxyUrl", m_proxyUrl);
-
+  if (m_proxyUrlHasBeenSet) {
+    payload.WithString("ProxyUrl", m_proxyUrl);
   }
 
-  if(m_stageNameHasBeenSet)
-  {
-   payload.WithString("StageName", m_stageName);
-
+  if (m_stageNameHasBeenSet) {
+    payload.WithString("StageName", m_stageName);
   }
 
-  if(m_vpcLinkIdHasBeenSet)
-  {
-   payload.WithString("VpcLinkId", m_vpcLinkId);
-
+  if (m_vpcLinkIdHasBeenSet) {
+    payload.WithString("VpcLinkId", m_vpcLinkId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MigrationHubRefactorSpaces
-} // namespace Aws
+}  // namespace Model
+}  // namespace MigrationHubRefactorSpaces
+}  // namespace Aws

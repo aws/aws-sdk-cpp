@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/support-app/SupportAppRequest.h>
 
-namespace Aws
-{
-namespace SupportApp
-{
-} // namespace SupportApp
-} // namespace Aws
+namespace Aws {
+namespace SupportApp {}  // namespace SupportApp
+}  // namespace Aws

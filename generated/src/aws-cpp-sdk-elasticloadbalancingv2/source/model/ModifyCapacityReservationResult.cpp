@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancingv2/model/ModifyCapacityReservationResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticloadbalancingv2/model/ModifyCapacityReservationResult.h>
 
 #include <utility>
 
@@ -17,48 +17,40 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ModifyCapacityReservationResult::ModifyCapacityReservationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+ModifyCapacityReservationResult::ModifyCapacityReservationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-ModifyCapacityReservationResult& ModifyCapacityReservationResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+ModifyCapacityReservationResult& ModifyCapacityReservationResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "ModifyCapacityReservationResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "ModifyCapacityReservationResult")) {
     resultNode = rootNode.FirstChild("ModifyCapacityReservationResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode lastModifiedTimeNode = resultNode.FirstChild("LastModifiedTime");
-    if(!lastModifiedTimeNode.IsNull())
-    {
-      m_lastModifiedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastModifiedTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+    if (!lastModifiedTimeNode.IsNull()) {
+      m_lastModifiedTime =
+          DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastModifiedTimeNode.GetText()).c_str()).c_str(),
+                   Aws::Utils::DateFormat::ISO_8601);
       m_lastModifiedTimeHasBeenSet = true;
     }
     XmlNode decreaseRequestsRemainingNode = resultNode.FirstChild("DecreaseRequestsRemaining");
-    if(!decreaseRequestsRemainingNode.IsNull())
-    {
-      m_decreaseRequestsRemaining = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(decreaseRequestsRemainingNode.GetText()).c_str()).c_str());
+    if (!decreaseRequestsRemainingNode.IsNull()) {
+      m_decreaseRequestsRemaining = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(decreaseRequestsRemainingNode.GetText()).c_str()).c_str());
       m_decreaseRequestsRemainingHasBeenSet = true;
     }
     XmlNode minimumLoadBalancerCapacityNode = resultNode.FirstChild("MinimumLoadBalancerCapacity");
-    if(!minimumLoadBalancerCapacityNode.IsNull())
-    {
+    if (!minimumLoadBalancerCapacityNode.IsNull()) {
       m_minimumLoadBalancerCapacity = minimumLoadBalancerCapacityNode;
       m_minimumLoadBalancerCapacityHasBeenSet = true;
     }
     XmlNode capacityReservationStateNode = resultNode.FirstChild("CapacityReservationState");
-    if(!capacityReservationStateNode.IsNull())
-    {
+    if (!capacityReservationStateNode.IsNull()) {
       XmlNode capacityReservationStateMember = capacityReservationStateNode.FirstChild("member");
       m_capacityReservationStateHasBeenSet = !capacityReservationStateMember.IsNull();
-      while(!capacityReservationStateMember.IsNull())
-      {
+      while (!capacityReservationStateMember.IsNull()) {
         m_capacityReservationState.push_back(capacityReservationStateMember);
         capacityReservationStateMember = capacityReservationStateMember.NextNode("member");
       }
@@ -71,7 +63,8 @@ ModifyCapacityReservationResult& ModifyCapacityReservationResult::operator =(con
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancingv2::Model::ModifyCapacityReservationResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancingv2::Model::ModifyCapacityReservationResult",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

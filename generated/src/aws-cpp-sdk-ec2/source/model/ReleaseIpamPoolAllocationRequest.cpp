@@ -3,34 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ReleaseIpamPoolAllocationRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ReleaseIpamPoolAllocationRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ReleaseIpamPoolAllocationRequest::SerializePayload() const
-{
+Aws::String ReleaseIpamPoolAllocationRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ReleaseIpamPoolAllocation&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_ipamPoolIdHasBeenSet)
-  {
+  if (m_ipamPoolIdHasBeenSet) {
     ss << "IpamPoolId=" << StringUtils::URLEncode(m_ipamPoolId.c_str()) << "&";
   }
 
-  if(m_cidrHasBeenSet)
-  {
+  if (m_cidrHasBeenSet) {
     ss << "Cidr=" << StringUtils::URLEncode(m_cidr.c_str()) << "&";
   }
 
-  if(m_ipamPoolAllocationIdHasBeenSet)
-  {
+  if (m_ipamPoolAllocationIdHasBeenSet) {
     ss << "IpamPoolAllocationId=" << StringUtils::URLEncode(m_ipamPoolAllocationId.c_str()) << "&";
   }
 
@@ -38,8 +33,4 @@ Aws::String ReleaseIpamPoolAllocationRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ReleaseIpamPoolAllocationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ReleaseIpamPoolAllocationRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/notifications/Notifications_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/notifications/Notifications_EXPORTS.h>
 
-namespace Aws
-{
-namespace Notifications
-{
-namespace Model
-{
-  enum class ChannelType
-  {
-    NOT_SET,
-    MOBILE,
-    CHATBOT,
-    EMAIL,
-    ACCOUNT_CONTACT
-  };
+namespace Aws {
+namespace Notifications {
+namespace Model {
+enum class ChannelType { NOT_SET, MOBILE, CHATBOT, EMAIL, ACCOUNT_CONTACT };
 
-namespace ChannelTypeMapper
-{
+namespace ChannelTypeMapper {
 AWS_NOTIFICATIONS_API ChannelType GetChannelTypeForName(const Aws::String& name);
 
 AWS_NOTIFICATIONS_API Aws::String GetNameForChannelType(ChannelType value);
-} // namespace ChannelTypeMapper
-} // namespace Model
-} // namespace Notifications
-} // namespace Aws
+}  // namespace ChannelTypeMapper
+}  // namespace Model
+}  // namespace Notifications
+}  // namespace Aws

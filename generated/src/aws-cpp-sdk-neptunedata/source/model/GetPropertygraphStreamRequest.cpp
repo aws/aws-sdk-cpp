@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/neptunedata/model/GetPropertygraphStreamRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/neptunedata/model/GetPropertygraphStreamRequest.h>
 
 #include <utility>
 
@@ -15,56 +15,41 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String GetPropertygraphStreamRequest::SerializePayload() const
-{
-  return {};
-}
+Aws::String GetPropertygraphStreamRequest::SerializePayload() const { return {}; }
 
-Aws::Http::HeaderValueCollection GetPropertygraphStreamRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetPropertygraphStreamRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_encodingHasBeenSet && m_encoding != Encoding::NOT_SET)
-  {
+  if (m_encodingHasBeenSet && m_encoding != Encoding::NOT_SET) {
     headers.emplace("accept-encoding", EncodingMapper::GetNameForEncoding(m_encoding));
   }
 
   return headers;
-
 }
 
-void GetPropertygraphStreamRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_limitHasBeenSet)
-    {
-      ss << m_limit;
-      uri.AddQueryStringParameter("limit", ss.str());
-      ss.str("");
-    }
+void GetPropertygraphStreamRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_limitHasBeenSet) {
+    ss << m_limit;
+    uri.AddQueryStringParameter("limit", ss.str());
+    ss.str("");
+  }
 
-    if(m_iteratorTypeHasBeenSet)
-    {
-      ss << IteratorTypeMapper::GetNameForIteratorType(m_iteratorType);
-      uri.AddQueryStringParameter("iteratorType", ss.str());
-      ss.str("");
-    }
+  if (m_iteratorTypeHasBeenSet) {
+    ss << IteratorTypeMapper::GetNameForIteratorType(m_iteratorType);
+    uri.AddQueryStringParameter("iteratorType", ss.str());
+    ss.str("");
+  }
 
-    if(m_commitNumHasBeenSet)
-    {
-      ss << m_commitNum;
-      uri.AddQueryStringParameter("commitNum", ss.str());
-      ss.str("");
-    }
+  if (m_commitNumHasBeenSet) {
+    ss << m_commitNum;
+    uri.AddQueryStringParameter("commitNum", ss.str());
+    ss.str("");
+  }
 
-    if(m_opNumHasBeenSet)
-    {
-      ss << m_opNum;
-      uri.AddQueryStringParameter("opNum", ss.str());
-      ss.str("");
-    }
-
+  if (m_opNumHasBeenSet) {
+    ss << m_opNum;
+    uri.AddQueryStringParameter("opNum", ss.str());
+    ss.str("");
+  }
 }
-
-
-

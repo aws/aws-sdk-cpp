@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glue/Glue_EXPORTS.h>
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
-  enum class DataQualityRuleResultStatus
-  {
-    NOT_SET,
-    PASS,
-    FAIL,
-    ERROR_
-  };
+namespace Aws {
+namespace Glue {
+namespace Model {
+enum class DataQualityRuleResultStatus { NOT_SET, PASS, FAIL, ERROR_ };
 
-namespace DataQualityRuleResultStatusMapper
-{
+namespace DataQualityRuleResultStatusMapper {
 AWS_GLUE_API DataQualityRuleResultStatus GetDataQualityRuleResultStatusForName(const Aws::String& name);
 
 AWS_GLUE_API Aws::String GetNameForDataQualityRuleResultStatus(DataQualityRuleResultStatus value);
-} // namespace DataQualityRuleResultStatusMapper
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace DataQualityRuleResultStatusMapper
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

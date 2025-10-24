@@ -3,71 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsEc2ClientVpnEndpointConnectionLogOptionsDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsEc2ClientVpnEndpointConnectionLogOptionsDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsEc2ClientVpnEndpointConnectionLogOptionsDetails::AwsEc2ClientVpnEndpointConnectionLogOptionsDetails(JsonView jsonValue)
-{
+AwsEc2ClientVpnEndpointConnectionLogOptionsDetails::AwsEc2ClientVpnEndpointConnectionLogOptionsDetails(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-AwsEc2ClientVpnEndpointConnectionLogOptionsDetails& AwsEc2ClientVpnEndpointConnectionLogOptionsDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Enabled"))
-  {
+AwsEc2ClientVpnEndpointConnectionLogOptionsDetails& AwsEc2ClientVpnEndpointConnectionLogOptionsDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Enabled")) {
     m_enabled = jsonValue.GetBool("Enabled");
     m_enabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CloudwatchLogGroup"))
-  {
+  if (jsonValue.ValueExists("CloudwatchLogGroup")) {
     m_cloudwatchLogGroup = jsonValue.GetString("CloudwatchLogGroup");
     m_cloudwatchLogGroupHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CloudwatchLogStream"))
-  {
+  if (jsonValue.ValueExists("CloudwatchLogStream")) {
     m_cloudwatchLogStream = jsonValue.GetString("CloudwatchLogStream");
     m_cloudwatchLogStreamHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsEc2ClientVpnEndpointConnectionLogOptionsDetails::Jsonize() const
-{
+JsonValue AwsEc2ClientVpnEndpointConnectionLogOptionsDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_enabledHasBeenSet)
-  {
-   payload.WithBool("Enabled", m_enabled);
-
+  if (m_enabledHasBeenSet) {
+    payload.WithBool("Enabled", m_enabled);
   }
 
-  if(m_cloudwatchLogGroupHasBeenSet)
-  {
-   payload.WithString("CloudwatchLogGroup", m_cloudwatchLogGroup);
-
+  if (m_cloudwatchLogGroupHasBeenSet) {
+    payload.WithString("CloudwatchLogGroup", m_cloudwatchLogGroup);
   }
 
-  if(m_cloudwatchLogStreamHasBeenSet)
-  {
-   payload.WithString("CloudwatchLogStream", m_cloudwatchLogStream);
-
+  if (m_cloudwatchLogStreamHasBeenSet) {
+    payload.WithString("CloudwatchLogStream", m_cloudwatchLogStream);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

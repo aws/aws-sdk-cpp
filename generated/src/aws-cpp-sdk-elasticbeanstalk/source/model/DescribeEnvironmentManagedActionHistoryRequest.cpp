@@ -3,34 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticbeanstalk/model/DescribeEnvironmentManagedActionHistoryRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticbeanstalk/model/DescribeEnvironmentManagedActionHistoryRequest.h>
 
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeEnvironmentManagedActionHistoryRequest::SerializePayload() const
-{
+Aws::String DescribeEnvironmentManagedActionHistoryRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeEnvironmentManagedActionHistory&";
-  if(m_environmentIdHasBeenSet)
-  {
+  if (m_environmentIdHasBeenSet) {
     ss << "EnvironmentId=" << StringUtils::URLEncode(m_environmentId.c_str()) << "&";
   }
 
-  if(m_environmentNameHasBeenSet)
-  {
+  if (m_environmentNameHasBeenSet) {
     ss << "EnvironmentName=" << StringUtils::URLEncode(m_environmentName.c_str()) << "&";
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  if(m_maxItemsHasBeenSet)
-  {
+  if (m_maxItemsHasBeenSet) {
     ss << "MaxItems=" << m_maxItems << "&";
   }
 
@@ -38,8 +33,4 @@ Aws::String DescribeEnvironmentManagedActionHistoryRequest::SerializePayload() c
   return ss.str();
 }
 
-
-void  DescribeEnvironmentManagedActionHistoryRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeEnvironmentManagedActionHistoryRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

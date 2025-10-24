@@ -12,37 +12,24 @@ using namespace Aws::ConnectContactLens::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ListRealtimeContactAnalysisSegmentsRequest::SerializePayload() const
-{
+Aws::String ListRealtimeContactAnalysisSegmentsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_instanceIdHasBeenSet)
-  {
-   payload.WithString("InstanceId", m_instanceId);
-
+  if (m_instanceIdHasBeenSet) {
+    payload.WithString("InstanceId", m_instanceId);
   }
 
-  if(m_contactIdHasBeenSet)
-  {
-   payload.WithString("ContactId", m_contactId);
-
+  if (m_contactIdHasBeenSet) {
+    payload.WithString("ContactId", m_contactId);
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("MaxResults", m_maxResults);
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
-   payload.WithString("NextToken", m_nextToken);
-
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("NextToken", m_nextToken);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

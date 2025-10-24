@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/email/SES_EXPORTS.h>
 
-namespace Aws
-{
-namespace SES
-{
-enum class SESErrors
-{
-  //From Core//
+namespace Aws {
+namespace SES {
+enum class SESErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class SESErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class SESErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ACCOUNT_SENDING_PAUSED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ACCOUNT_SENDING_PAUSED = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   ALREADY_EXISTS,
   CANNOT_DELETE,
   CONFIGURATION_SET_ALREADY_EXISTS,
@@ -83,9 +80,8 @@ enum class SESErrors
   TRACKING_OPTIONS_DOES_NOT_EXIST
 };
 
-class AWS_SES_API SESError : public Aws::Client::AWSError<SESErrors>
-{
-public:
+class AWS_SES_API SESError : public Aws::Client::AWSError<SESErrors> {
+ public:
   SESError() {}
   SESError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<SESErrors>(rhs) {}
   SESError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<SESErrors>(rhs) {}
@@ -96,10 +92,9 @@ public:
   T GetModeledError();
 };
 
-namespace SESErrorMapper
-{
-  AWS_SES_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace SESErrorMapper {
+AWS_SES_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace SES
-} // namespace Aws
+}  // namespace SES
+}  // namespace Aws

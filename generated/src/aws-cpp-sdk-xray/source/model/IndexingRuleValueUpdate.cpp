@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/xray/model/IndexingRuleValueUpdate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/xray/model/IndexingRuleValueUpdate.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace XRay
-{
-namespace Model
-{
+namespace Aws {
+namespace XRay {
+namespace Model {
 
-IndexingRuleValueUpdate::IndexingRuleValueUpdate(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IndexingRuleValueUpdate::IndexingRuleValueUpdate(JsonView jsonValue) { *this = jsonValue; }
 
-IndexingRuleValueUpdate& IndexingRuleValueUpdate::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Probabilistic"))
-  {
+IndexingRuleValueUpdate& IndexingRuleValueUpdate::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Probabilistic")) {
     m_probabilistic = jsonValue.GetObject("Probabilistic");
     m_probabilisticHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IndexingRuleValueUpdate::Jsonize() const
-{
+JsonValue IndexingRuleValueUpdate::Jsonize() const {
   JsonValue payload;
 
-  if(m_probabilisticHasBeenSet)
-  {
-   payload.WithObject("Probabilistic", m_probabilistic.Jsonize());
-
+  if (m_probabilisticHasBeenSet) {
+    payload.WithObject("Probabilistic", m_probabilistic.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace XRay
-} // namespace Aws
+}  // namespace Model
+}  // namespace XRay
+}  // namespace Aws

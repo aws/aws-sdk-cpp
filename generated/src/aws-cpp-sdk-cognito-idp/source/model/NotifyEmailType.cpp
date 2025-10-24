@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
 
-NotifyEmailType::NotifyEmailType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NotifyEmailType::NotifyEmailType(JsonView jsonValue) { *this = jsonValue; }
 
-NotifyEmailType& NotifyEmailType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Subject"))
-  {
+NotifyEmailType& NotifyEmailType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Subject")) {
     m_subject = jsonValue.GetString("Subject");
     m_subjectHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HtmlBody"))
-  {
+  if (jsonValue.ValueExists("HtmlBody")) {
     m_htmlBody = jsonValue.GetString("HtmlBody");
     m_htmlBodyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TextBody"))
-  {
+  if (jsonValue.ValueExists("TextBody")) {
     m_textBody = jsonValue.GetString("TextBody");
     m_textBodyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NotifyEmailType::Jsonize() const
-{
+JsonValue NotifyEmailType::Jsonize() const {
   JsonValue payload;
 
-  if(m_subjectHasBeenSet)
-  {
-   payload.WithString("Subject", m_subject);
-
+  if (m_subjectHasBeenSet) {
+    payload.WithString("Subject", m_subject);
   }
 
-  if(m_htmlBodyHasBeenSet)
-  {
-   payload.WithString("HtmlBody", m_htmlBody);
-
+  if (m_htmlBodyHasBeenSet) {
+    payload.WithString("HtmlBody", m_htmlBody);
   }
 
-  if(m_textBodyHasBeenSet)
-  {
-   payload.WithString("TextBody", m_textBody);
-
+  if (m_textBodyHasBeenSet) {
+    payload.WithString("TextBody", m_textBody);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

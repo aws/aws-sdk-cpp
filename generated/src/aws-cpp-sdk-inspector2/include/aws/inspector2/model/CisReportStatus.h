@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector2/Inspector2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Inspector2
-{
-namespace Model
-{
-  enum class CisReportStatus
-  {
-    NOT_SET,
-    SUCCEEDED,
-    FAILED,
-    IN_PROGRESS
-  };
+namespace Aws {
+namespace Inspector2 {
+namespace Model {
+enum class CisReportStatus { NOT_SET, SUCCEEDED, FAILED, IN_PROGRESS };
 
-namespace CisReportStatusMapper
-{
+namespace CisReportStatusMapper {
 AWS_INSPECTOR2_API CisReportStatus GetCisReportStatusForName(const Aws::String& name);
 
 AWS_INSPECTOR2_API Aws::String GetNameForCisReportStatus(CisReportStatus value);
-} // namespace CisReportStatusMapper
-} // namespace Model
-} // namespace Inspector2
-} // namespace Aws
+}  // namespace CisReportStatusMapper
+}  // namespace Model
+}  // namespace Inspector2
+}  // namespace Aws

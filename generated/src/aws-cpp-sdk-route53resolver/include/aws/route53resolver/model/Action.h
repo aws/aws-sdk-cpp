@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/route53resolver/Route53Resolver_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/route53resolver/Route53Resolver_EXPORTS.h>
 
-namespace Aws
-{
-namespace Route53Resolver
-{
-namespace Model
-{
-  enum class Action
-  {
-    NOT_SET,
-    ALLOW,
-    BLOCK,
-    ALERT
-  };
+namespace Aws {
+namespace Route53Resolver {
+namespace Model {
+enum class Action { NOT_SET, ALLOW, BLOCK, ALERT };
 
-namespace ActionMapper
-{
+namespace ActionMapper {
 AWS_ROUTE53RESOLVER_API Action GetActionForName(const Aws::String& name);
 
 AWS_ROUTE53RESOLVER_API Aws::String GetNameForAction(Action value);
-} // namespace ActionMapper
-} // namespace Model
-} // namespace Route53Resolver
-} // namespace Aws
+}  // namespace ActionMapper
+}  // namespace Model
+}  // namespace Route53Resolver
+}  // namespace Aws

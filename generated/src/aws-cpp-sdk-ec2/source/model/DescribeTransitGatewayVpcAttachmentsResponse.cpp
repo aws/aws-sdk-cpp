@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeTransitGatewayVpcAttachmentsResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/DescribeTransitGatewayVpcAttachmentsResponse.h>
 
 #include <utility>
 
@@ -17,30 +17,26 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeTransitGatewayVpcAttachmentsResponse::DescribeTransitGatewayVpcAttachmentsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeTransitGatewayVpcAttachmentsResponse::DescribeTransitGatewayVpcAttachmentsResponse(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-DescribeTransitGatewayVpcAttachmentsResponse& DescribeTransitGatewayVpcAttachmentsResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeTransitGatewayVpcAttachmentsResponse& DescribeTransitGatewayVpcAttachmentsResponse::operator=(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeTransitGatewayVpcAttachmentsResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeTransitGatewayVpcAttachmentsResponse")) {
     resultNode = rootNode.FirstChild("DescribeTransitGatewayVpcAttachmentsResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode transitGatewayVpcAttachmentsNode = resultNode.FirstChild("transitGatewayVpcAttachments");
-    if(!transitGatewayVpcAttachmentsNode.IsNull())
-    {
+    if (!transitGatewayVpcAttachmentsNode.IsNull()) {
       XmlNode transitGatewayVpcAttachmentsMember = transitGatewayVpcAttachmentsNode.FirstChild("item");
       m_transitGatewayVpcAttachmentsHasBeenSet = !transitGatewayVpcAttachmentsMember.IsNull();
-      while(!transitGatewayVpcAttachmentsMember.IsNull())
-      {
+      while (!transitGatewayVpcAttachmentsMember.IsNull()) {
         m_transitGatewayVpcAttachments.push_back(transitGatewayVpcAttachmentsMember);
         transitGatewayVpcAttachmentsMember = transitGatewayVpcAttachmentsMember.NextNode("item");
       }
@@ -48,8 +44,7 @@ DescribeTransitGatewayVpcAttachmentsResponse& DescribeTransitGatewayVpcAttachmen
       m_transitGatewayVpcAttachmentsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
+    if (!nextTokenNode.IsNull()) {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
       m_nextTokenHasBeenSet = true;
     }
@@ -57,12 +52,12 @@ DescribeTransitGatewayVpcAttachmentsResponse& DescribeTransitGatewayVpcAttachmen
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeTransitGatewayVpcAttachmentsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeTransitGatewayVpcAttachmentsResponse",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

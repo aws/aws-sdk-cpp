@@ -7,82 +7,87 @@
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/guardduty/model/OrgFeatureAdditionalConfiguration.h>
 #include <aws/guardduty/model/OrgFeatureStatus.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace GuardDuty
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace GuardDuty {
+namespace Model {
 
+/**
+ * <p>A list of additional configurations which will be configured for the
+ * organization. </p> <p>Additional configuration applies to only GuardDuty Runtime
+ * Monitoring protection plan.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/OrganizationAdditionalConfiguration">AWS
+ * API Reference</a></p>
+ */
+class OrganizationAdditionalConfiguration {
+ public:
+  AWS_GUARDDUTY_API OrganizationAdditionalConfiguration() = default;
+  AWS_GUARDDUTY_API OrganizationAdditionalConfiguration(Aws::Utils::Json::JsonView jsonValue);
+  AWS_GUARDDUTY_API OrganizationAdditionalConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>A list of additional configurations which will be configured for the
-   * organization. </p> <p>Additional configuration applies to only GuardDuty Runtime
-   * Monitoring protection plan.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/OrganizationAdditionalConfiguration">AWS
-   * API Reference</a></p>
+   * <p>The name of the additional configuration that will be configured for the
+   * organization. These values are applicable to only Runtime Monitoring protection
+   * plan.</p>
    */
-  class OrganizationAdditionalConfiguration
-  {
-  public:
-    AWS_GUARDDUTY_API OrganizationAdditionalConfiguration() = default;
-    AWS_GUARDDUTY_API OrganizationAdditionalConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AWS_GUARDDUTY_API OrganizationAdditionalConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline OrgFeatureAdditionalConfiguration GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  inline void SetName(OrgFeatureAdditionalConfiguration value) {
+    m_nameHasBeenSet = true;
+    m_name = value;
+  }
+  inline OrganizationAdditionalConfiguration& WithName(OrgFeatureAdditionalConfiguration value) {
+    SetName(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The status of the additional configuration that will be configured for the
+   * organization. Use one of the following values to configure the feature status
+   * for the entire organization:</p> <ul> <li> <p> <code>NEW</code>: Indicates that
+   * when a new account joins the organization, they will have the additional
+   * configuration enabled automatically. </p> </li> <li> <p> <code>ALL</code>:
+   * Indicates that all accounts in the organization have the additional
+   * configuration enabled automatically. This includes <code>NEW</code> accounts
+   * that join the organization and accounts that may have been suspended or removed
+   * from the organization in GuardDuty.</p> <p>It may take up to 24 hours to update
+   * the configuration for all the member accounts.</p> </li> <li> <p>
+   * <code>NONE</code>: Indicates that the additional configuration will not be
+   * automatically enabled for any account in the organization. The administrator
+   * must manage the additional configuration for each account individually.</p>
+   * </li> </ul>
+   */
+  inline OrgFeatureStatus GetAutoEnable() const { return m_autoEnable; }
+  inline bool AutoEnableHasBeenSet() const { return m_autoEnableHasBeenSet; }
+  inline void SetAutoEnable(OrgFeatureStatus value) {
+    m_autoEnableHasBeenSet = true;
+    m_autoEnable = value;
+  }
+  inline OrganizationAdditionalConfiguration& WithAutoEnable(OrgFeatureStatus value) {
+    SetAutoEnable(value);
+    return *this;
+  }
+  ///@}
+ private:
+  OrgFeatureAdditionalConfiguration m_name{OrgFeatureAdditionalConfiguration::NOT_SET};
+  bool m_nameHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The name of the additional configuration that will be configured for the
-     * organization. These values are applicable to only Runtime Monitoring protection
-     * plan.</p>
-     */
-    inline OrgFeatureAdditionalConfiguration GetName() const { return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(OrgFeatureAdditionalConfiguration value) { m_nameHasBeenSet = true; m_name = value; }
-    inline OrganizationAdditionalConfiguration& WithName(OrgFeatureAdditionalConfiguration value) { SetName(value); return *this;}
-    ///@}
+  OrgFeatureStatus m_autoEnable{OrgFeatureStatus::NOT_SET};
+  bool m_autoEnableHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The status of the additional configuration that will be configured for the
-     * organization. Use one of the following values to configure the feature status
-     * for the entire organization:</p> <ul> <li> <p> <code>NEW</code>: Indicates that
-     * when a new account joins the organization, they will have the additional
-     * configuration enabled automatically. </p> </li> <li> <p> <code>ALL</code>:
-     * Indicates that all accounts in the organization have the additional
-     * configuration enabled automatically. This includes <code>NEW</code> accounts
-     * that join the organization and accounts that may have been suspended or removed
-     * from the organization in GuardDuty.</p> <p>It may take up to 24 hours to update
-     * the configuration for all the member accounts.</p> </li> <li> <p>
-     * <code>NONE</code>: Indicates that the additional configuration will not be
-     * automatically enabled for any account in the organization. The administrator
-     * must manage the additional configuration for each account individually.</p>
-     * </li> </ul>
-     */
-    inline OrgFeatureStatus GetAutoEnable() const { return m_autoEnable; }
-    inline bool AutoEnableHasBeenSet() const { return m_autoEnableHasBeenSet; }
-    inline void SetAutoEnable(OrgFeatureStatus value) { m_autoEnableHasBeenSet = true; m_autoEnable = value; }
-    inline OrganizationAdditionalConfiguration& WithAutoEnable(OrgFeatureStatus value) { SetAutoEnable(value); return *this;}
-    ///@}
-  private:
-
-    OrgFeatureAdditionalConfiguration m_name{OrgFeatureAdditionalConfiguration::NOT_SET};
-    bool m_nameHasBeenSet = false;
-
-    OrgFeatureStatus m_autoEnable{OrgFeatureStatus::NOT_SET};
-    bool m_autoEnableHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace GuardDuty
-} // namespace Aws
+}  // namespace Model
+}  // namespace GuardDuty
+}  // namespace Aws

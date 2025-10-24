@@ -12,74 +12,50 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateConnectorRequest::SerializePayload() const
-{
+Aws::String CreateConnectorRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_urlHasBeenSet)
-  {
-   payload.WithString("Url", m_url);
-
+  if (m_urlHasBeenSet) {
+    payload.WithString("Url", m_url);
   }
 
-  if(m_as2ConfigHasBeenSet)
-  {
-   payload.WithObject("As2Config", m_as2Config.Jsonize());
-
+  if (m_as2ConfigHasBeenSet) {
+    payload.WithObject("As2Config", m_as2Config.Jsonize());
   }
 
-  if(m_accessRoleHasBeenSet)
-  {
-   payload.WithString("AccessRole", m_accessRole);
-
+  if (m_accessRoleHasBeenSet) {
+    payload.WithString("AccessRole", m_accessRole);
   }
 
-  if(m_loggingRoleHasBeenSet)
-  {
-   payload.WithString("LoggingRole", m_loggingRole);
-
+  if (m_loggingRoleHasBeenSet) {
+    payload.WithString("LoggingRole", m_loggingRole);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("Tags", std::move(tagsJsonList));
-
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
-  if(m_sftpConfigHasBeenSet)
-  {
-   payload.WithObject("SftpConfig", m_sftpConfig.Jsonize());
-
+  if (m_sftpConfigHasBeenSet) {
+    payload.WithObject("SftpConfig", m_sftpConfig.Jsonize());
   }
 
-  if(m_securityPolicyNameHasBeenSet)
-  {
-   payload.WithString("SecurityPolicyName", m_securityPolicyName);
-
+  if (m_securityPolicyNameHasBeenSet) {
+    payload.WithString("SecurityPolicyName", m_securityPolicyName);
   }
 
-  if(m_egressConfigHasBeenSet)
-  {
-   payload.WithObject("EgressConfig", m_egressConfig.Jsonize());
-
+  if (m_egressConfigHasBeenSet) {
+    payload.WithObject("EgressConfig", m_egressConfig.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateConnectorRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateConnectorRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TransferService.CreateConnector"));
   return headers;
-
 }
-
-
-
-

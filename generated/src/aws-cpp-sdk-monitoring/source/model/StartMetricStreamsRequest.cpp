@@ -3,30 +3,23 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/monitoring/model/StartMetricStreamsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/monitoring/model/StartMetricStreamsRequest.h>
 
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-Aws::String StartMetricStreamsRequest::SerializePayload() const
-{
+Aws::String StartMetricStreamsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=StartMetricStreams&";
-  if(m_namesHasBeenSet)
-  {
-    if (m_names.empty())
-    {
+  if (m_namesHasBeenSet) {
+    if (m_names.empty()) {
       ss << "Names=&";
-    }
-    else
-    {
+    } else {
       unsigned namesCount = 1;
-      for(auto& item : m_names)
-      {
-        ss << "Names.member." << namesCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_names) {
+        ss << "Names.member." << namesCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         namesCount++;
       }
     }
@@ -36,8 +29,4 @@ Aws::String StartMetricStreamsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  StartMetricStreamsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void StartMetricStreamsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

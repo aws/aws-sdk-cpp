@@ -3,55 +3,45 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ReportInstanceStatusRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ReportInstanceStatusRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ReportInstanceStatusRequest::SerializePayload() const
-{
+Aws::String ReportInstanceStatusRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ReportInstanceStatus&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_instancesHasBeenSet)
-  {
+  if (m_instancesHasBeenSet) {
     unsigned instancesCount = 1;
-    for(auto& item : m_instances)
-    {
-      ss << "InstanceId." << instancesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_instances) {
+      ss << "InstanceId." << instancesCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       instancesCount++;
     }
   }
 
-  if(m_statusHasBeenSet)
-  {
+  if (m_statusHasBeenSet) {
     ss << "Status=" << StringUtils::URLEncode(ReportStatusTypeMapper::GetNameForReportStatusType(m_status)) << "&";
   }
 
-  if(m_startTimeHasBeenSet)
-  {
+  if (m_startTimeHasBeenSet) {
     ss << "StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_endTimeHasBeenSet)
-  {
+  if (m_endTimeHasBeenSet) {
     ss << "EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_reasonCodesHasBeenSet)
-  {
+  if (m_reasonCodesHasBeenSet) {
     unsigned reasonCodesCount = 1;
-    for(auto& item : m_reasonCodes)
-    {
+    for (auto& item : m_reasonCodes) {
       ss << "ReasonCode." << reasonCodesCount << "="
-          << StringUtils::URLEncode(ReportInstanceReasonCodesMapper::GetNameForReportInstanceReasonCodes(item)) << "&";
+         << StringUtils::URLEncode(ReportInstanceReasonCodesMapper::GetNameForReportInstanceReasonCodes(item)) << "&";
       reasonCodesCount++;
     }
   }
@@ -60,8 +50,4 @@ Aws::String ReportInstanceStatusRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ReportInstanceStatusRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ReportInstanceStatusRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

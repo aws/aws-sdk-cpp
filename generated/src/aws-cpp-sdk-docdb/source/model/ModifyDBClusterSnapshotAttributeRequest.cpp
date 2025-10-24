@@ -3,58 +3,43 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/docdb/model/ModifyDBClusterSnapshotAttributeRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/docdb/model/ModifyDBClusterSnapshotAttributeRequest.h>
 
 using namespace Aws::DocDB::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyDBClusterSnapshotAttributeRequest::SerializePayload() const
-{
+Aws::String ModifyDBClusterSnapshotAttributeRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyDBClusterSnapshotAttribute&";
-  if(m_dBClusterSnapshotIdentifierHasBeenSet)
-  {
+  if (m_dBClusterSnapshotIdentifierHasBeenSet) {
     ss << "DBClusterSnapshotIdentifier=" << StringUtils::URLEncode(m_dBClusterSnapshotIdentifier.c_str()) << "&";
   }
 
-  if(m_attributeNameHasBeenSet)
-  {
+  if (m_attributeNameHasBeenSet) {
     ss << "AttributeName=" << StringUtils::URLEncode(m_attributeName.c_str()) << "&";
   }
 
-  if(m_valuesToAddHasBeenSet)
-  {
-    if (m_valuesToAdd.empty())
-    {
+  if (m_valuesToAddHasBeenSet) {
+    if (m_valuesToAdd.empty()) {
       ss << "ValuesToAdd=&";
-    }
-    else
-    {
+    } else {
       unsigned valuesToAddCount = 1;
-      for(auto& item : m_valuesToAdd)
-      {
-        ss << "ValuesToAdd.AttributeValue." << valuesToAddCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_valuesToAdd) {
+        ss << "ValuesToAdd.AttributeValue." << valuesToAddCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         valuesToAddCount++;
       }
     }
   }
 
-  if(m_valuesToRemoveHasBeenSet)
-  {
-    if (m_valuesToRemove.empty())
-    {
+  if (m_valuesToRemoveHasBeenSet) {
+    if (m_valuesToRemove.empty()) {
       ss << "ValuesToRemove=&";
-    }
-    else
-    {
+    } else {
       unsigned valuesToRemoveCount = 1;
-      for(auto& item : m_valuesToRemove)
-      {
-        ss << "ValuesToRemove.AttributeValue." << valuesToRemoveCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_valuesToRemove) {
+        ss << "ValuesToRemove.AttributeValue." << valuesToRemoveCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         valuesToRemoveCount++;
       }
     }
@@ -64,8 +49,4 @@ Aws::String ModifyDBClusterSnapshotAttributeRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ModifyDBClusterSnapshotAttributeRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ModifyDBClusterSnapshotAttributeRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

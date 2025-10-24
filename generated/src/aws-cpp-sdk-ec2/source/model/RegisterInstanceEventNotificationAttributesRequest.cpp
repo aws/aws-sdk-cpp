@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/RegisterInstanceEventNotificationAttributesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/RegisterInstanceEventNotificationAttributesRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String RegisterInstanceEventNotificationAttributesRequest::SerializePayload() const
-{
+Aws::String RegisterInstanceEventNotificationAttributesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=RegisterInstanceEventNotificationAttributes&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_instanceTagAttributeHasBeenSet)
-  {
+  if (m_instanceTagAttributeHasBeenSet) {
     m_instanceTagAttribute.OutputToStream(ss, "InstanceTagAttribute");
   }
 
@@ -28,8 +25,6 @@ Aws::String RegisterInstanceEventNotificationAttributesRequest::SerializePayload
   return ss.str();
 }
 
-
-void  RegisterInstanceEventNotificationAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
+void RegisterInstanceEventNotificationAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const {
   uri.SetQueryString(SerializePayload());
 }

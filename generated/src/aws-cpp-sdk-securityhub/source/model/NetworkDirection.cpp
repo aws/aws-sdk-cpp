@@ -3,70 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/NetworkDirection.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/securityhub/model/NetworkDirection.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
+namespace NetworkDirectionMapper {
 
-namespace Aws
-{
-  namespace SecurityHub
-  {
-    namespace Model
-    {
-      namespace NetworkDirectionMapper
-      {
+static const int IN_HASH = HashingUtils::HashString("IN");
+static const int OUT_HASH = HashingUtils::HashString("OUT");
 
-        static const int IN_HASH = HashingUtils::HashString("IN");
-        static const int OUT_HASH = HashingUtils::HashString("OUT");
+NetworkDirection GetNetworkDirectionForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == IN_HASH) {
+    return NetworkDirection::IN;
+  } else if (hashCode == OUT_HASH) {
+    return NetworkDirection::OUT;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<NetworkDirection>(hashCode);
+  }
 
+  return NetworkDirection::NOT_SET;
+}
 
-        NetworkDirection GetNetworkDirectionForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == IN_HASH)
-          {
-            return NetworkDirection::IN;
-          }
-          else if (hashCode == OUT_HASH)
-          {
-            return NetworkDirection::OUT;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<NetworkDirection>(hashCode);
-          }
+Aws::String GetNameForNetworkDirection(NetworkDirection enumValue) {
+  switch (enumValue) {
+    case NetworkDirection::NOT_SET:
+      return {};
+    case NetworkDirection::IN:
+      return "IN";
+    case NetworkDirection::OUT:
+      return "OUT";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return NetworkDirection::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForNetworkDirection(NetworkDirection enumValue)
-        {
-          switch(enumValue)
-          {
-          case NetworkDirection::NOT_SET:
-            return {};
-          case NetworkDirection::IN:
-            return "IN";
-          case NetworkDirection::OUT:
-            return "OUT";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace NetworkDirectionMapper
-    } // namespace Model
-  } // namespace SecurityHub
-} // namespace Aws
+}  // namespace NetworkDirectionMapper
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

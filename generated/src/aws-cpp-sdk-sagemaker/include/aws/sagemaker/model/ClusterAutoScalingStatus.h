@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class ClusterAutoScalingStatus
-  {
-    NOT_SET,
-    InService,
-    Failed,
-    Creating,
-    Deleting
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class ClusterAutoScalingStatus { NOT_SET, InService, Failed, Creating, Deleting };
 
-namespace ClusterAutoScalingStatusMapper
-{
+namespace ClusterAutoScalingStatusMapper {
 AWS_SAGEMAKER_API ClusterAutoScalingStatus GetClusterAutoScalingStatusForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForClusterAutoScalingStatus(ClusterAutoScalingStatus value);
-} // namespace ClusterAutoScalingStatusMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace ClusterAutoScalingStatusMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

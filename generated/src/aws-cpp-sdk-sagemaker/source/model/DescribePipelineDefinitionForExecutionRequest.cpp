@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/DescribePipelineDefinitionForExecutionRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/DescribePipelineDefinitionForExecutionRequest.h>
 
 #include <utility>
 
@@ -12,27 +12,18 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribePipelineDefinitionForExecutionRequest::SerializePayload() const
-{
+Aws::String DescribePipelineDefinitionForExecutionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_pipelineExecutionArnHasBeenSet)
-  {
-   payload.WithString("PipelineExecutionArn", m_pipelineExecutionArn);
-
+  if (m_pipelineExecutionArnHasBeenSet) {
+    payload.WithString("PipelineExecutionArn", m_pipelineExecutionArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribePipelineDefinitionForExecutionRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribePipelineDefinitionForExecutionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "SageMaker.DescribePipelineDefinitionForExecution"));
   return headers;
-
 }
-
-
-
-

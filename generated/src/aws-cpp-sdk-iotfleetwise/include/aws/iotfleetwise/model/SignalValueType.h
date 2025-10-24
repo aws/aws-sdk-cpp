@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTFleetWise
-{
-namespace Model
-{
-  enum class SignalValueType
-  {
-    NOT_SET,
-    INTEGER,
-    FLOATING_POINT
-  };
+namespace Aws {
+namespace IoTFleetWise {
+namespace Model {
+enum class SignalValueType { NOT_SET, INTEGER, FLOATING_POINT };
 
-namespace SignalValueTypeMapper
-{
+namespace SignalValueTypeMapper {
 AWS_IOTFLEETWISE_API SignalValueType GetSignalValueTypeForName(const Aws::String& name);
 
 AWS_IOTFLEETWISE_API Aws::String GetNameForSignalValueType(SignalValueType value);
-} // namespace SignalValueTypeMapper
-} // namespace Model
-} // namespace IoTFleetWise
-} // namespace Aws
+}  // namespace SignalValueTypeMapper
+}  // namespace Model
+}  // namespace IoTFleetWise
+}  // namespace Aws

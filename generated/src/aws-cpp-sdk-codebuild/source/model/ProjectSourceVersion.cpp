@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeBuild
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeBuild {
+namespace Model {
 
-ProjectSourceVersion::ProjectSourceVersion(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProjectSourceVersion::ProjectSourceVersion(JsonView jsonValue) { *this = jsonValue; }
 
-ProjectSourceVersion& ProjectSourceVersion::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("sourceIdentifier"))
-  {
+ProjectSourceVersion& ProjectSourceVersion::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("sourceIdentifier")) {
     m_sourceIdentifier = jsonValue.GetString("sourceIdentifier");
     m_sourceIdentifierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sourceVersion"))
-  {
+  if (jsonValue.ValueExists("sourceVersion")) {
     m_sourceVersion = jsonValue.GetString("sourceVersion");
     m_sourceVersionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ProjectSourceVersion::Jsonize() const
-{
+JsonValue ProjectSourceVersion::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceIdentifierHasBeenSet)
-  {
-   payload.WithString("sourceIdentifier", m_sourceIdentifier);
-
+  if (m_sourceIdentifierHasBeenSet) {
+    payload.WithString("sourceIdentifier", m_sourceIdentifier);
   }
 
-  if(m_sourceVersionHasBeenSet)
-  {
-   payload.WithString("sourceVersion", m_sourceVersion);
-
+  if (m_sourceVersionHasBeenSet) {
+    payload.WithString("sourceVersion", m_sourceVersion);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeBuild
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeBuild
+}  // namespace Aws

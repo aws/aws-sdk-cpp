@@ -11,83 +11,62 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKIdentity
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKIdentity {
+namespace Model {
 
-AppInstance::AppInstance(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AppInstance::AppInstance(JsonView jsonValue) { *this = jsonValue; }
 
-AppInstance& AppInstance::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AppInstanceArn"))
-  {
+AppInstance& AppInstance::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AppInstanceArn")) {
     m_appInstanceArn = jsonValue.GetString("AppInstanceArn");
     m_appInstanceArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedTimestamp"))
-  {
+  if (jsonValue.ValueExists("CreatedTimestamp")) {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
     m_createdTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastUpdatedTimestamp"))
-  {
+  if (jsonValue.ValueExists("LastUpdatedTimestamp")) {
     m_lastUpdatedTimestamp = jsonValue.GetDouble("LastUpdatedTimestamp");
     m_lastUpdatedTimestampHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Metadata"))
-  {
+  if (jsonValue.ValueExists("Metadata")) {
     m_metadata = jsonValue.GetString("Metadata");
     m_metadataHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AppInstance::Jsonize() const
-{
+JsonValue AppInstance::Jsonize() const {
   JsonValue payload;
 
-  if(m_appInstanceArnHasBeenSet)
-  {
-   payload.WithString("AppInstanceArn", m_appInstanceArn);
-
+  if (m_appInstanceArnHasBeenSet) {
+    payload.WithString("AppInstanceArn", m_appInstanceArn);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_createdTimestampHasBeenSet)
-  {
-   payload.WithDouble("CreatedTimestamp", m_createdTimestamp.SecondsWithMSPrecision());
+  if (m_createdTimestampHasBeenSet) {
+    payload.WithDouble("CreatedTimestamp", m_createdTimestamp.SecondsWithMSPrecision());
   }
 
-  if(m_lastUpdatedTimestampHasBeenSet)
-  {
-   payload.WithDouble("LastUpdatedTimestamp", m_lastUpdatedTimestamp.SecondsWithMSPrecision());
+  if (m_lastUpdatedTimestampHasBeenSet) {
+    payload.WithDouble("LastUpdatedTimestamp", m_lastUpdatedTimestamp.SecondsWithMSPrecision());
   }
 
-  if(m_metadataHasBeenSet)
-  {
-   payload.WithString("Metadata", m_metadata);
-
+  if (m_metadataHasBeenSet) {
+    payload.WithString("Metadata", m_metadata);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKIdentity
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKIdentity
+}  // namespace Aws

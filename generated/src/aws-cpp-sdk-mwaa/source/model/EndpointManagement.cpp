@@ -3,70 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mwaa/model/EndpointManagement.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/mwaa/model/EndpointManagement.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace MWAA {
+namespace Model {
+namespace EndpointManagementMapper {
 
-namespace Aws
-{
-  namespace MWAA
-  {
-    namespace Model
-    {
-      namespace EndpointManagementMapper
-      {
+static const int CUSTOMER_HASH = HashingUtils::HashString("CUSTOMER");
+static const int SERVICE_HASH = HashingUtils::HashString("SERVICE");
 
-        static const int CUSTOMER_HASH = HashingUtils::HashString("CUSTOMER");
-        static const int SERVICE_HASH = HashingUtils::HashString("SERVICE");
+EndpointManagement GetEndpointManagementForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == CUSTOMER_HASH) {
+    return EndpointManagement::CUSTOMER;
+  } else if (hashCode == SERVICE_HASH) {
+    return EndpointManagement::SERVICE;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<EndpointManagement>(hashCode);
+  }
 
+  return EndpointManagement::NOT_SET;
+}
 
-        EndpointManagement GetEndpointManagementForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == CUSTOMER_HASH)
-          {
-            return EndpointManagement::CUSTOMER;
-          }
-          else if (hashCode == SERVICE_HASH)
-          {
-            return EndpointManagement::SERVICE;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<EndpointManagement>(hashCode);
-          }
+Aws::String GetNameForEndpointManagement(EndpointManagement enumValue) {
+  switch (enumValue) {
+    case EndpointManagement::NOT_SET:
+      return {};
+    case EndpointManagement::CUSTOMER:
+      return "CUSTOMER";
+    case EndpointManagement::SERVICE:
+      return "SERVICE";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return EndpointManagement::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForEndpointManagement(EndpointManagement enumValue)
-        {
-          switch(enumValue)
-          {
-          case EndpointManagement::NOT_SET:
-            return {};
-          case EndpointManagement::CUSTOMER:
-            return "CUSTOMER";
-          case EndpointManagement::SERVICE:
-            return "SERVICE";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace EndpointManagementMapper
-    } // namespace Model
-  } // namespace MWAA
-} // namespace Aws
+}  // namespace EndpointManagementMapper
+}  // namespace Model
+}  // namespace MWAA
+}  // namespace Aws

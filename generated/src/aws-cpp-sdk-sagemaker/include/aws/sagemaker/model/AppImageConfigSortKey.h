@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class AppImageConfigSortKey
-  {
-    NOT_SET,
-    CreationTime,
-    LastModifiedTime,
-    Name
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class AppImageConfigSortKey { NOT_SET, CreationTime, LastModifiedTime, Name };
 
-namespace AppImageConfigSortKeyMapper
-{
+namespace AppImageConfigSortKeyMapper {
 AWS_SAGEMAKER_API AppImageConfigSortKey GetAppImageConfigSortKeyForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForAppImageConfigSortKey(AppImageConfigSortKey value);
-} // namespace AppImageConfigSortKeyMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace AppImageConfigSortKeyMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

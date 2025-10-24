@@ -4,42 +4,32 @@
  */
 
 #include <aws/cloudformation/model/LoggingConfig.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFormation
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFormation {
+namespace Model {
 
-LoggingConfig::LoggingConfig(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+LoggingConfig::LoggingConfig(const XmlNode& xmlNode) { *this = xmlNode; }
 
-LoggingConfig& LoggingConfig::operator =(const XmlNode& xmlNode)
-{
+LoggingConfig& LoggingConfig::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode logRoleArnNode = resultNode.FirstChild("LogRoleArn");
-    if(!logRoleArnNode.IsNull())
-    {
+    if (!logRoleArnNode.IsNull()) {
       m_logRoleArn = Aws::Utils::Xml::DecodeEscapedXmlText(logRoleArnNode.GetText());
       m_logRoleArnHasBeenSet = true;
     }
     XmlNode logGroupNameNode = resultNode.FirstChild("LogGroupName");
-    if(!logGroupNameNode.IsNull())
-    {
+    if (!logGroupNameNode.IsNull()) {
       m_logGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(logGroupNameNode.GetText());
       m_logGroupNameHasBeenSet = true;
     }
@@ -48,32 +38,25 @@ LoggingConfig& LoggingConfig::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void LoggingConfig::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_logRoleArnHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".LogRoleArn=" << StringUtils::URLEncode(m_logRoleArn.c_str()) << "&";
+void LoggingConfig::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_logRoleArnHasBeenSet) {
+    oStream << location << index << locationValue << ".LogRoleArn=" << StringUtils::URLEncode(m_logRoleArn.c_str()) << "&";
   }
 
-  if(m_logGroupNameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".LogGroupName=" << StringUtils::URLEncode(m_logGroupName.c_str()) << "&";
-  }
-
-}
-
-void LoggingConfig::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_logRoleArnHasBeenSet)
-  {
-      oStream << location << ".LogRoleArn=" << StringUtils::URLEncode(m_logRoleArn.c_str()) << "&";
-  }
-  if(m_logGroupNameHasBeenSet)
-  {
-      oStream << location << ".LogGroupName=" << StringUtils::URLEncode(m_logGroupName.c_str()) << "&";
+  if (m_logGroupNameHasBeenSet) {
+    oStream << location << index << locationValue << ".LogGroupName=" << StringUtils::URLEncode(m_logGroupName.c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace CloudFormation
-} // namespace Aws
+void LoggingConfig::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_logRoleArnHasBeenSet) {
+    oStream << location << ".LogRoleArn=" << StringUtils::URLEncode(m_logRoleArn.c_str()) << "&";
+  }
+  if (m_logGroupNameHasBeenSet) {
+    oStream << location << ".LogGroupName=" << StringUtils::URLEncode(m_logGroupName.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace CloudFormation
+}  // namespace Aws

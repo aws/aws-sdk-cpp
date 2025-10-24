@@ -3,63 +3,51 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker-geospatial/model/VectorEnrichmentJobDocumentType.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/sagemaker-geospatial/model/VectorEnrichmentJobDocumentType.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace SageMakerGeospatial {
+namespace Model {
+namespace VectorEnrichmentJobDocumentTypeMapper {
 
-namespace Aws
-{
-  namespace SageMakerGeospatial
-  {
-    namespace Model
-    {
-      namespace VectorEnrichmentJobDocumentTypeMapper
-      {
+static const int CSV_HASH = HashingUtils::HashString("CSV");
 
-        static const int CSV_HASH = HashingUtils::HashString("CSV");
+VectorEnrichmentJobDocumentType GetVectorEnrichmentJobDocumentTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == CSV_HASH) {
+    return VectorEnrichmentJobDocumentType::CSV;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<VectorEnrichmentJobDocumentType>(hashCode);
+  }
 
+  return VectorEnrichmentJobDocumentType::NOT_SET;
+}
 
-        VectorEnrichmentJobDocumentType GetVectorEnrichmentJobDocumentTypeForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == CSV_HASH)
-          {
-            return VectorEnrichmentJobDocumentType::CSV;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<VectorEnrichmentJobDocumentType>(hashCode);
-          }
+Aws::String GetNameForVectorEnrichmentJobDocumentType(VectorEnrichmentJobDocumentType enumValue) {
+  switch (enumValue) {
+    case VectorEnrichmentJobDocumentType::NOT_SET:
+      return {};
+    case VectorEnrichmentJobDocumentType::CSV:
+      return "CSV";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return VectorEnrichmentJobDocumentType::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForVectorEnrichmentJobDocumentType(VectorEnrichmentJobDocumentType enumValue)
-        {
-          switch(enumValue)
-          {
-          case VectorEnrichmentJobDocumentType::NOT_SET:
-            return {};
-          case VectorEnrichmentJobDocumentType::CSV:
-            return "CSV";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace VectorEnrichmentJobDocumentTypeMapper
-    } // namespace Model
-  } // namespace SageMakerGeospatial
-} // namespace Aws
+}  // namespace VectorEnrichmentJobDocumentTypeMapper
+}  // namespace Model
+}  // namespace SageMakerGeospatial
+}  // namespace Aws

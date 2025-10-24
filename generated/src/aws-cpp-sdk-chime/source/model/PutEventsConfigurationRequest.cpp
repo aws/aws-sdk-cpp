@@ -12,25 +12,16 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutEventsConfigurationRequest::SerializePayload() const
-{
+Aws::String PutEventsConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_outboundEventsHTTPSEndpointHasBeenSet)
-  {
-   payload.WithString("OutboundEventsHTTPSEndpoint", m_outboundEventsHTTPSEndpoint);
-
+  if (m_outboundEventsHTTPSEndpointHasBeenSet) {
+    payload.WithString("OutboundEventsHTTPSEndpoint", m_outboundEventsHTTPSEndpoint);
   }
 
-  if(m_lambdaFunctionArnHasBeenSet)
-  {
-   payload.WithString("LambdaFunctionArn", m_lambdaFunctionArn);
-
+  if (m_lambdaFunctionArnHasBeenSet) {
+    payload.WithString("LambdaFunctionArn", m_lambdaFunctionArn);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -7,25 +7,16 @@
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ConfigService
-{
-namespace Model
-{
-  enum class RecordingScope
-  {
-    NOT_SET,
-    INTERNAL,
-    PAID
-  };
+namespace Aws {
+namespace ConfigService {
+namespace Model {
+enum class RecordingScope { NOT_SET, INTERNAL, PAID };
 
-namespace RecordingScopeMapper
-{
+namespace RecordingScopeMapper {
 AWS_CONFIGSERVICE_API RecordingScope GetRecordingScopeForName(const Aws::String& name);
 
 AWS_CONFIGSERVICE_API Aws::String GetNameForRecordingScope(RecordingScope value);
-} // namespace RecordingScopeMapper
-} // namespace Model
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace RecordingScopeMapper
+}  // namespace Model
+}  // namespace ConfigService
+}  // namespace Aws

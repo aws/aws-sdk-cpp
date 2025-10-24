@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ecs/model/Ulimit.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ecs/model/Ulimit.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ECS
-{
-namespace Model
-{
+namespace Aws {
+namespace ECS {
+namespace Model {
 
-Ulimit::Ulimit(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Ulimit::Ulimit(JsonView jsonValue) { *this = jsonValue; }
 
-Ulimit& Ulimit::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+Ulimit& Ulimit::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = UlimitNameMapper::GetUlimitNameForName(jsonValue.GetString("name"));
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("softLimit"))
-  {
+  if (jsonValue.ValueExists("softLimit")) {
     m_softLimit = jsonValue.GetInteger("softLimit");
     m_softLimitHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("hardLimit"))
-  {
+  if (jsonValue.ValueExists("hardLimit")) {
     m_hardLimit = jsonValue.GetInteger("hardLimit");
     m_hardLimitHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Ulimit::Jsonize() const
-{
+JsonValue Ulimit::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", UlimitNameMapper::GetNameForUlimitName(m_name));
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", UlimitNameMapper::GetNameForUlimitName(m_name));
   }
 
-  if(m_softLimitHasBeenSet)
-  {
-   payload.WithInteger("softLimit", m_softLimit);
-
+  if (m_softLimitHasBeenSet) {
+    payload.WithInteger("softLimit", m_softLimit);
   }
 
-  if(m_hardLimitHasBeenSet)
-  {
-   payload.WithInteger("hardLimit", m_hardLimit);
-
+  if (m_hardLimitHasBeenSet) {
+    payload.WithInteger("hardLimit", m_hardLimit);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ECS
-} // namespace Aws
+}  // namespace Model
+}  // namespace ECS
+}  // namespace Aws

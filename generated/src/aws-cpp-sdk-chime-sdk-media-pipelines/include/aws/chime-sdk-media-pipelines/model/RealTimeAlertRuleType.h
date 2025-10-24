@@ -7,26 +7,16 @@
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelines_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
-  enum class RealTimeAlertRuleType
-  {
-    NOT_SET,
-    KeywordMatch,
-    Sentiment,
-    IssueDetection
-  };
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
+enum class RealTimeAlertRuleType { NOT_SET, KeywordMatch, Sentiment, IssueDetection };
 
-namespace RealTimeAlertRuleTypeMapper
-{
+namespace RealTimeAlertRuleTypeMapper {
 AWS_CHIMESDKMEDIAPIPELINES_API RealTimeAlertRuleType GetRealTimeAlertRuleTypeForName(const Aws::String& name);
 
 AWS_CHIMESDKMEDIAPIPELINES_API Aws::String GetNameForRealTimeAlertRuleType(RealTimeAlertRuleType value);
-} // namespace RealTimeAlertRuleTypeMapper
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace RealTimeAlertRuleTypeMapper
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/panorama/Panorama_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/panorama/Panorama_EXPORTS.h>
 
-namespace Aws
-{
-namespace Panorama
-{
-namespace Model
-{
-  enum class PortType
-  {
-    NOT_SET,
-    BOOLEAN,
-    STRING,
-    INT32,
-    FLOAT32,
-    MEDIA
-  };
+namespace Aws {
+namespace Panorama {
+namespace Model {
+enum class PortType { NOT_SET, BOOLEAN, STRING, INT32, FLOAT32, MEDIA };
 
-namespace PortTypeMapper
-{
+namespace PortTypeMapper {
 AWS_PANORAMA_API PortType GetPortTypeForName(const Aws::String& name);
 
 AWS_PANORAMA_API Aws::String GetNameForPortType(PortType value);
-} // namespace PortTypeMapper
-} // namespace Model
-} // namespace Panorama
-} // namespace Aws
+}  // namespace PortTypeMapper
+}  // namespace Model
+}  // namespace Panorama
+}  // namespace Aws

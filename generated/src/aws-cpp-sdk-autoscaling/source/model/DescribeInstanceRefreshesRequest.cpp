@@ -10,40 +10,30 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeInstanceRefreshesRequest::SerializePayload() const
-{
+Aws::String DescribeInstanceRefreshesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeInstanceRefreshes&";
-  if(m_autoScalingGroupNameHasBeenSet)
-  {
+  if (m_autoScalingGroupNameHasBeenSet) {
     ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
 
-  if(m_instanceRefreshIdsHasBeenSet)
-  {
-    if (m_instanceRefreshIds.empty())
-    {
+  if (m_instanceRefreshIdsHasBeenSet) {
+    if (m_instanceRefreshIds.empty()) {
       ss << "InstanceRefreshIds=&";
-    }
-    else
-    {
+    } else {
       unsigned instanceRefreshIdsCount = 1;
-      for(auto& item : m_instanceRefreshIds)
-      {
-        ss << "InstanceRefreshIds.member." << instanceRefreshIdsCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_instanceRefreshIds) {
+        ss << "InstanceRefreshIds.member." << instanceRefreshIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         instanceRefreshIdsCount++;
       }
     }
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  if(m_maxRecordsHasBeenSet)
-  {
+  if (m_maxRecordsHasBeenSet) {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
 
@@ -51,8 +41,4 @@ Aws::String DescribeInstanceRefreshesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeInstanceRefreshesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeInstanceRefreshesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

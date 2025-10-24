@@ -4,82 +4,97 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/MonitoringScheduleSummary.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace SageMaker
-{
-namespace Model
-{
-  class ListMonitoringSchedulesResult
-  {
-  public:
-    AWS_SAGEMAKER_API ListMonitoringSchedulesResult() = default;
-    AWS_SAGEMAKER_API ListMonitoringSchedulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_SAGEMAKER_API ListMonitoringSchedulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace SageMaker {
+namespace Model {
+class ListMonitoringSchedulesResult {
+ public:
+  AWS_SAGEMAKER_API ListMonitoringSchedulesResult() = default;
+  AWS_SAGEMAKER_API ListMonitoringSchedulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_SAGEMAKER_API ListMonitoringSchedulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>A JSON array in which each element is a summary for a monitoring
+   * schedule.</p>
+   */
+  inline const Aws::Vector<MonitoringScheduleSummary>& GetMonitoringScheduleSummaries() const { return m_monitoringScheduleSummaries; }
+  template <typename MonitoringScheduleSummariesT = Aws::Vector<MonitoringScheduleSummary>>
+  void SetMonitoringScheduleSummaries(MonitoringScheduleSummariesT&& value) {
+    m_monitoringScheduleSummariesHasBeenSet = true;
+    m_monitoringScheduleSummaries = std::forward<MonitoringScheduleSummariesT>(value);
+  }
+  template <typename MonitoringScheduleSummariesT = Aws::Vector<MonitoringScheduleSummary>>
+  ListMonitoringSchedulesResult& WithMonitoringScheduleSummaries(MonitoringScheduleSummariesT&& value) {
+    SetMonitoringScheduleSummaries(std::forward<MonitoringScheduleSummariesT>(value));
+    return *this;
+  }
+  template <typename MonitoringScheduleSummariesT = MonitoringScheduleSummary>
+  ListMonitoringSchedulesResult& AddMonitoringScheduleSummaries(MonitoringScheduleSummariesT&& value) {
+    m_monitoringScheduleSummariesHasBeenSet = true;
+    m_monitoringScheduleSummaries.emplace_back(std::forward<MonitoringScheduleSummariesT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>A JSON array in which each element is a summary for a monitoring
-     * schedule.</p>
-     */
-    inline const Aws::Vector<MonitoringScheduleSummary>& GetMonitoringScheduleSummaries() const { return m_monitoringScheduleSummaries; }
-    template<typename MonitoringScheduleSummariesT = Aws::Vector<MonitoringScheduleSummary>>
-    void SetMonitoringScheduleSummaries(MonitoringScheduleSummariesT&& value) { m_monitoringScheduleSummariesHasBeenSet = true; m_monitoringScheduleSummaries = std::forward<MonitoringScheduleSummariesT>(value); }
-    template<typename MonitoringScheduleSummariesT = Aws::Vector<MonitoringScheduleSummary>>
-    ListMonitoringSchedulesResult& WithMonitoringScheduleSummaries(MonitoringScheduleSummariesT&& value) { SetMonitoringScheduleSummaries(std::forward<MonitoringScheduleSummariesT>(value)); return *this;}
-    template<typename MonitoringScheduleSummariesT = MonitoringScheduleSummary>
-    ListMonitoringSchedulesResult& AddMonitoringScheduleSummaries(MonitoringScheduleSummariesT&& value) { m_monitoringScheduleSummariesHasBeenSet = true; m_monitoringScheduleSummaries.emplace_back(std::forward<MonitoringScheduleSummariesT>(value)); return *this; }
-    ///@}
+  ///@{
+  /**
+   * <p>The token returned if the response is truncated. To retrieve the next set of
+   * job executions, use it in the next request.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListMonitoringSchedulesResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The token returned if the response is truncated. To retrieve the next set of
-     * job executions, use it in the next request.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    ListMonitoringSchedulesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    ListMonitoringSchedulesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  ListMonitoringSchedulesResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<MonitoringScheduleSummary> m_monitoringScheduleSummaries;
+  bool m_monitoringScheduleSummariesHasBeenSet = false;
 
-    Aws::Vector<MonitoringScheduleSummary> m_monitoringScheduleSummaries;
-    bool m_monitoringScheduleSummariesHasBeenSet = false;
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

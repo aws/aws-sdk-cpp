@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mailmanager/MailManager_EXPORTS.h>
 
-namespace Aws
-{
-namespace MailManager
-{
-namespace Model
-{
-  enum class ImportDataType
-  {
-    NOT_SET,
-    CSV,
-    JSON
-  };
+namespace Aws {
+namespace MailManager {
+namespace Model {
+enum class ImportDataType { NOT_SET, CSV, JSON };
 
-namespace ImportDataTypeMapper
-{
+namespace ImportDataTypeMapper {
 AWS_MAILMANAGER_API ImportDataType GetImportDataTypeForName(const Aws::String& name);
 
 AWS_MAILMANAGER_API Aws::String GetNameForImportDataType(ImportDataType value);
-} // namespace ImportDataTypeMapper
-} // namespace Model
-} // namespace MailManager
-} // namespace Aws
+}  // namespace ImportDataTypeMapper
+}  // namespace Model
+}  // namespace MailManager
+}  // namespace Aws

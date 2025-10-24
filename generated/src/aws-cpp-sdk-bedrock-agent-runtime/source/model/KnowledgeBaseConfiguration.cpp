@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgentRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
 
-KnowledgeBaseConfiguration::KnowledgeBaseConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+KnowledgeBaseConfiguration::KnowledgeBaseConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-KnowledgeBaseConfiguration& KnowledgeBaseConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("knowledgeBaseId"))
-  {
+KnowledgeBaseConfiguration& KnowledgeBaseConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("knowledgeBaseId")) {
     m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
     m_knowledgeBaseIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("retrievalConfiguration"))
-  {
+  if (jsonValue.ValueExists("retrievalConfiguration")) {
     m_retrievalConfiguration = jsonValue.GetObject("retrievalConfiguration");
     m_retrievalConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue KnowledgeBaseConfiguration::Jsonize() const
-{
+JsonValue KnowledgeBaseConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_knowledgeBaseIdHasBeenSet)
-  {
-   payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
-
+  if (m_knowledgeBaseIdHasBeenSet) {
+    payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
   }
 
-  if(m_retrievalConfigurationHasBeenSet)
-  {
-   payload.WithObject("retrievalConfiguration", m_retrievalConfiguration.Jsonize());
-
+  if (m_retrievalConfigurationHasBeenSet) {
+    payload.WithObject("retrievalConfiguration", m_retrievalConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgentRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

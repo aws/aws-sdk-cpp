@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/location/LocationService_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/location/LocationServiceEndpointRules.h>
+#include <aws/location/LocationService_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace LocationService
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace LocationService {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using LocationServiceClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using LocationServiceDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_LOCATIONSERVICE_API LocationServiceEndpointProvider : public LocationServiceDefaultEpProviderBase
-{
-public:
-    using LocationServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_LOCATIONSERVICE_API LocationServiceEndpointProvider : public LocationServiceDefaultEpProviderBase {
+ public:
+  using LocationServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    LocationServiceEndpointProvider()
-      : LocationServiceDefaultEpProviderBase(Aws::LocationService::LocationServiceEndpointRules::GetRulesBlob(), Aws::LocationService::LocationServiceEndpointRules::RulesBlobSize)
-    {}
+  LocationServiceEndpointProvider()
+      : LocationServiceDefaultEpProviderBase(Aws::LocationService::LocationServiceEndpointRules::GetRulesBlob(),
+                                             Aws::LocationService::LocationServiceEndpointRules::RulesBlobSize) {}
 
-    ~LocationServiceEndpointProvider()
-    {
-    }
+  ~LocationServiceEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace LocationService
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace LocationService
+}  // namespace Aws

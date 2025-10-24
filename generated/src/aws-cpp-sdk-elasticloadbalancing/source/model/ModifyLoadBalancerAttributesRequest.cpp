@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancing/model/ModifyLoadBalancerAttributesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticloadbalancing/model/ModifyLoadBalancerAttributesRequest.h>
 
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyLoadBalancerAttributesRequest::SerializePayload() const
-{
+Aws::String ModifyLoadBalancerAttributesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyLoadBalancerAttributes&";
-  if(m_loadBalancerNameHasBeenSet)
-  {
+  if (m_loadBalancerNameHasBeenSet) {
     ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
   }
 
-  if(m_loadBalancerAttributesHasBeenSet)
-  {
+  if (m_loadBalancerAttributesHasBeenSet) {
     m_loadBalancerAttributes.OutputToStream(ss, "LoadBalancerAttributes");
   }
 
@@ -28,8 +25,4 @@ Aws::String ModifyLoadBalancerAttributesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ModifyLoadBalancerAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ModifyLoadBalancerAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

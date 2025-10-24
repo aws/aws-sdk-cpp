@@ -7,26 +7,16 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace BedrockAgentCoreControl
-{
-namespace Model
-{
-  enum class ServerProtocol
-  {
-    NOT_SET,
-    MCP,
-    HTTP,
-    A2A
-  };
+namespace Aws {
+namespace BedrockAgentCoreControl {
+namespace Model {
+enum class ServerProtocol { NOT_SET, MCP, HTTP, A2A };
 
-namespace ServerProtocolMapper
-{
+namespace ServerProtocolMapper {
 AWS_BEDROCKAGENTCORECONTROL_API ServerProtocol GetServerProtocolForName(const Aws::String& name);
 
 AWS_BEDROCKAGENTCORECONTROL_API Aws::String GetNameForServerProtocol(ServerProtocol value);
-} // namespace ServerProtocolMapper
-} // namespace Model
-} // namespace BedrockAgentCoreControl
-} // namespace Aws
+}  // namespace ServerProtocolMapper
+}  // namespace Model
+}  // namespace BedrockAgentCoreControl
+}  // namespace Aws

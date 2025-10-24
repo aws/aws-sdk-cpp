@@ -5,12 +5,8 @@
 
 #include <aws/securitylake/SecurityLakeEndpointProvider.h>
 
-namespace Aws
-{
-namespace SecurityLake
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace SecurityLake
-} // namespace Aws
+namespace Aws {
+namespace SecurityLake {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace SecurityLake
+}  // namespace Aws

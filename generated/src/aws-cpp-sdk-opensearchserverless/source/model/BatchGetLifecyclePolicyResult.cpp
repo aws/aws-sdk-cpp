@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/opensearchserverless/model/BatchGetLifecyclePolicyResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/opensearchserverless/model/BatchGetLifecyclePolicyResult.h>
 
 #include <utility>
 
@@ -17,28 +17,22 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetLifecyclePolicyResult::BatchGetLifecyclePolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+BatchGetLifecyclePolicyResult::BatchGetLifecyclePolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-BatchGetLifecyclePolicyResult& BatchGetLifecyclePolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+BatchGetLifecyclePolicyResult& BatchGetLifecyclePolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("lifecyclePolicyDetails"))
-  {
+  if (jsonValue.ValueExists("lifecyclePolicyDetails")) {
     Aws::Utils::Array<JsonView> lifecyclePolicyDetailsJsonList = jsonValue.GetArray("lifecyclePolicyDetails");
-    for(unsigned lifecyclePolicyDetailsIndex = 0; lifecyclePolicyDetailsIndex < lifecyclePolicyDetailsJsonList.GetLength(); ++lifecyclePolicyDetailsIndex)
-    {
+    for (unsigned lifecyclePolicyDetailsIndex = 0; lifecyclePolicyDetailsIndex < lifecyclePolicyDetailsJsonList.GetLength();
+         ++lifecyclePolicyDetailsIndex) {
       m_lifecyclePolicyDetails.push_back(lifecyclePolicyDetailsJsonList[lifecyclePolicyDetailsIndex].AsObject());
     }
     m_lifecyclePolicyDetailsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lifecyclePolicyErrorDetails"))
-  {
+  if (jsonValue.ValueExists("lifecyclePolicyErrorDetails")) {
     Aws::Utils::Array<JsonView> lifecyclePolicyErrorDetailsJsonList = jsonValue.GetArray("lifecyclePolicyErrorDetails");
-    for(unsigned lifecyclePolicyErrorDetailsIndex = 0; lifecyclePolicyErrorDetailsIndex < lifecyclePolicyErrorDetailsJsonList.GetLength(); ++lifecyclePolicyErrorDetailsIndex)
-    {
+    for (unsigned lifecyclePolicyErrorDetailsIndex = 0; lifecyclePolicyErrorDetailsIndex < lifecyclePolicyErrorDetailsJsonList.GetLength();
+         ++lifecyclePolicyErrorDetailsIndex) {
       m_lifecyclePolicyErrorDetails.push_back(lifecyclePolicyErrorDetailsJsonList[lifecyclePolicyErrorDetailsIndex].AsObject());
     }
     m_lifecyclePolicyErrorDetailsHasBeenSet = true;
@@ -46,12 +40,10 @@ BatchGetLifecyclePolicyResult& BatchGetLifecyclePolicyResult::operator =(const A
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

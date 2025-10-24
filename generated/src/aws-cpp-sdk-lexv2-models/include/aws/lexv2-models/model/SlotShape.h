@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
-  enum class SlotShape
-  {
-    NOT_SET,
-    Scalar,
-    List
-  };
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
+enum class SlotShape { NOT_SET, Scalar, List };
 
-namespace SlotShapeMapper
-{
+namespace SlotShapeMapper {
 AWS_LEXMODELSV2_API SlotShape GetSlotShapeForName(const Aws::String& name);
 
 AWS_LEXMODELSV2_API Aws::String GetNameForSlotShape(SlotShape value);
-} // namespace SlotShapeMapper
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace SlotShapeMapper
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

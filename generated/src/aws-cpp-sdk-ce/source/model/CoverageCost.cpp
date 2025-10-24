@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CostExplorer
-{
-namespace Model
-{
+namespace Aws {
+namespace CostExplorer {
+namespace Model {
 
-CoverageCost::CoverageCost(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CoverageCost::CoverageCost(JsonView jsonValue) { *this = jsonValue; }
 
-CoverageCost& CoverageCost::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("OnDemandCost"))
-  {
+CoverageCost& CoverageCost::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("OnDemandCost")) {
     m_onDemandCost = jsonValue.GetString("OnDemandCost");
     m_onDemandCostHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CoverageCost::Jsonize() const
-{
+JsonValue CoverageCost::Jsonize() const {
   JsonValue payload;
 
-  if(m_onDemandCostHasBeenSet)
-  {
-   payload.WithString("OnDemandCost", m_onDemandCost);
-
+  if (m_onDemandCostHasBeenSet) {
+    payload.WithString("OnDemandCost", m_onDemandCost);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CostExplorer
-} // namespace Aws
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

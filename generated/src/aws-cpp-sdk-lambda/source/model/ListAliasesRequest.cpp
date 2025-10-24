@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lambda/model/ListAliasesRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/lambda/model/ListAliasesRequest.h>
 
 #include <utility>
 
@@ -15,36 +15,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String ListAliasesRequest::SerializePayload() const
-{
-  return {};
+Aws::String ListAliasesRequest::SerializePayload() const { return {}; }
+
+void ListAliasesRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_functionVersionHasBeenSet) {
+    ss << m_functionVersion;
+    uri.AddQueryStringParameter("FunctionVersion", ss.str());
+    ss.str("");
+  }
+
+  if (m_markerHasBeenSet) {
+    ss << m_marker;
+    uri.AddQueryStringParameter("Marker", ss.str());
+    ss.str("");
+  }
+
+  if (m_maxItemsHasBeenSet) {
+    ss << m_maxItems;
+    uri.AddQueryStringParameter("MaxItems", ss.str());
+    ss.str("");
+  }
 }
-
-void ListAliasesRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_functionVersionHasBeenSet)
-    {
-      ss << m_functionVersion;
-      uri.AddQueryStringParameter("FunctionVersion", ss.str());
-      ss.str("");
-    }
-
-    if(m_markerHasBeenSet)
-    {
-      ss << m_marker;
-      uri.AddQueryStringParameter("Marker", ss.str());
-      ss.str("");
-    }
-
-    if(m_maxItemsHasBeenSet)
-    {
-      ss << m_maxItems;
-      uri.AddQueryStringParameter("MaxItems", ss.str());
-      ss.str("");
-    }
-
-}
-
-
-

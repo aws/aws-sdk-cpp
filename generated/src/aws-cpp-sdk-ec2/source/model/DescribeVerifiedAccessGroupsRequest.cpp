@@ -3,55 +3,45 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeVerifiedAccessGroupsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DescribeVerifiedAccessGroupsRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeVerifiedAccessGroupsRequest::SerializePayload() const
-{
+Aws::String DescribeVerifiedAccessGroupsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeVerifiedAccessGroups&";
-  if(m_verifiedAccessGroupIdsHasBeenSet)
-  {
+  if (m_verifiedAccessGroupIdsHasBeenSet) {
     unsigned verifiedAccessGroupIdsCount = 1;
-    for(auto& item : m_verifiedAccessGroupIds)
-    {
-      ss << "VerifiedAccessGroupId." << verifiedAccessGroupIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_verifiedAccessGroupIds) {
+      ss << "VerifiedAccessGroupId." << verifiedAccessGroupIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       verifiedAccessGroupIdsCount++;
     }
   }
 
-  if(m_verifiedAccessInstanceIdHasBeenSet)
-  {
+  if (m_verifiedAccessInstanceIdHasBeenSet) {
     ss << "VerifiedAccessInstanceId=" << StringUtils::URLEncode(m_verifiedAccessInstanceId.c_str()) << "&";
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
+  if (m_maxResultsHasBeenSet) {
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  if(m_filtersHasBeenSet)
-  {
+  if (m_filtersHasBeenSet) {
     unsigned filtersCount = 1;
-    for(auto& item : m_filters)
-    {
+    for (auto& item : m_filters) {
       item.OutputToStream(ss, "Filter.", filtersCount, "");
       filtersCount++;
     }
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -59,8 +49,4 @@ Aws::String DescribeVerifiedAccessGroupsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeVerifiedAccessGroupsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeVerifiedAccessGroupsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

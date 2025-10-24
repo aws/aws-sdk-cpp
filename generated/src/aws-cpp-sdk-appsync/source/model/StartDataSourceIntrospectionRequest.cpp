@@ -12,19 +12,12 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartDataSourceIntrospectionRequest::SerializePayload() const
-{
+Aws::String StartDataSourceIntrospectionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_rdsDataApiConfigHasBeenSet)
-  {
-   payload.WithObject("rdsDataApiConfig", m_rdsDataApiConfig.Jsonize());
-
+  if (m_rdsDataApiConfigHasBeenSet) {
+    payload.WithObject("rdsDataApiConfig", m_rdsDataApiConfig.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

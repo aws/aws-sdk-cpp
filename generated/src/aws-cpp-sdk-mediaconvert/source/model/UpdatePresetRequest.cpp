@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/UpdatePresetRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconvert/model/UpdatePresetRequest.h>
 
 #include <utility>
 
@@ -12,31 +12,20 @@ using namespace Aws::MediaConvert::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdatePresetRequest::SerializePayload() const
-{
+Aws::String UpdatePresetRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_categoryHasBeenSet)
-  {
-   payload.WithString("category", m_category);
-
+  if (m_categoryHasBeenSet) {
+    payload.WithString("category", m_category);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_settingsHasBeenSet)
-  {
-   payload.WithObject("settings", m_settings.Jsonize());
-
+  if (m_settingsHasBeenSet) {
+    payload.WithObject("settings", m_settings.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

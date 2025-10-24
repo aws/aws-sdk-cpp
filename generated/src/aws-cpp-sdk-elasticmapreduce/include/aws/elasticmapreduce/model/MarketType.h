@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticmapreduce/EMR_EXPORTS.h>
 
-namespace Aws
-{
-namespace EMR
-{
-namespace Model
-{
-  enum class MarketType
-  {
-    NOT_SET,
-    ON_DEMAND,
-    SPOT
-  };
+namespace Aws {
+namespace EMR {
+namespace Model {
+enum class MarketType { NOT_SET, ON_DEMAND, SPOT };
 
-namespace MarketTypeMapper
-{
+namespace MarketTypeMapper {
 AWS_EMR_API MarketType GetMarketTypeForName(const Aws::String& name);
 
 AWS_EMR_API Aws::String GetNameForMarketType(MarketType value);
-} // namespace MarketTypeMapper
-} // namespace Model
-} // namespace EMR
-} // namespace Aws
+}  // namespace MarketTypeMapper
+}  // namespace Model
+}  // namespace EMR
+}  // namespace Aws

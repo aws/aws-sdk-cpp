@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/outposts/Outposts_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/outposts/Outposts_EXPORTS.h>
 
-namespace Aws
-{
-namespace Outposts
-{
-namespace Model
-{
-  enum class ShipmentCarrier
-  {
-    NOT_SET,
-    DHL,
-    DBS,
-    FEDEX,
-    UPS,
-    EXPEDITORS
-  };
+namespace Aws {
+namespace Outposts {
+namespace Model {
+enum class ShipmentCarrier { NOT_SET, DHL, DBS, FEDEX, UPS, EXPEDITORS };
 
-namespace ShipmentCarrierMapper
-{
+namespace ShipmentCarrierMapper {
 AWS_OUTPOSTS_API ShipmentCarrier GetShipmentCarrierForName(const Aws::String& name);
 
 AWS_OUTPOSTS_API Aws::String GetNameForShipmentCarrier(ShipmentCarrier value);
-} // namespace ShipmentCarrierMapper
-} // namespace Model
-} // namespace Outposts
-} // namespace Aws
+}  // namespace ShipmentCarrierMapper
+}  // namespace Model
+}  // namespace Outposts
+}  // namespace Aws

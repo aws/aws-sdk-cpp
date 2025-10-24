@@ -3,306 +3,234 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/DataSet.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/DataSet.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-DataSet::DataSet(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DataSet::DataSet(JsonView jsonValue) { *this = jsonValue; }
 
-DataSet& DataSet::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Arn"))
-  {
+DataSet& DataSet::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DataSetId"))
-  {
+  if (jsonValue.ValueExists("DataSetId")) {
     m_dataSetId = jsonValue.GetString("DataSetId");
     m_dataSetIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedTime"))
-  {
+  if (jsonValue.ValueExists("CreatedTime")) {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
     m_createdTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastUpdatedTime"))
-  {
+  if (jsonValue.ValueExists("LastUpdatedTime")) {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
     m_lastUpdatedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PhysicalTableMap"))
-  {
+  if (jsonValue.ValueExists("PhysicalTableMap")) {
     Aws::Map<Aws::String, JsonView> physicalTableMapJsonMap = jsonValue.GetObject("PhysicalTableMap").GetAllObjects();
-    for(auto& physicalTableMapItem : physicalTableMapJsonMap)
-    {
+    for (auto& physicalTableMapItem : physicalTableMapJsonMap) {
       m_physicalTableMap[physicalTableMapItem.first] = physicalTableMapItem.second.AsObject();
     }
     m_physicalTableMapHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LogicalTableMap"))
-  {
+  if (jsonValue.ValueExists("LogicalTableMap")) {
     Aws::Map<Aws::String, JsonView> logicalTableMapJsonMap = jsonValue.GetObject("LogicalTableMap").GetAllObjects();
-    for(auto& logicalTableMapItem : logicalTableMapJsonMap)
-    {
+    for (auto& logicalTableMapItem : logicalTableMapJsonMap) {
       m_logicalTableMap[logicalTableMapItem.first] = logicalTableMapItem.second.AsObject();
     }
     m_logicalTableMapHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OutputColumns"))
-  {
+  if (jsonValue.ValueExists("OutputColumns")) {
     Aws::Utils::Array<JsonView> outputColumnsJsonList = jsonValue.GetArray("OutputColumns");
-    for(unsigned outputColumnsIndex = 0; outputColumnsIndex < outputColumnsJsonList.GetLength(); ++outputColumnsIndex)
-    {
+    for (unsigned outputColumnsIndex = 0; outputColumnsIndex < outputColumnsJsonList.GetLength(); ++outputColumnsIndex) {
       m_outputColumns.push_back(outputColumnsJsonList[outputColumnsIndex].AsObject());
     }
     m_outputColumnsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ImportMode"))
-  {
+  if (jsonValue.ValueExists("ImportMode")) {
     m_importMode = DataSetImportModeMapper::GetDataSetImportModeForName(jsonValue.GetString("ImportMode"));
     m_importModeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ConsumedSpiceCapacityInBytes"))
-  {
+  if (jsonValue.ValueExists("ConsumedSpiceCapacityInBytes")) {
     m_consumedSpiceCapacityInBytes = jsonValue.GetInt64("ConsumedSpiceCapacityInBytes");
     m_consumedSpiceCapacityInBytesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ColumnGroups"))
-  {
+  if (jsonValue.ValueExists("ColumnGroups")) {
     Aws::Utils::Array<JsonView> columnGroupsJsonList = jsonValue.GetArray("ColumnGroups");
-    for(unsigned columnGroupsIndex = 0; columnGroupsIndex < columnGroupsJsonList.GetLength(); ++columnGroupsIndex)
-    {
+    for (unsigned columnGroupsIndex = 0; columnGroupsIndex < columnGroupsJsonList.GetLength(); ++columnGroupsIndex) {
       m_columnGroups.push_back(columnGroupsJsonList[columnGroupsIndex].AsObject());
     }
     m_columnGroupsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FieldFolders"))
-  {
+  if (jsonValue.ValueExists("FieldFolders")) {
     Aws::Map<Aws::String, JsonView> fieldFoldersJsonMap = jsonValue.GetObject("FieldFolders").GetAllObjects();
-    for(auto& fieldFoldersItem : fieldFoldersJsonMap)
-    {
+    for (auto& fieldFoldersItem : fieldFoldersJsonMap) {
       m_fieldFolders[fieldFoldersItem.first] = fieldFoldersItem.second.AsObject();
     }
     m_fieldFoldersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RowLevelPermissionDataSet"))
-  {
+  if (jsonValue.ValueExists("RowLevelPermissionDataSet")) {
     m_rowLevelPermissionDataSet = jsonValue.GetObject("RowLevelPermissionDataSet");
     m_rowLevelPermissionDataSetHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RowLevelPermissionTagConfiguration"))
-  {
+  if (jsonValue.ValueExists("RowLevelPermissionTagConfiguration")) {
     m_rowLevelPermissionTagConfiguration = jsonValue.GetObject("RowLevelPermissionTagConfiguration");
     m_rowLevelPermissionTagConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ColumnLevelPermissionRules"))
-  {
+  if (jsonValue.ValueExists("ColumnLevelPermissionRules")) {
     Aws::Utils::Array<JsonView> columnLevelPermissionRulesJsonList = jsonValue.GetArray("ColumnLevelPermissionRules");
-    for(unsigned columnLevelPermissionRulesIndex = 0; columnLevelPermissionRulesIndex < columnLevelPermissionRulesJsonList.GetLength(); ++columnLevelPermissionRulesIndex)
-    {
+    for (unsigned columnLevelPermissionRulesIndex = 0; columnLevelPermissionRulesIndex < columnLevelPermissionRulesJsonList.GetLength();
+         ++columnLevelPermissionRulesIndex) {
       m_columnLevelPermissionRules.push_back(columnLevelPermissionRulesJsonList[columnLevelPermissionRulesIndex].AsObject());
     }
     m_columnLevelPermissionRulesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DataSetUsageConfiguration"))
-  {
+  if (jsonValue.ValueExists("DataSetUsageConfiguration")) {
     m_dataSetUsageConfiguration = jsonValue.GetObject("DataSetUsageConfiguration");
     m_dataSetUsageConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DatasetParameters"))
-  {
+  if (jsonValue.ValueExists("DatasetParameters")) {
     Aws::Utils::Array<JsonView> datasetParametersJsonList = jsonValue.GetArray("DatasetParameters");
-    for(unsigned datasetParametersIndex = 0; datasetParametersIndex < datasetParametersJsonList.GetLength(); ++datasetParametersIndex)
-    {
+    for (unsigned datasetParametersIndex = 0; datasetParametersIndex < datasetParametersJsonList.GetLength(); ++datasetParametersIndex) {
       m_datasetParameters.push_back(datasetParametersJsonList[datasetParametersIndex].AsObject());
     }
     m_datasetParametersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PerformanceConfiguration"))
-  {
+  if (jsonValue.ValueExists("PerformanceConfiguration")) {
     m_performanceConfiguration = jsonValue.GetObject("PerformanceConfiguration");
     m_performanceConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UseAs"))
-  {
+  if (jsonValue.ValueExists("UseAs")) {
     m_useAs = DataSetUseAsMapper::GetDataSetUseAsForName(jsonValue.GetString("UseAs"));
     m_useAsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DataSet::Jsonize() const
-{
+JsonValue DataSet::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_dataSetIdHasBeenSet)
-  {
-   payload.WithString("DataSetId", m_dataSetId);
-
+  if (m_dataSetIdHasBeenSet) {
+    payload.WithString("DataSetId", m_dataSetId);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_createdTimeHasBeenSet)
-  {
-   payload.WithDouble("CreatedTime", m_createdTime.SecondsWithMSPrecision());
+  if (m_createdTimeHasBeenSet) {
+    payload.WithDouble("CreatedTime", m_createdTime.SecondsWithMSPrecision());
   }
 
-  if(m_lastUpdatedTimeHasBeenSet)
-  {
-   payload.WithDouble("LastUpdatedTime", m_lastUpdatedTime.SecondsWithMSPrecision());
+  if (m_lastUpdatedTimeHasBeenSet) {
+    payload.WithDouble("LastUpdatedTime", m_lastUpdatedTime.SecondsWithMSPrecision());
   }
 
-  if(m_physicalTableMapHasBeenSet)
-  {
-   JsonValue physicalTableMapJsonMap;
-   for(auto& physicalTableMapItem : m_physicalTableMap)
-   {
-     physicalTableMapJsonMap.WithObject(physicalTableMapItem.first, physicalTableMapItem.second.Jsonize());
-   }
-   payload.WithObject("PhysicalTableMap", std::move(physicalTableMapJsonMap));
-
+  if (m_physicalTableMapHasBeenSet) {
+    JsonValue physicalTableMapJsonMap;
+    for (auto& physicalTableMapItem : m_physicalTableMap) {
+      physicalTableMapJsonMap.WithObject(physicalTableMapItem.first, physicalTableMapItem.second.Jsonize());
+    }
+    payload.WithObject("PhysicalTableMap", std::move(physicalTableMapJsonMap));
   }
 
-  if(m_logicalTableMapHasBeenSet)
-  {
-   JsonValue logicalTableMapJsonMap;
-   for(auto& logicalTableMapItem : m_logicalTableMap)
-   {
-     logicalTableMapJsonMap.WithObject(logicalTableMapItem.first, logicalTableMapItem.second.Jsonize());
-   }
-   payload.WithObject("LogicalTableMap", std::move(logicalTableMapJsonMap));
-
+  if (m_logicalTableMapHasBeenSet) {
+    JsonValue logicalTableMapJsonMap;
+    for (auto& logicalTableMapItem : m_logicalTableMap) {
+      logicalTableMapJsonMap.WithObject(logicalTableMapItem.first, logicalTableMapItem.second.Jsonize());
+    }
+    payload.WithObject("LogicalTableMap", std::move(logicalTableMapJsonMap));
   }
 
-  if(m_outputColumnsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> outputColumnsJsonList(m_outputColumns.size());
-   for(unsigned outputColumnsIndex = 0; outputColumnsIndex < outputColumnsJsonList.GetLength(); ++outputColumnsIndex)
-   {
-     outputColumnsJsonList[outputColumnsIndex].AsObject(m_outputColumns[outputColumnsIndex].Jsonize());
-   }
-   payload.WithArray("OutputColumns", std::move(outputColumnsJsonList));
-
+  if (m_outputColumnsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> outputColumnsJsonList(m_outputColumns.size());
+    for (unsigned outputColumnsIndex = 0; outputColumnsIndex < outputColumnsJsonList.GetLength(); ++outputColumnsIndex) {
+      outputColumnsJsonList[outputColumnsIndex].AsObject(m_outputColumns[outputColumnsIndex].Jsonize());
+    }
+    payload.WithArray("OutputColumns", std::move(outputColumnsJsonList));
   }
 
-  if(m_importModeHasBeenSet)
-  {
-   payload.WithString("ImportMode", DataSetImportModeMapper::GetNameForDataSetImportMode(m_importMode));
+  if (m_importModeHasBeenSet) {
+    payload.WithString("ImportMode", DataSetImportModeMapper::GetNameForDataSetImportMode(m_importMode));
   }
 
-  if(m_consumedSpiceCapacityInBytesHasBeenSet)
-  {
-   payload.WithInt64("ConsumedSpiceCapacityInBytes", m_consumedSpiceCapacityInBytes);
-
+  if (m_consumedSpiceCapacityInBytesHasBeenSet) {
+    payload.WithInt64("ConsumedSpiceCapacityInBytes", m_consumedSpiceCapacityInBytes);
   }
 
-  if(m_columnGroupsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> columnGroupsJsonList(m_columnGroups.size());
-   for(unsigned columnGroupsIndex = 0; columnGroupsIndex < columnGroupsJsonList.GetLength(); ++columnGroupsIndex)
-   {
-     columnGroupsJsonList[columnGroupsIndex].AsObject(m_columnGroups[columnGroupsIndex].Jsonize());
-   }
-   payload.WithArray("ColumnGroups", std::move(columnGroupsJsonList));
-
+  if (m_columnGroupsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> columnGroupsJsonList(m_columnGroups.size());
+    for (unsigned columnGroupsIndex = 0; columnGroupsIndex < columnGroupsJsonList.GetLength(); ++columnGroupsIndex) {
+      columnGroupsJsonList[columnGroupsIndex].AsObject(m_columnGroups[columnGroupsIndex].Jsonize());
+    }
+    payload.WithArray("ColumnGroups", std::move(columnGroupsJsonList));
   }
 
-  if(m_fieldFoldersHasBeenSet)
-  {
-   JsonValue fieldFoldersJsonMap;
-   for(auto& fieldFoldersItem : m_fieldFolders)
-   {
-     fieldFoldersJsonMap.WithObject(fieldFoldersItem.first, fieldFoldersItem.second.Jsonize());
-   }
-   payload.WithObject("FieldFolders", std::move(fieldFoldersJsonMap));
-
+  if (m_fieldFoldersHasBeenSet) {
+    JsonValue fieldFoldersJsonMap;
+    for (auto& fieldFoldersItem : m_fieldFolders) {
+      fieldFoldersJsonMap.WithObject(fieldFoldersItem.first, fieldFoldersItem.second.Jsonize());
+    }
+    payload.WithObject("FieldFolders", std::move(fieldFoldersJsonMap));
   }
 
-  if(m_rowLevelPermissionDataSetHasBeenSet)
-  {
-   payload.WithObject("RowLevelPermissionDataSet", m_rowLevelPermissionDataSet.Jsonize());
-
+  if (m_rowLevelPermissionDataSetHasBeenSet) {
+    payload.WithObject("RowLevelPermissionDataSet", m_rowLevelPermissionDataSet.Jsonize());
   }
 
-  if(m_rowLevelPermissionTagConfigurationHasBeenSet)
-  {
-   payload.WithObject("RowLevelPermissionTagConfiguration", m_rowLevelPermissionTagConfiguration.Jsonize());
-
+  if (m_rowLevelPermissionTagConfigurationHasBeenSet) {
+    payload.WithObject("RowLevelPermissionTagConfiguration", m_rowLevelPermissionTagConfiguration.Jsonize());
   }
 
-  if(m_columnLevelPermissionRulesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> columnLevelPermissionRulesJsonList(m_columnLevelPermissionRules.size());
-   for(unsigned columnLevelPermissionRulesIndex = 0; columnLevelPermissionRulesIndex < columnLevelPermissionRulesJsonList.GetLength(); ++columnLevelPermissionRulesIndex)
-   {
-     columnLevelPermissionRulesJsonList[columnLevelPermissionRulesIndex].AsObject(m_columnLevelPermissionRules[columnLevelPermissionRulesIndex].Jsonize());
-   }
-   payload.WithArray("ColumnLevelPermissionRules", std::move(columnLevelPermissionRulesJsonList));
-
+  if (m_columnLevelPermissionRulesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> columnLevelPermissionRulesJsonList(m_columnLevelPermissionRules.size());
+    for (unsigned columnLevelPermissionRulesIndex = 0; columnLevelPermissionRulesIndex < columnLevelPermissionRulesJsonList.GetLength();
+         ++columnLevelPermissionRulesIndex) {
+      columnLevelPermissionRulesJsonList[columnLevelPermissionRulesIndex].AsObject(
+          m_columnLevelPermissionRules[columnLevelPermissionRulesIndex].Jsonize());
+    }
+    payload.WithArray("ColumnLevelPermissionRules", std::move(columnLevelPermissionRulesJsonList));
   }
 
-  if(m_dataSetUsageConfigurationHasBeenSet)
-  {
-   payload.WithObject("DataSetUsageConfiguration", m_dataSetUsageConfiguration.Jsonize());
-
+  if (m_dataSetUsageConfigurationHasBeenSet) {
+    payload.WithObject("DataSetUsageConfiguration", m_dataSetUsageConfiguration.Jsonize());
   }
 
-  if(m_datasetParametersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> datasetParametersJsonList(m_datasetParameters.size());
-   for(unsigned datasetParametersIndex = 0; datasetParametersIndex < datasetParametersJsonList.GetLength(); ++datasetParametersIndex)
-   {
-     datasetParametersJsonList[datasetParametersIndex].AsObject(m_datasetParameters[datasetParametersIndex].Jsonize());
-   }
-   payload.WithArray("DatasetParameters", std::move(datasetParametersJsonList));
-
+  if (m_datasetParametersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> datasetParametersJsonList(m_datasetParameters.size());
+    for (unsigned datasetParametersIndex = 0; datasetParametersIndex < datasetParametersJsonList.GetLength(); ++datasetParametersIndex) {
+      datasetParametersJsonList[datasetParametersIndex].AsObject(m_datasetParameters[datasetParametersIndex].Jsonize());
+    }
+    payload.WithArray("DatasetParameters", std::move(datasetParametersJsonList));
   }
 
-  if(m_performanceConfigurationHasBeenSet)
-  {
-   payload.WithObject("PerformanceConfiguration", m_performanceConfiguration.Jsonize());
-
+  if (m_performanceConfigurationHasBeenSet) {
+    payload.WithObject("PerformanceConfiguration", m_performanceConfiguration.Jsonize());
   }
 
-  if(m_useAsHasBeenSet)
-  {
-   payload.WithString("UseAs", DataSetUseAsMapper::GetNameForDataSetUseAs(m_useAs));
+  if (m_useAsHasBeenSet) {
+    payload.WithString("UseAs", DataSetUseAsMapper::GetNameForDataSetUseAs(m_useAs));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

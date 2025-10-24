@@ -3,18 +3,16 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/client/AWSError.h>
 #include <aws/appintegrations/AppIntegrationsServiceErrorMarshaller.h>
 #include <aws/appintegrations/AppIntegrationsServiceErrors.h>
+#include <aws/core/client/AWSError.h>
 
 using namespace Aws::Client;
 using namespace Aws::AppIntegrationsService;
 
-AWSError<CoreErrors> AppIntegrationsServiceErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> AppIntegrationsServiceErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = AppIntegrationsServiceErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

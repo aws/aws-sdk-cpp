@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconnect/model/InputConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconnect/model/InputConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConnect
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConnect {
+namespace Model {
 
-InputConfiguration::InputConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InputConfiguration::InputConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-InputConfiguration& InputConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("inputIp"))
-  {
+InputConfiguration& InputConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("inputIp")) {
     m_inputIp = jsonValue.GetString("inputIp");
     m_inputIpHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("inputPort"))
-  {
+  if (jsonValue.ValueExists("inputPort")) {
     m_inputPort = jsonValue.GetInteger("inputPort");
     m_inputPortHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("interface"))
-  {
+  if (jsonValue.ValueExists("interface")) {
     m_interface = jsonValue.GetObject("interface");
     m_interfaceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InputConfiguration::Jsonize() const
-{
+JsonValue InputConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_inputIpHasBeenSet)
-  {
-   payload.WithString("inputIp", m_inputIp);
-
+  if (m_inputIpHasBeenSet) {
+    payload.WithString("inputIp", m_inputIp);
   }
 
-  if(m_inputPortHasBeenSet)
-  {
-   payload.WithInteger("inputPort", m_inputPort);
-
+  if (m_inputPortHasBeenSet) {
+    payload.WithInteger("inputPort", m_inputPort);
   }
 
-  if(m_interfaceHasBeenSet)
-  {
-   payload.WithObject("interface", m_interface.Jsonize());
-
+  if (m_interfaceHasBeenSet) {
+    payload.WithObject("interface", m_interface.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConnect
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConnect
+}  // namespace Aws

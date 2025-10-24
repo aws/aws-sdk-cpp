@@ -12,48 +12,32 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateContactFlowModuleRequest::SerializePayload() const
-{
+Aws::String CreateContactFlowModuleRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_contentHasBeenSet)
-  {
-   payload.WithString("Content", m_content);
-
+  if (m_contentHasBeenSet) {
+    payload.WithString("Content", m_content);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("Tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("ClientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("ClientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

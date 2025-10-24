@@ -12,38 +12,26 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreatePipelineRequest::SerializePayload() const
-{
+Aws::String CreatePipelineRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_pipelineHasBeenSet)
-  {
-   payload.WithObject("pipeline", m_pipeline.Jsonize());
-
+  if (m_pipelineHasBeenSet) {
+    payload.WithObject("pipeline", m_pipeline.Jsonize());
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("tags", std::move(tagsJsonList));
-
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("tags", std::move(tagsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreatePipelineRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreatePipelineRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodePipeline_20150709.CreatePipeline"));
   return headers;
-
 }
-
-
-
-

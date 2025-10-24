@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/DescribeGroupRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/DescribeGroupRequest.h>
 
 #include <utility>
 
@@ -12,11 +12,4 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeGroupRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DescribeGroupRequest::SerializePayload() const { return {}; }

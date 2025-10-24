@@ -3,69 +3,53 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/imagebuilder/model/LifecyclePolicyDetailExclusionRules.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/imagebuilder/model/LifecyclePolicyDetailExclusionRules.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace imagebuilder
-{
-namespace Model
-{
+namespace Aws {
+namespace imagebuilder {
+namespace Model {
 
-LifecyclePolicyDetailExclusionRules::LifecyclePolicyDetailExclusionRules(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LifecyclePolicyDetailExclusionRules::LifecyclePolicyDetailExclusionRules(JsonView jsonValue) { *this = jsonValue; }
 
-LifecyclePolicyDetailExclusionRules& LifecyclePolicyDetailExclusionRules::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("tagMap"))
-  {
+LifecyclePolicyDetailExclusionRules& LifecyclePolicyDetailExclusionRules::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("tagMap")) {
     Aws::Map<Aws::String, JsonView> tagMapJsonMap = jsonValue.GetObject("tagMap").GetAllObjects();
-    for(auto& tagMapItem : tagMapJsonMap)
-    {
+    for (auto& tagMapItem : tagMapJsonMap) {
       m_tagMap[tagMapItem.first] = tagMapItem.second.AsString();
     }
     m_tagMapHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("amis"))
-  {
+  if (jsonValue.ValueExists("amis")) {
     m_amis = jsonValue.GetObject("amis");
     m_amisHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LifecyclePolicyDetailExclusionRules::Jsonize() const
-{
+JsonValue LifecyclePolicyDetailExclusionRules::Jsonize() const {
   JsonValue payload;
 
-  if(m_tagMapHasBeenSet)
-  {
-   JsonValue tagMapJsonMap;
-   for(auto& tagMapItem : m_tagMap)
-   {
-     tagMapJsonMap.WithString(tagMapItem.first, tagMapItem.second);
-   }
-   payload.WithObject("tagMap", std::move(tagMapJsonMap));
-
+  if (m_tagMapHasBeenSet) {
+    JsonValue tagMapJsonMap;
+    for (auto& tagMapItem : m_tagMap) {
+      tagMapJsonMap.WithString(tagMapItem.first, tagMapItem.second);
+    }
+    payload.WithObject("tagMap", std::move(tagMapJsonMap));
   }
 
-  if(m_amisHasBeenSet)
-  {
-   payload.WithObject("amis", m_amis.Jsonize());
-
+  if (m_amisHasBeenSet) {
+    payload.WithObject("amis", m_amis.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace imagebuilder
-} // namespace Aws
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

@@ -12,33 +12,22 @@ using namespace Aws::MigrationHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeMigrationTaskRequest::SerializePayload() const
-{
+Aws::String DescribeMigrationTaskRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_progressUpdateStreamHasBeenSet)
-  {
-   payload.WithString("ProgressUpdateStream", m_progressUpdateStream);
-
+  if (m_progressUpdateStreamHasBeenSet) {
+    payload.WithString("ProgressUpdateStream", m_progressUpdateStream);
   }
 
-  if(m_migrationTaskNameHasBeenSet)
-  {
-   payload.WithString("MigrationTaskName", m_migrationTaskName);
-
+  if (m_migrationTaskNameHasBeenSet) {
+    payload.WithString("MigrationTaskName", m_migrationTaskName);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeMigrationTaskRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeMigrationTaskRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSMigrationHub.DescribeMigrationTask"));
   return headers;
-
 }
-
-
-
-

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker-geospatial/model/StartEarthObservationJobRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker-geospatial/model/StartEarthObservationJobRequest.h>
 
 #include <utility>
 
@@ -12,60 +12,40 @@ using namespace Aws::SageMakerGeospatial::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartEarthObservationJobRequest::SerializePayload() const
-{
+Aws::String StartEarthObservationJobRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("ClientToken", m_clientToken);
-
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("ClientToken", m_clientToken);
   }
 
-  if(m_executionRoleArnHasBeenSet)
-  {
-   payload.WithString("ExecutionRoleArn", m_executionRoleArn);
-
+  if (m_executionRoleArnHasBeenSet) {
+    payload.WithString("ExecutionRoleArn", m_executionRoleArn);
   }
 
-  if(m_inputConfigHasBeenSet)
-  {
-   payload.WithObject("InputConfig", m_inputConfig.Jsonize());
-
+  if (m_inputConfigHasBeenSet) {
+    payload.WithObject("InputConfig", m_inputConfig.Jsonize());
   }
 
-  if(m_jobConfigHasBeenSet)
-  {
-   payload.WithObject("JobConfig", m_jobConfig.Jsonize());
-
+  if (m_jobConfigHasBeenSet) {
+    payload.WithObject("JobConfig", m_jobConfig.Jsonize());
   }
 
-  if(m_kmsKeyIdHasBeenSet)
-  {
-   payload.WithString("KmsKeyId", m_kmsKeyId);
-
+  if (m_kmsKeyIdHasBeenSet) {
+    payload.WithString("KmsKeyId", m_kmsKeyId);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("Tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

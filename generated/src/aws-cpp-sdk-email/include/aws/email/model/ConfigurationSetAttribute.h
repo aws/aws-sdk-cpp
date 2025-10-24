@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/email/SES_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/email/SES_EXPORTS.h>
 
-namespace Aws
-{
-namespace SES
-{
-namespace Model
-{
-  enum class ConfigurationSetAttribute
-  {
-    NOT_SET,
-    eventDestinations,
-    trackingOptions,
-    deliveryOptions,
-    reputationOptions
-  };
+namespace Aws {
+namespace SES {
+namespace Model {
+enum class ConfigurationSetAttribute { NOT_SET, eventDestinations, trackingOptions, deliveryOptions, reputationOptions };
 
-namespace ConfigurationSetAttributeMapper
-{
+namespace ConfigurationSetAttributeMapper {
 AWS_SES_API ConfigurationSetAttribute GetConfigurationSetAttributeForName(const Aws::String& name);
 
 AWS_SES_API Aws::String GetNameForConfigurationSetAttribute(ConfigurationSetAttribute value);
-} // namespace ConfigurationSetAttributeMapper
-} // namespace Model
-} // namespace SES
-} // namespace Aws
+}  // namespace ConfigurationSetAttributeMapper
+}  // namespace Model
+}  // namespace SES
+}  // namespace Aws

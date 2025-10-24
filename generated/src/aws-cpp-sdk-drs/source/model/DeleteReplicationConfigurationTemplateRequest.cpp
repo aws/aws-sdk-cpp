@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/drs/model/DeleteReplicationConfigurationTemplateRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/drs/model/DeleteReplicationConfigurationTemplateRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::drs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteReplicationConfigurationTemplateRequest::SerializePayload() const
-{
+Aws::String DeleteReplicationConfigurationTemplateRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_replicationConfigurationTemplateIDHasBeenSet)
-  {
-   payload.WithString("replicationConfigurationTemplateID", m_replicationConfigurationTemplateID);
-
+  if (m_replicationConfigurationTemplateIDHasBeenSet) {
+    payload.WithString("replicationConfigurationTemplateID", m_replicationConfigurationTemplateID);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

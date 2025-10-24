@@ -12,66 +12,46 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateAnomalySubscriptionRequest::SerializePayload() const
-{
+Aws::String UpdateAnomalySubscriptionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_subscriptionArnHasBeenSet)
-  {
-   payload.WithString("SubscriptionArn", m_subscriptionArn);
-
+  if (m_subscriptionArnHasBeenSet) {
+    payload.WithString("SubscriptionArn", m_subscriptionArn);
   }
 
-  if(m_frequencyHasBeenSet)
-  {
-   payload.WithString("Frequency", AnomalySubscriptionFrequencyMapper::GetNameForAnomalySubscriptionFrequency(m_frequency));
+  if (m_frequencyHasBeenSet) {
+    payload.WithString("Frequency", AnomalySubscriptionFrequencyMapper::GetNameForAnomalySubscriptionFrequency(m_frequency));
   }
 
-  if(m_monitorArnListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> monitorArnListJsonList(m_monitorArnList.size());
-   for(unsigned monitorArnListIndex = 0; monitorArnListIndex < monitorArnListJsonList.GetLength(); ++monitorArnListIndex)
-   {
-     monitorArnListJsonList[monitorArnListIndex].AsString(m_monitorArnList[monitorArnListIndex]);
-   }
-   payload.WithArray("MonitorArnList", std::move(monitorArnListJsonList));
-
+  if (m_monitorArnListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> monitorArnListJsonList(m_monitorArnList.size());
+    for (unsigned monitorArnListIndex = 0; monitorArnListIndex < monitorArnListJsonList.GetLength(); ++monitorArnListIndex) {
+      monitorArnListJsonList[monitorArnListIndex].AsString(m_monitorArnList[monitorArnListIndex]);
+    }
+    payload.WithArray("MonitorArnList", std::move(monitorArnListJsonList));
   }
 
-  if(m_subscribersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> subscribersJsonList(m_subscribers.size());
-   for(unsigned subscribersIndex = 0; subscribersIndex < subscribersJsonList.GetLength(); ++subscribersIndex)
-   {
-     subscribersJsonList[subscribersIndex].AsObject(m_subscribers[subscribersIndex].Jsonize());
-   }
-   payload.WithArray("Subscribers", std::move(subscribersJsonList));
-
+  if (m_subscribersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> subscribersJsonList(m_subscribers.size());
+    for (unsigned subscribersIndex = 0; subscribersIndex < subscribersJsonList.GetLength(); ++subscribersIndex) {
+      subscribersJsonList[subscribersIndex].AsObject(m_subscribers[subscribersIndex].Jsonize());
+    }
+    payload.WithArray("Subscribers", std::move(subscribersJsonList));
   }
 
-  if(m_subscriptionNameHasBeenSet)
-  {
-   payload.WithString("SubscriptionName", m_subscriptionName);
-
+  if (m_subscriptionNameHasBeenSet) {
+    payload.WithString("SubscriptionName", m_subscriptionName);
   }
 
-  if(m_thresholdExpressionHasBeenSet)
-  {
-   payload.WithObject("ThresholdExpression", m_thresholdExpression.Jsonize());
-
+  if (m_thresholdExpressionHasBeenSet) {
+    payload.WithObject("ThresholdExpression", m_thresholdExpression.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateAnomalySubscriptionRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateAnomalySubscriptionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSInsightsIndexService.UpdateAnomalySubscription"));
   return headers;
-
 }
-
-
-
-

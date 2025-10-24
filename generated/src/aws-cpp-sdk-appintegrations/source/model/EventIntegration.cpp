@@ -11,50 +11,36 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppIntegrationsService
-{
-namespace Model
-{
+namespace Aws {
+namespace AppIntegrationsService {
+namespace Model {
 
-EventIntegration::EventIntegration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EventIntegration::EventIntegration(JsonView jsonValue) { *this = jsonValue; }
 
-EventIntegration& EventIntegration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EventIntegrationArn"))
-  {
+EventIntegration& EventIntegration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EventIntegrationArn")) {
     m_eventIntegrationArn = jsonValue.GetString("EventIntegrationArn");
     m_eventIntegrationArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EventFilter"))
-  {
+  if (jsonValue.ValueExists("EventFilter")) {
     m_eventFilter = jsonValue.GetObject("EventFilter");
     m_eventFilterHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EventBridgeBus"))
-  {
+  if (jsonValue.ValueExists("EventBridgeBus")) {
     m_eventBridgeBus = jsonValue.GetString("EventBridgeBus");
     m_eventBridgeBusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Tags"))
-  {
+  if (jsonValue.ValueExists("Tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
+    for (auto& tagsItem : tagsJsonMap) {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
@@ -62,54 +48,40 @@ EventIntegration& EventIntegration::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue EventIntegration::Jsonize() const
-{
+JsonValue EventIntegration::Jsonize() const {
   JsonValue payload;
 
-  if(m_eventIntegrationArnHasBeenSet)
-  {
-   payload.WithString("EventIntegrationArn", m_eventIntegrationArn);
-
+  if (m_eventIntegrationArnHasBeenSet) {
+    payload.WithString("EventIntegrationArn", m_eventIntegrationArn);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_eventFilterHasBeenSet)
-  {
-   payload.WithObject("EventFilter", m_eventFilter.Jsonize());
-
+  if (m_eventFilterHasBeenSet) {
+    payload.WithObject("EventFilter", m_eventFilter.Jsonize());
   }
 
-  if(m_eventBridgeBusHasBeenSet)
-  {
-   payload.WithString("EventBridgeBus", m_eventBridgeBus);
-
+  if (m_eventBridgeBusHasBeenSet) {
+    payload.WithString("EventBridgeBus", m_eventBridgeBus);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("Tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppIntegrationsService
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppIntegrationsService
+}  // namespace Aws

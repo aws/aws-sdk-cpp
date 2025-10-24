@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTAnalytics
-{
-class IoTAnalyticsEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace IoTAnalytics {
+class IoTAnalyticsEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace IoTAnalytics
-} // namespace Aws
+}  // namespace IoTAnalytics
+}  // namespace Aws

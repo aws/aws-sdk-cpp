@@ -12,36 +12,24 @@ using namespace Aws::CleanRooms::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String StartProtectedJobRequest::SerializePayload() const
-{
+Aws::String StartProtectedJobRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", ProtectedJobTypeMapper::GetNameForProtectedJobType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", ProtectedJobTypeMapper::GetNameForProtectedJobType(m_type));
   }
 
-  if(m_jobParametersHasBeenSet)
-  {
-   payload.WithObject("jobParameters", m_jobParameters.Jsonize());
-
+  if (m_jobParametersHasBeenSet) {
+    payload.WithObject("jobParameters", m_jobParameters.Jsonize());
   }
 
-  if(m_resultConfigurationHasBeenSet)
-  {
-   payload.WithObject("resultConfiguration", m_resultConfiguration.Jsonize());
-
+  if (m_resultConfigurationHasBeenSet) {
+    payload.WithObject("resultConfiguration", m_resultConfiguration.Jsonize());
   }
 
-  if(m_computeConfigurationHasBeenSet)
-  {
-   payload.WithObject("computeConfiguration", m_computeConfiguration.Jsonize());
-
+  if (m_computeConfigurationHasBeenSet) {
+    payload.WithObject("computeConfiguration", m_computeConfiguration.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

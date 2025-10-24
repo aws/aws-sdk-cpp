@@ -11,61 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeGuruProfiler
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeGuruProfiler {
+namespace Model {
 
-ProfilingStatus::ProfilingStatus(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProfilingStatus::ProfilingStatus(JsonView jsonValue) { *this = jsonValue; }
 
-ProfilingStatus& ProfilingStatus::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("latestAgentOrchestratedAt"))
-  {
+ProfilingStatus& ProfilingStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("latestAgentOrchestratedAt")) {
     m_latestAgentOrchestratedAt = jsonValue.GetString("latestAgentOrchestratedAt");
     m_latestAgentOrchestratedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("latestAgentProfileReportedAt"))
-  {
+  if (jsonValue.ValueExists("latestAgentProfileReportedAt")) {
     m_latestAgentProfileReportedAt = jsonValue.GetString("latestAgentProfileReportedAt");
     m_latestAgentProfileReportedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("latestAggregatedProfile"))
-  {
+  if (jsonValue.ValueExists("latestAggregatedProfile")) {
     m_latestAggregatedProfile = jsonValue.GetObject("latestAggregatedProfile");
     m_latestAggregatedProfileHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ProfilingStatus::Jsonize() const
-{
+JsonValue ProfilingStatus::Jsonize() const {
   JsonValue payload;
 
-  if(m_latestAgentOrchestratedAtHasBeenSet)
-  {
-   payload.WithString("latestAgentOrchestratedAt", m_latestAgentOrchestratedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_latestAgentOrchestratedAtHasBeenSet) {
+    payload.WithString("latestAgentOrchestratedAt", m_latestAgentOrchestratedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_latestAgentProfileReportedAtHasBeenSet)
-  {
-   payload.WithString("latestAgentProfileReportedAt", m_latestAgentProfileReportedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_latestAgentProfileReportedAtHasBeenSet) {
+    payload.WithString("latestAgentProfileReportedAt", m_latestAgentProfileReportedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_latestAggregatedProfileHasBeenSet)
-  {
-   payload.WithObject("latestAggregatedProfile", m_latestAggregatedProfile.Jsonize());
-
+  if (m_latestAggregatedProfileHasBeenSet) {
+    payload.WithObject("latestAggregatedProfile", m_latestAggregatedProfile.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeGuruProfiler
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeGuruProfiler
+}  // namespace Aws

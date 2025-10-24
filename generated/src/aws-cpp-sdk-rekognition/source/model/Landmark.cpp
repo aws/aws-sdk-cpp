@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rekognition/model/Landmark.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rekognition/model/Landmark.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Rekognition
-{
-namespace Model
-{
+namespace Aws {
+namespace Rekognition {
+namespace Model {
 
-Landmark::Landmark(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Landmark::Landmark(JsonView jsonValue) { *this = jsonValue; }
 
-Landmark& Landmark::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Type"))
-  {
+Landmark& Landmark::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Type")) {
     m_type = LandmarkTypeMapper::GetLandmarkTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("X"))
-  {
+  if (jsonValue.ValueExists("X")) {
     m_x = jsonValue.GetDouble("X");
     m_xHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Y"))
-  {
+  if (jsonValue.ValueExists("Y")) {
     m_y = jsonValue.GetDouble("Y");
     m_yHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Landmark::Jsonize() const
-{
+JsonValue Landmark::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", LandmarkTypeMapper::GetNameForLandmarkType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", LandmarkTypeMapper::GetNameForLandmarkType(m_type));
   }
 
-  if(m_xHasBeenSet)
-  {
-   payload.WithDouble("X", m_x);
-
+  if (m_xHasBeenSet) {
+    payload.WithDouble("X", m_x);
   }
 
-  if(m_yHasBeenSet)
-  {
-   payload.WithDouble("Y", m_y);
-
+  if (m_yHasBeenSet) {
+    payload.WithDouble("Y", m_y);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Rekognition
-} // namespace Aws
+}  // namespace Model
+}  // namespace Rekognition
+}  // namespace Aws

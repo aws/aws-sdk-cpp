@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lookoutvision/model/DeleteProjectRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/lookoutvision/model/DeleteProjectRequest.h>
 
 #include <utility>
 
@@ -13,26 +13,16 @@ using namespace Aws::LookoutforVision::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteProjectRequest::SerializePayload() const
-{
-  return {};
-}
+Aws::String DeleteProjectRequest::SerializePayload() const { return {}; }
 
-Aws::Http::HeaderValueCollection DeleteProjectRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteProjectRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_clientTokenHasBeenSet)
-  {
+  if (m_clientTokenHasBeenSet) {
     ss << m_clientToken;
-    headers.emplace("x-amzn-client-token",  ss.str());
+    headers.emplace("x-amzn-client-token", ss.str());
     ss.str("");
   }
 
   return headers;
-
 }
-
-
-
-

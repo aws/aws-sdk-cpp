@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
 
-Span::Span(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Span::Span(JsonView jsonValue) { *this = jsonValue; }
 
-Span& Span::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("start"))
-  {
+Span& Span::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("start")) {
     m_start = jsonValue.GetObject("start");
     m_startHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("end"))
-  {
+  if (jsonValue.ValueExists("end")) {
     m_end = jsonValue.GetObject("end");
     m_endHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Span::Jsonize() const
-{
+JsonValue Span::Jsonize() const {
   JsonValue payload;
 
-  if(m_startHasBeenSet)
-  {
-   payload.WithObject("start", m_start.Jsonize());
-
+  if (m_startHasBeenSet) {
+    payload.WithObject("start", m_start.Jsonize());
   }
 
-  if(m_endHasBeenSet)
-  {
-   payload.WithObject("end", m_end.Jsonize());
-
+  if (m_endHasBeenSet) {
+    payload.WithObject("end", m_end.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

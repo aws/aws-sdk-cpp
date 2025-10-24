@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppIntegrationsService
-{
-namespace Model
-{
+namespace Aws {
+namespace AppIntegrationsService {
+namespace Model {
 
-ScheduleConfiguration::ScheduleConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ScheduleConfiguration::ScheduleConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ScheduleConfiguration& ScheduleConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FirstExecutionFrom"))
-  {
+ScheduleConfiguration& ScheduleConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FirstExecutionFrom")) {
     m_firstExecutionFrom = jsonValue.GetString("FirstExecutionFrom");
     m_firstExecutionFromHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Object"))
-  {
+  if (jsonValue.ValueExists("Object")) {
     m_object = jsonValue.GetString("Object");
     m_objectHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ScheduleExpression"))
-  {
+  if (jsonValue.ValueExists("ScheduleExpression")) {
     m_scheduleExpression = jsonValue.GetString("ScheduleExpression");
     m_scheduleExpressionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ScheduleConfiguration::Jsonize() const
-{
+JsonValue ScheduleConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_firstExecutionFromHasBeenSet)
-  {
-   payload.WithString("FirstExecutionFrom", m_firstExecutionFrom);
-
+  if (m_firstExecutionFromHasBeenSet) {
+    payload.WithString("FirstExecutionFrom", m_firstExecutionFrom);
   }
 
-  if(m_objectHasBeenSet)
-  {
-   payload.WithString("Object", m_object);
-
+  if (m_objectHasBeenSet) {
+    payload.WithString("Object", m_object);
   }
 
-  if(m_scheduleExpressionHasBeenSet)
-  {
-   payload.WithString("ScheduleExpression", m_scheduleExpression);
-
+  if (m_scheduleExpressionHasBeenSet) {
+    payload.WithString("ScheduleExpression", m_scheduleExpression);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppIntegrationsService
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppIntegrationsService
+}  // namespace Aws

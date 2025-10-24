@@ -3,176 +3,133 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ssm/model/ParameterMetadata.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ssm/model/ParameterMetadata.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SSM
-{
-namespace Model
-{
+namespace Aws {
+namespace SSM {
+namespace Model {
 
-ParameterMetadata::ParameterMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ParameterMetadata::ParameterMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-ParameterMetadata& ParameterMetadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+ParameterMetadata& ParameterMetadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ARN"))
-  {
+  if (jsonValue.ValueExists("ARN")) {
     m_aRN = jsonValue.GetString("ARN");
     m_aRNHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = ParameterTypeMapper::GetParameterTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("KeyId"))
-  {
+  if (jsonValue.ValueExists("KeyId")) {
     m_keyId = jsonValue.GetString("KeyId");
     m_keyIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModifiedDate"))
-  {
+  if (jsonValue.ValueExists("LastModifiedDate")) {
     m_lastModifiedDate = jsonValue.GetDouble("LastModifiedDate");
     m_lastModifiedDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModifiedUser"))
-  {
+  if (jsonValue.ValueExists("LastModifiedUser")) {
     m_lastModifiedUser = jsonValue.GetString("LastModifiedUser");
     m_lastModifiedUserHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AllowedPattern"))
-  {
+  if (jsonValue.ValueExists("AllowedPattern")) {
     m_allowedPattern = jsonValue.GetString("AllowedPattern");
     m_allowedPatternHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Version"))
-  {
+  if (jsonValue.ValueExists("Version")) {
     m_version = jsonValue.GetInt64("Version");
     m_versionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Tier"))
-  {
+  if (jsonValue.ValueExists("Tier")) {
     m_tier = ParameterTierMapper::GetParameterTierForName(jsonValue.GetString("Tier"));
     m_tierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Policies"))
-  {
+  if (jsonValue.ValueExists("Policies")) {
     Aws::Utils::Array<JsonView> policiesJsonList = jsonValue.GetArray("Policies");
-    for(unsigned policiesIndex = 0; policiesIndex < policiesJsonList.GetLength(); ++policiesIndex)
-    {
+    for (unsigned policiesIndex = 0; policiesIndex < policiesJsonList.GetLength(); ++policiesIndex) {
       m_policies.push_back(policiesJsonList[policiesIndex].AsObject());
     }
     m_policiesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DataType"))
-  {
+  if (jsonValue.ValueExists("DataType")) {
     m_dataType = jsonValue.GetString("DataType");
     m_dataTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ParameterMetadata::Jsonize() const
-{
+JsonValue ParameterMetadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_aRNHasBeenSet)
-  {
-   payload.WithString("ARN", m_aRN);
-
+  if (m_aRNHasBeenSet) {
+    payload.WithString("ARN", m_aRN);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", ParameterTypeMapper::GetNameForParameterType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", ParameterTypeMapper::GetNameForParameterType(m_type));
   }
 
-  if(m_keyIdHasBeenSet)
-  {
-   payload.WithString("KeyId", m_keyId);
-
+  if (m_keyIdHasBeenSet) {
+    payload.WithString("KeyId", m_keyId);
   }
 
-  if(m_lastModifiedDateHasBeenSet)
-  {
-   payload.WithDouble("LastModifiedDate", m_lastModifiedDate.SecondsWithMSPrecision());
+  if (m_lastModifiedDateHasBeenSet) {
+    payload.WithDouble("LastModifiedDate", m_lastModifiedDate.SecondsWithMSPrecision());
   }
 
-  if(m_lastModifiedUserHasBeenSet)
-  {
-   payload.WithString("LastModifiedUser", m_lastModifiedUser);
-
+  if (m_lastModifiedUserHasBeenSet) {
+    payload.WithString("LastModifiedUser", m_lastModifiedUser);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_allowedPatternHasBeenSet)
-  {
-   payload.WithString("AllowedPattern", m_allowedPattern);
-
+  if (m_allowedPatternHasBeenSet) {
+    payload.WithString("AllowedPattern", m_allowedPattern);
   }
 
-  if(m_versionHasBeenSet)
-  {
-   payload.WithInt64("Version", m_version);
-
+  if (m_versionHasBeenSet) {
+    payload.WithInt64("Version", m_version);
   }
 
-  if(m_tierHasBeenSet)
-  {
-   payload.WithString("Tier", ParameterTierMapper::GetNameForParameterTier(m_tier));
+  if (m_tierHasBeenSet) {
+    payload.WithString("Tier", ParameterTierMapper::GetNameForParameterTier(m_tier));
   }
 
-  if(m_policiesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> policiesJsonList(m_policies.size());
-   for(unsigned policiesIndex = 0; policiesIndex < policiesJsonList.GetLength(); ++policiesIndex)
-   {
-     policiesJsonList[policiesIndex].AsObject(m_policies[policiesIndex].Jsonize());
-   }
-   payload.WithArray("Policies", std::move(policiesJsonList));
-
+  if (m_policiesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> policiesJsonList(m_policies.size());
+    for (unsigned policiesIndex = 0; policiesIndex < policiesJsonList.GetLength(); ++policiesIndex) {
+      policiesJsonList[policiesIndex].AsObject(m_policies[policiesIndex].Jsonize());
+    }
+    payload.WithArray("Policies", std::move(policiesJsonList));
   }
 
-  if(m_dataTypeHasBeenSet)
-  {
-   payload.WithString("DataType", m_dataType);
-
+  if (m_dataTypeHasBeenSet) {
+    payload.WithString("DataType", m_dataType);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SSM
-} // namespace Aws
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

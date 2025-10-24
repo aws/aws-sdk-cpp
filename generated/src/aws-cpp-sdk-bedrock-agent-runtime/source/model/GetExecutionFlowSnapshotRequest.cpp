@@ -12,11 +12,4 @@ using namespace Aws::BedrockAgentRuntime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetExecutionFlowSnapshotRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetExecutionFlowSnapshotRequest::SerializePayload() const { return {}; }

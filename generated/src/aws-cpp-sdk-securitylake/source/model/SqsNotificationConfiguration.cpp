@@ -3,39 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securitylake/model/SqsNotificationConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securitylake/model/SqsNotificationConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityLake
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityLake {
+namespace Model {
 
-SqsNotificationConfiguration::SqsNotificationConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SqsNotificationConfiguration::SqsNotificationConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-SqsNotificationConfiguration& SqsNotificationConfiguration::operator =(JsonView jsonValue)
-{
+SqsNotificationConfiguration& SqsNotificationConfiguration::operator=(JsonView jsonValue) {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
 }
 
-JsonValue SqsNotificationConfiguration::Jsonize() const
-{
+JsonValue SqsNotificationConfiguration::Jsonize() const {
   JsonValue payload;
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityLake
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityLake
+}  // namespace Aws

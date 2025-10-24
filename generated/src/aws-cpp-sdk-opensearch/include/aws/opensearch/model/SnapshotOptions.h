@@ -6,53 +6,51 @@
 #pragma once
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace OpenSearchService
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace OpenSearchService {
+namespace Model {
 
+/**
+ * <p>The time, in UTC format, when OpenSearch Service takes a daily automated
+ * snapshot of the specified domain. Default is <code>0</code> hours.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/SnapshotOptions">AWS
+ * API Reference</a></p>
+ */
+class SnapshotOptions {
+ public:
+  AWS_OPENSEARCHSERVICE_API SnapshotOptions() = default;
+  AWS_OPENSEARCHSERVICE_API SnapshotOptions(Aws::Utils::Json::JsonView jsonValue);
+  AWS_OPENSEARCHSERVICE_API SnapshotOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
    * <p>The time, in UTC format, when OpenSearch Service takes a daily automated
-   * snapshot of the specified domain. Default is <code>0</code> hours.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/SnapshotOptions">AWS
-   * API Reference</a></p>
+   * snapshot of the specified domain. Default is <code>0</code> hours.</p>
    */
-  class SnapshotOptions
-  {
-  public:
-    AWS_OPENSEARCHSERVICE_API SnapshotOptions() = default;
-    AWS_OPENSEARCHSERVICE_API SnapshotOptions(Aws::Utils::Json::JsonView jsonValue);
-    AWS_OPENSEARCHSERVICE_API SnapshotOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetAutomatedSnapshotStartHour() const { return m_automatedSnapshotStartHour; }
+  inline bool AutomatedSnapshotStartHourHasBeenSet() const { return m_automatedSnapshotStartHourHasBeenSet; }
+  inline void SetAutomatedSnapshotStartHour(int value) {
+    m_automatedSnapshotStartHourHasBeenSet = true;
+    m_automatedSnapshotStartHour = value;
+  }
+  inline SnapshotOptions& WithAutomatedSnapshotStartHour(int value) {
+    SetAutomatedSnapshotStartHour(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_automatedSnapshotStartHour{0};
+  bool m_automatedSnapshotStartHourHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>The time, in UTC format, when OpenSearch Service takes a daily automated
-     * snapshot of the specified domain. Default is <code>0</code> hours.</p>
-     */
-    inline int GetAutomatedSnapshotStartHour() const { return m_automatedSnapshotStartHour; }
-    inline bool AutomatedSnapshotStartHourHasBeenSet() const { return m_automatedSnapshotStartHourHasBeenSet; }
-    inline void SetAutomatedSnapshotStartHour(int value) { m_automatedSnapshotStartHourHasBeenSet = true; m_automatedSnapshotStartHour = value; }
-    inline SnapshotOptions& WithAutomatedSnapshotStartHour(int value) { SetAutomatedSnapshotStartHour(value); return *this;}
-    ///@}
-  private:
-
-    int m_automatedSnapshotStartHour{0};
-    bool m_automatedSnapshotStartHourHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace OpenSearchService
-} // namespace Aws
+}  // namespace Model
+}  // namespace OpenSearchService
+}  // namespace Aws

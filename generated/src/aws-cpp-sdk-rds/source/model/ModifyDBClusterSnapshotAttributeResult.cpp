@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/ModifyDBClusterSnapshotAttributeResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/rds/model/ModifyDBClusterSnapshotAttributeResult.h>
 
 #include <utility>
 
@@ -17,26 +17,22 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ModifyDBClusterSnapshotAttributeResult::ModifyDBClusterSnapshotAttributeResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+ModifyDBClusterSnapshotAttributeResult::ModifyDBClusterSnapshotAttributeResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-ModifyDBClusterSnapshotAttributeResult& ModifyDBClusterSnapshotAttributeResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+ModifyDBClusterSnapshotAttributeResult& ModifyDBClusterSnapshotAttributeResult::operator=(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "ModifyDBClusterSnapshotAttributeResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "ModifyDBClusterSnapshotAttributeResult")) {
     resultNode = rootNode.FirstChild("ModifyDBClusterSnapshotAttributeResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode dBClusterSnapshotAttributesResultNode = resultNode.FirstChild("DBClusterSnapshotAttributesResult");
-    if(!dBClusterSnapshotAttributesResultNode.IsNull())
-    {
+    if (!dBClusterSnapshotAttributesResultNode.IsNull()) {
       m_dBClusterSnapshotAttributesResult = dBClusterSnapshotAttributesResultNode;
       m_dBClusterSnapshotAttributesResultHasBeenSet = true;
     }
@@ -46,7 +42,8 @@ ModifyDBClusterSnapshotAttributeResult& ModifyDBClusterSnapshotAttributeResult::
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::ModifyDBClusterSnapshotAttributeResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::ModifyDBClusterSnapshotAttributeResult",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

@@ -4,33 +4,28 @@
  */
 
 #pragma once
-#include <aws/s3-crt/S3Crt_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3-crt/S3Crt_EXPORTS.h>
 
-namespace Aws
-{
-namespace S3Crt
-{
-namespace Model
-{
-  enum class ObjectCannedACL
-  {
-    NOT_SET,
-    private_,
-    public_read,
-    public_read_write,
-    authenticated_read,
-    aws_exec_read,
-    bucket_owner_read,
-    bucket_owner_full_control
-  };
+namespace Aws {
+namespace S3Crt {
+namespace Model {
+enum class ObjectCannedACL {
+  NOT_SET,
+  private_,
+  public_read,
+  public_read_write,
+  authenticated_read,
+  aws_exec_read,
+  bucket_owner_read,
+  bucket_owner_full_control
+};
 
-namespace ObjectCannedACLMapper
-{
+namespace ObjectCannedACLMapper {
 AWS_S3CRT_API ObjectCannedACL GetObjectCannedACLForName(const Aws::String& name);
 
 AWS_S3CRT_API Aws::String GetNameForObjectCannedACL(ObjectCannedACL value);
-} // namespace ObjectCannedACLMapper
-} // namespace Model
-} // namespace S3Crt
-} // namespace Aws
+}  // namespace ObjectCannedACLMapper
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

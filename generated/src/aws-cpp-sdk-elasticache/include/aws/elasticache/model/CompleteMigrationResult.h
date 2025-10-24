@@ -7,58 +7,63 @@
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/elasticache/model/ReplicationGroup.h>
 #include <aws/elasticache/model/ResponseMetadata.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Xml
-{
-  class XmlDocument;
-} // namespace Xml
-} // namespace Utils
-namespace ElastiCache
-{
-namespace Model
-{
-  class CompleteMigrationResult
-  {
-  public:
-    AWS_ELASTICACHE_API CompleteMigrationResult() = default;
-    AWS_ELASTICACHE_API CompleteMigrationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AWS_ELASTICACHE_API CompleteMigrationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+namespace Utils {
+namespace Xml {
+class XmlDocument;
+}  // namespace Xml
+}  // namespace Utils
+namespace ElastiCache {
+namespace Model {
+class CompleteMigrationResult {
+ public:
+  AWS_ELASTICACHE_API CompleteMigrationResult() = default;
+  AWS_ELASTICACHE_API CompleteMigrationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_ELASTICACHE_API CompleteMigrationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
+  ///@{
 
-    ///@{
-    
-    inline const ReplicationGroup& GetReplicationGroup() const { return m_replicationGroup; }
-    template<typename ReplicationGroupT = ReplicationGroup>
-    void SetReplicationGroup(ReplicationGroupT&& value) { m_replicationGroupHasBeenSet = true; m_replicationGroup = std::forward<ReplicationGroupT>(value); }
-    template<typename ReplicationGroupT = ReplicationGroup>
-    CompleteMigrationResult& WithReplicationGroup(ReplicationGroupT&& value) { SetReplicationGroup(std::forward<ReplicationGroupT>(value)); return *this;}
-    ///@}
+  inline const ReplicationGroup& GetReplicationGroup() const { return m_replicationGroup; }
+  template <typename ReplicationGroupT = ReplicationGroup>
+  void SetReplicationGroup(ReplicationGroupT&& value) {
+    m_replicationGroupHasBeenSet = true;
+    m_replicationGroup = std::forward<ReplicationGroupT>(value);
+  }
+  template <typename ReplicationGroupT = ReplicationGroup>
+  CompleteMigrationResult& WithReplicationGroup(ReplicationGroupT&& value) {
+    SetReplicationGroup(std::forward<ReplicationGroupT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    
-    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
-    template<typename ResponseMetadataT = ResponseMetadata>
-    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
-    template<typename ResponseMetadataT = ResponseMetadata>
-    CompleteMigrationResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
-    ///@}
-  private:
+  ///@{
 
-    ReplicationGroup m_replicationGroup;
-    bool m_replicationGroupHasBeenSet = false;
+  inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  void SetResponseMetadata(ResponseMetadataT&& value) {
+    m_responseMetadataHasBeenSet = true;
+    m_responseMetadata = std::forward<ResponseMetadataT>(value);
+  }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  CompleteMigrationResult& WithResponseMetadata(ResponseMetadataT&& value) {
+    SetResponseMetadata(std::forward<ResponseMetadataT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  ReplicationGroup m_replicationGroup;
+  bool m_replicationGroupHasBeenSet = false;
 
-    ResponseMetadata m_responseMetadata;
-    bool m_responseMetadataHasBeenSet = false;
-  };
+  ResponseMetadata m_responseMetadata;
+  bool m_responseMetadataHasBeenSet = false;
+};
 
-} // namespace Model
-} // namespace ElastiCache
-} // namespace Aws
+}  // namespace Model
+}  // namespace ElastiCache
+}  // namespace Aws

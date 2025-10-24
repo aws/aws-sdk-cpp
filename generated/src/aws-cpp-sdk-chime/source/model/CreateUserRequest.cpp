@@ -12,30 +12,20 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateUserRequest::SerializePayload() const
-{
+Aws::String CreateUserRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_usernameHasBeenSet)
-  {
-   payload.WithString("Username", m_username);
-
+  if (m_usernameHasBeenSet) {
+    payload.WithString("Username", m_username);
   }
 
-  if(m_emailHasBeenSet)
-  {
-   payload.WithString("Email", m_email);
-
+  if (m_emailHasBeenSet) {
+    payload.WithString("Email", m_email);
   }
 
-  if(m_userTypeHasBeenSet)
-  {
-   payload.WithString("UserType", UserTypeMapper::GetNameForUserType(m_userType));
+  if (m_userTypeHasBeenSet) {
+    payload.WithString("UserType", UserTypeMapper::GetNameForUserType(m_userType));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

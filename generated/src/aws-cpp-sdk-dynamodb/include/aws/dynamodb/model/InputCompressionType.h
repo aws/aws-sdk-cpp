@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dynamodb/DynamoDB_EXPORTS.h>
 
-namespace Aws
-{
-namespace DynamoDB
-{
-namespace Model
-{
-  enum class InputCompressionType
-  {
-    NOT_SET,
-    GZIP,
-    ZSTD,
-    NONE
-  };
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
+enum class InputCompressionType { NOT_SET, GZIP, ZSTD, NONE };
 
-namespace InputCompressionTypeMapper
-{
+namespace InputCompressionTypeMapper {
 AWS_DYNAMODB_API InputCompressionType GetInputCompressionTypeForName(const Aws::String& name);
 
 AWS_DYNAMODB_API Aws::String GetNameForInputCompressionType(InputCompressionType value);
-} // namespace InputCompressionTypeMapper
-} // namespace Model
-} // namespace DynamoDB
-} // namespace Aws
+}  // namespace InputCompressionTypeMapper
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws

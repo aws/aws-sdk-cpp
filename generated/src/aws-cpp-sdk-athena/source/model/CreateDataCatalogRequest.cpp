@@ -12,60 +12,42 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateDataCatalogRequest::SerializePayload() const
-{
+Aws::String CreateDataCatalogRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", DataCatalogTypeMapper::GetNameForDataCatalogType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", DataCatalogTypeMapper::GetNameForDataCatalogType(m_type));
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_parametersHasBeenSet)
-  {
-   JsonValue parametersJsonMap;
-   for(auto& parametersItem : m_parameters)
-   {
-     parametersJsonMap.WithString(parametersItem.first, parametersItem.second);
-   }
-   payload.WithObject("Parameters", std::move(parametersJsonMap));
-
+  if (m_parametersHasBeenSet) {
+    JsonValue parametersJsonMap;
+    for (auto& parametersItem : m_parameters) {
+      parametersJsonMap.WithString(parametersItem.first, parametersItem.second);
+    }
+    payload.WithObject("Parameters", std::move(parametersJsonMap));
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("Tags", std::move(tagsJsonList));
-
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateDataCatalogRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateDataCatalogRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonAthena.CreateDataCatalog"));
   return headers;
-
 }
-
-
-
-

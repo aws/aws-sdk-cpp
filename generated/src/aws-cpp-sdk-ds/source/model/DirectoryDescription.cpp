@@ -3,364 +3,276 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ds/model/DirectoryDescription.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ds/model/DirectoryDescription.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DirectoryService
-{
-namespace Model
-{
+namespace Aws {
+namespace DirectoryService {
+namespace Model {
 
-DirectoryDescription::DirectoryDescription(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DirectoryDescription::DirectoryDescription(JsonView jsonValue) { *this = jsonValue; }
 
-DirectoryDescription& DirectoryDescription::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DirectoryId"))
-  {
+DirectoryDescription& DirectoryDescription::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DirectoryId")) {
     m_directoryId = jsonValue.GetString("DirectoryId");
     m_directoryIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ShortName"))
-  {
+  if (jsonValue.ValueExists("ShortName")) {
     m_shortName = jsonValue.GetString("ShortName");
     m_shortNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Size"))
-  {
+  if (jsonValue.ValueExists("Size")) {
     m_size = DirectorySizeMapper::GetDirectorySizeForName(jsonValue.GetString("Size"));
     m_sizeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Edition"))
-  {
+  if (jsonValue.ValueExists("Edition")) {
     m_edition = DirectoryEditionMapper::GetDirectoryEditionForName(jsonValue.GetString("Edition"));
     m_editionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Alias"))
-  {
+  if (jsonValue.ValueExists("Alias")) {
     m_alias = jsonValue.GetString("Alias");
     m_aliasHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AccessUrl"))
-  {
+  if (jsonValue.ValueExists("AccessUrl")) {
     m_accessUrl = jsonValue.GetString("AccessUrl");
     m_accessUrlHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DnsIpAddrs"))
-  {
+  if (jsonValue.ValueExists("DnsIpAddrs")) {
     Aws::Utils::Array<JsonView> dnsIpAddrsJsonList = jsonValue.GetArray("DnsIpAddrs");
-    for(unsigned dnsIpAddrsIndex = 0; dnsIpAddrsIndex < dnsIpAddrsJsonList.GetLength(); ++dnsIpAddrsIndex)
-    {
+    for (unsigned dnsIpAddrsIndex = 0; dnsIpAddrsIndex < dnsIpAddrsJsonList.GetLength(); ++dnsIpAddrsIndex) {
       m_dnsIpAddrs.push_back(dnsIpAddrsJsonList[dnsIpAddrsIndex].AsString());
     }
     m_dnsIpAddrsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DnsIpv6Addrs"))
-  {
+  if (jsonValue.ValueExists("DnsIpv6Addrs")) {
     Aws::Utils::Array<JsonView> dnsIpv6AddrsJsonList = jsonValue.GetArray("DnsIpv6Addrs");
-    for(unsigned dnsIpv6AddrsIndex = 0; dnsIpv6AddrsIndex < dnsIpv6AddrsJsonList.GetLength(); ++dnsIpv6AddrsIndex)
-    {
+    for (unsigned dnsIpv6AddrsIndex = 0; dnsIpv6AddrsIndex < dnsIpv6AddrsJsonList.GetLength(); ++dnsIpv6AddrsIndex) {
       m_dnsIpv6Addrs.push_back(dnsIpv6AddrsJsonList[dnsIpv6AddrsIndex].AsString());
     }
     m_dnsIpv6AddrsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Stage"))
-  {
+  if (jsonValue.ValueExists("Stage")) {
     m_stage = DirectoryStageMapper::GetDirectoryStageForName(jsonValue.GetString("Stage"));
     m_stageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ShareStatus"))
-  {
+  if (jsonValue.ValueExists("ShareStatus")) {
     m_shareStatus = ShareStatusMapper::GetShareStatusForName(jsonValue.GetString("ShareStatus"));
     m_shareStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ShareMethod"))
-  {
+  if (jsonValue.ValueExists("ShareMethod")) {
     m_shareMethod = ShareMethodMapper::GetShareMethodForName(jsonValue.GetString("ShareMethod"));
     m_shareMethodHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ShareNotes"))
-  {
+  if (jsonValue.ValueExists("ShareNotes")) {
     m_shareNotes = jsonValue.GetString("ShareNotes");
     m_shareNotesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LaunchTime"))
-  {
+  if (jsonValue.ValueExists("LaunchTime")) {
     m_launchTime = jsonValue.GetDouble("LaunchTime");
     m_launchTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StageLastUpdatedDateTime"))
-  {
+  if (jsonValue.ValueExists("StageLastUpdatedDateTime")) {
     m_stageLastUpdatedDateTime = jsonValue.GetDouble("StageLastUpdatedDateTime");
     m_stageLastUpdatedDateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = DirectoryTypeMapper::GetDirectoryTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VpcSettings"))
-  {
+  if (jsonValue.ValueExists("VpcSettings")) {
     m_vpcSettings = jsonValue.GetObject("VpcSettings");
     m_vpcSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ConnectSettings"))
-  {
+  if (jsonValue.ValueExists("ConnectSettings")) {
     m_connectSettings = jsonValue.GetObject("ConnectSettings");
     m_connectSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RadiusSettings"))
-  {
+  if (jsonValue.ValueExists("RadiusSettings")) {
     m_radiusSettings = jsonValue.GetObject("RadiusSettings");
     m_radiusSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RadiusStatus"))
-  {
+  if (jsonValue.ValueExists("RadiusStatus")) {
     m_radiusStatus = RadiusStatusMapper::GetRadiusStatusForName(jsonValue.GetString("RadiusStatus"));
     m_radiusStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StageReason"))
-  {
+  if (jsonValue.ValueExists("StageReason")) {
     m_stageReason = jsonValue.GetString("StageReason");
     m_stageReasonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SsoEnabled"))
-  {
+  if (jsonValue.ValueExists("SsoEnabled")) {
     m_ssoEnabled = jsonValue.GetBool("SsoEnabled");
     m_ssoEnabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DesiredNumberOfDomainControllers"))
-  {
+  if (jsonValue.ValueExists("DesiredNumberOfDomainControllers")) {
     m_desiredNumberOfDomainControllers = jsonValue.GetInteger("DesiredNumberOfDomainControllers");
     m_desiredNumberOfDomainControllersHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OwnerDirectoryDescription"))
-  {
+  if (jsonValue.ValueExists("OwnerDirectoryDescription")) {
     m_ownerDirectoryDescription = jsonValue.GetObject("OwnerDirectoryDescription");
     m_ownerDirectoryDescriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RegionsInfo"))
-  {
+  if (jsonValue.ValueExists("RegionsInfo")) {
     m_regionsInfo = jsonValue.GetObject("RegionsInfo");
     m_regionsInfoHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OsVersion"))
-  {
+  if (jsonValue.ValueExists("OsVersion")) {
     m_osVersion = OSVersionMapper::GetOSVersionForName(jsonValue.GetString("OsVersion"));
     m_osVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HybridSettings"))
-  {
+  if (jsonValue.ValueExists("HybridSettings")) {
     m_hybridSettings = jsonValue.GetObject("HybridSettings");
     m_hybridSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NetworkType"))
-  {
+  if (jsonValue.ValueExists("NetworkType")) {
     m_networkType = NetworkTypeMapper::GetNetworkTypeForName(jsonValue.GetString("NetworkType"));
     m_networkTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DirectoryDescription::Jsonize() const
-{
+JsonValue DirectoryDescription::Jsonize() const {
   JsonValue payload;
 
-  if(m_directoryIdHasBeenSet)
-  {
-   payload.WithString("DirectoryId", m_directoryId);
-
+  if (m_directoryIdHasBeenSet) {
+    payload.WithString("DirectoryId", m_directoryId);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_shortNameHasBeenSet)
-  {
-   payload.WithString("ShortName", m_shortName);
-
+  if (m_shortNameHasBeenSet) {
+    payload.WithString("ShortName", m_shortName);
   }
 
-  if(m_sizeHasBeenSet)
-  {
-   payload.WithString("Size", DirectorySizeMapper::GetNameForDirectorySize(m_size));
+  if (m_sizeHasBeenSet) {
+    payload.WithString("Size", DirectorySizeMapper::GetNameForDirectorySize(m_size));
   }
 
-  if(m_editionHasBeenSet)
-  {
-   payload.WithString("Edition", DirectoryEditionMapper::GetNameForDirectoryEdition(m_edition));
+  if (m_editionHasBeenSet) {
+    payload.WithString("Edition", DirectoryEditionMapper::GetNameForDirectoryEdition(m_edition));
   }
 
-  if(m_aliasHasBeenSet)
-  {
-   payload.WithString("Alias", m_alias);
-
+  if (m_aliasHasBeenSet) {
+    payload.WithString("Alias", m_alias);
   }
 
-  if(m_accessUrlHasBeenSet)
-  {
-   payload.WithString("AccessUrl", m_accessUrl);
-
+  if (m_accessUrlHasBeenSet) {
+    payload.WithString("AccessUrl", m_accessUrl);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_dnsIpAddrsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> dnsIpAddrsJsonList(m_dnsIpAddrs.size());
-   for(unsigned dnsIpAddrsIndex = 0; dnsIpAddrsIndex < dnsIpAddrsJsonList.GetLength(); ++dnsIpAddrsIndex)
-   {
-     dnsIpAddrsJsonList[dnsIpAddrsIndex].AsString(m_dnsIpAddrs[dnsIpAddrsIndex]);
-   }
-   payload.WithArray("DnsIpAddrs", std::move(dnsIpAddrsJsonList));
-
+  if (m_dnsIpAddrsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> dnsIpAddrsJsonList(m_dnsIpAddrs.size());
+    for (unsigned dnsIpAddrsIndex = 0; dnsIpAddrsIndex < dnsIpAddrsJsonList.GetLength(); ++dnsIpAddrsIndex) {
+      dnsIpAddrsJsonList[dnsIpAddrsIndex].AsString(m_dnsIpAddrs[dnsIpAddrsIndex]);
+    }
+    payload.WithArray("DnsIpAddrs", std::move(dnsIpAddrsJsonList));
   }
 
-  if(m_dnsIpv6AddrsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> dnsIpv6AddrsJsonList(m_dnsIpv6Addrs.size());
-   for(unsigned dnsIpv6AddrsIndex = 0; dnsIpv6AddrsIndex < dnsIpv6AddrsJsonList.GetLength(); ++dnsIpv6AddrsIndex)
-   {
-     dnsIpv6AddrsJsonList[dnsIpv6AddrsIndex].AsString(m_dnsIpv6Addrs[dnsIpv6AddrsIndex]);
-   }
-   payload.WithArray("DnsIpv6Addrs", std::move(dnsIpv6AddrsJsonList));
-
+  if (m_dnsIpv6AddrsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> dnsIpv6AddrsJsonList(m_dnsIpv6Addrs.size());
+    for (unsigned dnsIpv6AddrsIndex = 0; dnsIpv6AddrsIndex < dnsIpv6AddrsJsonList.GetLength(); ++dnsIpv6AddrsIndex) {
+      dnsIpv6AddrsJsonList[dnsIpv6AddrsIndex].AsString(m_dnsIpv6Addrs[dnsIpv6AddrsIndex]);
+    }
+    payload.WithArray("DnsIpv6Addrs", std::move(dnsIpv6AddrsJsonList));
   }
 
-  if(m_stageHasBeenSet)
-  {
-   payload.WithString("Stage", DirectoryStageMapper::GetNameForDirectoryStage(m_stage));
+  if (m_stageHasBeenSet) {
+    payload.WithString("Stage", DirectoryStageMapper::GetNameForDirectoryStage(m_stage));
   }
 
-  if(m_shareStatusHasBeenSet)
-  {
-   payload.WithString("ShareStatus", ShareStatusMapper::GetNameForShareStatus(m_shareStatus));
+  if (m_shareStatusHasBeenSet) {
+    payload.WithString("ShareStatus", ShareStatusMapper::GetNameForShareStatus(m_shareStatus));
   }
 
-  if(m_shareMethodHasBeenSet)
-  {
-   payload.WithString("ShareMethod", ShareMethodMapper::GetNameForShareMethod(m_shareMethod));
+  if (m_shareMethodHasBeenSet) {
+    payload.WithString("ShareMethod", ShareMethodMapper::GetNameForShareMethod(m_shareMethod));
   }
 
-  if(m_shareNotesHasBeenSet)
-  {
-   payload.WithString("ShareNotes", m_shareNotes);
-
+  if (m_shareNotesHasBeenSet) {
+    payload.WithString("ShareNotes", m_shareNotes);
   }
 
-  if(m_launchTimeHasBeenSet)
-  {
-   payload.WithDouble("LaunchTime", m_launchTime.SecondsWithMSPrecision());
+  if (m_launchTimeHasBeenSet) {
+    payload.WithDouble("LaunchTime", m_launchTime.SecondsWithMSPrecision());
   }
 
-  if(m_stageLastUpdatedDateTimeHasBeenSet)
-  {
-   payload.WithDouble("StageLastUpdatedDateTime", m_stageLastUpdatedDateTime.SecondsWithMSPrecision());
+  if (m_stageLastUpdatedDateTimeHasBeenSet) {
+    payload.WithDouble("StageLastUpdatedDateTime", m_stageLastUpdatedDateTime.SecondsWithMSPrecision());
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", DirectoryTypeMapper::GetNameForDirectoryType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", DirectoryTypeMapper::GetNameForDirectoryType(m_type));
   }
 
-  if(m_vpcSettingsHasBeenSet)
-  {
-   payload.WithObject("VpcSettings", m_vpcSettings.Jsonize());
-
+  if (m_vpcSettingsHasBeenSet) {
+    payload.WithObject("VpcSettings", m_vpcSettings.Jsonize());
   }
 
-  if(m_connectSettingsHasBeenSet)
-  {
-   payload.WithObject("ConnectSettings", m_connectSettings.Jsonize());
-
+  if (m_connectSettingsHasBeenSet) {
+    payload.WithObject("ConnectSettings", m_connectSettings.Jsonize());
   }
 
-  if(m_radiusSettingsHasBeenSet)
-  {
-   payload.WithObject("RadiusSettings", m_radiusSettings.Jsonize());
-
+  if (m_radiusSettingsHasBeenSet) {
+    payload.WithObject("RadiusSettings", m_radiusSettings.Jsonize());
   }
 
-  if(m_radiusStatusHasBeenSet)
-  {
-   payload.WithString("RadiusStatus", RadiusStatusMapper::GetNameForRadiusStatus(m_radiusStatus));
+  if (m_radiusStatusHasBeenSet) {
+    payload.WithString("RadiusStatus", RadiusStatusMapper::GetNameForRadiusStatus(m_radiusStatus));
   }
 
-  if(m_stageReasonHasBeenSet)
-  {
-   payload.WithString("StageReason", m_stageReason);
-
+  if (m_stageReasonHasBeenSet) {
+    payload.WithString("StageReason", m_stageReason);
   }
 
-  if(m_ssoEnabledHasBeenSet)
-  {
-   payload.WithBool("SsoEnabled", m_ssoEnabled);
-
+  if (m_ssoEnabledHasBeenSet) {
+    payload.WithBool("SsoEnabled", m_ssoEnabled);
   }
 
-  if(m_desiredNumberOfDomainControllersHasBeenSet)
-  {
-   payload.WithInteger("DesiredNumberOfDomainControllers", m_desiredNumberOfDomainControllers);
-
+  if (m_desiredNumberOfDomainControllersHasBeenSet) {
+    payload.WithInteger("DesiredNumberOfDomainControllers", m_desiredNumberOfDomainControllers);
   }
 
-  if(m_ownerDirectoryDescriptionHasBeenSet)
-  {
-   payload.WithObject("OwnerDirectoryDescription", m_ownerDirectoryDescription.Jsonize());
-
+  if (m_ownerDirectoryDescriptionHasBeenSet) {
+    payload.WithObject("OwnerDirectoryDescription", m_ownerDirectoryDescription.Jsonize());
   }
 
-  if(m_regionsInfoHasBeenSet)
-  {
-   payload.WithObject("RegionsInfo", m_regionsInfo.Jsonize());
-
+  if (m_regionsInfoHasBeenSet) {
+    payload.WithObject("RegionsInfo", m_regionsInfo.Jsonize());
   }
 
-  if(m_osVersionHasBeenSet)
-  {
-   payload.WithString("OsVersion", OSVersionMapper::GetNameForOSVersion(m_osVersion));
+  if (m_osVersionHasBeenSet) {
+    payload.WithString("OsVersion", OSVersionMapper::GetNameForOSVersion(m_osVersion));
   }
 
-  if(m_hybridSettingsHasBeenSet)
-  {
-   payload.WithObject("HybridSettings", m_hybridSettings.Jsonize());
-
+  if (m_hybridSettingsHasBeenSet) {
+    payload.WithObject("HybridSettings", m_hybridSettings.Jsonize());
   }
 
-  if(m_networkTypeHasBeenSet)
-  {
-   payload.WithString("NetworkType", NetworkTypeMapper::GetNameForNetworkType(m_networkType));
+  if (m_networkTypeHasBeenSet) {
+    payload.WithString("NetworkType", NetworkTypeMapper::GetNameForNetworkType(m_networkType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DirectoryService
-} // namespace Aws
+}  // namespace Model
+}  // namespace DirectoryService
+}  // namespace Aws

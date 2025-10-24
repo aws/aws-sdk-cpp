@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudDirectory
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudDirectory {
+namespace Model {
 
-BatchDeleteObject::BatchDeleteObject(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchDeleteObject::BatchDeleteObject(JsonView jsonValue) { *this = jsonValue; }
 
-BatchDeleteObject& BatchDeleteObject::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ObjectReference"))
-  {
+BatchDeleteObject& BatchDeleteObject::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ObjectReference")) {
     m_objectReference = jsonValue.GetObject("ObjectReference");
     m_objectReferenceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BatchDeleteObject::Jsonize() const
-{
+JsonValue BatchDeleteObject::Jsonize() const {
   JsonValue payload;
 
-  if(m_objectReferenceHasBeenSet)
-  {
-   payload.WithObject("ObjectReference", m_objectReference.Jsonize());
-
+  if (m_objectReferenceHasBeenSet) {
+    payload.WithObject("ObjectReference", m_objectReference.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudDirectory
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudDirectory
+}  // namespace Aws

@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-S3Config::S3Config(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+S3Config::S3Config(JsonView jsonValue) { *this = jsonValue; }
 
-S3Config& S3Config::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("BucketName"))
-  {
+S3Config& S3Config::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("BucketName")) {
     m_bucketName = jsonValue.GetString("BucketName");
     m_bucketNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BucketPrefix"))
-  {
+  if (jsonValue.ValueExists("BucketPrefix")) {
     m_bucketPrefix = jsonValue.GetString("BucketPrefix");
     m_bucketPrefixHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EncryptionConfig"))
-  {
+  if (jsonValue.ValueExists("EncryptionConfig")) {
     m_encryptionConfig = jsonValue.GetObject("EncryptionConfig");
     m_encryptionConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue S3Config::Jsonize() const
-{
+JsonValue S3Config::Jsonize() const {
   JsonValue payload;
 
-  if(m_bucketNameHasBeenSet)
-  {
-   payload.WithString("BucketName", m_bucketName);
-
+  if (m_bucketNameHasBeenSet) {
+    payload.WithString("BucketName", m_bucketName);
   }
 
-  if(m_bucketPrefixHasBeenSet)
-  {
-   payload.WithString("BucketPrefix", m_bucketPrefix);
-
+  if (m_bucketPrefixHasBeenSet) {
+    payload.WithString("BucketPrefix", m_bucketPrefix);
   }
 
-  if(m_encryptionConfigHasBeenSet)
-  {
-   payload.WithObject("EncryptionConfig", m_encryptionConfig.Jsonize());
-
+  if (m_encryptionConfigHasBeenSet) {
+    payload.WithObject("EncryptionConfig", m_encryptionConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

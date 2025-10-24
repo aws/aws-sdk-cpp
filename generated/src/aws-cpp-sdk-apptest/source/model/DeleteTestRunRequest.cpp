@@ -12,11 +12,4 @@ using namespace Aws::AppTest::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteTestRunRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DeleteTestRunRequest::SerializePayload() const { return {}; }

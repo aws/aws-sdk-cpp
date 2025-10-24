@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotsitewise/model/BatchGetAssetPropertyValueHistorySkippedEntry.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotsitewise/model/BatchGetAssetPropertyValueHistorySkippedEntry.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTSiteWise
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTSiteWise {
+namespace Model {
 
-BatchGetAssetPropertyValueHistorySkippedEntry::BatchGetAssetPropertyValueHistorySkippedEntry(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchGetAssetPropertyValueHistorySkippedEntry::BatchGetAssetPropertyValueHistorySkippedEntry(JsonView jsonValue) { *this = jsonValue; }
 
-BatchGetAssetPropertyValueHistorySkippedEntry& BatchGetAssetPropertyValueHistorySkippedEntry::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("entryId"))
-  {
+BatchGetAssetPropertyValueHistorySkippedEntry& BatchGetAssetPropertyValueHistorySkippedEntry::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("entryId")) {
     m_entryId = jsonValue.GetString("entryId");
     m_entryIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("completionStatus"))
-  {
+  if (jsonValue.ValueExists("completionStatus")) {
     m_completionStatus = BatchEntryCompletionStatusMapper::GetBatchEntryCompletionStatusForName(jsonValue.GetString("completionStatus"));
     m_completionStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("errorInfo"))
-  {
+  if (jsonValue.ValueExists("errorInfo")) {
     m_errorInfo = jsonValue.GetObject("errorInfo");
     m_errorInfoHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BatchGetAssetPropertyValueHistorySkippedEntry::Jsonize() const
-{
+JsonValue BatchGetAssetPropertyValueHistorySkippedEntry::Jsonize() const {
   JsonValue payload;
 
-  if(m_entryIdHasBeenSet)
-  {
-   payload.WithString("entryId", m_entryId);
-
+  if (m_entryIdHasBeenSet) {
+    payload.WithString("entryId", m_entryId);
   }
 
-  if(m_completionStatusHasBeenSet)
-  {
-   payload.WithString("completionStatus", BatchEntryCompletionStatusMapper::GetNameForBatchEntryCompletionStatus(m_completionStatus));
+  if (m_completionStatusHasBeenSet) {
+    payload.WithString("completionStatus", BatchEntryCompletionStatusMapper::GetNameForBatchEntryCompletionStatus(m_completionStatus));
   }
 
-  if(m_errorInfoHasBeenSet)
-  {
-   payload.WithObject("errorInfo", m_errorInfo.Jsonize());
-
+  if (m_errorInfoHasBeenSet) {
+    payload.WithObject("errorInfo", m_errorInfo.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTSiteWise
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTSiteWise
+}  // namespace Aws

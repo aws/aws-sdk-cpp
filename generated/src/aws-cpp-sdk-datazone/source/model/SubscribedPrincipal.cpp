@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/datazone/model/SubscribedPrincipal.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/datazone/model/SubscribedPrincipal.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DataZone
-{
-namespace Model
-{
+namespace Aws {
+namespace DataZone {
+namespace Model {
 
-SubscribedPrincipal::SubscribedPrincipal(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SubscribedPrincipal::SubscribedPrincipal(JsonView jsonValue) { *this = jsonValue; }
 
-SubscribedPrincipal& SubscribedPrincipal::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("project"))
-  {
+SubscribedPrincipal& SubscribedPrincipal::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("project")) {
     m_project = jsonValue.GetObject("project");
     m_projectHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SubscribedPrincipal::Jsonize() const
-{
+JsonValue SubscribedPrincipal::Jsonize() const {
   JsonValue payload;
 
-  if(m_projectHasBeenSet)
-  {
-   payload.WithObject("project", m_project.Jsonize());
-
+  if (m_projectHasBeenSet) {
+    payload.WithObject("project", m_project.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DataZone
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

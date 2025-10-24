@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/license-manager/LicenseManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/license-manager/LicenseManager_EXPORTS.h>
 
-namespace Aws
-{
-namespace LicenseManager
-{
-namespace Model
-{
-  enum class LicenseCountingType
-  {
-    NOT_SET,
-    vCPU,
-    Instance,
-    Core,
-    Socket
-  };
+namespace Aws {
+namespace LicenseManager {
+namespace Model {
+enum class LicenseCountingType { NOT_SET, vCPU, Instance, Core, Socket };
 
-namespace LicenseCountingTypeMapper
-{
+namespace LicenseCountingTypeMapper {
 AWS_LICENSEMANAGER_API LicenseCountingType GetLicenseCountingTypeForName(const Aws::String& name);
 
 AWS_LICENSEMANAGER_API Aws::String GetNameForLicenseCountingType(LicenseCountingType value);
-} // namespace LicenseCountingTypeMapper
-} // namespace Model
-} // namespace LicenseManager
-} // namespace Aws
+}  // namespace LicenseCountingTypeMapper
+}  // namespace Model
+}  // namespace LicenseManager
+}  // namespace Aws

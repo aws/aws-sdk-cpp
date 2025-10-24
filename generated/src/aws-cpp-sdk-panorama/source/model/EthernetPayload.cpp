@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/panorama/model/EthernetPayload.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/panorama/model/EthernetPayload.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Panorama
-{
-namespace Model
-{
+namespace Aws {
+namespace Panorama {
+namespace Model {
 
-EthernetPayload::EthernetPayload(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EthernetPayload::EthernetPayload(JsonView jsonValue) { *this = jsonValue; }
 
-EthernetPayload& EthernetPayload::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ConnectionType"))
-  {
+EthernetPayload& EthernetPayload::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ConnectionType")) {
     m_connectionType = ConnectionTypeMapper::GetConnectionTypeForName(jsonValue.GetString("ConnectionType"));
     m_connectionTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StaticIpConnectionInfo"))
-  {
+  if (jsonValue.ValueExists("StaticIpConnectionInfo")) {
     m_staticIpConnectionInfo = jsonValue.GetObject("StaticIpConnectionInfo");
     m_staticIpConnectionInfoHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EthernetPayload::Jsonize() const
-{
+JsonValue EthernetPayload::Jsonize() const {
   JsonValue payload;
 
-  if(m_connectionTypeHasBeenSet)
-  {
-   payload.WithString("ConnectionType", ConnectionTypeMapper::GetNameForConnectionType(m_connectionType));
+  if (m_connectionTypeHasBeenSet) {
+    payload.WithString("ConnectionType", ConnectionTypeMapper::GetNameForConnectionType(m_connectionType));
   }
 
-  if(m_staticIpConnectionInfoHasBeenSet)
-  {
-   payload.WithObject("StaticIpConnectionInfo", m_staticIpConnectionInfo.Jsonize());
-
+  if (m_staticIpConnectionInfoHasBeenSet) {
+    payload.WithObject("StaticIpConnectionInfo", m_staticIpConnectionInfo.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Panorama
-} // namespace Aws
+}  // namespace Model
+}  // namespace Panorama
+}  // namespace Aws

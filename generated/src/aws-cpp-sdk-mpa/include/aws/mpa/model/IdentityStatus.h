@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/mpa/MPA_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mpa/MPA_EXPORTS.h>
 
-namespace Aws
-{
-namespace MPA
-{
-namespace Model
-{
-  enum class IdentityStatus
-  {
-    NOT_SET,
-    PENDING,
-    ACCEPTED,
-    REJECTED,
-    INVALID
-  };
+namespace Aws {
+namespace MPA {
+namespace Model {
+enum class IdentityStatus { NOT_SET, PENDING, ACCEPTED, REJECTED, INVALID };
 
-namespace IdentityStatusMapper
-{
+namespace IdentityStatusMapper {
 AWS_MPA_API IdentityStatus GetIdentityStatusForName(const Aws::String& name);
 
 AWS_MPA_API Aws::String GetNameForIdentityStatus(IdentityStatus value);
-} // namespace IdentityStatusMapper
-} // namespace Model
-} // namespace MPA
-} // namespace Aws
+}  // namespace IdentityStatusMapper
+}  // namespace Model
+}  // namespace MPA
+}  // namespace Aws

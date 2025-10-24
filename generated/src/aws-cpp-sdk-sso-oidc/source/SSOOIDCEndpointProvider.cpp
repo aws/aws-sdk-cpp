@@ -5,12 +5,8 @@
 
 #include <aws/sso-oidc/SSOOIDCEndpointProvider.h>
 
-namespace Aws
-{
-namespace SSOOIDC
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace SSOOIDC
-} // namespace Aws
+namespace Aws {
+namespace SSOOIDC {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace SSOOIDC
+}  // namespace Aws

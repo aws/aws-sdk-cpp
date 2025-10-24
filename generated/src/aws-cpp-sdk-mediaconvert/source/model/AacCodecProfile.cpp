@@ -3,84 +3,66 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/AacCodecProfile.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/mediaconvert/model/AacCodecProfile.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+namespace AacCodecProfileMapper {
 
-namespace Aws
-{
-  namespace MediaConvert
-  {
-    namespace Model
-    {
-      namespace AacCodecProfileMapper
-      {
+static const int LC_HASH = HashingUtils::HashString("LC");
+static const int HEV1_HASH = HashingUtils::HashString("HEV1");
+static const int HEV2_HASH = HashingUtils::HashString("HEV2");
+static const int XHE_HASH = HashingUtils::HashString("XHE");
 
-        static const int LC_HASH = HashingUtils::HashString("LC");
-        static const int HEV1_HASH = HashingUtils::HashString("HEV1");
-        static const int HEV2_HASH = HashingUtils::HashString("HEV2");
-        static const int XHE_HASH = HashingUtils::HashString("XHE");
+AacCodecProfile GetAacCodecProfileForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == LC_HASH) {
+    return AacCodecProfile::LC;
+  } else if (hashCode == HEV1_HASH) {
+    return AacCodecProfile::HEV1;
+  } else if (hashCode == HEV2_HASH) {
+    return AacCodecProfile::HEV2;
+  } else if (hashCode == XHE_HASH) {
+    return AacCodecProfile::XHE;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<AacCodecProfile>(hashCode);
+  }
 
+  return AacCodecProfile::NOT_SET;
+}
 
-        AacCodecProfile GetAacCodecProfileForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == LC_HASH)
-          {
-            return AacCodecProfile::LC;
-          }
-          else if (hashCode == HEV1_HASH)
-          {
-            return AacCodecProfile::HEV1;
-          }
-          else if (hashCode == HEV2_HASH)
-          {
-            return AacCodecProfile::HEV2;
-          }
-          else if (hashCode == XHE_HASH)
-          {
-            return AacCodecProfile::XHE;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<AacCodecProfile>(hashCode);
-          }
+Aws::String GetNameForAacCodecProfile(AacCodecProfile enumValue) {
+  switch (enumValue) {
+    case AacCodecProfile::NOT_SET:
+      return {};
+    case AacCodecProfile::LC:
+      return "LC";
+    case AacCodecProfile::HEV1:
+      return "HEV1";
+    case AacCodecProfile::HEV2:
+      return "HEV2";
+    case AacCodecProfile::XHE:
+      return "XHE";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return AacCodecProfile::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForAacCodecProfile(AacCodecProfile enumValue)
-        {
-          switch(enumValue)
-          {
-          case AacCodecProfile::NOT_SET:
-            return {};
-          case AacCodecProfile::LC:
-            return "LC";
-          case AacCodecProfile::HEV1:
-            return "HEV1";
-          case AacCodecProfile::HEV2:
-            return "HEV2";
-          case AacCodecProfile::XHE:
-            return "XHE";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace AacCodecProfileMapper
-    } // namespace Model
-  } // namespace MediaConvert
-} // namespace Aws
+}  // namespace AacCodecProfileMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

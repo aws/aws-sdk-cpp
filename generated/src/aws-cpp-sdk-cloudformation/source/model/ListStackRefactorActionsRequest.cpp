@@ -10,22 +10,18 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String ListStackRefactorActionsRequest::SerializePayload() const
-{
+Aws::String ListStackRefactorActionsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ListStackRefactorActions&";
-  if(m_stackRefactorIdHasBeenSet)
-  {
+  if (m_stackRefactorIdHasBeenSet) {
     ss << "StackRefactorId=" << StringUtils::URLEncode(m_stackRefactorId.c_str()) << "&";
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
+  if (m_maxResultsHasBeenSet) {
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String ListStackRefactorActionsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ListStackRefactorActionsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ListStackRefactorActionsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

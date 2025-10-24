@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/MultiplexOutputDestination.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/MultiplexOutputDestination.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-MultiplexOutputDestination::MultiplexOutputDestination(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MultiplexOutputDestination::MultiplexOutputDestination(JsonView jsonValue) { *this = jsonValue; }
 
-MultiplexOutputDestination& MultiplexOutputDestination::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("mediaConnectSettings"))
-  {
+MultiplexOutputDestination& MultiplexOutputDestination::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("mediaConnectSettings")) {
     m_mediaConnectSettings = jsonValue.GetObject("mediaConnectSettings");
     m_mediaConnectSettingsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MultiplexOutputDestination::Jsonize() const
-{
+JsonValue MultiplexOutputDestination::Jsonize() const {
   JsonValue payload;
 
-  if(m_mediaConnectSettingsHasBeenSet)
-  {
-   payload.WithObject("mediaConnectSettings", m_mediaConnectSettings.Jsonize());
-
+  if (m_mediaConnectSettingsHasBeenSet) {
+    payload.WithObject("mediaConnectSettings", m_mediaConnectSettings.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

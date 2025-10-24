@@ -3,102 +3,78 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/polly/model/LexiconAttributes.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/polly/model/LexiconAttributes.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Polly
-{
-namespace Model
-{
+namespace Aws {
+namespace Polly {
+namespace Model {
 
-LexiconAttributes::LexiconAttributes(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LexiconAttributes::LexiconAttributes(JsonView jsonValue) { *this = jsonValue; }
 
-LexiconAttributes& LexiconAttributes::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Alphabet"))
-  {
+LexiconAttributes& LexiconAttributes::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Alphabet")) {
     m_alphabet = jsonValue.GetString("Alphabet");
     m_alphabetHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LanguageCode"))
-  {
+  if (jsonValue.ValueExists("LanguageCode")) {
     m_languageCode = LanguageCodeMapper::GetLanguageCodeForName(jsonValue.GetString("LanguageCode"));
     m_languageCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LastModified"))
-  {
+  if (jsonValue.ValueExists("LastModified")) {
     m_lastModified = jsonValue.GetDouble("LastModified");
     m_lastModifiedHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LexiconArn"))
-  {
+  if (jsonValue.ValueExists("LexiconArn")) {
     m_lexiconArn = jsonValue.GetString("LexiconArn");
     m_lexiconArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LexemesCount"))
-  {
+  if (jsonValue.ValueExists("LexemesCount")) {
     m_lexemesCount = jsonValue.GetInteger("LexemesCount");
     m_lexemesCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Size"))
-  {
+  if (jsonValue.ValueExists("Size")) {
     m_size = jsonValue.GetInteger("Size");
     m_sizeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LexiconAttributes::Jsonize() const
-{
+JsonValue LexiconAttributes::Jsonize() const {
   JsonValue payload;
 
-  if(m_alphabetHasBeenSet)
-  {
-   payload.WithString("Alphabet", m_alphabet);
-
+  if (m_alphabetHasBeenSet) {
+    payload.WithString("Alphabet", m_alphabet);
   }
 
-  if(m_languageCodeHasBeenSet)
-  {
-   payload.WithString("LanguageCode", LanguageCodeMapper::GetNameForLanguageCode(m_languageCode));
+  if (m_languageCodeHasBeenSet) {
+    payload.WithString("LanguageCode", LanguageCodeMapper::GetNameForLanguageCode(m_languageCode));
   }
 
-  if(m_lastModifiedHasBeenSet)
-  {
-   payload.WithDouble("LastModified", m_lastModified.SecondsWithMSPrecision());
+  if (m_lastModifiedHasBeenSet) {
+    payload.WithDouble("LastModified", m_lastModified.SecondsWithMSPrecision());
   }
 
-  if(m_lexiconArnHasBeenSet)
-  {
-   payload.WithString("LexiconArn", m_lexiconArn);
-
+  if (m_lexiconArnHasBeenSet) {
+    payload.WithString("LexiconArn", m_lexiconArn);
   }
 
-  if(m_lexemesCountHasBeenSet)
-  {
-   payload.WithInteger("LexemesCount", m_lexemesCount);
-
+  if (m_lexemesCountHasBeenSet) {
+    payload.WithInteger("LexemesCount", m_lexemesCount);
   }
 
-  if(m_sizeHasBeenSet)
-  {
-   payload.WithInteger("Size", m_size);
-
+  if (m_sizeHasBeenSet) {
+    payload.WithInteger("Size", m_size);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Polly
-} // namespace Aws
+}  // namespace Model
+}  // namespace Polly
+}  // namespace Aws

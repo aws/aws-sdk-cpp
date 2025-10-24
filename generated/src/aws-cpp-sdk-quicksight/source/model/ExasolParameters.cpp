@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/ExasolParameters.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/ExasolParameters.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-ExasolParameters::ExasolParameters(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExasolParameters::ExasolParameters(JsonView jsonValue) { *this = jsonValue; }
 
-ExasolParameters& ExasolParameters::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Host"))
-  {
+ExasolParameters& ExasolParameters::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Host")) {
     m_host = jsonValue.GetString("Host");
     m_hostHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Port"))
-  {
+  if (jsonValue.ValueExists("Port")) {
     m_port = jsonValue.GetInteger("Port");
     m_portHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExasolParameters::Jsonize() const
-{
+JsonValue ExasolParameters::Jsonize() const {
   JsonValue payload;
 
-  if(m_hostHasBeenSet)
-  {
-   payload.WithString("Host", m_host);
-
+  if (m_hostHasBeenSet) {
+    payload.WithString("Host", m_host);
   }
 
-  if(m_portHasBeenSet)
-  {
-   payload.WithInteger("Port", m_port);
-
+  if (m_portHasBeenSet) {
+    payload.WithInteger("Port", m_port);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

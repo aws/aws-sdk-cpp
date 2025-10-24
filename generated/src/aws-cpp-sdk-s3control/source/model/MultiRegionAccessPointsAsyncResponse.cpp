@@ -3,41 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/s3control/model/MultiRegionAccessPointsAsyncResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3control/model/MultiRegionAccessPointsAsyncResponse.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace S3Control
-{
-namespace Model
-{
+namespace Aws {
+namespace S3Control {
+namespace Model {
 
-MultiRegionAccessPointsAsyncResponse::MultiRegionAccessPointsAsyncResponse(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+MultiRegionAccessPointsAsyncResponse::MultiRegionAccessPointsAsyncResponse(const XmlNode& xmlNode) { *this = xmlNode; }
 
-MultiRegionAccessPointsAsyncResponse& MultiRegionAccessPointsAsyncResponse::operator =(const XmlNode& xmlNode)
-{
+MultiRegionAccessPointsAsyncResponse& MultiRegionAccessPointsAsyncResponse::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode regionsNode = resultNode.FirstChild("Regions");
-    if(!regionsNode.IsNull())
-    {
+    if (!regionsNode.IsNull()) {
       XmlNode regionsMember = regionsNode.FirstChild("Region");
       m_regionsHasBeenSet = !regionsMember.IsNull();
-      while(!regionsMember.IsNull())
-      {
+      while (!regionsMember.IsNull()) {
         m_regions.push_back(regionsMember);
         regionsMember = regionsMember.NextNode("Region");
       }
@@ -49,21 +39,17 @@ MultiRegionAccessPointsAsyncResponse& MultiRegionAccessPointsAsyncResponse::oper
   return *this;
 }
 
-void MultiRegionAccessPointsAsyncResponse::AddToNode(XmlNode& parentNode) const
-{
+void MultiRegionAccessPointsAsyncResponse::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_regionsHasBeenSet)
-  {
-   XmlNode regionsParentNode = parentNode.CreateChildElement("Regions");
-   for(const auto& item : m_regions)
-   {
-     XmlNode regionsNode = regionsParentNode.CreateChildElement("Region");
-     item.AddToNode(regionsNode);
-   }
+  if (m_regionsHasBeenSet) {
+    XmlNode regionsParentNode = parentNode.CreateChildElement("Regions");
+    for (const auto& item : m_regions) {
+      XmlNode regionsNode = regionsParentNode.CreateChildElement("Region");
+      item.AddToNode(regionsNode);
+    }
   }
-
 }
 
-} // namespace Model
-} // namespace S3Control
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Control
+}  // namespace Aws

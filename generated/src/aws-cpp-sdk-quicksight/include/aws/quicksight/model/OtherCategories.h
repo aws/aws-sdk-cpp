@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
-  enum class OtherCategories
-  {
-    NOT_SET,
-    INCLUDE,
-    EXCLUDE
-  };
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class OtherCategories { NOT_SET, INCLUDE, EXCLUDE };
 
-namespace OtherCategoriesMapper
-{
+namespace OtherCategoriesMapper {
 AWS_QUICKSIGHT_API OtherCategories GetOtherCategoriesForName(const Aws::String& name);
 
 AWS_QUICKSIGHT_API Aws::String GetNameForOtherCategories(OtherCategories value);
-} // namespace OtherCategoriesMapper
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace OtherCategoriesMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

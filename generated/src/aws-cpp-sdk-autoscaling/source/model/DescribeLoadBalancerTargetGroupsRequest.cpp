@@ -10,22 +10,18 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeLoadBalancerTargetGroupsRequest::SerializePayload() const
-{
+Aws::String DescribeLoadBalancerTargetGroupsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeLoadBalancerTargetGroups&";
-  if(m_autoScalingGroupNameHasBeenSet)
-  {
+  if (m_autoScalingGroupNameHasBeenSet) {
     ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  if(m_maxRecordsHasBeenSet)
-  {
+  if (m_maxRecordsHasBeenSet) {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
 
@@ -33,8 +29,4 @@ Aws::String DescribeLoadBalancerTargetGroupsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeLoadBalancerTargetGroupsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeLoadBalancerTargetGroupsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

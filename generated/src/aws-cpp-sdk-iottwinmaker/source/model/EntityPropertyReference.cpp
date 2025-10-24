@@ -3,102 +3,77 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iottwinmaker/model/EntityPropertyReference.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iottwinmaker/model/EntityPropertyReference.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTTwinMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTTwinMaker {
+namespace Model {
 
-EntityPropertyReference::EntityPropertyReference(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EntityPropertyReference::EntityPropertyReference(JsonView jsonValue) { *this = jsonValue; }
 
-EntityPropertyReference& EntityPropertyReference::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("componentName"))
-  {
+EntityPropertyReference& EntityPropertyReference::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("componentName")) {
     m_componentName = jsonValue.GetString("componentName");
     m_componentNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("componentPath"))
-  {
+  if (jsonValue.ValueExists("componentPath")) {
     m_componentPath = jsonValue.GetString("componentPath");
     m_componentPathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("externalIdProperty"))
-  {
+  if (jsonValue.ValueExists("externalIdProperty")) {
     Aws::Map<Aws::String, JsonView> externalIdPropertyJsonMap = jsonValue.GetObject("externalIdProperty").GetAllObjects();
-    for(auto& externalIdPropertyItem : externalIdPropertyJsonMap)
-    {
+    for (auto& externalIdPropertyItem : externalIdPropertyJsonMap) {
       m_externalIdProperty[externalIdPropertyItem.first] = externalIdPropertyItem.second.AsString();
     }
     m_externalIdPropertyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("entityId"))
-  {
+  if (jsonValue.ValueExists("entityId")) {
     m_entityId = jsonValue.GetString("entityId");
     m_entityIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("propertyName"))
-  {
+  if (jsonValue.ValueExists("propertyName")) {
     m_propertyName = jsonValue.GetString("propertyName");
     m_propertyNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EntityPropertyReference::Jsonize() const
-{
+JsonValue EntityPropertyReference::Jsonize() const {
   JsonValue payload;
 
-  if(m_componentNameHasBeenSet)
-  {
-   payload.WithString("componentName", m_componentName);
-
+  if (m_componentNameHasBeenSet) {
+    payload.WithString("componentName", m_componentName);
   }
 
-  if(m_componentPathHasBeenSet)
-  {
-   payload.WithString("componentPath", m_componentPath);
-
+  if (m_componentPathHasBeenSet) {
+    payload.WithString("componentPath", m_componentPath);
   }
 
-  if(m_externalIdPropertyHasBeenSet)
-  {
-   JsonValue externalIdPropertyJsonMap;
-   for(auto& externalIdPropertyItem : m_externalIdProperty)
-   {
-     externalIdPropertyJsonMap.WithString(externalIdPropertyItem.first, externalIdPropertyItem.second);
-   }
-   payload.WithObject("externalIdProperty", std::move(externalIdPropertyJsonMap));
-
+  if (m_externalIdPropertyHasBeenSet) {
+    JsonValue externalIdPropertyJsonMap;
+    for (auto& externalIdPropertyItem : m_externalIdProperty) {
+      externalIdPropertyJsonMap.WithString(externalIdPropertyItem.first, externalIdPropertyItem.second);
+    }
+    payload.WithObject("externalIdProperty", std::move(externalIdPropertyJsonMap));
   }
 
-  if(m_entityIdHasBeenSet)
-  {
-   payload.WithString("entityId", m_entityId);
-
+  if (m_entityIdHasBeenSet) {
+    payload.WithString("entityId", m_entityId);
   }
 
-  if(m_propertyNameHasBeenSet)
-  {
-   payload.WithString("propertyName", m_propertyName);
-
+  if (m_propertyNameHasBeenSet) {
+    payload.WithString("propertyName", m_propertyName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTTwinMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTTwinMaker
+}  // namespace Aws

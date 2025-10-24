@@ -7,32 +7,27 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
-  enum class TriggerType
-  {
-    NOT_SET,
-    CreatePipeline,
-    StartPipelineExecution,
-    PollForSourceChanges,
-    Webhook,
-    CloudWatchEvent,
-    PutActionRevision,
-    WebhookV2,
-    ManualRollback,
-    AutomatedRollback
-  };
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
+enum class TriggerType {
+  NOT_SET,
+  CreatePipeline,
+  StartPipelineExecution,
+  PollForSourceChanges,
+  Webhook,
+  CloudWatchEvent,
+  PutActionRevision,
+  WebhookV2,
+  ManualRollback,
+  AutomatedRollback
+};
 
-namespace TriggerTypeMapper
-{
+namespace TriggerTypeMapper {
 AWS_CODEPIPELINE_API TriggerType GetTriggerTypeForName(const Aws::String& name);
 
 AWS_CODEPIPELINE_API Aws::String GetNameForTriggerType(TriggerType value);
-} // namespace TriggerTypeMapper
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace TriggerTypeMapper
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

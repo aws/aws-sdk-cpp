@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-MissingLoopInputNodeFlowValidationDetails::MissingLoopInputNodeFlowValidationDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MissingLoopInputNodeFlowValidationDetails::MissingLoopInputNodeFlowValidationDetails(JsonView jsonValue) { *this = jsonValue; }
 
-MissingLoopInputNodeFlowValidationDetails& MissingLoopInputNodeFlowValidationDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("loopNode"))
-  {
+MissingLoopInputNodeFlowValidationDetails& MissingLoopInputNodeFlowValidationDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("loopNode")) {
     m_loopNode = jsonValue.GetString("loopNode");
     m_loopNodeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MissingLoopInputNodeFlowValidationDetails::Jsonize() const
-{
+JsonValue MissingLoopInputNodeFlowValidationDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_loopNodeHasBeenSet)
-  {
-   payload.WithString("loopNode", m_loopNode);
-
+  if (m_loopNodeHasBeenSet) {
+    payload.WithString("loopNode", m_loopNode);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

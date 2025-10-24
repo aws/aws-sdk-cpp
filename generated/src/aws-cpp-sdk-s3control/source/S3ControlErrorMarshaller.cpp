@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::S3Control;
 
-AWSError<CoreErrors> S3ControlErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> S3ControlErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = S3ControlErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

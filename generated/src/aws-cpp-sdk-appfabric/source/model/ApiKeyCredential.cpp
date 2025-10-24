@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppFabric
-{
-namespace Model
-{
+namespace Aws {
+namespace AppFabric {
+namespace Model {
 
-ApiKeyCredential::ApiKeyCredential(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ApiKeyCredential::ApiKeyCredential(JsonView jsonValue) { *this = jsonValue; }
 
-ApiKeyCredential& ApiKeyCredential::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("apiKey"))
-  {
+ApiKeyCredential& ApiKeyCredential::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("apiKey")) {
     m_apiKey = jsonValue.GetString("apiKey");
     m_apiKeyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ApiKeyCredential::Jsonize() const
-{
+JsonValue ApiKeyCredential::Jsonize() const {
   JsonValue payload;
 
-  if(m_apiKeyHasBeenSet)
-  {
-   payload.WithString("apiKey", m_apiKey);
-
+  if (m_apiKeyHasBeenSet) {
+    payload.WithString("apiKey", m_apiKey);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppFabric
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppFabric
+}  // namespace Aws

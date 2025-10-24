@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ds/model/IpRoute.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ds/model/IpRoute.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DirectoryService
-{
-namespace Model
-{
+namespace Aws {
+namespace DirectoryService {
+namespace Model {
 
-IpRoute::IpRoute(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IpRoute::IpRoute(JsonView jsonValue) { *this = jsonValue; }
 
-IpRoute& IpRoute::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CidrIp"))
-  {
+IpRoute& IpRoute::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CidrIp")) {
     m_cidrIp = jsonValue.GetString("CidrIp");
     m_cidrIpHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CidrIpv6"))
-  {
+  if (jsonValue.ValueExists("CidrIpv6")) {
     m_cidrIpv6 = jsonValue.GetString("CidrIpv6");
     m_cidrIpv6HasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Description"))
-  {
+  if (jsonValue.ValueExists("Description")) {
     m_description = jsonValue.GetString("Description");
     m_descriptionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IpRoute::Jsonize() const
-{
+JsonValue IpRoute::Jsonize() const {
   JsonValue payload;
 
-  if(m_cidrIpHasBeenSet)
-  {
-   payload.WithString("CidrIp", m_cidrIp);
-
+  if (m_cidrIpHasBeenSet) {
+    payload.WithString("CidrIp", m_cidrIp);
   }
 
-  if(m_cidrIpv6HasBeenSet)
-  {
-   payload.WithString("CidrIpv6", m_cidrIpv6);
-
+  if (m_cidrIpv6HasBeenSet) {
+    payload.WithString("CidrIpv6", m_cidrIpv6);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DirectoryService
-} // namespace Aws
+}  // namespace Model
+}  // namespace DirectoryService
+}  // namespace Aws

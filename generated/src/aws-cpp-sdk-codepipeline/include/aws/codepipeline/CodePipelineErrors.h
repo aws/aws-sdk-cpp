@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/codepipeline/CodePipeline_EXPORTS.h>
 
-namespace Aws
-{
-namespace CodePipeline
-{
-enum class CodePipelineErrors
-{
-  //From Core//
+namespace Aws {
+namespace CodePipeline {
+enum class CodePipelineErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class CodePipelineErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class CodePipelineErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ACTION_EXECUTION_NOT_FOUND= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ACTION_EXECUTION_NOT_FOUND = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   ACTION_NOT_FOUND,
   ACTION_TYPE_NOT_FOUND,
   APPROVAL_ALREADY_COMPLETED,
@@ -88,9 +85,8 @@ enum class CodePipelineErrors
   WEBHOOK_NOT_FOUND
 };
 
-class AWS_CODEPIPELINE_API CodePipelineError : public Aws::Client::AWSError<CodePipelineErrors>
-{
-public:
+class AWS_CODEPIPELINE_API CodePipelineError : public Aws::Client::AWSError<CodePipelineErrors> {
+ public:
   CodePipelineError() {}
   CodePipelineError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CodePipelineErrors>(rhs) {}
   CodePipelineError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CodePipelineErrors>(rhs) {}
@@ -101,10 +97,9 @@ public:
   T GetModeledError();
 };
 
-namespace CodePipelineErrorMapper
-{
-  AWS_CODEPIPELINE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace CodePipelineErrorMapper {
+AWS_CODEPIPELINE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace CodePipeline
+}  // namespace Aws

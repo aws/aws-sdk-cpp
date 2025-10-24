@@ -4,93 +4,106 @@
  */
 
 #pragma once
-#include <aws/es/ElasticsearchService_EXPORTS.h>
-#include <aws/es/ElasticsearchServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/es/ElasticsearchServiceRequest.h>
+#include <aws/es/ElasticsearchService_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Http
-{
-    class URI;
-} //namespace Http
-namespace ElasticsearchService
-{
-namespace Model
-{
+namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
+namespace ElasticsearchService {
+namespace Model {
 
+/**
+ * <p>Container for parameters to
+ * <code>DescribeReservedElasticsearchInstanceOfferings</code></p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeReservedElasticsearchInstanceOfferingsRequest">AWS
+ * API Reference</a></p>
+ */
+class DescribeReservedElasticsearchInstanceOfferingsRequest : public ElasticsearchServiceRequest {
+ public:
+  AWS_ELASTICSEARCHSERVICE_API DescribeReservedElasticsearchInstanceOfferingsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DescribeReservedElasticsearchInstanceOfferings"; }
+
+  AWS_ELASTICSEARCHSERVICE_API Aws::String SerializePayload() const override;
+
+  AWS_ELASTICSEARCHSERVICE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+  ///@{
   /**
-   * <p>Container for parameters to
-   * <code>DescribeReservedElasticsearchInstanceOfferings</code></p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeReservedElasticsearchInstanceOfferingsRequest">AWS
-   * API Reference</a></p>
+   * <p>The offering identifier filter value. Use this parameter to show only the
+   * available offering that matches the specified reservation identifier.</p>
    */
-  class DescribeReservedElasticsearchInstanceOfferingsRequest : public ElasticsearchServiceRequest
-  {
-  public:
-    AWS_ELASTICSEARCHSERVICE_API DescribeReservedElasticsearchInstanceOfferingsRequest() = default;
+  inline const Aws::String& GetReservedElasticsearchInstanceOfferingId() const { return m_reservedElasticsearchInstanceOfferingId; }
+  inline bool ReservedElasticsearchInstanceOfferingIdHasBeenSet() const { return m_reservedElasticsearchInstanceOfferingIdHasBeenSet; }
+  template <typename ReservedElasticsearchInstanceOfferingIdT = Aws::String>
+  void SetReservedElasticsearchInstanceOfferingId(ReservedElasticsearchInstanceOfferingIdT&& value) {
+    m_reservedElasticsearchInstanceOfferingIdHasBeenSet = true;
+    m_reservedElasticsearchInstanceOfferingId = std::forward<ReservedElasticsearchInstanceOfferingIdT>(value);
+  }
+  template <typename ReservedElasticsearchInstanceOfferingIdT = Aws::String>
+  DescribeReservedElasticsearchInstanceOfferingsRequest& WithReservedElasticsearchInstanceOfferingId(
+      ReservedElasticsearchInstanceOfferingIdT&& value) {
+    SetReservedElasticsearchInstanceOfferingId(std::forward<ReservedElasticsearchInstanceOfferingIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "DescribeReservedElasticsearchInstanceOfferings"; }
+  ///@{
+  /**
+   * <p>Set this value to limit the number of results returned. If not specified,
+   * defaults to 100.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline DescribeReservedElasticsearchInstanceOfferingsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
 
-    AWS_ELASTICSEARCHSERVICE_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>NextToken should be sent in case if earlier API call produced result
+   * containing NextToken. It is used for pagination.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  DescribeReservedElasticsearchInstanceOfferingsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_reservedElasticsearchInstanceOfferingId;
+  bool m_reservedElasticsearchInstanceOfferingIdHasBeenSet = false;
 
-    AWS_ELASTICSEARCHSERVICE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+  int m_maxResults{0};
+  bool m_maxResultsHasBeenSet = false;
 
+  Aws::String m_nextToken;
+  bool m_nextTokenHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The offering identifier filter value. Use this parameter to show only the
-     * available offering that matches the specified reservation identifier.</p>
-     */
-    inline const Aws::String& GetReservedElasticsearchInstanceOfferingId() const { return m_reservedElasticsearchInstanceOfferingId; }
-    inline bool ReservedElasticsearchInstanceOfferingIdHasBeenSet() const { return m_reservedElasticsearchInstanceOfferingIdHasBeenSet; }
-    template<typename ReservedElasticsearchInstanceOfferingIdT = Aws::String>
-    void SetReservedElasticsearchInstanceOfferingId(ReservedElasticsearchInstanceOfferingIdT&& value) { m_reservedElasticsearchInstanceOfferingIdHasBeenSet = true; m_reservedElasticsearchInstanceOfferingId = std::forward<ReservedElasticsearchInstanceOfferingIdT>(value); }
-    template<typename ReservedElasticsearchInstanceOfferingIdT = Aws::String>
-    DescribeReservedElasticsearchInstanceOfferingsRequest& WithReservedElasticsearchInstanceOfferingId(ReservedElasticsearchInstanceOfferingIdT&& value) { SetReservedElasticsearchInstanceOfferingId(std::forward<ReservedElasticsearchInstanceOfferingIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Set this value to limit the number of results returned. If not specified,
-     * defaults to 100.</p>
-     */
-    inline int GetMaxResults() const { return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline DescribeReservedElasticsearchInstanceOfferingsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>NextToken should be sent in case if earlier API call produced result
-     * containing NextToken. It is used for pagination.</p>
-     */
-    inline const Aws::String& GetNextToken() const { return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    template<typename NextTokenT = Aws::String>
-    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
-    template<typename NextTokenT = Aws::String>
-    DescribeReservedElasticsearchInstanceOfferingsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_reservedElasticsearchInstanceOfferingId;
-    bool m_reservedElasticsearchInstanceOfferingIdHasBeenSet = false;
-
-    int m_maxResults{0};
-    bool m_maxResultsHasBeenSet = false;
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace ElasticsearchService
-} // namespace Aws
+}  // namespace Model
+}  // namespace ElasticsearchService
+}  // namespace Aws

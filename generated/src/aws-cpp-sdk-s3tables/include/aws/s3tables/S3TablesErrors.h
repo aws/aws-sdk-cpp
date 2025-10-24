@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/s3tables/S3Tables_EXPORTS.h>
 
-namespace Aws
-{
-namespace S3Tables
-{
-enum class S3TablesErrors
-{
-  //From Core//
+namespace Aws {
+namespace S3Tables {
+enum class S3TablesErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class S3TablesErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class S3TablesErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BAD_REQUEST = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CONFLICT,
   FORBIDDEN,
   INTERNAL_SERVER_ERROR,
@@ -55,9 +52,8 @@ enum class S3TablesErrors
   TOO_MANY_REQUESTS
 };
 
-class AWS_S3TABLES_API S3TablesError : public Aws::Client::AWSError<S3TablesErrors>
-{
-public:
+class AWS_S3TABLES_API S3TablesError : public Aws::Client::AWSError<S3TablesErrors> {
+ public:
   S3TablesError() {}
   S3TablesError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<S3TablesErrors>(rhs) {}
   S3TablesError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<S3TablesErrors>(rhs) {}
@@ -68,10 +64,9 @@ public:
   T GetModeledError();
 };
 
-namespace S3TablesErrorMapper
-{
-  AWS_S3TABLES_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace S3TablesErrorMapper {
+AWS_S3TABLES_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace S3Tables
-} // namespace Aws
+}  // namespace S3Tables
+}  // namespace Aws

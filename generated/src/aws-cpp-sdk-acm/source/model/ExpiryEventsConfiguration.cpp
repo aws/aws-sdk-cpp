@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ACM
-{
-namespace Model
-{
+namespace Aws {
+namespace ACM {
+namespace Model {
 
-ExpiryEventsConfiguration::ExpiryEventsConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExpiryEventsConfiguration::ExpiryEventsConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ExpiryEventsConfiguration& ExpiryEventsConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DaysBeforeExpiry"))
-  {
+ExpiryEventsConfiguration& ExpiryEventsConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DaysBeforeExpiry")) {
     m_daysBeforeExpiry = jsonValue.GetInteger("DaysBeforeExpiry");
     m_daysBeforeExpiryHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExpiryEventsConfiguration::Jsonize() const
-{
+JsonValue ExpiryEventsConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_daysBeforeExpiryHasBeenSet)
-  {
-   payload.WithInteger("DaysBeforeExpiry", m_daysBeforeExpiry);
-
+  if (m_daysBeforeExpiryHasBeenSet) {
+    payload.WithInteger("DaysBeforeExpiry", m_daysBeforeExpiry);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ACM
-} // namespace Aws
+}  // namespace Model
+}  // namespace ACM
+}  // namespace Aws

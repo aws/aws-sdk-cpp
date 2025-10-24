@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/taxsettings/TaxSettings_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/taxsettings/TaxSettings_EXPORTS.h>
 
-namespace Aws
-{
-namespace TaxSettings
-{
-namespace Model
-{
-  enum class IsraelDealerType
-  {
-    NOT_SET,
-    Authorized,
-    Non_authorized
-  };
+namespace Aws {
+namespace TaxSettings {
+namespace Model {
+enum class IsraelDealerType { NOT_SET, Authorized, Non_authorized };
 
-namespace IsraelDealerTypeMapper
-{
+namespace IsraelDealerTypeMapper {
 AWS_TAXSETTINGS_API IsraelDealerType GetIsraelDealerTypeForName(const Aws::String& name);
 
 AWS_TAXSETTINGS_API Aws::String GetNameForIsraelDealerType(IsraelDealerType value);
-} // namespace IsraelDealerTypeMapper
-} // namespace Model
-} // namespace TaxSettings
-} // namespace Aws
+}  // namespace IsraelDealerTypeMapper
+}  // namespace Model
+}  // namespace TaxSettings
+}  // namespace Aws

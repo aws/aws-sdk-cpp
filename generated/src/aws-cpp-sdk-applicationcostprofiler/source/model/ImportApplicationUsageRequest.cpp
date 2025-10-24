@@ -12,19 +12,12 @@ using namespace Aws::ApplicationCostProfiler::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String ImportApplicationUsageRequest::SerializePayload() const
-{
+Aws::String ImportApplicationUsageRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_sourceS3LocationHasBeenSet)
-  {
-   payload.WithObject("sourceS3Location", m_sourceS3Location.Jsonize());
-
+  if (m_sourceS3LocationHasBeenSet) {
+    payload.WithObject("sourceS3Location", m_sourceS3Location.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

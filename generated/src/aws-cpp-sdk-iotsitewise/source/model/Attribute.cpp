@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotsitewise/model/Attribute.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotsitewise/model/Attribute.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTSiteWise
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTSiteWise {
+namespace Model {
 
-Attribute::Attribute(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Attribute::Attribute(JsonView jsonValue) { *this = jsonValue; }
 
-Attribute& Attribute::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("defaultValue"))
-  {
+Attribute& Attribute::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("defaultValue")) {
     m_defaultValue = jsonValue.GetString("defaultValue");
     m_defaultValueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Attribute::Jsonize() const
-{
+JsonValue Attribute::Jsonize() const {
   JsonValue payload;
 
-  if(m_defaultValueHasBeenSet)
-  {
-   payload.WithString("defaultValue", m_defaultValue);
-
+  if (m_defaultValueHasBeenSet) {
+    payload.WithString("defaultValue", m_defaultValue);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTSiteWise
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTSiteWise
+}  // namespace Aws

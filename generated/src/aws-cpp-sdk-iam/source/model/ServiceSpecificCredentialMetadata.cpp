@@ -3,79 +3,66 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/ServiceSpecificCredentialMetadata.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/iam/model/ServiceSpecificCredentialMetadata.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IAM
-{
-namespace Model
-{
+namespace Aws {
+namespace IAM {
+namespace Model {
 
-ServiceSpecificCredentialMetadata::ServiceSpecificCredentialMetadata(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+ServiceSpecificCredentialMetadata::ServiceSpecificCredentialMetadata(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ServiceSpecificCredentialMetadata& ServiceSpecificCredentialMetadata::operator =(const XmlNode& xmlNode)
-{
+ServiceSpecificCredentialMetadata& ServiceSpecificCredentialMetadata::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode userNameNode = resultNode.FirstChild("UserName");
-    if(!userNameNode.IsNull())
-    {
+    if (!userNameNode.IsNull()) {
       m_userName = Aws::Utils::Xml::DecodeEscapedXmlText(userNameNode.GetText());
       m_userNameHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    if(!statusNode.IsNull())
-    {
-      m_status = StatusTypeMapper::GetStatusTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
+    if (!statusNode.IsNull()) {
+      m_status =
+          StatusTypeMapper::GetStatusTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode serviceUserNameNode = resultNode.FirstChild("ServiceUserName");
-    if(!serviceUserNameNode.IsNull())
-    {
+    if (!serviceUserNameNode.IsNull()) {
       m_serviceUserName = Aws::Utils::Xml::DecodeEscapedXmlText(serviceUserNameNode.GetText());
       m_serviceUserNameHasBeenSet = true;
     }
     XmlNode serviceCredentialAliasNode = resultNode.FirstChild("ServiceCredentialAlias");
-    if(!serviceCredentialAliasNode.IsNull())
-    {
+    if (!serviceCredentialAliasNode.IsNull()) {
       m_serviceCredentialAlias = Aws::Utils::Xml::DecodeEscapedXmlText(serviceCredentialAliasNode.GetText());
       m_serviceCredentialAliasHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
-    if(!createDateNode.IsNull())
-    {
-      m_createDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+    if (!createDateNode.IsNull()) {
+      m_createDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createDateNode.GetText()).c_str()).c_str(),
+                              Aws::Utils::DateFormat::ISO_8601);
       m_createDateHasBeenSet = true;
     }
     XmlNode expirationDateNode = resultNode.FirstChild("ExpirationDate");
-    if(!expirationDateNode.IsNull())
-    {
-      m_expirationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(expirationDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+    if (!expirationDateNode.IsNull()) {
+      m_expirationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(expirationDateNode.GetText()).c_str()).c_str(),
+                                  Aws::Utils::DateFormat::ISO_8601);
       m_expirationDateHasBeenSet = true;
     }
     XmlNode serviceSpecificCredentialIdNode = resultNode.FirstChild("ServiceSpecificCredentialId");
-    if(!serviceSpecificCredentialIdNode.IsNull())
-    {
+    if (!serviceSpecificCredentialIdNode.IsNull()) {
       m_serviceSpecificCredentialId = Aws::Utils::Xml::DecodeEscapedXmlText(serviceSpecificCredentialIdNode.GetText());
       m_serviceSpecificCredentialIdHasBeenSet = true;
     }
     XmlNode serviceNameNode = resultNode.FirstChild("ServiceName");
-    if(!serviceNameNode.IsNull())
-    {
+    if (!serviceNameNode.IsNull()) {
       m_serviceName = Aws::Utils::Xml::DecodeEscapedXmlText(serviceNameNode.GetText());
       m_serviceNameHasBeenSet = true;
     }
@@ -84,86 +71,75 @@ ServiceSpecificCredentialMetadata& ServiceSpecificCredentialMetadata::operator =
   return *this;
 }
 
-void ServiceSpecificCredentialMetadata::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_userNameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
+void ServiceSpecificCredentialMetadata::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                       const char* locationValue) const {
+  if (m_userNameHasBeenSet) {
+    oStream << location << index << locationValue << ".UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
   }
 
-  if(m_statusHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(StatusTypeMapper::GetNameForStatusType(m_status)) << "&";
+  if (m_statusHasBeenSet) {
+    oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(StatusTypeMapper::GetNameForStatusType(m_status))
+            << "&";
   }
 
-  if(m_serviceUserNameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ServiceUserName=" << StringUtils::URLEncode(m_serviceUserName.c_str()) << "&";
+  if (m_serviceUserNameHasBeenSet) {
+    oStream << location << index << locationValue << ".ServiceUserName=" << StringUtils::URLEncode(m_serviceUserName.c_str()) << "&";
   }
 
-  if(m_serviceCredentialAliasHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ServiceCredentialAlias=" << StringUtils::URLEncode(m_serviceCredentialAlias.c_str()) << "&";
+  if (m_serviceCredentialAliasHasBeenSet) {
+    oStream << location << index << locationValue << ".ServiceCredentialAlias=" << StringUtils::URLEncode(m_serviceCredentialAlias.c_str())
+            << "&";
   }
 
-  if(m_createDateHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  if (m_createDateHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_expirationDateHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ExpirationDate=" << StringUtils::URLEncode(m_expirationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  if (m_expirationDateHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".ExpirationDate=" << StringUtils::URLEncode(m_expirationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
-  if(m_serviceSpecificCredentialIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ServiceSpecificCredentialId=" << StringUtils::URLEncode(m_serviceSpecificCredentialId.c_str()) << "&";
+  if (m_serviceSpecificCredentialIdHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".ServiceSpecificCredentialId=" << StringUtils::URLEncode(m_serviceSpecificCredentialId.c_str()) << "&";
   }
 
-  if(m_serviceNameHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ServiceName=" << StringUtils::URLEncode(m_serviceName.c_str()) << "&";
-  }
-
-}
-
-void ServiceSpecificCredentialMetadata::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_userNameHasBeenSet)
-  {
-      oStream << location << ".UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
-  }
-  if(m_statusHasBeenSet)
-  {
-      oStream << location << ".Status=" << StringUtils::URLEncode(StatusTypeMapper::GetNameForStatusType(m_status)) << "&";
-  }
-  if(m_serviceUserNameHasBeenSet)
-  {
-      oStream << location << ".ServiceUserName=" << StringUtils::URLEncode(m_serviceUserName.c_str()) << "&";
-  }
-  if(m_serviceCredentialAliasHasBeenSet)
-  {
-      oStream << location << ".ServiceCredentialAlias=" << StringUtils::URLEncode(m_serviceCredentialAlias.c_str()) << "&";
-  }
-  if(m_createDateHasBeenSet)
-  {
-      oStream << location << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
-  }
-  if(m_expirationDateHasBeenSet)
-  {
-      oStream << location << ".ExpirationDate=" << StringUtils::URLEncode(m_expirationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
-  }
-  if(m_serviceSpecificCredentialIdHasBeenSet)
-  {
-      oStream << location << ".ServiceSpecificCredentialId=" << StringUtils::URLEncode(m_serviceSpecificCredentialId.c_str()) << "&";
-  }
-  if(m_serviceNameHasBeenSet)
-  {
-      oStream << location << ".ServiceName=" << StringUtils::URLEncode(m_serviceName.c_str()) << "&";
+  if (m_serviceNameHasBeenSet) {
+    oStream << location << index << locationValue << ".ServiceName=" << StringUtils::URLEncode(m_serviceName.c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace IAM
-} // namespace Aws
+void ServiceSpecificCredentialMetadata::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_userNameHasBeenSet) {
+    oStream << location << ".UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
+  }
+  if (m_statusHasBeenSet) {
+    oStream << location << ".Status=" << StringUtils::URLEncode(StatusTypeMapper::GetNameForStatusType(m_status)) << "&";
+  }
+  if (m_serviceUserNameHasBeenSet) {
+    oStream << location << ".ServiceUserName=" << StringUtils::URLEncode(m_serviceUserName.c_str()) << "&";
+  }
+  if (m_serviceCredentialAliasHasBeenSet) {
+    oStream << location << ".ServiceCredentialAlias=" << StringUtils::URLEncode(m_serviceCredentialAlias.c_str()) << "&";
+  }
+  if (m_createDateHasBeenSet) {
+    oStream << location << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str())
+            << "&";
+  }
+  if (m_expirationDateHasBeenSet) {
+    oStream << location
+            << ".ExpirationDate=" << StringUtils::URLEncode(m_expirationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if (m_serviceSpecificCredentialIdHasBeenSet) {
+    oStream << location << ".ServiceSpecificCredentialId=" << StringUtils::URLEncode(m_serviceSpecificCredentialId.c_str()) << "&";
+  }
+  if (m_serviceNameHasBeenSet) {
+    oStream << location << ".ServiceName=" << StringUtils::URLEncode(m_serviceName.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace IAM
+}  // namespace Aws

@@ -4,32 +4,27 @@
  */
 
 #pragma once
-#include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rds/RDS_EXPORTS.h>
 
-namespace Aws
-{
-namespace RDS
-{
-namespace Model
-{
-  enum class TargetHealthReason
-  {
-    NOT_SET,
-    UNREACHABLE,
-    CONNECTION_FAILED,
-    AUTH_FAILURE,
-    PENDING_PROXY_CAPACITY,
-    INVALID_REPLICATION_STATE,
-    PROMOTED
-  };
+namespace Aws {
+namespace RDS {
+namespace Model {
+enum class TargetHealthReason {
+  NOT_SET,
+  UNREACHABLE,
+  CONNECTION_FAILED,
+  AUTH_FAILURE,
+  PENDING_PROXY_CAPACITY,
+  INVALID_REPLICATION_STATE,
+  PROMOTED
+};
 
-namespace TargetHealthReasonMapper
-{
+namespace TargetHealthReasonMapper {
 AWS_RDS_API TargetHealthReason GetTargetHealthReasonForName(const Aws::String& name);
 
 AWS_RDS_API Aws::String GetNameForTargetHealthReason(TargetHealthReason value);
-} // namespace TargetHealthReasonMapper
-} // namespace Model
-} // namespace RDS
-} // namespace Aws
+}  // namespace TargetHealthReasonMapper
+}  // namespace Model
+}  // namespace RDS
+}  // namespace Aws

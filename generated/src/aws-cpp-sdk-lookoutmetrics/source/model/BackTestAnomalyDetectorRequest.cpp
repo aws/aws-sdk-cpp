@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lookoutmetrics/model/BackTestAnomalyDetectorRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lookoutmetrics/model/BackTestAnomalyDetectorRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::LookoutMetrics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String BackTestAnomalyDetectorRequest::SerializePayload() const
-{
+Aws::String BackTestAnomalyDetectorRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_anomalyDetectorArnHasBeenSet)
-  {
-   payload.WithString("AnomalyDetectorArn", m_anomalyDetectorArn);
-
+  if (m_anomalyDetectorArnHasBeenSet) {
+    payload.WithString("AnomalyDetectorArn", m_anomalyDetectorArn);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

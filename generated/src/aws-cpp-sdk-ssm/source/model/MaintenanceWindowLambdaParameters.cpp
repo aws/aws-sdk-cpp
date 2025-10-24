@@ -3,71 +3,55 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ssm/model/MaintenanceWindowLambdaParameters.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ssm/model/MaintenanceWindowLambdaParameters.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SSM
-{
-namespace Model
-{
+namespace Aws {
+namespace SSM {
+namespace Model {
 
-MaintenanceWindowLambdaParameters::MaintenanceWindowLambdaParameters(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MaintenanceWindowLambdaParameters::MaintenanceWindowLambdaParameters(JsonView jsonValue) { *this = jsonValue; }
 
-MaintenanceWindowLambdaParameters& MaintenanceWindowLambdaParameters::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ClientContext"))
-  {
+MaintenanceWindowLambdaParameters& MaintenanceWindowLambdaParameters::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ClientContext")) {
     m_clientContext = jsonValue.GetString("ClientContext");
     m_clientContextHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Qualifier"))
-  {
+  if (jsonValue.ValueExists("Qualifier")) {
     m_qualifier = jsonValue.GetString("Qualifier");
     m_qualifierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Payload"))
-  {
+  if (jsonValue.ValueExists("Payload")) {
     m_payload = HashingUtils::Base64Decode(jsonValue.GetString("Payload"));
     m_payloadHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MaintenanceWindowLambdaParameters::Jsonize() const
-{
+JsonValue MaintenanceWindowLambdaParameters::Jsonize() const {
   JsonValue payload;
 
-  if(m_clientContextHasBeenSet)
-  {
-   payload.WithString("ClientContext", m_clientContext);
-
+  if (m_clientContextHasBeenSet) {
+    payload.WithString("ClientContext", m_clientContext);
   }
 
-  if(m_qualifierHasBeenSet)
-  {
-   payload.WithString("Qualifier", m_qualifier);
-
+  if (m_qualifierHasBeenSet) {
+    payload.WithString("Qualifier", m_qualifier);
   }
 
-  if(m_payloadHasBeenSet)
-  {
-   payload.WithString("Payload", HashingUtils::Base64Encode(m_payload));
+  if (m_payloadHasBeenSet) {
+    payload.WithString("Payload", HashingUtils::Base64Encode(m_payload));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SSM
-} // namespace Aws
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datazone/DataZone_EXPORTS.h>
 
-namespace Aws
-{
-namespace DataZone
-{
-namespace Model
-{
-  enum class GroupProfileStatus
-  {
-    NOT_SET,
-    ASSIGNED,
-    NOT_ASSIGNED
-  };
+namespace Aws {
+namespace DataZone {
+namespace Model {
+enum class GroupProfileStatus { NOT_SET, ASSIGNED, NOT_ASSIGNED };
 
-namespace GroupProfileStatusMapper
-{
+namespace GroupProfileStatusMapper {
 AWS_DATAZONE_API GroupProfileStatus GetGroupProfileStatusForName(const Aws::String& name);
 
 AWS_DATAZONE_API Aws::String GetNameForGroupProfileStatus(GroupProfileStatus value);
-} // namespace GroupProfileStatusMapper
-} // namespace Model
-} // namespace DataZone
-} // namespace Aws
+}  // namespace GroupProfileStatusMapper
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

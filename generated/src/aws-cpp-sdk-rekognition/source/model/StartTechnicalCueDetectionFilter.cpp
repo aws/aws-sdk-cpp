@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rekognition/model/StartTechnicalCueDetectionFilter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rekognition/model/StartTechnicalCueDetectionFilter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Rekognition
-{
-namespace Model
-{
+namespace Aws {
+namespace Rekognition {
+namespace Model {
 
-StartTechnicalCueDetectionFilter::StartTechnicalCueDetectionFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StartTechnicalCueDetectionFilter::StartTechnicalCueDetectionFilter(JsonView jsonValue) { *this = jsonValue; }
 
-StartTechnicalCueDetectionFilter& StartTechnicalCueDetectionFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MinSegmentConfidence"))
-  {
+StartTechnicalCueDetectionFilter& StartTechnicalCueDetectionFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MinSegmentConfidence")) {
     m_minSegmentConfidence = jsonValue.GetDouble("MinSegmentConfidence");
     m_minSegmentConfidenceHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("BlackFrame"))
-  {
+  if (jsonValue.ValueExists("BlackFrame")) {
     m_blackFrame = jsonValue.GetObject("BlackFrame");
     m_blackFrameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StartTechnicalCueDetectionFilter::Jsonize() const
-{
+JsonValue StartTechnicalCueDetectionFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_minSegmentConfidenceHasBeenSet)
-  {
-   payload.WithDouble("MinSegmentConfidence", m_minSegmentConfidence);
-
+  if (m_minSegmentConfidenceHasBeenSet) {
+    payload.WithDouble("MinSegmentConfidence", m_minSegmentConfidence);
   }
 
-  if(m_blackFrameHasBeenSet)
-  {
-   payload.WithObject("BlackFrame", m_blackFrame.Jsonize());
-
+  if (m_blackFrameHasBeenSet) {
+    payload.WithObject("BlackFrame", m_blackFrame.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Rekognition
-} // namespace Aws
+}  // namespace Model
+}  // namespace Rekognition
+}  // namespace Aws

@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/monitoring/model/DescribeAlarmHistoryResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/monitoring/model/DescribeAlarmHistoryResult.h>
 
 #include <utility>
 
@@ -17,30 +17,22 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAlarmHistoryResult::DescribeAlarmHistoryResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+DescribeAlarmHistoryResult::DescribeAlarmHistoryResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-DescribeAlarmHistoryResult& DescribeAlarmHistoryResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeAlarmHistoryResult& DescribeAlarmHistoryResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeAlarmHistoryResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeAlarmHistoryResult")) {
     resultNode = rootNode.FirstChild("DescribeAlarmHistoryResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode alarmHistoryItemsNode = resultNode.FirstChild("AlarmHistoryItems");
-    if(!alarmHistoryItemsNode.IsNull())
-    {
+    if (!alarmHistoryItemsNode.IsNull()) {
       XmlNode alarmHistoryItemsMember = alarmHistoryItemsNode.FirstChild("member");
       m_alarmHistoryItemsHasBeenSet = !alarmHistoryItemsMember.IsNull();
-      while(!alarmHistoryItemsMember.IsNull())
-      {
+      while (!alarmHistoryItemsMember.IsNull()) {
         m_alarmHistoryItems.push_back(alarmHistoryItemsMember);
         alarmHistoryItemsMember = alarmHistoryItemsMember.NextNode("member");
       }
@@ -48,8 +40,7 @@ DescribeAlarmHistoryResult& DescribeAlarmHistoryResult::operator =(const Aws::Am
       m_alarmHistoryItemsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
-    if(!nextTokenNode.IsNull())
-    {
+    if (!nextTokenNode.IsNull()) {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
       m_nextTokenHasBeenSet = true;
     }
@@ -59,7 +50,7 @@ DescribeAlarmHistoryResult& DescribeAlarmHistoryResult::operator =(const Aws::Am
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::CloudWatch::Model::DescribeAlarmHistoryResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::CloudWatch::Model::DescribeAlarmHistoryResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

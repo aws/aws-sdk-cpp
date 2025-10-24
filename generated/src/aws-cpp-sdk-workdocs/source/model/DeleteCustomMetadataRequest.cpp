@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/workdocs/model/DeleteCustomMetadataRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/workdocs/model/DeleteCustomMetadataRequest.h>
 
 #include <utility>
 
@@ -15,54 +15,39 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String DeleteCustomMetadataRequest::SerializePayload() const
-{
-  return {};
-}
+Aws::String DeleteCustomMetadataRequest::SerializePayload() const { return {}; }
 
-Aws::Http::HeaderValueCollection DeleteCustomMetadataRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteCustomMetadataRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_authenticationTokenHasBeenSet)
-  {
+  if (m_authenticationTokenHasBeenSet) {
     ss << m_authenticationToken;
-    headers.emplace("authentication",  ss.str());
+    headers.emplace("authentication", ss.str());
     ss.str("");
   }
 
   return headers;
-
 }
 
-void DeleteCustomMetadataRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_versionIdHasBeenSet)
-    {
-      ss << m_versionId;
-      uri.AddQueryStringParameter("versionId", ss.str());
+void DeleteCustomMetadataRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_versionIdHasBeenSet) {
+    ss << m_versionId;
+    uri.AddQueryStringParameter("versionId", ss.str());
+    ss.str("");
+  }
+
+  if (m_keysHasBeenSet) {
+    for (const auto& item : m_keys) {
+      ss << item;
+      uri.AddQueryStringParameter("keys", ss.str());
       ss.str("");
     }
+  }
 
-    if(m_keysHasBeenSet)
-    {
-      for(const auto& item : m_keys)
-      {
-        ss << item;
-        uri.AddQueryStringParameter("keys", ss.str());
-        ss.str("");
-      }
-    }
-
-    if(m_deleteAllHasBeenSet)
-    {
-      ss << m_deleteAll;
-      uri.AddQueryStringParameter("deleteAll", ss.str());
-      ss.str("");
-    }
-
+  if (m_deleteAllHasBeenSet) {
+    ss << m_deleteAll;
+    uri.AddQueryStringParameter("deleteAll", ss.str());
+    ss.str("");
+  }
 }
-
-
-

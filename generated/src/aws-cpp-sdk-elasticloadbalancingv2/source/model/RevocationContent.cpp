@@ -3,56 +3,45 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancingv2/model/RevocationContent.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticloadbalancingv2/model/RevocationContent.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ElasticLoadBalancingv2
-{
-namespace Model
-{
+namespace Aws {
+namespace ElasticLoadBalancingv2 {
+namespace Model {
 
-RevocationContent::RevocationContent(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+RevocationContent::RevocationContent(const XmlNode& xmlNode) { *this = xmlNode; }
 
-RevocationContent& RevocationContent::operator =(const XmlNode& xmlNode)
-{
+RevocationContent& RevocationContent::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode s3BucketNode = resultNode.FirstChild("S3Bucket");
-    if(!s3BucketNode.IsNull())
-    {
+    if (!s3BucketNode.IsNull()) {
       m_s3Bucket = Aws::Utils::Xml::DecodeEscapedXmlText(s3BucketNode.GetText());
       m_s3BucketHasBeenSet = true;
     }
     XmlNode s3KeyNode = resultNode.FirstChild("S3Key");
-    if(!s3KeyNode.IsNull())
-    {
+    if (!s3KeyNode.IsNull()) {
       m_s3Key = Aws::Utils::Xml::DecodeEscapedXmlText(s3KeyNode.GetText());
       m_s3KeyHasBeenSet = true;
     }
     XmlNode s3ObjectVersionNode = resultNode.FirstChild("S3ObjectVersion");
-    if(!s3ObjectVersionNode.IsNull())
-    {
+    if (!s3ObjectVersionNode.IsNull()) {
       m_s3ObjectVersion = Aws::Utils::Xml::DecodeEscapedXmlText(s3ObjectVersionNode.GetText());
       m_s3ObjectVersionHasBeenSet = true;
     }
     XmlNode revocationTypeNode = resultNode.FirstChild("RevocationType");
-    if(!revocationTypeNode.IsNull())
-    {
-      m_revocationType = RevocationTypeMapper::GetRevocationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(revocationTypeNode.GetText()).c_str()));
+    if (!revocationTypeNode.IsNull()) {
+      m_revocationType = RevocationTypeMapper::GetRevocationTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(revocationTypeNode.GetText()).c_str()));
       m_revocationTypeHasBeenSet = true;
     }
   }
@@ -60,50 +49,41 @@ RevocationContent& RevocationContent::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void RevocationContent::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_s3BucketHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".S3Bucket=" << StringUtils::URLEncode(m_s3Bucket.c_str()) << "&";
+void RevocationContent::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_s3BucketHasBeenSet) {
+    oStream << location << index << locationValue << ".S3Bucket=" << StringUtils::URLEncode(m_s3Bucket.c_str()) << "&";
   }
 
-  if(m_s3KeyHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".S3Key=" << StringUtils::URLEncode(m_s3Key.c_str()) << "&";
+  if (m_s3KeyHasBeenSet) {
+    oStream << location << index << locationValue << ".S3Key=" << StringUtils::URLEncode(m_s3Key.c_str()) << "&";
   }
 
-  if(m_s3ObjectVersionHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".S3ObjectVersion=" << StringUtils::URLEncode(m_s3ObjectVersion.c_str()) << "&";
+  if (m_s3ObjectVersionHasBeenSet) {
+    oStream << location << index << locationValue << ".S3ObjectVersion=" << StringUtils::URLEncode(m_s3ObjectVersion.c_str()) << "&";
   }
 
-  if(m_revocationTypeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".RevocationType=" << StringUtils::URLEncode(RevocationTypeMapper::GetNameForRevocationType(m_revocationType)) << "&";
-  }
-
-}
-
-void RevocationContent::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_s3BucketHasBeenSet)
-  {
-      oStream << location << ".S3Bucket=" << StringUtils::URLEncode(m_s3Bucket.c_str()) << "&";
-  }
-  if(m_s3KeyHasBeenSet)
-  {
-      oStream << location << ".S3Key=" << StringUtils::URLEncode(m_s3Key.c_str()) << "&";
-  }
-  if(m_s3ObjectVersionHasBeenSet)
-  {
-      oStream << location << ".S3ObjectVersion=" << StringUtils::URLEncode(m_s3ObjectVersion.c_str()) << "&";
-  }
-  if(m_revocationTypeHasBeenSet)
-  {
-      oStream << location << ".RevocationType=" << StringUtils::URLEncode(RevocationTypeMapper::GetNameForRevocationType(m_revocationType)) << "&";
+  if (m_revocationTypeHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".RevocationType=" << StringUtils::URLEncode(RevocationTypeMapper::GetNameForRevocationType(m_revocationType)) << "&";
   }
 }
 
-} // namespace Model
-} // namespace ElasticLoadBalancingv2
-} // namespace Aws
+void RevocationContent::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_s3BucketHasBeenSet) {
+    oStream << location << ".S3Bucket=" << StringUtils::URLEncode(m_s3Bucket.c_str()) << "&";
+  }
+  if (m_s3KeyHasBeenSet) {
+    oStream << location << ".S3Key=" << StringUtils::URLEncode(m_s3Key.c_str()) << "&";
+  }
+  if (m_s3ObjectVersionHasBeenSet) {
+    oStream << location << ".S3ObjectVersion=" << StringUtils::URLEncode(m_s3ObjectVersion.c_str()) << "&";
+  }
+  if (m_revocationTypeHasBeenSet) {
+    oStream << location << ".RevocationType=" << StringUtils::URLEncode(RevocationTypeMapper::GetNameForRevocationType(m_revocationType))
+            << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace ElasticLoadBalancingv2
+}  // namespace Aws

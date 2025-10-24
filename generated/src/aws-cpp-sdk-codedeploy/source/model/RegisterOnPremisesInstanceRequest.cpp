@@ -12,39 +12,26 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String RegisterOnPremisesInstanceRequest::SerializePayload() const
-{
+Aws::String RegisterOnPremisesInstanceRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_instanceNameHasBeenSet)
-  {
-   payload.WithString("instanceName", m_instanceName);
-
+  if (m_instanceNameHasBeenSet) {
+    payload.WithString("instanceName", m_instanceName);
   }
 
-  if(m_iamSessionArnHasBeenSet)
-  {
-   payload.WithString("iamSessionArn", m_iamSessionArn);
-
+  if (m_iamSessionArnHasBeenSet) {
+    payload.WithString("iamSessionArn", m_iamSessionArn);
   }
 
-  if(m_iamUserArnHasBeenSet)
-  {
-   payload.WithString("iamUserArn", m_iamUserArn);
-
+  if (m_iamUserArnHasBeenSet) {
+    payload.WithString("iamUserArn", m_iamUserArn);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection RegisterOnPremisesInstanceRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection RegisterOnPremisesInstanceRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeDeploy_20141006.RegisterOnPremisesInstance"));
   return headers;
-
 }
-
-
-
-

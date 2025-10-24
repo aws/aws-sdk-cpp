@@ -3,63 +3,51 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/kinesis-video-signaling/model/Service.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/kinesis-video-signaling/model/Service.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace KinesisVideoSignalingChannels {
+namespace Model {
+namespace ServiceMapper {
 
-namespace Aws
-{
-  namespace KinesisVideoSignalingChannels
-  {
-    namespace Model
-    {
-      namespace ServiceMapper
-      {
+static const int TURN_HASH = HashingUtils::HashString("TURN");
 
-        static const int TURN_HASH = HashingUtils::HashString("TURN");
+Service GetServiceForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == TURN_HASH) {
+    return Service::TURN;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<Service>(hashCode);
+  }
 
+  return Service::NOT_SET;
+}
 
-        Service GetServiceForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == TURN_HASH)
-          {
-            return Service::TURN;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<Service>(hashCode);
-          }
+Aws::String GetNameForService(Service enumValue) {
+  switch (enumValue) {
+    case Service::NOT_SET:
+      return {};
+    case Service::TURN:
+      return "TURN";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return Service::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForService(Service enumValue)
-        {
-          switch(enumValue)
-          {
-          case Service::NOT_SET:
-            return {};
-          case Service::TURN:
-            return "TURN";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace ServiceMapper
-    } // namespace Model
-  } // namespace KinesisVideoSignalingChannels
-} // namespace Aws
+}  // namespace ServiceMapper
+}  // namespace Model
+}  // namespace KinesisVideoSignalingChannels
+}  // namespace Aws

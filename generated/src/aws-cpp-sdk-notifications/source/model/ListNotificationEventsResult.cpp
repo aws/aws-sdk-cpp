@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/notifications/model/ListNotificationEventsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/notifications/model/ListNotificationEventsResult.h>
 
 #include <utility>
 
@@ -17,24 +17,18 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListNotificationEventsResult::ListNotificationEventsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListNotificationEventsResult::ListNotificationEventsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListNotificationEventsResult& ListNotificationEventsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListNotificationEventsResult& ListNotificationEventsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("notificationEvents"))
-  {
+  if (jsonValue.ValueExists("notificationEvents")) {
     Aws::Utils::Array<JsonView> notificationEventsJsonList = jsonValue.GetArray("notificationEvents");
-    for(unsigned notificationEventsIndex = 0; notificationEventsIndex < notificationEventsJsonList.GetLength(); ++notificationEventsIndex)
-    {
+    for (unsigned notificationEventsIndex = 0; notificationEventsIndex < notificationEventsJsonList.GetLength();
+         ++notificationEventsIndex) {
       m_notificationEvents.push_back(notificationEventsJsonList[notificationEventsIndex].AsObject());
     }
     m_notificationEventsHasBeenSet = true;
@@ -42,12 +36,10 @@ ListNotificationEventsResult& ListNotificationEventsResult::operator =(const Aws
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

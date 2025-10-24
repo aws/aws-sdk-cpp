@@ -4,66 +4,73 @@
  */
 
 #pragma once
-#include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
-#include <aws/customer-profiles/CustomerProfilesRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/customer-profiles/CustomerProfilesRequest.h>
+#include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace CustomerProfiles
-{
-namespace Model
-{
+namespace Aws {
+namespace CustomerProfiles {
+namespace Model {
 
+/**
+ */
+class GetCalculatedAttributeDefinitionRequest : public CustomerProfilesRequest {
+ public:
+  AWS_CUSTOMERPROFILES_API GetCalculatedAttributeDefinitionRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "GetCalculatedAttributeDefinition"; }
+
+  AWS_CUSTOMERPROFILES_API Aws::String SerializePayload() const override;
+
+  ///@{
   /**
+   * <p>The unique name of the domain.</p>
    */
-  class GetCalculatedAttributeDefinitionRequest : public CustomerProfilesRequest
-  {
-  public:
-    AWS_CUSTOMERPROFILES_API GetCalculatedAttributeDefinitionRequest() = default;
+  inline const Aws::String& GetDomainName() const { return m_domainName; }
+  inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+  template <typename DomainNameT = Aws::String>
+  void SetDomainName(DomainNameT&& value) {
+    m_domainNameHasBeenSet = true;
+    m_domainName = std::forward<DomainNameT>(value);
+  }
+  template <typename DomainNameT = Aws::String>
+  GetCalculatedAttributeDefinitionRequest& WithDomainName(DomainNameT&& value) {
+    SetDomainName(std::forward<DomainNameT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "GetCalculatedAttributeDefinition"; }
+  ///@{
+  /**
+   * <p>The unique name of the calculated attribute.</p>
+   */
+  inline const Aws::String& GetCalculatedAttributeName() const { return m_calculatedAttributeName; }
+  inline bool CalculatedAttributeNameHasBeenSet() const { return m_calculatedAttributeNameHasBeenSet; }
+  template <typename CalculatedAttributeNameT = Aws::String>
+  void SetCalculatedAttributeName(CalculatedAttributeNameT&& value) {
+    m_calculatedAttributeNameHasBeenSet = true;
+    m_calculatedAttributeName = std::forward<CalculatedAttributeNameT>(value);
+  }
+  template <typename CalculatedAttributeNameT = Aws::String>
+  GetCalculatedAttributeDefinitionRequest& WithCalculatedAttributeName(CalculatedAttributeNameT&& value) {
+    SetCalculatedAttributeName(std::forward<CalculatedAttributeNameT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_domainName;
+  bool m_domainNameHasBeenSet = false;
 
-    AWS_CUSTOMERPROFILES_API Aws::String SerializePayload() const override;
+  Aws::String m_calculatedAttributeName;
+  bool m_calculatedAttributeNameHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>The unique name of the domain.</p>
-     */
-    inline const Aws::String& GetDomainName() const { return m_domainName; }
-    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    template<typename DomainNameT = Aws::String>
-    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
-    template<typename DomainNameT = Aws::String>
-    GetCalculatedAttributeDefinitionRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The unique name of the calculated attribute.</p>
-     */
-    inline const Aws::String& GetCalculatedAttributeName() const { return m_calculatedAttributeName; }
-    inline bool CalculatedAttributeNameHasBeenSet() const { return m_calculatedAttributeNameHasBeenSet; }
-    template<typename CalculatedAttributeNameT = Aws::String>
-    void SetCalculatedAttributeName(CalculatedAttributeNameT&& value) { m_calculatedAttributeNameHasBeenSet = true; m_calculatedAttributeName = std::forward<CalculatedAttributeNameT>(value); }
-    template<typename CalculatedAttributeNameT = Aws::String>
-    GetCalculatedAttributeDefinitionRequest& WithCalculatedAttributeName(CalculatedAttributeNameT&& value) { SetCalculatedAttributeName(std::forward<CalculatedAttributeNameT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_domainName;
-    bool m_domainNameHasBeenSet = false;
-
-    Aws::String m_calculatedAttributeName;
-    bool m_calculatedAttributeNameHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace CustomerProfiles
-} // namespace Aws
+}  // namespace Model
+}  // namespace CustomerProfiles
+}  // namespace Aws

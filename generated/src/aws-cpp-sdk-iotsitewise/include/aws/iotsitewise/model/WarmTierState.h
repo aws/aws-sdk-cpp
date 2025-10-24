@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTSiteWise
-{
-namespace Model
-{
-  enum class WarmTierState
-  {
-    NOT_SET,
-    ENABLED,
-    DISABLED
-  };
+namespace Aws {
+namespace IoTSiteWise {
+namespace Model {
+enum class WarmTierState { NOT_SET, ENABLED, DISABLED };
 
-namespace WarmTierStateMapper
-{
+namespace WarmTierStateMapper {
 AWS_IOTSITEWISE_API WarmTierState GetWarmTierStateForName(const Aws::String& name);
 
 AWS_IOTSITEWISE_API Aws::String GetNameForWarmTierState(WarmTierState value);
-} // namespace WarmTierStateMapper
-} // namespace Model
-} // namespace IoTSiteWise
-} // namespace Aws
+}  // namespace WarmTierStateMapper
+}  // namespace Model
+}  // namespace IoTSiteWise
+}  // namespace Aws

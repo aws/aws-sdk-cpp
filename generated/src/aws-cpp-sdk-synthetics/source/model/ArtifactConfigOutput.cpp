@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/synthetics/model/ArtifactConfigOutput.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/synthetics/model/ArtifactConfigOutput.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Synthetics
-{
-namespace Model
-{
+namespace Aws {
+namespace Synthetics {
+namespace Model {
 
-ArtifactConfigOutput::ArtifactConfigOutput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ArtifactConfigOutput::ArtifactConfigOutput(JsonView jsonValue) { *this = jsonValue; }
 
-ArtifactConfigOutput& ArtifactConfigOutput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("S3Encryption"))
-  {
+ArtifactConfigOutput& ArtifactConfigOutput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("S3Encryption")) {
     m_s3Encryption = jsonValue.GetObject("S3Encryption");
     m_s3EncryptionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ArtifactConfigOutput::Jsonize() const
-{
+JsonValue ArtifactConfigOutput::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3EncryptionHasBeenSet)
-  {
-   payload.WithObject("S3Encryption", m_s3Encryption.Jsonize());
-
+  if (m_s3EncryptionHasBeenSet) {
+    payload.WithObject("S3Encryption", m_s3Encryption.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Synthetics
-} // namespace Aws
+}  // namespace Model
+}  // namespace Synthetics
+}  // namespace Aws

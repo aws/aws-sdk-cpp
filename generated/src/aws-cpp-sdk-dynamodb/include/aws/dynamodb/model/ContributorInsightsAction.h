@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dynamodb/DynamoDB_EXPORTS.h>
 
-namespace Aws
-{
-namespace DynamoDB
-{
-namespace Model
-{
-  enum class ContributorInsightsAction
-  {
-    NOT_SET,
-    ENABLE,
-    DISABLE
-  };
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
+enum class ContributorInsightsAction { NOT_SET, ENABLE, DISABLE };
 
-namespace ContributorInsightsActionMapper
-{
+namespace ContributorInsightsActionMapper {
 AWS_DYNAMODB_API ContributorInsightsAction GetContributorInsightsActionForName(const Aws::String& name);
 
 AWS_DYNAMODB_API Aws::String GetNameForContributorInsightsAction(ContributorInsightsAction value);
-} // namespace ContributorInsightsActionMapper
-} // namespace Model
-} // namespace DynamoDB
-} // namespace Aws
+}  // namespace ContributorInsightsActionMapper
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws

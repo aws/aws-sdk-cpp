@@ -13,50 +13,36 @@ using namespace Aws::ChimeSDKMessaging::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String BatchCreateChannelMembershipRequest::SerializePayload() const
-{
+Aws::String BatchCreateChannelMembershipRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", ChannelMembershipTypeMapper::GetNameForChannelMembershipType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", ChannelMembershipTypeMapper::GetNameForChannelMembershipType(m_type));
   }
 
-  if(m_memberArnsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> memberArnsJsonList(m_memberArns.size());
-   for(unsigned memberArnsIndex = 0; memberArnsIndex < memberArnsJsonList.GetLength(); ++memberArnsIndex)
-   {
-     memberArnsJsonList[memberArnsIndex].AsString(m_memberArns[memberArnsIndex]);
-   }
-   payload.WithArray("MemberArns", std::move(memberArnsJsonList));
-
+  if (m_memberArnsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> memberArnsJsonList(m_memberArns.size());
+    for (unsigned memberArnsIndex = 0; memberArnsIndex < memberArnsJsonList.GetLength(); ++memberArnsIndex) {
+      memberArnsJsonList[memberArnsIndex].AsString(m_memberArns[memberArnsIndex]);
+    }
+    payload.WithArray("MemberArns", std::move(memberArnsJsonList));
   }
 
-  if(m_subChannelIdHasBeenSet)
-  {
-   payload.WithString("SubChannelId", m_subChannelId);
-
+  if (m_subChannelIdHasBeenSet) {
+    payload.WithString("SubChannelId", m_subChannelId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection BatchCreateChannelMembershipRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection BatchCreateChannelMembershipRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_chimeBearerHasBeenSet)
-  {
+  if (m_chimeBearerHasBeenSet) {
     ss << m_chimeBearer;
-    headers.emplace("x-amz-chime-bearer",  ss.str());
+    headers.emplace("x-amz-chime-bearer", ss.str());
     ss.str("");
   }
 
   return headers;
-
 }
-
-
-
-

@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppStream
-{
-namespace Model
-{
+namespace Aws {
+namespace AppStream {
+namespace Model {
 
-ApplicationSettingsResponse::ApplicationSettingsResponse(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ApplicationSettingsResponse::ApplicationSettingsResponse(JsonView jsonValue) { *this = jsonValue; }
 
-ApplicationSettingsResponse& ApplicationSettingsResponse::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Enabled"))
-  {
+ApplicationSettingsResponse& ApplicationSettingsResponse::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Enabled")) {
     m_enabled = jsonValue.GetBool("Enabled");
     m_enabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SettingsGroup"))
-  {
+  if (jsonValue.ValueExists("SettingsGroup")) {
     m_settingsGroup = jsonValue.GetString("SettingsGroup");
     m_settingsGroupHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("S3BucketName"))
-  {
+  if (jsonValue.ValueExists("S3BucketName")) {
     m_s3BucketName = jsonValue.GetString("S3BucketName");
     m_s3BucketNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ApplicationSettingsResponse::Jsonize() const
-{
+JsonValue ApplicationSettingsResponse::Jsonize() const {
   JsonValue payload;
 
-  if(m_enabledHasBeenSet)
-  {
-   payload.WithBool("Enabled", m_enabled);
-
+  if (m_enabledHasBeenSet) {
+    payload.WithBool("Enabled", m_enabled);
   }
 
-  if(m_settingsGroupHasBeenSet)
-  {
-   payload.WithString("SettingsGroup", m_settingsGroup);
-
+  if (m_settingsGroupHasBeenSet) {
+    payload.WithString("SettingsGroup", m_settingsGroup);
   }
 
-  if(m_s3BucketNameHasBeenSet)
-  {
-   payload.WithString("S3BucketName", m_s3BucketName);
-
+  if (m_s3BucketNameHasBeenSet) {
+    payload.WithString("S3BucketName", m_s3BucketName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppStream
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppStream
+}  // namespace Aws

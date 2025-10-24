@@ -3,69 +3,53 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/opensearch/model/AdvancedOptionsStatus.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/opensearch/model/AdvancedOptionsStatus.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace OpenSearchService
-{
-namespace Model
-{
+namespace Aws {
+namespace OpenSearchService {
+namespace Model {
 
-AdvancedOptionsStatus::AdvancedOptionsStatus(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AdvancedOptionsStatus::AdvancedOptionsStatus(JsonView jsonValue) { *this = jsonValue; }
 
-AdvancedOptionsStatus& AdvancedOptionsStatus::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Options"))
-  {
+AdvancedOptionsStatus& AdvancedOptionsStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Options")) {
     Aws::Map<Aws::String, JsonView> optionsJsonMap = jsonValue.GetObject("Options").GetAllObjects();
-    for(auto& optionsItem : optionsJsonMap)
-    {
+    for (auto& optionsItem : optionsJsonMap) {
       m_options[optionsItem.first] = optionsItem.second.AsString();
     }
     m_optionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Status"))
-  {
+  if (jsonValue.ValueExists("Status")) {
     m_status = jsonValue.GetObject("Status");
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AdvancedOptionsStatus::Jsonize() const
-{
+JsonValue AdvancedOptionsStatus::Jsonize() const {
   JsonValue payload;
 
-  if(m_optionsHasBeenSet)
-  {
-   JsonValue optionsJsonMap;
-   for(auto& optionsItem : m_options)
-   {
-     optionsJsonMap.WithString(optionsItem.first, optionsItem.second);
-   }
-   payload.WithObject("Options", std::move(optionsJsonMap));
-
+  if (m_optionsHasBeenSet) {
+    JsonValue optionsJsonMap;
+    for (auto& optionsItem : m_options) {
+      optionsJsonMap.WithString(optionsItem.first, optionsItem.second);
+    }
+    payload.WithObject("Options", std::move(optionsJsonMap));
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithObject("Status", m_status.Jsonize());
-
+  if (m_statusHasBeenSet) {
+    payload.WithObject("Status", m_status.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace OpenSearchService
-} // namespace Aws
+}  // namespace Model
+}  // namespace OpenSearchService
+}  // namespace Aws

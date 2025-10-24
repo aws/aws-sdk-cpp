@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/eks/model/AssociateAccessPolicyResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/eks/model/AssociateAccessPolicyResult.h>
 
 #include <utility>
 
@@ -17,38 +17,29 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AssociateAccessPolicyResult::AssociateAccessPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+AssociateAccessPolicyResult::AssociateAccessPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-AssociateAccessPolicyResult& AssociateAccessPolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+AssociateAccessPolicyResult& AssociateAccessPolicyResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("clusterName"))
-  {
+  if (jsonValue.ValueExists("clusterName")) {
     m_clusterName = jsonValue.GetString("clusterName");
     m_clusterNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("principalArn"))
-  {
+  if (jsonValue.ValueExists("principalArn")) {
     m_principalArn = jsonValue.GetString("principalArn");
     m_principalArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("associatedAccessPolicy"))
-  {
+  if (jsonValue.ValueExists("associatedAccessPolicy")) {
     m_associatedAccessPolicy = jsonValue.GetObject("associatedAccessPolicy");
     m_associatedAccessPolicyHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

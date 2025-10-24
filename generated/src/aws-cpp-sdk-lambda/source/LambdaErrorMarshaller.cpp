@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::Lambda;
 
-AWSError<CoreErrors> LambdaErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> LambdaErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = LambdaErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

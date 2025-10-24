@@ -6,76 +6,86 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace Inspector2
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Inspector2 {
+namespace Model {
 
+/**
+ * <p>The status counts.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/StatusCounts">AWS
+ * API Reference</a></p>
+ */
+class StatusCounts {
+ public:
+  AWS_INSPECTOR2_API StatusCounts() = default;
+  AWS_INSPECTOR2_API StatusCounts(Aws::Utils::Json::JsonView jsonValue);
+  AWS_INSPECTOR2_API StatusCounts& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>The status counts.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/StatusCounts">AWS
-   * API Reference</a></p>
+   * <p>The number of checks that failed.</p>
    */
-  class StatusCounts
-  {
-  public:
-    AWS_INSPECTOR2_API StatusCounts() = default;
-    AWS_INSPECTOR2_API StatusCounts(Aws::Utils::Json::JsonView jsonValue);
-    AWS_INSPECTOR2_API StatusCounts& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetFailed() const { return m_failed; }
+  inline bool FailedHasBeenSet() const { return m_failedHasBeenSet; }
+  inline void SetFailed(int value) {
+    m_failedHasBeenSet = true;
+    m_failed = value;
+  }
+  inline StatusCounts& WithFailed(int value) {
+    SetFailed(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The number of checks that were skipped.</p>
+   */
+  inline int GetSkipped() const { return m_skipped; }
+  inline bool SkippedHasBeenSet() const { return m_skippedHasBeenSet; }
+  inline void SetSkipped(int value) {
+    m_skippedHasBeenSet = true;
+    m_skipped = value;
+  }
+  inline StatusCounts& WithSkipped(int value) {
+    SetSkipped(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The number of checks that failed.</p>
-     */
-    inline int GetFailed() const { return m_failed; }
-    inline bool FailedHasBeenSet() const { return m_failedHasBeenSet; }
-    inline void SetFailed(int value) { m_failedHasBeenSet = true; m_failed = value; }
-    inline StatusCounts& WithFailed(int value) { SetFailed(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>The number of checks that passed.</p>
+   */
+  inline int GetPassed() const { return m_passed; }
+  inline bool PassedHasBeenSet() const { return m_passedHasBeenSet; }
+  inline void SetPassed(int value) {
+    m_passedHasBeenSet = true;
+    m_passed = value;
+  }
+  inline StatusCounts& WithPassed(int value) {
+    SetPassed(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_failed{0};
+  bool m_failedHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The number of checks that were skipped.</p>
-     */
-    inline int GetSkipped() const { return m_skipped; }
-    inline bool SkippedHasBeenSet() const { return m_skippedHasBeenSet; }
-    inline void SetSkipped(int value) { m_skippedHasBeenSet = true; m_skipped = value; }
-    inline StatusCounts& WithSkipped(int value) { SetSkipped(value); return *this;}
-    ///@}
+  int m_skipped{0};
+  bool m_skippedHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>The number of checks that passed.</p>
-     */
-    inline int GetPassed() const { return m_passed; }
-    inline bool PassedHasBeenSet() const { return m_passedHasBeenSet; }
-    inline void SetPassed(int value) { m_passedHasBeenSet = true; m_passed = value; }
-    inline StatusCounts& WithPassed(int value) { SetPassed(value); return *this;}
-    ///@}
-  private:
+  int m_passed{0};
+  bool m_passedHasBeenSet = false;
+};
 
-    int m_failed{0};
-    bool m_failedHasBeenSet = false;
-
-    int m_skipped{0};
-    bool m_skippedHasBeenSet = false;
-
-    int m_passed{0};
-    bool m_passedHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Inspector2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Inspector2
+}  // namespace Aws

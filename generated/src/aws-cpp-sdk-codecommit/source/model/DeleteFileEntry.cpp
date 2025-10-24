@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeCommit
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeCommit {
+namespace Model {
 
-DeleteFileEntry::DeleteFileEntry(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DeleteFileEntry::DeleteFileEntry(JsonView jsonValue) { *this = jsonValue; }
 
-DeleteFileEntry& DeleteFileEntry::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("filePath"))
-  {
+DeleteFileEntry& DeleteFileEntry::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("filePath")) {
     m_filePath = jsonValue.GetString("filePath");
     m_filePathHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DeleteFileEntry::Jsonize() const
-{
+JsonValue DeleteFileEntry::Jsonize() const {
   JsonValue payload;
 
-  if(m_filePathHasBeenSet)
-  {
-   payload.WithString("filePath", m_filePath);
-
+  if (m_filePathHasBeenSet) {
+    payload.WithString("filePath", m_filePath);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeCommit
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeCommit
+}  // namespace Aws

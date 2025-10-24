@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTTwinMaker
-{
-namespace Model
-{
-  enum class State
-  {
-    NOT_SET,
-    CREATING,
-    UPDATING,
-    DELETING,
-    ACTIVE,
-    ERROR_
-  };
+namespace Aws {
+namespace IoTTwinMaker {
+namespace Model {
+enum class State { NOT_SET, CREATING, UPDATING, DELETING, ACTIVE, ERROR_ };
 
-namespace StateMapper
-{
+namespace StateMapper {
 AWS_IOTTWINMAKER_API State GetStateForName(const Aws::String& name);
 
 AWS_IOTTWINMAKER_API Aws::String GetNameForState(State value);
-} // namespace StateMapper
-} // namespace Model
-} // namespace IoTTwinMaker
-} // namespace Aws
+}  // namespace StateMapper
+}  // namespace Model
+}  // namespace IoTTwinMaker
+}  // namespace Aws

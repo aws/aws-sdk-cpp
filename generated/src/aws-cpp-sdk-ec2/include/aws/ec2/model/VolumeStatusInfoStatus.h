@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class VolumeStatusInfoStatus
-  {
-    NOT_SET,
-    ok,
-    impaired,
-    insufficient_data,
-    warning
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class VolumeStatusInfoStatus { NOT_SET, ok, impaired, insufficient_data, warning };
 
-namespace VolumeStatusInfoStatusMapper
-{
+namespace VolumeStatusInfoStatusMapper {
 AWS_EC2_API VolumeStatusInfoStatus GetVolumeStatusInfoStatusForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForVolumeStatusInfoStatus(VolumeStatusInfoStatus value);
-} // namespace VolumeStatusInfoStatusMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace VolumeStatusInfoStatusMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

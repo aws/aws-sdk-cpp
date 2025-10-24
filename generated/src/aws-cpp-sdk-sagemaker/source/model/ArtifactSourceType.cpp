@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/ArtifactSourceType.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/ArtifactSourceType.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-ArtifactSourceType::ArtifactSourceType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ArtifactSourceType::ArtifactSourceType(JsonView jsonValue) { *this = jsonValue; }
 
-ArtifactSourceType& ArtifactSourceType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SourceIdType"))
-  {
+ArtifactSourceType& ArtifactSourceType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SourceIdType")) {
     m_sourceIdType = ArtifactSourceIdTypeMapper::GetArtifactSourceIdTypeForName(jsonValue.GetString("SourceIdType"));
     m_sourceIdTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Value"))
-  {
+  if (jsonValue.ValueExists("Value")) {
     m_value = jsonValue.GetString("Value");
     m_valueHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ArtifactSourceType::Jsonize() const
-{
+JsonValue ArtifactSourceType::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceIdTypeHasBeenSet)
-  {
-   payload.WithString("SourceIdType", ArtifactSourceIdTypeMapper::GetNameForArtifactSourceIdType(m_sourceIdType));
+  if (m_sourceIdTypeHasBeenSet) {
+    payload.WithString("SourceIdType", ArtifactSourceIdTypeMapper::GetNameForArtifactSourceIdType(m_sourceIdType));
   }
 
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("Value", m_value);
-
+  if (m_valueHasBeenSet) {
+    payload.WithString("Value", m_value);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

@@ -12,27 +12,18 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteResourcesByExternalIdRequest::SerializePayload() const
-{
+Aws::String DeleteResourcesByExternalIdRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_externalIdHasBeenSet)
-  {
-   payload.WithString("externalId", m_externalId);
-
+  if (m_externalIdHasBeenSet) {
+    payload.WithString("externalId", m_externalId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteResourcesByExternalIdRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteResourcesByExternalIdRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeDeploy_20141006.DeleteResourcesByExternalId"));
   return headers;
-
 }
-
-
-
-

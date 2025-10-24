@@ -11,50 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKIdentity
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKIdentity {
+namespace Model {
 
-EndpointState::EndpointState(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EndpointState::EndpointState(JsonView jsonValue) { *this = jsonValue; }
 
-EndpointState& EndpointState::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Status"))
-  {
+EndpointState& EndpointState::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Status")) {
     m_status = EndpointStatusMapper::GetEndpointStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("StatusReason"))
-  {
+  if (jsonValue.ValueExists("StatusReason")) {
     m_statusReason = EndpointStatusReasonMapper::GetEndpointStatusReasonForName(jsonValue.GetString("StatusReason"));
     m_statusReasonHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EndpointState::Jsonize() const
-{
+JsonValue EndpointState::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", EndpointStatusMapper::GetNameForEndpointStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", EndpointStatusMapper::GetNameForEndpointStatus(m_status));
   }
 
-  if(m_statusReasonHasBeenSet)
-  {
-   payload.WithString("StatusReason", EndpointStatusReasonMapper::GetNameForEndpointStatusReason(m_statusReason));
+  if (m_statusReasonHasBeenSet) {
+    payload.WithString("StatusReason", EndpointStatusReasonMapper::GetNameForEndpointStatusReason(m_statusReason));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKIdentity
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKIdentity
+}  // namespace Aws

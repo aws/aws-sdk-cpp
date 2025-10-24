@@ -5,12 +5,8 @@
 
 #include <aws/identitystore/IdentityStoreEndpointProvider.h>
 
-namespace Aws
-{
-namespace IdentityStore
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace IdentityStore
-} // namespace Aws
+namespace Aws {
+namespace IdentityStore {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace IdentityStore
+}  // namespace Aws

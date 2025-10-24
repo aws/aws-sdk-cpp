@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/DoubleConfigurationOptions.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/DoubleConfigurationOptions.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-DoubleConfigurationOptions::DoubleConfigurationOptions(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DoubleConfigurationOptions::DoubleConfigurationOptions(JsonView jsonValue) { *this = jsonValue; }
 
-DoubleConfigurationOptions& DoubleConfigurationOptions::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DefaultValue"))
-  {
+DoubleConfigurationOptions& DoubleConfigurationOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DefaultValue")) {
     m_defaultValue = jsonValue.GetDouble("DefaultValue");
     m_defaultValueHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Min"))
-  {
+  if (jsonValue.ValueExists("Min")) {
     m_min = jsonValue.GetDouble("Min");
     m_minHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Max"))
-  {
+  if (jsonValue.ValueExists("Max")) {
     m_max = jsonValue.GetDouble("Max");
     m_maxHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DoubleConfigurationOptions::Jsonize() const
-{
+JsonValue DoubleConfigurationOptions::Jsonize() const {
   JsonValue payload;
 
-  if(m_defaultValueHasBeenSet)
-  {
-   payload.WithDouble("DefaultValue", m_defaultValue);
-
+  if (m_defaultValueHasBeenSet) {
+    payload.WithDouble("DefaultValue", m_defaultValue);
   }
 
-  if(m_minHasBeenSet)
-  {
-   payload.WithDouble("Min", m_min);
-
+  if (m_minHasBeenSet) {
+    payload.WithDouble("Min", m_min);
   }
 
-  if(m_maxHasBeenSet)
-  {
-   payload.WithDouble("Max", m_max);
-
+  if (m_maxHasBeenSet) {
+    payload.WithDouble("Max", m_max);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

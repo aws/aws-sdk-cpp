@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/monitoring/CloudWatch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/monitoring/CloudWatch_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudWatch
-{
-namespace Model
-{
-  enum class HistoryItemType
-  {
-    NOT_SET,
-    ConfigurationUpdate,
-    StateUpdate,
-    Action,
-    AlarmContributorStateUpdate,
-    AlarmContributorAction
-  };
+namespace Aws {
+namespace CloudWatch {
+namespace Model {
+enum class HistoryItemType { NOT_SET, ConfigurationUpdate, StateUpdate, Action, AlarmContributorStateUpdate, AlarmContributorAction };
 
-namespace HistoryItemTypeMapper
-{
+namespace HistoryItemTypeMapper {
 AWS_CLOUDWATCH_API HistoryItemType GetHistoryItemTypeForName(const Aws::String& name);
 
 AWS_CLOUDWATCH_API Aws::String GetNameForHistoryItemType(HistoryItemType value);
-} // namespace HistoryItemTypeMapper
-} // namespace Model
-} // namespace CloudWatch
-} // namespace Aws
+}  // namespace HistoryItemTypeMapper
+}  // namespace Model
+}  // namespace CloudWatch
+}  // namespace Aws

@@ -4,48 +4,38 @@
  */
 
 #include <aws/bedrock-runtime/model/InvokeModelTokensRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockRuntime
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockRuntime {
+namespace Model {
 
-InvokeModelTokensRequest::InvokeModelTokensRequest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InvokeModelTokensRequest::InvokeModelTokensRequest(JsonView jsonValue) { *this = jsonValue; }
 
-InvokeModelTokensRequest& InvokeModelTokensRequest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("body"))
-  {
+InvokeModelTokensRequest& InvokeModelTokensRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("body")) {
     m_body = HashingUtils::Base64Decode(jsonValue.GetString("body"));
     m_bodyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InvokeModelTokensRequest::Jsonize() const
-{
+JsonValue InvokeModelTokensRequest::Jsonize() const {
   JsonValue payload;
 
-  if(m_bodyHasBeenSet)
-  {
-   payload.WithString("body", HashingUtils::Base64Encode(m_body));
+  if (m_bodyHasBeenSet) {
+    payload.WithString("body", HashingUtils::Base64Encode(m_body));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockRuntime
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockRuntime
+}  // namespace Aws

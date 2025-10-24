@@ -12,18 +12,13 @@ using namespace Aws::Artifact::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutAccountSettingsRequest::SerializePayload() const
-{
+Aws::String PutAccountSettingsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_notificationSubscriptionStatusHasBeenSet)
-  {
-   payload.WithString("notificationSubscriptionStatus", NotificationSubscriptionStatusMapper::GetNameForNotificationSubscriptionStatus(m_notificationSubscriptionStatus));
+  if (m_notificationSubscriptionStatusHasBeenSet) {
+    payload.WithString("notificationSubscriptionStatus",
+                       NotificationSubscriptionStatusMapper::GetNameForNotificationSubscriptionStatus(m_notificationSubscriptionStatus));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lakeformation/model/WorkUnitRange.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lakeformation/model/WorkUnitRange.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LakeFormation
-{
-namespace Model
-{
+namespace Aws {
+namespace LakeFormation {
+namespace Model {
 
-WorkUnitRange::WorkUnitRange(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+WorkUnitRange::WorkUnitRange(JsonView jsonValue) { *this = jsonValue; }
 
-WorkUnitRange& WorkUnitRange::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("WorkUnitIdMax"))
-  {
+WorkUnitRange& WorkUnitRange::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("WorkUnitIdMax")) {
     m_workUnitIdMax = jsonValue.GetInt64("WorkUnitIdMax");
     m_workUnitIdMaxHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WorkUnitIdMin"))
-  {
+  if (jsonValue.ValueExists("WorkUnitIdMin")) {
     m_workUnitIdMin = jsonValue.GetInt64("WorkUnitIdMin");
     m_workUnitIdMinHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("WorkUnitToken"))
-  {
+  if (jsonValue.ValueExists("WorkUnitToken")) {
     m_workUnitToken = jsonValue.GetString("WorkUnitToken");
     m_workUnitTokenHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue WorkUnitRange::Jsonize() const
-{
+JsonValue WorkUnitRange::Jsonize() const {
   JsonValue payload;
 
-  if(m_workUnitIdMaxHasBeenSet)
-  {
-   payload.WithInt64("WorkUnitIdMax", m_workUnitIdMax);
-
+  if (m_workUnitIdMaxHasBeenSet) {
+    payload.WithInt64("WorkUnitIdMax", m_workUnitIdMax);
   }
 
-  if(m_workUnitIdMinHasBeenSet)
-  {
-   payload.WithInt64("WorkUnitIdMin", m_workUnitIdMin);
-
+  if (m_workUnitIdMinHasBeenSet) {
+    payload.WithInt64("WorkUnitIdMin", m_workUnitIdMin);
   }
 
-  if(m_workUnitTokenHasBeenSet)
-  {
-   payload.WithString("WorkUnitToken", m_workUnitToken);
-
+  if (m_workUnitTokenHasBeenSet) {
+    payload.WithString("WorkUnitToken", m_workUnitToken);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LakeFormation
-} // namespace Aws
+}  // namespace Model
+}  // namespace LakeFormation
+}  // namespace Aws

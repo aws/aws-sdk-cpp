@@ -7,61 +7,68 @@
 #include <aws/chime-sdk-voice/ChimeSDKVoice_EXPORTS.h>
 #include <aws/chime-sdk-voice/model/ExternalSystemsConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace ChimeSDKVoice
-{
-namespace Model
-{
-  class GetVoiceConnectorExternalSystemsConfigurationResult
-  {
-  public:
-    AWS_CHIMESDKVOICE_API GetVoiceConnectorExternalSystemsConfigurationResult() = default;
-    AWS_CHIMESDKVOICE_API GetVoiceConnectorExternalSystemsConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_CHIMESDKVOICE_API GetVoiceConnectorExternalSystemsConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace ChimeSDKVoice {
+namespace Model {
+class GetVoiceConnectorExternalSystemsConfigurationResult {
+ public:
+  AWS_CHIMESDKVOICE_API GetVoiceConnectorExternalSystemsConfigurationResult() = default;
+  AWS_CHIMESDKVOICE_API GetVoiceConnectorExternalSystemsConfigurationResult(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_CHIMESDKVOICE_API GetVoiceConnectorExternalSystemsConfigurationResult& operator=(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>An object that contains information about an external systems configuration
+   * for a Voice Connector.</p>
+   */
+  inline const ExternalSystemsConfiguration& GetExternalSystemsConfiguration() const { return m_externalSystemsConfiguration; }
+  template <typename ExternalSystemsConfigurationT = ExternalSystemsConfiguration>
+  void SetExternalSystemsConfiguration(ExternalSystemsConfigurationT&& value) {
+    m_externalSystemsConfigurationHasBeenSet = true;
+    m_externalSystemsConfiguration = std::forward<ExternalSystemsConfigurationT>(value);
+  }
+  template <typename ExternalSystemsConfigurationT = ExternalSystemsConfiguration>
+  GetVoiceConnectorExternalSystemsConfigurationResult& WithExternalSystemsConfiguration(ExternalSystemsConfigurationT&& value) {
+    SetExternalSystemsConfiguration(std::forward<ExternalSystemsConfigurationT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>An object that contains information about an external systems configuration
-     * for a Voice Connector.</p>
-     */
-    inline const ExternalSystemsConfiguration& GetExternalSystemsConfiguration() const { return m_externalSystemsConfiguration; }
-    template<typename ExternalSystemsConfigurationT = ExternalSystemsConfiguration>
-    void SetExternalSystemsConfiguration(ExternalSystemsConfigurationT&& value) { m_externalSystemsConfigurationHasBeenSet = true; m_externalSystemsConfiguration = std::forward<ExternalSystemsConfigurationT>(value); }
-    template<typename ExternalSystemsConfigurationT = ExternalSystemsConfiguration>
-    GetVoiceConnectorExternalSystemsConfigurationResult& WithExternalSystemsConfiguration(ExternalSystemsConfigurationT&& value) { SetExternalSystemsConfiguration(std::forward<ExternalSystemsConfigurationT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    GetVoiceConnectorExternalSystemsConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  GetVoiceConnectorExternalSystemsConfigurationResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  ExternalSystemsConfiguration m_externalSystemsConfiguration;
+  bool m_externalSystemsConfigurationHasBeenSet = false;
 
-    ExternalSystemsConfiguration m_externalSystemsConfiguration;
-    bool m_externalSystemsConfigurationHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace ChimeSDKVoice
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKVoice
+}  // namespace Aws

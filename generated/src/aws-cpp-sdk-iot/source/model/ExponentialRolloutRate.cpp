@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/ExponentialRolloutRate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot/model/ExponentialRolloutRate.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
+namespace Aws {
+namespace IoT {
+namespace Model {
 
-ExponentialRolloutRate::ExponentialRolloutRate(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExponentialRolloutRate::ExponentialRolloutRate(JsonView jsonValue) { *this = jsonValue; }
 
-ExponentialRolloutRate& ExponentialRolloutRate::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("baseRatePerMinute"))
-  {
+ExponentialRolloutRate& ExponentialRolloutRate::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("baseRatePerMinute")) {
     m_baseRatePerMinute = jsonValue.GetInteger("baseRatePerMinute");
     m_baseRatePerMinuteHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("incrementFactor"))
-  {
+  if (jsonValue.ValueExists("incrementFactor")) {
     m_incrementFactor = jsonValue.GetDouble("incrementFactor");
     m_incrementFactorHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("rateIncreaseCriteria"))
-  {
+  if (jsonValue.ValueExists("rateIncreaseCriteria")) {
     m_rateIncreaseCriteria = jsonValue.GetObject("rateIncreaseCriteria");
     m_rateIncreaseCriteriaHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExponentialRolloutRate::Jsonize() const
-{
+JsonValue ExponentialRolloutRate::Jsonize() const {
   JsonValue payload;
 
-  if(m_baseRatePerMinuteHasBeenSet)
-  {
-   payload.WithInteger("baseRatePerMinute", m_baseRatePerMinute);
-
+  if (m_baseRatePerMinuteHasBeenSet) {
+    payload.WithInteger("baseRatePerMinute", m_baseRatePerMinute);
   }
 
-  if(m_incrementFactorHasBeenSet)
-  {
-   payload.WithDouble("incrementFactor", m_incrementFactor);
-
+  if (m_incrementFactorHasBeenSet) {
+    payload.WithDouble("incrementFactor", m_incrementFactor);
   }
 
-  if(m_rateIncreaseCriteriaHasBeenSet)
-  {
-   payload.WithObject("rateIncreaseCriteria", m_rateIncreaseCriteria.Jsonize());
-
+  if (m_rateIncreaseCriteriaHasBeenSet) {
+    payload.WithObject("rateIncreaseCriteria", m_rateIncreaseCriteria.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

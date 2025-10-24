@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-enum class MediaConvertErrors
-{
-  //From Core//
+namespace Aws {
+namespace MediaConvert {
+enum class MediaConvertErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class MediaConvertErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class MediaConvertErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  BAD_REQUEST = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CONFLICT,
   FORBIDDEN,
   INTERNAL_SERVER_ERROR,
@@ -56,9 +53,8 @@ enum class MediaConvertErrors
   TOO_MANY_REQUESTS
 };
 
-class AWS_MEDIACONVERT_API MediaConvertError : public Aws::Client::AWSError<MediaConvertErrors>
-{
-public:
+class AWS_MEDIACONVERT_API MediaConvertError : public Aws::Client::AWSError<MediaConvertErrors> {
+ public:
   MediaConvertError() {}
   MediaConvertError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<MediaConvertErrors>(rhs) {}
   MediaConvertError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<MediaConvertErrors>(rhs) {}
@@ -69,10 +65,9 @@ public:
   T GetModeledError();
 };
 
-namespace MediaConvertErrorMapper
-{
-  AWS_MEDIACONVERT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace MediaConvertErrorMapper {
+AWS_MEDIACONVERT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace MediaConvert
+}  // namespace Aws

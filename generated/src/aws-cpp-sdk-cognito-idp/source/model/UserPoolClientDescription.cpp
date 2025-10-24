@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
 
-UserPoolClientDescription::UserPoolClientDescription(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UserPoolClientDescription::UserPoolClientDescription(JsonView jsonValue) { *this = jsonValue; }
 
-UserPoolClientDescription& UserPoolClientDescription::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ClientId"))
-  {
+UserPoolClientDescription& UserPoolClientDescription::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ClientId")) {
     m_clientId = jsonValue.GetString("ClientId");
     m_clientIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UserPoolId"))
-  {
+  if (jsonValue.ValueExists("UserPoolId")) {
     m_userPoolId = jsonValue.GetString("UserPoolId");
     m_userPoolIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ClientName"))
-  {
+  if (jsonValue.ValueExists("ClientName")) {
     m_clientName = jsonValue.GetString("ClientName");
     m_clientNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UserPoolClientDescription::Jsonize() const
-{
+JsonValue UserPoolClientDescription::Jsonize() const {
   JsonValue payload;
 
-  if(m_clientIdHasBeenSet)
-  {
-   payload.WithString("ClientId", m_clientId);
-
+  if (m_clientIdHasBeenSet) {
+    payload.WithString("ClientId", m_clientId);
   }
 
-  if(m_userPoolIdHasBeenSet)
-  {
-   payload.WithString("UserPoolId", m_userPoolId);
-
+  if (m_userPoolIdHasBeenSet) {
+    payload.WithString("UserPoolId", m_userPoolId);
   }
 
-  if(m_clientNameHasBeenSet)
-  {
-   payload.WithString("ClientName", m_clientName);
-
+  if (m_clientNameHasBeenSet) {
+    payload.WithString("ClientName", m_clientName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

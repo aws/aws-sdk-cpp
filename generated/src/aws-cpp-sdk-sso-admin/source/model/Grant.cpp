@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sso-admin/model/Grant.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sso-admin/model/Grant.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SSOAdmin
-{
-namespace Model
-{
+namespace Aws {
+namespace SSOAdmin {
+namespace Model {
 
-Grant::Grant(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Grant::Grant(JsonView jsonValue) { *this = jsonValue; }
 
-Grant& Grant::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AuthorizationCode"))
-  {
+Grant& Grant::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AuthorizationCode")) {
     m_authorizationCode = jsonValue.GetObject("AuthorizationCode");
     m_authorizationCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("JwtBearer"))
-  {
+  if (jsonValue.ValueExists("JwtBearer")) {
     m_jwtBearer = jsonValue.GetObject("JwtBearer");
     m_jwtBearerHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RefreshToken"))
-  {
+  if (jsonValue.ValueExists("RefreshToken")) {
     m_refreshToken = jsonValue.GetObject("RefreshToken");
     m_refreshTokenHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TokenExchange"))
-  {
+  if (jsonValue.ValueExists("TokenExchange")) {
     m_tokenExchange = jsonValue.GetObject("TokenExchange");
     m_tokenExchangeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Grant::Jsonize() const
-{
+JsonValue Grant::Jsonize() const {
   JsonValue payload;
 
-  if(m_authorizationCodeHasBeenSet)
-  {
-   payload.WithObject("AuthorizationCode", m_authorizationCode.Jsonize());
-
+  if (m_authorizationCodeHasBeenSet) {
+    payload.WithObject("AuthorizationCode", m_authorizationCode.Jsonize());
   }
 
-  if(m_jwtBearerHasBeenSet)
-  {
-   payload.WithObject("JwtBearer", m_jwtBearer.Jsonize());
-
+  if (m_jwtBearerHasBeenSet) {
+    payload.WithObject("JwtBearer", m_jwtBearer.Jsonize());
   }
 
-  if(m_refreshTokenHasBeenSet)
-  {
-   payload.WithObject("RefreshToken", m_refreshToken.Jsonize());
-
+  if (m_refreshTokenHasBeenSet) {
+    payload.WithObject("RefreshToken", m_refreshToken.Jsonize());
   }
 
-  if(m_tokenExchangeHasBeenSet)
-  {
-   payload.WithObject("TokenExchange", m_tokenExchange.Jsonize());
-
+  if (m_tokenExchangeHasBeenSet) {
+    payload.WithObject("TokenExchange", m_tokenExchange.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SSOAdmin
-} // namespace Aws
+}  // namespace Model
+}  // namespace SSOAdmin
+}  // namespace Aws

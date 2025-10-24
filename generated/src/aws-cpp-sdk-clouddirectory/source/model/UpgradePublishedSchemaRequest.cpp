@@ -12,37 +12,24 @@ using namespace Aws::CloudDirectory::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpgradePublishedSchemaRequest::SerializePayload() const
-{
+Aws::String UpgradePublishedSchemaRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_developmentSchemaArnHasBeenSet)
-  {
-   payload.WithString("DevelopmentSchemaArn", m_developmentSchemaArn);
-
+  if (m_developmentSchemaArnHasBeenSet) {
+    payload.WithString("DevelopmentSchemaArn", m_developmentSchemaArn);
   }
 
-  if(m_publishedSchemaArnHasBeenSet)
-  {
-   payload.WithString("PublishedSchemaArn", m_publishedSchemaArn);
-
+  if (m_publishedSchemaArnHasBeenSet) {
+    payload.WithString("PublishedSchemaArn", m_publishedSchemaArn);
   }
 
-  if(m_minorVersionHasBeenSet)
-  {
-   payload.WithString("MinorVersion", m_minorVersion);
-
+  if (m_minorVersionHasBeenSet) {
+    payload.WithString("MinorVersion", m_minorVersion);
   }
 
-  if(m_dryRunHasBeenSet)
-  {
-   payload.WithBool("DryRun", m_dryRun);
-
+  if (m_dryRunHasBeenSet) {
+    payload.WithBool("DryRun", m_dryRun);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

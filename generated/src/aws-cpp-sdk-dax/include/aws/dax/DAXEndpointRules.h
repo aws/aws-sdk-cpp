@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/dax/DAX_EXPORTS.h>
 
-namespace Aws
-{
-namespace DAX
-{
-class DAXEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace DAX {
+class DAXEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace DAX
-} // namespace Aws
+}  // namespace DAX
+}  // namespace Aws

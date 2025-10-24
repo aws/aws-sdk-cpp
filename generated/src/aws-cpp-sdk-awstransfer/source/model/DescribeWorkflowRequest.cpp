@@ -12,27 +12,18 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeWorkflowRequest::SerializePayload() const
-{
+Aws::String DescribeWorkflowRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_workflowIdHasBeenSet)
-  {
-   payload.WithString("WorkflowId", m_workflowId);
-
+  if (m_workflowIdHasBeenSet) {
+    payload.WithString("WorkflowId", m_workflowId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeWorkflowRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeWorkflowRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "TransferService.DescribeWorkflow"));
   return headers;
-
 }
-
-
-
-

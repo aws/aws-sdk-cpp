@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/config/ConfigService_EXPORTS.h>
 
-namespace Aws
-{
-namespace ConfigService
-{
-enum class ConfigServiceErrors
-{
-  //From Core//
+namespace Aws {
+namespace ConfigService {
+enum class ConfigServiceErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class ConfigServiceErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class ConfigServiceErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CONFORMANCE_PACK_TEMPLATE_VALIDATION,
   IDEMPOTENT_PARAMETER_MISMATCH,
   INSUFFICIENT_DELIVERY_POLICY,
@@ -102,9 +99,8 @@ enum class ConfigServiceErrors
   UNMODIFIABLE_ENTITY
 };
 
-class AWS_CONFIGSERVICE_API ConfigServiceError : public Aws::Client::AWSError<ConfigServiceErrors>
-{
-public:
+class AWS_CONFIGSERVICE_API ConfigServiceError : public Aws::Client::AWSError<ConfigServiceErrors> {
+ public:
   ConfigServiceError() {}
   ConfigServiceError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ConfigServiceErrors>(rhs) {}
   ConfigServiceError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ConfigServiceErrors>(rhs) {}
@@ -115,10 +111,9 @@ public:
   T GetModeledError();
 };
 
-namespace ConfigServiceErrorMapper
-{
-  AWS_CONFIGSERVICE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace ConfigServiceErrorMapper {
+AWS_CONFIGSERVICE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace ConfigService
-} // namespace Aws
+}  // namespace ConfigService
+}  // namespace Aws

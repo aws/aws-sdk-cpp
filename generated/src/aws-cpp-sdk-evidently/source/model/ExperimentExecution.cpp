@@ -3,58 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/evidently/model/ExperimentExecution.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/evidently/model/ExperimentExecution.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudWatchEvidently
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudWatchEvidently {
+namespace Model {
 
-ExperimentExecution::ExperimentExecution(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ExperimentExecution::ExperimentExecution(JsonView jsonValue) { *this = jsonValue; }
 
-ExperimentExecution& ExperimentExecution::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("endedTime"))
-  {
+ExperimentExecution& ExperimentExecution::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("endedTime")) {
     m_endedTime = jsonValue.GetDouble("endedTime");
     m_endedTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("startedTime"))
-  {
+  if (jsonValue.ValueExists("startedTime")) {
     m_startedTime = jsonValue.GetDouble("startedTime");
     m_startedTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ExperimentExecution::Jsonize() const
-{
+JsonValue ExperimentExecution::Jsonize() const {
   JsonValue payload;
 
-  if(m_endedTimeHasBeenSet)
-  {
-   payload.WithDouble("endedTime", m_endedTime.SecondsWithMSPrecision());
+  if (m_endedTimeHasBeenSet) {
+    payload.WithDouble("endedTime", m_endedTime.SecondsWithMSPrecision());
   }
 
-  if(m_startedTimeHasBeenSet)
-  {
-   payload.WithDouble("startedTime", m_startedTime.SecondsWithMSPrecision());
+  if (m_startedTimeHasBeenSet) {
+    payload.WithDouble("startedTime", m_startedTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudWatchEvidently
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudWatchEvidently
+}  // namespace Aws

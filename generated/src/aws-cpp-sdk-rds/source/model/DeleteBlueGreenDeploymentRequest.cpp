@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/DeleteBlueGreenDeploymentRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/DeleteBlueGreenDeploymentRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteBlueGreenDeploymentRequest::SerializePayload() const
-{
+Aws::String DeleteBlueGreenDeploymentRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteBlueGreenDeployment&";
-  if(m_blueGreenDeploymentIdentifierHasBeenSet)
-  {
+  if (m_blueGreenDeploymentIdentifierHasBeenSet) {
     ss << "BlueGreenDeploymentIdentifier=" << StringUtils::URLEncode(m_blueGreenDeploymentIdentifier.c_str()) << "&";
   }
 
-  if(m_deleteTargetHasBeenSet)
-  {
+  if (m_deleteTargetHasBeenSet) {
     ss << "DeleteTarget=" << std::boolalpha << m_deleteTarget << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DeleteBlueGreenDeploymentRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteBlueGreenDeploymentRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteBlueGreenDeploymentRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -3,134 +3,102 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/omics/model/ReferenceListItem.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/omics/model/ReferenceListItem.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Omics
-{
-namespace Model
-{
+namespace Aws {
+namespace Omics {
+namespace Model {
 
-ReferenceListItem::ReferenceListItem(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ReferenceListItem::ReferenceListItem(JsonView jsonValue) { *this = jsonValue; }
 
-ReferenceListItem& ReferenceListItem::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("id"))
-  {
+ReferenceListItem& ReferenceListItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("arn"))
-  {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("referenceStoreId"))
-  {
+  if (jsonValue.ValueExists("referenceStoreId")) {
     m_referenceStoreId = jsonValue.GetString("referenceStoreId");
     m_referenceStoreIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("md5"))
-  {
+  if (jsonValue.ValueExists("md5")) {
     m_md5 = jsonValue.GetString("md5");
     m_md5HasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = ReferenceStatusMapper::GetReferenceStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("creationTime"))
-  {
+  if (jsonValue.ValueExists("creationTime")) {
     m_creationTime = jsonValue.GetString("creationTime");
     m_creationTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("updateTime"))
-  {
+  if (jsonValue.ValueExists("updateTime")) {
     m_updateTime = jsonValue.GetString("updateTime");
     m_updateTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ReferenceListItem::Jsonize() const
-{
+JsonValue ReferenceListItem::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_referenceStoreIdHasBeenSet)
-  {
-   payload.WithString("referenceStoreId", m_referenceStoreId);
-
+  if (m_referenceStoreIdHasBeenSet) {
+    payload.WithString("referenceStoreId", m_referenceStoreId);
   }
 
-  if(m_md5HasBeenSet)
-  {
-   payload.WithString("md5", m_md5);
-
+  if (m_md5HasBeenSet) {
+    payload.WithString("md5", m_md5);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", ReferenceStatusMapper::GetNameForReferenceStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", ReferenceStatusMapper::GetNameForReferenceStatus(m_status));
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithString("creationTime", m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_creationTimeHasBeenSet) {
+    payload.WithString("creationTime", m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_updateTimeHasBeenSet)
-  {
-   payload.WithString("updateTime", m_updateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_updateTimeHasBeenSet) {
+    payload.WithString("updateTime", m_updateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Omics
-} // namespace Aws
+}  // namespace Model
+}  // namespace Omics
+}  // namespace Aws

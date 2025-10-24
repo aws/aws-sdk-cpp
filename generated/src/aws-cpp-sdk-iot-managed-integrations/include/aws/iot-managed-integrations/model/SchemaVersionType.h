@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTManagedIntegrations
-{
-namespace Model
-{
-  enum class SchemaVersionType
-  {
-    NOT_SET,
-    capability,
-    definition
-  };
+namespace Aws {
+namespace IoTManagedIntegrations {
+namespace Model {
+enum class SchemaVersionType { NOT_SET, capability, definition };
 
-namespace SchemaVersionTypeMapper
-{
+namespace SchemaVersionTypeMapper {
 AWS_IOTMANAGEDINTEGRATIONS_API SchemaVersionType GetSchemaVersionTypeForName(const Aws::String& name);
 
 AWS_IOTMANAGEDINTEGRATIONS_API Aws::String GetNameForSchemaVersionType(SchemaVersionType value);
-} // namespace SchemaVersionTypeMapper
-} // namespace Model
-} // namespace IoTManagedIntegrations
-} // namespace Aws
+}  // namespace SchemaVersionTypeMapper
+}  // namespace Model
+}  // namespace IoTManagedIntegrations
+}  // namespace Aws

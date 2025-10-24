@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/dlm/DLM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dlm/DLM_EXPORTS.h>
 
-namespace Aws
-{
-namespace DLM
-{
-namespace Model
-{
-  enum class IntervalUnitValues
-  {
-    NOT_SET,
-    HOURS
-  };
+namespace Aws {
+namespace DLM {
+namespace Model {
+enum class IntervalUnitValues { NOT_SET, HOURS };
 
-namespace IntervalUnitValuesMapper
-{
+namespace IntervalUnitValuesMapper {
 AWS_DLM_API IntervalUnitValues GetIntervalUnitValuesForName(const Aws::String& name);
 
 AWS_DLM_API Aws::String GetNameForIntervalUnitValues(IntervalUnitValues value);
-} // namespace IntervalUnitValuesMapper
-} // namespace Model
-} // namespace DLM
-} // namespace Aws
+}  // namespace IntervalUnitValuesMapper
+}  // namespace Model
+}  // namespace DLM
+}  // namespace Aws

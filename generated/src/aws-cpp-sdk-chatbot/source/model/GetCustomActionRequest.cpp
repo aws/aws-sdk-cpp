@@ -12,19 +12,12 @@ using namespace Aws::chatbot::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetCustomActionRequest::SerializePayload() const
-{
+Aws::String GetCustomActionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_customActionArnHasBeenSet)
-  {
-   payload.WithString("CustomActionArn", m_customActionArn);
-
+  if (m_customActionArnHasBeenSet) {
+    payload.WithString("CustomActionArn", m_customActionArn);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

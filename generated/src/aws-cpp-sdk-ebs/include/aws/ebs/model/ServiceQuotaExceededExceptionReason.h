@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/ebs/EBS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ebs/EBS_EXPORTS.h>
 
-namespace Aws
-{
-namespace EBS
-{
-namespace Model
-{
-  enum class ServiceQuotaExceededExceptionReason
-  {
-    NOT_SET,
-    DEPENDENCY_SERVICE_QUOTA_EXCEEDED
-  };
+namespace Aws {
+namespace EBS {
+namespace Model {
+enum class ServiceQuotaExceededExceptionReason { NOT_SET, DEPENDENCY_SERVICE_QUOTA_EXCEEDED };
 
-namespace ServiceQuotaExceededExceptionReasonMapper
-{
+namespace ServiceQuotaExceededExceptionReasonMapper {
 AWS_EBS_API ServiceQuotaExceededExceptionReason GetServiceQuotaExceededExceptionReasonForName(const Aws::String& name);
 
 AWS_EBS_API Aws::String GetNameForServiceQuotaExceededExceptionReason(ServiceQuotaExceededExceptionReason value);
-} // namespace ServiceQuotaExceededExceptionReasonMapper
-} // namespace Model
-} // namespace EBS
-} // namespace Aws
+}  // namespace ServiceQuotaExceededExceptionReasonMapper
+}  // namespace Model
+}  // namespace EBS
+}  // namespace Aws

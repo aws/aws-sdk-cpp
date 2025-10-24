@@ -12,27 +12,18 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetUserPoolMfaConfigRequest::SerializePayload() const
-{
+Aws::String GetUserPoolMfaConfigRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_userPoolIdHasBeenSet)
-  {
-   payload.WithString("UserPoolId", m_userPoolId);
-
+  if (m_userPoolIdHasBeenSet) {
+    payload.WithString("UserPoolId", m_userPoolId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetUserPoolMfaConfigRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetUserPoolMfaConfigRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityProviderService.GetUserPoolMfaConfig"));
   return headers;
-
 }
-
-
-
-

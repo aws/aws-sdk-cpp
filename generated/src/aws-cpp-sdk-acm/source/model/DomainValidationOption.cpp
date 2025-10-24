@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ACM
-{
-namespace Model
-{
+namespace Aws {
+namespace ACM {
+namespace Model {
 
-DomainValidationOption::DomainValidationOption(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DomainValidationOption::DomainValidationOption(JsonView jsonValue) { *this = jsonValue; }
 
-DomainValidationOption& DomainValidationOption::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("DomainName"))
-  {
+DomainValidationOption& DomainValidationOption::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DomainName")) {
     m_domainName = jsonValue.GetString("DomainName");
     m_domainNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ValidationDomain"))
-  {
+  if (jsonValue.ValueExists("ValidationDomain")) {
     m_validationDomain = jsonValue.GetString("ValidationDomain");
     m_validationDomainHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DomainValidationOption::Jsonize() const
-{
+JsonValue DomainValidationOption::Jsonize() const {
   JsonValue payload;
 
-  if(m_domainNameHasBeenSet)
-  {
-   payload.WithString("DomainName", m_domainName);
-
+  if (m_domainNameHasBeenSet) {
+    payload.WithString("DomainName", m_domainName);
   }
 
-  if(m_validationDomainHasBeenSet)
-  {
-   payload.WithString("ValidationDomain", m_validationDomain);
-
+  if (m_validationDomainHasBeenSet) {
+    payload.WithString("ValidationDomain", m_validationDomain);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ACM
-} // namespace Aws
+}  // namespace Model
+}  // namespace ACM
+}  // namespace Aws

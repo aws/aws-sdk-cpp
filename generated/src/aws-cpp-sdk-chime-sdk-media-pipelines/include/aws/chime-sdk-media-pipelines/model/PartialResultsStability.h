@@ -7,26 +7,16 @@
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelines_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
-  enum class PartialResultsStability
-  {
-    NOT_SET,
-    high,
-    medium,
-    low
-  };
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
+enum class PartialResultsStability { NOT_SET, high, medium, low };
 
-namespace PartialResultsStabilityMapper
-{
+namespace PartialResultsStabilityMapper {
 AWS_CHIMESDKMEDIAPIPELINES_API PartialResultsStability GetPartialResultsStabilityForName(const Aws::String& name);
 
 AWS_CHIMESDKMEDIAPIPELINES_API Aws::String GetNameForPartialResultsStability(PartialResultsStability value);
-} // namespace PartialResultsStabilityMapper
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace PartialResultsStabilityMapper
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

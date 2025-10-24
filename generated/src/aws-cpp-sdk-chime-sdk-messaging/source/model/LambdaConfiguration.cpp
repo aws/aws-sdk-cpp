@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMessaging
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMessaging {
+namespace Model {
 
-LambdaConfiguration::LambdaConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LambdaConfiguration::LambdaConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-LambdaConfiguration& LambdaConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ResourceArn"))
-  {
+LambdaConfiguration& LambdaConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ResourceArn")) {
     m_resourceArn = jsonValue.GetString("ResourceArn");
     m_resourceArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("InvocationType"))
-  {
+  if (jsonValue.ValueExists("InvocationType")) {
     m_invocationType = InvocationTypeMapper::GetInvocationTypeForName(jsonValue.GetString("InvocationType"));
     m_invocationTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LambdaConfiguration::Jsonize() const
-{
+JsonValue LambdaConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_resourceArnHasBeenSet)
-  {
-   payload.WithString("ResourceArn", m_resourceArn);
-
+  if (m_resourceArnHasBeenSet) {
+    payload.WithString("ResourceArn", m_resourceArn);
   }
 
-  if(m_invocationTypeHasBeenSet)
-  {
-   payload.WithString("InvocationType", InvocationTypeMapper::GetNameForInvocationType(m_invocationType));
+  if (m_invocationTypeHasBeenSet) {
+    payload.WithString("InvocationType", InvocationTypeMapper::GetNameForInvocationType(m_invocationType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMessaging
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMessaging
+}  // namespace Aws

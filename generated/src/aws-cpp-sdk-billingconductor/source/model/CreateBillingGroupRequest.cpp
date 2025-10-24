@@ -13,69 +13,48 @@ using namespace Aws::BillingConductor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateBillingGroupRequest::SerializePayload() const
-{
+Aws::String CreateBillingGroupRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_accountGroupingHasBeenSet)
-  {
-   payload.WithObject("AccountGrouping", m_accountGrouping.Jsonize());
-
+  if (m_accountGroupingHasBeenSet) {
+    payload.WithObject("AccountGrouping", m_accountGrouping.Jsonize());
   }
 
-  if(m_computationPreferenceHasBeenSet)
-  {
-   payload.WithObject("ComputationPreference", m_computationPreference.Jsonize());
-
+  if (m_computationPreferenceHasBeenSet) {
+    payload.WithObject("ComputationPreference", m_computationPreference.Jsonize());
   }
 
-  if(m_primaryAccountIdHasBeenSet)
-  {
-   payload.WithString("PrimaryAccountId", m_primaryAccountId);
-
+  if (m_primaryAccountIdHasBeenSet) {
+    payload.WithString("PrimaryAccountId", m_primaryAccountId);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("Tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateBillingGroupRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateBillingGroupRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_clientTokenHasBeenSet)
-  {
+  if (m_clientTokenHasBeenSet) {
     ss << m_clientToken;
-    headers.emplace("x-amzn-client-token",  ss.str());
+    headers.emplace("x-amzn-client-token", ss.str());
     ss.str("");
   }
 
   return headers;
-
 }
-
-
-
-

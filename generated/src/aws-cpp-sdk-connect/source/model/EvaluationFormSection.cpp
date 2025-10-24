@@ -11,94 +11,69 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
+namespace Aws {
+namespace Connect {
+namespace Model {
 
-EvaluationFormSection::EvaluationFormSection(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EvaluationFormSection::EvaluationFormSection(JsonView jsonValue) { *this = jsonValue; }
 
-EvaluationFormSection& EvaluationFormSection::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Title"))
-  {
+EvaluationFormSection& EvaluationFormSection::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Title")) {
     m_title = jsonValue.GetString("Title");
     m_titleHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RefId"))
-  {
+  if (jsonValue.ValueExists("RefId")) {
     m_refId = jsonValue.GetString("RefId");
     m_refIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Instructions"))
-  {
+  if (jsonValue.ValueExists("Instructions")) {
     m_instructions = jsonValue.GetString("Instructions");
     m_instructionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Items"))
-  {
+  if (jsonValue.ValueExists("Items")) {
     Aws::Utils::Array<JsonView> itemsJsonList = jsonValue.GetArray("Items");
-    for(unsigned itemsIndex = 0; itemsIndex < itemsJsonList.GetLength(); ++itemsIndex)
-    {
+    for (unsigned itemsIndex = 0; itemsIndex < itemsJsonList.GetLength(); ++itemsIndex) {
       m_items.push_back(itemsJsonList[itemsIndex].AsObject());
     }
     m_itemsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Weight"))
-  {
+  if (jsonValue.ValueExists("Weight")) {
     m_weight = jsonValue.GetDouble("Weight");
     m_weightHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EvaluationFormSection::Jsonize() const
-{
+JsonValue EvaluationFormSection::Jsonize() const {
   JsonValue payload;
 
-  if(m_titleHasBeenSet)
-  {
-   payload.WithString("Title", m_title);
-
+  if (m_titleHasBeenSet) {
+    payload.WithString("Title", m_title);
   }
 
-  if(m_refIdHasBeenSet)
-  {
-   payload.WithString("RefId", m_refId);
-
+  if (m_refIdHasBeenSet) {
+    payload.WithString("RefId", m_refId);
   }
 
-  if(m_instructionsHasBeenSet)
-  {
-   payload.WithString("Instructions", m_instructions);
-
+  if (m_instructionsHasBeenSet) {
+    payload.WithString("Instructions", m_instructions);
   }
 
-  if(m_itemsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> itemsJsonList(m_items.size());
-   for(unsigned itemsIndex = 0; itemsIndex < itemsJsonList.GetLength(); ++itemsIndex)
-   {
-     itemsJsonList[itemsIndex].AsObject(m_items[itemsIndex].Jsonize());
-   }
-   payload.WithArray("Items", std::move(itemsJsonList));
-
+  if (m_itemsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> itemsJsonList(m_items.size());
+    for (unsigned itemsIndex = 0; itemsIndex < itemsJsonList.GetLength(); ++itemsIndex) {
+      itemsJsonList[itemsIndex].AsObject(m_items[itemsIndex].Jsonize());
+    }
+    payload.WithArray("Items", std::move(itemsJsonList));
   }
 
-  if(m_weightHasBeenSet)
-  {
-   payload.WithDouble("Weight", m_weight);
-
+  if (m_weightHasBeenSet) {
+    payload.WithDouble("Weight", m_weight);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

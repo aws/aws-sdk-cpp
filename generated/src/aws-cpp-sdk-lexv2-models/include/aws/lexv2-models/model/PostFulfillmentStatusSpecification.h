@@ -5,182 +5,229 @@
 
 #pragma once
 #include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
-#include <aws/lexv2-models/model/ResponseSpecification.h>
-#include <aws/lexv2-models/model/DialogState.h>
 #include <aws/lexv2-models/model/ConditionalSpecification.h>
+#include <aws/lexv2-models/model/DialogState.h>
+#include <aws/lexv2-models/model/ResponseSpecification.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace LexModelsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace LexModelsV2 {
+namespace Model {
 
+/**
+ * <p>Provides a setting that determines whether the post-fulfillment response is
+ * sent to the user. For more information, see <a
+ * href="https://docs.aws.amazon.com/lexv2/latest/dg/streaming-progress.html#progress-complete">https://docs.aws.amazon.com/lexv2/latest/dg/streaming-progress.html#progress-complete</a>
+ * </p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/PostFulfillmentStatusSpecification">AWS
+ * API Reference</a></p>
+ */
+class PostFulfillmentStatusSpecification {
+ public:
+  AWS_LEXMODELSV2_API PostFulfillmentStatusSpecification() = default;
+  AWS_LEXMODELSV2_API PostFulfillmentStatusSpecification(Aws::Utils::Json::JsonView jsonValue);
+  AWS_LEXMODELSV2_API PostFulfillmentStatusSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+
+  inline const ResponseSpecification& GetSuccessResponse() const { return m_successResponse; }
+  inline bool SuccessResponseHasBeenSet() const { return m_successResponseHasBeenSet; }
+  template <typename SuccessResponseT = ResponseSpecification>
+  void SetSuccessResponse(SuccessResponseT&& value) {
+    m_successResponseHasBeenSet = true;
+    m_successResponse = std::forward<SuccessResponseT>(value);
+  }
+  template <typename SuccessResponseT = ResponseSpecification>
+  PostFulfillmentStatusSpecification& WithSuccessResponse(SuccessResponseT&& value) {
+    SetSuccessResponse(std::forward<SuccessResponseT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const ResponseSpecification& GetFailureResponse() const { return m_failureResponse; }
+  inline bool FailureResponseHasBeenSet() const { return m_failureResponseHasBeenSet; }
+  template <typename FailureResponseT = ResponseSpecification>
+  void SetFailureResponse(FailureResponseT&& value) {
+    m_failureResponseHasBeenSet = true;
+    m_failureResponse = std::forward<FailureResponseT>(value);
+  }
+  template <typename FailureResponseT = ResponseSpecification>
+  PostFulfillmentStatusSpecification& WithFailureResponse(FailureResponseT&& value) {
+    SetFailureResponse(std::forward<FailureResponseT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const ResponseSpecification& GetTimeoutResponse() const { return m_timeoutResponse; }
+  inline bool TimeoutResponseHasBeenSet() const { return m_timeoutResponseHasBeenSet; }
+  template <typename TimeoutResponseT = ResponseSpecification>
+  void SetTimeoutResponse(TimeoutResponseT&& value) {
+    m_timeoutResponseHasBeenSet = true;
+    m_timeoutResponse = std::forward<TimeoutResponseT>(value);
+  }
+  template <typename TimeoutResponseT = ResponseSpecification>
+  PostFulfillmentStatusSpecification& WithTimeoutResponse(TimeoutResponseT&& value) {
+    SetTimeoutResponse(std::forward<TimeoutResponseT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
-   * <p>Provides a setting that determines whether the post-fulfillment response is
-   * sent to the user. For more information, see <a
-   * href="https://docs.aws.amazon.com/lexv2/latest/dg/streaming-progress.html#progress-complete">https://docs.aws.amazon.com/lexv2/latest/dg/streaming-progress.html#progress-complete</a>
-   * </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/PostFulfillmentStatusSpecification">AWS
-   * API Reference</a></p>
+   * <p>Specifies the next step in the conversation that Amazon Lex invokes when the
+   * fulfillment code hook completes successfully.</p>
    */
-  class PostFulfillmentStatusSpecification
-  {
-  public:
-    AWS_LEXMODELSV2_API PostFulfillmentStatusSpecification() = default;
-    AWS_LEXMODELSV2_API PostFulfillmentStatusSpecification(Aws::Utils::Json::JsonView jsonValue);
-    AWS_LEXMODELSV2_API PostFulfillmentStatusSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const DialogState& GetSuccessNextStep() const { return m_successNextStep; }
+  inline bool SuccessNextStepHasBeenSet() const { return m_successNextStepHasBeenSet; }
+  template <typename SuccessNextStepT = DialogState>
+  void SetSuccessNextStep(SuccessNextStepT&& value) {
+    m_successNextStepHasBeenSet = true;
+    m_successNextStep = std::forward<SuccessNextStepT>(value);
+  }
+  template <typename SuccessNextStepT = DialogState>
+  PostFulfillmentStatusSpecification& WithSuccessNextStep(SuccessNextStepT&& value) {
+    SetSuccessNextStep(std::forward<SuccessNextStepT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>A list of conditional branches to evaluate after the fulfillment code hook
+   * finishes successfully.</p>
+   */
+  inline const ConditionalSpecification& GetSuccessConditional() const { return m_successConditional; }
+  inline bool SuccessConditionalHasBeenSet() const { return m_successConditionalHasBeenSet; }
+  template <typename SuccessConditionalT = ConditionalSpecification>
+  void SetSuccessConditional(SuccessConditionalT&& value) {
+    m_successConditionalHasBeenSet = true;
+    m_successConditional = std::forward<SuccessConditionalT>(value);
+  }
+  template <typename SuccessConditionalT = ConditionalSpecification>
+  PostFulfillmentStatusSpecification& WithSuccessConditional(SuccessConditionalT&& value) {
+    SetSuccessConditional(std::forward<SuccessConditionalT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    
-    inline const ResponseSpecification& GetSuccessResponse() const { return m_successResponse; }
-    inline bool SuccessResponseHasBeenSet() const { return m_successResponseHasBeenSet; }
-    template<typename SuccessResponseT = ResponseSpecification>
-    void SetSuccessResponse(SuccessResponseT&& value) { m_successResponseHasBeenSet = true; m_successResponse = std::forward<SuccessResponseT>(value); }
-    template<typename SuccessResponseT = ResponseSpecification>
-    PostFulfillmentStatusSpecification& WithSuccessResponse(SuccessResponseT&& value) { SetSuccessResponse(std::forward<SuccessResponseT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>Specifies the next step the bot runs after the fulfillment code hook throws
+   * an exception or returns with the <code>State</code> field of the
+   * <code>Intent</code> object set to <code>Failed</code>.</p>
+   */
+  inline const DialogState& GetFailureNextStep() const { return m_failureNextStep; }
+  inline bool FailureNextStepHasBeenSet() const { return m_failureNextStepHasBeenSet; }
+  template <typename FailureNextStepT = DialogState>
+  void SetFailureNextStep(FailureNextStepT&& value) {
+    m_failureNextStepHasBeenSet = true;
+    m_failureNextStep = std::forward<FailureNextStepT>(value);
+  }
+  template <typename FailureNextStepT = DialogState>
+  PostFulfillmentStatusSpecification& WithFailureNextStep(FailureNextStepT&& value) {
+    SetFailureNextStep(std::forward<FailureNextStepT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    
-    inline const ResponseSpecification& GetFailureResponse() const { return m_failureResponse; }
-    inline bool FailureResponseHasBeenSet() const { return m_failureResponseHasBeenSet; }
-    template<typename FailureResponseT = ResponseSpecification>
-    void SetFailureResponse(FailureResponseT&& value) { m_failureResponseHasBeenSet = true; m_failureResponse = std::forward<FailureResponseT>(value); }
-    template<typename FailureResponseT = ResponseSpecification>
-    PostFulfillmentStatusSpecification& WithFailureResponse(FailureResponseT&& value) { SetFailureResponse(std::forward<FailureResponseT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>A list of conditional branches to evaluate after the fulfillment code hook
+   * throws an exception or returns with the <code>State</code> field of the
+   * <code>Intent</code> object set to <code>Failed</code>.</p>
+   */
+  inline const ConditionalSpecification& GetFailureConditional() const { return m_failureConditional; }
+  inline bool FailureConditionalHasBeenSet() const { return m_failureConditionalHasBeenSet; }
+  template <typename FailureConditionalT = ConditionalSpecification>
+  void SetFailureConditional(FailureConditionalT&& value) {
+    m_failureConditionalHasBeenSet = true;
+    m_failureConditional = std::forward<FailureConditionalT>(value);
+  }
+  template <typename FailureConditionalT = ConditionalSpecification>
+  PostFulfillmentStatusSpecification& WithFailureConditional(FailureConditionalT&& value) {
+    SetFailureConditional(std::forward<FailureConditionalT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    
-    inline const ResponseSpecification& GetTimeoutResponse() const { return m_timeoutResponse; }
-    inline bool TimeoutResponseHasBeenSet() const { return m_timeoutResponseHasBeenSet; }
-    template<typename TimeoutResponseT = ResponseSpecification>
-    void SetTimeoutResponse(TimeoutResponseT&& value) { m_timeoutResponseHasBeenSet = true; m_timeoutResponse = std::forward<TimeoutResponseT>(value); }
-    template<typename TimeoutResponseT = ResponseSpecification>
-    PostFulfillmentStatusSpecification& WithTimeoutResponse(TimeoutResponseT&& value) { SetTimeoutResponse(std::forward<TimeoutResponseT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>Specifies the next step that the bot runs when the fulfillment code hook
+   * times out.</p>
+   */
+  inline const DialogState& GetTimeoutNextStep() const { return m_timeoutNextStep; }
+  inline bool TimeoutNextStepHasBeenSet() const { return m_timeoutNextStepHasBeenSet; }
+  template <typename TimeoutNextStepT = DialogState>
+  void SetTimeoutNextStep(TimeoutNextStepT&& value) {
+    m_timeoutNextStepHasBeenSet = true;
+    m_timeoutNextStep = std::forward<TimeoutNextStepT>(value);
+  }
+  template <typename TimeoutNextStepT = DialogState>
+  PostFulfillmentStatusSpecification& WithTimeoutNextStep(TimeoutNextStepT&& value) {
+    SetTimeoutNextStep(std::forward<TimeoutNextStepT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Specifies the next step in the conversation that Amazon Lex invokes when the
-     * fulfillment code hook completes successfully.</p>
-     */
-    inline const DialogState& GetSuccessNextStep() const { return m_successNextStep; }
-    inline bool SuccessNextStepHasBeenSet() const { return m_successNextStepHasBeenSet; }
-    template<typename SuccessNextStepT = DialogState>
-    void SetSuccessNextStep(SuccessNextStepT&& value) { m_successNextStepHasBeenSet = true; m_successNextStep = std::forward<SuccessNextStepT>(value); }
-    template<typename SuccessNextStepT = DialogState>
-    PostFulfillmentStatusSpecification& WithSuccessNextStep(SuccessNextStepT&& value) { SetSuccessNextStep(std::forward<SuccessNextStepT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>A list of conditional branches to evaluate if the fulfillment code hook times
+   * out.</p>
+   */
+  inline const ConditionalSpecification& GetTimeoutConditional() const { return m_timeoutConditional; }
+  inline bool TimeoutConditionalHasBeenSet() const { return m_timeoutConditionalHasBeenSet; }
+  template <typename TimeoutConditionalT = ConditionalSpecification>
+  void SetTimeoutConditional(TimeoutConditionalT&& value) {
+    m_timeoutConditionalHasBeenSet = true;
+    m_timeoutConditional = std::forward<TimeoutConditionalT>(value);
+  }
+  template <typename TimeoutConditionalT = ConditionalSpecification>
+  PostFulfillmentStatusSpecification& WithTimeoutConditional(TimeoutConditionalT&& value) {
+    SetTimeoutConditional(std::forward<TimeoutConditionalT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  ResponseSpecification m_successResponse;
+  bool m_successResponseHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>A list of conditional branches to evaluate after the fulfillment code hook
-     * finishes successfully.</p>
-     */
-    inline const ConditionalSpecification& GetSuccessConditional() const { return m_successConditional; }
-    inline bool SuccessConditionalHasBeenSet() const { return m_successConditionalHasBeenSet; }
-    template<typename SuccessConditionalT = ConditionalSpecification>
-    void SetSuccessConditional(SuccessConditionalT&& value) { m_successConditionalHasBeenSet = true; m_successConditional = std::forward<SuccessConditionalT>(value); }
-    template<typename SuccessConditionalT = ConditionalSpecification>
-    PostFulfillmentStatusSpecification& WithSuccessConditional(SuccessConditionalT&& value) { SetSuccessConditional(std::forward<SuccessConditionalT>(value)); return *this;}
-    ///@}
+  ResponseSpecification m_failureResponse;
+  bool m_failureResponseHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>Specifies the next step the bot runs after the fulfillment code hook throws
-     * an exception or returns with the <code>State</code> field of the
-     * <code>Intent</code> object set to <code>Failed</code>.</p>
-     */
-    inline const DialogState& GetFailureNextStep() const { return m_failureNextStep; }
-    inline bool FailureNextStepHasBeenSet() const { return m_failureNextStepHasBeenSet; }
-    template<typename FailureNextStepT = DialogState>
-    void SetFailureNextStep(FailureNextStepT&& value) { m_failureNextStepHasBeenSet = true; m_failureNextStep = std::forward<FailureNextStepT>(value); }
-    template<typename FailureNextStepT = DialogState>
-    PostFulfillmentStatusSpecification& WithFailureNextStep(FailureNextStepT&& value) { SetFailureNextStep(std::forward<FailureNextStepT>(value)); return *this;}
-    ///@}
+  ResponseSpecification m_timeoutResponse;
+  bool m_timeoutResponseHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>A list of conditional branches to evaluate after the fulfillment code hook
-     * throws an exception or returns with the <code>State</code> field of the
-     * <code>Intent</code> object set to <code>Failed</code>.</p>
-     */
-    inline const ConditionalSpecification& GetFailureConditional() const { return m_failureConditional; }
-    inline bool FailureConditionalHasBeenSet() const { return m_failureConditionalHasBeenSet; }
-    template<typename FailureConditionalT = ConditionalSpecification>
-    void SetFailureConditional(FailureConditionalT&& value) { m_failureConditionalHasBeenSet = true; m_failureConditional = std::forward<FailureConditionalT>(value); }
-    template<typename FailureConditionalT = ConditionalSpecification>
-    PostFulfillmentStatusSpecification& WithFailureConditional(FailureConditionalT&& value) { SetFailureConditional(std::forward<FailureConditionalT>(value)); return *this;}
-    ///@}
+  DialogState m_successNextStep;
+  bool m_successNextStepHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>Specifies the next step that the bot runs when the fulfillment code hook
-     * times out.</p>
-     */
-    inline const DialogState& GetTimeoutNextStep() const { return m_timeoutNextStep; }
-    inline bool TimeoutNextStepHasBeenSet() const { return m_timeoutNextStepHasBeenSet; }
-    template<typename TimeoutNextStepT = DialogState>
-    void SetTimeoutNextStep(TimeoutNextStepT&& value) { m_timeoutNextStepHasBeenSet = true; m_timeoutNextStep = std::forward<TimeoutNextStepT>(value); }
-    template<typename TimeoutNextStepT = DialogState>
-    PostFulfillmentStatusSpecification& WithTimeoutNextStep(TimeoutNextStepT&& value) { SetTimeoutNextStep(std::forward<TimeoutNextStepT>(value)); return *this;}
-    ///@}
+  ConditionalSpecification m_successConditional;
+  bool m_successConditionalHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>A list of conditional branches to evaluate if the fulfillment code hook times
-     * out.</p>
-     */
-    inline const ConditionalSpecification& GetTimeoutConditional() const { return m_timeoutConditional; }
-    inline bool TimeoutConditionalHasBeenSet() const { return m_timeoutConditionalHasBeenSet; }
-    template<typename TimeoutConditionalT = ConditionalSpecification>
-    void SetTimeoutConditional(TimeoutConditionalT&& value) { m_timeoutConditionalHasBeenSet = true; m_timeoutConditional = std::forward<TimeoutConditionalT>(value); }
-    template<typename TimeoutConditionalT = ConditionalSpecification>
-    PostFulfillmentStatusSpecification& WithTimeoutConditional(TimeoutConditionalT&& value) { SetTimeoutConditional(std::forward<TimeoutConditionalT>(value)); return *this;}
-    ///@}
-  private:
+  DialogState m_failureNextStep;
+  bool m_failureNextStepHasBeenSet = false;
 
-    ResponseSpecification m_successResponse;
-    bool m_successResponseHasBeenSet = false;
+  ConditionalSpecification m_failureConditional;
+  bool m_failureConditionalHasBeenSet = false;
 
-    ResponseSpecification m_failureResponse;
-    bool m_failureResponseHasBeenSet = false;
+  DialogState m_timeoutNextStep;
+  bool m_timeoutNextStepHasBeenSet = false;
 
-    ResponseSpecification m_timeoutResponse;
-    bool m_timeoutResponseHasBeenSet = false;
+  ConditionalSpecification m_timeoutConditional;
+  bool m_timeoutConditionalHasBeenSet = false;
+};
 
-    DialogState m_successNextStep;
-    bool m_successNextStepHasBeenSet = false;
-
-    ConditionalSpecification m_successConditional;
-    bool m_successConditionalHasBeenSet = false;
-
-    DialogState m_failureNextStep;
-    bool m_failureNextStepHasBeenSet = false;
-
-    ConditionalSpecification m_failureConditional;
-    bool m_failureConditionalHasBeenSet = false;
-
-    DialogState m_timeoutNextStep;
-    bool m_timeoutNextStepHasBeenSet = false;
-
-    ConditionalSpecification m_timeoutConditional;
-    bool m_timeoutConditionalHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

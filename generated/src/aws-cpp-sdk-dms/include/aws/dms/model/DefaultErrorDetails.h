@@ -4,57 +4,56 @@
  */
 
 #pragma once
-#include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dms/DatabaseMigrationService_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace DatabaseMigrationService
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace DatabaseMigrationService {
+namespace Model {
 
+/**
+ * <p>Provides error information about a schema conversion operation.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DefaultErrorDetails">AWS
+ * API Reference</a></p>
+ */
+class DefaultErrorDetails {
+ public:
+  AWS_DATABASEMIGRATIONSERVICE_API DefaultErrorDetails() = default;
+  AWS_DATABASEMIGRATIONSERVICE_API DefaultErrorDetails(Aws::Utils::Json::JsonView jsonValue);
+  AWS_DATABASEMIGRATIONSERVICE_API DefaultErrorDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Provides error information about a schema conversion operation.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DefaultErrorDetails">AWS
-   * API Reference</a></p>
+   * <p>The error message.</p>
    */
-  class DefaultErrorDetails
-  {
-  public:
-    AWS_DATABASEMIGRATIONSERVICE_API DefaultErrorDetails() = default;
-    AWS_DATABASEMIGRATIONSERVICE_API DefaultErrorDetails(Aws::Utils::Json::JsonView jsonValue);
-    AWS_DATABASEMIGRATIONSERVICE_API DefaultErrorDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetMessage() const { return m_message; }
+  inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+  template <typename MessageT = Aws::String>
+  void SetMessage(MessageT&& value) {
+    m_messageHasBeenSet = true;
+    m_message = std::forward<MessageT>(value);
+  }
+  template <typename MessageT = Aws::String>
+  DefaultErrorDetails& WithMessage(MessageT&& value) {
+    SetMessage(std::forward<MessageT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_message;
+  bool m_messageHasBeenSet = false;
+};
 
-
-    ///@{
-    /**
-     * <p>The error message.</p>
-     */
-    inline const Aws::String& GetMessage() const { return m_message; }
-    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    template<typename MessageT = Aws::String>
-    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
-    template<typename MessageT = Aws::String>
-    DefaultErrorDetails& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_message;
-    bool m_messageHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace DatabaseMigrationService
-} // namespace Aws
+}  // namespace Model
+}  // namespace DatabaseMigrationService
+}  // namespace Aws

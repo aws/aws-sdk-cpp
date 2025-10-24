@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/geo-places/GeoPlaces_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/geo-places/GeoPlaces_EXPORTS.h>
 
-namespace Aws
-{
-namespace GeoPlaces
-{
-namespace Model
-{
-  enum class PostalCodeMode
-  {
-    NOT_SET,
-    MergeAllSpannedLocalities,
-    EnumerateSpannedLocalities
-  };
+namespace Aws {
+namespace GeoPlaces {
+namespace Model {
+enum class PostalCodeMode { NOT_SET, MergeAllSpannedLocalities, EnumerateSpannedLocalities };
 
-namespace PostalCodeModeMapper
-{
+namespace PostalCodeModeMapper {
 AWS_GEOPLACES_API PostalCodeMode GetPostalCodeModeForName(const Aws::String& name);
 
 AWS_GEOPLACES_API Aws::String GetNameForPostalCodeMode(PostalCodeMode value);
-} // namespace PostalCodeModeMapper
-} // namespace Model
-} // namespace GeoPlaces
-} // namespace Aws
+}  // namespace PostalCodeModeMapper
+}  // namespace Model
+}  // namespace GeoPlaces
+}  // namespace Aws

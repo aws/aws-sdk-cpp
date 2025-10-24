@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/workdocs/WorkDocs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workdocs/WorkDocs_EXPORTS.h>
 
-namespace Aws
-{
-namespace WorkDocs
-{
-namespace Model
-{
-  enum class UserType
-  {
-    NOT_SET,
-    USER,
-    ADMIN,
-    POWERUSER,
-    MINIMALUSER,
-    WORKSPACESUSER
-  };
+namespace Aws {
+namespace WorkDocs {
+namespace Model {
+enum class UserType { NOT_SET, USER, ADMIN, POWERUSER, MINIMALUSER, WORKSPACESUSER };
 
-namespace UserTypeMapper
-{
+namespace UserTypeMapper {
 AWS_WORKDOCS_API UserType GetUserTypeForName(const Aws::String& name);
 
 AWS_WORKDOCS_API Aws::String GetNameForUserType(UserType value);
-} // namespace UserTypeMapper
-} // namespace Model
-} // namespace WorkDocs
-} // namespace Aws
+}  // namespace UserTypeMapper
+}  // namespace Model
+}  // namespace WorkDocs
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class EmbeddedTerminateCaptions
-  {
-    NOT_SET,
-    END_OF_INPUT,
-    DISABLED
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class EmbeddedTerminateCaptions { NOT_SET, END_OF_INPUT, DISABLED };
 
-namespace EmbeddedTerminateCaptionsMapper
-{
+namespace EmbeddedTerminateCaptionsMapper {
 AWS_MEDIACONVERT_API EmbeddedTerminateCaptions GetEmbeddedTerminateCaptionsForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForEmbeddedTerminateCaptions(EmbeddedTerminateCaptions value);
-} // namespace EmbeddedTerminateCaptionsMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace EmbeddedTerminateCaptionsMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

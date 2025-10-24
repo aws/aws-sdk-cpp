@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/RegisteredCustomerManagedKey.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/RegisteredCustomerManagedKey.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-RegisteredCustomerManagedKey::RegisteredCustomerManagedKey(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RegisteredCustomerManagedKey::RegisteredCustomerManagedKey(JsonView jsonValue) { *this = jsonValue; }
 
-RegisteredCustomerManagedKey& RegisteredCustomerManagedKey::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("KeyArn"))
-  {
+RegisteredCustomerManagedKey& RegisteredCustomerManagedKey::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("KeyArn")) {
     m_keyArn = jsonValue.GetString("KeyArn");
     m_keyArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DefaultKey"))
-  {
+  if (jsonValue.ValueExists("DefaultKey")) {
     m_defaultKey = jsonValue.GetBool("DefaultKey");
     m_defaultKeyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RegisteredCustomerManagedKey::Jsonize() const
-{
+JsonValue RegisteredCustomerManagedKey::Jsonize() const {
   JsonValue payload;
 
-  if(m_keyArnHasBeenSet)
-  {
-   payload.WithString("KeyArn", m_keyArn);
-
+  if (m_keyArnHasBeenSet) {
+    payload.WithString("KeyArn", m_keyArn);
   }
 
-  if(m_defaultKeyHasBeenSet)
-  {
-   payload.WithBool("DefaultKey", m_defaultKey);
-
+  if (m_defaultKeyHasBeenSet) {
+    payload.WithBool("DefaultKey", m_defaultKey);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

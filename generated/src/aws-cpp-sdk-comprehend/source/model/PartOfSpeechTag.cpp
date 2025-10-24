@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Comprehend {
+namespace Model {
 
-PartOfSpeechTag::PartOfSpeechTag(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PartOfSpeechTag::PartOfSpeechTag(JsonView jsonValue) { *this = jsonValue; }
 
-PartOfSpeechTag& PartOfSpeechTag::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Tag"))
-  {
+PartOfSpeechTag& PartOfSpeechTag::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Tag")) {
     m_tag = PartOfSpeechTagTypeMapper::GetPartOfSpeechTagTypeForName(jsonValue.GetString("Tag"));
     m_tagHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Score"))
-  {
+  if (jsonValue.ValueExists("Score")) {
     m_score = jsonValue.GetDouble("Score");
     m_scoreHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PartOfSpeechTag::Jsonize() const
-{
+JsonValue PartOfSpeechTag::Jsonize() const {
   JsonValue payload;
 
-  if(m_tagHasBeenSet)
-  {
-   payload.WithString("Tag", PartOfSpeechTagTypeMapper::GetNameForPartOfSpeechTagType(m_tag));
+  if (m_tagHasBeenSet) {
+    payload.WithString("Tag", PartOfSpeechTagTypeMapper::GetNameForPartOfSpeechTagType(m_tag));
   }
 
-  if(m_scoreHasBeenSet)
-  {
-   payload.WithDouble("Score", m_score);
-
+  if (m_scoreHasBeenSet) {
+    payload.WithDouble("Score", m_score);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

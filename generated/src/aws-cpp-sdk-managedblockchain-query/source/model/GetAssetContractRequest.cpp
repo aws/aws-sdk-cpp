@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/managedblockchain-query/model/GetAssetContractRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/managedblockchain-query/model/GetAssetContractRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::ManagedBlockchainQuery::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetAssetContractRequest::SerializePayload() const
-{
+Aws::String GetAssetContractRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_contractIdentifierHasBeenSet)
-  {
-   payload.WithObject("contractIdentifier", m_contractIdentifier.Jsonize());
-
+  if (m_contractIdentifierHasBeenSet) {
+    payload.WithObject("contractIdentifier", m_contractIdentifier.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

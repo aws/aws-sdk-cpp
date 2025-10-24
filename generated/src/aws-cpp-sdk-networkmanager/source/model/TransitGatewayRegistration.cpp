@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/networkmanager/model/TransitGatewayRegistration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/networkmanager/model/TransitGatewayRegistration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace NetworkManager
-{
-namespace Model
-{
+namespace Aws {
+namespace NetworkManager {
+namespace Model {
 
-TransitGatewayRegistration::TransitGatewayRegistration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TransitGatewayRegistration::TransitGatewayRegistration(JsonView jsonValue) { *this = jsonValue; }
 
-TransitGatewayRegistration& TransitGatewayRegistration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("GlobalNetworkId"))
-  {
+TransitGatewayRegistration& TransitGatewayRegistration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("GlobalNetworkId")) {
     m_globalNetworkId = jsonValue.GetString("GlobalNetworkId");
     m_globalNetworkIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TransitGatewayArn"))
-  {
+  if (jsonValue.ValueExists("TransitGatewayArn")) {
     m_transitGatewayArn = jsonValue.GetString("TransitGatewayArn");
     m_transitGatewayArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("State"))
-  {
+  if (jsonValue.ValueExists("State")) {
     m_state = jsonValue.GetObject("State");
     m_stateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TransitGatewayRegistration::Jsonize() const
-{
+JsonValue TransitGatewayRegistration::Jsonize() const {
   JsonValue payload;
 
-  if(m_globalNetworkIdHasBeenSet)
-  {
-   payload.WithString("GlobalNetworkId", m_globalNetworkId);
-
+  if (m_globalNetworkIdHasBeenSet) {
+    payload.WithString("GlobalNetworkId", m_globalNetworkId);
   }
 
-  if(m_transitGatewayArnHasBeenSet)
-  {
-   payload.WithString("TransitGatewayArn", m_transitGatewayArn);
-
+  if (m_transitGatewayArnHasBeenSet) {
+    payload.WithString("TransitGatewayArn", m_transitGatewayArn);
   }
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithObject("State", m_state.Jsonize());
-
+  if (m_stateHasBeenSet) {
+    payload.WithObject("State", m_state.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace NetworkManager
-} // namespace Aws
+}  // namespace Model
+}  // namespace NetworkManager
+}  // namespace Aws

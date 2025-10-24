@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApplicationAutoScaling
-{
-namespace Model
-{
+namespace Aws {
+namespace ApplicationAutoScaling {
+namespace Model {
 
-StepAdjustment::StepAdjustment(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+StepAdjustment::StepAdjustment(JsonView jsonValue) { *this = jsonValue; }
 
-StepAdjustment& StepAdjustment::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MetricIntervalLowerBound"))
-  {
+StepAdjustment& StepAdjustment::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MetricIntervalLowerBound")) {
     m_metricIntervalLowerBound = jsonValue.GetDouble("MetricIntervalLowerBound");
     m_metricIntervalLowerBoundHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MetricIntervalUpperBound"))
-  {
+  if (jsonValue.ValueExists("MetricIntervalUpperBound")) {
     m_metricIntervalUpperBound = jsonValue.GetDouble("MetricIntervalUpperBound");
     m_metricIntervalUpperBoundHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ScalingAdjustment"))
-  {
+  if (jsonValue.ValueExists("ScalingAdjustment")) {
     m_scalingAdjustment = jsonValue.GetInteger("ScalingAdjustment");
     m_scalingAdjustmentHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue StepAdjustment::Jsonize() const
-{
+JsonValue StepAdjustment::Jsonize() const {
   JsonValue payload;
 
-  if(m_metricIntervalLowerBoundHasBeenSet)
-  {
-   payload.WithDouble("MetricIntervalLowerBound", m_metricIntervalLowerBound);
-
+  if (m_metricIntervalLowerBoundHasBeenSet) {
+    payload.WithDouble("MetricIntervalLowerBound", m_metricIntervalLowerBound);
   }
 
-  if(m_metricIntervalUpperBoundHasBeenSet)
-  {
-   payload.WithDouble("MetricIntervalUpperBound", m_metricIntervalUpperBound);
-
+  if (m_metricIntervalUpperBoundHasBeenSet) {
+    payload.WithDouble("MetricIntervalUpperBound", m_metricIntervalUpperBound);
   }
 
-  if(m_scalingAdjustmentHasBeenSet)
-  {
-   payload.WithInteger("ScalingAdjustment", m_scalingAdjustment);
-
+  if (m_scalingAdjustmentHasBeenSet) {
+    payload.WithInteger("ScalingAdjustment", m_scalingAdjustment);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApplicationAutoScaling
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApplicationAutoScaling
+}  // namespace Aws

@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-MediaInsightsPipelineConfigurationSummary::MediaInsightsPipelineConfigurationSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MediaInsightsPipelineConfigurationSummary::MediaInsightsPipelineConfigurationSummary(JsonView jsonValue) { *this = jsonValue; }
 
-MediaInsightsPipelineConfigurationSummary& MediaInsightsPipelineConfigurationSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MediaInsightsPipelineConfigurationName"))
-  {
+MediaInsightsPipelineConfigurationSummary& MediaInsightsPipelineConfigurationSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MediaInsightsPipelineConfigurationName")) {
     m_mediaInsightsPipelineConfigurationName = jsonValue.GetString("MediaInsightsPipelineConfigurationName");
     m_mediaInsightsPipelineConfigurationNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MediaInsightsPipelineConfigurationId"))
-  {
+  if (jsonValue.ValueExists("MediaInsightsPipelineConfigurationId")) {
     m_mediaInsightsPipelineConfigurationId = jsonValue.GetString("MediaInsightsPipelineConfigurationId");
     m_mediaInsightsPipelineConfigurationIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MediaInsightsPipelineConfigurationArn"))
-  {
+  if (jsonValue.ValueExists("MediaInsightsPipelineConfigurationArn")) {
     m_mediaInsightsPipelineConfigurationArn = jsonValue.GetString("MediaInsightsPipelineConfigurationArn");
     m_mediaInsightsPipelineConfigurationArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MediaInsightsPipelineConfigurationSummary::Jsonize() const
-{
+JsonValue MediaInsightsPipelineConfigurationSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_mediaInsightsPipelineConfigurationNameHasBeenSet)
-  {
-   payload.WithString("MediaInsightsPipelineConfigurationName", m_mediaInsightsPipelineConfigurationName);
-
+  if (m_mediaInsightsPipelineConfigurationNameHasBeenSet) {
+    payload.WithString("MediaInsightsPipelineConfigurationName", m_mediaInsightsPipelineConfigurationName);
   }
 
-  if(m_mediaInsightsPipelineConfigurationIdHasBeenSet)
-  {
-   payload.WithString("MediaInsightsPipelineConfigurationId", m_mediaInsightsPipelineConfigurationId);
-
+  if (m_mediaInsightsPipelineConfigurationIdHasBeenSet) {
+    payload.WithString("MediaInsightsPipelineConfigurationId", m_mediaInsightsPipelineConfigurationId);
   }
 
-  if(m_mediaInsightsPipelineConfigurationArnHasBeenSet)
-  {
-   payload.WithString("MediaInsightsPipelineConfigurationArn", m_mediaInsightsPipelineConfigurationArn);
-
+  if (m_mediaInsightsPipelineConfigurationArnHasBeenSet) {
+    payload.WithString("MediaInsightsPipelineConfigurationArn", m_mediaInsightsPipelineConfigurationArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

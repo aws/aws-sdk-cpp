@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/opensearch/model/OutboundConnectionStatus.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/opensearch/model/OutboundConnectionStatus.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace OpenSearchService
-{
-namespace Model
-{
+namespace Aws {
+namespace OpenSearchService {
+namespace Model {
 
-OutboundConnectionStatus::OutboundConnectionStatus(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OutboundConnectionStatus::OutboundConnectionStatus(JsonView jsonValue) { *this = jsonValue; }
 
-OutboundConnectionStatus& OutboundConnectionStatus::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("StatusCode"))
-  {
+OutboundConnectionStatus& OutboundConnectionStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("StatusCode")) {
     m_statusCode = OutboundConnectionStatusCodeMapper::GetOutboundConnectionStatusCodeForName(jsonValue.GetString("StatusCode"));
     m_statusCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Message"))
-  {
+  if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OutboundConnectionStatus::Jsonize() const
-{
+JsonValue OutboundConnectionStatus::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusCodeHasBeenSet)
-  {
-   payload.WithString("StatusCode", OutboundConnectionStatusCodeMapper::GetNameForOutboundConnectionStatusCode(m_statusCode));
+  if (m_statusCodeHasBeenSet) {
+    payload.WithString("StatusCode", OutboundConnectionStatusCodeMapper::GetNameForOutboundConnectionStatusCode(m_statusCode));
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("Message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("Message", m_message);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace OpenSearchService
-} // namespace Aws
+}  // namespace Model
+}  // namespace OpenSearchService
+}  // namespace Aws

@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/KinesisAction.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot/model/KinesisAction.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
+namespace Aws {
+namespace IoT {
+namespace Model {
 
-KinesisAction::KinesisAction(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+KinesisAction::KinesisAction(JsonView jsonValue) { *this = jsonValue; }
 
-KinesisAction& KinesisAction::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("roleArn"))
-  {
+KinesisAction& KinesisAction::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("roleArn")) {
     m_roleArn = jsonValue.GetString("roleArn");
     m_roleArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("streamName"))
-  {
+  if (jsonValue.ValueExists("streamName")) {
     m_streamName = jsonValue.GetString("streamName");
     m_streamNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("partitionKey"))
-  {
+  if (jsonValue.ValueExists("partitionKey")) {
     m_partitionKey = jsonValue.GetString("partitionKey");
     m_partitionKeyHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue KinesisAction::Jsonize() const
-{
+JsonValue KinesisAction::Jsonize() const {
   JsonValue payload;
 
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("roleArn", m_roleArn);
-
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("roleArn", m_roleArn);
   }
 
-  if(m_streamNameHasBeenSet)
-  {
-   payload.WithString("streamName", m_streamName);
-
+  if (m_streamNameHasBeenSet) {
+    payload.WithString("streamName", m_streamName);
   }
 
-  if(m_partitionKeyHasBeenSet)
-  {
-   payload.WithString("partitionKey", m_partitionKey);
-
+  if (m_partitionKeyHasBeenSet) {
+    payload.WithString("partitionKey", m_partitionKey);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

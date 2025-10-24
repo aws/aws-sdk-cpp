@@ -3,43 +3,34 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticache/model/PurchaseReservedCacheNodesOfferingRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticache/model/PurchaseReservedCacheNodesOfferingRequest.h>
 
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-Aws::String PurchaseReservedCacheNodesOfferingRequest::SerializePayload() const
-{
+Aws::String PurchaseReservedCacheNodesOfferingRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=PurchaseReservedCacheNodesOffering&";
-  if(m_reservedCacheNodesOfferingIdHasBeenSet)
-  {
+  if (m_reservedCacheNodesOfferingIdHasBeenSet) {
     ss << "ReservedCacheNodesOfferingId=" << StringUtils::URLEncode(m_reservedCacheNodesOfferingId.c_str()) << "&";
   }
 
-  if(m_reservedCacheNodeIdHasBeenSet)
-  {
+  if (m_reservedCacheNodeIdHasBeenSet) {
     ss << "ReservedCacheNodeId=" << StringUtils::URLEncode(m_reservedCacheNodeId.c_str()) << "&";
   }
 
-  if(m_cacheNodeCountHasBeenSet)
-  {
+  if (m_cacheNodeCountHasBeenSet) {
     ss << "CacheNodeCount=" << m_cacheNodeCount << "&";
   }
 
-  if(m_tagsHasBeenSet)
-  {
-    if (m_tags.empty())
-    {
+  if (m_tagsHasBeenSet) {
+    if (m_tags.empty()) {
       ss << "Tags=&";
-    }
-    else
-    {
+    } else {
       unsigned tagsCount = 1;
-      for(auto& item : m_tags)
-      {
+      for (auto& item : m_tags) {
         item.OutputToStream(ss, "Tags.Tag.", tagsCount, "");
         tagsCount++;
       }
@@ -50,8 +41,4 @@ Aws::String PurchaseReservedCacheNodesOfferingRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  PurchaseReservedCacheNodesOfferingRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void PurchaseReservedCacheNodesOfferingRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

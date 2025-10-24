@@ -10,17 +10,14 @@
 using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils;
 
-Aws::String DefineAnalysisSchemeRequest::SerializePayload() const
-{
+Aws::String DefineAnalysisSchemeRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DefineAnalysisScheme&";
-  if(m_domainNameHasBeenSet)
-  {
+  if (m_domainNameHasBeenSet) {
     ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
   }
 
-  if(m_analysisSchemeHasBeenSet)
-  {
+  if (m_analysisSchemeHasBeenSet) {
     m_analysisScheme.OutputToStream(ss, "AnalysisScheme");
   }
 
@@ -28,8 +25,4 @@ Aws::String DefineAnalysisSchemeRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DefineAnalysisSchemeRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DefineAnalysisSchemeRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

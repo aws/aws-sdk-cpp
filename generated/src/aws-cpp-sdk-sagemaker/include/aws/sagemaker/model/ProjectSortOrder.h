@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class ProjectSortOrder
-  {
-    NOT_SET,
-    Ascending,
-    Descending
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class ProjectSortOrder { NOT_SET, Ascending, Descending };
 
-namespace ProjectSortOrderMapper
-{
+namespace ProjectSortOrderMapper {
 AWS_SAGEMAKER_API ProjectSortOrder GetProjectSortOrderForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForProjectSortOrder(ProjectSortOrder value);
-} // namespace ProjectSortOrderMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace ProjectSortOrderMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

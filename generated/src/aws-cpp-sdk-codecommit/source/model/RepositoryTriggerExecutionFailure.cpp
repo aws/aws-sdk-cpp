@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeCommit
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeCommit {
+namespace Model {
 
-RepositoryTriggerExecutionFailure::RepositoryTriggerExecutionFailure(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RepositoryTriggerExecutionFailure::RepositoryTriggerExecutionFailure(JsonView jsonValue) { *this = jsonValue; }
 
-RepositoryTriggerExecutionFailure& RepositoryTriggerExecutionFailure::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("trigger"))
-  {
+RepositoryTriggerExecutionFailure& RepositoryTriggerExecutionFailure::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("trigger")) {
     m_trigger = jsonValue.GetString("trigger");
     m_triggerHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("failureMessage"))
-  {
+  if (jsonValue.ValueExists("failureMessage")) {
     m_failureMessage = jsonValue.GetString("failureMessage");
     m_failureMessageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RepositoryTriggerExecutionFailure::Jsonize() const
-{
+JsonValue RepositoryTriggerExecutionFailure::Jsonize() const {
   JsonValue payload;
 
-  if(m_triggerHasBeenSet)
-  {
-   payload.WithString("trigger", m_trigger);
-
+  if (m_triggerHasBeenSet) {
+    payload.WithString("trigger", m_trigger);
   }
 
-  if(m_failureMessageHasBeenSet)
-  {
-   payload.WithString("failureMessage", m_failureMessage);
-
+  if (m_failureMessageHasBeenSet) {
+    payload.WithString("failureMessage", m_failureMessage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeCommit
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeCommit
+}  // namespace Aws

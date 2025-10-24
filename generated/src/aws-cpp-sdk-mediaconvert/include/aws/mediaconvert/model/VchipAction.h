@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class VchipAction
-  {
-    NOT_SET,
-    PASSTHROUGH,
-    STRIP
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class VchipAction { NOT_SET, PASSTHROUGH, STRIP };
 
-namespace VchipActionMapper
-{
+namespace VchipActionMapper {
 AWS_MEDIACONVERT_API VchipAction GetVchipActionForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForVchipAction(VchipAction value);
-} // namespace VchipActionMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace VchipActionMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

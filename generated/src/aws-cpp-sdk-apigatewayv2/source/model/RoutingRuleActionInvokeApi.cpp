@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ApiGatewayV2
-{
-namespace Model
-{
+namespace Aws {
+namespace ApiGatewayV2 {
+namespace Model {
 
-RoutingRuleActionInvokeApi::RoutingRuleActionInvokeApi(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RoutingRuleActionInvokeApi::RoutingRuleActionInvokeApi(JsonView jsonValue) { *this = jsonValue; }
 
-RoutingRuleActionInvokeApi& RoutingRuleActionInvokeApi::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("apiId"))
-  {
+RoutingRuleActionInvokeApi& RoutingRuleActionInvokeApi::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("apiId")) {
     m_apiId = jsonValue.GetString("apiId");
     m_apiIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("stage"))
-  {
+  if (jsonValue.ValueExists("stage")) {
     m_stage = jsonValue.GetString("stage");
     m_stageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("stripBasePath"))
-  {
+  if (jsonValue.ValueExists("stripBasePath")) {
     m_stripBasePath = jsonValue.GetBool("stripBasePath");
     m_stripBasePathHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RoutingRuleActionInvokeApi::Jsonize() const
-{
+JsonValue RoutingRuleActionInvokeApi::Jsonize() const {
   JsonValue payload;
 
-  if(m_apiIdHasBeenSet)
-  {
-   payload.WithString("apiId", m_apiId);
-
+  if (m_apiIdHasBeenSet) {
+    payload.WithString("apiId", m_apiId);
   }
 
-  if(m_stageHasBeenSet)
-  {
-   payload.WithString("stage", m_stage);
-
+  if (m_stageHasBeenSet) {
+    payload.WithString("stage", m_stage);
   }
 
-  if(m_stripBasePathHasBeenSet)
-  {
-   payload.WithBool("stripBasePath", m_stripBasePath);
-
+  if (m_stripBasePathHasBeenSet) {
+    payload.WithBool("stripBasePath", m_stripBasePath);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ApiGatewayV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace ApiGatewayV2
+}  // namespace Aws

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/storagegateway/model/AddTagsToResourceRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/storagegateway/model/AddTagsToResourceRequest.h>
 
 #include <utility>
 
@@ -12,38 +12,26 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AddTagsToResourceRequest::SerializePayload() const
-{
+Aws::String AddTagsToResourceRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceARNHasBeenSet)
-  {
-   payload.WithString("ResourceARN", m_resourceARN);
-
+  if (m_resourceARNHasBeenSet) {
+    payload.WithString("ResourceARN", m_resourceARN);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("Tags", std::move(tagsJsonList));
-
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection AddTagsToResourceRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection AddTagsToResourceRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "StorageGateway_20130630.AddTagsToResource"));
   return headers;
-
 }
-
-
-
-

@@ -4,54 +4,55 @@
  */
 
 #pragma once
-#include <aws/route53resolver/Route53Resolver_EXPORTS.h>
-#include <aws/route53resolver/Route53ResolverRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/route53resolver/Route53ResolverRequest.h>
+#include <aws/route53resolver/Route53Resolver_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Route53Resolver
-{
-namespace Model
-{
+namespace Aws {
+namespace Route53Resolver {
+namespace Model {
 
+/**
+ */
+class GetResolverRuleAssociationRequest : public Route53ResolverRequest {
+ public:
+  AWS_ROUTE53RESOLVER_API GetResolverRuleAssociationRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "GetResolverRuleAssociation"; }
+
+  AWS_ROUTE53RESOLVER_API Aws::String SerializePayload() const override;
+
+  AWS_ROUTE53RESOLVER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>The ID of the Resolver rule association that you want to get information
+   * about.</p>
    */
-  class GetResolverRuleAssociationRequest : public Route53ResolverRequest
-  {
-  public:
-    AWS_ROUTE53RESOLVER_API GetResolverRuleAssociationRequest() = default;
+  inline const Aws::String& GetResolverRuleAssociationId() const { return m_resolverRuleAssociationId; }
+  inline bool ResolverRuleAssociationIdHasBeenSet() const { return m_resolverRuleAssociationIdHasBeenSet; }
+  template <typename ResolverRuleAssociationIdT = Aws::String>
+  void SetResolverRuleAssociationId(ResolverRuleAssociationIdT&& value) {
+    m_resolverRuleAssociationIdHasBeenSet = true;
+    m_resolverRuleAssociationId = std::forward<ResolverRuleAssociationIdT>(value);
+  }
+  template <typename ResolverRuleAssociationIdT = Aws::String>
+  GetResolverRuleAssociationRequest& WithResolverRuleAssociationId(ResolverRuleAssociationIdT&& value) {
+    SetResolverRuleAssociationId(std::forward<ResolverRuleAssociationIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_resolverRuleAssociationId;
+  bool m_resolverRuleAssociationIdHasBeenSet = false;
+};
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "GetResolverRuleAssociation"; }
-
-    AWS_ROUTE53RESOLVER_API Aws::String SerializePayload() const override;
-
-    AWS_ROUTE53RESOLVER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    ///@{
-    /**
-     * <p>The ID of the Resolver rule association that you want to get information
-     * about.</p>
-     */
-    inline const Aws::String& GetResolverRuleAssociationId() const { return m_resolverRuleAssociationId; }
-    inline bool ResolverRuleAssociationIdHasBeenSet() const { return m_resolverRuleAssociationIdHasBeenSet; }
-    template<typename ResolverRuleAssociationIdT = Aws::String>
-    void SetResolverRuleAssociationId(ResolverRuleAssociationIdT&& value) { m_resolverRuleAssociationIdHasBeenSet = true; m_resolverRuleAssociationId = std::forward<ResolverRuleAssociationIdT>(value); }
-    template<typename ResolverRuleAssociationIdT = Aws::String>
-    GetResolverRuleAssociationRequest& WithResolverRuleAssociationId(ResolverRuleAssociationIdT&& value) { SetResolverRuleAssociationId(std::forward<ResolverRuleAssociationIdT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_resolverRuleAssociationId;
-    bool m_resolverRuleAssociationIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace Route53Resolver
-} // namespace Aws
+}  // namespace Model
+}  // namespace Route53Resolver
+}  // namespace Aws

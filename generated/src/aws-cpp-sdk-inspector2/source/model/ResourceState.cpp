@@ -3,93 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/inspector2/model/ResourceState.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/inspector2/model/ResourceState.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Inspector2
-{
-namespace Model
-{
+namespace Aws {
+namespace Inspector2 {
+namespace Model {
 
-ResourceState::ResourceState(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ResourceState::ResourceState(JsonView jsonValue) { *this = jsonValue; }
 
-ResourceState& ResourceState::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ec2"))
-  {
+ResourceState& ResourceState::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ec2")) {
     m_ec2 = jsonValue.GetObject("ec2");
     m_ec2HasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ecr"))
-  {
+  if (jsonValue.ValueExists("ecr")) {
     m_ecr = jsonValue.GetObject("ecr");
     m_ecrHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lambda"))
-  {
+  if (jsonValue.ValueExists("lambda")) {
     m_lambda = jsonValue.GetObject("lambda");
     m_lambdaHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lambdaCode"))
-  {
+  if (jsonValue.ValueExists("lambdaCode")) {
     m_lambdaCode = jsonValue.GetObject("lambdaCode");
     m_lambdaCodeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("codeRepository"))
-  {
+  if (jsonValue.ValueExists("codeRepository")) {
     m_codeRepository = jsonValue.GetObject("codeRepository");
     m_codeRepositoryHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ResourceState::Jsonize() const
-{
+JsonValue ResourceState::Jsonize() const {
   JsonValue payload;
 
-  if(m_ec2HasBeenSet)
-  {
-   payload.WithObject("ec2", m_ec2.Jsonize());
-
+  if (m_ec2HasBeenSet) {
+    payload.WithObject("ec2", m_ec2.Jsonize());
   }
 
-  if(m_ecrHasBeenSet)
-  {
-   payload.WithObject("ecr", m_ecr.Jsonize());
-
+  if (m_ecrHasBeenSet) {
+    payload.WithObject("ecr", m_ecr.Jsonize());
   }
 
-  if(m_lambdaHasBeenSet)
-  {
-   payload.WithObject("lambda", m_lambda.Jsonize());
-
+  if (m_lambdaHasBeenSet) {
+    payload.WithObject("lambda", m_lambda.Jsonize());
   }
 
-  if(m_lambdaCodeHasBeenSet)
-  {
-   payload.WithObject("lambdaCode", m_lambdaCode.Jsonize());
-
+  if (m_lambdaCodeHasBeenSet) {
+    payload.WithObject("lambdaCode", m_lambdaCode.Jsonize());
   }
 
-  if(m_codeRepositoryHasBeenSet)
-  {
-   payload.WithObject("codeRepository", m_codeRepository.Jsonize());
-
+  if (m_codeRepositoryHasBeenSet) {
+    payload.WithObject("codeRepository", m_codeRepository.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Inspector2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Inspector2
+}  // namespace Aws

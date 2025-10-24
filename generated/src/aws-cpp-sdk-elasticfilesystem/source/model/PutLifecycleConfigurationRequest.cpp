@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticfilesystem/model/PutLifecycleConfigurationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/elasticfilesystem/model/PutLifecycleConfigurationRequest.h>
 
 #include <utility>
 
@@ -12,24 +12,16 @@ using namespace Aws::EFS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutLifecycleConfigurationRequest::SerializePayload() const
-{
+Aws::String PutLifecycleConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_lifecyclePoliciesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> lifecyclePoliciesJsonList(m_lifecyclePolicies.size());
-   for(unsigned lifecyclePoliciesIndex = 0; lifecyclePoliciesIndex < lifecyclePoliciesJsonList.GetLength(); ++lifecyclePoliciesIndex)
-   {
-     lifecyclePoliciesJsonList[lifecyclePoliciesIndex].AsObject(m_lifecyclePolicies[lifecyclePoliciesIndex].Jsonize());
-   }
-   payload.WithArray("LifecyclePolicies", std::move(lifecyclePoliciesJsonList));
-
+  if (m_lifecyclePoliciesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> lifecyclePoliciesJsonList(m_lifecyclePolicies.size());
+    for (unsigned lifecyclePoliciesIndex = 0; lifecyclePoliciesIndex < lifecyclePoliciesJsonList.GetLength(); ++lifecyclePoliciesIndex) {
+      lifecyclePoliciesJsonList[lifecyclePoliciesIndex].AsObject(m_lifecyclePolicies[lifecyclePoliciesIndex].Jsonize());
+    }
+    payload.WithArray("LifecyclePolicies", std::move(lifecyclePoliciesJsonList));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

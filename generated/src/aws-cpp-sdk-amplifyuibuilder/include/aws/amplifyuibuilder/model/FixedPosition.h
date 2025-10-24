@@ -7,24 +7,16 @@
 #include <aws/amplifyuibuilder/AmplifyUIBuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace AmplifyUIBuilder
-{
-namespace Model
-{
-  enum class FixedPosition
-  {
-    NOT_SET,
-    first
-  };
+namespace Aws {
+namespace AmplifyUIBuilder {
+namespace Model {
+enum class FixedPosition { NOT_SET, first };
 
-namespace FixedPositionMapper
-{
+namespace FixedPositionMapper {
 AWS_AMPLIFYUIBUILDER_API FixedPosition GetFixedPositionForName(const Aws::String& name);
 
 AWS_AMPLIFYUIBUILDER_API Aws::String GetNameForFixedPosition(FixedPosition value);
-} // namespace FixedPositionMapper
-} // namespace Model
-} // namespace AmplifyUIBuilder
-} // namespace Aws
+}  // namespace FixedPositionMapper
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

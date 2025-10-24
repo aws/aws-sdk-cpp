@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancing/model/EnableAvailabilityZonesForLoadBalancerResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticloadbalancing/model/EnableAvailabilityZonesForLoadBalancerResult.h>
 
 #include <utility>
 
@@ -17,30 +17,26 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-EnableAvailabilityZonesForLoadBalancerResult::EnableAvailabilityZonesForLoadBalancerResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+EnableAvailabilityZonesForLoadBalancerResult::EnableAvailabilityZonesForLoadBalancerResult(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-EnableAvailabilityZonesForLoadBalancerResult& EnableAvailabilityZonesForLoadBalancerResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+EnableAvailabilityZonesForLoadBalancerResult& EnableAvailabilityZonesForLoadBalancerResult::operator=(
+    const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "EnableAvailabilityZonesForLoadBalancerResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "EnableAvailabilityZonesForLoadBalancerResult")) {
     resultNode = rootNode.FirstChild("EnableAvailabilityZonesForLoadBalancerResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode availabilityZonesNode = resultNode.FirstChild("AvailabilityZones");
-    if(!availabilityZonesNode.IsNull())
-    {
+    if (!availabilityZonesNode.IsNull()) {
       XmlNode availabilityZonesMember = availabilityZonesNode.FirstChild("member");
       m_availabilityZonesHasBeenSet = !availabilityZonesMember.IsNull();
-      while(!availabilityZonesMember.IsNull())
-      {
+      while (!availabilityZonesMember.IsNull()) {
         m_availabilityZones.push_back(availabilityZonesMember.GetText());
         availabilityZonesMember = availabilityZonesMember.NextNode("member");
       }
@@ -53,7 +49,8 @@ EnableAvailabilityZonesForLoadBalancerResult& EnableAvailabilityZonesForLoadBala
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancing::Model::EnableAvailabilityZonesForLoadBalancerResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancing::Model::EnableAvailabilityZonesForLoadBalancerResult",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

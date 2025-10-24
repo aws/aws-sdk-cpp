@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoTSiteWise
-{
-enum class IoTSiteWiseErrors
-{
-  //From Core//
+namespace Aws {
+namespace IoTSiteWise {
+enum class IoTSiteWiseErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class IoTSiteWiseErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class IoTSiteWiseErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICTING_OPERATION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICTING_OPERATION = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_REQUEST,
   LIMIT_EXCEEDED,
   PRECONDITION_FAILED,
@@ -57,9 +54,8 @@ enum class IoTSiteWiseErrors
   UNAUTHORIZED
 };
 
-class AWS_IOTSITEWISE_API IoTSiteWiseError : public Aws::Client::AWSError<IoTSiteWiseErrors>
-{
-public:
+class AWS_IOTSITEWISE_API IoTSiteWiseError : public Aws::Client::AWSError<IoTSiteWiseErrors> {
+ public:
   IoTSiteWiseError() {}
   IoTSiteWiseError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<IoTSiteWiseErrors>(rhs) {}
   IoTSiteWiseError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<IoTSiteWiseErrors>(rhs) {}
@@ -70,10 +66,9 @@ public:
   T GetModeledError();
 };
 
-namespace IoTSiteWiseErrorMapper
-{
-  AWS_IOTSITEWISE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace IoTSiteWiseErrorMapper {
+AWS_IOTSITEWISE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace IoTSiteWise
-} // namespace Aws
+}  // namespace IoTSiteWise
+}  // namespace Aws

@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/inspector2/model/DelegatedAdminAccount.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/inspector2/model/DelegatedAdminAccount.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Inspector2
-{
-namespace Model
-{
+namespace Aws {
+namespace Inspector2 {
+namespace Model {
 
-DelegatedAdminAccount::DelegatedAdminAccount(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DelegatedAdminAccount::DelegatedAdminAccount(JsonView jsonValue) { *this = jsonValue; }
 
-DelegatedAdminAccount& DelegatedAdminAccount::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("accountId"))
-  {
+DelegatedAdminAccount& DelegatedAdminAccount::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("accountId")) {
     m_accountId = jsonValue.GetString("accountId");
     m_accountIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = DelegatedAdminStatusMapper::GetDelegatedAdminStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DelegatedAdminAccount::Jsonize() const
-{
+JsonValue DelegatedAdminAccount::Jsonize() const {
   JsonValue payload;
 
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("accountId", m_accountId);
-
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("accountId", m_accountId);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", DelegatedAdminStatusMapper::GetNameForDelegatedAdminStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", DelegatedAdminStatusMapper::GetNameForDelegatedAdminStatus(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Inspector2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Inspector2
+}  // namespace Aws

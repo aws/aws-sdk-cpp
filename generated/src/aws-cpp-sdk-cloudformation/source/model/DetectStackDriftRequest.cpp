@@ -10,28 +10,20 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String DetectStackDriftRequest::SerializePayload() const
-{
+Aws::String DetectStackDriftRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DetectStackDrift&";
-  if(m_stackNameHasBeenSet)
-  {
+  if (m_stackNameHasBeenSet) {
     ss << "StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
   }
 
-  if(m_logicalResourceIdsHasBeenSet)
-  {
-    if (m_logicalResourceIds.empty())
-    {
+  if (m_logicalResourceIdsHasBeenSet) {
+    if (m_logicalResourceIds.empty()) {
       ss << "LogicalResourceIds=&";
-    }
-    else
-    {
+    } else {
       unsigned logicalResourceIdsCount = 1;
-      for(auto& item : m_logicalResourceIds)
-      {
-        ss << "LogicalResourceIds.member." << logicalResourceIdsCount << "="
-            << StringUtils::URLEncode(item.c_str()) << "&";
+      for (auto& item : m_logicalResourceIds) {
+        ss << "LogicalResourceIds.member." << logicalResourceIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
         logicalResourceIdsCount++;
       }
     }
@@ -41,8 +33,4 @@ Aws::String DetectStackDriftRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DetectStackDriftRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DetectStackDriftRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

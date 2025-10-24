@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/timestream-write/model/RetentionProperties.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/timestream-write/model/RetentionProperties.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace TimestreamWrite
-{
-namespace Model
-{
+namespace Aws {
+namespace TimestreamWrite {
+namespace Model {
 
-RetentionProperties::RetentionProperties(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RetentionProperties::RetentionProperties(JsonView jsonValue) { *this = jsonValue; }
 
-RetentionProperties& RetentionProperties::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MemoryStoreRetentionPeriodInHours"))
-  {
+RetentionProperties& RetentionProperties::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MemoryStoreRetentionPeriodInHours")) {
     m_memoryStoreRetentionPeriodInHours = jsonValue.GetInt64("MemoryStoreRetentionPeriodInHours");
     m_memoryStoreRetentionPeriodInHoursHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MagneticStoreRetentionPeriodInDays"))
-  {
+  if (jsonValue.ValueExists("MagneticStoreRetentionPeriodInDays")) {
     m_magneticStoreRetentionPeriodInDays = jsonValue.GetInt64("MagneticStoreRetentionPeriodInDays");
     m_magneticStoreRetentionPeriodInDaysHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RetentionProperties::Jsonize() const
-{
+JsonValue RetentionProperties::Jsonize() const {
   JsonValue payload;
 
-  if(m_memoryStoreRetentionPeriodInHoursHasBeenSet)
-  {
-   payload.WithInt64("MemoryStoreRetentionPeriodInHours", m_memoryStoreRetentionPeriodInHours);
-
+  if (m_memoryStoreRetentionPeriodInHoursHasBeenSet) {
+    payload.WithInt64("MemoryStoreRetentionPeriodInHours", m_memoryStoreRetentionPeriodInHours);
   }
 
-  if(m_magneticStoreRetentionPeriodInDaysHasBeenSet)
-  {
-   payload.WithInt64("MagneticStoreRetentionPeriodInDays", m_magneticStoreRetentionPeriodInDays);
-
+  if (m_magneticStoreRetentionPeriodInDaysHasBeenSet) {
+    payload.WithInt64("MagneticStoreRetentionPeriodInDays", m_magneticStoreRetentionPeriodInDays);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace TimestreamWrite
-} // namespace Aws
+}  // namespace Model
+}  // namespace TimestreamWrite
+}  // namespace Aws

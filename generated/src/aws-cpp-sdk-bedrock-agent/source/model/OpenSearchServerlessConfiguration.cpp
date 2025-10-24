@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-OpenSearchServerlessConfiguration::OpenSearchServerlessConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OpenSearchServerlessConfiguration::OpenSearchServerlessConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-OpenSearchServerlessConfiguration& OpenSearchServerlessConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("collectionArn"))
-  {
+OpenSearchServerlessConfiguration& OpenSearchServerlessConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("collectionArn")) {
     m_collectionArn = jsonValue.GetString("collectionArn");
     m_collectionArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("vectorIndexName"))
-  {
+  if (jsonValue.ValueExists("vectorIndexName")) {
     m_vectorIndexName = jsonValue.GetString("vectorIndexName");
     m_vectorIndexNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("fieldMapping"))
-  {
+  if (jsonValue.ValueExists("fieldMapping")) {
     m_fieldMapping = jsonValue.GetObject("fieldMapping");
     m_fieldMappingHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OpenSearchServerlessConfiguration::Jsonize() const
-{
+JsonValue OpenSearchServerlessConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_collectionArnHasBeenSet)
-  {
-   payload.WithString("collectionArn", m_collectionArn);
-
+  if (m_collectionArnHasBeenSet) {
+    payload.WithString("collectionArn", m_collectionArn);
   }
 
-  if(m_vectorIndexNameHasBeenSet)
-  {
-   payload.WithString("vectorIndexName", m_vectorIndexName);
-
+  if (m_vectorIndexNameHasBeenSet) {
+    payload.WithString("vectorIndexName", m_vectorIndexName);
   }
 
-  if(m_fieldMappingHasBeenSet)
-  {
-   payload.WithObject("fieldMapping", m_fieldMapping.Jsonize());
-
+  if (m_fieldMappingHasBeenSet) {
+    payload.WithObject("fieldMapping", m_fieldMapping.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

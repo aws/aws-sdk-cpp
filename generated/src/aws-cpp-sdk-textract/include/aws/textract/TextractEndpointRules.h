@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/textract/Textract_EXPORTS.h>
 
-namespace Aws
-{
-namespace Textract
-{
-class TextractEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace Textract {
+class TextractEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace Textract
-} // namespace Aws
+}  // namespace Textract
+}  // namespace Aws

@@ -12,62 +12,42 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateUpdatedImageRequest::SerializePayload() const
-{
+Aws::String CreateUpdatedImageRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_existingImageNameHasBeenSet)
-  {
-   payload.WithString("existingImageName", m_existingImageName);
-
+  if (m_existingImageNameHasBeenSet) {
+    payload.WithString("existingImageName", m_existingImageName);
   }
 
-  if(m_newImageNameHasBeenSet)
-  {
-   payload.WithString("newImageName", m_newImageName);
-
+  if (m_newImageNameHasBeenSet) {
+    payload.WithString("newImageName", m_newImageName);
   }
 
-  if(m_newImageDescriptionHasBeenSet)
-  {
-   payload.WithString("newImageDescription", m_newImageDescription);
-
+  if (m_newImageDescriptionHasBeenSet) {
+    payload.WithString("newImageDescription", m_newImageDescription);
   }
 
-  if(m_newImageDisplayNameHasBeenSet)
-  {
-   payload.WithString("newImageDisplayName", m_newImageDisplayName);
-
+  if (m_newImageDisplayNameHasBeenSet) {
+    payload.WithString("newImageDisplayName", m_newImageDisplayName);
   }
 
-  if(m_newImageTagsHasBeenSet)
-  {
-   JsonValue newImageTagsJsonMap;
-   for(auto& newImageTagsItem : m_newImageTags)
-   {
-     newImageTagsJsonMap.WithString(newImageTagsItem.first, newImageTagsItem.second);
-   }
-   payload.WithObject("newImageTags", std::move(newImageTagsJsonMap));
-
+  if (m_newImageTagsHasBeenSet) {
+    JsonValue newImageTagsJsonMap;
+    for (auto& newImageTagsItem : m_newImageTags) {
+      newImageTagsJsonMap.WithString(newImageTagsItem.first, newImageTagsItem.second);
+    }
+    payload.WithObject("newImageTags", std::move(newImageTagsJsonMap));
   }
 
-  if(m_dryRunHasBeenSet)
-  {
-   payload.WithBool("dryRun", m_dryRun);
-
+  if (m_dryRunHasBeenSet) {
+    payload.WithBool("dryRun", m_dryRun);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateUpdatedImageRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateUpdatedImageRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "PhotonAdminProxyService.CreateUpdatedImage"));
   return headers;
-
 }
-
-
-
-

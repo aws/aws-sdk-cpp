@@ -4,40 +4,30 @@
  */
 
 #include <aws/autoscaling/model/CpuPerformanceFactorRequest.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AutoScaling
-{
-namespace Model
-{
+namespace Aws {
+namespace AutoScaling {
+namespace Model {
 
-CpuPerformanceFactorRequest::CpuPerformanceFactorRequest(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+CpuPerformanceFactorRequest::CpuPerformanceFactorRequest(const XmlNode& xmlNode) { *this = xmlNode; }
 
-CpuPerformanceFactorRequest& CpuPerformanceFactorRequest::operator =(const XmlNode& xmlNode)
-{
+CpuPerformanceFactorRequest& CpuPerformanceFactorRequest::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode referencesNode = resultNode.FirstChild("Reference");
-    if(!referencesNode.IsNull())
-    {
+    if (!referencesNode.IsNull()) {
       XmlNode referencesMember = referencesNode.FirstChild("item");
       m_referencesHasBeenSet = !referencesMember.IsNull();
-      while(!referencesMember.IsNull())
-      {
+      while (!referencesMember.IsNull()) {
         m_references.push_back(referencesMember);
         referencesMember = referencesMember.NextNode("item");
       }
@@ -49,35 +39,29 @@ CpuPerformanceFactorRequest& CpuPerformanceFactorRequest::operator =(const XmlNo
   return *this;
 }
 
-void CpuPerformanceFactorRequest::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_referencesHasBeenSet)
-  {
-      unsigned referencesIdx = 1;
-      for(auto& item : m_references)
-      {
-        Aws::StringStream referencesSs;
-        referencesSs << location << index << locationValue << ".References.item." << referencesIdx++;
-        item.OutputToStream(oStream, referencesSs.str().c_str());
-      }
-  }
-
-}
-
-void CpuPerformanceFactorRequest::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_referencesHasBeenSet)
-  {
-      unsigned referencesIdx = 1;
-      for(auto& item : m_references)
-      {
-        Aws::StringStream referencesSs;
-        referencesSs << location << ".References.item." << referencesIdx++;
-        item.OutputToStream(oStream, referencesSs.str().c_str());
-      }
+void CpuPerformanceFactorRequest::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                 const char* locationValue) const {
+  if (m_referencesHasBeenSet) {
+    unsigned referencesIdx = 1;
+    for (auto& item : m_references) {
+      Aws::StringStream referencesSs;
+      referencesSs << location << index << locationValue << ".References.item." << referencesIdx++;
+      item.OutputToStream(oStream, referencesSs.str().c_str());
+    }
   }
 }
 
-} // namespace Model
-} // namespace AutoScaling
-} // namespace Aws
+void CpuPerformanceFactorRequest::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_referencesHasBeenSet) {
+    unsigned referencesIdx = 1;
+    for (auto& item : m_references) {
+      Aws::StringStream referencesSs;
+      referencesSs << location << ".References.item." << referencesIdx++;
+      item.OutputToStream(oStream, referencesSs.str().c_str());
+    }
+  }
+}
+
+}  // namespace Model
+}  // namespace AutoScaling
+}  // namespace Aws

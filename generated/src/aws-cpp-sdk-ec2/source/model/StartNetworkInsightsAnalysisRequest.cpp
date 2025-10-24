@@ -3,72 +3,57 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/StartNetworkInsightsAnalysisRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/StartNetworkInsightsAnalysisRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String StartNetworkInsightsAnalysisRequest::SerializePayload() const
-{
+Aws::String StartNetworkInsightsAnalysisRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=StartNetworkInsightsAnalysis&";
-  if(m_networkInsightsPathIdHasBeenSet)
-  {
+  if (m_networkInsightsPathIdHasBeenSet) {
     ss << "NetworkInsightsPathId=" << StringUtils::URLEncode(m_networkInsightsPathId.c_str()) << "&";
   }
 
-  if(m_additionalAccountsHasBeenSet)
-  {
+  if (m_additionalAccountsHasBeenSet) {
     unsigned additionalAccountsCount = 1;
-    for(auto& item : m_additionalAccounts)
-    {
-      ss << "AdditionalAccount." << additionalAccountsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_additionalAccounts) {
+      ss << "AdditionalAccount." << additionalAccountsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       additionalAccountsCount++;
     }
   }
 
-  if(m_filterInArnsHasBeenSet)
-  {
+  if (m_filterInArnsHasBeenSet) {
     unsigned filterInArnsCount = 1;
-    for(auto& item : m_filterInArns)
-    {
-      ss << "FilterInArn." << filterInArnsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_filterInArns) {
+      ss << "FilterInArn." << filterInArnsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       filterInArnsCount++;
     }
   }
 
-  if(m_filterOutArnsHasBeenSet)
-  {
+  if (m_filterOutArnsHasBeenSet) {
     unsigned filterOutArnsCount = 1;
-    for(auto& item : m_filterOutArns)
-    {
-      ss << "FilterOutArn." << filterOutArnsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_filterOutArns) {
+      ss << "FilterOutArn." << filterOutArnsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       filterOutArnsCount++;
     }
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_tagSpecificationsHasBeenSet)
-  {
+  if (m_tagSpecificationsHasBeenSet) {
     unsigned tagSpecificationsCount = 1;
-    for(auto& item : m_tagSpecifications)
-    {
+    for (auto& item : m_tagSpecifications) {
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
+  if (m_clientTokenHasBeenSet) {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
@@ -76,8 +61,4 @@ Aws::String StartNetworkInsightsAnalysisRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  StartNetworkInsightsAnalysisRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void StartNetworkInsightsAnalysisRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

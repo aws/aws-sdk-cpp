@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRoomsML
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRoomsML {
+namespace Model {
 
-IncrementalTrainingDataChannelOutput::IncrementalTrainingDataChannelOutput(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+IncrementalTrainingDataChannelOutput::IncrementalTrainingDataChannelOutput(JsonView jsonValue) { *this = jsonValue; }
 
-IncrementalTrainingDataChannelOutput& IncrementalTrainingDataChannelOutput::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("channelName"))
-  {
+IncrementalTrainingDataChannelOutput& IncrementalTrainingDataChannelOutput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("channelName")) {
     m_channelName = jsonValue.GetString("channelName");
     m_channelNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("versionIdentifier"))
-  {
+  if (jsonValue.ValueExists("versionIdentifier")) {
     m_versionIdentifier = jsonValue.GetString("versionIdentifier");
     m_versionIdentifierHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("modelName"))
-  {
+  if (jsonValue.ValueExists("modelName")) {
     m_modelName = jsonValue.GetString("modelName");
     m_modelNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue IncrementalTrainingDataChannelOutput::Jsonize() const
-{
+JsonValue IncrementalTrainingDataChannelOutput::Jsonize() const {
   JsonValue payload;
 
-  if(m_channelNameHasBeenSet)
-  {
-   payload.WithString("channelName", m_channelName);
-
+  if (m_channelNameHasBeenSet) {
+    payload.WithString("channelName", m_channelName);
   }
 
-  if(m_versionIdentifierHasBeenSet)
-  {
-   payload.WithString("versionIdentifier", m_versionIdentifier);
-
+  if (m_versionIdentifierHasBeenSet) {
+    payload.WithString("versionIdentifier", m_versionIdentifier);
   }
 
-  if(m_modelNameHasBeenSet)
-  {
-   payload.WithString("modelName", m_modelName);
-
+  if (m_modelNameHasBeenSet) {
+    payload.WithString("modelName", m_modelName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRoomsML
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRoomsML
+}  // namespace Aws

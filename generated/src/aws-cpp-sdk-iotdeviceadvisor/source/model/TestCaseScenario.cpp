@@ -3,91 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iotdeviceadvisor/model/TestCaseScenario.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotdeviceadvisor/model/TestCaseScenario.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTDeviceAdvisor
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTDeviceAdvisor {
+namespace Model {
 
-TestCaseScenario::TestCaseScenario(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TestCaseScenario::TestCaseScenario(JsonView jsonValue) { *this = jsonValue; }
 
-TestCaseScenario& TestCaseScenario::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("testCaseScenarioId"))
-  {
+TestCaseScenario& TestCaseScenario::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("testCaseScenarioId")) {
     m_testCaseScenarioId = jsonValue.GetString("testCaseScenarioId");
     m_testCaseScenarioIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("testCaseScenarioType"))
-  {
+  if (jsonValue.ValueExists("testCaseScenarioType")) {
     m_testCaseScenarioType = TestCaseScenarioTypeMapper::GetTestCaseScenarioTypeForName(jsonValue.GetString("testCaseScenarioType"));
     m_testCaseScenarioTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("status"))
-  {
+  if (jsonValue.ValueExists("status")) {
     m_status = TestCaseScenarioStatusMapper::GetTestCaseScenarioStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("failure"))
-  {
+  if (jsonValue.ValueExists("failure")) {
     m_failure = jsonValue.GetString("failure");
     m_failureHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("systemMessage"))
-  {
+  if (jsonValue.ValueExists("systemMessage")) {
     m_systemMessage = jsonValue.GetString("systemMessage");
     m_systemMessageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TestCaseScenario::Jsonize() const
-{
+JsonValue TestCaseScenario::Jsonize() const {
   JsonValue payload;
 
-  if(m_testCaseScenarioIdHasBeenSet)
-  {
-   payload.WithString("testCaseScenarioId", m_testCaseScenarioId);
-
+  if (m_testCaseScenarioIdHasBeenSet) {
+    payload.WithString("testCaseScenarioId", m_testCaseScenarioId);
   }
 
-  if(m_testCaseScenarioTypeHasBeenSet)
-  {
-   payload.WithString("testCaseScenarioType", TestCaseScenarioTypeMapper::GetNameForTestCaseScenarioType(m_testCaseScenarioType));
+  if (m_testCaseScenarioTypeHasBeenSet) {
+    payload.WithString("testCaseScenarioType", TestCaseScenarioTypeMapper::GetNameForTestCaseScenarioType(m_testCaseScenarioType));
   }
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", TestCaseScenarioStatusMapper::GetNameForTestCaseScenarioStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", TestCaseScenarioStatusMapper::GetNameForTestCaseScenarioStatus(m_status));
   }
 
-  if(m_failureHasBeenSet)
-  {
-   payload.WithString("failure", m_failure);
-
+  if (m_failureHasBeenSet) {
+    payload.WithString("failure", m_failure);
   }
 
-  if(m_systemMessageHasBeenSet)
-  {
-   payload.WithString("systemMessage", m_systemMessage);
-
+  if (m_systemMessageHasBeenSet) {
+    payload.WithString("systemMessage", m_systemMessage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTDeviceAdvisor
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTDeviceAdvisor
+}  // namespace Aws

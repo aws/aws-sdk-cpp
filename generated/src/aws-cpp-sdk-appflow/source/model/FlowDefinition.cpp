@@ -11,198 +11,149 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-FlowDefinition::FlowDefinition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FlowDefinition::FlowDefinition(JsonView jsonValue) { *this = jsonValue; }
 
-FlowDefinition& FlowDefinition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("flowArn"))
-  {
+FlowDefinition& FlowDefinition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("flowArn")) {
     m_flowArn = jsonValue.GetString("flowArn");
     m_flowArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("flowName"))
-  {
+  if (jsonValue.ValueExists("flowName")) {
     m_flowName = jsonValue.GetString("flowName");
     m_flowNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("flowStatus"))
-  {
+  if (jsonValue.ValueExists("flowStatus")) {
     m_flowStatus = FlowStatusMapper::GetFlowStatusForName(jsonValue.GetString("flowStatus"));
     m_flowStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sourceConnectorType"))
-  {
+  if (jsonValue.ValueExists("sourceConnectorType")) {
     m_sourceConnectorType = ConnectorTypeMapper::GetConnectorTypeForName(jsonValue.GetString("sourceConnectorType"));
     m_sourceConnectorTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sourceConnectorLabel"))
-  {
+  if (jsonValue.ValueExists("sourceConnectorLabel")) {
     m_sourceConnectorLabel = jsonValue.GetString("sourceConnectorLabel");
     m_sourceConnectorLabelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("destinationConnectorType"))
-  {
+  if (jsonValue.ValueExists("destinationConnectorType")) {
     m_destinationConnectorType = ConnectorTypeMapper::GetConnectorTypeForName(jsonValue.GetString("destinationConnectorType"));
     m_destinationConnectorTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("destinationConnectorLabel"))
-  {
+  if (jsonValue.ValueExists("destinationConnectorLabel")) {
     m_destinationConnectorLabel = jsonValue.GetString("destinationConnectorLabel");
     m_destinationConnectorLabelHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("triggerType"))
-  {
+  if (jsonValue.ValueExists("triggerType")) {
     m_triggerType = TriggerTypeMapper::GetTriggerTypeForName(jsonValue.GetString("triggerType"));
     m_triggerTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdAt"))
-  {
+  if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetDouble("createdAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdatedAt"))
-  {
+  if (jsonValue.ValueExists("lastUpdatedAt")) {
     m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");
     m_lastUpdatedAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createdBy"))
-  {
+  if (jsonValue.ValueExists("createdBy")) {
     m_createdBy = jsonValue.GetString("createdBy");
     m_createdByHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastUpdatedBy"))
-  {
+  if (jsonValue.ValueExists("lastUpdatedBy")) {
     m_lastUpdatedBy = jsonValue.GetString("lastUpdatedBy");
     m_lastUpdatedByHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tags"))
-  {
+  if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
+    for (auto& tagsItem : tagsJsonMap) {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("lastRunExecutionDetails"))
-  {
+  if (jsonValue.ValueExists("lastRunExecutionDetails")) {
     m_lastRunExecutionDetails = jsonValue.GetObject("lastRunExecutionDetails");
     m_lastRunExecutionDetailsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FlowDefinition::Jsonize() const
-{
+JsonValue FlowDefinition::Jsonize() const {
   JsonValue payload;
 
-  if(m_flowArnHasBeenSet)
-  {
-   payload.WithString("flowArn", m_flowArn);
-
+  if (m_flowArnHasBeenSet) {
+    payload.WithString("flowArn", m_flowArn);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_flowNameHasBeenSet)
-  {
-   payload.WithString("flowName", m_flowName);
-
+  if (m_flowNameHasBeenSet) {
+    payload.WithString("flowName", m_flowName);
   }
 
-  if(m_flowStatusHasBeenSet)
-  {
-   payload.WithString("flowStatus", FlowStatusMapper::GetNameForFlowStatus(m_flowStatus));
+  if (m_flowStatusHasBeenSet) {
+    payload.WithString("flowStatus", FlowStatusMapper::GetNameForFlowStatus(m_flowStatus));
   }
 
-  if(m_sourceConnectorTypeHasBeenSet)
-  {
-   payload.WithString("sourceConnectorType", ConnectorTypeMapper::GetNameForConnectorType(m_sourceConnectorType));
+  if (m_sourceConnectorTypeHasBeenSet) {
+    payload.WithString("sourceConnectorType", ConnectorTypeMapper::GetNameForConnectorType(m_sourceConnectorType));
   }
 
-  if(m_sourceConnectorLabelHasBeenSet)
-  {
-   payload.WithString("sourceConnectorLabel", m_sourceConnectorLabel);
-
+  if (m_sourceConnectorLabelHasBeenSet) {
+    payload.WithString("sourceConnectorLabel", m_sourceConnectorLabel);
   }
 
-  if(m_destinationConnectorTypeHasBeenSet)
-  {
-   payload.WithString("destinationConnectorType", ConnectorTypeMapper::GetNameForConnectorType(m_destinationConnectorType));
+  if (m_destinationConnectorTypeHasBeenSet) {
+    payload.WithString("destinationConnectorType", ConnectorTypeMapper::GetNameForConnectorType(m_destinationConnectorType));
   }
 
-  if(m_destinationConnectorLabelHasBeenSet)
-  {
-   payload.WithString("destinationConnectorLabel", m_destinationConnectorLabel);
-
+  if (m_destinationConnectorLabelHasBeenSet) {
+    payload.WithString("destinationConnectorLabel", m_destinationConnectorLabel);
   }
 
-  if(m_triggerTypeHasBeenSet)
-  {
-   payload.WithString("triggerType", TriggerTypeMapper::GetNameForTriggerType(m_triggerType));
+  if (m_triggerTypeHasBeenSet) {
+    payload.WithString("triggerType", TriggerTypeMapper::GetNameForTriggerType(m_triggerType));
   }
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
-  if(m_lastUpdatedAtHasBeenSet)
-  {
-   payload.WithDouble("lastUpdatedAt", m_lastUpdatedAt.SecondsWithMSPrecision());
+  if (m_lastUpdatedAtHasBeenSet) {
+    payload.WithDouble("lastUpdatedAt", m_lastUpdatedAt.SecondsWithMSPrecision());
   }
 
-  if(m_createdByHasBeenSet)
-  {
-   payload.WithString("createdBy", m_createdBy);
-
+  if (m_createdByHasBeenSet) {
+    payload.WithString("createdBy", m_createdBy);
   }
 
-  if(m_lastUpdatedByHasBeenSet)
-  {
-   payload.WithString("lastUpdatedBy", m_lastUpdatedBy);
-
+  if (m_lastUpdatedByHasBeenSet) {
+    payload.WithString("lastUpdatedBy", m_lastUpdatedBy);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
-  if(m_lastRunExecutionDetailsHasBeenSet)
-  {
-   payload.WithObject("lastRunExecutionDetails", m_lastRunExecutionDetails.Jsonize());
-
+  if (m_lastRunExecutionDetailsHasBeenSet) {
+    payload.WithObject("lastRunExecutionDetails", m_lastRunExecutionDetails.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

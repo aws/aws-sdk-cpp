@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
 
-namespace Aws
-{
-namespace WorkSpacesWeb
-{
-namespace Model
-{
-  enum class SessionSortBy
-  {
-    NOT_SET,
-    StartTimeAscending,
-    StartTimeDescending
-  };
+namespace Aws {
+namespace WorkSpacesWeb {
+namespace Model {
+enum class SessionSortBy { NOT_SET, StartTimeAscending, StartTimeDescending };
 
-namespace SessionSortByMapper
-{
+namespace SessionSortByMapper {
 AWS_WORKSPACESWEB_API SessionSortBy GetSessionSortByForName(const Aws::String& name);
 
 AWS_WORKSPACESWEB_API Aws::String GetNameForSessionSortBy(SessionSortBy value);
-} // namespace SessionSortByMapper
-} // namespace Model
-} // namespace WorkSpacesWeb
-} // namespace Aws
+}  // namespace SessionSortByMapper
+}  // namespace Model
+}  // namespace WorkSpacesWeb
+}  // namespace Aws

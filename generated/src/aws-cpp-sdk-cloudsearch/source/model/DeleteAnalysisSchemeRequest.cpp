@@ -10,17 +10,14 @@
 using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils;
 
-Aws::String DeleteAnalysisSchemeRequest::SerializePayload() const
-{
+Aws::String DeleteAnalysisSchemeRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DeleteAnalysisScheme&";
-  if(m_domainNameHasBeenSet)
-  {
+  if (m_domainNameHasBeenSet) {
     ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
   }
 
-  if(m_analysisSchemeNameHasBeenSet)
-  {
+  if (m_analysisSchemeNameHasBeenSet) {
     ss << "AnalysisSchemeName=" << StringUtils::URLEncode(m_analysisSchemeName.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String DeleteAnalysisSchemeRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DeleteAnalysisSchemeRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DeleteAnalysisSchemeRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

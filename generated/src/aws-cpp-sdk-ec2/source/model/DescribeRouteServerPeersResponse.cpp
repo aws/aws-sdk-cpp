@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeRouteServerPeersResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/DescribeRouteServerPeersResponse.h>
 
 #include <utility>
 
@@ -17,30 +17,24 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeRouteServerPeersResponse::DescribeRouteServerPeersResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeRouteServerPeersResponse::DescribeRouteServerPeersResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-DescribeRouteServerPeersResponse& DescribeRouteServerPeersResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeRouteServerPeersResponse& DescribeRouteServerPeersResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeRouteServerPeersResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeRouteServerPeersResponse")) {
     resultNode = rootNode.FirstChild("DescribeRouteServerPeersResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode routeServerPeersNode = resultNode.FirstChild("routeServerPeerSet");
-    if(!routeServerPeersNode.IsNull())
-    {
+    if (!routeServerPeersNode.IsNull()) {
       XmlNode routeServerPeersMember = routeServerPeersNode.FirstChild("item");
       m_routeServerPeersHasBeenSet = !routeServerPeersMember.IsNull();
-      while(!routeServerPeersMember.IsNull())
-      {
+      while (!routeServerPeersMember.IsNull()) {
         m_routeServerPeers.push_back(routeServerPeersMember);
         routeServerPeersMember = routeServerPeersMember.NextNode("item");
       }
@@ -48,8 +42,7 @@ DescribeRouteServerPeersResponse& DescribeRouteServerPeersResponse::operator =(c
       m_routeServerPeersHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
+    if (!nextTokenNode.IsNull()) {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
       m_nextTokenHasBeenSet = true;
     }
@@ -57,12 +50,11 @@ DescribeRouteServerPeersResponse& DescribeRouteServerPeersResponse::operator =(c
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeRouteServerPeersResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeRouteServerPeersResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

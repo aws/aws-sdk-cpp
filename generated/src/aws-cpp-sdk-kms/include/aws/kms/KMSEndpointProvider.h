@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/kms/KMS_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/kms/KMSEndpointRules.h>
+#include <aws/kms/KMS_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace KMS
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace KMS {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using KMSClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -34,28 +29,21 @@ using KMSBuiltInParameters = Aws::Endpoint::BuiltInParameters;
  * Inherit from this Base class / "Interface" should you want to provide a custom endpoint provider.
  * The SDK must use service-specific type for each service per specification.
  */
-using KMSEndpointProviderBase =
-    EndpointProviderBase<KMSClientConfiguration, KMSBuiltInParameters, KMSClientContextParameters>;
+using KMSEndpointProviderBase = EndpointProviderBase<KMSClientConfiguration, KMSBuiltInParameters, KMSClientContextParameters>;
 
-using KMSDefaultEpProviderBase =
-    DefaultEndpointProvider<KMSClientConfiguration, KMSBuiltInParameters, KMSClientContextParameters>;
+using KMSDefaultEpProviderBase = DefaultEndpointProvider<KMSClientConfiguration, KMSBuiltInParameters, KMSClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_KMS_API KMSEndpointProvider : public KMSDefaultEpProviderBase
-{
-public:
-    using KMSResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_KMS_API KMSEndpointProvider : public KMSDefaultEpProviderBase {
+ public:
+  using KMSResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    KMSEndpointProvider()
-      : KMSDefaultEpProviderBase(Aws::KMS::KMSEndpointRules::GetRulesBlob(), Aws::KMS::KMSEndpointRules::RulesBlobSize)
-    {}
+  KMSEndpointProvider() : KMSDefaultEpProviderBase(Aws::KMS::KMSEndpointRules::GetRulesBlob(), Aws::KMS::KMSEndpointRules::RulesBlobSize) {}
 
-    ~KMSEndpointProvider()
-    {
-    }
+  ~KMSEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace KMS
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace KMS
+}  // namespace Aws

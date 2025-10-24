@@ -3,86 +3,66 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/Multiplex.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/Multiplex.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-Multiplex::Multiplex(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Multiplex::Multiplex(JsonView jsonValue) { *this = jsonValue; }
 
-Multiplex& Multiplex::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("arn"))
-  {
+Multiplex& Multiplex::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("availabilityZones"))
-  {
+  if (jsonValue.ValueExists("availabilityZones")) {
     Aws::Utils::Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("availabilityZones");
-    for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
-    {
+    for (unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex) {
       m_availabilityZones.push_back(availabilityZonesJsonList[availabilityZonesIndex].AsString());
     }
     m_availabilityZonesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("destinations"))
-  {
+  if (jsonValue.ValueExists("destinations")) {
     Aws::Utils::Array<JsonView> destinationsJsonList = jsonValue.GetArray("destinations");
-    for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
-    {
+    for (unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex) {
       m_destinations.push_back(destinationsJsonList[destinationsIndex].AsObject());
     }
     m_destinationsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("id"))
-  {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("multiplexSettings"))
-  {
+  if (jsonValue.ValueExists("multiplexSettings")) {
     m_multiplexSettings = jsonValue.GetObject("multiplexSettings");
     m_multiplexSettingsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("pipelinesRunningCount"))
-  {
+  if (jsonValue.ValueExists("pipelinesRunningCount")) {
     m_pipelinesRunningCount = jsonValue.GetInteger("pipelinesRunningCount");
     m_pipelinesRunningCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("programCount"))
-  {
+  if (jsonValue.ValueExists("programCount")) {
     m_programCount = jsonValue.GetInteger("programCount");
     m_programCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("state"))
-  {
+  if (jsonValue.ValueExists("state")) {
     m_state = MultiplexStateMapper::GetMultiplexStateForName(jsonValue.GetString("state"));
     m_stateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tags"))
-  {
+  if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
+    for (auto& tagsItem : tagsJsonMap) {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
@@ -90,87 +70,64 @@ Multiplex& Multiplex::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue Multiplex::Jsonize() const
-{
+JsonValue Multiplex::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
-  if(m_availabilityZonesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> availabilityZonesJsonList(m_availabilityZones.size());
-   for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
-   {
-     availabilityZonesJsonList[availabilityZonesIndex].AsString(m_availabilityZones[availabilityZonesIndex]);
-   }
-   payload.WithArray("availabilityZones", std::move(availabilityZonesJsonList));
-
+  if (m_availabilityZonesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> availabilityZonesJsonList(m_availabilityZones.size());
+    for (unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex) {
+      availabilityZonesJsonList[availabilityZonesIndex].AsString(m_availabilityZones[availabilityZonesIndex]);
+    }
+    payload.WithArray("availabilityZones", std::move(availabilityZonesJsonList));
   }
 
-  if(m_destinationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> destinationsJsonList(m_destinations.size());
-   for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
-   {
-     destinationsJsonList[destinationsIndex].AsObject(m_destinations[destinationsIndex].Jsonize());
-   }
-   payload.WithArray("destinations", std::move(destinationsJsonList));
-
+  if (m_destinationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> destinationsJsonList(m_destinations.size());
+    for (unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex) {
+      destinationsJsonList[destinationsIndex].AsObject(m_destinations[destinationsIndex].Jsonize());
+    }
+    payload.WithArray("destinations", std::move(destinationsJsonList));
   }
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_multiplexSettingsHasBeenSet)
-  {
-   payload.WithObject("multiplexSettings", m_multiplexSettings.Jsonize());
-
+  if (m_multiplexSettingsHasBeenSet) {
+    payload.WithObject("multiplexSettings", m_multiplexSettings.Jsonize());
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_pipelinesRunningCountHasBeenSet)
-  {
-   payload.WithInteger("pipelinesRunningCount", m_pipelinesRunningCount);
-
+  if (m_pipelinesRunningCountHasBeenSet) {
+    payload.WithInteger("pipelinesRunningCount", m_pipelinesRunningCount);
   }
 
-  if(m_programCountHasBeenSet)
-  {
-   payload.WithInteger("programCount", m_programCount);
-
+  if (m_programCountHasBeenSet) {
+    payload.WithInteger("programCount", m_programCount);
   }
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("state", MultiplexStateMapper::GetNameForMultiplexState(m_state));
+  if (m_stateHasBeenSet) {
+    payload.WithString("state", MultiplexStateMapper::GetNameForMultiplexState(m_state));
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

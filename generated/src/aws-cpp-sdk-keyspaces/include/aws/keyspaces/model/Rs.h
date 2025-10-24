@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/keyspaces/Keyspaces_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/keyspaces/Keyspaces_EXPORTS.h>
 
-namespace Aws
-{
-namespace Keyspaces
-{
-namespace Model
-{
-  enum class Rs
-  {
-    NOT_SET,
-    SINGLE_REGION,
-    MULTI_REGION
-  };
+namespace Aws {
+namespace Keyspaces {
+namespace Model {
+enum class Rs { NOT_SET, SINGLE_REGION, MULTI_REGION };
 
-namespace RsMapper
-{
+namespace RsMapper {
 AWS_KEYSPACES_API Rs GetRsForName(const Aws::String& name);
 
 AWS_KEYSPACES_API Aws::String GetNameForRs(Rs value);
-} // namespace RsMapper
-} // namespace Model
-} // namespace Keyspaces
-} // namespace Aws
+}  // namespace RsMapper
+}  // namespace Model
+}  // namespace Keyspaces
+}  // namespace Aws

@@ -3,43 +3,32 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/waf/model/RegexMatchSet.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/waf/model/RegexMatchSet.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WAF
-{
-namespace Model
-{
+namespace Aws {
+namespace WAF {
+namespace Model {
 
-RegexMatchSet::RegexMatchSet(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RegexMatchSet::RegexMatchSet(JsonView jsonValue) { *this = jsonValue; }
 
-RegexMatchSet& RegexMatchSet::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("RegexMatchSetId"))
-  {
+RegexMatchSet& RegexMatchSet::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RegexMatchSetId")) {
     m_regexMatchSetId = jsonValue.GetString("RegexMatchSetId");
     m_regexMatchSetIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RegexMatchTuples"))
-  {
+  if (jsonValue.ValueExists("RegexMatchTuples")) {
     Aws::Utils::Array<JsonView> regexMatchTuplesJsonList = jsonValue.GetArray("RegexMatchTuples");
-    for(unsigned regexMatchTuplesIndex = 0; regexMatchTuplesIndex < regexMatchTuplesJsonList.GetLength(); ++regexMatchTuplesIndex)
-    {
+    for (unsigned regexMatchTuplesIndex = 0; regexMatchTuplesIndex < regexMatchTuplesJsonList.GetLength(); ++regexMatchTuplesIndex) {
       m_regexMatchTuples.push_back(regexMatchTuplesJsonList[regexMatchTuplesIndex].AsObject());
     }
     m_regexMatchTuplesHasBeenSet = true;
@@ -47,36 +36,28 @@ RegexMatchSet& RegexMatchSet::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue RegexMatchSet::Jsonize() const
-{
+JsonValue RegexMatchSet::Jsonize() const {
   JsonValue payload;
 
-  if(m_regexMatchSetIdHasBeenSet)
-  {
-   payload.WithString("RegexMatchSetId", m_regexMatchSetId);
-
+  if (m_regexMatchSetIdHasBeenSet) {
+    payload.WithString("RegexMatchSetId", m_regexMatchSetId);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_regexMatchTuplesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> regexMatchTuplesJsonList(m_regexMatchTuples.size());
-   for(unsigned regexMatchTuplesIndex = 0; regexMatchTuplesIndex < regexMatchTuplesJsonList.GetLength(); ++regexMatchTuplesIndex)
-   {
-     regexMatchTuplesJsonList[regexMatchTuplesIndex].AsObject(m_regexMatchTuples[regexMatchTuplesIndex].Jsonize());
-   }
-   payload.WithArray("RegexMatchTuples", std::move(regexMatchTuplesJsonList));
-
+  if (m_regexMatchTuplesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> regexMatchTuplesJsonList(m_regexMatchTuples.size());
+    for (unsigned regexMatchTuplesIndex = 0; regexMatchTuplesIndex < regexMatchTuplesJsonList.GetLength(); ++regexMatchTuplesIndex) {
+      regexMatchTuplesJsonList[regexMatchTuplesIndex].AsObject(m_regexMatchTuples[regexMatchTuplesIndex].Jsonize());
+    }
+    payload.WithArray("RegexMatchTuples", std::move(regexMatchTuplesJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WAF
-} // namespace Aws
+}  // namespace Model
+}  // namespace WAF
+}  // namespace Aws

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/CascadingControlSource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/CascadingControlSource.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-CascadingControlSource::CascadingControlSource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CascadingControlSource::CascadingControlSource(JsonView jsonValue) { *this = jsonValue; }
 
-CascadingControlSource& CascadingControlSource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("SourceSheetControlId"))
-  {
+CascadingControlSource& CascadingControlSource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("SourceSheetControlId")) {
     m_sourceSheetControlId = jsonValue.GetString("SourceSheetControlId");
     m_sourceSheetControlIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ColumnToMatch"))
-  {
+  if (jsonValue.ValueExists("ColumnToMatch")) {
     m_columnToMatch = jsonValue.GetObject("ColumnToMatch");
     m_columnToMatchHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CascadingControlSource::Jsonize() const
-{
+JsonValue CascadingControlSource::Jsonize() const {
   JsonValue payload;
 
-  if(m_sourceSheetControlIdHasBeenSet)
-  {
-   payload.WithString("SourceSheetControlId", m_sourceSheetControlId);
-
+  if (m_sourceSheetControlIdHasBeenSet) {
+    payload.WithString("SourceSheetControlId", m_sourceSheetControlId);
   }
 
-  if(m_columnToMatchHasBeenSet)
-  {
-   payload.WithObject("ColumnToMatch", m_columnToMatch.Jsonize());
-
+  if (m_columnToMatchHasBeenSet) {
+    payload.WithObject("ColumnToMatch", m_columnToMatch.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
-  enum class AnalyticsBinByName
-  {
-    NOT_SET,
-    ConversationStartTime,
-    UtteranceTimestamp
-  };
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
+enum class AnalyticsBinByName { NOT_SET, ConversationStartTime, UtteranceTimestamp };
 
-namespace AnalyticsBinByNameMapper
-{
+namespace AnalyticsBinByNameMapper {
 AWS_LEXMODELSV2_API AnalyticsBinByName GetAnalyticsBinByNameForName(const Aws::String& name);
 
 AWS_LEXMODELSV2_API Aws::String GetNameForAnalyticsBinByName(AnalyticsBinByName value);
-} // namespace AnalyticsBinByNameMapper
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace AnalyticsBinByNameMapper
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

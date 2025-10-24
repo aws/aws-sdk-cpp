@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/cloudcontrol/CloudControlApiRequest.h>
 
-namespace Aws
-{
-namespace CloudControlApi
-{
-} // namespace CloudControlApi
-} // namespace Aws
+namespace Aws {
+namespace CloudControlApi {}  // namespace CloudControlApi
+}  // namespace Aws

@@ -3,35 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/StartInstancesRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/StartInstancesRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String StartInstancesRequest::SerializePayload() const
-{
+Aws::String StartInstancesRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=StartInstances&";
-  if(m_instanceIdsHasBeenSet)
-  {
+  if (m_instanceIdsHasBeenSet) {
     unsigned instanceIdsCount = 1;
-    for(auto& item : m_instanceIds)
-    {
-      ss << "InstanceId." << instanceIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_instanceIds) {
+      ss << "InstanceId." << instanceIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       instanceIdsCount++;
     }
   }
 
-  if(m_additionalInfoHasBeenSet)
-  {
+  if (m_additionalInfoHasBeenSet) {
     ss << "AdditionalInfo=" << StringUtils::URLEncode(m_additionalInfo.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -39,8 +33,4 @@ Aws::String StartInstancesRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  StartInstancesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void StartInstancesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

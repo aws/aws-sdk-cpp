@@ -11,12 +11,9 @@ using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::MigrationHubStrategyRecommendations;
 
-namespace Aws
-{
-namespace MigrationHubStrategyRecommendations
-{
-namespace MigrationHubStrategyRecommendationsErrorMapper
-{
+namespace Aws {
+namespace MigrationHubStrategyRecommendations {
+namespace MigrationHubStrategyRecommendationsErrorMapper {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
@@ -24,34 +21,26 @@ static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServer
 static const int DEPENDENCY_HASH = HashingUtils::HashString("DependencyException");
 static const int SERVICE_LINKED_ROLE_LOCK_CLIENT_HASH = HashingUtils::HashString("ServiceLinkedRoleLockClientException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == CONFLICT_HASH)
-  {
+  if (hashCode == CONFLICT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MigrationHubStrategyRecommendationsErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MigrationHubStrategyRecommendationsErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INTERNAL_SERVER_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MigrationHubStrategyRecommendationsErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == DEPENDENCY_HASH)
-  {
+  } else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MigrationHubStrategyRecommendationsErrors::SERVICE_QUOTA_EXCEEDED),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INTERNAL_SERVER_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MigrationHubStrategyRecommendationsErrors::INTERNAL_SERVER),
+                                RetryableType::RETRYABLE);
+  } else if (hashCode == DEPENDENCY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MigrationHubStrategyRecommendationsErrors::DEPENDENCY), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == SERVICE_LINKED_ROLE_LOCK_CLIENT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MigrationHubStrategyRecommendationsErrors::SERVICE_LINKED_ROLE_LOCK_CLIENT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == SERVICE_LINKED_ROLE_LOCK_CLIENT_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MigrationHubStrategyRecommendationsErrors::SERVICE_LINKED_ROLE_LOCK_CLIENT),
+                                RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace MigrationHubStrategyRecommendationsErrorMapper
-} // namespace MigrationHubStrategyRecommendations
-} // namespace Aws
+}  // namespace MigrationHubStrategyRecommendationsErrorMapper
+}  // namespace MigrationHubStrategyRecommendations
+}  // namespace Aws

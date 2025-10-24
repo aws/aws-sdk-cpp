@@ -12,51 +12,34 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateGroupRequest::SerializePayload() const
-{
+Aws::String UpdateGroupRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_groupNameHasBeenSet)
-  {
-   payload.WithString("GroupName", m_groupName);
-
+  if (m_groupNameHasBeenSet) {
+    payload.WithString("GroupName", m_groupName);
   }
 
-  if(m_userPoolIdHasBeenSet)
-  {
-   payload.WithString("UserPoolId", m_userPoolId);
-
+  if (m_userPoolIdHasBeenSet) {
+    payload.WithString("UserPoolId", m_userPoolId);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
   }
 
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("RoleArn", m_roleArn);
-
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("RoleArn", m_roleArn);
   }
 
-  if(m_precedenceHasBeenSet)
-  {
-   payload.WithInteger("Precedence", m_precedence);
-
+  if (m_precedenceHasBeenSet) {
+    payload.WithInteger("Precedence", m_precedence);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdateGroupRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdateGroupRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityProviderService.UpdateGroup"));
   return headers;
-
 }
-
-
-
-

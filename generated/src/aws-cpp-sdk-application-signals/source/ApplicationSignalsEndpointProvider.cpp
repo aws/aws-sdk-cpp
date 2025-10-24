@@ -5,12 +5,8 @@
 
 #include <aws/application-signals/ApplicationSignalsEndpointProvider.h>
 
-namespace Aws
-{
-namespace ApplicationSignals
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace ApplicationSignals
-} // namespace Aws
+namespace Aws {
+namespace ApplicationSignals {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace ApplicationSignals
+}  // namespace Aws

@@ -5,17 +5,14 @@
 
 #pragma once
 
+#include <aws/cloudtrail/CloudTrail_EXPORTS.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/cloudtrail/CloudTrail_EXPORTS.h>
 
-namespace Aws
-{
-namespace CloudTrail
-{
-enum class CloudTrailErrors
-{
-  //From Core//
+namespace Aws {
+namespace CloudTrail {
+enum class CloudTrailErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class CloudTrailErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class CloudTrailErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ACCOUNT_HAS_ONGOING_IMPORT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ACCOUNT_HAS_ONGOING_IMPORT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   ACCOUNT_NOT_FOUND,
   ACCOUNT_NOT_REGISTERED,
   ACCOUNT_REGISTERED,
@@ -131,9 +128,8 @@ enum class CloudTrailErrors
   UNSUPPORTED_OPERATION
 };
 
-class AWS_CLOUDTRAIL_API CloudTrailError : public Aws::Client::AWSError<CloudTrailErrors>
-{
-public:
+class AWS_CLOUDTRAIL_API CloudTrailError : public Aws::Client::AWSError<CloudTrailErrors> {
+ public:
   CloudTrailError() {}
   CloudTrailError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CloudTrailErrors>(rhs) {}
   CloudTrailError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CloudTrailErrors>(rhs) {}
@@ -144,10 +140,9 @@ public:
   T GetModeledError();
 };
 
-namespace CloudTrailErrorMapper
-{
-  AWS_CLOUDTRAIL_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace CloudTrailErrorMapper {
+AWS_CLOUDTRAIL_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace CloudTrail
-} // namespace Aws
+}  // namespace CloudTrail
+}  // namespace Aws

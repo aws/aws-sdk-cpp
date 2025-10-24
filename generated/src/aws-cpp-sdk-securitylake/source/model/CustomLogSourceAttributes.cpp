@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securitylake/model/CustomLogSourceAttributes.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securitylake/model/CustomLogSourceAttributes.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityLake
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityLake {
+namespace Model {
 
-CustomLogSourceAttributes::CustomLogSourceAttributes(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CustomLogSourceAttributes::CustomLogSourceAttributes(JsonView jsonValue) { *this = jsonValue; }
 
-CustomLogSourceAttributes& CustomLogSourceAttributes::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("crawlerArn"))
-  {
+CustomLogSourceAttributes& CustomLogSourceAttributes::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("crawlerArn")) {
     m_crawlerArn = jsonValue.GetString("crawlerArn");
     m_crawlerArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("databaseArn"))
-  {
+  if (jsonValue.ValueExists("databaseArn")) {
     m_databaseArn = jsonValue.GetString("databaseArn");
     m_databaseArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tableArn"))
-  {
+  if (jsonValue.ValueExists("tableArn")) {
     m_tableArn = jsonValue.GetString("tableArn");
     m_tableArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CustomLogSourceAttributes::Jsonize() const
-{
+JsonValue CustomLogSourceAttributes::Jsonize() const {
   JsonValue payload;
 
-  if(m_crawlerArnHasBeenSet)
-  {
-   payload.WithString("crawlerArn", m_crawlerArn);
-
+  if (m_crawlerArnHasBeenSet) {
+    payload.WithString("crawlerArn", m_crawlerArn);
   }
 
-  if(m_databaseArnHasBeenSet)
-  {
-   payload.WithString("databaseArn", m_databaseArn);
-
+  if (m_databaseArnHasBeenSet) {
+    payload.WithString("databaseArn", m_databaseArn);
   }
 
-  if(m_tableArnHasBeenSet)
-  {
-   payload.WithString("tableArn", m_tableArn);
-
+  if (m_tableArnHasBeenSet) {
+    payload.WithString("tableArn", m_tableArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityLake
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityLake
+}  // namespace Aws

@@ -12,11 +12,4 @@ using namespace Aws::ApplicationCostProfiler::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetReportDefinitionRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetReportDefinitionRequest::SerializePayload() const { return {}; }

@@ -12,44 +12,30 @@ using namespace Aws::CloudHSMV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CopyBackupToRegionRequest::SerializePayload() const
-{
+Aws::String CopyBackupToRegionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_destinationRegionHasBeenSet)
-  {
-   payload.WithString("DestinationRegion", m_destinationRegion);
-
+  if (m_destinationRegionHasBeenSet) {
+    payload.WithString("DestinationRegion", m_destinationRegion);
   }
 
-  if(m_backupIdHasBeenSet)
-  {
-   payload.WithString("BackupId", m_backupId);
-
+  if (m_backupIdHasBeenSet) {
+    payload.WithString("BackupId", m_backupId);
   }
 
-  if(m_tagListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagListJsonList(m_tagList.size());
-   for(unsigned tagListIndex = 0; tagListIndex < tagListJsonList.GetLength(); ++tagListIndex)
-   {
-     tagListJsonList[tagListIndex].AsObject(m_tagList[tagListIndex].Jsonize());
-   }
-   payload.WithArray("TagList", std::move(tagListJsonList));
-
+  if (m_tagListHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagListJsonList(m_tagList.size());
+    for (unsigned tagListIndex = 0; tagListIndex < tagListJsonList.GetLength(); ++tagListIndex) {
+      tagListJsonList[tagListIndex].AsObject(m_tagList[tagListIndex].Jsonize());
+    }
+    payload.WithArray("TagList", std::move(tagListJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CopyBackupToRegionRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CopyBackupToRegionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "BaldrApiService.CopyBackupToRegion"));
   return headers;
-
 }
-
-
-
-

@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/marketplace-agreement/model/GrantItem.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/marketplace-agreement/model/GrantItem.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AgreementService
-{
-namespace Model
-{
+namespace Aws {
+namespace AgreementService {
+namespace Model {
 
-GrantItem::GrantItem(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GrantItem::GrantItem(JsonView jsonValue) { *this = jsonValue; }
 
-GrantItem& GrantItem::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("dimensionKey"))
-  {
+GrantItem& GrantItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("dimensionKey")) {
     m_dimensionKey = jsonValue.GetString("dimensionKey");
     m_dimensionKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("maxQuantity"))
-  {
+  if (jsonValue.ValueExists("maxQuantity")) {
     m_maxQuantity = jsonValue.GetInteger("maxQuantity");
     m_maxQuantityHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GrantItem::Jsonize() const
-{
+JsonValue GrantItem::Jsonize() const {
   JsonValue payload;
 
-  if(m_dimensionKeyHasBeenSet)
-  {
-   payload.WithString("dimensionKey", m_dimensionKey);
-
+  if (m_dimensionKeyHasBeenSet) {
+    payload.WithString("dimensionKey", m_dimensionKey);
   }
 
-  if(m_maxQuantityHasBeenSet)
-  {
-   payload.WithInteger("maxQuantity", m_maxQuantity);
-
+  if (m_maxQuantityHasBeenSet) {
+    payload.WithInteger("maxQuantity", m_maxQuantity);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AgreementService
-} // namespace Aws
+}  // namespace Model
+}  // namespace AgreementService
+}  // namespace Aws

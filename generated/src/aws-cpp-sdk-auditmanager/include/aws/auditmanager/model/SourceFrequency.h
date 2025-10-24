@@ -7,26 +7,16 @@
 #include <aws/auditmanager/AuditManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace AuditManager
-{
-namespace Model
-{
-  enum class SourceFrequency
-  {
-    NOT_SET,
-    DAILY,
-    WEEKLY,
-    MONTHLY
-  };
+namespace Aws {
+namespace AuditManager {
+namespace Model {
+enum class SourceFrequency { NOT_SET, DAILY, WEEKLY, MONTHLY };
 
-namespace SourceFrequencyMapper
-{
+namespace SourceFrequencyMapper {
 AWS_AUDITMANAGER_API SourceFrequency GetSourceFrequencyForName(const Aws::String& name);
 
 AWS_AUDITMANAGER_API Aws::String GetNameForSourceFrequency(SourceFrequency value);
-} // namespace SourceFrequencyMapper
-} // namespace Model
-} // namespace AuditManager
-} // namespace Aws
+}  // namespace SourceFrequencyMapper
+}  // namespace Model
+}  // namespace AuditManager
+}  // namespace Aws

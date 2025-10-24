@@ -5,19 +5,16 @@
 
 #pragma once
 
-#include <aws/ivschat/Ivschat_EXPORTS.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
+#include <aws/ivschat/Ivschat_EXPORTS.h>
 
-namespace Aws
-{
-namespace Client
-{
+namespace Aws {
+namespace Client {
 
-class AWS_IVSCHAT_API IvschatErrorMarshaller : public Aws::Client::JsonErrorMarshaller
-{
-public:
+class AWS_IVSCHAT_API IvschatErrorMarshaller : public Aws::Client::JsonErrorMarshaller {
+ public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Client
-} // namespace Aws
+}  // namespace Client
+}  // namespace Aws

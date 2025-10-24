@@ -5,12 +5,8 @@
 
 #include <aws/personalize-runtime/PersonalizeRuntimeEndpointProvider.h>
 
-namespace Aws
-{
-namespace PersonalizeRuntime
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace PersonalizeRuntime
-} // namespace Aws
+namespace Aws {
+namespace PersonalizeRuntime {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace PersonalizeRuntime
+}  // namespace Aws

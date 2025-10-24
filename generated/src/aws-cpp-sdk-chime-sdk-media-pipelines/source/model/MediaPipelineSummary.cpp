@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-MediaPipelineSummary::MediaPipelineSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MediaPipelineSummary::MediaPipelineSummary(JsonView jsonValue) { *this = jsonValue; }
 
-MediaPipelineSummary& MediaPipelineSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MediaPipelineId"))
-  {
+MediaPipelineSummary& MediaPipelineSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MediaPipelineId")) {
     m_mediaPipelineId = jsonValue.GetString("MediaPipelineId");
     m_mediaPipelineIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MediaPipelineArn"))
-  {
+  if (jsonValue.ValueExists("MediaPipelineArn")) {
     m_mediaPipelineArn = jsonValue.GetString("MediaPipelineArn");
     m_mediaPipelineArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MediaPipelineSummary::Jsonize() const
-{
+JsonValue MediaPipelineSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_mediaPipelineIdHasBeenSet)
-  {
-   payload.WithString("MediaPipelineId", m_mediaPipelineId);
-
+  if (m_mediaPipelineIdHasBeenSet) {
+    payload.WithString("MediaPipelineId", m_mediaPipelineId);
   }
 
-  if(m_mediaPipelineArnHasBeenSet)
-  {
-   payload.WithString("MediaPipelineArn", m_mediaPipelineArn);
-
+  if (m_mediaPipelineArnHasBeenSet) {
+    payload.WithString("MediaPipelineArn", m_mediaPipelineArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

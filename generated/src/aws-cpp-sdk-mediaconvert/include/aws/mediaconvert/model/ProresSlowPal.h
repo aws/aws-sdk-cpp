@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class ProresSlowPal
-  {
-    NOT_SET,
-    DISABLED,
-    ENABLED
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class ProresSlowPal { NOT_SET, DISABLED, ENABLED };
 
-namespace ProresSlowPalMapper
-{
+namespace ProresSlowPalMapper {
 AWS_MEDIACONVERT_API ProresSlowPal GetProresSlowPalForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForProresSlowPal(ProresSlowPal value);
-} // namespace ProresSlowPalMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace ProresSlowPalMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

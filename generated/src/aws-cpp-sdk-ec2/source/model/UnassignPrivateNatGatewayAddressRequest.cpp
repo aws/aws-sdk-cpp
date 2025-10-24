@@ -3,40 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/UnassignPrivateNatGatewayAddressRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/UnassignPrivateNatGatewayAddressRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String UnassignPrivateNatGatewayAddressRequest::SerializePayload() const
-{
+Aws::String UnassignPrivateNatGatewayAddressRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=UnassignPrivateNatGatewayAddress&";
-  if(m_natGatewayIdHasBeenSet)
-  {
+  if (m_natGatewayIdHasBeenSet) {
     ss << "NatGatewayId=" << StringUtils::URLEncode(m_natGatewayId.c_str()) << "&";
   }
 
-  if(m_privateIpAddressesHasBeenSet)
-  {
+  if (m_privateIpAddressesHasBeenSet) {
     unsigned privateIpAddressesCount = 1;
-    for(auto& item : m_privateIpAddresses)
-    {
-      ss << "PrivateIpAddress." << privateIpAddressesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
+    for (auto& item : m_privateIpAddresses) {
+      ss << "PrivateIpAddress." << privateIpAddressesCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       privateIpAddressesCount++;
     }
   }
 
-  if(m_maxDrainDurationSecondsHasBeenSet)
-  {
+  if (m_maxDrainDurationSecondsHasBeenSet) {
     ss << "MaxDrainDurationSeconds=" << m_maxDrainDurationSeconds << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -44,8 +37,4 @@ Aws::String UnassignPrivateNatGatewayAddressRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  UnassignPrivateNatGatewayAddressRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void UnassignPrivateNatGatewayAddressRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

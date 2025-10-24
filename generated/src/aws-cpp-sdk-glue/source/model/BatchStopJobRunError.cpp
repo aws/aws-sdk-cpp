@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/BatchStopJobRunError.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/BatchStopJobRunError.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
+namespace Aws {
+namespace Glue {
+namespace Model {
 
-BatchStopJobRunError::BatchStopJobRunError(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+BatchStopJobRunError::BatchStopJobRunError(JsonView jsonValue) { *this = jsonValue; }
 
-BatchStopJobRunError& BatchStopJobRunError::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("JobName"))
-  {
+BatchStopJobRunError& BatchStopJobRunError::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("JobName")) {
     m_jobName = jsonValue.GetString("JobName");
     m_jobNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("JobRunId"))
-  {
+  if (jsonValue.ValueExists("JobRunId")) {
     m_jobRunId = jsonValue.GetString("JobRunId");
     m_jobRunIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorDetail"))
-  {
+  if (jsonValue.ValueExists("ErrorDetail")) {
     m_errorDetail = jsonValue.GetObject("ErrorDetail");
     m_errorDetailHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue BatchStopJobRunError::Jsonize() const
-{
+JsonValue BatchStopJobRunError::Jsonize() const {
   JsonValue payload;
 
-  if(m_jobNameHasBeenSet)
-  {
-   payload.WithString("JobName", m_jobName);
-
+  if (m_jobNameHasBeenSet) {
+    payload.WithString("JobName", m_jobName);
   }
 
-  if(m_jobRunIdHasBeenSet)
-  {
-   payload.WithString("JobRunId", m_jobRunId);
-
+  if (m_jobRunIdHasBeenSet) {
+    payload.WithString("JobRunId", m_jobRunId);
   }
 
-  if(m_errorDetailHasBeenSet)
-  {
-   payload.WithObject("ErrorDetail", m_errorDetail.Jsonize());
-
+  if (m_errorDetailHasBeenSet) {
+    payload.WithObject("ErrorDetail", m_errorDetail.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

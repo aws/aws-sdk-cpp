@@ -3,147 +3,110 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/resiliencehub/model/DisruptionCompliance.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/resiliencehub/model/DisruptionCompliance.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ResilienceHub
-{
-namespace Model
-{
+namespace Aws {
+namespace ResilienceHub {
+namespace Model {
 
-DisruptionCompliance::DisruptionCompliance(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DisruptionCompliance::DisruptionCompliance(JsonView jsonValue) { *this = jsonValue; }
 
-DisruptionCompliance& DisruptionCompliance::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("achievableRpoInSecs"))
-  {
+DisruptionCompliance& DisruptionCompliance::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("achievableRpoInSecs")) {
     m_achievableRpoInSecs = jsonValue.GetInteger("achievableRpoInSecs");
     m_achievableRpoInSecsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("achievableRtoInSecs"))
-  {
+  if (jsonValue.ValueExists("achievableRtoInSecs")) {
     m_achievableRtoInSecs = jsonValue.GetInteger("achievableRtoInSecs");
     m_achievableRtoInSecsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("complianceStatus"))
-  {
+  if (jsonValue.ValueExists("complianceStatus")) {
     m_complianceStatus = ComplianceStatusMapper::GetComplianceStatusForName(jsonValue.GetString("complianceStatus"));
     m_complianceStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("currentRpoInSecs"))
-  {
+  if (jsonValue.ValueExists("currentRpoInSecs")) {
     m_currentRpoInSecs = jsonValue.GetInteger("currentRpoInSecs");
     m_currentRpoInSecsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("currentRtoInSecs"))
-  {
+  if (jsonValue.ValueExists("currentRtoInSecs")) {
     m_currentRtoInSecs = jsonValue.GetInteger("currentRtoInSecs");
     m_currentRtoInSecsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("message"))
-  {
+  if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("rpoDescription"))
-  {
+  if (jsonValue.ValueExists("rpoDescription")) {
     m_rpoDescription = jsonValue.GetString("rpoDescription");
     m_rpoDescriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("rpoReferenceId"))
-  {
+  if (jsonValue.ValueExists("rpoReferenceId")) {
     m_rpoReferenceId = jsonValue.GetString("rpoReferenceId");
     m_rpoReferenceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("rtoDescription"))
-  {
+  if (jsonValue.ValueExists("rtoDescription")) {
     m_rtoDescription = jsonValue.GetString("rtoDescription");
     m_rtoDescriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("rtoReferenceId"))
-  {
+  if (jsonValue.ValueExists("rtoReferenceId")) {
     m_rtoReferenceId = jsonValue.GetString("rtoReferenceId");
     m_rtoReferenceIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DisruptionCompliance::Jsonize() const
-{
+JsonValue DisruptionCompliance::Jsonize() const {
   JsonValue payload;
 
-  if(m_achievableRpoInSecsHasBeenSet)
-  {
-   payload.WithInteger("achievableRpoInSecs", m_achievableRpoInSecs);
-
+  if (m_achievableRpoInSecsHasBeenSet) {
+    payload.WithInteger("achievableRpoInSecs", m_achievableRpoInSecs);
   }
 
-  if(m_achievableRtoInSecsHasBeenSet)
-  {
-   payload.WithInteger("achievableRtoInSecs", m_achievableRtoInSecs);
-
+  if (m_achievableRtoInSecsHasBeenSet) {
+    payload.WithInteger("achievableRtoInSecs", m_achievableRtoInSecs);
   }
 
-  if(m_complianceStatusHasBeenSet)
-  {
-   payload.WithString("complianceStatus", ComplianceStatusMapper::GetNameForComplianceStatus(m_complianceStatus));
+  if (m_complianceStatusHasBeenSet) {
+    payload.WithString("complianceStatus", ComplianceStatusMapper::GetNameForComplianceStatus(m_complianceStatus));
   }
 
-  if(m_currentRpoInSecsHasBeenSet)
-  {
-   payload.WithInteger("currentRpoInSecs", m_currentRpoInSecs);
-
+  if (m_currentRpoInSecsHasBeenSet) {
+    payload.WithInteger("currentRpoInSecs", m_currentRpoInSecs);
   }
 
-  if(m_currentRtoInSecsHasBeenSet)
-  {
-   payload.WithInteger("currentRtoInSecs", m_currentRtoInSecs);
-
+  if (m_currentRtoInSecsHasBeenSet) {
+    payload.WithInteger("currentRtoInSecs", m_currentRtoInSecs);
   }
 
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
   }
 
-  if(m_rpoDescriptionHasBeenSet)
-  {
-   payload.WithString("rpoDescription", m_rpoDescription);
-
+  if (m_rpoDescriptionHasBeenSet) {
+    payload.WithString("rpoDescription", m_rpoDescription);
   }
 
-  if(m_rpoReferenceIdHasBeenSet)
-  {
-   payload.WithString("rpoReferenceId", m_rpoReferenceId);
-
+  if (m_rpoReferenceIdHasBeenSet) {
+    payload.WithString("rpoReferenceId", m_rpoReferenceId);
   }
 
-  if(m_rtoDescriptionHasBeenSet)
-  {
-   payload.WithString("rtoDescription", m_rtoDescription);
-
+  if (m_rtoDescriptionHasBeenSet) {
+    payload.WithString("rtoDescription", m_rtoDescription);
   }
 
-  if(m_rtoReferenceIdHasBeenSet)
-  {
-   payload.WithString("rtoReferenceId", m_rtoReferenceId);
-
+  if (m_rtoReferenceIdHasBeenSet) {
+    payload.WithString("rtoReferenceId", m_rtoReferenceId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ResilienceHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace ResilienceHub
+}  // namespace Aws

@@ -7,29 +7,16 @@
 #include <aws/codeconnections/CodeConnections_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CodeConnections
-{
-namespace Model
-{
-  enum class ProviderType
-  {
-    NOT_SET,
-    Bitbucket,
-    GitHub,
-    GitHubEnterpriseServer,
-    GitLab,
-    GitLabSelfManaged,
-    AzureDevOps
-  };
+namespace Aws {
+namespace CodeConnections {
+namespace Model {
+enum class ProviderType { NOT_SET, Bitbucket, GitHub, GitHubEnterpriseServer, GitLab, GitLabSelfManaged, AzureDevOps };
 
-namespace ProviderTypeMapper
-{
+namespace ProviderTypeMapper {
 AWS_CODECONNECTIONS_API ProviderType GetProviderTypeForName(const Aws::String& name);
 
 AWS_CODECONNECTIONS_API Aws::String GetNameForProviderType(ProviderType value);
-} // namespace ProviderTypeMapper
-} // namespace Model
-} // namespace CodeConnections
-} // namespace Aws
+}  // namespace ProviderTypeMapper
+}  // namespace Model
+}  // namespace CodeConnections
+}  // namespace Aws

@@ -12,33 +12,22 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DescribeRiskConfigurationRequest::SerializePayload() const
-{
+Aws::String DescribeRiskConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_userPoolIdHasBeenSet)
-  {
-   payload.WithString("UserPoolId", m_userPoolId);
-
+  if (m_userPoolIdHasBeenSet) {
+    payload.WithString("UserPoolId", m_userPoolId);
   }
 
-  if(m_clientIdHasBeenSet)
-  {
-   payload.WithString("ClientId", m_clientId);
-
+  if (m_clientIdHasBeenSet) {
+    payload.WithString("ClientId", m_clientId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DescribeRiskConfigurationRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DescribeRiskConfigurationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCognitoIdentityProviderService.DescribeRiskConfiguration"));
   return headers;
-
 }
-
-
-
-

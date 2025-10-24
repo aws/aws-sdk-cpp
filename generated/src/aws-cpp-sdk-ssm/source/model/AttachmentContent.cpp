@@ -3,92 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ssm/model/AttachmentContent.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ssm/model/AttachmentContent.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SSM
-{
-namespace Model
-{
+namespace Aws {
+namespace SSM {
+namespace Model {
 
-AttachmentContent::AttachmentContent(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AttachmentContent::AttachmentContent(JsonView jsonValue) { *this = jsonValue; }
 
-AttachmentContent& AttachmentContent::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+AttachmentContent& AttachmentContent::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Size"))
-  {
+  if (jsonValue.ValueExists("Size")) {
     m_size = jsonValue.GetInt64("Size");
     m_sizeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Hash"))
-  {
+  if (jsonValue.ValueExists("Hash")) {
     m_hash = jsonValue.GetString("Hash");
     m_hashHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HashType"))
-  {
+  if (jsonValue.ValueExists("HashType")) {
     m_hashType = AttachmentHashTypeMapper::GetAttachmentHashTypeForName(jsonValue.GetString("HashType"));
     m_hashTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Url"))
-  {
+  if (jsonValue.ValueExists("Url")) {
     m_url = jsonValue.GetString("Url");
     m_urlHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AttachmentContent::Jsonize() const
-{
+JsonValue AttachmentContent::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_sizeHasBeenSet)
-  {
-   payload.WithInt64("Size", m_size);
-
+  if (m_sizeHasBeenSet) {
+    payload.WithInt64("Size", m_size);
   }
 
-  if(m_hashHasBeenSet)
-  {
-   payload.WithString("Hash", m_hash);
-
+  if (m_hashHasBeenSet) {
+    payload.WithString("Hash", m_hash);
   }
 
-  if(m_hashTypeHasBeenSet)
-  {
-   payload.WithString("HashType", AttachmentHashTypeMapper::GetNameForAttachmentHashType(m_hashType));
+  if (m_hashTypeHasBeenSet) {
+    payload.WithString("HashType", AttachmentHashTypeMapper::GetNameForAttachmentHashType(m_hashType));
   }
 
-  if(m_urlHasBeenSet)
-  {
-   payload.WithString("Url", m_url);
-
+  if (m_urlHasBeenSet) {
+    payload.WithString("Url", m_url);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SSM
-} // namespace Aws
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

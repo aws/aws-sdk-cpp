@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/rds-data/RDSDataService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rds-data/RDSDataService_EXPORTS.h>
 
-namespace Aws
-{
-namespace RDSDataService
-{
-namespace Model
-{
-  enum class DecimalReturnType
-  {
-    NOT_SET,
-    STRING,
-    DOUBLE_OR_LONG
-  };
+namespace Aws {
+namespace RDSDataService {
+namespace Model {
+enum class DecimalReturnType { NOT_SET, STRING, DOUBLE_OR_LONG };
 
-namespace DecimalReturnTypeMapper
-{
+namespace DecimalReturnTypeMapper {
 AWS_RDSDATASERVICE_API DecimalReturnType GetDecimalReturnTypeForName(const Aws::String& name);
 
 AWS_RDSDATASERVICE_API Aws::String GetNameForDecimalReturnType(DecimalReturnType value);
-} // namespace DecimalReturnTypeMapper
-} // namespace Model
-} // namespace RDSDataService
-} // namespace Aws
+}  // namespace DecimalReturnTypeMapper
+}  // namespace Model
+}  // namespace RDSDataService
+}  // namespace Aws

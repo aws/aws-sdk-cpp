@@ -6,76 +6,86 @@
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace GuardDuty
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace GuardDuty {
+namespace Model {
 
+/**
+ * <p>Total number of scanned files.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ScannedItemCount">AWS
+ * API Reference</a></p>
+ */
+class ScannedItemCount {
+ public:
+  AWS_GUARDDUTY_API ScannedItemCount() = default;
+  AWS_GUARDDUTY_API ScannedItemCount(Aws::Utils::Json::JsonView jsonValue);
+  AWS_GUARDDUTY_API ScannedItemCount& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Total number of scanned files.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ScannedItemCount">AWS
-   * API Reference</a></p>
+   * <p>Total GB of files scanned for malware.</p>
    */
-  class ScannedItemCount
-  {
-  public:
-    AWS_GUARDDUTY_API ScannedItemCount() = default;
-    AWS_GUARDDUTY_API ScannedItemCount(Aws::Utils::Json::JsonView jsonValue);
-    AWS_GUARDDUTY_API ScannedItemCount& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline int GetTotalGb() const { return m_totalGb; }
+  inline bool TotalGbHasBeenSet() const { return m_totalGbHasBeenSet; }
+  inline void SetTotalGb(int value) {
+    m_totalGbHasBeenSet = true;
+    m_totalGb = value;
+  }
+  inline ScannedItemCount& WithTotalGb(int value) {
+    SetTotalGb(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>Number of files scanned.</p>
+   */
+  inline int GetFiles() const { return m_files; }
+  inline bool FilesHasBeenSet() const { return m_filesHasBeenSet; }
+  inline void SetFiles(int value) {
+    m_filesHasBeenSet = true;
+    m_files = value;
+  }
+  inline ScannedItemCount& WithFiles(int value) {
+    SetFiles(value);
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>Total GB of files scanned for malware.</p>
-     */
-    inline int GetTotalGb() const { return m_totalGb; }
-    inline bool TotalGbHasBeenSet() const { return m_totalGbHasBeenSet; }
-    inline void SetTotalGb(int value) { m_totalGbHasBeenSet = true; m_totalGb = value; }
-    inline ScannedItemCount& WithTotalGb(int value) { SetTotalGb(value); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>Total number of scanned volumes.</p>
+   */
+  inline int GetVolumes() const { return m_volumes; }
+  inline bool VolumesHasBeenSet() const { return m_volumesHasBeenSet; }
+  inline void SetVolumes(int value) {
+    m_volumesHasBeenSet = true;
+    m_volumes = value;
+  }
+  inline ScannedItemCount& WithVolumes(int value) {
+    SetVolumes(value);
+    return *this;
+  }
+  ///@}
+ private:
+  int m_totalGb{0};
+  bool m_totalGbHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>Number of files scanned.</p>
-     */
-    inline int GetFiles() const { return m_files; }
-    inline bool FilesHasBeenSet() const { return m_filesHasBeenSet; }
-    inline void SetFiles(int value) { m_filesHasBeenSet = true; m_files = value; }
-    inline ScannedItemCount& WithFiles(int value) { SetFiles(value); return *this;}
-    ///@}
+  int m_files{0};
+  bool m_filesHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>Total number of scanned volumes.</p>
-     */
-    inline int GetVolumes() const { return m_volumes; }
-    inline bool VolumesHasBeenSet() const { return m_volumesHasBeenSet; }
-    inline void SetVolumes(int value) { m_volumesHasBeenSet = true; m_volumes = value; }
-    inline ScannedItemCount& WithVolumes(int value) { SetVolumes(value); return *this;}
-    ///@}
-  private:
+  int m_volumes{0};
+  bool m_volumesHasBeenSet = false;
+};
 
-    int m_totalGb{0};
-    bool m_totalGbHasBeenSet = false;
-
-    int m_files{0};
-    bool m_filesHasBeenSet = false;
-
-    int m_volumes{0};
-    bool m_volumesHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace GuardDuty
-} // namespace Aws
+}  // namespace Model
+}  // namespace GuardDuty
+}  // namespace Aws

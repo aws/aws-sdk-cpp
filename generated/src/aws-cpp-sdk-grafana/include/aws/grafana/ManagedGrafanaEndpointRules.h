@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/grafana/ManagedGrafana_EXPORTS.h>
 
-namespace Aws
-{
-namespace ManagedGrafana
-{
-class ManagedGrafanaEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace ManagedGrafana {
+class ManagedGrafanaEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace ManagedGrafana
-} // namespace Aws
+}  // namespace ManagedGrafana
+}  // namespace Aws

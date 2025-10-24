@@ -4,43 +4,35 @@
  */
 
 #include <aws/autoscaling/model/InstanceRefreshWarmPoolProgress.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AutoScaling
-{
-namespace Model
-{
+namespace Aws {
+namespace AutoScaling {
+namespace Model {
 
-InstanceRefreshWarmPoolProgress::InstanceRefreshWarmPoolProgress(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+InstanceRefreshWarmPoolProgress::InstanceRefreshWarmPoolProgress(const XmlNode& xmlNode) { *this = xmlNode; }
 
-InstanceRefreshWarmPoolProgress& InstanceRefreshWarmPoolProgress::operator =(const XmlNode& xmlNode)
-{
+InstanceRefreshWarmPoolProgress& InstanceRefreshWarmPoolProgress::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode percentageCompleteNode = resultNode.FirstChild("PercentageComplete");
-    if(!percentageCompleteNode.IsNull())
-    {
-      m_percentageComplete = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(percentageCompleteNode.GetText()).c_str()).c_str());
+    if (!percentageCompleteNode.IsNull()) {
+      m_percentageComplete = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(percentageCompleteNode.GetText()).c_str()).c_str());
       m_percentageCompleteHasBeenSet = true;
     }
     XmlNode instancesToUpdateNode = resultNode.FirstChild("InstancesToUpdate");
-    if(!instancesToUpdateNode.IsNull())
-    {
-      m_instancesToUpdate = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instancesToUpdateNode.GetText()).c_str()).c_str());
+    if (!instancesToUpdateNode.IsNull()) {
+      m_instancesToUpdate = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instancesToUpdateNode.GetText()).c_str()).c_str());
       m_instancesToUpdateHasBeenSet = true;
     }
   }
@@ -48,32 +40,26 @@ InstanceRefreshWarmPoolProgress& InstanceRefreshWarmPoolProgress::operator =(con
   return *this;
 }
 
-void InstanceRefreshWarmPoolProgress::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_percentageCompleteHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".PercentageComplete=" << m_percentageComplete << "&";
+void InstanceRefreshWarmPoolProgress::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                     const char* locationValue) const {
+  if (m_percentageCompleteHasBeenSet) {
+    oStream << location << index << locationValue << ".PercentageComplete=" << m_percentageComplete << "&";
   }
 
-  if(m_instancesToUpdateHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".InstancesToUpdate=" << m_instancesToUpdate << "&";
-  }
-
-}
-
-void InstanceRefreshWarmPoolProgress::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_percentageCompleteHasBeenSet)
-  {
-      oStream << location << ".PercentageComplete=" << m_percentageComplete << "&";
-  }
-  if(m_instancesToUpdateHasBeenSet)
-  {
-      oStream << location << ".InstancesToUpdate=" << m_instancesToUpdate << "&";
+  if (m_instancesToUpdateHasBeenSet) {
+    oStream << location << index << locationValue << ".InstancesToUpdate=" << m_instancesToUpdate << "&";
   }
 }
 
-} // namespace Model
-} // namespace AutoScaling
-} // namespace Aws
+void InstanceRefreshWarmPoolProgress::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_percentageCompleteHasBeenSet) {
+    oStream << location << ".PercentageComplete=" << m_percentageComplete << "&";
+  }
+  if (m_instancesToUpdateHasBeenSet) {
+    oStream << location << ".InstancesToUpdate=" << m_instancesToUpdate << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace AutoScaling
+}  // namespace Aws

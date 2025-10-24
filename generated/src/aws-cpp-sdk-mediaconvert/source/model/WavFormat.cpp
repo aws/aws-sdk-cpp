@@ -3,77 +3,61 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/WavFormat.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/mediaconvert/model/WavFormat.h>
 
 using namespace Aws::Utils;
 
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+namespace WavFormatMapper {
 
-namespace Aws
-{
-  namespace MediaConvert
-  {
-    namespace Model
-    {
-      namespace WavFormatMapper
-      {
+static const int RIFF_HASH = HashingUtils::HashString("RIFF");
+static const int RF64_HASH = HashingUtils::HashString("RF64");
+static const int EXTENSIBLE_HASH = HashingUtils::HashString("EXTENSIBLE");
 
-        static const int RIFF_HASH = HashingUtils::HashString("RIFF");
-        static const int RF64_HASH = HashingUtils::HashString("RF64");
-        static const int EXTENSIBLE_HASH = HashingUtils::HashString("EXTENSIBLE");
+WavFormat GetWavFormatForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == RIFF_HASH) {
+    return WavFormat::RIFF;
+  } else if (hashCode == RF64_HASH) {
+    return WavFormat::RF64;
+  } else if (hashCode == EXTENSIBLE_HASH) {
+    return WavFormat::EXTENSIBLE;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<WavFormat>(hashCode);
+  }
 
+  return WavFormat::NOT_SET;
+}
 
-        WavFormat GetWavFormatForName(const Aws::String& name)
-        {
-          int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == RIFF_HASH)
-          {
-            return WavFormat::RIFF;
-          }
-          else if (hashCode == RF64_HASH)
-          {
-            return WavFormat::RF64;
-          }
-          else if (hashCode == EXTENSIBLE_HASH)
-          {
-            return WavFormat::EXTENSIBLE;
-          }
-          EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-          if(overflowContainer)
-          {
-            overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<WavFormat>(hashCode);
-          }
+Aws::String GetNameForWavFormat(WavFormat enumValue) {
+  switch (enumValue) {
+    case WavFormat::NOT_SET:
+      return {};
+    case WavFormat::RIFF:
+      return "RIFF";
+    case WavFormat::RF64:
+      return "RF64";
+    case WavFormat::EXTENSIBLE:
+      return "EXTENSIBLE";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
 
-          return WavFormat::NOT_SET;
-        }
+      return {};
+  }
+}
 
-        Aws::String GetNameForWavFormat(WavFormat enumValue)
-        {
-          switch(enumValue)
-          {
-          case WavFormat::NOT_SET:
-            return {};
-          case WavFormat::RIFF:
-            return "RIFF";
-          case WavFormat::RF64:
-            return "RF64";
-          case WavFormat::EXTENSIBLE:
-            return "EXTENSIBLE";
-          default:
-            EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-            if(overflowContainer)
-            {
-              return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
-            }
-
-            return {};
-          }
-        }
-
-      } // namespace WavFormatMapper
-    } // namespace Model
-  } // namespace MediaConvert
-} // namespace Aws
+}  // namespace WavFormatMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

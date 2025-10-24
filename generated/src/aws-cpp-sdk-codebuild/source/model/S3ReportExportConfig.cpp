@@ -11,95 +11,70 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeBuild
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeBuild {
+namespace Model {
 
-S3ReportExportConfig::S3ReportExportConfig(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+S3ReportExportConfig::S3ReportExportConfig(JsonView jsonValue) { *this = jsonValue; }
 
-S3ReportExportConfig& S3ReportExportConfig::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("bucket"))
-  {
+S3ReportExportConfig& S3ReportExportConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("bucket")) {
     m_bucket = jsonValue.GetString("bucket");
     m_bucketHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("bucketOwner"))
-  {
+  if (jsonValue.ValueExists("bucketOwner")) {
     m_bucketOwner = jsonValue.GetString("bucketOwner");
     m_bucketOwnerHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("path"))
-  {
+  if (jsonValue.ValueExists("path")) {
     m_path = jsonValue.GetString("path");
     m_pathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("packaging"))
-  {
+  if (jsonValue.ValueExists("packaging")) {
     m_packaging = ReportPackagingTypeMapper::GetReportPackagingTypeForName(jsonValue.GetString("packaging"));
     m_packagingHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("encryptionKey"))
-  {
+  if (jsonValue.ValueExists("encryptionKey")) {
     m_encryptionKey = jsonValue.GetString("encryptionKey");
     m_encryptionKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("encryptionDisabled"))
-  {
+  if (jsonValue.ValueExists("encryptionDisabled")) {
     m_encryptionDisabled = jsonValue.GetBool("encryptionDisabled");
     m_encryptionDisabledHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue S3ReportExportConfig::Jsonize() const
-{
+JsonValue S3ReportExportConfig::Jsonize() const {
   JsonValue payload;
 
-  if(m_bucketHasBeenSet)
-  {
-   payload.WithString("bucket", m_bucket);
-
+  if (m_bucketHasBeenSet) {
+    payload.WithString("bucket", m_bucket);
   }
 
-  if(m_bucketOwnerHasBeenSet)
-  {
-   payload.WithString("bucketOwner", m_bucketOwner);
-
+  if (m_bucketOwnerHasBeenSet) {
+    payload.WithString("bucketOwner", m_bucketOwner);
   }
 
-  if(m_pathHasBeenSet)
-  {
-   payload.WithString("path", m_path);
-
+  if (m_pathHasBeenSet) {
+    payload.WithString("path", m_path);
   }
 
-  if(m_packagingHasBeenSet)
-  {
-   payload.WithString("packaging", ReportPackagingTypeMapper::GetNameForReportPackagingType(m_packaging));
+  if (m_packagingHasBeenSet) {
+    payload.WithString("packaging", ReportPackagingTypeMapper::GetNameForReportPackagingType(m_packaging));
   }
 
-  if(m_encryptionKeyHasBeenSet)
-  {
-   payload.WithString("encryptionKey", m_encryptionKey);
-
+  if (m_encryptionKeyHasBeenSet) {
+    payload.WithString("encryptionKey", m_encryptionKey);
   }
 
-  if(m_encryptionDisabledHasBeenSet)
-  {
-   payload.WithBool("encryptionDisabled", m_encryptionDisabled);
-
+  if (m_encryptionDisabledHasBeenSet) {
+    payload.WithBool("encryptionDisabled", m_encryptionDisabled);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeBuild
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeBuild
+}  // namespace Aws

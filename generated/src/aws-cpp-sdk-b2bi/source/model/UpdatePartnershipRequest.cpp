@@ -12,50 +12,34 @@ using namespace Aws::B2BI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdatePartnershipRequest::SerializePayload() const
-{
+Aws::String UpdatePartnershipRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_partnershipIdHasBeenSet)
-  {
-   payload.WithString("partnershipId", m_partnershipId);
-
+  if (m_partnershipIdHasBeenSet) {
+    payload.WithString("partnershipId", m_partnershipId);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_capabilitiesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> capabilitiesJsonList(m_capabilities.size());
-   for(unsigned capabilitiesIndex = 0; capabilitiesIndex < capabilitiesJsonList.GetLength(); ++capabilitiesIndex)
-   {
-     capabilitiesJsonList[capabilitiesIndex].AsString(m_capabilities[capabilitiesIndex]);
-   }
-   payload.WithArray("capabilities", std::move(capabilitiesJsonList));
-
+  if (m_capabilitiesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> capabilitiesJsonList(m_capabilities.size());
+    for (unsigned capabilitiesIndex = 0; capabilitiesIndex < capabilitiesJsonList.GetLength(); ++capabilitiesIndex) {
+      capabilitiesJsonList[capabilitiesIndex].AsString(m_capabilities[capabilitiesIndex]);
+    }
+    payload.WithArray("capabilities", std::move(capabilitiesJsonList));
   }
 
-  if(m_capabilityOptionsHasBeenSet)
-  {
-   payload.WithObject("capabilityOptions", m_capabilityOptions.Jsonize());
-
+  if (m_capabilityOptionsHasBeenSet) {
+    payload.WithObject("capabilityOptions", m_capabilityOptions.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection UpdatePartnershipRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection UpdatePartnershipRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "B2BI.UpdatePartnership"));
   return headers;
-
 }
-
-
-
-

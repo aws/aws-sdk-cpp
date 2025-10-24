@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker-geospatial/SageMakerGeospatial_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker-geospatial/SageMakerGeospatial_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMakerGeospatial
-{
-namespace Model
-{
-  enum class Unit
-  {
-    NOT_SET,
-    METERS
-  };
+namespace Aws {
+namespace SageMakerGeospatial {
+namespace Model {
+enum class Unit { NOT_SET, METERS };
 
-namespace UnitMapper
-{
+namespace UnitMapper {
 AWS_SAGEMAKERGEOSPATIAL_API Unit GetUnitForName(const Aws::String& name);
 
 AWS_SAGEMAKERGEOSPATIAL_API Aws::String GetNameForUnit(Unit value);
-} // namespace UnitMapper
-} // namespace Model
-} // namespace SageMakerGeospatial
-} // namespace Aws
+}  // namespace UnitMapper
+}  // namespace Model
+}  // namespace SageMakerGeospatial
+}  // namespace Aws

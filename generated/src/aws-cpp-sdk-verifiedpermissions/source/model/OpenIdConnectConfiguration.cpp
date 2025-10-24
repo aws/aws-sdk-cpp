@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/verifiedpermissions/model/OpenIdConnectConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/verifiedpermissions/model/OpenIdConnectConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace VerifiedPermissions
-{
-namespace Model
-{
+namespace Aws {
+namespace VerifiedPermissions {
+namespace Model {
 
-OpenIdConnectConfiguration::OpenIdConnectConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+OpenIdConnectConfiguration::OpenIdConnectConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-OpenIdConnectConfiguration& OpenIdConnectConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("issuer"))
-  {
+OpenIdConnectConfiguration& OpenIdConnectConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("issuer")) {
     m_issuer = jsonValue.GetString("issuer");
     m_issuerHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("entityIdPrefix"))
-  {
+  if (jsonValue.ValueExists("entityIdPrefix")) {
     m_entityIdPrefix = jsonValue.GetString("entityIdPrefix");
     m_entityIdPrefixHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("groupConfiguration"))
-  {
+  if (jsonValue.ValueExists("groupConfiguration")) {
     m_groupConfiguration = jsonValue.GetObject("groupConfiguration");
     m_groupConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tokenSelection"))
-  {
+  if (jsonValue.ValueExists("tokenSelection")) {
     m_tokenSelection = jsonValue.GetObject("tokenSelection");
     m_tokenSelectionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue OpenIdConnectConfiguration::Jsonize() const
-{
+JsonValue OpenIdConnectConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_issuerHasBeenSet)
-  {
-   payload.WithString("issuer", m_issuer);
-
+  if (m_issuerHasBeenSet) {
+    payload.WithString("issuer", m_issuer);
   }
 
-  if(m_entityIdPrefixHasBeenSet)
-  {
-   payload.WithString("entityIdPrefix", m_entityIdPrefix);
-
+  if (m_entityIdPrefixHasBeenSet) {
+    payload.WithString("entityIdPrefix", m_entityIdPrefix);
   }
 
-  if(m_groupConfigurationHasBeenSet)
-  {
-   payload.WithObject("groupConfiguration", m_groupConfiguration.Jsonize());
-
+  if (m_groupConfigurationHasBeenSet) {
+    payload.WithObject("groupConfiguration", m_groupConfiguration.Jsonize());
   }
 
-  if(m_tokenSelectionHasBeenSet)
-  {
-   payload.WithObject("tokenSelection", m_tokenSelection.Jsonize());
-
+  if (m_tokenSelectionHasBeenSet) {
+    payload.WithObject("tokenSelection", m_tokenSelection.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace VerifiedPermissions
-} // namespace Aws
+}  // namespace Model
+}  // namespace VerifiedPermissions
+}  // namespace Aws

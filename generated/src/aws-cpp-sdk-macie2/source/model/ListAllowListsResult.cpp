@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/macie2/model/ListAllowListsResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/macie2/model/ListAllowListsResult.h>
 
 #include <utility>
 
@@ -17,37 +17,28 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAllowListsResult::ListAllowListsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+ListAllowListsResult::ListAllowListsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-ListAllowListsResult& ListAllowListsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+ListAllowListsResult& ListAllowListsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("allowLists"))
-  {
+  if (jsonValue.ValueExists("allowLists")) {
     Aws::Utils::Array<JsonView> allowListsJsonList = jsonValue.GetArray("allowLists");
-    for(unsigned allowListsIndex = 0; allowListsIndex < allowListsJsonList.GetLength(); ++allowListsIndex)
-    {
+    for (unsigned allowListsIndex = 0; allowListsIndex < allowListsJsonList.GetLength(); ++allowListsIndex) {
       m_allowLists.push_back(allowListsJsonList[allowListsIndex].AsObject());
     }
     m_allowListsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("nextToken"))
-  {
+  if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

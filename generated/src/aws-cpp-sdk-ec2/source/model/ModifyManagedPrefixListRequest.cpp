@@ -3,59 +3,49 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/ModifyManagedPrefixListRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ModifyManagedPrefixListRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyManagedPrefixListRequest::SerializePayload() const
-{
+Aws::String ModifyManagedPrefixListRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyManagedPrefixList&";
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_prefixListIdHasBeenSet)
-  {
+  if (m_prefixListIdHasBeenSet) {
     ss << "PrefixListId=" << StringUtils::URLEncode(m_prefixListId.c_str()) << "&";
   }
 
-  if(m_currentVersionHasBeenSet)
-  {
+  if (m_currentVersionHasBeenSet) {
     ss << "CurrentVersion=" << m_currentVersion << "&";
   }
 
-  if(m_prefixListNameHasBeenSet)
-  {
+  if (m_prefixListNameHasBeenSet) {
     ss << "PrefixListName=" << StringUtils::URLEncode(m_prefixListName.c_str()) << "&";
   }
 
-  if(m_addEntriesHasBeenSet)
-  {
+  if (m_addEntriesHasBeenSet) {
     unsigned addEntriesCount = 1;
-    for(auto& item : m_addEntries)
-    {
+    for (auto& item : m_addEntries) {
       item.OutputToStream(ss, "AddEntry.", addEntriesCount, "");
       addEntriesCount++;
     }
   }
 
-  if(m_removeEntriesHasBeenSet)
-  {
+  if (m_removeEntriesHasBeenSet) {
     unsigned removeEntriesCount = 1;
-    for(auto& item : m_removeEntries)
-    {
+    for (auto& item : m_removeEntries) {
       item.OutputToStream(ss, "RemoveEntry.", removeEntriesCount, "");
       removeEntriesCount++;
     }
   }
 
-  if(m_maxEntriesHasBeenSet)
-  {
+  if (m_maxEntriesHasBeenSet) {
     ss << "MaxEntries=" << m_maxEntries << "&";
   }
 
@@ -63,8 +53,4 @@ Aws::String ModifyManagedPrefixListRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ModifyManagedPrefixListRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ModifyManagedPrefixListRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

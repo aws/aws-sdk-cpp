@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/frauddetector/FraudDetector_EXPORTS.h>
 
-namespace Aws
-{
-namespace FraudDetector
-{
-enum class FraudDetectorErrors
-{
-  //From Core//
+namespace Aws {
+namespace FraudDetector {
+enum class FraudDetectorErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class FraudDetectorErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,14 +44,13 @@ enum class FraudDetectorErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER,
   RESOURCE_UNAVAILABLE
 };
 
-class AWS_FRAUDDETECTOR_API FraudDetectorError : public Aws::Client::AWSError<FraudDetectorErrors>
-{
-public:
+class AWS_FRAUDDETECTOR_API FraudDetectorError : public Aws::Client::AWSError<FraudDetectorErrors> {
+ public:
   FraudDetectorError() {}
   FraudDetectorError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<FraudDetectorErrors>(rhs) {}
   FraudDetectorError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<FraudDetectorErrors>(rhs) {}
@@ -65,10 +61,9 @@ public:
   T GetModeledError();
 };
 
-namespace FraudDetectorErrorMapper
-{
-  AWS_FRAUDDETECTOR_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace FraudDetectorErrorMapper {
+AWS_FRAUDDETECTOR_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace FraudDetector
-} // namespace Aws
+}  // namespace FraudDetector
+}  // namespace Aws

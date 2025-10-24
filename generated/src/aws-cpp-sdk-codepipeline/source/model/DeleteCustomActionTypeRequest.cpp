@@ -12,38 +12,26 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteCustomActionTypeRequest::SerializePayload() const
-{
+Aws::String DeleteCustomActionTypeRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_categoryHasBeenSet)
-  {
-   payload.WithString("category", ActionCategoryMapper::GetNameForActionCategory(m_category));
+  if (m_categoryHasBeenSet) {
+    payload.WithString("category", ActionCategoryMapper::GetNameForActionCategory(m_category));
   }
 
-  if(m_providerHasBeenSet)
-  {
-   payload.WithString("provider", m_provider);
-
+  if (m_providerHasBeenSet) {
+    payload.WithString("provider", m_provider);
   }
 
-  if(m_versionHasBeenSet)
-  {
-   payload.WithString("version", m_version);
-
+  if (m_versionHasBeenSet) {
+    payload.WithString("version", m_version);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteCustomActionTypeRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteCustomActionTypeRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodePipeline_20150709.DeleteCustomActionType"));
   return headers;
-
 }
-
-
-
-

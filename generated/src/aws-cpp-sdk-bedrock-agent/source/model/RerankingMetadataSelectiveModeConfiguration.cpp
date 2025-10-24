@@ -11,34 +11,23 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-RerankingMetadataSelectiveModeConfiguration::RerankingMetadataSelectiveModeConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RerankingMetadataSelectiveModeConfiguration::RerankingMetadataSelectiveModeConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-RerankingMetadataSelectiveModeConfiguration& RerankingMetadataSelectiveModeConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("fieldsToInclude"))
-  {
+RerankingMetadataSelectiveModeConfiguration& RerankingMetadataSelectiveModeConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("fieldsToInclude")) {
     Aws::Utils::Array<JsonView> fieldsToIncludeJsonList = jsonValue.GetArray("fieldsToInclude");
-    for(unsigned fieldsToIncludeIndex = 0; fieldsToIncludeIndex < fieldsToIncludeJsonList.GetLength(); ++fieldsToIncludeIndex)
-    {
+    for (unsigned fieldsToIncludeIndex = 0; fieldsToIncludeIndex < fieldsToIncludeJsonList.GetLength(); ++fieldsToIncludeIndex) {
       m_fieldsToInclude.push_back(fieldsToIncludeJsonList[fieldsToIncludeIndex].AsObject());
     }
     m_fieldsToIncludeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("fieldsToExclude"))
-  {
+  if (jsonValue.ValueExists("fieldsToExclude")) {
     Aws::Utils::Array<JsonView> fieldsToExcludeJsonList = jsonValue.GetArray("fieldsToExclude");
-    for(unsigned fieldsToExcludeIndex = 0; fieldsToExcludeIndex < fieldsToExcludeJsonList.GetLength(); ++fieldsToExcludeIndex)
-    {
+    for (unsigned fieldsToExcludeIndex = 0; fieldsToExcludeIndex < fieldsToExcludeJsonList.GetLength(); ++fieldsToExcludeIndex) {
       m_fieldsToExclude.push_back(fieldsToExcludeJsonList[fieldsToExcludeIndex].AsObject());
     }
     m_fieldsToExcludeHasBeenSet = true;
@@ -46,35 +35,28 @@ RerankingMetadataSelectiveModeConfiguration& RerankingMetadataSelectiveModeConfi
   return *this;
 }
 
-JsonValue RerankingMetadataSelectiveModeConfiguration::Jsonize() const
-{
+JsonValue RerankingMetadataSelectiveModeConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_fieldsToIncludeHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> fieldsToIncludeJsonList(m_fieldsToInclude.size());
-   for(unsigned fieldsToIncludeIndex = 0; fieldsToIncludeIndex < fieldsToIncludeJsonList.GetLength(); ++fieldsToIncludeIndex)
-   {
-     fieldsToIncludeJsonList[fieldsToIncludeIndex].AsObject(m_fieldsToInclude[fieldsToIncludeIndex].Jsonize());
-   }
-   payload.WithArray("fieldsToInclude", std::move(fieldsToIncludeJsonList));
-
+  if (m_fieldsToIncludeHasBeenSet) {
+    Aws::Utils::Array<JsonValue> fieldsToIncludeJsonList(m_fieldsToInclude.size());
+    for (unsigned fieldsToIncludeIndex = 0; fieldsToIncludeIndex < fieldsToIncludeJsonList.GetLength(); ++fieldsToIncludeIndex) {
+      fieldsToIncludeJsonList[fieldsToIncludeIndex].AsObject(m_fieldsToInclude[fieldsToIncludeIndex].Jsonize());
+    }
+    payload.WithArray("fieldsToInclude", std::move(fieldsToIncludeJsonList));
   }
 
-  if(m_fieldsToExcludeHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> fieldsToExcludeJsonList(m_fieldsToExclude.size());
-   for(unsigned fieldsToExcludeIndex = 0; fieldsToExcludeIndex < fieldsToExcludeJsonList.GetLength(); ++fieldsToExcludeIndex)
-   {
-     fieldsToExcludeJsonList[fieldsToExcludeIndex].AsObject(m_fieldsToExclude[fieldsToExcludeIndex].Jsonize());
-   }
-   payload.WithArray("fieldsToExclude", std::move(fieldsToExcludeJsonList));
-
+  if (m_fieldsToExcludeHasBeenSet) {
+    Aws::Utils::Array<JsonValue> fieldsToExcludeJsonList(m_fieldsToExclude.size());
+    for (unsigned fieldsToExcludeIndex = 0; fieldsToExcludeIndex < fieldsToExcludeJsonList.GetLength(); ++fieldsToExcludeIndex) {
+      fieldsToExcludeJsonList[fieldsToExcludeIndex].AsObject(m_fieldsToExclude[fieldsToExcludeIndex].Jsonize());
+    }
+    payload.WithArray("fieldsToExclude", std::move(fieldsToExcludeJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

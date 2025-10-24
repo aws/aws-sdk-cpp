@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dynamodb/model/ArchivalSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dynamodb/model/ArchivalSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DynamoDB
-{
-namespace Model
-{
+namespace Aws {
+namespace DynamoDB {
+namespace Model {
 
-ArchivalSummary::ArchivalSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ArchivalSummary::ArchivalSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ArchivalSummary& ArchivalSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ArchivalDateTime"))
-  {
+ArchivalSummary& ArchivalSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ArchivalDateTime")) {
     m_archivalDateTime = jsonValue.GetDouble("ArchivalDateTime");
     m_archivalDateTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ArchivalReason"))
-  {
+  if (jsonValue.ValueExists("ArchivalReason")) {
     m_archivalReason = jsonValue.GetString("ArchivalReason");
     m_archivalReasonHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ArchivalBackupArn"))
-  {
+  if (jsonValue.ValueExists("ArchivalBackupArn")) {
     m_archivalBackupArn = jsonValue.GetString("ArchivalBackupArn");
     m_archivalBackupArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ArchivalSummary::Jsonize() const
-{
+JsonValue ArchivalSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_archivalDateTimeHasBeenSet)
-  {
-   payload.WithDouble("ArchivalDateTime", m_archivalDateTime.SecondsWithMSPrecision());
+  if (m_archivalDateTimeHasBeenSet) {
+    payload.WithDouble("ArchivalDateTime", m_archivalDateTime.SecondsWithMSPrecision());
   }
 
-  if(m_archivalReasonHasBeenSet)
-  {
-   payload.WithString("ArchivalReason", m_archivalReason);
-
+  if (m_archivalReasonHasBeenSet) {
+    payload.WithString("ArchivalReason", m_archivalReason);
   }
 
-  if(m_archivalBackupArnHasBeenSet)
-  {
-   payload.WithString("ArchivalBackupArn", m_archivalBackupArn);
-
+  if (m_archivalBackupArnHasBeenSet) {
+    payload.WithString("ArchivalBackupArn", m_archivalBackupArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DynamoDB
-} // namespace Aws
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws

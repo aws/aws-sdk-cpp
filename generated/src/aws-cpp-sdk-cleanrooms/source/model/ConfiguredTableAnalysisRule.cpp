@@ -11,93 +11,70 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CleanRooms
-{
-namespace Model
-{
+namespace Aws {
+namespace CleanRooms {
+namespace Model {
 
-ConfiguredTableAnalysisRule::ConfiguredTableAnalysisRule(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConfiguredTableAnalysisRule::ConfiguredTableAnalysisRule(JsonView jsonValue) { *this = jsonValue; }
 
-ConfiguredTableAnalysisRule& ConfiguredTableAnalysisRule::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("configuredTableId"))
-  {
+ConfiguredTableAnalysisRule& ConfiguredTableAnalysisRule::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("configuredTableId")) {
     m_configuredTableId = jsonValue.GetString("configuredTableId");
     m_configuredTableIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("configuredTableArn"))
-  {
+  if (jsonValue.ValueExists("configuredTableArn")) {
     m_configuredTableArn = jsonValue.GetString("configuredTableArn");
     m_configuredTableArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("policy"))
-  {
+  if (jsonValue.ValueExists("policy")) {
     m_policy = jsonValue.GetObject("policy");
     m_policyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("type"))
-  {
+  if (jsonValue.ValueExists("type")) {
     m_type = ConfiguredTableAnalysisRuleTypeMapper::GetConfiguredTableAnalysisRuleTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("createTime"))
-  {
+  if (jsonValue.ValueExists("createTime")) {
     m_createTime = jsonValue.GetDouble("createTime");
     m_createTimeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("updateTime"))
-  {
+  if (jsonValue.ValueExists("updateTime")) {
     m_updateTime = jsonValue.GetDouble("updateTime");
     m_updateTimeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ConfiguredTableAnalysisRule::Jsonize() const
-{
+JsonValue ConfiguredTableAnalysisRule::Jsonize() const {
   JsonValue payload;
 
-  if(m_configuredTableIdHasBeenSet)
-  {
-   payload.WithString("configuredTableId", m_configuredTableId);
-
+  if (m_configuredTableIdHasBeenSet) {
+    payload.WithString("configuredTableId", m_configuredTableId);
   }
 
-  if(m_configuredTableArnHasBeenSet)
-  {
-   payload.WithString("configuredTableArn", m_configuredTableArn);
-
+  if (m_configuredTableArnHasBeenSet) {
+    payload.WithString("configuredTableArn", m_configuredTableArn);
   }
 
-  if(m_policyHasBeenSet)
-  {
-   payload.WithObject("policy", m_policy.Jsonize());
-
+  if (m_policyHasBeenSet) {
+    payload.WithObject("policy", m_policy.Jsonize());
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", ConfiguredTableAnalysisRuleTypeMapper::GetNameForConfiguredTableAnalysisRuleType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", ConfiguredTableAnalysisRuleTypeMapper::GetNameForConfiguredTableAnalysisRuleType(m_type));
   }
 
-  if(m_createTimeHasBeenSet)
-  {
-   payload.WithDouble("createTime", m_createTime.SecondsWithMSPrecision());
+  if (m_createTimeHasBeenSet) {
+    payload.WithDouble("createTime", m_createTime.SecondsWithMSPrecision());
   }
 
-  if(m_updateTimeHasBeenSet)
-  {
-   payload.WithDouble("updateTime", m_updateTime.SecondsWithMSPrecision());
+  if (m_updateTimeHasBeenSet) {
+    payload.WithDouble("updateTime", m_updateTime.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CleanRooms
-} // namespace Aws
+}  // namespace Model
+}  // namespace CleanRooms
+}  // namespace Aws

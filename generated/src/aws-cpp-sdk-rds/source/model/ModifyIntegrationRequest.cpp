@@ -3,34 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/ModifyIntegrationRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/ModifyIntegrationRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyIntegrationRequest::SerializePayload() const
-{
+Aws::String ModifyIntegrationRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyIntegration&";
-  if(m_integrationIdentifierHasBeenSet)
-  {
+  if (m_integrationIdentifierHasBeenSet) {
     ss << "IntegrationIdentifier=" << StringUtils::URLEncode(m_integrationIdentifier.c_str()) << "&";
   }
 
-  if(m_integrationNameHasBeenSet)
-  {
+  if (m_integrationNameHasBeenSet) {
     ss << "IntegrationName=" << StringUtils::URLEncode(m_integrationName.c_str()) << "&";
   }
 
-  if(m_dataFilterHasBeenSet)
-  {
+  if (m_dataFilterHasBeenSet) {
     ss << "DataFilter=" << StringUtils::URLEncode(m_dataFilter.c_str()) << "&";
   }
 
-  if(m_descriptionHasBeenSet)
-  {
+  if (m_descriptionHasBeenSet) {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
@@ -38,8 +33,4 @@ Aws::String ModifyIntegrationRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ModifyIntegrationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ModifyIntegrationRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lexv2-models/model/CreateBotVersionRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lexv2-models/model/CreateBotVersionRequest.h>
 
 #include <utility>
 
@@ -12,30 +12,21 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateBotVersionRequest::SerializePayload() const
-{
+Aws::String CreateBotVersionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_botVersionLocaleSpecificationHasBeenSet)
-  {
-   JsonValue botVersionLocaleSpecificationJsonMap;
-   for(auto& botVersionLocaleSpecificationItem : m_botVersionLocaleSpecification)
-   {
-     botVersionLocaleSpecificationJsonMap.WithObject(botVersionLocaleSpecificationItem.first, botVersionLocaleSpecificationItem.second.Jsonize());
-   }
-   payload.WithObject("botVersionLocaleSpecification", std::move(botVersionLocaleSpecificationJsonMap));
-
+  if (m_botVersionLocaleSpecificationHasBeenSet) {
+    JsonValue botVersionLocaleSpecificationJsonMap;
+    for (auto& botVersionLocaleSpecificationItem : m_botVersionLocaleSpecification) {
+      botVersionLocaleSpecificationJsonMap.WithObject(botVersionLocaleSpecificationItem.first,
+                                                      botVersionLocaleSpecificationItem.second.Jsonize());
+    }
+    payload.WithObject("botVersionLocaleSpecification", std::move(botVersionLocaleSpecificationJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -5,12 +5,8 @@
 
 #include <aws/personalize-events/PersonalizeEventsEndpointProvider.h>
 
-namespace Aws
-{
-namespace PersonalizeEvents
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace PersonalizeEvents
-} // namespace Aws
+namespace Aws {
+namespace PersonalizeEvents {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace PersonalizeEvents
+}  // namespace Aws

@@ -6,60 +6,65 @@
 #pragma once
 #include <aws/backup-gateway/BackupGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-template<typename RESULT_TYPE>
+namespace Aws {
+template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace BackupGateway
-{
-namespace Model
-{
-  class DeleteHypervisorResult
-  {
-  public:
-    AWS_BACKUPGATEWAY_API DeleteHypervisorResult() = default;
-    AWS_BACKUPGATEWAY_API DeleteHypervisorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_BACKUPGATEWAY_API DeleteHypervisorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace BackupGateway {
+namespace Model {
+class DeleteHypervisorResult {
+ public:
+  AWS_BACKUPGATEWAY_API DeleteHypervisorResult() = default;
+  AWS_BACKUPGATEWAY_API DeleteHypervisorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_BACKUPGATEWAY_API DeleteHypervisorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the hypervisor you deleted.</p>
+   */
+  inline const Aws::String& GetHypervisorArn() const { return m_hypervisorArn; }
+  template <typename HypervisorArnT = Aws::String>
+  void SetHypervisorArn(HypervisorArnT&& value) {
+    m_hypervisorArnHasBeenSet = true;
+    m_hypervisorArn = std::forward<HypervisorArnT>(value);
+  }
+  template <typename HypervisorArnT = Aws::String>
+  DeleteHypervisorResult& WithHypervisorArn(HypervisorArnT&& value) {
+    SetHypervisorArn(std::forward<HypervisorArnT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the hypervisor you deleted.</p>
-     */
-    inline const Aws::String& GetHypervisorArn() const { return m_hypervisorArn; }
-    template<typename HypervisorArnT = Aws::String>
-    void SetHypervisorArn(HypervisorArnT&& value) { m_hypervisorArnHasBeenSet = true; m_hypervisorArn = std::forward<HypervisorArnT>(value); }
-    template<typename HypervisorArnT = Aws::String>
-    DeleteHypervisorResult& WithHypervisorArn(HypervisorArnT&& value) { SetHypervisorArn(std::forward<HypervisorArnT>(value)); return *this;}
-    ///@}
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetRequestId() const { return m_requestId; }
-    template<typename RequestIdT = Aws::String>
-    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
-    template<typename RequestIdT = Aws::String>
-    DeleteHypervisorResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
-    ///@}
-  private:
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  DeleteHypervisorResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_hypervisorArn;
+  bool m_hypervisorArnHasBeenSet = false;
 
-    Aws::String m_hypervisorArn;
-    bool m_hypervisorArnHasBeenSet = false;
+  Aws::String m_requestId;
+  bool m_requestIdHasBeenSet = false;
+};
 
-    Aws::String m_requestId;
-    bool m_requestIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace BackupGateway
-} // namespace Aws
+}  // namespace Model
+}  // namespace BackupGateway
+}  // namespace Aws

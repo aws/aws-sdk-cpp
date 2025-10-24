@@ -4,36 +4,31 @@
  */
 
 #pragma once
-#include <aws/panorama/Panorama_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/panorama/Panorama_EXPORTS.h>
 
-namespace Aws
-{
-namespace Panorama
-{
-namespace Model
-{
-  enum class DeviceAggregatedStatus
-  {
-    NOT_SET,
-    ERROR_,
-    AWAITING_PROVISIONING,
-    PENDING,
-    FAILED,
-    DELETING,
-    ONLINE,
-    OFFLINE,
-    LEASE_EXPIRED,
-    UPDATE_NEEDED,
-    REBOOTING
-  };
+namespace Aws {
+namespace Panorama {
+namespace Model {
+enum class DeviceAggregatedStatus {
+  NOT_SET,
+  ERROR_,
+  AWAITING_PROVISIONING,
+  PENDING,
+  FAILED,
+  DELETING,
+  ONLINE,
+  OFFLINE,
+  LEASE_EXPIRED,
+  UPDATE_NEEDED,
+  REBOOTING
+};
 
-namespace DeviceAggregatedStatusMapper
-{
+namespace DeviceAggregatedStatusMapper {
 AWS_PANORAMA_API DeviceAggregatedStatus GetDeviceAggregatedStatusForName(const Aws::String& name);
 
 AWS_PANORAMA_API Aws::String GetNameForDeviceAggregatedStatus(DeviceAggregatedStatus value);
-} // namespace DeviceAggregatedStatusMapper
-} // namespace Model
-} // namespace Panorama
-} // namespace Aws
+}  // namespace DeviceAggregatedStatusMapper
+}  // namespace Model
+}  // namespace Panorama
+}  // namespace Aws

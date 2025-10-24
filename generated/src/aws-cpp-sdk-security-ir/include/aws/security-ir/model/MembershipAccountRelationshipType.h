@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/security-ir/SecurityIR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/security-ir/SecurityIR_EXPORTS.h>
 
-namespace Aws
-{
-namespace SecurityIR
-{
-namespace Model
-{
-  enum class MembershipAccountRelationshipType
-  {
-    NOT_SET,
-    Organization,
-    Unrelated
-  };
+namespace Aws {
+namespace SecurityIR {
+namespace Model {
+enum class MembershipAccountRelationshipType { NOT_SET, Organization, Unrelated };
 
-namespace MembershipAccountRelationshipTypeMapper
-{
+namespace MembershipAccountRelationshipTypeMapper {
 AWS_SECURITYIR_API MembershipAccountRelationshipType GetMembershipAccountRelationshipTypeForName(const Aws::String& name);
 
 AWS_SECURITYIR_API Aws::String GetNameForMembershipAccountRelationshipType(MembershipAccountRelationshipType value);
-} // namespace MembershipAccountRelationshipTypeMapper
-} // namespace Model
-} // namespace SecurityIR
-} // namespace Aws
+}  // namespace MembershipAccountRelationshipTypeMapper
+}  // namespace Model
+}  // namespace SecurityIR
+}  // namespace Aws

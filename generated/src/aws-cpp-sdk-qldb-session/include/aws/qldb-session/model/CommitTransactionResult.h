@@ -4,105 +4,122 @@
  */
 
 #pragma once
-#include <aws/qldb-session/QLDBSession_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/Array.h>
-#include <aws/qldb-session/model/TimingInformation.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qldb-session/QLDBSession_EXPORTS.h>
 #include <aws/qldb-session/model/IOUsage.h>
+#include <aws/qldb-session/model/TimingInformation.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace QLDBSession
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace QLDBSession {
+namespace Model {
 
+/**
+ * <p>Contains the details of the committed transaction.</p><p><h3>See Also:</h3>
+ * <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-session-2019-07-11/CommitTransactionResult">AWS
+ * API Reference</a></p>
+ */
+class CommitTransactionResult {
+ public:
+  AWS_QLDBSESSION_API CommitTransactionResult() = default;
+  AWS_QLDBSESSION_API CommitTransactionResult(Aws::Utils::Json::JsonView jsonValue);
+  AWS_QLDBSESSION_API CommitTransactionResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_QLDBSESSION_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
-   * <p>Contains the details of the committed transaction.</p><p><h3>See Also:</h3>  
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-session-2019-07-11/CommitTransactionResult">AWS
-   * API Reference</a></p>
+   * <p>The transaction ID of the committed transaction.</p>
    */
-  class CommitTransactionResult
-  {
-  public:
-    AWS_QLDBSESSION_API CommitTransactionResult() = default;
-    AWS_QLDBSESSION_API CommitTransactionResult(Aws::Utils::Json::JsonView jsonValue);
-    AWS_QLDBSESSION_API CommitTransactionResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_QLDBSESSION_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetTransactionId() const { return m_transactionId; }
+  inline bool TransactionIdHasBeenSet() const { return m_transactionIdHasBeenSet; }
+  template <typename TransactionIdT = Aws::String>
+  void SetTransactionId(TransactionIdT&& value) {
+    m_transactionIdHasBeenSet = true;
+    m_transactionId = std::forward<TransactionIdT>(value);
+  }
+  template <typename TransactionIdT = Aws::String>
+  CommitTransactionResult& WithTransactionId(TransactionIdT&& value) {
+    SetTransactionId(std::forward<TransactionIdT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The commit digest of the committed transaction.</p>
+   */
+  inline const Aws::Utils::ByteBuffer& GetCommitDigest() const { return m_commitDigest; }
+  inline bool CommitDigestHasBeenSet() const { return m_commitDigestHasBeenSet; }
+  template <typename CommitDigestT = Aws::Utils::ByteBuffer>
+  void SetCommitDigest(CommitDigestT&& value) {
+    m_commitDigestHasBeenSet = true;
+    m_commitDigest = std::forward<CommitDigestT>(value);
+  }
+  template <typename CommitDigestT = Aws::Utils::ByteBuffer>
+  CommitTransactionResult& WithCommitDigest(CommitDigestT&& value) {
+    SetCommitDigest(std::forward<CommitDigestT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The transaction ID of the committed transaction.</p>
-     */
-    inline const Aws::String& GetTransactionId() const { return m_transactionId; }
-    inline bool TransactionIdHasBeenSet() const { return m_transactionIdHasBeenSet; }
-    template<typename TransactionIdT = Aws::String>
-    void SetTransactionId(TransactionIdT&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::forward<TransactionIdT>(value); }
-    template<typename TransactionIdT = Aws::String>
-    CommitTransactionResult& WithTransactionId(TransactionIdT&& value) { SetTransactionId(std::forward<TransactionIdT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>Contains server-side performance information for the command.</p>
+   */
+  inline const TimingInformation& GetTimingInformation() const { return m_timingInformation; }
+  inline bool TimingInformationHasBeenSet() const { return m_timingInformationHasBeenSet; }
+  template <typename TimingInformationT = TimingInformation>
+  void SetTimingInformation(TimingInformationT&& value) {
+    m_timingInformationHasBeenSet = true;
+    m_timingInformation = std::forward<TimingInformationT>(value);
+  }
+  template <typename TimingInformationT = TimingInformation>
+  CommitTransactionResult& WithTimingInformation(TimingInformationT&& value) {
+    SetTimingInformation(std::forward<TimingInformationT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    /**
-     * <p>The commit digest of the committed transaction.</p>
-     */
-    inline const Aws::Utils::ByteBuffer& GetCommitDigest() const { return m_commitDigest; }
-    inline bool CommitDigestHasBeenSet() const { return m_commitDigestHasBeenSet; }
-    template<typename CommitDigestT = Aws::Utils::ByteBuffer>
-    void SetCommitDigest(CommitDigestT&& value) { m_commitDigestHasBeenSet = true; m_commitDigest = std::forward<CommitDigestT>(value); }
-    template<typename CommitDigestT = Aws::Utils::ByteBuffer>
-    CommitTransactionResult& WithCommitDigest(CommitDigestT&& value) { SetCommitDigest(std::forward<CommitDigestT>(value)); return *this;}
-    ///@}
+  ///@{
+  /**
+   * <p>Contains metrics about the number of I/O requests that were consumed.</p>
+   */
+  inline const IOUsage& GetConsumedIOs() const { return m_consumedIOs; }
+  inline bool ConsumedIOsHasBeenSet() const { return m_consumedIOsHasBeenSet; }
+  template <typename ConsumedIOsT = IOUsage>
+  void SetConsumedIOs(ConsumedIOsT&& value) {
+    m_consumedIOsHasBeenSet = true;
+    m_consumedIOs = std::forward<ConsumedIOsT>(value);
+  }
+  template <typename ConsumedIOsT = IOUsage>
+  CommitTransactionResult& WithConsumedIOs(ConsumedIOsT&& value) {
+    SetConsumedIOs(std::forward<ConsumedIOsT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_transactionId;
+  bool m_transactionIdHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>Contains server-side performance information for the command.</p>
-     */
-    inline const TimingInformation& GetTimingInformation() const { return m_timingInformation; }
-    inline bool TimingInformationHasBeenSet() const { return m_timingInformationHasBeenSet; }
-    template<typename TimingInformationT = TimingInformation>
-    void SetTimingInformation(TimingInformationT&& value) { m_timingInformationHasBeenSet = true; m_timingInformation = std::forward<TimingInformationT>(value); }
-    template<typename TimingInformationT = TimingInformation>
-    CommitTransactionResult& WithTimingInformation(TimingInformationT&& value) { SetTimingInformation(std::forward<TimingInformationT>(value)); return *this;}
-    ///@}
+  Aws::Utils::ByteBuffer m_commitDigest{};
+  bool m_commitDigestHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>Contains metrics about the number of I/O requests that were consumed.</p>
-     */
-    inline const IOUsage& GetConsumedIOs() const { return m_consumedIOs; }
-    inline bool ConsumedIOsHasBeenSet() const { return m_consumedIOsHasBeenSet; }
-    template<typename ConsumedIOsT = IOUsage>
-    void SetConsumedIOs(ConsumedIOsT&& value) { m_consumedIOsHasBeenSet = true; m_consumedIOs = std::forward<ConsumedIOsT>(value); }
-    template<typename ConsumedIOsT = IOUsage>
-    CommitTransactionResult& WithConsumedIOs(ConsumedIOsT&& value) { SetConsumedIOs(std::forward<ConsumedIOsT>(value)); return *this;}
-    ///@}
-  private:
+  TimingInformation m_timingInformation;
+  bool m_timingInformationHasBeenSet = false;
 
-    Aws::String m_transactionId;
-    bool m_transactionIdHasBeenSet = false;
+  IOUsage m_consumedIOs;
+  bool m_consumedIOsHasBeenSet = false;
+};
 
-    Aws::Utils::ByteBuffer m_commitDigest{};
-    bool m_commitDigestHasBeenSet = false;
-
-    TimingInformation m_timingInformation;
-    bool m_timingInformationHasBeenSet = false;
-
-    IOUsage m_consumedIOs;
-    bool m_consumedIOsHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace QLDBSession
-} // namespace Aws
+}  // namespace Model
+}  // namespace QLDBSession
+}  // namespace Aws

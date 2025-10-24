@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sns/model/CheckIfPhoneNumberIsOptedOutRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sns/model/CheckIfPhoneNumberIsOptedOutRequest.h>
 
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-Aws::String CheckIfPhoneNumberIsOptedOutRequest::SerializePayload() const
-{
+Aws::String CheckIfPhoneNumberIsOptedOutRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CheckIfPhoneNumberIsOptedOut&";
-  if(m_phoneNumberHasBeenSet)
-  {
+  if (m_phoneNumberHasBeenSet) {
     ss << "phoneNumber=" << StringUtils::URLEncode(m_phoneNumber.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String CheckIfPhoneNumberIsOptedOutRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CheckIfPhoneNumberIsOptedOutRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CheckIfPhoneNumberIsOptedOutRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

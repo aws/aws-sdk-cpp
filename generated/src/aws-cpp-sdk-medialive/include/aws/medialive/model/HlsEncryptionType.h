@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
-  enum class HlsEncryptionType
-  {
-    NOT_SET,
-    AES128,
-    SAMPLE_AES
-  };
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+enum class HlsEncryptionType { NOT_SET, AES128, SAMPLE_AES };
 
-namespace HlsEncryptionTypeMapper
-{
+namespace HlsEncryptionTypeMapper {
 AWS_MEDIALIVE_API HlsEncryptionType GetHlsEncryptionTypeForName(const Aws::String& name);
 
 AWS_MEDIALIVE_API Aws::String GetNameForHlsEncryptionType(HlsEncryptionType value);
-} // namespace HlsEncryptionTypeMapper
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace HlsEncryptionTypeMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

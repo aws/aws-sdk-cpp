@@ -3,48 +3,41 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/taxsettings/model/SaudiArabiaAdditionalInfo.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/taxsettings/model/SaudiArabiaAdditionalInfo.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace TaxSettings
-{
-namespace Model
-{
+namespace Aws {
+namespace TaxSettings {
+namespace Model {
 
-SaudiArabiaAdditionalInfo::SaudiArabiaAdditionalInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SaudiArabiaAdditionalInfo::SaudiArabiaAdditionalInfo(JsonView jsonValue) { *this = jsonValue; }
 
-SaudiArabiaAdditionalInfo& SaudiArabiaAdditionalInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("taxRegistrationNumberType"))
-  {
-    m_taxRegistrationNumberType = SaudiArabiaTaxRegistrationNumberTypeMapper::GetSaudiArabiaTaxRegistrationNumberTypeForName(jsonValue.GetString("taxRegistrationNumberType"));
+SaudiArabiaAdditionalInfo& SaudiArabiaAdditionalInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("taxRegistrationNumberType")) {
+    m_taxRegistrationNumberType = SaudiArabiaTaxRegistrationNumberTypeMapper::GetSaudiArabiaTaxRegistrationNumberTypeForName(
+        jsonValue.GetString("taxRegistrationNumberType"));
     m_taxRegistrationNumberTypeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SaudiArabiaAdditionalInfo::Jsonize() const
-{
+JsonValue SaudiArabiaAdditionalInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_taxRegistrationNumberTypeHasBeenSet)
-  {
-   payload.WithString("taxRegistrationNumberType", SaudiArabiaTaxRegistrationNumberTypeMapper::GetNameForSaudiArabiaTaxRegistrationNumberType(m_taxRegistrationNumberType));
+  if (m_taxRegistrationNumberTypeHasBeenSet) {
+    payload.WithString(
+        "taxRegistrationNumberType",
+        SaudiArabiaTaxRegistrationNumberTypeMapper::GetNameForSaudiArabiaTaxRegistrationNumberType(m_taxRegistrationNumberType));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace TaxSettings
-} // namespace Aws
+}  // namespace Model
+}  // namespace TaxSettings
+}  // namespace Aws

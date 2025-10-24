@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeCommit
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeCommit {
+namespace Model {
 
-Folder::Folder(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Folder::Folder(JsonView jsonValue) { *this = jsonValue; }
 
-Folder& Folder::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("treeId"))
-  {
+Folder& Folder::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("treeId")) {
     m_treeId = jsonValue.GetString("treeId");
     m_treeIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("absolutePath"))
-  {
+  if (jsonValue.ValueExists("absolutePath")) {
     m_absolutePath = jsonValue.GetString("absolutePath");
     m_absolutePathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("relativePath"))
-  {
+  if (jsonValue.ValueExists("relativePath")) {
     m_relativePath = jsonValue.GetString("relativePath");
     m_relativePathHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Folder::Jsonize() const
-{
+JsonValue Folder::Jsonize() const {
   JsonValue payload;
 
-  if(m_treeIdHasBeenSet)
-  {
-   payload.WithString("treeId", m_treeId);
-
+  if (m_treeIdHasBeenSet) {
+    payload.WithString("treeId", m_treeId);
   }
 
-  if(m_absolutePathHasBeenSet)
-  {
-   payload.WithString("absolutePath", m_absolutePath);
-
+  if (m_absolutePathHasBeenSet) {
+    payload.WithString("absolutePath", m_absolutePath);
   }
 
-  if(m_relativePathHasBeenSet)
-  {
-   payload.WithString("relativePath", m_relativePath);
-
+  if (m_relativePathHasBeenSet) {
+    payload.WithString("relativePath", m_relativePath);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeCommit
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeCommit
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/greengrassv2/GreengrassV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/greengrassv2/GreengrassV2_EXPORTS.h>
 
-namespace Aws
-{
-namespace GreengrassV2
-{
-namespace Model
-{
-  enum class LambdaEventSourceType
-  {
-    NOT_SET,
-    PUB_SUB,
-    IOT_CORE
-  };
+namespace Aws {
+namespace GreengrassV2 {
+namespace Model {
+enum class LambdaEventSourceType { NOT_SET, PUB_SUB, IOT_CORE };
 
-namespace LambdaEventSourceTypeMapper
-{
+namespace LambdaEventSourceTypeMapper {
 AWS_GREENGRASSV2_API LambdaEventSourceType GetLambdaEventSourceTypeForName(const Aws::String& name);
 
 AWS_GREENGRASSV2_API Aws::String GetNameForLambdaEventSourceType(LambdaEventSourceType value);
-} // namespace LambdaEventSourceTypeMapper
-} // namespace Model
-} // namespace GreengrassV2
-} // namespace Aws
+}  // namespace LambdaEventSourceTypeMapper
+}  // namespace Model
+}  // namespace GreengrassV2
+}  // namespace Aws

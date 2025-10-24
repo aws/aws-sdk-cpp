@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/RebootDBInstanceRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/RebootDBInstanceRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String RebootDBInstanceRequest::SerializePayload() const
-{
+Aws::String RebootDBInstanceRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=RebootDBInstance&";
-  if(m_dBInstanceIdentifierHasBeenSet)
-  {
+  if (m_dBInstanceIdentifierHasBeenSet) {
     ss << "DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
   }
 
-  if(m_forceFailoverHasBeenSet)
-  {
+  if (m_forceFailoverHasBeenSet) {
     ss << "ForceFailover=" << std::boolalpha << m_forceFailover << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String RebootDBInstanceRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  RebootDBInstanceRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void RebootDBInstanceRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

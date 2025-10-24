@@ -5,19 +5,16 @@
 
 #pragma once
 
-#include <aws/iotsecuretunneling/IoTSecureTunneling_EXPORTS.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
+#include <aws/iotsecuretunneling/IoTSecureTunneling_EXPORTS.h>
 
-namespace Aws
-{
-namespace Client
-{
+namespace Aws {
+namespace Client {
 
-class AWS_IOTSECURETUNNELING_API IoTSecureTunnelingErrorMarshaller : public Aws::Client::JsonErrorMarshaller
-{
-public:
+class AWS_IOTSECURETUNNELING_API IoTSecureTunnelingErrorMarshaller : public Aws::Client::JsonErrorMarshaller {
+ public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Client
-} // namespace Aws
+}  // namespace Client
+}  // namespace Aws

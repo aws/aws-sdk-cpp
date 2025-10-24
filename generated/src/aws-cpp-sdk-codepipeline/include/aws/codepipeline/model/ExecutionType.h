@@ -7,25 +7,16 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
-  enum class ExecutionType
-  {
-    NOT_SET,
-    STANDARD,
-    ROLLBACK
-  };
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
+enum class ExecutionType { NOT_SET, STANDARD, ROLLBACK };
 
-namespace ExecutionTypeMapper
-{
+namespace ExecutionTypeMapper {
 AWS_CODEPIPELINE_API ExecutionType GetExecutionTypeForName(const Aws::String& name);
 
 AWS_CODEPIPELINE_API Aws::String GetNameForExecutionType(ExecutionType value);
-} // namespace ExecutionTypeMapper
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace ExecutionTypeMapper
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

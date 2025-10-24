@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppIntegrationsService
-{
-namespace Model
-{
+namespace Aws {
+namespace AppIntegrationsService {
+namespace Model {
 
-DataIntegrationSummary::DataIntegrationSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DataIntegrationSummary::DataIntegrationSummary(JsonView jsonValue) { *this = jsonValue; }
 
-DataIntegrationSummary& DataIntegrationSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Arn"))
-  {
+DataIntegrationSummary& DataIntegrationSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SourceURI"))
-  {
+  if (jsonValue.ValueExists("SourceURI")) {
     m_sourceURI = jsonValue.GetString("SourceURI");
     m_sourceURIHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DataIntegrationSummary::Jsonize() const
-{
+JsonValue DataIntegrationSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_sourceURIHasBeenSet)
-  {
-   payload.WithString("SourceURI", m_sourceURI);
-
+  if (m_sourceURIHasBeenSet) {
+    payload.WithString("SourceURI", m_sourceURI);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppIntegrationsService
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppIntegrationsService
+}  // namespace Aws

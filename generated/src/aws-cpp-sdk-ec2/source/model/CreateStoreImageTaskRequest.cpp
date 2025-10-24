@@ -3,39 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/CreateStoreImageTaskRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/CreateStoreImageTaskRequest.h>
 
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateStoreImageTaskRequest::SerializePayload() const
-{
+Aws::String CreateStoreImageTaskRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateStoreImageTask&";
-  if(m_imageIdHasBeenSet)
-  {
+  if (m_imageIdHasBeenSet) {
     ss << "ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
   }
 
-  if(m_bucketHasBeenSet)
-  {
+  if (m_bucketHasBeenSet) {
     ss << "Bucket=" << StringUtils::URLEncode(m_bucket.c_str()) << "&";
   }
 
-  if(m_s3ObjectTagsHasBeenSet)
-  {
+  if (m_s3ObjectTagsHasBeenSet) {
     unsigned s3ObjectTagsCount = 1;
-    for(auto& item : m_s3ObjectTags)
-    {
+    for (auto& item : m_s3ObjectTags) {
       item.OutputToStream(ss, "S3ObjectTag.", s3ObjectTagsCount, "");
       s3ObjectTagsCount++;
     }
   }
 
-  if(m_dryRunHasBeenSet)
-  {
+  if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
@@ -43,8 +37,4 @@ Aws::String CreateStoreImageTaskRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  CreateStoreImageTaskRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateStoreImageTaskRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

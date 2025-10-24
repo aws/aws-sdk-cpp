@@ -11,51 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-ConcatenationSink::ConcatenationSink(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ConcatenationSink::ConcatenationSink(JsonView jsonValue) { *this = jsonValue; }
 
-ConcatenationSink& ConcatenationSink::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Type"))
-  {
+ConcatenationSink& ConcatenationSink::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Type")) {
     m_type = ConcatenationSinkTypeMapper::GetConcatenationSinkTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("S3BucketSinkConfiguration"))
-  {
+  if (jsonValue.ValueExists("S3BucketSinkConfiguration")) {
     m_s3BucketSinkConfiguration = jsonValue.GetObject("S3BucketSinkConfiguration");
     m_s3BucketSinkConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ConcatenationSink::Jsonize() const
-{
+JsonValue ConcatenationSink::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", ConcatenationSinkTypeMapper::GetNameForConcatenationSinkType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", ConcatenationSinkTypeMapper::GetNameForConcatenationSinkType(m_type));
   }
 
-  if(m_s3BucketSinkConfigurationHasBeenSet)
-  {
-   payload.WithObject("S3BucketSinkConfiguration", m_s3BucketSinkConfiguration.Jsonize());
-
+  if (m_s3BucketSinkConfigurationHasBeenSet) {
+    payload.WithObject("S3BucketSinkConfiguration", m_s3BucketSinkConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

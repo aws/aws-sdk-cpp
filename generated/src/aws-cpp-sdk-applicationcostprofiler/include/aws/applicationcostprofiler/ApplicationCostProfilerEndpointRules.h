@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/applicationcostprofiler/ApplicationCostProfiler_EXPORTS.h>
 
-namespace Aws
-{
-namespace ApplicationCostProfiler
-{
-class ApplicationCostProfilerEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace ApplicationCostProfiler {
+class ApplicationCostProfilerEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace ApplicationCostProfiler
-} // namespace Aws
+}  // namespace ApplicationCostProfiler
+}  // namespace Aws

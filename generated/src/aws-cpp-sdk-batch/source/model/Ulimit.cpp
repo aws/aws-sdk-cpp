@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Batch
-{
-namespace Model
-{
+namespace Aws {
+namespace Batch {
+namespace Model {
 
-Ulimit::Ulimit(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Ulimit::Ulimit(JsonView jsonValue) { *this = jsonValue; }
 
-Ulimit& Ulimit::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("hardLimit"))
-  {
+Ulimit& Ulimit::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("hardLimit")) {
     m_hardLimit = jsonValue.GetInteger("hardLimit");
     m_hardLimitHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("softLimit"))
-  {
+  if (jsonValue.ValueExists("softLimit")) {
     m_softLimit = jsonValue.GetInteger("softLimit");
     m_softLimitHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Ulimit::Jsonize() const
-{
+JsonValue Ulimit::Jsonize() const {
   JsonValue payload;
 
-  if(m_hardLimitHasBeenSet)
-  {
-   payload.WithInteger("hardLimit", m_hardLimit);
-
+  if (m_hardLimitHasBeenSet) {
+    payload.WithInteger("hardLimit", m_hardLimit);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_softLimitHasBeenSet)
-  {
-   payload.WithInteger("softLimit", m_softLimit);
-
+  if (m_softLimitHasBeenSet) {
+    payload.WithInteger("softLimit", m_softLimit);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Batch
-} // namespace Aws
+}  // namespace Model
+}  // namespace Batch
+}  // namespace Aws

@@ -11,12 +11,9 @@ using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::CloudWatchEvents;
 
-namespace Aws
-{
-namespace CloudWatchEvents
-{
-namespace CloudWatchEventsErrorMapper
-{
+namespace Aws {
+namespace CloudWatchEvents {
+namespace CloudWatchEventsErrorMapper {
 
 static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
 static const int OPERATION_DISABLED_HASH = HashingUtils::HashString("OperationDisabledException");
@@ -29,54 +26,33 @@ static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("Concur
 static const int ILLEGAL_STATUS_HASH = HashingUtils::HashString("IllegalStatusException");
 static const int INVALID_STATE_HASH = HashingUtils::HashString("InvalidStateException");
 
-
-AWSError<CoreErrors> GetErrorForName(const char* errorName)
-{
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INTERNAL_HASH)
-  {
+  if (hashCode == INTERNAL_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchEventsErrors::INTERNAL), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == OPERATION_DISABLED_HASH)
-  {
+  } else if (hashCode == OPERATION_DISABLED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchEventsErrors::OPERATION_DISABLED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_EVENT_PATTERN_HASH)
-  {
+  } else if (hashCode == INVALID_EVENT_PATTERN_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchEventsErrors::INVALID_EVENT_PATTERN), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == MANAGED_RULE_HASH)
-  {
+  } else if (hashCode == MANAGED_RULE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchEventsErrors::MANAGED_RULE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
-  {
+  } else if (hashCode == RESOURCE_ALREADY_EXISTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchEventsErrors::RESOURCE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == POLICY_LENGTH_EXCEEDED_HASH)
-  {
+  } else if (hashCode == POLICY_LENGTH_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchEventsErrors::POLICY_LENGTH_EXCEEDED), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == LIMIT_EXCEEDED_HASH)
-  {
+  } else if (hashCode == LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchEventsErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
-  }
-  else if (hashCode == CONCURRENT_MODIFICATION_HASH)
-  {
+  } else if (hashCode == CONCURRENT_MODIFICATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchEventsErrors::CONCURRENT_MODIFICATION), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == ILLEGAL_STATUS_HASH)
-  {
+  } else if (hashCode == ILLEGAL_STATUS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchEventsErrors::ILLEGAL_STATUS), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == INVALID_STATE_HASH)
-  {
+  } else if (hashCode == INVALID_STATE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchEventsErrors::INVALID_STATE), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 
-} // namespace CloudWatchEventsErrorMapper
-} // namespace CloudWatchEvents
-} // namespace Aws
+}  // namespace CloudWatchEventsErrorMapper
+}  // namespace CloudWatchEvents
+}  // namespace Aws

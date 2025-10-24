@@ -11,72 +11,53 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AccessAnalyzer
-{
-namespace Model
-{
+namespace Aws {
+namespace AccessAnalyzer {
+namespace Model {
 
-Trail::Trail(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Trail::Trail(JsonView jsonValue) { *this = jsonValue; }
 
-Trail& Trail::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("cloudTrailArn"))
-  {
+Trail& Trail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("cloudTrailArn")) {
     m_cloudTrailArn = jsonValue.GetString("cloudTrailArn");
     m_cloudTrailArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("regions"))
-  {
+  if (jsonValue.ValueExists("regions")) {
     Aws::Utils::Array<JsonView> regionsJsonList = jsonValue.GetArray("regions");
-    for(unsigned regionsIndex = 0; regionsIndex < regionsJsonList.GetLength(); ++regionsIndex)
-    {
+    for (unsigned regionsIndex = 0; regionsIndex < regionsJsonList.GetLength(); ++regionsIndex) {
       m_regions.push_back(regionsJsonList[regionsIndex].AsString());
     }
     m_regionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("allRegions"))
-  {
+  if (jsonValue.ValueExists("allRegions")) {
     m_allRegions = jsonValue.GetBool("allRegions");
     m_allRegionsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Trail::Jsonize() const
-{
+JsonValue Trail::Jsonize() const {
   JsonValue payload;
 
-  if(m_cloudTrailArnHasBeenSet)
-  {
-   payload.WithString("cloudTrailArn", m_cloudTrailArn);
-
+  if (m_cloudTrailArnHasBeenSet) {
+    payload.WithString("cloudTrailArn", m_cloudTrailArn);
   }
 
-  if(m_regionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> regionsJsonList(m_regions.size());
-   for(unsigned regionsIndex = 0; regionsIndex < regionsJsonList.GetLength(); ++regionsIndex)
-   {
-     regionsJsonList[regionsIndex].AsString(m_regions[regionsIndex]);
-   }
-   payload.WithArray("regions", std::move(regionsJsonList));
-
+  if (m_regionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> regionsJsonList(m_regions.size());
+    for (unsigned regionsIndex = 0; regionsIndex < regionsJsonList.GetLength(); ++regionsIndex) {
+      regionsJsonList[regionsIndex].AsString(m_regions[regionsIndex]);
+    }
+    payload.WithArray("regions", std::move(regionsJsonList));
   }
 
-  if(m_allRegionsHasBeenSet)
-  {
-   payload.WithBool("allRegions", m_allRegions);
-
+  if (m_allRegionsHasBeenSet) {
+    payload.WithBool("allRegions", m_allRegions);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AccessAnalyzer
-} // namespace Aws
+}  // namespace Model
+}  // namespace AccessAnalyzer
+}  // namespace Aws

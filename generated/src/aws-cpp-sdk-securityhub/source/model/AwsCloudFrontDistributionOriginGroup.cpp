@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsCloudFrontDistributionOriginGroup.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsCloudFrontDistributionOriginGroup.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsCloudFrontDistributionOriginGroup::AwsCloudFrontDistributionOriginGroup(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AwsCloudFrontDistributionOriginGroup::AwsCloudFrontDistributionOriginGroup(JsonView jsonValue) { *this = jsonValue; }
 
-AwsCloudFrontDistributionOriginGroup& AwsCloudFrontDistributionOriginGroup::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FailoverCriteria"))
-  {
+AwsCloudFrontDistributionOriginGroup& AwsCloudFrontDistributionOriginGroup::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FailoverCriteria")) {
     m_failoverCriteria = jsonValue.GetObject("FailoverCriteria");
     m_failoverCriteriaHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsCloudFrontDistributionOriginGroup::Jsonize() const
-{
+JsonValue AwsCloudFrontDistributionOriginGroup::Jsonize() const {
   JsonValue payload;
 
-  if(m_failoverCriteriaHasBeenSet)
-  {
-   payload.WithObject("FailoverCriteria", m_failoverCriteria.Jsonize());
-
+  if (m_failoverCriteriaHasBeenSet) {
+    payload.WithObject("FailoverCriteria", m_failoverCriteria.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

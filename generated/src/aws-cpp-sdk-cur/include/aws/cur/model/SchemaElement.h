@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/cur/CostandUsageReportService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cur/CostandUsageReportService_EXPORTS.h>
 
-namespace Aws
-{
-namespace CostandUsageReportService
-{
-namespace Model
-{
-  enum class SchemaElement
-  {
-    NOT_SET,
-    RESOURCES,
-    SPLIT_COST_ALLOCATION_DATA,
-    MANUAL_DISCOUNT_COMPATIBILITY
-  };
+namespace Aws {
+namespace CostandUsageReportService {
+namespace Model {
+enum class SchemaElement { NOT_SET, RESOURCES, SPLIT_COST_ALLOCATION_DATA, MANUAL_DISCOUNT_COMPATIBILITY };
 
-namespace SchemaElementMapper
-{
+namespace SchemaElementMapper {
 AWS_COSTANDUSAGEREPORTSERVICE_API SchemaElement GetSchemaElementForName(const Aws::String& name);
 
 AWS_COSTANDUSAGEREPORTSERVICE_API Aws::String GetNameForSchemaElement(SchemaElement value);
-} // namespace SchemaElementMapper
-} // namespace Model
-} // namespace CostandUsageReportService
-} // namespace Aws
+}  // namespace SchemaElementMapper
+}  // namespace Model
+}  // namespace CostandUsageReportService
+}  // namespace Aws

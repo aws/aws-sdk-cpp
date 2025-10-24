@@ -4,97 +4,82 @@
  */
 
 #include <aws/cloudfront/model/StreamingDistributionSummary.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudFront
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudFront {
+namespace Model {
 
-StreamingDistributionSummary::StreamingDistributionSummary(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+StreamingDistributionSummary::StreamingDistributionSummary(const XmlNode& xmlNode) { *this = xmlNode; }
 
-StreamingDistributionSummary& StreamingDistributionSummary::operator =(const XmlNode& xmlNode)
-{
+StreamingDistributionSummary& StreamingDistributionSummary::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode idNode = resultNode.FirstChild("Id");
-    if(!idNode.IsNull())
-    {
+    if (!idNode.IsNull()) {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
     }
     XmlNode aRNNode = resultNode.FirstChild("ARN");
-    if(!aRNNode.IsNull())
-    {
+    if (!aRNNode.IsNull()) {
       m_aRN = Aws::Utils::Xml::DecodeEscapedXmlText(aRNNode.GetText());
       m_aRNHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
-    if(!statusNode.IsNull())
-    {
+    if (!statusNode.IsNull()) {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
     }
     XmlNode lastModifiedTimeNode = resultNode.FirstChild("LastModifiedTime");
-    if(!lastModifiedTimeNode.IsNull())
-    {
-      m_lastModifiedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastModifiedTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+    if (!lastModifiedTimeNode.IsNull()) {
+      m_lastModifiedTime =
+          DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastModifiedTimeNode.GetText()).c_str()).c_str(),
+                   Aws::Utils::DateFormat::ISO_8601);
       m_lastModifiedTimeHasBeenSet = true;
     }
     XmlNode domainNameNode = resultNode.FirstChild("DomainName");
-    if(!domainNameNode.IsNull())
-    {
+    if (!domainNameNode.IsNull()) {
       m_domainName = Aws::Utils::Xml::DecodeEscapedXmlText(domainNameNode.GetText());
       m_domainNameHasBeenSet = true;
     }
     XmlNode s3OriginNode = resultNode.FirstChild("S3Origin");
-    if(!s3OriginNode.IsNull())
-    {
+    if (!s3OriginNode.IsNull()) {
       m_s3Origin = s3OriginNode;
       m_s3OriginHasBeenSet = true;
     }
     XmlNode aliasesNode = resultNode.FirstChild("Aliases");
-    if(!aliasesNode.IsNull())
-    {
+    if (!aliasesNode.IsNull()) {
       m_aliases = aliasesNode;
       m_aliasesHasBeenSet = true;
     }
     XmlNode trustedSignersNode = resultNode.FirstChild("TrustedSigners");
-    if(!trustedSignersNode.IsNull())
-    {
+    if (!trustedSignersNode.IsNull()) {
       m_trustedSigners = trustedSignersNode;
       m_trustedSignersHasBeenSet = true;
     }
     XmlNode commentNode = resultNode.FirstChild("Comment");
-    if(!commentNode.IsNull())
-    {
+    if (!commentNode.IsNull()) {
       m_comment = Aws::Utils::Xml::DecodeEscapedXmlText(commentNode.GetText());
       m_commentHasBeenSet = true;
     }
     XmlNode priceClassNode = resultNode.FirstChild("PriceClass");
-    if(!priceClassNode.IsNull())
-    {
-      m_priceClass = PriceClassMapper::GetPriceClassForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(priceClassNode.GetText()).c_str()));
+    if (!priceClassNode.IsNull()) {
+      m_priceClass = PriceClassMapper::GetPriceClassForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(priceClassNode.GetText()).c_str()));
       m_priceClassHasBeenSet = true;
     }
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
-    if(!enabledNode.IsNull())
-    {
-      m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
+    if (!enabledNode.IsNull()) {
+      m_enabled =
+          StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
     }
   }
@@ -102,79 +87,66 @@ StreamingDistributionSummary& StreamingDistributionSummary::operator =(const Xml
   return *this;
 }
 
-void StreamingDistributionSummary::AddToNode(XmlNode& parentNode) const
-{
+void StreamingDistributionSummary::AddToNode(XmlNode& parentNode) const {
   Aws::StringStream ss;
-  if(m_idHasBeenSet)
-  {
-   XmlNode idNode = parentNode.CreateChildElement("Id");
-   idNode.SetText(m_id);
+  if (m_idHasBeenSet) {
+    XmlNode idNode = parentNode.CreateChildElement("Id");
+    idNode.SetText(m_id);
   }
 
-  if(m_aRNHasBeenSet)
-  {
-   XmlNode aRNNode = parentNode.CreateChildElement("ARN");
-   aRNNode.SetText(m_aRN);
+  if (m_aRNHasBeenSet) {
+    XmlNode aRNNode = parentNode.CreateChildElement("ARN");
+    aRNNode.SetText(m_aRN);
   }
 
-  if(m_statusHasBeenSet)
-  {
-   XmlNode statusNode = parentNode.CreateChildElement("Status");
-   statusNode.SetText(m_status);
+  if (m_statusHasBeenSet) {
+    XmlNode statusNode = parentNode.CreateChildElement("Status");
+    statusNode.SetText(m_status);
   }
 
-  if(m_lastModifiedTimeHasBeenSet)
-  {
-   XmlNode lastModifiedTimeNode = parentNode.CreateChildElement("LastModifiedTime");
-   lastModifiedTimeNode.SetText(m_lastModifiedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_lastModifiedTimeHasBeenSet) {
+    XmlNode lastModifiedTimeNode = parentNode.CreateChildElement("LastModifiedTime");
+    lastModifiedTimeNode.SetText(m_lastModifiedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_domainNameHasBeenSet)
-  {
-   XmlNode domainNameNode = parentNode.CreateChildElement("DomainName");
-   domainNameNode.SetText(m_domainName);
+  if (m_domainNameHasBeenSet) {
+    XmlNode domainNameNode = parentNode.CreateChildElement("DomainName");
+    domainNameNode.SetText(m_domainName);
   }
 
-  if(m_s3OriginHasBeenSet)
-  {
-   XmlNode s3OriginNode = parentNode.CreateChildElement("S3Origin");
-   m_s3Origin.AddToNode(s3OriginNode);
+  if (m_s3OriginHasBeenSet) {
+    XmlNode s3OriginNode = parentNode.CreateChildElement("S3Origin");
+    m_s3Origin.AddToNode(s3OriginNode);
   }
 
-  if(m_aliasesHasBeenSet)
-  {
-   XmlNode aliasesNode = parentNode.CreateChildElement("Aliases");
-   m_aliases.AddToNode(aliasesNode);
+  if (m_aliasesHasBeenSet) {
+    XmlNode aliasesNode = parentNode.CreateChildElement("Aliases");
+    m_aliases.AddToNode(aliasesNode);
   }
 
-  if(m_trustedSignersHasBeenSet)
-  {
-   XmlNode trustedSignersNode = parentNode.CreateChildElement("TrustedSigners");
-   m_trustedSigners.AddToNode(trustedSignersNode);
+  if (m_trustedSignersHasBeenSet) {
+    XmlNode trustedSignersNode = parentNode.CreateChildElement("TrustedSigners");
+    m_trustedSigners.AddToNode(trustedSignersNode);
   }
 
-  if(m_commentHasBeenSet)
-  {
-   XmlNode commentNode = parentNode.CreateChildElement("Comment");
-   commentNode.SetText(m_comment);
+  if (m_commentHasBeenSet) {
+    XmlNode commentNode = parentNode.CreateChildElement("Comment");
+    commentNode.SetText(m_comment);
   }
 
-  if(m_priceClassHasBeenSet)
-  {
-   XmlNode priceClassNode = parentNode.CreateChildElement("PriceClass");
-   priceClassNode.SetText(PriceClassMapper::GetNameForPriceClass(m_priceClass));
+  if (m_priceClassHasBeenSet) {
+    XmlNode priceClassNode = parentNode.CreateChildElement("PriceClass");
+    priceClassNode.SetText(PriceClassMapper::GetNameForPriceClass(m_priceClass));
   }
 
-  if(m_enabledHasBeenSet)
-  {
-   XmlNode enabledNode = parentNode.CreateChildElement("Enabled");
-   ss << std::boolalpha << m_enabled;
-   enabledNode.SetText(ss.str());
-   ss.str("");
+  if (m_enabledHasBeenSet) {
+    XmlNode enabledNode = parentNode.CreateChildElement("Enabled");
+    ss << std::boolalpha << m_enabled;
+    enabledNode.SetText(ss.str());
+    ss.str("");
   }
-
 }
 
-} // namespace Model
-} // namespace CloudFront
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

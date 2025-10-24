@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/location/model/SearchPlaceIndexForPositionRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/location/model/SearchPlaceIndexForPositionRequest.h>
 
 #include <utility>
 
@@ -15,47 +15,33 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-Aws::String SearchPlaceIndexForPositionRequest::SerializePayload() const
-{
+Aws::String SearchPlaceIndexForPositionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_positionHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> positionJsonList(m_position.size());
-   for(unsigned positionIndex = 0; positionIndex < positionJsonList.GetLength(); ++positionIndex)
-   {
-     positionJsonList[positionIndex].AsDouble(m_position[positionIndex]);
-   }
-   payload.WithArray("Position", std::move(positionJsonList));
-
+  if (m_positionHasBeenSet) {
+    Aws::Utils::Array<JsonValue> positionJsonList(m_position.size());
+    for (unsigned positionIndex = 0; positionIndex < positionJsonList.GetLength(); ++positionIndex) {
+      positionJsonList[positionIndex].AsDouble(m_position[positionIndex]);
+    }
+    payload.WithArray("Position", std::move(positionJsonList));
   }
 
-  if(m_maxResultsHasBeenSet)
-  {
-   payload.WithInteger("MaxResults", m_maxResults);
-
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("MaxResults", m_maxResults);
   }
 
-  if(m_languageHasBeenSet)
-  {
-   payload.WithString("Language", m_language);
-
+  if (m_languageHasBeenSet) {
+    payload.WithString("Language", m_language);
   }
 
   return payload.View().WriteReadable();
 }
 
-void SearchPlaceIndexForPositionRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_keyHasBeenSet)
-    {
-      ss << m_key;
-      uri.AddQueryStringParameter("key", ss.str());
-      ss.str("");
-    }
-
+void SearchPlaceIndexForPositionRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_keyHasBeenSet) {
+    ss << m_key;
+    uri.AddQueryStringParameter("key", ss.str());
+    ss.str("");
+  }
 }
-
-
-

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/voice-id/VoiceID_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/voice-id/VoiceID_EXPORTS.h>
 
-namespace Aws
-{
-namespace VoiceID
-{
-namespace Model
-{
-  enum class DuplicateRegistrationAction
-  {
-    NOT_SET,
-    SKIP,
-    REGISTER_AS_NEW
-  };
+namespace Aws {
+namespace VoiceID {
+namespace Model {
+enum class DuplicateRegistrationAction { NOT_SET, SKIP, REGISTER_AS_NEW };
 
-namespace DuplicateRegistrationActionMapper
-{
+namespace DuplicateRegistrationActionMapper {
 AWS_VOICEID_API DuplicateRegistrationAction GetDuplicateRegistrationActionForName(const Aws::String& name);
 
 AWS_VOICEID_API Aws::String GetNameForDuplicateRegistrationAction(DuplicateRegistrationAction value);
-} // namespace DuplicateRegistrationActionMapper
-} // namespace Model
-} // namespace VoiceID
-} // namespace Aws
+}  // namespace DuplicateRegistrationActionMapper
+}  // namespace Model
+}  // namespace VoiceID
+}  // namespace Aws

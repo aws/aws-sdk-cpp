@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/macie2/model/DomainDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/macie2/model/DomainDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Macie2
-{
-namespace Model
-{
+namespace Aws {
+namespace Macie2 {
+namespace Model {
 
-DomainDetails::DomainDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DomainDetails::DomainDetails(JsonView jsonValue) { *this = jsonValue; }
 
-DomainDetails& DomainDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("domainName"))
-  {
+DomainDetails& DomainDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("domainName")) {
     m_domainName = jsonValue.GetString("domainName");
     m_domainNameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DomainDetails::Jsonize() const
-{
+JsonValue DomainDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_domainNameHasBeenSet)
-  {
-   payload.WithString("domainName", m_domainName);
-
+  if (m_domainNameHasBeenSet) {
+    payload.WithString("domainName", m_domainName);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Macie2
-} // namespace Aws
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

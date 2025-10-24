@@ -11,74 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppSync
-{
-namespace Model
-{
+namespace Aws {
+namespace AppSync {
+namespace Model {
 
-ApiKey::ApiKey(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ApiKey::ApiKey(JsonView jsonValue) { *this = jsonValue; }
 
-ApiKey& ApiKey::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("id"))
-  {
+ApiKey& ApiKey::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
     m_id = jsonValue.GetString("id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("description"))
-  {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("expires"))
-  {
+  if (jsonValue.ValueExists("expires")) {
     m_expires = jsonValue.GetInt64("expires");
     m_expiresHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("deletes"))
-  {
+  if (jsonValue.ValueExists("deletes")) {
     m_deletes = jsonValue.GetInt64("deletes");
     m_deletesHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ApiKey::Jsonize() const
-{
+JsonValue ApiKey::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_expiresHasBeenSet)
-  {
-   payload.WithInt64("expires", m_expires);
-
+  if (m_expiresHasBeenSet) {
+    payload.WithInt64("expires", m_expires);
   }
 
-  if(m_deletesHasBeenSet)
-  {
-   payload.WithInt64("deletes", m_deletes);
-
+  if (m_deletesHasBeenSet) {
+    payload.WithInt64("deletes", m_deletes);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppSync
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppSync
+}  // namespace Aws

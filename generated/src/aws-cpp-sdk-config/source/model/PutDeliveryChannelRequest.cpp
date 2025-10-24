@@ -12,27 +12,18 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String PutDeliveryChannelRequest::SerializePayload() const
-{
+Aws::String PutDeliveryChannelRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_deliveryChannelHasBeenSet)
-  {
-   payload.WithObject("DeliveryChannel", m_deliveryChannel.Jsonize());
-
+  if (m_deliveryChannelHasBeenSet) {
+    payload.WithObject("DeliveryChannel", m_deliveryChannel.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection PutDeliveryChannelRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection PutDeliveryChannelRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "StarlingDoveService.PutDeliveryChannel"));
   return headers;
-
 }
-
-
-
-

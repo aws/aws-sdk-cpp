@@ -7,25 +7,16 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace Connect
-{
-namespace Model
-{
-  enum class MediaStreamType
-  {
-    NOT_SET,
-    AUDIO,
-    VIDEO
-  };
+namespace Aws {
+namespace Connect {
+namespace Model {
+enum class MediaStreamType { NOT_SET, AUDIO, VIDEO };
 
-namespace MediaStreamTypeMapper
-{
+namespace MediaStreamTypeMapper {
 AWS_CONNECT_API MediaStreamType GetMediaStreamTypeForName(const Aws::String& name);
 
 AWS_CONNECT_API Aws::String GetNameForMediaStreamType(MediaStreamType value);
-} // namespace MediaStreamTypeMapper
-} // namespace Model
-} // namespace Connect
-} // namespace Aws
+}  // namespace MediaStreamTypeMapper
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

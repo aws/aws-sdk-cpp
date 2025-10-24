@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/fsx/model/TieringPolicy.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fsx/model/TieringPolicy.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace FSx
-{
-namespace Model
-{
+namespace Aws {
+namespace FSx {
+namespace Model {
 
-TieringPolicy::TieringPolicy(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TieringPolicy::TieringPolicy(JsonView jsonValue) { *this = jsonValue; }
 
-TieringPolicy& TieringPolicy::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CoolingPeriod"))
-  {
+TieringPolicy& TieringPolicy::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CoolingPeriod")) {
     m_coolingPeriod = jsonValue.GetInteger("CoolingPeriod");
     m_coolingPeriodHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Name"))
-  {
+  if (jsonValue.ValueExists("Name")) {
     m_name = TieringPolicyNameMapper::GetTieringPolicyNameForName(jsonValue.GetString("Name"));
     m_nameHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TieringPolicy::Jsonize() const
-{
+JsonValue TieringPolicy::Jsonize() const {
   JsonValue payload;
 
-  if(m_coolingPeriodHasBeenSet)
-  {
-   payload.WithInteger("CoolingPeriod", m_coolingPeriod);
-
+  if (m_coolingPeriodHasBeenSet) {
+    payload.WithInteger("CoolingPeriod", m_coolingPeriod);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", TieringPolicyNameMapper::GetNameForTieringPolicyName(m_name));
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", TieringPolicyNameMapper::GetNameForTieringPolicyName(m_name));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace FSx
-} // namespace Aws
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

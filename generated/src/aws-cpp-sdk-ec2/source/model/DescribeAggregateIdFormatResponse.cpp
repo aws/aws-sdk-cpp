@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/DescribeAggregateIdFormatResponse.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/DescribeAggregateIdFormatResponse.h>
 
 #include <utility>
 
@@ -17,36 +17,30 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAggregateIdFormatResponse::DescribeAggregateIdFormatResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeAggregateIdFormatResponse::DescribeAggregateIdFormatResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   *this = result;
 }
 
-DescribeAggregateIdFormatResponse& DescribeAggregateIdFormatResponse::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeAggregateIdFormatResponse& DescribeAggregateIdFormatResponse::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeAggregateIdFormatResponse"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeAggregateIdFormatResponse")) {
     resultNode = rootNode.FirstChild("DescribeAggregateIdFormatResponse");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode useLongIdsAggregatedNode = resultNode.FirstChild("useLongIdsAggregated");
-    if(!useLongIdsAggregatedNode.IsNull())
-    {
-      m_useLongIdsAggregated = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(useLongIdsAggregatedNode.GetText()).c_str()).c_str());
+    if (!useLongIdsAggregatedNode.IsNull()) {
+      m_useLongIdsAggregated = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(useLongIdsAggregatedNode.GetText()).c_str()).c_str());
       m_useLongIdsAggregatedHasBeenSet = true;
     }
     XmlNode statusesNode = resultNode.FirstChild("statusSet");
-    if(!statusesNode.IsNull())
-    {
+    if (!statusesNode.IsNull()) {
       XmlNode statusesMember = statusesNode.FirstChild("item");
       m_statusesHasBeenSet = !statusesMember.IsNull();
-      while(!statusesMember.IsNull())
-      {
+      while (!statusesMember.IsNull()) {
         m_statuses.push_back(statusesMember);
         statusesMember = statusesMember.NextNode("item");
       }
@@ -57,12 +51,11 @@ DescribeAggregateIdFormatResponse& DescribeAggregateIdFormatResponse::operator =
 
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
-    if (!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeAggregateIdFormatResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeAggregateIdFormatResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::EFS;
 
-AWSError<CoreErrors> EFSErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> EFSErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = EFSErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

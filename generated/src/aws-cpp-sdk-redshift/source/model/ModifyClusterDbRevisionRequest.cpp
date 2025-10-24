@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/redshift/model/ModifyClusterDbRevisionRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/redshift/model/ModifyClusterDbRevisionRequest.h>
 
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-Aws::String ModifyClusterDbRevisionRequest::SerializePayload() const
-{
+Aws::String ModifyClusterDbRevisionRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ModifyClusterDbRevision&";
-  if(m_clusterIdentifierHasBeenSet)
-  {
+  if (m_clusterIdentifierHasBeenSet) {
     ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
   }
 
-  if(m_revisionTargetHasBeenSet)
-  {
+  if (m_revisionTargetHasBeenSet) {
     ss << "RevisionTarget=" << StringUtils::URLEncode(m_revisionTarget.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String ModifyClusterDbRevisionRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ModifyClusterDbRevisionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ModifyClusterDbRevisionRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

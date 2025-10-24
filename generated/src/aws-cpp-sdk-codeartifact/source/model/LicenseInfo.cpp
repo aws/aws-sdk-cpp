@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeArtifact
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeArtifact {
+namespace Model {
 
-LicenseInfo::LicenseInfo(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LicenseInfo::LicenseInfo(JsonView jsonValue) { *this = jsonValue; }
 
-LicenseInfo& LicenseInfo::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("name"))
-  {
+LicenseInfo& LicenseInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("url"))
-  {
+  if (jsonValue.ValueExists("url")) {
     m_url = jsonValue.GetString("url");
     m_urlHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LicenseInfo::Jsonize() const
-{
+JsonValue LicenseInfo::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
-  if(m_urlHasBeenSet)
-  {
-   payload.WithString("url", m_url);
-
+  if (m_urlHasBeenSet) {
+    payload.WithString("url", m_url);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeArtifact
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeArtifact
+}  // namespace Aws

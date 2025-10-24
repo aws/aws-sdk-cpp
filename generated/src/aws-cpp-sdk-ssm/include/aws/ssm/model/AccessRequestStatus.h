@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm/SSM_EXPORTS.h>
 
-namespace Aws
-{
-namespace SSM
-{
-namespace Model
-{
-  enum class AccessRequestStatus
-  {
-    NOT_SET,
-    Approved,
-    Rejected,
-    Revoked,
-    Expired,
-    Pending
-  };
+namespace Aws {
+namespace SSM {
+namespace Model {
+enum class AccessRequestStatus { NOT_SET, Approved, Rejected, Revoked, Expired, Pending };
 
-namespace AccessRequestStatusMapper
-{
+namespace AccessRequestStatusMapper {
 AWS_SSM_API AccessRequestStatus GetAccessRequestStatusForName(const Aws::String& name);
 
 AWS_SSM_API Aws::String GetNameForAccessRequestStatus(AccessRequestStatus value);
-} // namespace AccessRequestStatusMapper
-} // namespace Model
-} // namespace SSM
-} // namespace Aws
+}  // namespace AccessRequestStatusMapper
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

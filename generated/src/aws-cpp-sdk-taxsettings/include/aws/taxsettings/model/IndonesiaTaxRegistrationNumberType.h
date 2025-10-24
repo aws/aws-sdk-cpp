@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/taxsettings/TaxSettings_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/taxsettings/TaxSettings_EXPORTS.h>
 
-namespace Aws
-{
-namespace TaxSettings
-{
-namespace Model
-{
-  enum class IndonesiaTaxRegistrationNumberType
-  {
-    NOT_SET,
-    NIK,
-    PassportNumber,
-    NPWP,
-    NITKU
-  };
+namespace Aws {
+namespace TaxSettings {
+namespace Model {
+enum class IndonesiaTaxRegistrationNumberType { NOT_SET, NIK, PassportNumber, NPWP, NITKU };
 
-namespace IndonesiaTaxRegistrationNumberTypeMapper
-{
+namespace IndonesiaTaxRegistrationNumberTypeMapper {
 AWS_TAXSETTINGS_API IndonesiaTaxRegistrationNumberType GetIndonesiaTaxRegistrationNumberTypeForName(const Aws::String& name);
 
 AWS_TAXSETTINGS_API Aws::String GetNameForIndonesiaTaxRegistrationNumberType(IndonesiaTaxRegistrationNumberType value);
-} // namespace IndonesiaTaxRegistrationNumberTypeMapper
-} // namespace Model
-} // namespace TaxSettings
-} // namespace Aws
+}  // namespace IndonesiaTaxRegistrationNumberTypeMapper
+}  // namespace Model
+}  // namespace TaxSettings
+}  // namespace Aws

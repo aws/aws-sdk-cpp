@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/IoT_EXPORTS.h>
 
-namespace Aws
-{
-namespace IoT
-{
-namespace Model
-{
-  enum class CertificateProviderOperation
-  {
-    NOT_SET,
-    CreateCertificateFromCsr
-  };
+namespace Aws {
+namespace IoT {
+namespace Model {
+enum class CertificateProviderOperation { NOT_SET, CreateCertificateFromCsr };
 
-namespace CertificateProviderOperationMapper
-{
+namespace CertificateProviderOperationMapper {
 AWS_IOT_API CertificateProviderOperation GetCertificateProviderOperationForName(const Aws::String& name);
 
 AWS_IOT_API Aws::String GetNameForCertificateProviderOperation(CertificateProviderOperation value);
-} // namespace CertificateProviderOperationMapper
-} // namespace Model
-} // namespace IoT
-} // namespace Aws
+}  // namespace CertificateProviderOperationMapper
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

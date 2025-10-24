@@ -4,66 +4,73 @@
  */
 
 #pragma once
-#include <aws/connectcampaignsv2/ConnectCampaignsV2_EXPORTS.h>
 #include <aws/connectcampaignsv2/ConnectCampaignsV2Request.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/connectcampaignsv2/ConnectCampaignsV2_EXPORTS.h>
 #include <aws/connectcampaignsv2/model/Schedule.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace ConnectCampaignsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace ConnectCampaignsV2 {
+namespace Model {
 
-  /**
-   * <p>The request for UpdateCampaignSchedule API.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/UpdateCampaignScheduleRequest">AWS
-   * API Reference</a></p>
-   */
-  class UpdateCampaignScheduleRequest : public ConnectCampaignsV2Request
-  {
-  public:
-    AWS_CONNECTCAMPAIGNSV2_API UpdateCampaignScheduleRequest() = default;
+/**
+ * <p>The request for UpdateCampaignSchedule API.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/UpdateCampaignScheduleRequest">AWS
+ * API Reference</a></p>
+ */
+class UpdateCampaignScheduleRequest : public ConnectCampaignsV2Request {
+ public:
+  AWS_CONNECTCAMPAIGNSV2_API UpdateCampaignScheduleRequest() = default;
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "UpdateCampaignSchedule"; }
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "UpdateCampaignSchedule"; }
 
-    AWS_CONNECTCAMPAIGNSV2_API Aws::String SerializePayload() const override;
+  AWS_CONNECTCAMPAIGNSV2_API Aws::String SerializePayload() const override;
 
+  ///@{
 
-    ///@{
-    
-    inline const Aws::String& GetId() const { return m_id; }
-    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    template<typename IdT = Aws::String>
-    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
-    template<typename IdT = Aws::String>
-    UpdateCampaignScheduleRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
-    ///@}
+  inline const Aws::String& GetId() const { return m_id; }
+  inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
+  }
+  template <typename IdT = Aws::String>
+  UpdateCampaignScheduleRequest& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
 
-    ///@{
-    
-    inline const Schedule& GetSchedule() const { return m_schedule; }
-    inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
-    template<typename ScheduleT = Schedule>
-    void SetSchedule(ScheduleT&& value) { m_scheduleHasBeenSet = true; m_schedule = std::forward<ScheduleT>(value); }
-    template<typename ScheduleT = Schedule>
-    UpdateCampaignScheduleRequest& WithSchedule(ScheduleT&& value) { SetSchedule(std::forward<ScheduleT>(value)); return *this;}
-    ///@}
-  private:
+  ///@{
 
-    Aws::String m_id;
-    bool m_idHasBeenSet = false;
+  inline const Schedule& GetSchedule() const { return m_schedule; }
+  inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
+  template <typename ScheduleT = Schedule>
+  void SetSchedule(ScheduleT&& value) {
+    m_scheduleHasBeenSet = true;
+    m_schedule = std::forward<ScheduleT>(value);
+  }
+  template <typename ScheduleT = Schedule>
+  UpdateCampaignScheduleRequest& WithSchedule(ScheduleT&& value) {
+    SetSchedule(std::forward<ScheduleT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_id;
+  bool m_idHasBeenSet = false;
 
-    Schedule m_schedule;
-    bool m_scheduleHasBeenSet = false;
-  };
+  Schedule m_schedule;
+  bool m_scheduleHasBeenSet = false;
+};
 
-} // namespace Model
-} // namespace ConnectCampaignsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace ConnectCampaignsV2
+}  // namespace Aws

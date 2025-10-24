@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/email/model/CreateConfigurationSetEventDestinationRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/email/model/CreateConfigurationSetEventDestinationRequest.h>
 
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateConfigurationSetEventDestinationRequest::SerializePayload() const
-{
+Aws::String CreateConfigurationSetEventDestinationRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateConfigurationSetEventDestination&";
-  if(m_configurationSetNameHasBeenSet)
-  {
+  if (m_configurationSetNameHasBeenSet) {
     ss << "ConfigurationSetName=" << StringUtils::URLEncode(m_configurationSetName.c_str()) << "&";
   }
 
-  if(m_eventDestinationHasBeenSet)
-  {
+  if (m_eventDestinationHasBeenSet) {
     m_eventDestination.OutputToStream(ss, "EventDestination");
   }
 
@@ -28,8 +25,4 @@ Aws::String CreateConfigurationSetEventDestinationRequest::SerializePayload() co
   return ss.str();
 }
 
-
-void  CreateConfigurationSetEventDestinationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateConfigurationSetEventDestinationRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ds/model/UpdateValue.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ds/model/UpdateValue.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DirectoryService
-{
-namespace Model
-{
+namespace Aws {
+namespace DirectoryService {
+namespace Model {
 
-UpdateValue::UpdateValue(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UpdateValue::UpdateValue(JsonView jsonValue) { *this = jsonValue; }
 
-UpdateValue& UpdateValue::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("OSUpdateSettings"))
-  {
+UpdateValue& UpdateValue::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("OSUpdateSettings")) {
     m_oSUpdateSettings = jsonValue.GetObject("OSUpdateSettings");
     m_oSUpdateSettingsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UpdateValue::Jsonize() const
-{
+JsonValue UpdateValue::Jsonize() const {
   JsonValue payload;
 
-  if(m_oSUpdateSettingsHasBeenSet)
-  {
-   payload.WithObject("OSUpdateSettings", m_oSUpdateSettings.Jsonize());
-
+  if (m_oSUpdateSettingsHasBeenSet) {
+    payload.WithObject("OSUpdateSettings", m_oSUpdateSettings.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DirectoryService
-} // namespace Aws
+}  // namespace Model
+}  // namespace DirectoryService
+}  // namespace Aws

@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/MonitoringStoppingCondition.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/MonitoringStoppingCondition.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-MonitoringStoppingCondition::MonitoringStoppingCondition(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MonitoringStoppingCondition::MonitoringStoppingCondition(JsonView jsonValue) { *this = jsonValue; }
 
-MonitoringStoppingCondition& MonitoringStoppingCondition::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MaxRuntimeInSeconds"))
-  {
+MonitoringStoppingCondition& MonitoringStoppingCondition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MaxRuntimeInSeconds")) {
     m_maxRuntimeInSeconds = jsonValue.GetInteger("MaxRuntimeInSeconds");
     m_maxRuntimeInSecondsHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MonitoringStoppingCondition::Jsonize() const
-{
+JsonValue MonitoringStoppingCondition::Jsonize() const {
   JsonValue payload;
 
-  if(m_maxRuntimeInSecondsHasBeenSet)
-  {
-   payload.WithInteger("MaxRuntimeInSeconds", m_maxRuntimeInSeconds);
-
+  if (m_maxRuntimeInSecondsHasBeenSet) {
+    payload.WithInteger("MaxRuntimeInSeconds", m_maxRuntimeInSeconds);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

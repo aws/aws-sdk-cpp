@@ -3,81 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lookoutmetrics/model/InterMetricImpactDetails.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lookoutmetrics/model/InterMetricImpactDetails.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LookoutMetrics
-{
-namespace Model
-{
+namespace Aws {
+namespace LookoutMetrics {
+namespace Model {
 
-InterMetricImpactDetails::InterMetricImpactDetails(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InterMetricImpactDetails::InterMetricImpactDetails(JsonView jsonValue) { *this = jsonValue; }
 
-InterMetricImpactDetails& InterMetricImpactDetails::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MetricName"))
-  {
+InterMetricImpactDetails& InterMetricImpactDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MetricName")) {
     m_metricName = jsonValue.GetString("MetricName");
     m_metricNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AnomalyGroupId"))
-  {
+  if (jsonValue.ValueExists("AnomalyGroupId")) {
     m_anomalyGroupId = jsonValue.GetString("AnomalyGroupId");
     m_anomalyGroupIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RelationshipType"))
-  {
+  if (jsonValue.ValueExists("RelationshipType")) {
     m_relationshipType = RelationshipTypeMapper::GetRelationshipTypeForName(jsonValue.GetString("RelationshipType"));
     m_relationshipTypeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ContributionPercentage"))
-  {
+  if (jsonValue.ValueExists("ContributionPercentage")) {
     m_contributionPercentage = jsonValue.GetDouble("ContributionPercentage");
     m_contributionPercentageHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue InterMetricImpactDetails::Jsonize() const
-{
+JsonValue InterMetricImpactDetails::Jsonize() const {
   JsonValue payload;
 
-  if(m_metricNameHasBeenSet)
-  {
-   payload.WithString("MetricName", m_metricName);
-
+  if (m_metricNameHasBeenSet) {
+    payload.WithString("MetricName", m_metricName);
   }
 
-  if(m_anomalyGroupIdHasBeenSet)
-  {
-   payload.WithString("AnomalyGroupId", m_anomalyGroupId);
-
+  if (m_anomalyGroupIdHasBeenSet) {
+    payload.WithString("AnomalyGroupId", m_anomalyGroupId);
   }
 
-  if(m_relationshipTypeHasBeenSet)
-  {
-   payload.WithString("RelationshipType", RelationshipTypeMapper::GetNameForRelationshipType(m_relationshipType));
+  if (m_relationshipTypeHasBeenSet) {
+    payload.WithString("RelationshipType", RelationshipTypeMapper::GetNameForRelationshipType(m_relationshipType));
   }
 
-  if(m_contributionPercentageHasBeenSet)
-  {
-   payload.WithDouble("ContributionPercentage", m_contributionPercentage);
-
+  if (m_contributionPercentageHasBeenSet) {
+    payload.WithDouble("ContributionPercentage", m_contributionPercentage);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LookoutMetrics
-} // namespace Aws
+}  // namespace Model
+}  // namespace LookoutMetrics
+}  // namespace Aws

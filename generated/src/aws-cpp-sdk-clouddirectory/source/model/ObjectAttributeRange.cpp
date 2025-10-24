@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CloudDirectory
-{
-namespace Model
-{
+namespace Aws {
+namespace CloudDirectory {
+namespace Model {
 
-ObjectAttributeRange::ObjectAttributeRange(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ObjectAttributeRange::ObjectAttributeRange(JsonView jsonValue) { *this = jsonValue; }
 
-ObjectAttributeRange& ObjectAttributeRange::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("AttributeKey"))
-  {
+ObjectAttributeRange& ObjectAttributeRange::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("AttributeKey")) {
     m_attributeKey = jsonValue.GetObject("AttributeKey");
     m_attributeKeyHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Range"))
-  {
+  if (jsonValue.ValueExists("Range")) {
     m_range = jsonValue.GetObject("Range");
     m_rangeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ObjectAttributeRange::Jsonize() const
-{
+JsonValue ObjectAttributeRange::Jsonize() const {
   JsonValue payload;
 
-  if(m_attributeKeyHasBeenSet)
-  {
-   payload.WithObject("AttributeKey", m_attributeKey.Jsonize());
-
+  if (m_attributeKeyHasBeenSet) {
+    payload.WithObject("AttributeKey", m_attributeKey.Jsonize());
   }
 
-  if(m_rangeHasBeenSet)
-  {
-   payload.WithObject("Range", m_range.Jsonize());
-
+  if (m_rangeHasBeenSet) {
+    payload.WithObject("Range", m_range.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CloudDirectory
-} // namespace Aws
+}  // namespace Model
+}  // namespace CloudDirectory
+}  // namespace Aws

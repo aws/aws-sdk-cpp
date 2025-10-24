@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/eks/EKS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/eks/EKS_EXPORTS.h>
 
-namespace Aws
-{
-namespace EKS
-{
-namespace Model
-{
-  enum class ConfigStatus
-  {
-    NOT_SET,
-    CREATING,
-    DELETING,
-    ACTIVE
-  };
+namespace Aws {
+namespace EKS {
+namespace Model {
+enum class ConfigStatus { NOT_SET, CREATING, DELETING, ACTIVE };
 
-namespace ConfigStatusMapper
-{
+namespace ConfigStatusMapper {
 AWS_EKS_API ConfigStatus GetConfigStatusForName(const Aws::String& name);
 
 AWS_EKS_API Aws::String GetNameForConfigStatus(ConfigStatus value);
-} // namespace ConfigStatusMapper
-} // namespace Model
-} // namespace EKS
-} // namespace Aws
+}  // namespace ConfigStatusMapper
+}  // namespace Model
+}  // namespace EKS
+}  // namespace Aws

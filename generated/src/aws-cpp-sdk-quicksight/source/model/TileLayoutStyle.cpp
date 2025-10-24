@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/TileLayoutStyle.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/TileLayoutStyle.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-TileLayoutStyle::TileLayoutStyle(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TileLayoutStyle::TileLayoutStyle(JsonView jsonValue) { *this = jsonValue; }
 
-TileLayoutStyle& TileLayoutStyle::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Gutter"))
-  {
+TileLayoutStyle& TileLayoutStyle::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Gutter")) {
     m_gutter = jsonValue.GetObject("Gutter");
     m_gutterHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Margin"))
-  {
+  if (jsonValue.ValueExists("Margin")) {
     m_margin = jsonValue.GetObject("Margin");
     m_marginHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TileLayoutStyle::Jsonize() const
-{
+JsonValue TileLayoutStyle::Jsonize() const {
   JsonValue payload;
 
-  if(m_gutterHasBeenSet)
-  {
-   payload.WithObject("Gutter", m_gutter.Jsonize());
-
+  if (m_gutterHasBeenSet) {
+    payload.WithObject("Gutter", m_gutter.Jsonize());
   }
 
-  if(m_marginHasBeenSet)
-  {
-   payload.WithObject("Margin", m_margin.Jsonize());
-
+  if (m_marginHasBeenSet) {
+    payload.WithObject("Margin", m_margin.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

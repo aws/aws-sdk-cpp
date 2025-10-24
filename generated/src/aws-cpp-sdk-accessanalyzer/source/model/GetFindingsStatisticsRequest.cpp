@@ -12,19 +12,12 @@ using namespace Aws::AccessAnalyzer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetFindingsStatisticsRequest::SerializePayload() const
-{
+Aws::String GetFindingsStatisticsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_analyzerArnHasBeenSet)
-  {
-   payload.WithString("analyzerArn", m_analyzerArn);
-
+  if (m_analyzerArnHasBeenSet) {
+    payload.WithString("analyzerArn", m_analyzerArn);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

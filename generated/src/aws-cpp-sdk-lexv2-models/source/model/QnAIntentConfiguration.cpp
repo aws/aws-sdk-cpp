@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lexv2-models/model/QnAIntentConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lexv2-models/model/QnAIntentConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace LexModelsV2
-{
-namespace Model
-{
+namespace Aws {
+namespace LexModelsV2 {
+namespace Model {
 
-QnAIntentConfiguration::QnAIntentConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+QnAIntentConfiguration::QnAIntentConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-QnAIntentConfiguration& QnAIntentConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("dataSourceConfiguration"))
-  {
+QnAIntentConfiguration& QnAIntentConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("dataSourceConfiguration")) {
     m_dataSourceConfiguration = jsonValue.GetObject("dataSourceConfiguration");
     m_dataSourceConfigurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("bedrockModelConfiguration"))
-  {
+  if (jsonValue.ValueExists("bedrockModelConfiguration")) {
     m_bedrockModelConfiguration = jsonValue.GetObject("bedrockModelConfiguration");
     m_bedrockModelConfigurationHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue QnAIntentConfiguration::Jsonize() const
-{
+JsonValue QnAIntentConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_dataSourceConfigurationHasBeenSet)
-  {
-   payload.WithObject("dataSourceConfiguration", m_dataSourceConfiguration.Jsonize());
-
+  if (m_dataSourceConfigurationHasBeenSet) {
+    payload.WithObject("dataSourceConfiguration", m_dataSourceConfiguration.Jsonize());
   }
 
-  if(m_bedrockModelConfigurationHasBeenSet)
-  {
-   payload.WithObject("bedrockModelConfiguration", m_bedrockModelConfiguration.Jsonize());
-
+  if (m_bedrockModelConfigurationHasBeenSet) {
+    payload.WithObject("bedrockModelConfiguration", m_bedrockModelConfiguration.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace LexModelsV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace LexModelsV2
+}  // namespace Aws

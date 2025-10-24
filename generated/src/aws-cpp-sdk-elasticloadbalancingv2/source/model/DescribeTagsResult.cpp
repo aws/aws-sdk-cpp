@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticloadbalancingv2/model/DescribeTagsResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticloadbalancingv2/model/DescribeTagsResult.h>
 
 #include <utility>
 
@@ -17,30 +17,22 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeTagsResult::DescribeTagsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+DescribeTagsResult::DescribeTagsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-DescribeTagsResult& DescribeTagsResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+DescribeTagsResult& DescribeTagsResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeTagsResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeTagsResult")) {
     resultNode = rootNode.FirstChild("DescribeTagsResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode tagDescriptionsNode = resultNode.FirstChild("TagDescriptions");
-    if(!tagDescriptionsNode.IsNull())
-    {
+    if (!tagDescriptionsNode.IsNull()) {
       XmlNode tagDescriptionsMember = tagDescriptionsNode.FirstChild("member");
       m_tagDescriptionsHasBeenSet = !tagDescriptionsMember.IsNull();
-      while(!tagDescriptionsMember.IsNull())
-      {
+      while (!tagDescriptionsMember.IsNull()) {
         m_tagDescriptions.push_back(tagDescriptionsMember);
         tagDescriptionsMember = tagDescriptionsMember.NextNode("member");
       }
@@ -53,7 +45,8 @@ DescribeTagsResult& DescribeTagsResult::operator =(const Aws::AmazonWebServiceRe
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancingv2::Model::DescribeTagsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancingv2::Model::DescribeTagsResult",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

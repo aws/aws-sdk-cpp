@@ -4,36 +4,27 @@
  */
 
 #include <aws/autoscaling/model/ResponseMetadata.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AutoScaling
-{
-namespace Model
-{
+namespace Aws {
+namespace AutoScaling {
+namespace Model {
 
-ResponseMetadata::ResponseMetadata(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+ResponseMetadata::ResponseMetadata(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ResponseMetadata& ResponseMetadata::operator =(const XmlNode& xmlNode)
-{
+ResponseMetadata& ResponseMetadata::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode requestIdNode = resultNode.FirstChild("RequestId");
-    if(!requestIdNode.IsNull())
-    {
+    if (!requestIdNode.IsNull()) {
       m_requestId = Aws::Utils::Xml::DecodeEscapedXmlText(requestIdNode.GetText());
       m_requestIdHasBeenSet = true;
     }
@@ -42,23 +33,18 @@ ResponseMetadata& ResponseMetadata::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void ResponseMetadata::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_requestIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".RequestId=" << StringUtils::URLEncode(m_requestId.c_str()) << "&";
-  }
-
-}
-
-void ResponseMetadata::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_requestIdHasBeenSet)
-  {
-      oStream << location << ".RequestId=" << StringUtils::URLEncode(m_requestId.c_str()) << "&";
+void ResponseMetadata::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_requestIdHasBeenSet) {
+    oStream << location << index << locationValue << ".RequestId=" << StringUtils::URLEncode(m_requestId.c_str()) << "&";
   }
 }
 
-} // namespace Model
-} // namespace AutoScaling
-} // namespace Aws
+void ResponseMetadata::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_requestIdHasBeenSet) {
+    oStream << location << ".RequestId=" << StringUtils::URLEncode(m_requestId.c_str()) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace AutoScaling
+}  // namespace Aws

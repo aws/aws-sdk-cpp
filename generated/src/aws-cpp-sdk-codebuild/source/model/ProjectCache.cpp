@@ -11,82 +11,61 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeBuild
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeBuild {
+namespace Model {
 
-ProjectCache::ProjectCache(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProjectCache::ProjectCache(JsonView jsonValue) { *this = jsonValue; }
 
-ProjectCache& ProjectCache::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("type"))
-  {
+ProjectCache& ProjectCache::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
     m_type = CacheTypeMapper::GetCacheTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("location"))
-  {
+  if (jsonValue.ValueExists("location")) {
     m_location = jsonValue.GetString("location");
     m_locationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("modes"))
-  {
+  if (jsonValue.ValueExists("modes")) {
     Aws::Utils::Array<JsonView> modesJsonList = jsonValue.GetArray("modes");
-    for(unsigned modesIndex = 0; modesIndex < modesJsonList.GetLength(); ++modesIndex)
-    {
+    for (unsigned modesIndex = 0; modesIndex < modesJsonList.GetLength(); ++modesIndex) {
       m_modes.push_back(CacheModeMapper::GetCacheModeForName(modesJsonList[modesIndex].AsString()));
     }
     m_modesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("cacheNamespace"))
-  {
+  if (jsonValue.ValueExists("cacheNamespace")) {
     m_cacheNamespace = jsonValue.GetString("cacheNamespace");
     m_cacheNamespaceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ProjectCache::Jsonize() const
-{
+JsonValue ProjectCache::Jsonize() const {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", CacheTypeMapper::GetNameForCacheType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", CacheTypeMapper::GetNameForCacheType(m_type));
   }
 
-  if(m_locationHasBeenSet)
-  {
-   payload.WithString("location", m_location);
-
+  if (m_locationHasBeenSet) {
+    payload.WithString("location", m_location);
   }
 
-  if(m_modesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> modesJsonList(m_modes.size());
-   for(unsigned modesIndex = 0; modesIndex < modesJsonList.GetLength(); ++modesIndex)
-   {
-     modesJsonList[modesIndex].AsString(CacheModeMapper::GetNameForCacheMode(m_modes[modesIndex]));
-   }
-   payload.WithArray("modes", std::move(modesJsonList));
-
+  if (m_modesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> modesJsonList(m_modes.size());
+    for (unsigned modesIndex = 0; modesIndex < modesJsonList.GetLength(); ++modesIndex) {
+      modesJsonList[modesIndex].AsString(CacheModeMapper::GetNameForCacheMode(m_modes[modesIndex]));
+    }
+    payload.WithArray("modes", std::move(modesJsonList));
   }
 
-  if(m_cacheNamespaceHasBeenSet)
-  {
-   payload.WithString("cacheNamespace", m_cacheNamespace);
-
+  if (m_cacheNamespaceHasBeenSet) {
+    payload.WithString("cacheNamespace", m_cacheNamespace);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeBuild
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeBuild
+}  // namespace Aws

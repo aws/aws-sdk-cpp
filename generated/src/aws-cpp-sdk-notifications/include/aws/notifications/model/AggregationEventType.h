@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/notifications/Notifications_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/notifications/Notifications_EXPORTS.h>
 
-namespace Aws
-{
-namespace Notifications
-{
-namespace Model
-{
-  enum class AggregationEventType
-  {
-    NOT_SET,
-    AGGREGATE,
-    CHILD,
-    NONE
-  };
+namespace Aws {
+namespace Notifications {
+namespace Model {
+enum class AggregationEventType { NOT_SET, AGGREGATE, CHILD, NONE };
 
-namespace AggregationEventTypeMapper
-{
+namespace AggregationEventTypeMapper {
 AWS_NOTIFICATIONS_API AggregationEventType GetAggregationEventTypeForName(const Aws::String& name);
 
 AWS_NOTIFICATIONS_API Aws::String GetNameForAggregationEventType(AggregationEventType value);
-} // namespace AggregationEventTypeMapper
-} // namespace Model
-} // namespace Notifications
-} // namespace Aws
+}  // namespace AggregationEventTypeMapper
+}  // namespace Model
+}  // namespace Notifications
+}  // namespace Aws

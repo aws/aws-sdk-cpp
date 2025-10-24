@@ -3,48 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/guardduty/model/FlowLogsConfigurationResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/guardduty/model/FlowLogsConfigurationResult.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GuardDuty
-{
-namespace Model
-{
+namespace Aws {
+namespace GuardDuty {
+namespace Model {
 
-FlowLogsConfigurationResult::FlowLogsConfigurationResult(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+FlowLogsConfigurationResult::FlowLogsConfigurationResult(JsonView jsonValue) { *this = jsonValue; }
 
-FlowLogsConfigurationResult& FlowLogsConfigurationResult::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("status"))
-  {
+FlowLogsConfigurationResult& FlowLogsConfigurationResult::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("status")) {
     m_status = DataSourceStatusMapper::GetDataSourceStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue FlowLogsConfigurationResult::Jsonize() const
-{
+JsonValue FlowLogsConfigurationResult::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", DataSourceStatusMapper::GetNameForDataSourceStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", DataSourceStatusMapper::GetNameForDataSourceStatus(m_status));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GuardDuty
-} // namespace Aws
+}  // namespace Model
+}  // namespace GuardDuty
+}  // namespace Aws

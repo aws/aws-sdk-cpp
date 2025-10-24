@@ -3,60 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/globalaccelerator/model/CustomRoutingEndpointConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/globalaccelerator/model/CustomRoutingEndpointConfiguration.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace GlobalAccelerator
-{
-namespace Model
-{
+namespace Aws {
+namespace GlobalAccelerator {
+namespace Model {
 
-CustomRoutingEndpointConfiguration::CustomRoutingEndpointConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CustomRoutingEndpointConfiguration::CustomRoutingEndpointConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-CustomRoutingEndpointConfiguration& CustomRoutingEndpointConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("EndpointId"))
-  {
+CustomRoutingEndpointConfiguration& CustomRoutingEndpointConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EndpointId")) {
     m_endpointId = jsonValue.GetString("EndpointId");
     m_endpointIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("AttachmentArn"))
-  {
+  if (jsonValue.ValueExists("AttachmentArn")) {
     m_attachmentArn = jsonValue.GetString("AttachmentArn");
     m_attachmentArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CustomRoutingEndpointConfiguration::Jsonize() const
-{
+JsonValue CustomRoutingEndpointConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_endpointIdHasBeenSet)
-  {
-   payload.WithString("EndpointId", m_endpointId);
-
+  if (m_endpointIdHasBeenSet) {
+    payload.WithString("EndpointId", m_endpointId);
   }
 
-  if(m_attachmentArnHasBeenSet)
-  {
-   payload.WithString("AttachmentArn", m_attachmentArn);
-
+  if (m_attachmentArnHasBeenSet) {
+    payload.WithString("AttachmentArn", m_attachmentArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace GlobalAccelerator
-} // namespace Aws
+}  // namespace Model
+}  // namespace GlobalAccelerator
+}  // namespace Aws

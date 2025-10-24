@@ -3,19 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/RebootDBShardGroupRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/RebootDBShardGroupRequest.h>
 
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-Aws::String RebootDBShardGroupRequest::SerializePayload() const
-{
+Aws::String RebootDBShardGroupRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=RebootDBShardGroup&";
-  if(m_dBShardGroupIdentifierHasBeenSet)
-  {
+  if (m_dBShardGroupIdentifierHasBeenSet) {
     ss << "DBShardGroupIdentifier=" << StringUtils::URLEncode(m_dBShardGroupIdentifier.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String RebootDBShardGroupRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  RebootDBShardGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void RebootDBShardGroupRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -3,126 +3,94 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/quicksight/model/Filter.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/Filter.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace QuickSight
-{
-namespace Model
-{
+namespace Aws {
+namespace QuickSight {
+namespace Model {
 
-Filter::Filter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Filter::Filter(JsonView jsonValue) { *this = jsonValue; }
 
-Filter& Filter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("CategoryFilter"))
-  {
+Filter& Filter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CategoryFilter")) {
     m_categoryFilter = jsonValue.GetObject("CategoryFilter");
     m_categoryFilterHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NumericRangeFilter"))
-  {
+  if (jsonValue.ValueExists("NumericRangeFilter")) {
     m_numericRangeFilter = jsonValue.GetObject("NumericRangeFilter");
     m_numericRangeFilterHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NumericEqualityFilter"))
-  {
+  if (jsonValue.ValueExists("NumericEqualityFilter")) {
     m_numericEqualityFilter = jsonValue.GetObject("NumericEqualityFilter");
     m_numericEqualityFilterHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TimeEqualityFilter"))
-  {
+  if (jsonValue.ValueExists("TimeEqualityFilter")) {
     m_timeEqualityFilter = jsonValue.GetObject("TimeEqualityFilter");
     m_timeEqualityFilterHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TimeRangeFilter"))
-  {
+  if (jsonValue.ValueExists("TimeRangeFilter")) {
     m_timeRangeFilter = jsonValue.GetObject("TimeRangeFilter");
     m_timeRangeFilterHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("RelativeDatesFilter"))
-  {
+  if (jsonValue.ValueExists("RelativeDatesFilter")) {
     m_relativeDatesFilter = jsonValue.GetObject("RelativeDatesFilter");
     m_relativeDatesFilterHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TopBottomFilter"))
-  {
+  if (jsonValue.ValueExists("TopBottomFilter")) {
     m_topBottomFilter = jsonValue.GetObject("TopBottomFilter");
     m_topBottomFilterHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NestedFilter"))
-  {
+  if (jsonValue.ValueExists("NestedFilter")) {
     m_nestedFilter = jsonValue.GetObject("NestedFilter");
     m_nestedFilterHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Filter::Jsonize() const
-{
+JsonValue Filter::Jsonize() const {
   JsonValue payload;
 
-  if(m_categoryFilterHasBeenSet)
-  {
-   payload.WithObject("CategoryFilter", m_categoryFilter.Jsonize());
-
+  if (m_categoryFilterHasBeenSet) {
+    payload.WithObject("CategoryFilter", m_categoryFilter.Jsonize());
   }
 
-  if(m_numericRangeFilterHasBeenSet)
-  {
-   payload.WithObject("NumericRangeFilter", m_numericRangeFilter.Jsonize());
-
+  if (m_numericRangeFilterHasBeenSet) {
+    payload.WithObject("NumericRangeFilter", m_numericRangeFilter.Jsonize());
   }
 
-  if(m_numericEqualityFilterHasBeenSet)
-  {
-   payload.WithObject("NumericEqualityFilter", m_numericEqualityFilter.Jsonize());
-
+  if (m_numericEqualityFilterHasBeenSet) {
+    payload.WithObject("NumericEqualityFilter", m_numericEqualityFilter.Jsonize());
   }
 
-  if(m_timeEqualityFilterHasBeenSet)
-  {
-   payload.WithObject("TimeEqualityFilter", m_timeEqualityFilter.Jsonize());
-
+  if (m_timeEqualityFilterHasBeenSet) {
+    payload.WithObject("TimeEqualityFilter", m_timeEqualityFilter.Jsonize());
   }
 
-  if(m_timeRangeFilterHasBeenSet)
-  {
-   payload.WithObject("TimeRangeFilter", m_timeRangeFilter.Jsonize());
-
+  if (m_timeRangeFilterHasBeenSet) {
+    payload.WithObject("TimeRangeFilter", m_timeRangeFilter.Jsonize());
   }
 
-  if(m_relativeDatesFilterHasBeenSet)
-  {
-   payload.WithObject("RelativeDatesFilter", m_relativeDatesFilter.Jsonize());
-
+  if (m_relativeDatesFilterHasBeenSet) {
+    payload.WithObject("RelativeDatesFilter", m_relativeDatesFilter.Jsonize());
   }
 
-  if(m_topBottomFilterHasBeenSet)
-  {
-   payload.WithObject("TopBottomFilter", m_topBottomFilter.Jsonize());
-
+  if (m_topBottomFilterHasBeenSet) {
+    payload.WithObject("TopBottomFilter", m_topBottomFilter.Jsonize());
   }
 
-  if(m_nestedFilterHasBeenSet)
-  {
-   payload.WithObject("NestedFilter", m_nestedFilter.Jsonize());
-
+  if (m_nestedFilterHasBeenSet) {
+    payload.WithObject("NestedFilter", m_nestedFilter.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace QuickSight
-} // namespace Aws
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

@@ -5,12 +5,8 @@
 
 #include <aws/repostspace/RepostspaceEndpointProvider.h>
 
-namespace Aws
-{
-namespace repostspace
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace repostspace
-} // namespace Aws
+namespace Aws {
+namespace repostspace {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace repostspace
+}  // namespace Aws

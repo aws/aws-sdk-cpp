@@ -11,61 +11,48 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ChimeSDKMediaPipelines
-{
-namespace Model
-{
+namespace Aws {
+namespace ChimeSDKMediaPipelines {
+namespace Model {
 
-KinesisVideoStreamRecordingSourceRuntimeConfiguration::KinesisVideoStreamRecordingSourceRuntimeConfiguration(JsonView jsonValue)
-{
+KinesisVideoStreamRecordingSourceRuntimeConfiguration::KinesisVideoStreamRecordingSourceRuntimeConfiguration(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-KinesisVideoStreamRecordingSourceRuntimeConfiguration& KinesisVideoStreamRecordingSourceRuntimeConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Streams"))
-  {
+KinesisVideoStreamRecordingSourceRuntimeConfiguration& KinesisVideoStreamRecordingSourceRuntimeConfiguration::operator=(
+    JsonView jsonValue) {
+  if (jsonValue.ValueExists("Streams")) {
     Aws::Utils::Array<JsonView> streamsJsonList = jsonValue.GetArray("Streams");
-    for(unsigned streamsIndex = 0; streamsIndex < streamsJsonList.GetLength(); ++streamsIndex)
-    {
+    for (unsigned streamsIndex = 0; streamsIndex < streamsJsonList.GetLength(); ++streamsIndex) {
       m_streams.push_back(streamsJsonList[streamsIndex].AsObject());
     }
     m_streamsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("FragmentSelector"))
-  {
+  if (jsonValue.ValueExists("FragmentSelector")) {
     m_fragmentSelector = jsonValue.GetObject("FragmentSelector");
     m_fragmentSelectorHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue KinesisVideoStreamRecordingSourceRuntimeConfiguration::Jsonize() const
-{
+JsonValue KinesisVideoStreamRecordingSourceRuntimeConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_streamsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> streamsJsonList(m_streams.size());
-   for(unsigned streamsIndex = 0; streamsIndex < streamsJsonList.GetLength(); ++streamsIndex)
-   {
-     streamsJsonList[streamsIndex].AsObject(m_streams[streamsIndex].Jsonize());
-   }
-   payload.WithArray("Streams", std::move(streamsJsonList));
-
+  if (m_streamsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> streamsJsonList(m_streams.size());
+    for (unsigned streamsIndex = 0; streamsIndex < streamsJsonList.GetLength(); ++streamsIndex) {
+      streamsJsonList[streamsIndex].AsObject(m_streams[streamsIndex].Jsonize());
+    }
+    payload.WithArray("Streams", std::move(streamsJsonList));
   }
 
-  if(m_fragmentSelectorHasBeenSet)
-  {
-   payload.WithObject("FragmentSelector", m_fragmentSelector.Jsonize());
-
+  if (m_fragmentSelectorHasBeenSet) {
+    payload.WithObject("FragmentSelector", m_fragmentSelector.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ChimeSDKMediaPipelines
-} // namespace Aws
+}  // namespace Model
+}  // namespace ChimeSDKMediaPipelines
+}  // namespace Aws

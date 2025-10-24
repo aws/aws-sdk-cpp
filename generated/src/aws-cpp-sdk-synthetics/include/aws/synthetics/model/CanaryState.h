@@ -4,35 +4,19 @@
  */
 
 #pragma once
-#include <aws/synthetics/Synthetics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/synthetics/Synthetics_EXPORTS.h>
 
-namespace Aws
-{
-namespace Synthetics
-{
-namespace Model
-{
-  enum class CanaryState
-  {
-    NOT_SET,
-    CREATING,
-    READY,
-    STARTING,
-    RUNNING,
-    UPDATING,
-    STOPPING,
-    STOPPED,
-    ERROR_,
-    DELETING
-  };
+namespace Aws {
+namespace Synthetics {
+namespace Model {
+enum class CanaryState { NOT_SET, CREATING, READY, STARTING, RUNNING, UPDATING, STOPPING, STOPPED, ERROR_, DELETING };
 
-namespace CanaryStateMapper
-{
+namespace CanaryStateMapper {
 AWS_SYNTHETICS_API CanaryState GetCanaryStateForName(const Aws::String& name);
 
 AWS_SYNTHETICS_API Aws::String GetNameForCanaryState(CanaryState value);
-} // namespace CanaryStateMapper
-} // namespace Model
-} // namespace Synthetics
-} // namespace Aws
+}  // namespace CanaryStateMapper
+}  // namespace Model
+}  // namespace Synthetics
+}  // namespace Aws

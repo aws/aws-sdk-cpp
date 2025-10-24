@@ -10,12 +10,10 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-Aws::String DescribeResourceScanRequest::SerializePayload() const
-{
+Aws::String DescribeResourceScanRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=DescribeResourceScan&";
-  if(m_resourceScanIdHasBeenSet)
-  {
+  if (m_resourceScanIdHasBeenSet) {
     ss << "ResourceScanId=" << StringUtils::URLEncode(m_resourceScanId.c_str()) << "&";
   }
 
@@ -23,8 +21,4 @@ Aws::String DescribeResourceScanRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  DescribeResourceScanRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void DescribeResourceScanRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

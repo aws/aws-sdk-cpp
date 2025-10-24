@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/s3control/S3Control_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3control/S3Control_EXPORTS.h>
 
-namespace Aws
-{
-namespace S3Control
-{
-namespace Model
-{
-  enum class ComputeObjectChecksumType
-  {
-    NOT_SET,
-    FULL_OBJECT,
-    COMPOSITE
-  };
+namespace Aws {
+namespace S3Control {
+namespace Model {
+enum class ComputeObjectChecksumType { NOT_SET, FULL_OBJECT, COMPOSITE };
 
-namespace ComputeObjectChecksumTypeMapper
-{
+namespace ComputeObjectChecksumTypeMapper {
 AWS_S3CONTROL_API ComputeObjectChecksumType GetComputeObjectChecksumTypeForName(const Aws::String& name);
 
 AWS_S3CONTROL_API Aws::String GetNameForComputeObjectChecksumType(ComputeObjectChecksumType value);
-} // namespace ComputeObjectChecksumTypeMapper
-} // namespace Model
-} // namespace S3Control
-} // namespace Aws
+}  // namespace ComputeObjectChecksumTypeMapper
+}  // namespace Model
+}  // namespace S3Control
+}  // namespace Aws

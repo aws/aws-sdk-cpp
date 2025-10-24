@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 
-namespace Aws
-{
-namespace PartnerCentralSelling
-{
-namespace Model
-{
-  enum class EngagementContextType
-  {
-    NOT_SET,
-    CustomerProject
-  };
+namespace Aws {
+namespace PartnerCentralSelling {
+namespace Model {
+enum class EngagementContextType { NOT_SET, CustomerProject };
 
-namespace EngagementContextTypeMapper
-{
+namespace EngagementContextTypeMapper {
 AWS_PARTNERCENTRALSELLING_API EngagementContextType GetEngagementContextTypeForName(const Aws::String& name);
 
 AWS_PARTNERCENTRALSELLING_API Aws::String GetNameForEngagementContextType(EngagementContextType value);
-} // namespace EngagementContextTypeMapper
-} // namespace Model
-} // namespace PartnerCentralSelling
-} // namespace Aws
+}  // namespace EngagementContextTypeMapper
+}  // namespace Model
+}  // namespace PartnerCentralSelling
+}  // namespace Aws

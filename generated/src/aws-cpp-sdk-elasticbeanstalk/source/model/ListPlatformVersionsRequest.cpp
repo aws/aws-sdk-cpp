@@ -3,41 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticbeanstalk/model/ListPlatformVersionsRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticbeanstalk/model/ListPlatformVersionsRequest.h>
 
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-Aws::String ListPlatformVersionsRequest::SerializePayload() const
-{
+Aws::String ListPlatformVersionsRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=ListPlatformVersions&";
-  if(m_filtersHasBeenSet)
-  {
-    if (m_filters.empty())
-    {
+  if (m_filtersHasBeenSet) {
+    if (m_filters.empty()) {
       ss << "Filters=&";
-    }
-    else
-    {
+    } else {
       unsigned filtersCount = 1;
-      for(auto& item : m_filters)
-      {
+      for (auto& item : m_filters) {
         item.OutputToStream(ss, "Filters.member.", filtersCount, "");
         filtersCount++;
       }
     }
   }
 
-  if(m_maxRecordsHasBeenSet)
-  {
+  if (m_maxRecordsHasBeenSet) {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
 
-  if(m_nextTokenHasBeenSet)
-  {
+  if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
@@ -45,8 +37,4 @@ Aws::String ListPlatformVersionsRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  ListPlatformVersionsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void ListPlatformVersionsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

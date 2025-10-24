@@ -4,35 +4,28 @@
  */
 
 #pragma once
-#include <aws/kinesis/Kinesis_EXPORTS.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/kinesis/Kinesis_EXPORTS.h>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace Kinesis
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Kinesis {
+namespace Model {
 
-  class SubscribeToShardInitialResponse
-  {
-  public:
-    AWS_KINESIS_API SubscribeToShardInitialResponse() = default;
-    AWS_KINESIS_API SubscribeToShardInitialResponse(Aws::Utils::Json::JsonView jsonValue);
-    AWS_KINESIS_API SubscribeToShardInitialResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_KINESIS_API SubscribeToShardInitialResponse(const Http::HeaderValueCollection& responseHeaders);
-    AWS_KINESIS_API Aws::Utils::Json::JsonValue Jsonize() const;
+class SubscribeToShardInitialResponse {
+ public:
+  AWS_KINESIS_API SubscribeToShardInitialResponse() = default;
+  AWS_KINESIS_API SubscribeToShardInitialResponse(Aws::Utils::Json::JsonView jsonValue);
+  AWS_KINESIS_API SubscribeToShardInitialResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_KINESIS_API SubscribeToShardInitialResponse(const Http::HeaderValueCollection& responseHeaders);
+  AWS_KINESIS_API Aws::Utils::Json::JsonValue Jsonize() const;
+};
 
-  };
-
-} // namespace Model
-} // namespace Kinesis
-} // namespace Aws
+}  // namespace Model
+}  // namespace Kinesis
+}  // namespace Aws

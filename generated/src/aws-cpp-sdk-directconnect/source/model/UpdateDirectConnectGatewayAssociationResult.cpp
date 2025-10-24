@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/directconnect/model/UpdateDirectConnectGatewayAssociationResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/directconnect/model/UpdateDirectConnectGatewayAssociationResult.h>
 
 #include <utility>
 
@@ -17,28 +17,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateDirectConnectGatewayAssociationResult::UpdateDirectConnectGatewayAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+UpdateDirectConnectGatewayAssociationResult::UpdateDirectConnectGatewayAssociationResult(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   *this = result;
 }
 
-UpdateDirectConnectGatewayAssociationResult& UpdateDirectConnectGatewayAssociationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+UpdateDirectConnectGatewayAssociationResult& UpdateDirectConnectGatewayAssociationResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("directConnectGatewayAssociation"))
-  {
+  if (jsonValue.ValueExists("directConnectGatewayAssociation")) {
     m_directConnectGatewayAssociation = jsonValue.GetObject("directConnectGatewayAssociation");
     m_directConnectGatewayAssociationHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

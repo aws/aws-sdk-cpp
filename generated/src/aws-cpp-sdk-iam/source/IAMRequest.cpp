@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/iam/IAMRequest.h>
 
-namespace Aws
-{
-namespace IAM
-{
-} // namespace IAM
-} // namespace Aws
+namespace Aws {
+namespace IAM {}  // namespace IAM
+}  // namespace Aws

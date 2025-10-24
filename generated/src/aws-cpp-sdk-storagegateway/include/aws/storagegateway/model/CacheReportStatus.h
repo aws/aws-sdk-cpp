@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/storagegateway/StorageGateway_EXPORTS.h>
 
-namespace Aws
-{
-namespace StorageGateway
-{
-namespace Model
-{
-  enum class CacheReportStatus
-  {
-    NOT_SET,
-    IN_PROGRESS,
-    COMPLETED,
-    CANCELED,
-    FAILED,
-    ERROR_
-  };
+namespace Aws {
+namespace StorageGateway {
+namespace Model {
+enum class CacheReportStatus { NOT_SET, IN_PROGRESS, COMPLETED, CANCELED, FAILED, ERROR_ };
 
-namespace CacheReportStatusMapper
-{
+namespace CacheReportStatusMapper {
 AWS_STORAGEGATEWAY_API CacheReportStatus GetCacheReportStatusForName(const Aws::String& name);
 
 AWS_STORAGEGATEWAY_API Aws::String GetNameForCacheReportStatus(CacheReportStatus value);
-} // namespace CacheReportStatusMapper
-} // namespace Model
-} // namespace StorageGateway
-} // namespace Aws
+}  // namespace CacheReportStatusMapper
+}  // namespace Model
+}  // namespace StorageGateway
+}  // namespace Aws

@@ -11,50 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Backup
-{
-namespace Model
-{
+namespace Aws {
+namespace Backup {
+namespace Model {
 
-DateRange::DateRange(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DateRange::DateRange(JsonView jsonValue) { *this = jsonValue; }
 
-DateRange& DateRange::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("FromDate"))
-  {
+DateRange& DateRange::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FromDate")) {
     m_fromDate = jsonValue.GetDouble("FromDate");
     m_fromDateHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ToDate"))
-  {
+  if (jsonValue.ValueExists("ToDate")) {
     m_toDate = jsonValue.GetDouble("ToDate");
     m_toDateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DateRange::Jsonize() const
-{
+JsonValue DateRange::Jsonize() const {
   JsonValue payload;
 
-  if(m_fromDateHasBeenSet)
-  {
-   payload.WithDouble("FromDate", m_fromDate.SecondsWithMSPrecision());
+  if (m_fromDateHasBeenSet) {
+    payload.WithDouble("FromDate", m_fromDate.SecondsWithMSPrecision());
   }
 
-  if(m_toDateHasBeenSet)
-  {
-   payload.WithDouble("ToDate", m_toDate.SecondsWithMSPrecision());
+  if (m_toDateHasBeenSet) {
+    payload.WithDouble("ToDate", m_toDate.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Backup
-} // namespace Aws
+}  // namespace Model
+}  // namespace Backup
+}  // namespace Aws

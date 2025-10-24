@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/es/ElasticsearchServiceEndpointRules.h>
+#include <aws/es/ElasticsearchService_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace ElasticsearchService
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace ElasticsearchService {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using ElasticsearchServiceClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -35,27 +30,26 @@ using ElasticsearchServiceBuiltInParameters = Aws::Endpoint::BuiltInParameters;
  * The SDK must use service-specific type for each service per specification.
  */
 using ElasticsearchServiceEndpointProviderBase =
-    EndpointProviderBase<ElasticsearchServiceClientConfiguration, ElasticsearchServiceBuiltInParameters, ElasticsearchServiceClientContextParameters>;
+    EndpointProviderBase<ElasticsearchServiceClientConfiguration, ElasticsearchServiceBuiltInParameters,
+                         ElasticsearchServiceClientContextParameters>;
 
 using ElasticsearchServiceDefaultEpProviderBase =
-    DefaultEndpointProvider<ElasticsearchServiceClientConfiguration, ElasticsearchServiceBuiltInParameters, ElasticsearchServiceClientContextParameters>;
+    DefaultEndpointProvider<ElasticsearchServiceClientConfiguration, ElasticsearchServiceBuiltInParameters,
+                            ElasticsearchServiceClientContextParameters>;
 
 /**
  * Default endpoint provider used for this service
  */
-class AWS_ELASTICSEARCHSERVICE_API ElasticsearchServiceEndpointProvider : public ElasticsearchServiceDefaultEpProviderBase
-{
-public:
-    using ElasticsearchServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_ELASTICSEARCHSERVICE_API ElasticsearchServiceEndpointProvider : public ElasticsearchServiceDefaultEpProviderBase {
+ public:
+  using ElasticsearchServiceResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    ElasticsearchServiceEndpointProvider()
-      : ElasticsearchServiceDefaultEpProviderBase(Aws::ElasticsearchService::ElasticsearchServiceEndpointRules::GetRulesBlob(), Aws::ElasticsearchService::ElasticsearchServiceEndpointRules::RulesBlobSize)
-    {}
+  ElasticsearchServiceEndpointProvider()
+      : ElasticsearchServiceDefaultEpProviderBase(Aws::ElasticsearchService::ElasticsearchServiceEndpointRules::GetRulesBlob(),
+                                                  Aws::ElasticsearchService::ElasticsearchServiceEndpointRules::RulesBlobSize) {}
 
-    ~ElasticsearchServiceEndpointProvider()
-    {
-    }
+  ~ElasticsearchServiceEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace ElasticsearchService
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace ElasticsearchService
+}  // namespace Aws

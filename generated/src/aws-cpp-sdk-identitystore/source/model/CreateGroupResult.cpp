@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/identitystore/model/CreateGroupResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/identitystore/model/CreateGroupResult.h>
 
 #include <utility>
 
@@ -17,33 +17,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateGroupResult::CreateGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+CreateGroupResult::CreateGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-CreateGroupResult& CreateGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+CreateGroupResult& CreateGroupResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("GroupId"))
-  {
+  if (jsonValue.ValueExists("GroupId")) {
     m_groupId = jsonValue.GetString("GroupId");
     m_groupIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IdentityStoreId"))
-  {
+  if (jsonValue.ValueExists("IdentityStoreId")) {
     m_identityStoreId = jsonValue.GetString("IdentityStoreId");
     m_identityStoreIdHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

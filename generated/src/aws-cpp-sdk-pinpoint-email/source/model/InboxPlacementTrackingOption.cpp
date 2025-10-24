@@ -3,38 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/pinpoint-email/model/InboxPlacementTrackingOption.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pinpoint-email/model/InboxPlacementTrackingOption.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace PinpointEmail
-{
-namespace Model
-{
+namespace Aws {
+namespace PinpointEmail {
+namespace Model {
 
-InboxPlacementTrackingOption::InboxPlacementTrackingOption(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+InboxPlacementTrackingOption::InboxPlacementTrackingOption(JsonView jsonValue) { *this = jsonValue; }
 
-InboxPlacementTrackingOption& InboxPlacementTrackingOption::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Global"))
-  {
+InboxPlacementTrackingOption& InboxPlacementTrackingOption::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Global")) {
     m_global = jsonValue.GetBool("Global");
     m_globalHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TrackedIsps"))
-  {
+  if (jsonValue.ValueExists("TrackedIsps")) {
     Aws::Utils::Array<JsonView> trackedIspsJsonList = jsonValue.GetArray("TrackedIsps");
-    for(unsigned trackedIspsIndex = 0; trackedIspsIndex < trackedIspsJsonList.GetLength(); ++trackedIspsIndex)
-    {
+    for (unsigned trackedIspsIndex = 0; trackedIspsIndex < trackedIspsJsonList.GetLength(); ++trackedIspsIndex) {
       m_trackedIsps.push_back(trackedIspsJsonList[trackedIspsIndex].AsString());
     }
     m_trackedIspsHasBeenSet = true;
@@ -42,30 +32,24 @@ InboxPlacementTrackingOption& InboxPlacementTrackingOption::operator =(JsonView 
   return *this;
 }
 
-JsonValue InboxPlacementTrackingOption::Jsonize() const
-{
+JsonValue InboxPlacementTrackingOption::Jsonize() const {
   JsonValue payload;
 
-  if(m_globalHasBeenSet)
-  {
-   payload.WithBool("Global", m_global);
-
+  if (m_globalHasBeenSet) {
+    payload.WithBool("Global", m_global);
   }
 
-  if(m_trackedIspsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> trackedIspsJsonList(m_trackedIsps.size());
-   for(unsigned trackedIspsIndex = 0; trackedIspsIndex < trackedIspsJsonList.GetLength(); ++trackedIspsIndex)
-   {
-     trackedIspsJsonList[trackedIspsIndex].AsString(m_trackedIsps[trackedIspsIndex]);
-   }
-   payload.WithArray("TrackedIsps", std::move(trackedIspsJsonList));
-
+  if (m_trackedIspsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> trackedIspsJsonList(m_trackedIsps.size());
+    for (unsigned trackedIspsIndex = 0; trackedIspsIndex < trackedIspsJsonList.GetLength(); ++trackedIspsIndex) {
+      trackedIspsJsonList[trackedIspsIndex].AsString(m_trackedIsps[trackedIspsIndex]);
+    }
+    payload.WithArray("TrackedIsps", std::move(trackedIspsJsonList));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace PinpointEmail
-} // namespace Aws
+}  // namespace Model
+}  // namespace PinpointEmail
+}  // namespace Aws

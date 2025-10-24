@@ -7,24 +7,16 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CodePipeline
-{
-namespace Model
-{
-  enum class PipelineTriggerProviderType
-  {
-    NOT_SET,
-    CodeStarSourceConnection
-  };
+namespace Aws {
+namespace CodePipeline {
+namespace Model {
+enum class PipelineTriggerProviderType { NOT_SET, CodeStarSourceConnection };
 
-namespace PipelineTriggerProviderTypeMapper
-{
+namespace PipelineTriggerProviderTypeMapper {
 AWS_CODEPIPELINE_API PipelineTriggerProviderType GetPipelineTriggerProviderTypeForName(const Aws::String& name);
 
 AWS_CODEPIPELINE_API Aws::String GetNameForPipelineTriggerProviderType(PipelineTriggerProviderType value);
-} // namespace PipelineTriggerProviderTypeMapper
-} // namespace Model
-} // namespace CodePipeline
-} // namespace Aws
+}  // namespace PipelineTriggerProviderTypeMapper
+}  // namespace Model
+}  // namespace CodePipeline
+}  // namespace Aws

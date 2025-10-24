@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mediaconvert/model/Endpoint.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconvert/model/Endpoint.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
 
-Endpoint::Endpoint(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Endpoint::Endpoint(JsonView jsonValue) { *this = jsonValue; }
 
-Endpoint& Endpoint::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("url"))
-  {
+Endpoint& Endpoint::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("url")) {
     m_url = jsonValue.GetString("url");
     m_urlHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Endpoint::Jsonize() const
-{
+JsonValue Endpoint::Jsonize() const {
   JsonValue payload;
 
-  if(m_urlHasBeenSet)
-  {
-   payload.WithString("url", m_url);
-
+  if (m_urlHasBeenSet) {
+    payload.WithString("url", m_url);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Braket
-{
-namespace Model
-{
+namespace Aws {
+namespace Braket {
+namespace Model {
 
-DataSource::DataSource(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DataSource::DataSource(JsonView jsonValue) { *this = jsonValue; }
 
-DataSource& DataSource::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("s3DataSource"))
-  {
+DataSource& DataSource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("s3DataSource")) {
     m_s3DataSource = jsonValue.GetObject("s3DataSource");
     m_s3DataSourceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DataSource::Jsonize() const
-{
+JsonValue DataSource::Jsonize() const {
   JsonValue payload;
 
-  if(m_s3DataSourceHasBeenSet)
-  {
-   payload.WithObject("s3DataSource", m_s3DataSource.Jsonize());
-
+  if (m_s3DataSourceHasBeenSet) {
+    payload.WithObject("s3DataSource", m_s3DataSource.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Braket
-} // namespace Aws
+}  // namespace Model
+}  // namespace Braket
+}  // namespace Aws

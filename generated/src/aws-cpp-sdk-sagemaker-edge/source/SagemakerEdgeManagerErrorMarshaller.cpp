@@ -10,11 +10,9 @@
 using namespace Aws::Client;
 using namespace Aws::SagemakerEdgeManager;
 
-AWSError<CoreErrors> SagemakerEdgeManagerErrorMarshaller::FindErrorByName(const char* errorName) const
-{
+AWSError<CoreErrors> SagemakerEdgeManagerErrorMarshaller::FindErrorByName(const char* errorName) const {
   AWSError<CoreErrors> error = SagemakerEdgeManagerErrorMapper::GetErrorForName(errorName);
-  if(error.GetErrorType() != CoreErrors::UNKNOWN)
-  {
+  if (error.GetErrorType() != CoreErrors::UNKNOWN) {
     return error;
   }
 

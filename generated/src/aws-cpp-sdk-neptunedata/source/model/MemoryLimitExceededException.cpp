@@ -3,71 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/neptunedata/model/MemoryLimitExceededException.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/neptunedata/model/MemoryLimitExceededException.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace neptunedata
-{
-namespace Model
-{
+namespace Aws {
+namespace neptunedata {
+namespace Model {
 
-MemoryLimitExceededException::MemoryLimitExceededException(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MemoryLimitExceededException::MemoryLimitExceededException(JsonView jsonValue) { *this = jsonValue; }
 
-MemoryLimitExceededException& MemoryLimitExceededException::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("detailedMessage"))
-  {
+MemoryLimitExceededException& MemoryLimitExceededException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("detailedMessage")) {
     m_detailedMessage = jsonValue.GetString("detailedMessage");
     m_detailedMessageHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("requestId"))
-  {
+  if (jsonValue.ValueExists("requestId")) {
     m_requestId = jsonValue.GetString("requestId");
     m_requestIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("code"))
-  {
+  if (jsonValue.ValueExists("code")) {
     m_code = jsonValue.GetString("code");
     m_codeHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue MemoryLimitExceededException::Jsonize() const
-{
+JsonValue MemoryLimitExceededException::Jsonize() const {
   JsonValue payload;
 
-  if(m_detailedMessageHasBeenSet)
-  {
-   payload.WithString("detailedMessage", m_detailedMessage);
-
+  if (m_detailedMessageHasBeenSet) {
+    payload.WithString("detailedMessage", m_detailedMessage);
   }
 
-  if(m_requestIdHasBeenSet)
-  {
-   payload.WithString("requestId", m_requestId);
-
+  if (m_requestIdHasBeenSet) {
+    payload.WithString("requestId", m_requestId);
   }
 
-  if(m_codeHasBeenSet)
-  {
-   payload.WithString("code", m_code);
-
+  if (m_codeHasBeenSet) {
+    payload.WithString("code", m_code);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace neptunedata
-} // namespace Aws
+}  // namespace Model
+}  // namespace neptunedata
+}  // namespace Aws

@@ -12,25 +12,16 @@ using namespace Aws::Appflow::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UnregisterConnectorRequest::SerializePayload() const
-{
+Aws::String UnregisterConnectorRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_connectorLabelHasBeenSet)
-  {
-   payload.WithString("connectorLabel", m_connectorLabel);
-
+  if (m_connectorLabelHasBeenSet) {
+    payload.WithString("connectorLabel", m_connectorLabel);
   }
 
-  if(m_forceDeleteHasBeenSet)
-  {
-   payload.WithBool("forceDelete", m_forceDelete);
-
+  if (m_forceDeleteHasBeenSet) {
+    payload.WithBool("forceDelete", m_forceDelete);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

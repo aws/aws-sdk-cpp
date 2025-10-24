@@ -4,25 +4,20 @@
  */
 
 #pragma once
-#include <aws/pca-connector-ad/PcaConnectorAd_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-
 #include <aws/pca-connector-ad/PcaConnectorAdEndpointRules.h>
+#include <aws/pca-connector-ad/PcaConnectorAd_EXPORTS.h>
 
-
-namespace Aws
-{
-namespace PcaConnectorAd
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace PcaConnectorAd {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using PcaConnectorAdClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using PcaConnectorAdDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_PCACONNECTORAD_API PcaConnectorAdEndpointProvider : public PcaConnectorAdDefaultEpProviderBase
-{
-public:
-    using PcaConnectorAdResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_PCACONNECTORAD_API PcaConnectorAdEndpointProvider : public PcaConnectorAdDefaultEpProviderBase {
+ public:
+  using PcaConnectorAdResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    PcaConnectorAdEndpointProvider()
-      : PcaConnectorAdDefaultEpProviderBase(Aws::PcaConnectorAd::PcaConnectorAdEndpointRules::GetRulesBlob(), Aws::PcaConnectorAd::PcaConnectorAdEndpointRules::RulesBlobSize)
-    {}
+  PcaConnectorAdEndpointProvider()
+      : PcaConnectorAdDefaultEpProviderBase(Aws::PcaConnectorAd::PcaConnectorAdEndpointRules::GetRulesBlob(),
+                                            Aws::PcaConnectorAd::PcaConnectorAdEndpointRules::RulesBlobSize) {}
 
-    ~PcaConnectorAdEndpointProvider()
-    {
-    }
+  ~PcaConnectorAdEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace PcaConnectorAd
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace PcaConnectorAd
+}  // namespace Aws

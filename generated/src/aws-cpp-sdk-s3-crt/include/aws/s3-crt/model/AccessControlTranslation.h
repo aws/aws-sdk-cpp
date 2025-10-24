@@ -6,55 +6,54 @@
 #pragma once
 #include <aws/s3-crt/S3Crt_EXPORTS.h>
 #include <aws/s3-crt/model/OwnerOverride.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Xml
-{
-  class XmlNode;
-} // namespace Xml
-} // namespace Utils
-namespace S3Crt
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Xml {
+class XmlNode;
+}  // namespace Xml
+}  // namespace Utils
+namespace S3Crt {
+namespace Model {
 
+/**
+ * <p>A container for information about access control for replicas.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AccessControlTranslation">AWS
+ * API Reference</a></p>
+ */
+class AccessControlTranslation {
+ public:
+  AWS_S3CRT_API AccessControlTranslation() = default;
+  AWS_S3CRT_API AccessControlTranslation(const Aws::Utils::Xml::XmlNode& xmlNode);
+  AWS_S3CRT_API AccessControlTranslation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+  AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+
+  ///@{
   /**
-   * <p>A container for information about access control for replicas.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AccessControlTranslation">AWS
-   * API Reference</a></p>
+   * <p>Specifies the replica ownership. For default and valid values, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT
+   * bucket replication</a> in the <i>Amazon S3 API Reference</i>.</p>
    */
-  class AccessControlTranslation
-  {
-  public:
-    AWS_S3CRT_API AccessControlTranslation() = default;
-    AWS_S3CRT_API AccessControlTranslation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AWS_S3CRT_API AccessControlTranslation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+  inline OwnerOverride GetOwner() const { return m_owner; }
+  inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
+  inline void SetOwner(OwnerOverride value) {
+    m_ownerHasBeenSet = true;
+    m_owner = value;
+  }
+  inline AccessControlTranslation& WithOwner(OwnerOverride value) {
+    SetOwner(value);
+    return *this;
+  }
+  ///@}
+ private:
+  OwnerOverride m_owner{OwnerOverride::NOT_SET};
+  bool m_ownerHasBeenSet = false;
+};
 
-    AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
-
-
-    ///@{
-    /**
-     * <p>Specifies the replica ownership. For default and valid values, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT
-     * bucket replication</a> in the <i>Amazon S3 API Reference</i>.</p>
-     */
-    inline OwnerOverride GetOwner() const { return m_owner; }
-    inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
-    inline void SetOwner(OwnerOverride value) { m_ownerHasBeenSet = true; m_owner = value; }
-    inline AccessControlTranslation& WithOwner(OwnerOverride value) { SetOwner(value); return *this;}
-    ///@}
-  private:
-
-    OwnerOverride m_owner{OwnerOverride::NOT_SET};
-    bool m_ownerHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace S3Crt
-} // namespace Aws
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iot/model/CreateCommandResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iot/model/CreateCommandResult.h>
 
 #include <utility>
 
@@ -17,33 +17,25 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateCommandResult::CreateCommandResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  *this = result;
-}
+CreateCommandResult::CreateCommandResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-CreateCommandResult& CreateCommandResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
+CreateCommandResult& CreateCommandResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("commandId"))
-  {
+  if (jsonValue.ValueExists("commandId")) {
     m_commandId = jsonValue.GetString("commandId");
     m_commandIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("commandArn"))
-  {
+  if (jsonValue.ValueExists("commandArn")) {
     m_commandArn = jsonValue.GetString("commandArn");
     m_commandArnHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
+  if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
     m_requestIdHasBeenSet = true;
   }
-
 
   return *this;
 }

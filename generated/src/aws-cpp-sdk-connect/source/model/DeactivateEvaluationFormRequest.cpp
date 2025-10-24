@@ -12,19 +12,12 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeactivateEvaluationFormRequest::SerializePayload() const
-{
+Aws::String DeactivateEvaluationFormRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_evaluationFormVersionHasBeenSet)
-  {
-   payload.WithInteger("EvaluationFormVersion", m_evaluationFormVersion);
-
+  if (m_evaluationFormVersionHasBeenSet) {
+    payload.WithInteger("EvaluationFormVersion", m_evaluationFormVersion);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

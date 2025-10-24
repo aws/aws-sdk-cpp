@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElasticLoadBalancingv2
-{
-namespace Model
-{
-  enum class IpAddressType
-  {
-    NOT_SET,
-    ipv4,
-    dualstack,
-    dualstack_without_public_ipv4
-  };
+namespace Aws {
+namespace ElasticLoadBalancingv2 {
+namespace Model {
+enum class IpAddressType { NOT_SET, ipv4, dualstack, dualstack_without_public_ipv4 };
 
-namespace IpAddressTypeMapper
-{
+namespace IpAddressTypeMapper {
 AWS_ELASTICLOADBALANCINGV2_API IpAddressType GetIpAddressTypeForName(const Aws::String& name);
 
 AWS_ELASTICLOADBALANCINGV2_API Aws::String GetNameForIpAddressType(IpAddressType value);
-} // namespace IpAddressTypeMapper
-} // namespace Model
-} // namespace ElasticLoadBalancingv2
-} // namespace Aws
+}  // namespace IpAddressTypeMapper
+}  // namespace Model
+}  // namespace ElasticLoadBalancingv2
+}  // namespace Aws

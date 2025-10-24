@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/elasticloadbalancing/ElasticLoadBalancing_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElasticLoadBalancing
-{
-enum class ElasticLoadBalancingErrors
-{
-  //From Core//
+namespace Aws {
+namespace ElasticLoadBalancing {
+enum class ElasticLoadBalancingErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class ElasticLoadBalancingErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class ElasticLoadBalancingErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ACCESS_POINT_NOT_FOUND= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ACCESS_POINT_NOT_FOUND = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CERTIFICATE_NOT_FOUND,
   DEPENDENCY_THROTTLE,
   DUPLICATE_ACCESS_POINT_NAME,
@@ -71,23 +68,25 @@ enum class ElasticLoadBalancingErrors
   UNSUPPORTED_PROTOCOL
 };
 
-class AWS_ELASTICLOADBALANCING_API ElasticLoadBalancingError : public Aws::Client::AWSError<ElasticLoadBalancingErrors>
-{
-public:
+class AWS_ELASTICLOADBALANCING_API ElasticLoadBalancingError : public Aws::Client::AWSError<ElasticLoadBalancingErrors> {
+ public:
   ElasticLoadBalancingError() {}
-  ElasticLoadBalancingError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ElasticLoadBalancingErrors>(rhs) {}
-  ElasticLoadBalancingError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ElasticLoadBalancingErrors>(rhs) {}
-  ElasticLoadBalancingError(const Aws::Client::AWSError<ElasticLoadBalancingErrors>& rhs) : Aws::Client::AWSError<ElasticLoadBalancingErrors>(rhs) {}
-  ElasticLoadBalancingError(Aws::Client::AWSError<ElasticLoadBalancingErrors>&& rhs) : Aws::Client::AWSError<ElasticLoadBalancingErrors>(rhs) {}
+  ElasticLoadBalancingError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs)
+      : Aws::Client::AWSError<ElasticLoadBalancingErrors>(rhs) {}
+  ElasticLoadBalancingError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs)
+      : Aws::Client::AWSError<ElasticLoadBalancingErrors>(rhs) {}
+  ElasticLoadBalancingError(const Aws::Client::AWSError<ElasticLoadBalancingErrors>& rhs)
+      : Aws::Client::AWSError<ElasticLoadBalancingErrors>(rhs) {}
+  ElasticLoadBalancingError(Aws::Client::AWSError<ElasticLoadBalancingErrors>&& rhs)
+      : Aws::Client::AWSError<ElasticLoadBalancingErrors>(rhs) {}
 
   template <typename T>
   T GetModeledError();
 };
 
-namespace ElasticLoadBalancingErrorMapper
-{
-  AWS_ELASTICLOADBALANCING_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace ElasticLoadBalancingErrorMapper {
+AWS_ELASTICLOADBALANCING_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace ElasticLoadBalancing
-} // namespace Aws
+}  // namespace ElasticLoadBalancing
+}  // namespace Aws

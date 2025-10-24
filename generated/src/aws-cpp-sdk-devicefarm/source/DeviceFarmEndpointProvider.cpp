@@ -5,12 +5,8 @@
 
 #include <aws/devicefarm/DeviceFarmEndpointProvider.h>
 
-namespace Aws
-{
-namespace DeviceFarm
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace DeviceFarm
-} // namespace Aws
+namespace Aws {
+namespace DeviceFarm {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace DeviceFarm
+}  // namespace Aws

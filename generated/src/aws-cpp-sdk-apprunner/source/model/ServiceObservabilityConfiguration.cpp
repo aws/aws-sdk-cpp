@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppRunner
-{
-namespace Model
-{
+namespace Aws {
+namespace AppRunner {
+namespace Model {
 
-ServiceObservabilityConfiguration::ServiceObservabilityConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ServiceObservabilityConfiguration::ServiceObservabilityConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-ServiceObservabilityConfiguration& ServiceObservabilityConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ObservabilityEnabled"))
-  {
+ServiceObservabilityConfiguration& ServiceObservabilityConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ObservabilityEnabled")) {
     m_observabilityEnabled = jsonValue.GetBool("ObservabilityEnabled");
     m_observabilityEnabledHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ObservabilityConfigurationArn"))
-  {
+  if (jsonValue.ValueExists("ObservabilityConfigurationArn")) {
     m_observabilityConfigurationArn = jsonValue.GetString("ObservabilityConfigurationArn");
     m_observabilityConfigurationArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ServiceObservabilityConfiguration::Jsonize() const
-{
+JsonValue ServiceObservabilityConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_observabilityEnabledHasBeenSet)
-  {
-   payload.WithBool("ObservabilityEnabled", m_observabilityEnabled);
-
+  if (m_observabilityEnabledHasBeenSet) {
+    payload.WithBool("ObservabilityEnabled", m_observabilityEnabled);
   }
 
-  if(m_observabilityConfigurationArnHasBeenSet)
-  {
-   payload.WithString("ObservabilityConfigurationArn", m_observabilityConfigurationArn);
-
+  if (m_observabilityConfigurationArnHasBeenSet) {
+    payload.WithString("ObservabilityConfigurationArn", m_observabilityConfigurationArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppRunner
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppRunner
+}  // namespace Aws

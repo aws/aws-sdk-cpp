@@ -12,32 +12,23 @@ using namespace Aws::CodeStarconnections::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetResourceSyncStatusRequest::SerializePayload() const
-{
+Aws::String GetResourceSyncStatusRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceNameHasBeenSet)
-  {
-   payload.WithString("ResourceName", m_resourceName);
-
+  if (m_resourceNameHasBeenSet) {
+    payload.WithString("ResourceName", m_resourceName);
   }
 
-  if(m_syncTypeHasBeenSet)
-  {
-   payload.WithString("SyncType", SyncConfigurationTypeMapper::GetNameForSyncConfigurationType(m_syncType));
+  if (m_syncTypeHasBeenSet) {
+    payload.WithString("SyncType", SyncConfigurationTypeMapper::GetNameForSyncConfigurationType(m_syncType));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetResourceSyncStatusRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetResourceSyncStatusRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.codestar.connections.CodeStar_connections_20191201.GetResourceSyncStatus"));
+  headers.insert(
+      Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.codestar.connections.CodeStar_connections_20191201.GetResourceSyncStatus"));
   return headers;
-
 }
-
-
-
-

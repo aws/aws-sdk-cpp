@@ -4,32 +4,19 @@
  */
 
 #pragma once
-#include <aws/deadline/Deadline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/deadline/Deadline_EXPORTS.h>
 
-namespace Aws
-{
-namespace deadline
-{
-namespace Model
-{
-  enum class JobTargetTaskRunStatus
-  {
-    NOT_SET,
-    READY,
-    FAILED,
-    SUCCEEDED,
-    CANCELED,
-    SUSPENDED,
-    PENDING
-  };
+namespace Aws {
+namespace deadline {
+namespace Model {
+enum class JobTargetTaskRunStatus { NOT_SET, READY, FAILED, SUCCEEDED, CANCELED, SUSPENDED, PENDING };
 
-namespace JobTargetTaskRunStatusMapper
-{
+namespace JobTargetTaskRunStatusMapper {
 AWS_DEADLINE_API JobTargetTaskRunStatus GetJobTargetTaskRunStatusForName(const Aws::String& name);
 
 AWS_DEADLINE_API Aws::String GetNameForJobTargetTaskRunStatus(JobTargetTaskRunStatus value);
-} // namespace JobTargetTaskRunStatusMapper
-} // namespace Model
-} // namespace deadline
-} // namespace Aws
+}  // namespace JobTargetTaskRunStatusMapper
+}  // namespace Model
+}  // namespace deadline
+}  // namespace Aws

@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class InstanceBootModeValues
-  {
-    NOT_SET,
-    legacy_bios,
-    uefi
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class InstanceBootModeValues { NOT_SET, legacy_bios, uefi };
 
-namespace InstanceBootModeValuesMapper
-{
+namespace InstanceBootModeValuesMapper {
 AWS_EC2_API InstanceBootModeValues GetInstanceBootModeValuesForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForInstanceBootModeValues(InstanceBootModeValues value);
-} // namespace InstanceBootModeValuesMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace InstanceBootModeValuesMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

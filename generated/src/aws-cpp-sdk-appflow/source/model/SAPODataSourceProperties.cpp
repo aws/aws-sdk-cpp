@@ -11,63 +11,46 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-SAPODataSourceProperties::SAPODataSourceProperties(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+SAPODataSourceProperties::SAPODataSourceProperties(JsonView jsonValue) { *this = jsonValue; }
 
-SAPODataSourceProperties& SAPODataSourceProperties::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("objectPath"))
-  {
+SAPODataSourceProperties& SAPODataSourceProperties::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("objectPath")) {
     m_objectPath = jsonValue.GetString("objectPath");
     m_objectPathHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("parallelismConfig"))
-  {
+  if (jsonValue.ValueExists("parallelismConfig")) {
     m_parallelismConfig = jsonValue.GetObject("parallelismConfig");
     m_parallelismConfigHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("paginationConfig"))
-  {
+  if (jsonValue.ValueExists("paginationConfig")) {
     m_paginationConfig = jsonValue.GetObject("paginationConfig");
     m_paginationConfigHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue SAPODataSourceProperties::Jsonize() const
-{
+JsonValue SAPODataSourceProperties::Jsonize() const {
   JsonValue payload;
 
-  if(m_objectPathHasBeenSet)
-  {
-   payload.WithString("objectPath", m_objectPath);
-
+  if (m_objectPathHasBeenSet) {
+    payload.WithString("objectPath", m_objectPath);
   }
 
-  if(m_parallelismConfigHasBeenSet)
-  {
-   payload.WithObject("parallelismConfig", m_parallelismConfig.Jsonize());
-
+  if (m_parallelismConfigHasBeenSet) {
+    payload.WithObject("parallelismConfig", m_parallelismConfig.Jsonize());
   }
 
-  if(m_paginationConfigHasBeenSet)
-  {
-   payload.WithObject("paginationConfig", m_paginationConfig.Jsonize());
-
+  if (m_paginationConfigHasBeenSet) {
+    payload.WithObject("paginationConfig", m_paginationConfig.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

@@ -11,71 +11,54 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Comprehend
-{
-namespace Model
-{
+namespace Aws {
+namespace Comprehend {
+namespace Model {
 
-DocumentClassifierFilter::DocumentClassifierFilter(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+DocumentClassifierFilter::DocumentClassifierFilter(JsonView jsonValue) { *this = jsonValue; }
 
-DocumentClassifierFilter& DocumentClassifierFilter::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Status"))
-  {
+DocumentClassifierFilter& DocumentClassifierFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Status")) {
     m_status = ModelStatusMapper::GetModelStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DocumentClassifierName"))
-  {
+  if (jsonValue.ValueExists("DocumentClassifierName")) {
     m_documentClassifierName = jsonValue.GetString("DocumentClassifierName");
     m_documentClassifierNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SubmitTimeBefore"))
-  {
+  if (jsonValue.ValueExists("SubmitTimeBefore")) {
     m_submitTimeBefore = jsonValue.GetDouble("SubmitTimeBefore");
     m_submitTimeBeforeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("SubmitTimeAfter"))
-  {
+  if (jsonValue.ValueExists("SubmitTimeAfter")) {
     m_submitTimeAfter = jsonValue.GetDouble("SubmitTimeAfter");
     m_submitTimeAfterHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue DocumentClassifierFilter::Jsonize() const
-{
+JsonValue DocumentClassifierFilter::Jsonize() const {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", ModelStatusMapper::GetNameForModelStatus(m_status));
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", ModelStatusMapper::GetNameForModelStatus(m_status));
   }
 
-  if(m_documentClassifierNameHasBeenSet)
-  {
-   payload.WithString("DocumentClassifierName", m_documentClassifierName);
-
+  if (m_documentClassifierNameHasBeenSet) {
+    payload.WithString("DocumentClassifierName", m_documentClassifierName);
   }
 
-  if(m_submitTimeBeforeHasBeenSet)
-  {
-   payload.WithDouble("SubmitTimeBefore", m_submitTimeBefore.SecondsWithMSPrecision());
+  if (m_submitTimeBeforeHasBeenSet) {
+    payload.WithDouble("SubmitTimeBefore", m_submitTimeBefore.SecondsWithMSPrecision());
   }
 
-  if(m_submitTimeAfterHasBeenSet)
-  {
-   payload.WithDouble("SubmitTimeAfter", m_submitTimeAfter.SecondsWithMSPrecision());
+  if (m_submitTimeAfterHasBeenSet) {
+    payload.WithDouble("SubmitTimeAfter", m_submitTimeAfter.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Comprehend
-} // namespace Aws
+}  // namespace Model
+}  // namespace Comprehend
+}  // namespace Aws

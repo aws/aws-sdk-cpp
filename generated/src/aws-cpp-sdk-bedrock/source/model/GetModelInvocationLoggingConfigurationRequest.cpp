@@ -12,11 +12,4 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetModelInvocationLoggingConfigurationRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String GetModelInvocationLoggingConfigurationRequest::SerializePayload() const { return {}; }

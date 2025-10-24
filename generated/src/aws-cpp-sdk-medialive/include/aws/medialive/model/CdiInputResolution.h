@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
-  enum class CdiInputResolution
-  {
-    NOT_SET,
-    SD,
-    HD,
-    FHD,
-    UHD
-  };
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+enum class CdiInputResolution { NOT_SET, SD, HD, FHD, UHD };
 
-namespace CdiInputResolutionMapper
-{
+namespace CdiInputResolutionMapper {
 AWS_MEDIALIVE_API CdiInputResolution GetCdiInputResolutionForName(const Aws::String& name);
 
 AWS_MEDIALIVE_API Aws::String GetNameForCdiInputResolution(CdiInputResolution value);
-} // namespace CdiInputResolutionMapper
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace CdiInputResolutionMapper
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

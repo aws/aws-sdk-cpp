@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sesv2/model/EmailTemplateMetadata.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sesv2/model/EmailTemplateMetadata.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SESV2
-{
-namespace Model
-{
+namespace Aws {
+namespace SESV2 {
+namespace Model {
 
-EmailTemplateMetadata::EmailTemplateMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EmailTemplateMetadata::EmailTemplateMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-EmailTemplateMetadata& EmailTemplateMetadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TemplateName"))
-  {
+EmailTemplateMetadata& EmailTemplateMetadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TemplateName")) {
     m_templateName = jsonValue.GetString("TemplateName");
     m_templateNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedTimestamp"))
-  {
+  if (jsonValue.ValueExists("CreatedTimestamp")) {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
     m_createdTimestampHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EmailTemplateMetadata::Jsonize() const
-{
+JsonValue EmailTemplateMetadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_templateNameHasBeenSet)
-  {
-   payload.WithString("TemplateName", m_templateName);
-
+  if (m_templateNameHasBeenSet) {
+    payload.WithString("TemplateName", m_templateName);
   }
 
-  if(m_createdTimestampHasBeenSet)
-  {
-   payload.WithDouble("CreatedTimestamp", m_createdTimestamp.SecondsWithMSPrecision());
+  if (m_createdTimestampHasBeenSet) {
+    payload.WithDouble("CreatedTimestamp", m_createdTimestamp.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SESV2
-} // namespace Aws
+}  // namespace Model
+}  // namespace SESV2
+}  // namespace Aws

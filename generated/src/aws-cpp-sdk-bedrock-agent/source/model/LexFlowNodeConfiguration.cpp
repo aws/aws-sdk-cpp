@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BedrockAgent
-{
-namespace Model
-{
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
 
-LexFlowNodeConfiguration::LexFlowNodeConfiguration(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+LexFlowNodeConfiguration::LexFlowNodeConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
-LexFlowNodeConfiguration& LexFlowNodeConfiguration::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("botAliasArn"))
-  {
+LexFlowNodeConfiguration& LexFlowNodeConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("botAliasArn")) {
     m_botAliasArn = jsonValue.GetString("botAliasArn");
     m_botAliasArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("localeId"))
-  {
+  if (jsonValue.ValueExists("localeId")) {
     m_localeId = jsonValue.GetString("localeId");
     m_localeIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue LexFlowNodeConfiguration::Jsonize() const
-{
+JsonValue LexFlowNodeConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if(m_botAliasArnHasBeenSet)
-  {
-   payload.WithString("botAliasArn", m_botAliasArn);
-
+  if (m_botAliasArnHasBeenSet) {
+    payload.WithString("botAliasArn", m_botAliasArn);
   }
 
-  if(m_localeIdHasBeenSet)
-  {
-   payload.WithString("localeId", m_localeId);
-
+  if (m_localeIdHasBeenSet) {
+    payload.WithString("localeId", m_localeId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BedrockAgent
-} // namespace Aws
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

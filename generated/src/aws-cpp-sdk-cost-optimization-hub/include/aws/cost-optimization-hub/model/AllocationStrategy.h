@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/cost-optimization-hub/CostOptimizationHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cost-optimization-hub/CostOptimizationHub_EXPORTS.h>
 
-namespace Aws
-{
-namespace CostOptimizationHub
-{
-namespace Model
-{
-  enum class AllocationStrategy
-  {
-    NOT_SET,
-    Prioritized,
-    LowestPrice
-  };
+namespace Aws {
+namespace CostOptimizationHub {
+namespace Model {
+enum class AllocationStrategy { NOT_SET, Prioritized, LowestPrice };
 
-namespace AllocationStrategyMapper
-{
+namespace AllocationStrategyMapper {
 AWS_COSTOPTIMIZATIONHUB_API AllocationStrategy GetAllocationStrategyForName(const Aws::String& name);
 
 AWS_COSTOPTIMIZATIONHUB_API Aws::String GetNameForAllocationStrategy(AllocationStrategy value);
-} // namespace AllocationStrategyMapper
-} // namespace Model
-} // namespace CostOptimizationHub
-} // namespace Aws
+}  // namespace AllocationStrategyMapper
+}  // namespace Model
+}  // namespace CostOptimizationHub
+}  // namespace Aws

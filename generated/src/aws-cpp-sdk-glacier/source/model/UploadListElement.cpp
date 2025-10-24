@@ -3,93 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glacier/model/UploadListElement.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glacier/model/UploadListElement.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Glacier
-{
-namespace Model
-{
+namespace Aws {
+namespace Glacier {
+namespace Model {
 
-UploadListElement::UploadListElement(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+UploadListElement::UploadListElement(JsonView jsonValue) { *this = jsonValue; }
 
-UploadListElement& UploadListElement::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("MultipartUploadId"))
-  {
+UploadListElement& UploadListElement::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MultipartUploadId")) {
     m_multipartUploadId = jsonValue.GetString("MultipartUploadId");
     m_multipartUploadIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("VaultARN"))
-  {
+  if (jsonValue.ValueExists("VaultARN")) {
     m_vaultARN = jsonValue.GetString("VaultARN");
     m_vaultARNHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ArchiveDescription"))
-  {
+  if (jsonValue.ValueExists("ArchiveDescription")) {
     m_archiveDescription = jsonValue.GetString("ArchiveDescription");
     m_archiveDescriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("PartSizeInBytes"))
-  {
+  if (jsonValue.ValueExists("PartSizeInBytes")) {
     m_partSizeInBytes = jsonValue.GetInt64("PartSizeInBytes");
     m_partSizeInBytesHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreationDate"))
-  {
+  if (jsonValue.ValueExists("CreationDate")) {
     m_creationDate = jsonValue.GetString("CreationDate");
     m_creationDateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue UploadListElement::Jsonize() const
-{
+JsonValue UploadListElement::Jsonize() const {
   JsonValue payload;
 
-  if(m_multipartUploadIdHasBeenSet)
-  {
-   payload.WithString("MultipartUploadId", m_multipartUploadId);
-
+  if (m_multipartUploadIdHasBeenSet) {
+    payload.WithString("MultipartUploadId", m_multipartUploadId);
   }
 
-  if(m_vaultARNHasBeenSet)
-  {
-   payload.WithString("VaultARN", m_vaultARN);
-
+  if (m_vaultARNHasBeenSet) {
+    payload.WithString("VaultARN", m_vaultARN);
   }
 
-  if(m_archiveDescriptionHasBeenSet)
-  {
-   payload.WithString("ArchiveDescription", m_archiveDescription);
-
+  if (m_archiveDescriptionHasBeenSet) {
+    payload.WithString("ArchiveDescription", m_archiveDescription);
   }
 
-  if(m_partSizeInBytesHasBeenSet)
-  {
-   payload.WithInt64("PartSizeInBytes", m_partSizeInBytes);
-
+  if (m_partSizeInBytesHasBeenSet) {
+    payload.WithInt64("PartSizeInBytes", m_partSizeInBytes);
   }
 
-  if(m_creationDateHasBeenSet)
-  {
-   payload.WithString("CreationDate", m_creationDate);
-
+  if (m_creationDateHasBeenSet) {
+    payload.WithString("CreationDate", m_creationDate);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Glacier
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glacier
+}  // namespace Aws

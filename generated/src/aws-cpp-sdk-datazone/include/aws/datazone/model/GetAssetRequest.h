@@ -4,90 +4,102 @@
  */
 
 #pragma once
-#include <aws/datazone/DataZone_EXPORTS.h>
-#include <aws/datazone/DataZoneRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datazone/DataZoneRequest.h>
+#include <aws/datazone/DataZone_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Http
-{
-    class URI;
-} //namespace Http
-namespace DataZone
-{
-namespace Model
-{
+namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
+namespace DataZone {
+namespace Model {
 
+/**
+ */
+class GetAssetRequest : public DataZoneRequest {
+ public:
+  AWS_DATAZONE_API GetAssetRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "GetAsset"; }
+
+  AWS_DATAZONE_API Aws::String SerializePayload() const override;
+
+  AWS_DATAZONE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+  ///@{
   /**
+   * <p>The ID of the Amazon DataZone domain to which the asset belongs.</p>
    */
-  class GetAssetRequest : public DataZoneRequest
-  {
-  public:
-    AWS_DATAZONE_API GetAssetRequest() = default;
+  inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
+  inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
+  template <typename DomainIdentifierT = Aws::String>
+  void SetDomainIdentifier(DomainIdentifierT&& value) {
+    m_domainIdentifierHasBeenSet = true;
+    m_domainIdentifier = std::forward<DomainIdentifierT>(value);
+  }
+  template <typename DomainIdentifierT = Aws::String>
+  GetAssetRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
+    SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "GetAsset"; }
+  ///@{
+  /**
+   * <p>The ID of the Amazon DataZone asset.</p> <p>This parameter supports either
+   * the value of <code>assetId</code> or <code>externalIdentifier</code> as input.
+   * If you are passing the value of <code>externalIdentifier</code>, you must prefix
+   * this value with <code>externalIdentifer%2F</code>.</p>
+   */
+  inline const Aws::String& GetIdentifier() const { return m_identifier; }
+  inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
+  template <typename IdentifierT = Aws::String>
+  void SetIdentifier(IdentifierT&& value) {
+    m_identifierHasBeenSet = true;
+    m_identifier = std::forward<IdentifierT>(value);
+  }
+  template <typename IdentifierT = Aws::String>
+  GetAssetRequest& WithIdentifier(IdentifierT&& value) {
+    SetIdentifier(std::forward<IdentifierT>(value));
+    return *this;
+  }
+  ///@}
 
-    AWS_DATAZONE_API Aws::String SerializePayload() const override;
+  ///@{
+  /**
+   * <p>The revision of the Amazon DataZone asset.</p>
+   */
+  inline const Aws::String& GetRevision() const { return m_revision; }
+  inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
+  template <typename RevisionT = Aws::String>
+  void SetRevision(RevisionT&& value) {
+    m_revisionHasBeenSet = true;
+    m_revision = std::forward<RevisionT>(value);
+  }
+  template <typename RevisionT = Aws::String>
+  GetAssetRequest& WithRevision(RevisionT&& value) {
+    SetRevision(std::forward<RevisionT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_domainIdentifier;
+  bool m_domainIdentifierHasBeenSet = false;
 
-    AWS_DATAZONE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+  Aws::String m_identifier;
+  bool m_identifierHasBeenSet = false;
 
+  Aws::String m_revision;
+  bool m_revisionHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>The ID of the Amazon DataZone domain to which the asset belongs.</p>
-     */
-    inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
-    inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-    template<typename DomainIdentifierT = Aws::String>
-    void SetDomainIdentifier(DomainIdentifierT&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::forward<DomainIdentifierT>(value); }
-    template<typename DomainIdentifierT = Aws::String>
-    GetAssetRequest& WithDomainIdentifier(DomainIdentifierT&& value) { SetDomainIdentifier(std::forward<DomainIdentifierT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the Amazon DataZone asset.</p> <p>This parameter supports either
-     * the value of <code>assetId</code> or <code>externalIdentifier</code> as input.
-     * If you are passing the value of <code>externalIdentifier</code>, you must prefix
-     * this value with <code>externalIdentifer%2F</code>.</p>
-     */
-    inline const Aws::String& GetIdentifier() const { return m_identifier; }
-    inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    template<typename IdentifierT = Aws::String>
-    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
-    template<typename IdentifierT = Aws::String>
-    GetAssetRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The revision of the Amazon DataZone asset.</p>
-     */
-    inline const Aws::String& GetRevision() const { return m_revision; }
-    inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
-    template<typename RevisionT = Aws::String>
-    void SetRevision(RevisionT&& value) { m_revisionHasBeenSet = true; m_revision = std::forward<RevisionT>(value); }
-    template<typename RevisionT = Aws::String>
-    GetAssetRequest& WithRevision(RevisionT&& value) { SetRevision(std::forward<RevisionT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_domainIdentifier;
-    bool m_domainIdentifierHasBeenSet = false;
-
-    Aws::String m_identifier;
-    bool m_identifierHasBeenSet = false;
-
-    Aws::String m_revision;
-    bool m_revisionHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace DataZone
-} // namespace Aws
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

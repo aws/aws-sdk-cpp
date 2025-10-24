@@ -4,20 +4,18 @@
  */
 
 #pragma once
-#include <cstddef>
 #include <aws/xray/XRay_EXPORTS.h>
 
-namespace Aws
-{
-namespace XRay
-{
-class XRayEndpointRules
-{
-public:
-    static const size_t RulesBlobStrLen;
-    static const size_t RulesBlobSize;
+#include <cstddef>
 
-    static const char* GetRulesBlob();
+namespace Aws {
+namespace XRay {
+class XRayEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
 };
-} // namespace XRay
-} // namespace Aws
+}  // namespace XRay
+}  // namespace Aws

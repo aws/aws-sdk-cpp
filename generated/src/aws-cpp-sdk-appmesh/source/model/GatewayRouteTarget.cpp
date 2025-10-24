@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace AppMesh
-{
-namespace Model
-{
+namespace Aws {
+namespace AppMesh {
+namespace Model {
 
-GatewayRouteTarget::GatewayRouteTarget(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+GatewayRouteTarget::GatewayRouteTarget(JsonView jsonValue) { *this = jsonValue; }
 
-GatewayRouteTarget& GatewayRouteTarget::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("port"))
-  {
+GatewayRouteTarget& GatewayRouteTarget::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("port")) {
     m_port = jsonValue.GetInteger("port");
     m_portHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("virtualService"))
-  {
+  if (jsonValue.ValueExists("virtualService")) {
     m_virtualService = jsonValue.GetObject("virtualService");
     m_virtualServiceHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue GatewayRouteTarget::Jsonize() const
-{
+JsonValue GatewayRouteTarget::Jsonize() const {
   JsonValue payload;
 
-  if(m_portHasBeenSet)
-  {
-   payload.WithInteger("port", m_port);
-
+  if (m_portHasBeenSet) {
+    payload.WithInteger("port", m_port);
   }
 
-  if(m_virtualServiceHasBeenSet)
-  {
-   payload.WithObject("virtualService", m_virtualService.Jsonize());
-
+  if (m_virtualServiceHasBeenSet) {
+    payload.WithObject("virtualService", m_virtualService.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace AppMesh
-} // namespace Aws
+}  // namespace Model
+}  // namespace AppMesh
+}  // namespace Aws

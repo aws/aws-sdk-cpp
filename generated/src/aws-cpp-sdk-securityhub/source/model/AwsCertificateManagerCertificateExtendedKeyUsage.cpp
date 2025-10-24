@@ -3,60 +3,48 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AwsCertificateManagerCertificateExtendedKeyUsage.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsCertificateManagerCertificateExtendedKeyUsage.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SecurityHub
-{
-namespace Model
-{
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
 
-AwsCertificateManagerCertificateExtendedKeyUsage::AwsCertificateManagerCertificateExtendedKeyUsage(JsonView jsonValue)
-{
+AwsCertificateManagerCertificateExtendedKeyUsage::AwsCertificateManagerCertificateExtendedKeyUsage(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-AwsCertificateManagerCertificateExtendedKeyUsage& AwsCertificateManagerCertificateExtendedKeyUsage::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Name"))
-  {
+AwsCertificateManagerCertificateExtendedKeyUsage& AwsCertificateManagerCertificateExtendedKeyUsage::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("OId"))
-  {
+  if (jsonValue.ValueExists("OId")) {
     m_oId = jsonValue.GetString("OId");
     m_oIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AwsCertificateManagerCertificateExtendedKeyUsage::Jsonize() const
-{
+JsonValue AwsCertificateManagerCertificateExtendedKeyUsage::Jsonize() const {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("Name", m_name);
-
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if(m_oIdHasBeenSet)
-  {
-   payload.WithString("OId", m_oId);
-
+  if (m_oIdHasBeenSet) {
+    payload.WithString("OId", m_oId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SecurityHub
-} // namespace Aws
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

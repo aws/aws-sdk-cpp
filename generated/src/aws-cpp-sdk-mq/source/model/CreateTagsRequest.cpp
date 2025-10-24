@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/mq/model/CreateTagsRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mq/model/CreateTagsRequest.h>
 
 #include <utility>
 
@@ -12,24 +12,16 @@ using namespace Aws::MQ::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateTagsRequest::SerializePayload() const
-{
+Aws::String CreateTagsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

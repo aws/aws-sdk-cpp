@@ -3,82 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/medialive/model/AudioSelectorSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/AudioSelectorSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MediaLive
-{
-namespace Model
-{
+namespace Aws {
+namespace MediaLive {
+namespace Model {
 
-AudioSelectorSettings::AudioSelectorSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AudioSelectorSettings::AudioSelectorSettings(JsonView jsonValue) { *this = jsonValue; }
 
-AudioSelectorSettings& AudioSelectorSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("audioHlsRenditionSelection"))
-  {
+AudioSelectorSettings& AudioSelectorSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("audioHlsRenditionSelection")) {
     m_audioHlsRenditionSelection = jsonValue.GetObject("audioHlsRenditionSelection");
     m_audioHlsRenditionSelectionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("audioLanguageSelection"))
-  {
+  if (jsonValue.ValueExists("audioLanguageSelection")) {
     m_audioLanguageSelection = jsonValue.GetObject("audioLanguageSelection");
     m_audioLanguageSelectionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("audioPidSelection"))
-  {
+  if (jsonValue.ValueExists("audioPidSelection")) {
     m_audioPidSelection = jsonValue.GetObject("audioPidSelection");
     m_audioPidSelectionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("audioTrackSelection"))
-  {
+  if (jsonValue.ValueExists("audioTrackSelection")) {
     m_audioTrackSelection = jsonValue.GetObject("audioTrackSelection");
     m_audioTrackSelectionHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AudioSelectorSettings::Jsonize() const
-{
+JsonValue AudioSelectorSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_audioHlsRenditionSelectionHasBeenSet)
-  {
-   payload.WithObject("audioHlsRenditionSelection", m_audioHlsRenditionSelection.Jsonize());
-
+  if (m_audioHlsRenditionSelectionHasBeenSet) {
+    payload.WithObject("audioHlsRenditionSelection", m_audioHlsRenditionSelection.Jsonize());
   }
 
-  if(m_audioLanguageSelectionHasBeenSet)
-  {
-   payload.WithObject("audioLanguageSelection", m_audioLanguageSelection.Jsonize());
-
+  if (m_audioLanguageSelectionHasBeenSet) {
+    payload.WithObject("audioLanguageSelection", m_audioLanguageSelection.Jsonize());
   }
 
-  if(m_audioPidSelectionHasBeenSet)
-  {
-   payload.WithObject("audioPidSelection", m_audioPidSelection.Jsonize());
-
+  if (m_audioPidSelectionHasBeenSet) {
+    payload.WithObject("audioPidSelection", m_audioPidSelection.Jsonize());
   }
 
-  if(m_audioTrackSelectionHasBeenSet)
-  {
-   payload.WithObject("audioTrackSelection", m_audioTrackSelection.Jsonize());
-
+  if (m_audioTrackSelectionHasBeenSet) {
+    payload.WithObject("audioTrackSelection", m_audioTrackSelection.Jsonize());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MediaLive
-} // namespace Aws
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

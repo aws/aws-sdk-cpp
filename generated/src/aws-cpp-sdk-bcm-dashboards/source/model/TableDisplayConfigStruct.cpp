@@ -11,31 +11,23 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BCMDashboards
-{
-namespace Model
-{
+namespace Aws {
+namespace BCMDashboards {
+namespace Model {
 
-TableDisplayConfigStruct::TableDisplayConfigStruct(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TableDisplayConfigStruct::TableDisplayConfigStruct(JsonView jsonValue) { *this = jsonValue; }
 
-TableDisplayConfigStruct& TableDisplayConfigStruct::operator =(JsonView jsonValue)
-{
+TableDisplayConfigStruct& TableDisplayConfigStruct::operator=(JsonView jsonValue) {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
 }
 
-JsonValue TableDisplayConfigStruct::Jsonize() const
-{
+JsonValue TableDisplayConfigStruct::Jsonize() const {
   JsonValue payload;
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BCMDashboards
-} // namespace Aws
+}  // namespace Model
+}  // namespace BCMDashboards
+}  // namespace Aws

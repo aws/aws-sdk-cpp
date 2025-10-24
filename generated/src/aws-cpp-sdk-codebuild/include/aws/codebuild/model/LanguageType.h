@@ -7,33 +7,16 @@
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-namespace Aws
-{
-namespace CodeBuild
-{
-namespace Model
-{
-  enum class LanguageType
-  {
-    NOT_SET,
-    JAVA,
-    PYTHON,
-    NODE_JS,
-    RUBY,
-    GOLANG,
-    DOCKER,
-    ANDROID_,
-    DOTNET,
-    BASE,
-    PHP
-  };
+namespace Aws {
+namespace CodeBuild {
+namespace Model {
+enum class LanguageType { NOT_SET, JAVA, PYTHON, NODE_JS, RUBY, GOLANG, DOCKER, ANDROID_, DOTNET, BASE, PHP };
 
-namespace LanguageTypeMapper
-{
+namespace LanguageTypeMapper {
 AWS_CODEBUILD_API LanguageType GetLanguageTypeForName(const Aws::String& name);
 
 AWS_CODEBUILD_API Aws::String GetNameForLanguageType(LanguageType value);
-} // namespace LanguageTypeMapper
-} // namespace Model
-} // namespace CodeBuild
-} // namespace Aws
+}  // namespace LanguageTypeMapper
+}  // namespace Model
+}  // namespace CodeBuild
+}  // namespace Aws

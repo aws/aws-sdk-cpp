@@ -11,51 +11,40 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CognitoIdentityProvider
-{
-namespace Model
-{
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
 
-PreTokenGenerationVersionConfigType::PreTokenGenerationVersionConfigType(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+PreTokenGenerationVersionConfigType::PreTokenGenerationVersionConfigType(JsonView jsonValue) { *this = jsonValue; }
 
-PreTokenGenerationVersionConfigType& PreTokenGenerationVersionConfigType::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("LambdaVersion"))
-  {
-    m_lambdaVersion = PreTokenGenerationLambdaVersionTypeMapper::GetPreTokenGenerationLambdaVersionTypeForName(jsonValue.GetString("LambdaVersion"));
+PreTokenGenerationVersionConfigType& PreTokenGenerationVersionConfigType::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("LambdaVersion")) {
+    m_lambdaVersion =
+        PreTokenGenerationLambdaVersionTypeMapper::GetPreTokenGenerationLambdaVersionTypeForName(jsonValue.GetString("LambdaVersion"));
     m_lambdaVersionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("LambdaArn"))
-  {
+  if (jsonValue.ValueExists("LambdaArn")) {
     m_lambdaArn = jsonValue.GetString("LambdaArn");
     m_lambdaArnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue PreTokenGenerationVersionConfigType::Jsonize() const
-{
+JsonValue PreTokenGenerationVersionConfigType::Jsonize() const {
   JsonValue payload;
 
-  if(m_lambdaVersionHasBeenSet)
-  {
-   payload.WithString("LambdaVersion", PreTokenGenerationLambdaVersionTypeMapper::GetNameForPreTokenGenerationLambdaVersionType(m_lambdaVersion));
+  if (m_lambdaVersionHasBeenSet) {
+    payload.WithString("LambdaVersion",
+                       PreTokenGenerationLambdaVersionTypeMapper::GetNameForPreTokenGenerationLambdaVersionType(m_lambdaVersion));
   }
 
-  if(m_lambdaArnHasBeenSet)
-  {
-   payload.WithString("LambdaArn", m_lambdaArn);
-
+  if (m_lambdaArnHasBeenSet) {
+    payload.WithString("LambdaArn", m_lambdaArn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CognitoIdentityProvider
-} // namespace Aws
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

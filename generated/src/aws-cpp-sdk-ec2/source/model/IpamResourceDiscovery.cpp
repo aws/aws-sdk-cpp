@@ -3,71 +3,56 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ec2/model/IpamResourceDiscovery.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/IpamResourceDiscovery.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
+namespace Aws {
+namespace EC2 {
+namespace Model {
 
-IpamResourceDiscovery::IpamResourceDiscovery(const XmlNode& xmlNode)
-{
-  *this = xmlNode;
-}
+IpamResourceDiscovery::IpamResourceDiscovery(const XmlNode& xmlNode) { *this = xmlNode; }
 
-IpamResourceDiscovery& IpamResourceDiscovery::operator =(const XmlNode& xmlNode)
-{
+IpamResourceDiscovery& IpamResourceDiscovery::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
-    if(!ownerIdNode.IsNull())
-    {
+    if (!ownerIdNode.IsNull()) {
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
     }
     XmlNode ipamResourceDiscoveryIdNode = resultNode.FirstChild("ipamResourceDiscoveryId");
-    if(!ipamResourceDiscoveryIdNode.IsNull())
-    {
+    if (!ipamResourceDiscoveryIdNode.IsNull()) {
       m_ipamResourceDiscoveryId = Aws::Utils::Xml::DecodeEscapedXmlText(ipamResourceDiscoveryIdNode.GetText());
       m_ipamResourceDiscoveryIdHasBeenSet = true;
     }
     XmlNode ipamResourceDiscoveryArnNode = resultNode.FirstChild("ipamResourceDiscoveryArn");
-    if(!ipamResourceDiscoveryArnNode.IsNull())
-    {
+    if (!ipamResourceDiscoveryArnNode.IsNull()) {
       m_ipamResourceDiscoveryArn = Aws::Utils::Xml::DecodeEscapedXmlText(ipamResourceDiscoveryArnNode.GetText());
       m_ipamResourceDiscoveryArnHasBeenSet = true;
     }
     XmlNode ipamResourceDiscoveryRegionNode = resultNode.FirstChild("ipamResourceDiscoveryRegion");
-    if(!ipamResourceDiscoveryRegionNode.IsNull())
-    {
+    if (!ipamResourceDiscoveryRegionNode.IsNull()) {
       m_ipamResourceDiscoveryRegion = Aws::Utils::Xml::DecodeEscapedXmlText(ipamResourceDiscoveryRegionNode.GetText());
       m_ipamResourceDiscoveryRegionHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
-    if(!descriptionNode.IsNull())
-    {
+    if (!descriptionNode.IsNull()) {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
     XmlNode operatingRegionsNode = resultNode.FirstChild("operatingRegionSet");
-    if(!operatingRegionsNode.IsNull())
-    {
+    if (!operatingRegionsNode.IsNull()) {
       XmlNode operatingRegionsMember = operatingRegionsNode.FirstChild("item");
       m_operatingRegionsHasBeenSet = !operatingRegionsMember.IsNull();
-      while(!operatingRegionsMember.IsNull())
-      {
+      while (!operatingRegionsMember.IsNull()) {
         m_operatingRegions.push_back(operatingRegionsMember);
         operatingRegionsMember = operatingRegionsMember.NextNode("item");
       }
@@ -75,24 +60,22 @@ IpamResourceDiscovery& IpamResourceDiscovery::operator =(const XmlNode& xmlNode)
       m_operatingRegionsHasBeenSet = true;
     }
     XmlNode isDefaultNode = resultNode.FirstChild("isDefault");
-    if(!isDefaultNode.IsNull())
-    {
-      m_isDefault = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isDefaultNode.GetText()).c_str()).c_str());
+    if (!isDefaultNode.IsNull()) {
+      m_isDefault =
+          StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isDefaultNode.GetText()).c_str()).c_str());
       m_isDefaultHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
-    if(!stateNode.IsNull())
-    {
-      m_state = IpamResourceDiscoveryStateMapper::GetIpamResourceDiscoveryStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
+    if (!stateNode.IsNull()) {
+      m_state = IpamResourceDiscoveryStateMapper::GetIpamResourceDiscoveryStateForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
-    if(!tagsNode.IsNull())
-    {
+    if (!tagsNode.IsNull()) {
       XmlNode tagsMember = tagsNode.FirstChild("item");
       m_tagsHasBeenSet = !tagsMember.IsNull();
-      while(!tagsMember.IsNull())
-      {
+      while (!tagsMember.IsNull()) {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
@@ -100,12 +83,10 @@ IpamResourceDiscovery& IpamResourceDiscovery::operator =(const XmlNode& xmlNode)
       m_tagsHasBeenSet = true;
     }
     XmlNode organizationalUnitExclusionsNode = resultNode.FirstChild("organizationalUnitExclusionSet");
-    if(!organizationalUnitExclusionsNode.IsNull())
-    {
+    if (!organizationalUnitExclusionsNode.IsNull()) {
       XmlNode organizationalUnitExclusionsMember = organizationalUnitExclusionsNode.FirstChild("item");
       m_organizationalUnitExclusionsHasBeenSet = !organizationalUnitExclusionsMember.IsNull();
-      while(!organizationalUnitExclusionsMember.IsNull())
-      {
+      while (!organizationalUnitExclusionsMember.IsNull()) {
         m_organizationalUnitExclusions.push_back(organizationalUnitExclusionsMember);
         organizationalUnitExclusionsMember = organizationalUnitExclusionsMember.NextNode("item");
       }
@@ -117,140 +98,117 @@ IpamResourceDiscovery& IpamResourceDiscovery::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
-void IpamResourceDiscovery::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
-{
-  if(m_ownerIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
+void IpamResourceDiscovery::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_ownerIdHasBeenSet) {
+    oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
   }
 
-  if(m_ipamResourceDiscoveryIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".IpamResourceDiscoveryId=" << StringUtils::URLEncode(m_ipamResourceDiscoveryId.c_str()) << "&";
+  if (m_ipamResourceDiscoveryIdHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".IpamResourceDiscoveryId=" << StringUtils::URLEncode(m_ipamResourceDiscoveryId.c_str()) << "&";
   }
 
-  if(m_ipamResourceDiscoveryArnHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".IpamResourceDiscoveryArn=" << StringUtils::URLEncode(m_ipamResourceDiscoveryArn.c_str()) << "&";
+  if (m_ipamResourceDiscoveryArnHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".IpamResourceDiscoveryArn=" << StringUtils::URLEncode(m_ipamResourceDiscoveryArn.c_str()) << "&";
   }
 
-  if(m_ipamResourceDiscoveryRegionHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".IpamResourceDiscoveryRegion=" << StringUtils::URLEncode(m_ipamResourceDiscoveryRegion.c_str()) << "&";
+  if (m_ipamResourceDiscoveryRegionHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".IpamResourceDiscoveryRegion=" << StringUtils::URLEncode(m_ipamResourceDiscoveryRegion.c_str()) << "&";
   }
 
-  if(m_descriptionHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  if (m_descriptionHasBeenSet) {
+    oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
-  if(m_operatingRegionsHasBeenSet)
-  {
-      unsigned operatingRegionsIdx = 1;
-      for(auto& item : m_operatingRegions)
-      {
-        Aws::StringStream operatingRegionsSs;
-        operatingRegionsSs << location << index << locationValue << ".OperatingRegionSet." << operatingRegionsIdx++;
-        item.OutputToStream(oStream, operatingRegionsSs.str().c_str());
-      }
+  if (m_operatingRegionsHasBeenSet) {
+    unsigned operatingRegionsIdx = 1;
+    for (auto& item : m_operatingRegions) {
+      Aws::StringStream operatingRegionsSs;
+      operatingRegionsSs << location << index << locationValue << ".OperatingRegionSet." << operatingRegionsIdx++;
+      item.OutputToStream(oStream, operatingRegionsSs.str().c_str());
+    }
   }
 
-  if(m_isDefaultHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".IsDefault=" << std::boolalpha << m_isDefault << "&";
+  if (m_isDefaultHasBeenSet) {
+    oStream << location << index << locationValue << ".IsDefault=" << std::boolalpha << m_isDefault << "&";
   }
 
-  if(m_stateHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(IpamResourceDiscoveryStateMapper::GetNameForIpamResourceDiscoveryState(m_state)) << "&";
+  if (m_stateHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".State=" << StringUtils::URLEncode(IpamResourceDiscoveryStateMapper::GetNameForIpamResourceDiscoveryState(m_state)) << "&";
   }
 
-  if(m_tagsHasBeenSet)
-  {
-      unsigned tagsIdx = 1;
-      for(auto& item : m_tags)
-      {
-        Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
-        item.OutputToStream(oStream, tagsSs.str().c_str());
-      }
+  if (m_tagsHasBeenSet) {
+    unsigned tagsIdx = 1;
+    for (auto& item : m_tags) {
+      Aws::StringStream tagsSs;
+      tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
+      item.OutputToStream(oStream, tagsSs.str().c_str());
+    }
   }
 
-  if(m_organizationalUnitExclusionsHasBeenSet)
-  {
-      unsigned organizationalUnitExclusionsIdx = 1;
-      for(auto& item : m_organizationalUnitExclusions)
-      {
-        Aws::StringStream organizationalUnitExclusionsSs;
-        organizationalUnitExclusionsSs << location << index << locationValue << ".OrganizationalUnitExclusionSet." << organizationalUnitExclusionsIdx++;
-        item.OutputToStream(oStream, organizationalUnitExclusionsSs.str().c_str());
-      }
-  }
-
-}
-
-void IpamResourceDiscovery::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_ownerIdHasBeenSet)
-  {
-      oStream << location << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
-  }
-  if(m_ipamResourceDiscoveryIdHasBeenSet)
-  {
-      oStream << location << ".IpamResourceDiscoveryId=" << StringUtils::URLEncode(m_ipamResourceDiscoveryId.c_str()) << "&";
-  }
-  if(m_ipamResourceDiscoveryArnHasBeenSet)
-  {
-      oStream << location << ".IpamResourceDiscoveryArn=" << StringUtils::URLEncode(m_ipamResourceDiscoveryArn.c_str()) << "&";
-  }
-  if(m_ipamResourceDiscoveryRegionHasBeenSet)
-  {
-      oStream << location << ".IpamResourceDiscoveryRegion=" << StringUtils::URLEncode(m_ipamResourceDiscoveryRegion.c_str()) << "&";
-  }
-  if(m_descriptionHasBeenSet)
-  {
-      oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
-  }
-  if(m_operatingRegionsHasBeenSet)
-  {
-      unsigned operatingRegionsIdx = 1;
-      for(auto& item : m_operatingRegions)
-      {
-        Aws::StringStream operatingRegionsSs;
-        operatingRegionsSs << location << ".OperatingRegionSet." << operatingRegionsIdx++;
-        item.OutputToStream(oStream, operatingRegionsSs.str().c_str());
-      }
-  }
-  if(m_isDefaultHasBeenSet)
-  {
-      oStream << location << ".IsDefault=" << std::boolalpha << m_isDefault << "&";
-  }
-  if(m_stateHasBeenSet)
-  {
-      oStream << location << ".State=" << StringUtils::URLEncode(IpamResourceDiscoveryStateMapper::GetNameForIpamResourceDiscoveryState(m_state)) << "&";
-  }
-  if(m_tagsHasBeenSet)
-  {
-      unsigned tagsIdx = 1;
-      for(auto& item : m_tags)
-      {
-        Aws::StringStream tagsSs;
-        tagsSs << location << ".TagSet." << tagsIdx++;
-        item.OutputToStream(oStream, tagsSs.str().c_str());
-      }
-  }
-  if(m_organizationalUnitExclusionsHasBeenSet)
-  {
-      unsigned organizationalUnitExclusionsIdx = 1;
-      for(auto& item : m_organizationalUnitExclusions)
-      {
-        Aws::StringStream organizationalUnitExclusionsSs;
-        organizationalUnitExclusionsSs << location << ".OrganizationalUnitExclusionSet." << organizationalUnitExclusionsIdx++;
-        item.OutputToStream(oStream, organizationalUnitExclusionsSs.str().c_str());
-      }
+  if (m_organizationalUnitExclusionsHasBeenSet) {
+    unsigned organizationalUnitExclusionsIdx = 1;
+    for (auto& item : m_organizationalUnitExclusions) {
+      Aws::StringStream organizationalUnitExclusionsSs;
+      organizationalUnitExclusionsSs << location << index << locationValue << ".OrganizationalUnitExclusionSet."
+                                     << organizationalUnitExclusionsIdx++;
+      item.OutputToStream(oStream, organizationalUnitExclusionsSs.str().c_str());
+    }
   }
 }
 
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+void IpamResourceDiscovery::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_ownerIdHasBeenSet) {
+    oStream << location << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
+  }
+  if (m_ipamResourceDiscoveryIdHasBeenSet) {
+    oStream << location << ".IpamResourceDiscoveryId=" << StringUtils::URLEncode(m_ipamResourceDiscoveryId.c_str()) << "&";
+  }
+  if (m_ipamResourceDiscoveryArnHasBeenSet) {
+    oStream << location << ".IpamResourceDiscoveryArn=" << StringUtils::URLEncode(m_ipamResourceDiscoveryArn.c_str()) << "&";
+  }
+  if (m_ipamResourceDiscoveryRegionHasBeenSet) {
+    oStream << location << ".IpamResourceDiscoveryRegion=" << StringUtils::URLEncode(m_ipamResourceDiscoveryRegion.c_str()) << "&";
+  }
+  if (m_descriptionHasBeenSet) {
+    oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+  if (m_operatingRegionsHasBeenSet) {
+    unsigned operatingRegionsIdx = 1;
+    for (auto& item : m_operatingRegions) {
+      Aws::StringStream operatingRegionsSs;
+      operatingRegionsSs << location << ".OperatingRegionSet." << operatingRegionsIdx++;
+      item.OutputToStream(oStream, operatingRegionsSs.str().c_str());
+    }
+  }
+  if (m_isDefaultHasBeenSet) {
+    oStream << location << ".IsDefault=" << std::boolalpha << m_isDefault << "&";
+  }
+  if (m_stateHasBeenSet) {
+    oStream << location
+            << ".State=" << StringUtils::URLEncode(IpamResourceDiscoveryStateMapper::GetNameForIpamResourceDiscoveryState(m_state)) << "&";
+  }
+  if (m_tagsHasBeenSet) {
+    unsigned tagsIdx = 1;
+    for (auto& item : m_tags) {
+      Aws::StringStream tagsSs;
+      tagsSs << location << ".TagSet." << tagsIdx++;
+      item.OutputToStream(oStream, tagsSs.str().c_str());
+    }
+  }
+  if (m_organizationalUnitExclusionsHasBeenSet) {
+    unsigned organizationalUnitExclusionsIdx = 1;
+    for (auto& item : m_organizationalUnitExclusions) {
+      Aws::StringStream organizationalUnitExclusionsSs;
+      organizationalUnitExclusionsSs << location << ".OrganizationalUnitExclusionSet." << organizationalUnitExclusionsIdx++;
+      item.OutputToStream(oStream, organizationalUnitExclusionsSs.str().c_str());
+    }
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

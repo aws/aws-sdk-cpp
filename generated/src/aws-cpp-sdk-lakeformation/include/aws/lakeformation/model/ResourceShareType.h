@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/lakeformation/LakeFormation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lakeformation/LakeFormation_EXPORTS.h>
 
-namespace Aws
-{
-namespace LakeFormation
-{
-namespace Model
-{
-  enum class ResourceShareType
-  {
-    NOT_SET,
-    FOREIGN,
-    ALL
-  };
+namespace Aws {
+namespace LakeFormation {
+namespace Model {
+enum class ResourceShareType { NOT_SET, FOREIGN, ALL };
 
-namespace ResourceShareTypeMapper
-{
+namespace ResourceShareTypeMapper {
 AWS_LAKEFORMATION_API ResourceShareType GetResourceShareTypeForName(const Aws::String& name);
 
 AWS_LAKEFORMATION_API Aws::String GetNameForResourceShareType(ResourceShareType value);
-} // namespace ResourceShareTypeMapper
-} // namespace Model
-} // namespace LakeFormation
-} // namespace Aws
+}  // namespace ResourceShareTypeMapper
+}  // namespace Model
+}  // namespace LakeFormation
+}  // namespace Aws

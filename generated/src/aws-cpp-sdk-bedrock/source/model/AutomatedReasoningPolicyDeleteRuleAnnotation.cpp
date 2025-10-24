@@ -11,41 +11,30 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Bedrock
-{
-namespace Model
-{
+namespace Aws {
+namespace Bedrock {
+namespace Model {
 
-AutomatedReasoningPolicyDeleteRuleAnnotation::AutomatedReasoningPolicyDeleteRuleAnnotation(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+AutomatedReasoningPolicyDeleteRuleAnnotation::AutomatedReasoningPolicyDeleteRuleAnnotation(JsonView jsonValue) { *this = jsonValue; }
 
-AutomatedReasoningPolicyDeleteRuleAnnotation& AutomatedReasoningPolicyDeleteRuleAnnotation::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ruleId"))
-  {
+AutomatedReasoningPolicyDeleteRuleAnnotation& AutomatedReasoningPolicyDeleteRuleAnnotation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ruleId")) {
     m_ruleId = jsonValue.GetString("ruleId");
     m_ruleIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue AutomatedReasoningPolicyDeleteRuleAnnotation::Jsonize() const
-{
+JsonValue AutomatedReasoningPolicyDeleteRuleAnnotation::Jsonize() const {
   JsonValue payload;
 
-  if(m_ruleIdHasBeenSet)
-  {
-   payload.WithString("ruleId", m_ruleId);
-
+  if (m_ruleIdHasBeenSet) {
+    payload.WithString("ruleId", m_ruleId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Bedrock
-} // namespace Aws
+}  // namespace Model
+}  // namespace Bedrock
+}  // namespace Aws

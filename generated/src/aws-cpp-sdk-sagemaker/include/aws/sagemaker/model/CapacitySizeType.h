@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
-  enum class CapacitySizeType
-  {
-    NOT_SET,
-    INSTANCE_COUNT,
-    CAPACITY_PERCENT
-  };
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+enum class CapacitySizeType { NOT_SET, INSTANCE_COUNT, CAPACITY_PERCENT };
 
-namespace CapacitySizeTypeMapper
-{
+namespace CapacitySizeTypeMapper {
 AWS_SAGEMAKER_API CapacitySizeType GetCapacitySizeTypeForName(const Aws::String& name);
 
 AWS_SAGEMAKER_API Aws::String GetNameForCapacitySizeType(CapacitySizeType value);
-} // namespace CapacitySizeTypeMapper
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace CapacitySizeTypeMapper
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

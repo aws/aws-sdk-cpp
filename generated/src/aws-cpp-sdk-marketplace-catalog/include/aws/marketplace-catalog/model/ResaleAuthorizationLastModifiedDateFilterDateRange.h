@@ -4,74 +4,79 @@
  */
 
 #pragma once
-#include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-  class JsonView;
-} // namespace Json
-} // namespace Utils
-namespace MarketplaceCatalog
-{
-namespace Model
-{
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace MarketplaceCatalog {
+namespace Model {
 
+/**
+ * <p>Allows filtering on the <code>LastModifiedDate</code> of a
+ * ResaleAuthorization with date range as input.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/ResaleAuthorizationLastModifiedDateFilterDateRange">AWS
+ * API Reference</a></p>
+ */
+class ResaleAuthorizationLastModifiedDateFilterDateRange {
+ public:
+  AWS_MARKETPLACECATALOG_API ResaleAuthorizationLastModifiedDateFilterDateRange() = default;
+  AWS_MARKETPLACECATALOG_API ResaleAuthorizationLastModifiedDateFilterDateRange(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MARKETPLACECATALOG_API ResaleAuthorizationLastModifiedDateFilterDateRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
   /**
    * <p>Allows filtering on the <code>LastModifiedDate</code> of a
-   * ResaleAuthorization with date range as input.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/ResaleAuthorizationLastModifiedDateFilterDateRange">AWS
-   * API Reference</a></p>
+   * ResaleAuthorization after a date.</p>
    */
-  class ResaleAuthorizationLastModifiedDateFilterDateRange
-  {
-  public:
-    AWS_MARKETPLACECATALOG_API ResaleAuthorizationLastModifiedDateFilterDateRange() = default;
-    AWS_MARKETPLACECATALOG_API ResaleAuthorizationLastModifiedDateFilterDateRange(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MARKETPLACECATALOG_API ResaleAuthorizationLastModifiedDateFilterDateRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
+  inline const Aws::String& GetAfterValue() const { return m_afterValue; }
+  inline bool AfterValueHasBeenSet() const { return m_afterValueHasBeenSet; }
+  template <typename AfterValueT = Aws::String>
+  void SetAfterValue(AfterValueT&& value) {
+    m_afterValueHasBeenSet = true;
+    m_afterValue = std::forward<AfterValueT>(value);
+  }
+  template <typename AfterValueT = Aws::String>
+  ResaleAuthorizationLastModifiedDateFilterDateRange& WithAfterValue(AfterValueT&& value) {
+    SetAfterValue(std::forward<AfterValueT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>Allows filtering on the <code>LastModifiedDate</code> of a
+   * ResaleAuthorization before a date.</p>
+   */
+  inline const Aws::String& GetBeforeValue() const { return m_beforeValue; }
+  inline bool BeforeValueHasBeenSet() const { return m_beforeValueHasBeenSet; }
+  template <typename BeforeValueT = Aws::String>
+  void SetBeforeValue(BeforeValueT&& value) {
+    m_beforeValueHasBeenSet = true;
+    m_beforeValue = std::forward<BeforeValueT>(value);
+  }
+  template <typename BeforeValueT = Aws::String>
+  ResaleAuthorizationLastModifiedDateFilterDateRange& WithBeforeValue(BeforeValueT&& value) {
+    SetBeforeValue(std::forward<BeforeValueT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_afterValue;
+  bool m_afterValueHasBeenSet = false;
 
-    ///@{
-    /**
-     * <p>Allows filtering on the <code>LastModifiedDate</code> of a
-     * ResaleAuthorization after a date.</p>
-     */
-    inline const Aws::String& GetAfterValue() const { return m_afterValue; }
-    inline bool AfterValueHasBeenSet() const { return m_afterValueHasBeenSet; }
-    template<typename AfterValueT = Aws::String>
-    void SetAfterValue(AfterValueT&& value) { m_afterValueHasBeenSet = true; m_afterValue = std::forward<AfterValueT>(value); }
-    template<typename AfterValueT = Aws::String>
-    ResaleAuthorizationLastModifiedDateFilterDateRange& WithAfterValue(AfterValueT&& value) { SetAfterValue(std::forward<AfterValueT>(value)); return *this;}
-    ///@}
+  Aws::String m_beforeValue;
+  bool m_beforeValueHasBeenSet = false;
+};
 
-    ///@{
-    /**
-     * <p>Allows filtering on the <code>LastModifiedDate</code> of a
-     * ResaleAuthorization before a date.</p>
-     */
-    inline const Aws::String& GetBeforeValue() const { return m_beforeValue; }
-    inline bool BeforeValueHasBeenSet() const { return m_beforeValueHasBeenSet; }
-    template<typename BeforeValueT = Aws::String>
-    void SetBeforeValue(BeforeValueT&& value) { m_beforeValueHasBeenSet = true; m_beforeValue = std::forward<BeforeValueT>(value); }
-    template<typename BeforeValueT = Aws::String>
-    ResaleAuthorizationLastModifiedDateFilterDateRange& WithBeforeValue(BeforeValueT&& value) { SetBeforeValue(std::forward<BeforeValueT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_afterValue;
-    bool m_afterValueHasBeenSet = false;
-
-    Aws::String m_beforeValue;
-    bool m_beforeValueHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace MarketplaceCatalog
-} // namespace Aws
+}  // namespace Model
+}  // namespace MarketplaceCatalog
+}  // namespace Aws

@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/monitoring/model/GetDashboardResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/monitoring/model/GetDashboardResult.h>
 
 #include <utility>
 
@@ -17,38 +17,29 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDashboardResult::GetDashboardResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
-  *this = result;
-}
+GetDashboardResult::GetDashboardResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
 
-GetDashboardResult& GetDashboardResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-{
+GetDashboardResult& GetDashboardResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "GetDashboardResult"))
-  {
+  if (!rootNode.IsNull() && (rootNode.GetName() != "GetDashboardResult")) {
     resultNode = rootNode.FirstChild("GetDashboardResult");
   }
 
-  if(!resultNode.IsNull())
-  {
+  if (!resultNode.IsNull()) {
     XmlNode dashboardArnNode = resultNode.FirstChild("DashboardArn");
-    if(!dashboardArnNode.IsNull())
-    {
+    if (!dashboardArnNode.IsNull()) {
       m_dashboardArn = Aws::Utils::Xml::DecodeEscapedXmlText(dashboardArnNode.GetText());
       m_dashboardArnHasBeenSet = true;
     }
     XmlNode dashboardBodyNode = resultNode.FirstChild("DashboardBody");
-    if(!dashboardBodyNode.IsNull())
-    {
+    if (!dashboardBodyNode.IsNull()) {
       m_dashboardBody = Aws::Utils::Xml::DecodeEscapedXmlText(dashboardBodyNode.GetText());
       m_dashboardBodyHasBeenSet = true;
     }
     XmlNode dashboardNameNode = resultNode.FirstChild("DashboardName");
-    if(!dashboardNameNode.IsNull())
-    {
+    if (!dashboardNameNode.IsNull()) {
       m_dashboardName = Aws::Utils::Xml::DecodeEscapedXmlText(dashboardNameNode.GetText());
       m_dashboardNameHasBeenSet = true;
     }
@@ -58,7 +49,7 @@ GetDashboardResult& GetDashboardResult::operator =(const Aws::AmazonWebServiceRe
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
     m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::CloudWatch::Model::GetDashboardResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::CloudWatch::Model::GetDashboardResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
 }

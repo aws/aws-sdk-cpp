@@ -13,44 +13,32 @@ using namespace Aws::CloudDirectory::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String BatchReadRequest::SerializePayload() const
-{
+Aws::String BatchReadRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_operationsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> operationsJsonList(m_operations.size());
-   for(unsigned operationsIndex = 0; operationsIndex < operationsJsonList.GetLength(); ++operationsIndex)
-   {
-     operationsJsonList[operationsIndex].AsObject(m_operations[operationsIndex].Jsonize());
-   }
-   payload.WithArray("Operations", std::move(operationsJsonList));
-
+  if (m_operationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> operationsJsonList(m_operations.size());
+    for (unsigned operationsIndex = 0; operationsIndex < operationsJsonList.GetLength(); ++operationsIndex) {
+      operationsJsonList[operationsIndex].AsObject(m_operations[operationsIndex].Jsonize());
+    }
+    payload.WithArray("Operations", std::move(operationsJsonList));
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection BatchReadRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection BatchReadRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_directoryArnHasBeenSet)
-  {
+  if (m_directoryArnHasBeenSet) {
     ss << m_directoryArn;
-    headers.emplace("x-amz-data-partition",  ss.str());
+    headers.emplace("x-amz-data-partition", ss.str());
     ss.str("");
   }
 
-  if(m_consistencyLevelHasBeenSet && m_consistencyLevel != ConsistencyLevel::NOT_SET)
-  {
+  if (m_consistencyLevelHasBeenSet && m_consistencyLevel != ConsistencyLevel::NOT_SET) {
     headers.emplace("x-amz-consistency-level", ConsistencyLevelMapper::GetNameForConsistencyLevel(m_consistencyLevel));
   }
 
   return headers;
-
 }
-
-
-
-

@@ -11,31 +11,23 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Appflow
-{
-namespace Model
-{
+namespace Aws {
+namespace Appflow {
+namespace Model {
 
-MarketoMetadata::MarketoMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+MarketoMetadata::MarketoMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-MarketoMetadata& MarketoMetadata::operator =(JsonView jsonValue)
-{
+MarketoMetadata& MarketoMetadata::operator=(JsonView jsonValue) {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
 }
 
-JsonValue MarketoMetadata::Jsonize() const
-{
+JsonValue MarketoMetadata::Jsonize() const {
   JsonValue payload;
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Appflow
-} // namespace Aws
+}  // namespace Model
+}  // namespace Appflow
+}  // namespace Aws

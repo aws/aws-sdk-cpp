@@ -11,52 +11,38 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace CodeDeploy
-{
-namespace Model
-{
+namespace Aws {
+namespace CodeDeploy {
+namespace Model {
 
-RawString::RawString(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+RawString::RawString(JsonView jsonValue) { *this = jsonValue; }
 
-RawString& RawString::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("content"))
-  {
+RawString& RawString::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("content")) {
     m_content = jsonValue.GetString("content");
     m_contentHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("sha256"))
-  {
+  if (jsonValue.ValueExists("sha256")) {
     m_sha256 = jsonValue.GetString("sha256");
     m_sha256HasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue RawString::Jsonize() const
-{
+JsonValue RawString::Jsonize() const {
   JsonValue payload;
 
-  if(m_contentHasBeenSet)
-  {
-   payload.WithString("content", m_content);
-
+  if (m_contentHasBeenSet) {
+    payload.WithString("content", m_content);
   }
 
-  if(m_sha256HasBeenSet)
-  {
-   payload.WithString("sha256", m_sha256);
-
+  if (m_sha256HasBeenSet) {
+    payload.WithString("sha256", m_sha256);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace CodeDeploy
-} // namespace Aws
+}  // namespace Model
+}  // namespace CodeDeploy
+}  // namespace Aws

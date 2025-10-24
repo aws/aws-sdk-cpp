@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/backup-gateway/BackupGatewayEndpointRules.h>
 #include <aws/backup-gateway/BackupGateway_EXPORTS.h>
 #include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
@@ -11,18 +12,12 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
-#include <aws/backup-gateway/BackupGatewayEndpointRules.h>
-
-
-namespace Aws
-{
-namespace BackupGateway
-{
-namespace Endpoint
-{
+namespace Aws {
+namespace BackupGateway {
+namespace Endpoint {
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
-using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
+using Aws::Endpoint::EndpointProviderBase;
 
 using BackupGatewayClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
@@ -43,19 +38,16 @@ using BackupGatewayDefaultEpProviderBase =
 /**
  * Default endpoint provider used for this service
  */
-class AWS_BACKUPGATEWAY_API BackupGatewayEndpointProvider : public BackupGatewayDefaultEpProviderBase
-{
-public:
-    using BackupGatewayResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+class AWS_BACKUPGATEWAY_API BackupGatewayEndpointProvider : public BackupGatewayDefaultEpProviderBase {
+ public:
+  using BackupGatewayResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    BackupGatewayEndpointProvider()
-      : BackupGatewayDefaultEpProviderBase(Aws::BackupGateway::BackupGatewayEndpointRules::GetRulesBlob(), Aws::BackupGateway::BackupGatewayEndpointRules::RulesBlobSize)
-    {}
+  BackupGatewayEndpointProvider()
+      : BackupGatewayDefaultEpProviderBase(Aws::BackupGateway::BackupGatewayEndpointRules::GetRulesBlob(),
+                                           Aws::BackupGateway::BackupGatewayEndpointRules::RulesBlobSize) {}
 
-    ~BackupGatewayEndpointProvider()
-    {
-    }
+  ~BackupGatewayEndpointProvider() {}
 };
-} // namespace Endpoint
-} // namespace BackupGateway
-} // namespace Aws
+}  // namespace Endpoint
+}  // namespace BackupGateway
+}  // namespace Aws

@@ -3,70 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/migrationhubstrategy/model/TransformationTool.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/migrationhubstrategy/model/TransformationTool.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace MigrationHubStrategyRecommendations
-{
-namespace Model
-{
+namespace Aws {
+namespace MigrationHubStrategyRecommendations {
+namespace Model {
 
-TransformationTool::TransformationTool(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+TransformationTool::TransformationTool(JsonView jsonValue) { *this = jsonValue; }
 
-TransformationTool& TransformationTool::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("description"))
-  {
+TransformationTool& TransformationTool::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("name"))
-  {
+  if (jsonValue.ValueExists("name")) {
     m_name = TransformationToolNameMapper::GetTransformationToolNameForName(jsonValue.GetString("name"));
     m_nameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("tranformationToolInstallationLink"))
-  {
+  if (jsonValue.ValueExists("tranformationToolInstallationLink")) {
     m_tranformationToolInstallationLink = jsonValue.GetString("tranformationToolInstallationLink");
     m_tranformationToolInstallationLinkHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue TransformationTool::Jsonize() const
-{
+JsonValue TransformationTool::Jsonize() const {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("description", m_description);
-
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", TransformationToolNameMapper::GetNameForTransformationToolName(m_name));
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", TransformationToolNameMapper::GetNameForTransformationToolName(m_name));
   }
 
-  if(m_tranformationToolInstallationLinkHasBeenSet)
-  {
-   payload.WithString("tranformationToolInstallationLink", m_tranformationToolInstallationLink);
-
+  if (m_tranformationToolInstallationLinkHasBeenSet) {
+    payload.WithString("tranformationToolInstallationLink", m_tranformationToolInstallationLink);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace MigrationHubStrategyRecommendations
-} // namespace Aws
+}  // namespace Model
+}  // namespace MigrationHubStrategyRecommendations
+}  // namespace Aws

@@ -3,89 +3,69 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wellarchitected/model/ProfileTemplate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wellarchitected/model/ProfileTemplate.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace WellArchitected
-{
-namespace Model
-{
+namespace Aws {
+namespace WellArchitected {
+namespace Model {
 
-ProfileTemplate::ProfileTemplate(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ProfileTemplate::ProfileTemplate(JsonView jsonValue) { *this = jsonValue; }
 
-ProfileTemplate& ProfileTemplate::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("TemplateName"))
-  {
+ProfileTemplate& ProfileTemplate::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TemplateName")) {
     m_templateName = jsonValue.GetString("TemplateName");
     m_templateNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("TemplateQuestions"))
-  {
+  if (jsonValue.ValueExists("TemplateQuestions")) {
     Aws::Utils::Array<JsonView> templateQuestionsJsonList = jsonValue.GetArray("TemplateQuestions");
-    for(unsigned templateQuestionsIndex = 0; templateQuestionsIndex < templateQuestionsJsonList.GetLength(); ++templateQuestionsIndex)
-    {
+    for (unsigned templateQuestionsIndex = 0; templateQuestionsIndex < templateQuestionsJsonList.GetLength(); ++templateQuestionsIndex) {
       m_templateQuestions.push_back(templateQuestionsJsonList[templateQuestionsIndex].AsObject());
     }
     m_templateQuestionsHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("CreatedAt"))
-  {
+  if (jsonValue.ValueExists("CreatedAt")) {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
     m_createdAtHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("UpdatedAt"))
-  {
+  if (jsonValue.ValueExists("UpdatedAt")) {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
     m_updatedAtHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ProfileTemplate::Jsonize() const
-{
+JsonValue ProfileTemplate::Jsonize() const {
   JsonValue payload;
 
-  if(m_templateNameHasBeenSet)
-  {
-   payload.WithString("TemplateName", m_templateName);
-
+  if (m_templateNameHasBeenSet) {
+    payload.WithString("TemplateName", m_templateName);
   }
 
-  if(m_templateQuestionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> templateQuestionsJsonList(m_templateQuestions.size());
-   for(unsigned templateQuestionsIndex = 0; templateQuestionsIndex < templateQuestionsJsonList.GetLength(); ++templateQuestionsIndex)
-   {
-     templateQuestionsJsonList[templateQuestionsIndex].AsObject(m_templateQuestions[templateQuestionsIndex].Jsonize());
-   }
-   payload.WithArray("TemplateQuestions", std::move(templateQuestionsJsonList));
-
+  if (m_templateQuestionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> templateQuestionsJsonList(m_templateQuestions.size());
+    for (unsigned templateQuestionsIndex = 0; templateQuestionsIndex < templateQuestionsJsonList.GetLength(); ++templateQuestionsIndex) {
+      templateQuestionsJsonList[templateQuestionsIndex].AsObject(m_templateQuestions[templateQuestionsIndex].Jsonize());
+    }
+    payload.WithArray("TemplateQuestions", std::move(templateQuestionsJsonList));
   }
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
+  if (m_createdAtHasBeenSet) {
+    payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
   }
 
-  if(m_updatedAtHasBeenSet)
-  {
-   payload.WithDouble("UpdatedAt", m_updatedAt.SecondsWithMSPrecision());
+  if (m_updatedAtHasBeenSet) {
+    payload.WithDouble("UpdatedAt", m_updatedAt.SecondsWithMSPrecision());
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace WellArchitected
-} // namespace Aws
+}  // namespace Model
+}  // namespace WellArchitected
+}  // namespace Aws

@@ -4,68 +4,75 @@
  */
 
 #pragma once
-#include <aws/b2bi/B2BI_EXPORTS.h>
 #include <aws/b2bi/B2BIRequest.h>
+#include <aws/b2bi/B2BI_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+
 #include <utility>
 
-namespace Aws
-{
-namespace B2BI
-{
-namespace Model
-{
+namespace Aws {
+namespace B2BI {
+namespace Model {
 
+/**
+ */
+class GetTransformerJobRequest : public B2BIRequest {
+ public:
+  AWS_B2BI_API GetTransformerJobRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "GetTransformerJob"; }
+
+  AWS_B2BI_API Aws::String SerializePayload() const override;
+
+  AWS_B2BI_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
   /**
+   * <p>Specifies the unique, system-generated identifier for a transformer run.</p>
    */
-  class GetTransformerJobRequest : public B2BIRequest
-  {
-  public:
-    AWS_B2BI_API GetTransformerJobRequest() = default;
+  inline const Aws::String& GetTransformerJobId() const { return m_transformerJobId; }
+  inline bool TransformerJobIdHasBeenSet() const { return m_transformerJobIdHasBeenSet; }
+  template <typename TransformerJobIdT = Aws::String>
+  void SetTransformerJobId(TransformerJobIdT&& value) {
+    m_transformerJobIdHasBeenSet = true;
+    m_transformerJobId = std::forward<TransformerJobIdT>(value);
+  }
+  template <typename TransformerJobIdT = Aws::String>
+  GetTransformerJobRequest& WithTransformerJobId(TransformerJobIdT&& value) {
+    SetTransformerJobId(std::forward<TransformerJobIdT>(value));
+    return *this;
+  }
+  ///@}
 
-    // Service request name is the Operation name which will send this request out,
-    // each operation should has unique request name, so that we can get operation's name from this request.
-    // Note: this is not true for response, multiple operations may have the same response name,
-    // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "GetTransformerJob"; }
+  ///@{
+  /**
+   * <p>Specifies the system-assigned unique identifier for the transformer.</p>
+   */
+  inline const Aws::String& GetTransformerId() const { return m_transformerId; }
+  inline bool TransformerIdHasBeenSet() const { return m_transformerIdHasBeenSet; }
+  template <typename TransformerIdT = Aws::String>
+  void SetTransformerId(TransformerIdT&& value) {
+    m_transformerIdHasBeenSet = true;
+    m_transformerId = std::forward<TransformerIdT>(value);
+  }
+  template <typename TransformerIdT = Aws::String>
+  GetTransformerJobRequest& WithTransformerId(TransformerIdT&& value) {
+    SetTransformerId(std::forward<TransformerIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_transformerJobId;
+  bool m_transformerJobIdHasBeenSet = false;
 
-    AWS_B2BI_API Aws::String SerializePayload() const override;
+  Aws::String m_transformerId;
+  bool m_transformerIdHasBeenSet = false;
+};
 
-    AWS_B2BI_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    ///@{
-    /**
-     * <p>Specifies the unique, system-generated identifier for a transformer run.</p>
-     */
-    inline const Aws::String& GetTransformerJobId() const { return m_transformerJobId; }
-    inline bool TransformerJobIdHasBeenSet() const { return m_transformerJobIdHasBeenSet; }
-    template<typename TransformerJobIdT = Aws::String>
-    void SetTransformerJobId(TransformerJobIdT&& value) { m_transformerJobIdHasBeenSet = true; m_transformerJobId = std::forward<TransformerJobIdT>(value); }
-    template<typename TransformerJobIdT = Aws::String>
-    GetTransformerJobRequest& WithTransformerJobId(TransformerJobIdT&& value) { SetTransformerJobId(std::forward<TransformerJobIdT>(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Specifies the system-assigned unique identifier for the transformer.</p>
-     */
-    inline const Aws::String& GetTransformerId() const { return m_transformerId; }
-    inline bool TransformerIdHasBeenSet() const { return m_transformerIdHasBeenSet; }
-    template<typename TransformerIdT = Aws::String>
-    void SetTransformerId(TransformerIdT&& value) { m_transformerIdHasBeenSet = true; m_transformerId = std::forward<TransformerIdT>(value); }
-    template<typename TransformerIdT = Aws::String>
-    GetTransformerJobRequest& WithTransformerId(TransformerIdT&& value) { SetTransformerId(std::forward<TransformerIdT>(value)); return *this;}
-    ///@}
-  private:
-
-    Aws::String m_transformerJobId;
-    bool m_transformerJobIdHasBeenSet = false;
-
-    Aws::String m_transformerId;
-    bool m_transformerIdHasBeenSet = false;
-  };
-
-} // namespace Model
-} // namespace B2BI
-} // namespace Aws
+}  // namespace Model
+}  // namespace B2BI
+}  // namespace Aws

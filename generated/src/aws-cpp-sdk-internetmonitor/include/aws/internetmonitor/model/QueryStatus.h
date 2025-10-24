@@ -4,31 +4,19 @@
  */
 
 #pragma once
-#include <aws/internetmonitor/InternetMonitor_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/internetmonitor/InternetMonitor_EXPORTS.h>
 
-namespace Aws
-{
-namespace InternetMonitor
-{
-namespace Model
-{
-  enum class QueryStatus
-  {
-    NOT_SET,
-    QUEUED,
-    RUNNING,
-    SUCCEEDED,
-    FAILED,
-    CANCELED
-  };
+namespace Aws {
+namespace InternetMonitor {
+namespace Model {
+enum class QueryStatus { NOT_SET, QUEUED, RUNNING, SUCCEEDED, FAILED, CANCELED };
 
-namespace QueryStatusMapper
-{
+namespace QueryStatusMapper {
 AWS_INTERNETMONITOR_API QueryStatus GetQueryStatusForName(const Aws::String& name);
 
 AWS_INTERNETMONITOR_API Aws::String GetNameForQueryStatus(QueryStatus value);
-} // namespace QueryStatusMapper
-} // namespace Model
-} // namespace InternetMonitor
-} // namespace Aws
+}  // namespace QueryStatusMapper
+}  // namespace Model
+}  // namespace InternetMonitor
+}  // namespace Aws

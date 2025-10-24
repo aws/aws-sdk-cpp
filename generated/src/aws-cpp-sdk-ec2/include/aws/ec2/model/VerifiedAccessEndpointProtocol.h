@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 
-namespace Aws
-{
-namespace EC2
-{
-namespace Model
-{
-  enum class VerifiedAccessEndpointProtocol
-  {
-    NOT_SET,
-    http,
-    https,
-    tcp
-  };
+namespace Aws {
+namespace EC2 {
+namespace Model {
+enum class VerifiedAccessEndpointProtocol { NOT_SET, http, https, tcp };
 
-namespace VerifiedAccessEndpointProtocolMapper
-{
+namespace VerifiedAccessEndpointProtocolMapper {
 AWS_EC2_API VerifiedAccessEndpointProtocol GetVerifiedAccessEndpointProtocolForName(const Aws::String& name);
 
 AWS_EC2_API Aws::String GetNameForVerifiedAccessEndpointProtocol(VerifiedAccessEndpointProtocol value);
-} // namespace VerifiedAccessEndpointProtocolMapper
-} // namespace Model
-} // namespace EC2
-} // namespace Aws
+}  // namespace VerifiedAccessEndpointProtocolMapper
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

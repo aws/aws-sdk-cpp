@@ -3,12 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
 #include <aws/panorama/PanoramaRequest.h>
 
-namespace Aws
-{
-namespace Panorama
-{
-} // namespace Panorama
-} // namespace Aws
+namespace Aws {
+namespace Panorama {}  // namespace Panorama
+}  // namespace Aws

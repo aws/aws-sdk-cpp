@@ -5,12 +5,8 @@
 
 #include <aws/kafka/KafkaEndpointProvider.h>
 
-namespace Aws
-{
-namespace Kafka
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace Kafka
-} // namespace Aws
+namespace Aws {
+namespace Kafka {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace Kafka
+}  // namespace Aws

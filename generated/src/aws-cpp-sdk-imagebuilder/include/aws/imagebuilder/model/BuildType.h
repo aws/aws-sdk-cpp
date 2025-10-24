@@ -4,30 +4,19 @@
  */
 
 #pragma once
-#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 
-namespace Aws
-{
-namespace imagebuilder
-{
-namespace Model
-{
-  enum class BuildType
-  {
-    NOT_SET,
-    USER_INITIATED,
-    SCHEDULED,
-    IMPORT,
-    IMPORT_ISO
-  };
+namespace Aws {
+namespace imagebuilder {
+namespace Model {
+enum class BuildType { NOT_SET, USER_INITIATED, SCHEDULED, IMPORT, IMPORT_ISO };
 
-namespace BuildTypeMapper
-{
+namespace BuildTypeMapper {
 AWS_IMAGEBUILDER_API BuildType GetBuildTypeForName(const Aws::String& name);
 
 AWS_IMAGEBUILDER_API Aws::String GetNameForBuildType(BuildType value);
-} // namespace BuildTypeMapper
-} // namespace Model
-} // namespace imagebuilder
-} // namespace Aws
+}  // namespace BuildTypeMapper
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

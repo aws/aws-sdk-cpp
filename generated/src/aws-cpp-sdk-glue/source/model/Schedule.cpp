@@ -3,59 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/glue/model/Schedule.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/Schedule.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace Glue
-{
-namespace Model
-{
+namespace Aws {
+namespace Glue {
+namespace Model {
 
-Schedule::Schedule(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+Schedule::Schedule(JsonView jsonValue) { *this = jsonValue; }
 
-Schedule& Schedule::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ScheduleExpression"))
-  {
+Schedule& Schedule::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ScheduleExpression")) {
     m_scheduleExpression = jsonValue.GetString("ScheduleExpression");
     m_scheduleExpressionHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("State"))
-  {
+  if (jsonValue.ValueExists("State")) {
     m_state = ScheduleStateMapper::GetScheduleStateForName(jsonValue.GetString("State"));
     m_stateHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue Schedule::Jsonize() const
-{
+JsonValue Schedule::Jsonize() const {
   JsonValue payload;
 
-  if(m_scheduleExpressionHasBeenSet)
-  {
-   payload.WithString("ScheduleExpression", m_scheduleExpression);
-
+  if (m_scheduleExpressionHasBeenSet) {
+    payload.WithString("ScheduleExpression", m_scheduleExpression);
   }
 
-  if(m_stateHasBeenSet)
-  {
-   payload.WithString("State", ScheduleStateMapper::GetNameForScheduleState(m_state));
+  if (m_stateHasBeenSet) {
+    payload.WithString("State", ScheduleStateMapper::GetNameForScheduleState(m_state));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace Glue
-} // namespace Aws
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

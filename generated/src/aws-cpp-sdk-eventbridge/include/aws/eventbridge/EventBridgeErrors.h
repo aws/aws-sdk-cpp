@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/eventbridge/EventBridge_EXPORTS.h>
 
-namespace Aws
-{
-namespace EventBridge
-{
-enum class EventBridgeErrors
-{
-  //From Core//
+namespace Aws {
+namespace EventBridge {
+enum class EventBridgeErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class EventBridgeErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,7 +44,7 @@ enum class EventBridgeErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONCURRENT_MODIFICATION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONCURRENT_MODIFICATION = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   ILLEGAL_STATUS,
   INTERNAL,
   INVALID_EVENT_PATTERN,
@@ -59,9 +56,8 @@ enum class EventBridgeErrors
   RESOURCE_ALREADY_EXISTS
 };
 
-class AWS_EVENTBRIDGE_API EventBridgeError : public Aws::Client::AWSError<EventBridgeErrors>
-{
-public:
+class AWS_EVENTBRIDGE_API EventBridgeError : public Aws::Client::AWSError<EventBridgeErrors> {
+ public:
   EventBridgeError() {}
   EventBridgeError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<EventBridgeErrors>(rhs) {}
   EventBridgeError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<EventBridgeErrors>(rhs) {}
@@ -72,10 +68,9 @@ public:
   T GetModeledError();
 };
 
-namespace EventBridgeErrorMapper
-{
-  AWS_EVENTBRIDGE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace EventBridgeErrorMapper {
+AWS_EVENTBRIDGE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace EventBridge
-} // namespace Aws
+}  // namespace EventBridge
+}  // namespace Aws

@@ -3,24 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iam/model/PutRolePermissionsBoundaryRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iam/model/PutRolePermissionsBoundaryRequest.h>
 
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-Aws::String PutRolePermissionsBoundaryRequest::SerializePayload() const
-{
+Aws::String PutRolePermissionsBoundaryRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=PutRolePermissionsBoundary&";
-  if(m_roleNameHasBeenSet)
-  {
+  if (m_roleNameHasBeenSet) {
     ss << "RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
   }
 
-  if(m_permissionsBoundaryHasBeenSet)
-  {
+  if (m_permissionsBoundaryHasBeenSet) {
     ss << "PermissionsBoundary=" << StringUtils::URLEncode(m_permissionsBoundary.c_str()) << "&";
   }
 
@@ -28,8 +25,4 @@ Aws::String PutRolePermissionsBoundaryRequest::SerializePayload() const
   return ss.str();
 }
 
-
-void  PutRolePermissionsBoundaryRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void PutRolePermissionsBoundaryRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

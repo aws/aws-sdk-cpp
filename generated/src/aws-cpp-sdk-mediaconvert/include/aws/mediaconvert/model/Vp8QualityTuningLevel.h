@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class Vp8QualityTuningLevel
-  {
-    NOT_SET,
-    MULTI_PASS,
-    MULTI_PASS_HQ
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class Vp8QualityTuningLevel { NOT_SET, MULTI_PASS, MULTI_PASS_HQ };
 
-namespace Vp8QualityTuningLevelMapper
-{
+namespace Vp8QualityTuningLevelMapper {
 AWS_MEDIACONVERT_API Vp8QualityTuningLevel GetVp8QualityTuningLevelForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForVp8QualityTuningLevel(Vp8QualityTuningLevel value);
-} // namespace Vp8QualityTuningLevelMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace Vp8QualityTuningLevelMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

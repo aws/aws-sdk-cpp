@@ -12,19 +12,12 @@ using namespace Aws::AppFabric::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String UpdateIngestionDestinationRequest::SerializePayload() const
-{
+Aws::String UpdateIngestionDestinationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_destinationConfigurationHasBeenSet)
-  {
-   payload.WithObject("destinationConfiguration", m_destinationConfiguration.Jsonize());
-
+  if (m_destinationConfigurationHasBeenSet) {
+    payload.WithObject("destinationConfiguration", m_destinationConfiguration.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

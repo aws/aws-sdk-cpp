@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
-namespace Aws
-{
-namespace MediaConvert
-{
-namespace Model
-{
-  enum class MsSmoothManifestEncoding
-  {
-    NOT_SET,
-    UTF8,
-    UTF16
-  };
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class MsSmoothManifestEncoding { NOT_SET, UTF8, UTF16 };
 
-namespace MsSmoothManifestEncodingMapper
-{
+namespace MsSmoothManifestEncodingMapper {
 AWS_MEDIACONVERT_API MsSmoothManifestEncoding GetMsSmoothManifestEncodingForName(const Aws::String& name);
 
 AWS_MEDIACONVERT_API Aws::String GetNameForMsSmoothManifestEncoding(MsSmoothManifestEncoding value);
-} // namespace MsSmoothManifestEncodingMapper
-} // namespace Model
-} // namespace MediaConvert
-} // namespace Aws
+}  // namespace MsSmoothManifestEncodingMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

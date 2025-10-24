@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/iottwinmaker/model/CompositeComponentTypeRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iottwinmaker/model/CompositeComponentTypeRequest.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace IoTTwinMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace IoTTwinMaker {
+namespace Model {
 
-CompositeComponentTypeRequest::CompositeComponentTypeRequest(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+CompositeComponentTypeRequest::CompositeComponentTypeRequest(JsonView jsonValue) { *this = jsonValue; }
 
-CompositeComponentTypeRequest& CompositeComponentTypeRequest::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("componentTypeId"))
-  {
+CompositeComponentTypeRequest& CompositeComponentTypeRequest::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("componentTypeId")) {
     m_componentTypeId = jsonValue.GetString("componentTypeId");
     m_componentTypeIdHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue CompositeComponentTypeRequest::Jsonize() const
-{
+JsonValue CompositeComponentTypeRequest::Jsonize() const {
   JsonValue payload;
 
-  if(m_componentTypeIdHasBeenSet)
-  {
-   payload.WithString("componentTypeId", m_componentTypeId);
-
+  if (m_componentTypeIdHasBeenSet) {
+    payload.WithString("componentTypeId", m_componentTypeId);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace IoTTwinMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace IoTTwinMaker
+}  // namespace Aws

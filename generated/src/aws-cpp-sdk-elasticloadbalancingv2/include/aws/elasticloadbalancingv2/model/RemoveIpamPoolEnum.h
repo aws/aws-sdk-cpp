@@ -4,27 +4,19 @@
  */
 
 #pragma once
-#include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElasticLoadBalancingv2
-{
-namespace Model
-{
-  enum class RemoveIpamPoolEnum
-  {
-    NOT_SET,
-    ipv4
-  };
+namespace Aws {
+namespace ElasticLoadBalancingv2 {
+namespace Model {
+enum class RemoveIpamPoolEnum { NOT_SET, ipv4 };
 
-namespace RemoveIpamPoolEnumMapper
-{
+namespace RemoveIpamPoolEnumMapper {
 AWS_ELASTICLOADBALANCINGV2_API RemoveIpamPoolEnum GetRemoveIpamPoolEnumForName(const Aws::String& name);
 
 AWS_ELASTICLOADBALANCINGV2_API Aws::String GetNameForRemoveIpamPoolEnum(RemoveIpamPoolEnum value);
-} // namespace RemoveIpamPoolEnumMapper
-} // namespace Model
-} // namespace ElasticLoadBalancingv2
-} // namespace Aws
+}  // namespace RemoveIpamPoolEnumMapper
+}  // namespace Model
+}  // namespace ElasticLoadBalancingv2
+}  // namespace Aws

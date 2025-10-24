@@ -9,13 +9,10 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/wisdom/ConnectWisdomService_EXPORTS.h>
 
-namespace Aws
-{
-namespace ConnectWisdomService
-{
-enum class ConnectWisdomServiceErrors
-{
-  //From Core//
+namespace Aws {
+namespace ConnectWisdomService {
+enum class ConnectWisdomServiceErrors {
+  // From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
   INCOMPLETE_SIGNATURE = 0,
   INTERNAL_FAILURE = 1,
@@ -24,9 +21,9 @@ enum class ConnectWisdomServiceErrors
   INVALID_PARAMETER_COMBINATION = 4,
   INVALID_QUERY_PARAMETER = 5,
   INVALID_PARAMETER_VALUE = 6,
-  MISSING_ACTION = 7, // SDK should never allow
-  MISSING_AUTHENTICATION_TOKEN = 8, // SDK should never allow
-  MISSING_PARAMETER = 9, // SDK should never allow
+  MISSING_ACTION = 7,                // SDK should never allow
+  MISSING_AUTHENTICATION_TOKEN = 8,  // SDK should never allow
+  MISSING_PARAMETER = 9,             // SDK should never allow
   OPT_IN_REQUIRED = 10,
   REQUEST_EXPIRED = 11,
   SERVICE_UNAVAILABLE = 12,
@@ -47,29 +44,31 @@ enum class ConnectWisdomServiceErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   PRECONDITION_FAILED,
   SERVICE_QUOTA_EXCEEDED,
   TOO_MANY_TAGS
 };
 
-class AWS_CONNECTWISDOMSERVICE_API ConnectWisdomServiceError : public Aws::Client::AWSError<ConnectWisdomServiceErrors>
-{
-public:
+class AWS_CONNECTWISDOMSERVICE_API ConnectWisdomServiceError : public Aws::Client::AWSError<ConnectWisdomServiceErrors> {
+ public:
   ConnectWisdomServiceError() {}
-  ConnectWisdomServiceError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ConnectWisdomServiceErrors>(rhs) {}
-  ConnectWisdomServiceError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ConnectWisdomServiceErrors>(rhs) {}
-  ConnectWisdomServiceError(const Aws::Client::AWSError<ConnectWisdomServiceErrors>& rhs) : Aws::Client::AWSError<ConnectWisdomServiceErrors>(rhs) {}
-  ConnectWisdomServiceError(Aws::Client::AWSError<ConnectWisdomServiceErrors>&& rhs) : Aws::Client::AWSError<ConnectWisdomServiceErrors>(rhs) {}
+  ConnectWisdomServiceError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs)
+      : Aws::Client::AWSError<ConnectWisdomServiceErrors>(rhs) {}
+  ConnectWisdomServiceError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs)
+      : Aws::Client::AWSError<ConnectWisdomServiceErrors>(rhs) {}
+  ConnectWisdomServiceError(const Aws::Client::AWSError<ConnectWisdomServiceErrors>& rhs)
+      : Aws::Client::AWSError<ConnectWisdomServiceErrors>(rhs) {}
+  ConnectWisdomServiceError(Aws::Client::AWSError<ConnectWisdomServiceErrors>&& rhs)
+      : Aws::Client::AWSError<ConnectWisdomServiceErrors>(rhs) {}
 
   template <typename T>
   T GetModeledError();
 };
 
-namespace ConnectWisdomServiceErrorMapper
-{
-  AWS_CONNECTWISDOMSERVICE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
+namespace ConnectWisdomServiceErrorMapper {
+AWS_CONNECTWISDOMSERVICE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);
 }
 
-} // namespace ConnectWisdomService
-} // namespace Aws
+}  // namespace ConnectWisdomService
+}  // namespace Aws

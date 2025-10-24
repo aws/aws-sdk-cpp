@@ -5,12 +5,8 @@
 
 #include <aws/codestar-connections/CodeStarconnectionsEndpointProvider.h>
 
-namespace Aws
-{
-namespace CodeStarconnections
-{
-namespace Endpoint
-{
-} // namespace Endpoint
-} // namespace CodeStarconnections
-} // namespace Aws
+namespace Aws {
+namespace CodeStarconnections {
+namespace Endpoint {}  // namespace Endpoint
+}  // namespace CodeStarconnections
+}  // namespace Aws

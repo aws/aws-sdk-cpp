@@ -4,28 +4,19 @@
  */
 
 #pragma once
-#include <aws/sagemaker-geospatial/SageMakerGeospatial_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker-geospatial/SageMakerGeospatial_EXPORTS.h>
 
-namespace Aws
-{
-namespace SageMakerGeospatial
-{
-namespace Model
-{
-  enum class VectorEnrichmentJobExportErrorType
-  {
-    NOT_SET,
-    CLIENT_ERROR,
-    SERVER_ERROR
-  };
+namespace Aws {
+namespace SageMakerGeospatial {
+namespace Model {
+enum class VectorEnrichmentJobExportErrorType { NOT_SET, CLIENT_ERROR, SERVER_ERROR };
 
-namespace VectorEnrichmentJobExportErrorTypeMapper
-{
+namespace VectorEnrichmentJobExportErrorTypeMapper {
 AWS_SAGEMAKERGEOSPATIAL_API VectorEnrichmentJobExportErrorType GetVectorEnrichmentJobExportErrorTypeForName(const Aws::String& name);
 
 AWS_SAGEMAKERGEOSPATIAL_API Aws::String GetNameForVectorEnrichmentJobExportErrorType(VectorEnrichmentJobExportErrorType value);
-} // namespace VectorEnrichmentJobExportErrorTypeMapper
-} // namespace Model
-} // namespace SageMakerGeospatial
-} // namespace Aws
+}  // namespace VectorEnrichmentJobExportErrorTypeMapper
+}  // namespace Model
+}  // namespace SageMakerGeospatial
+}  // namespace Aws

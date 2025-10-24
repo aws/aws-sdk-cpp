@@ -3,53 +3,40 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/ssm-sap/model/ApplicationSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ssm-sap/model/ApplicationSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SsmSap
-{
-namespace Model
-{
+namespace Aws {
+namespace SsmSap {
+namespace Model {
 
-ApplicationSummary::ApplicationSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+ApplicationSummary::ApplicationSummary(JsonView jsonValue) { *this = jsonValue; }
 
-ApplicationSummary& ApplicationSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Id"))
-  {
+ApplicationSummary& ApplicationSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("DiscoveryStatus"))
-  {
+  if (jsonValue.ValueExists("DiscoveryStatus")) {
     m_discoveryStatus = ApplicationDiscoveryStatusMapper::GetApplicationDiscoveryStatusForName(jsonValue.GetString("DiscoveryStatus"));
     m_discoveryStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Type"))
-  {
+  if (jsonValue.ValueExists("Type")) {
     m_type = ApplicationTypeMapper::GetApplicationTypeForName(jsonValue.GetString("Type"));
     m_typeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Arn"))
-  {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Tags"))
-  {
+  if (jsonValue.ValueExists("Tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
+    for (auto& tagsItem : tagsJsonMap) {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
@@ -57,46 +44,36 @@ ApplicationSummary& ApplicationSummary::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue ApplicationSummary::Jsonize() const
-{
+JsonValue ApplicationSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("Id", m_id);
-
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
   }
 
-  if(m_discoveryStatusHasBeenSet)
-  {
-   payload.WithString("DiscoveryStatus", ApplicationDiscoveryStatusMapper::GetNameForApplicationDiscoveryStatus(m_discoveryStatus));
+  if (m_discoveryStatusHasBeenSet) {
+    payload.WithString("DiscoveryStatus", ApplicationDiscoveryStatusMapper::GetNameForApplicationDiscoveryStatus(m_discoveryStatus));
   }
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("Type", ApplicationTypeMapper::GetNameForApplicationType(m_type));
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", ApplicationTypeMapper::GetNameForApplicationType(m_type));
   }
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("Tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("Tags", std::move(tagsJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SsmSap
-} // namespace Aws
+}  // namespace Model
+}  // namespace SsmSap
+}  // namespace Aws

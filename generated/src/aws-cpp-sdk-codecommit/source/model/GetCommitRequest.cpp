@@ -12,33 +12,22 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String GetCommitRequest::SerializePayload() const
-{
+Aws::String GetCommitRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_repositoryNameHasBeenSet)
-  {
-   payload.WithString("repositoryName", m_repositoryName);
-
+  if (m_repositoryNameHasBeenSet) {
+    payload.WithString("repositoryName", m_repositoryName);
   }
 
-  if(m_commitIdHasBeenSet)
-  {
-   payload.WithString("commitId", m_commitId);
-
+  if (m_commitIdHasBeenSet) {
+    payload.WithString("commitId", m_commitId);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection GetCommitRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection GetCommitRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeCommit_20150413.GetCommit"));
   return headers;
-
 }
-
-
-
-

@@ -3,115 +3,86 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/dms/model/NeptuneSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dms/model/NeptuneSettings.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace DatabaseMigrationService
-{
-namespace Model
-{
+namespace Aws {
+namespace DatabaseMigrationService {
+namespace Model {
 
-NeptuneSettings::NeptuneSettings(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+NeptuneSettings::NeptuneSettings(JsonView jsonValue) { *this = jsonValue; }
 
-NeptuneSettings& NeptuneSettings::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("ServiceAccessRoleArn"))
-  {
+NeptuneSettings& NeptuneSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ServiceAccessRoleArn")) {
     m_serviceAccessRoleArn = jsonValue.GetString("ServiceAccessRoleArn");
     m_serviceAccessRoleArnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("S3BucketName"))
-  {
+  if (jsonValue.ValueExists("S3BucketName")) {
     m_s3BucketName = jsonValue.GetString("S3BucketName");
     m_s3BucketNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("S3BucketFolder"))
-  {
+  if (jsonValue.ValueExists("S3BucketFolder")) {
     m_s3BucketFolder = jsonValue.GetString("S3BucketFolder");
     m_s3BucketFolderHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ErrorRetryDuration"))
-  {
+  if (jsonValue.ValueExists("ErrorRetryDuration")) {
     m_errorRetryDuration = jsonValue.GetInteger("ErrorRetryDuration");
     m_errorRetryDurationHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MaxFileSize"))
-  {
+  if (jsonValue.ValueExists("MaxFileSize")) {
     m_maxFileSize = jsonValue.GetInteger("MaxFileSize");
     m_maxFileSizeHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("MaxRetryCount"))
-  {
+  if (jsonValue.ValueExists("MaxRetryCount")) {
     m_maxRetryCount = jsonValue.GetInteger("MaxRetryCount");
     m_maxRetryCountHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("IamAuthEnabled"))
-  {
+  if (jsonValue.ValueExists("IamAuthEnabled")) {
     m_iamAuthEnabled = jsonValue.GetBool("IamAuthEnabled");
     m_iamAuthEnabledHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue NeptuneSettings::Jsonize() const
-{
+JsonValue NeptuneSettings::Jsonize() const {
   JsonValue payload;
 
-  if(m_serviceAccessRoleArnHasBeenSet)
-  {
-   payload.WithString("ServiceAccessRoleArn", m_serviceAccessRoleArn);
-
+  if (m_serviceAccessRoleArnHasBeenSet) {
+    payload.WithString("ServiceAccessRoleArn", m_serviceAccessRoleArn);
   }
 
-  if(m_s3BucketNameHasBeenSet)
-  {
-   payload.WithString("S3BucketName", m_s3BucketName);
-
+  if (m_s3BucketNameHasBeenSet) {
+    payload.WithString("S3BucketName", m_s3BucketName);
   }
 
-  if(m_s3BucketFolderHasBeenSet)
-  {
-   payload.WithString("S3BucketFolder", m_s3BucketFolder);
-
+  if (m_s3BucketFolderHasBeenSet) {
+    payload.WithString("S3BucketFolder", m_s3BucketFolder);
   }
 
-  if(m_errorRetryDurationHasBeenSet)
-  {
-   payload.WithInteger("ErrorRetryDuration", m_errorRetryDuration);
-
+  if (m_errorRetryDurationHasBeenSet) {
+    payload.WithInteger("ErrorRetryDuration", m_errorRetryDuration);
   }
 
-  if(m_maxFileSizeHasBeenSet)
-  {
-   payload.WithInteger("MaxFileSize", m_maxFileSize);
-
+  if (m_maxFileSizeHasBeenSet) {
+    payload.WithInteger("MaxFileSize", m_maxFileSize);
   }
 
-  if(m_maxRetryCountHasBeenSet)
-  {
-   payload.WithInteger("MaxRetryCount", m_maxRetryCount);
-
+  if (m_maxRetryCountHasBeenSet) {
+    payload.WithInteger("MaxRetryCount", m_maxRetryCount);
   }
 
-  if(m_iamAuthEnabledHasBeenSet)
-  {
-   payload.WithBool("IamAuthEnabled", m_iamAuthEnabled);
-
+  if (m_iamAuthEnabledHasBeenSet) {
+    payload.WithBool("IamAuthEnabled", m_iamAuthEnabled);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace DatabaseMigrationService
-} // namespace Aws
+}  // namespace Model
+}  // namespace DatabaseMigrationService
+}  // namespace Aws

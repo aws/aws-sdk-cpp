@@ -5,19 +5,16 @@
 
 #pragma once
 
-#include <aws/eventbridge/EventBridge_EXPORTS.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
+#include <aws/eventbridge/EventBridge_EXPORTS.h>
 
-namespace Aws
-{
-namespace Client
-{
+namespace Aws {
+namespace Client {
 
-class AWS_EVENTBRIDGE_API EventBridgeErrorMarshaller : public Aws::Client::JsonErrorMarshaller
-{
-public:
+class AWS_EVENTBRIDGE_API EventBridgeErrorMarshaller : public Aws::Client::JsonErrorMarshaller {
+ public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 
-} // namespace Client
-} // namespace Aws
+}  // namespace Client
+}  // namespace Aws

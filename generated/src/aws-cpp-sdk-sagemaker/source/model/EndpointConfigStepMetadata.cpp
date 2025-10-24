@@ -3,49 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/EndpointConfigStepMetadata.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/EndpointConfigStepMetadata.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace SageMaker
-{
-namespace Model
-{
+namespace Aws {
+namespace SageMaker {
+namespace Model {
 
-EndpointConfigStepMetadata::EndpointConfigStepMetadata(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+EndpointConfigStepMetadata::EndpointConfigStepMetadata(JsonView jsonValue) { *this = jsonValue; }
 
-EndpointConfigStepMetadata& EndpointConfigStepMetadata::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Arn"))
-  {
+EndpointConfigStepMetadata& EndpointConfigStepMetadata::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue EndpointConfigStepMetadata::Jsonize() const
-{
+JsonValue EndpointConfigStepMetadata::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace SageMaker
-} // namespace Aws
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

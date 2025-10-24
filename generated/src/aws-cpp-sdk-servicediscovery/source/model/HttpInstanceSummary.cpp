@@ -3,53 +3,40 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/servicediscovery/model/HttpInstanceSummary.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/servicediscovery/model/HttpInstanceSummary.h>
 
 #include <utility>
 
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace ServiceDiscovery
-{
-namespace Model
-{
+namespace Aws {
+namespace ServiceDiscovery {
+namespace Model {
 
-HttpInstanceSummary::HttpInstanceSummary(JsonView jsonValue)
-{
-  *this = jsonValue;
-}
+HttpInstanceSummary::HttpInstanceSummary(JsonView jsonValue) { *this = jsonValue; }
 
-HttpInstanceSummary& HttpInstanceSummary::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("InstanceId"))
-  {
+HttpInstanceSummary& HttpInstanceSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("InstanceId")) {
     m_instanceId = jsonValue.GetString("InstanceId");
     m_instanceIdHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("NamespaceName"))
-  {
+  if (jsonValue.ValueExists("NamespaceName")) {
     m_namespaceName = jsonValue.GetString("NamespaceName");
     m_namespaceNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("ServiceName"))
-  {
+  if (jsonValue.ValueExists("ServiceName")) {
     m_serviceName = jsonValue.GetString("ServiceName");
     m_serviceNameHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("HealthStatus"))
-  {
+  if (jsonValue.ValueExists("HealthStatus")) {
     m_healthStatus = HealthStatusMapper::GetHealthStatusForName(jsonValue.GetString("HealthStatus"));
     m_healthStatusHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Attributes"))
-  {
+  if (jsonValue.ValueExists("Attributes")) {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
-    for(auto& attributesItem : attributesJsonMap)
-    {
+    for (auto& attributesItem : attributesJsonMap) {
       m_attributes[attributesItem.first] = attributesItem.second.AsString();
     }
     m_attributesHasBeenSet = true;
@@ -57,47 +44,36 @@ HttpInstanceSummary& HttpInstanceSummary::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue HttpInstanceSummary::Jsonize() const
-{
+JsonValue HttpInstanceSummary::Jsonize() const {
   JsonValue payload;
 
-  if(m_instanceIdHasBeenSet)
-  {
-   payload.WithString("InstanceId", m_instanceId);
-
+  if (m_instanceIdHasBeenSet) {
+    payload.WithString("InstanceId", m_instanceId);
   }
 
-  if(m_namespaceNameHasBeenSet)
-  {
-   payload.WithString("NamespaceName", m_namespaceName);
-
+  if (m_namespaceNameHasBeenSet) {
+    payload.WithString("NamespaceName", m_namespaceName);
   }
 
-  if(m_serviceNameHasBeenSet)
-  {
-   payload.WithString("ServiceName", m_serviceName);
-
+  if (m_serviceNameHasBeenSet) {
+    payload.WithString("ServiceName", m_serviceName);
   }
 
-  if(m_healthStatusHasBeenSet)
-  {
-   payload.WithString("HealthStatus", HealthStatusMapper::GetNameForHealthStatus(m_healthStatus));
+  if (m_healthStatusHasBeenSet) {
+    payload.WithString("HealthStatus", HealthStatusMapper::GetNameForHealthStatus(m_healthStatus));
   }
 
-  if(m_attributesHasBeenSet)
-  {
-   JsonValue attributesJsonMap;
-   for(auto& attributesItem : m_attributes)
-   {
-     attributesJsonMap.WithString(attributesItem.first, attributesItem.second);
-   }
-   payload.WithObject("Attributes", std::move(attributesJsonMap));
-
+  if (m_attributesHasBeenSet) {
+    JsonValue attributesJsonMap;
+    for (auto& attributesItem : m_attributes) {
+      attributesJsonMap.WithString(attributesItem.first, attributesItem.second);
+    }
+    payload.WithObject("Attributes", std::move(attributesJsonMap));
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace ServiceDiscovery
-} // namespace Aws
+}  // namespace Model
+}  // namespace ServiceDiscovery
+}  // namespace Aws

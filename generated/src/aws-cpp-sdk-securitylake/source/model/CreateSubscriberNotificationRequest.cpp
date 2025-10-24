@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securitylake/model/CreateSubscriberNotificationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securitylake/model/CreateSubscriberNotificationRequest.h>
 
 #include <utility>
 
@@ -12,19 +12,12 @@ using namespace Aws::SecurityLake::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateSubscriberNotificationRequest::SerializePayload() const
-{
+Aws::String CreateSubscriberNotificationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_configurationHasBeenSet)
-  {
-   payload.WithObject("configuration", m_configuration.Jsonize());
-
+  if (m_configurationHasBeenSet) {
+    payload.WithObject("configuration", m_configuration.Jsonize());
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

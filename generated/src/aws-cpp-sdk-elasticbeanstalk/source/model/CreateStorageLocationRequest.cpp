@@ -3,23 +3,18 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/elasticbeanstalk/model/CreateStorageLocationRequest.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticbeanstalk/model/CreateStorageLocationRequest.h>
 
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-Aws::String CreateStorageLocationRequest::SerializePayload() const
-{
+Aws::String CreateStorageLocationRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=CreateStorageLocation&";
   ss << "Version=2010-12-01";
   return ss.str();
 }
 
-
-void  CreateStorageLocationRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
-{
-  uri.SetQueryString(SerializePayload());
-}
+void CreateStorageLocationRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

@@ -11,62 +11,49 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-namespace Aws
-{
-namespace BillingConductor
-{
-namespace Model
-{
+namespace Aws {
+namespace BillingConductor {
+namespace Model {
 
-ListResourcesAssociatedToCustomLineItemResponseElement::ListResourcesAssociatedToCustomLineItemResponseElement(JsonView jsonValue)
-{
+ListResourcesAssociatedToCustomLineItemResponseElement::ListResourcesAssociatedToCustomLineItemResponseElement(JsonView jsonValue) {
   *this = jsonValue;
 }
 
-ListResourcesAssociatedToCustomLineItemResponseElement& ListResourcesAssociatedToCustomLineItemResponseElement::operator =(JsonView jsonValue)
-{
-  if(jsonValue.ValueExists("Arn"))
-  {
+ListResourcesAssociatedToCustomLineItemResponseElement& ListResourcesAssociatedToCustomLineItemResponseElement::operator=(
+    JsonView jsonValue) {
+  if (jsonValue.ValueExists("Arn")) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("Relationship"))
-  {
+  if (jsonValue.ValueExists("Relationship")) {
     m_relationship = CustomLineItemRelationshipMapper::GetCustomLineItemRelationshipForName(jsonValue.GetString("Relationship"));
     m_relationshipHasBeenSet = true;
   }
-  if(jsonValue.ValueExists("EndBillingPeriod"))
-  {
+  if (jsonValue.ValueExists("EndBillingPeriod")) {
     m_endBillingPeriod = jsonValue.GetString("EndBillingPeriod");
     m_endBillingPeriodHasBeenSet = true;
   }
   return *this;
 }
 
-JsonValue ListResourcesAssociatedToCustomLineItemResponseElement::Jsonize() const
-{
+JsonValue ListResourcesAssociatedToCustomLineItemResponseElement::Jsonize() const {
   JsonValue payload;
 
-  if(m_arnHasBeenSet)
-  {
-   payload.WithString("Arn", m_arn);
-
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
-  if(m_relationshipHasBeenSet)
-  {
-   payload.WithString("Relationship", CustomLineItemRelationshipMapper::GetNameForCustomLineItemRelationship(m_relationship));
+  if (m_relationshipHasBeenSet) {
+    payload.WithString("Relationship", CustomLineItemRelationshipMapper::GetNameForCustomLineItemRelationship(m_relationship));
   }
 
-  if(m_endBillingPeriodHasBeenSet)
-  {
-   payload.WithString("EndBillingPeriod", m_endBillingPeriod);
-
+  if (m_endBillingPeriodHasBeenSet) {
+    payload.WithString("EndBillingPeriod", m_endBillingPeriod);
   }
 
   return payload;
 }
 
-} // namespace Model
-} // namespace BillingConductor
-} // namespace Aws
+}  // namespace Model
+}  // namespace BillingConductor
+}  // namespace Aws

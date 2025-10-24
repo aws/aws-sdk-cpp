@@ -12,19 +12,12 @@ using namespace Aws::AmplifyBackend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String RemoveAllBackendsRequest::SerializePayload() const
-{
+Aws::String RemoveAllBackendsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_cleanAmplifyAppHasBeenSet)
-  {
-   payload.WithBool("cleanAmplifyApp", m_cleanAmplifyApp);
-
+  if (m_cleanAmplifyAppHasBeenSet) {
+    payload.WithBool("cleanAmplifyApp", m_cleanAmplifyApp);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/eks/model/AssociateIdentityProviderConfigRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/eks/model/AssociateIdentityProviderConfigRequest.h>
 
 #include <utility>
 
@@ -12,36 +12,24 @@ using namespace Aws::EKS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String AssociateIdentityProviderConfigRequest::SerializePayload() const
-{
+Aws::String AssociateIdentityProviderConfigRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_oidcHasBeenSet)
-  {
-   payload.WithObject("oidc", m_oidc.Jsonize());
-
+  if (m_oidcHasBeenSet) {
+    payload.WithObject("oidc", m_oidc.Jsonize());
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
-  if(m_clientRequestTokenHasBeenSet)
-  {
-   payload.WithString("clientRequestToken", m_clientRequestToken);
-
+  if (m_clientRequestTokenHasBeenSet) {
+    payload.WithString("clientRequestToken", m_clientRequestToken);
   }
 
   return payload.View().WriteReadable();
 }
-
-
-
-

@@ -4,29 +4,19 @@
  */
 
 #pragma once
-#include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 
-namespace Aws
-{
-namespace ElasticBeanstalk
-{
-namespace Model
-{
-  enum class ComputeType
-  {
-    NOT_SET,
-    BUILD_GENERAL1_SMALL,
-    BUILD_GENERAL1_MEDIUM,
-    BUILD_GENERAL1_LARGE
-  };
+namespace Aws {
+namespace ElasticBeanstalk {
+namespace Model {
+enum class ComputeType { NOT_SET, BUILD_GENERAL1_SMALL, BUILD_GENERAL1_MEDIUM, BUILD_GENERAL1_LARGE };
 
-namespace ComputeTypeMapper
-{
+namespace ComputeTypeMapper {
 AWS_ELASTICBEANSTALK_API ComputeType GetComputeTypeForName(const Aws::String& name);
 
 AWS_ELASTICBEANSTALK_API Aws::String GetNameForComputeType(ComputeType value);
-} // namespace ComputeTypeMapper
-} // namespace Model
-} // namespace ElasticBeanstalk
-} // namespace Aws
+}  // namespace ComputeTypeMapper
+}  // namespace Model
+}  // namespace ElasticBeanstalk
+}  // namespace Aws

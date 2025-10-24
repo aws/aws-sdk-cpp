@@ -12,85 +12,58 @@ using namespace Aws::ApplicationInsights::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String CreateApplicationRequest::SerializePayload() const
-{
+Aws::String CreateApplicationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_resourceGroupNameHasBeenSet)
-  {
-   payload.WithString("ResourceGroupName", m_resourceGroupName);
-
+  if (m_resourceGroupNameHasBeenSet) {
+    payload.WithString("ResourceGroupName", m_resourceGroupName);
   }
 
-  if(m_opsCenterEnabledHasBeenSet)
-  {
-   payload.WithBool("OpsCenterEnabled", m_opsCenterEnabled);
-
+  if (m_opsCenterEnabledHasBeenSet) {
+    payload.WithBool("OpsCenterEnabled", m_opsCenterEnabled);
   }
 
-  if(m_cWEMonitorEnabledHasBeenSet)
-  {
-   payload.WithBool("CWEMonitorEnabled", m_cWEMonitorEnabled);
-
+  if (m_cWEMonitorEnabledHasBeenSet) {
+    payload.WithBool("CWEMonitorEnabled", m_cWEMonitorEnabled);
   }
 
-  if(m_opsItemSNSTopicArnHasBeenSet)
-  {
-   payload.WithString("OpsItemSNSTopicArn", m_opsItemSNSTopicArn);
-
+  if (m_opsItemSNSTopicArnHasBeenSet) {
+    payload.WithString("OpsItemSNSTopicArn", m_opsItemSNSTopicArn);
   }
 
-  if(m_sNSNotificationArnHasBeenSet)
-  {
-   payload.WithString("SNSNotificationArn", m_sNSNotificationArn);
-
+  if (m_sNSNotificationArnHasBeenSet) {
+    payload.WithString("SNSNotificationArn", m_sNSNotificationArn);
   }
 
-  if(m_tagsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("Tags", std::move(tagsJsonList));
-
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
-  if(m_autoConfigEnabledHasBeenSet)
-  {
-   payload.WithBool("AutoConfigEnabled", m_autoConfigEnabled);
-
+  if (m_autoConfigEnabledHasBeenSet) {
+    payload.WithBool("AutoConfigEnabled", m_autoConfigEnabled);
   }
 
-  if(m_autoCreateHasBeenSet)
-  {
-   payload.WithBool("AutoCreate", m_autoCreate);
-
+  if (m_autoCreateHasBeenSet) {
+    payload.WithBool("AutoCreate", m_autoCreate);
   }
 
-  if(m_groupingTypeHasBeenSet)
-  {
-   payload.WithString("GroupingType", GroupingTypeMapper::GetNameForGroupingType(m_groupingType));
+  if (m_groupingTypeHasBeenSet) {
+    payload.WithString("GroupingType", GroupingTypeMapper::GetNameForGroupingType(m_groupingType));
   }
 
-  if(m_attachMissingPermissionHasBeenSet)
-  {
-   payload.WithBool("AttachMissingPermission", m_attachMissingPermission);
-
+  if (m_attachMissingPermissionHasBeenSet) {
+    payload.WithBool("AttachMissingPermission", m_attachMissingPermission);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateApplicationRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection CreateApplicationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "EC2WindowsBarleyService.CreateApplication"));
   return headers;
-
 }
-
-
-
-

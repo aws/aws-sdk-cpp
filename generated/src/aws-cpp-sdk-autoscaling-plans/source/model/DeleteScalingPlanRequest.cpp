@@ -12,33 +12,22 @@ using namespace Aws::AutoScalingPlans::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeleteScalingPlanRequest::SerializePayload() const
-{
+Aws::String DeleteScalingPlanRequest::SerializePayload() const {
   JsonValue payload;
 
-  if(m_scalingPlanNameHasBeenSet)
-  {
-   payload.WithString("ScalingPlanName", m_scalingPlanName);
-
+  if (m_scalingPlanNameHasBeenSet) {
+    payload.WithString("ScalingPlanName", m_scalingPlanName);
   }
 
-  if(m_scalingPlanVersionHasBeenSet)
-  {
-   payload.WithInt64("ScalingPlanVersion", m_scalingPlanVersion);
-
+  if (m_scalingPlanVersionHasBeenSet) {
+    payload.WithInt64("ScalingPlanVersion", m_scalingPlanVersion);
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeleteScalingPlanRequest::GetRequestSpecificHeaders() const
-{
+Aws::Http::HeaderValueCollection DeleteScalingPlanRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
   headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AnyScaleScalingPlannerFrontendService.DeleteScalingPlan"));
   return headers;
-
 }
-
-
-
-

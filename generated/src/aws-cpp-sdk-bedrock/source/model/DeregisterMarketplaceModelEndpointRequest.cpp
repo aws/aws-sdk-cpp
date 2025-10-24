@@ -12,11 +12,4 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-Aws::String DeregisterMarketplaceModelEndpointRequest::SerializePayload() const
-{
-  return {};
-}
-
-
-
-
+Aws::String DeregisterMarketplaceModelEndpointRequest::SerializePayload() const { return {}; }
