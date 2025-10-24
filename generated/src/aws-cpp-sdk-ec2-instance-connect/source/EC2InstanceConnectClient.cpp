@@ -159,9 +159,7 @@ void EC2InstanceConnectClient::init(const EC2InstanceConnect::EC2InstanceConnect
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
-  if (!config.endpointOverride.empty()) {
-    m_endpointProvider->OverrideEndpoint(config.endpointOverride);
-  } else {
+  if (config.endpointOverride.empty()) {
     Aws::Config::EndpointResolver::EndpointSource("ec2-instance-connect", config.profileName, *m_endpointProvider);
   }
 }

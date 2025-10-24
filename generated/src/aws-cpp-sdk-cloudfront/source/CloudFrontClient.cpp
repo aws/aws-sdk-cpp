@@ -305,9 +305,7 @@ void CloudFrontClient::init(const CloudFront::CloudFrontClientConfiguration& con
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
-  if (!config.endpointOverride.empty()) {
-    m_endpointProvider->OverrideEndpoint(config.endpointOverride);
-  } else {
+  if (config.endpointOverride.empty()) {
     Aws::Config::EndpointResolver::EndpointSource("cloudfront", config.profileName, *m_endpointProvider);
   }
 }

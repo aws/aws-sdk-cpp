@@ -357,9 +357,7 @@ void S3Client::init(const S3::S3ClientConfiguration& config)
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
-  if (!config.endpointOverride.empty()) {
-    m_endpointProvider->OverrideEndpoint(config.endpointOverride);
-  } else {
+  if (config.endpointOverride.empty()) {
     Aws::Config::EndpointResolver::EndpointSource("s3", config.profileName, *m_endpointProvider);
   }
 }

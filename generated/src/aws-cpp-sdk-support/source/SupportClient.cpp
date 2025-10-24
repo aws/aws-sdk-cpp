@@ -173,9 +173,7 @@ void SupportClient::init(const Support::SupportClientConfiguration& config)
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
-  if (!config.endpointOverride.empty()) {
-    m_endpointProvider->OverrideEndpoint(config.endpointOverride);
-  } else {
+  if (config.endpointOverride.empty()) {
     Aws::Config::EndpointResolver::EndpointSource("support", config.profileName, *m_endpointProvider);
   }
 }
