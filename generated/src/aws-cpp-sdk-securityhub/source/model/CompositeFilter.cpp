@@ -70,6 +70,24 @@ CompositeFilter& CompositeFilter::operator =(JsonView jsonValue)
     }
     m_mapFiltersHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("IpFilters"))
+  {
+    Aws::Utils::Array<JsonView> ipFiltersJsonList = jsonValue.GetArray("IpFilters");
+    for(unsigned ipFiltersIndex = 0; ipFiltersIndex < ipFiltersJsonList.GetLength(); ++ipFiltersIndex)
+    {
+      m_ipFilters.push_back(ipFiltersJsonList[ipFiltersIndex].AsObject());
+    }
+    m_ipFiltersHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("NestedCompositeFilters"))
+  {
+    Aws::Utils::Array<JsonView> nestedCompositeFiltersJsonList = jsonValue.GetArray("NestedCompositeFilters");
+    for(unsigned nestedCompositeFiltersIndex = 0; nestedCompositeFiltersIndex < nestedCompositeFiltersJsonList.GetLength(); ++nestedCompositeFiltersIndex)
+    {
+      m_nestedCompositeFilters.push_back(nestedCompositeFiltersJsonList[nestedCompositeFiltersIndex].AsObject());
+    }
+    m_nestedCompositeFiltersHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("Operator"))
   {
     m_operator = AllowedOperatorsMapper::GetAllowedOperatorsForName(jsonValue.GetString("Operator"));
@@ -134,6 +152,28 @@ JsonValue CompositeFilter::Jsonize() const
      mapFiltersJsonList[mapFiltersIndex].AsObject(m_mapFilters[mapFiltersIndex].Jsonize());
    }
    payload.WithArray("MapFilters", std::move(mapFiltersJsonList));
+
+  }
+
+  if(m_ipFiltersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> ipFiltersJsonList(m_ipFilters.size());
+   for(unsigned ipFiltersIndex = 0; ipFiltersIndex < ipFiltersJsonList.GetLength(); ++ipFiltersIndex)
+   {
+     ipFiltersJsonList[ipFiltersIndex].AsObject(m_ipFilters[ipFiltersIndex].Jsonize());
+   }
+   payload.WithArray("IpFilters", std::move(ipFiltersJsonList));
+
+  }
+
+  if(m_nestedCompositeFiltersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> nestedCompositeFiltersJsonList(m_nestedCompositeFilters.size());
+   for(unsigned nestedCompositeFiltersIndex = 0; nestedCompositeFiltersIndex < nestedCompositeFiltersJsonList.GetLength(); ++nestedCompositeFiltersIndex)
+   {
+     nestedCompositeFiltersJsonList[nestedCompositeFiltersIndex].AsObject(m_nestedCompositeFilters[nestedCompositeFiltersIndex].Jsonize());
+   }
+   payload.WithArray("NestedCompositeFilters", std::move(nestedCompositeFiltersJsonList));
 
   }
 

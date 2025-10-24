@@ -16,8 +16,8 @@ namespace Model
   enum class ResourcesDateField
   {
     NOT_SET,
-    resource_detail_capture_time_dt,
-    resource_creation_time_dt
+    ResourceDetailCaptureTime,
+    ResourceCreationTime
   };
 
 namespace ResourcesDateFieldMapper

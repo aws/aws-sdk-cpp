@@ -26,6 +26,12 @@ namespace Aws
         static const int severity_id_HASH = HashingUtils::HashString("severity_id");
         static const int status_id_HASH = HashingUtils::HashString("status_id");
         static const int finding_info_related_events_count_HASH = HashingUtils::HashString("finding_info.related_events_count");
+        static const int evidences_api_response_code_HASH = HashingUtils::HashString("evidences.api.response.code");
+        static const int evidences_dst_endpoint_autonomous_system_number_HASH = HashingUtils::HashString("evidences.dst_endpoint.autonomous_system.number");
+        static const int evidences_dst_endpoint_port_HASH = HashingUtils::HashString("evidences.dst_endpoint.port");
+        static const int evidences_src_endpoint_autonomous_system_number_HASH = HashingUtils::HashString("evidences.src_endpoint.autonomous_system.number");
+        static const int evidences_src_endpoint_port_HASH = HashingUtils::HashString("evidences.src_endpoint.port");
+        static const int resources_image_in_use_count_HASH = HashingUtils::HashString("resources.image.in_use_count");
 
 
         OcsfNumberField GetOcsfNumberFieldForName(const Aws::String& name)
@@ -55,6 +61,30 @@ namespace Aws
           {
             return OcsfNumberField::finding_info_related_events_count;
           }
+          else if (hashCode == evidences_api_response_code_HASH)
+          {
+            return OcsfNumberField::evidences_api_response_code;
+          }
+          else if (hashCode == evidences_dst_endpoint_autonomous_system_number_HASH)
+          {
+            return OcsfNumberField::evidences_dst_endpoint_autonomous_system_number;
+          }
+          else if (hashCode == evidences_dst_endpoint_port_HASH)
+          {
+            return OcsfNumberField::evidences_dst_endpoint_port;
+          }
+          else if (hashCode == evidences_src_endpoint_autonomous_system_number_HASH)
+          {
+            return OcsfNumberField::evidences_src_endpoint_autonomous_system_number;
+          }
+          else if (hashCode == evidences_src_endpoint_port_HASH)
+          {
+            return OcsfNumberField::evidences_src_endpoint_port;
+          }
+          else if (hashCode == resources_image_in_use_count_HASH)
+          {
+            return OcsfNumberField::resources_image_in_use_count;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -83,6 +113,18 @@ namespace Aws
             return "status_id";
           case OcsfNumberField::finding_info_related_events_count:
             return "finding_info.related_events_count";
+          case OcsfNumberField::evidences_api_response_code:
+            return "evidences.api.response.code";
+          case OcsfNumberField::evidences_dst_endpoint_autonomous_system_number:
+            return "evidences.dst_endpoint.autonomous_system.number";
+          case OcsfNumberField::evidences_dst_endpoint_port:
+            return "evidences.dst_endpoint.port";
+          case OcsfNumberField::evidences_src_endpoint_autonomous_system_number:
+            return "evidences.src_endpoint.autonomous_system.number";
+          case OcsfNumberField::evidences_src_endpoint_port:
+            return "evidences.src_endpoint.port";
+          case OcsfNumberField::resources_image_in_use_count:
+            return "resources.image.in_use_count";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

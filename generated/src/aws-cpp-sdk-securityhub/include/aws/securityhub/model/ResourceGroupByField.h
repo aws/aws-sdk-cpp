@@ -16,12 +16,12 @@ namespace Model
   enum class ResourceGroupByField
   {
     NOT_SET,
-    account_id,
-    region,
-    resource_category,
-    resource_type,
-    resource_name,
-    findings_summary_finding_type
+    AccountId,
+    Region,
+    ResourceCategory,
+    ResourceType,
+    ResourceName,
+    FindingsSummary_FindingType
   };
 
 namespace ResourceGroupByFieldMapper

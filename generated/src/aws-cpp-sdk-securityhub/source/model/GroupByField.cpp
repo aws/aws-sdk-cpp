@@ -37,6 +37,10 @@ namespace Aws
         static const int status_HASH = HashingUtils::HashString("status");
         static const int vulnerabilities_fix_coverage_HASH = HashingUtils::HashString("vulnerabilities.fix_coverage");
         static const int class_name_HASH = HashingUtils::HashString("class_name");
+        static const int vulnerabilities_affected_packages_name_HASH = HashingUtils::HashString("vulnerabilities.affected_packages.name");
+        static const int finding_info_analytic_name_HASH = HashingUtils::HashString("finding_info.analytic.name");
+        static const int compliance_standards_HASH = HashingUtils::HashString("compliance.standards");
+        static const int cloud_account_name_HASH = HashingUtils::HashString("cloud.account.name");
 
 
         GroupByField GetGroupByFieldForName(const Aws::String& name)
@@ -110,6 +114,22 @@ namespace Aws
           {
             return GroupByField::class_name;
           }
+          else if (hashCode == vulnerabilities_affected_packages_name_HASH)
+          {
+            return GroupByField::vulnerabilities_affected_packages_name;
+          }
+          else if (hashCode == finding_info_analytic_name_HASH)
+          {
+            return GroupByField::finding_info_analytic_name;
+          }
+          else if (hashCode == compliance_standards_HASH)
+          {
+            return GroupByField::compliance_standards;
+          }
+          else if (hashCode == cloud_account_name_HASH)
+          {
+            return GroupByField::cloud_account_name;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -160,6 +180,14 @@ namespace Aws
             return "vulnerabilities.fix_coverage";
           case GroupByField::class_name:
             return "class_name";
+          case GroupByField::vulnerabilities_affected_packages_name:
+            return "vulnerabilities.affected_packages.name";
+          case GroupByField::finding_info_analytic_name:
+            return "finding_info.analytic.name";
+          case GroupByField::compliance_standards:
+            return "compliance.standards";
+          case GroupByField::cloud_account_name:
+            return "cloud.account.name";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

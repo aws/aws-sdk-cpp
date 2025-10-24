@@ -7,6 +7,8 @@
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/location/model/AndroidApp.h>
+#include <aws/location/model/AppleApp.h>
 #include <utility>
 
 namespace Aws
@@ -146,6 +148,38 @@ namespace Model
     template<typename AllowReferersT = Aws::String>
     ApiKeyRestrictions& AddAllowReferers(AllowReferersT&& value) { m_allowReferersHasBeenSet = true; m_allowReferers.emplace_back(std::forward<AllowReferersT>(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>An optional list of allowed Android applications for which requests must
+     * originate from. Requests using this API key from other sources will not be
+     * allowed.</p>
+     */
+    inline const Aws::Vector<AndroidApp>& GetAllowAndroidApps() const { return m_allowAndroidApps; }
+    inline bool AllowAndroidAppsHasBeenSet() const { return m_allowAndroidAppsHasBeenSet; }
+    template<typename AllowAndroidAppsT = Aws::Vector<AndroidApp>>
+    void SetAllowAndroidApps(AllowAndroidAppsT&& value) { m_allowAndroidAppsHasBeenSet = true; m_allowAndroidApps = std::forward<AllowAndroidAppsT>(value); }
+    template<typename AllowAndroidAppsT = Aws::Vector<AndroidApp>>
+    ApiKeyRestrictions& WithAllowAndroidApps(AllowAndroidAppsT&& value) { SetAllowAndroidApps(std::forward<AllowAndroidAppsT>(value)); return *this;}
+    template<typename AllowAndroidAppsT = AndroidApp>
+    ApiKeyRestrictions& AddAllowAndroidApps(AllowAndroidAppsT&& value) { m_allowAndroidAppsHasBeenSet = true; m_allowAndroidApps.emplace_back(std::forward<AllowAndroidAppsT>(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>An optional list of allowed Apple applications for which requests must
+     * originate from. Requests using this API key from other sources will not be
+     * allowed.</p>
+     */
+    inline const Aws::Vector<AppleApp>& GetAllowAppleApps() const { return m_allowAppleApps; }
+    inline bool AllowAppleAppsHasBeenSet() const { return m_allowAppleAppsHasBeenSet; }
+    template<typename AllowAppleAppsT = Aws::Vector<AppleApp>>
+    void SetAllowAppleApps(AllowAppleAppsT&& value) { m_allowAppleAppsHasBeenSet = true; m_allowAppleApps = std::forward<AllowAppleAppsT>(value); }
+    template<typename AllowAppleAppsT = Aws::Vector<AppleApp>>
+    ApiKeyRestrictions& WithAllowAppleApps(AllowAppleAppsT&& value) { SetAllowAppleApps(std::forward<AllowAppleAppsT>(value)); return *this;}
+    template<typename AllowAppleAppsT = AppleApp>
+    ApiKeyRestrictions& AddAllowAppleApps(AllowAppleAppsT&& value) { m_allowAppleAppsHasBeenSet = true; m_allowAppleApps.emplace_back(std::forward<AllowAppleAppsT>(value)); return *this; }
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_allowActions;
@@ -156,6 +190,12 @@ namespace Model
 
     Aws::Vector<Aws::String> m_allowReferers;
     bool m_allowReferersHasBeenSet = false;
+
+    Aws::Vector<AndroidApp> m_allowAndroidApps;
+    bool m_allowAndroidAppsHasBeenSet = false;
+
+    Aws::Vector<AppleApp> m_allowAppleApps;
+    bool m_allowAppleAppsHasBeenSet = false;
   };
 
 } // namespace Model

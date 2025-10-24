@@ -23,6 +23,16 @@ Aws::String GetTileRequest::SerializePayload() const
 void GetTileRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
+    if(m_additionalFeaturesHasBeenSet)
+    {
+      for(const auto& item : m_additionalFeatures)
+      {
+        ss << TileAdditionalFeatureMapper::GetNameForTileAdditionalFeature(item);
+        uri.AddQueryStringParameter("additional-features", ss.str());
+        ss.str("");
+      }
+    }
+
     if(m_keyHasBeenSet)
     {
       ss << m_key;

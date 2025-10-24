@@ -20,55 +20,55 @@ namespace Aws
       namespace ResourcesStringFieldMapper
       {
 
-        static const int resource_arn_HASH = HashingUtils::HashString("resource_arn");
-        static const int resource_id_HASH = HashingUtils::HashString("resource_id");
-        static const int account_id_HASH = HashingUtils::HashString("account_id");
-        static const int region_HASH = HashingUtils::HashString("region");
-        static const int resource_category_HASH = HashingUtils::HashString("resource_category");
-        static const int resource_type_HASH = HashingUtils::HashString("resource_type");
-        static const int resource_name_HASH = HashingUtils::HashString("resource_name");
-        static const int findings_summary_finding_type_HASH = HashingUtils::HashString("findings_summary.finding_type");
-        static const int findings_summary_product_name_HASH = HashingUtils::HashString("findings_summary.product_name");
+        static const int ResourceGuid_HASH = HashingUtils::HashString("ResourceGuid");
+        static const int ResourceId_HASH = HashingUtils::HashString("ResourceId");
+        static const int AccountId_HASH = HashingUtils::HashString("AccountId");
+        static const int Region_HASH = HashingUtils::HashString("Region");
+        static const int ResourceCategory_HASH = HashingUtils::HashString("ResourceCategory");
+        static const int ResourceType_HASH = HashingUtils::HashString("ResourceType");
+        static const int ResourceName_HASH = HashingUtils::HashString("ResourceName");
+        static const int FindingsSummary_FindingType_HASH = HashingUtils::HashString("FindingsSummary.FindingType");
+        static const int FindingsSummary_ProductName_HASH = HashingUtils::HashString("FindingsSummary.ProductName");
 
 
         ResourcesStringField GetResourcesStringFieldForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == resource_arn_HASH)
+          if (hashCode == ResourceGuid_HASH)
           {
-            return ResourcesStringField::resource_arn;
+            return ResourcesStringField::ResourceGuid;
           }
-          else if (hashCode == resource_id_HASH)
+          else if (hashCode == ResourceId_HASH)
           {
-            return ResourcesStringField::resource_id;
+            return ResourcesStringField::ResourceId;
           }
-          else if (hashCode == account_id_HASH)
+          else if (hashCode == AccountId_HASH)
           {
-            return ResourcesStringField::account_id;
+            return ResourcesStringField::AccountId;
           }
-          else if (hashCode == region_HASH)
+          else if (hashCode == Region_HASH)
           {
-            return ResourcesStringField::region;
+            return ResourcesStringField::Region;
           }
-          else if (hashCode == resource_category_HASH)
+          else if (hashCode == ResourceCategory_HASH)
           {
-            return ResourcesStringField::resource_category;
+            return ResourcesStringField::ResourceCategory;
           }
-          else if (hashCode == resource_type_HASH)
+          else if (hashCode == ResourceType_HASH)
           {
-            return ResourcesStringField::resource_type;
+            return ResourcesStringField::ResourceType;
           }
-          else if (hashCode == resource_name_HASH)
+          else if (hashCode == ResourceName_HASH)
           {
-            return ResourcesStringField::resource_name;
+            return ResourcesStringField::ResourceName;
           }
-          else if (hashCode == findings_summary_finding_type_HASH)
+          else if (hashCode == FindingsSummary_FindingType_HASH)
           {
-            return ResourcesStringField::findings_summary_finding_type;
+            return ResourcesStringField::FindingsSummary_FindingType;
           }
-          else if (hashCode == findings_summary_product_name_HASH)
+          else if (hashCode == FindingsSummary_ProductName_HASH)
           {
-            return ResourcesStringField::findings_summary_product_name;
+            return ResourcesStringField::FindingsSummary_ProductName;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -86,24 +86,24 @@ namespace Aws
           {
           case ResourcesStringField::NOT_SET:
             return {};
-          case ResourcesStringField::resource_arn:
-            return "resource_arn";
-          case ResourcesStringField::resource_id:
-            return "resource_id";
-          case ResourcesStringField::account_id:
-            return "account_id";
-          case ResourcesStringField::region:
-            return "region";
-          case ResourcesStringField::resource_category:
-            return "resource_category";
-          case ResourcesStringField::resource_type:
-            return "resource_type";
-          case ResourcesStringField::resource_name:
-            return "resource_name";
-          case ResourcesStringField::findings_summary_finding_type:
-            return "findings_summary.finding_type";
-          case ResourcesStringField::findings_summary_product_name:
-            return "findings_summary.product_name";
+          case ResourcesStringField::ResourceGuid:
+            return "ResourceGuid";
+          case ResourcesStringField::ResourceId:
+            return "ResourceId";
+          case ResourcesStringField::AccountId:
+            return "AccountId";
+          case ResourcesStringField::Region:
+            return "Region";
+          case ResourcesStringField::ResourceCategory:
+            return "ResourceCategory";
+          case ResourcesStringField::ResourceType:
+            return "ResourceType";
+          case ResourcesStringField::ResourceName:
+            return "ResourceName";
+          case ResourcesStringField::FindingsSummary_FindingType:
+            return "FindingsSummary.FindingType";
+          case ResourcesStringField::FindingsSummary_ProductName:
+            return "FindingsSummary.ProductName";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

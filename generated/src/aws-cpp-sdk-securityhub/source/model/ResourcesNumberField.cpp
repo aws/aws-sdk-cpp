@@ -20,55 +20,55 @@ namespace Aws
       namespace ResourcesNumberFieldMapper
       {
 
-        static const int findings_summary_total_findings_HASH = HashingUtils::HashString("findings_summary.total_findings");
-        static const int findings_summary_severities_other_HASH = HashingUtils::HashString("findings_summary.severities.other");
-        static const int findings_summary_severities_fatal_HASH = HashingUtils::HashString("findings_summary.severities.fatal");
-        static const int findings_summary_severities_critical_HASH = HashingUtils::HashString("findings_summary.severities.critical");
-        static const int findings_summary_severities_high_HASH = HashingUtils::HashString("findings_summary.severities.high");
-        static const int findings_summary_severities_medium_HASH = HashingUtils::HashString("findings_summary.severities.medium");
-        static const int findings_summary_severities_low_HASH = HashingUtils::HashString("findings_summary.severities.low");
-        static const int findings_summary_severities_informational_HASH = HashingUtils::HashString("findings_summary.severities.informational");
-        static const int findings_summary_severities_unknown_HASH = HashingUtils::HashString("findings_summary.severities.unknown");
+        static const int FindingsSummary_TotalFindings_HASH = HashingUtils::HashString("FindingsSummary.TotalFindings");
+        static const int FindingsSummary_Severities_Other_HASH = HashingUtils::HashString("FindingsSummary.Severities.Other");
+        static const int FindingsSummary_Severities_Fatal_HASH = HashingUtils::HashString("FindingsSummary.Severities.Fatal");
+        static const int FindingsSummary_Severities_Critical_HASH = HashingUtils::HashString("FindingsSummary.Severities.Critical");
+        static const int FindingsSummary_Severities_High_HASH = HashingUtils::HashString("FindingsSummary.Severities.High");
+        static const int FindingsSummary_Severities_Medium_HASH = HashingUtils::HashString("FindingsSummary.Severities.Medium");
+        static const int FindingsSummary_Severities_Low_HASH = HashingUtils::HashString("FindingsSummary.Severities.Low");
+        static const int FindingsSummary_Severities_Informational_HASH = HashingUtils::HashString("FindingsSummary.Severities.Informational");
+        static const int FindingsSummary_Severities_Unknown_HASH = HashingUtils::HashString("FindingsSummary.Severities.Unknown");
 
 
         ResourcesNumberField GetResourcesNumberFieldForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == findings_summary_total_findings_HASH)
+          if (hashCode == FindingsSummary_TotalFindings_HASH)
           {
-            return ResourcesNumberField::findings_summary_total_findings;
+            return ResourcesNumberField::FindingsSummary_TotalFindings;
           }
-          else if (hashCode == findings_summary_severities_other_HASH)
+          else if (hashCode == FindingsSummary_Severities_Other_HASH)
           {
-            return ResourcesNumberField::findings_summary_severities_other;
+            return ResourcesNumberField::FindingsSummary_Severities_Other;
           }
-          else if (hashCode == findings_summary_severities_fatal_HASH)
+          else if (hashCode == FindingsSummary_Severities_Fatal_HASH)
           {
-            return ResourcesNumberField::findings_summary_severities_fatal;
+            return ResourcesNumberField::FindingsSummary_Severities_Fatal;
           }
-          else if (hashCode == findings_summary_severities_critical_HASH)
+          else if (hashCode == FindingsSummary_Severities_Critical_HASH)
           {
-            return ResourcesNumberField::findings_summary_severities_critical;
+            return ResourcesNumberField::FindingsSummary_Severities_Critical;
           }
-          else if (hashCode == findings_summary_severities_high_HASH)
+          else if (hashCode == FindingsSummary_Severities_High_HASH)
           {
-            return ResourcesNumberField::findings_summary_severities_high;
+            return ResourcesNumberField::FindingsSummary_Severities_High;
           }
-          else if (hashCode == findings_summary_severities_medium_HASH)
+          else if (hashCode == FindingsSummary_Severities_Medium_HASH)
           {
-            return ResourcesNumberField::findings_summary_severities_medium;
+            return ResourcesNumberField::FindingsSummary_Severities_Medium;
           }
-          else if (hashCode == findings_summary_severities_low_HASH)
+          else if (hashCode == FindingsSummary_Severities_Low_HASH)
           {
-            return ResourcesNumberField::findings_summary_severities_low;
+            return ResourcesNumberField::FindingsSummary_Severities_Low;
           }
-          else if (hashCode == findings_summary_severities_informational_HASH)
+          else if (hashCode == FindingsSummary_Severities_Informational_HASH)
           {
-            return ResourcesNumberField::findings_summary_severities_informational;
+            return ResourcesNumberField::FindingsSummary_Severities_Informational;
           }
-          else if (hashCode == findings_summary_severities_unknown_HASH)
+          else if (hashCode == FindingsSummary_Severities_Unknown_HASH)
           {
-            return ResourcesNumberField::findings_summary_severities_unknown;
+            return ResourcesNumberField::FindingsSummary_Severities_Unknown;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -86,24 +86,24 @@ namespace Aws
           {
           case ResourcesNumberField::NOT_SET:
             return {};
-          case ResourcesNumberField::findings_summary_total_findings:
-            return "findings_summary.total_findings";
-          case ResourcesNumberField::findings_summary_severities_other:
-            return "findings_summary.severities.other";
-          case ResourcesNumberField::findings_summary_severities_fatal:
-            return "findings_summary.severities.fatal";
-          case ResourcesNumberField::findings_summary_severities_critical:
-            return "findings_summary.severities.critical";
-          case ResourcesNumberField::findings_summary_severities_high:
-            return "findings_summary.severities.high";
-          case ResourcesNumberField::findings_summary_severities_medium:
-            return "findings_summary.severities.medium";
-          case ResourcesNumberField::findings_summary_severities_low:
-            return "findings_summary.severities.low";
-          case ResourcesNumberField::findings_summary_severities_informational:
-            return "findings_summary.severities.informational";
-          case ResourcesNumberField::findings_summary_severities_unknown:
-            return "findings_summary.severities.unknown";
+          case ResourcesNumberField::FindingsSummary_TotalFindings:
+            return "FindingsSummary.TotalFindings";
+          case ResourcesNumberField::FindingsSummary_Severities_Other:
+            return "FindingsSummary.Severities.Other";
+          case ResourcesNumberField::FindingsSummary_Severities_Fatal:
+            return "FindingsSummary.Severities.Fatal";
+          case ResourcesNumberField::FindingsSummary_Severities_Critical:
+            return "FindingsSummary.Severities.Critical";
+          case ResourcesNumberField::FindingsSummary_Severities_High:
+            return "FindingsSummary.Severities.High";
+          case ResourcesNumberField::FindingsSummary_Severities_Medium:
+            return "FindingsSummary.Severities.Medium";
+          case ResourcesNumberField::FindingsSummary_Severities_Low:
+            return "FindingsSummary.Severities.Low";
+          case ResourcesNumberField::FindingsSummary_Severities_Informational:
+            return "FindingsSummary.Severities.Informational";
+          case ResourcesNumberField::FindingsSummary_Severities_Unknown:
+            return "FindingsSummary.Severities.Unknown";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -16,15 +16,15 @@ namespace Model
   enum class ResourcesStringField
   {
     NOT_SET,
-    resource_arn,
-    resource_id,
-    account_id,
-    region,
-    resource_category,
-    resource_type,
-    resource_name,
-    findings_summary_finding_type,
-    findings_summary_product_name
+    ResourceGuid,
+    ResourceId,
+    AccountId,
+    Region,
+    ResourceCategory,
+    ResourceType,
+    ResourceName,
+    FindingsSummary_FindingType,
+    FindingsSummary_ProductName
   };
 
 namespace ResourcesStringFieldMapper

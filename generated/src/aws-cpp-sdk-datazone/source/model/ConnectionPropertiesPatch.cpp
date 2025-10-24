@@ -45,6 +45,11 @@ ConnectionPropertiesPatch& ConnectionPropertiesPatch::operator =(JsonView jsonVa
     m_iamProperties = jsonValue.GetObject("iamProperties");
     m_iamPropertiesHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("mlflowProperties"))
+  {
+    m_mlflowProperties = jsonValue.GetObject("mlflowProperties");
+    m_mlflowPropertiesHasBeenSet = true;
+  }
   if(jsonValue.ValueExists("redshiftProperties"))
   {
     m_redshiftProperties = jsonValue.GetObject("redshiftProperties");
@@ -88,6 +93,12 @@ JsonValue ConnectionPropertiesPatch::Jsonize() const
   if(m_iamPropertiesHasBeenSet)
   {
    payload.WithObject("iamProperties", m_iamProperties.Jsonize());
+
+  }
+
+  if(m_mlflowPropertiesHasBeenSet)
+  {
+   payload.WithObject("mlflowProperties", m_mlflowProperties.Jsonize());
 
   }
 

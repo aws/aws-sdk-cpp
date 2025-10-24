@@ -52,6 +52,24 @@ ApiKeyRestrictions& ApiKeyRestrictions::operator =(JsonView jsonValue)
     }
     m_allowReferersHasBeenSet = true;
   }
+  if(jsonValue.ValueExists("AllowAndroidApps"))
+  {
+    Aws::Utils::Array<JsonView> allowAndroidAppsJsonList = jsonValue.GetArray("AllowAndroidApps");
+    for(unsigned allowAndroidAppsIndex = 0; allowAndroidAppsIndex < allowAndroidAppsJsonList.GetLength(); ++allowAndroidAppsIndex)
+    {
+      m_allowAndroidApps.push_back(allowAndroidAppsJsonList[allowAndroidAppsIndex].AsObject());
+    }
+    m_allowAndroidAppsHasBeenSet = true;
+  }
+  if(jsonValue.ValueExists("AllowAppleApps"))
+  {
+    Aws::Utils::Array<JsonView> allowAppleAppsJsonList = jsonValue.GetArray("AllowAppleApps");
+    for(unsigned allowAppleAppsIndex = 0; allowAppleAppsIndex < allowAppleAppsJsonList.GetLength(); ++allowAppleAppsIndex)
+    {
+      m_allowAppleApps.push_back(allowAppleAppsJsonList[allowAppleAppsIndex].AsObject());
+    }
+    m_allowAppleAppsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -89,6 +107,28 @@ JsonValue ApiKeyRestrictions::Jsonize() const
      allowReferersJsonList[allowReferersIndex].AsString(m_allowReferers[allowReferersIndex]);
    }
    payload.WithArray("AllowReferers", std::move(allowReferersJsonList));
+
+  }
+
+  if(m_allowAndroidAppsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> allowAndroidAppsJsonList(m_allowAndroidApps.size());
+   for(unsigned allowAndroidAppsIndex = 0; allowAndroidAppsIndex < allowAndroidAppsJsonList.GetLength(); ++allowAndroidAppsIndex)
+   {
+     allowAndroidAppsJsonList[allowAndroidAppsIndex].AsObject(m_allowAndroidApps[allowAndroidAppsIndex].Jsonize());
+   }
+   payload.WithArray("AllowAndroidApps", std::move(allowAndroidAppsJsonList));
+
+  }
+
+  if(m_allowAppleAppsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> allowAppleAppsJsonList(m_allowAppleApps.size());
+   for(unsigned allowAppleAppsIndex = 0; allowAppleAppsIndex < allowAppleAppsJsonList.GetLength(); ++allowAppleAppsIndex)
+   {
+     allowAppleAppsJsonList[allowAppleAppsIndex].AsObject(m_allowAppleApps[allowAppleAppsIndex].Jsonize());
+   }
+   payload.WithArray("AllowAppleApps", std::move(allowAppleAppsJsonList));
 
   }
 

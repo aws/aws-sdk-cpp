@@ -10,6 +10,7 @@
 #include <aws/datazone/model/GluePropertiesInput.h>
 #include <aws/datazone/model/HyperPodPropertiesInput.h>
 #include <aws/datazone/model/IamPropertiesInput.h>
+#include <aws/datazone/model/MlflowPropertiesInput.h>
 #include <aws/datazone/model/RedshiftPropertiesInput.h>
 #include <aws/datazone/model/S3PropertiesInput.h>
 #include <aws/datazone/model/SparkEmrPropertiesInput.h>
@@ -107,6 +108,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The MLflow properties of a connection.</p>
+     */
+    inline const MlflowPropertiesInput& GetMlflowProperties() const { return m_mlflowProperties; }
+    inline bool MlflowPropertiesHasBeenSet() const { return m_mlflowPropertiesHasBeenSet; }
+    template<typename MlflowPropertiesT = MlflowPropertiesInput>
+    void SetMlflowProperties(MlflowPropertiesT&& value) { m_mlflowPropertiesHasBeenSet = true; m_mlflowProperties = std::forward<MlflowPropertiesT>(value); }
+    template<typename MlflowPropertiesT = MlflowPropertiesInput>
+    ConnectionPropertiesInput& WithMlflowProperties(MlflowPropertiesT&& value) { SetMlflowProperties(std::forward<MlflowPropertiesT>(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Redshift properties of a connection.</p>
      */
     inline const RedshiftPropertiesInput& GetRedshiftProperties() const { return m_redshiftProperties; }
@@ -168,6 +181,9 @@ namespace Model
 
     IamPropertiesInput m_iamProperties;
     bool m_iamPropertiesHasBeenSet = false;
+
+    MlflowPropertiesInput m_mlflowProperties;
+    bool m_mlflowPropertiesHasBeenSet = false;
 
     RedshiftPropertiesInput m_redshiftProperties;
     bool m_redshiftPropertiesHasBeenSet = false;

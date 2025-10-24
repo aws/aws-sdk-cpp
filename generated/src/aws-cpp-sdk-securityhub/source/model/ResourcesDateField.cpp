@@ -20,20 +20,20 @@ namespace Aws
       namespace ResourcesDateFieldMapper
       {
 
-        static const int resource_detail_capture_time_dt_HASH = HashingUtils::HashString("resource_detail_capture_time_dt");
-        static const int resource_creation_time_dt_HASH = HashingUtils::HashString("resource_creation_time_dt");
+        static const int ResourceDetailCaptureTime_HASH = HashingUtils::HashString("ResourceDetailCaptureTime");
+        static const int ResourceCreationTime_HASH = HashingUtils::HashString("ResourceCreationTime");
 
 
         ResourcesDateField GetResourcesDateFieldForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == resource_detail_capture_time_dt_HASH)
+          if (hashCode == ResourceDetailCaptureTime_HASH)
           {
-            return ResourcesDateField::resource_detail_capture_time_dt;
+            return ResourcesDateField::ResourceDetailCaptureTime;
           }
-          else if (hashCode == resource_creation_time_dt_HASH)
+          else if (hashCode == ResourceCreationTime_HASH)
           {
-            return ResourcesDateField::resource_creation_time_dt;
+            return ResourcesDateField::ResourceCreationTime;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -51,10 +51,10 @@ namespace Aws
           {
           case ResourcesDateField::NOT_SET:
             return {};
-          case ResourcesDateField::resource_detail_capture_time_dt:
-            return "resource_detail_capture_time_dt";
-          case ResourcesDateField::resource_creation_time_dt:
-            return "resource_creation_time_dt";
+          case ResourcesDateField::ResourceDetailCaptureTime:
+            return "ResourceDetailCaptureTime";
+          case ResourcesDateField::ResourceCreationTime:
+            return "ResourceCreationTime";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

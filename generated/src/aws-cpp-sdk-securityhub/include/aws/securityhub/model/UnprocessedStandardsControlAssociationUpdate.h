@@ -61,7 +61,8 @@ namespace Model
     ///@{
     /**
      * <p>The error code for the unprocessed update of the control's enablement status
-     * in the specified standard.</p>
+     * in the specified standard. The <code>NOT_FOUND</code> value has been deprecated
+     * and replaced by the <code>RESOURCE_NOT_FOUND</code> value.</p>
      */
     inline UnprocessedErrorCode GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
