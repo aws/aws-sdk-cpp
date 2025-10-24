@@ -9,6 +9,7 @@
 #include <aws/sagemaker/model/InferenceComponentContainerSpecificationSummary.h>
 #include <aws/sagemaker/model/InferenceComponentStartupParameters.h>
 #include <aws/sagemaker/model/InferenceComponentComputeResourceRequirements.h>
+#include <aws/sagemaker/model/InferenceComponentDataCacheConfigSummary.h>
 #include <utility>
 
 namespace Aws
@@ -104,6 +105,18 @@ namespace Model
     template<typename BaseInferenceComponentNameT = Aws::String>
     InferenceComponentSpecificationSummary& WithBaseInferenceComponentName(BaseInferenceComponentNameT&& value) { SetBaseInferenceComponentName(std::forward<BaseInferenceComponentNameT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Settings that affect how the inference component caches data.</p>
+     */
+    inline const InferenceComponentDataCacheConfigSummary& GetDataCacheConfig() const { return m_dataCacheConfig; }
+    inline bool DataCacheConfigHasBeenSet() const { return m_dataCacheConfigHasBeenSet; }
+    template<typename DataCacheConfigT = InferenceComponentDataCacheConfigSummary>
+    void SetDataCacheConfig(DataCacheConfigT&& value) { m_dataCacheConfigHasBeenSet = true; m_dataCacheConfig = std::forward<DataCacheConfigT>(value); }
+    template<typename DataCacheConfigT = InferenceComponentDataCacheConfigSummary>
+    InferenceComponentSpecificationSummary& WithDataCacheConfig(DataCacheConfigT&& value) { SetDataCacheConfig(std::forward<DataCacheConfigT>(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_modelName;
@@ -120,6 +133,9 @@ namespace Model
 
     Aws::String m_baseInferenceComponentName;
     bool m_baseInferenceComponentNameHasBeenSet = false;
+
+    InferenceComponentDataCacheConfigSummary m_dataCacheConfig;
+    bool m_dataCacheConfigHasBeenSet = false;
   };
 
 } // namespace Model

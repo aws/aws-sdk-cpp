@@ -280,7 +280,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The platform identifier of the notebook instance runtime environment.</p>
+     * <p>The platform identifier of the notebook instance runtime environment. The
+     * default value is <code>notebook-al2-v2</code>.</p>
      */
     inline const Aws::String& GetPlatformIdentifier() const { return m_platformIdentifier; }
     inline bool PlatformIdentifierHasBeenSet() const { return m_platformIdentifierHasBeenSet; }

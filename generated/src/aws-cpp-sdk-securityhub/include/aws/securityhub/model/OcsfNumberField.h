@@ -21,7 +21,13 @@ namespace Model
     confidence_score,
     severity_id,
     status_id,
-    finding_info_related_events_count
+    finding_info_related_events_count,
+    evidences_api_response_code,
+    evidences_dst_endpoint_autonomous_system_number,
+    evidences_dst_endpoint_port,
+    evidences_src_endpoint_autonomous_system_number,
+    evidences_src_endpoint_port,
+    resources_image_in_use_count
   };
 
 namespace OcsfNumberFieldMapper

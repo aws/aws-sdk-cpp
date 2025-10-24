@@ -19,7 +19,13 @@ namespace Model
     internalError,
     invalidSignalRequest,
     placementTimeout,
-    applicationLogS3DestinationError
+    applicationLogS3DestinationError,
+    applicationExit,
+    connectionTimeout,
+    reconnectionTimeout,
+    maxSessionLengthTimeout,
+    idleTimeout,
+    apiTerminated
   };
 
 namespace StreamSessionStatusReasonMapper

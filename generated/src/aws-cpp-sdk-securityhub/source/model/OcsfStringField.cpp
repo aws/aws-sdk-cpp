@@ -52,6 +52,43 @@ namespace Aws
         static const int comment_HASH = HashingUtils::HashString("comment");
         static const int vulnerabilities_fix_coverage_HASH = HashingUtils::HashString("vulnerabilities.fix_coverage");
         static const int class_name_HASH = HashingUtils::HashString("class_name");
+        static const int databucket_encryption_details_algorithm_HASH = HashingUtils::HashString("databucket.encryption_details.algorithm");
+        static const int databucket_encryption_details_key_uid_HASH = HashingUtils::HashString("databucket.encryption_details.key_uid");
+        static const int databucket_file_data_classifications_classifier_details_type_HASH = HashingUtils::HashString("databucket.file.data_classifications.classifier_details.type");
+        static const int evidences_actor_user_account_uid_HASH = HashingUtils::HashString("evidences.actor.user.account.uid");
+        static const int evidences_api_operation_HASH = HashingUtils::HashString("evidences.api.operation");
+        static const int evidences_api_response_error_message_HASH = HashingUtils::HashString("evidences.api.response.error_message");
+        static const int evidences_api_service_name_HASH = HashingUtils::HashString("evidences.api.service.name");
+        static const int evidences_connection_info_direction_HASH = HashingUtils::HashString("evidences.connection_info.direction");
+        static const int evidences_connection_info_protocol_name_HASH = HashingUtils::HashString("evidences.connection_info.protocol_name");
+        static const int evidences_dst_endpoint_autonomous_system_name_HASH = HashingUtils::HashString("evidences.dst_endpoint.autonomous_system.name");
+        static const int evidences_dst_endpoint_location_city_HASH = HashingUtils::HashString("evidences.dst_endpoint.location.city");
+        static const int evidences_dst_endpoint_location_country_HASH = HashingUtils::HashString("evidences.dst_endpoint.location.country");
+        static const int evidences_src_endpoint_autonomous_system_name_HASH = HashingUtils::HashString("evidences.src_endpoint.autonomous_system.name");
+        static const int evidences_src_endpoint_hostname_HASH = HashingUtils::HashString("evidences.src_endpoint.hostname");
+        static const int evidences_src_endpoint_location_city_HASH = HashingUtils::HashString("evidences.src_endpoint.location.city");
+        static const int evidences_src_endpoint_location_country_HASH = HashingUtils::HashString("evidences.src_endpoint.location.country");
+        static const int finding_info_analytic_name_HASH = HashingUtils::HashString("finding_info.analytic.name");
+        static const int malware_name_HASH = HashingUtils::HashString("malware.name");
+        static const int malware_scan_info_uid_HASH = HashingUtils::HashString("malware_scan_info.uid");
+        static const int malware_severity_HASH = HashingUtils::HashString("malware.severity");
+        static const int resources_cloud_function_layers_uid_alt_HASH = HashingUtils::HashString("resources.cloud_function.layers.uid_alt");
+        static const int resources_cloud_function_runtime_HASH = HashingUtils::HashString("resources.cloud_function.runtime");
+        static const int resources_cloud_function_user_uid_HASH = HashingUtils::HashString("resources.cloud_function.user.uid");
+        static const int resources_device_encryption_details_key_uid_HASH = HashingUtils::HashString("resources.device.encryption_details.key_uid");
+        static const int resources_device_image_uid_HASH = HashingUtils::HashString("resources.device.image.uid");
+        static const int resources_image_architecture_HASH = HashingUtils::HashString("resources.image.architecture");
+        static const int resources_image_registry_uid_HASH = HashingUtils::HashString("resources.image.registry_uid");
+        static const int resources_image_repository_name_HASH = HashingUtils::HashString("resources.image.repository_name");
+        static const int resources_image_uid_HASH = HashingUtils::HashString("resources.image.uid");
+        static const int resources_subnet_info_uid_HASH = HashingUtils::HashString("resources.subnet_info.uid");
+        static const int resources_vpc_uid_HASH = HashingUtils::HashString("resources.vpc_uid");
+        static const int vulnerabilities_affected_code_file_path_HASH = HashingUtils::HashString("vulnerabilities.affected_code.file.path");
+        static const int vulnerabilities_affected_packages_name_HASH = HashingUtils::HashString("vulnerabilities.affected_packages.name");
+        static const int vulnerabilities_cve_epss_score_HASH = HashingUtils::HashString("vulnerabilities.cve.epss.score");
+        static const int vulnerabilities_cve_uid_HASH = HashingUtils::HashString("vulnerabilities.cve.uid");
+        static const int vulnerabilities_related_vulnerabilities_HASH = HashingUtils::HashString("vulnerabilities.related_vulnerabilities");
+        static const int cloud_account_name_HASH = HashingUtils::HashString("cloud.account.name");
 
 
         OcsfStringField GetOcsfStringFieldForName(const Aws::String& name)
@@ -185,6 +222,154 @@ namespace Aws
           {
             return OcsfStringField::class_name;
           }
+          else if (hashCode == databucket_encryption_details_algorithm_HASH)
+          {
+            return OcsfStringField::databucket_encryption_details_algorithm;
+          }
+          else if (hashCode == databucket_encryption_details_key_uid_HASH)
+          {
+            return OcsfStringField::databucket_encryption_details_key_uid;
+          }
+          else if (hashCode == databucket_file_data_classifications_classifier_details_type_HASH)
+          {
+            return OcsfStringField::databucket_file_data_classifications_classifier_details_type;
+          }
+          else if (hashCode == evidences_actor_user_account_uid_HASH)
+          {
+            return OcsfStringField::evidences_actor_user_account_uid;
+          }
+          else if (hashCode == evidences_api_operation_HASH)
+          {
+            return OcsfStringField::evidences_api_operation;
+          }
+          else if (hashCode == evidences_api_response_error_message_HASH)
+          {
+            return OcsfStringField::evidences_api_response_error_message;
+          }
+          else if (hashCode == evidences_api_service_name_HASH)
+          {
+            return OcsfStringField::evidences_api_service_name;
+          }
+          else if (hashCode == evidences_connection_info_direction_HASH)
+          {
+            return OcsfStringField::evidences_connection_info_direction;
+          }
+          else if (hashCode == evidences_connection_info_protocol_name_HASH)
+          {
+            return OcsfStringField::evidences_connection_info_protocol_name;
+          }
+          else if (hashCode == evidences_dst_endpoint_autonomous_system_name_HASH)
+          {
+            return OcsfStringField::evidences_dst_endpoint_autonomous_system_name;
+          }
+          else if (hashCode == evidences_dst_endpoint_location_city_HASH)
+          {
+            return OcsfStringField::evidences_dst_endpoint_location_city;
+          }
+          else if (hashCode == evidences_dst_endpoint_location_country_HASH)
+          {
+            return OcsfStringField::evidences_dst_endpoint_location_country;
+          }
+          else if (hashCode == evidences_src_endpoint_autonomous_system_name_HASH)
+          {
+            return OcsfStringField::evidences_src_endpoint_autonomous_system_name;
+          }
+          else if (hashCode == evidences_src_endpoint_hostname_HASH)
+          {
+            return OcsfStringField::evidences_src_endpoint_hostname;
+          }
+          else if (hashCode == evidences_src_endpoint_location_city_HASH)
+          {
+            return OcsfStringField::evidences_src_endpoint_location_city;
+          }
+          else if (hashCode == evidences_src_endpoint_location_country_HASH)
+          {
+            return OcsfStringField::evidences_src_endpoint_location_country;
+          }
+          else if (hashCode == finding_info_analytic_name_HASH)
+          {
+            return OcsfStringField::finding_info_analytic_name;
+          }
+          else if (hashCode == malware_name_HASH)
+          {
+            return OcsfStringField::malware_name;
+          }
+          else if (hashCode == malware_scan_info_uid_HASH)
+          {
+            return OcsfStringField::malware_scan_info_uid;
+          }
+          else if (hashCode == malware_severity_HASH)
+          {
+            return OcsfStringField::malware_severity;
+          }
+          else if (hashCode == resources_cloud_function_layers_uid_alt_HASH)
+          {
+            return OcsfStringField::resources_cloud_function_layers_uid_alt;
+          }
+          else if (hashCode == resources_cloud_function_runtime_HASH)
+          {
+            return OcsfStringField::resources_cloud_function_runtime;
+          }
+          else if (hashCode == resources_cloud_function_user_uid_HASH)
+          {
+            return OcsfStringField::resources_cloud_function_user_uid;
+          }
+          else if (hashCode == resources_device_encryption_details_key_uid_HASH)
+          {
+            return OcsfStringField::resources_device_encryption_details_key_uid;
+          }
+          else if (hashCode == resources_device_image_uid_HASH)
+          {
+            return OcsfStringField::resources_device_image_uid;
+          }
+          else if (hashCode == resources_image_architecture_HASH)
+          {
+            return OcsfStringField::resources_image_architecture;
+          }
+          else if (hashCode == resources_image_registry_uid_HASH)
+          {
+            return OcsfStringField::resources_image_registry_uid;
+          }
+          else if (hashCode == resources_image_repository_name_HASH)
+          {
+            return OcsfStringField::resources_image_repository_name;
+          }
+          else if (hashCode == resources_image_uid_HASH)
+          {
+            return OcsfStringField::resources_image_uid;
+          }
+          else if (hashCode == resources_subnet_info_uid_HASH)
+          {
+            return OcsfStringField::resources_subnet_info_uid;
+          }
+          else if (hashCode == resources_vpc_uid_HASH)
+          {
+            return OcsfStringField::resources_vpc_uid;
+          }
+          else if (hashCode == vulnerabilities_affected_code_file_path_HASH)
+          {
+            return OcsfStringField::vulnerabilities_affected_code_file_path;
+          }
+          else if (hashCode == vulnerabilities_affected_packages_name_HASH)
+          {
+            return OcsfStringField::vulnerabilities_affected_packages_name;
+          }
+          else if (hashCode == vulnerabilities_cve_epss_score_HASH)
+          {
+            return OcsfStringField::vulnerabilities_cve_epss_score;
+          }
+          else if (hashCode == vulnerabilities_cve_uid_HASH)
+          {
+            return OcsfStringField::vulnerabilities_cve_uid;
+          }
+          else if (hashCode == vulnerabilities_related_vulnerabilities_HASH)
+          {
+            return OcsfStringField::vulnerabilities_related_vulnerabilities;
+          }
+          else if (hashCode == cloud_account_name_HASH)
+          {
+            return OcsfStringField::cloud_account_name;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -265,6 +450,80 @@ namespace Aws
             return "vulnerabilities.fix_coverage";
           case OcsfStringField::class_name:
             return "class_name";
+          case OcsfStringField::databucket_encryption_details_algorithm:
+            return "databucket.encryption_details.algorithm";
+          case OcsfStringField::databucket_encryption_details_key_uid:
+            return "databucket.encryption_details.key_uid";
+          case OcsfStringField::databucket_file_data_classifications_classifier_details_type:
+            return "databucket.file.data_classifications.classifier_details.type";
+          case OcsfStringField::evidences_actor_user_account_uid:
+            return "evidences.actor.user.account.uid";
+          case OcsfStringField::evidences_api_operation:
+            return "evidences.api.operation";
+          case OcsfStringField::evidences_api_response_error_message:
+            return "evidences.api.response.error_message";
+          case OcsfStringField::evidences_api_service_name:
+            return "evidences.api.service.name";
+          case OcsfStringField::evidences_connection_info_direction:
+            return "evidences.connection_info.direction";
+          case OcsfStringField::evidences_connection_info_protocol_name:
+            return "evidences.connection_info.protocol_name";
+          case OcsfStringField::evidences_dst_endpoint_autonomous_system_name:
+            return "evidences.dst_endpoint.autonomous_system.name";
+          case OcsfStringField::evidences_dst_endpoint_location_city:
+            return "evidences.dst_endpoint.location.city";
+          case OcsfStringField::evidences_dst_endpoint_location_country:
+            return "evidences.dst_endpoint.location.country";
+          case OcsfStringField::evidences_src_endpoint_autonomous_system_name:
+            return "evidences.src_endpoint.autonomous_system.name";
+          case OcsfStringField::evidences_src_endpoint_hostname:
+            return "evidences.src_endpoint.hostname";
+          case OcsfStringField::evidences_src_endpoint_location_city:
+            return "evidences.src_endpoint.location.city";
+          case OcsfStringField::evidences_src_endpoint_location_country:
+            return "evidences.src_endpoint.location.country";
+          case OcsfStringField::finding_info_analytic_name:
+            return "finding_info.analytic.name";
+          case OcsfStringField::malware_name:
+            return "malware.name";
+          case OcsfStringField::malware_scan_info_uid:
+            return "malware_scan_info.uid";
+          case OcsfStringField::malware_severity:
+            return "malware.severity";
+          case OcsfStringField::resources_cloud_function_layers_uid_alt:
+            return "resources.cloud_function.layers.uid_alt";
+          case OcsfStringField::resources_cloud_function_runtime:
+            return "resources.cloud_function.runtime";
+          case OcsfStringField::resources_cloud_function_user_uid:
+            return "resources.cloud_function.user.uid";
+          case OcsfStringField::resources_device_encryption_details_key_uid:
+            return "resources.device.encryption_details.key_uid";
+          case OcsfStringField::resources_device_image_uid:
+            return "resources.device.image.uid";
+          case OcsfStringField::resources_image_architecture:
+            return "resources.image.architecture";
+          case OcsfStringField::resources_image_registry_uid:
+            return "resources.image.registry_uid";
+          case OcsfStringField::resources_image_repository_name:
+            return "resources.image.repository_name";
+          case OcsfStringField::resources_image_uid:
+            return "resources.image.uid";
+          case OcsfStringField::resources_subnet_info_uid:
+            return "resources.subnet_info.uid";
+          case OcsfStringField::resources_vpc_uid:
+            return "resources.vpc_uid";
+          case OcsfStringField::vulnerabilities_affected_code_file_path:
+            return "vulnerabilities.affected_code.file.path";
+          case OcsfStringField::vulnerabilities_affected_packages_name:
+            return "vulnerabilities.affected_packages.name";
+          case OcsfStringField::vulnerabilities_cve_epss_score:
+            return "vulnerabilities.cve.epss.score";
+          case OcsfStringField::vulnerabilities_cve_uid:
+            return "vulnerabilities.cve.uid";
+          case OcsfStringField::vulnerabilities_related_vulnerabilities:
+            return "vulnerabilities.related_vulnerabilities";
+          case OcsfStringField::cloud_account_name:
+            return "cloud.account.name";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

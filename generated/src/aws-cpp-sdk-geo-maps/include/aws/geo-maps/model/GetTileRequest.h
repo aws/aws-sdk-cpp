@@ -6,7 +6,9 @@
 #pragma once
 #include <aws/geo-maps/GeoMaps_EXPORTS.h>
 #include <aws/geo-maps/GeoMapsRequest.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/geo-maps/model/TileAdditionalFeature.h>
 #include <utility>
 
 namespace Aws
@@ -37,6 +39,20 @@ namespace Model
 
     AWS_GEOMAPS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+
+    ///@{
+    /**
+     * <p>A list of optional additional parameters such as map styles that can be
+     * requested for each result.</p>
+     */
+    inline const Aws::Vector<TileAdditionalFeature>& GetAdditionalFeatures() const { return m_additionalFeatures; }
+    inline bool AdditionalFeaturesHasBeenSet() const { return m_additionalFeaturesHasBeenSet; }
+    template<typename AdditionalFeaturesT = Aws::Vector<TileAdditionalFeature>>
+    void SetAdditionalFeatures(AdditionalFeaturesT&& value) { m_additionalFeaturesHasBeenSet = true; m_additionalFeatures = std::forward<AdditionalFeaturesT>(value); }
+    template<typename AdditionalFeaturesT = Aws::Vector<TileAdditionalFeature>>
+    GetTileRequest& WithAdditionalFeatures(AdditionalFeaturesT&& value) { SetAdditionalFeatures(std::forward<AdditionalFeaturesT>(value)); return *this;}
+    inline GetTileRequest& AddAdditionalFeatures(TileAdditionalFeature value) { m_additionalFeaturesHasBeenSet = true; m_additionalFeatures.push_back(value); return *this; }
+    ///@}
 
     ///@{
     /**
@@ -100,6 +116,9 @@ namespace Model
     GetTileRequest& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
   private:
+
+    Aws::Vector<TileAdditionalFeature> m_additionalFeatures;
+    bool m_additionalFeaturesHasBeenSet = false;
 
     Aws::String m_tileset;
     bool m_tilesetHasBeenSet = false;

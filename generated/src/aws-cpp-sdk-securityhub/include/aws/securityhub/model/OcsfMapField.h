@@ -16,7 +16,10 @@ namespace Model
   enum class OcsfMapField
   {
     NOT_SET,
-    resources_tags
+    resources_tags,
+    compliance_control_parameters,
+    databucket_tags,
+    finding_info_tags
   };
 
 namespace OcsfMapFieldMapper

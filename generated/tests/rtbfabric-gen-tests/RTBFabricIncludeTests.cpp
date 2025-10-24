@@ -75,6 +75,7 @@
 #include <aws/rtbfabric/model/NoBidModuleParameters.h>
 #include <aws/rtbfabric/model/OpenRtbAttributeModuleParameters.h>
 #include <aws/rtbfabric/model/Protocol.h>
+#include <aws/rtbfabric/model/RateLimiterModuleParameters.h>
 #include <aws/rtbfabric/model/RejectLinkRequest.h>
 #include <aws/rtbfabric/model/RejectLinkResult.h>
 #include <aws/rtbfabric/model/RequesterGatewayStatus.h>

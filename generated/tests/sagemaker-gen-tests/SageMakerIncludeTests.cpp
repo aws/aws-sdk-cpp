@@ -808,6 +808,8 @@
 #include <aws/sagemaker/model/InferenceComponentComputeResourceRequirements.h>
 #include <aws/sagemaker/model/InferenceComponentContainerSpecification.h>
 #include <aws/sagemaker/model/InferenceComponentContainerSpecificationSummary.h>
+#include <aws/sagemaker/model/InferenceComponentDataCacheConfig.h>
+#include <aws/sagemaker/model/InferenceComponentDataCacheConfigSummary.h>
 #include <aws/sagemaker/model/InferenceComponentDeploymentConfig.h>
 #include <aws/sagemaker/model/InferenceComponentRollingUpdatePolicy.h>
 #include <aws/sagemaker/model/InferenceComponentRuntimeConfig.h>

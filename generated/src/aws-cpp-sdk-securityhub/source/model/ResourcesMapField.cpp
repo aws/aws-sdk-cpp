@@ -20,15 +20,15 @@ namespace Aws
       namespace ResourcesMapFieldMapper
       {
 
-        static const int tags_HASH = HashingUtils::HashString("tags");
+        static const int ResourceTags_HASH = HashingUtils::HashString("ResourceTags");
 
 
         ResourcesMapField GetResourcesMapFieldForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == tags_HASH)
+          if (hashCode == ResourceTags_HASH)
           {
-            return ResourcesMapField::tags;
+            return ResourcesMapField::ResourceTags;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,8 +46,8 @@ namespace Aws
           {
           case ResourcesMapField::NOT_SET:
             return {};
-          case ResourcesMapField::tags:
-            return "tags";
+          case ResourcesMapField::ResourceTags:
+            return "ResourceTags";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

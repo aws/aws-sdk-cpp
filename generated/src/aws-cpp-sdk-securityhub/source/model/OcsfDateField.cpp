@@ -24,6 +24,9 @@ namespace Aws
         static const int finding_info_first_seen_time_dt_HASH = HashingUtils::HashString("finding_info.first_seen_time_dt");
         static const int finding_info_last_seen_time_dt_HASH = HashingUtils::HashString("finding_info.last_seen_time_dt");
         static const int finding_info_modified_time_dt_HASH = HashingUtils::HashString("finding_info.modified_time_dt");
+        static const int resources_image_created_time_dt_HASH = HashingUtils::HashString("resources.image.created_time_dt");
+        static const int resources_image_last_used_time_dt_HASH = HashingUtils::HashString("resources.image.last_used_time_dt");
+        static const int resources_modified_time_dt_HASH = HashingUtils::HashString("resources.modified_time_dt");
 
 
         OcsfDateField GetOcsfDateFieldForName(const Aws::String& name)
@@ -44,6 +47,18 @@ namespace Aws
           else if (hashCode == finding_info_modified_time_dt_HASH)
           {
             return OcsfDateField::finding_info_modified_time_dt;
+          }
+          else if (hashCode == resources_image_created_time_dt_HASH)
+          {
+            return OcsfDateField::resources_image_created_time_dt;
+          }
+          else if (hashCode == resources_image_last_used_time_dt_HASH)
+          {
+            return OcsfDateField::resources_image_last_used_time_dt;
+          }
+          else if (hashCode == resources_modified_time_dt_HASH)
+          {
+            return OcsfDateField::resources_modified_time_dt;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +84,12 @@ namespace Aws
             return "finding_info.last_seen_time_dt";
           case OcsfDateField::finding_info_modified_time_dt:
             return "finding_info.modified_time_dt";
+          case OcsfDateField::resources_image_created_time_dt:
+            return "resources.image.created_time_dt";
+          case OcsfDateField::resources_image_last_used_time_dt:
+            return "resources.image.last_used_time_dt";
+          case OcsfDateField::resources_modified_time_dt:
+            return "resources.modified_time_dt";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

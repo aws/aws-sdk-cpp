@@ -19,7 +19,10 @@ namespace Model
     finding_info_created_time_dt,
     finding_info_first_seen_time_dt,
     finding_info_last_seen_time_dt,
-    finding_info_modified_time_dt
+    finding_info_modified_time_dt,
+    resources_image_created_time_dt,
+    resources_image_last_used_time_dt,
+    resources_modified_time_dt
   };
 
 namespace OcsfDateFieldMapper

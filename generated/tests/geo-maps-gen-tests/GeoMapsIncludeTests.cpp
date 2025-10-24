@@ -32,6 +32,7 @@
 #include <aws/geo-maps/model/ScaleBarUnit.h>
 #include <aws/geo-maps/model/StaticMapStyle.h>
 #include <aws/geo-maps/model/Terrain.h>
+#include <aws/geo-maps/model/TileAdditionalFeature.h>
 #include <aws/geo-maps/model/Traffic.h>
 #include <aws/geo-maps/model/TravelMode.h>
 #include <aws/geo-maps/model/ValidationException.h>

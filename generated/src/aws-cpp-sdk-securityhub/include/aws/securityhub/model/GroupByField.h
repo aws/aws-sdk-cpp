@@ -32,7 +32,11 @@ namespace Model
     severity,
     status,
     vulnerabilities_fix_coverage,
-    class_name
+    class_name,
+    vulnerabilities_affected_packages_name,
+    finding_info_analytic_name,
+    compliance_standards,
+    cloud_account_name
   };
 
 namespace GroupByFieldMapper

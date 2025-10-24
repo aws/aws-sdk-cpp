@@ -41,6 +41,7 @@ namespace Aws
         static const int VERTICA_HASH = HashingUtils::HashString("VERTICA");
         static const int WORKFLOWS_MWAA_HASH = HashingUtils::HashString("WORKFLOWS_MWAA");
         static const int AMAZON_Q_HASH = HashingUtils::HashString("AMAZON_Q");
+        static const int MLFLOW_HASH = HashingUtils::HashString("MLFLOW");
 
 
         ConnectionType GetConnectionTypeForName(const Aws::String& name)
@@ -130,6 +131,10 @@ namespace Aws
           {
             return ConnectionType::AMAZON_Q;
           }
+          else if (hashCode == MLFLOW_HASH)
+          {
+            return ConnectionType::MLFLOW;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -188,6 +193,8 @@ namespace Aws
             return "WORKFLOWS_MWAA";
           case ConnectionType::AMAZON_Q:
             return "AMAZON_Q";
+          case ConnectionType::MLFLOW:
+            return "MLFLOW";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

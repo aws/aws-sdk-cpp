@@ -7,6 +7,7 @@
 #include <aws/rtbfabric/RTBFabric_EXPORTS.h>
 #include <aws/rtbfabric/model/NoBidModuleParameters.h>
 #include <aws/rtbfabric/model/OpenRtbAttributeModuleParameters.h>
+#include <aws/rtbfabric/model/RateLimiterModuleParameters.h>
 #include <utility>
 
 namespace Aws
@@ -61,6 +62,18 @@ namespace Model
     template<typename OpenRtbAttributeT = OpenRtbAttributeModuleParameters>
     ModuleParameters& WithOpenRtbAttribute(OpenRtbAttributeT&& value) { SetOpenRtbAttribute(std::forward<OpenRtbAttributeT>(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Describes the parameters of a rate limit.</p>
+     */
+    inline const RateLimiterModuleParameters& GetRateLimiter() const { return m_rateLimiter; }
+    inline bool RateLimiterHasBeenSet() const { return m_rateLimiterHasBeenSet; }
+    template<typename RateLimiterT = RateLimiterModuleParameters>
+    void SetRateLimiter(RateLimiterT&& value) { m_rateLimiterHasBeenSet = true; m_rateLimiter = std::forward<RateLimiterT>(value); }
+    template<typename RateLimiterT = RateLimiterModuleParameters>
+    ModuleParameters& WithRateLimiter(RateLimiterT&& value) { SetRateLimiter(std::forward<RateLimiterT>(value)); return *this;}
+    ///@}
   private:
 
     NoBidModuleParameters m_noBid;
@@ -68,6 +81,9 @@ namespace Model
 
     OpenRtbAttributeModuleParameters m_openRtbAttribute;
     bool m_openRtbAttributeHasBeenSet = false;
+
+    RateLimiterModuleParameters m_rateLimiter;
+    bool m_rateLimiterHasBeenSet = false;
   };
 
 } // namespace Model

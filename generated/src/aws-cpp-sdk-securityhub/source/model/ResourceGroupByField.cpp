@@ -20,40 +20,40 @@ namespace Aws
       namespace ResourceGroupByFieldMapper
       {
 
-        static const int account_id_HASH = HashingUtils::HashString("account_id");
-        static const int region_HASH = HashingUtils::HashString("region");
-        static const int resource_category_HASH = HashingUtils::HashString("resource_category");
-        static const int resource_type_HASH = HashingUtils::HashString("resource_type");
-        static const int resource_name_HASH = HashingUtils::HashString("resource_name");
-        static const int findings_summary_finding_type_HASH = HashingUtils::HashString("findings_summary.finding_type");
+        static const int AccountId_HASH = HashingUtils::HashString("AccountId");
+        static const int Region_HASH = HashingUtils::HashString("Region");
+        static const int ResourceCategory_HASH = HashingUtils::HashString("ResourceCategory");
+        static const int ResourceType_HASH = HashingUtils::HashString("ResourceType");
+        static const int ResourceName_HASH = HashingUtils::HashString("ResourceName");
+        static const int FindingsSummary_FindingType_HASH = HashingUtils::HashString("FindingsSummary.FindingType");
 
 
         ResourceGroupByField GetResourceGroupByFieldForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == account_id_HASH)
+          if (hashCode == AccountId_HASH)
           {
-            return ResourceGroupByField::account_id;
+            return ResourceGroupByField::AccountId;
           }
-          else if (hashCode == region_HASH)
+          else if (hashCode == Region_HASH)
           {
-            return ResourceGroupByField::region;
+            return ResourceGroupByField::Region;
           }
-          else if (hashCode == resource_category_HASH)
+          else if (hashCode == ResourceCategory_HASH)
           {
-            return ResourceGroupByField::resource_category;
+            return ResourceGroupByField::ResourceCategory;
           }
-          else if (hashCode == resource_type_HASH)
+          else if (hashCode == ResourceType_HASH)
           {
-            return ResourceGroupByField::resource_type;
+            return ResourceGroupByField::ResourceType;
           }
-          else if (hashCode == resource_name_HASH)
+          else if (hashCode == ResourceName_HASH)
           {
-            return ResourceGroupByField::resource_name;
+            return ResourceGroupByField::ResourceName;
           }
-          else if (hashCode == findings_summary_finding_type_HASH)
+          else if (hashCode == FindingsSummary_FindingType_HASH)
           {
-            return ResourceGroupByField::findings_summary_finding_type;
+            return ResourceGroupByField::FindingsSummary_FindingType;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -71,18 +71,18 @@ namespace Aws
           {
           case ResourceGroupByField::NOT_SET:
             return {};
-          case ResourceGroupByField::account_id:
-            return "account_id";
-          case ResourceGroupByField::region:
-            return "region";
-          case ResourceGroupByField::resource_category:
-            return "resource_category";
-          case ResourceGroupByField::resource_type:
-            return "resource_type";
-          case ResourceGroupByField::resource_name:
-            return "resource_name";
-          case ResourceGroupByField::findings_summary_finding_type:
-            return "findings_summary.finding_type";
+          case ResourceGroupByField::AccountId:
+            return "AccountId";
+          case ResourceGroupByField::Region:
+            return "Region";
+          case ResourceGroupByField::ResourceCategory:
+            return "ResourceCategory";
+          case ResourceGroupByField::ResourceType:
+            return "ResourceType";
+          case ResourceGroupByField::ResourceName:
+            return "ResourceName";
+          case ResourceGroupByField::FindingsSummary_FindingType:
+            return "FindingsSummary.FindingType";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
