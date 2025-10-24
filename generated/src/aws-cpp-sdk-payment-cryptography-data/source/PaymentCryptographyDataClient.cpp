@@ -170,7 +170,11 @@ void PaymentCryptographyDataClient::init(const PaymentCryptographyData::PaymentC
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
-  Aws::Config::EndpointResolver::EndpointSource("payment-cryptography", config.profileName, *m_endpointProvider);
+  if (!config.endpointOverride.empty()) {
+    m_endpointProvider->OverrideEndpoint(config.endpointOverride);
+  } else {
+    Aws::Config::EndpointResolver::EndpointSource("payment-cryptography", config.profileName, *m_endpointProvider);
+  }
 }
 
 void PaymentCryptographyDataClient::OverrideEndpoint(const Aws::String& endpoint)

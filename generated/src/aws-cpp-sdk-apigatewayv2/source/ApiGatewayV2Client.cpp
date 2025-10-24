@@ -234,7 +234,11 @@ void ApiGatewayV2Client::init(const ApiGatewayV2::ApiGatewayV2ClientConfiguratio
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
-  Aws::Config::EndpointResolver::EndpointSource("apigateway", config.profileName, *m_endpointProvider);
+  if (!config.endpointOverride.empty()) {
+    m_endpointProvider->OverrideEndpoint(config.endpointOverride);
+  } else {
+    Aws::Config::EndpointResolver::EndpointSource("apigateway", config.profileName, *m_endpointProvider);
+  }
 }
 
 void ApiGatewayV2Client::OverrideEndpoint(const Aws::String& endpoint)

@@ -182,7 +182,11 @@ void ManagedGrafanaClient::init(const ManagedGrafana::ManagedGrafanaClientConfig
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
-  Aws::Config::EndpointResolver::EndpointSource("grafana", config.profileName, *m_endpointProvider);
+  if (!config.endpointOverride.empty()) {
+    m_endpointProvider->OverrideEndpoint(config.endpointOverride);
+  } else {
+    Aws::Config::EndpointResolver::EndpointSource("grafana", config.profileName, *m_endpointProvider);
+  }
 }
 
 void ManagedGrafanaClient::OverrideEndpoint(const Aws::String& endpoint)

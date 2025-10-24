@@ -214,7 +214,11 @@ void NetworkFirewallClient::init(const NetworkFirewall::NetworkFirewallClientCon
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
-  Aws::Config::EndpointResolver::EndpointSource("network-firewall", config.profileName, *m_endpointProvider);
+  if (!config.endpointOverride.empty()) {
+    m_endpointProvider->OverrideEndpoint(config.endpointOverride);
+  } else {
+    Aws::Config::EndpointResolver::EndpointSource("network-firewall", config.profileName, *m_endpointProvider);
+  }
 }
 
 void NetworkFirewallClient::OverrideEndpoint(const Aws::String& endpoint)

@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/config/EndpointResolver.h>
 
 #include <aws/rtbfabric/RTBFabricClient.h>
 #include <aws/rtbfabric/RTBFabricErrorMarshaller.h>
@@ -183,6 +184,11 @@ void RTBFabricClient::init(const RTBFabric::RTBFabricClientConfiguration& config
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+  if (!config.endpointOverride.empty()) {
+    m_endpointProvider->OverrideEndpoint(config.endpointOverride);
+  } else {
+    Aws::Config::EndpointResolver::EndpointSource("rtbfabric", config.profileName, *m_endpointProvider);
+  }
 }
 
 void RTBFabricClient::OverrideEndpoint(const Aws::String& endpoint)

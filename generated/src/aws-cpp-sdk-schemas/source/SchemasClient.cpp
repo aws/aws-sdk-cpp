@@ -188,7 +188,11 @@ void SchemasClient::init(const Schemas::SchemasClientConfiguration& config)
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
-  Aws::Config::EndpointResolver::EndpointSource("schemas", config.profileName, *m_endpointProvider);
+  if (!config.endpointOverride.empty()) {
+    m_endpointProvider->OverrideEndpoint(config.endpointOverride);
+  } else {
+    Aws::Config::EndpointResolver::EndpointSource("schemas", config.profileName, *m_endpointProvider);
+  }
 }
 
 void SchemasClient::OverrideEndpoint(const Aws::String& endpoint)

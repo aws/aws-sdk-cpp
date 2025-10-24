@@ -209,7 +209,11 @@ void ElasticLoadBalancingv2Client::init(const ElasticLoadBalancingv2::ElasticLoa
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
-  Aws::Config::EndpointResolver::EndpointSource("elasticloadbalancing", config.profileName, *m_endpointProvider);
+  if (!config.endpointOverride.empty()) {
+    m_endpointProvider->OverrideEndpoint(config.endpointOverride);
+  } else {
+    Aws::Config::EndpointResolver::EndpointSource("elasticloadbalancing", config.profileName, *m_endpointProvider);
+  }
 }
 
 void ElasticLoadBalancingv2Client::OverrideEndpoint(const Aws::String& endpoint)

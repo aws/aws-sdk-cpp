@@ -207,7 +207,11 @@ void LicenseManagerClient::init(const LicenseManager::LicenseManagerClientConfig
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
-  Aws::Config::EndpointResolver::EndpointSource("license-manager", config.profileName, *m_endpointProvider);
+  if (!config.endpointOverride.empty()) {
+    m_endpointProvider->OverrideEndpoint(config.endpointOverride);
+  } else {
+    Aws::Config::EndpointResolver::EndpointSource("license-manager", config.profileName, *m_endpointProvider);
+  }
 }
 
 void LicenseManagerClient::OverrideEndpoint(const Aws::String& endpoint)

@@ -162,7 +162,11 @@ void LexRuntimeServiceClient::init(const LexRuntimeService::LexRuntimeServiceCli
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
-  Aws::Config::EndpointResolver::EndpointSource("lex", config.profileName, *m_endpointProvider);
+  if (!config.endpointOverride.empty()) {
+    m_endpointProvider->OverrideEndpoint(config.endpointOverride);
+  } else {
+    Aws::Config::EndpointResolver::EndpointSource("lex", config.profileName, *m_endpointProvider);
+  }
 }
 
 void LexRuntimeServiceClient::OverrideEndpoint(const Aws::String& endpoint)

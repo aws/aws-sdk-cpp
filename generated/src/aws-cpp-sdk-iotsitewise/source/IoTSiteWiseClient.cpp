@@ -262,7 +262,11 @@ void IoTSiteWiseClient::init(const IoTSiteWise::IoTSiteWiseClientConfiguration& 
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
-  Aws::Config::EndpointResolver::EndpointSource("iotsitewise", config.profileName, *m_endpointProvider);
+  if (!config.endpointOverride.empty()) {
+    m_endpointProvider->OverrideEndpoint(config.endpointOverride);
+  } else {
+    Aws::Config::EndpointResolver::EndpointSource("iotsitewise", config.profileName, *m_endpointProvider);
+  }
 }
 
 void IoTSiteWiseClient::OverrideEndpoint(const Aws::String& endpoint)

@@ -202,7 +202,11 @@ void FinspaceClient::init(const finspace::FinspaceClientConfiguration& config)
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
-  Aws::Config::EndpointResolver::EndpointSource("finspace", config.profileName, *m_endpointProvider);
+  if (!config.endpointOverride.empty()) {
+    m_endpointProvider->OverrideEndpoint(config.endpointOverride);
+  } else {
+    Aws::Config::EndpointResolver::EndpointSource("finspace", config.profileName, *m_endpointProvider);
+  }
 }
 
 void FinspaceClient::OverrideEndpoint(const Aws::String& endpoint)

@@ -162,7 +162,11 @@ void FreeTierClient::init(const FreeTier::FreeTierClientConfiguration& config)
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
-  Aws::Config::EndpointResolver::EndpointSource("freetier", config.profileName, *m_endpointProvider);
+  if (!config.endpointOverride.empty()) {
+    m_endpointProvider->OverrideEndpoint(config.endpointOverride);
+  } else {
+    Aws::Config::EndpointResolver::EndpointSource("freetier", config.profileName, *m_endpointProvider);
+  }
 }
 
 void FreeTierClient::OverrideEndpoint(const Aws::String& endpoint)

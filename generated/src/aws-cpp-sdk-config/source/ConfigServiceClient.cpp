@@ -254,7 +254,11 @@ void ConfigServiceClient::init(const ConfigService::ConfigServiceClientConfigura
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
-  Aws::Config::EndpointResolver::EndpointSource("config", config.profileName, *m_endpointProvider);
+  if (!config.endpointOverride.empty()) {
+    m_endpointProvider->OverrideEndpoint(config.endpointOverride);
+  } else {
+    Aws::Config::EndpointResolver::EndpointSource("config", config.profileName, *m_endpointProvider);
+  }
 }
 
 void ConfigServiceClient::OverrideEndpoint(const Aws::String& endpoint)

@@ -259,7 +259,11 @@ void LexModelsV2Client::init(const LexModelsV2::LexModelsV2ClientConfiguration& 
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
-  Aws::Config::EndpointResolver::EndpointSource("lex", config.profileName, *m_endpointProvider);
+  if (!config.endpointOverride.empty()) {
+    m_endpointProvider->OverrideEndpoint(config.endpointOverride);
+  } else {
+    Aws::Config::EndpointResolver::EndpointSource("lex", config.profileName, *m_endpointProvider);
+  }
 }
 
 void LexModelsV2Client::OverrideEndpoint(const Aws::String& endpoint)

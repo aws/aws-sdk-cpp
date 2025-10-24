@@ -181,7 +181,11 @@ void GameLiftStreamsClient::init(const GameLiftStreams::GameLiftStreamsClientCon
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
-  Aws::Config::EndpointResolver::EndpointSource("gameliftstreams", config.profileName, *m_endpointProvider);
+  if (!config.endpointOverride.empty()) {
+    m_endpointProvider->OverrideEndpoint(config.endpointOverride);
+  } else {
+    Aws::Config::EndpointResolver::EndpointSource("gameliftstreams", config.profileName, *m_endpointProvider);
+  }
 }
 
 void GameLiftStreamsClient::OverrideEndpoint(const Aws::String& endpoint)

@@ -170,7 +170,11 @@ void WorkspacesInstancesClient::init(const WorkspacesInstances::WorkspacesInstan
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
-  Aws::Config::EndpointResolver::EndpointSource("workspaces-instances", config.profileName, *m_endpointProvider);
+  if (!config.endpointOverride.empty()) {
+    m_endpointProvider->OverrideEndpoint(config.endpointOverride);
+  } else {
+    Aws::Config::EndpointResolver::EndpointSource("workspaces-instances", config.profileName, *m_endpointProvider);
+  }
 }
 
 void WorkspacesInstancesClient::OverrideEndpoint(const Aws::String& endpoint)

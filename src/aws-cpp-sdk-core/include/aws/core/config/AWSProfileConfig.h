@@ -103,7 +103,7 @@ namespace Aws
             inline void SetSourceProfile(const Aws::String& value ) { m_sourceProfile = value; }
             inline const Aws::String& GetCredentialProcess() const { return m_credentialProcess; }
             inline void SetCredentialProcess(const Aws::String& value ) { m_credentialProcess = value; }
-            inline Aws::String GetGlobalEndpointUrl() const { return m_endpointUrl; }
+            inline const Aws::String& GetGlobalEndpointUrl() const { return m_endpointUrl; }
             inline void SetGlobalEndpointUrl(const Aws::String& value) { m_endpointUrl = value; }
             inline Services GetServices() const { return m_services; }
             inline void SetServices(Services&& services) { m_services = std::move(services); }
@@ -114,14 +114,6 @@ namespace Aws
                 auto iter = m_allKeyValPairs.find(key);
                 if (iter == m_allKeyValPairs.end()) return {};
                 return iter->second;
-            }
-
-            inline const Services& GetServices() const { return m_services; }
-            inline void SetServices(Services&& services) { m_services = std::move(services); }
-
-            inline Aws::Crt::Optional<Aws::String> GetGlobalEndpointUrl() const {
-                const Aws::String& endpoint = GetValue("endpoint_url");
-                return endpoint.empty() ? Aws::Crt::Optional<Aws::String>() : Aws::Crt::Optional<Aws::String>(endpoint);
             }
 
             inline bool IsSsoSessionSet() const { return m_ssoSessionSet; }

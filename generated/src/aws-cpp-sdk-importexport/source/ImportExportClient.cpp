@@ -164,7 +164,11 @@ void ImportExportClient::init(const ImportExport::ImportExportClientConfiguratio
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
-  Aws::Config::EndpointResolver::EndpointSource("importexport", config.profileName, *m_endpointProvider);
+  if (!config.endpointOverride.empty()) {
+    m_endpointProvider->OverrideEndpoint(config.endpointOverride);
+  } else {
+    Aws::Config::EndpointResolver::EndpointSource("importexport", config.profileName, *m_endpointProvider);
+  }
 }
 
 void ImportExportClient::OverrideEndpoint(const Aws::String& endpoint)

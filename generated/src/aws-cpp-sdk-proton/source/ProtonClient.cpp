@@ -157,7 +157,11 @@ void ProtonClient::init(const Proton::ProtonClientConfiguration& config)
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
-  Aws::Config::EndpointResolver::EndpointSource("proton", config.profileName, *m_endpointProvider);
+  if (!config.endpointOverride.empty()) {
+    m_endpointProvider->OverrideEndpoint(config.endpointOverride);
+  } else {
+    Aws::Config::EndpointResolver::EndpointSource("proton", config.profileName, *m_endpointProvider);
+  }
 }
 
 void ProtonClient::OverrideEndpoint(const Aws::String& endpoint)

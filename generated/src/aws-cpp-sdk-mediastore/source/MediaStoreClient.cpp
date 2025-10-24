@@ -178,7 +178,11 @@ void MediaStoreClient::init(const MediaStore::MediaStoreClientConfiguration& con
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
-  Aws::Config::EndpointResolver::EndpointSource("mediastore", config.profileName, *m_endpointProvider);
+  if (!config.endpointOverride.empty()) {
+    m_endpointProvider->OverrideEndpoint(config.endpointOverride);
+  } else {
+    Aws::Config::EndpointResolver::EndpointSource("mediastore", config.profileName, *m_endpointProvider);
+  }
 }
 
 void MediaStoreClient::OverrideEndpoint(const Aws::String& endpoint)

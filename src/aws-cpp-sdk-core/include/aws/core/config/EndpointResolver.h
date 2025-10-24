@@ -99,11 +99,11 @@ namespace Aws
                 }
 
                 // 5) Global profile endpoint
-                auto opt = profile.GetGlobalEndpointUrl();
-                if (opt.has_value() && !opt->empty()) {
+                auto endpoint = profile.GetGlobalEndpointUrl();
+                if (!endpoint.empty()) {
                     AWS_LOGSTREAM_DEBUG(LOG_TAG, "Resolved configured endpoint from global profile setting in profile: " << profileName);
-                    AWS_LOGSTREAM_TRACE(LOG_TAG, "Configured endpoint URL: " << *opt);
-                    endpointProvider.OverrideEndpoint(*opt);
+                    AWS_LOGSTREAM_TRACE(LOG_TAG, "Configured endpoint URL: " << endpoint);
+                    endpointProvider.OverrideEndpoint(endpoint);
                     return;
                 }
 

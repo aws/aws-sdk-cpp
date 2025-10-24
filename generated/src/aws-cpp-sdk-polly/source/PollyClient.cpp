@@ -166,7 +166,11 @@ void PollyClient::init(const Polly::PollyClientConfiguration& config)
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
-  Aws::Config::EndpointResolver::EndpointSource("polly", config.profileName, *m_endpointProvider);
+  if (!config.endpointOverride.empty()) {
+    m_endpointProvider->OverrideEndpoint(config.endpointOverride);
+  } else {
+    Aws::Config::EndpointResolver::EndpointSource("polly", config.profileName, *m_endpointProvider);
+  }
 }
 
 void PollyClient::OverrideEndpoint(const Aws::String& endpoint)

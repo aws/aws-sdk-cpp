@@ -175,7 +175,11 @@ void KafkaConnectClient::init(const KafkaConnect::KafkaConnectClientConfiguratio
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
-  Aws::Config::EndpointResolver::EndpointSource("kafkaconnect", config.profileName, *m_endpointProvider);
+  if (!config.endpointOverride.empty()) {
+    m_endpointProvider->OverrideEndpoint(config.endpointOverride);
+  } else {
+    Aws::Config::EndpointResolver::EndpointSource("kafkaconnect", config.profileName, *m_endpointProvider);
+  }
 }
 
 void KafkaConnectClient::OverrideEndpoint(const Aws::String& endpoint)

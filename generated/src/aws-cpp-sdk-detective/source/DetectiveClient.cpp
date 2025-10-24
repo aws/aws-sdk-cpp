@@ -186,7 +186,11 @@ void DetectiveClient::init(const Detective::DetectiveClientConfiguration& config
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
-  Aws::Config::EndpointResolver::EndpointSource("detective", config.profileName, *m_endpointProvider);
+  if (!config.endpointOverride.empty()) {
+    m_endpointProvider->OverrideEndpoint(config.endpointOverride);
+  } else {
+    Aws::Config::EndpointResolver::EndpointSource("detective", config.profileName, *m_endpointProvider);
+  }
 }
 
 void DetectiveClient::OverrideEndpoint(const Aws::String& endpoint)

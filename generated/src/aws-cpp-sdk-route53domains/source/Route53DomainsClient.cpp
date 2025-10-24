@@ -191,7 +191,11 @@ void Route53DomainsClient::init(const Route53Domains::Route53DomainsClientConfig
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
-  Aws::Config::EndpointResolver::EndpointSource("route53domains", config.profileName, *m_endpointProvider);
+  if (!config.endpointOverride.empty()) {
+    m_endpointProvider->OverrideEndpoint(config.endpointOverride);
+  } else {
+    Aws::Config::EndpointResolver::EndpointSource("route53domains", config.profileName, *m_endpointProvider);
+  }
 }
 
 void Route53DomainsClient::OverrideEndpoint(const Aws::String& endpoint)

@@ -179,7 +179,11 @@ void SecurityIRClient::init(const SecurityIR::SecurityIRClientConfiguration& con
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
-  Aws::Config::EndpointResolver::EndpointSource("security-ir", config.profileName, *m_endpointProvider);
+  if (!config.endpointOverride.empty()) {
+    m_endpointProvider->OverrideEndpoint(config.endpointOverride);
+  } else {
+    Aws::Config::EndpointResolver::EndpointSource("security-ir", config.profileName, *m_endpointProvider);
+  }
 }
 
 void SecurityIRClient::OverrideEndpoint(const Aws::String& endpoint)

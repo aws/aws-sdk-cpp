@@ -244,7 +244,11 @@ void CleanRoomsClient::init(const CleanRooms::CleanRoomsClientConfiguration& con
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
-  Aws::Config::EndpointResolver::EndpointSource("cleanrooms", config.profileName, *m_endpointProvider);
+  if (!config.endpointOverride.empty()) {
+    m_endpointProvider->OverrideEndpoint(config.endpointOverride);
+  } else {
+    Aws::Config::EndpointResolver::EndpointSource("cleanrooms", config.profileName, *m_endpointProvider);
+  }
 }
 
 void CleanRoomsClient::OverrideEndpoint(const Aws::String& endpoint)

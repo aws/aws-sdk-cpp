@@ -228,7 +228,11 @@ void TransferClient::init(const Transfer::TransferClientConfiguration& config)
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
-  Aws::Config::EndpointResolver::EndpointSource("transfer", config.profileName, *m_endpointProvider);
+  if (!config.endpointOverride.empty()) {
+    m_endpointProvider->OverrideEndpoint(config.endpointOverride);
+  } else {
+    Aws::Config::EndpointResolver::EndpointSource("transfer", config.profileName, *m_endpointProvider);
+  }
 }
 
 void TransferClient::OverrideEndpoint(const Aws::String& endpoint)

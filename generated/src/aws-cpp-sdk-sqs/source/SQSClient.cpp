@@ -180,7 +180,11 @@ void SQSClient::init(const SQS::SQSClientConfiguration& config)
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
-  Aws::Config::EndpointResolver::EndpointSource("sqs", config.profileName, *m_endpointProvider);
+  if (!config.endpointOverride.empty()) {
+    m_endpointProvider->OverrideEndpoint(config.endpointOverride);
+  } else {
+    Aws::Config::EndpointResolver::EndpointSource("sqs", config.profileName, *m_endpointProvider);
+  }
 }
 
 void SQSClient::OverrideEndpoint(const Aws::String& endpoint)

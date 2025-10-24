@@ -270,7 +270,11 @@ void DeadlineClient::init(const deadline::DeadlineClientConfiguration& config)
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
-  Aws::Config::EndpointResolver::EndpointSource("deadline", config.profileName, *m_endpointProvider);
+  if (!config.endpointOverride.empty()) {
+    m_endpointProvider->OverrideEndpoint(config.endpointOverride);
+  } else {
+    Aws::Config::EndpointResolver::EndpointSource("deadline", config.profileName, *m_endpointProvider);
+  }
 }
 
 void DeadlineClient::OverrideEndpoint(const Aws::String& endpoint)

@@ -195,7 +195,11 @@ void AppMeshClient::init(const AppMesh::AppMeshClientConfiguration& config)
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
-  Aws::Config::EndpointResolver::EndpointSource("appmesh", config.profileName, *m_endpointProvider);
+  if (!config.endpointOverride.empty()) {
+    m_endpointProvider->OverrideEndpoint(config.endpointOverride);
+  } else {
+    Aws::Config::EndpointResolver::EndpointSource("appmesh", config.profileName, *m_endpointProvider);
+  }
 }
 
 void AppMeshClient::OverrideEndpoint(const Aws::String& endpoint)
