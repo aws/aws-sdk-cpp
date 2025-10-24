@@ -12,6 +12,8 @@
 #include <aws/core/client/RetryStrategy.h>
 #include <aws/core/utils/FileSystemUtils.h>
 #include <aws/core/config/ConfigAndCredentialsCacheManager.h>
+#include <aws/core/platform/Environment.h>
+#include <aws/testing/platform/PlatformTesting.h>
 
 using namespace Aws;
 using namespace Aws::S3;
@@ -21,6 +23,7 @@ using namespace Aws::Client;
 using namespace Aws::Http;
 using namespace Aws::Utils;
 using namespace Aws::Config;
+using namespace Aws::Environment;
 
 const char* ALLOCATION_TAG = "EndpointResolverIntegrationTest";
 
@@ -103,14 +106,34 @@ protected:
         _mockClientFactory.reset();
         _mockHttpClient.reset();
         
-        // Clean up environment variables
-        unsetenv("AWS_ENDPOINT_URL");
-        unsetenv("AWS_ENDPOINT_URL_S3");
-        unsetenv("AWS_IGNORE_CONFIGURED_ENDPOINT_URLS");
-        unsetenv("AWS_CONFIG_FILE");
-        
         // Shutdown AWS SDK
         ShutdownAPI(_options);
+    }
+
+    void SetupMockResponse()
+    {
+        auto mockRequest = MakeShared<Standard::StandardHttpRequest>(ALLOCATION_TAG, "mockuri", HttpMethod::HTTP_HEAD);
+        mockRequest->SetResponseStreamFactory([]() -> IOStream* {
+            return Aws::New<StringStream>(ALLOCATION_TAG, "response-string", std::ios_base::in | std::ios_base::binary);
+        });
+        auto mockResponse = MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, mockRequest);
+        mockResponse->SetResponseCode(HttpResponseCode::OK);
+        _mockHttpClient->AddResponseToReturn(mockResponse);
+    }
+
+    const Aws::Http::HttpRequest& ExecuteHeadBucketRequest(const S3ClientConfiguration& config)
+    {
+        SetupMockResponse();
+        
+        AWSCredentials credentials{"mock", "credentials"};
+        const auto epProvider = MakeShared<S3EndpointProvider>(ALLOCATION_TAG);
+        auto testClient = MakeShared<S3TestClient>(ALLOCATION_TAG, credentials, epProvider, config);
+        
+        HeadBucketRequest request;
+        request.SetBucket("test-bucket");
+        
+        auto response = testClient->HeadBucket(request);
+        return _mockHttpClient->GetMostRecentHttpRequest();
     }
 
     SDKOptions _options;
@@ -118,97 +141,58 @@ protected:
     std::shared_ptr<MockHttpClientFactory> _mockClientFactory;
 };
 
+TEST_F(EndpointResolverIntegrationTest, DefaultResolution)
+{
+    S3ClientConfiguration s3Config;
+    s3Config.region = "us-east-1";
+    s3Config.profileName = "test-default";
+    s3Config.retryStrategy = MakeShared<NoRetry>(ALLOCATION_TAG);
 
+    const auto& seenRequest = ExecuteHeadBucketRequest(s3Config);
+
+    EXPECT_EQ("https://test-bucket.s3.us-east-1.amazonaws.com", seenRequest.GetUri().GetURIString());
+}
 
 TEST_F(EndpointResolverIntegrationTest, CodeProvidedEndpoint)
 {
-    auto mockRequest = MakeShared<Standard::StandardHttpRequest>(ALLOCATION_TAG, "mockuri", HttpMethod::HTTP_HEAD);
-    mockRequest->SetResponseStreamFactory([]() -> IOStream* {
-        return Aws::New<StringStream>(ALLOCATION_TAG, "response-string", std::ios_base::in | std::ios_base::binary);
-    });
-    auto mockResponse = MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, mockRequest);
-    mockResponse->SetResponseCode(HttpResponseCode::OK);
-    _mockHttpClient->AddResponseToReturn(mockResponse);
-    
-    AWSCredentials credentials{"mock", "credentials"};
-    const auto epProvider = MakeShared<S3EndpointProvider>(ALLOCATION_TAG);
     S3ClientConfiguration s3Config;
     s3Config.region = "us-east-1";
     s3Config.endpointOverride = "https://code-provided.example.com";
     s3Config.retryStrategy = MakeShared<NoRetry>(ALLOCATION_TAG);
-    auto testClient = MakeShared<S3TestClient>(ALLOCATION_TAG, credentials, epProvider, s3Config);
     
-    HeadBucketRequest request;
-    request.SetBucket("test-bucket");
-    
-    auto response = testClient->HeadBucket(request);
-    const auto& seenRequest = _mockHttpClient->GetMostRecentHttpRequest();
-    
-    // Debug: Print actual URL
-    std::cout << "Actual URL: " << seenRequest.GetUri().GetURIString() << std::endl;
+    const auto& seenRequest = ExecuteHeadBucketRequest(s3Config);
+
     EXPECT_EQ("https://test-bucket.code-provided.example.com", seenRequest.GetUri().GetURIString());
 }
 
 TEST_F(EndpointResolverIntegrationTest, ServiceSpecificEnvironmentVariable)
 {
-    setenv("AWS_ENDPOINT_URL_S3", "https://custom-s3.example.com", 1);
+    Aws::Environment::EnvironmentRAII envGuard{{
+        {"AWS_ENDPOINT_URL_S3", "https://custom-s3.example.com"}
+    }};
     
-    auto mockRequest = MakeShared<Standard::StandardHttpRequest>(ALLOCATION_TAG, "mockuri", HttpMethod::HTTP_HEAD);
-    mockRequest->SetResponseStreamFactory([]() -> IOStream* {
-        return Aws::New<StringStream>(ALLOCATION_TAG, "response-string", std::ios_base::in | std::ios_base::binary);
-    });
-    auto mockResponse = MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, mockRequest);
-    mockResponse->SetResponseCode(HttpResponseCode::OK);
-    _mockHttpClient->AddResponseToReturn(mockResponse);
-    
-    AWSCredentials credentials{"mock", "credentials"};
-    const auto epProvider = MakeShared<S3EndpointProvider>(ALLOCATION_TAG);
     S3ClientConfiguration s3Config;
     s3Config.region = "us-east-1";
     s3Config.retryStrategy = MakeShared<NoRetry>(ALLOCATION_TAG);
-    auto testClient = MakeShared<S3TestClient>(ALLOCATION_TAG, credentials, epProvider, s3Config);
     
-    HeadBucketRequest request;
-    request.SetBucket("test-bucket");
-    
-    auto response = testClient->HeadBucket(request);
-    const auto& seenRequest = _mockHttpClient->GetMostRecentHttpRequest();
+    const auto& seenRequest = ExecuteHeadBucketRequest(s3Config);
     
     EXPECT_EQ("https://test-bucket.custom-s3.example.com", seenRequest.GetUri().GetURIString());
-    
-    // Cleanup
-    unsetenv("AWS_ENDPOINT_URL_S3");
 }
 
 TEST_F(EndpointResolverIntegrationTest, GlobalEnvironmentVariable)
 {
-    setenv("AWS_ENDPOINT_URL", "https://global-env.example.com", 1);
+    Aws::Environment::EnvironmentRAII envGuard{{
+        {"AWS_ENDPOINT_URL", "https://global-env.example.com"}
+    }};
     
-    auto mockRequest = MakeShared<Standard::StandardHttpRequest>(ALLOCATION_TAG, "mockuri", HttpMethod::HTTP_HEAD);
-    mockRequest->SetResponseStreamFactory([]() -> IOStream* {
-        return Aws::New<StringStream>(ALLOCATION_TAG, "response-string", std::ios_base::in | std::ios_base::binary);
-    });
-    auto mockResponse = MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, mockRequest);
-    mockResponse->SetResponseCode(HttpResponseCode::OK);
-    _mockHttpClient->AddResponseToReturn(mockResponse);
-    
-    AWSCredentials credentials{"mock", "credentials"};
-    const auto epProvider = MakeShared<S3EndpointProvider>(ALLOCATION_TAG);
     S3ClientConfiguration s3Config;
     s3Config.region = "us-east-1";
     s3Config.retryStrategy = MakeShared<NoRetry>(ALLOCATION_TAG);
-    auto testClient = MakeShared<S3TestClient>(ALLOCATION_TAG, credentials, epProvider, s3Config);
     
-    HeadBucketRequest request;
-    request.SetBucket("test-bucket");
-    
-    auto response = testClient->HeadBucket(request);
-    const auto& seenRequest = _mockHttpClient->GetMostRecentHttpRequest();
+    const auto& seenRequest = ExecuteHeadBucketRequest(s3Config);
     
     EXPECT_EQ("https://test-bucket.global-env.example.com", seenRequest.GetUri().GetURIString());
-    
-    // Cleanup
-    unsetenv("AWS_ENDPOINT_URL");
 }
 
 TEST_F(EndpointResolverIntegrationTest, ServiceSpecificProfile)
@@ -216,42 +200,26 @@ TEST_F(EndpointResolverIntegrationTest, ServiceSpecificProfile)
     TempFile configFile(std::ios_base::out | std::ios_base::trunc);
     ASSERT_TRUE(configFile.good());
     
-    configFile << "[profile test-profile]\n";
+    configFile << "[profile test-profile-service]\n";
     configFile << "services = test-services\n";
     configFile << "\n[services test-services]\n";
     configFile << "s3 =\n";
     configFile << "  endpoint_url = https://s3-profile.example.com\n";
     configFile.flush();
     
-    setenv("AWS_CONFIG_FILE", configFile.GetFileName().c_str(), 1);
+    Aws::Environment::EnvironmentRAII envGuard{{
+        {"AWS_CONFIG_FILE", configFile.GetFileName()}
+    }};
     ReloadCachedConfigFile();
     
-    auto mockRequest = MakeShared<Standard::StandardHttpRequest>(ALLOCATION_TAG, "mockuri", HttpMethod::HTTP_HEAD);
-    mockRequest->SetResponseStreamFactory([]() -> IOStream* {
-        return Aws::New<StringStream>(ALLOCATION_TAG, "response-string", std::ios_base::in | std::ios_base::binary);
-    });
-    auto mockResponse = MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, mockRequest);
-    mockResponse->SetResponseCode(HttpResponseCode::OK);
-    _mockHttpClient->AddResponseToReturn(mockResponse);
-    
-    AWSCredentials credentials{"mock", "credentials"};
-    const auto epProvider = MakeShared<S3EndpointProvider>(ALLOCATION_TAG);
     S3ClientConfiguration s3Config;
     s3Config.region = "us-east-1";
-    s3Config.profileName = "test-profile";
+    s3Config.profileName = "test-profile-service";
     s3Config.retryStrategy = MakeShared<NoRetry>(ALLOCATION_TAG);
-    auto testClient = MakeShared<S3TestClient>(ALLOCATION_TAG, credentials, epProvider, s3Config);
     
-    HeadBucketRequest request;
-    request.SetBucket("test-bucket");
-    
-    auto response = testClient->HeadBucket(request);
-    const auto& seenRequest = _mockHttpClient->GetMostRecentHttpRequest();
+    const auto& seenRequest = ExecuteHeadBucketRequest(s3Config);
     
     EXPECT_EQ("https://test-bucket.s3-profile.example.com", seenRequest.GetUri().GetURIString());
-    
-    // Cleanup
-    unsetenv("AWS_CONFIG_FILE");
     ReloadCachedConfigFile();
 }
 
@@ -260,68 +228,23 @@ TEST_F(EndpointResolverIntegrationTest, GlobalProfile)
     TempFile configFile(std::ios_base::out | std::ios_base::trunc);
     ASSERT_TRUE(configFile.good());
     
-    configFile << "[profile test-profile]\n";
+    configFile << "[profile test-profile-global]\n";
     configFile << "endpoint_url = https://global-profile.example.com\n";
     configFile.flush();
     
-    setenv("AWS_CONFIG_FILE", configFile.GetFileName().c_str(), 1);
+    Aws::Environment::EnvironmentRAII envGuard{{
+        {"AWS_CONFIG_FILE", configFile.GetFileName()}
+    }};
     ReloadCachedConfigFile();
     
-    auto mockRequest = MakeShared<Standard::StandardHttpRequest>(ALLOCATION_TAG, "mockuri", HttpMethod::HTTP_HEAD);
-    mockRequest->SetResponseStreamFactory([]() -> IOStream* {
-        return Aws::New<StringStream>(ALLOCATION_TAG, "response-string", std::ios_base::in | std::ios_base::binary);
-    });
-    auto mockResponse = MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, mockRequest);
-    mockResponse->SetResponseCode(HttpResponseCode::OK);
-    _mockHttpClient->AddResponseToReturn(mockResponse);
-    
-    AWSCredentials credentials{"mock", "credentials"};
-    const auto epProvider = MakeShared<S3EndpointProvider>(ALLOCATION_TAG);
     S3ClientConfiguration s3Config;
     s3Config.region = "us-east-1";
-    s3Config.profileName = "test-profile";
+    s3Config.profileName = "test-profile-global";
     s3Config.retryStrategy = MakeShared<NoRetry>(ALLOCATION_TAG);
-    auto testClient = MakeShared<S3TestClient>(ALLOCATION_TAG, credentials, epProvider, s3Config);
     
-    HeadBucketRequest request;
-    request.SetBucket("test-bucket");
-    
-    auto response = testClient->HeadBucket(request);
-    const auto& seenRequest = _mockHttpClient->GetMostRecentHttpRequest();
+    const auto& seenRequest = ExecuteHeadBucketRequest(s3Config);
     
     EXPECT_EQ("https://test-bucket.global-profile.example.com", seenRequest.GetUri().GetURIString());
-    
-    // Cleanup
-    unsetenv("AWS_CONFIG_FILE");
-    ReloadCachedConfigFile();
-}
 
-TEST_F(EndpointResolverIntegrationTest, DefaultResolution)
-{
-    auto mockRequest = MakeShared<Standard::StandardHttpRequest>(ALLOCATION_TAG, "mockuri", HttpMethod::HTTP_HEAD);
-    mockRequest->SetResponseStreamFactory([]() -> IOStream* {
-        return Aws::New<StringStream>(ALLOCATION_TAG, "response-string", std::ios_base::in | std::ios_base::binary);
-    });
-    auto mockResponse = MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, mockRequest);
-    mockResponse->SetResponseCode(HttpResponseCode::OK);
-    _mockHttpClient->AddResponseToReturn(mockResponse);
-    
-    AWSCredentials credentials{"mock", "credentials"};
-    const auto epProvider = MakeShared<S3EndpointProvider>(ALLOCATION_TAG);
-    S3ClientConfiguration s3Config;
-    s3Config.region = "us-east-1";
-    s3Config.retryStrategy = MakeShared<NoRetry>(ALLOCATION_TAG);
-    auto testClient = MakeShared<S3TestClient>(ALLOCATION_TAG, credentials, epProvider, s3Config);
-    
-    HeadBucketRequest request;
-    request.SetBucket("test-bucket");
-    
-    auto response = testClient->HeadBucket(request);
-    const auto& seenRequest = _mockHttpClient->GetMostRecentHttpRequest();
-    
-    // Debug: Print actual URL
-    std::cout << "Default resolution URL: " << seenRequest.GetUri().GetURIString() << std::endl;
-    // Due to config bleeding from previous tests, this may get a profile endpoint
-    EXPECT_TRUE(seenRequest.GetUri().GetURIString().find("global-profile.example.com") != std::string::npos || 
-                seenRequest.GetUri().GetURIString().find("amazonaws.com") != std::string::npos);
+    ReloadCachedConfigFile();
 }

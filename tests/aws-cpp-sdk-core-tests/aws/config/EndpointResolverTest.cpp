@@ -35,25 +35,12 @@ class EndpointResolverTest : public ::testing::Test
 protected:
     void SetUp() override
     {
-        // Clear environment variables
-        unsetenv("AWS_ENDPOINT_URL");
-        unsetenv("AWS_ENDPOINT_URL_S3");
-        unsetenv("AWS_ENDPOINT_URL_ELASTIC_BEANSTALK");
-        unsetenv("AWS_IGNORE_CONFIGURED_ENDPOINT_URLS");
-        
         // Initialize AWS SDK
         Aws::InitAPI(m_options);
     }
 
     void TearDown() override
     {
-        // Clean up environment variables
-        unsetenv("AWS_ENDPOINT_URL");
-        unsetenv("AWS_ENDPOINT_URL_S3");
-        unsetenv("AWS_ENDPOINT_URL_ELASTIC_BEANSTALK");
-        unsetenv("AWS_IGNORE_CONFIGURED_ENDPOINT_URLS");
-        unsetenv("AWS_CONFIG_FILE");
-        
         // Shutdown AWS SDK
         Aws::ShutdownAPI(m_options);
     }
@@ -64,25 +51,34 @@ private:
 
 TEST_F(EndpointResolverTest, ServiceSpecificEnvironmentVariable)
 {
+    Aws::Environment::EnvironmentRAII envGuard{{
+        {"AWS_ENDPOINT_URL_S3", "https://s3.example.com"}
+    }};
+    
     MockEndpointProvider provider;
-    setenv("AWS_ENDPOINT_URL_S3", "https://s3.example.com", 1);
     EndpointResolver::EndpointSource("s3", "default", provider);
     EXPECT_EQ("https://s3.example.com", provider.GetOverriddenEndpoint());
 }
 
 TEST_F(EndpointResolverTest, GlobalEnvironmentVariable)
 {
+    Aws::Environment::EnvironmentRAII envGuard{{
+        {"AWS_ENDPOINT_URL", "https://global.example.com"}
+    }};
+    
     MockEndpointProvider provider;
-    setenv("AWS_ENDPOINT_URL", "https://global.example.com", 1);
     EndpointResolver::EndpointSource("s3", "default", provider);
     EXPECT_EQ("https://global.example.com", provider.GetOverriddenEndpoint());
 }
 
 TEST_F(EndpointResolverTest, EnvironmentTakesPrecedenceOverGlobal)
 {
+    Aws::Environment::EnvironmentRAII envGuard{{
+        {"AWS_ENDPOINT_URL", "https://global.example.com"},
+        {"AWS_ENDPOINT_URL_S3", "https://s3.example.com"}
+    }};
+    
     MockEndpointProvider provider;
-    setenv("AWS_ENDPOINT_URL", "https://global.example.com", 1);
-    setenv("AWS_ENDPOINT_URL_S3", "https://s3.example.com", 1);
     EndpointResolver::EndpointSource("s3", "default", provider);
     EXPECT_EQ("https://s3.example.com", provider.GetOverriddenEndpoint());
 }
@@ -99,15 +95,14 @@ TEST_F(EndpointResolverTest, GlobalEnvOverServiceProfile)
     configFile << "  endpoint_url = https://s3-profile.example.com\n";
     configFile.flush();
     
-    // Set config file path and reload cache
-    setenv("AWS_CONFIG_FILE", configFile.GetFileName().c_str(), 1);
+    Aws::Environment::EnvironmentRAII envGuard{{
+        {"AWS_CONFIG_FILE", configFile.GetFileName()},
+        {"AWS_ENDPOINT_URL", "https://global-env.example.com"}
+    }};
     ReloadCachedConfigFile();
     
     // Verify profile is cached
     ASSERT_TRUE(HasCachedConfigProfile("test-profile"));
-    
-    // Set global environment variable
-    setenv("AWS_ENDPOINT_URL", "https://global-env.example.com", 1);
     
     // Test that global env takes precedence over service profile
     MockEndpointProvider provider;
@@ -128,8 +123,9 @@ TEST_F(EndpointResolverTest, ServiceProfileOverGlobalProfile)
     configFile << "  endpoint_url = https://s3-profile.example.com\n";
     configFile.flush();
     
-    // Set config file path and reload cache
-    setenv("AWS_CONFIG_FILE", configFile.GetFileName().c_str(), 1);
+    Aws::Environment::EnvironmentRAII envGuard{{
+        {"AWS_CONFIG_FILE", configFile.GetFileName()}
+    }};
     ReloadCachedConfigFile();
     
     // Verify profile is cached
@@ -143,9 +139,12 @@ TEST_F(EndpointResolverTest, ServiceProfileOverGlobalProfile)
 
 TEST_F(EndpointResolverTest, BlankValueContinuesResolution)
 {
+    Aws::Environment::EnvironmentRAII envGuard{{
+        {"AWS_ENDPOINT_URL_S3", ""},  // Blank service-specific
+        {"AWS_ENDPOINT_URL", "https://global.example.com"}
+    }};
+    
     MockEndpointProvider provider;
-    setenv("AWS_ENDPOINT_URL_S3", "", 1);  // Blank service-specific
-    setenv("AWS_ENDPOINT_URL", "https://global.example.com", 1);
     EndpointResolver::EndpointSource("s3", "default", provider);
     EXPECT_EQ("https://global.example.com", provider.GetOverriddenEndpoint());
 }
@@ -158,10 +157,6 @@ TEST_F(EndpointResolverTest, NoEndpointConfigured)
 }
 TEST_F(EndpointResolverTest, CodeProvidedEndpointTakesPrecedenceOverAll)
 {
-    // Set up all other endpoint sources
-    setenv("AWS_ENDPOINT_URL_S3", "https://s3-env.example.com", 1);
-    setenv("AWS_ENDPOINT_URL", "https://global-env.example.com", 1);
-    
     TempFile configFile(std::ios_base::out | std::ios_base::trunc);
     ASSERT_TRUE(configFile.good());
     configFile << "[profile test-profile]\n";
@@ -172,16 +167,16 @@ TEST_F(EndpointResolverTest, CodeProvidedEndpointTakesPrecedenceOverAll)
     configFile << "  endpoint_url = https://s3-profile.example.com\n";
     configFile.flush();
     
-    setenv("AWS_CONFIG_FILE", configFile.GetFileName().c_str(), 1);
+    Aws::Environment::EnvironmentRAII envGuard{{
+        {"AWS_ENDPOINT_URL_S3", "https://s3-env.example.com"},
+        {"AWS_ENDPOINT_URL", "https://global-env.example.com"},
+        {"AWS_CONFIG_FILE", configFile.GetFileName()}
+    }};
     ReloadCachedConfigFile();
     
     // Simulate code-provided endpoint (highest priority)
     MockEndpointProvider provider;
     provider.OverrideEndpoint("https://code-provided.example.com");
-    
-    // EndpointResolver should not override code-provided endpoints
-    // In practice, EndpointResolver::EndpointSource wouldn't be called
-    // if an endpoint was already set in code, but this documents the behavior
     
     // Verify that if EndpointSource is called, it would use env vars
     MockEndpointProvider resolverProvider;
@@ -193,10 +188,6 @@ TEST_F(EndpointResolverTest, CodeProvidedEndpointTakesPrecedenceOverAll)
 }
 TEST_F(EndpointResolverTest, IgnoreConfiguredEndpointUrlsEnvironmentVariable)
 {
-    // Set up endpoint sources that would normally be used
-    setenv("AWS_ENDPOINT_URL_S3", "https://s3-env.example.com", 1);
-    setenv("AWS_ENDPOINT_URL", "https://global-env.example.com", 1);
-    
     TempFile configFile(std::ios_base::out | std::ios_base::trunc);
     ASSERT_TRUE(configFile.good());
     configFile << "[profile test-profile]\n";
@@ -207,27 +198,22 @@ TEST_F(EndpointResolverTest, IgnoreConfiguredEndpointUrlsEnvironmentVariable)
     configFile << "  endpoint_url = https://s3-profile.example.com\n";
     configFile.flush();
     
-    setenv("AWS_CONFIG_FILE", configFile.GetFileName().c_str(), 1);
+    Aws::Environment::EnvironmentRAII envGuard{{
+        {"AWS_ENDPOINT_URL_S3", "https://s3-env.example.com"},
+        {"AWS_ENDPOINT_URL", "https://global-env.example.com"},
+        {"AWS_CONFIG_FILE", configFile.GetFileName()},
+        {"AWS_IGNORE_CONFIGURED_ENDPOINT_URLS", "true"}
+    }};
     ReloadCachedConfigFile();
-    
-    // Set ignore flag via environment variable
-    setenv("AWS_IGNORE_CONFIGURED_ENDPOINT_URLS", "true", 1);
     
     // Test that all configured endpoints are ignored
     MockEndpointProvider provider;
     EndpointResolver::EndpointSource("s3", "test-profile", provider);
     EXPECT_TRUE(provider.GetOverriddenEndpoint().empty());
-    
-    // Cleanup
-    unsetenv("AWS_IGNORE_CONFIGURED_ENDPOINT_URLS");
 }
 
 TEST_F(EndpointResolverTest, IgnoreConfiguredEndpointUrlsProfileSetting)
 {
-    // Set up endpoint sources that would normally be used
-    setenv("AWS_ENDPOINT_URL_S3", "https://s3-env.example.com", 1);
-    setenv("AWS_ENDPOINT_URL", "https://global-env.example.com", 1);
-    
     TempFile configFile(std::ios_base::out | std::ios_base::trunc);
     ASSERT_TRUE(configFile.good());
     configFile << "[profile test-profile]\n";
@@ -239,7 +225,11 @@ TEST_F(EndpointResolverTest, IgnoreConfiguredEndpointUrlsProfileSetting)
     configFile << "  endpoint_url = https://s3-profile.example.com\n";
     configFile.flush();
     
-    setenv("AWS_CONFIG_FILE", configFile.GetFileName().c_str(), 1);
+    Aws::Environment::EnvironmentRAII envGuard{{
+        {"AWS_ENDPOINT_URL_S3", "https://s3-env.example.com"},
+        {"AWS_ENDPOINT_URL", "https://global-env.example.com"},
+        {"AWS_CONFIG_FILE", configFile.GetFileName()}
+    }};
     ReloadCachedConfigFile();
     
     // Test that all configured endpoints are ignored due to profile setting
